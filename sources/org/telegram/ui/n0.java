@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n0 extends c8.ha {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class n0 extends c8.ha {
         switch (this.a) {
             case 0:
                 if (org.telegram.messenger.g0.G3()) {
-                    org.telegram.messenger.n10.t(null, 2131743953, new org.telegram.ui.Components.lc(this.b.h0, null));
+                    org.telegram.messenger.o10.t(null, 2131743951, new org.telegram.ui.Components.lc(this.b.h0, null));
                     break;
                 }
                 break;

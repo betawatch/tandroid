@@ -1,12 +1,12 @@
 package ah;
 
-import ai.y0;
-import ai.z2;
+import ai.a3;
+import ai.c1;
 import android.view.View;
 import android.widget.TextView;
 import bi.e2;
-import bi.m7;
-import bi.p7;
+import bi.l7;
+import bi.o7;
 import bi.t0;
 import ch.b0;
 import di.b6;
@@ -31,15 +31,16 @@ import hi.v0;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Components.a30;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
+import ug.y0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,10 +64,10 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 1:
-                z2 z2Var = (z2) this.b;
-                z2Var.getClass();
+                a3 a3Var = (a3) this.b;
+                a3Var.getClass();
                 DictationAsr.Y(!DictationAsr.x());
-                z2Var.e0();
+                a3Var.e0();
                 break;
             case 2:
                 ((androidx.mediarouter.app.g) this.b).dismiss();
@@ -88,7 +89,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 6:
-                if (((m7) this.b).n > 0 && (Q = LaunchActivity.Q()) != null) {
+                if (((l7) this.b).n > 0 && (Q = LaunchActivity.Q()) != null) {
                     org.telegram.ui.ActionBar.e2 e2Var2 = new org.telegram.ui.ActionBar.e2();
                     e2Var2.a = true;
                     Q.showAsSheet(new pb(), e2Var2);
@@ -96,7 +97,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 7:
-                ((p7) this.b).performClick();
+                ((o7) this.b).performClick();
                 break;
             case 8:
                 b0 b0Var = (b0) this.b;
@@ -128,7 +129,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                         if (i10 != o0Var.C1) {
                             z10 = false;
                         }
-                        G.i(new y0(o0Var, i10, 5), gd.G(i10 / 3600, "GiftOfferHours", new Object[0]), z10);
+                        G.i(new c1(o0Var, i10, 5), hd.G(i10 / 3600, "GiftOfferHours", new Object[0]), z10);
                         i7++;
                     }
                 }
@@ -183,7 +184,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((n5) this.b).dismiss();
                 g2 Q3 = LaunchActivity.Q();
                 if (Q3 != null) {
-                    Q3.showDialog(new ug.y0(Q3, 14, false));
+                    Q3.showDialog(new y0(Q3, 14, false));
                     break;
                 }
                 break;

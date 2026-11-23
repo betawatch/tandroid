@@ -4,6 +4,7 @@ import ai.f0;
 import ai.l0;
 import ai.o0;
 import ai.p0;
+import ai.x2;
 import android.animation.ValueAnimator;
 import android.app.Dialog;
 import android.content.Context;
@@ -19,8 +20,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import bi.b1;
-import bi.h5;
-import bi.m5;
+import bi.g5;
+import bi.l5;
 import c8.l9;
 import c8.ma;
 import c8.ra;
@@ -36,23 +37,23 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.uq;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.v3;
 import org.telegram.messenger.video.VideoAds;
-import org.telegram.messenger.vp;
+import org.telegram.messenger.vq;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.wp;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -117,7 +118,6 @@ import org.telegram.ui.cx;
 import org.telegram.ui.i8;
 import org.telegram.ui.kz;
 import org.telegram.ui.la;
-import org.telegram.ui.np;
 import org.telegram.ui.o6;
 import org.telegram.ui.p6;
 import org.telegram.ui.qq;
@@ -125,9 +125,8 @@ import org.telegram.ui.rq;
 import org.telegram.ui.vo;
 import org.telegram.ui.w0;
 import org.telegram.ui.wn;
-import org.telegram.ui.wp;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
@@ -203,7 +202,7 @@ public final /* synthetic */ class i implements Runnable {
         if (context == null) {
             return;
         }
-        final int n22 = (int) mp.u1(j10.t0).A7.J.n2(TimeUnit.SECONDS);
+        final int n22 = (int) np.u1(k10.t0).A7.J.n2(TimeUnit.SECONDS);
         final w4 w4Var = new w4(context, h6Var);
         ((w2) w4Var.b).w0 = false;
         int i23 = i19;
@@ -233,7 +232,7 @@ public final /* synthetic */ class i implements Runnable {
         FrameLayout frameLayout3 = new FrameLayout(context);
         w3Var2.addView(frameLayout3, ma.t(-1, -2, 51, 22, 0, 0, 4));
         TextView textView = new TextView(context);
-        textView.setText(gd.N0(2131744586, null));
+        textView.setText(hd.N0(2131744584, null));
         textView.setTextColor(i10);
         i5.c.x(textView, 1, 20.0f);
         frameLayout3.addView(textView, ma.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
@@ -248,26 +247,26 @@ public final /* synthetic */ class i implements Runnable {
         textView2.setGravity(17);
         final Calendar calendar = Calendar.getInstance();
         xb xbVar = new xb(context, 16);
-        xbVar.setText(gd.N0(2131744587, null));
+        xbVar.setText(hd.N0(2131744585, null));
         ra.b(xbVar, 0.02f, 1.2f);
-        linearLayout.addView(tb0Var, ma.l(0.5f, 0, ks.t4));
+        linearLayout.addView(tb0Var, ma.l(0.5f, 0, ls.t4));
         tb0Var.setMinValue(0);
         tb0Var.setMaxValue(365);
         tb0Var.setWrapSelectorWheel(false);
         tb0Var.setFormatter(new cr(28));
-        m5 m5Var = new m5(n22, tb0Var, g4Var, h4Var, textView2);
-        tb0Var.setOnValueChangedListener(m5Var);
+        l5 l5Var = new l5(n22, tb0Var, g4Var, h4Var, textView2);
+        tb0Var.setOnValueChangedListener(l5Var);
         g4Var.setMinValue(0);
         g4Var.setMaxValue(23);
-        linearLayout.addView(g4Var, ma.l(0.2f, 0, ks.t4));
+        linearLayout.addView(g4Var, ma.l(0.2f, 0, ls.t4));
         g4Var.setFormatter(new cr(29));
-        g4Var.setOnValueChangedListener(m5Var);
+        g4Var.setOnValueChangedListener(l5Var);
         h4Var.setMinValue(0);
         h4Var.setMaxValue(59);
         h4Var.setValue(0);
         h4Var.setFormatter(new l2(0));
-        linearLayout.addView(h4Var, ma.l(0.3f, 0, ks.t4));
-        h4Var.setOnValueChangedListener(m5Var);
+        linearLayout.addView(h4Var, ma.l(0.3f, 0, ls.t4));
+        h4Var.setOnValueChangedListener(l5Var);
         if (j3 <= 0 || j3 == 2147483646) {
             meVar = meVar2;
             frameLayout = frameLayout2;
@@ -401,8 +400,8 @@ public final /* synthetic */ class i implements Runnable {
                                 l6Var.H = false;
                                 l6Var.h0 = null;
                                 l6Var.i0 = null;
-                                ks.f(l6Var.F).b(l6Var, ks.Y1);
-                                ks.f(l6Var.F).b(l6Var, ks.Z1);
+                                ls.f(l6Var.F).b(l6Var, ls.Y1);
+                                ls.f(l6Var.F).b(l6Var, ls.Z1);
                                 w7 G = w7.G(l6Var.F);
                                 TLRPC.TL_theme tL_theme3 = l6Var.G;
                                 z11 = true;
@@ -444,7 +443,7 @@ public final /* synthetic */ class i implements Runnable {
                 }
                 break;
             case 4:
-                ((h5) this.c).a(m6.T0((File) this.b, (String) this.d, (String[]) this.e));
+                ((g5) this.c).a(m6.T0((File) this.b, (String) this.d, (String[]) this.e));
                 break;
             case 5:
                 p6 p6Var = (p6) this.c;
@@ -478,17 +477,17 @@ public final /* synthetic */ class i implements Runnable {
             case 9:
                 bn bnVar = (bn) this.c;
                 g2 g2Var = (g2) this.b;
-                fj fjVar = (fj) this.d;
+                gj gjVar = (gj) this.d;
                 r4 r4Var = (r4) this.e;
-                if (g2Var instanceof fs) {
+                if (g2Var instanceof gs) {
                     i7 = 4;
-                    bnVar.getNotificationCenter().n((fs) g2Var, 4);
+                    bnVar.getNotificationCenter().n((gs) g2Var, 4);
                 } else {
                     i7 = 4;
                 }
                 bnVar.getNotificationCenter().k(i7, new Object[0]);
                 Bundle bundle = new Bundle();
-                bundle.putLong("chat_id", fjVar.k.action.channel_id);
+                bundle.putLong("chat_id", gjVar.k.action.channel_id);
                 ((ActionBarLayout) r4Var).c(r4Var.getFragmentStack().size() - 1, new bn(bundle));
                 g2Var.finishFragment();
                 break;
@@ -529,24 +528,24 @@ public final /* synthetic */ class i implements Runnable {
                 break;
             case 12:
                 bn bnVar3 = (bn) this.c;
-                fj fjVar2 = (fj) this.b;
+                gj gjVar2 = (gj) this.b;
                 t1 t1Var = (t1) this.d;
                 boolean[] zArr4 = (boolean[]) this.e;
                 try {
-                    tL_webPage = d90.g(fjVar2);
+                    tL_webPage = d90.g(gjVar2);
                     th2 = null;
                 } catch (Throwable th3) {
                     a8.g(th3, true);
                     th2 = th3;
                     tL_webPage = null;
                 }
-                g0.g3(new o3(bnVar3, t1Var, zArr4, th2 == null && tL_webPage != null, fjVar2, tL_webPage));
+                g0.g3(new o3(bnVar3, t1Var, zArr4, th2 == null && tL_webPage != null, gjVar2, tL_webPage));
                 break;
             case 13:
                 bn bnVar4 = (bn) this.c;
                 TLObject tLObject3 = (TLObject) this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
-                tr trVar = (tr) this.e;
+                ur urVar = (ur) this.e;
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject3;
                 if (tL_error != null || messages_messages.messages.isEmpty()) {
                     if (messages_messages != null) {
@@ -554,7 +553,7 @@ public final /* synthetic */ class i implements Runnable {
                     } else {
                         bnVar4.D6 = 0;
                     }
-                    trVar.a.c(new uq(trVar, bnVar4.d(), bnVar4.l6, bnVar4.D6, 7));
+                    urVar.a.c(new vq(urVar, bnVar4.d(), bnVar4.l6, bnVar4.D6, 7));
                     int i16 = bnVar4.D6;
                     if (i16 == 0) {
                         bnVar4.E6 = true;
@@ -567,10 +566,10 @@ public final /* synthetic */ class i implements Runnable {
                     }
                 } else {
                     int i17 = messages_messages.messages.get(0).id;
-                    fj fjVar3 = (fj) bnVar4.G6[0].get(i17);
-                    trVar.a.c(new vp(trVar, i17, bnVar4.l6, 4));
-                    if (fjVar3 != null) {
-                        TLRPC.Message message = fjVar3.k;
+                    gj gjVar3 = (gj) bnVar4.G6[0].get(i17);
+                    urVar.a.c(new wp(urVar, i17, bnVar4.l6, 4));
+                    if (gjVar3 != null) {
+                        TLRPC.Message message = gjVar3.k;
                         message.media_unread = true;
                         message.mentioned = true;
                     }
@@ -585,7 +584,7 @@ public final /* synthetic */ class i implements Runnable {
                 vo.b0((vo) this.c, (t1[]) this.b, (TLRPC.Chat) this.d, (g2) this.e);
                 break;
             case 16:
-                np npVar = (np) this.c;
+                org.telegram.ui.np npVar = (org.telegram.ui.np) this.c;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.b;
                 TLObject tLObject4 = (TLObject) this.d;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.e;
@@ -602,16 +601,16 @@ public final /* synthetic */ class i implements Runnable {
                 rq rqVar2 = (rq) this.c;
                 TLObject tLObject5 = (TLObject) this.b;
                 TLRPC.User user2 = (TLRPC.User) this.d;
-                wp wpVar = (wp) this.e;
+                org.telegram.ui.wp wpVar = (org.telegram.ui.wp) this.e;
                 if (!(tLObject5 instanceof TLRPC.TL_channelParticipantAdmin) && !(tLObject5 instanceof TLRPC.TL_chatParticipantAdmin)) {
                     wpVar.a(1);
                     break;
                 } else {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(rqVar2.getParentActivity());
-                    alertDialog$Builder.a.S = gd.N0(R.string.AppName, "AppName");
-                    alertDialog$Builder.a.U = gd.a0(null, null, 2131754347, o10.q(user2));
-                    alertDialog$Builder.k(gd.N0(2131747637, "OK"), new w0(wpVar, 26));
-                    alertDialog$Builder.h(gd.N0(2131752577, "Cancel"), null);
+                    alertDialog$Builder.a.S = hd.N0(R.string.AppName, "AppName");
+                    alertDialog$Builder.a.U = hd.a0(null, null, 2131754347, p10.q(user2));
+                    alertDialog$Builder.k(hd.N0(2131747637, "OK"), new w0(wpVar, 26));
+                    alertDialog$Builder.h(hd.N0(2131752577, "Cancel"), null);
                     rqVar2.showDialog(alertDialog$Builder.a);
                     break;
                 }
@@ -627,7 +626,7 @@ public final /* synthetic */ class i implements Runnable {
                     g0.g3(new wn(qqVar2, new ArrayList(), new a0.h(), new ArrayList(), new ArrayList(), 2));
                     break;
                 } else {
-                    String T0 = gd.E0().T0(lowerCase2, true, false);
+                    String T0 = hd.E0().T0(lowerCase2, true, false);
                     if (lowerCase2.equals(T0) || T0.length() == 0) {
                         T0 = null;
                     }
@@ -656,7 +655,7 @@ public final /* synthetic */ class i implements Runnable {
                                 arrayList = arrayList2;
                                 qqVar = qqVar2;
                                 if (tLObject6 instanceof TLRPC.ChannelParticipant) {
-                                    B1 = fj.B1(((TLRPC.ChannelParticipant) tLObject6).peer);
+                                    B1 = gj.B1(((TLRPC.ChannelParticipant) tLObject6).peer);
                                 }
                                 strArr = strArr2;
                                 rqVar = rqVar4;
@@ -671,8 +670,8 @@ public final /* synthetic */ class i implements Runnable {
                             if (B1 > 0) {
                                 TLRPC.User c22 = rqVar4.getMessagesController().c2(Long.valueOf(B1));
                                 if (c22.id != rqVar4.getUserConfig().e()) {
-                                    String lowerCase3 = o10.q(c22).toLowerCase();
-                                    String o10 = o10.o(c22);
+                                    String lowerCase3 = p10.q(c22).toLowerCase();
+                                    String o10 = p10.o(c22);
                                     String str6 = c22.first_name;
                                     rqVar = rqVar4;
                                     str3 = c22.last_name;
@@ -703,7 +702,7 @@ public final /* synthetic */ class i implements Runnable {
                                 str3 = null;
                             }
                             i10 = size;
-                            String T02 = gd.E0().T0(lowerCase, true, z13);
+                            String T02 = hd.E0().T0(lowerCase, true, z13);
                             if (lowerCase.equals(T02)) {
                                 T02 = null;
                             }
@@ -752,8 +751,8 @@ public final /* synthetic */ class i implements Runnable {
                         for (int i22 = 0; i22 < arrayList3.size(); i22++) {
                             TLRPC.User c23 = rqVar5.getMessagesController().c2(Long.valueOf(((TLRPC.TL_contact) arrayList3.get(i22)).user_id));
                             if (c23.id != rqVar5.getUserConfig().e()) {
-                                String lowerCase4 = o10.q(c23).toLowerCase();
-                                String T03 = gd.E0().T0(lowerCase4, true, false);
+                                String lowerCase4 = p10.q(c23).toLowerCase();
+                                String T03 = hd.E0().T0(lowerCase4, true, false);
                                 if (lowerCase4.equals(T03)) {
                                     T03 = null;
                                 }
@@ -765,7 +764,7 @@ public final /* synthetic */ class i implements Runnable {
                                         if (lowerCase4.startsWith(str8) || i5.c.B(" ", str8, lowerCase4) || (T03 != null && (T03.startsWith(str8) || i5.c.B(" ", str8, T03)))) {
                                             z17 = true;
                                         } else {
-                                            String o11 = o10.o(c23);
+                                            String o11 = p10.o(c23);
                                             if (o11 != null && o11.startsWith(str8)) {
                                                 z17 = 2;
                                             }
@@ -774,7 +773,7 @@ public final /* synthetic */ class i implements Runnable {
                                             if (z17) {
                                                 arrayList5.add(g0.r0(c23.first_name, c23.last_name, str8));
                                             } else {
-                                                arrayList5.add(g0.r0("@" + o10.o(c23), null, "@" + str8));
+                                                arrayList5.add(g0.r0("@" + p10.o(c23), null, "@" + str8));
                                             }
                                             arrayList4.add(c23);
                                             hVar.k(c23, c23.id);
@@ -800,7 +799,7 @@ public final /* synthetic */ class i implements Runnable {
                 break;
             case 20:
                 b5 b5Var = (b5) this.c;
-                ai.w2 w2Var = (ai.w2) this.b;
+                x2 x2Var = (x2) this.b;
                 t1[] t1VarArr = (t1[]) this.d;
                 View view = (View) this.e;
                 String trim = b5Var.getText().toString().trim();
@@ -813,7 +812,7 @@ public final /* synthetic */ class i implements Runnable {
                     if (lowerCase5.startsWith("www.")) {
                         lowerCase5 = lowerCase5.substring(4);
                     }
-                    w2Var.a(lowerCase5);
+                    x2Var.a(lowerCase5);
                     t1 t1Var2 = t1VarArr[0];
                     if (t1Var2 != null) {
                         t1Var2.dismiss();
@@ -833,7 +832,7 @@ public final /* synthetic */ class i implements Runnable {
                 String[] strArr4 = (String[]) this.d;
                 TextView textView = (TextView) this.e;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) gd.N0(2131748313, null));
+                spannableStringBuilder.append((CharSequence) hd.N0(2131748313, null));
                 spannableStringBuilder.append((CharSequence) " ");
                 int length = spannableStringBuilder.length();
                 int i24 = 0;
@@ -848,7 +847,7 @@ public final /* synthetic */ class i implements Runnable {
                     }
                 }
                 spannableStringBuilder.append((CharSequence) " v");
-                if (j10.i(j10.t0).q()) {
+                if (k10.i(k10.t0).q()) {
                     nq nqVar = new nq(R.drawable.arrows_select, 0);
                     nqVar.H = 0.7f;
                     float L = g0.L(-1.33f);
@@ -1083,9 +1082,9 @@ public final /* synthetic */ class i implements Runnable {
                 int[] iArr5 = new int[2];
                 view2.getLocationInWindow(iArr5);
                 b1Var.T = iArr5[1] > g0.q.y / 2;
-                b1Var.M = g0.L(ks.x3);
+                b1Var.M = g0.L(ls.x3);
                 b1Var.L = 0;
-                b1Var.n = g0.L(ks.P4);
+                b1Var.n = g0.L(ls.P4);
                 int w02 = m6.w0(m6.G6, h6Var2);
                 ArrayList J = A0.J();
                 int size2 = J.size();
@@ -1161,7 +1160,7 @@ public final /* synthetic */ class i implements Runnable {
                 i00 i00Var = (i00) this.c;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.b;
                 TLObject tLObject9 = (TLObject) this.d;
-                x10 x10Var = (x10) this.e;
+                y10 y10Var = (y10) this.e;
                 i00Var.v2 = -1;
                 g2 g2Var2 = i00Var.s1;
                 kz.x0(tL_error3, g2Var2, lc.b0(g2Var2));
@@ -1187,7 +1186,7 @@ public final /* synthetic */ class i implements Runnable {
                         }
                     }
                     if (i00Var.V1 instanceof TL_chatlists.TL_chatlists_chatlistInvite) {
-                        g2Var2.getMessagesController().i3(true, new h5(i00Var, x10Var, i13, i11));
+                        g2Var2.getMessagesController().i3(true, new g5(i00Var, y10Var, i13, i11));
                         break;
                     } else {
                         if (i00Var.W1 != null) {
@@ -1195,7 +1194,7 @@ public final /* synthetic */ class i implements Runnable {
                         }
                         i00Var.w2 = true;
                         i00Var.dismiss();
-                        x10Var.a(Integer.valueOf(i13));
+                        y10Var.a(Integer.valueOf(i13));
                         break;
                     }
                 } else {

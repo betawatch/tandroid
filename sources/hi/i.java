@@ -3,12 +3,12 @@ package hi;
 import android.animation.ObjectAnimator;
 import android.text.Editable;
 import android.text.TextWatcher;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i implements TextWatcher {
     public int a;
@@ -35,7 +35,7 @@ public final class i implements TextWatcher {
         o6Var.a();
         o6Var.setText(str);
         o6Var.setTextColor(oVar.x >= captionLimit ? -1280137 : -1);
-        if (oVar.x > captionLimit && !j10.i(oVar.V).q() && oVar.x < oVar.getCaptionPremiumLimit() && oVar.x > this.a && (oVar.e() || mp.u1(oVar.V).K3())) {
+        if (oVar.x > captionLimit && !k10.i(oVar.V).q() && oVar.x < oVar.getCaptionPremiumLimit() && oVar.x > this.a && (oVar.e() || np.u1(oVar.V).K3())) {
             int i7 = -oVar.O;
             oVar.O = i7;
             org.telegram.messenger.g0.E3(i7, o6Var, null);
@@ -90,8 +90,8 @@ public final class i implements TextWatcher {
         }
         if (oVar.N.getAdapter() != null) {
             jg.h1 adapter = oVar.N.getAdapter();
-            mp.u1(oVar.V).c2(Long.valueOf(oVar.y));
-            TLRPC.Chat O0 = mp.u1(oVar.V).O0(Long.valueOf(-oVar.y));
+            np.u1(oVar.V).c2(Long.valueOf(oVar.y));
+            TLRPC.Chat O0 = np.u1(oVar.V).O0(Long.valueOf(-oVar.y));
             adapter.getClass();
             adapter.m0 = O0;
             oVar.N.getAdapter().U(charSequence, hVar.getEditText().getSelectionStart(), null, false, false);

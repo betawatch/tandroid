@@ -5,12 +5,12 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xe0 extends bv0 {
     public boolean a = false;
     public final Paint b = new Paint(1);
-    public final int c = org.telegram.messenger.j10.t0;
+    public final int c = org.telegram.messenger.k10.t0;
     public long d = 0;
     public boolean e = false;
     public final RectF f = new RectF();
@@ -51,7 +51,7 @@ public final class xe0 extends bv0 {
         rectF.set(0.0f, i7, L, i7 + L);
         float f10 = this.g;
         float f11 = 0.5f;
-        int y10 = (int) (f10 < 0.5f ? org.telegram.messenger.n10.y(f10, 0.5f, 1.0f, 35.0f) : ((f10 - 0.5f) * 35.0f) / 0.5f);
+        int y10 = (int) (f10 < 0.5f ? org.telegram.messenger.o10.y(f10, 0.5f, 1.0f, 35.0f) : ((f10 - 0.5f) * 35.0f) / 0.5f);
         int i10 = 0;
         while (i10 < 3) {
             float L3 = org.telegram.messenger.g0.L(9.2f) + (org.telegram.messenger.g0.L(5.0f) * i10);
@@ -60,19 +60,19 @@ public final class xe0 extends bv0 {
             float f13 = this.g;
             float f14 = L3 - (L4 * f13);
             if (i10 == 2) {
-                paint.setAlpha(Math.min(org.telegram.messenger.ks.e4, (int) ((f13 * 255.0f) / f12)));
+                paint.setAlpha(Math.min(org.telegram.messenger.ls.e4, (int) ((f13 * 255.0f) / f12)));
             } else if (i10 != 0) {
-                paint.setAlpha(org.telegram.messenger.ks.e4);
+                paint.setAlpha(org.telegram.messenger.ls.e4);
             } else if (f13 > f12) {
                 paint.setAlpha((int) ((1.0f - ((f13 - f12) / f12)) * 255.0f));
             } else {
-                paint.setAlpha(org.telegram.messenger.ks.e4);
+                paint.setAlpha(org.telegram.messenger.ls.e4);
             }
             canvas.drawCircle(f14, (L / 2) + i7, org.telegram.messenger.g0.L(1.2f), paint);
             i10++;
             f11 = f12;
         }
-        paint.setAlpha(org.telegram.messenger.ks.e4);
+        paint.setAlpha(org.telegram.messenger.ls.e4);
         canvas.drawArc(rectF, y10, 360 - (y10 * 2), true, paint);
         paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, z10 ? org.telegram.ui.ActionBar.m6.d6 : org.telegram.ui.ActionBar.m6.s8, false));
         canvas.drawCircle(org.telegram.messenger.g0.L(4.0f), ((L / 2) + i7) - org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(1.0f), paint);
@@ -87,7 +87,7 @@ public final class xe0 extends bv0 {
 
     public final void f() {
         if (this.e) {
-            if (org.telegram.messenger.ks.f(this.c).g()) {
+            if (org.telegram.messenger.ls.f(this.c).g()) {
                 org.telegram.messenger.g0.h3(new hb0(this, 10), 100L);
                 return;
             }

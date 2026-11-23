@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n21 extends org.telegram.ui.ActionBar.w2 {
     public static final /* synthetic */ int p1 = 0;
@@ -15,7 +15,7 @@ public final class n21 extends org.telegram.ui.ActionBar.w2 {
 
     public static void J0(n21 n21Var, String str) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n21Var.getContext());
-        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.gd.N0(2131751755, null)}, new og.j(12, n21Var, str));
+        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.hd.N0(2131751755, null)}, new og.j(12, n21Var, str));
         alertDialog$Builder.p();
     }
 

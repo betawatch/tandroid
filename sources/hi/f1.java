@@ -2,11 +2,11 @@ package hi;
 
 import android.content.DialogInterface;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.vr;
+import org.telegram.messenger.wr;
 import org.telegram.ui.Components.pz0;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class f1 implements DialogInterface.OnDismissListen
             case 2:
                 break;
             case 3:
-                vr.j.edit().putInt("dismissed_count", vr.j.getInt("dismissed_count", 0) + 1).apply();
+                wr.j.edit().putInt("dismissed_count", wr.j.getInt("dismissed_count", 0) + 1).apply();
                 break;
             case 4:
                 int i10 = pz0.e;

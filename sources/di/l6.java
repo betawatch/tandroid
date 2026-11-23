@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.ni;
 import org.telegram.messenger.oi;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.pi;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.q20;
@@ -25,9 +25,9 @@ import org.telegram.ui.cv0;
 import org.telegram.ui.ld0;
 import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFailureListener, fi.z8, org.telegram.ui.ActionBar.q1, rb0, f5.n, oi {
+public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFailureListener, fi.z8, org.telegram.ui.ActionBar.q1, rb0, f5.n, pi {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -44,7 +44,7 @@ public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFa
 
     @Override // org.telegram.messenger.q1
     public void a(f5.f fVar, List list) {
-        org.telegram.messenger.g0.g3(new m6((y8) this.a, list, (bi.f8) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, fVar, (Activity) this.e, 1));
+        org.telegram.messenger.g0.g3(new m6((y8) this.a, list, (bi.e8) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, fVar, (Activity) this.e, 1));
     }
 
     @Override // f5.n
@@ -52,7 +52,7 @@ public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFa
         org.telegram.messenger.g0.g3(new m6((ld0) this.a, fVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (q20) this.e, 8));
     }
 
-    @Override // org.telegram.messenger.oi
+    @Override // org.telegram.messenger.pi
     public void e(String str, ArrayList arrayList) {
         TLRPC.TL_availableReaction tL_availableReaction;
         s11 s11Var = (s11) this.a;
@@ -63,11 +63,11 @@ public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFa
         s11Var.getClass();
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             try {
-                if (((ni) arrayList.get(i7)).a.startsWith("animated_")) {
-                    linkedHashSet.add(Long.valueOf(Long.parseLong(((ni) arrayList.get(i7)).a.substring(9))));
+                if (((oi) arrayList.get(i7)).a.startsWith("animated_")) {
+                    linkedHashSet.add(Long.valueOf(Long.parseLong(((oi) arrayList.get(i7)).a.substring(9))));
                 } else {
                     int i10 = s11Var.a0;
-                    if ((i10 == 1 || i10 == 11 || i10 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((ni) arrayList.get(i7)).a)) != null) {
+                    if ((i10 == 1 || i10 == 11 || i10 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((oi) arrayList.get(i7)).a)) != null) {
                         arrayList2.add(ch.p0.c(tL_availableReaction));
                     }
                 }
@@ -82,11 +82,11 @@ public final /* synthetic */ class l6 implements org.telegram.messenger.q1, OnFa
         org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.a;
         boolean[] zArr = (boolean[]) this.b;
         org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.c;
-        x10 x10Var = (x10) this.d;
+        y10 y10Var = (y10) this.d;
         org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.e;
         zArr[0] = true;
         f3Var.h(f3Var.x, e3Var, true);
-        x10Var.a(Boolean.TRUE);
+        y10Var.a(Boolean.TRUE);
         t1VarArr[0].dismiss();
     }
 

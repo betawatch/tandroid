@@ -1,6 +1,6 @@
 package ci;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class c1 {
     public static final float[][] a = {new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 33.0f, 3.8f, 1.0f, -1.0f, 1.0f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 27.0f, 0.79f, 23.0f, 0.86f, 33.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 2.0f, 3.0f}, new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 18.0f, 3.8f, 1.0f, -1.0f, 1.2f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 13.0f, 0.79f, 11.0f, 0.86f, 16.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 1.0f, 1.5f}};

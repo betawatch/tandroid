@@ -1,11 +1,11 @@
 package fi;
 
-import org.telegram.messenger.u10;
+import org.telegram.messenger.v10;
 import org.telegram.ui.Components.rh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n3 implements u10 {
+public final /* synthetic */ class n3 implements v10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ r3 b;
     public final /* synthetic */ w3 c;
@@ -16,7 +16,7 @@ public final /* synthetic */ class n3 implements u10 {
         this.c = w3Var;
     }
 
-    @Override // org.telegram.messenger.u10
+    @Override // org.telegram.messenger.v10
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
@@ -50,7 +50,7 @@ public final /* synthetic */ class n3 implements u10 {
                     ((w8) z3Var.A1).g(false);
                     z3Var.setActive(true);
                     z3Var.E3 = false;
-                    z3Var.S0 = new ai.b1(2, runnable);
+                    z3Var.S0 = new ai.a1(2, runnable);
                     if (bool.booleanValue()) {
                         z3Var.d1(false);
                     }
@@ -89,7 +89,7 @@ public final /* synthetic */ class n3 implements u10 {
                     ((w8) z3Var2.A1).g(false);
                     z3Var2.setActive(true);
                     z3Var2.E3 = false;
-                    z3Var2.S0 = new ai.b1(3, runnable2);
+                    z3Var2.S0 = new ai.a1(3, runnable2);
                     if (bool2.booleanValue()) {
                         z3Var2.d1(false);
                     }

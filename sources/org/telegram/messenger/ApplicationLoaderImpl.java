@@ -10,7 +10,7 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends t0 {
     @Override // org.telegram.messenger.t0
@@ -49,7 +49,7 @@ public class ApplicationLoaderImpl extends t0 {
         boolean z10 = false;
         try {
             w7.r(null, document);
-            w7.G(j10.t0);
+            w7.G(k10.t0);
             File J = w7.J(document, null, true, true);
             z10 = J.exists();
             if (z10) {

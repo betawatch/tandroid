@@ -20,10 +20,10 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import c8.k0;
 import m.m2;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e extends Drawable implements Drawable.Callback {
     public static final /* synthetic */ int K = 0;
@@ -42,7 +42,7 @@ public final class e extends Drawable implements Drawable.Callback {
     public long w;
     public a5.b x;
     public b y;
-    public int e = ks.e4;
+    public int e = ls.e4;
     public int h = -1;
     public int H = -1;
     public int I = -1;
@@ -93,7 +93,7 @@ public final class e extends Drawable implements Drawable.Callback {
             bVar2.b = resources2;
             int i12 = resources2.getDisplayMetrics().densityDpi;
             if (i12 == 0) {
-                i12 = ks.q2;
+                i12 = ls.q2;
             }
             int i13 = bVar2.c;
             bVar2.c = i12;
@@ -229,14 +229,14 @@ public final class e extends Drawable implements Drawable.Callback {
             long j3 = this.s;
             if (j3 != 0) {
                 if (j3 > uptimeMillis) {
-                    drawable2.setAlpha(((255 - (((int) ((j3 - uptimeMillis) * 255)) / this.a.y)) * this.e) / ks.e4);
+                    drawable2.setAlpha(((255 - (((int) ((j3 - uptimeMillis) * 255)) / this.a.y)) * this.e) / ls.e4);
                     z11 = true;
                     drawable = this.d;
                     if (drawable == null) {
                         long j10 = this.w;
                         if (j10 != 0) {
                             if (j10 > uptimeMillis) {
-                                drawable.setAlpha(((((int) ((j10 - uptimeMillis) * 255)) / this.a.z) * this.e) / ks.e4);
+                                drawable.setAlpha(((((int) ((j10 - uptimeMillis) * 255)) / this.a.z) * this.e) / ls.e4);
                                 if (z10 && z12) {
                                     scheduleSelf(this.r, uptimeMillis + 16);
                                     return;
@@ -299,7 +299,7 @@ public final class e extends Drawable implements Drawable.Callback {
             bVar.b = resources;
             int i11 = resources.getDisplayMetrics().densityDpi;
             if (i11 == 0) {
-                i11 = ks.q2;
+                i11 = ls.q2;
             }
             int i12 = bVar.c;
             bVar.c = i11;

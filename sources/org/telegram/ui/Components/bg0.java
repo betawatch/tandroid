@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bg0 implements c5.h {
     public final /* synthetic */ org.telegram.ui.av0 a;
@@ -21,16 +21,16 @@ public final class bg0 implements c5.h {
         if (i7 != i10) {
             av0Var.p1 = i7;
         }
-        org.telegram.messenger.uo uoVar = av0Var.T0;
-        if (uoVar != null) {
+        org.telegram.messenger.vo voVar = av0Var.T0;
+        if (voVar != null) {
             gg0 gg0Var = av0Var.E0;
-            uoVar.b(i7 - (gg0Var != null ? gg0Var.j() : 0), z10);
+            voVar.b(i7 - (gg0Var != null ? gg0Var.j() : 0), z10);
         }
     }
 
     @Override // c5.h
     public final void b(float f10, int i7, int i10) {
-        org.telegram.messenger.fc fcVar;
+        org.telegram.messenger.gc gcVar;
         org.telegram.ui.av0 av0Var = this.a;
         av0Var.B(f10, i7);
         if (i10 == 0) {
@@ -50,18 +50,18 @@ public final class bg0 implements c5.h {
                                 imageReceiver.u0 = true;
                                 imageReceiver.P0(false);
                             }
-                            org.telegram.messenger.fc fcVar2 = (org.telegram.messenger.fc) av0Var.X0.get(k11);
-                            if (fcVar2 != null) {
+                            org.telegram.messenger.gc gcVar2 = (org.telegram.messenger.gc) av0Var.X0.get(k11);
+                            if (gcVar2 != null) {
                                 org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(av0Var.M0);
-                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = fcVar2.f;
+                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = gcVar2.f;
                                 if (tL_fileLocationToBeDeprecated != null) {
                                     org.telegram.messenger.w7.K.c(new org.telegram.messenger.z4(9, G, tL_fileLocationToBeDeprecated));
                                 }
                             }
                         } else if (z10) {
                             c6 m10 = imageReceiver.m();
-                            if (m10 != null && (fcVar = (org.telegram.messenger.fc) av0Var.X0.get(k11)) != null) {
-                                m10.y(fcVar.j, false, true);
+                            if (m10 != null && (gcVar = (org.telegram.messenger.gc) av0Var.X0.get(k11)) != null) {
+                                m10.y(gcVar.j, false, true);
                             }
                             imageReceiver.u0 = false;
                             imageReceiver.Q0();

@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class wa0 extends FrameLayout {
     public final ik E;
@@ -20,7 +20,7 @@ public abstract class wa0 extends FrameLayout {
     public TLRPC.Peer a;
     public final boolean b;
     public final org.telegram.ui.bn c;
-    public final org.telegram.messenger.jj d;
+    public final org.telegram.messenger.kj d;
     public final ua0 e;
     public final ca0 f;
     public ValueAnimator h;
@@ -31,7 +31,7 @@ public abstract class wa0 extends FrameLayout {
     public final int x;
     public boolean y;
 
-    public wa0(Context context, org.telegram.ui.bn bnVar, dh.c cVar, org.telegram.messenger.jj jjVar, TLRPC.User user, TLRPC.Chat chat, int i7, sa0 sa0Var, int i10, final boolean z10) {
+    public wa0(Context context, org.telegram.ui.bn bnVar, dh.c cVar, org.telegram.messenger.kj kjVar, TLRPC.User user, TLRPC.Chat chat, int i7, sa0 sa0Var, int i10, final boolean z10) {
         super(context);
         this.E = new ik(this, 10);
         this.F = new ArrayList(10);
@@ -41,7 +41,7 @@ public abstract class wa0 extends FrameLayout {
         this.H = cVar;
         this.n = user;
         this.r = chat;
-        this.d = jjVar;
+        this.d = kjVar;
         this.G = sa0Var;
         this.f = new ca0(this, context, sa0Var);
         ua0 ua0Var = new ua0(context, sa0Var);
@@ -54,12 +54,12 @@ public abstract class wa0 extends FrameLayout {
         ua0Var.setBackground(c10);
         int i11 = 0;
         for (int i12 = 0; i12 < 3; i12++) {
-            if (i12 == 0 && jjVar.a != null) {
-                this.e.a(0, org.telegram.messenger.gd.N0(2131748354, null));
-            } else if (i12 == 1 && jjVar.b != null && !z10) {
-                this.e.a(1, org.telegram.messenger.gd.N0(2131748358, null));
-            } else if (i12 == 2 && jjVar.c != null && !z10) {
-                this.e.a(2, org.telegram.messenger.gd.N0(2131748357, null));
+            if (i12 == 0 && kjVar.a != null) {
+                this.e.a(0, org.telegram.messenger.hd.N0(2131748354, null));
+            } else if (i12 == 1 && kjVar.b != null && !z10) {
+                this.e.a(1, org.telegram.messenger.hd.N0(2131748358, null));
+            } else if (i12 == 2 && kjVar.c != null && !z10) {
+                this.e.a(2, org.telegram.messenger.hd.N0(2131748357, null));
             }
             if (i12 == i10) {
                 i11 = this.e.a.size() - 1;
@@ -69,7 +69,7 @@ public abstract class wa0 extends FrameLayout {
         this.f.setPosition(i11);
         this.e.setSelectedTab(i11);
         addView(this.e, c8.ma.e(-1, 66, 87));
-        addView(this.f, c8.ma.d(-1, -1.0f, org.telegram.messenger.ks.E1, 0.0f, 0.0f, 0.0f, 66.0f));
+        addView(this.f, c8.ma.d(-1, -1.0f, org.telegram.messenger.ls.E1, 0.0f, 0.0f, 0.0f, 66.0f));
         this.e.setOnTabClick(new z2(this, 8));
         setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ba0
             @Override // android.view.View.OnTouchListener
@@ -129,12 +129,12 @@ public abstract class wa0 extends FrameLayout {
             org.telegram.ui.bn bnVar = mkVar.I;
             bnVar.cb = null;
             bnVar.s7();
-            org.telegram.messenger.jj jjVar = bnVar.x5;
-            if (jjVar != null) {
+            org.telegram.messenger.kj kjVar = bnVar.x5;
+            if (kjVar != null) {
                 if (bnVar.D5 == null) {
-                    bnVar.D5 = jjVar.d;
+                    bnVar.D5 = kjVar.d;
                 }
-                org.telegram.ui.rm rmVar = jjVar.d;
+                org.telegram.ui.rm rmVar = kjVar.d;
                 if (rmVar == null) {
                     bnVar.D5 = null;
                 }
@@ -158,18 +158,18 @@ public abstract class wa0 extends FrameLayout {
                 org.telegram.ui.rm rmVar4 = bnVar.D5;
                 if (rmVar4 != null) {
                     rmVar4.f = false;
-                    org.telegram.messenger.jj jjVar2 = bnVar.x5;
-                    rmVar4.b = jjVar2.e;
-                    rmVar4.c = jjVar2.f;
+                    org.telegram.messenger.kj kjVar2 = bnVar.x5;
+                    rmVar4.b = kjVar2.e;
+                    rmVar4.c = kjVar2.f;
                     rmVar4.f();
                     if (bnVar.Sb == 2) {
                         bnVar.jc(bnVar.F5, bnVar.D5);
                     }
                 } else {
                     ArrayList arrayList = new ArrayList();
-                    org.telegram.messenger.hj hjVar = bnVar.x5.b;
-                    if (hjVar != null) {
-                        hjVar.b(arrayList);
+                    org.telegram.messenger.ij ijVar = bnVar.x5.b;
+                    if (ijVar != null) {
+                        ijVar.b(arrayList);
                     }
                     bnVar.B8();
                 }

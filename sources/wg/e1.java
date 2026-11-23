@@ -20,17 +20,17 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.n5;
+import org.telegram.messenger.np;
 import org.telegram.messenger.o10;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -53,9 +53,9 @@ import org.telegram.ui.uv;
 import org.telegram.ui.v00;
 import ug.i1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class e1 extends sa implements fs {
+public final class e1 extends sa implements gs {
     public final int T1;
     public final tg0 U1;
     public final sg0 V1;
@@ -83,7 +83,7 @@ public final class e1 extends sa implements fs {
     public int r2;
     public v00 s2;
     public final HashSet t2;
-    public q10 u2;
+    public r10 u2;
 
     public e1(Context context, int i7, fi.h0 h0Var) {
         super(context, null, true, false, h0Var);
@@ -128,7 +128,7 @@ public final class e1 extends sa implements fs {
         t6.h(i11, sg0Var, h0Var);
         sg0Var.setOnSearchTextChange(new z0(this, i12));
         hashSet.isEmpty();
-        sg0Var.b.r(gd.N0(2131745640, null), false);
+        sg0Var.b.r(hd.N0(2131745640, null), false);
         uv uvVar = new uv(15, getContext(), this);
         this.W1 = uvVar;
         ViewGroup viewGroup = this.b;
@@ -198,10 +198,10 @@ public final class e1 extends sa implements fs {
                                 if (i18 != 1) {
                                     int i19 = 0;
                                     if (i18 == 4) {
-                                        q10 q10Var = e1Var.u2;
-                                        if (q10Var != null) {
+                                        r10 r10Var = e1Var.u2;
+                                        if (r10Var != null) {
                                             op opVar2 = e1Var.Y1;
-                                            q10Var.a(Boolean.valueOf(opVar2 != null && opVar2.a.q), hashSet2);
+                                            r10Var.a(Boolean.valueOf(opVar2 != null && opVar2.a.q), hashSet2);
                                             e1Var.u2 = null;
                                         }
                                         e1Var.dismiss();
@@ -210,8 +210,8 @@ public final class e1 extends sa implements fs {
                                         List c10 = s.c(s.b(arrayList4.size(), arrayList3));
                                         if (arrayList4.size() == 1) {
                                             long j3 = ((TLRPC.User) arrayList4.get(0)).id;
-                                            if (o10.b(j3)) {
-                                                n10.u(gd.a0(null, null, 2131743499, n5.t(j3)), new lc(e1Var.c, e1Var.J0), R.raw.error, 36);
+                                            if (p10.b(j3)) {
+                                                o10.u(hd.a0(null, null, 2131743497, n5.t(j3)), new lc(e1Var.c, e1Var.J0), R.raw.error, 36);
                                                 break;
                                             } else {
                                                 n3 n3Var = new n3(e1Var.getContext(), e1Var.a, j3, c10, new z0(e1Var, i19));
@@ -265,10 +265,10 @@ public final class e1 extends sa implements fs {
                                 if (i18 != 1) {
                                     int i19 = 0;
                                     if (i18 == 4) {
-                                        q10 q10Var = e1Var.u2;
-                                        if (q10Var != null) {
+                                        r10 r10Var = e1Var.u2;
+                                        if (r10Var != null) {
                                             op opVar2 = e1Var.Y1;
-                                            q10Var.a(Boolean.valueOf(opVar2 != null && opVar2.a.q), hashSet2);
+                                            r10Var.a(Boolean.valueOf(opVar2 != null && opVar2.a.q), hashSet2);
                                             e1Var.u2 = null;
                                         }
                                         e1Var.dismiss();
@@ -277,8 +277,8 @@ public final class e1 extends sa implements fs {
                                         List c10 = s.c(s.b(arrayList4.size(), arrayList3));
                                         if (arrayList4.size() == 1) {
                                             long j3 = ((TLRPC.User) arrayList4.get(0)).id;
-                                            if (o10.b(j3)) {
-                                                n10.u(gd.a0(null, null, 2131743499, n5.t(j3)), new lc(e1Var.c, e1Var.J0), R.raw.error, 36);
+                                            if (p10.b(j3)) {
+                                                o10.u(hd.a0(null, null, 2131743497, n5.t(j3)), new lc(e1Var.c, e1Var.J0), R.raw.error, 36);
                                                 break;
                                             } else {
                                                 n3 n3Var = new n3(e1Var.getContext(), e1Var.a, j3, c10, new z0(e1Var, i19));
@@ -330,7 +330,7 @@ public final class e1 extends sa implements fs {
         k1(false);
         i1(false);
         if (arrayList2.isEmpty()) {
-            arrayList2.addAll(ri.d0(this.a).j1);
+            arrayList2.addAll(si.d0(this.a).j1);
         }
         m1(false, true);
     }
@@ -354,13 +354,13 @@ public final class e1 extends sa implements fs {
         int i7 = this.T1;
         if (i7 != 0) {
             if (i7 == 1) {
-                return gd.N0(2131749431, null);
+                return hd.N0(2131749431, null);
             }
             if (i7 != 2) {
-                return i7 != 4 ? gd.N0(2131749424, null) : gd.N0(2131743182, null);
+                return i7 != 4 ? hd.N0(2131749424, null) : hd.N0(2131743180, null);
             }
         }
-        return gd.N0(2131749425, null);
+        return hd.N0(2131749425, null);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -381,17 +381,17 @@ public final class e1 extends sa implements fs {
         l1(false, true);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.U2) {
+        if (i7 == ls.U2) {
             dismiss();
             return;
         }
-        if (i7 == ks.O) {
+        if (i7 == ls.O) {
             org.telegram.messenger.g0.g3(new x0(this, 0));
-        } else if (i7 == ks.S0) {
+        } else if (i7 == ls.S0) {
             org.telegram.messenger.g0.g3(new x0(this, 6));
-        } else if (i7 == ks.E0) {
+        } else if (i7 == ls.E0) {
             org.telegram.messenger.g0.g3(new x0(this, 9));
         }
     }
@@ -455,9 +455,9 @@ public final class e1 extends sa implements fs {
                         e1 e1Var = this.b;
                         HashSet hashSet = e1Var.c2;
                         hashSet.add(Long.valueOf(j3));
-                        q10 q10Var = e1Var.u2;
-                        if (q10Var != null) {
-                            q10Var.a(Boolean.FALSE, hashSet);
+                        r10 r10Var = e1Var.u2;
+                        if (r10Var != null) {
+                            r10Var.a(Boolean.FALSE, hashSet);
                             e1Var.u2 = null;
                         }
                         e1Var.dismiss();
@@ -466,9 +466,9 @@ public final class e1 extends sa implements fs {
                         e1 e1Var2 = this.b;
                         HashSet hashSet2 = e1Var2.c2;
                         hashSet2.add(Long.valueOf(j3));
-                        q10 q10Var2 = e1Var2.u2;
-                        if (q10Var2 != null) {
-                            q10Var2.a(Boolean.TRUE, hashSet2);
+                        r10 r10Var2 = e1Var2.u2;
+                        if (r10Var2 != null) {
+                            r10Var2.a(Boolean.TRUE, hashSet2);
                             e1Var2.u2 = null;
                         }
                         e1Var2.dismiss();
@@ -491,9 +491,9 @@ public final class e1 extends sa implements fs {
                         e1 e1Var = this.b;
                         HashSet hashSet = e1Var.c2;
                         hashSet.add(Long.valueOf(j3));
-                        q10 q10Var = e1Var.u2;
-                        if (q10Var != null) {
-                            q10Var.a(Boolean.FALSE, hashSet);
+                        r10 r10Var = e1Var.u2;
+                        if (r10Var != null) {
+                            r10Var.a(Boolean.FALSE, hashSet);
                             e1Var.u2 = null;
                         }
                         e1Var.dismiss();
@@ -502,9 +502,9 @@ public final class e1 extends sa implements fs {
                         e1 e1Var2 = this.b;
                         HashSet hashSet2 = e1Var2.c2;
                         hashSet2.add(Long.valueOf(j3));
-                        q10 q10Var2 = e1Var2.u2;
-                        if (q10Var2 != null) {
-                            q10Var2.a(Boolean.TRUE, hashSet2);
+                        r10 r10Var2 = e1Var2.u2;
+                        if (r10Var2 != null) {
+                            r10Var2.a(Boolean.TRUE, hashSet2);
                             e1Var2.u2 = null;
                         }
                         e1Var2.dismiss();
@@ -519,7 +519,7 @@ public final class e1 extends sa implements fs {
 
     public final int h1() {
         if (this.T1 == 4) {
-            return Math.max(0, (mp.u1(this.a).S6 - this.t2.size()) - 1);
+            return Math.max(0, (np.u1(this.a).S6 - this.t2.size()) - 1);
         }
         return 10;
     }
@@ -537,7 +537,7 @@ public final class e1 extends sa implements fs {
     }
 
     public final void j1() {
-        String H = this.T1 == 4 ? gd.H(',', "UserSelectorLimit", h1()) : gd.N0(2131753269, null);
+        String H = this.T1 == 4 ? hd.H(',', "UserSelectorLimit", h1()) : hd.N0(2131753269, null);
         h6 h6Var = this.J0;
         m2 m2Var = this.c;
         new lc(m2Var, h6Var).Q(R.raw.chats_infotip, 36, H).k(true);
@@ -554,15 +554,15 @@ public final class e1 extends sa implements fs {
         int i7 = this.T1;
         HashSet hashSet = this.c2;
         if (i7 == 4) {
-            spannableStringBuilder.append((CharSequence) gd.N0(2131752611, null));
+            spannableStringBuilder.append((CharSequence) hd.N0(2131752611, null));
         } else if (hashSet.size() != 0) {
-            spannableStringBuilder.append((CharSequence) gd.N0(2131749488, "GiftPremiumProceedBtn"));
-        } else if (gd.a0) {
-            spannableStringBuilder.append((CharSequence) gd.N0(2131749501, "GiftPremiumChooseRecipientsBtn"));
+            spannableStringBuilder.append((CharSequence) hd.N0(2131749488, "GiftPremiumProceedBtn"));
+        } else if (hd.a0) {
+            spannableStringBuilder.append((CharSequence) hd.N0(2131749501, "GiftPremiumChooseRecipientsBtn"));
             spannableStringBuilder.append((CharSequence) "d").setSpan(this.p2, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         } else {
             spannableStringBuilder.append((CharSequence) "d").setSpan(this.p2, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) gd.N0(2131749501, "GiftPremiumChooseRecipientsBtn"));
+            spannableStringBuilder.append((CharSequence) hd.N0(2131749501, "GiftPremiumChooseRecipientsBtn"));
         }
         tg0Var.c(hashSet.size(), true);
         tg0Var.i(spannableStringBuilder, z10, false);
@@ -594,14 +594,14 @@ public final class e1 extends sa implements fs {
         HashSet hashSet = this.t2;
         HashSet hashSet2 = this.c2;
         if (isEmpty) {
-            TLRPC.UserFull d2 = mp.u1(this.a).d2(j10.i(this.a).e());
+            TLRPC.UserFull d2 = np.u1(this.a).d2(k10.i(this.a).e());
             if (d2 == null) {
-                mp.u1(this.a).c3(j10.i(this.a).f(), 0, true, null);
+                np.u1(this.a).c3(k10.i(this.a).f(), 0, true, null);
             }
             int i12 = this.T1;
             if ((i12 == 0 || i12 == 2) && d2 != null && d2.birthday == null) {
                 L = org.telegram.messenger.g0.L(50.0f);
-                String N0 = gd.N0(2131749400, null);
+                String N0 = hd.N0(2131749400, null);
                 xg.g gVar2 = new xg.g(9, false);
                 gVar2.h = 1;
                 gVar2.i = R.drawable.menu_birthday;
@@ -611,17 +611,17 @@ public final class e1 extends sa implements fs {
                 L = 0;
             }
             if (this.s2 != null && i12 == 4) {
-                String N02 = gd.N0(2131743177, null);
+                String N02 = hd.N0(2131743175, null);
                 xg.g gVar3 = new xg.g(9, false);
                 gVar3.h = 3;
                 gVar3.i = R.drawable.msg2_link2;
                 gVar3.f = N02;
                 arrayList2.add(gVar3);
             }
-            if ((i12 == 0 || i12 == 2) && (f10 = j10.i(this.a).f()) != null) {
-                arrayList2.add(xg.g.b(gd.N0(2131750082, null)));
+            if ((i12 == 0 || i12 == 2) && (f10 = k10.i(this.a).f()) != null) {
+                arrayList2.add(xg.g.b(hd.N0(2131750082, null)));
                 xg.g c10 = xg.g.c(f10, hashSet2.contains(Long.valueOf(f10.id)));
-                c10.g = gd.N0(2131750083, null);
+                c10.g = hd.N0(2131750083, null);
                 arrayList2.add(c10);
             }
             ArrayList arrayList3 = new ArrayList();
@@ -638,13 +638,13 @@ public final class e1 extends sa implements fs {
                 while (i13 < size2) {
                     Object obj = arrayList4.get(i13);
                     i13++;
-                    mp u12 = mp.u1(this.a);
+                    np u12 = np.u1(this.a);
                     TLRPC.Peer peer = ((TLRPC.TL_topPeer) obj).peer;
                     ArrayList arrayList6 = arrayList4;
                     TLRPC.User c22 = u12.c2(Long.valueOf(peer.user_id));
                     if (c22 != null) {
                         long j10 = c22.id;
-                        if (j10 != 0 && !c22.self && !c22.bot && !o10.B(j10) && !o10.y(c22) && !hashSet.contains(Long.valueOf(c22.id))) {
+                        if (j10 != 0 && !c22.self && !c22.bot && !p10.B(j10) && !p10.y(c22) && !hashSet.contains(Long.valueOf(c22.id))) {
                             if (hashSet2.contains(Long.valueOf(c22.id))) {
                                 arrayList3.add(Long.valueOf(c22.id));
                             }
@@ -660,7 +660,7 @@ public final class e1 extends sa implements fs {
                 j3 = 0;
                 if (!arrayList5.isEmpty()) {
                     L += org.telegram.messenger.g0.L(32.0f);
-                    gVar = xg.g.b(gd.N0(2131749499, null));
+                    gVar = xg.g.b(hd.N0(2131749499, null));
                     arrayList2.add(gVar);
                     arrayList2.addAll(arrayList5);
                     ArrayList arrayList7 = this.h2;
@@ -672,7 +672,7 @@ public final class e1 extends sa implements fs {
                         String str = (String) obj2;
                         ArrayList arrayList8 = new ArrayList();
                         for (TLRPC.TL_contact tL_contact : (List) this.g2.get(str)) {
-                            long e10 = j10.i(this.a).e();
+                            long e10 = k10.i(this.a).e();
                             ArrayList arrayList9 = arrayList7;
                             int i14 = size;
                             long j11 = tL_contact.user_id;
@@ -681,12 +681,12 @@ public final class e1 extends sa implements fs {
                             } else {
                                 i11 = L;
                                 HashSet hashSet3 = hashSet;
-                                TLRPC.User c23 = mp.u1(this.a).c2(Long.valueOf(tL_contact.user_id));
+                                TLRPC.User c23 = np.u1(this.a).c2(Long.valueOf(tL_contact.user_id));
                                 if (c23 == null || c23.bot) {
                                     hashSet = hashSet3;
                                 } else {
                                     hashSet = hashSet3;
-                                    if (!o10.B(c23.id)) {
+                                    if (!p10.B(c23.id)) {
                                         int L2 = org.telegram.messenger.g0.L(f11) + i11;
                                         if (hashSet2.contains(Long.valueOf(c23.id))) {
                                             arrayList3.add(Long.valueOf(c23.id));
@@ -721,7 +721,7 @@ public final class e1 extends sa implements fs {
                         size = i16;
                     }
                     if (gVar != null && arrayList3.size() > 0 && !hashSet2.isEmpty()) {
-                        String N03 = gd.N0(2131751445, null);
+                        String N03 = hd.N0(2131751445, null);
                         y0 y0Var = new y0(0, this, arrayList3);
                         gVar.g = N03;
                         gVar.l = y0Var;
@@ -736,7 +736,7 @@ public final class e1 extends sa implements fs {
             while (i7 < size) {
             }
             if (gVar != null) {
-                String N032 = gd.N0(2131751445, null);
+                String N032 = hd.N0(2131751445, null);
                 y0 y0Var2 = new y0(0, this, arrayList3);
                 gVar.g = N032;
                 gVar.l = y0Var2;
@@ -753,7 +753,7 @@ public final class e1 extends sa implements fs {
                 TLObject tLObject = (TLObject) obj3;
                 if (tLObject instanceof TLRPC.User) {
                     TLRPC.User user = (TLRPC.User) tLObject;
-                    if (!user.bot && !o10.B(user.id)) {
+                    if (!user.bot && !p10.B(user.id)) {
                         long j12 = user.id;
                         i10 += org.telegram.messenger.g0.L(56.0f);
                         if (!hashSet.contains(Long.valueOf(user.id))) {
@@ -856,19 +856,19 @@ public final class e1 extends sa implements fs {
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.a).c(this, ks.U2);
-        ks.f(this.a).c(this, ks.E0);
-        ks.f(this.a).c(this, ks.O);
-        ks.f(this.a).c(this, ks.S0);
+        ls.f(this.a).c(this, ls.U2);
+        ls.f(this.a).c(this, ls.E0);
+        ls.f(this.a).c(this, ls.O);
+        ls.f(this.a).c(this, ls.S0);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.a).n(this, ks.U2);
-        ks.f(this.a).n(this, ks.E0);
-        ks.f(this.a).n(this, ks.O);
-        ks.f(this.a).n(this, ks.S0);
+        ls.f(this.a).n(this, ls.U2);
+        ls.f(this.a).n(this, ls.E0);
+        ls.f(this.a).n(this, ls.O);
+        ls.f(this.a).n(this, ls.S0);
     }
 
     @Override // org.telegram.ui.ActionBar.w2

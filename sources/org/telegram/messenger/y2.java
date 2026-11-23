@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.util.Pair;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class y2 {
     public final long a;
@@ -28,19 +28,19 @@ public abstract class y2 {
         return false;
     }
 
-    public final void c(int i7, Object obj, x10 x10Var) {
+    public final void c(int i7, Object obj, y10 y10Var) {
         Pair pair = new Pair(Integer.valueOf(i7), obj);
         HashMap hashMap = this.c;
         if (hashMap != null && hashMap.get(pair) != null) {
-            g0.g3(new yf(this, pair, x10Var, 11));
+            g0.g3(new zf(this, pair, y10Var, 11));
             return;
         }
         HashMap hashMap2 = this.b;
         Object obj2 = hashMap2 == null ? null : hashMap2.get(pair);
         if (obj2 != null && !i(pair)) {
-            x10Var.a(obj2);
+            y10Var.a(obj2);
         } else {
-            g0.g3(new yf(this, pair, x10Var, 11));
+            g0.g3(new zf(this, pair, y10Var, 11));
             e(i7, obj, new w2(this, pair, obj, i7));
         }
     }
@@ -51,13 +51,13 @@ public abstract class y2 {
         }
         Pair pair = new Pair(Integer.valueOf(i7), num);
         this.d.remove(pair);
-        if (this instanceof lo) {
+        if (this instanceof mo) {
             h(pair.hashCode(), 0L);
         }
     }
 
-    public void e(int i7, Object obj, q10 q10Var) {
-        ((w2) q10Var).a(0L, null);
+    public void e(int i7, Object obj, r10 r10Var) {
+        ((w2) r10Var).a(0L, null);
     }
 
     public abstract void f(int i7, Object obj, long j3, x2 x2Var);
@@ -65,9 +65,9 @@ public abstract class y2 {
     public final boolean i(Pair pair) {
         HashMap hashMap = this.d;
         Long l10 = hashMap != null ? (Long) hashMap.get(pair) : null;
-        if ((this instanceof lo) && l10 == null) {
+        if ((this instanceof mo) && l10 == null) {
             int hashCode = pair.hashCode();
-            l10 = Long.valueOf(((lo) this).e.h7.getLong("effects_last_" + hashCode, 0L));
+            l10 = Long.valueOf(((mo) this).e.h7.getLong("effects_last_" + hashCode, 0L));
         }
         return l10 == null || System.currentTimeMillis() - l10.longValue() >= this.a;
     }

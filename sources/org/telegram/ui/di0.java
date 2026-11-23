@@ -5,9 +5,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class di0 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class di0 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int[] a;
     public final /* synthetic */ hi.e b;
     public final /* synthetic */ hi.e c;
@@ -38,7 +38,7 @@ public final /* synthetic */ class di0 implements org.telegram.messenger.x10 {
         this.m = h6Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int[] iArr = this.a;
         hi.e eVar = this.b;
@@ -59,8 +59,8 @@ public final /* synthetic */ class di0 implements org.telegram.messenger.x10 {
         }
         final org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, org.telegram.messenger.t0.b, null);
         t1Var.r(200L);
-        ConnectionsManager.getInstance(num.intValue()).sendRequestTyped(tL_messages_requestUrlAuth, new d3.b(1), new org.telegram.messenger.q10() { // from class: org.telegram.ui.bi0
-            @Override // org.telegram.messenger.q10
+        ConnectionsManager.getInstance(num.intValue()).sendRequestTyped(tL_messages_requestUrlAuth, new d3.b(1), new org.telegram.messenger.r10() { // from class: org.telegram.ui.bi0
+            @Override // org.telegram.messenger.r10
             public final void a(Object obj2, Object obj3) {
                 TLRPC.UrlAuthResult urlAuthResult2 = (TLRPC.UrlAuthResult) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
@@ -76,9 +76,9 @@ public final /* synthetic */ class di0 implements org.telegram.messenger.x10 {
                     }
                     w2Var2.dismiss();
                     org.telegram.ui.Components.lc a10 = gi0.a();
-                    String N0 = org.telegram.messenger.gd.N0(2131753125, null);
+                    String N0 = org.telegram.messenger.hd.N0(2131753125, null);
                     String str3 = str2;
-                    a10.I(R.raw.error, N0, TextUtils.isEmpty(str3) ? org.telegram.messenger.gd.N0(2131753126, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), org.telegram.messenger.gd.a0(null, null, 2131753127, str3))).j();
+                    a10.I(R.raw.error, N0, TextUtils.isEmpty(str3) ? org.telegram.messenger.hd.N0(2131753126, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), org.telegram.messenger.hd.a0(null, null, 2131753127, str3))).j();
                 }
             }
         });

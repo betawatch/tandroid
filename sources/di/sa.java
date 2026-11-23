@@ -4,12 +4,12 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.TextView;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.yb0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sa implements TextWatcher {
     public boolean a;
@@ -47,9 +47,9 @@ public final class sa implements TextWatcher {
         try {
             j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
             try {
-                if (j3 > mp.u1(j10.t0).V5) {
+                if (j3 > np.u1(k10.t0).V5) {
                     this.a = true;
-                    j3 = mp.u1(j10.t0).V5;
+                    j3 = np.u1(k10.t0).V5;
                     editTextBoldCursor.setText(Long.toString(j3));
                     editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                     int i7 = -this.b;
@@ -83,7 +83,7 @@ public final class sa implements TextWatcher {
             textView2.setText("");
         } else {
             textView2.animate().alpha(1.0f).start();
-            textView2.setText("≈" + org.telegram.messenger.r1.i().f((long) ((j3 / 1000.0d) * mp.u1(j10.t0).f6), "USD"));
+            textView2.setText("≈" + org.telegram.messenger.r1.i().f((long) ((j3 / 1000.0d) * np.u1(k10.t0).f6), "USD"));
         }
     }
 

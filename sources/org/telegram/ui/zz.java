@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zz extends org.telegram.ui.Components.zj0 {
     public final Context r;
@@ -77,7 +77,7 @@ public final class zz extends org.telegram.ui.Components.zj0 {
         }
         if (i7 < this.w.n.size()) {
             view.setAlpha(1.0f);
-            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.e0(((org.telegram.messenger.fj) ((ArrayList) r1.r.get((String) r1.n.get(i7))).get(0)).k.date, false));
+            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.e0(((org.telegram.messenger.gj) ((ArrayList) r1.r.get((String) r1.n.get(i7))).get(0)).k.date, false));
         }
         return view;
     }
@@ -98,7 +98,7 @@ public final class zz extends org.telegram.ui.Components.zj0 {
             int i12 = f1Var.f;
             boolean z10 = false;
             if (i12 == 0) {
-                ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.e0(((org.telegram.messenger.fj) arrayList2.get(0)).k.date, false));
+                ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.e0(((org.telegram.messenger.gj) arrayList2.get(0)).k.date, false));
                 return;
             }
             if (i12 != 1) {
@@ -108,16 +108,16 @@ public final class zz extends org.telegram.ui.Components.zj0 {
                 i10--;
             }
             org.telegram.ui.Cells.l7 l7Var = (org.telegram.ui.Cells.l7) view;
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList2.get(i10);
-            boolean z11 = l7Var.getMessage() != null && l7Var.getMessage().e1() == fjVar.e1();
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList2.get(i10);
+            boolean z11 = l7Var.getMessage() != null && l7Var.getMessage().e1() == gjVar.e1();
             if (i10 != arrayList2.size() - 1 || (i7 == arrayList.size() - 1 && c00Var.N)) {
                 z10 = true;
             }
             l7Var.E = z10;
             l7Var.e();
-            l7Var.c0 = fjVar;
+            l7Var.c0 = gjVar;
             l7Var.requestLayout();
-            l7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.kk(this, l7Var, fjVar, z11, 4));
+            l7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.kk(this, l7Var, gjVar, z11, 4));
         }
     }
 

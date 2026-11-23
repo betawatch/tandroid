@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xf0 implements org.telegram.ui.Components.wi0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.g2 a;
@@ -39,10 +39,10 @@ public final class xf0 implements org.telegram.ui.Components.wi0 {
                 return;
             }
             int i10 = 0;
-            boolean z14 = !org.telegram.messenger.j10.i(i7).q() && p0Var2.d;
+            boolean z14 = !org.telegram.messenger.k10.i(i7).q() && p0Var2.d;
             org.telegram.ui.Cells.r1 r1Var = eg0Var.Q;
             if (r1Var != null) {
-                org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
+                org.telegram.messenger.gj messageObject = r1Var.getMessageObject();
                 if (messageObject == null) {
                     return;
                 }
@@ -106,7 +106,7 @@ public final class xf0 implements org.telegram.ui.Components.wi0 {
                 }
                 eg0Var.m(eg0Var.I);
                 if (!z14) {
-                    TLRPC.TL_availableEffect b12 = eg0Var.I == 0 ? null : org.telegram.messenger.mp.u1(i7).b1(eg0Var.I);
+                    TLRPC.TL_availableEffect b12 = eg0Var.I == 0 ? null : org.telegram.messenger.np.u1(i7).b1(eg0Var.I);
                     org.telegram.ui.Components.n5 n5Var = eg0Var.J;
                     if (n5Var != null) {
                         if (eg0Var.I == 0 || b12 == null) {
@@ -133,11 +133,11 @@ public final class xf0 implements org.telegram.ui.Components.wi0 {
                     if (j14 != 0) {
                         tL_message.flags2 |= 4;
                     }
-                    eg0Var.a0.d(null, 0, null, new org.telegram.messenger.fj(i7, tL_message, false, false), 0, false, false, 0.0f, 0.0f, true);
+                    eg0Var.a0.d(null, 0, null, new org.telegram.messenger.gj(i7, tL_message, false, false), 0, false, false, 0.0f, 0.0f, true);
                 }
             }
             if (z14 && (g2Var = this.a) != null) {
-                new org.telegram.ui.Components.lc(eg0Var.G, eg0Var.b).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.gd.N0(2131754250, null), new wf0(i10, g2Var))).j();
+                new org.telegram.ui.Components.lc(eg0Var.G, eg0Var.b).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.hd.N0(2131754250, null), new wf0(i10, g2Var))).j();
             }
             eg0Var.H.invalidate();
         }

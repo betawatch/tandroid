@@ -5,14 +5,14 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vp0 extends tg.h0 {
     public final /* synthetic */ PhotoViewer Y1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vp0(PhotoViewer photoViewer, Context context, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, org.telegram.messenger.we weVar, hn0 hn0Var, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, activity, i7, bitmap, bitmap2, i10, arrayList, weVar, hn0Var, h6Var);
+    public vp0(PhotoViewer photoViewer, Context context, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, org.telegram.messenger.xe xeVar, hn0 hn0Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, activity, i7, bitmap, bitmap2, i10, arrayList, xeVar, hn0Var, h6Var);
         this.Y1 = photoViewer;
     }
 

@@ -1,11 +1,11 @@
 package fi;
 
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class o9 {
     public static long g;
@@ -62,7 +62,7 @@ public class o9 {
                 a(tL_stories_getStoriesViews.id);
                 if (!tL_stories_getStoriesViews.id.isEmpty()) {
                     int i7 = this.b;
-                    tL_stories_getStoriesViews.peer = mp.u1(i7).l1(this.c);
+                    tL_stories_getStoriesViews.peer = np.u1(i7).l1(this.c);
                     this.d = ConnectionsManager.getInstance(i7).sendRequest(tL_stories_getStoriesViews, new bi.o1(14, this, tL_stories_getStoriesViews));
                     return;
                 }

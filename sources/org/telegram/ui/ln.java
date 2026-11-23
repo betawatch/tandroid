@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.or, na0, org.telegram.messenger.lr {
+public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.pr, na0, org.telegram.messenger.mr {
     public final /* synthetic */ int a;
     public final /* synthetic */ rn b;
 
@@ -26,10 +26,10 @@ public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, o
         rnVar.getMessagesController().b3(0, rnVar.w0, true);
     }
 
-    @Override // org.telegram.messenger.lr
+    @Override // org.telegram.messenger.mr
     public void d(boolean z10) {
         boolean Q1 = org.telegram.messenger.g0.Q1();
-        int i7 = org.telegram.messenger.ks.t;
+        int i7 = org.telegram.messenger.ls.t;
         rn rnVar = this.b;
         if (Q1) {
             rnVar.getNotificationCenter().k(i7, Long.valueOf(-rnVar.w0));
@@ -37,7 +37,7 @@ public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, o
             rnVar.getNotificationCenter().k(i7, new Object[0]);
         }
         rnVar.finishFragment();
-        rnVar.getNotificationCenter().k(org.telegram.messenger.ks.K2, Long.valueOf(-rnVar.x0.id), null, rnVar.x0, Boolean.valueOf(z10));
+        rnVar.getNotificationCenter().k(org.telegram.messenger.ls.K2, Long.valueOf(-rnVar.x0.id), null, rnVar.x0, Boolean.valueOf(z10));
     }
 
     @Override // org.telegram.ui.ActionBar.q1
@@ -58,7 +58,7 @@ public final /* synthetic */ class ln implements org.telegram.ui.ActionBar.q1, o
         }
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.pr
     public void run(long j3) {
         switch (this.a) {
             case 4:

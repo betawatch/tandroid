@@ -4,12 +4,12 @@ import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import c8.ma;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.j6;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p5 extends FrameLayout {
     public final f1 a;
@@ -19,7 +19,7 @@ public final class p5 extends FrameLayout {
         super(context);
         f1 f1Var = new f1(context, h6Var);
         this.a = f1Var;
-        f1Var.setTextSize(1, Math.max(8, bz.W0 - 2));
+        f1Var.setTextSize(1, Math.max(8, cz.W0 - 2));
         f1Var.setAllowNewlines(true);
         setCompact(false);
         addView(f1Var, ma.e(-1, -2, 51));

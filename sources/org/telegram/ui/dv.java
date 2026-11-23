@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dv extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                     break;
                                 }
                             } else if (hashMap.size() == 1) {
-                                kwVar.t0((org.telegram.messenger.fj) hashMap.values().iterator().next());
+                                kwVar.t0((org.telegram.messenger.gj) hashMap.values().iterator().next());
                                 break;
                             }
                         } else if (kwVar.K()) {
@@ -89,14 +89,14 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                     } else if (cxVar3 != null && cxVar3.getParentActivity() != null) {
                         ArrayList arrayList2 = new ArrayList(hashMap.values());
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cxVar3.getParentActivity());
-                        String G = org.telegram.messenger.gd.G(hashMap.size(), "RemoveDocumentsTitle", new Object[0]);
+                        String G = org.telegram.messenger.hd.G(hashMap.size(), "RemoveDocumentsTitle", new Object[0]);
                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         t1Var.S = G;
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(hashMap.size(), "RemoveDocumentsMessage", new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) org.telegram.messenger.gd.N0(2131746123, null));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.W2(org.telegram.messenger.hd.G(hashMap.size(), "RemoveDocumentsMessage", new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) org.telegram.messenger.hd.N0(2131746123, null));
                         t1Var.U = spannableStringBuilder;
-                        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), new org.telegram.ui.Components.xb0(6));
-                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751586, null), new org.telegram.ui.Components.h2(19, kwVar, arrayList2));
+                        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), new org.telegram.ui.Components.xb0(6));
+                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new org.telegram.ui.Components.h2(19, kwVar, arrayList2));
                         TextView textView = (TextView) alertDialog$Builder.p().d(-1);
                         if (textView != null) {
                             org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
@@ -165,31 +165,31 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                         cxVar2.showDialog(szVar);
                         break;
                     } else if (i7 == 110) {
-                        org.telegram.messenger.ro roVar = (org.telegram.messenger.ro) cxVar2.getMessagesController().V0().get(cxVar2.f0[0].h);
-                        ArrayList K0 = org.telegram.ui.Components.sz.K0(cxVar2, roVar, arrayList, false, false);
-                        if (K0.size() + (roVar != null ? roVar.i.size() : 0) > 100) {
-                            cxVar2.showDialog(org.telegram.ui.Components.c5.K(cxVar2.getParentActivity(), org.telegram.messenger.gd.N0(2131750798, null), org.telegram.messenger.gd.N0(2131750799, null)).a);
+                        org.telegram.messenger.so soVar = (org.telegram.messenger.so) cxVar2.getMessagesController().V0().get(cxVar2.f0[0].h);
+                        ArrayList K0 = org.telegram.ui.Components.sz.K0(cxVar2, soVar, arrayList, false, false);
+                        if (K0.size() + (soVar != null ? soVar.i.size() : 0) > 100) {
+                            cxVar2.showDialog(org.telegram.ui.Components.c5.K(cxVar2.getParentActivity(), org.telegram.messenger.hd.N0(2131750798, null), org.telegram.messenger.hd.N0(2131750799, null)).a);
                             break;
                         } else {
                             if (K0.isEmpty()) {
                                 cxVar = cxVar2;
                             } else {
-                                roVar.i.addAll(K0);
+                                soVar.i.addAll(K0);
                                 for (int i14 = 0; i14 < K0.size(); i14++) {
                                     Long l10 = (Long) K0.get(i14);
-                                    roVar.h.remove(l10);
-                                    roVar.j.delete(l10.longValue());
+                                    soVar.h.remove(l10);
+                                    soVar.j.delete(l10.longValue());
                                 }
-                                if (roVar.c()) {
-                                    roVar.i.clear();
+                                if (soVar.c()) {
+                                    soVar.i.clear();
                                 }
-                                kz.z0(roVar, roVar.g, roVar.b, roVar.c, roVar.n, roVar.m, roVar.h, roVar.i, roVar.j, false, false, true, false, false, cxVar2, null);
+                                kz.z0(soVar, soVar.g, soVar.b, soVar.c, soVar.n, soVar.m, soVar.h, soVar.i, soVar.j, false, false, true, false, false, cxVar2, null);
                                 cxVar = cxVar2;
                             }
                             long longValue = K0.size() == 1 ? ((Long) K0.get(0)).longValue() : 0L;
                             UndoView l42 = cxVar.l4();
                             if (l42 != null) {
-                                l42.k(longValue, 21, Integer.valueOf(K0.size()), roVar, null, null);
+                                l42.k(longValue, 21, Integer.valueOf(K0.size()), soVar, null, null);
                             }
                             cxVar.p4(false);
                             break;
@@ -199,8 +199,8 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                         break;
                     }
                 } else if (cxVar2.getParentActivity() != null) {
-                    org.telegram.messenger.bz.x = true;
-                    org.telegram.messenger.bz.y();
+                    org.telegram.messenger.cz.x = true;
+                    org.telegram.messenger.cz.y();
                     int[] iArr = new int[2];
                     cxVar2.g0.getLocationInWindow(iArr);
                     ((LaunchActivity) cxVar2.getParentActivity()).K0(false, true, (cxVar2.g0.getMeasuredWidth() / 2) + iArr[0], (cxVar2.g0.getMeasuredHeight() / 2) + iArr[1], new bh(this, 22));
@@ -227,12 +227,12 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                     ArrayList arrayList4 = new ArrayList();
                     int i17 = 0;
                     while (i17 < arrayList3.size()) {
-                        arrayList4.add(org.telegram.messenger.sr.a(((Long) arrayList3.get(i17)).longValue(), j10));
+                        arrayList4.add(org.telegram.messenger.tr.a(((Long) arrayList3.get(i17)).longValue(), j10));
                         i17++;
                         j10 = 0;
                     }
-                    org.telegram.messenger.tr messagesStorage = kxVar.getMessagesStorage();
-                    messagesStorage.a.c(new org.telegram.messenger.tp(messagesStorage, i16, arrayList4, i13));
+                    org.telegram.messenger.ur messagesStorage = kxVar.getMessagesStorage();
+                    messagesStorage.a.c(new org.telegram.messenger.up(messagesStorage, i16, arrayList4, i13));
                     SharedPreferences.Editor edit = kxVar.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
                     i10 = ((org.telegram.ui.ActionBar.g2) kxVar).currentAccount;
                     edit.putInt("account" + i16, i10);
@@ -413,7 +413,7 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                                         tL_messages_exportChatInvite.flags |= 32;
                                         TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = new TL_stars.TL_starsSubscriptionPricing();
                                         tL_messages_exportChatInvite.subscription_pricing = tL_starsSubscriptionPricing;
-                                        tL_starsSubscriptionPricing.period = k90Var.getConnectionsManager().isTestBackend() ? org.telegram.messenger.ks.X4 : 2592000;
+                                        tL_starsSubscriptionPricing.period = k90Var.getConnectionsManager().isTestBackend() ? org.telegram.messenger.ls.X4 : 2592000;
                                         tL_messages_exportChatInvite.subscription_pricing.amount = j3;
                                     }
                                     k90Var.getConnectionsManager().sendRequest(tL_messages_exportChatInvite, new RequestDelegate() { // from class: org.telegram.ui.b90
@@ -767,7 +767,7 @@ public final class dv extends org.telegram.ui.ActionBar.j {
                 break;
             case 19:
                 if (i7 == -1) {
-                    ((bi.c9) obj2).finishFragment();
+                    ((bi.b9) obj2).finishFragment();
                     break;
                 }
                 break;

@@ -5,10 +5,10 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.dk0;
@@ -20,9 +20,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class fb extends org.telegram.ui.Components.sa implements fs {
+public final class fb extends org.telegram.ui.Components.sa implements gs {
     public final long T1;
     public final ah.a U1;
     public final FrameLayout V1;
@@ -46,15 +46,15 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
         String str3;
         this.v1 = 0.2f;
         this.X1 = runnable;
-        TLRPC.InputPeer l1 = j10 == 0 ? null : mp.u1(this.a).l1(j10);
+        TLRPC.InputPeer l1 = j10 == 0 ? null : np.u1(this.a).l1(j10);
         this.Y1 = l1;
-        boolean k10 = (l1 == null || !((org.telegram.messenger.h0) mp.u1(y8.y(this.a, false).a).A7.n0.b).c) ? true : org.telegram.messenger.r1.i().k();
+        boolean k10 = (l1 == null || !((org.telegram.messenger.h0) np.u1(y8.y(this.a, false).a).A7.n0.b).c) ? true : org.telegram.messenger.r1.i().k();
         this.Z1 = k10;
         O();
         ek0 ek0Var = this.o1;
         int i10 = this.u0;
         ek0Var.setPadding(i10, 0, i10, 0);
-        this.o1.setOnItemClickListener(new bi.l8(this, 4));
+        this.o1.setOnItemClickListener(new bi.k8(this, 4));
         this.o1.r1();
         v4.k kVar = new v4.k();
         kVar.m = false;
@@ -67,7 +67,7 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
         ah.a aVar = new ah.a(this.a, context, h6Var);
         TextView textView = (TextView) aVar.e;
         this.U1 = aVar;
-        ((TextView) aVar.d).setText(gd.G((int) Math.max(0L, j3 - y8.y(this.a, false).p().amount), "StarsNeededTitle", new Object[0]));
+        ((TextView) aVar.d).setText(hd.G((int) Math.max(0L, j3 - y8.y(this.a, false).p().amount), "StarsNeededTitle", new Object[0]));
         if (i7 == 1) {
             str2 = "StarsNeededTextBuySubscription";
         } else {
@@ -84,7 +84,7 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
                         } else {
                             str3 = "StarsNeededTextLink_" + str.toLowerCase();
                         }
-                        String O0 = gd.O0(str3);
+                        String O0 = hd.O0(str3);
                     } else {
                         str2 = i7 == 5 ? "StarsNeededTextReactions" : i7 == 6 ? "StarsNeededTextGift" : i7 == 12 ? "StarsNeededTextGiftChannel" : i7 == 13 ? "StarsNeededTextPrivateMessage" : i7 == 10 ? "StarsNeededTextGiftUpgrade" : i7 == 11 ? "StarsNeededTextGiftTransfer" : i7 == 9 ? "StarsNeededBizText" : i7 == 14 ? "StarsNeededTextGiftBuyResale" : i7 == 15 ? "StarsNeededTextSearch" : i7 == 16 ? "StarsNeededRemoveGiftDescription" : i7 == 17 ? "StarsNeededLiveComments" : "StarsNeededText";
                     }
@@ -96,9 +96,9 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
         if (TextUtils.isEmpty(str3)) {
             textView.setText("");
         } else {
-            String a02 = gd.a0(str3, null, 0, str);
+            String a02 = hd.a0(str3, null, 0, str);
             a02 = (a02 == null || a02.startsWith("LOC_ERR")) ? null : a02;
-            textView.setText(org.telegram.messenger.g0.W2(a02 == null ? gd.O0(str3) : a02));
+            textView.setText(org.telegram.messenger.g0.W2(a02 == null ? hd.O0(str3) : a02));
             textView.setMaxWidth(hi.l3.a(textView.getText(), textView.getPaint()));
         }
         this.p1.setTitle(P0());
@@ -110,9 +110,9 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
         org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.B6, h6Var);
         org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.Xc, h6Var);
         if (k10) {
-            m80Var.setText(org.telegram.messenger.g0.T2(gd.N0(2131744726, null), new ca.r(this, 28)));
+            m80Var.setText(org.telegram.messenger.g0.T2(hd.N0(2131744724, null), new ca.r(this, 28)));
         } else {
-            m80Var.setText(org.telegram.messenger.g0.W2(gd.N0(2131744808, null)));
+            m80Var.setText(org.telegram.messenger.g0.W2(hd.N0(2131744806, null)));
         }
         m80Var.setGravity(17);
         m80Var.setMaxWidth(hi.l3.a(m80Var.getText(), m80Var.getPaint()));
@@ -130,8 +130,8 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
     @Override // org.telegram.ui.ActionBar.w2
     public final void L() {
         super.L();
-        ks.f(this.a).n(this, ks.x3);
-        ks.f(this.a).n(this, ks.A3);
+        ls.f(this.a).n(this, ls.x3);
+        ls.f(this.a).n(this, ls.A3);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -150,10 +150,10 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
         return ((TextView) aVar.d).getText();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         Runnable runnable;
-        if (i7 == ks.x3 || i7 == ks.A3) {
+        if (i7 == ls.x3 || i7 == ls.A3) {
             c51 c51Var = this.a2;
             if (c51Var != null) {
                 c51Var.O(true);
@@ -161,7 +161,7 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
             long j3 = y8.y(this.a, false).p().amount;
             TextView textView = (TextView) this.U1.d;
             long j10 = this.T1;
-            textView.setText(gd.H(',', "StarsNeededTitle", (int) (j10 - j3)));
+            textView.setText(hd.H(',', "StarsNeededTitle", (int) (j10 - j3)));
             org.telegram.ui.Components.na naVar = this.p1;
             if (naVar != null) {
                 naVar.setTitle(P0());
@@ -208,7 +208,7 @@ public final class fb extends org.telegram.ui.Components.sa implements fs {
             }
         }
         super.show();
-        ks.f(this.a).c(this, ks.x3);
-        ks.f(this.a).c(this, ks.A3);
+        ls.f(this.a).c(this, ls.x3);
+        ls.f(this.a).c(this, ls.A3);
     }
 }

@@ -36,9 +36,9 @@ import java.util.List;
 import ji.l;
 import lf.b;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.cj;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.i10;
+import org.telegram.messenger.dj;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.j10;
 import org.telegram.messenger.p2;
 import org.telegram.messenger.s2;
 import org.telegram.tgnet.TLObject;
@@ -56,7 +56,7 @@ import u4.c;
 import u9.d;
 import yi.f;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation, d, r, f, gh.a, m1, OnFailureListener, c {
     public static final /* synthetic */ a b = new a(14);
@@ -209,7 +209,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void L(cj cjVar) {
+    public /* synthetic */ void L(dj djVar) {
         int i7 = this.a;
     }
 
@@ -276,7 +276,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void O1(fj fjVar) {
+    public /* synthetic */ void O1(gj gjVar) {
         int i7 = this.a;
     }
 
@@ -327,7 +327,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void R(fj fjVar) {
+    public /* synthetic */ void R(gj gjVar) {
         int i7 = this.a;
     }
 
@@ -346,7 +346,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void S1(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    public /* synthetic */ void S1(gj gjVar, String str, String str2, String str3, String str4, int i7, int i10) {
         int i11 = this.a;
     }
 
@@ -363,7 +363,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean T1(r1 r1Var, fj fjVar) {
+    public /* synthetic */ boolean T1(r1 r1Var, gj gjVar) {
         switch (this.a) {
         }
         return false;
@@ -460,7 +460,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void a2(r1 r1Var, i10 i10Var) {
+    public /* synthetic */ void a2(r1 r1Var, j10 j10Var) {
         int i7 = this.a;
     }
 
@@ -530,9 +530,9 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean f1(fj fjVar) {
+    public /* synthetic */ boolean f1(gj gjVar) {
         int i7 = this.a;
-        return c0.a(fjVar);
+        return c0.a(gjVar);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -853,7 +853,7 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean y0(fj fjVar) {
+    public /* synthetic */ boolean y0(gj gjVar) {
         switch (this.a) {
         }
         return true;
@@ -1011,10 +1011,10 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     private final /* synthetic */ void P2(r1 r1Var) {
     }
 
-    private final /* synthetic */ void Q3(fj fjVar) {
+    private final /* synthetic */ void Q3(gj gjVar) {
     }
 
-    private final /* synthetic */ void R3(fj fjVar) {
+    private final /* synthetic */ void R3(gj gjVar) {
     }
 
     private final /* synthetic */ void S0(r1 r1Var) {
@@ -1038,10 +1038,10 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     private final /* synthetic */ void b0(r1 r1Var) {
     }
 
-    private final /* synthetic */ void b1(cj cjVar) {
+    private final /* synthetic */ void b1(dj djVar) {
     }
 
-    private final /* synthetic */ void c1(cj cjVar) {
+    private final /* synthetic */ void c1(dj djVar) {
     }
 
     private final /* synthetic */ void c3(String str) {
@@ -1080,10 +1080,10 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     private final /* synthetic */ void o1(r1 r1Var) {
     }
 
-    private final /* synthetic */ void o3(fj fjVar) {
+    private final /* synthetic */ void o3(gj gjVar) {
     }
 
-    private final /* synthetic */ void p3(fj fjVar) {
+    private final /* synthetic */ void p3(gj gjVar) {
     }
 
     private final /* synthetic */ void q1(r1 r1Var) {
@@ -1141,10 +1141,10 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     private final /* synthetic */ void n1(r1 r1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
     }
 
-    private final /* synthetic */ void s3(r1 r1Var, i10 i10Var) {
+    private final /* synthetic */ void s3(r1 r1Var, j10 j10Var) {
     }
 
-    private final /* synthetic */ void t3(r1 r1Var, i10 i10Var) {
+    private final /* synthetic */ void t3(r1 r1Var, j10 j10Var) {
     }
 
     private final /* synthetic */ void u1(r1 r1Var, int i7) {
@@ -1286,9 +1286,9 @@ public class a implements s0, e, k, i0, eg.a, l5.e, fg.a, ja.a, b, Continuation,
     private final /* synthetic */ void K0(r1 r1Var, TLRPC.Chat chat, int i7, float f10, float f11, boolean z10) {
     }
 
-    private final /* synthetic */ void H3(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    private final /* synthetic */ void H3(gj gjVar, String str, String str2, String str3, String str4, int i7, int i10) {
     }
 
-    private final /* synthetic */ void I3(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    private final /* synthetic */ void I3(gj gjVar, String str, String str2, String str3, String str4, int i7, int i10) {
     }
 }

@@ -10,15 +10,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.k00;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class ia extends t {
     public final Path R1;
@@ -35,11 +35,11 @@ public final class ia extends t {
     public final boolean e() {
         gc gcVar;
         int i7 = 0;
-        if (mp.u1(this.V).K3() || ((gcVar = gc.w) != null && gcVar.a == 2)) {
+        if (np.u1(this.V).K3() || ((gcVar = gc.w) != null && gcVar.a == 2)) {
             return false;
         }
-        int i10 = mp.u1(this.V).Z4;
-        SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.G(Math.round(i10 / mp.u1(this.V).Y4), "CaptionPremiumSubtitle", i5.c.i(i10, "")));
+        int i10 = np.u1(this.V).Z4;
+        SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(hd.G(Math.round(i10 / np.u1(this.V).Y4), "CaptionPremiumSubtitle", i5.c.i(i10, "")));
         int indexOf = W2.toString().indexOf("__");
         if (indexOf >= 0) {
             W2.replace(indexOf, indexOf + 2, (CharSequence) "");
@@ -50,7 +50,7 @@ public final class ia extends t {
                 W2.setSpan(new ha(this, i7), indexOf, indexOf2, 33);
             }
         }
-        gc I = new lc(this.S1.m0, this.a).I(R.raw.caption_limit, gd.N0(2131752544, null), W2);
+        gc I = new lc(this.S1.m0, this.a).I(R.raw.caption_limit, hd.N0(2131752544, null), W2);
         I.a = 2;
         I.j = 5000;
         I.k(false);
@@ -138,7 +138,7 @@ public final class ia extends t {
         sa saVar = this.S1;
         o5 o5Var = saVar.c1;
         if (!saVar.O1 && !z10) {
-            fi.p6 R1 = mp.u1(this.V).R1();
+            fi.p6 R1 = np.u1(this.V).R1();
             int A = saVar.A();
             fi.j6 o4 = R1.o();
             if (o4 == null || !o4.a(R1.a, A) || ((c7Var = saVar.L1) != null && c7Var.g)) {

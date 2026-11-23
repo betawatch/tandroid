@@ -9,10 +9,10 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q4 extends FrameLayout {
     public final org.telegram.ui.Components.q9 a;
@@ -82,7 +82,7 @@ public final class q4 extends FrameLayout {
         q9Var.setScaleX(0.95f);
         q9Var.setScaleY(0.95f);
         q9Var.setTranslationY(org.telegram.messenger.g0.L(2.0f));
-        org.telegram.ui.Components.p5 l10 = org.telegram.ui.Components.p5.l(j10.t0, 9, stargiftattributepattern.document);
+        org.telegram.ui.Components.p5 l10 = org.telegram.ui.Components.p5.l(k10.t0, 9, stargiftattributepattern.document);
         l10.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         q9Var.setAnimatedEmojiDrawable(l10);
     }

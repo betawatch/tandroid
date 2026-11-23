@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yi implements org.telegram.ui.Components.qo {
     public final /* synthetic */ bn a;
@@ -65,10 +65,10 @@ public final class yi implements org.telegram.ui.Components.qo {
         int i7;
         bn bnVar = this.a;
         i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-        SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(i7).g7;
-        boolean z10 = sharedPreferences.getBoolean("sound_enabled_" + org.telegram.messenger.xs.v(bnVar.l6, bnVar.d(), false), true);
+        SharedPreferences sharedPreferences = org.telegram.messenger.np.u1(i7).g7;
+        boolean z10 = sharedPreferences.getBoolean("sound_enabled_" + org.telegram.messenger.ys.v(bnVar.l6, bnVar.d(), false), true);
         boolean z11 = !z10;
-        sharedPreferences.edit().putBoolean("sound_enabled_" + org.telegram.messenger.xs.v(bnVar.l6, bnVar.d(), false), z11).apply();
+        sharedPreferences.edit().putBoolean("sound_enabled_" + org.telegram.messenger.ys.v(bnVar.l6, bnVar.d(), false), z11).apply();
         if (org.telegram.ui.Components.lc.a(bnVar)) {
             org.telegram.ui.Components.lc.S(z10 ? 1 : 0, bnVar, bnVar.getResourceProvider()).j();
         }

@@ -3,14 +3,14 @@ package di;
 import android.graphics.Paint;
 import android.view.KeyEvent;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.z10;
 import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ta implements y10 {
+public final /* synthetic */ class ta implements z10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ KeyEvent.Callback b;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class ta implements y10 {
         this.b = callback;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.z10
     public final Object a(Object obj) {
         int i7 = this.a;
         KeyEvent.Callback callback = this.b;
@@ -28,9 +28,9 @@ public final /* synthetic */ class ta implements y10 {
                 ua uaVar = (ua) callback;
                 return uaVar.s[((Integer) obj).intValue() % uaVar.s.length];
             case 1:
-                fj fjVar = (fj) obj;
-                ((hi.u6) callback).m2 = fjVar;
-                return Boolean.valueOf(MediaController.B().o0(org.telegram.messenger.f3.i(fjVar), fjVar, 0L, true, null, 0L));
+                gj gjVar = (gj) obj;
+                ((hi.u6) callback).m2 = gjVar;
+                return Boolean.valueOf(MediaController.B().o0(org.telegram.messenger.f3.i(gjVar), gjVar, 0L, true, null, 0L));
             case 2:
                 ua uaVar2 = (ua) callback;
                 return uaVar2.s[((Integer) obj).intValue() % uaVar2.s.length];
@@ -41,7 +41,7 @@ public final /* synthetic */ class ta implements y10 {
                 if (((Integer) obj).intValue() == 2) {
                     ui uiVar = new ui(h0Var.getContext(), new tg.x(h0Var), false, false, false, h0Var.A1);
                     uiVar.n = true;
-                    uiVar.B1(gd.N0(2131754425, null));
+                    uiVar.B1(hd.N0(2131754425, null));
                     uiVar.X3 = new tg.y(h0Var, uiVar);
                     uiVar.setOnDismissListener(new hi.f1(8));
                     uiVar.z1(1, false);

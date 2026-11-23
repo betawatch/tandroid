@@ -15,7 +15,7 @@ import java.util.Calendar;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class wz extends View {
     public static final int E;
@@ -37,8 +37,8 @@ public class wz extends View {
     public final ArrayList r;
 
     static {
-        y = org.telegram.messenger.bz.o() == 0 ? 50 : 60;
-        E = org.telegram.messenger.bz.o() == 0 ? 20 : 30;
+        y = org.telegram.messenger.cz.o() == 0 ? 50 : 60;
+        E = org.telegram.messenger.cz.o() == 0 ? 20 : 30;
         int[] iArr = {-13845272, -6421296, -79102, -187561, -14185218, -10897300};
         F = iArr;
         G = new int[]{-1944197, -10498574, -9623, -2399389, -1870160};
@@ -310,7 +310,7 @@ public class wz extends View {
                     arrayList.add(a(true));
                 }
             }
-            float w10 = org.telegram.messenger.n10.w(i7, 16.0f, 0.15f, this.e);
+            float w10 = org.telegram.messenger.o10.w(i7, 16.0f, 0.15f, this.e);
             this.e = w10;
             if (w10 < 0.2f) {
                 this.e = 0.2f;

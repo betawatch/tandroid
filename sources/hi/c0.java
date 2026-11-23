@@ -8,12 +8,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.a70;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class c0 implements Runnable {
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
                         frameLayout.addView(imageView, c8.ma.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
                         TextView textView = new TextView(g0Var.getContext());
-                        n10.l(13.0f, 2131744464, 1, textView, null);
+                        o10.l(13.0f, 2131744462, 1, textView, null);
                         textView.setTextColor(-1);
                         frameLayout.addView(textView, c8.ma.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
                         a70 G = a70.G(g0Var.a, g0Var.b, g0Var);
@@ -84,11 +84,11 @@ public final /* synthetic */ class c0 implements Runnable {
                             G.q(w6Var);
                             G.o(true);
                         }
-                        G.W = ks.x3;
-                        G.c(R.drawable.menu_camera_retake, gd.N0(2131744570, null), new c0(g0Var, 4), false);
-                        G.c(R.drawable.msg_delete, gd.N0(2131751586, null), new c0(g0Var, 5), true);
+                        G.W = ls.x3;
+                        G.c(R.drawable.menu_camera_retake, hd.N0(2131744568, null), new c0(g0Var, 4), false);
+                        G.c(R.drawable.msg_delete, hd.N0(2131751586, null), new c0(g0Var, 5), true);
                         G.o(true);
-                        G.r(frameLayout, c8.ma.o(ks.x3, -2));
+                        G.r(frameLayout, c8.ma.o(ls.x3, -2));
                         G.p = new ai.n(16);
                         G.i = 1;
                         G.Y = true;

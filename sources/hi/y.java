@@ -5,13 +5,13 @@ import android.graphics.Point;
 import android.view.KeyEvent;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.aj;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.bj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.dg0;
 import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y extends v4.i0 {
     public final /* synthetic */ int c;
@@ -50,20 +50,20 @@ public final class y extends v4.i0 {
             default:
                 eg0 eg0Var = (eg0) this.f;
                 ArrayList arrayList = eg0Var.N;
-                fj fjVar = (fj) arrayList.get((b() - 1) - i7);
+                gj gjVar = (gj) arrayList.get((b() - 1) - i7);
                 org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) f1Var.a;
-                aj l10 = eg0Var.l(fjVar);
+                bj l10 = eg0Var.l(gjVar);
                 int i10 = 0;
                 r1Var.setInvalidatesParent(l10 != null);
-                r1Var.y3(fjVar, l10, false, false, false, false);
+                r1Var.y3(gjVar, l10, false, false, false, false);
                 if (!eg0Var.P.i() && arrayList.size() >= 10) {
                     i10 = arrayList.size() % 10;
                 }
-                if (i7 == i10 && !fjVar.n5()) {
+                if (i7 == i10 && !gjVar.n5()) {
                     eg0Var.Q = r1Var;
                     Point point = org.telegram.messenger.g0.q;
                     r1Var.A3(point.x, point.y);
-                    eg0Var.R = fjVar.e1();
+                    eg0Var.R = gjVar.e1();
                     break;
                 }
                 break;

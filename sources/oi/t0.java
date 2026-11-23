@@ -2,7 +2,7 @@ package oi;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
@@ -10,7 +10,7 @@ import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class t0 extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -26,7 +26,7 @@ public final class t0 extends n41 {
         r2 r2Var = (r2) o41Var.I;
         u0Var.a = aVar;
         u0Var.w = r2Var;
-        u0Var.x = gd.a0;
+        u0Var.x = hd.a0;
         u0Var.c(aVar);
     }
 

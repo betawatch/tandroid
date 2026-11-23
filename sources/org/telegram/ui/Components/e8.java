@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e8 extends dk0 {
     public final Context c;
@@ -164,7 +164,7 @@ public final class e8 extends dk0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void t(v4.f1 f1Var, int i7) {
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         boolean z10;
         f8 f8Var = this.n;
         if (f8Var.p2) {
@@ -177,23 +177,23 @@ public final class e8 extends dk0 {
         org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) f1Var.a;
         int i10 = 1;
         if (f8Var.q1) {
-            fjVar = (org.telegram.messenger.fj) this.d.get(i7);
-        } else if (f8Var.q2 == null ? !org.telegram.messenger.bz.O0 : org.telegram.messenger.bz.O0) {
+            gjVar = (org.telegram.messenger.gj) this.d.get(i7);
+        } else if (f8Var.q2 == null ? !org.telegram.messenger.cz.O0 : org.telegram.messenger.cz.O0) {
             ArrayList arrayList = f8Var.r2;
-            fjVar = (org.telegram.messenger.fj) arrayList.get((arrayList.size() - i7) - 1);
+            gjVar = (org.telegram.messenger.gj) arrayList.get((arrayList.size() - i7) - 1);
         } else {
-            fjVar = (org.telegram.messenger.fj) f8Var.r2.get(i7);
+            gjVar = (org.telegram.messenger.gj) f8Var.r2.get(i7);
         }
-        if (fjVar != null) {
-            fjVar.K5(this.e, true);
+        if (gjVar != null) {
+            gjVar.K5(this.e, true);
         }
         hi.p1 p1Var = f8Var.P0() ? new hi.p1(i10, this, wVar) : null;
         org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.h5, wVar, f8Var.J0);
         boolean P0 = f8Var.P0();
-        ah.h hVar = (f8Var.P0() || f8Var.t2 || fjVar.e1() <= 0) ? null : new ah.h(this, wVar, fjVar, 24);
+        ah.h hVar = (f8Var.P0() || f8Var.t2 || gjVar.e1() <= 0) ? null : new ah.h(this, wVar, gjVar, 24);
         RadialProgress2 radialProgress2 = wVar.I;
         ImageView imageView = wVar.w;
-        wVar.x = fjVar;
+        wVar.x = gjVar;
         if (wVar.y != z10) {
             wVar.invalidate();
         }
@@ -202,12 +202,12 @@ public final class e8 extends dk0 {
         imageView.setVisibility((P0 || hVar != null) ? 0 : 8);
         imageView.setOnClickListener(hVar);
         imageView.setOnTouchListener(p1Var);
-        TLRPC.Document F0 = fjVar.F0();
+        TLRPC.Document F0 = gjVar.F0();
         TLRPC.PhotoSize w10 = F0 != null ? org.telegram.messenger.w7.w(F0.thumbs, 90, false, null, false) : null;
         if ((w10 instanceof TLRPC.TL_photoSize) || (w10 instanceof TLRPC.TL_photoSizeProgressive)) {
-            radialProgress2.i(w10, F0, fjVar);
+            radialProgress2.i(w10, F0, gjVar);
         } else {
-            String u02 = fjVar.u0(true);
+            String u02 = gjVar.u0(true);
             if (TextUtils.isEmpty(u02)) {
                 radialProgress2.i(null, null, null);
             } else {

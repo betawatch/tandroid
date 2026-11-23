@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ea extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ la c;
@@ -62,11 +62,11 @@ public final class ea extends org.telegram.ui.Components.dk0 {
         int i10 = f1Var.f;
         View view = f1Var.a;
         if (i10 == 0) {
-            ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.N0(i7 == 0 ? j3 != 0 ? 2131752973 : 2131745302 : 2131743399, null));
+            ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.hd.N0(i7 == 0 ? j3 != 0 ? 2131752973 : 2131745302 : 2131743397, null));
             return;
         }
         if (i10 == 2) {
-            ((org.telegram.ui.Cells.a9) view).setText(org.telegram.messenger.gd.N0(j3 != 0 ? 2131752925 : 2131743398, null));
+            ((org.telegram.ui.Cells.a9) view).setText(org.telegram.messenger.hd.N0(j3 != 0 ? 2131752925 : 2131743396, null));
             return;
         }
         if (i10 == 3) {

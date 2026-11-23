@@ -8,15 +8,15 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class m extends FrameLayout implements org.telegram.messenger.s9, org.telegram.ui.ActionBar.b6 {
+public final class m extends FrameLayout implements org.telegram.messenger.t9, org.telegram.ui.ActionBar.b6 {
     public final int a;
     public final org.telegram.ui.Components.o6 b;
     public final org.telegram.ui.Components.o6 c;
@@ -52,7 +52,7 @@ public final class m extends FrameLayout implements org.telegram.messenger.s9, o
         setOnClickListener(new a(this, 1));
     }
 
-    @Override // org.telegram.messenger.s9
+    @Override // org.telegram.messenger.t9
     public final void g(ArrayList arrayList) {
         org.telegram.ui.Components.o6 o6Var;
         String str;
@@ -64,18 +64,18 @@ public final class m extends FrameLayout implements org.telegram.messenger.s9, o
         int size = arrayList2.size();
         l lVar = this.d;
         if (size == 1) {
-            org.telegram.messenger.q9 q9Var = (org.telegram.messenger.q9) this.e.get(0);
-            q9Var.getClass();
-            if (q9Var.g(ConnectionsManager.getInstance(j10.t0).getCurrentTime())) {
-                lVar.a(q9Var.d.auction_start_date);
+            org.telegram.messenger.r9 r9Var = (org.telegram.messenger.r9) this.e.get(0);
+            r9Var.getClass();
+            if (r9Var.g(ConnectionsManager.getInstance(k10.t0).getCurrentTime())) {
+                lVar.a(r9Var.d.auction_start_date);
             } else {
-                TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = q9Var.f;
+                TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = r9Var.f;
                 lVar.a(tL_starGiftAuctionState != null ? Math.max(0, tL_starGiftAuctionState.next_round_at) : 0);
             }
         } else {
             lVar.f = 0;
             lVar.c.b();
-            lVar.a.t(gd.N0(2131750319, null), true, true);
+            lVar.a.t(hd.N0(2131750319, null), true, true);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         int size2 = this.e.size();
@@ -91,16 +91,16 @@ public final class m extends FrameLayout implements org.telegram.messenger.s9, o
             if (i7 >= size2) {
                 break;
             }
-            org.telegram.messenger.q9 q9Var2 = (org.telegram.messenger.q9) this.e.get(i7);
-            boolean g10 = q9Var2.g(currentTime);
+            org.telegram.messenger.r9 r9Var2 = (org.telegram.messenger.r9) this.e.get(i7);
+            boolean g10 = r9Var2.g(currentTime);
             int i10 = size2;
-            long j3 = q9Var2.c;
+            long j3 = r9Var2.c;
             z10 |= g10;
             if (j3 != 0) {
                 spannableStringBuilder.append((CharSequence) "*");
                 spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(j3, o6Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
             }
-            int d = q9Var2.d();
+            int d = r9Var2.d();
             z11 |= d == 2 || d == 3;
             i7++;
             size2 = i10;
@@ -110,59 +110,59 @@ public final class m extends FrameLayout implements org.telegram.messenger.s9, o
         if (z10) {
             if (i11 == 1) {
                 str = null;
-                a03 = gd.N0(2131750384, null);
+                a03 = hd.N0(2131750384, null);
             } else {
                 str = null;
-                a03 = gd.a0(null, null, 2131750383, Integer.valueOf(i11));
+                a03 = hd.a0(null, null, 2131750383, Integer.valueOf(i11));
             }
             spannableStringBuilder.append((CharSequence) a03);
         } else {
             str = null;
-            spannableStringBuilder.append((CharSequence) (i11 == 1 ? gd.N0(2131750402, null) : gd.a0(null, null, 2131750401, Integer.valueOf(i11))));
+            spannableStringBuilder.append((CharSequence) (i11 == 1 ? hd.N0(2131750402, null) : hd.a0(null, null, 2131750401, Integer.valueOf(i11))));
         }
         o6Var.c(spannableStringBuilder, true, true);
         this.f = false;
         org.telegram.ui.Components.o6 o6Var2 = this.c;
         if (z10) {
-            o6Var2.setText(gd.N0(2131750396, str));
+            o6Var2.setText(hd.N0(2131750396, str));
         } else if (z11) {
-            o6Var2.setText(gd.N0(2131750395, str));
+            o6Var2.setText(hd.N0(2131750395, str));
             this.f = true;
         } else if (i11 > 1) {
-            o6Var2.setText(gd.N0(2131750391, str));
+            o6Var2.setText(hd.N0(2131750391, str));
         } else {
-            int i12 = ((org.telegram.messenger.q9) this.e.get(0)).i;
+            int i12 = ((org.telegram.messenger.r9) this.e.get(0)).i;
             if (i12 == 1) {
-                a02 = gd.N0(2131750394, str);
+                a02 = hd.N0(2131750394, str);
             } else if (i12 == 2) {
-                a02 = gd.N0(2131750393, str);
+                a02 = hd.N0(2131750393, str);
             } else if (i12 == 3) {
-                a02 = gd.N0(2131750392, str);
+                a02 = hd.N0(2131750392, str);
             } else {
                 int i13 = i12 % 100;
                 if (i13 < 11 || i13 > 13) {
                     int i14 = i12 % 10;
                     if (i14 == 1) {
                         str2 = null;
-                        a02 = gd.a0(null, null, 2131750386, Integer.valueOf(i12));
+                        a02 = hd.a0(null, null, 2131750386, Integer.valueOf(i12));
                     } else if (i14 == 2) {
                         str2 = null;
-                        a02 = gd.a0(null, null, 2131750389, Integer.valueOf(i12));
+                        a02 = hd.a0(null, null, 2131750389, Integer.valueOf(i12));
                     } else if (i14 != 3) {
                         str2 = null;
-                        a02 = gd.a0(null, null, 2131750385, Integer.valueOf(i12));
+                        a02 = hd.a0(null, null, 2131750385, Integer.valueOf(i12));
                     } else {
                         str2 = null;
-                        a02 = gd.a0(null, null, 2131750387, Integer.valueOf(i12));
+                        a02 = hd.a0(null, null, 2131750387, Integer.valueOf(i12));
                     }
                 } else {
                     str2 = null;
-                    a02 = gd.a0(null, null, 2131750385, Integer.valueOf(i12));
+                    a02 = hd.a0(null, null, 2131750385, Integer.valueOf(i12));
                 }
-                o6Var2.setText(gd.a0(str2, str2, 2131750390, a02));
+                o6Var2.setText(hd.a0(str2, str2, 2131750390, a02));
             }
             str2 = str;
-            o6Var2.setText(gd.a0(str2, str2, 2131750390, a02));
+            o6Var2.setText(hd.a0(str2, str2, 2131750390, a02));
         }
         updateColors();
     }
@@ -171,14 +171,14 @@ public final class m extends FrameLayout implements org.telegram.messenger.s9, o
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i7 = this.a;
-        org.telegram.messenger.u9.c(i7).f.add(this);
-        g(org.telegram.messenger.u9.c(i7).c);
+        org.telegram.messenger.v9.c(i7).f.add(this);
+        g(org.telegram.messenger.v9.c(i7).c);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.u9.c(this.a).f.remove(this);
+        org.telegram.messenger.v9.c(this.a).f.remove(this);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

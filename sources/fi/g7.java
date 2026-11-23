@@ -3,13 +3,13 @@ package fi;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.bp;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.cp;
+import org.telegram.messenger.k10;
 import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.s10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g7 {
     public final int a;
@@ -20,12 +20,12 @@ public final class g7 {
     public final org.telegram.ui.Components.g5 f;
     public final org.telegram.ui.Components.g5 g;
     public boolean h;
-    public bp i;
+    public cp i;
     public int j;
 
     public g7(View view) {
         bu buVar = new bu(1, view);
-        this.a = j10.t0;
+        this.a = k10.t0;
         this.b = buVar;
         nr nrVar = nr.h;
         this.f = new org.telegram.ui.Components.g5(buVar, 350L, nrVar);
@@ -54,9 +54,9 @@ public final class g7 {
                     m10 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Yk, false);
                     n10 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Zk, false);
                 } else {
-                    bp bpVar = this.i;
-                    if (bpVar != null) {
-                        m10 = bpVar.m(org.telegram.ui.ActionBar.m6.I.q());
+                    cp cpVar = this.i;
+                    if (cpVar != null) {
+                        m10 = cpVar.m(org.telegram.ui.ActionBar.m6.I.q());
                         n10 = this.i.n(org.telegram.ui.ActionBar.m6.I.q());
                     }
                 }
@@ -85,14 +85,14 @@ public final class g7 {
         d(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Yk, false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Zk, false), z10);
     }
 
-    public final void c(bp bpVar, boolean z10) {
-        this.i = bpVar;
+    public final void c(cp cpVar, boolean z10) {
+        this.i = cpVar;
         this.j = org.telegram.ui.ActionBar.t6.b;
-        if (bpVar == null) {
+        if (cpVar == null) {
             b(z10);
         } else {
             this.h = false;
-            d(bpVar.m(org.telegram.ui.ActionBar.m6.I.q()), bpVar.n(org.telegram.ui.ActionBar.m6.I.q()), z10);
+            d(cpVar.m(org.telegram.ui.ActionBar.m6.I.q()), cpVar.n(org.telegram.ui.ActionBar.m6.I.q()), z10);
         }
     }
 

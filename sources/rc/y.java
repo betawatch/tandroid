@@ -1,9 +1,9 @@
 package rc;
 
 import java.io.BufferedOutputStream;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class y extends BufferedOutputStream {
     public final void a(x xVar) {
@@ -11,16 +11,16 @@ public final class y extends BufferedOutputStream {
         write((xVar.a ? 128 : 0) | (xVar.b ? 64 : 0) | (xVar.c ? 32 : 0) | (xVar.d ? 16 : 0) | (xVar.e & 15));
         byte[] bArr2 = xVar.g;
         int length = bArr2 == null ? 0 : bArr2.length;
-        write(length <= 125 ? length | 128 : length <= 65535 ? ks.d4 : 255);
+        write(length <= 125 ? length | 128 : length <= 65535 ? ls.d4 : 255);
         byte[] bArr3 = xVar.g;
         int length2 = bArr3 == null ? 0 : bArr3.length;
         if (length2 > 125) {
             if (length2 <= 65535) {
-                bArr = new byte[]{(byte) ((length2 >> 8) & ks.e4), (byte) (length2 & ks.e4)};
+                bArr = new byte[]{(byte) ((length2 >> 8) & ls.e4), (byte) (length2 & ls.e4)};
             } else {
                 bArr = new byte[8];
                 for (int i7 = 7; i7 >= 0; i7--) {
-                    bArr[i7] = (byte) (length2 & ks.e4);
+                    bArr[i7] = (byte) (length2 & ls.e4);
                     length2 >>>= 8;
                 }
             }
@@ -35,7 +35,7 @@ public final class y extends BufferedOutputStream {
         }
         byte[] bArr6 = new byte[bArr5.length];
         for (int i10 = 0; i10 < bArr5.length; i10++) {
-            bArr6[i10] = (byte) ((bArr5[i10] ^ bArr4[i10 % 4]) & ks.e4);
+            bArr6[i10] = (byte) ((bArr5[i10] ^ bArr4[i10 % 4]) & ls.e4);
         }
         write(bArr6);
     }

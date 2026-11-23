@@ -7,14 +7,14 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import bi.l8;
+import bi.k8;
 import c8.ma;
 import hi.s6;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
@@ -30,9 +30,9 @@ import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class h0 extends mi implements b6, fs, te.b {
+public final class h0 extends mi implements b6, gs, te.b {
     public final f0 E;
     public final vy F;
     public final qi G;
@@ -58,7 +58,7 @@ public final class h0 extends mi implements b6, fs, te.b {
         ah.j jVar = new ah.j(this, 10);
         ah.i iVar = qiVar.r;
         iVar.addTextChangedListener(jVar);
-        iVar.setHint(gd.N0(2131752644, null));
+        iVar.setHint(hd.N0(2131752644, null));
         frameLayout.addView(tiVar, ma.g());
         FrameLayout.LayoutParams d = ma.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += org.telegram.messenger.g0.m;
@@ -74,7 +74,7 @@ public final class h0 extends mi implements b6, fs, te.b {
         this.d = b1Var;
         this.h = true;
         this.f = true;
-        ks.e().h(b1Var, ks.l4, new s6(this, 8));
+        ls.e().h(b1Var, ls.l4, new s6(this, 8));
         b1Var.setClipToPadding(false);
         getContext();
         d0 d0Var = new d0(this, org.telegram.messenger.g0.L(9.0f), b1Var, 0);
@@ -89,7 +89,7 @@ public final class h0 extends mi implements b6, fs, te.b {
         this.y = e0Var;
         b1Var.setAdapter(e0Var);
         t6.l(b1Var, 21, m6.A5, h6Var);
-        b1Var.setOnItemClickListener(new l8(this, 15));
+        b1Var.setOnItemClickListener(new k8(this, 15));
         b1Var.setOnScrollListener(new bi.u1(this, 19));
         FrameLayout.LayoutParams e10 = ma.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e10).height += org.telegram.messenger.g0.m;
@@ -252,7 +252,7 @@ public final class h0 extends mi implements b6, fs, te.b {
     public final /* synthetic */ void D(float f10, int i7) {
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
     }
 

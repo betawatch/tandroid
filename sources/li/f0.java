@@ -1,21 +1,21 @@
 package li;
 
-import org.telegram.messenger.fs;
-import org.telegram.messenger.lr;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.or;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.mr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.pr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f0 implements or, lr {
+public final /* synthetic */ class f0 implements pr, mr {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ fs d;
+    public final /* synthetic */ gs d;
     public final /* synthetic */ Object e;
 
     public /* synthetic */ f0(t1 t1Var, g2 g2Var, int i7, long j3, boolean z10) {
@@ -26,14 +26,14 @@ public final /* synthetic */ class f0 implements or, lr {
         this.c = z10;
     }
 
-    @Override // org.telegram.messenger.lr
+    @Override // org.telegram.messenger.mr
     public void d(boolean z10) {
         cx cxVar = (cx) this.d;
         TLRPC.Chat chat = (TLRPC.Chat) this.e;
         cx.j0(this.a, this.b, chat, cxVar, this.c, z10);
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.pr
     public void run(long j3) {
         t1 t1Var = (t1) this.d;
         g2 g2Var = (g2) this.e;
@@ -41,7 +41,7 @@ public final /* synthetic */ class f0 implements or, lr {
         if (j3 == 0) {
             return;
         }
-        mp.u1(this.a).W2(-j3, this.b, false, this.c, new bi.n(g2Var, j3, 1));
+        np.u1(this.a).W2(-j3, this.b, false, this.c, new bi.n(g2Var, j3, 1));
     }
 
     public /* synthetic */ f0(cx cxVar, int i7, TLRPC.Chat chat, long j3, boolean z10) {

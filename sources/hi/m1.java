@@ -7,19 +7,19 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.qc;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.xs;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m1 extends xs {
     public int N;
     public int O;
     public ArrayList P;
     public final ArrayList Q = new ArrayList();
-    public final boolean R = pc.e(8200);
+    public final boolean R = qc.e(8200);
     public final /* synthetic */ o1 S;
 
     public m1(o1 o1Var) {
@@ -130,9 +130,9 @@ public final class m1 extends xs {
                 this.S.invalidate();
                 return;
             }
-            gc gcVar = ((n1) arrayList.get(i7)).n[this.L];
-            if (gcVar != null) {
-                gcVar.a();
+            hc hcVar = ((n1) arrayList.get(i7)).n[this.L];
+            if (hcVar != null) {
+                hcVar.a();
             }
             i7++;
         }
@@ -155,7 +155,7 @@ public final class m1 extends xs {
         for (int i10 = 0; i10 < this.P.size(); i10++) {
             n1 n1Var = (n1) this.P.get(i10);
             n1Var.getClass();
-            gc[] gcVarArr = n1Var.n;
+            hc[] hcVarArr = n1Var.n;
             org.telegram.ui.Components.p5 p5Var = n1Var.d;
             ImageReceiver imageReceiver = p5Var != null ? p5Var.k : n1Var.f;
             if (imageReceiver != null) {
@@ -165,8 +165,8 @@ public final class m1 extends xs {
                     p5Var2.setColorFilter(this.S.p3);
                 }
                 int i11 = this.L;
-                gc e02 = imageReceiver.e0(gcVarArr[i11], i11);
-                gcVarArr[i11] = e02;
+                hc e02 = imageReceiver.e0(hcVarArr[i11], i11);
+                hcVarArr[i11] = e02;
                 e02.c = j3;
                 n1Var.r = imageReceiver;
                 if (imageReceiver.B() != null) {
@@ -200,7 +200,7 @@ public final class m1 extends xs {
                                 rect.bottom = (int) (rect.centerY() + width2);
                             }
                             rect.offset((n1Var.getLeft() + ((int) n1Var.getTranslationX())) - this.O, 0);
-                            gcVarArr[i11].b(rect);
+                            hcVarArr[i11].b(rect);
                             arrayList.add(n1Var);
                         }
                     } else {
@@ -216,7 +216,7 @@ public final class m1 extends xs {
                 if (intrinsicWidth >= 1.0f) {
                 }
                 rect.offset((n1Var.getLeft() + ((int) n1Var.getTranslationX())) - this.O, 0);
-                gcVarArr[i11].b(rect);
+                hcVarArr[i11].b(rect);
                 arrayList.add(n1Var);
             }
         }

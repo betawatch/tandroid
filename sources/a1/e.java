@@ -6,17 +6,17 @@ import aa.t;
 import aa.v;
 import ab.l;
 import ab.u;
-import ai.d1;
-import ai.e2;
+import ai.a3;
 import ai.f0;
+import ai.f2;
 import ai.m0;
 import ai.p0;
-import ai.q2;
 import ai.r2;
-import ai.w1;
+import ai.s2;
 import ai.x;
 import ai.x1;
-import ai.y2;
+import ai.y0;
+import ai.y1;
 import ai.z;
 import android.content.Intent;
 import android.speech.SpeechRecognizer;
@@ -29,7 +29,6 @@ import android.widget.FrameLayout;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import bi.b1;
 import bi.g3;
-import bi.n6;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.messaging.FirebaseMessaging;
 import java.nio.ByteBuffer;
@@ -44,11 +43,11 @@ import kotlin.jvm.internal.r;
 import m.o3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.g2;
@@ -62,7 +61,7 @@ import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.LaunchActivity;
 import v0.n;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -76,11 +75,11 @@ public final /* synthetic */ class e implements Runnable {
     }
 
     /* JADX WARN: Finally extract failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0297 A[Catch: all -> 0x0215, InterruptedException -> 0x03c3, TryCatch #11 {InterruptedException -> 0x03c3, all -> 0x0215, blocks: (B:181:0x02fd, B:183:0x0307, B:186:0x030c, B:188:0x0312, B:192:0x0326, B:194:0x0350, B:198:0x033d, B:200:0x0341, B:202:0x0349, B:209:0x0353, B:75:0x0211, B:76:0x021b, B:83:0x0258, B:84:0x025a, B:89:0x0263, B:91:0x0267, B:93:0x0274, B:95:0x027c, B:100:0x028f, B:102:0x0297, B:104:0x02b6, B:105:0x02be, B:106:0x02c7, B:108:0x02cb, B:112:0x02dc, B:114:0x02e7, B:115:0x02ee, B:127:0x0228, B:129:0x0243), top: B:180:0x02fd }] */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x02c2  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x03ca  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x038e  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x028b  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x02a0 A[Catch: all -> 0x021e, InterruptedException -> 0x03cc, TryCatch #10 {InterruptedException -> 0x03cc, all -> 0x021e, blocks: (B:181:0x0306, B:183:0x0310, B:186:0x0315, B:188:0x031b, B:192:0x032f, B:194:0x0359, B:198:0x0346, B:200:0x034a, B:202:0x0352, B:209:0x035c, B:75:0x021a, B:76:0x0224, B:83:0x0261, B:84:0x0263, B:89:0x026c, B:91:0x0270, B:93:0x027d, B:95:0x0285, B:100:0x0298, B:102:0x02a0, B:104:0x02bf, B:105:0x02c7, B:106:0x02d0, B:108:0x02d4, B:112:0x02e5, B:114:0x02f0, B:115:0x02f7, B:127:0x0231, B:129:0x024c), top: B:180:0x0306 }] */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x02cb  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x03d3  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0397  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0294  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -218,7 +217,7 @@ public final /* synthetic */ class e implements Runnable {
                 return;
             case 11:
                 z zVar = (z) this.b;
-                w1 w1Var = (w1) this.c;
+                x1 x1Var = (x1) this.c;
                 byte[] bArr = new byte[3200];
                 while (!zVar.d) {
                     int read = zVar.e.read(bArr, 0, 3200);
@@ -237,7 +236,7 @@ public final /* synthetic */ class e implements Runnable {
                         double d2 = (short) ((bArr[i18 + 1] << 8) | (bArr[i18] & 255));
                         d += d2 * d2;
                     }
-                    w1Var.a((float) Math.max(0.0d, Math.min(1.0d, ((Math.log10(Math.max(1.0d, Math.sqrt(d / Math.max(1, i16)))) * 20.0d) - 42.0d) / 30.0d)));
+                    x1Var.a((float) Math.max(0.0d, Math.min(1.0d, ((Math.log10(Math.max(1.0d, Math.sqrt(d / Math.max(1, i16)))) * 20.0d) - 42.0d) / 30.0d)));
                 }
                 return;
             case 12:
@@ -248,9 +247,9 @@ public final /* synthetic */ class e implements Runnable {
                 return;
             case 14:
                 p0 p0Var = (p0) this.b;
-                e2 e2Var = (e2) this.c;
-                if (p0Var.G == e2Var && p0Var.r == 1) {
-                    e2Var.s();
+                f2 f2Var = (f2) this.c;
+                if (p0Var.G == f2Var && p0Var.r == 1) {
+                    f2Var.t();
                     return;
                 }
                 return;
@@ -258,23 +257,23 @@ public final /* synthetic */ class e implements Runnable {
                 ((z2) this.b).a((ai.g) this.c);
                 return;
             case 16:
-                g0.g3(new d1((x10) this.c, DictationLid.m((byte[]) this.b).length / 32, 0));
+                g0.g3(new y0((y10) this.c, DictationLid.m((byte[]) this.b).length / 32, 0));
                 return;
             case 17:
-                e2 e2Var2 = (e2) this.b;
+                f2 f2Var2 = (f2) this.b;
                 Runnable runnable = (Runnable) this.c;
-                if (e2Var2.j) {
+                if (f2Var2.j) {
                     return;
                 }
                 runnable.run();
                 return;
             case 18:
-                r2 r2Var = (r2) this.b;
+                s2 s2Var = (s2) this.b;
                 a0 a0Var5 = (a0) this.c;
-                r2Var.getClass();
+                s2Var.getClass();
                 SparseArray sparseArray3 = new SparseArray();
                 int i19 = 0;
-                while (r2Var.d) {
+                while (s2Var.d) {
                     try {
                         byte[] readIncomingAudio = NativeInstance.readIncomingAudio();
                         long currentTimeMillis2 = System.currentTimeMillis();
@@ -289,30 +288,37 @@ public final /* synthetic */ class e implements Runnable {
                                     if (i21 <= order.remaining()) {
                                         order.position(position + i21);
                                         if (i20 == 0) {
-                                            r2Var.a.getClass();
+                                            s2Var.a.getClass();
                                             VoIPService sharedInstance = VoIPService.getSharedInstance();
                                             if (sharedInstance == null || sharedInstance.isMicMute()) {
                                                 i13 = i11;
                                             }
                                         }
-                                        q2 q2Var = (q2) sparseArray3.get(i20);
-                                        if (q2Var == null) {
-                                            q2Var = new q2(r2Var, i20);
+                                        r2 r2Var = (r2) sparseArray3.get(i20);
+                                        if (r2Var == null) {
+                                            r2Var = new r2(s2Var, i20);
                                             byteBuffer = order;
-                                            long j11 = r2Var.f;
+                                            long j11 = s2Var.f;
                                             SparseArray sparseArray4 = sparseArray3;
                                             try {
-                                                r2Var.f = j11 + 1;
-                                                q2Var.f = j11;
-                                                if (i20 == 0 && r2Var.c) {
+                                                s2Var.f = j11 + 1;
+                                                r2Var.f = j11;
+                                                if (i20 == 0 && s2Var.c) {
                                                     ExecutorService executorService = DictationLid.a;
-                                                    q2Var.k = mp.g1().getString("tinylid_lang", str);
+                                                    r2Var.k = np.g1().getString("tinylid_lang", str);
                                                 }
                                                 sparseArray2 = sparseArray4;
-                                                sparseArray2.put(i20, q2Var);
+                                                sparseArray2.put(i20, r2Var);
                                             } catch (InterruptedException unused2) {
                                                 sparseArray = sparseArray4;
-                                                while (i10 < sparseArray.size()) {
+                                                for (i10 = 0; i10 < sparseArray.size(); i10++) {
+                                                    r2 r2Var2 = (r2) sparseArray.valueAt(i10);
+                                                    x xVar = r2Var2.d;
+                                                    if (xVar != null) {
+                                                        xVar.a();
+                                                        r2Var2.d = null;
+                                                    }
+                                                    r2Var2.b();
                                                 }
                                                 return;
                                             } catch (Throwable th3) {
@@ -320,18 +326,25 @@ public final /* synthetic */ class e implements Runnable {
                                                 sparseArray = sparseArray4;
                                                 try {
                                                     Log.e("Dictation", "live captions", th);
-                                                    while (i7 < sparseArray.size()) {
+                                                    for (i7 = 0; i7 < sparseArray.size(); i7++) {
+                                                        r2 r2Var3 = (r2) sparseArray.valueAt(i7);
+                                                        x xVar2 = r2Var3.d;
+                                                        if (xVar2 != null) {
+                                                            xVar2.a();
+                                                            r2Var3.d = null;
+                                                        }
+                                                        r2Var3.b();
                                                     }
                                                     return;
                                                 } catch (Throwable th4) {
                                                     for (int i22 = 0; i22 < sparseArray.size(); i22++) {
-                                                        q2 q2Var2 = (q2) sparseArray.valueAt(i22);
-                                                        x xVar = q2Var2.d;
-                                                        if (xVar != null) {
-                                                            xVar.a();
-                                                            q2Var2.d = null;
+                                                        r2 r2Var4 = (r2) sparseArray.valueAt(i22);
+                                                        x xVar3 = r2Var4.d;
+                                                        if (xVar3 != null) {
+                                                            xVar3.a();
+                                                            r2Var4.d = null;
                                                         }
-                                                        q2Var2.b();
+                                                        r2Var4.b();
                                                     }
                                                     throw th4;
                                                 }
@@ -359,13 +372,13 @@ public final /* synthetic */ class e implements Runnable {
                                         }
                                         boolean z12 = sqrt >= 400.0f;
                                         if (z12) {
-                                            q2Var.e = currentTimeMillis2;
+                                            r2Var.e = currentTimeMillis2;
                                         }
-                                        if (q2Var.d == null) {
+                                        if (r2Var.d == null) {
                                             if (!z12 || i19 >= 4) {
                                                 j3 = 0;
                                             } else {
-                                                String str4 = q2Var.k;
+                                                String str4 = r2Var.k;
                                                 if (str4 != null) {
                                                     a0Var3 = a0Var2;
                                                     a0Var4 = DictationAsr.V(str4, a0Var3, false);
@@ -381,24 +394,24 @@ public final /* synthetic */ class e implements Runnable {
                                                         if (tVar3.f != 0) {
                                                             z10 = true;
                                                             if (z10) {
-                                                                c10 = x.c(a0Var4, q2Var);
-                                                                q2Var.d = c10;
+                                                                c10 = x.c(a0Var4, r2Var);
+                                                                r2Var.d = c10;
                                                                 if (c10 == null) {
                                                                     i19++;
-                                                                    q2Var.h = 0;
-                                                                    q2Var.g = 0;
-                                                                    q2Var.e();
-                                                                    q2Var.c(0, q2Var.c, q2Var.b);
-                                                                    x xVar2 = q2Var.d;
-                                                                    byte[] bArr2 = q2Var.b;
-                                                                    int i26 = q2Var.c;
+                                                                    r2Var.h = 0;
+                                                                    r2Var.g = 0;
+                                                                    r2Var.e();
+                                                                    r2Var.c(0, r2Var.c, r2Var.b);
+                                                                    x xVar4 = r2Var.d;
+                                                                    byte[] bArr2 = r2Var.b;
+                                                                    int i26 = r2Var.c;
                                                                     a0Var2 = a0Var3;
-                                                                    long j12 = xVar2.c;
+                                                                    long j12 = xVar4.c;
                                                                     if (j12 != j3) {
                                                                         nativeSessionPush2 = DictationAsr.nativeSessionPush(j12, bArr2, 0, i26);
-                                                                        xVar2.b(nativeSessionPush2);
+                                                                        xVar4.b(nativeSessionPush2);
                                                                     }
-                                                                    q2Var.c = 0;
+                                                                    r2Var.c = 0;
                                                                 } else {
                                                                     a0Var2 = a0Var3;
                                                                 }
@@ -414,13 +427,13 @@ public final /* synthetic */ class e implements Runnable {
                                                     j3 = 0;
                                                 }
                                                 a0Var4 = a0Var3;
-                                                c10 = x.c(a0Var4, q2Var);
-                                                q2Var.d = c10;
+                                                c10 = x.c(a0Var4, r2Var);
+                                                r2Var.d = c10;
                                                 if (c10 == null) {
                                                 }
                                             }
-                                            if (q2Var.d == null) {
-                                                q2Var.d(position, i21, readIncomingAudio);
+                                            if (r2Var.d == null) {
+                                                r2Var.d(position, i21, readIncomingAudio);
                                                 sparseArray3 = sparseArray2;
                                                 i13 = i11;
                                                 order = byteBuffer;
@@ -430,14 +443,14 @@ public final /* synthetic */ class e implements Runnable {
                                         } else {
                                             j3 = 0;
                                         }
-                                        q2Var.c(position, i21, readIncomingAudio);
-                                        x xVar3 = q2Var.d;
-                                        long j13 = xVar3.c;
+                                        r2Var.c(position, i21, readIncomingAudio);
+                                        x xVar5 = r2Var.d;
+                                        long j13 = xVar5.c;
                                         if (j13 != j3) {
                                             nativeSessionPush = DictationAsr.nativeSessionPush(j13, readIncomingAudio, position, i21);
-                                            xVar3.b(nativeSessionPush);
+                                            xVar5.b(nativeSessionPush);
                                         }
-                                        q2Var.a();
+                                        r2Var.a();
                                         sparseArray3 = sparseArray2;
                                         i13 = i11;
                                         order = byteBuffer;
@@ -457,23 +470,23 @@ public final /* synthetic */ class e implements Runnable {
                         }
                         while (true) {
                             try {
-                                Runnable runnable2 = (Runnable) r2Var.b.poll();
+                                Runnable runnable2 = (Runnable) s2Var.b.poll();
                                 if (runnable2 != null) {
                                     runnable2.run();
                                 } else {
                                     for (int i27 = 0; i27 < sparseArray.size(); i27++) {
-                                        q2 q2Var3 = (q2) sparseArray.valueAt(i27);
-                                        long j14 = currentTimeMillis2 - q2Var3.e;
-                                        x xVar4 = q2Var3.d;
-                                        if (xVar4 != null && j14 > 6000) {
-                                            xVar4.a();
-                                            q2Var3.d = null;
+                                        r2 r2Var5 = (r2) sparseArray.valueAt(i27);
+                                        long j14 = currentTimeMillis2 - r2Var5.e;
+                                        x xVar6 = r2Var5.d;
+                                        if (xVar6 != null && j14 > 6000) {
+                                            xVar6.a();
+                                            r2Var5.d = null;
                                             i19--;
-                                            q2Var3.b();
-                                            q2Var3.e();
-                                        } else if (xVar4 != null && j14 > 1600 && q2Var3.i && !q2Var3.j.isEmpty()) {
-                                            q2Var3.b();
-                                            q2Var3.g = q2Var3.h;
+                                            r2Var5.b();
+                                            r2Var5.e();
+                                        } else if (xVar6 != null && j14 > 1600 && r2Var5.i && !r2Var5.j.isEmpty()) {
+                                            r2Var5.b();
+                                            r2Var5.g = r2Var5.h;
                                         }
                                     }
                                     Thread.sleep(60L);
@@ -483,27 +496,13 @@ public final /* synthetic */ class e implements Runnable {
                                     str = null;
                                 }
                             } catch (InterruptedException unused3) {
-                                for (i10 = 0; i10 < sparseArray.size(); i10++) {
-                                    q2 q2Var4 = (q2) sparseArray.valueAt(i10);
-                                    x xVar5 = q2Var4.d;
-                                    if (xVar5 != null) {
-                                        xVar5.a();
-                                        q2Var4.d = null;
-                                    }
-                                    q2Var4.b();
+                                while (i10 < sparseArray.size()) {
                                 }
                                 return;
                             } catch (Throwable th5) {
                                 th = th5;
                                 Log.e("Dictation", "live captions", th);
-                                for (i7 = 0; i7 < sparseArray.size(); i7++) {
-                                    q2 q2Var5 = (q2) sparseArray.valueAt(i7);
-                                    x xVar6 = q2Var5.d;
-                                    if (xVar6 != null) {
-                                        xVar6.a();
-                                        q2Var5.d = null;
-                                    }
-                                    q2Var5.b();
+                                while (i7 < sparseArray.size()) {
                                 }
                                 return;
                             }
@@ -517,35 +516,36 @@ public final /* synthetic */ class e implements Runnable {
                 }
                 SparseArray sparseArray5 = sparseArray3;
                 for (int i28 = 0; i28 < sparseArray5.size(); i28++) {
-                    q2 q2Var6 = (q2) sparseArray5.valueAt(i28);
-                    x xVar7 = q2Var6.d;
+                    r2 r2Var6 = (r2) sparseArray5.valueAt(i28);
+                    x xVar7 = r2Var6.d;
                     if (xVar7 != null) {
                         xVar7.a();
-                        q2Var6.d = null;
+                        r2Var6.d = null;
                     }
-                    q2Var6.b();
+                    r2Var6.b();
                 }
                 return;
             case 19:
-                ai.z2 z2Var = (ai.z2) this.b;
-                y2 y2Var = (y2) this.c;
-                View view = y2Var.W;
-                View view2 = z2Var.fragmentView;
+                a3 a3Var = (a3) this.b;
+                ai.z2 z2Var = (ai.z2) this.c;
+                View view = z2Var.W;
+                View view2 = a3Var.fragmentView;
                 if (!(view2 instanceof ViewGroup) || view == null) {
                     return;
                 }
                 ViewGroup viewGroup = (ViewGroup) view2;
-                b1 b1Var = new b1(z2Var.getParentActivity(), view, z2Var.getResourceProvider(), new c(z2Var, 9));
-                b1Var.M = g0.L(ks.x3);
+                b1 b1Var = new b1(a3Var.getParentActivity(), view, a3Var.getResourceProvider(), new c(a3Var, 9));
+                b1Var.M = g0.L(ls.x3);
+                b1Var.n = g0.L(ls.P4);
                 b1Var.L = 0;
                 b1Var.S = true;
-                int w02 = m6.w0(m6.G6, z2Var.getResourceProvider());
-                String d02 = DictationAsr.d0(y2Var.f, y2Var.a);
-                String[] strArr = y2Var.V;
+                int w02 = m6.w0(m6.G6, a3Var.getResourceProvider());
+                String d02 = DictationAsr.d0(z2Var.f, z2Var.a);
+                String[] strArr = z2Var.V;
                 int length = strArr.length;
                 while (i14 < length) {
                     String str5 = strArr[i14];
-                    b1Var.a(new m0(z2Var.getParentActivity(), p0.N(str5), null, w02, str5.equals(d02)), 44, new e(20, y2Var, str5));
+                    b1Var.a(new m0(a3Var.getParentActivity(), p0.N(str5), null, w02, str5.equals(d02)), 44, new e(20, z2Var, str5));
                     i14++;
                     z11 = true;
                 }
@@ -556,9 +556,9 @@ public final /* synthetic */ class e implements Runnable {
                 b1Var.f();
                 return;
             case 20:
-                y2 y2Var2 = (y2) this.b;
-                DictationAsr.Z(y2Var2.a, (String) this.c);
-                y2Var2.c();
+                ai.z2 z2Var2 = (ai.z2) this.b;
+                DictationAsr.Z(z2Var2.a, (String) this.c);
+                z2Var2.c();
                 return;
             case 21:
                 ViewGroup container = (ViewGroup) this.b;
@@ -602,12 +602,12 @@ public final /* synthetic */ class e implements Runnable {
             case 28:
                 gq0 gq0Var = (gq0) this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
-                gq0Var.h(tL_starGiftCollection.title, new x1(i12, gq0Var, tL_starGiftCollection));
+                gq0Var.h(tL_starGiftCollection.title, new y1(i12, gq0Var, tL_starGiftCollection));
                 return;
             default:
-                n6 n6Var = (n6) this.b;
+                bi.m6 m6Var = (bi.m6) this.b;
                 g0.g((String) this.c);
-                lc.b0(n6Var.a.a).k(false).j();
+                lc.b0(m6Var.a.a).k(false).j();
                 return;
         }
     }

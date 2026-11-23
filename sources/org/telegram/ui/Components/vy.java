@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vy extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -37,7 +37,7 @@ public final class vy extends FrameLayout {
         rh0Var.setScaleType(ImageView.ScaleType.FIT_XY);
         rh0Var.setImportantForAccessibility(2);
         rh0Var.setVisibility(8);
-        linearLayout.addView(rh0Var, c8.ma.t(org.telegram.messenger.ks.g2, org.telegram.messenger.ks.g2, 17, 0, 0, 0, 20));
+        linearLayout.addView(rh0Var, c8.ma.t(org.telegram.messenger.ls.g2, org.telegram.messenger.ls.g2, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);

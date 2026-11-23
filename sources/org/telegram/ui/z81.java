@@ -4,9 +4,9 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z81 implements zh.c, org.telegram.messenger.xo, r0.m, org.telegram.ui.Components.tj0 {
+public final /* synthetic */ class z81 implements zh.c, org.telegram.messenger.yo, r0.m, org.telegram.ui.Components.tj0 {
     public final /* synthetic */ y91 a;
 
     public /* synthetic */ z81(y91 y91Var) {
@@ -31,7 +31,7 @@ public final /* synthetic */ class z81 implements zh.c, org.telegram.messenger.x
         return r0.l1.b;
     }
 
-    @Override // org.telegram.messenger.xo
+    @Override // org.telegram.messenger.yo
     public boolean e(TLRPC.TL_error tL_error) {
         return y91.Z(this.a, tL_error);
     }

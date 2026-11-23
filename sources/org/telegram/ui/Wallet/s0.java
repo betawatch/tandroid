@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s0 implements q10 {
+public final /* synthetic */ class s0 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ t0 b;
     public final /* synthetic */ TL_wallet.getTransactions c;
@@ -22,7 +22,7 @@ public final /* synthetic */ class s0 implements q10 {
         this.c = gettransactions;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         boolean z10;
         boolean z11;
@@ -36,8 +36,8 @@ public final /* synthetic */ class s0 implements q10 {
                 int i10 = 0;
                 t0Var.k = false;
                 if (wallettransactions != null) {
-                    mp.u1(i7).f4(wallettransactions.users, false);
-                    mp.u1(i7).Z3(wallettransactions.chats, false);
+                    np.u1(i7).f4(wallettransactions.users, false);
+                    np.u1(i7).Z3(wallettransactions.chats, false);
                     int size = wallettransactions.transactions.size();
                     u0.p(wallettransactions.transactions);
                     ArrayList<TL_wallet.walletTransaction> arrayList = wallettransactions.transactions;
@@ -82,8 +82,8 @@ public final /* synthetic */ class s0 implements q10 {
                 t0Var2.j = -1;
                 t0Var2.i = false;
                 if (wallettransactions2 != null) {
-                    mp.u1(i11).f4(wallettransactions2.users, false);
-                    mp.u1(i11).Z3(wallettransactions2.chats, false);
+                    np.u1(i11).f4(wallettransactions2.users, false);
+                    np.u1(i11).Z3(wallettransactions2.chats, false);
                     int size3 = wallettransactions2.transactions.size();
                     u0.p(wallettransactions2.transactions);
                     ArrayList<TL_wallet.walletTransaction> arrayList3 = wallettransactions2.transactions;

@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lp extends dk0 {
     public final org.telegram.ui.ActionBar.h6 c;
@@ -48,9 +48,9 @@ public final class lp extends dk0 {
         if (i10 >= 0) {
             g(i10);
             WeakReference weakReference = this.e;
-            l01 l01Var = weakReference == null ? null : (l01) weakReference.get();
-            if (l01Var != null) {
-                l01Var.setSelected(false);
+            k01 k01Var = weakReference == null ? null : (k01) weakReference.get();
+            if (k01Var != null) {
+                k01Var.setSelected(false);
             }
         }
         this.f = i7;
@@ -73,7 +73,7 @@ public final class lp extends dk0 {
         int h;
         int intValue;
         String[] split;
-        l01 l01Var = (l01) f1Var.a;
+        k01 k01Var = (k01) f1Var.a;
         org.telegram.ui.ActionBar.l6 i10 = ((mp) this.d.get(i7)).a.i(((mp) this.d.get(i7)).c);
         if (i10 != null && i10.b != null && !i10.U && new File(i10.b).exists() && i10.b != null) {
             try {
@@ -245,15 +245,15 @@ public final class lp extends dk0 {
             }
         }
         mp mpVar = (mp) this.d.get(i7);
-        mp mpVar2 = l01Var.H;
-        boolean z11 = mpVar2 != null && ig.b.a(mpVar2.a.c, mpVar.a.c) && !org.telegram.ui.cx.C4 && l01Var.W == mpVar.c;
-        l01Var.setFocusable(true);
-        l01Var.setEnabled(true);
-        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.i5, l01Var, null);
-        l01Var.f(mpVar, this.r, z11);
-        l01Var.g(i7 == this.f, z11);
+        mp mpVar2 = k01Var.H;
+        boolean z11 = mpVar2 != null && ig.b.a(mpVar2.a.c, mpVar.a.c) && !org.telegram.ui.cx.C4 && k01Var.W == mpVar.c;
+        k01Var.setFocusable(true);
+        k01Var.setEnabled(true);
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.i5, k01Var, null);
+        k01Var.f(mpVar, this.r, z11);
+        k01Var.g(i7 == this.f, z11);
         if (i7 == this.f) {
-            this.e = new WeakReference(l01Var);
+            this.e = new WeakReference(k01Var);
         }
     }
 
@@ -261,6 +261,6 @@ public final class lp extends dk0 {
     public final v4.f1 x(ViewGroup viewGroup, int i7) {
         Context context = viewGroup.getContext();
         org.telegram.ui.ActionBar.h6 h6Var = this.c;
-        return new mj0(new l01(this.h, this.n, context, h6Var));
+        return new mj0(new k01(this.h, this.n, context, h6Var));
     }
 }

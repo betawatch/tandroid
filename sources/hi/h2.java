@@ -10,9 +10,9 @@ import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class h2 extends View {
     public final RectF E;
@@ -94,18 +94,18 @@ public final class h2 extends View {
             TextPaint textPaint = this.a;
             textPaint.setTextSize(L);
             textPaint.setTypeface(org.telegram.messenger.g0.o());
-            String O0 = gd.O0("Emoji");
+            String O0 = hd.O0("Emoji");
             int measuredWidth = getMeasuredWidth();
             Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
             StaticLayout staticLayout = new StaticLayout(O0, textPaint, measuredWidth, alignment, 1.0f, 0.0f, false);
             this.c = staticLayout;
             this.d = staticLayout.getLineCount() >= 1 ? this.c.getLineWidth(0) : 0.0f;
             this.e = this.c.getLineCount() >= 1 ? this.c.getLineLeft(0) : 0.0f;
-            StaticLayout staticLayout2 = new StaticLayout(gd.O0("AccDescrStickers"), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
+            StaticLayout staticLayout2 = new StaticLayout(hd.O0("AccDescrStickers"), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
             this.f = staticLayout2;
             this.h = staticLayout2.getLineCount() >= 1 ? this.f.getLineWidth(0) : 0.0f;
             this.n = this.f.getLineCount() >= 1 ? this.f.getLineLeft(0) : 0.0f;
-            StaticLayout staticLayout3 = new StaticLayout(gd.N0(2131754879, null), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
+            StaticLayout staticLayout3 = new StaticLayout(hd.N0(2131754879, null), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
             this.r = staticLayout3;
             this.s = staticLayout3.getLineCount() >= 1 ? this.r.getLineWidth(0) : 0.0f;
             this.w = this.r.getLineCount() >= 1 ? this.r.getLineLeft(0) : 0.0f;

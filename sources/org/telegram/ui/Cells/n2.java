@@ -1,10 +1,10 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n2 extends fi.e7 {
     public final /* synthetic */ u2 S;
@@ -29,14 +29,14 @@ public final class n2 extends fi.e7 {
             return false;
         }
         if (j3 > 0) {
-            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
+            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(j3));
             if (c22 == null || c22.linked_community_id == 0) {
                 return false;
             }
             cxVar.showDialog(new li.d0(cxVar, c22.linked_community_id));
             return true;
         }
-        TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
+        TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-j3));
         if (O0 == null || O0.linked_community_id == 0) {
             return false;
         }

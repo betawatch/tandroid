@@ -13,14 +13,14 @@ import java.net.URLDecoder;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.az;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.gp;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.xy;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.yy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a70;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.v41;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g3 extends x7 {
     public final /* synthetic */ z3 A0;
@@ -82,9 +82,9 @@ public final class g3 extends x7 {
         boolean z10 = characterStyle instanceof v41;
         z3 z3Var = this.A0;
         if (z10) {
-            TLRPC.User c22 = mp.u1(z3Var.m2).c2(Utilities.A(((v41) characterStyle).getURL()));
+            TLRPC.User c22 = np.u1(z3Var.m2).c2(Utilities.A(((v41) characterStyle).getURL()));
             if (c22 != null) {
-                mp.u1(z3Var.m2).G3(c22, null, g2Var, 0);
+                np.u1(z3Var.m2).G3(c22, null, g2Var, 0);
                 return;
             }
             return;
@@ -97,7 +97,7 @@ public final class g3 extends x7 {
             if (characterStyle instanceof r41) {
                 r41 r41Var = (r41) characterStyle;
                 org.telegram.messenger.g0.g(r41Var.a.subSequence(r41Var.b, r41Var.c).toString());
-                n10.t(null, 2131743953, new lc(z3Var.M0, this.z0));
+                o10.t(null, 2131743951, new lc(z3Var.M0, this.z0));
                 return;
             } else {
                 if (characterStyle instanceof ClickableSpan) {
@@ -126,7 +126,7 @@ public final class g3 extends x7 {
         }
         String lowerCase = c10.toLowerCase();
         if (url.startsWith("@")) {
-            mp.u1(z3Var.m2).F3(lowerCase, g2Var, 0, null);
+            np.u1(z3Var.m2).F3(lowerCase, g2Var, 0, null);
         } else {
             M(0, url, characterStyle, false);
         }
@@ -161,7 +161,7 @@ public final class g3 extends x7 {
         j3.R = true;
         z3 z3Var = this.A0;
         x3 x3Var = z3Var.y1;
-        CharSequence[] charSequenceArr = (x3Var == null || x3Var.d()) ? new CharSequence[]{gd.N0(2131747623, null), gd.N0(2131751755, null)} : new CharSequence[]{gd.N0(2131747623, null)};
+        CharSequence[] charSequenceArr = (x3Var == null || x3Var.d()) ? new CharSequence[]{hd.N0(2131747623, null), hd.N0(2131751755, null)} : new CharSequence[]{hd.N0(2131747623, null)};
         final org.telegram.ui.ActionBar.h6 h6Var2 = this.z0;
         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: fi.f3
             @Override // android.content.DialogInterface.OnClickListener
@@ -197,7 +197,7 @@ public final class g3 extends x7 {
             G.i = 3;
             G.b0(-org.telegram.messenger.g0.L(8.0f), 0.0f);
             final int i10 = 0;
-            G.l(R.drawable.msg_saved, gd.N0(2131744481, null), new Runnable(this) { // from class: fi.d3
+            G.l(R.drawable.msg_saved, hd.N0(2131744479, null), new Runnable(this) { // from class: fi.d3
                 public final /* synthetic */ g3 b;
 
                 {
@@ -213,12 +213,12 @@ public final class g3 extends x7 {
                     switch (i11) {
                         case 0:
                             z3 z3Var2 = g3Var.A0;
-                            zy C = zy.C(z3Var2.m2);
+                            az C = az.C(z3Var2.m2);
                             TLRPC.TL_document tL_document = (TLRPC.TL_document) document2;
-                            long e10 = j10.i(z3Var2.m2).e();
+                            long e10 = k10.i(z3Var2.m2).e();
                             x3 x3Var = z3Var2.y1;
-                            C.r0(xy.f(tL_document, null, null, e10, null, null, null, null, null, null, false, 0, 0, 0, x3Var != null ? x3Var.a : null, null, false));
-                            new lc(z3Var2.M0, h6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.R2(gd.N0(2131744480, null), -1, 2, new org.telegram.messenger.j2(27), null)).k(true);
+                            C.r0(yy.f(tL_document, null, null, e10, null, null, null, null, null, null, false, 0, 0, 0, x3Var != null ? x3Var.a : null, null, false));
+                            new lc(z3Var2.M0, h6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.R2(hd.N0(2131744478, null), -1, 2, new org.telegram.messenger.j2(27), null)).k(true);
                             break;
                         default:
                             z3 z3Var3 = g3Var.A0;
@@ -228,18 +228,18 @@ public final class g3 extends x7 {
                             tL_inputDocument.id = document2.id;
                             tL_inputDocument.access_hash = document2.access_hash;
                             tL_inputDocument.file_reference = document2.file_reference;
-                            if (MediaController.B().R0 != null && MediaController.B().R0.b == j10.i(z3Var3.m2).e()) {
-                                gp gpVar = MediaController.B().R0;
-                                gpVar.c.add(0, gpVar.d(document2));
-                                gpVar.e();
+                            if (MediaController.B().R0 != null && MediaController.B().R0.b == k10.i(z3Var3.m2).e()) {
+                                hp hpVar = MediaController.B().R0;
+                                hpVar.c.add(0, hpVar.d(document2));
+                                hpVar.e();
                             }
                             ConnectionsManager.getInstance(z3Var3.m2).sendRequest(tL_account_saveMusic, null);
-                            new lc(z3Var3.M0, h6Var2).Q(R.raw.ic_save_to_music, 36, gd.N0(2131744482, null)).k(true);
+                            new lc(z3Var3.M0, h6Var2).Q(R.raw.ic_save_to_music, 36, hd.N0(2131744480, null)).k(true);
                             break;
                     }
                 }
             }, document instanceof TLRPC.TL_document);
-            G.c(R.drawable.msg_tone_add, gd.N0(2131744483, null), new Runnable(this) { // from class: fi.d3
+            G.c(R.drawable.msg_tone_add, hd.N0(2131744481, null), new Runnable(this) { // from class: fi.d3
                 public final /* synthetic */ g3 b;
 
                 {
@@ -255,12 +255,12 @@ public final class g3 extends x7 {
                     switch (i11) {
                         case 0:
                             z3 z3Var2 = g3Var.A0;
-                            zy C = zy.C(z3Var2.m2);
+                            az C = az.C(z3Var2.m2);
                             TLRPC.TL_document tL_document = (TLRPC.TL_document) document2;
-                            long e10 = j10.i(z3Var2.m2).e();
+                            long e10 = k10.i(z3Var2.m2).e();
                             x3 x3Var = z3Var2.y1;
-                            C.r0(xy.f(tL_document, null, null, e10, null, null, null, null, null, null, false, 0, 0, 0, x3Var != null ? x3Var.a : null, null, false));
-                            new lc(z3Var2.M0, h6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.R2(gd.N0(2131744480, null), -1, 2, new org.telegram.messenger.j2(27), null)).k(true);
+                            C.r0(yy.f(tL_document, null, null, e10, null, null, null, null, null, null, false, 0, 0, 0, x3Var != null ? x3Var.a : null, null, false));
+                            new lc(z3Var2.M0, h6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.R2(hd.N0(2131744478, null), -1, 2, new org.telegram.messenger.j2(27), null)).k(true);
                             break;
                         default:
                             z3 z3Var3 = g3Var.A0;
@@ -270,13 +270,13 @@ public final class g3 extends x7 {
                             tL_inputDocument.id = document2.id;
                             tL_inputDocument.access_hash = document2.access_hash;
                             tL_inputDocument.file_reference = document2.file_reference;
-                            if (MediaController.B().R0 != null && MediaController.B().R0.b == j10.i(z3Var3.m2).e()) {
-                                gp gpVar = MediaController.B().R0;
-                                gpVar.c.add(0, gpVar.d(document2));
-                                gpVar.e();
+                            if (MediaController.B().R0 != null && MediaController.B().R0.b == k10.i(z3Var3.m2).e()) {
+                                hp hpVar = MediaController.B().R0;
+                                hpVar.c.add(0, hpVar.d(document2));
+                                hpVar.e();
                             }
                             ConnectionsManager.getInstance(z3Var3.m2).sendRequest(tL_account_saveMusic, null);
-                            new lc(z3Var3.M0, h6Var2).Q(R.raw.ic_save_to_music, 36, gd.N0(2131744482, null)).k(true);
+                            new lc(z3Var3.M0, h6Var2).Q(R.raw.ic_save_to_music, 36, hd.N0(2131744480, null)).k(true);
                             break;
                     }
                 }
@@ -296,11 +296,11 @@ public final class g3 extends x7 {
             return;
         }
         if (s7Var.b == null || s7Var.c == null) {
-            gc Q = new lc(z3Var.M0, h6Var).Q(R.raw.error, 36, gd.N0(2131744423, null));
+            gc Q = new lc(z3Var.M0, h6Var).Q(R.raw.error, 36, hd.N0(2131744421, null));
             Q.a = 3;
             Q.k(true);
         } else {
-            mp.u1(z3Var.m2).R1().g0(s7Var.c.intValue(), s7Var.b.longValue(), new bi.m2(this, s7Var, f9Var, h6Var, 2));
+            np.u1(z3Var.m2).R1().g0(s7Var.c.intValue(), s7Var.b.longValue(), new bi.m2(this, s7Var, f9Var, h6Var, 2));
         }
     }
 

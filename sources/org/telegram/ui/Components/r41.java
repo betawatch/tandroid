@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r41 extends MetricAffectingSpan {
     public final CharSequence a;
@@ -23,7 +23,7 @@ public final class r41 extends MetricAffectingSpan {
 
     @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.g0.L(org.telegram.messenger.bz.W0 - 1));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(org.telegram.messenger.cz.W0 - 1));
         byte b10 = this.d;
         if (b10 == 2) {
             textPaint.setColor(-1);
@@ -43,7 +43,7 @@ public final class r41 extends MetricAffectingSpan {
 
     @Override // android.text.style.MetricAffectingSpan
     public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.g0.L(org.telegram.messenger.bz.W0 - 1));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(org.telegram.messenger.cz.W0 - 1));
         textPaint.setFlags(textPaint.getFlags() | 128);
         fz0 fz0Var = this.e;
         if (fz0Var != null) {

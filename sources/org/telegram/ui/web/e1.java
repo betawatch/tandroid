@@ -2,10 +2,10 @@ package org.telegram.ui.web;
 
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e1 {
     public static ArrayList d;
@@ -21,7 +21,7 @@ public final class e1 {
 
     public static e1 a() {
         ArrayList b10 = b();
-        return b10.isEmpty() ? new e1("Google", "https://www.google.com/search?q=", "https://suggestqueries.google.com/complete/search?client=chrome&amp;q=") : (e1) b10.get(Utilities.j(bz.p0, b10.size() - 1, 0));
+        return b10.isEmpty() ? new e1("Google", "https://www.google.com/search?q=", "https://suggestqueries.google.com/complete/search?client=chrome&amp;q=") : (e1) b10.get(Utilities.j(cz.p0, b10.size() - 1, 0));
     }
 
     public static ArrayList b() {
@@ -29,13 +29,13 @@ public final class e1 {
             d = new ArrayList();
             int i7 = 1;
             while (true) {
-                String c10 = c(gd.O0("SearchEngine" + i7 + "Name"));
+                String c10 = c(hd.O0("SearchEngine" + i7 + "Name"));
                 if (c10 == null) {
                     break;
                 }
-                String c11 = c(gd.O0("SearchEngine" + i7 + "SearchURL"));
-                String c12 = c(gd.O0("SearchEngine" + i7 + "AutocompleteURL"));
-                c(gd.O0("SearchEngine" + i7 + "PrivacyPolicyURL"));
+                String c11 = c(hd.O0("SearchEngine" + i7 + "SearchURL"));
+                String c12 = c(hd.O0("SearchEngine" + i7 + "AutocompleteURL"));
+                c(hd.O0("SearchEngine" + i7 + "PrivacyPolicyURL"));
                 d.add(new e1(c10, c11, c12));
                 i7++;
             }

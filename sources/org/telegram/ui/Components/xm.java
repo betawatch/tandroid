@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xm implements qj0 {
     public final /* synthetic */ int a = 1;
@@ -65,17 +65,17 @@ public final /* synthetic */ class xm implements qj0 {
                     while (true) {
                         int[] iArr = tnVar.U0;
                         if (i13 >= iArr.length) {
-                            G.c(R.drawable.msg_customize, org.telegram.messenger.gd.N0(2131746937, null), new org.telegram.messenger.camera.i(tnVar, context, view, h6Var, 25), false);
+                            G.c(R.drawable.msg_customize, org.telegram.messenger.hd.N0(2131746937, null), new org.telegram.messenger.camera.i(tnVar, context, view, h6Var, 25), false);
                             G.t = false;
                             G.s = 0;
                             G.a0();
                             break;
                         } else {
                             int i14 = iArr[i13];
-                            m01 a10 = m01.a(i14);
+                            l01 a10 = l01.a(i14);
                             int i15 = org.telegram.ui.ActionBar.m6.F8;
                             org.telegram.ui.ActionBar.t6.x(tnVar, a10, i15, h6Var, PorterDuff.Mode.SRC_IN);
-                            G.b(0, a10, org.telegram.messenger.gd.G(i14 / 3600, "Hours", new Object[0]), i15, org.telegram.ui.ActionBar.m6.E8, new org.telegram.ui.b0(tnVar, i14, view, 9));
+                            G.b(0, a10, org.telegram.messenger.hd.G(i14 / 3600, "Hours", new Object[0]), i15, org.telegram.ui.ActionBar.m6.E8, new org.telegram.ui.f0(tnVar, i14, view, 8));
                             i13++;
                         }
                     }
@@ -287,7 +287,7 @@ public final /* synthetic */ class xm implements qj0 {
                                     b6Var.n(tnVar.d0, z10);
                                     b6Var.r.a(zArr[i29 - tnVar.u0], z15);
                                     if (b6Var.getTop() > org.telegram.messenger.g0.L(40.0f) && i7 == tnVar.H0 && !tnVar.e0) {
-                                        m30Var.setText(org.telegram.messenger.gd.N0(2131746961, null));
+                                        m30Var.setText(org.telegram.messenger.hd.N0(2131746961, null));
                                         m30Var.c(b6Var.getCheckBox());
                                         tnVar.e0 = z10;
                                     }
@@ -322,7 +322,7 @@ public final /* synthetic */ class xm implements qj0 {
                             if (document == null) {
                                 document = p5.e(evVar.a, y5Var.getDocumentId());
                             }
-                            SpannableString spannableString = new SpannableString(org.telegram.messenger.fj.U(document));
+                            SpannableString spannableString = new SpannableString(org.telegram.messenger.gj.U(document));
                             spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
                             ((org.telegram.ui.bn) g2Var).a0.F0.getText().append((CharSequence) spannableString);
                             evVar.M0();

@@ -34,11 +34,11 @@ import n2.r0;
 import n2.s;
 import n2.w;
 import n2.x;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import q2.g;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioRenderer extends b implements t0 {
     public final k8.a J;
@@ -119,7 +119,7 @@ public final class FfmpegAudioRenderer extends b implements t0 {
         } else {
             i7 = 0;
         }
-        return i7 <= 2 ? c.a(i7, 0, 0, 0) : i7 | ks.y2;
+        return i7 <= 2 ? c.a(i7, 0, 0, 0) : i7 | ls.y2;
     }
 
     @Override // l2.b

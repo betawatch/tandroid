@@ -44,20 +44,20 @@ import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.b20;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.vr;
-import org.telegram.messenger.we;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.si;
+import org.telegram.messenger.wr;
+import org.telegram.messenger.xe;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -77,7 +77,7 @@ import org.telegram.ui.Components.yg;
 import org.telegram.ui.Components.yt0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
     public final r4 A0;
@@ -161,7 +161,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
     public float n1;
     public final org.telegram.messenger.r5 o0;
     public final Paint o1;
-    public final we p0;
+    public final xe p0;
     public final int p1;
     public boolean q0;
     public final c5 q1;
@@ -184,7 +184,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
     public final bi.m3 z0;
     public c7 z1;
 
-    public k5(Context context, boolean z10, File file, boolean z11, boolean z12, ra raVar, Activity activity, final int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, c7 c7Var, int i11, int i12, we weVar, org.telegram.ui.Components.ca caVar, org.telegram.ui.ActionBar.h6 h6Var, u5 u5Var, v5 v5Var) {
+    public k5(Context context, boolean z10, File file, boolean z11, boolean z12, ra raVar, Activity activity, final int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, c7 c7Var, int i11, int i12, xe xeVar, org.telegram.ui.Components.ca caVar, org.telegram.ui.ActionBar.h6 h6Var, u5 u5Var, v5 v5Var) {
         super(context, activity);
         sg.h1 h1Var;
         org.telegram.ui.Components.ca caVar2;
@@ -223,7 +223,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         this.p1 = i7;
         c5 c5Var = new c5(0, h6Var);
         this.q1 = c5Var;
-        this.p0 = weVar;
+        this.p0 = xeVar;
         this.x0 = context instanceof BubbleActivity;
         sg.k0 e10 = sg.k0.e(i7);
         e10.i(0, true);
@@ -369,8 +369,8 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         textView.setTextColor(-1);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 16.0f);
-        textView.setText(gd.N0(2131747073, null));
-        linearLayout.addView(n10.e(context, R.drawable.photo_zoomout), c8.ma.t(24, 24, 16, 0, 0, 8, 0));
+        textView.setText(hd.N0(2131747073, null));
+        linearLayout.addView(o10.e(context, R.drawable.photo_zoomout), c8.ma.t(24, 24, 16, 0, 0, 8, 0));
         linearLayout.addView(textView, c8.ma.r(-2, -2, 16));
         linearLayout.setAlpha(0.0f);
         linearLayout.setOnClickListener(new bi.o(8));
@@ -379,7 +379,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         this.Y0 = textView2;
         textView2.setBackground(org.telegram.ui.ActionBar.m6.h0(822083583, 7, -1));
         textView2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
-        textView2.setText(gd.N0(2131747085, null));
+        textView2.setText(hd.N0(2131747085, null));
         textView2.setGravity(16);
         textView2.setTextColor(-1);
         textView2.setTypeface(org.telegram.messenger.g0.o());
@@ -467,7 +467,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         TextView m10 = org.telegram.ui.Cells.c0.m(frameLayout, textView2, c8.ma.d(-2, 32.0f, 5, 0.0f, 0.0f, 4.0f, 0.0f), context);
         this.Z0 = m10;
         m10.setBackground(org.telegram.ui.ActionBar.m6.h0(822083583, 7, -1));
-        m10.setText(gd.N0(2131752089, null));
+        m10.setText(hd.N0(2131752089, null));
         m10.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         m10.setGravity(16);
         m10.setTextColor(-1);
@@ -557,7 +557,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         TextView m11 = org.telegram.ui.Cells.c0.m(frameLayout, m10, c8.ma.d(-2, 32.0f, 51, 4.0f, 0.0f, 0.0f, 0.0f), context);
         this.a1 = m11;
         m11.setBackground(org.telegram.ui.ActionBar.m6.h0(822083583, 7, -1));
-        m11.setText(gd.N0(2131751342, null));
+        m11.setText(hd.N0(2131751342, null));
         m11.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         m11.setGravity(16);
         m11.setTextColor(-1);
@@ -649,7 +649,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         this.D0 = g5Var;
         g5Var.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), 0);
         g5Var.setBackground(new GradientDrawable(orientation, new int[]{0, TLObject.FLAG_31}));
-        addView(g5Var, c8.ma.e(-1, ks.p1, 80));
+        addView(g5Var, c8.ma.e(-1, ls.p1, 80));
         tg.i1 i1Var = new tg.i1(context, (c7Var == null || c7Var.v() || c7Var.u || caVar == null) ? false : true);
         this.U0 = i1Var;
         i1Var.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
@@ -686,7 +686,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         tg.k1 k1Var2 = new tg.k1(context);
         this.W0 = k1Var2;
         k1Var2.setVisibility(8);
-        k1Var2.setOnItemClickListener(new bi.l8(u9Var, 11));
+        k1Var2.setOnItemClickListener(new bi.k8(u9Var, 11));
         f1Var.setTypefaceListView(k1Var2);
         r4Var.addView(k1Var2, c8.ma.d(-2, -2.0f, 85, 0.0f, 0.0f, 8.0f, 8.0f));
         paint.setStyle(Paint.Style.FILL);
@@ -696,7 +696,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         this.g1 = s4Var;
         s4Var.setVisibility(8);
         s4Var.setColorPalette(sg.k0.e(i7));
-        s4Var.setColorListener(new bi.s8(u9Var, 2));
+        s4Var.setColorListener(new bi.r8(u9Var, 2));
         g5Var.addView(s4Var, c8.ma.d(-1, 84.0f, 48, 56.0f, 0.0f, 56.0f, 6.0f));
         setupTabsLayout(context);
         tg.w0 w0Var = new tg.w0(context);
@@ -829,7 +829,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         } else {
             i13 = 1;
         }
-        this.y1 = new t4(u9Var, raVar, new ai.x1(16, u9Var, raVar));
+        this.y1 = new t4(u9Var, raVar, new ai.y1(16, u9Var, raVar));
         i2.C1 = i13;
     }
 
@@ -839,7 +839,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         n2Var.getEditText().setGravity(i7 != 1 ? i7 != 2 ? 19 : 21 : 17);
         if (i7 == 1) {
             i10 = 4;
-        } else if (i7 == 2 ? !gd.a0 : gd.a0) {
+        } else if (i7 == 2 ? !hd.a0 : hd.a0) {
             i10 = 3;
         }
         n2Var.getEditText().setTextAlignment(i10);
@@ -953,7 +953,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         this.D0.addView(this.G0, c8.ma.d(-1, 40.0f, 80, 52.0f, 0.0f, 52.0f, 0.0f));
         TextView textView = new TextView(context);
         this.R0 = textView;
-        textView.setText(gd.N0(2131747083, null).toUpperCase());
+        textView.setText(hd.N0(2131747083, null).toUpperCase());
         TextView textView2 = this.R0;
         int i10 = org.telegram.ui.ActionBar.m6.i6;
         c5 c5Var = this.q1;
@@ -1002,7 +1002,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         this.G0.addView(this.R0, c8.ma.l(1.0f, 0, -2));
         TextView textView3 = new TextView(context);
         this.S0 = textView3;
-        textView3.setText(gd.N0(2131747082, null).toUpperCase());
+        textView3.setText(hd.N0(2131747082, null).toUpperCase());
         org.telegram.ui.ActionBar.t6.Q(this.S0, org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i10, c5Var), 7, -1), null, org.telegram.ui.ActionBar.t6.M(i10), c5Var);
         this.S0.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
         this.S0.setOnClickListener(new View.OnClickListener(this) { // from class: hi.y3
@@ -1048,7 +1048,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         this.G0.addView(this.S0, c8.ma.l(1.0f, 0, -2));
         TextView textView4 = new TextView(context);
         this.T0 = textView4;
-        textView4.setText(gd.N0(2131747081, null).toUpperCase());
+        textView4.setText(hd.N0(2131747081, null).toUpperCase());
         org.telegram.ui.ActionBar.t6.Q(this.T0, org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i10, c5Var), 7, -1), null, org.telegram.ui.ActionBar.t6.M(i10), c5Var);
         this.T0.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
         this.T0.setTextColor(-1);
@@ -1368,31 +1368,31 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                 r14.setVisibility(z10 ? 1 : 0);
                 return;
             }
-            c20 c20Var = (c20) arrayList.get(i10);
-            byte b10 = c20Var.a;
+            d20 d20Var = (d20) arrayList.get(i10);
+            byte b10 = d20Var.a;
             if (b10 == 0) {
-                b5 k02 = k0(c20Var.C, c20Var.B);
-                if ((2 & c20Var.b) != 0) {
+                b5 k02 = k0(d20Var.C, d20Var.B);
+                if ((2 & d20Var.b) != 0) {
                     k02.r(z10);
                 }
                 ViewGroup.LayoutParams layoutParams = k02.getLayoutParams();
-                layoutParams.width = c20Var.q;
-                layoutParams.height = c20Var.r;
+                layoutParams.width = d20Var.q;
+                layoutParams.height = d20Var.r;
                 i7 = size;
                 jVar2 = k02;
             } else if (b10 == 1) {
                 tg.n2 l02 = l0(z10);
-                l02.setType(c20Var.b);
-                l02.setTypeface(c20Var.n);
-                l02.setBaseFontSize(c20Var.m);
-                SpannableString spannableString = new SpannableString(c20Var.j);
-                ?? r42 = c20Var.k;
+                l02.setType(d20Var.b);
+                l02.setTypeface(d20Var.n);
+                l02.setBaseFontSize(d20Var.m);
+                SpannableString spannableString = new SpannableString(d20Var.j);
+                ?? r42 = d20Var.k;
                 int size2 = r42.size();
                 for (?? r62 = z10; r62 < size2; r62++) {
-                    b20 b20Var = (b20) r42.get(r62);
-                    org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(b20Var.document_id, 1.0f, l02.getFontMetricsInt());
-                    int i11 = b20Var.offset;
-                    spannableString.setSpan(y5Var, i11, b20Var.length + i11, 33);
+                    c20 c20Var = (c20) r42.get(r62);
+                    org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(c20Var.document_id, 1.0f, l02.getFontMetricsInt());
+                    int i11 = c20Var.offset;
+                    spannableString.setSpan(y5Var, i11, c20Var.length + i11, 33);
                     size = size;
                 }
                 i7 = size;
@@ -1403,26 +1403,26 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                     }
                 }
                 l02.setText(m10);
-                D0(l02, c20Var.p);
+                D0(l02, d20Var.p);
                 sg.h1 swatch = l02.getSwatch();
-                swatch.a = c20Var.l;
+                swatch.a = d20Var.l;
                 l02.setSwatch(swatch);
                 jVar2 = l02;
             } else {
                 i7 = size;
                 if (b10 == 2) {
-                    tg.p1 h02 = h0(c20Var.j, false);
-                    h02.H0 = c20Var.u;
+                    tg.p1 h02 = h0(d20Var.j, false);
+                    h02.H0 = d20Var.u;
                     h02.C0 = false;
-                    if ((2 & c20Var.b) != 0) {
+                    if ((2 & d20Var.b) != 0) {
                         h02.r(false);
                     }
-                    if ((c20Var.b & 16) != 0) {
+                    if ((d20Var.b & 16) != 0) {
                         h02.t(false);
                     }
                     ViewGroup.LayoutParams layoutParams2 = h02.getLayoutParams();
-                    layoutParams2.width = c20Var.q;
-                    layoutParams2.height = c20Var.r;
+                    layoutParams2.width = d20Var.q;
+                    layoutParams2.height = d20Var.r;
                     jVar2 = h02;
                 } else {
                     if (b10 == 6) {
@@ -1435,44 +1435,44 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                         r14.addView(a5Var);
                         d0();
                         jVar = a5Var;
-                        if (c20Var.q > 0) {
+                        if (d20Var.q > 0) {
                             jVar = a5Var;
-                            if (c20Var.r > 0) {
+                            if (d20Var.r > 0) {
                                 ViewGroup.LayoutParams layoutParams3 = a5Var.getLayoutParams();
-                                layoutParams3.width = c20Var.q;
-                                layoutParams3.height = c20Var.r;
+                                layoutParams3.width = d20Var.q;
+                                layoutParams3.height = d20Var.r;
                                 jVar = a5Var;
                             }
                         }
                     } else {
                         f10 = 1.0f;
                         if (b10 == 3) {
-                            tg.o0 g02 = g0(c20Var.N, c20Var.M);
-                            int i12 = c20Var.l;
+                            tg.o0 g02 = g0(d20Var.N, d20Var.M);
+                            int i12 = d20Var.l;
                             if (i12 != 0) {
                                 g02.setColor(i12);
                             }
-                            g02.setType(c20Var.b);
+                            g02.setType(d20Var.b);
                             jVar = g02;
                         } else if (b10 == 8) {
-                            pb pbVar = c20Var.O;
+                            pb pbVar = d20Var.O;
                             if (pbVar == null) {
                                 i10++;
                                 size = i7;
                                 z10 = false;
                             } else {
                                 tg.o2 m0 = m0(pbVar);
-                                int i13 = c20Var.l;
+                                int i13 = d20Var.l;
                                 if (i13 != 0) {
                                     m0.setColor(i13);
                                 }
-                                m0.setType(c20Var.b);
+                                m0.setType(d20Var.b);
                                 jVar = m0;
                             }
                         } else if (b10 == 7) {
-                            tg.l0 f02 = f0(c20Var.W);
+                            tg.l0 f02 = f0(d20Var.W);
                             tg.j0 j0Var = f02.r0;
-                            int i14 = c20Var.l;
+                            int i14 = d20Var.l;
                             if (i14 != 0) {
                                 f02.setColor(i14);
                             }
@@ -1480,14 +1480,14 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                             int i15 = j0Var.h;
                             int i16 = j0Var.f;
                             if (e10) {
-                                j0Var.setPreviewType(c20Var.b);
+                                j0Var.setPreviewType(d20Var.b);
                             }
-                            byte b11 = c20Var.b;
+                            byte b11 = d20Var.b;
                             if (b11 == -1) {
                                 f02.setType(3);
                                 j0Var.d();
-                                c20Var.q = ((int) Math.ceil(j0Var.b0)) + i16 + i16;
-                                c20Var.r = ((int) Math.ceil(j0Var.c0)) + i15 + i15;
+                                d20Var.q = ((int) Math.ceil(j0Var.b0)) + i16 + i16;
+                                d20Var.r = ((int) Math.ceil(j0Var.c0)) + i15 + i15;
                                 PointF position = f02.getPosition();
                                 position.y = (this.C1 * 0.3f) + position.y;
                                 f02.setPosition(position);
@@ -1500,12 +1500,12 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                             }
                         } else if (b10 == 4) {
                             tg.s1 i02 = i0(false);
-                            i02.s(ch.p0.d(c20Var.M.reaction), false);
-                            if (c20Var.M.flipped) {
+                            i02.s(ch.p0.d(d20Var.M.reaction), false);
+                            if (d20Var.M.flipped) {
                                 i02.r(false);
                             }
                             jVar = i02;
-                            if (c20Var.M.dark) {
+                            if (d20Var.M.dark) {
                                 i02.q(false);
                                 jVar = i02;
                             }
@@ -1526,7 +1526,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                     iaVar.setHasRoundVideo(true);
                                 }
                                 jVar = j02;
-                                if ((c20Var.b & 2) != 0) {
+                                if ((d20Var.b & 2) != 0) {
                                     boolean z12 = !j02.s0;
                                     j02.s0 = z12;
                                     j02.t0.f(z12, true);
@@ -1539,11 +1539,11 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                             z10 = false;
                         }
                     }
-                    jVar.setX((c20Var.c * this.B1) - (((f10 - c20Var.v) * c20Var.q) / 2.0f));
-                    jVar.setY((c20Var.d * this.C1) - (((f10 - c20Var.v) * c20Var.r) / 2.0f));
-                    jVar.setPosition(new PointF((c20Var.q / 2.0f) + jVar.getX(), (c20Var.r / 2.0f) + jVar.getY()));
-                    jVar.setScale(c20Var.v);
-                    jVar.setRotation((float) (((-c20Var.e) / 3.141592653589793d) * 180.0d));
+                    jVar.setX((d20Var.c * this.B1) - (((f10 - d20Var.v) * d20Var.q) / 2.0f));
+                    jVar.setY((d20Var.d * this.C1) - (((f10 - d20Var.v) * d20Var.r) / 2.0f));
+                    jVar.setPosition(new PointF((d20Var.q / 2.0f) + jVar.getX(), (d20Var.r / 2.0f) + jVar.getY()));
+                    jVar.setScale(d20Var.v);
+                    jVar.setRotation((float) (((-d20Var.e) / 3.141592653589793d) * 180.0d));
                     i10++;
                     size = i7;
                     z10 = false;
@@ -1551,11 +1551,11 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
             }
             f10 = 1.0f;
             jVar = jVar2;
-            jVar.setX((c20Var.c * this.B1) - (((f10 - c20Var.v) * c20Var.q) / 2.0f));
-            jVar.setY((c20Var.d * this.C1) - (((f10 - c20Var.v) * c20Var.r) / 2.0f));
-            jVar.setPosition(new PointF((c20Var.q / 2.0f) + jVar.getX(), (c20Var.r / 2.0f) + jVar.getY()));
-            jVar.setScale(c20Var.v);
-            jVar.setRotation((float) (((-c20Var.e) / 3.141592653589793d) * 180.0d));
+            jVar.setX((d20Var.c * this.B1) - (((f10 - d20Var.v) * d20Var.q) / 2.0f));
+            jVar.setY((d20Var.d * this.C1) - (((f10 - d20Var.v) * d20Var.r) / 2.0f));
+            jVar.setPosition(new PointF((d20Var.q / 2.0f) + jVar.getX(), (d20Var.r / 2.0f) + jVar.getY()));
+            jVar.setScale(d20Var.v);
+            jVar.setRotation((float) (((-d20Var.e) / 3.141592653589793d) * 180.0d));
             i10++;
             size = i7;
             z10 = false;
@@ -1644,7 +1644,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
             boolean z10 = tyVar != null && tyVar.getVisibility() == 0;
             ty tyVar2 = this.Z1;
             ra raVar = this.w1;
-            if (tyVar2 != null && tyVar2.d1 != j10.t0) {
+            if (tyVar2 != null && tyVar2.d1 != k10.t0) {
                 raVar.removeView(tyVar2);
                 this.Z1 = null;
             }
@@ -1667,14 +1667,14 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                 if (org.telegram.messenger.g0.Q1()) {
                     this.f2 = org.telegram.messenger.g0.L(150.0f);
                 } else {
-                    this.f2 = mp.f1().getInt("kbd_height", org.telegram.messenger.g0.L(200.0f));
+                    this.f2 = np.f1().getInt("kbd_height", org.telegram.messenger.g0.L(200.0f));
                 }
             }
             if (this.g2 <= 0) {
                 if (org.telegram.messenger.g0.Q1()) {
                     this.g2 = org.telegram.messenger.g0.L(150.0f);
                 } else {
-                    this.g2 = mp.f1().getInt("kbd_height_land3", org.telegram.messenger.g0.L(200.0f));
+                    this.g2 = np.f1().getInt("kbd_height_land3", org.telegram.messenger.g0.L(200.0f));
                 }
             }
             Point point = org.telegram.messenger.g0.q;
@@ -1729,7 +1729,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
     }
 
     public final void H0(tg.l0 l0Var) {
-        k7 k7Var = new k7(getContext(), this.q1, this.Q1, new ai.x1(18, this, l0Var));
+        k7 k7Var = new k7(getContext(), this.q1, this.Q1, new ai.y1(18, this, l0Var));
         if (l0Var != null) {
             tg.i0 i0Var = l0Var.v0;
             k7Var.Y1 = true;
@@ -1749,7 +1749,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                 k7Var.j2 = true;
                 k7Var.k2 = false;
             }
-            String N0 = gd.N0(2131744400, null);
+            String N0 = hd.N0(2131744398, null);
             e eVar = k7Var.X1;
             eVar.i(N0, false, true);
             di.f0 f0Var = k7Var.T1;
@@ -1764,10 +1764,10 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         w0(true);
     }
 
-    public final void I0(tg.o0 o0Var, q10 q10Var) {
+    public final void I0(tg.o0 o0Var, r10 r10Var) {
         TLRPC.MessageMedia messageMedia;
         TLRPC.GeoPoint geoPoint;
-        ui uiVar = new ui(getContext(), new z4(this, q10Var), false, true, false, this.q1);
+        ui uiVar = new ui(getContext(), new z4(this, r10Var), false, true, false, this.q1);
         uiVar.X3 = new w7.s(10);
         uh uhVar = uiVar.v3;
         if (o0Var != null && (messageMedia = o0Var.v0) != null && (geoPoint = messageMedia.geo) != null) {
@@ -1864,10 +1864,10 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         if (i7 > org.telegram.messenger.g0.L(50.0f) && this.b2 && !org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1()) {
             if (z10) {
                 this.g2 = i7;
-                mp.f1().edit().putInt("kbd_height_land3", this.g2).commit();
+                np.f1().edit().putInt("kbd_height_land3", this.g2).commit();
             } else {
                 this.f2 = i7;
-                mp.f1().edit().putInt("kbd_height", this.f2).commit();
+                np.f1().edit().putInt("kbd_height", this.f2).commit();
             }
         }
         boolean z12 = this.a2;
@@ -1938,7 +1938,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.L1, z10 ? 1.0f : 0.0f);
                 this.J1.setTransitionProgress(this.L1);
                 ofFloat.addUpdateListener(new c4(this, 2));
-                ofFloat.addListener(new bi.h7(12, this, z10));
+                ofFloat.addListener(new bi.g7(12, this, z10));
                 ofFloat.setDuration(200L);
                 ofFloat.setInterpolator(nr.g);
                 ofFloat.start();
@@ -1975,15 +1975,15 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
     public final PointF N0(tg.j jVar) {
         float f10;
         float f11;
-        we weVar = this.p0;
-        float f12 = weVar != null ? 200.0f / weVar.c : 200.0f;
+        xe xeVar = this.p0;
+        float f12 = xeVar != null ? 200.0f / xeVar.c : 200.0f;
         float f13 = 0.2f;
         if (jVar != null) {
             PointF position = jVar.getPosition();
             float min = Math.min(jVar.getHeight(), jVar.getWidth()) * 0.2f;
             return new PointF(position.x + min, position.y + min);
         }
-        float f14 = weVar != null ? 100.0f / weVar.c : 100.0f;
+        float f14 = xeVar != null ? 100.0f / xeVar.c : 100.0f;
         PointF c02 = c0();
         int i7 = 0;
         while (i7 < 10) {
@@ -2261,20 +2261,20 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        we weVar;
-        if ((view == this.y0 || view == this.z0 || view == this.B0 || view == this.A0) && (weVar = this.p0) != null) {
+        xe xeVar;
+        if ((view == this.y0 || view == this.z0 || view == this.B0 || view == this.A0) && (xeVar = this.p0) != null) {
             canvas.save();
             r1 = this.x0 ? 0 : org.telegram.messenger.g0.m;
             int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + r1;
             int measuredWidth = view.getMeasuredWidth();
             int measuredHeight = view.getMeasuredHeight();
-            int i7 = weVar.k;
+            int i7 = xeVar.k;
             if (i7 != 90 && i7 != 270) {
                 measuredHeight = measuredWidth;
                 measuredWidth = measuredHeight;
             }
-            int scaleX = (int) ((view.getScaleX() * (measuredHeight * weVar.e)) / weVar.c);
-            int scaleY = (int) ((view.getScaleY() * (measuredWidth * weVar.f)) / weVar.c);
+            int scaleX = (int) ((view.getScaleX() * (measuredHeight * xeVar.e)) / xeVar.c);
+            int scaleY = (int) ((view.getScaleY() * (measuredWidth * xeVar.f)) / xeVar.c);
             float ceil = ((float) Math.ceil((getMeasuredWidth() - scaleX) / 2.0f)) + 0.0f;
             float additionalBottom = (((getAdditionalBottom() + ((getMeasuredHeight() - currentActionBarHeight) - org.telegram.messenger.g0.L(48.0f))) - scaleY) / 2.0f) + org.telegram.messenger.g0.L(8.0f) + r1 + 0.0f;
             canvas.clipRect(Math.max(0.0f, ceil), Math.max(0.0f, additionalBottom), Math.min(ceil + scaleX, getMeasuredWidth()), Math.min(getMeasuredHeight(), additionalBottom + scaleY));
@@ -2331,10 +2331,10 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         l0Var.setMaxWidth(L);
         f5Var.addView(l0Var, c8.ma.c(-2.0f, -2));
         d0();
-        we weVar = this.p0;
-        if (weVar != null) {
-            l0Var.j(1.0f / weVar.c);
-            l0Var.f(-(weVar.k + weVar.d));
+        xe xeVar = this.p0;
+        if (xeVar != null) {
+            l0Var.j(1.0f / xeVar.c);
+            l0Var.f(-(xeVar.k + xeVar.d));
         }
         return l0Var;
     }
@@ -2362,10 +2362,10 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         o0Var.setMaxWidth(L);
         f5Var.addView(o0Var, c8.ma.c(-2.0f, -2));
         d0();
-        we weVar = this.p0;
-        if (weVar != null) {
-            o0Var.j(1.0f / weVar.c);
-            o0Var.f(-(weVar.k + weVar.d));
+        xe xeVar = this.p0;
+        if (xeVar != null) {
+            o0Var.j(1.0f / xeVar.c);
+            o0Var.f(-(xeVar.k + xeVar.d));
         }
         return o0Var;
     }
@@ -2391,9 +2391,9 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
     }
 
     public float getCropRotation() {
-        we weVar = this.p0;
-        if (weVar != null) {
-            return weVar.d + weVar.k;
+        xe xeVar = this.p0;
+        if (xeVar != null) {
+            return xeVar.d + xeVar.k;
         }
         return 0.0f;
     }
@@ -2586,7 +2586,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         s1Var.r0 = yt0Var;
         d6Var2.e(true, 1.0f);
         d6Var.e(true, 1.0f);
-        ArrayList arrayList = ri.d0(j10.t0).h;
+        ArrayList arrayList = si.d0(k10.t0).h;
         ch.g0 g0Var = s1Var.u0;
         int i10 = 0;
         while (true) {
@@ -2643,10 +2643,10 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         for (int i7 = 0; i7 < document.attributes.size() && !(document.attributes.get(i7) instanceof TLRPC.TL_documentAttributeSticker); i7++) {
         }
         float f11 = 0.75f;
-        we weVar = this.p0;
-        if (weVar != null) {
-            f10 = -(weVar.k + weVar.d);
-            f11 = 0.75f / weVar.c;
+        xe xeVar = this.p0;
+        if (xeVar != null) {
+            f10 = -(xeVar.k + xeVar.d);
+            f11 = 0.75f / xeVar.c;
         } else {
             f10 = 0.0f;
         }
@@ -2654,7 +2654,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         Context context = getContext();
         float floor = (float) Math.floor(getPaintingSize().a * 0.5d);
         b5 b5Var = new b5(this, context, j5Var.a, j5Var.c, j5Var.b, new yt0(floor, floor), document, obj);
-        boolean C4 = fj.C4(document);
+        boolean C4 = gj.C4(document);
         ImageReceiver imageReceiver = b5Var.y0;
         if (C4) {
             imageReceiver.p1 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
@@ -2690,10 +2690,10 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         n2Var.setType(sg.k0.e(i7).h);
         f5Var.addView(n2Var, c8.ma.c(-2.0f, -2));
         d0();
-        we weVar = this.p0;
-        if (weVar != null) {
-            n2Var.j(1.0f / weVar.c);
-            n2Var.f(-(weVar.k + weVar.d));
+        xe xeVar = this.p0;
+        if (xeVar != null) {
+            n2Var.j(1.0f / xeVar.c);
+            n2Var.f(-(xeVar.k + xeVar.d));
         }
         if (z10) {
             y0(n2Var);
@@ -2733,10 +2733,10 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
         o2Var.setMaxWidth(L);
         f5Var.addView(o2Var, c8.ma.c(-2.0f, -2));
         d0();
-        we weVar = this.p0;
-        if (weVar != null) {
-            o2Var.j(1.0f / weVar.c);
-            o2Var.f(-(weVar.k + weVar.d));
+        xe xeVar = this.p0;
+        if (xeVar != null) {
+            o2Var.j(1.0f / xeVar.c);
+            o2Var.f(-(xeVar.k + xeVar.d));
         }
         return o2Var;
     }
@@ -2932,12 +2932,12 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                         if (childAt instanceof tg.j) {
                             tg.j jVar = (tg.j) childAt;
                             jVar.getPosition();
-                            c20 c20Var = new c20();
+                            d20 d20Var = new d20();
                             if (arrayList != null) {
                                 boolean z21 = jVar instanceof tg.n2;
                                 int i16 = k5Var.p1;
                                 if (z21) {
-                                    c20Var.a = b11;
+                                    d20Var.a = b11;
                                     tg.n2 n2Var = (tg.n2) jVar;
                                     CharSequence text = n2Var.getText();
                                     if (text instanceof Spanned) {
@@ -2957,25 +2957,25 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                 if (document != null) {
                                                     org.telegram.ui.Components.p5.g(i16).e(document);
                                                 }
-                                                b20 b20Var = new b20();
+                                                c20 c20Var = new c20();
                                                 int i19 = childCount;
                                                 int i20 = i15;
-                                                b20Var.document_id = y5Var.getDocumentId();
-                                                b20Var.document = document;
-                                                b20Var.offset = spanned2.getSpanStart(y5Var);
-                                                b20Var.length = spanned2.getSpanEnd(y5Var) - b20Var.offset;
+                                                c20Var.document_id = y5Var.getDocumentId();
+                                                c20Var.document = document;
+                                                c20Var.offset = spanned2.getSpanStart(y5Var);
+                                                c20Var.length = spanned2.getSpanEnd(y5Var) - c20Var.offset;
                                                 org.telegram.messenger.w7.G(i16);
-                                                b20Var.a = org.telegram.messenger.w7.J(document, null, true, true).getAbsolutePath();
+                                                c20Var.a = org.telegram.messenger.w7.J(document, null, true, true).getAbsolutePath();
                                                 int i21 = 0;
                                                 while (document != null) {
                                                     ArrayList<TLRPC.PhotoSize> arrayList2 = document.thumbs;
-                                                    if (arrayList2 == null || arrayList2.isEmpty() || new File(b20Var.a).exists()) {
+                                                    if (arrayList2 == null || arrayList2.isEmpty() || new File(c20Var.a).exists()) {
                                                         break;
                                                     }
                                                     org.telegram.messenger.w7.G(i16);
                                                     spanned = spanned2;
                                                     z20 = true;
-                                                    b20Var.a = org.telegram.messenger.w7.J(document.thumbs.get(i21), null, true, true).getAbsolutePath();
+                                                    c20Var.a = org.telegram.messenger.w7.J(document.thumbs.get(i21), null, true, true).getAbsolutePath();
                                                     i21++;
                                                     if (i21 >= document.thumbs.size()) {
                                                         break;
@@ -2984,14 +2984,14 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                 }
                                                 spanned = spanned2;
                                                 z20 = true;
-                                                boolean K2 = fj.K2(b20Var.document, z20);
-                                                if (K2 || u0(b20Var.document)) {
-                                                    b20Var.c = (byte) (b20Var.c | (K2 ? (byte) 1 : (byte) 4));
+                                                boolean K2 = gj.K2(c20Var.document, z20);
+                                                if (K2 || u0(c20Var.document)) {
+                                                    c20Var.c = (byte) (c20Var.c | (K2 ? (byte) 1 : (byte) 4));
                                                 }
-                                                if (fj.C4(b20Var.document)) {
-                                                    b20Var.c = (byte) (b20Var.c | 8);
+                                                if (gj.C4(c20Var.document)) {
+                                                    c20Var.c = (byte) (c20Var.c | 8);
                                                 }
-                                                c20Var.k.add(b20Var);
+                                                d20Var.k.add(c20Var);
                                                 if (document != null) {
                                                     BigInteger valueOf = BigInteger.valueOf(5000L);
                                                     k5Var.Q0 = k5Var.Q0.multiply(valueOf).divide(k5Var.Q0.gcd(valueOf));
@@ -3008,138 +3008,138 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                     }
                                     i11 = childCount;
                                     i12 = i15;
-                                    c20Var.j = text.toString();
-                                    c20Var.b = (byte) n2Var.getType();
-                                    c20Var.l = n2Var.getSwatch().a;
-                                    c20Var.m = n2Var.getTextSize();
-                                    c20Var.n = n2Var.getTypeface();
-                                    c20Var.p = n2Var.getAlign();
+                                    d20Var.j = text.toString();
+                                    d20Var.b = (byte) n2Var.getType();
+                                    d20Var.l = n2Var.getSwatch().a;
+                                    d20Var.m = n2Var.getTextSize();
+                                    d20Var.n = n2Var.getTypeface();
+                                    d20Var.p = n2Var.getAlign();
                                 } else {
                                     f5Var = f5Var2;
                                     i11 = childCount;
                                     i12 = i15;
                                     if (jVar instanceof tg.g2) {
-                                        c20Var.a = (byte) 0;
+                                        d20Var.a = (byte) 0;
                                         tg.g2 g2Var = (tg.g2) jVar;
                                         yt0 baseSize = g2Var.getBaseSize();
-                                        c20Var.f = baseSize.a;
-                                        c20Var.g = baseSize.b;
-                                        c20Var.B = g2Var.getSticker();
-                                        c20Var.C = g2Var.getParentObject();
+                                        d20Var.f = baseSize.a;
+                                        d20Var.g = baseSize.b;
+                                        d20Var.B = g2Var.getSticker();
+                                        d20Var.C = g2Var.getParentObject();
                                         TLRPC.Document sticker = g2Var.getSticker();
-                                        org.telegram.messenger.w7.G(j10.t0);
-                                        c20Var.j = org.telegram.messenger.w7.J(sticker, null, true, true).getAbsolutePath();
-                                        if (fj.K2(sticker, true) || u0(sticker)) {
-                                            boolean K22 = fj.K2(sticker, true);
-                                            c20Var.b = (byte) (c20Var.b | (K22 ? (byte) 1 : (byte) 4));
+                                        org.telegram.messenger.w7.G(k10.t0);
+                                        d20Var.j = org.telegram.messenger.w7.J(sticker, null, true, true).getAbsolutePath();
+                                        if (gj.K2(sticker, true) || u0(sticker)) {
+                                            boolean K22 = gj.K2(sticker, true);
+                                            d20Var.b = (byte) (d20Var.b | (K22 ? (byte) 1 : (byte) 4));
                                             r21 = (K22 || u0(sticker)) ? g2Var.getDuration() : 5000L;
                                             if (r21 != 0) {
                                                 BigInteger valueOf2 = BigInteger.valueOf(r21);
                                                 k5Var.Q0 = k5Var.Q0.multiply(valueOf2).divide(k5Var.Q0.gcd(valueOf2));
                                             }
                                         }
-                                        if (fj.C4(sticker)) {
-                                            c20Var.l = -1;
-                                            c20Var.b = (byte) (c20Var.b | 8);
+                                        if (gj.C4(sticker)) {
+                                            d20Var.l = -1;
+                                            d20Var.b = (byte) (d20Var.b | 8);
                                         }
                                         if (g2Var.u0) {
-                                            c20Var.b = (byte) (c20Var.b | 2);
+                                            d20Var.b = (byte) (d20Var.b | 2);
                                         }
                                     } else if (jVar instanceof tg.p1) {
                                         tg.p1 p1Var = (tg.p1) jVar;
-                                        c20Var.a = (byte) 2;
+                                        d20Var.a = (byte) 2;
                                         yt0 baseSize2 = p1Var.getBaseSize();
-                                        c20Var.f = baseSize2.a;
-                                        c20Var.g = baseSize2.b;
-                                        c20Var.j = p1Var.q(i16);
-                                        c20Var.u = p1Var.H0;
+                                        d20Var.f = baseSize2.a;
+                                        d20Var.g = baseSize2.b;
+                                        d20Var.j = p1Var.q(i16);
+                                        d20Var.u = p1Var.H0;
                                         if (p1Var.u0) {
-                                            c20Var.b = (byte) (c20Var.b | 2);
+                                            d20Var.b = (byte) (d20Var.b | 2);
                                         }
                                     } else if (jVar instanceof tg.o0) {
                                         tg.o0 o0Var = (tg.o0) jVar;
                                         tg.n0 n0Var = o0Var.r0;
-                                        c20Var.a = (byte) 3;
-                                        c20Var.b = (byte) o0Var.getType();
-                                        c20Var.f = n0Var.getWidth();
-                                        c20Var.g = n0Var.getHeight();
-                                        c20Var.j = n0Var.getText();
-                                        c20Var.l = o0Var.s0 ? o0Var.getColor() : 0;
-                                        c20Var.P = n0Var.E;
-                                        c20Var.N = o0Var.v0;
+                                        d20Var.a = (byte) 3;
+                                        d20Var.b = (byte) o0Var.getType();
+                                        d20Var.f = n0Var.getWidth();
+                                        d20Var.g = n0Var.getHeight();
+                                        d20Var.j = n0Var.getText();
+                                        d20Var.l = o0Var.s0 ? o0Var.getColor() : 0;
+                                        d20Var.P = n0Var.E;
+                                        d20Var.N = o0Var.v0;
                                         TL_stories.MediaArea mediaArea2 = o0Var.w0;
-                                        c20Var.M = mediaArea2;
+                                        d20Var.M = mediaArea2;
                                         mediaArea2.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                         TLRPC.Document codeEmojiDocument = n0Var.getCodeEmojiDocument();
                                         if (codeEmojiDocument != null) {
-                                            b20 b20Var2 = new b20();
-                                            b20Var2.document_id = codeEmojiDocument.id;
-                                            b20Var2.document = codeEmojiDocument;
+                                            c20 c20Var2 = new c20();
+                                            c20Var2.document_id = codeEmojiDocument.id;
+                                            c20Var2.document = codeEmojiDocument;
                                             org.telegram.messenger.w7.G(i16);
-                                            b20Var2.a = org.telegram.messenger.w7.J(codeEmojiDocument, null, true, true).getAbsolutePath();
-                                            boolean K23 = fj.K2(b20Var2.document, true);
-                                            if (K23 || u0(b20Var2.document)) {
-                                                b20Var2.c = (byte) (b20Var2.c | (K23 ? (byte) 1 : (byte) 4));
+                                            c20Var2.a = org.telegram.messenger.w7.J(codeEmojiDocument, null, true, true).getAbsolutePath();
+                                            boolean K23 = gj.K2(c20Var2.document, true);
+                                            if (K23 || u0(c20Var2.document)) {
+                                                c20Var2.c = (byte) (c20Var2.c | (K23 ? (byte) 1 : (byte) 4));
                                             }
-                                            c20Var.k.add(b20Var2);
+                                            d20Var.k.add(c20Var2);
                                         }
                                     } else if (jVar instanceof tg.o2) {
                                         tg.o2 o2Var = (tg.o2) jVar;
                                         tg.n0 n0Var2 = o2Var.r0;
-                                        c20Var.a = (byte) 8;
-                                        c20Var.b = (byte) o2Var.getType();
-                                        c20Var.f = n0Var2.getWidth();
-                                        c20Var.g = n0Var2.getHeight();
-                                        c20Var.j = n0Var2.getText();
-                                        c20Var.l = o2Var.s0 ? o2Var.getColor() : 0;
-                                        c20Var.P = n0Var2.E;
-                                        c20Var.O = o2Var.v0;
+                                        d20Var.a = (byte) 8;
+                                        d20Var.b = (byte) o2Var.getType();
+                                        d20Var.f = n0Var2.getWidth();
+                                        d20Var.g = n0Var2.getHeight();
+                                        d20Var.j = n0Var2.getText();
+                                        d20Var.l = o2Var.s0 ? o2Var.getColor() : 0;
+                                        d20Var.P = n0Var2.E;
+                                        d20Var.O = o2Var.v0;
                                         TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = new TL_stories.TL_mediaAreaWeather();
                                         tL_mediaAreaWeather.emoji = o2Var.v0.c;
                                         tL_mediaAreaWeather.temperature_c = Math.round(r4.d);
                                         tL_mediaAreaWeather.color = n0Var2.f.getColor();
-                                        c20Var.M = tL_mediaAreaWeather;
+                                        d20Var.M = tL_mediaAreaWeather;
                                         tL_mediaAreaWeather.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                         TLRPC.Document codeEmojiDocument2 = n0Var2.getCodeEmojiDocument();
                                         if (codeEmojiDocument2 != null) {
-                                            b20 b20Var3 = new b20();
-                                            b20Var3.document_id = codeEmojiDocument2.id;
-                                            b20Var3.document = codeEmojiDocument2;
+                                            c20 c20Var3 = new c20();
+                                            c20Var3.document_id = codeEmojiDocument2.id;
+                                            c20Var3.document = codeEmojiDocument2;
                                             org.telegram.messenger.w7.G(i16);
-                                            b20Var3.a = org.telegram.messenger.w7.J(codeEmojiDocument2, null, true, true).getAbsolutePath();
-                                            boolean K24 = fj.K2(b20Var3.document, true);
-                                            if (K24 || u0(b20Var3.document)) {
-                                                b20Var3.c = (byte) (b20Var3.c | (K24 ? (byte) 1 : (byte) 4));
+                                            c20Var3.a = org.telegram.messenger.w7.J(codeEmojiDocument2, null, true, true).getAbsolutePath();
+                                            boolean K24 = gj.K2(c20Var3.document, true);
+                                            if (K24 || u0(c20Var3.document)) {
+                                                c20Var3.c = (byte) (c20Var3.c | (K24 ? (byte) 1 : (byte) 4));
                                             }
-                                            c20Var.k.add(b20Var3);
+                                            d20Var.k.add(c20Var3);
                                         }
                                         view = childAt;
                                         z16 = false;
                                         z17 = false;
                                         imageReceiver = null;
-                                        arrayList.add(c20Var);
+                                        arrayList.add(d20Var);
                                         scaleX = view.getScaleX();
                                         float scaleY = view.getScaleY();
                                         float x10 = view.getX();
                                         float y10 = view.getY();
-                                        c20Var.q = view.getWidth();
-                                        c20Var.r = view.getHeight();
-                                        c20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
-                                        c20Var.g = (view.getHeight() * scaleY) / f5Var.getMeasuredHeight();
-                                        c20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x10) / f5Var.getMeasuredWidth();
-                                        c20Var.d = ((((1.0f - scaleY) * view.getHeight()) / 2.0f) + y10) / f5Var.getMeasuredHeight();
-                                        c20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                        c20Var.y = ((view.getWidth() / 2.0f) + x10) / f5Var.getMeasuredWidth();
-                                        c20Var.z = ((view.getHeight() / 2.0f) + y10) / f5Var.getMeasuredHeight();
-                                        c20Var.w = c20Var.q / f5Var.getMeasuredWidth();
-                                        c20Var.x = c20Var.r / f5Var.getMeasuredHeight();
-                                        c20Var.v = scaleX;
+                                        d20Var.q = view.getWidth();
+                                        d20Var.r = view.getHeight();
+                                        d20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
+                                        d20Var.g = (view.getHeight() * scaleY) / f5Var.getMeasuredHeight();
+                                        d20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x10) / f5Var.getMeasuredWidth();
+                                        d20Var.d = ((((1.0f - scaleY) * view.getHeight()) / 2.0f) + y10) / f5Var.getMeasuredHeight();
+                                        d20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                        d20Var.y = ((view.getWidth() / 2.0f) + x10) / f5Var.getMeasuredWidth();
+                                        d20Var.z = ((view.getHeight() / 2.0f) + y10) / f5Var.getMeasuredHeight();
+                                        d20Var.w = d20Var.q / f5Var.getMeasuredWidth();
+                                        d20Var.x = d20Var.r / f5Var.getMeasuredHeight();
+                                        d20Var.v = scaleX;
                                         if (jVar instanceof tg.v0) {
                                             z18 = z16;
                                             if (jVar instanceof tg.g2) {
                                                 ImageReceiver imageReceiver5 = ((tg.g2) jVar).y0;
                                                 RectF rectF = imageReceiver5.Q0;
-                                                if (imageReceiver5.V % ks.K2 != 0) {
+                                                if (imageReceiver5.V % ls.K2 != 0) {
                                                     width = rectF.height();
                                                     height = rectF.width();
                                                 } else {
@@ -3147,49 +3147,49 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                     height = rectF.height();
                                                 }
                                                 float f10 = width / height;
-                                                float f11 = (c20Var.f / 2.0f) + c20Var.c;
-                                                float f12 = (c20Var.g / 2.0f) + c20Var.d;
+                                                float f11 = (d20Var.f / 2.0f) + d20Var.c;
+                                                float f12 = (d20Var.g / 2.0f) + d20Var.d;
                                                 float measuredWidth = f5Var.getMeasuredWidth() / f5Var.getMeasuredHeight();
                                                 if (f10 > 1.0f) {
-                                                    float f13 = (c20Var.f * measuredWidth) / f10;
-                                                    c20Var.g = f13;
-                                                    c20Var.r = (int) (c20Var.q / f10);
-                                                    c20Var.d = f12 - (f13 / 2.0f);
+                                                    float f13 = (d20Var.f * measuredWidth) / f10;
+                                                    d20Var.g = f13;
+                                                    d20Var.r = (int) (d20Var.q / f10);
+                                                    d20Var.d = f12 - (f13 / 2.0f);
                                                 } else if (f10 < 1.0f) {
-                                                    float f14 = (c20Var.g / measuredWidth) * f10;
-                                                    c20Var.f = f14;
-                                                    c20Var.q = (int) (c20Var.r * f10);
-                                                    c20Var.c = f11 - (f14 / 2.0f);
+                                                    float f14 = (d20Var.g / measuredWidth) * f10;
+                                                    d20Var.f = f14;
+                                                    d20Var.q = (int) (d20Var.r * f10);
+                                                    d20Var.c = f11 - (f14 / 2.0f);
                                                 }
                                             } else {
-                                                TL_stories.MediaArea mediaArea3 = c20Var.M;
+                                                TL_stories.MediaArea mediaArea3 = d20Var.M;
                                                 if (mediaArea3 != null && (((z19 = jVar instanceof tg.o0)) || (jVar instanceof tg.o2) || (jVar instanceof tg.l0) || (jVar instanceof tg.s1))) {
                                                     TL_stories.MediaAreaCoordinates mediaAreaCoordinates2 = mediaArea3.coordinates;
-                                                    float f15 = c20Var.c;
-                                                    float f16 = c20Var.f;
+                                                    float f15 = d20Var.c;
+                                                    float f16 = d20Var.f;
                                                     mediaAreaCoordinates2.x = ((f16 / 2.0f) + f15) * 100.0f;
-                                                    mediaAreaCoordinates2.y = ((c20Var.g / 2.0f) + c20Var.d) * 100.0f;
+                                                    mediaAreaCoordinates2.y = ((d20Var.g / 2.0f) + d20Var.d) * 100.0f;
                                                     if (z19) {
                                                         tg.n0 n0Var3 = ((tg.o0) jVar).r0;
-                                                        mediaAreaCoordinates2.w = n10.y(n0Var3.J * 2 * scaleX, f5Var.getMeasuredWidth(), f16, 100.0f);
-                                                        c20Var.M.coordinates.h = n10.y(n0Var3.K * 2 * scaleY, f5Var.getMeasuredHeight(), c20Var.g, 100.0f);
+                                                        mediaAreaCoordinates2.w = o10.y(n0Var3.J * 2 * scaleX, f5Var.getMeasuredWidth(), f16, 100.0f);
+                                                        d20Var.M.coordinates.h = o10.y(n0Var3.K * 2 * scaleY, f5Var.getMeasuredHeight(), d20Var.g, 100.0f);
                                                     } else if (jVar instanceof tg.o2) {
                                                         tg.n0 n0Var4 = ((tg.o2) jVar).r0;
-                                                        mediaAreaCoordinates2.w = n10.y(n0Var4.J * 2 * scaleX, f5Var.getMeasuredWidth(), f16, 100.0f);
-                                                        c20Var.M.coordinates.h = n10.y(n0Var4.K * 2 * scaleY, f5Var.getMeasuredHeight(), c20Var.g, 100.0f);
+                                                        mediaAreaCoordinates2.w = o10.y(n0Var4.J * 2 * scaleX, f5Var.getMeasuredWidth(), f16, 100.0f);
+                                                        d20Var.M.coordinates.h = o10.y(n0Var4.K * 2 * scaleY, f5Var.getMeasuredHeight(), d20Var.g, 100.0f);
                                                     } else if (jVar instanceof tg.l0) {
                                                         tg.j0 j0Var = ((tg.l0) jVar).r0;
-                                                        mediaAreaCoordinates2.w = n10.y(j0Var.f * 2 * scaleX, f5Var.getMeasuredWidth(), f16, 100.0f);
-                                                        c20Var.M.coordinates.h = n10.y(j0Var.h * 2 * scaleY, f5Var.getMeasuredHeight(), c20Var.g, 100.0f);
+                                                        mediaAreaCoordinates2.w = o10.y(j0Var.f * 2 * scaleX, f5Var.getMeasuredWidth(), f16, 100.0f);
+                                                        d20Var.M.coordinates.h = o10.y(j0Var.h * 2 * scaleY, f5Var.getMeasuredHeight(), d20Var.g, 100.0f);
                                                     } else if (jVar instanceof tg.s1) {
                                                         tg.s1 s1Var = (tg.s1) jVar;
                                                         float padding = ((s1Var.getPadding() * 2) * scaleX) / f5Var.getMeasuredWidth();
                                                         float padding2 = ((s1Var.getPadding() * 2) * scaleX) / f5Var.getMeasuredHeight();
-                                                        TL_stories.MediaAreaCoordinates mediaAreaCoordinates3 = c20Var.M.coordinates;
-                                                        mediaAreaCoordinates3.w = (c20Var.f - padding) * 100.0f;
-                                                        mediaAreaCoordinates3.h = (c20Var.g - padding2) * 100.0f;
+                                                        TL_stories.MediaAreaCoordinates mediaAreaCoordinates3 = d20Var.M.coordinates;
+                                                        mediaAreaCoordinates3.w = (d20Var.f - padding) * 100.0f;
+                                                        mediaAreaCoordinates3.h = (d20Var.g - padding2) * 100.0f;
                                                     }
-                                                    c20Var.M.coordinates.rotation = ((-c20Var.e) / 3.141592653589793d) * 180.0d;
+                                                    d20Var.M.coordinates.rotation = ((-d20Var.e) / 3.141592653589793d) * 180.0d;
                                                     if (z19) {
                                                         radius = ((tg.o0) jVar).r0.getRadius();
                                                     } else if (jVar instanceof tg.o2) {
@@ -3210,14 +3210,14 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                             double r10 = v0Var3.r(rectF2);
                                             rectF2.offset(n4Var2.getX(), n4Var2.getY());
                                             rectF2.offset(q0Var.getX(), q0Var.getY());
-                                            c20Var.M.coordinates.x = (((rectF2.centerX() * scaleX) + n10.w(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / f5Var.getMeasuredWidth()) * 100.0f;
-                                            c20Var.M.coordinates.y = (((rectF2.centerY() * scaleY) + n10.w(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y10)) / f5Var.getMeasuredHeight()) * 100.0f;
-                                            c20Var.M.coordinates.w = ((rectF2.width() * scaleX) / f5Var.getMeasuredWidth()) * 100.0f;
-                                            c20Var.M.coordinates.h = ((rectF2.height() * scaleY) / f5Var.getMeasuredHeight()) * 100.0f;
-                                            c20Var.M.coordinates.rotation = ((-c20Var.e) / 3.141592653589793d) * 180.0d;
+                                            d20Var.M.coordinates.x = (((rectF2.centerX() * scaleX) + o10.w(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / f5Var.getMeasuredWidth()) * 100.0f;
+                                            d20Var.M.coordinates.y = (((rectF2.centerY() * scaleY) + o10.w(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y10)) / f5Var.getMeasuredHeight()) * 100.0f;
+                                            d20Var.M.coordinates.w = ((rectF2.width() * scaleX) / f5Var.getMeasuredWidth()) * 100.0f;
+                                            d20Var.M.coordinates.h = ((rectF2.height() * scaleY) / f5Var.getMeasuredHeight()) * 100.0f;
+                                            d20Var.M.coordinates.rotation = ((-d20Var.e) / 3.141592653589793d) * 180.0d;
                                             d = r10;
                                         }
-                                        mediaArea = c20Var.M;
+                                        mediaArea = d20Var.M;
                                         if (mediaArea != null && (mediaAreaCoordinates = mediaArea.coordinates) != null && d > 0.0d) {
                                             mediaAreaCoordinates.flags |= 1;
                                             mediaAreaCoordinates.radius = ((scaleX * d) / view.getWidth()) * 100.0d;
@@ -3228,40 +3228,40 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                         if (jVar instanceof tg.l0) {
                                             tg.l0 l0Var = (tg.l0) jVar;
                                             tg.j0 j0Var2 = l0Var.r0;
-                                            c20Var.a = (byte) 7;
+                                            d20Var.a = (byte) 7;
                                             if (j0Var2.e()) {
-                                                c20Var.b = (byte) j0Var2.getPreviewType();
+                                                d20Var.b = (byte) j0Var2.getPreviewType();
                                             } else {
-                                                c20Var.b = (byte) l0Var.getType();
+                                                d20Var.b = (byte) l0Var.getType();
                                             }
-                                            c20Var.f = j0Var2.getWidth();
-                                            c20Var.g = j0Var2.getHeight();
-                                            c20Var.l = l0Var.u0 ? l0Var.getColor() : 0;
-                                            c20Var.P = j0Var2.e;
-                                            c20Var.W = l0Var.v0;
+                                            d20Var.f = j0Var2.getWidth();
+                                            d20Var.g = j0Var2.getHeight();
+                                            d20Var.l = l0Var.u0 ? l0Var.getColor() : 0;
+                                            d20Var.P = j0Var2.e;
+                                            d20Var.W = l0Var.v0;
                                             if (j0Var2.S) {
                                                 ImageReceiver imageReceiver6 = j0Var2.U;
                                                 if (j0Var2.S && imageReceiver6.J() && imageReceiver6.n() != null) {
-                                                    ec.D().O(new BitmapDrawable(imageReceiver6.n()), imageReceiver6.R, false);
+                                                    fc.D().O(new BitmapDrawable(imageReceiver6.n()), imageReceiver6.R, false);
                                                 }
-                                                tg.i0 i0Var = c20Var.W;
+                                                tg.i0 i0Var = d20Var.W;
                                                 i0Var.a |= 4;
                                                 i0Var.i = j0Var2.getPhotoSide();
                                             }
                                             TL_stories.TL_mediaAreaUrl tL_mediaAreaUrl = new TL_stories.TL_mediaAreaUrl();
-                                            c20Var.M = tL_mediaAreaUrl;
+                                            d20Var.M = tL_mediaAreaUrl;
                                             tg.i0 i0Var2 = l0Var.v0;
                                             if (i0Var2 != null) {
                                                 TLRPC.WebPage webPage = i0Var2.d;
                                                 tL_mediaAreaUrl.url = (webPage == null || TextUtils.isEmpty(webPage.url)) ? l0Var.v0.c : l0Var.v0.d.url;
-                                                c20Var.M.coordinates = new TL_stories.TL_mediaAreaCoordinates();
+                                                d20Var.M.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                             }
                                         } else {
                                             if (jVar instanceof tg.s1) {
                                                 tg.s1 s1Var2 = (tg.s1) jVar;
-                                                c20Var.a = (byte) 4;
+                                                d20Var.a = (byte) 4;
                                                 TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction = new TL_stories.TL_mediaAreaSuggestedReaction();
-                                                c20Var.M = tL_mediaAreaSuggestedReaction;
+                                                d20Var.M = tL_mediaAreaSuggestedReaction;
                                                 ch.p0 currentReaction = s1Var2.getCurrentReaction();
                                                 if (currentReaction.f != null) {
                                                     TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
@@ -3273,48 +3273,48 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                     tL_reactionCustomEmoji = tL_reactionCustomEmoji2;
                                                 }
                                                 tL_mediaAreaSuggestedReaction.reaction = tL_reactionCustomEmoji;
-                                                TL_stories.MediaArea mediaArea4 = c20Var.M;
+                                                TL_stories.MediaArea mediaArea4 = d20Var.M;
                                                 mediaArea4.dark = s1Var2.s0.a == 1;
                                                 mediaArea4.flipped = s1Var2.z0;
                                                 mediaArea4.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                             } else if (jVar instanceof tg.t1) {
                                                 tg.t1 t1Var = (tg.t1) jVar;
                                                 yt0 baseSize3 = t1Var.getBaseSize();
-                                                c20Var.f = baseSize3.a;
-                                                c20Var.g = baseSize3.b;
-                                                c20Var.a = (byte) 5;
+                                                d20Var.f = baseSize3.a;
+                                                d20Var.g = baseSize3.b;
+                                                d20Var.a = (byte) 5;
                                                 if (c7Var != null) {
-                                                    c20Var.j = c7Var.o0.getAbsolutePath();
-                                                    c20Var.Q = c7Var.r0;
+                                                    d20Var.j = c7Var.o0.getAbsolutePath();
+                                                    d20Var.Q = c7Var.r0;
                                                     long j3 = c7Var.q0;
-                                                    c20Var.T = j3;
+                                                    d20Var.T = j3;
                                                     float f17 = j3;
-                                                    c20Var.R = (long) (c7Var.s0 * f17);
-                                                    c20Var.S = (long) (c7Var.t0 * f17);
+                                                    d20Var.R = (long) (c7Var.s0 * f17);
+                                                    d20Var.S = (long) (c7Var.t0 * f17);
                                                 }
-                                                c20Var.b = (byte) 4;
+                                                d20Var.b = (byte) 4;
                                                 if (t1Var.s0) {
-                                                    c20Var.b = (byte) (c20Var.b | 2);
+                                                    d20Var.b = (byte) (d20Var.b | 2);
                                                 }
                                             } else if (jVar instanceof tg.v0) {
                                                 tg.v0 v0Var4 = (tg.v0) jVar;
                                                 di.n4 n4Var3 = v0Var4.r0;
                                                 ArrayList arrayList3 = v0Var4.t0;
                                                 tg.q0 q0Var2 = v0Var4.s0;
-                                                c20Var.a = (byte) 6;
+                                                d20Var.a = (byte) 6;
                                                 int width2 = v0Var4.getWidth();
-                                                c20Var.q = width2;
-                                                c20Var.f = width2;
+                                                d20Var.q = width2;
+                                                d20Var.f = width2;
                                                 int height2 = v0Var4.getHeight();
-                                                c20Var.r = height2;
-                                                c20Var.g = height2;
-                                                fj fjVar = arrayList3.size() > 0 ? (fj) arrayList3.get(0) : null;
-                                                if (fjVar != null && (message = fjVar.k) != null) {
+                                                d20Var.r = height2;
+                                                d20Var.g = height2;
+                                                gj gjVar = arrayList3.size() > 0 ? (gj) arrayList3.get(0) : null;
+                                                if (gjVar != null && (message = gjVar.k) != null) {
                                                     TLRPC.MessageAction messageAction = message.action;
                                                     if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
                                                         TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) messageAction).gift;
                                                         TL_stories.TL_mediaAreaStarGift tL_mediaAreaStarGift = new TL_stories.TL_mediaAreaStarGift();
-                                                        c20Var.M = tL_mediaAreaStarGift;
+                                                        d20Var.M = tL_mediaAreaStarGift;
                                                         tL_mediaAreaStarGift.slug = starGift.slug;
                                                         tL_mediaAreaStarGift.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                                         int i22 = 0;
@@ -3371,26 +3371,26 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                                 z16 = true;
                                                             }
                                                             z17 = true;
-                                                            arrayList.add(c20Var);
+                                                            arrayList.add(d20Var);
                                                             scaleX = view.getScaleX();
                                                             float scaleY2 = view.getScaleY();
                                                             float x102 = view.getX();
                                                             float y102 = view.getY();
-                                                            c20Var.q = view.getWidth();
-                                                            c20Var.r = view.getHeight();
-                                                            c20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
-                                                            c20Var.g = (view.getHeight() * scaleY2) / f5Var.getMeasuredHeight();
-                                                            c20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x102) / f5Var.getMeasuredWidth();
-                                                            c20Var.d = ((((1.0f - scaleY2) * view.getHeight()) / 2.0f) + y102) / f5Var.getMeasuredHeight();
-                                                            c20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                                            c20Var.y = ((view.getWidth() / 2.0f) + x102) / f5Var.getMeasuredWidth();
-                                                            c20Var.z = ((view.getHeight() / 2.0f) + y102) / f5Var.getMeasuredHeight();
-                                                            c20Var.w = c20Var.q / f5Var.getMeasuredWidth();
-                                                            c20Var.x = c20Var.r / f5Var.getMeasuredHeight();
-                                                            c20Var.v = scaleX;
+                                                            d20Var.q = view.getWidth();
+                                                            d20Var.r = view.getHeight();
+                                                            d20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
+                                                            d20Var.g = (view.getHeight() * scaleY2) / f5Var.getMeasuredHeight();
+                                                            d20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x102) / f5Var.getMeasuredWidth();
+                                                            d20Var.d = ((((1.0f - scaleY2) * view.getHeight()) / 2.0f) + y102) / f5Var.getMeasuredHeight();
+                                                            d20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                                            d20Var.y = ((view.getWidth() / 2.0f) + x102) / f5Var.getMeasuredWidth();
+                                                            d20Var.z = ((view.getHeight() / 2.0f) + y102) / f5Var.getMeasuredHeight();
+                                                            d20Var.w = d20Var.q / f5Var.getMeasuredWidth();
+                                                            d20Var.x = d20Var.r / f5Var.getMeasuredHeight();
+                                                            d20Var.v = scaleX;
                                                             if (jVar instanceof tg.v0) {
                                                             }
-                                                            mediaArea = c20Var.M;
+                                                            mediaArea = d20Var.M;
                                                             if (mediaArea != null) {
                                                                 mediaAreaCoordinates.flags |= 1;
                                                                 mediaAreaCoordinates.radius = ((scaleX * d) / view.getWidth()) * 100.0d;
@@ -3405,18 +3405,18 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                                 float r11 = imageReceiver3.r() + v0Var2.getX() + q0Var2.getX() + v0Var2.G0;
                                                                 float s5 = imageReceiver3.s() + v0Var2.getY() + q0Var2.getY() + v0Var2.H0;
                                                                 v0Var = v0Var4;
-                                                                c20 c20Var2 = new c20();
-                                                                c20Var2.a = (byte) 0;
-                                                                c20Var2.f = L;
-                                                                c20Var2.g = L;
+                                                                d20 d20Var2 = new d20();
+                                                                d20Var2.a = (byte) 0;
+                                                                d20Var2.f = L;
+                                                                d20Var2.g = L;
                                                                 TLRPC.Document document2 = stargiftattributemodel.document;
-                                                                c20Var2.B = document2;
-                                                                c20Var2.C = starGift;
-                                                                org.telegram.messenger.w7.G(j10.t0);
-                                                                c20Var2.j = org.telegram.messenger.w7.K(document2, true).getAbsolutePath();
-                                                                if (fj.K2(document2, true) || u0(document2)) {
-                                                                    boolean K25 = fj.K2(document2, true);
-                                                                    c20Var2.b = (byte) (c20Var2.b | (K25 ? (byte) 1 : (byte) 4));
+                                                                d20Var2.B = document2;
+                                                                d20Var2.C = starGift;
+                                                                org.telegram.messenger.w7.G(k10.t0);
+                                                                d20Var2.j = org.telegram.messenger.w7.K(document2, true).getAbsolutePath();
+                                                                if (gj.K2(document2, true) || u0(document2)) {
+                                                                    boolean K25 = gj.K2(document2, true);
+                                                                    d20Var2.b = (byte) (d20Var2.b | (K25 ? (byte) 1 : (byte) 4));
                                                                     oh0 B = imageReceiver3.B();
                                                                     if (B != null && (K25 || u0(document2))) {
                                                                         r21 = B.r();
@@ -3431,30 +3431,30 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                                 float x11 = childAt.getX();
                                                                 float y11 = childAt.getY();
                                                                 int i23 = (int) L;
-                                                                c20Var2.q = i23;
-                                                                c20Var2.r = i23;
-                                                                c20Var2.f = (L * scaleX2) / f5Var.getMeasuredWidth();
-                                                                c20Var2.g = (L * scaleY3) / f5Var.getMeasuredHeight();
-                                                                c20Var2.c = (childAt.getWidth() / 2.0f) + x11;
-                                                                c20Var2.d = (childAt.getHeight() / 2.0f) + y11;
-                                                                float w10 = n10.w(childAt.getWidth(), 2.0f, scaleX2, r11 * scaleX2);
+                                                                d20Var2.q = i23;
+                                                                d20Var2.r = i23;
+                                                                d20Var2.f = (L * scaleX2) / f5Var.getMeasuredWidth();
+                                                                d20Var2.g = (L * scaleY3) / f5Var.getMeasuredHeight();
+                                                                d20Var2.c = (childAt.getWidth() / 2.0f) + x11;
+                                                                d20Var2.d = (childAt.getHeight() / 2.0f) + y11;
+                                                                float w10 = o10.w(childAt.getWidth(), 2.0f, scaleX2, r11 * scaleX2);
                                                                 n4Var = n4Var3;
                                                                 imageReceiver4 = imageReceiver3;
                                                                 view = childAt;
                                                                 double d2 = w10;
                                                                 double rotation = (float) ((childAt.getRotation() / 180.0f) * 3.141592653589793d);
-                                                                double w11 = n10.w(childAt.getHeight(), 2.0f, scaleY3, s5 * scaleY3);
-                                                                c20Var2.c = (float) (((Math.cos(rotation) * d2) - (Math.sin(rotation) * w11)) + c20Var2.c);
-                                                                float cos = (float) ((Math.cos(rotation) * w11) + (Math.sin(rotation) * d2) + c20Var2.d);
+                                                                double w11 = o10.w(childAt.getHeight(), 2.0f, scaleY3, s5 * scaleY3);
+                                                                d20Var2.c = (float) (((Math.cos(rotation) * d2) - (Math.sin(rotation) * w11)) + d20Var2.c);
+                                                                float cos = (float) ((Math.cos(rotation) * w11) + (Math.sin(rotation) * d2) + d20Var2.d);
                                                                 float f18 = (-L) / 2.0f;
-                                                                float f19 = (f18 * scaleX2) + c20Var2.c;
-                                                                c20Var2.c = f19;
-                                                                c20Var2.d = (f18 * scaleY3) + cos;
-                                                                c20Var2.c = f19 / f5Var.getMeasuredWidth();
-                                                                c20Var2.d /= f5Var.getMeasuredHeight();
-                                                                c20Var2.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                                                c20Var2.v = scaleX2;
-                                                                arrayList.add(c20Var2);
+                                                                float f19 = (f18 * scaleX2) + d20Var2.c;
+                                                                d20Var2.c = f19;
+                                                                d20Var2.d = (f18 * scaleY3) + cos;
+                                                                d20Var2.c = f19 / f5Var.getMeasuredWidth();
+                                                                d20Var2.d /= f5Var.getMeasuredHeight();
+                                                                d20Var2.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                                                d20Var2.v = scaleX2;
+                                                                arrayList.add(d20Var2);
                                                             } else {
                                                                 v0Var = v0Var4;
                                                                 n4Var = n4Var3;
@@ -3465,26 +3465,26 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                             if (z12) {
                                                             }
                                                             z17 = true;
-                                                            arrayList.add(c20Var);
+                                                            arrayList.add(d20Var);
                                                             scaleX = view.getScaleX();
                                                             float scaleY22 = view.getScaleY();
                                                             float x1022 = view.getX();
                                                             float y1022 = view.getY();
-                                                            c20Var.q = view.getWidth();
-                                                            c20Var.r = view.getHeight();
-                                                            c20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
-                                                            c20Var.g = (view.getHeight() * scaleY22) / f5Var.getMeasuredHeight();
-                                                            c20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x1022) / f5Var.getMeasuredWidth();
-                                                            c20Var.d = ((((1.0f - scaleY22) * view.getHeight()) / 2.0f) + y1022) / f5Var.getMeasuredHeight();
-                                                            c20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                                            c20Var.y = ((view.getWidth() / 2.0f) + x1022) / f5Var.getMeasuredWidth();
-                                                            c20Var.z = ((view.getHeight() / 2.0f) + y1022) / f5Var.getMeasuredHeight();
-                                                            c20Var.w = c20Var.q / f5Var.getMeasuredWidth();
-                                                            c20Var.x = c20Var.r / f5Var.getMeasuredHeight();
-                                                            c20Var.v = scaleX;
+                                                            d20Var.q = view.getWidth();
+                                                            d20Var.r = view.getHeight();
+                                                            d20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
+                                                            d20Var.g = (view.getHeight() * scaleY22) / f5Var.getMeasuredHeight();
+                                                            d20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x1022) / f5Var.getMeasuredWidth();
+                                                            d20Var.d = ((((1.0f - scaleY22) * view.getHeight()) / 2.0f) + y1022) / f5Var.getMeasuredHeight();
+                                                            d20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                                            d20Var.y = ((view.getWidth() / 2.0f) + x1022) / f5Var.getMeasuredWidth();
+                                                            d20Var.z = ((view.getHeight() / 2.0f) + y1022) / f5Var.getMeasuredHeight();
+                                                            d20Var.w = d20Var.q / f5Var.getMeasuredWidth();
+                                                            d20Var.x = d20Var.r / f5Var.getMeasuredHeight();
+                                                            d20Var.v = scaleX;
                                                             if (jVar instanceof tg.v0) {
                                                             }
-                                                            mediaArea = c20Var.M;
+                                                            mediaArea = d20Var.M;
                                                             if (mediaArea != null) {
                                                             }
                                                             z14 = z17;
@@ -3495,43 +3495,43 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                                 v0Var = v0Var4;
                                                 n4Var = n4Var3;
                                                 view = childAt;
-                                                if (fjVar != null) {
+                                                if (gjVar != null) {
                                                     TL_stories.TL_inputMediaAreaChannelPost tL_inputMediaAreaChannelPost = new TL_stories.TL_inputMediaAreaChannelPost();
-                                                    c20Var.M = tL_inputMediaAreaChannelPost;
+                                                    d20Var.M = tL_inputMediaAreaChannelPost;
                                                     tL_inputMediaAreaChannelPost.coordinates = new TL_stories.TL_mediaAreaCoordinates();
-                                                    ((TL_stories.TL_inputMediaAreaChannelPost) c20Var.M).channel = mp.u1(i16).j1(-c7.p(fjVar));
-                                                    TL_stories.TL_inputMediaAreaChannelPost tL_inputMediaAreaChannelPost2 = (TL_stories.TL_inputMediaAreaChannelPost) c20Var.M;
-                                                    Boolean D = c7.D(fjVar);
-                                                    tL_inputMediaAreaChannelPost2.msg_id = D == null ? 0 : D.booleanValue() ? fjVar.k.fwd_from.channel_post : fjVar.e1();
+                                                    ((TL_stories.TL_inputMediaAreaChannelPost) d20Var.M).channel = np.u1(i16).j1(-c7.p(gjVar));
+                                                    TL_stories.TL_inputMediaAreaChannelPost tL_inputMediaAreaChannelPost2 = (TL_stories.TL_inputMediaAreaChannelPost) d20Var.M;
+                                                    Boolean D = c7.D(gjVar);
+                                                    tL_inputMediaAreaChannelPost2.msg_id = D == null ? 0 : D.booleanValue() ? gjVar.k.fwd_from.channel_post : gjVar.e1();
                                                 } else {
                                                     TL_stories.TL_inputMediaAreaChannelPost tL_inputMediaAreaChannelPost3 = new TL_stories.TL_inputMediaAreaChannelPost();
-                                                    c20Var.M = tL_inputMediaAreaChannelPost3;
+                                                    d20Var.M = tL_inputMediaAreaChannelPost3;
                                                     tL_inputMediaAreaChannelPost3.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                                 }
                                                 imageReceiver = null;
                                                 if (z12) {
                                                 }
                                                 z17 = true;
-                                                arrayList.add(c20Var);
+                                                arrayList.add(d20Var);
                                                 scaleX = view.getScaleX();
                                                 float scaleY222 = view.getScaleY();
                                                 float x10222 = view.getX();
                                                 float y10222 = view.getY();
-                                                c20Var.q = view.getWidth();
-                                                c20Var.r = view.getHeight();
-                                                c20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
-                                                c20Var.g = (view.getHeight() * scaleY222) / f5Var.getMeasuredHeight();
-                                                c20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x10222) / f5Var.getMeasuredWidth();
-                                                c20Var.d = ((((1.0f - scaleY222) * view.getHeight()) / 2.0f) + y10222) / f5Var.getMeasuredHeight();
-                                                c20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                                c20Var.y = ((view.getWidth() / 2.0f) + x10222) / f5Var.getMeasuredWidth();
-                                                c20Var.z = ((view.getHeight() / 2.0f) + y10222) / f5Var.getMeasuredHeight();
-                                                c20Var.w = c20Var.q / f5Var.getMeasuredWidth();
-                                                c20Var.x = c20Var.r / f5Var.getMeasuredHeight();
-                                                c20Var.v = scaleX;
+                                                d20Var.q = view.getWidth();
+                                                d20Var.r = view.getHeight();
+                                                d20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
+                                                d20Var.g = (view.getHeight() * scaleY222) / f5Var.getMeasuredHeight();
+                                                d20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x10222) / f5Var.getMeasuredWidth();
+                                                d20Var.d = ((((1.0f - scaleY222) * view.getHeight()) / 2.0f) + y10222) / f5Var.getMeasuredHeight();
+                                                d20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                                d20Var.y = ((view.getWidth() / 2.0f) + x10222) / f5Var.getMeasuredWidth();
+                                                d20Var.z = ((view.getHeight() / 2.0f) + y10222) / f5Var.getMeasuredHeight();
+                                                d20Var.w = d20Var.q / f5Var.getMeasuredWidth();
+                                                d20Var.x = d20Var.r / f5Var.getMeasuredHeight();
+                                                d20Var.v = scaleX;
                                                 if (jVar instanceof tg.v0) {
                                                 }
-                                                mediaArea = c20Var.M;
+                                                mediaArea = d20Var.M;
                                                 if (mediaArea != null) {
                                                 }
                                                 z14 = z17;
@@ -3541,26 +3541,26 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                             z16 = true;
                                             z17 = true;
                                             imageReceiver = null;
-                                            arrayList.add(c20Var);
+                                            arrayList.add(d20Var);
                                             scaleX = view.getScaleX();
                                             float scaleY2222 = view.getScaleY();
                                             float x102222 = view.getX();
                                             float y102222 = view.getY();
-                                            c20Var.q = view.getWidth();
-                                            c20Var.r = view.getHeight();
-                                            c20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
-                                            c20Var.g = (view.getHeight() * scaleY2222) / f5Var.getMeasuredHeight();
-                                            c20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x102222) / f5Var.getMeasuredWidth();
-                                            c20Var.d = ((((1.0f - scaleY2222) * view.getHeight()) / 2.0f) + y102222) / f5Var.getMeasuredHeight();
-                                            c20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                            c20Var.y = ((view.getWidth() / 2.0f) + x102222) / f5Var.getMeasuredWidth();
-                                            c20Var.z = ((view.getHeight() / 2.0f) + y102222) / f5Var.getMeasuredHeight();
-                                            c20Var.w = c20Var.q / f5Var.getMeasuredWidth();
-                                            c20Var.x = c20Var.r / f5Var.getMeasuredHeight();
-                                            c20Var.v = scaleX;
+                                            d20Var.q = view.getWidth();
+                                            d20Var.r = view.getHeight();
+                                            d20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
+                                            d20Var.g = (view.getHeight() * scaleY2222) / f5Var.getMeasuredHeight();
+                                            d20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x102222) / f5Var.getMeasuredWidth();
+                                            d20Var.d = ((((1.0f - scaleY2222) * view.getHeight()) / 2.0f) + y102222) / f5Var.getMeasuredHeight();
+                                            d20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                            d20Var.y = ((view.getWidth() / 2.0f) + x102222) / f5Var.getMeasuredWidth();
+                                            d20Var.z = ((view.getHeight() / 2.0f) + y102222) / f5Var.getMeasuredHeight();
+                                            d20Var.w = d20Var.q / f5Var.getMeasuredWidth();
+                                            d20Var.x = d20Var.r / f5Var.getMeasuredHeight();
+                                            d20Var.v = scaleX;
                                             if (jVar instanceof tg.v0) {
                                             }
-                                            mediaArea = c20Var.M;
+                                            mediaArea = d20Var.M;
                                             if (mediaArea != null) {
                                             }
                                             z14 = z17;
@@ -3574,26 +3574,26 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                 z16 = false;
                                 z17 = true;
                                 imageReceiver = null;
-                                arrayList.add(c20Var);
+                                arrayList.add(d20Var);
                                 scaleX = view.getScaleX();
                                 float scaleY22222 = view.getScaleY();
                                 float x1022222 = view.getX();
                                 float y1022222 = view.getY();
-                                c20Var.q = view.getWidth();
-                                c20Var.r = view.getHeight();
-                                c20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
-                                c20Var.g = (view.getHeight() * scaleY22222) / f5Var.getMeasuredHeight();
-                                c20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x1022222) / f5Var.getMeasuredWidth();
-                                c20Var.d = ((((1.0f - scaleY22222) * view.getHeight()) / 2.0f) + y1022222) / f5Var.getMeasuredHeight();
-                                c20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
-                                c20Var.y = ((view.getWidth() / 2.0f) + x1022222) / f5Var.getMeasuredWidth();
-                                c20Var.z = ((view.getHeight() / 2.0f) + y1022222) / f5Var.getMeasuredHeight();
-                                c20Var.w = c20Var.q / f5Var.getMeasuredWidth();
-                                c20Var.x = c20Var.r / f5Var.getMeasuredHeight();
-                                c20Var.v = scaleX;
+                                d20Var.q = view.getWidth();
+                                d20Var.r = view.getHeight();
+                                d20Var.f = (view.getWidth() * scaleX) / f5Var.getMeasuredWidth();
+                                d20Var.g = (view.getHeight() * scaleY22222) / f5Var.getMeasuredHeight();
+                                d20Var.c = ((((1.0f - scaleX) * view.getWidth()) / 2.0f) + x1022222) / f5Var.getMeasuredWidth();
+                                d20Var.d = ((((1.0f - scaleY22222) * view.getHeight()) / 2.0f) + y1022222) / f5Var.getMeasuredHeight();
+                                d20Var.e = (float) ((-view.getRotation()) * 0.017453292519943295d);
+                                d20Var.y = ((view.getWidth() / 2.0f) + x1022222) / f5Var.getMeasuredWidth();
+                                d20Var.z = ((view.getHeight() / 2.0f) + y1022222) / f5Var.getMeasuredHeight();
+                                d20Var.w = d20Var.q / f5Var.getMeasuredWidth();
+                                d20Var.x = d20Var.r / f5Var.getMeasuredHeight();
+                                d20Var.v = scaleX;
                                 if (jVar instanceof tg.v0) {
                                 }
-                                mediaArea = c20Var.M;
+                                mediaArea = d20Var.M;
                                 if (mediaArea != null) {
                                 }
                                 z14 = z17;
@@ -3607,7 +3607,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                 z15 = false;
                                 imageReceiver = null;
                             }
-                            if (z14 && ((z11 || (z12 && c20Var.a == 6)) && bitmap != null)) {
+                            if (z14 && ((z11 || (z12 && d20Var.a == 6)) && bitmap != null)) {
                                 Canvas canvas2 = new Canvas(bitmap);
                                 float width3 = bitmap.getWidth() / f5Var.getMeasuredWidth();
                                 int i24 = 0;
@@ -3619,9 +3619,9 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                     } else {
                                         canvas3.save();
                                         canvas3.scale(width3, width3);
-                                        canvas3.translate(c20Var.c * f5Var.getMeasuredWidth(), c20Var.d * f5Var.getMeasuredHeight());
+                                        canvas3.translate(d20Var.c * f5Var.getMeasuredWidth(), d20Var.d * f5Var.getMeasuredHeight());
                                         canvas3.scale(view.getScaleX(), view.getScaleY());
-                                        canvas3.rotate(view.getRotation(), ((c20Var.f / 2.0f) / view.getScaleX()) * f5Var.getMeasuredWidth(), ((c20Var.g / 2.0f) / view.getScaleY()) * f5Var.getMeasuredHeight());
+                                        canvas3.rotate(view.getRotation(), ((d20Var.f / 2.0f) / view.getScaleX()) * f5Var.getMeasuredWidth(), ((d20Var.g / 2.0f) / view.getScaleY()) * f5Var.getMeasuredHeight());
                                         view2 = view;
                                         if (!(view2 instanceof tg.n2) || view2.getHeight() <= 0 || view2.getWidth() <= 0) {
                                             canvas = canvas2;
@@ -3658,7 +3658,7 @@ public abstract class k5 extends eu0 implements tg.h1, tg.h, tg.d1, cu0, oa {
                                             int scaleX3 = (int) (view2.getScaleX() * view2.getWidth());
                                             int scaleY4 = (int) (view2.getScaleY() * view2.getHeight());
                                             Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                                            Bitmap c10 = vr.c(scaleX3, scaleY4);
+                                            Bitmap c10 = wr.c(scaleX3, scaleY4);
                                             Canvas canvas4 = new Canvas(c10);
                                             canvas = canvas2;
                                             canvas4.scale(view2.getScaleX(), view2.getScaleY());

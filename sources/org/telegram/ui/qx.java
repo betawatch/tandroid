@@ -13,7 +13,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qx extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -23,13 +23,13 @@ public final class qx extends LinearLayout implements org.telegram.ui.ActionBar.
     public final FrameLayout[] e;
     public final float[] f;
     public final int[] h;
-    public org.telegram.messenger.x10 n;
+    public org.telegram.messenger.y10 n;
     public org.telegram.ui.Components.o41 r;
     public int s;
     public ValueAnimator w;
     public int x;
     public static final int[] y = {R.raw.topics_tabs, R.raw.topics_list, R.raw.topics_sidebar};
-    public static final int[] E = {2131743742, 2131743743, 2131743739};
+    public static final int[] E = {2131743740, 2131743741, 2131743737};
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v0 */
@@ -57,16 +57,16 @@ public final class qx extends LinearLayout implements org.telegram.ui.ActionBar.
             frameLayout.setClipChildren(r52);
             c8.ra.b(frameLayout, 0.05f, 1.25f);
             frameLayout.setOnClickListener(new ci.q(this, i11, 25));
-            addView(frameLayout, c8.ma.p(r52, i10, 1.0f, org.telegram.messenger.ks.E1));
+            addView(frameLayout, c8.ma.p(r52, i10, 1.0f, org.telegram.messenger.ls.E1));
             this.b[i11] = frameLayout;
             org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
             q9Var.setImageDrawable(new org.telegram.ui.Components.oh0(y[i11], org.telegram.messenger.g0.L(160.0f), org.telegram.messenger.g0.L(160.0f)));
-            frameLayout.addView(q9Var, c8.ma.d(org.telegram.messenger.ks.q2, 160.0f, 49, 0.0f, 12.0f, 0.0f, 0.0f));
+            frameLayout.addView(q9Var, c8.ma.d(org.telegram.messenger.ls.q2, 160.0f, 49, 0.0f, 12.0f, 0.0f, 0.0f));
             this.c[i11] = q9Var;
             FrameLayout frameLayout2 = new FrameLayout(context);
             TextView b10 = c8.va.b(context, 14.0f, org.telegram.ui.ActionBar.m6.z6, true, null);
             int[] iArr = E;
-            b10.setText(org.telegram.messenger.gd.N0(iArr[i11], null));
+            b10.setText(org.telegram.messenger.hd.N0(iArr[i11], null));
             b10.setSingleLine();
             b10.setPadding(org.telegram.messenger.g0.L(10.0f), r52, org.telegram.messenger.g0.L(10.0f), r52);
             frameLayout2.addView(b10, c8.ma.e(-2, -2, 17));
@@ -80,7 +80,7 @@ public final class qx extends LinearLayout implements org.telegram.ui.ActionBar.
             org.telegram.ui.ActionBar.t6.j(frameLayout3, d02, M, null, h6Var);
             frameLayout2.addView(frameLayout3, c8.ma.e(-2, 26, 17));
             TextView b11 = c8.va.b(context, 14.0f, org.telegram.ui.ActionBar.m6.g6, true, null);
-            b11.setText(org.telegram.messenger.gd.N0(iArr[i11], null));
+            b11.setText(org.telegram.messenger.hd.N0(iArr[i11], null));
             b11.setSingleLine();
             frameLayout3.addView(b11, c8.ma.e(-2, -2, 17));
             frameLayout.addView(frameLayout2, c8.ma.e(-2, 26, 49));
@@ -134,7 +134,7 @@ public final class qx extends LinearLayout implements org.telegram.ui.ActionBar.
             float f10 = i10 != i7 ? 0.0f : 1.0f;
             FrameLayout[] frameLayoutArr = this.e;
             if (z10) {
-                org.telegram.messenger.n10.o(frameLayoutArr[i10].animate().scaleX(f10).scaleY(f10).alpha(f10), org.telegram.ui.Components.nr.h, 320L);
+                org.telegram.messenger.o10.o(frameLayoutArr[i10].animate().scaleX(f10).scaleY(f10).alpha(f10), org.telegram.ui.Components.nr.h, 320L);
             } else {
                 frameLayoutArr[i10].animate().cancel();
                 frameLayoutArr[i10].setScaleX(f10);

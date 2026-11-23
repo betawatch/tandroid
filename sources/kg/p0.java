@@ -2,12 +2,12 @@ package kg;
 
 import android.view.View;
 import java.io.Serializable;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.w10;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, v10 {
+public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ s0 b;
 
@@ -31,7 +31,7 @@ public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, v
         }
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         s0.b0(this.b, (o41) obj, (View) obj2);
     }

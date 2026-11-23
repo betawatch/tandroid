@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x91 extends v4.w {
     public boolean d;
@@ -98,10 +98,10 @@ public final class x91 extends v4.w {
             TLRPC.TL_forumTopic tL_forumTopic = v91Var.O;
             y91 y91Var = this.e;
             if (tL_forumTopic != null) {
-                org.telegram.messenger.e00 e00Var = y91Var.getMessagesController().t7;
+                org.telegram.messenger.f00 f00Var = y91Var.getMessagesController().t7;
                 long j3 = y91Var.a;
                 TLRPC.TL_forumTopic tL_forumTopic2 = v91Var.O;
-                e00Var.A(tL_forumTopic2.id, j3, tL_forumTopic2.hidden);
+                f00Var.A(tL_forumTopic2.id, j3, tL_forumTopic2.hidden);
             }
             y91Var.d1 = v91Var;
             k91 k91Var = y91Var.O;

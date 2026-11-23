@@ -13,7 +13,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ig implements tx {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -27,7 +27,7 @@ public final class ig implements tx {
         return this.a.p4;
     }
 
-    public final void B(View view, Object obj, String str, Object obj2, boolean z10, int i7, int i10, org.telegram.messenger.ef efVar, boolean z11) {
+    public final void B(View view, Object obj, String str, Object obj2, boolean z10, int i7, int i10, org.telegram.messenger.ff ffVar, boolean z11) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         vg vgVar = chatActivityEnterView.G0;
         org.telegram.ui.bn bnVar = chatActivityEnterView.F3;
@@ -37,11 +37,11 @@ public final class ig implements tx {
             return;
         }
         if (c() && i7 == 0) {
-            c5.J(chatActivityEnterView.E3, bnVar.a(), new org.telegram.ui.sp(this, view, obj, str, obj2, efVar, z11), chatActivityEnterView.M4);
+            c5.J(chatActivityEnterView.E3, bnVar.a(), new org.telegram.ui.sp(this, view, obj, str, obj2, ffVar, z11), chatActivityEnterView.M4);
             return;
         }
         if (chatActivityEnterView.H0 <= 0 || c()) {
-            c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new yd(this, obj, efVar, z10, i7, i10, z11, str, obj2));
+            c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new yd(this, obj, ffVar, z10, i7, i10, z11, str, obj2));
             return;
         }
         ng ngVar = chatActivityEnterView.P3;
@@ -122,11 +122,11 @@ public final class ig implements tx {
             }
         }
         ArrayList arrayList = new ArrayList();
-        org.telegram.messenger.ef efVar = new org.telegram.messenger.ef(0, file.getAbsolutePath(), 0, false, 0, 0);
-        efVar.a = null;
-        efVar.b = true;
-        arrayList.add(efVar);
-        PhotoViewer.p1().f2(arrayList, 0, 12, false, new gg(this, obj, obj2, efVar), chatActivityEnterView.F3);
+        org.telegram.messenger.ff ffVar = new org.telegram.messenger.ff(0, file.getAbsolutePath(), 0, false, 0, 0);
+        ffVar.a = null;
+        ffVar.b = true;
+        arrayList.add(ffVar);
+        PhotoViewer.p1().f2(arrayList, 0, 12, false, new gg(this, obj, obj2, ffVar), chatActivityEnterView.F3);
     }
 
     @Override // org.telegram.ui.Components.tx
@@ -139,13 +139,13 @@ public final class ig implements tx {
     @Override // org.telegram.ui.Components.tx
     public final boolean g() {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        return chatActivityEnterView.G3 == org.telegram.messenger.j10.i(chatActivityEnterView.R).e();
+        return chatActivityEnterView.G3 == org.telegram.messenger.k10.i(chatActivityEnterView.R).e();
     }
 
     @Override // org.telegram.ui.Components.tx
     public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.messenger.ri.d0(chatActivityEnterView.R).k2(chatActivityEnterView.E3, stickerSetCovered, 0, chatActivityEnterView.F3, false, false);
+        org.telegram.messenger.si.d0(chatActivityEnterView.R).k2(chatActivityEnterView.E3, stickerSetCovered, 0, chatActivityEnterView.F3, false, false);
     }
 
     @Override // org.telegram.ui.Components.tx
@@ -208,7 +208,7 @@ public final class ig implements tx {
     }
 
     @Override // org.telegram.ui.Components.tx
-    public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10, int i7) {
+    public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10, int i7) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         vg vgVar = chatActivityEnterView.G0;
         if (chatActivityEnterView.p7) {
@@ -257,9 +257,9 @@ public final class ig implements tx {
             }
             chatActivityEnterView.Q1(false, true, false, true);
         }
-        chatActivityEnterView.d(document, str, obj, bjVar, false, z10, i7, 0);
-        if (org.telegram.messenger.n5.C(chatActivityEnterView.G3) && org.telegram.messenger.fj.s3(document, false)) {
-            org.telegram.messenger.mp.u1(chatActivityEnterView.S.a).C4(obj, document);
+        chatActivityEnterView.d(document, str, obj, cjVar, false, z10, i7, 0);
+        if (org.telegram.messenger.n5.C(chatActivityEnterView.G3) && org.telegram.messenger.gj.s3(document, false)) {
+            org.telegram.messenger.np.u1(chatActivityEnterView.S.a).C4(obj, document);
         }
     }
 
@@ -272,12 +272,12 @@ public final class ig implements tx {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, chatActivityEnterView.M4);
-        String N0 = org.telegram.messenger.gd.N0(2131752056, null);
+        String N0 = org.telegram.messenger.hd.N0(2131752056, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.gd.N0(2131752057, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752087, null), new c0(this, 16));
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        t1Var.U = org.telegram.messenger.hd.N0(2131752057, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752087, null), new c0(this, 16));
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
         bnVar.showDialog(t1Var);
     }
 
@@ -316,7 +316,7 @@ public final class ig implements tx {
     @Override // org.telegram.ui.Components.tx
     public final void r(TLRPC.StickerSetCovered stickerSetCovered) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.messenger.ri.d0(chatActivityEnterView.R).k2(chatActivityEnterView.E3, stickerSetCovered, 2, chatActivityEnterView.F3, false, false);
+        org.telegram.messenger.si.d0(chatActivityEnterView.R).k2(chatActivityEnterView.E3, stickerSetCovered, 2, chatActivityEnterView.F3, false, false);
     }
 
     @Override // org.telegram.ui.Components.tx

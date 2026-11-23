@@ -11,11 +11,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ju extends View {
     public final org.telegram.ui.ActionBar.h6 E;
-    public org.telegram.messenger.q10 F;
+    public org.telegram.messenger.r10 F;
     public int G;
     public boolean H;
     public long I;
@@ -203,9 +203,9 @@ public final class ju extends View {
         }
         if (iArr2[0] != iArr[0] || iArr2[1] != iArr[1]) {
             org.telegram.messenger.g0.a4(this);
-            org.telegram.messenger.q10 q10Var = this.F;
-            if (q10Var != null) {
-                q10Var.a(Integer.valueOf(iArr[0]), Integer.valueOf(iArr[1]));
+            org.telegram.messenger.r10 r10Var = this.F;
+            if (r10Var != null) {
+                r10Var.a(Integer.valueOf(iArr[0]), Integer.valueOf(iArr[1]));
             }
         }
         invalidate();
@@ -220,7 +220,7 @@ public final class ju extends View {
         invalidate();
     }
 
-    public void setOnSelectionUpdateListener(org.telegram.messenger.q10 q10Var) {
-        this.F = q10Var;
+    public void setOnSelectionUpdateListener(org.telegram.messenger.r10 r10Var) {
+        this.F = r10Var;
     }
 }

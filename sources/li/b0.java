@@ -5,14 +5,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import bi.u1;
 import c8.ma;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.o41;
 import v4.f1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class b0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
@@ -30,7 +30,7 @@ public abstract class b0 extends FrameLayout {
         this.c = frameLayout;
         frameLayout.setPadding(0, 0, 0, 0);
         frameLayout.setClipToPadding(true);
-        addView(frameLayout, ma.e(-1, -1, ks.E1));
+        addView(frameLayout, ma.e(-1, -1, ls.E1));
         lh.f fVar = new lh.f(getContext());
         this.b = fVar;
         fVar.setupColorKey(m6.a7);

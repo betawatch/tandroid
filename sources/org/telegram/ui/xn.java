@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xn implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -24,16 +24,16 @@ public final /* synthetic */ class xn implements View.OnClickListener {
             case 0:
                 TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(joVar.getParentActivity());
-                String N0 = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                String N0 = org.telegram.messenger.hd.N0(R.string.AppName, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
                 if (joVar.b0) {
-                    t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("RevokeLinkAlertChannel", null, 2131745825, joVar.getMessagesController().X2 + "/" + org.telegram.messenger.v3.K(currentChannel, false), currentChannel.title));
+                    t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("RevokeLinkAlertChannel", null, 2131745825, joVar.getMessagesController().X2 + "/" + org.telegram.messenger.v3.K(currentChannel, false), currentChannel.title));
                 } else {
-                    t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("RevokeLinkAlert", null, 2131745826, joVar.getMessagesController().X2 + "/" + org.telegram.messenger.v3.K(currentChannel, false), currentChannel.title));
+                    t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("RevokeLinkAlert", null, 2131745826, joVar.getMessagesController().X2 + "/" + org.telegram.messenger.v3.K(currentChannel, false), currentChannel.title));
                 }
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131745828, null), new oi.f0(20, joVar, currentChannel));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131745828, null), new oi.f0(20, joVar, currentChannel));
                 joVar.showDialog(t1Var);
                 break;
             case 1:

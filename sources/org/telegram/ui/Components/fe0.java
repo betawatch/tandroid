@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fe0 extends FrameLayout {
     public final hi.cb a;
@@ -15,7 +15,7 @@ public final class fe0 extends FrameLayout {
     public long e;
     public float f;
     public hi.h3 h;
-    public org.telegram.messenger.x10 n;
+    public org.telegram.messenger.y10 n;
     public Runnable r;
 
     public fe0(Context context, org.telegram.ui.ActionBar.h6 h6Var, ca caVar) {
@@ -24,7 +24,7 @@ public final class fe0 extends FrameLayout {
         this.f = 1.39f;
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, h6Var);
         kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(org.telegram.messenger.gd.N0(2131751193, null));
+        kVar.setTitle(org.telegram.messenger.hd.N0(2131751193, null));
         kVar.G(-1, false);
         kVar.F(587202559, false);
         kVar.setActionBarMenuOnItemClick(new org.telegram.ui.x7(this, 18));
@@ -35,30 +35,30 @@ public final class fe0 extends FrameLayout {
         addView(cbVar, c8.ma.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
         hi.e eVar = new hi.e(context, h6Var, true);
         this.b = eVar;
-        eVar.i(org.telegram.messenger.gd.N0(2131751194, null), false, true);
+        eVar.i(org.telegram.messenger.hd.N0(2131751194, null), false, true);
         eVar.f();
         addView(eVar, c8.ma.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        et etVar = new et(context, org.telegram.messenger.gd.N0(2131751195, null));
+        et etVar = new et(context, org.telegram.messenger.hd.N0(2131751195, null));
         this.c = etVar;
         etVar.setOnClickListener(new st(this, context, h6Var, 5));
         addView(etVar, c8.ma.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
         cbVar.setDelegate(new ji.l(this));
     }
 
-    public final void a(org.telegram.messenger.ef efVar, i61 i61Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public final void a(org.telegram.messenger.ff ffVar, i61 i61Var, org.telegram.ui.ActionBar.h6 h6Var) {
         int i7;
         hi.e eVar = this.b;
         eVar.a = h6Var;
         eVar.F = false;
         eVar.updateColors();
-        int i10 = efVar.F;
-        if (i10 <= 0 || (i7 = efVar.G) <= 0) {
+        int i10 = ffVar.F;
+        if (i10 <= 0 || (i7 = ffVar.G) <= 0) {
             this.f = 1.39f;
         } else {
             this.f = Utilities.i(i7 / i10, 1.39f, 0.85f);
         }
         this.d = i61Var;
-        long j3 = efVar.d;
+        long j3 = ffVar.d;
         if (j3 >= 0) {
             this.e = j3;
             i61Var.q0(j3, false);
@@ -93,7 +93,7 @@ public final class fe0 extends FrameLayout {
         this.r = runnable;
     }
 
-    public void setOnGalleryImage(org.telegram.messenger.x10 x10Var) {
-        this.n = x10Var;
+    public void setOnGalleryImage(org.telegram.messenger.y10 y10Var) {
+        this.n = y10Var;
     }
 }

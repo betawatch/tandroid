@@ -2,12 +2,12 @@ package g;
 
 import android.view.ViewGroup;
 import java.util.WeakHashMap;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class h implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final class h implements Runnable {
                     sVar.l(0);
                 }
                 if ((sVar.j0 & TLObject.FLAG_12) != 0) {
-                    sVar.l(ks.t1);
+                    sVar.l(ls.t1);
                 }
                 sVar.i0 = false;
                 sVar.j0 = 0;

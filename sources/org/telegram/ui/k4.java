@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -47,8 +47,8 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                         }
                     }
                 } else {
-                    org.telegram.messenger.tr messagesStorage = cxVar.getMessagesStorage();
-                    messagesStorage.a.c(new org.telegram.messenger.rp(messagesStorage, i12, i10));
+                    org.telegram.messenger.ur messagesStorage = cxVar.getMessagesStorage();
+                    messagesStorage.a.c(new org.telegram.messenger.sp(messagesStorage, i12, i10));
                     break;
                 }
                 break;
@@ -81,12 +81,12 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                         break;
                     } else {
                         hk0Var.x = "female";
-                        hk0Var.Z[4].setText(org.telegram.messenger.gd.N0(2131747375, null));
+                        hk0Var.Z[4].setText(org.telegram.messenger.hd.N0(2131747375, null));
                         break;
                     }
                 } else {
                     hk0Var.x = "male";
-                    hk0Var.Z[4].setText(org.telegram.messenger.gd.N0(2131747314, null));
+                    hk0Var.Z[4].setText(org.telegram.messenger.hd.N0(2131747314, null));
                     break;
                 }
         }

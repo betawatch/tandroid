@@ -6,9 +6,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0, org.telegram.messenger.or {
+public final /* synthetic */ class vr implements org.telegram.messenger.b20, rj0, org.telegram.messenger.pr {
     public final /* synthetic */ int a;
     public final /* synthetic */ as b;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x002e  */
     /* JADX WARN: Removed duplicated region for block: B:153:0x019e  */
-    @Override // org.telegram.messenger.a20
+    @Override // org.telegram.messenger.b20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -32,19 +32,19 @@ public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0
                 TLRPC.Chat chat = asVar.U1;
                 if (asVar.y2) {
                     if (tLObject instanceof TLRPC.User) {
-                        org.telegram.messenger.mp.u1(asVar.a).k0(chat, (TLRPC.User) tLObject, null, 0);
+                        org.telegram.messenger.np.u1(asVar.a).k0(chat, (TLRPC.User) tLObject, null, 0);
                     } else if (tLObject instanceof TLRPC.Chat) {
-                        org.telegram.messenger.mp.u1(asVar.a).k0(chat, null, (TLRPC.Chat) tLObject, 0);
+                        org.telegram.messenger.np.u1(asVar.a).k0(chat, null, (TLRPC.Chat) tLObject, 0);
                     }
                 }
                 if (asVar.z2) {
                     if (!(tLObject instanceof TLRPC.User)) {
                         if (tLObject instanceof TLRPC.Chat) {
-                            org.telegram.messenger.mp.u1(asVar.a).j0(chat, null, (TLRPC.Chat) tLObject);
+                            org.telegram.messenger.np.u1(asVar.a).j0(chat, null, (TLRPC.Chat) tLObject);
                             break;
                         }
                     } else {
-                        org.telegram.messenger.mp.u1(asVar.a).j0(chat, (TLRPC.User) tLObject, null);
+                        org.telegram.messenger.np.u1(asVar.a).j0(chat, (TLRPC.User) tLObject, null);
                         break;
                     }
                 }
@@ -54,11 +54,11 @@ public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0
                 TLRPC.Chat chat2 = asVar2.U1;
                 if (!(tLObject instanceof TLRPC.User)) {
                     if (tLObject instanceof TLRPC.Chat) {
-                        org.telegram.messenger.mp.u1(asVar2.a).k0(chat2, null, (TLRPC.Chat) tLObject, 0);
+                        org.telegram.messenger.np.u1(asVar2.a).k0(chat2, null, (TLRPC.Chat) tLObject, 0);
                         break;
                     }
                 } else {
-                    org.telegram.messenger.mp.u1(asVar2.a).k0(chat2, (TLRPC.User) tLObject, null, 0);
+                    org.telegram.messenger.np.u1(asVar2.a).k0(chat2, (TLRPC.User) tLObject, null, 0);
                     break;
                 }
                 break;
@@ -67,11 +67,11 @@ public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0
                 TLRPC.Chat chat3 = asVar3.U1;
                 if (!(tLObject instanceof TLRPC.User)) {
                     if (tLObject instanceof TLRPC.Chat) {
-                        org.telegram.messenger.mp.u1(asVar3.a).j0(chat3, null, (TLRPC.Chat) tLObject);
+                        org.telegram.messenger.np.u1(asVar3.a).j0(chat3, null, (TLRPC.Chat) tLObject);
                         break;
                     }
                 } else {
-                    org.telegram.messenger.mp.u1(asVar3.a).j0(chat3, (TLRPC.User) tLObject, null);
+                    org.telegram.messenger.np.u1(asVar3.a).j0(chat3, (TLRPC.User) tLObject, null);
                     break;
                 }
                 break;
@@ -121,20 +121,20 @@ public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0
                             }
                             if (!(tLObject instanceof TLRPC.User)) {
                                 if (tLObject instanceof TLRPC.Chat) {
-                                    org.telegram.messenger.mp.u1(asVar4.a).Y4(j3, null, (TLRPC.Chat) tLObject, tL_chatBannedRights, false, asVar4.s1, null);
+                                    org.telegram.messenger.np.u1(asVar4.a).Y4(j3, null, (TLRPC.Chat) tLObject, tL_chatBannedRights, false, asVar4.s1, null);
                                     break;
                                 }
                             } else {
-                                org.telegram.messenger.mp.u1(asVar4.a).Y4(j3, (TLRPC.User) tLObject, null, tL_chatBannedRights, false, asVar4.s1, null);
+                                org.telegram.messenger.np.u1(asVar4.a).Y4(j3, (TLRPC.User) tLObject, null, tL_chatBannedRights, false, asVar4.s1, null);
                                 break;
                             }
                         } else if (!(tLObject instanceof TLRPC.User)) {
                             if (tLObject instanceof TLRPC.Chat) {
-                                org.telegram.messenger.mp.u1(asVar4.a).g0(j3, null, (TLRPC.Chat) tLObject, false, false);
+                                org.telegram.messenger.np.u1(asVar4.a).g0(j3, null, (TLRPC.Chat) tLObject, false, false);
                                 break;
                             }
                         } else {
-                            org.telegram.messenger.mp.u1(asVar4.a).g0(j3, (TLRPC.User) tLObject, null, false, false);
+                            org.telegram.messenger.np.u1(asVar4.a).g0(j3, (TLRPC.User) tLObject, null, false, false);
                             break;
                         }
                     }
@@ -199,11 +199,11 @@ public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0
             if (i11 == 39) {
                 if (G.u) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(asVar.getContext());
-                    String N0 = org.telegram.messenger.gd.N0(2131743476, null);
+                    String N0 = org.telegram.messenger.hd.N0(2131743474, null);
                     org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                     t1Var.S = N0;
-                    t1Var.U = org.telegram.messenger.gd.N0(2131743475, null);
-                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
+                    t1Var.U = org.telegram.messenger.hd.N0(2131743473, null);
+                    alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, null), null);
                     t1Var.show();
                     return;
                 }
@@ -280,11 +280,11 @@ public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0
         if (i11 == 35) {
             if (G.u) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(asVar.getContext());
-                String N02 = org.telegram.messenger.gd.N0(2131743476, null);
+                String N02 = org.telegram.messenger.hd.N0(2131743474, null);
                 org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder2.a;
                 t1Var2.S = N02;
-                t1Var2.U = org.telegram.messenger.gd.N0(2131743475, null);
-                alertDialog$Builder2.k(org.telegram.messenger.gd.N0(2131747637, null), null);
+                t1Var2.U = org.telegram.messenger.hd.N0(2131743473, null);
+                alertDialog$Builder2.k(org.telegram.messenger.hd.N0(2131747637, null), null);
                 t1Var2.show();
                 return;
             }
@@ -366,7 +366,7 @@ public final /* synthetic */ class vr implements org.telegram.messenger.a20, rj0
         }
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.pr
     public void run(long j3) {
         switch (this.a) {
             case 5:

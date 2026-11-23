@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class r8 extends c1 {
     public static volatile r8[] s = new r8[4];
@@ -329,13 +329,13 @@ public final class r8 extends c1 {
         if (obj instanceof TLRPC.TL_attachMenuBot) {
             return a8.p0.o(((TLRPC.TL_attachMenuBot) obj).bot_id, "attach_menu_bot_");
         }
-        if (obj instanceof fj) {
-            fj fjVar = (fj) obj;
-            long v02 = fj.v0(fjVar.k);
-            if (fjVar.D == 29 && (message = fjVar.k) != null && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
+        if (obj instanceof gj) {
+            gj gjVar = (gj) obj;
+            long v02 = gj.v0(gjVar.k);
+            if (gjVar.D == 29 && (message = gjVar.k) != null && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
                 v02 = n5.o(peer);
             }
-            return "message" + fjVar.L1() + "_" + v02 + "_" + fjVar.r1 + "_" + fj.I1(fjVar.k);
+            return "message" + gjVar.L1() + "_" + v02 + "_" + gjVar.r1 + "_" + gj.I1(gjVar.k);
         }
         if (obj instanceof TLRPC.Message) {
             TLRPC.Message message2 = (TLRPC.Message) obj;
@@ -1031,13 +1031,13 @@ public final class r8 extends c1 {
         } else if (tLObject instanceof TLRPC.TL_help_appUpdate) {
             TLRPC.TL_help_appUpdate tL_help_appUpdate = (TLRPC.TL_help_appUpdate) tLObject;
             try {
-                bz.j1 = tL_help_appUpdate;
-                bz.y();
+                cz.j1 = tL_help_appUpdate;
+                cz.y();
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
             try {
-                ks.e().k(ks.T4, new Object[0]);
+                ls.e().k(ls.T4, new Object[0]);
             } catch (Exception e11) {
                 a8.g(e11, true);
             }
@@ -1196,16 +1196,16 @@ public final class r8 extends c1 {
                     } else {
                         TLRPC.User c22 = getMessagesController().c2(Long.valueOf(storyItem2.dialogId));
                         if (c22 != null && c22.contact) {
-                            mp.u1(this.currentAccount).R1().k.k(storyItem2.dialogId, storyItem);
+                            np.u1(this.currentAccount).R1().k.k(storyItem2.dialogId, storyItem);
                         }
                     }
                     if (storyItem != null && bArr == null) {
                         TL_stories.TL_updateStory tL_updateStory2 = new TL_stories.TL_updateStory();
-                        tL_updateStory2.peer = mp.u1(this.currentAccount).B1(storyItem2.dialogId);
+                        tL_updateStory2.peer = np.u1(this.currentAccount).B1(storyItem2.dialogId);
                         tL_updateStory2.story = storyItem;
                         ArrayList arrayList5 = new ArrayList();
                         arrayList5.add(tL_updateStory2);
-                        mp.u1(this.currentAccount).U3(arrayList5, null, null, false, 0);
+                        np.u1(this.currentAccount).U3(arrayList5, null, null, false, 0);
                     }
                 }
             }
@@ -1594,13 +1594,13 @@ public final class r8 extends c1 {
                                                 if (tLObject instanceof TLRPC.TL_help_appUpdate) {
                                                     TLRPC.TL_help_appUpdate tL_help_appUpdate = (TLRPC.TL_help_appUpdate) tLObject;
                                                     try {
-                                                        bz.j1 = tL_help_appUpdate;
-                                                        bz.y();
+                                                        cz.j1 = tL_help_appUpdate;
+                                                        cz.y();
                                                     } catch (Exception e13) {
                                                         a8.g(e13, true);
                                                     }
                                                     try {
-                                                        ks.e().k(ks.T4, new Object[0]);
+                                                        ls.e().k(ls.T4, new Object[0]);
                                                     } catch (Exception e14) {
                                                         a8.g(e14, true);
                                                     }
@@ -1908,17 +1908,17 @@ public final class r8 extends c1 {
                                                                             p8Var = p8Var3;
                                                                             TLRPC.User c22 = getMessagesController().c2(Long.valueOf(storyItem3.dialogId));
                                                                             if (c22 != null && c22.contact) {
-                                                                                mp.u1(this.currentAccount).R1().k.k(storyItem3.dialogId, storyItem2);
+                                                                                np.u1(this.currentAccount).R1().k.k(storyItem3.dialogId, storyItem2);
                                                                             }
                                                                         }
                                                                         if (storyItem2 != null && bArr == null) {
                                                                             TL_stories.TL_updateStory tL_updateStory2 = new TL_stories.TL_updateStory();
                                                                             hashMap = hashMap2;
-                                                                            tL_updateStory2.peer = mp.u1(this.currentAccount).B1(storyItem3.dialogId);
+                                                                            tL_updateStory2.peer = np.u1(this.currentAccount).B1(storyItem3.dialogId);
                                                                             tL_updateStory2.story = storyItem2;
                                                                             ArrayList arrayList14 = new ArrayList();
                                                                             arrayList14.add(tL_updateStory2);
-                                                                            mp.u1(this.currentAccount).U3(arrayList14, null, null, false, 0);
+                                                                            np.u1(this.currentAccount).U3(arrayList14, null, null, false, 0);
                                                                             if (bArr != null) {
                                                                                 v(p8Var.b);
                                                                             } else if (t(p8Var, bArr, inputFileLocationArr != null ? inputFileLocationArr[0] : null, z11)) {
@@ -2205,52 +2205,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i7) {
                             case 0:
-                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                fj fjVar = (fj) objArr6[1];
+                                gj gjVar = (gj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                ly lyVar = (ly) objArr6[3];
+                                my myVar = (my) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, gjVar, str2, myVar, booleanValue, (my) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                fj fjVar2 = (fj) objArr8[1];
+                                gj gjVar2 = (gj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                ly lyVar2 = (ly) objArr8[3];
+                                my myVar2 = (my) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, myVar2, booleanValue2, (my) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                fj fjVar3 = (fj) objArr10[1];
+                                gj gjVar3 = (gj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                ly lyVar3 = (ly) objArr10[3];
+                                my myVar3 = (my) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, myVar3, booleanValue3, (my) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                fj fjVar4 = (fj) objArr12[1];
+                                gj gjVar4 = (gj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                ly lyVar4 = (ly) objArr12[3];
+                                my myVar4 = (my) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, myVar4, booleanValue4, (my) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2271,52 +2271,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i7) {
                             case 0:
-                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                fj fjVar = (fj) objArr6[1];
+                                gj gjVar = (gj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                ly lyVar = (ly) objArr6[3];
+                                my myVar = (my) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, gjVar, str2, myVar, booleanValue, (my) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                fj fjVar2 = (fj) objArr8[1];
+                                gj gjVar2 = (gj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                ly lyVar2 = (ly) objArr8[3];
+                                my myVar2 = (my) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, myVar2, booleanValue2, (my) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                fj fjVar3 = (fj) objArr10[1];
+                                gj gjVar3 = (gj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                ly lyVar3 = (ly) objArr10[3];
+                                my myVar3 = (my) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, myVar3, booleanValue3, (my) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                fj fjVar4 = (fj) objArr12[1];
+                                gj gjVar4 = (gj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                ly lyVar4 = (ly) objArr12[3];
+                                my myVar4 = (my) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, myVar4, booleanValue4, (my) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2343,52 +2343,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                fj fjVar = (fj) objArr6[1];
+                                gj gjVar = (gj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                ly lyVar = (ly) objArr6[3];
+                                my myVar = (my) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, gjVar, str2, myVar, booleanValue, (my) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                fj fjVar2 = (fj) objArr8[1];
+                                gj gjVar2 = (gj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                ly lyVar2 = (ly) objArr8[3];
+                                my myVar2 = (my) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, myVar2, booleanValue2, (my) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                fj fjVar3 = (fj) objArr10[1];
+                                gj gjVar3 = (gj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                ly lyVar3 = (ly) objArr10[3];
+                                my myVar3 = (my) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, myVar3, booleanValue3, (my) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                fj fjVar4 = (fj) objArr12[1];
+                                gj gjVar4 = (gj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                ly lyVar4 = (ly) objArr12[3];
+                                my myVar4 = (my) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, myVar4, booleanValue4, (my) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2409,52 +2409,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                fj fjVar = (fj) objArr6[1];
+                                gj gjVar = (gj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                ly lyVar = (ly) objArr6[3];
+                                my myVar = (my) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, gjVar, str2, myVar, booleanValue, (my) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                fj fjVar2 = (fj) objArr8[1];
+                                gj gjVar2 = (gj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                ly lyVar2 = (ly) objArr8[3];
+                                my myVar2 = (my) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, myVar2, booleanValue2, (my) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                fj fjVar3 = (fj) objArr10[1];
+                                gj gjVar3 = (gj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                ly lyVar3 = (ly) objArr10[3];
+                                my myVar3 = (my) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, myVar3, booleanValue3, (my) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                fj fjVar4 = (fj) objArr12[1];
+                                gj gjVar4 = (gj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                ly lyVar4 = (ly) objArr12[3];
+                                my myVar4 = (my) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, myVar4, booleanValue4, (my) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2481,52 +2481,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i13) {
                             case 0:
-                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                fj fjVar = (fj) objArr6[1];
+                                gj gjVar = (gj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                ly lyVar = (ly) objArr6[3];
+                                my myVar = (my) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, gjVar, str2, myVar, booleanValue, (my) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                fj fjVar2 = (fj) objArr8[1];
+                                gj gjVar2 = (gj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                ly lyVar2 = (ly) objArr8[3];
+                                my myVar2 = (my) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, myVar2, booleanValue2, (my) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                fj fjVar3 = (fj) objArr10[1];
+                                gj gjVar3 = (gj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                ly lyVar3 = (ly) objArr10[3];
+                                my myVar3 = (my) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, myVar3, booleanValue3, (my) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                fj fjVar4 = (fj) objArr12[1];
+                                gj gjVar4 = (gj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                ly lyVar4 = (ly) objArr12[3];
+                                my myVar4 = (my) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, myVar4, booleanValue4, (my) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2547,52 +2547,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i13) {
                             case 0:
-                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                fj fjVar = (fj) objArr6[1];
+                                gj gjVar = (gj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                ly lyVar = (ly) objArr6[3];
+                                my myVar = (my) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, gjVar, str2, myVar, booleanValue, (my) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                fj fjVar2 = (fj) objArr8[1];
+                                gj gjVar2 = (gj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                ly lyVar2 = (ly) objArr8[3];
+                                my myVar2 = (my) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, myVar2, booleanValue2, (my) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                fj fjVar3 = (fj) objArr10[1];
+                                gj gjVar3 = (gj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                ly lyVar3 = (ly) objArr10[3];
+                                my myVar3 = (my) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, myVar3, booleanValue3, (my) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                az sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                fj fjVar4 = (fj) objArr12[1];
+                                gj gjVar4 = (gj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                ly lyVar4 = (ly) objArr12[3];
+                                my myVar4 = (my) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, myVar4, booleanValue4, (my) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2645,52 +2645,52 @@ public final class r8 extends c1 {
                         public final void run() {
                             switch (i11) {
                                 case 0:
-                                    zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                                    az sendMessagesHelper = this.b.getSendMessagesHelper();
                                     p8 p8Var2 = p8Var;
                                     Object[] objArr6 = p8Var2.b;
                                     TLObject tLObject = (TLObject) objArr6[0];
-                                    fj fjVar = (fj) objArr6[1];
+                                    gj gjVar = (gj) objArr6[1];
                                     String str2 = (String) objArr6[2];
-                                    ly lyVar = (ly) objArr6[3];
+                                    my myVar = (my) objArr6[3];
                                     boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                     Object[] objArr7 = p8Var2.b;
-                                    sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                    sendMessagesHelper.O(tLObject, gjVar, str2, myVar, booleanValue, (my) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                     break;
                                 case 1:
-                                    zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                    az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                     p8 p8Var3 = p8Var;
                                     Object[] objArr8 = p8Var3.b;
                                     TLObject tLObject2 = (TLObject) objArr8[0];
-                                    fj fjVar2 = (fj) objArr8[1];
+                                    gj gjVar2 = (gj) objArr8[1];
                                     String str3 = (String) objArr8[2];
-                                    ly lyVar2 = (ly) objArr8[3];
+                                    my myVar2 = (my) objArr8[3];
                                     boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                     Object[] objArr9 = p8Var3.b;
-                                    sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                    sendMessagesHelper2.O(tLObject2, gjVar2, str3, myVar2, booleanValue2, (my) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                     break;
                                 case 2:
-                                    zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                    az sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                     p8 p8Var4 = p8Var;
                                     Object[] objArr10 = p8Var4.b;
                                     TLObject tLObject3 = (TLObject) objArr10[0];
-                                    fj fjVar3 = (fj) objArr10[1];
+                                    gj gjVar3 = (gj) objArr10[1];
                                     String str4 = (String) objArr10[2];
-                                    ly lyVar3 = (ly) objArr10[3];
+                                    my myVar3 = (my) objArr10[3];
                                     boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                     Object[] objArr11 = p8Var4.b;
-                                    sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                    sendMessagesHelper3.O(tLObject3, gjVar3, str4, myVar3, booleanValue3, (my) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                     break;
                                 default:
-                                    zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                    az sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                     p8 p8Var5 = p8Var;
                                     Object[] objArr12 = p8Var5.b;
                                     TLObject tLObject4 = (TLObject) objArr12[0];
-                                    fj fjVar4 = (fj) objArr12[1];
+                                    gj gjVar4 = (gj) objArr12[1];
                                     String str5 = (String) objArr12[2];
-                                    ly lyVar4 = (ly) objArr12[3];
+                                    my myVar4 = (my) objArr12[3];
                                     boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                     Object[] objArr13 = p8Var5.b;
-                                    sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                    sendMessagesHelper4.O(tLObject4, gjVar4, str5, myVar4, booleanValue4, (my) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                     break;
                             }
                         }
@@ -2711,52 +2711,52 @@ public final class r8 extends c1 {
                         public final void run() {
                             switch (i11) {
                                 case 0:
-                                    zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                                    az sendMessagesHelper = this.b.getSendMessagesHelper();
                                     p8 p8Var2 = p8Var;
                                     Object[] objArr6 = p8Var2.b;
                                     TLObject tLObject = (TLObject) objArr6[0];
-                                    fj fjVar = (fj) objArr6[1];
+                                    gj gjVar = (gj) objArr6[1];
                                     String str2 = (String) objArr6[2];
-                                    ly lyVar = (ly) objArr6[3];
+                                    my myVar = (my) objArr6[3];
                                     boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                     Object[] objArr7 = p8Var2.b;
-                                    sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                    sendMessagesHelper.O(tLObject, gjVar, str2, myVar, booleanValue, (my) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                     break;
                                 case 1:
-                                    zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                    az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                     p8 p8Var3 = p8Var;
                                     Object[] objArr8 = p8Var3.b;
                                     TLObject tLObject2 = (TLObject) objArr8[0];
-                                    fj fjVar2 = (fj) objArr8[1];
+                                    gj gjVar2 = (gj) objArr8[1];
                                     String str3 = (String) objArr8[2];
-                                    ly lyVar2 = (ly) objArr8[3];
+                                    my myVar2 = (my) objArr8[3];
                                     boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                     Object[] objArr9 = p8Var3.b;
-                                    sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                    sendMessagesHelper2.O(tLObject2, gjVar2, str3, myVar2, booleanValue2, (my) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                     break;
                                 case 2:
-                                    zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                    az sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                     p8 p8Var4 = p8Var;
                                     Object[] objArr10 = p8Var4.b;
                                     TLObject tLObject3 = (TLObject) objArr10[0];
-                                    fj fjVar3 = (fj) objArr10[1];
+                                    gj gjVar3 = (gj) objArr10[1];
                                     String str4 = (String) objArr10[2];
-                                    ly lyVar3 = (ly) objArr10[3];
+                                    my myVar3 = (my) objArr10[3];
                                     boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                     Object[] objArr11 = p8Var4.b;
-                                    sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                    sendMessagesHelper3.O(tLObject3, gjVar3, str4, myVar3, booleanValue3, (my) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                     break;
                                 default:
-                                    zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                    az sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                     p8 p8Var5 = p8Var;
                                     Object[] objArr12 = p8Var5.b;
                                     TLObject tLObject4 = (TLObject) objArr12[0];
-                                    fj fjVar4 = (fj) objArr12[1];
+                                    gj gjVar4 = (gj) objArr12[1];
                                     String str5 = (String) objArr12[2];
-                                    ly lyVar4 = (ly) objArr12[3];
+                                    my myVar4 = (my) objArr12[3];
                                     boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                     Object[] objArr13 = p8Var5.b;
-                                    sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                    sendMessagesHelper4.O(tLObject4, gjVar4, str5, myVar4, booleanValue4, (my) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                     break;
                             }
                         }
@@ -2891,9 +2891,9 @@ public final class r8 extends c1 {
                 sb3.append(storyItem.dialogId);
                 sb3.append(" id=");
                 simpleName = a8.p0.n(storyItem.id, ")", sb3);
-            } else if (obj instanceof fj) {
-                fj fjVar = (fj) obj;
-                simpleName = "message(dialogId=" + fj.B0(fjVar.k) + "messageId" + fjVar.e1() + ")";
+            } else if (obj instanceof gj) {
+                gj gjVar = (gj) obj;
+                simpleName = "message(dialogId=" + gj.B0(gjVar.k) + "messageId" + gjVar.e1() + ")";
             } else {
                 simpleName = obj == null ? null : obj.getClass().getSimpleName();
             }
@@ -2960,9 +2960,9 @@ public final class r8 extends c1 {
         }
         TLRPC.InputFileLocation inputFileLocation = (TLRPC.InputFileLocation) p10.first;
         String str9 = (String) p10.second;
-        if (obj instanceof fj) {
-            fj fjVar2 = (fj) obj;
-            if (fjVar2.L1() < 0 && (message = fjVar2.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
+        if (obj instanceof gj) {
+            gj gjVar2 = (gj) obj;
+            if (gjVar2.L1() < 0 && (message = gjVar2.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
                 obj2 = webPage;
                 o4 = o(obj2);
                 if (o4 != null) {
@@ -3585,14 +3585,14 @@ public final class r8 extends c1 {
                         });
                         return;
                     }
-                    if (obj2 instanceof fj) {
-                        fj fjVar3 = (fj) obj2;
-                        long v02 = fj.v0(fjVar3.k);
-                        TLRPC.InputPeer l1 = getMessagesController().l1(fj.B0(fjVar3.k));
-                        if (fjVar3.r1) {
+                    if (obj2 instanceof gj) {
+                        gj gjVar3 = (gj) obj2;
+                        long v02 = gj.v0(gjVar3.k);
+                        TLRPC.InputPeer l1 = getMessagesController().l1(gj.B0(gjVar3.k));
+                        if (gjVar3.r1) {
                             TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
-                            tL_messages_getScheduledMessages.peer = getMessagesController().l1(fj.B0(fjVar3.k));
-                            tL_messages_getScheduledMessages.id.add(Integer.valueOf(fjVar3.L1()));
+                            tL_messages_getScheduledMessages.peer = getMessagesController().l1(gj.B0(gjVar3.k));
+                            tL_messages_getScheduledMessages.id.add(Integer.valueOf(gjVar3.L1()));
                             final int i20 = 21;
                             getConnectionsManager().sendRequest(tL_messages_getScheduledMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
@@ -3690,11 +3690,11 @@ public final class r8 extends c1 {
                             });
                             return;
                         }
-                        if (fj.b4(fjVar3.k)) {
+                        if (gj.b4(gjVar3.k)) {
                             TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
-                            tL_messages_getQuickReplyMessages.shortcut_id = fj.I1(fjVar3.k);
+                            tL_messages_getQuickReplyMessages.shortcut_id = gj.I1(gjVar3.k);
                             tL_messages_getQuickReplyMessages.flags |= 1;
-                            tL_messages_getQuickReplyMessages.id.add(Integer.valueOf(fjVar3.L1()));
+                            tL_messages_getQuickReplyMessages.id.add(Integer.valueOf(gjVar3.L1()));
                             final int i21 = 22;
                             getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
@@ -3792,11 +3792,11 @@ public final class r8 extends c1 {
                             });
                             return;
                         }
-                        TLRPC.Message message2 = fjVar3.k;
+                        TLRPC.Message message2 = gjVar3.k;
                         if (message2 != null && message2.rich_message != null) {
                             TL_iv.getRichMessage getrichmessage = new TL_iv.getRichMessage();
                             getrichmessage.peer = l1;
-                            getrichmessage.id = fjVar3.L1();
+                            getrichmessage.id = gjVar3.L1();
                             final int i22 = 23;
                             getConnectionsManager().sendRequest(getrichmessage, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
@@ -3896,7 +3896,7 @@ public final class r8 extends c1 {
                         }
                         if (v02 == 0) {
                             TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
-                            tL_messages_getMessages.id.add(Integer.valueOf(fjVar3.L1()));
+                            tL_messages_getMessages.id.add(Integer.valueOf(gjVar3.L1()));
                             final int i23 = 0;
                             getConnectionsManager().sendRequest(tL_messages_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
@@ -3996,7 +3996,7 @@ public final class r8 extends c1 {
                         }
                         TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
                         tL_channels_getMessages.channel = getMessagesController().j1(v02);
-                        tL_channels_getMessages.id.add(Integer.valueOf(fjVar3.L1()));
+                        tL_channels_getMessages.id.add(Integer.valueOf(gjVar3.L1()));
                         final int i24 = 24;
                         getConnectionsManager().sendRequest(tL_channels_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
@@ -4608,7 +4608,7 @@ public final class r8 extends c1 {
                         }
                         if ((chat instanceof TLRPC.TL_channel) || (chat instanceof TLRPC.TL_community)) {
                             TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
-                            tL_channels_getChannels.id.add(mp.k1(chat));
+                            tL_channels_getChannels.id.add(np.k1(chat));
                             getConnectionsManager().sendRequest(tL_channels_getChannels, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
@@ -5481,7 +5481,7 @@ public final class r8 extends c1 {
                             return;
                         }
                         TLRPC.TL_channels_getMessages tL_channels_getMessages2 = new TLRPC.TL_channels_getMessages();
-                        tL_channels_getMessages2.channel = mp.k1(getMessagesController().O0(A));
+                        tL_channels_getMessages2.channel = np.k1(getMessagesController().O0(A));
                         tL_channels_getMessages2.id.add(Utilities.z(split[2]));
                         final int i39 = 12;
                         getConnectionsManager().sendRequest(tL_channels_getMessages2, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
@@ -5587,7 +5587,7 @@ public final class r8 extends c1 {
                         tL_photos_getUserPhotos.limit = 80;
                         tL_photos_getUserPhotos.offset = 0;
                         tL_photos_getUserPhotos.max_id = 0L;
-                        mp messagesController = getMessagesController();
+                        np messagesController = getMessagesController();
                         tL_photos_getUserPhotos.user_id = messagesController.s1(messagesController.c2(A2));
                         final int i40 = 10;
                         getConnectionsManager().sendRequest(tL_photos_getUserPhotos, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
@@ -5902,14 +5902,14 @@ public final class r8 extends c1 {
                 public final void run() {
                     switch (i7) {
                         case 0:
-                            zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                            az sendMessagesHelper = this.b.getSendMessagesHelper();
                             Object[] objArr5 = objArr;
-                            sendMessagesHelper.O((TLObject) objArr5[0], (fj) objArr5[1], (String) objArr5[2], (ly) objArr5[3], ((Boolean) objArr5[4]).booleanValue(), (ly) objArr5[5], null, null, ((Boolean) objArr5[6]).booleanValue());
+                            sendMessagesHelper.O((TLObject) objArr5[0], (gj) objArr5[1], (String) objArr5[2], (my) objArr5[3], ((Boolean) objArr5[4]).booleanValue(), (my) objArr5[5], null, null, ((Boolean) objArr5[6]).booleanValue());
                             break;
                         default:
-                            zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                            az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                             Object[] objArr6 = objArr;
-                            sendMessagesHelper2.O((TLObject) objArr6[0], (fj) objArr6[1], (String) objArr6[2], (ly) objArr6[3], ((Boolean) objArr6[4]).booleanValue(), (ly) objArr6[5], null, null, ((Boolean) objArr6[6]).booleanValue());
+                            sendMessagesHelper2.O((TLObject) objArr6[0], (gj) objArr6[1], (String) objArr6[2], (my) objArr6[3], ((Boolean) objArr6[4]).booleanValue(), (my) objArr6[5], null, null, ((Boolean) objArr6[6]).booleanValue());
                             break;
                     }
                 }
@@ -5928,14 +5928,14 @@ public final class r8 extends c1 {
             public final void run() {
                 switch (i10) {
                     case 0:
-                        zy sendMessagesHelper = this.b.getSendMessagesHelper();
+                        az sendMessagesHelper = this.b.getSendMessagesHelper();
                         Object[] objArr5 = objArr;
-                        sendMessagesHelper.O((TLObject) objArr5[0], (fj) objArr5[1], (String) objArr5[2], (ly) objArr5[3], ((Boolean) objArr5[4]).booleanValue(), (ly) objArr5[5], null, null, ((Boolean) objArr5[6]).booleanValue());
+                        sendMessagesHelper.O((TLObject) objArr5[0], (gj) objArr5[1], (String) objArr5[2], (my) objArr5[3], ((Boolean) objArr5[4]).booleanValue(), (my) objArr5[5], null, null, ((Boolean) objArr5[6]).booleanValue());
                         break;
                     default:
-                        zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                        az sendMessagesHelper2 = this.b.getSendMessagesHelper();
                         Object[] objArr6 = objArr;
-                        sendMessagesHelper2.O((TLObject) objArr6[0], (fj) objArr6[1], (String) objArr6[2], (ly) objArr6[3], ((Boolean) objArr6[4]).booleanValue(), (ly) objArr6[5], null, null, ((Boolean) objArr6[6]).booleanValue());
+                        sendMessagesHelper2.O((TLObject) objArr6[0], (gj) objArr6[1], (String) objArr6[2], (my) objArr6[3], ((Boolean) objArr6[4]).booleanValue(), (my) objArr6[5], null, null, ((Boolean) objArr6[6]).booleanValue());
                         break;
                 }
             }

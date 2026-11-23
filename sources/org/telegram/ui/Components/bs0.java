@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bs0 extends dk0 {
     public final Context c;
@@ -116,18 +116,18 @@ public final class bs0 extends dk0 {
         org.telegram.ui.ActionBar.g2 g2Var = jt0Var.y1;
         TLObject E = E(i7);
         if (E instanceof TLRPC.ChannelParticipant) {
-            c22 = g2Var.getMessagesController().c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) E).peer)));
+            c22 = g2Var.getMessagesController().c2(Long.valueOf(org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) E).peer)));
         } else if (!(E instanceof TLRPC.ChatParticipant)) {
             return;
         } else {
             c22 = g2Var.getMessagesController().c2(Long.valueOf(((TLRPC.ChatParticipant) E).user_id));
         }
-        org.telegram.messenger.o10.o(c22);
+        org.telegram.messenger.p10.o(c22);
         jg.z1 z1Var = this.e;
         z1Var.g.size();
         String str = z1Var.n;
         if (str != null) {
-            String q10 = org.telegram.messenger.o10.q(c22);
+            String q10 = org.telegram.messenger.p10.q(c22);
             spannableStringBuilder = new SpannableStringBuilder(q10);
             int A1 = org.telegram.messenger.g0.A1(q10, str);
             if (A1 != -1) {

@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class j5 extends FrameLayout {
     public long E;
@@ -82,7 +82,7 @@ public final class j5 extends FrameLayout {
             i5Var.a = storyItem;
             arrayList2.add(i5Var);
         }
-        ArrayList F = mp.u1(this.r.h).i0.F(j10.i(j10.t0).e());
+        ArrayList F = np.u1(this.r.h).i0.F(k10.i(k10.t0).e());
         if (F != null) {
             for (int i11 = 0; i11 < F.size(); i11++) {
                 o6 o6Var = (o6) F.get(i11);
@@ -207,15 +207,15 @@ public final class j5 extends FrameLayout {
         c5 c5Var = this.h;
         if (f11 == 1.0f && this.f != 1.0f) {
             if (f9Var.O0 != null) {
-                fj fjVar = (fj) f9Var.O0.i.get(Utilities.j(c5Var.getClosestPosition(), f9Var.O0.i.size() - 1, 0));
-                long b10 = h6.b(fjVar);
+                gj gjVar = (gj) f9Var.O0.i.get(Utilities.j(c5Var.getClosestPosition(), f9Var.O0.i.size() - 1, 0));
+                long b10 = h6.b(gjVar);
                 ImageReceiver imageReceiver = c9Var.c;
                 if (imageReceiver != null) {
                     imageReceiver.O0(true, true);
                     c9Var.c = null;
                 }
                 v8 v8Var = f9Var.o0;
-                int i10 = fjVar.l.id;
+                int i10 = gjVar.l.id;
                 f9 f9Var2 = v8Var.O0;
                 int i11 = 0;
                 while (true) {

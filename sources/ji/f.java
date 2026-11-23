@@ -1,14 +1,14 @@
 package ji;
 
-import ai.e2;
+import ai.f2;
 import ai.p0;
 import ai.t;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements x10 {
+public final /* synthetic */ class f implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ o b;
     public final /* synthetic */ String[] c;
@@ -19,11 +19,11 @@ public final /* synthetic */ class f implements x10 {
         this.c = strArr;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
-        e2 e2Var;
+        f2 f2Var;
         r rVar;
-        e2 e2Var2;
+        f2 f2Var2;
         Integer num = (Integer) obj;
         switch (this.a) {
             case 0:
@@ -63,8 +63,8 @@ public final /* synthetic */ class f implements x10 {
                     if (rVar2 != null) {
                         rVar2.setLanguage(p0.H(str));
                     }
-                    if (oVar.c == 2 && (e2Var = oVar.f) != null) {
-                        e2Var.p(str);
+                    if (oVar.c == 2 && (f2Var = oVar.f) != null) {
+                        f2Var.q(str);
                     }
                     oVar.t();
                     break;
@@ -91,8 +91,8 @@ public final /* synthetic */ class f implements x10 {
                     if (eVar != null) {
                         eVar.setLanguage(H);
                     }
-                    if (oVar2.c == 2 && (e2Var2 = oVar2.f) != null) {
-                        e2Var2.p(str2);
+                    if (oVar2.c == 2 && (f2Var2 = oVar2.f) != null) {
+                        f2Var2.q(str2);
                     }
                     oVar2.t();
                     break;

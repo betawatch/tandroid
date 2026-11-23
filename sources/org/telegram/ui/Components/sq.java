@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sq {
     public float A;
@@ -181,11 +181,11 @@ public final class sq {
         if (this.p != null) {
             canvas.save();
             canvas.translate(this.A, L + org.telegram.messenger.g0.L(4.0f));
-            this.e.setAlpha(org.telegram.messenger.ks.e4);
+            this.e.setAlpha(org.telegram.messenger.ls.e4);
             this.p.draw(canvas);
             canvas.restore();
         }
-        this.e.setAlpha(org.telegram.messenger.ks.e4);
+        this.e.setAlpha(org.telegram.messenger.ls.e4);
         canvas.restore();
     }
 

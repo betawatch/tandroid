@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class tf0 extends View {
     public final HashSet E;
@@ -264,7 +264,7 @@ public final class tf0 extends View {
             case 3:
                 i10 = new qf0(this, rf0.n);
                 i10.t = true;
-                i10.x = org.telegram.messenger.ks.e3;
+                i10.x = org.telegram.messenger.ls.e3;
                 break;
             case 4:
                 i10 = new qf0(this, rf0.r);
@@ -283,7 +283,7 @@ public final class tf0 extends View {
             case 7:
                 i10 = new qf0(this, rf0.x);
                 i10.t = true;
-                i10.v = org.telegram.messenger.ks.X4;
+                i10.v = org.telegram.messenger.ls.X4;
                 break;
             case 8:
                 i10 = new qf0(this, rf0.y);
@@ -294,7 +294,7 @@ public final class tf0 extends View {
                 i10 = new qf0(this, rf0.E);
                 i10.t = true;
                 i10.u = R.raw.profile_leave;
-                i10.x = org.telegram.messenger.ks.X4;
+                i10.x = org.telegram.messenger.ls.X4;
                 break;
             case 10:
                 i10 = new qf0(this, rf0.F);
@@ -314,7 +314,7 @@ public final class tf0 extends View {
             case 13:
                 i10 = new qf0(this, rf0.I);
                 i10.t = true;
-                i10.x = org.telegram.messenger.ks.X4;
+                i10.x = org.telegram.messenger.ls.X4;
                 break;
         }
         if (i10 != null) {
@@ -860,12 +860,12 @@ public final class tf0 extends View {
         if (!z10) {
             rf0 rf0Var = this.H ? rf0.e : rf0.f;
             qf0Var.d(0, rf0Var.b, rf0Var.c);
-            qf0Var.c(org.telegram.messenger.gd.N0(rf0Var.a, null));
+            qf0Var.c(org.telegram.messenger.hd.N0(rf0Var.a, null));
         } else if (this.H) {
-            qf0Var.c(org.telegram.messenger.gd.N0(2131746491, null));
+            qf0Var.c(org.telegram.messenger.hd.N0(2131746491, null));
             qf0Var.d(R.raw.profile_unmuting, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24);
         } else {
-            qf0Var.c(org.telegram.messenger.gd.N0(2131746490, null));
+            qf0Var.c(org.telegram.messenger.hd.N0(2131746490, null));
             qf0Var.d(R.raw.profile_muting, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24);
         }
     }

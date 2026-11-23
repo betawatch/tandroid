@@ -8,7 +8,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class nk extends mi {
     public final ty n;
@@ -95,7 +95,7 @@ public final class nk extends mi {
             uiVar.V2.getTitleTextView().setBuildFullLayout(true);
         } catch (Exception unused) {
         }
-        uiVar.V2.setTitle(org.telegram.messenger.gd.N0(this.x ? 2131745456 : 2131745462, null));
+        uiVar.V2.setTitle(org.telegram.messenger.hd.N0(this.x ? 2131745456 : 2131745462, null));
         this.s.h1(0, 0);
     }
 

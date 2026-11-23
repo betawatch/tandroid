@@ -11,10 +11,10 @@ import android.text.StaticLayout;
 import android.text.style.CharacterStyle;
 import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
-import org.telegram.messenger.aj;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.xi;
+import org.telegram.messenger.bj;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.yi;
 import org.telegram.ui.Components.h80;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.n80;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t1 {
     public final r1 a;
@@ -77,8 +77,8 @@ public final class t1 {
             mcVar.f = new e1(r1Var, 0);
         }
         float backgroundDrawableRight = ((r1Var.getBackgroundDrawableRight() + (y1Var != null ? y1Var.i0 : 0.0f)) - org.telegram.messenger.g0.L(10 + ((!r1Var.Q5.P3() || r1Var.C6 || r1Var.K) ? 0 : 6))) - r1Var.getExtraTextX();
-        aj ajVar = r1Var.L;
-        if (ajVar == null || ajVar.i) {
+        bj bjVar = r1Var.L;
+        if (bjVar == null || bjVar.i) {
             if (r1Var.Q5.P3()) {
                 i7 = r1Var.getExtraTextX() + org.telegram.messenger.g0.L(12.0f) + r1Var.N6;
                 if (r1Var.Q5.D == 19) {
@@ -228,8 +228,8 @@ public final class t1 {
         int i7;
         r1 r1Var = this.a;
         y1 y1Var = r1Var.ib;
-        xi xiVar = r1Var.M;
-        if (xiVar == null || xiVar.h) {
+        yi yiVar = r1Var.M;
+        if (yiVar == null || yiVar.h) {
             float f10 = this.b ? 1.0f : 0.0f;
             if (y1Var.S2) {
                 f10 = org.telegram.messenger.g0.T1(1.0f - f10, f10, y1Var.L1);
@@ -239,8 +239,8 @@ public final class t1 {
                 return;
             }
             float backgroundDrawableRight = ((r1Var.getBackgroundDrawableRight() + (y1Var != null ? y1Var.i0 : 0.0f)) - org.telegram.messenger.g0.L(10 + ((!r1Var.Q5.P3() || r1Var.C6 || r1Var.K) ? 0 : 6))) - r1Var.getExtraTextX();
-            aj ajVar = r1Var.L;
-            if (ajVar != null && !ajVar.i) {
+            bj bjVar = r1Var.L;
+            if (bjVar != null && !bjVar.i) {
                 i7 = (int) r1Var.s3;
             } else if (r1Var.Q5.P3()) {
                 i7 = r1Var.getExtraTextX() + org.telegram.messenger.g0.L(12.0f) + r1Var.N6;
@@ -320,8 +320,8 @@ public final class t1 {
         Canvas canvas2 = canvas;
         r1 r1Var = this.a;
         y1 y1Var = r1Var.ib;
-        xi xiVar = r1Var.M;
-        if (xiVar == null || xiVar.h) {
+        yi yiVar = r1Var.M;
+        if (yiVar == null || yiVar.h) {
             float f14 = this.b ? 1.0f : 0.0f;
             if (y1Var.S2) {
                 f14 = org.telegram.messenger.g0.T1(1.0f - f14, f14, y1Var.L1);
@@ -331,8 +331,8 @@ public final class t1 {
                 return;
             }
             float backgroundDrawableRight = ((r1Var.getBackgroundDrawableRight() + (y1Var != null ? y1Var.i0 : 0.0f)) - org.telegram.messenger.g0.L(10 + ((!r1Var.Q5.P3() || r1Var.C6 || r1Var.K) ? 0 : 6))) - r1Var.getExtraTextX();
-            aj ajVar = r1Var.L;
-            if (ajVar == null || ajVar.i) {
+            bj bjVar = r1Var.L;
+            if (bjVar == null || bjVar.i) {
                 if (r1Var.Q5.P3()) {
                     i7 = r1Var.getExtraTextX() + org.telegram.messenger.g0.L(12.0f) + r1Var.N6;
                     if (r1Var.Q5.D == 19) {
@@ -383,7 +383,7 @@ public final class t1 {
                     f12 = f20;
                     i10 = p10;
                     rectF = rectF2;
-                    canvas2.saveLayerAlpha(0.0f, 0.0f, f19, i16 - 1, ks.e4, 31);
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, f19, i16 - 1, ls.e4, 31);
                 } else {
                     i10 = p10;
                     rectF = rectF2;
@@ -505,7 +505,7 @@ public final class t1 {
                 canvas2.save();
                 int L4 = org.telegram.messenger.g0.L(16.0f);
                 this.l.setBounds((i11 - L4) - org.telegram.messenger.g0.L(7.0f), (i16 - L4) - org.telegram.messenger.g0.L(5.0f), i11 - org.telegram.messenger.g0.L(7.0f), i16 - org.telegram.messenger.g0.L(5.0f));
-                canvas2.rotate(org.telegram.messenger.g0.W1(f10, 0, ks.K2), this.l.getBounds().centerX(), this.l.getBounds().centerY());
+                canvas2.rotate(org.telegram.messenger.g0.W1(f10, 0, ls.K2), this.l.getBounds().centerX(), this.l.getBounds().centerY());
                 this.l.setAlpha((int) (f11 * 255.0f));
                 this.l.draw(canvas2);
                 canvas2.restore();

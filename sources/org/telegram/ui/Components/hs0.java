@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hs0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -36,7 +36,7 @@ public final class hs0 extends FrameLayout implements org.telegram.ui.ActionBar.
         addView(view, c8.ma.c(60.0f, -1));
         hi.e eVar = new hi.e(context, h6Var, true);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(z10 ? 2131748136 : 2131748134, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(z10 ? 2131748136 : 2131748134, null));
         spannableStringBuilder.append((CharSequence) " ");
         SpannableString spannableString = new SpannableString("l");
         spannableString.setSpan(new nq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
@@ -51,8 +51,8 @@ public final class hs0 extends FrameLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.G6, h6Var);
         org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.n6, h6Var);
         m80Var.setLineSpacing(org.telegram.messenger.g0.L(3.0f), 1.0f);
-        SpannableStringBuilder x22 = org.telegram.messenger.g0.x2(org.telegram.messenger.gd.N0(z10 ? 2131748135 : 2131748133, null), new cp0(cp0Var, 4));
-        SpannableString spannableString2 = new SpannableString("" + org.telegram.messenger.mp.u1(i7).A4);
+        SpannableStringBuilder x22 = org.telegram.messenger.g0.x2(org.telegram.messenger.hd.N0(z10 ? 2131748135 : 2131748133, null), new cp0(cp0Var, 4));
+        SpannableString spannableString2 = new SpannableString("" + org.telegram.messenger.np.u1(i7).A4);
         spannableString2.setSpan(new l41(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
         m80Var.setText(org.telegram.messenger.g0.K2(x22, spannableString2, "%s"));
         addView(m80Var, c8.ma.d(-1, -2.0f, 49, 24.0f, 96.0f, 24.0f, 12.0f));

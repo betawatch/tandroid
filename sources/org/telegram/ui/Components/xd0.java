@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xd0 extends View {
     public int a;
@@ -48,15 +48,15 @@ public final class xd0 extends View {
         ce0 ce0Var = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : (ce0) cVar.e : (ce0) cVar.d : (ce0) cVar.c : (ce0) cVar.b;
         int i11 = this.a;
         if (i11 == 1) {
-            ce0Var.a = org.telegram.messenger.n10.A(ce0Var.a, min, 100.0f, 0.0f);
+            ce0Var.a = org.telegram.messenger.o10.A(ce0Var.a, min, 100.0f, 0.0f);
         } else if (i11 == 2) {
-            ce0Var.b = org.telegram.messenger.n10.A(ce0Var.b, min, 100.0f, 0.0f);
+            ce0Var.b = org.telegram.messenger.o10.A(ce0Var.b, min, 100.0f, 0.0f);
         } else if (i11 == 3) {
-            ce0Var.c = org.telegram.messenger.n10.A(ce0Var.c, min, 100.0f, 0.0f);
+            ce0Var.c = org.telegram.messenger.o10.A(ce0Var.c, min, 100.0f, 0.0f);
         } else if (i11 == 4) {
-            ce0Var.d = org.telegram.messenger.n10.A(ce0Var.d, min, 100.0f, 0.0f);
+            ce0Var.d = org.telegram.messenger.o10.A(ce0Var.d, min, 100.0f, 0.0f);
         } else if (i11 == 5) {
-            ce0Var.e = org.telegram.messenger.n10.A(ce0Var.e, min, 100.0f, 0.0f);
+            ce0Var.e = org.telegram.messenger.o10.A(ce0Var.e, min, 100.0f, 0.0f);
         }
         invalidate();
         wd0 wd0Var = this.w;

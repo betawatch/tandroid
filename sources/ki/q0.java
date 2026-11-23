@@ -18,7 +18,7 @@ import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.rh0;
 import org.telegram.ui.Components.w6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class q0 extends Drawable implements w6 {
     public final Paint a;

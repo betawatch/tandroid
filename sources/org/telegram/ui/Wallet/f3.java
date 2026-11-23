@@ -6,11 +6,11 @@ import di.pb;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class f3 {
     public final int a;
@@ -86,7 +86,7 @@ public final class f3 {
             if (i10 != 0 && wallettransaction.amount > 0 && (nftitem = wallettransaction.nft) != null) {
                 TL_stars.StarGift starGift = nftitem.gift;
                 if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                    i7 = bi.y4.f((TL_stars.TL_starGiftUnique) starGift);
+                    i7 = bi.x4.f((TL_stars.TL_starGiftUnique) starGift);
                     if (i7 > 0 || i7 >= 10000) {
                         j3 = 0;
                     } else {
@@ -117,7 +117,7 @@ public final class f3 {
         if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCreate) {
             TL_wallet.walletOnchainGiftActionOfferCreate walletonchaingiftactionoffercreate = (TL_wallet.walletOnchainGiftActionOfferCreate) walletOnchainGiftAction;
             long j11 = wallettransaction.amount;
-            return new f3(5, R.drawable.wallet_transaction_out, false, 0, -(j11 != 0 ? Math.abs(j11) : walletonchaingiftactionoffercreate.amount), walletonchaingiftactionoffercreate.price, walletonchaingiftactionoffercreate.service_fee, 0L, walletonchaingiftactionoffercreate.expires_at, walletonchaingiftactionoffercreate.counterparty_address, 2131742776);
+            return new f3(5, R.drawable.wallet_transaction_out, false, 0, -(j11 != 0 ? Math.abs(j11) : walletonchaingiftactionoffercreate.amount), walletonchaingiftactionoffercreate.price, walletonchaingiftactionoffercreate.service_fee, 0L, walletonchaingiftactionoffercreate.expires_at, walletonchaingiftactionoffercreate.counterparty_address, 2131742774);
         }
         if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferAccept) {
             TL_wallet.walletOnchainGiftActionOfferAccept walletonchaingiftactionofferaccept = (TL_wallet.walletOnchainGiftActionOfferAccept) walletOnchainGiftAction;
@@ -147,11 +147,11 @@ public final class f3 {
 
     public static f3 d(int i7, TL_wallet.walletTransaction wallettransaction, long j3, long j10, long j11, String str) {
         long j12 = wallettransaction.amount;
-        return new f3(i7, R.drawable.wallet_transaction_in, true, 0, j12 != 0 ? Math.abs(j12) : j3, j10, 0L, j11, 0, str, 2131742776);
+        return new f3(i7, R.drawable.wallet_transaction_in, true, 0, j12 != 0 ? Math.abs(j12) : j3, j10, 0L, j11, 0, str, 2131742774);
     }
 
     public static SpannableStringBuilder f(int i7, long j3) {
-        return pb.b1(true, gd.a0(null, null, i7, "⭐️ " + u0.t(j3, false)), 0.7f, null);
+        return pb.b1(true, hd.a0(null, null, i7, "⭐️ " + u0.t(j3, false)), 0.7f, null);
     }
 
     public final CharSequence b() {
@@ -163,28 +163,28 @@ public final class f3 {
                 if (j10 == 0) {
                     j10 = Math.abs(j3);
                 }
-                return f(2131742816, j10);
+                return f(2131742814, j10);
             case 1:
                 if (j3 != 0) {
                     j10 = Math.abs(j3);
                 }
-                return f(2131742805, j10);
+                return f(2131742803, j10);
             case 2:
-                return f(2131742815, Math.abs(j3));
+                return f(2131742813, Math.abs(j3));
             case 3:
-                return j10 != 0 ? f(2131742809, j10) : gd.N0(2131742810, null);
+                return j10 != 0 ? f(2131742807, j10) : hd.N0(2131742808, null);
             case 4:
-                return gd.N0(2131742808, null);
+                return hd.N0(2131742806, null);
             case 5:
-                return gd.N0(2131742811, null);
+                return hd.N0(2131742809, null);
             case 6:
-                return gd.N0(2131742814, null);
+                return hd.N0(2131742812, null);
             case 7:
-                return gd.N0(2131742813, null);
+                return hd.N0(2131742811, null);
             case 8:
-                return gd.N0(2131742812, null);
+                return hd.N0(2131742810, null);
             case 9:
-                return f(2131742807, j10);
+                return f(2131742805, j10);
             default:
                 return "";
         }
@@ -193,25 +193,25 @@ public final class f3 {
     public final String e() {
         switch (this.a) {
             case 0:
-                return gd.N0(2131742802, null);
+                return hd.N0(2131742800, null);
             case 1:
-                return gd.N0(2131742799, null);
+                return hd.N0(2131742797, null);
             case 2:
-                return gd.N0(2131742804, null);
+                return hd.N0(2131742802, null);
             case 3:
-                return gd.N0(2131742801, null);
+                return hd.N0(2131742799, null);
             case 4:
-                return gd.N0(2131742800, null);
+                return hd.N0(2131742798, null);
             case 5:
-                return gd.N0(2131742811, null);
+                return hd.N0(2131742809, null);
             case 6:
-                return gd.N0(2131742814, null);
+                return hd.N0(2131742812, null);
             case 7:
-                return gd.N0(2131742813, null);
+                return hd.N0(2131742811, null);
             case 8:
-                return gd.N0(2131742812, null);
+                return hd.N0(2131742810, null);
             case 9:
-                return gd.N0(2131742803, null);
+                return hd.N0(2131742801, null);
             default:
                 return "";
         }

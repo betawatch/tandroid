@@ -7,7 +7,7 @@ import java.util.Calendar;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hl0 implements TextWatcher {
     public int a = -1;
@@ -108,7 +108,7 @@ public final class hl0 implements TextWatcher {
             int intValue4 = Utilities.z(strArr[1]).intValue() + 2000;
             Calendar calendar = Calendar.getInstance();
             i7 = ((org.telegram.ui.ActionBar.g2) ml0Var).currentAccount;
-            boolean z11 = org.telegram.messenger.j10.i(i7).d().startsWith("7") || ((psVar = ml0Var.B0) != null && psVar.c.equals("7"));
+            boolean z11 = org.telegram.messenger.k10.i(i7).d().startsWith("7") || ((psVar = ml0Var.B0) != null && psVar.c.equals("7"));
             int i13 = z11 ? 2022 : calendar.get(1);
             int i14 = z11 ? 1 : calendar.get(2) + 1;
             if (intValue4 < i13 || (intValue4 == i13 && intValue3 < i14)) {

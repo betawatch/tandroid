@@ -40,16 +40,16 @@ import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocketFactory;
 import m9.y;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.vr;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.i61;
 import org.telegram.ui.k9;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class j implements s9, g61, h2.d, u2.u, f0 {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
         if (TextUtils.isEmpty(c10)) {
             g0.g3(new ai.n(7));
         } else {
-            mp.u1(this.b).f2().a(c10, null, new h0((g2) this.c, 7));
+            np.u1(this.b).f2().a(c10, null, new h0((g2) this.c, 7));
         }
     }
 
@@ -317,7 +317,7 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
                     ((qb.a) this.c).getClass();
                     rc.s sVar = new rc.s(z10 ? SSLSocketFactory.getDefault() : SocketFactory.getDefault(), new rc.a(str2, i10), i7, null, null);
                     sVar.d = 1;
-                    sVar.e = ks.Z3;
+                    sVar.e = ls.Z3;
                     sVar.f = true;
                     if (port >= 0) {
                         str2 = str2 + ":" + port;
@@ -644,7 +644,7 @@ public final class j implements s9, g61, h2.d, u2.u, f0 {
     }
 
     @Override // org.telegram.ui.s9
-    public /* synthetic */ void S0(ur urVar) {
+    public /* synthetic */ void S0(vr vrVar) {
     }
 
     @Override // org.telegram.ui.Components.g61

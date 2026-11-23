@@ -12,10 +12,10 @@ import android.os.HandlerThread;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class w0 {
     public static final float[] n = {-1.0f, -1.0f, 0.0f, 0.0f, 1.0f, -1.0f, 1.0f, 0.0f, -1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
@@ -35,7 +35,7 @@ public final class w0 {
 
     public w0(Surface surface, int i7) {
         this.a = i7;
-        FloatBuffer i10 = n10.i(ByteBuffer.allocateDirect(64));
+        FloatBuffer i10 = o10.i(ByteBuffer.allocateDirect(64));
         this.d = i10;
         i10.put(n).position(0);
         HandlerThread handlerThread = new HandlerThread("RoundVideoTranscoderFrames");

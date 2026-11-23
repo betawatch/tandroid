@@ -1,15 +1,15 @@
 package hi;
 
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class mb implements Runnable {
-    public final /* synthetic */ mp a;
+    public final /* synthetic */ np a;
     public final /* synthetic */ TLRPC.User[] b;
     public final /* synthetic */ double c;
     public final /* synthetic */ double d;
@@ -18,8 +18,8 @@ public final /* synthetic */ class mb implements Runnable {
     public final /* synthetic */ kb h;
     public final /* synthetic */ String n;
 
-    public /* synthetic */ mb(mp mpVar, TLRPC.User[] userArr, double d, double d2, int[] iArr, ConnectionsManager connectionsManager, kb kbVar, String str) {
-        this.a = mpVar;
+    public /* synthetic */ mb(np npVar, TLRPC.User[] userArr, double d, double d2, int[] iArr, ConnectionsManager connectionsManager, kb kbVar, String str) {
+        this.a = npVar;
         this.b = userArr;
         this.c = d;
         this.d = d2;

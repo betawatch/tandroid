@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a00 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class a00 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ org.telegram.ui.ActionBar.r4 b;
     public final /* synthetic */ rh c;
@@ -18,7 +18,7 @@ public final /* synthetic */ class a00 implements org.telegram.messenger.x10 {
     /* JADX WARN: Removed duplicated region for block: B:21:0x0045  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x003e  */
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

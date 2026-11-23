@@ -11,8 +11,8 @@ import c8.ma;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.x1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements b6 {
     public int a;
@@ -37,11 +37,11 @@ public class e extends FrameLayout implements b6 {
         this.b = h6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        n10.p(textView, 1, 20.0f);
-        textView.setGravity(gd.a0 ? 5 : 3);
+        o10.p(textView, 1, 20.0f);
+        textView.setGravity(hd.a0 ? 5 : 3);
         int i7 = m6.j5;
         t6.U(textView, i7, h6Var);
-        boolean z10 = gd.a0;
+        boolean z10 = hd.a0;
         addView(textView, ma.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
@@ -53,7 +53,7 @@ public class e extends FrameLayout implements b6 {
         x1Var.a(w02);
         x1Var.b(m6.w0(i7, h6Var));
         x1Var.k = 220.0f;
-        addView(imageView, ma.d(24, 24.0f, (gd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, ma.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new d(this, 0));
     }
 
@@ -81,7 +81,7 @@ public class e extends FrameLayout implements b6 {
 
     public void setCloseImageVisible(boolean z10) {
         this.c.setVisibility(z10 ? 0 : 8);
-        boolean z11 = gd.a0;
+        boolean z11 = hd.a0;
         this.d.setLayoutParams(ma.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
     }
 

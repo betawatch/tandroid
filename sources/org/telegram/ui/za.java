@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class za extends oq0 {
     public final /* synthetic */ lb a;
@@ -14,11 +14,11 @@ public final class za extends oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public final wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         org.telegram.ui.Cells.v0 v0Var;
-        org.telegram.messenger.fj messageObject;
+        org.telegram.messenger.gj messageObject;
         org.telegram.ui.Cells.r1 r1Var;
-        org.telegram.messenger.fj messageObject2;
+        org.telegram.messenger.gj messageObject2;
         lb lbVar = this.a;
         int childCount = lbVar.w.getChildCount();
         int i10 = 0;
@@ -29,12 +29,12 @@ public final class za extends oq0 {
             }
             View childAt = lbVar.w.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.r1) {
-                if (fjVar != null && (messageObject2 = (r1Var = (org.telegram.ui.Cells.r1) childAt).getMessageObject()) != null && messageObject2.e1() == fjVar.e1()) {
+                if (gjVar != null && (messageObject2 = (r1Var = (org.telegram.ui.Cells.r1) childAt).getMessageObject()) != null && messageObject2.e1() == gjVar.e1()) {
                     imageReceiver = r1Var.getPhotoImage();
                 }
             } else if ((childAt instanceof org.telegram.ui.Cells.v0) && (messageObject = (v0Var = (org.telegram.ui.Cells.v0) childAt).getMessageObject()) != null) {
-                if (fjVar != null) {
-                    if (messageObject.e1() == fjVar.e1()) {
+                if (gjVar != null) {
+                    if (messageObject.e1() == gjVar.e1()) {
                         imageReceiver = v0Var.getPhotoImage();
                     }
                 } else if (fileLocation != null && messageObject.p0 != null) {

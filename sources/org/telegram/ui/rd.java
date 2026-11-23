@@ -3,24 +3,24 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rd extends FrameLayout {
     public final org.telegram.ui.Components.h51 a;
     public final org.telegram.ui.ActionBar.h6 b;
     public final int c;
     public final int d;
-    public final ai.y0 e;
+    public final ai.c1 e;
     public final /* synthetic */ td f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rd(td tdVar, Context context, int i7, int i10, int i11, ai.y0 y0Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public rd(td tdVar, Context context, int i7, int i10, int i11, ai.c1 c1Var, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.f = tdVar;
         this.d = i7;
         this.c = i10;
         this.b = h6Var;
-        this.e = y0Var;
+        this.e = c1Var;
         org.telegram.ui.Components.h51 h51Var = new org.telegram.ui.Components.h51(context, i10, i11, true, new a5(this, 3), new w0(this, 15), null, h6Var);
         this.a = h51Var;
         setClipChildren(false);
@@ -31,7 +31,7 @@ public final class rd extends FrameLayout {
         h51Var.setCaptureSectionsDecoratorAllowed(true);
         h51Var.setOverScrollMode(0);
         addView(h51Var, c8.ma.c(-1.0f, -1));
-        h51Var.setOnScrollListener(new bi.h6(3, this, y0Var));
+        h51Var.setOnScrollListener(new bi.g6(3, this, c1Var));
         ri.q qVar = tdVar.x.e1;
         if (qVar != null) {
             qVar.b(h51Var);

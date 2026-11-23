@@ -28,8 +28,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -48,18 +48,18 @@ import org.telegram.ui.bj;
 import org.telegram.ui.bn;
 import org.telegram.ui.tl;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class p0 implements c2 {
+public final class p0 implements d2 {
     public static final nr I0 = new nr(0.3d, 0.0d, 0.2d, 1.0d);
     public ValueAnimator A0;
     public final int[] B0;
     public final int[] C0;
     public final float[] D0;
     public tl E0;
-    public j2 F;
+    public k2 F;
     public float F0;
-    public e2 G;
+    public f2 G;
     public ValueAnimator G0;
     public h H;
     public final j0 H0;
@@ -77,7 +77,7 @@ public final class p0 implements c2 {
     public long W;
     public boolean X;
     public d6 Y;
-    public n1 a;
+    public o1 a;
     public jh.f a0;
     public long b;
     public float b0;
@@ -108,7 +108,7 @@ public final class p0 implements c2 {
     public final b0 t0;
     public final b0 u0;
     public final b0 v0;
-    public m1 w;
+    public n1 w;
     public LinearGradient w0;
     public boolean x0;
     public float y0;
@@ -149,7 +149,7 @@ public final class p0 implements c2 {
             return;
         }
         if (tL_error != null && ("AICOMPOSE_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) || "SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text))) {
-            Y.I(R.raw.star_premium_2, gd.N0(2131754989, null), org.telegram.messenger.g0.W2(gd.N0(2131754990, null))).j();
+            Y.I(R.raw.star_premium_2, hd.N0(2131754989, null), org.telegram.messenger.g0.W2(hd.N0(2131754990, null))).j();
         } else if (tL_error != null) {
             Y.g0(tL_error, false);
         } else {
@@ -181,11 +181,11 @@ public final class p0 implements c2 {
         for (String str3 : split) {
             sb2.append(d(str3));
         }
-        String L0 = gd.L0(sb2.toString());
+        String L0 = hd.L0(sb2.toString());
         if (!TextUtils.isEmpty(L0)) {
             return L0;
         }
-        Locale locale = gd.E0().y;
+        Locale locale = hd.E0().y;
         StringBuilder sb3 = new StringBuilder();
         StringBuilder sb4 = new StringBuilder();
         boolean z10 = true;
@@ -228,7 +228,7 @@ public final class p0 implements c2 {
 
     public static String q(String str) {
         String language = Locale.forLanguageTag(str.replace('_', '-')).getLanguage();
-        Locale locale = gd.E0().y;
+        Locale locale = hd.E0().y;
         String displayLanguage = locale != null ? new Locale(language).getDisplayLanguage(locale) : null;
         if (displayLanguage == null || displayLanguage.isEmpty() || displayLanguage.equalsIgnoreCase(language)) {
             String Q0 = b31.Q0(language);
@@ -248,21 +248,21 @@ public final class p0 implements c2 {
     }
 
     public final void A(String str) {
-        e2 e2Var;
+        f2 f2Var;
         DictationAsr.X(str);
         DictationAsr.t(DictationAsr.J(str));
         this.w.setLanguage(H(str));
-        if (this.r != 1 || (e2Var = this.G) == null) {
+        if (this.r != 1 || (f2Var = this.G) == null) {
             return;
         }
-        e2Var.p(str);
+        f2Var.q(str);
     }
 
     public final void B() {
         Log.d("Dictation", "send from listening (" + w() + " chars)");
-        e2 e2Var = this.G;
-        if (e2Var != null) {
-            e2Var.c();
+        f2 f2Var = this.G;
+        if (f2Var != null) {
+            f2Var.d();
         }
         this.G = null;
         org.telegram.messenger.g0.r(this.s0);
@@ -347,14 +347,14 @@ public final class p0 implements c2 {
             s0Var.Z0 = f11;
             s0Var.invalidate();
         }
-        m1 m1Var = this.w;
-        if (m1Var != null) {
-            if (m1Var.m0 == f10 && m1Var.l0 == f11) {
+        n1 n1Var = this.w;
+        if (n1Var != null) {
+            if (n1Var.m0 == f10 && n1Var.l0 == f11) {
                 return;
             }
-            m1Var.m0 = f10;
-            m1Var.l0 = f11;
-            m1Var.invalidate();
+            n1Var.m0 = f10;
+            n1Var.l0 = f11;
+            n1Var.invalidate();
         }
     }
 
@@ -387,9 +387,9 @@ public final class p0 implements c2 {
             this.w.setRevert(false);
             this.w.setSettings(false);
             E();
-            j2 j2Var = this.F;
-            if (j2Var != null) {
-                j2Var.f(false);
+            k2 k2Var = this.F;
+            if (k2Var != null) {
+                k2Var.f(false);
             }
         }
         this.J = null;
@@ -476,17 +476,17 @@ public final class p0 implements c2 {
         if (!z10) {
             org.telegram.messenger.g0.h3(this.s0, 300L);
         }
-        boolean z13 = mp.g1().getInt("design_dictation_mode", 1) == 2;
+        boolean z13 = np.g1().getInt("design_dictation_mode", 1) == 2;
         ChatActivityEnterView chatActivityEnterView2 = sfVar.a;
-        this.G = new e2(this.h, chatActivityEnterView2.R, chatActivityEnterView2.G3, z13, this);
+        this.G = new f2(this.h, chatActivityEnterView2.R, chatActivityEnterView2.G3, z13, this);
         gf gfVar = sfVar.a.F0;
         if (gfVar != null) {
             gfVar.n1 = true;
         }
         Log.d("Dictation", "start simulated=" + z13);
-        e2 e2Var = this.G;
-        e2Var.m();
-        org.telegram.messenger.g0.h3(new a1.e(14, this, e2Var), (z13 || z10) ? 120L : 420L);
+        f2 f2Var = this.G;
+        f2Var.n();
+        org.telegram.messenger.g0.h3(new a1.e(14, this, f2Var), (z13 || z10) ? 120L : 420L);
     }
 
     public final ArrayList J() {
@@ -556,10 +556,10 @@ public final class p0 implements c2 {
         int[] iArr = u0Var.B;
         int i13 = iArr[0];
         int i14 = iArr[1];
-        if (l2.e != i13 || l2.f != i14) {
-            l2.e = i13;
-            l2.f = i14;
-            Arrays.fill(l2.g[0], (Object) null);
+        if (m2.e != i13 || m2.f != i14) {
+            m2.e = i13;
+            m2.f = i14;
+            Arrays.fill(m2.g[0], (Object) null);
         }
         if (this.s != null) {
             int w03 = m6.w0(i12, h6Var) | (-16777216);
@@ -609,20 +609,20 @@ public final class p0 implements c2 {
             s0Var3.invalidate();
             this.s.setSendIconColor(m6.w0(m6.Tf, h6Var));
         }
-        j2 j2Var = this.F;
-        if (j2Var != null) {
-            j2Var.c(u(m6.w0(i12, h6Var), w02, c10), m6.w0(m6.Le, h6Var), c10);
+        k2 k2Var = this.F;
+        if (k2Var != null) {
+            k2Var.c(u(m6.w0(i12, h6Var), w02, c10), m6.w0(m6.Le, h6Var), c10);
         }
-        m1 m1Var = this.w;
-        if (m1Var != null) {
-            m1Var.e();
+        n1 n1Var = this.w;
+        if (n1Var != null) {
+            n1Var.e();
         }
     }
 
     public final void M(boolean z10) {
         String str;
         if (DictationAsr.H(new long[2])) {
-            str = " " + gd.a0(null, null, 2131745063, Long.valueOf(Math.round(r1[0] / 1048576.0d)), Long.valueOf(Math.max(1L, Math.round(r1[1] / 1048576.0d))));
+            str = " " + hd.a0(null, null, 2131745063, Long.valueOf(Math.round(r1[0] / 1048576.0d)), Long.valueOf(Math.max(1L, Math.round(r1[1] / 1048576.0d))));
         } else {
             str = null;
         }
@@ -630,17 +630,17 @@ public final class p0 implements c2 {
             this.l0 = str;
             sf sfVar = this.f;
             if (str == null) {
-                sfVar.a.M1(gd.N0(2131745054, null), true);
+                sfVar.a.M1(hd.N0(2131745054, null), true);
                 return;
             }
-            String N0 = gd.N0(2131745062, null);
+            String N0 = hd.N0(2131745062, null);
             ChatActivityEnterView chatActivityEnterView = sfVar.a;
             CharSequence charSequence = chatActivityEnterView.e;
             chatActivityEnterView.M1(TextUtils.concat(N0, str), !(charSequence != null && charSequence.toString().startsWith(N0.toString())));
         }
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void a(String str, String str2) {
         if (p()) {
             if (!TextUtils.isEmpty(str)) {
@@ -651,10 +651,10 @@ public final class p0 implements c2 {
                     this.L = false;
                 }
             }
-            j2 j2Var = this.F;
-            Editable editableText = j2Var.a.getEditableText();
+            k2 k2Var = this.F;
+            Editable editableText = k2Var.a.getEditableText();
             if (editableText != null) {
-                j2Var.d(editableText, editableText.length());
+                k2Var.d(editableText, editableText.length());
             }
             sf sfVar = this.f;
             gf gfVar = sfVar.a.F0;
@@ -691,7 +691,7 @@ public final class p0 implements c2 {
             this.P = 0.0f;
             org.telegram.messenger.g0.h3(this.t0, 460L);
             this.w.setStopMode(false);
-            this.w.d(gd.N0(2131745060, null), false);
+            this.w.d(hd.N0(2131745060, null), false);
             gf gfVar2 = sfVar.a.F0;
             gfVar2.setSelection(gfVar2.length());
             int i7 = 7;
@@ -739,7 +739,7 @@ public final class p0 implements c2 {
         this.r = 4;
         this.b = 0L;
         this.V = SystemClock.uptimeMillis();
-        this.w.d(gVar.d ? gd.N0(2131745059, null) : gd.a0(null, null, 2131745069, gVar.a()), true);
+        this.w.d(gVar.d ? hd.N0(2131745059, null) : hd.a0(null, null, 2131745069, gVar.a()), true);
         this.F.a();
         this.F.f(true);
         this.x.f();
@@ -831,7 +831,7 @@ public final class p0 implements c2 {
         org.telegram.messenger.g0.h3(b0Var2, 310L);
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void h(float f10) {
         ChatActivityEnterView chatActivityEnterView;
         ChatActivityEnterView.RecordCircle recordCircle;
@@ -856,7 +856,7 @@ public final class p0 implements c2 {
         }
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void i(String str) {
         l(-1, str);
     }
@@ -890,7 +890,7 @@ public final class p0 implements c2 {
         int i10 = 4;
         s0Var3.setBubbleProvider(new cb.c(this, i10));
         if (this.w == null) {
-            this.w = new m1(context, this.n, this);
+            this.w = new n1(context, this.n, this);
         }
         if (this.w.getParent() != du0Var) {
             org.telegram.messenger.g0.E2(this.w);
@@ -918,16 +918,16 @@ public final class p0 implements c2 {
             if (cVar != null && (gVar = fVar2.n) != null && (aVar = gVar.w) != null) {
                 fh.g c10 = cVar.c(this.w, aVar, false);
                 fh.g c11 = cVar.c(this.w, this.a0.n.w, false);
-                m1 m1Var = this.w;
-                fh.g c12 = cVar.c(m1Var, this.a0.n.w, false);
-                m1Var.I = c10;
-                m1Var.J = c11;
-                m1Var.K = c12;
+                n1 n1Var = this.w;
+                fh.g c12 = cVar.c(n1Var, this.a0.n.w, false);
+                n1Var.I = c10;
+                n1Var.J = c11;
+                n1Var.K = c12;
                 c10.r(org.telegram.messenger.g0.L(18.0f));
                 c11.r(org.telegram.messenger.g0.L(18.0f));
                 c12.r(org.telegram.messenger.g0.L(18.0f));
-                m1 m1Var2 = this.w;
-                m1Var2.setGearGlass(cVar.c(m1Var2, this.a0.n.w, false));
+                n1 n1Var2 = this.w;
+                n1Var2.setGearGlass(cVar.c(n1Var2, this.a0.n.w, false));
                 s0 s0Var4 = this.s;
                 if (s0Var4 != null) {
                     s0Var4.setStopGlass(cVar.c(s0Var4, new qb.a(i12), false));
@@ -936,10 +936,10 @@ public final class p0 implements c2 {
         }
         gf gfVar = sfVar.a.F0;
         if (this.F == null) {
-            j2 j2Var = new j2(gfVar);
-            this.F = j2Var;
-            j2Var.h = new a0(this, i10);
-            this.a = new n1(gfVar);
+            k2 k2Var = new k2(gfVar);
+            this.F = k2Var;
+            k2Var.h = new a0(this, i10);
+            this.a = new o1(gfVar);
             gfVar.addTextChangedListener(this.g0);
         }
         if (this.H == null) {
@@ -954,9 +954,9 @@ public final class p0 implements c2 {
         if (gfVar != null) {
             gfVar.n1 = false;
         }
-        e2 e2Var = this.G;
-        if (e2Var != null) {
-            e2Var.c();
+        f2 f2Var = this.G;
+        if (f2Var != null) {
+            f2Var.d();
         }
         this.G = null;
         h hVar = this.H;
@@ -966,9 +966,9 @@ public final class p0 implements c2 {
         if (p()) {
             g();
         }
-        m1 m1Var = this.w;
-        if (m1Var != null) {
-            m1Var.a();
+        n1 n1Var = this.w;
+        if (n1Var != null) {
+            n1Var.a();
             this.w.setIsland(false);
             this.w.setRevert(false);
             this.w.setSettings(false);
@@ -976,9 +976,9 @@ public final class p0 implements c2 {
         this.J = null;
         this.r = 0;
         D(false);
-        n1 n1Var = this.a;
-        if (n1Var != null) {
-            n1Var.c();
+        o1 o1Var = this.a;
+        if (o1Var != null) {
+            o1Var.c();
         }
         ChatActivityEnterView chatActivityEnterView = sfVar.a;
         chatActivityEnterView.G1 = 0L;
@@ -987,16 +987,16 @@ public final class p0 implements c2 {
         if (s0Var != null && s0Var.getRightMode() == 3) {
             this.s.e();
         }
-        j2 j2Var = this.F;
-        if (j2Var != null) {
-            j2Var.f(false);
+        k2 k2Var = this.F;
+        if (k2Var != null) {
+            k2Var.f(false);
         }
         C(false);
         E();
         sfVar.b();
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void l(int i7, String str) {
         if (p()) {
             this.q0 = SystemClock.uptimeMillis();
@@ -1054,9 +1054,9 @@ public final class p0 implements c2 {
 
     public final void s() {
         if (p()) {
-            e2 e2Var = this.G;
-            if (e2Var != null) {
-                e2Var.c();
+            f2 f2Var = this.G;
+            if (f2Var != null) {
+                f2Var.d();
             }
             this.G = null;
             sf sfVar = this.f;
@@ -1088,9 +1088,9 @@ public final class p0 implements c2 {
         this.s.setStopIsland(false);
         this.s.setRightMode(1);
         this.s.setCancelShown(false);
-        e2 e2Var = this.G;
-        if (e2Var != null) {
-            e2Var.u();
+        f2 f2Var = this.G;
+        if (f2Var != null) {
+            f2Var.v();
         }
     }
 
@@ -1124,10 +1124,10 @@ public final class p0 implements c2 {
                         int lineCount = layout != null ? layout.getLineCount() : 1;
                         int width = (gfVar.getWidth() - gfVar.getTotalPaddingLeft()) - gfVar.getTotalPaddingRight();
                         int lineCount2 = width <= 0 ? 1 : StaticLayout.Builder.obtain(str, 0, str.length(), gfVar.getPaint(), width).setLineSpacing(gfVar.getLineSpacingExtra(), gfVar.getLineSpacingMultiplier()).setIncludePad(gfVar.getIncludeFontPadding()).build().getLineCount();
-                        nr nrVar = n1.J;
+                        nr nrVar = o1.J;
                         long max = Math.max(800L, Math.min(1200L, (Math.max(lineCount, lineCount2) * 70) + 700));
                         long uptimeMillis = SystemClock.uptimeMillis();
-                        nr nrVar2 = n1.J;
+                        nr nrVar2 = o1.J;
                         ChatActivityEnterView chatActivityEnterView = sfVar.a;
                         chatActivityEnterView.G1 = uptimeMillis + max;
                         chatActivityEnterView.H1 = nrVar2;
@@ -1145,8 +1145,8 @@ public final class p0 implements c2 {
                         this.a.a(max);
                         this.b = uptimeMillis + ((long) (max * 0.87f));
                         long min2 = Math.min(this.a.h(r0.w * 0.9f), max);
-                        n1 n1Var = this.a;
-                        this.a.H = new g0(this, min2, Math.min(n1Var.h(((n1Var.w + n1Var.x) * 0.9f) + (n1Var.b.getLayout() != null ? r5.getWidth() : 0.0f)) + ((long) (n1Var.F * 1000.0f)), max), 0);
+                        o1 o1Var = this.a;
+                        this.a.H = new g0(this, min2, Math.min(o1Var.h(((o1Var.w + o1Var.x) * 0.9f) + (o1Var.b.getLayout() != null ? r5.getWidth() : 0.0f)) + ((long) (o1Var.F * 1000.0f)), max), 0);
                         jh.f fVar = this.a0;
                         if (fVar != null) {
                             fVar.invalidate();
@@ -1164,9 +1164,9 @@ public final class p0 implements c2 {
                     this.L = true;
                     this.F.a();
                     text2.replace(min3, text2.length(), str);
-                    j2 j2Var = this.F;
+                    k2 k2Var = this.F;
                     int length = str.length() + min3;
-                    Editable editableText = j2Var.a.getEditableText();
+                    Editable editableText = k2Var.a.getEditableText();
                     if (editableText == null) {
                         editable = text2;
                         j3 = 45;
@@ -1186,9 +1186,9 @@ public final class p0 implements c2 {
                             }
                             boolean z12 = z11;
                             long j10 = (i7 * 45) + uptimeMillis2;
-                            g2 g2Var = new g2(j10 + 260, j2Var.b, j2Var.c);
-                            g2Var.b = j10;
-                            editableText.setSpan(g2Var, min3, i10, 33);
+                            h2 h2Var = new h2(j10 + 260, k2Var.b, k2Var.c);
+                            h2Var.b = j10;
+                            editableText.setSpan(h2Var, min3, i10, 33);
                             i7++;
                             min3 = i10;
                             z11 = z12;
@@ -1197,7 +1197,7 @@ public final class p0 implements c2 {
                         }
                         editable = text2;
                         j3 = 45;
-                        j2Var.g();
+                        k2Var.g();
                     }
                     this.W = (j3 * str.split("\\s+").length) + SystemClock.uptimeMillis() + 375;
                     jh.f fVar2 = this.a0;
@@ -1225,11 +1225,11 @@ public final class p0 implements c2 {
         return Math.max(0, text.length() - Math.min(this.I, text.length()));
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void x(String str) {
-        m1 m1Var = this.w;
-        if (m1Var != null) {
-            m1Var.setLanguage(str == null ? null : H(str));
+        n1 n1Var = this.w;
+        if (n1Var != null) {
+            n1Var.setLanguage(str == null ? null : H(str));
         }
     }
 

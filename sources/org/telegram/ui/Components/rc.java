@@ -24,7 +24,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class rc extends View implements org.telegram.ui.ActionBar.b6 {
     public static final int[] a0;
@@ -193,7 +193,7 @@ public abstract class rc extends View implements org.telegram.ui.ActionBar.b6 {
     }
 
     public int c() {
-        return org.telegram.messenger.ks.e3;
+        return org.telegram.messenger.ls.e3;
     }
 
     public abstract void d(int i7, boolean z10);
@@ -341,7 +341,7 @@ public abstract class rc extends View implements org.telegram.ui.ActionBar.b6 {
                 float e15 = pcVar2.m.e(false, pcVar2.l);
                 paint3.setAlpha((int) (f29 * 255.0f));
                 if (abs * 2.0f >= 359.0f) {
-                    canvas2.saveLayerAlpha(rectF12, org.telegram.messenger.ks.e4, 31);
+                    canvas2.saveLayerAlpha(rectF12, org.telegram.messenger.ls.e4, 31);
                     canvas2.drawCircle(rectF12.centerX(), rectF12.centerY(), rectF12.width() / 2.0f, paint2);
                     canvas2.drawRect(rectF12, paint3);
                     f25 = e14;
@@ -439,7 +439,7 @@ public abstract class rc extends View implements org.telegram.ui.ActionBar.b6 {
                             pcVar2.w.reset();
                             pcVar2.w.setTranslate(centerX, centerY);
                             pcVar2.v.setLocalMatrix(pcVar2.w);
-                            canvas2.saveLayerAlpha(rectF12, org.telegram.messenger.ks.e4, 31);
+                            canvas2.saveLayerAlpha(rectF12, org.telegram.messenger.ls.e4, 31);
                             canvas2.drawPath(path, paint2);
                             canvas2.drawRect(rectF12, paint3);
                             rectF2 = rectF5;
@@ -467,7 +467,7 @@ public abstract class rc extends View implements org.telegram.ui.ActionBar.b6 {
                     pcVar2.w.reset();
                     pcVar2.w.setTranslate(centerX2, centerY2);
                     pcVar2.v.setLocalMatrix(pcVar2.w);
-                    canvas2.saveLayerAlpha(rectF12, org.telegram.messenger.ks.e4, 31);
+                    canvas2.saveLayerAlpha(rectF12, org.telegram.messenger.ls.e4, 31);
                     canvas2.drawPath(path, paint2);
                     canvas2.drawRect(rectF12, paint3);
                     rectF2 = rectF5;
@@ -589,7 +589,7 @@ public abstract class rc extends View implements org.telegram.ui.ActionBar.b6 {
             this.R.a.offset((getMeasuredWidth() - this.R.a.width()) / 2.0f, (getMeasuredHeight() - this.R.a.height()) / 2.0f);
             this.R.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             this.R.f();
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ls.e4, 31);
             this.R.e(canvas, f43);
             int i17 = (int) (f43 * 255.0f);
             Paint paint4 = this.I;
@@ -1054,7 +1054,7 @@ public abstract class rc extends View implements org.telegram.ui.ActionBar.b6 {
                 boolean z10 = this.e;
                 int[] iArr = this.f;
                 if (z10) {
-                    pcVar.b = org.telegram.messenger.mz.d(iArr[i7], org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), -1);
+                    pcVar.b = org.telegram.messenger.nz.d(iArr[i7], org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), -1);
                 } else {
                     pcVar.b = BitmapFactory.decodeResource(getContext().getResources(), iArr[i7]);
                 }

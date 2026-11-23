@@ -6,14 +6,14 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import c8.ma;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c extends yg.c {
     public final op s;
@@ -36,7 +36,7 @@ public final class c extends yg.c {
         opVar.setDrawBackgroundAsArc(10);
         addView(opVar);
         opVar.a(false, false);
-        opVar.setLayoutParams(ma.d(24, 24.0f, (gd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+        opVar.setLayoutParams(ma.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
     @Override // yg.c
@@ -59,18 +59,18 @@ public final class c extends yg.c {
 
     @Override // yg.c
     public final void d() {
-        boolean z10 = gd.a0;
+        boolean z10 = hd.a0;
         this.d.setLayoutParams(ma.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
-        boolean z11 = gd.a0;
+        boolean z11 = hd.a0;
         this.e.setLayoutParams(ma.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 52.0f, 0.0f, z11 ? 52.0f : 20.0f, 0.0f));
-        boolean z12 = gd.a0;
+        boolean z12 = hd.a0;
         this.f.setLayoutParams(ma.d(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
     }
 
     public final void f() {
         TLRPC.TL_help_country tL_help_country = this.w;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        CharSequence o4 = j6.o(gd.F0(tL_help_country.iso2), this.x.getFontMetricsInt(), 0, this.y);
+        CharSequence o4 = j6.o(hd.F0(tL_help_country.iso2), this.x.getFontMetricsInt(), 0, this.y);
         if (o4 != null) {
             spannableStringBuilder.append(o4).append((CharSequence) " ");
             spannableStringBuilder.setSpan(new b(16), o4.length(), o4.length() + 1, 0);
@@ -78,7 +78,7 @@ public final class c extends yg.c {
             spannableStringBuilder.append((CharSequence) " ");
             spannableStringBuilder.setSpan(new b(34), 0, 1, 0);
         }
-        String i02 = gd.i0(2131750504, tL_help_country.iso2);
+        String i02 = hd.i0(2131750504, tL_help_country.iso2);
         if (TextUtils.isEmpty(i02)) {
             i02 = tL_help_country.default_name;
         }

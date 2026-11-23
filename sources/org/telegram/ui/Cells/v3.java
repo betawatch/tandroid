@@ -15,15 +15,15 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.k00;
 import org.telegram.ui.Components.pg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public int E;
@@ -51,7 +51,7 @@ public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.b
 
     public v3(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, boolean z11) {
         super(context);
-        this.x = j10.t0;
+        this.x = k10.t0;
         this.y = new Paint(1);
         this.a = z11;
         this.J = h6Var;
@@ -73,13 +73,13 @@ public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.b
             pg0 pg0Var = new pg0(context);
             this.d = pg0Var;
             org.telegram.ui.ActionBar.t6.U(pg0Var, org.telegram.ui.ActionBar.m6.Ji, h6Var);
-            pg0Var.setText(gd.N0(2131754483, null));
+            pg0Var.setText(hd.N0(2131754483, null));
             addView(pg0Var, z10 ? c8.ma.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f) : c8.ma.d(-2, 28.0f, 53, 0.0f, 16.0f, 14.0f, 0.0f));
             TextView textView3 = new TextView(context);
             this.e = textView3;
             textView3.setGravity(17);
             org.telegram.messenger.f3.l(textView3, org.telegram.ui.ActionBar.m6.Ii, h6Var, 1, 14.0f);
-            textView3.setText(gd.N0(2131744614, null));
+            textView3.setText(hd.N0(2131744612, null));
             addView(textView3, z10 ? c8.ma.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f) : c8.ma.d(-2, 28.0f, 53, 0.0f, 16.0f, 14.0f, 0.0f));
         }
         setWillNotDraw(false);
@@ -136,9 +136,9 @@ public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.b
         boolean z13 = stickerSet.emojis;
         TextView textView2 = this.c;
         if (z13) {
-            textView2.setText(gd.G(stickerSet.count, "EmojiCount", new Object[0]));
+            textView2.setText(hd.G(stickerSet.count, "EmojiCount", new Object[0]));
         } else {
-            textView2.setText(gd.G(stickerSet.count, "Stickers", new Object[0]));
+            textView2.setText(hd.G(stickerSet.count, "Stickers", new Object[0]));
         }
         this.w = z10;
         if (this.a) {
@@ -149,7 +149,7 @@ public final class v3 extends FrameLayout implements org.telegram.ui.ActionBar.b
                 return;
             }
             pg0Var.setVisibility(0);
-            boolean z15 = z12 || ri.d0(this.x).E0(stickerSetCovered.set.id, true);
+            boolean z15 = z12 || si.d0(this.x).E0(stickerSetCovered.set.id, true);
             this.r = z15;
             TextView textView3 = this.e;
             if (!z11) {

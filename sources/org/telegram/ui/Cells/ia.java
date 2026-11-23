@@ -10,17 +10,17 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.qj0;
 import org.telegram.ui.a81;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class ia extends ek0 implements fs {
+public abstract class ia extends ek0 implements gs {
     public static final byte[] q3 = new byte[1024];
     public boolean f3;
     public final jg.b0 g3;
@@ -145,10 +145,10 @@ public abstract class ia extends ek0 implements fs {
 
     public abstract void D1();
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != ks.Y1) {
-            if (i7 == ks.Z1) {
+        if (i7 != ls.Y1) {
+            if (i7 == ls.Z1) {
                 this.h3.remove((String) objArr[0]);
                 return;
             }
@@ -171,8 +171,8 @@ public abstract class ia extends ek0 implements fs {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         for (int i7 = 0; i7 < 4; i7++) {
-            ks.f(i7).c(this, ks.Y1);
-            ks.f(i7).c(this, ks.Z1);
+            ls.f(i7).c(this, ls.Y1);
+            ls.f(i7).c(this, ls.Z1);
         }
     }
 
@@ -180,8 +180,8 @@ public abstract class ia extends ek0 implements fs {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         for (int i7 = 0; i7 < 4; i7++) {
-            ks.f(i7).n(this, ks.Y1);
-            ks.f(i7).n(this, ks.Z1);
+            ls.f(i7).n(this, ls.Y1);
+            ls.f(i7).n(this, ls.Z1);
         }
     }
 
@@ -189,7 +189,7 @@ public abstract class ia extends ek0 implements fs {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.f3) {
-            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

@@ -3,12 +3,12 @@ package oi;
 import android.content.Intent;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ck;
 import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m implements ck {
     public final /* synthetic */ ui a;
@@ -36,11 +36,11 @@ public final class m implements ck {
         if (!arrayList.isEmpty()) {
             t3Var.f2((String) arrayList.get(0));
         } else if (!arrayList3.isEmpty()) {
-            fj fjVar = (fj) arrayList3.get(0);
+            gj gjVar = (gj) arrayList3.get(0);
             t3Var.getClass();
-            if (fjVar != null && fjVar.F0() != null) {
-                TLRPC.Document F0 = fjVar.F0();
-                TLRPC.Message message = fjVar.k;
+            if (gjVar != null && gjVar.F0() != null) {
+                TLRPC.Document F0 = gjVar.F0();
+                TLRPC.Message message = gjVar.k;
                 t3Var.g2(F0, message != null ? message.attachPath : null);
             }
         }

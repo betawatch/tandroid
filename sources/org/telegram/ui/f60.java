@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f60 extends ActionBarPopupWindow$ActionBarPopupWindowLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.m80 U;
@@ -32,14 +32,14 @@ public final class f60 extends ActionBarPopupWindow$ActionBarPopupWindowLayout i
         this.h0 = g2Var;
         this.e0 = g2Var.getMessagesController().u7;
         setFitItems(true);
-        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_autodelete_1d, org.telegram.messenger.gd.G(1, "Days", new Object[0]), false, null);
-        org.telegram.ui.ActionBar.y0 c11 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_autodelete_2d, org.telegram.messenger.gd.G(2, "Days", new Object[0]), false, null);
+        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_autodelete_1d, org.telegram.messenger.hd.G(1, "Days", new Object[0]), false, null);
+        org.telegram.ui.ActionBar.y0 c11 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_autodelete_2d, org.telegram.messenger.hd.G(2, "Days", new Object[0]), false, null);
         this.a0 = c11;
-        org.telegram.ui.ActionBar.y0 c12 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_autodelete_1w, org.telegram.messenger.gd.G(1, "Weeks", new Object[0]), false, null);
-        org.telegram.ui.ActionBar.y0 c13 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_autodelete_1m, org.telegram.messenger.gd.G(1, "Months", new Object[0]), false, null);
+        org.telegram.ui.ActionBar.y0 c12 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_autodelete_1w, org.telegram.messenger.hd.G(1, "Weeks", new Object[0]), false, null);
+        org.telegram.ui.ActionBar.y0 c13 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_autodelete_1m, org.telegram.messenger.hd.G(1, "Months", new Object[0]), false, null);
         this.W = c13;
-        org.telegram.ui.ActionBar.y0 c14 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_cancel, org.telegram.messenger.gd.N0(2131753848, null), false, null);
-        org.telegram.ui.ActionBar.y0 c15 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131751530, null), false, null);
+        org.telegram.ui.ActionBar.y0 c14 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_cancel, org.telegram.messenger.hd.N0(2131753848, null), false, null);
+        org.telegram.ui.ActionBar.y0 c15 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_delete, org.telegram.messenger.hd.N0(2131751530, null), false, null);
         this.V = c15;
         int i7 = org.telegram.ui.ActionBar.m6.p7;
         c15.d(org.telegram.ui.ActionBar.m6.x0(null, i7, false), org.telegram.ui.ActionBar.m6.x0(null, i7, false));
@@ -72,7 +72,7 @@ public final class f60 extends ActionBarPopupWindow$ActionBarPopupWindowLayout i
         org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.E8, null);
         m80Var.setMovementMethod(LinkMovementMethod.getInstance());
         org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.J6, null);
-        m80Var.setText(org.telegram.messenger.gd.N0(2131748864, null));
+        m80Var.setText(org.telegram.messenger.hd.N0(2131748864, null));
         a(m80Var, c8.ma.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
     }
 

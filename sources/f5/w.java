@@ -30,10 +30,10 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.j1;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.r1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class w extends b {
     public final Context C;
@@ -131,7 +131,7 @@ public final class w extends b {
         try {
             i7 = ((Integer) F(2).get(28500L, TimeUnit.MILLISECONDS)).intValue();
         } catch (TimeoutException e10) {
-            G(ks.n1, 28, z.p);
+            G(ls.n1, 28, z.p);
             com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", e10);
         } catch (Exception e11) {
             if (e11 instanceof InterruptedException) {
@@ -150,7 +150,7 @@ public final class w extends b {
             return super.b(activity, eVar);
         } catch (Exception e12) {
             f fVar = z.f;
-            G(ks.o1, 2, fVar);
+            G(ls.o1, 2, fVar);
             com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An internal error occurred.", e12);
             return fVar;
         }

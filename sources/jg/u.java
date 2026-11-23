@@ -1,11 +1,10 @@
 package jg;
 
 import android.graphics.RectF;
-import bi.x4;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -17,7 +16,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cu0;
 import org.telegram.ui.d9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,7 +41,7 @@ public final /* synthetic */ class u implements RequestDelegate {
             case 0:
                 h0 h0Var = (h0) obj2;
                 h0Var.getClass();
-                org.telegram.messenger.g0.g3(new x4(h0Var, this.b, tLObject, (String) obj, 7));
+                org.telegram.messenger.g0.g3(new ai.b1(h0Var, this.b, tLObject, (String) obj, 8));
                 break;
             case 1:
                 ((VoIPService) obj2).lambda$startConferenceGroupCall$34(i10, (String) obj, tLObject, tL_error);
@@ -51,19 +50,19 @@ public final /* synthetic */ class u implements RequestDelegate {
                 ((VoIPService) obj2).lambda$editCallMember$90(i10, (Runnable) obj, tLObject, tL_error);
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new x4((d9) obj2, tLObject, this.b, (TLRPC.User) obj, 16));
+                org.telegram.messenger.g0.g3(new ai.b1((d9) obj2, tLObject, this.b, (TLRPC.User) obj, 17));
                 break;
             case 4:
                 org.telegram.messenger.g0.g3(new ai.i1(tLObject, this.b, (HashSet) obj2, tL_error, (g2) obj, 11));
                 break;
             case 5:
-                org.telegram.messenger.g0.g3(new x4((g2) obj2, tLObject, this.b, (x10) obj, 24));
+                org.telegram.messenger.g0.g3(new ai.b1((g2) obj2, tLObject, this.b, (y10) obj, 25));
                 break;
             case 6:
-                org.telegram.messenger.g0.g3(new x4((i30) obj2, this.b, tLObject, (String) obj, 26));
+                org.telegram.messenger.g0.g3(new ai.b1((i30) obj2, this.b, tLObject, (String) obj, 27));
                 break;
             case 7:
-                org.telegram.messenger.g0.g3(new x4((ep0) obj2, this.b, tLObject, (String) obj, 28));
+                org.telegram.messenger.g0.g3(new ai.b1((ep0) obj2, this.b, tLObject, (String) obj, 29));
                 break;
             case 8:
                 RectF rectF = ProfileActivity.Z6;
@@ -71,7 +70,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
-                x10 x10Var = (x10) obj;
+                y10 y10Var = (y10) obj;
                 if (tLObject instanceof Vector) {
                     Vector vector = (Vector) tLObject;
                     ArrayList arrayList = new ArrayList();
@@ -90,10 +89,10 @@ public final /* synthetic */ class u implements RequestDelegate {
                     boolean isEmpty = arrayList2.isEmpty();
                     int i12 = this.b;
                     if (isEmpty || !wg.s.h()) {
-                        org.telegram.messenger.g0.g3(new wg.m(chat, i12, arrayList, x10Var, 1));
+                        org.telegram.messenger.g0.g3(new wg.m(chat, i12, arrayList, y10Var, 1));
                         break;
                     } else {
-                        org.telegram.messenger.r1.i().o(arrayList2, new bg.g0(arrayList, chat, i12, x10Var, 10));
+                        org.telegram.messenger.r1.i().o(arrayList2, new bg.g0(arrayList, chat, i12, y10Var, 10));
                         break;
                     }
                 }

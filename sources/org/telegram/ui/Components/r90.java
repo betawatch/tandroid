@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r90 extends org.telegram.ui.oq0 {
     public final /* synthetic */ v90 a;
@@ -19,7 +19,7 @@ public final class r90 extends org.telegram.ui.oq0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final org.telegram.ui.wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public final org.telegram.ui.wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         ImageReceiver imageReceiver;
         if (i7 >= 0) {
             v90 v90Var = this.a;
@@ -56,7 +56,7 @@ public final class r90 extends org.telegram.ui.oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
         if (i7 >= 0) {
             v90 v90Var = this.a;
             if (i7 >= v90Var.Q.size()) {

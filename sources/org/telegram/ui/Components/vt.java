@@ -3,15 +3,15 @@ package org.telegram.ui.Components;
 import android.app.Dialog;
 import android.content.Context;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vt extends Dialog {
-    public final /* synthetic */ bi.c9 a;
+    public final /* synthetic */ bi.b9 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vt(bi.c9 c9Var, Context context) {
+    public vt(bi.b9 b9Var, Context context) {
         super(context);
-        this.a = c9Var;
+        this.a = b9Var;
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface

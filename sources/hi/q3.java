@@ -14,11 +14,11 @@ import j$.util.Objects;
 import java.io.File;
 import java.io.FileOutputStream;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.nr;
@@ -27,9 +27,9 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class q3 extends FrameLayout implements RendererCommon.RendererEvents, fs {
+public final class q3 extends FrameLayout implements RendererCommon.RendererEvents, gs {
     public boolean E;
     public int a;
     public final p3 b;
@@ -51,10 +51,10 @@ public final class q3 extends FrameLayout implements RendererCommon.RendererEven
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.e = q9Var;
         q9Var.setAlpha(0.75f);
-        addView(q9Var, c8.ma.e(-1, -1, ks.E1));
+        addView(q9Var, c8.ma.e(-1, -1, ls.E1));
         TextureView textureView = new TextureView(context);
         this.f = textureView;
-        addView(textureView, c8.ma.e(-1, -1, ks.E1));
+        addView(textureView, c8.ma.e(-1, -1, ls.E1));
         TextureViewRenderer textureViewRenderer = new TextureViewRenderer(context);
         this.d = textureViewRenderer;
         textureViewRenderer.setOpaque(false);
@@ -62,14 +62,14 @@ public final class q3 extends FrameLayout implements RendererCommon.RendererEven
         textureViewRenderer.setIsCamera(true);
         textureViewRenderer.setRotateTextureWithScreen(true);
         textureViewRenderer.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-        addView(textureViewRenderer, c8.ma.e(-1, -1, ks.E1));
+        addView(textureViewRenderer, c8.ma.e(-1, -1, ls.E1));
         textureViewRenderer.setAlpha(1.0f);
         this.c = null;
         p3 p3Var = new p3(context);
         this.b = p3Var;
         p3Var.setAlpha(0.0f);
         p3Var.setVisibility(8);
-        addView(p3Var, c8.ma.e(-1, -1, ks.E1));
+        addView(p3Var, c8.ma.e(-1, -1, ls.E1));
     }
 
     public final void a(Runnable runnable, boolean z10) {
@@ -131,15 +131,15 @@ public final class q3 extends FrameLayout implements RendererCommon.RendererEven
                         } else {
                             String absolutePath = new File(org.telegram.messenger.w7.z(i7), p5.c.j(j3, "live", ".jpg")).getAbsolutePath();
                             if (j3 > 0) {
-                                TLRPC.User c22 = mp.u1(this.a).c2(Long.valueOf(j3));
-                                fc l10 = fc.l(this.a, 1, c22);
+                                TLRPC.User c22 = np.u1(this.a).c2(Long.valueOf(j3));
+                                gc l10 = gc.l(this.a, 1, c22);
                                 int d = c22 != null ? org.telegram.ui.Components.b9.d(c22.id) : i0.a.f(0.2f, -16777216, -1);
-                                q9Var.getImageReceiver().u0(fc.g(absolutePath), "500_500_nocache", l10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), 0L, null, c22, 0);
+                                q9Var.getImageReceiver().u0(gc.g(absolutePath), "500_500_nocache", l10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), 0L, null, c22, 0);
                             } else {
-                                TLRPC.Chat O0 = mp.u1(this.a).O0(Long.valueOf(-j3));
-                                fc a10 = fc.a(1, O0);
+                                TLRPC.Chat O0 = np.u1(this.a).O0(Long.valueOf(-j3));
+                                gc a10 = gc.a(1, O0);
                                 int d2 = O0 != null ? org.telegram.ui.Components.b9.d(O0.id) : i0.a.f(0.2f, -16777216, -1);
-                                q9Var.getImageReceiver().u0(fc.g(absolutePath), "500_500_nocache", a10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d2, -16777216), i0.a.f(0.4f, d2, -16777216)}), 0L, null, O0, 0);
+                                q9Var.getImageReceiver().u0(gc.g(absolutePath), "500_500_nocache", a10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d2, -16777216), i0.a.f(0.4f, d2, -16777216)}), 0L, null, O0, 0);
                             }
                         }
                     }
@@ -181,7 +181,7 @@ public final class q3 extends FrameLayout implements RendererCommon.RendererEven
     public final void c(boolean z10, boolean z11) {
         if (z10 || !z11) {
             if (z11) {
-                n10.o(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), nr.h, 320L);
+                o10.o(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), nr.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z10 ? 1.0f : 0.0f);
@@ -222,11 +222,11 @@ public final class q3 extends FrameLayout implements RendererCommon.RendererEven
         view.setTranslationY(((f12 - (measuredHeight3 * max2)) / 2.0f) - (this.y / 2.0f));
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         fi.c1 c1Var;
         fi.w0 w0Var;
-        if (i7 == ks.G2) {
+        if (i7 == ls.G2) {
             long longValue = ((Long) objArr[0]).longValue();
             fi.y3 y3Var = this.w;
             if (y3Var == null || (c1Var = (fi.c1) y3Var.b) == null || c1Var.g() != longValue) {
@@ -351,7 +351,7 @@ public final class q3 extends FrameLayout implements RendererCommon.RendererEven
             textureViewRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), this);
             textureViewRenderer.setBackgroundRenderer(this.f);
         }
-        ks.f(this.a).c(this, ks.G2);
+        ls.f(this.a).c(this, ls.G2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -367,7 +367,7 @@ public final class q3 extends FrameLayout implements RendererCommon.RendererEven
         if (textureViewRenderer != null) {
             textureViewRenderer.release();
         }
-        ks.f(this.a).n(this, ks.G2);
+        ls.f(this.a).n(this, ls.G2);
     }
 
     @Override // android.view.View
@@ -449,11 +449,11 @@ public final class q3 extends FrameLayout implements RendererCommon.RendererEven
             this.a = i7;
             return;
         }
-        ks f10 = ks.f(this.a);
-        int i10 = ks.G2;
+        ls f10 = ls.f(this.a);
+        int i10 = ls.G2;
         f10.n(this, i10);
         this.a = i7;
-        ks.f(i7).c(this, i10);
+        ls.f(i7).c(this, i10);
     }
 
     public void setKeyboardOffset(float f10) {

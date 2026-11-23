@@ -10,7 +10,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cm extends fm {
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
@@ -37,7 +37,7 @@ public final class cm extends fm {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final org.telegram.ui.wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public final org.telegram.ui.wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         ft ftVar;
         org.telegram.ui.wq0 closeIntoObject;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
@@ -96,7 +96,7 @@ public final class cm extends fm {
         org.telegram.ui.Cells.s5 P = ChatAttachAlertPhotoLayout.P(chatAttachAlertPhotoLayout, i7);
         if (P != null) {
             P.getImageView().r();
-            org.telegram.messenger.ef e02 = chatAttachAlertPhotoLayout.e0(i7);
+            org.telegram.messenger.ff e02 = chatAttachAlertPhotoLayout.e0(i7);
             if (e02 == null) {
                 return;
             }
@@ -157,23 +157,23 @@ public final class cm extends fm {
             ArrayList arrayList2 = ChatAttachAlertPhotoLayout.u1;
             if (arrayList2.size() > 0) {
                 Object obj = hashMap.get(arrayList2.get(0));
-                if (obj instanceof org.telegram.messenger.ef) {
-                    org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) obj;
-                    charSequence2 = efVar.a;
-                    arrayList = efVar.n;
+                if (obj instanceof org.telegram.messenger.ff) {
+                    org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) obj;
+                    charSequence2 = ffVar.a;
+                    arrayList = ffVar.n;
                 } else {
                     charSequence2 = null;
                     arrayList = null;
                 }
-                if (obj instanceof org.telegram.messenger.hf) {
-                    org.telegram.messenger.hf hfVar = (org.telegram.messenger.hf) obj;
-                    charSequence2 = hfVar.I;
-                    arrayList = hfVar.n;
+                if (obj instanceof org.telegram.messenger.jf) {
+                    org.telegram.messenger.jf jfVar = (org.telegram.messenger.jf) obj;
+                    charSequence2 = jfVar.I;
+                    arrayList = jfVar.n;
                 }
                 ArrayList arrayList3 = arrayList;
                 if (charSequence2 != null && arrayList3 != null) {
                     CharSequence spannableStringBuilder = !(charSequence2 instanceof Spannable) ? new SpannableStringBuilder(charSequence2) : charSequence2;
-                    org.telegram.messenger.fj.b(spannableStringBuilder, arrayList3, false, false, false, false, 0);
+                    org.telegram.messenger.gj.b(spannableStringBuilder, arrayList3, false, false, false, false, 0);
                     charSequence2 = spannableStringBuilder;
                 }
                 this.b.b.b1().setText(y5.cloneSpans(charSequence2, 3));
@@ -187,7 +187,7 @@ public final class cm extends fm {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final org.telegram.messenger.hc j(int i7) {
+    public final org.telegram.messenger.ic j(int i7) {
         org.telegram.ui.Cells.s5 P = ChatAttachAlertPhotoLayout.P(this.b, i7);
         if (P != null) {
             return P.getImageView().getImageReceiver().p();
@@ -202,14 +202,14 @@ public final class cm extends fm {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         ui uiVar = chatAttachAlertPhotoLayout.b;
         uiVar.t4 = true;
         boolean z12 = ChatAttachAlertPhotoLayout.r1;
-        org.telegram.messenger.ef e02 = chatAttachAlertPhotoLayout.e0(i7);
+        org.telegram.messenger.ff e02 = chatAttachAlertPhotoLayout.e0(i7);
         if (e02 != null) {
-            e02.s = e20Var;
+            e02.s = f20Var;
         }
         HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
         if (hashMap.isEmpty() && e02 != null) {
@@ -224,18 +224,18 @@ public final class cm extends fm {
             if (!hashMap.isEmpty()) {
                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
                     Object obj = hashMap.get(arrayList.get(i12));
-                    if (obj instanceof org.telegram.messenger.ef) {
-                        org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) obj;
+                    if (obj instanceof org.telegram.messenger.ff) {
+                        org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) obj;
                         if (i12 == 0) {
                             CharSequence[] charSequenceArr = {PhotoViewer.p1().q7};
-                            efVar.n = org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).Y(charSequenceArr, false, true);
+                            ffVar.n = org.telegram.messenger.si.d0(org.telegram.messenger.k10.t0).Y(charSequenceArr, false, true);
                             CharSequence charSequence = charSequenceArr[0];
-                            efVar.a = charSequence;
+                            ffVar.a = charSequence;
                             if (uiVar.P0(charSequence)) {
                                 return;
                             }
                         } else {
-                            efVar.a = null;
+                            ffVar.a = null;
                         }
                     }
                 }
@@ -264,9 +264,9 @@ public final class cm extends fm {
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final boolean w() {
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         ui uiVar = this.b.b;
-        return (uiVar == null || (fjVar = uiVar.F3) == null || !fjVar.p5()) ? false : true;
+        return (uiVar == null || (gjVar = uiVar.F3) == null || !gjVar.p5()) ? false : true;
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0

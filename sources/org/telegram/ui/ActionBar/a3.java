@@ -12,10 +12,10 @@ import android.view.WindowManager;
 import c8.ma;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a3 extends Dialog {
     public final j3 a;
@@ -56,7 +56,7 @@ public final class a3 extends Dialog {
                 z2 z2Var = a3Var.b;
                 View view = (View) z2Var.a;
                 org.telegram.messenger.g0.E2(view);
-                z2Var.addView(view, ma.e(-1, -1, ks.E1));
+                z2Var.addView(view, ma.e(-1, -1, ls.E1));
             }
         }
     }

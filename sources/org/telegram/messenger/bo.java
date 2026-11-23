@@ -1,87 +1,39 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bo implements Runnable {
+public final /* synthetic */ class bo implements y10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mp b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
+    public final /* synthetic */ np b;
 
-    public /* synthetic */ bo(mp mpVar, long j3, int i7, int i10, boolean z10, int i11) {
-        this.a = i11;
-        this.b = mpVar;
-        this.c = j3;
-        this.d = i7;
-        this.e = i10;
-        this.f = z10;
+    public /* synthetic */ bo(np npVar, int i7) {
+        this.a = i7;
+        this.b = npVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        long j3;
-        int i7;
+    @Override // org.telegram.messenger.y10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                g0.g3(new bo(this.b, this.c, this.d, this.e, this.f, 1));
+                TLRPC.messages_AvailableEffects messages_availableeffects = (TLRPC.messages_AvailableEffects) obj;
+                np npVar = this.b;
+                if (npVar.n8 != messages_availableeffects) {
+                    npVar.n8 = messages_availableeffects;
+                    if (messages_availableeffects != null) {
+                        org.telegram.ui.Components.p5.g(npVar.currentAccount).f(npVar.n8.documents);
+                    }
+                    npVar.getNotificationCenter().k(ls.w3, new Object[0]);
+                }
+                npVar.m8 = false;
+                break;
+            case 1:
+                g0.g3(new gi(17, this.b, (TLRPC.TL_help_appConfig) obj));
                 break;
             default:
-                mp mpVar = this.b;
-                a0.h hVar = mpVar.R;
-                long j10 = this.c;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) hVar.f(j10);
-                int i10 = this.e;
-                if (dialog != null) {
-                    int i11 = dialog.unread_count;
-                    int i12 = this.d;
-                    if (i12 == 0 || i10 >= dialog.top_message) {
-                        dialog.unread_count = 0;
-                    } else {
-                        int max = Math.max(i11 - i12, 0);
-                        dialog.unread_count = max;
-                        if (i10 != Integer.MIN_VALUE && max > (i7 = dialog.top_message - i10)) {
-                            dialog.unread_count = i7;
-                        }
-                    }
-                    boolean z10 = dialog.unread_mark;
-                    if (z10) {
-                        dialog.unread_mark = false;
-                        mpVar.getMessagesStorage().F1(dialog.id, false);
-                    }
-                    if ((i11 != 0 || z10) && dialog.unread_count == 0) {
-                        j3 = j10;
-                        mpVar.u2(j3, 0L, null);
-                        if (mpVar.n0()) {
-                            mpVar.f5(null);
-                            mpVar.getNotificationCenter().k(3, new Object[0]);
-                        }
-                    } else {
-                        j3 = j10;
-                    }
-                    mpVar.getNotificationCenter().k(2, 256);
-                } else {
-                    j3 = j10;
-                }
-                if (!this.f) {
-                    long j11 = j3;
-                    mpVar.getNotificationsController().L(null, j11, 0, i10, false);
-                    LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
-                    longSparseIntArray.put(j11, 0);
-                    mpVar.getNotificationsController().J(longSparseIntArray);
-                    break;
-                } else {
-                    long j12 = j3;
-                    mpVar.getNotificationsController().L(null, j12, 0, i10, true);
-                    LongSparseIntArray longSparseIntArray2 = new LongSparseIntArray(1);
-                    longSparseIntArray2.put(j12, -1);
-                    mpVar.getNotificationsController().J(longSparseIntArray2);
-                    break;
-                }
+                g0.g3(new kl(this.b, (TL_account.TL_webBrowserSettings) obj, 1));
                 break;
         }
     }

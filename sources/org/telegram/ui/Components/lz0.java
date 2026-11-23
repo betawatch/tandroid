@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lz0 {
     public final int[] A;
@@ -265,8 +265,8 @@ public final class lz0 {
                                         f15 = f13;
                                         i19 = i10;
                                     } else {
-                                        org.telegram.messenger.aj currentMessagesGroup = r1Var.getCurrentMessagesGroup();
-                                        org.telegram.messenger.xi d = (currentMessagesGroup == null || currentMessagesGroup.f == null) ? null : currentMessagesGroup.d(r1Var.getMessageObject());
+                                        org.telegram.messenger.bj currentMessagesGroup = r1Var.getCurrentMessagesGroup();
+                                        org.telegram.messenger.yi d = (currentMessagesGroup == null || currentMessagesGroup.f == null) ? null : currentMessagesGroup.d(r1Var.getMessageObject());
                                         f12 = f14;
                                         if (i19 == 0 && (d != null || r1Var.getTransitionParams().x0)) {
                                             if (d == null || d.h || (d.a == 0 && d.c == 0)) {
@@ -290,7 +290,7 @@ public final class lz0 {
                                             }
                                         }
                                         if (currentMessagesGroup != null) {
-                                            org.telegram.messenger.zi ziVar = currentMessagesGroup.m;
+                                            org.telegram.messenger.aj ajVar = currentMessagesGroup.m;
                                             if (i19 == 0) {
                                                 f13 = f15;
                                                 i12 = 1;
@@ -298,19 +298,19 @@ public final class lz0 {
                                                 f13 = f15;
                                                 i12 = 1;
                                             }
-                                            if ((i19 != i12 || ziVar.i) && ((i19 != 0 || !r1Var.getMessageObject().Z) && ((i19 != 1 || r1Var.getMessageObject().Z) && ((i19 != 2 || r1Var.za) && (i19 == 2 || !r1Var.za))))) {
+                                            if ((i19 != i12 || ajVar.i) && ((i19 != 0 || !r1Var.getMessageObject().Z) && ((i19 != 1 || r1Var.getMessageObject().Z) && ((i19 != 2 || r1Var.za) && (i19 == 2 || !r1Var.za))))) {
                                                 if (!arrayList8.contains(currentMessagesGroup)) {
-                                                    ziVar.a = 0;
-                                                    ziVar.b = 0;
-                                                    ziVar.c = 0;
-                                                    ziVar.d = 0;
-                                                    ziVar.l = false;
-                                                    ziVar.k = false;
-                                                    ziVar.m = r1Var;
+                                                    ajVar.a = 0;
+                                                    ajVar.b = 0;
+                                                    ajVar.c = 0;
+                                                    ajVar.d = 0;
+                                                    ajVar.l = false;
+                                                    ajVar.k = false;
+                                                    ajVar.m = r1Var;
                                                     arrayList8.add(currentMessagesGroup);
                                                 }
-                                                ziVar.k = r1Var.L2();
-                                                ziVar.l = r1Var.K2();
+                                                ajVar.k = r1Var.L2();
+                                                ajVar.l = r1Var.K2();
                                                 int backgroundDrawableLeft = r1Var.getBackgroundDrawableLeft() + r1Var.getLeft();
                                                 int backgroundDrawableRight = r1Var.getBackgroundDrawableRight() + r1Var.getLeft();
                                                 int backgroundDrawableTop = r1Var.getBackgroundDrawableTop() + r1Var.getPaddingTop() + r1Var.getTop();
@@ -320,23 +320,23 @@ public final class lz0 {
                                                 arrayList6 = arrayList9;
                                                 int L2 = (r1Var.getCurrentPosition().l & 8) == 0 ? org.telegram.messenger.g0.L(10.0f) + backgroundDrawableBottom : backgroundDrawableBottom;
                                                 if (r1Var.za) {
-                                                    ziVar.m = r1Var;
+                                                    ajVar.m = r1Var;
                                                 }
-                                                int i22 = ziVar.b;
+                                                int i22 = ajVar.b;
                                                 if (i22 == 0 || L < i22) {
-                                                    ziVar.b = L;
+                                                    ajVar.b = L;
                                                 }
-                                                int i23 = ziVar.d;
+                                                int i23 = ajVar.d;
                                                 if (i23 == 0 || L2 > i23) {
-                                                    ziVar.d = L2;
+                                                    ajVar.d = L2;
                                                 }
-                                                int i24 = ziVar.a;
+                                                int i24 = ajVar.a;
                                                 if (i24 == 0 || backgroundDrawableLeft < i24) {
-                                                    ziVar.a = backgroundDrawableLeft;
+                                                    ajVar.a = backgroundDrawableLeft;
                                                 }
-                                                int i25 = ziVar.c;
+                                                int i25 = ajVar.c;
                                                 if (i25 == 0 || backgroundDrawableRight > i25) {
-                                                    ziVar.c = backgroundDrawableRight;
+                                                    ajVar.c = backgroundDrawableRight;
                                                 }
                                                 i20 = i11 + 1;
                                                 arrayList9 = arrayList6;
@@ -386,17 +386,17 @@ public final class lz0 {
                         int i26 = 0;
                         lz0 lz0Var2 = lz0Var;
                         while (i26 < arrayList8.size()) {
-                            org.telegram.messenger.aj ajVar = (org.telegram.messenger.aj) arrayList8.get(i26);
-                            org.telegram.messenger.zi ziVar2 = ajVar.m;
-                            float S1 = ziVar2.m.S1(true);
-                            float f16 = ziVar2.a + S1 + ziVar2.e;
-                            float f17 = ziVar2.b + ziVar2.f;
-                            float f18 = ziVar2.c + S1 + ziVar2.g;
+                            org.telegram.messenger.bj bjVar = (org.telegram.messenger.bj) arrayList8.get(i26);
+                            org.telegram.messenger.aj ajVar2 = bjVar.m;
+                            float S1 = ajVar2.m.S1(true);
+                            float f16 = ajVar2.a + S1 + ajVar2.e;
+                            float f17 = ajVar2.b + ajVar2.f;
+                            float f18 = ajVar2.c + S1 + ajVar2.g;
                             int i27 = i26;
-                            float f19 = ziVar2.d + ziVar2.h;
-                            if (!ziVar2.j) {
-                                f17 += ziVar2.m.getTranslationY();
-                                f19 += ziVar2.m.getTranslationY();
+                            float f19 = ajVar2.d + ajVar2.h;
+                            if (!ajVar2.j) {
+                                f17 += ajVar2.m.getTranslationY();
+                                f19 += ajVar2.m.getTranslationY();
                             }
                             f17 = f17 < (chatActivity.P9 - ((float) chatActivity.R9)) - ((float) org.telegram.messenger.g0.L(20.0f)) ? (chatActivity.P9 - chatActivity.R9) - org.telegram.messenger.g0.L(20.0f) : f17;
                             f19 = f19 > ((float) (org.telegram.messenger.g0.L(20.0f) + ek0Var.getMeasuredHeight())) ? org.telegram.messenger.g0.L(20.0f) + ek0Var.getMeasuredHeight() : f19;
@@ -406,13 +406,13 @@ public final class lz0 {
                             float f23 = lz0Var2.i;
                             float f24 = f16 - f23;
                             float f25 = f18 - f23;
-                            boolean z10 = (ziVar2.m.getScaleX() == 1.0f && ziVar2.m.getScaleY() == 1.0f) ? false : true;
+                            boolean z10 = (ajVar2.m.getScaleX() == 1.0f && ajVar2.m.getScaleY() == 1.0f) ? false : true;
                             if (z10) {
                                 canvas.save();
                                 arrayList3 = arrayList8;
                                 arrayList4 = arrayList10;
                                 arrayList5 = arrayList11;
-                                canvas.scale(ziVar2.m.getScaleX(), ziVar2.m.getScaleY(), com.google.android.gms.internal.vision.e2.A(f25, f24, 2.0f, f24), com.google.android.gms.internal.vision.e2.A(f22, f21, 2.0f, f21));
+                                canvas.scale(ajVar2.m.getScaleX(), ajVar2.m.getScaleY(), com.google.android.gms.internal.vision.e2.A(f25, f24, 2.0f, f24), com.google.android.gms.internal.vision.e2.A(f22, f21, 2.0f, f21));
                             } else {
                                 arrayList3 = arrayList8;
                                 arrayList4 = arrayList10;
@@ -421,16 +421,16 @@ public final class lz0 {
                             ArrayList arrayList14 = arrayList5;
                             ArrayList arrayList15 = arrayList4;
                             ArrayList arrayList16 = arrayList13;
-                            ziVar2.m.K0(canvas, (int) f24, (int) f21, (int) f25, (int) f22, ziVar2.k, ziVar2.l, false, plVar.getKeyboardHeight());
-                            ziVar2.m = null;
-                            ziVar2.o = ajVar.c;
+                            ajVar2.m.K0(canvas, (int) f24, (int) f21, (int) f25, (int) f22, ajVar2.k, ajVar2.l, false, plVar.getKeyboardHeight());
+                            ajVar2.m = null;
+                            ajVar2.o = bjVar.c;
                             if (z10) {
                                 canvas.restore();
                                 for (int i28 = 0; i28 < arrayList.size(); i28++) {
                                     View view3 = (View) arrayList.get(i28);
                                     if (view3 instanceof org.telegram.ui.Cells.r1) {
                                         org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) view3;
-                                        if (r1Var2.getCurrentMessagesGroup() == ajVar) {
+                                        if (r1Var2.getCurrentMessagesGroup() == bjVar) {
                                             int left = r1Var2.getLeft();
                                             int top = r1Var2.getTop();
                                             view3.setPivotX(((f25 - f24) / 2.0f) + (f24 - left));

@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g71 extends View {
     public f71 a;
@@ -172,7 +172,7 @@ public final class g71 extends View {
                             paint.setColor(textPaint3.getColor());
                         }
                         int L2 = org.telegram.messenger.g0.L(6.0f) + i18 + this.a.c;
-                        int z10 = org.telegram.messenger.n10.z(20.0f, getMeasuredHeight(), i17);
+                        int z10 = org.telegram.messenger.o10.z(20.0f, getMeasuredHeight(), i17);
                         if (this.a.a != Integer.MAX_VALUE) {
                             if (i71Var.n) {
                                 int i28 = i71.t0;
@@ -198,7 +198,7 @@ public final class g71 extends View {
                                 int i31 = i71.t0;
                             }
                         }
-                        paint.setAlpha(org.telegram.messenger.ks.e4);
+                        paint.setAlpha(org.telegram.messenger.ls.e4);
                         float L32 = org.telegram.messenger.g0.L(20.0f) + z10;
                         RectF rectF2 = this.c;
                         rectF2.set(L2, z10, L2 + i15, L32);

@@ -1,28 +1,34 @@
 package bi;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.vv0;
+
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n6 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ o5(n6 n6Var, int i7, int i10) {
-        this.a = i10;
-        this.b = n6Var;
-        this.c = i7;
+    public /* synthetic */ o5(ProfileActivity profileActivity, int i7) {
+        this.a = i7;
+        this.b = profileActivity;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.f.scrollBy(0, this.c);
+                this.b.X4(true);
+                break;
+            case 1:
+                this.b.X4(true);
                 break;
             default:
-                g6 g6Var = this.b.f;
-                if (g6Var != null) {
-                    g6Var.setSpanCount(this.c);
+                ProfileActivity profileActivity = this.b;
+                vv0 vv0Var = profileActivity.O;
+                if (vv0Var != null) {
+                    vv0Var.k1(14);
+                    profileActivity.X4(false);
                     break;
                 }
                 break;

@@ -11,13 +11,13 @@ import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.jh0;
 import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class p {
     public static SpannableStringBuilder a(String str) {
@@ -88,7 +88,7 @@ public abstract class p {
                 }
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(fromHtml.toString());
-            ri.g(arrayList, spannableStringBuilder, spannableStringBuilder, -1);
+            si.g(arrayList, spannableStringBuilder, spannableStringBuilder, -1);
             for (Object obj2 : spans) {
                 if (obj2 instanceof URLSpan) {
                     int spanStart2 = fromHtml.getSpanStart(obj2);
@@ -102,7 +102,7 @@ public abstract class p {
                     }
                 }
             }
-            ri.a(null, spannableStringBuilder, arrayList);
+            si.a(null, spannableStringBuilder, arrayList);
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 o oVar2 = (o) arrayList2.get(i10);
                 int spanStart3 = fromHtml.getSpanStart(oVar2);

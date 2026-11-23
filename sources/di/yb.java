@@ -18,15 +18,15 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yb extends View implements te.b {
     public final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final class yb extends View implements te.b {
         this.d = new Matrix();
         this.b = new Paint(1);
         this.e = new Paint(1);
-        this.f = new xy0(gd.N0(2131744795, null), 14.16f, org.telegram.messenger.g0.o());
+        this.f = new xy0(hd.N0(2131744793, null), 14.16f, org.telegram.messenger.g0.o());
     }
 
     public static void a(Canvas canvas, Drawable drawable, float f10, float f11, float f12, float f13) {
@@ -61,7 +61,7 @@ public final class yb extends View implements te.b {
         canvas.rotate(f13, f10, f11);
         float T1 = org.telegram.messenger.g0.T1(0.6f, 1.0f, f12);
         canvas.scale(T1, T1, f10, f11);
-        n10.k(intrinsicHeight, 2.0f, f11, f10 - (intrinsicWidth / 2.0f), canvas);
+        o10.k(intrinsicHeight, 2.0f, f11, f10 - (intrinsicWidth / 2.0f), canvas);
         drawable.draw(canvas);
         canvas.restore();
     }
@@ -434,9 +434,9 @@ public final class yb extends View implements te.b {
         setPadding(0, 0, 0, 0);
         int i7 = 4;
         if (i2Var.K0(4)) {
-            hi.f2 f2Var = new hi.f2(this, 4, R.drawable.msg_limit_links, gd.N0(2131744202, null));
+            hi.f2 f2Var = new hi.f2(this, 4, R.drawable.msg_limit_links, hd.N0(2131744200, null));
             int i10 = hi.i2.C1;
-            if (!j10.i(i2Var.a).q()) {
+            if (!k10.i(i2Var.a).q()) {
                 Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
                 f2Var.j = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.r1(0.6f, -1), PorterDuff.Mode.SRC_IN));
@@ -447,7 +447,7 @@ public final class yb extends View implements te.b {
             arrayList.add(f2Var);
         }
         if (i2Var.K0(0)) {
-            arrayList.add(new hi.f2(this, 0, R.drawable.map_pin3, gd.N0(2131744201, null)));
+            arrayList.add(new hi.f2(this, 0, R.drawable.map_pin3, hd.N0(2131744199, null)));
         }
         int i11 = 3;
         if (i2Var.K0(5)) {
@@ -459,14 +459,14 @@ public final class yb extends View implements te.b {
             sb2.append(pbVar == null ? hi.qb.a() ? "24°C" : "72°F" : pbVar.a());
             CharSequence m10 = org.telegram.messenger.j6.m(sb2.toString(), textPaint.getFontMetricsInt(), false, null, 0);
             CharSequence charSequence = m10;
-            if (mp.u1(i2Var.a).Z5) {
+            if (np.u1(i2Var.a).Z5) {
                 charSequence = m10;
                 charSequence = m10;
                 if (c8.na.d("android.permission.ACCESS_COARSE_LOCATION") && pbVar == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
                     spannableStringBuilder.setSpan(new r80(org.telegram.messenger.g0.L(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     f2VarArr[0] = new hi.f2(this, spannableStringBuilder);
-                    c8.na.c(R.raw.permission_request_location, 2131747108, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new ai.w2(i7, new ai.w2(i11, new ai.x1(15, this, f2VarArr), z10), z10));
+                    c8.na.c(R.raw.permission_request_location, 2131747108, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new ai.x2(i7, new ai.x2(i11, new ai.y1(15, this, f2VarArr), z10), z10));
                     charSequence = spannableStringBuilder;
                 }
             }
@@ -474,10 +474,10 @@ public final class yb extends View implements te.b {
             arrayList.add(f2Var2 == null ? new hi.f2(this, charSequence) : f2Var2);
         }
         if (i2Var.K0(1)) {
-            arrayList.add(new hi.f2(this, 1, R.drawable.filled_widget_music, gd.N0(2131744203, null)));
+            arrayList.add(new hi.f2(this, 1, R.drawable.filled_widget_music, hd.N0(2131744201, null)));
         }
         if (i2Var.K0(2)) {
-            arrayList.add(new hi.f2(this, 2, R.drawable.filled_premium_camera, gd.N0(2131744200, null)));
+            arrayList.add(new hi.f2(this, 2, R.drawable.filled_premium_camera, hd.N0(2131744198, null)));
         }
         if (i2Var.K0(3)) {
             arrayList.add(new hi.g2(this));

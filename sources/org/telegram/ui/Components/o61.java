@@ -24,9 +24,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class o61 extends View implements org.telegram.messenger.fs {
+public abstract class o61 extends View implements org.telegram.messenger.gs {
     public String E;
     public int F;
     public final TextPaint G;
@@ -133,14 +133,14 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
         if (i10 == i7) {
             return;
         }
-        int i11 = org.telegram.messenger.ks.Z1;
-        int i12 = org.telegram.messenger.ks.Y1;
+        int i11 = org.telegram.messenger.ls.Z1;
+        int i12 = org.telegram.messenger.ls.Y1;
         if (i7 == -1) {
-            org.telegram.messenger.ks.f(i10).n(this, i12);
-            org.telegram.messenger.ks.f(this.h0).n(this, i11);
+            org.telegram.messenger.ls.f(i10).n(this, i12);
+            org.telegram.messenger.ls.f(this.h0).n(this, i11);
         } else {
-            org.telegram.messenger.ks.f(i7).c(this, i12);
-            org.telegram.messenger.ks.f(i7).c(this, i11);
+            org.telegram.messenger.ls.f(i7).c(this, i12);
+            org.telegram.messenger.ls.f(i7).c(this, i11);
         }
         this.h0 = i7;
     }
@@ -152,7 +152,7 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(org.telegram.messenger.fj fjVar, i61 i61Var) {
+    public final void c(org.telegram.messenger.gj gjVar, i61 i61Var) {
         TLRPC.Document document;
         long j3;
         if (i61Var == null) {
@@ -193,7 +193,7 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
                 }
                 this.d = h61Var.d;
                 org.telegram.messenger.q5 q5Var = Utilities.e;
-                es0 es0Var = new es0((org.telegram.ui.kp0) this, h61Var, fjVar, 8);
+                es0 es0Var = new es0((org.telegram.ui.kp0) this, h61Var, gjVar, 8);
                 this.e = es0Var;
                 q5Var.c(es0Var);
             }
@@ -208,12 +208,12 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
                 }
                 this.d = uri;
                 org.telegram.messenger.q5 q5Var2 = Utilities.e;
-                es0 es0Var2 = new es0((org.telegram.ui.kp0) this, uri, fjVar, 7);
+                es0 es0Var2 = new es0((org.telegram.ui.kp0) this, uri, gjVar, 7);
                 this.e = es0Var2;
                 q5Var2.c(es0Var2);
             }
         }
-        TLRPC.MessageMedia m12 = org.telegram.messenger.fj.m1(fjVar);
+        TLRPC.MessageMedia m12 = org.telegram.messenger.gj.m1(gjVar);
         if (m12 != null) {
             TLRPC.Document document2 = m12.document;
             if (document2 == null || !"application/x-tgstoryboardmap".equalsIgnoreCase(document2.mime_type)) {
@@ -243,13 +243,13 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
                     this.e0 = null;
                     return;
                 }
-                org.telegram.messenger.w7.G(fjVar.K1);
+                org.telegram.messenger.w7.G(gjVar.K1);
                 File I = org.telegram.messenger.w7.I(document);
                 if (I == null || !I.exists()) {
                     this.g0 = org.telegram.messenger.w7.r(null, document);
                     this.f0 = document;
-                    b(fjVar.K1);
-                    org.telegram.messenger.w7.G(fjVar.K1).W(document, fjVar, 2, 0);
+                    b(gjVar.K1);
+                    org.telegram.messenger.w7.G(gjVar.K1).W(document, gjVar, 2, 0);
                     return;
                 }
                 this.g0 = null;
@@ -303,10 +303,10 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != org.telegram.messenger.ks.Y1) {
-            if (i7 == org.telegram.messenger.ks.Z1 && ((String) objArr[0]).equals(this.g0)) {
+        if (i7 != org.telegram.messenger.ls.Y1) {
+            if (i7 == org.telegram.messenger.ls.Z1 && ((String) objArr[0]).equals(this.g0)) {
                 this.g0 = null;
                 this.f0 = null;
                 b(-1);
@@ -337,13 +337,13 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void e(org.telegram.messenger.fj fjVar, final float f10, int i7) {
+    public final void e(org.telegram.messenger.gj gjVar, final float f10, int i7) {
         boolean z10;
         TLRPC.Document document;
         this.O = null;
         if (this.e0 != null) {
             long j3 = this.b0;
-            TLRPC.MessageMedia m12 = org.telegram.messenger.fj.m1(fjVar);
+            TLRPC.MessageMedia m12 = org.telegram.messenger.gj.m1(gjVar);
             if (m12 != null) {
                 document = m12.document;
                 if (document == null || document.id != j3) {
@@ -362,7 +362,7 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
                 }
                 if (document == null) {
                     this.P = (this.c * f10) / 1000.0d;
-                    this.R.q0(org.telegram.messenger.fc.b(document), null, null, null, fjVar, 0);
+                    this.R.q0(org.telegram.messenger.gc.b(document), null, null, null, gjVar, 0);
                     z10 = true;
                     this.Q = z10;
                     if (i7 != 0) {
@@ -403,7 +403,7 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
                                     o61Var.h = f10;
                                     return;
                                 }
-                                int max = Math.max(org.telegram.messenger.ks.e3, org.telegram.messenger.g0.L(100.0f));
+                                int max = Math.max(org.telegram.messenger.ls.e3, org.telegram.messenger.g0.L(100.0f));
                                 Bitmap q10 = o61Var.b.q(j10, false);
                                 if (q10 != null) {
                                     int width = q10.getWidth();
@@ -417,7 +417,7 @@ public abstract class o61 extends View implements org.telegram.messenger.fs {
                                     }
                                     try {
                                         Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                                        Bitmap c10 = org.telegram.messenger.vr.c(max, i12);
+                                        Bitmap c10 = org.telegram.messenger.wr.c(max, i12);
                                         rectF.set(0.0f, 0.0f, max, i12);
                                         Canvas canvas = new Canvas(c10);
                                         canvas.drawBitmap(q10, (Rect) null, rectF, o61Var.J);

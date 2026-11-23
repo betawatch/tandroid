@@ -18,7 +18,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class m30 extends FrameLayout {
     public final di.xb a;
@@ -313,7 +313,7 @@ public class m30 extends FrameLayout {
             addView(xbVar, c8.ma.d(-2, -2.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         }
         if (i7 == 0) {
-            xbVar.setText(org.telegram.messenger.gd.N0(2131753759, null));
+            xbVar.setText(org.telegram.messenger.hd.N0(2131753759, null));
             ImageView imageView = new ImageView(context);
             imageView.setImageResource(R.drawable.tooltip_sound);
             imageView.setScaleType(ImageView.ScaleType.CENTER);

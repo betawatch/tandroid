@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class uz0 extends Dialog {
     public TextView E;
@@ -37,7 +37,7 @@ public final class uz0 extends Dialog {
     public boolean K;
     public float L;
     public org.telegram.ui.ActionBar.h6 M;
-    public org.telegram.messenger.fj N;
+    public org.telegram.messenger.gj N;
     public sz0 O;
     public org.telegram.ui.Cells.r1 P;
     public TextureView Q;
@@ -88,11 +88,11 @@ public final class uz0 extends Dialog {
         ai.l0 l0Var = new ai.l0(this, activity);
         this.c = l0Var;
         l0Var.setClipToPadding(false);
-        k0Var.addView(l0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        k0Var.addView(l0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         rz0 rz0Var = new rz0(this, i7);
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.i(k0Var, rz0Var);
-        if (org.telegram.messenger.bz.s0) {
+        if (org.telegram.messenger.cz.s0) {
             this.F = new org.telegram.ui.Components.ys();
         }
     }
@@ -209,7 +209,7 @@ public final class uz0 extends Dialog {
             this.Z = null;
             org.telegram.ui.Components.oz0 oz0Var = new org.telegram.ui.Components.oz0(this.a, null);
             this.d = oz0Var;
-            k0Var.addView(oz0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+            k0Var.addView(oz0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
             org.telegram.ui.Components.oz0 oz0Var2 = this.d;
             sz0 sz0Var2 = this.O;
             pz0 pz0Var = new pz0(this, 1);
@@ -267,24 +267,24 @@ public final class uz0 extends Dialog {
 
     @Override // android.app.Dialog
     public final void onBackPressed() {
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         org.telegram.ui.ActionBar.t1 t1Var = this.d0;
         if (t1Var != null) {
             t1Var.dismiss();
             this.d0 = null;
             return;
         }
-        if (this.c0 || (fjVar = this.N) == null || fjVar.P3()) {
+        if (this.c0 || (gjVar = this.N) == null || gjVar.P3()) {
             super.onBackPressed();
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.M);
-        String N0 = org.telegram.messenger.gd.N0(this.T ? 2131743349 : 2131743274, null);
+        String N0 = org.telegram.messenger.hd.N0(this.T ? 2131743347 : 2131743272, null);
         org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
         t1Var2.S = N0;
-        t1Var2.U = org.telegram.messenger.gd.N0(this.T ? 2131743350 : 2131743275, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751759, null), new rz0(this, 1));
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751586, null), new rz0(this, 2));
+        t1Var2.U = org.telegram.messenger.hd.N0(this.T ? 2131743348 : 2131743273, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751759, null), new rz0(this, 1));
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751586, null), new rz0(this, 2));
         this.d0 = t1Var2;
         t1Var2.show();
         TextView textView = (TextView) this.d0.d(-2);
@@ -304,7 +304,7 @@ public final class uz0 extends Dialog {
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.height = -1;
-        attributes.gravity = org.telegram.messenger.ks.E1;
+        attributes.gravity = org.telegram.messenger.ls.E1;
         attributes.dimAmount = 0.0f;
         int i7 = attributes.flags & (-3);
         attributes.softInputMode = 48;

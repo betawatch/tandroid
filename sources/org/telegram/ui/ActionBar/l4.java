@@ -33,14 +33,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.dl;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.el;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.ft;
 import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l4 {
     public static final y3 p = new y3();
@@ -60,7 +60,7 @@ public final class l4 {
     public MenuItem.OnMenuItemClickListener g = p;
     public boolean h = true;
     public final z3 l = new z3(this);
-    public final dl m = new dl(22);
+    public final el m = new el(22);
 
     static {
         Integer valueOf = Integer.valueOf(R.id.menu_regular);
@@ -149,7 +149,7 @@ public final class l4 {
                 textView.setPaddingRelative(org.telegram.messenger.g0.L(11.0f), 0, 0, 0);
                 linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, org.telegram.messenger.g0.L(!z10 ? 42.0f : 48.0f)));
                 linearLayout.addView(new Space(context), new LinearLayout.LayoutParams(-1, 1, 1.0f));
-                ImageView e10 = n10.e(context, R.drawable.msg_mini_lock3);
+                ImageView e10 = o10.e(context, R.drawable.msg_mini_lock3);
                 e10.setScaleType(ImageView.ScaleType.CENTER);
                 if (i11 == 2) {
                     if (i7 < 0) {
@@ -192,7 +192,7 @@ public final class l4 {
         textView.setPaddingRelative(org.telegram.messenger.g0.L(11.0f), 0, 0, 0);
         linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, org.telegram.messenger.g0.L(!z10 ? 42.0f : 48.0f)));
         linearLayout.addView(new Space(context), new LinearLayout.LayoutParams(-1, 1, 1.0f));
-        ImageView e102 = n10.e(context, R.drawable.msg_mini_lock3);
+        ImageView e102 = o10.e(context, R.drawable.msg_mini_lock3);
         e102.setScaleType(ImageView.ScaleType.CENTER);
         if (i11 == 2) {
         }
@@ -289,7 +289,7 @@ public final class l4 {
         i4Var.setAdapter((ListAdapter) arrayAdapter);
         j4Var.f.removeAllViews();
         j4Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(org.telegram.messenger.g0.L(400.0f), n10.B(16.0f, 2, rect.width()));
+        int min = Math.min(org.telegram.messenger.g0.L(400.0f), o10.B(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
         int i11 = min;
@@ -347,10 +347,10 @@ public final class l4 {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) i4Var.getAdapter();
             arrayAdapter2.clear();
             if (l4Var.j != null) {
-                Collections.sort(linkedList, new dl(23));
+                Collections.sort(linkedList, new el(23));
             }
             int size3 = linkedList.size();
-            boolean K3 = mp.u1(j10.t0).K3();
+            boolean K3 = np.u1(k10.t0).K3();
             int i14 = 0;
             while (i14 < size3) {
                 MenuItem menuItem4 = (MenuItem) linkedList.get(i14);

@@ -3,15 +3,15 @@ package kg;
 import android.text.TextUtils;
 import di.p6;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.dd;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class z {
     public static volatile z[] e = new z[4];
@@ -59,8 +59,8 @@ public final class z {
             ArrayList arrayList = this.b;
             int indexOf = arrayList.indexOf(c10);
             arrayList.remove(c10);
-            ks.f(this.a).k(ks.J1, new Object[0]);
-            lc.b0(vVar).U(gd.N0(2131752703, null), true, new ai.c1(this, indexOf, c10, 20), new y(this, str, c10, 0)).j();
+            ls.f(this.a).k(ls.J1, new Object[0]);
+            lc.b0(vVar).U(hd.N0(2131752703, null), true, new ai.j1(this, indexOf, c10, 19), new y(this, str, c10, 0)).j();
         }
     }
 
@@ -113,7 +113,7 @@ public final class z {
             this.c = true;
             int i7 = this.a;
             if (z10) {
-                tr a02 = tr.a0(i7);
+                ur a02 = ur.a0(i7);
                 a02.a.c(new p6(this, a02, z11, 5));
             } else {
                 ConnectionsManager.getInstance(i7).sendRequest(new TL_account.getBusinessChatLinks(), new x(this, 0));
@@ -123,7 +123,7 @@ public final class z {
 
     public final void f() {
         ArrayList arrayList = new ArrayList(this.b);
-        tr a02 = tr.a0(this.a);
+        ur a02 = ur.a0(this.a);
         a02.a.c(new hi.z0(a02, arrayList, 1));
     }
 }

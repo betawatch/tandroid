@@ -1,22 +1,22 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ u0 b;
     public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ q10 d;
+    public final /* synthetic */ r10 d;
     public final /* synthetic */ k2 e;
 
-    public /* synthetic */ x(u0 u0Var, boolean[] zArr, q10 q10Var, k2 k2Var, int i7) {
+    public /* synthetic */ x(u0 u0Var, boolean[] zArr, r10 r10Var, k2 k2Var, int i7) {
         this.a = i7;
         this.b = u0Var;
         this.c = zArr;
-        this.d = q10Var;
+        this.d = r10Var;
         this.e = k2Var;
     }
 
@@ -27,24 +27,24 @@ public final /* synthetic */ class x implements Runnable {
                 final boolean[] zArr = this.c;
                 if (!zArr[0]) {
                     WalletEngine2 walletEngine2 = this.b.b;
-                    final q10 q10Var = this.d;
+                    final r10 r10Var = this.d;
                     if (walletEngine2 != null) {
                         final int i7 = 0;
-                        walletEngine2.previewTonConnect(this.e, new q10() { // from class: org.telegram.ui.Wallet.z
-                            @Override // org.telegram.messenger.q10
+                        walletEngine2.previewTonConnect(this.e, new r10() { // from class: org.telegram.ui.Wallet.z
+                            @Override // org.telegram.messenger.r10
                             public final void a(Object obj, Object obj2) {
                                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                                 String str = (String) obj2;
                                 switch (i7) {
                                     case 0:
                                         if (!zArr[0]) {
-                                            q10Var.a(wallettransaction, str);
+                                            r10Var.a(wallettransaction, str);
                                             break;
                                         }
                                         break;
                                     default:
                                         if (!zArr[0]) {
-                                            q10Var.a(wallettransaction, str);
+                                            r10Var.a(wallettransaction, str);
                                             break;
                                         }
                                         break;
@@ -53,7 +53,7 @@ public final /* synthetic */ class x implements Runnable {
                         });
                         break;
                     } else {
-                        q10Var.a(null, "NULL_ENGINE");
+                        r10Var.a(null, "NULL_ENGINE");
                         break;
                     }
                 }
@@ -62,24 +62,24 @@ public final /* synthetic */ class x implements Runnable {
                 final boolean[] zArr2 = this.c;
                 if (!zArr2[0]) {
                     WalletEngine2 walletEngine22 = this.b.b;
-                    final q10 q10Var2 = this.d;
+                    final r10 r10Var2 = this.d;
                     if (walletEngine22 != null) {
                         final int i10 = 1;
-                        walletEngine22.previewTonConnect(this.e, new q10() { // from class: org.telegram.ui.Wallet.z
-                            @Override // org.telegram.messenger.q10
+                        walletEngine22.previewTonConnect(this.e, new r10() { // from class: org.telegram.ui.Wallet.z
+                            @Override // org.telegram.messenger.r10
                             public final void a(Object obj, Object obj2) {
                                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                                 String str = (String) obj2;
                                 switch (i10) {
                                     case 0:
                                         if (!zArr2[0]) {
-                                            q10Var2.a(wallettransaction, str);
+                                            r10Var2.a(wallettransaction, str);
                                             break;
                                         }
                                         break;
                                     default:
                                         if (!zArr2[0]) {
-                                            q10Var2.a(wallettransaction, str);
+                                            r10Var2.a(wallettransaction, str);
                                             break;
                                         }
                                         break;
@@ -88,7 +88,7 @@ public final /* synthetic */ class x implements Runnable {
                         });
                         break;
                     } else {
-                        q10Var2.a(null, "NULL_ENGINE");
+                        r10Var2.a(null, "NULL_ENGINE");
                         break;
                     }
                 }

@@ -10,7 +10,7 @@ import android.os.SystemClock;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o10 extends mh.b {
     public final OvershootInterpolator d;
@@ -381,7 +381,7 @@ public final class o10 extends mh.b {
                         w9Var7.a(measuredWidth2, y10, canvas, paint3);
                         canvas.restore();
                     }
-                    paint3.setAlpha(org.telegram.messenger.ks.e4);
+                    paint3.setAlpha(org.telegram.messenger.ls.e4);
                     if (z11) {
                         canvas.drawCircle(measuredWidth2, y10, org.telegram.messenger.g0.L(25.909092f), paint3);
                         paint3.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Fh, false));
@@ -522,7 +522,7 @@ public final class o10 extends mh.b {
                     float x112 = com.google.android.gms.internal.vision.e2.x(f40Var.J2, 0.807f, 0.5f, 0.878f);
                     float f372 = f40Var.P3;
                     canvas2.scale(f372 * x112, f372 * x112, measuredWidth32, y112);
-                    if (i10 != 1 && !f40Var.v1() && org.telegram.messenger.pc.e(512)) {
+                    if (i10 != 1 && !f40Var.v1() && org.telegram.messenger.qc.e(512)) {
                         canvas2.save();
                         canvas2.scale(1.2f, 1.2f, measuredWidth32, y112);
                         int alpha = paint5.getAlpha();
@@ -554,7 +554,7 @@ public final class o10 extends mh.b {
                     }
                     if (f40.E5) {
                         if (i10 == 0) {
-                            paint2.setAlpha(org.telegram.messenger.ks.e4);
+                            paint2.setAlpha(org.telegram.messenger.ls.e4);
                         } else {
                             paint2.setAlpha((int) (f17 * 255.0f));
                         }

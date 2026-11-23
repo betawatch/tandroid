@@ -23,13 +23,13 @@ import android.widget.ScrollView;
 import c8.ma;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b1 extends FrameLayout {
     public static final nr c0 = new nr(0.33d, 1.0d, 0.68d, 1.0d);
@@ -306,8 +306,11 @@ public final class b1 extends FrameLayout {
         if (z10) {
             float f10 = rectF.top;
             if (f10 > 0.0f) {
-                i7 = n10.D(16.0f, (int) f10, i7);
+                i7 = o10.D(16.0f, (int) f10, i7);
             }
+        }
+        if (!this.T && getHeight() > 0) {
+            i7 = o10.D(16.0f, getHeight(), i7);
         }
         int max = Math.max(this.M, this.d.getMeasuredWidth());
         int min = Math.min(this.d.getMeasuredHeight(), Math.max(org.telegram.messenger.g0.L(48.0f), i7));
@@ -319,13 +322,16 @@ public final class b1 extends FrameLayout {
         float max2 = Math.max(org.telegram.messenger.g0.L(8.0f), f11);
         boolean z11 = this.T;
         RectF rectF2 = this.E;
-        if (!z11) {
-            float f13 = rectF.top;
-            rectF2.set(max2, f13, f12 + max2, min + f13);
+        if (z11) {
+            float f13 = min;
+            float max3 = Math.max(org.telegram.messenger.g0.L(8.0f), (rectF.top - org.telegram.messenger.g0.L(8.0f)) - f13);
+            rectF2.set(max2, max3, f12 + max2, f13 + max3);
         } else {
-            float f14 = min;
-            float max3 = Math.max(org.telegram.messenger.g0.L(8.0f), (rectF.top - org.telegram.messenger.g0.L(8.0f)) - f14);
-            rectF2.set(max2, max3, f12 + max2, f14 + max3);
+            float f14 = rectF.top;
+            if (getHeight() > 0 && min + f14 > getHeight() - org.telegram.messenger.g0.L(8.0f)) {
+                f14 = Math.max(org.telegram.messenger.g0.L(8.0f), (getHeight() - org.telegram.messenger.g0.L(8.0f)) - min);
+            }
+            rectF2.set(max2, f14, f12 + max2, min + f14);
         }
     }
 
@@ -344,7 +350,7 @@ public final class b1 extends FrameLayout {
         linearLayout.setOrientation(1);
         linearLayout.setPadding(0, org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f));
         org.telegram.ui.ActionBar.y0 y0Var = new org.telegram.ui.ActionBar.y0(0, getContext(), this.b, false, false);
-        y0Var.j(gd.N0(2131753753, null), R.drawable.msg_arrow_back, null);
+        y0Var.j(hd.N0(2131753753, null), R.drawable.msg_arrow_back, null);
         y0Var.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
         int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.F8, this.b);
         int i7 = this.K;

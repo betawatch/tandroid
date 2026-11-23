@@ -16,10 +16,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.j1;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.q1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements Callable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class r implements Callable {
 
     /* JADX WARN: Code restructure failed: missing block: B:96:0x00b3, code lost:
     
-        r0 = r2.s(f5.z.h, org.telegram.messenger.ks.s1, "Service has been reset to null.", r5);
+        r0 = r2.s(f5.z.h, org.telegram.messenger.ls.s1, "Service has been reset to null.", r5);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -226,7 +226,7 @@ public final /* synthetic */ class r implements Callable {
 
     /* JADX WARN: Code restructure failed: missing block: B:93:0x0088, code lost:
     
-        r0 = r2.y(f5.z.h, org.telegram.messenger.ks.s1, "Service has been reset to null", r3);
+        r0 = r2.y(f5.z.h, org.telegram.messenger.ls.s1, "Service has been reset to null", r3);
      */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0174  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x023b  */
@@ -429,7 +429,7 @@ public final /* synthetic */ class r implements Callable {
                 cVar = bVar.i;
             }
             if (cVar == null) {
-                return com.google.android.gms.internal.play_billing.u.c(z.h, ks.s1);
+                return com.google.android.gms.internal.play_billing.u.c(z.h, ls.s1);
             }
             return ((com.google.android.gms.internal.play_billing.a) cVar).z1(bVar.g.getPackageName(), str, str2);
         } catch (DeadObjectException e10) {
@@ -492,7 +492,7 @@ public final /* synthetic */ class r implements Callable {
                             if (cVar == null) {
                                 str2 = str3;
                                 try {
-                                    bVar.g(hVar, str2, z.h, ks.s1, "Service has been reset to null.", null);
+                                    bVar.g(hVar, str2, z.h, ls.s1, "Service has been reset to null.", null);
                                     return null;
                                 } catch (DeadObjectException e10) {
                                     e = e10;

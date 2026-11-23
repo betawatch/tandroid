@@ -1,13 +1,13 @@
 package ch;
 
-import ai.y0;
+import ai.c1;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.ImageView;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e extends ImageView {
     public long a;
@@ -22,7 +22,7 @@ public final class e extends ImageView {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        x10 x10Var;
+        y10 y10Var;
         int action = motionEvent.getAction();
         f fVar = this.b;
         if (action == 0) {
@@ -32,11 +32,11 @@ public final class e extends ImageView {
             this.a = System.currentTimeMillis();
             fVar.b = true;
             fVar.c = false;
-            org.telegram.messenger.g0.h3(new y0(fVar, ks.V5, 4), ks.V5);
+            org.telegram.messenger.g0.h3(new c1(fVar, ls.V5, 4), ls.V5);
         } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
             fVar.b = false;
-            if (!fVar.c && (x10Var = fVar.d) != null) {
-                x10Var.a(Boolean.FALSE);
+            if (!fVar.c && (y10Var = fVar.d) != null) {
+                y10Var.a(Boolean.FALSE);
                 try {
                     fVar.a.performHapticFeedback(3);
                 } catch (Exception unused) {

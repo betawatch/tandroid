@@ -11,7 +11,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -165,11 +165,11 @@ public final /* synthetic */ class d8 implements Runnable {
                 sQLitePreparedStatement2.dispose();
                 return;
             default:
-                tr trVar = (tr) obj;
+                ur urVar = (ur) obj;
                 ArrayList<TLRPC.Peer> arrayList = (ArrayList) serializable;
-                trVar.getClass();
+                urVar.getClass();
                 try {
-                    executeFast2 = trVar.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
+                    executeFast2 = urVar.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
                 } catch (Exception e13) {
                     e = e13;
                     sQLitePreparedStatement3 = null;
@@ -178,7 +178,7 @@ public final /* synthetic */ class d8 implements Runnable {
                     sQLitePreparedStatement3 = null;
                 }
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                    SQLiteDatabase sQLiteDatabase2 = urVar.b;
                     Locale locale = Locale.ENGLISH;
                     j3 = -j10;
                     queryFinalized = sQLiteDatabase2.queryFinalized("SELECT replies_data FROM messages_v2 WHERE mid = " + i12 + " AND uid = " + j3, new Object[0]);
@@ -187,7 +187,7 @@ public final /* synthetic */ class d8 implements Runnable {
                     sQLitePreparedStatement3 = executeFast2;
                     sQLiteCursor = null;
                     try {
-                        trVar.o(e, true);
+                        urVar.o(e, true);
                         if (sQLitePreparedStatement3 != null) {
                             sQLitePreparedStatement3.dispose();
                         }
@@ -252,7 +252,7 @@ public final /* synthetic */ class d8 implements Runnable {
                     e = e15;
                     sQLiteCursor = queryFinalized;
                     sQLitePreparedStatement3 = executeFast2;
-                    trVar.o(e, true);
+                    urVar.o(e, true);
                     if (sQLitePreparedStatement3 != null) {
                     }
                     if (sQLiteCursor == null) {
@@ -271,8 +271,8 @@ public final /* synthetic */ class d8 implements Runnable {
         }
     }
 
-    public /* synthetic */ d8(tr trVar, int i7, long j3, int i10, ArrayList arrayList, int i11) {
-        this.f = trVar;
+    public /* synthetic */ d8(ur urVar, int i7, long j3, int i10, ArrayList arrayList, int i11) {
+        this.f = urVar;
         this.b = i7;
         this.c = j3;
         this.d = i10;

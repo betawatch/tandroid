@@ -9,14 +9,14 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.m6;
 import ug.a1;
 import ug.z0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e {
     public static e j;
@@ -91,7 +91,7 @@ public final class e {
     }
 
     public Paint e() {
-        if (!mp.u1(j10.t0).K3()) {
+        if (!np.u1(k10.t0).K3()) {
             return (Paint) this.c;
         }
         if (((Paint) this.d) == null) {

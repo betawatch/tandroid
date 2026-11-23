@@ -7,10 +7,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class c6 extends k1.b {
     public final /* synthetic */ int o = 0;
@@ -144,7 +144,7 @@ public final class c6 extends k1.b {
                         d6Var.A0 = false;
                         d6Var.H0.e(true, 1.0f);
                         i3 i3Var = ((p9) d6Var.a).a.U0;
-                        i3Var.a.t(gd.N0(2131744420, null), true, true);
+                        i3Var.a.t(hd.N0(2131744418, null), true, true);
                         i3Var.invalidate();
                         d6Var.invalidate();
                     } else {
@@ -217,7 +217,7 @@ public final class c6 extends k1.b {
                     float f12 = d6Var.k0;
                     rect.set((int) (f10 - f11), (int) (f12 - f11), (int) (f10 + f11), (int) (f12 + f11));
                     cVar.h(rect);
-                    cVar.j((d6Var.s0 && d6Var.B0) ? gd.N0(2131754845, null) : gd.N0(2131754912, null));
+                    cVar.j((d6Var.s0 && d6Var.B0) ? hd.N0(2131754845, null) : hd.N0(2131754912, null));
                     z10 = (d6Var.v0 || d6Var.b()) ? false : true;
                     accessibilityNodeInfo.setEnabled(z10);
                     if (z10) {
@@ -231,7 +231,7 @@ public final class c6 extends k1.b {
                     float f15 = d6Var.k0;
                     rect.set((int) (f13 - f14), (int) (f15 - f14), (int) (f13 + f14), (int) (f15 + f14));
                     cVar.h(rect);
-                    cVar.j(d6Var.b() ? gd.N0(2131745444, null) : d6Var.s0 ? gd.N0(2131754753, null) : d6Var.p0 ? gd.N0(2131754757, null) : gd.N0(2131754746, null));
+                    cVar.j(d6Var.b() ? hd.N0(2131745444, null) : d6Var.s0 ? hd.N0(2131754753, null) : d6Var.p0 ? hd.N0(2131754757, null) : hd.N0(2131754746, null));
                     accessibilityNodeInfo.setEnabled(!d6Var.v0);
                     if (!d6Var.v0) {
                         cVar.b(s0.b.c);
@@ -244,7 +244,7 @@ public final class c6 extends k1.b {
                     float f18 = d6Var.k0;
                     rect.set((int) (f16 - f17), (int) (f18 - f17), (int) (f16 + f17), (int) (f18 + f17));
                     cVar.h(rect);
-                    cVar.j(gd.N0(2131754751, null));
+                    cVar.j(hd.N0(2131754751, null));
                     z10 = (d6Var.v0 || d6Var.b()) ? false : true;
                     accessibilityNodeInfo.setEnabled(z10);
                     if (z10) {
@@ -290,9 +290,9 @@ public final class c6 extends k1.b {
                             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                             cVar.h(rect);
                             if (TextUtils.isEmpty(str3)) {
-                                str = gd.N0(2131747623, null);
+                                str = hd.N0(2131747623, null);
                             } else {
-                                str = gd.N0(2131747623, null) + ", " + str3;
+                                str = hd.N0(2131747623, null) + ", " + str3;
                             }
                             cVar.j(str);
                             break;
@@ -301,9 +301,9 @@ public final class c6 extends k1.b {
                             rect.set((int) (rectF.left + bounds.left), (int) (rectF.top + org.telegram.messenger.g0.L(24.0f) + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.top + org.telegram.messenger.g0.L(24.0f) + bounds.bottom));
                             cVar.h(rect);
                             if (TextUtils.isEmpty(str3)) {
-                                str2 = gd.N0(2131752029, null);
+                                str2 = hd.N0(2131752029, null);
                             } else {
-                                str2 = gd.N0(2131752029, null) + ", " + str3;
+                                str2 = hd.N0(2131752029, null) + ", " + str3;
                             }
                             cVar.j(str2);
                             break;
@@ -323,7 +323,7 @@ public final class c6 extends k1.b {
                         cVar.p(false);
                     }
                     cVar.h(rect);
-                    cVar.j(gd.N0(2131753096, null));
+                    cVar.j(hd.N0(2131753096, null));
                     break;
                 }
                 break;

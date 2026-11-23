@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -37,7 +37,7 @@ import org.telegram.ui.rv0;
 import org.telegram.ui.wq0;
 import p4.z;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f0 implements w30, j1, a7, oa1, a5, q1, w5.b, v9.g {
     public final /* synthetic */ int a;
@@ -226,14 +226,14 @@ public final /* synthetic */ class f0 implements w30, j1, a7, oa1, a5, q1, w5.b,
     public void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         g2 g2Var = (g2) this.c;
         TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;
-        q10 q10Var = (q10) this.e;
+        r10 r10Var = (r10) this.e;
         int currentAccount = g2Var.getCurrentAccount();
         boolean[] zArr = ii.n.a;
         if (zArr[currentAccount]) {
             return;
         }
         zArr[currentAccount] = true;
-        ii.n.b(g2Var, this.b, tL_inputCheckPasswordSRP, twoStepVerificationActivity, q10Var, null);
+        ii.n.b(g2Var, this.b, tL_inputCheckPasswordSRP, twoStepVerificationActivity, r10Var, null);
     }
 
     @Override // org.telegram.ui.Components.w30

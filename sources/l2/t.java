@@ -2,11 +2,11 @@ package l2;
 
 import j$.time.LocalDate;
 import j$.time.ZoneOffset;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.pb0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements h2.o, g9.k, nj0, pb0, h2.j {
     public final /* synthetic */ int a;
@@ -47,15 +47,15 @@ public final /* synthetic */ class t implements h2.o, g9.k, nj0, pb0, h2.j {
         switch (i10) {
             case 4:
                 if (i7 == 0) {
-                    return gd.N0(2131748338, null);
+                    return hd.N0(2131748338, null);
                 }
                 LocalDate plusDays = LocalDate.now().plusDays(i7);
                 int year = plusDays.getYear();
                 long epochMilli = plusDays.atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
                 if (year != i11) {
-                    return gd.E0().y0().format(epochMilli);
+                    return hd.E0().y0().format(epochMilli);
                 }
-                return gd.E0().A0().format(epochMilli) + ", " + gd.E0().w0().format(epochMilli);
+                return hd.E0().A0().format(epochMilli) + ", " + hd.E0().w0().format(epochMilli);
             default:
                 return i7 == i11 ? "—" : String.format("%02d", Integer.valueOf(i7));
         }

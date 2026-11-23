@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,9 +98,9 @@ public final /* synthetic */ class hp0 implements Runnable {
             case 9:
                 org.telegram.ui.ActionBar.g2 g2Var3 = jt0Var.y1;
                 try {
-                    org.telegram.messenger.ri mediaDataController = g2Var3.getMediaDataController();
+                    org.telegram.messenger.si mediaDataController = g2Var3.getMediaDataController();
                     long e10 = g2Var3.getUserConfig().e();
-                    Pattern pattern = org.telegram.messenger.ri.U1;
+                    Pattern pattern = org.telegram.messenger.si.U1;
                     mediaDataController.A0(e10, 0, null);
                     break;
                 } catch (Exception e11) {
@@ -115,7 +115,7 @@ public final /* synthetic */ class hp0 implements Runnable {
             case 11:
                 gq0 gq0Var = jt0Var.b0;
                 gq0Var.getClass();
-                gq0Var.h(null, new bi.l5(gq0Var, 1));
+                gq0Var.h(null, new bi.k5(gq0Var, 1));
                 break;
             case 12:
                 jt0Var.b0.setReordering(true);

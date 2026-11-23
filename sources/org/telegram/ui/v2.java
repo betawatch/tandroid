@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v2 extends FrameLayout implements org.telegram.messenger.y5, org.telegram.ui.Cells.i9 {
     public static final /* synthetic */ int W = 0;
@@ -40,7 +40,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
     public boolean R;
     public boolean S;
     public boolean T;
-    public org.telegram.messenger.xi U;
+    public org.telegram.messenger.yi U;
     public boolean V;
     public final p50 a;
     public final e4 b;
@@ -128,7 +128,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
             boolean z10 = this.Q;
             e4 e4Var = this.b;
             if (z10) {
-                imageReceiver.r0(org.telegram.messenger.fc.b(this.P), null, org.telegram.messenger.fc.c(org.telegram.messenger.w7.w(this.P.thumbs, 40, false, null, false), this.P), "80_80_b", null, this.P.size, null, e4Var.F, 1);
+                imageReceiver.r0(org.telegram.messenger.gc.b(this.P), null, org.telegram.messenger.gc.c(org.telegram.messenger.w7.w(this.P.thumbs, 40, false, null, false), this.P), "80_80_b", null, this.P.size, null, e4Var.F, 1);
             } else {
                 org.telegram.messenger.w7.G(i7).W(this.P, e4Var.F, 1, 1);
             }
@@ -179,7 +179,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
         } else {
             this.P = null;
         }
-        this.Q = org.telegram.messenger.fj.K4(this.P) || org.telegram.messenger.fj.s3(this.P, false);
+        this.Q = org.telegram.messenger.gj.K4(this.P) || org.telegram.messenger.gj.s3(this.P, false);
         this.x = z11;
         this.s.setVisibility(4);
         e(false);
@@ -266,7 +266,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
             if (w2Var == null || w2Var.b == null) {
                 if (org.telegram.messenger.w7.G(i7).S(r10)) {
                     this.J = 1;
-                    Float w10 = org.telegram.messenger.ec.D().w(r10);
+                    Float w10 = org.telegram.messenger.fc.D().w(r10);
                     if (w10 != null) {
                         f10 = w10.floatValue();
                     }
@@ -395,7 +395,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131753930, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.N0(2131753930, null));
         if (this.c != null) {
             sb2.append(", ");
             sb2.append(this.c.d.getText());
@@ -451,7 +451,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
                     } else {
                         i13 = org.telegram.messenger.g0.L(18.0f) + org.telegram.messenger.g0.L(i19 * 14);
                         this.y = i13;
-                        i14 = org.telegram.messenger.n10.x(18.0f, i13, i11);
+                        i14 = org.telegram.messenger.o10.x(18.0f, i13, i11);
                         L = i14;
                     }
                     TLRPC.Document document = this.P;
@@ -526,10 +526,10 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
                                                 File J = org.telegram.messenger.w7.J(this.P, null, true, true);
                                                 if (this.S || I.exists() || J.exists()) {
                                                     imageReceiver.O = null;
-                                                    imageReceiver.u0(null, null, org.telegram.messenger.fc.b(this.P), "200_200_pframe", org.telegram.messenger.fc.c(w10, this.P), "80_80_b", null, this.P.size, null, e4Var2.F, 1);
+                                                    imageReceiver.u0(null, null, org.telegram.messenger.gc.b(this.P), "200_200_pframe", org.telegram.messenger.gc.c(w10, this.P), "80_80_b", null, this.P.size, null, e4Var2.F, 1);
                                                 } else {
-                                                    imageReceiver.O = org.telegram.messenger.fc.b(this.P);
-                                                    imageReceiver.u0(null, null, null, null, org.telegram.messenger.fc.c(w10, this.P), "80_80_b", null, this.P.size, null, e4Var2.F, 1);
+                                                    imageReceiver.O = org.telegram.messenger.gc.b(this.P);
+                                                    imageReceiver.u0(null, null, null, null, org.telegram.messenger.gc.c(w10, this.P), "80_80_b", null, this.P.size, null, e4Var2.F, 1);
                                                 }
                                             } else {
                                                 imageReceiver.O = null;
@@ -537,7 +537,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.y5, 
                                             }
                                         } else {
                                             imageReceiver.O = null;
-                                            imageReceiver.r0(null, null, org.telegram.messenger.fc.c(w10, this.P), "80_80_b", null, 0L, null, e4Var2 != null ? e4Var2.F : null, 1);
+                                            imageReceiver.r0(null, null, org.telegram.messenger.gc.c(w10, this.P), "80_80_b", null, 0L, null, e4Var2 != null ? e4Var2.F : null, 1);
                                         }
                                     }
                                     imageReceiver.S0 = true;

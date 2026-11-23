@@ -10,7 +10,7 @@ import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qc0 extends org.telegram.ui.Components.iu0 {
     public Boolean E;
@@ -52,7 +52,7 @@ public final class qc0 extends org.telegram.ui.Components.iu0 {
         this.b = textView;
         textView.setTextSize(1, 18.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(org.telegram.messenger.gd.N0(2131745921, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131745921, null));
         textView.setGravity(17);
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         linearLayout.addView(textView, c8.ma.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -79,7 +79,7 @@ public final class qc0 extends org.telegram.ui.Components.iu0 {
         TextView textView5 = new TextView(context);
         this.d = textView5;
         textView5.setGravity(17);
-        textView5.setText(org.telegram.messenger.gd.N0(2131745921, null));
+        textView5.setText(org.telegram.messenger.hd.N0(2131745921, null));
         textView5.setTypeface(org.telegram.messenger.g0.o());
         textView5.setTextSize(1, 15.0f);
         textView5.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
@@ -105,7 +105,7 @@ public final class qc0 extends org.telegram.ui.Components.iu0 {
 
     @Override // org.telegram.ui.Components.iu0
     public String getHeaderName() {
-        return org.telegram.messenger.gd.N0(2131745921, "ResetAccount");
+        return org.telegram.messenger.hd.N0(2131745921, "ResetAccount");
     }
 
     @Override // org.telegram.ui.Components.iu0
@@ -136,7 +136,7 @@ public final class qc0 extends org.telegram.ui.Components.iu0 {
         this.w = bundle.getString("code");
         this.x = bundle.getInt("startTime");
         this.y = bundle.getInt("waitTime");
-        org.telegram.messenger.f3.q("ResetAccountInfo", null, 2131745918, new Object[]{org.telegram.messenger.gd.a(pf.b.c().b("+" + this.r))}, this.c);
+        org.telegram.messenger.f3.q("ResetAccountInfo", null, 2131745918, new Object[]{org.telegram.messenger.hd.a(pf.b.c().b("+" + this.r))}, this.c);
         n();
         m4 m4Var = new m4(this, 11);
         this.h = m4Var;
@@ -155,7 +155,7 @@ public final class qc0 extends org.telegram.ui.Components.iu0 {
         int i14 = max % 60;
         TextView textView = this.e;
         if (i11 >= 2) {
-            textView.setText(org.telegram.messenger.gd.G(round, "Days", new Object[0]));
+            textView.setText(org.telegram.messenger.hd.G(round, "Days", new Object[0]));
         } else {
             textView.setText(String.format(Locale.getDefault(), "%02d:%02d:%02d", Integer.valueOf(i12), Integer.valueOf(i13), Integer.valueOf(i14)));
         }

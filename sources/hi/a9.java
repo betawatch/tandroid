@@ -9,10 +9,10 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.ff;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gf;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.SerializedData;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.ez;
 import org.telegram.ui.Components.f81;
 import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.q1, e81, x51, v7, a7 {
     public final /* synthetic */ int a;
@@ -50,17 +50,17 @@ public final /* synthetic */ class a9 implements CameraView.CameraViewDelegate, 
 
     @Override // org.telegram.ui.Components.x51
     public void a(ez ezVar) {
-        ff ffVar;
+        gf gfVar;
         sa saVar = this.b;
         if (ezVar == null) {
             saVar.getClass();
             return;
         }
         c7 c7Var = saVar.L1;
-        if (c7Var == null || (ffVar = c7Var.a1) == null) {
+        if (c7Var == null || (gfVar = c7Var.a1) == null) {
             return;
         }
-        ezVar.d(new org.telegram.ui.Cells.c5(ffVar));
+        ezVar.d(new org.telegram.ui.Cells.c5(gfVar));
     }
 
     @Override // org.telegram.ui.Components.e81
@@ -96,7 +96,7 @@ public final /* synthetic */ class a9 implements CameraView.CameraViewDelegate, 
                     SerializedData serializedData2 = new SerializedData(serializedData.length());
                     serializedData.cleanup();
                     q8.c(serializedData2, n8Var);
-                    mp.u1(i11).h7.edit().putString("story_privacy2", Utilities.f(serializedData2.toByteArray())).apply();
+                    np.u1(i11).h7.edit().putString("story_privacy2", Utilities.f(serializedData2.toByteArray())).apply();
                     serializedData2.cleanup();
                     c7 c7Var = saVar.L1;
                     c7Var.G0 = z12;
@@ -131,8 +131,8 @@ public final /* synthetic */ class a9 implements CameraView.CameraViewDelegate, 
             default:
                 String[] strArr = z13 ? new String[0] : new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
                 final sa saVar2 = this.b;
-                c8.na.b(strArr, new x10() { // from class: hi.y8
-                    @Override // org.telegram.messenger.x10
+                c8.na.b(strArr, new y10() { // from class: hi.y8
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj2) {
                         boolean z14;
                         final boolean z15;
@@ -156,7 +156,7 @@ public final /* synthetic */ class a9 implements CameraView.CameraViewDelegate, 
                         tL_startLive.noforwards = z14 ^ z11;
                         TLRPC.InputPeer inputPeer2 = inputPeer;
                         tL_startLive.peer = inputPeer2 == null ? new TLRPC.TL_inputPeerSelf() : inputPeer2;
-                        final long e10 = (inputPeer2 == null || (inputPeer2 instanceof TLRPC.TL_inputPeerSelf)) ? j10.i(i14).e() : org.telegram.messenger.n5.n(inputPeer2);
+                        final long e10 = (inputPeer2 == null || (inputPeer2 instanceof TLRPC.TL_inputPeerSelf)) ? k10.i(i14).e() : org.telegram.messenger.n5.n(inputPeer2);
                         tL_startLive.privacy_rules.addAll(n8Var.b);
                         tL_startLive.random_id = Utilities.b.nextLong();
                         final boolean z16 = z13;
@@ -228,7 +228,7 @@ public final /* synthetic */ class a9 implements CameraView.CameraViewDelegate, 
                 int i10 = saVar5.c;
                 c7 c7Var = saVar5.L1;
                 if (c7Var != null) {
-                    c7Var.D0 = mp.u1(i10).j5();
+                    c7Var.D0 = np.u1(i10).j5();
                     saVar5.W1 = !saVar5.L1.c;
                     saVar5.h(null);
                     saVar5.k();
@@ -239,7 +239,7 @@ public final /* synthetic */ class a9 implements CameraView.CameraViewDelegate, 
                     c7Var2.C0 = saVar5.d1.getText();
                     saVar5.L1 = null;
                     saVar5.V(c7Var2, true);
-                    b1 b1Var = mp.u1(i10).R1().w;
+                    b1 b1Var = np.u1(i10).R1().w;
                     if (c7Var2.c) {
                         b1Var.d(c7Var2);
                     } else {
@@ -261,7 +261,7 @@ public final /* synthetic */ class a9 implements CameraView.CameraViewDelegate, 
                 sa saVar6 = this.b;
                 c7 c7Var3 = saVar6.L1;
                 if (c7Var3 != null && !c7Var3.g && ((!c7Var3.n || c7Var3.u) && c7Var3.c)) {
-                    mp.u1(saVar6.c).R1().w.b(saVar6.L1);
+                    np.u1(saVar6.c).R1().w.b(saVar6.L1);
                     saVar6.L1 = null;
                 }
                 c7 c7Var4 = saVar6.L1;

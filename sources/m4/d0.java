@@ -13,9 +13,9 @@ import h9.t1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class d0 implements f3.o {
     public final int a;
@@ -87,7 +87,7 @@ public final class d0 implements f3.o {
         int i7 = 0;
         while (i7 < 188) {
             for (int i10 = 0; i10 < 5; i10++) {
-                if (bArr[(i10 * ks.S2) + i7] != 71) {
+                if (bArr[(i10 * ls.S2) + i7] != 71) {
                     break;
                 }
             }
@@ -240,7 +240,7 @@ public final class d0 implements f3.o {
                         if (i20 > 4) {
                             break;
                         }
-                        int i22 = (i20 * ks.S2) + i19;
+                        int i22 = (i20 * ls.S2) + i19;
                         if (i22 < i17 || i22 >= i18 || bArr[i22] != 71) {
                             i21 = 0;
                         } else {
@@ -323,7 +323,7 @@ public final class d0 implements f3.o {
                     i25++;
                 }
                 xVar3.N(i25);
-                int i26 = i25 + ks.S2;
+                int i26 = i25 + ls.S2;
                 if (i26 > i24) {
                     int i27 = (i25 - i23) + this.s;
                     this.s = i27;

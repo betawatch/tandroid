@@ -16,7 +16,7 @@ import android.text.TextPaint;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f90 extends Drawable {
     public ky A;
@@ -371,7 +371,7 @@ public final class f90 extends Drawable {
             } else {
                 int i38 = this.q;
                 if (i38 == 3 || i38 == 14 || i38 == 2) {
-                    paint5.setAlpha(org.telegram.messenger.ks.e4);
+                    paint5.setAlpha(org.telegram.messenger.ls.e4);
                     f16 = this.r;
                 } else {
                     paint5.setAlpha((int) ((1.0f - this.r) * Math.min(1.0f, this.s / 0.5f) * 255.0f));
@@ -520,7 +520,7 @@ public final class f90 extends Drawable {
                 i12 = 1;
             } else if (i44 == 10 || this.q == 10 || i44 == 13) {
                 int i45 = this.q;
-                int i46 = (i45 == 4 || i45 == 6) ? (int) ((1.0f - this.r) * 255.0f) : org.telegram.messenger.ks.e4;
+                int i46 = (i45 == 4 || i45 == 6) ? (int) ((1.0f - this.r) * 255.0f) : org.telegram.messenger.ls.e4;
                 if (i46 != 0) {
                     a(false);
                     paint5.setAlpha((int) (i46 * this.o));
@@ -578,7 +578,7 @@ public final class f90 extends Drawable {
                         }
                         if (this.p != 9 || i16 == 9) {
                             a(false);
-                            paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+                            paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
                             int L13 = org.telegram.messenger.g0.L(7.0f) + i14;
                             int L14 = centerX2 - org.telegram.messenger.g0.L(3.0f);
                             if (this.p != this.q) {
@@ -605,7 +605,7 @@ public final class f90 extends Drawable {
                             int i47 = this.p;
                             int i48 = this.q;
                             float f62 = i47 == i48 ? 1.0f : i48 == 13 ? this.r : 1.0f - this.r;
-                            paint5.setAlpha(i47 == i48 ? org.telegram.messenger.ks.e4 : (int) (f62 * 255.0f));
+                            paint5.setAlpha(i47 == i48 ? org.telegram.messenger.ls.e4 : (int) (f62 * 255.0f));
                             org.telegram.messenger.g0.L(7.0f);
                             org.telegram.messenger.g0.L(3.0f);
                             if (this.p != this.q) {
@@ -675,13 +675,13 @@ public final class f90 extends Drawable {
                                 int i52 = this.q;
                                 if ((i52 == 0 || i52 == i21) && (i20 == 0 || i20 == i21)) {
                                     paint2 = paint;
-                                    paint2.setAlpha(org.telegram.messenger.ks.e4);
+                                    paint2.setAlpha(org.telegram.messenger.ls.e4);
                                 } else if (i52 == 4) {
                                     paint2 = paint;
                                     paint2.setAlpha((int) ((1.0f - this.r) * 255.0f));
                                 } else {
                                     paint2 = paint;
-                                    paint2.setAlpha(i20 == i52 ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+                                    paint2.setAlpha(i20 == i52 ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
                                 }
                                 a(true);
                                 canvas2.save();
@@ -722,13 +722,13 @@ public final class f90 extends Drawable {
                                     f24 = 0.0f;
                                     f21 = 1.0f;
                                 }
-                                paint5.setAlpha(org.telegram.messenger.ks.e4);
+                                paint5.setAlpha(org.telegram.messenger.ls.e4);
                                 f22 = f24;
                             } else {
                                 if (this.q != 6) {
                                     paint5.setAlpha((int) ((1.0f - this.r) * 255.0f));
                                 } else {
-                                    paint5.setAlpha(org.telegram.messenger.ks.e4);
+                                    paint5.setAlpha(org.telegram.messenger.ls.e4);
                                 }
                                 f21 = 0.0f;
                                 f22 = 1.0f;
@@ -762,7 +762,7 @@ public final class f90 extends Drawable {
                             int intrinsicWidth = (int) (drawable3.getIntrinsicWidth() * f20);
                             int intrinsicHeight = (int) (drawable3.getIntrinsicHeight() * f20);
                             drawable3.setColorFilter(this.g);
-                            drawable3.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) ((1.0f - this.r) * 255.0f));
+                            drawable3.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) ((1.0f - this.r) * 255.0f));
                             int i55 = intrinsicWidth / 2;
                             int i56 = intrinsicHeight / 2;
                             drawable3.setBounds(i22 - i55, i14 - i56, i22 + i55, i56 + i14);
@@ -772,7 +772,7 @@ public final class f90 extends Drawable {
                             int intrinsicWidth2 = (int) (drawable4.getIntrinsicWidth() * f17);
                             int intrinsicHeight2 = (int) (drawable4.getIntrinsicHeight() * f17);
                             drawable4.setColorFilter(this.g);
-                            drawable4.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+                            drawable4.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
                             int i57 = intrinsicWidth2 / 2;
                             int i58 = intrinsicHeight2 / 2;
                             drawable4.setBounds(i22 - i57, i14 - i58, i22 + i57, i58 + i14);
@@ -784,7 +784,7 @@ public final class f90 extends Drawable {
                         } else {
                             int L19 = org.telegram.messenger.g0.L(24.0f);
                             paint2.setStyle(Paint.Style.FILL_AND_STROKE);
-                            paint2.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) ((1.0f - this.r) * 255.0f));
+                            paint2.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) ((1.0f - this.r) * 255.0f));
                             a(true);
                             canvas2.save();
                             i25 = i22;
@@ -805,7 +805,7 @@ public final class f90 extends Drawable {
                         }
                         if (pathArr3 != null) {
                             int L20 = org.telegram.messenger.g0.L(24.0f);
-                            int i59 = this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f);
+                            int i59 = this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f);
                             paint2.setStyle(Paint.Style.FILL_AND_STROKE);
                             paint2.setAlpha(i59);
                             a(true);
@@ -900,7 +900,7 @@ public final class f90 extends Drawable {
                 if (this.p != 9) {
                 }
                 a(false);
-                paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+                paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
                 int L132 = org.telegram.messenger.g0.L(7.0f) + i14;
                 int L142 = centerX2 - org.telegram.messenger.g0.L(3.0f);
                 if (this.p != this.q) {
@@ -921,7 +921,7 @@ public final class f90 extends Drawable {
                 int i482 = this.q;
                 if (i472 == i482) {
                 }
-                paint5.setAlpha(i472 == i482 ? org.telegram.messenger.ks.e4 : (int) (f62 * 255.0f));
+                paint5.setAlpha(i472 == i482 ? org.telegram.messenger.ls.e4 : (int) (f62 * 255.0f));
                 org.telegram.messenger.g0.L(7.0f);
                 org.telegram.messenger.g0.L(3.0f);
                 if (this.p != this.q) {
@@ -991,7 +991,7 @@ public final class f90 extends Drawable {
                 if (this.p != 9) {
                 }
                 a(false);
-                paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+                paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
                 int L1322 = org.telegram.messenger.g0.L(7.0f) + i14;
                 int L1422 = centerX2 - org.telegram.messenger.g0.L(3.0f);
                 if (this.p != this.q) {
@@ -1012,7 +1012,7 @@ public final class f90 extends Drawable {
                 int i4822 = this.q;
                 if (i4722 == i4822) {
                 }
-                paint5.setAlpha(i4722 == i4822 ? org.telegram.messenger.ks.e4 : (int) (f62 * 255.0f));
+                paint5.setAlpha(i4722 == i4822 ? org.telegram.messenger.ls.e4 : (int) (f62 * 255.0f));
                 org.telegram.messenger.g0.L(7.0f);
                 org.telegram.messenger.g0.L(3.0f);
                 if (this.p != this.q) {
@@ -1179,7 +1179,7 @@ public final class f90 extends Drawable {
                     if (this.p != 9) {
                     }
                     a(false);
-                    paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+                    paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
                     int L13222 = org.telegram.messenger.g0.L(7.0f) + i14;
                     int L14222 = centerX2 - org.telegram.messenger.g0.L(3.0f);
                     if (this.p != this.q) {
@@ -1200,7 +1200,7 @@ public final class f90 extends Drawable {
                     int i48222 = this.q;
                     if (i47222 == i48222) {
                     }
-                    paint5.setAlpha(i47222 == i48222 ? org.telegram.messenger.ks.e4 : (int) (f62 * 255.0f));
+                    paint5.setAlpha(i47222 == i48222 ? org.telegram.messenger.ls.e4 : (int) (f62 * 255.0f));
                     org.telegram.messenger.g0.L(7.0f);
                     org.telegram.messenger.g0.L(3.0f);
                     if (this.p != this.q) {
@@ -1268,7 +1268,7 @@ public final class f90 extends Drawable {
                 if (this.p != 9) {
                 }
                 a(false);
-                paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+                paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
                 int L132222 = org.telegram.messenger.g0.L(7.0f) + i14;
                 int L142222 = centerX2 - org.telegram.messenger.g0.L(3.0f);
                 if (this.p != this.q) {
@@ -1289,7 +1289,7 @@ public final class f90 extends Drawable {
                 int i482222 = this.q;
                 if (i472222 == i482222) {
                 }
-                paint5.setAlpha(i472222 == i482222 ? org.telegram.messenger.ks.e4 : (int) (f62 * 255.0f));
+                paint5.setAlpha(i472222 == i482222 ? org.telegram.messenger.ls.e4 : (int) (f62 * 255.0f));
                 org.telegram.messenger.g0.L(7.0f);
                 org.telegram.messenger.g0.L(3.0f);
                 if (this.p != this.q) {
@@ -1371,7 +1371,7 @@ public final class f90 extends Drawable {
                 f31 = 0.0f;
                 f26 = 0.0f;
                 f27 = 1.0f;
-                i28 = org.telegram.messenger.ks.e4;
+                i28 = org.telegram.messenger.ls.e4;
             }
             if (i62 == i27) {
                 f32 = 1.0f;
@@ -1434,7 +1434,7 @@ public final class f90 extends Drawable {
             if (this.p != 9) {
             }
             a(false);
-            paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+            paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
             int L1322222 = org.telegram.messenger.g0.L(7.0f) + i14;
             int L1422222 = centerX2 - org.telegram.messenger.g0.L(3.0f);
             if (this.p != this.q) {
@@ -1455,7 +1455,7 @@ public final class f90 extends Drawable {
             int i4822222 = this.q;
             if (i4722222 == i4822222) {
             }
-            paint5.setAlpha(i4722222 == i4822222 ? org.telegram.messenger.ks.e4 : (int) (f62 * 255.0f));
+            paint5.setAlpha(i4722222 == i4822222 ? org.telegram.messenger.ls.e4 : (int) (f62 * 255.0f));
             org.telegram.messenger.g0.L(7.0f);
             org.telegram.messenger.g0.L(3.0f);
             if (this.p != this.q) {
@@ -1549,7 +1549,7 @@ public final class f90 extends Drawable {
         if (this.p != 9) {
         }
         a(false);
-        paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ks.e4 : (int) (this.r * 255.0f));
+        paint5.setAlpha(this.p == this.q ? org.telegram.messenger.ls.e4 : (int) (this.r * 255.0f));
         int L13222222 = org.telegram.messenger.g0.L(7.0f) + i14;
         int L14222222 = centerX2 - org.telegram.messenger.g0.L(3.0f);
         if (this.p != this.q) {
@@ -1570,7 +1570,7 @@ public final class f90 extends Drawable {
         int i48222222 = this.q;
         if (i47222222 == i48222222) {
         }
-        paint5.setAlpha(i47222222 == i48222222 ? org.telegram.messenger.ks.e4 : (int) (f62 * 255.0f));
+        paint5.setAlpha(i47222222 == i48222222 ? org.telegram.messenger.ls.e4 : (int) (f62 * 255.0f));
         org.telegram.messenger.g0.L(7.0f);
         org.telegram.messenger.g0.L(3.0f);
         if (this.p != this.q) {

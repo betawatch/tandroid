@@ -10,7 +10,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses ext
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kc {
     public static final kc E;
@@ -40,7 +40,7 @@ public final class kc {
         e = kcVar;
         kc kcVar2 = new kc("PHOTOS", 1, "PhotosSavedHint", jcVar);
         f = kcVar2;
-        kc kcVar3 = new kc("VIDEO", 2, "VideoSavedHint", 2131743342, jcVar);
+        kc kcVar3 = new kc("VIDEO", 2, "VideoSavedHint", 2131743340, jcVar);
         h = kcVar3;
         kc kcVar4 = new kc("VIDEOS", 3, "VideosSavedHint", jcVar);
         n = kcVar4;
@@ -53,7 +53,7 @@ public final class kc {
         jc jcVar2 = jc.d;
         kc kcVar8 = new kc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747069, jcVar2);
         x = kcVar8;
-        kc kcVar9 = new kc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743341, jcVar2);
+        kc kcVar9 = new kc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743339, jcVar2);
         y = kcVar9;
         kc kcVar10 = new kc("GIF", 9, "GifSavedHint", 2131750453, jc.h);
         E = kcVar10;

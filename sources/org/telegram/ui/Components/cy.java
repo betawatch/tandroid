@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cy extends ImageView {
     public int a;
@@ -16,13 +16,13 @@ public final class cy extends ImageView {
     public boolean c;
     public y5 d;
     public hx e;
-    public final org.telegram.messenger.gc[] f;
+    public final org.telegram.messenger.hc[] f;
     public float h;
     public ValueAnimator n;
 
     public cy(Context context) {
         super(context);
-        this.f = new org.telegram.messenger.gc[2];
+        this.f = new org.telegram.messenger.hc[2];
         setScaleType(ImageView.ScaleType.CENTER);
         int i7 = org.telegram.ui.ActionBar.m6.i6;
         org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.m6.a0(org.telegram.ui.ActionBar.m6.x0(null, i7, false), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));

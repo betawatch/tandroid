@@ -2,11 +2,11 @@ package bg;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class v extends u {
     public final void b(int i7, AbstractMap abstractMap, AbstractMap abstractMap2, int i10) {
@@ -20,8 +20,8 @@ public final class v extends u {
             int i12 = i7;
             AbstractMap abstractMap3 = abstractMap;
             AbstractMap abstractMap4 = abstractMap2;
-            fj fjVar = new fj(i12, (TLRPC.Message) b10, abstractMap3, abstractMap4, true, true);
-            long B0 = fj.B0(b10);
+            gj gjVar = new gj(i12, (TLRPC.Message) b10, abstractMap3, abstractMap4, true, true);
+            long B0 = gj.B0(b10);
             if (i10 != 0) {
                 b10.edit_date = i10;
                 b10.flags |= 32768;
@@ -39,7 +39,7 @@ public final class v extends u {
                 arrayList2 = new ArrayList();
                 hVar2.k(arrayList2, B0);
             }
-            arrayList2.add(fjVar);
+            arrayList2.add(gjVar);
             i7 = i12;
             abstractMap = abstractMap3;
             abstractMap2 = abstractMap4;

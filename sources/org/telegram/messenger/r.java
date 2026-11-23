@@ -11,9 +11,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.ui.Components.u41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r implements p10 {
+public final /* synthetic */ class r implements q10 {
     public final /* synthetic */ SpannableStringBuilder a;
     public final /* synthetic */ int b;
     public final /* synthetic */ boolean c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class r implements p10 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.p10
+    @Override // org.telegram.messenger.q10
     public final Object run() {
         boolean z10;
         int i7;
@@ -63,7 +63,7 @@ public final /* synthetic */ class r implements p10 {
                 if (!z13 && (this.b & 4) != 0) {
                     Linkify.addLinks(spannableStringBuilder, 4);
                 }
-                Pattern pattern = oc.a;
+                Pattern pattern = pc.a;
                 String[] strArr = {"http://", "https://", "tg://", "tonsite://"};
                 f fVar = g0.c0;
                 SpannableStringBuilder spannableStringBuilder2 = TextUtils.indexOf((CharSequence) spannableStringBuilder, (char) 9472) >= 0 ? new SpannableStringBuilder(spannableStringBuilder.toString().replace((char) 9472, ' ')) : spannableStringBuilder;

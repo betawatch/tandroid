@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t81 extends org.telegram.ui.Components.du0 {
     public boolean g0;
@@ -12,7 +12,7 @@ public final class t81 extends org.telegram.ui.Components.du0 {
             this.g0 = true;
             setPadding(0, 0, 0, 0);
         } else {
-            int i11 = org.telegram.messenger.mp.f1().getInt("kbd_height", org.telegram.messenger.g0.L(200.0f));
+            int i11 = org.telegram.messenger.np.f1().getInt("kbd_height", org.telegram.messenger.g0.L(200.0f));
             this.f = i11;
             setPadding(0, 0, 0, i11);
         }

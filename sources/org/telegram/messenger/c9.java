@@ -1,86 +1,107 @@
 package org.telegram.messenger;
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.security.keystore.KeyGenParameterSpec;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.KeyPairGenerator;
-import java.util.Iterator;
-import java.util.Locale;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+public final class c9 extends org.telegram.ui.ActionBar.w2 {
+    public final /* synthetic */ int m1 = 0;
+    public org.telegram.ui.ActionBar.g2 n1;
 
-    public /* synthetic */ c9(int i7, boolean z10) {
-        this.a = i7;
-        this.b = z10;
+    public /* synthetic */ c9(Context context, boolean z10) {
+        super(context, z10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = 1;
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.w2
+    public boolean G() {
+        switch (this.m1) {
             case 0:
-                boolean z10 = this.b;
-                KeyPairGenerator keyPairGenerator = vr.f;
-                if (keyPairGenerator == null) {
-                    try {
-                        keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
-                        vr.f = keyPairGenerator;
-                    } catch (Exception e10) {
-                        a8.g(e10, true);
-                        keyPairGenerator = null;
-                    }
-                }
-                if (keyPairGenerator != null) {
-                    try {
-                        Locale locale = Locale.getDefault();
-                        Locale locale2 = Locale.ENGLISH;
-                        Locale.setDefault(locale2);
-                        Resources resources = t0.b.getResources();
-                        Configuration configuration = resources.getConfiguration();
-                        configuration.setLocale(locale2);
-                        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-                        keyPairGenerator.initialize(new KeyGenParameterSpec.Builder("tmessages_passcode", 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
-                        keyPairGenerator.generateKeyPair();
-                        Locale.setDefault(locale);
-                        Resources resources2 = t0.b.getResources();
-                        Configuration configuration2 = resources2.getConfiguration();
-                        configuration2.setLocale(locale);
-                        resources2.updateConfiguration(configuration2, resources2.getDisplayMetrics());
-                        g0.g3(new c9(i7, z10));
-                        break;
-                    } catch (InvalidAlgorithmParameterException e11) {
-                        a8.g(e11, true);
-                        return;
-                    } catch (Exception e12) {
-                        if (e12.getClass().getName().equals("android.security.KeyStoreException")) {
-                            return;
-                        }
-                        a8.g(e12, true);
-                        return;
-                    }
-                }
-                break;
+                return false;
+            default:
+                return super.G();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.w2
+    public boolean I() {
+        switch (this.m1) {
+            case 0:
+                return false;
+            default:
+                return super.I();
+        }
+    }
+
+    public void J0() {
+        Activity parentActivity = ((org.telegram.ui.cx) this.n1).getParentActivity();
+        boolean z10 = false;
+        boolean z11 = parentActivity.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") == 0;
+        int i7 = Build.VERSION.SDK_INT;
+        if ((i7 >= 33 && parentActivity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") == 0 && parentActivity.checkSelfPermission("android.permission.READ_MEDIA_VIDEO") == 0 && parentActivity.checkSelfPermission("android.permission.READ_MEDIA_AUDIO") == 0) || (i7 < 33 && parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") == 0)) {
+            z10 = true;
+        }
+        if (z10 && z11) {
+            boolean z12 = FilesMigrationService.c;
+            t0.b.startService(new Intent(t0.b, (Class<?>) FilesMigrationService.class));
+            dismiss();
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        if (!z10) {
+            if (i7 >= 33) {
+                arrayList.add("android.permission.READ_MEDIA_IMAGES");
+                arrayList.add("android.permission.READ_MEDIA_VIDEO");
+                arrayList.add("android.permission.READ_MEDIA_AUDIO");
+            } else {
+                arrayList.add("android.permission.READ_EXTERNAL_STORAGE");
+            }
+        }
+        if (!z11) {
+            arrayList.add("android.permission.WRITE_EXTERNAL_STORAGE");
+        }
+        parentActivity.requestPermissions((String[]) arrayList.toArray(new String[arrayList.size()]), 4);
+    }
+
+    @Override // org.telegram.ui.ActionBar.w2
+    public void L() {
+        switch (this.m1) {
             case 1:
-                ks.e().k(ks.Q1, Boolean.valueOf(this.b));
-                break;
-            case 2:
-                boolean z11 = this.b;
-                Iterator it = pc.n.iterator();
-                while (it.hasNext()) {
-                    x10 x10Var = (x10) it.next();
-                    if (x10Var != null) {
-                        x10Var.a(Boolean.valueOf(z11));
-                    }
-                }
+                super.L();
+                org.telegram.ui.Components.y8 y8Var = (org.telegram.ui.Components.y8) this.n1;
+                g0.Z2(y8Var.getParentActivity(), y8Var.getClassGuid());
+                y8Var.T = null;
                 break;
             default:
-                ks.e().k(ks.q4, Boolean.FALSE, Boolean.valueOf(this.b));
+                super.L();
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
+    public final void dismiss() {
+        switch (this.m1) {
+            case 0:
+                super.dismiss();
+                FilesMigrationService.e = null;
+                break;
+            default:
+                super.dismiss();
+                org.telegram.ui.Components.y8 y8Var = (org.telegram.ui.Components.y8) this.n1;
+                y8Var.K.z1(y8Var.Z);
+                y8Var.f = true;
+                y8Var.fragmentView.invalidate();
+                y8Var.e.animate().setListener(new org.telegram.ui.Components.y(this, 5)).alpha(0.0f).setDuration(200L).start();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c9(org.telegram.ui.Components.y8 y8Var, Activity activity) {
+        super(activity, true);
+        this.n1 = y8Var;
     }
 }

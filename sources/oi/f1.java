@@ -16,8 +16,8 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.inputmethod.InputMethodManager;
 import java.util.HashSet;
-import org.telegram.messenger.cu;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.du;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.ot;
 import org.telegram.ui.Components.u41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class f1 extends ot implements org.telegram.ui.ActionBar.b6 {
     public final c1 A2;
@@ -71,7 +71,7 @@ public final class f1 extends ot implements org.telegram.ui.ActionBar.b6 {
     /* JADX WARN: Type inference failed for: r1v0, types: [oi.x0] */
     public f1(Context context, h6 h6Var) {
         super(context, h6Var);
-        this.h2 = j10.t0;
+        this.h2 = k10.t0;
         this.u2 = -1;
         this.v2 = true;
         this.w2 = new InputFilter() { // from class: oi.x0
@@ -307,9 +307,9 @@ public final class f1 extends ot implements org.telegram.ui.ActionBar.b6 {
         Editable text = getText();
         if (text != null) {
             for (i4 i4Var : (i4[]) text.getSpans(0, text.length(), i4.class)) {
-                cu cuVar = i4Var.b;
-                if (cuVar != null && i4Var.c == this) {
-                    cuVar.b(this);
+                du duVar = i4Var.b;
+                if (duVar != null && i4Var.c == this) {
+                    duVar.b(this);
                     i4Var.c = null;
                 }
             }

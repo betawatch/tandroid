@@ -6,14 +6,14 @@ import android.graphics.ColorMatrixColorFilter;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fc;
+import org.telegram.messenger.gc;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v4 {
     public static ColorMatrixColorFilter f;
@@ -90,7 +90,7 @@ public final class v4 {
         if (!rVar4.b) {
             if (rVar4.e != null) {
                 imageReceiver.G0(rVar4.l, rVar4.m, true);
-                imageReceiver.q0(fc.g(this.e.e), j3, null, null, null, 0);
+                imageReceiver.q0(gc.g(this.e.e), j3, null, null, null, 0);
                 return;
             } else {
                 if (!rVar4.b() || (photo = this.e.g) == null) {
@@ -100,13 +100,13 @@ public final class v4 {
                 TLRPC.PhotoSize w10 = w7.w(photo.sizes, org.telegram.messenger.g0.Z0(false), false, null, false);
                 TLRPC.PhotoSize w11 = w7.w(this.e.g.sizes, 100, false, null, false);
                 imageReceiver.G0(0, 0, false);
-                imageReceiver.r0(fc.i(w10, this.e.g), j3, fc.i(w11, this.e.g), j3, null, 0L, null, this.e.g, 0);
+                imageReceiver.r0(gc.i(w10, this.e.g), j3, gc.i(w11, this.e.g), j3, null, 0L, null, this.e.g, 0);
                 return;
             }
         }
         if (rVar4.e != null) {
             imageReceiver.G0(0, 0, false);
-            imageReceiver.u0(fc.o(this.e.e), "g", null, j3, null, j3, null, 0L, null, null, 0);
+            imageReceiver.u0(gc.o(this.e.e), "g", null, j3, null, j3, null, 0L, null, null, 0);
             return;
         }
         if (!rVar4.b() || (document = this.e.h) == null) {
@@ -143,7 +143,7 @@ public final class v4 {
             }
         }
         imageReceiver.G0(0, 0, false);
-        imageReceiver.u0(fc.b(this.e.h), "g", fc.c(photoSize, this.e.h), j3, fc.c(photoSize2, this.e.h), j3, null, 0L, null, this.e.h, 0);
+        imageReceiver.u0(gc.b(this.e.h), "g", gc.c(photoSize, this.e.h), j3, gc.c(photoSize2, this.e.h), j3, null, 0L, null, this.e.h, 0);
     }
 
     public final boolean b() {

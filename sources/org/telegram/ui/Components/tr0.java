@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class tr0 extends v4.w {
     public cs0 d;
@@ -62,7 +62,7 @@ public final class tr0 extends v4.w {
             if ((gt0Var.s instanceof fi.a6) || gt0Var.n > 0) {
                 arrayList = new ArrayList();
                 for (int i7 = 0; i7 < gt0Var.s.i.size(); i7++) {
-                    arrayList.add(Integer.valueOf(((org.telegram.messenger.fj) gt0Var.s.i.get(i7)).e1()));
+                    arrayList.add(Integer.valueOf(((org.telegram.messenger.gj) gt0Var.s.i.get(i7)).e1()));
                 }
             } else {
                 arrayList = new ArrayList(gt0Var.s.g);
@@ -72,9 +72,9 @@ public final class tr0 extends v4.w {
                 arrayList2.addAll(arrayList);
                 gt0Var.F = true;
             }
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) gt0Var.s.i.get(b10);
-            arrayList.remove(Integer.valueOf(fjVar.e1()));
-            arrayList.add(Utilities.j(b11, arrayList.size(), 0), Integer.valueOf(fjVar.e1()));
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) gt0Var.s.i.get(b10);
+            arrayList.remove(Integer.valueOf(gjVar.e1()));
+            arrayList.add(Utilities.j(b11, arrayList.size(), 0), Integer.valueOf(gjVar.e1()));
             gt0Var.s.C(arrayList, false);
             gt0Var.j(b10, b11);
         }
@@ -108,7 +108,7 @@ public final class tr0 extends v4.w {
                 if ((h6Var instanceof fi.a6) || gt0Var.n > 0) {
                     arrayList = new ArrayList();
                     for (int i10 = 0; i10 < gt0Var.s.i.size(); i10++) {
-                        arrayList.add(Integer.valueOf(((org.telegram.messenger.fj) gt0Var.s.i.get(i10)).e1()));
+                        arrayList.add(Integer.valueOf(((org.telegram.messenger.gj) gt0Var.s.i.get(i10)).e1()));
                     }
                 } else {
                     arrayList = h6Var.g;

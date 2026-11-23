@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q70 extends org.telegram.ui.bn {
     public boolean vd;
@@ -34,15 +34,15 @@ public final class q70 extends org.telegram.ui.bn {
             return;
         }
         this.vd = true;
-        org.telegram.messenger.mp messagesController = getMessagesController();
+        org.telegram.messenger.np messagesController = getMessagesController();
         long j3 = this.xd;
         TLRPC.Chat O0 = messagesController.O0(Long.valueOf(j3));
         if (org.telegram.messenger.v3.h(O0)) {
-            gc K = lc.b0(this).K(R.raw.contact_check, org.telegram.messenger.gd.N0(2131748878, null), org.telegram.messenger.gd.N0(2131748877, null), new bi.q2(this, j3, O0, 24));
+            gc K = lc.b0(this).K(R.raw.contact_check, org.telegram.messenger.hd.N0(2131748878, null), org.telegram.messenger.hd.N0(2131748877, null), new bi.q2(this, j3, O0, 24));
             K.r = false;
             K.k(true);
         } else {
-            gc Q = lc.b0(this).Q(R.raw.contact_check, 36, org.telegram.messenger.gd.N0(2131748878, null));
+            gc Q = lc.b0(this).Q(R.raw.contact_check, 36, org.telegram.messenger.hd.N0(2131748878, null));
             Q.r = false;
             Q.k(true);
         }

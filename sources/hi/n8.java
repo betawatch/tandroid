@@ -3,11 +3,11 @@ package hi;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class n8 {
     public final int a;
@@ -31,7 +31,7 @@ public final class n8 {
             TLRPC.TL_privacyValueDisallowUsers tL_privacyValueDisallowUsers = (TLRPC.TL_privacyValueDisallowUsers) a(arrayList, TLRPC.TL_privacyValueDisallowUsers.class);
             if (tL_privacyValueDisallowUsers != null) {
                 TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers = new TLRPC.TL_inputPrivacyValueDisallowUsers();
-                mp u12 = mp.u1(i7);
+                np u12 = np.u1(i7);
                 while (i10 < tL_privacyValueDisallowUsers.users.size()) {
                     Long l10 = tL_privacyValueDisallowUsers.users.get(i10);
                     l10.getClass();
@@ -57,7 +57,7 @@ public final class n8 {
         if (tL_privacyValueAllowUsers != null) {
             this.a = 3;
             TLRPC.TL_inputPrivacyValueAllowUsers tL_inputPrivacyValueAllowUsers = new TLRPC.TL_inputPrivacyValueAllowUsers();
-            mp u13 = mp.u1(i7);
+            np u13 = np.u1(i7);
             while (i10 < tL_privacyValueAllowUsers.users.size()) {
                 Long l11 = tL_privacyValueAllowUsers.users.get(i10);
                 l11.getClass();
@@ -81,7 +81,7 @@ public final class n8 {
         TLRPC.TL_privacyValueDisallowUsers tL_privacyValueDisallowUsers2 = (TLRPC.TL_privacyValueDisallowUsers) a(arrayList, TLRPC.TL_privacyValueDisallowUsers.class);
         if (tL_privacyValueDisallowUsers2 != null) {
             TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers2 = new TLRPC.TL_inputPrivacyValueDisallowUsers();
-            mp u14 = mp.u1(i7);
+            np u14 = np.u1(i7);
             while (i10 < tL_privacyValueDisallowUsers2.users.size()) {
                 Long l12 = tL_privacyValueDisallowUsers2.users.get(i10);
                 l12.getClass();
@@ -140,40 +140,40 @@ public final class n8 {
         int size;
         ArrayList arrayList = this.f;
         if (!arrayList.isEmpty()) {
-            return gd.G(arrayList.size(), "StoryPrivacyRecipients", new Object[0]);
+            return hd.G(arrayList.size(), "StoryPrivacyRecipients", new Object[0]);
         }
         ArrayList arrayList2 = this.b;
         if (arrayList2.isEmpty()) {
-            return gd.N0(2131744292, null);
+            return hd.N0(2131744290, null);
         }
         TLRPC.InputPrivacyRule inputPrivacyRule = (TLRPC.InputPrivacyRule) arrayList2.get(0);
         int i7 = this.a;
         if (i7 == 4) {
             TLRPC.InputPrivacyRule inputPrivacyRule2 = arrayList2.size() >= 2 ? (TLRPC.InputPrivacyRule) arrayList2.get(1) : null;
-            return (!(inputPrivacyRule2 instanceof TLRPC.TL_inputPrivacyValueDisallowUsers) || (size = ((TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule2).users.size()) <= 0) ? gd.N0(2131744304, null) : gd.G(size, "StoryPrivacyEveryoneExclude", new Object[0]);
+            return (!(inputPrivacyRule2 instanceof TLRPC.TL_inputPrivacyValueDisallowUsers) || (size = ((TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule2).users.size()) <= 0) ? hd.N0(2131744302, null) : hd.G(size, "StoryPrivacyEveryoneExclude", new Object[0]);
         }
         if (i7 == 1) {
-            return gd.N0(2131744311, null);
+            return hd.N0(2131744309, null);
         }
         if (i7 == 3 && (inputPrivacyRule instanceof TLRPC.TL_inputPrivacyValueAllowUsers)) {
-            return gd.G(((TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule).users.size(), "StoryPrivacyContacts", new Object[0]);
+            return hd.G(((TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule).users.size(), "StoryPrivacyContacts", new Object[0]);
         }
         if (i7 == 2) {
             TLRPC.InputPrivacyRule inputPrivacyRule3 = arrayList2.size() >= 2 ? (TLRPC.InputPrivacyRule) arrayList2.get(1) : null;
             if (!(inputPrivacyRule3 instanceof TLRPC.TL_inputPrivacyValueDisallowUsers)) {
-                return gd.N0(2131744319, null);
+                return hd.N0(2131744317, null);
             }
             int size2 = ((TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule3).users.size();
-            return size2 > 0 ? gd.G(size2, "StoryPrivacyContactsExclude", new Object[0]) : gd.N0(2131744319, null);
+            return size2 > 0 ? hd.G(size2, "StoryPrivacyContactsExclude", new Object[0]) : hd.N0(2131744317, null);
         }
         if (i7 != 0) {
-            return gd.N0(2131744292, null);
+            return hd.N0(2131744290, null);
         }
         if (!(inputPrivacyRule instanceof TLRPC.TL_inputPrivacyValueAllowUsers)) {
-            return gd.N0(2131744292, null);
+            return hd.N0(2131744290, null);
         }
         int size3 = ((TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule).users.size();
-        return size3 <= 0 ? gd.N0(2131744292, null) : gd.G(size3, "StoryPrivacyContacts", new Object[0]);
+        return size3 <= 0 ? hd.N0(2131744290, null) : hd.G(size3, "StoryPrivacyContacts", new Object[0]);
     }
 
     public n8() {
@@ -207,7 +207,7 @@ public final class n8 {
                 Long l10 = (Long) arrayList.get(i11);
                 l10.longValue();
                 this.c.add(l10);
-                mp u12 = mp.u1(i10);
+                np u12 = np.u1(i10);
                 TLRPC.InputUser s12 = u12.s1(u12.c2(l10));
                 if (!(s12 instanceof TLRPC.TL_inputUserEmpty)) {
                     tL_inputPrivacyValueDisallowUsers.users.add(s12);
@@ -232,7 +232,7 @@ public final class n8 {
                 Long l11 = (Long) arrayList.get(i11);
                 l11.longValue();
                 this.c.add(l11);
-                mp u13 = mp.u1(i10);
+                np u13 = np.u1(i10);
                 TLRPC.InputUser s13 = u13.s1(u13.c2(l11));
                 if (!(s13 instanceof TLRPC.TL_inputUserEmpty)) {
                     tL_inputPrivacyValueDisallowUsers2.users.add(s13);
@@ -256,7 +256,7 @@ public final class n8 {
                 Long l12 = (Long) arrayList.get(i11);
                 l12.longValue();
                 this.c.add(l12);
-                mp u14 = mp.u1(i10);
+                np u14 = np.u1(i10);
                 TLRPC.InputUser s14 = u14.s1(u14.c2(l12));
                 if (!(s14 instanceof TLRPC.TL_inputUserEmpty)) {
                     tL_inputPrivacyValueAllowUsers.users.add(s14);

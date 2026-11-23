@@ -11,24 +11,24 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.f4;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.jc;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.kc;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w3;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.yf;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.zf;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, jc {
+public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, kc {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ f(int i7, int i10, long j3, x10 x10Var) {
+    public /* synthetic */ f(int i7, int i10, long j3, y10 y10Var) {
         this.a = i7;
-        this.d = x10Var;
+        this.d = y10Var;
         this.c = i10;
         this.b = j3;
     }
@@ -36,7 +36,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
     /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0043  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0054  */
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -44,11 +44,11 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         List list;
         Bitmap bitmap;
         int i7 = this.a;
-        x10 x10Var = (x10) this.d;
+        y10 y10Var = (y10) this.d;
         int i10 = this.c;
         long j3 = this.b;
-        hc p10 = imageReceiver.p();
-        hc u10 = imageReceiver.u();
+        ic p10 = imageReceiver.p();
+        ic u10 = imageReceiver.u();
         if (!z10 || p10 == null) {
             return;
         }
@@ -63,7 +63,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                         bitmap = ((BitmapDrawable) drawable2).getBitmap();
                     }
                 }
-                x10Var.a(new gg.a(bitmap, i7, list));
+                y10Var.a(new gg.a(bitmap, i7, list));
                 f4 f10 = f4.f(i10);
                 if (i7 != 0) {
                     f4.s.c(new w3(24, f10.g(j3), bitmap));
@@ -72,7 +72,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                     if (i7 == 1) {
                         File i11 = t0.i();
                         Locale locale = Locale.US;
-                        f4.s.c(new yf(new File(i11, p5.c.j(j3, "pattern_", ".pgm.gz")), list, bitmap, 13));
+                        f4.s.c(new zf(new File(i11, p5.c.j(j3, "pattern_", ".pgm.gz")), list, bitmap, 13));
                         return;
                     }
                     return;
@@ -83,7 +83,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         bitmap = p10.c;
         if (bitmap == null) {
         }
-        x10Var.a(new gg.a(bitmap, i7, list));
+        y10Var.a(new gg.a(bitmap, i7, list));
         f4 f102 = f4.f(i10);
         if (i7 != 0) {
         }
@@ -106,11 +106,11 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         this.d = str;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 }

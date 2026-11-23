@@ -5,16 +5,16 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
 import org.telegram.messenger.gc;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.qc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class n1 extends View {
     public oq a;
@@ -24,15 +24,15 @@ public final class n1 extends View {
     public final o1 e;
     public ImageReceiver f;
     public long h;
-    public final gc[] n;
+    public final hc[] n;
     public ImageReceiver r;
     public final mc s;
     public boolean w;
 
     public n1(Context context, o1 o1Var) {
         super(context);
-        this.c = j10.t0;
-        this.n = new gc[2];
+        this.c = k10.t0;
+        this.n = new hc[2];
         this.s = new mc(this);
         setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
         this.e = o1Var;
@@ -55,7 +55,7 @@ public final class n1 extends View {
         this.b = true;
         this.h = document.id;
         int i7 = i2.C1;
-        org.telegram.ui.Components.p5 l10 = org.telegram.ui.Components.p5.l(this.c, pc.e(z10 ? 1 : 16388) ? 3 : 13, document);
+        org.telegram.ui.Components.p5 l10 = org.telegram.ui.Components.p5.l(this.c, qc.e(z10 ? 1 : 16388) ? 3 : 13, document);
         this.d = l10;
         if (this.w) {
             l10.a(this);
@@ -177,9 +177,9 @@ public final class n1 extends View {
         this.f.H0(!this.b ? this : this.e);
         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
         String str = "video/webm".equals(document.mime_type) ? "80_80_g" : "80_80";
-        if (!pc.e(1)) {
+        if (!qc.e(1)) {
             str = str.concat("_firstframe");
         }
-        this.f.r0(fc.b(document), str, fc.c(w10, document), "80_80", null, 0L, null, document, 0);
+        this.f.r0(gc.b(document), str, gc.c(w10, document), "80_80", null, 0L, null, document, 0);
     }
 }

@@ -2,13 +2,13 @@ package org.telegram.ui.web;
 
 import java.io.Serializable;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.w10;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements org.telegram.ui.ActionBar.q1, v10 {
+public final /* synthetic */ class a implements org.telegram.ui.ActionBar.q1, w10 {
     public final /* synthetic */ k a;
 
     public /* synthetic */ a(k kVar) {
@@ -22,7 +22,7 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.q1, v1
         kVar.x.g3.O(true);
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         org.telegram.ui.q qVar;
         o41 o41Var = (o41) obj;
@@ -41,7 +41,7 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.q1, v1
             return;
         }
         try {
-            qVar.a(k.a((fj) o41Var.I));
+            qVar.a(k.a((gj) o41Var.I));
         } catch (Exception e10) {
             a8.g(e10, true);
         }

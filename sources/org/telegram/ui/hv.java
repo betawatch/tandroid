@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hv implements e50, org.telegram.ui.Components.ng, org.telegram.ui.Components.a5, org.telegram.ui.Components.qm0, org.telegram.ui.Components.tj0, hi.ja, org.telegram.ui.Components.d10 {
     public final /* synthetic */ cx a;
@@ -34,7 +34,7 @@ public final class hv implements e50, org.telegram.ui.Components.ng, org.telegra
         }
         ArrayList arrayList = new ArrayList();
         for (int i11 = 0; i11 < cxVar.K2.size(); i11++) {
-            arrayList.add(org.telegram.messenger.sr.a(((Long) cxVar.K2.get(i11)).longValue(), 0L));
+            arrayList.add(org.telegram.messenger.tr.a(((Long) cxVar.K2.get(i11)).longValue(), 0L));
         }
         cx cxVar2 = this.a;
         cxVar2.E2.y(cxVar2, arrayList, charSequence, false, z10, i7, i10, null);
@@ -57,7 +57,7 @@ public final class hv implements e50, org.telegram.ui.Components.ng, org.telegra
         }
         ArrayList arrayList2 = new ArrayList();
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            arrayList2.add(org.telegram.messenger.sr.a(((Long) arrayList.get(i11)).longValue(), 0L));
+            arrayList2.add(org.telegram.messenger.tr.a(((Long) arrayList.get(i11)).longValue(), 0L));
         }
         cxVar.E2.y(cxVar, arrayList2, cxVar.D1.getFieldText(), false, z10, i7, i10, null);
     }
@@ -94,7 +94,7 @@ public final class hv implements e50, org.telegram.ui.Components.ng, org.telegra
     @Override // org.telegram.ui.e50
     public void c(f50 f50Var, long j3) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(org.telegram.messenger.sr.a(-j3, 0L));
+        arrayList.add(org.telegram.messenger.tr.a(-j3, 0L));
         cx cxVar = this.a;
         ww wwVar = cxVar.E2;
         if (cxVar.D2) {

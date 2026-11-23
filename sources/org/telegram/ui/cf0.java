@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cf0 extends FrameLayout {
     public int E;
@@ -28,7 +28,7 @@ public final class cf0 extends FrameLayout {
     public boolean H;
     public boolean I;
     public boolean J;
-    public final org.telegram.ui.Components.o01 K;
+    public final org.telegram.ui.Components.n01 K;
     public final /* synthetic */ ff0 L;
     public int a;
     public final LinearLayout b;
@@ -53,7 +53,7 @@ public final class cf0 extends FrameLayout {
         this.w = paint;
         this.x = new RectF();
         this.F = 1.0f;
-        this.K = new org.telegram.ui.Components.o01();
+        this.K = new org.telegram.ui.Components.n01();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -156,7 +156,7 @@ public final class cf0 extends FrameLayout {
             int i12 = tL_chatInviteExported.subscription_pricing.period;
             TextView textView2 = this.h;
             if (i12 == 2592000) {
-                textView2.setText(org.telegram.messenger.gd.N0(2131744815, null));
+                textView2.setText(org.telegram.messenger.hd.N0(2131744813, null));
             } else if (i12 == 300) {
                 textView2.setText("per 5 minutes");
             } else if (i12 == 60) {
@@ -178,7 +178,7 @@ public final class cf0 extends FrameLayout {
         } else if (tL_chatInviteExported.link.startsWith("https://t.me/+")) {
             StringBuilder sb2 = new StringBuilder();
             i10 = ((org.telegram.ui.ActionBar.g2) ff0Var).currentAccount;
-            sb2.append(org.telegram.messenger.mp.u1(i10).X2);
+            sb2.append(org.telegram.messenger.np.u1(i10).X2);
             sb2.append("/");
             sb2.append(tL_chatInviteExported.link.substring(14));
             textView3.setText(sb2.toString());
@@ -191,21 +191,21 @@ public final class cf0 extends FrameLayout {
         }
         int i13 = tL_chatInviteExported.usage;
         if (i13 == 0 && tL_chatInviteExported.usage_limit == 0 && tL_chatInviteExported.requested == 0) {
-            G = org.telegram.messenger.gd.N0(tL_chatInviteExported.subscription_pricing != null ? 2131747992 : 2131747994, null);
+            G = org.telegram.messenger.hd.N0(tL_chatInviteExported.subscription_pricing != null ? 2131747992 : 2131747994, null);
         } else {
             int i14 = tL_chatInviteExported.usage_limit;
             if (i14 > 0 && i13 == 0 && !tL_chatInviteExported.expired && !tL_chatInviteExported.revoked) {
-                G = org.telegram.messenger.gd.G(i14, "CanJoin", new Object[0]);
+                G = org.telegram.messenger.hd.G(i14, "CanJoin", new Object[0]);
             } else if (i14 > 0 && tL_chatInviteExported.expired && tL_chatInviteExported.revoked) {
-                G = org.telegram.messenger.gd.G(tL_chatInviteExported.usage, "PeopleJoined", new Object[0]) + ", " + org.telegram.messenger.gd.G(tL_chatInviteExported.usage_limit - tL_chatInviteExported.usage, "PeopleJoinedRemaining", new Object[0]);
+                G = org.telegram.messenger.hd.G(tL_chatInviteExported.usage, "PeopleJoined", new Object[0]) + ", " + org.telegram.messenger.hd.G(tL_chatInviteExported.usage_limit - tL_chatInviteExported.usage, "PeopleJoinedRemaining", new Object[0]);
             } else {
-                G = i13 > 0 ? org.telegram.messenger.gd.G(i13, "PeopleJoined", new Object[0]) : "";
+                G = i13 > 0 ? org.telegram.messenger.hd.G(i13, "PeopleJoined", new Object[0]) : "";
                 if (tL_chatInviteExported.requested > 0) {
                     if (tL_chatInviteExported.usage > 0) {
                         G = p5.c.v(G, ", ");
                     }
                     StringBuilder m10 = com.google.android.gms.internal.vision.e2.m(G);
-                    m10.append(org.telegram.messenger.gd.G(tL_chatInviteExported.requested, "JoinRequests", new Object[0]));
+                    m10.append(org.telegram.messenger.hd.G(tL_chatInviteExported.requested, "JoinRequests", new Object[0]));
                     G = m10.toString();
                 }
             }
@@ -215,10 +215,10 @@ public final class cf0 extends FrameLayout {
             org.telegram.ui.Components.us usVar = new org.telegram.ui.Components.us();
             usVar.b = org.telegram.messenger.g0.L(1.5f);
             spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(usVar, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
-            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.gd.N0(2131747127, null));
+            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.N0(2131747127, null));
         } else if (tL_chatInviteExported.expired || tL_chatInviteExported.revoked) {
             if (tL_chatInviteExported.revoked && tL_chatInviteExported.usage == 0) {
-                String N0 = org.telegram.messenger.gd.N0(tL_chatInviteExported.subscription_pricing != null ? 2131747992 : 2131747994, null);
+                String N0 = org.telegram.messenger.hd.N0(tL_chatInviteExported.subscription_pricing != null ? 2131747992 : 2131747994, null);
                 spannableStringBuilder2.clear();
                 spannableStringBuilder2.append((CharSequence) N0);
             }
@@ -227,9 +227,9 @@ public final class cf0 extends FrameLayout {
             spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(usVar2, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
             boolean z10 = tL_chatInviteExported.revoked;
             if (z10 || (i11 = tL_chatInviteExported.usage_limit) <= 0 || tL_chatInviteExported.usage < i11) {
-                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.gd.N0(z10 ? 2131745819 : 2131750864, null));
+                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.N0(z10 ? 2131745819 : 2131750864, null));
             } else {
-                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.gd.N0(2131748707, null));
+                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.N0(2131748707, null));
             }
         } else if (tL_chatInviteExported.expire_date > 0) {
             org.telegram.ui.Components.us usVar3 = new org.telegram.ui.Components.us();
@@ -240,7 +240,7 @@ public final class cf0 extends FrameLayout {
                 currentTimeMillis = 0;
             }
             if (currentTimeMillis > 86400000) {
-                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.gd.G((int) (currentTimeMillis / 86400000), "DaysLeft", new Object[0]));
+                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.G((int) (currentTimeMillis / 86400000), "DaysLeft", new Object[0]));
             } else {
                 long j3 = currentTimeMillis / 1000;
                 int i15 = (int) (j3 % 60);
@@ -254,7 +254,7 @@ public final class cf0 extends FrameLayout {
             org.telegram.ui.Components.us usVar4 = new org.telegram.ui.Components.us();
             usVar4.b = org.telegram.messenger.g0.L(1.5f);
             spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(usVar4, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
-            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.gd.N0(2131754206, null));
+            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.N0(2131754206, null));
         }
         this.d.setText(spannableStringBuilder2);
     }

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ti extends View {
     public final /* synthetic */ int a = 0;
@@ -32,13 +32,13 @@ public final class ti extends View {
         boolean isEmpty = arrayList.isEmpty();
         int i7 = this.b;
         if (isEmpty && getVisibility() != 8) {
-            org.telegram.messenger.ks.f(i7).e.remove(hf0Var);
-            org.telegram.messenger.ks.f(i7).d(hf0Var);
+            org.telegram.messenger.ls.f(i7).e.remove(hf0Var);
+            org.telegram.messenger.ls.f(i7).d(hf0Var);
         } else {
             if (arrayList.isEmpty() || getVisibility() == 0) {
                 return;
             }
-            org.telegram.messenger.ks.f(i7).e.remove(hf0Var);
+            org.telegram.messenger.ls.f(i7).e.remove(hf0Var);
             setVisibility(0);
         }
     }

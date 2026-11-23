@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qp implements org.telegram.messenger.or, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.rj0, org.telegram.ui.Components.sj0 {
+public final /* synthetic */ class qp implements org.telegram.messenger.pr, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.rj0, org.telegram.ui.Components.sj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ rq b;
 
@@ -48,7 +48,7 @@ public final /* synthetic */ class qp implements org.telegram.messenger.or, org.
         }
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.pr
     public void run(long j3) {
         rq.Z(this.b, j3);
     }

@@ -8,13 +8,13 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.view.View;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.n5;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u2 extends View {
     public boolean E;
@@ -44,7 +44,7 @@ public final class u2 extends View {
         Paint paint = new Paint(1);
         this.J = paint;
         this.K = new Rect();
-        boolean e10 = pc.e(512);
+        boolean e10 = qc.e(512);
         this.L = e10;
         this.I = l1Var;
         if (e10) {
@@ -162,14 +162,14 @@ public final class u2 extends View {
             }
             int alpha = l1Var.b().getAlpha();
             Paint paint = this.J;
-            paint.setAlpha(ks.e4);
+            paint.setAlpha(ls.e4);
             canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint, 31);
-            l1Var.b().setAlpha(ks.e4);
+            l1Var.b().setAlpha(ls.e4);
             canvas.drawRect(rect, l1Var.b());
             l1Var.b().setAlpha(alpha);
             if (l1Var.e) {
                 int alpha2 = ((Paint) l1Var.d.a).getAlpha();
-                ((Paint) l1Var.d.a).setAlpha(ks.e4);
+                ((Paint) l1Var.d.a).setAlpha(ls.e4);
                 canvas.drawRect(rect, (Paint) l1Var.d.a);
                 ((Paint) l1Var.d.a).setAlpha(alpha2);
             }

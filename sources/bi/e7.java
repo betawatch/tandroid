@@ -1,22 +1,32 @@
 package bi;
 
-import java.io.Serializable;
-import org.telegram.messenger.v10;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.o41;
-
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e7 implements di.m4, v10 {
-    public final /* synthetic */ k8 a;
+public final /* synthetic */ class e7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.j5 b;
 
-    @Override // di.m4
-    public void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
-        k8.c0(this.a, tL_starGiftUnique, j3, z10);
+    public /* synthetic */ e7(org.telegram.ui.ActionBar.j5 j5Var, int i7) {
+        this.a = i7;
+        this.b = j5Var;
     }
 
-    @Override // org.telegram.messenger.v10
-    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        k8.e0(this.a, (o41) obj);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.a(true);
+                break;
+            case 1:
+                this.b.a(true);
+                break;
+            default:
+                org.telegram.ui.ActionBar.j5 j5Var = this.b;
+                if (!j5Var.I && j5Var.S) {
+                    j5Var.c();
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -2,12 +2,12 @@ package hi;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b8 implements x10 {
+public final /* synthetic */ class b8 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ k8 b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class b8 implements x10 {
         this.b = k8Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7 = this.a;
         int i10 = 1;
@@ -30,9 +30,9 @@ public final /* synthetic */ class b8 implements x10 {
                 if (p8Var.F1 && p8Var.B1) {
                     p8Var.B1 = false;
                 }
-                x10 x10Var = p8Var.R1;
-                if (x10Var != null) {
-                    x10Var.a(p8Var.n1);
+                y10 y10Var = p8Var.R1;
+                if (y10Var != null) {
+                    y10Var.a(p8Var.n1);
                 }
                 s8 s8Var = p8Var.S1;
                 if (s8Var != null) {

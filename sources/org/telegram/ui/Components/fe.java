@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fe extends ah {
     public final /* synthetic */ ChatActivityEnterView G;
@@ -25,7 +25,7 @@ public final class fe extends ah {
         int i7 = ChatActivityEnterView.s7;
         if (!chatActivityEnterView.o0()) {
             super.onDraw(canvas);
-            if (getTag() == null || chatActivityEnterView.f2 == null || chatActivityEnterView.X0 || this.x || org.telegram.messenger.ri.d0(chatActivityEnterView.R).v0[0].isEmpty() || paint == null) {
+            if (getTag() == null || chatActivityEnterView.f2 == null || chatActivityEnterView.X0 || this.x || org.telegram.messenger.si.d0(chatActivityEnterView.R).v0[0].isEmpty() || paint == null) {
                 return;
             }
             canvas.drawCircle(org.telegram.messenger.g0.L(9.0f) + (getWidth() / 2), (getHeight() / 2) - org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(5.0f), paint);

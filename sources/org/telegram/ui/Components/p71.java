@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p71 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -121,7 +121,7 @@ public final class p71 extends FrameLayout {
             org.telegram.ui.ActionBar.t6.j(q9Var, d02, K, null, h6Var);
             addView(q9Var, c8.ma.d(48, 48.0f, 53, 0.0f, 5.0f, 0.0f, 1.0f));
             TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(webPage.photo.sizes, 40, false, null, false);
-            q9Var.g(1, 0L, webPage, "48_48", "48_48_b", null, org.telegram.messenger.fc.f(org.telegram.messenger.w7.w(webPage.photo.sizes, org.telegram.messenger.g0.L(36.0f), false, w10, true), webPage.photo), org.telegram.messenger.fc.f(w10, webPage.photo));
+            q9Var.g(1, 0L, webPage, "48_48", "48_48_b", null, org.telegram.messenger.gc.f(org.telegram.messenger.w7.w(webPage.photo.sizes, org.telegram.messenger.g0.L(36.0f), false, w10, true), webPage.photo), org.telegram.messenger.gc.f(w10, webPage.photo));
         }
         setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(6.0f));
     }

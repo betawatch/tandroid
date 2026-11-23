@@ -3,13 +3,13 @@ package di;
 import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.gk0;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class nb extends b71 {
     public final Context a;
@@ -68,7 +68,7 @@ public final class nb extends b71 {
     @Override // org.telegram.ui.Components.b71
     public final CharSequence g(int i7) {
         int h = h(i7);
-        return h != 0 ? h != 1 ? h != 2 ? "" : gd.N0(2131744677, null) : gd.N0(2131744678, null) : gd.N0(2131744679, null);
+        return h != 0 ? h != 1 ? h != 2 ? "" : hd.N0(2131744675, null) : hd.N0(2131744676, null) : hd.N0(2131744677, null);
     }
 
     @Override // org.telegram.ui.Components.b71

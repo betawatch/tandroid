@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class h4 extends f6 {
     public static final Paint i = new Paint(2);
@@ -28,7 +28,7 @@ public final class h4 extends f6 {
                 i7 = paint.getAlpha();
                 paint.setAlpha((int) (i7 * f10));
             } else {
-                i7 = ks.e4;
+                i7 = ls.e4;
             }
             canvas.drawBitmap(bitmap, (Rect) null, rect, paint);
             if (f10 < 1.0f) {

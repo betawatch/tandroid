@@ -14,7 +14,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r70 extends org.telegram.ui.ActionBar.w2 {
     public static final /* synthetic */ int u1 = 0;
@@ -121,7 +121,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                         TLRPC.ChatInvite chatInvite5 = this.p1;
                         String str6 = chatInvite5.title;
                         i7 = chatInvite5.participants_count;
-                        q9Var.j(org.telegram.messenger.fc.i(org.telegram.messenger.w7.w(chatInvite5.photo.sizes, 50, false, null, false), this.p1.photo), "50_50", b9Var2, this.p1);
+                        q9Var.j(org.telegram.messenger.gc.i(org.telegram.messenger.w7.w(chatInvite5.photo.sizes, 50, false, null, false), this.p1.photo), "50_50", b9Var2, this.p1);
                         str5 = str6;
                     }
                     TLRPC.ChatInvite chatInvite6 = this.p1;
@@ -133,7 +133,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                 } else if (this.q1 != null) {
                     b9 b9Var3 = new b9(this.q1);
                     String str7 = this.q1.title;
-                    TLRPC.ChatFull P0 = org.telegram.messenger.mp.u1(this.a).P0(this.q1.id);
+                    TLRPC.ChatFull P0 = org.telegram.messenger.np.u1(this.a).P0(this.q1.id);
                     String str8 = P0 != null ? P0.about : null;
                     i7 = Math.max(this.q1.participants_count, P0 != null ? P0.participants_count : 0);
                     TLRPC.Chat chat3 = this.q1;
@@ -179,9 +179,9 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                 textView.setEllipsize(truncateAt);
                 if (z13) {
                     i10 = 20;
-                    lowerCase = org.telegram.messenger.gd.N0(2131748448, null).toLowerCase();
+                    lowerCase = org.telegram.messenger.hd.N0(2131748448, null).toLowerCase();
                 } else {
-                    lowerCase = org.telegram.messenger.gd.N0(2131752317, null).toLowerCase();
+                    lowerCase = org.telegram.messenger.hd.N0(2131752317, null).toLowerCase();
                     i10 = 20;
                 }
                 textView.setText(lowerCase);
@@ -219,7 +219,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                     textView3.setEllipsize(truncateAt);
                     textView3.setGravity(17);
                     textView3.setSingleLine(true);
-                    textView3.setText(org.telegram.messenger.gd.N0(!z13 ? 2131745978 : 2131745974, null));
+                    textView3.setText(org.telegram.messenger.hd.N0(!z13 ? 2131745978 : 2131745974, null));
                     org.telegram.ui.ActionBar.t6.U(textView3, org.telegram.ui.ActionBar.m6.Ji, h6Var);
                     textView3.setTextSize(1, 14.0f);
                     textView3.setTypeface(org.telegram.messenger.g0.o());
@@ -255,7 +255,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                                 ConnectionsManager.getInstance(r70Var.a).sendRequest(tL_messages_importChatInvite, new di.l(r70Var, j3, z17, tL_messages_importChatInvite), 2);
                             } else {
                                 final int i17 = 1;
-                                org.telegram.messenger.mp.u1(r70Var.a).m(chat5.id, org.telegram.messenger.j10.i(r70Var.a).f(), 0, null, null, true, new Runnable() { // from class: org.telegram.ui.Components.p70
+                                org.telegram.messenger.np.u1(r70Var.a).m(chat5.id, org.telegram.messenger.k10.i(r70Var.a).f(), 0, null, null, true, new Runnable() { // from class: org.telegram.ui.Components.p70
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i17) {
@@ -280,7 +280,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                     TextView textView4 = new TextView(getContext());
                     textView4.setGravity(17);
                     textView4.setTextSize(1, 14.0f);
-                    textView4.setText(org.telegram.messenger.gd.N0(!z13 ? 2131745976 : 2131745972, null));
+                    textView4.setText(org.telegram.messenger.hd.N0(!z13 ? 2131745976 : 2131745972, null));
                     org.telegram.ui.ActionBar.t6.U(textView4, i13, h6Var);
                     linearLayout.addView(textView4, c8.ma.t(-1, -2, 48, 24, 17, 24, 15));
                 }
@@ -297,7 +297,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                     e9Var.setCount(min);
                     e9Var.setStepFactor(0.65f);
                     for (int i17 = 0; i17 < min; i17++) {
-                        e9Var.b(i17, org.telegram.messenger.j10.t0, this.p1.participants.get(i17));
+                        e9Var.b(i17, org.telegram.messenger.k10.t0, this.p1.participants.get(i17));
                     }
                     f10 = 24.0f;
                     e9Var.a(false);
@@ -312,15 +312,15 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                     } else {
                         z15 = false;
                         if (min == 2) {
-                            format = org.telegram.messenger.gd.a0("RequestToJoinMembersTwo", null, 2131745966, J0(textView5, this.p1, 0), J0(textView5, this.p1, 1));
+                            format = org.telegram.messenger.hd.a0("RequestToJoinMembersTwo", null, 2131745966, J0(textView5, this.p1, 0), J0(textView5, this.p1, 1));
                         } else {
                             if (i7 == 3) {
-                                format = org.telegram.messenger.gd.a0("RequestToJoinMembersThree", null, 2131745967, J0(textView5, this.p1, 0), J0(textView5, this.p1, 1), J0(textView5, this.p1, 2));
+                                format = org.telegram.messenger.hd.a0("RequestToJoinMembersThree", null, 2131745967, J0(textView5, this.p1, 0), J0(textView5, this.p1, 1), J0(textView5, this.p1, 2));
                                 z14 = false;
                             } else {
                                 int max = Math.max(i7 - min, 2);
                                 z14 = false;
-                                format = String.format(org.telegram.messenger.gd.K0(max, "RequestToJoinMembersAll"), J0(textView5, this.p1, 0), J0(textView5, this.p1, 1), Integer.valueOf(max));
+                                format = String.format(org.telegram.messenger.hd.K0(max, "RequestToJoinMembersAll"), J0(textView5, this.p1, 0), J0(textView5, this.p1, 1), Integer.valueOf(max));
                             }
                             textView5.setText(format);
                             linearLayout.addView(textView5, c8.ma.t(-2, -2, 49, 10, 0, 10, 24));
@@ -349,7 +349,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                 textView6.setEllipsize(TextUtils.TruncateAt.END);
                 textView6.setGravity(17);
                 textView6.setSingleLine(true);
-                textView6.setText(org.telegram.messenger.gd.N0(z14 ? 2131746466 : 2131746465, null));
+                textView6.setText(org.telegram.messenger.hd.N0(z14 ? 2131746466 : 2131746465, null));
                 org.telegram.messenger.f3.l(textView6, org.telegram.ui.ActionBar.m6.Ji, h6Var, 1, 14.0f);
                 linearLayout.addView(textView6, c8.ma.t(-1, 48, 8388611, 14, 0, 14, 14));
                 textView6.setOnClickListener(new bi.q(this, j3, i16));
@@ -438,7 +438,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
         textView32.setEllipsize(truncateAt2);
         textView32.setGravity(17);
         textView32.setSingleLine(true);
-        textView32.setText(org.telegram.messenger.gd.N0(!z13 ? 2131745978 : 2131745974, null));
+        textView32.setText(org.telegram.messenger.hd.N0(!z13 ? 2131745978 : 2131745974, null));
         org.telegram.ui.ActionBar.t6.U(textView32, org.telegram.ui.ActionBar.m6.Ji, h6Var);
         textView32.setTextSize(1, 14.0f);
         textView32.setTypeface(org.telegram.messenger.g0.o());
@@ -474,7 +474,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
                     ConnectionsManager.getInstance(r70Var.a).sendRequest(tL_messages_importChatInvite, new di.l(r70Var, j3, z17, tL_messages_importChatInvite), 2);
                 } else {
                     final int i172 = 1;
-                    org.telegram.messenger.mp.u1(r70Var.a).m(chat52.id, org.telegram.messenger.j10.i(r70Var.a).f(), 0, null, null, true, new Runnable() { // from class: org.telegram.ui.Components.p70
+                    org.telegram.messenger.np.u1(r70Var.a).m(chat52.id, org.telegram.messenger.k10.i(r70Var.a).f(), 0, null, null, true, new Runnable() { // from class: org.telegram.ui.Components.p70
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i172) {
@@ -499,7 +499,7 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
         TextView textView42 = new TextView(getContext());
         textView42.setGravity(17);
         textView42.setTextSize(1, 14.0f);
-        textView42.setText(org.telegram.messenger.gd.N0(!z13 ? 2131745976 : 2131745972, null));
+        textView42.setText(org.telegram.messenger.hd.N0(!z13 ? 2131745976 : 2131745972, null));
         org.telegram.ui.ActionBar.t6.U(textView42, i132, h6Var);
         linearLayout.addView(textView42, c8.ma.t(-1, -2, 48, 24, 17, 24, 15));
     }
@@ -525,8 +525,8 @@ public final class r70 extends org.telegram.ui.ActionBar.w2 {
         }
         dc dcVar = new dc(context, g2Var.getResourceProvider());
         dcVar.a.f(R.raw.timer_3, 28, 28, null);
-        dcVar.b.setText(org.telegram.messenger.gd.N0(2131745965, null));
-        dcVar.c.setText(z10 ? org.telegram.messenger.gd.N0(2131745975, null) : org.telegram.messenger.gd.N0(2131745971, null));
+        dcVar.b.setText(org.telegram.messenger.hd.N0(2131745965, null));
+        dcVar.c.setText(z10 ? org.telegram.messenger.hd.N0(2131745975, null) : org.telegram.messenger.hd.N0(2131745971, null));
         lcVar.b(dcVar, 2750).j();
     }
 

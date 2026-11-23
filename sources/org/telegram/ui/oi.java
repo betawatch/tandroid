@@ -6,7 +6,7 @@ import android.view.View;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oi implements org.telegram.ui.Components.rj0 {
     public final /* synthetic */ bn a;
@@ -18,7 +18,7 @@ public final class oi implements org.telegram.ui.Components.rj0 {
     @Override // org.telegram.ui.Components.rj0
     public final boolean b1(View view) {
         boolean z10;
-        org.telegram.messenger.fj messageObject;
+        org.telegram.messenger.gj messageObject;
         org.telegram.ui.ActionBar.k kVar;
         TLRPC.ChatFull chatFull;
         bn bnVar = this.a;
@@ -56,8 +56,8 @@ public final class oi implements org.telegram.ui.Components.rj0 {
         boolean z10;
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.Cells.r1 r1Var;
-        org.telegram.messenger.fj messageObject;
-        org.telegram.messenger.fj messageObject2;
+        org.telegram.messenger.gj messageObject;
+        org.telegram.messenger.gj messageObject2;
         int i10;
         org.telegram.ui.ActionBar.h6 h6Var;
         bn bnVar = this.a;
@@ -71,7 +71,7 @@ public final class oi implements org.telegram.ui.Components.rj0 {
             TLRPC.MessageAction messageAction = messageObject2.k.action;
             if (messageAction instanceof TLRPC.TL_messageActionWalletTonConnectRequest) {
                 TLRPC.TL_messageActionWalletTonConnectRequest tL_messageActionWalletTonConnectRequest = (TLRPC.TL_messageActionWalletTonConnectRequest) messageAction;
-                if (tL_messageActionWalletTonConnectRequest.expires <= bnVar.getConnectionsManager().getCurrentTime() || messageObject2.N3() || org.telegram.messenger.fj.B0(messageObject2.k) != 777000) {
+                if (tL_messageActionWalletTonConnectRequest.expires <= bnVar.getConnectionsManager().getCurrentTime() || messageObject2.N3() || org.telegram.messenger.gj.B0(messageObject2.k) != 777000) {
                     return;
                 }
                 Activity parentActivity = bnVar.getParentActivity();
@@ -104,14 +104,14 @@ public final class oi implements org.telegram.ui.Components.rj0 {
         if (z11) {
             org.telegram.ui.Cells.v0 v0Var2 = (org.telegram.ui.Cells.v0) view;
             if (v0Var2.getMessageObject() != null && (v0Var2.getMessageObject().k.action instanceof TLRPC.TL_messageActionBoostApply)) {
-                bnVar.getNotificationCenter().k(org.telegram.messenger.ks.p3, Long.valueOf(bnVar.l6));
+                bnVar.getNotificationCenter().k(org.telegram.messenger.ls.p3, Long.valueOf(bnVar.l6));
                 return;
             }
         }
         if (z11) {
             org.telegram.ui.Cells.v0 v0Var3 = (org.telegram.ui.Cells.v0) view;
             if (v0Var3.getMessageObject() != null && (v0Var3.getMessageObject().k.action instanceof TLRPC.TL_messageActionSetSameChatWallPaper)) {
-                org.telegram.messenger.g0.h3(new ai.y0(this, v0Var3.getMessageObject().N1(), 27), 16L);
+                org.telegram.messenger.g0.h3(new ai.c1(this, v0Var3.getMessageObject().N1(), 27), 16L);
                 return;
             }
         }
@@ -143,7 +143,7 @@ public final class oi implements org.telegram.ui.Components.rj0 {
 
     @Override // org.telegram.ui.Components.rj0
     public final void s0(View view, float f10, float f11) {
-        org.telegram.messenger.fj messageObject;
+        org.telegram.messenger.gj messageObject;
         boolean z10;
         TLRPC.ChatFull chatFull;
         TLRPC.ChatFull chatFull2;
@@ -162,8 +162,8 @@ public final class oi implements org.telegram.ui.Components.rj0 {
                 return;
             }
         }
-        org.telegram.messenger.fj fjVar = messageObject;
-        if ((fjVar.k instanceof TLRPC.TL_message_secret) || !fjVar.z() || fjVar.g3() || fjVar.D == 27) {
+        org.telegram.messenger.gj gjVar = messageObject;
+        if ((gjVar.k instanceof TLRPC.TL_message_secret) || !gjVar.z() || gjVar.g3() || gjVar.D == 27) {
             return;
         }
         TLRPC.Chat chat = bnVar.e;
@@ -176,13 +176,13 @@ public final class oi implements org.telegram.ui.Components.rj0 {
                     z10 = org.telegram.messenger.v3.w0(chatFull2, S);
                 }
                 if (z10) {
-                    bnVar.Eb(view, fjVar, null, null, f10, f11, ch.p0.b(S), true, false, false, false);
+                    bnVar.Eb(view, gjVar, null, null, f10, f11, ch.p0.b(S), true, false, false, false);
                     return;
                 }
                 return;
             }
             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) bnVar.getMediaDataController().r.get(S);
-            if (tL_availableReaction == null || fjVar.r4()) {
+            if (tL_availableReaction == null || gjVar.r4()) {
                 return;
             }
             z10 = bnVar.l6 >= 0;
@@ -190,7 +190,7 @@ public final class oi implements org.telegram.ui.Components.rj0 {
                 z10 = org.telegram.messenger.v3.w0(chatFull, tL_availableReaction.reaction);
             }
             if (z10) {
-                bnVar.Eb(view, fjVar, null, null, f10, f11, ch.p0.c(tL_availableReaction), true, false, false, false);
+                bnVar.Eb(view, gjVar, null, null, f10, f11, ch.p0.c(tL_availableReaction), true, false, false, false);
             }
         }
     }

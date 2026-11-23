@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pt extends org.telegram.ui.ActionBar.g2 {
     public static final int[][] r = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
@@ -32,7 +32,7 @@ public final class pt extends org.telegram.ui.ActionBar.g2 {
     @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131748105, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131748105, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new x7(this, 28));
         bi.t2 t2Var = new bi.t2(context, 27);
         org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.a7, t2Var, null);
@@ -41,7 +41,7 @@ public final class pt extends org.telegram.ui.ActionBar.g2 {
         j71Var.setAdapter(new li.x(this, 1));
         this.c = new FrameLayout(context);
         this.b = this.a.i(-2, true);
-        t2Var.addView(this.a, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        t2Var.addView(this.a, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         View view = new View(context);
         this.d = view;
         t2Var.addView(view, c8.ma.e(-1, 0, 48));
@@ -115,7 +115,7 @@ public final class pt extends org.telegram.ui.ActionBar.g2 {
     public final void onTransitionAnimationProgress(boolean z10, float f10) {
         if (f10 > 0.5f && !this.f) {
             this.f = true;
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.u4, new Object[0]);
         }
         super.onTransitionAnimationProgress(z10, f10);
     }

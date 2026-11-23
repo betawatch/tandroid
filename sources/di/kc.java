@@ -7,16 +7,16 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kc {
     public int a;
@@ -65,12 +65,12 @@ public final class kc {
         this.i = z10;
         this.j = j3;
         if (j3 >= 0) {
-            TLRPC.User c22 = mp.u1(mcVar.n1).c2(Long.valueOf(j3));
-            str = o10.l(c22);
+            TLRPC.User c22 = np.u1(mcVar.n1).c2(Long.valueOf(j3));
+            str = p10.l(c22);
             b9Var.r(c22);
             imageReceiver.i0(c22, b9Var, null);
         } else {
-            TLRPC.Chat O0 = mp.u1(mcVar.n1).O0(Long.valueOf(-j3));
+            TLRPC.Chat O0 = np.u1(mcVar.n1).O0(Long.valueOf(-j3));
             str = O0 == null ? "" : O0.title;
             b9Var.q(O0);
             imageReceiver.i0(O0, b9Var, null);
@@ -134,7 +134,7 @@ public final class kc {
                 b9Var.setBounds(L5, L6, L7, L8);
                 b9Var.y = (int) (d * f12 * d2);
                 b9Var.draw(canvas);
-                b9Var.y = ks.e4;
+                b9Var.y = ls.e4;
             }
         } else {
             f10 = 40.0f;
@@ -180,24 +180,24 @@ public final class kc {
         lc lcVar = this.w;
         mc mcVar = lcVar.w;
         if (this.i) {
-            if ((this.p ? 2666000L : this.j == j10.i(mcVar.n1).e() ? 0L : this.j) != j3) {
+            if ((this.p ? 2666000L : this.j == k10.i(mcVar.n1).e() ? 0L : this.j) != j3) {
                 this.p = j3 == 2666000;
                 if (j3 == 0 || j3 == 2666000) {
-                    j3 = j10.i(mcVar.n1).e();
+                    j3 = k10.i(mcVar.n1).e();
                 }
                 this.j = j3;
                 if (this.p) {
-                    str2 = gd.N0(2131744807, null);
+                    str2 = hd.N0(2131744805, null);
                 } else {
                     ImageReceiver imageReceiver = this.k;
                     org.telegram.ui.Components.b9 b9Var = this.l;
                     if (j3 >= 0) {
-                        TLRPC.User c22 = mp.u1(mcVar.n1).c2(Long.valueOf(this.j));
-                        str = o10.l(c22);
+                        TLRPC.User c22 = np.u1(mcVar.n1).c2(Long.valueOf(this.j));
+                        str = p10.l(c22);
                         b9Var.r(c22);
                         imageReceiver.i0(c22, b9Var, null);
                     } else {
-                        TLRPC.Chat O0 = mp.u1(mcVar.n1).O0(Long.valueOf(-this.j));
+                        TLRPC.Chat O0 = np.u1(mcVar.n1).O0(Long.valueOf(-this.j));
                         str = O0 == null ? "" : O0.title;
                         b9Var.q(O0);
                         imageReceiver.i0(O0, b9Var, null);

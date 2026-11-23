@@ -5,7 +5,7 @@ import a8.u6;
 import a8.v6;
 import ab.c0;
 import ab.o0;
-import ai.p2;
+import ai.q2;
 import ai.z;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -22,16 +22,16 @@ import android.widget.EditText;
 import androidx.fragment.app.j0;
 import androidx.fragment.app.u0;
 import androidx.lifecycle.e0;
-import bi.a5;
 import bi.b1;
 import bi.c3;
-import bi.e5;
+import bi.d5;
 import bi.j3;
 import bi.l3;
 import bi.n3;
+import bi.s6;
 import bi.t0;
-import bi.t6;
-import bi.y7;
+import bi.x7;
+import bi.z4;
 import c8.ke;
 import c8.m0;
 import c8.n0;
@@ -41,14 +41,14 @@ import java.nio.MappedByteBuffer;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import org.json.JSONArray;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final /* synthetic */ class f implements Runnable {
         if (!z10) {
             String a10 = wVar.b.a(wVar.c);
             String str = a10.split(",")[0];
-            nativeSessionNew = DictationAsr.nativeSessionNew(k10, a10, str, bz.o() == 0 ? 2 : 4);
+            nativeSessionNew = DictationAsr.nativeSessionNew(k10, a10, str, cz.o() == 0 ? 2 : 4);
             StringBuilder sb2 = new StringBuilder("tinyasr: session ");
             e2.r(sb2, wVar.b.a, " in ", a10, " (from ");
             sb2.append(str);
@@ -151,7 +151,7 @@ public final /* synthetic */ class f implements Runnable {
             j3 = j3;
         }
         long j11 = j3;
-        nativeFileNew = DictationAsr.nativeFileNew(k10, fArr, wVar.b.a(wVar.c), bz.o() == 0 ? 2 : 4);
+        nativeFileNew = DictationAsr.nativeFileNew(k10, fArr, wVar.b.a(wVar.c), cz.o() == 0 ? 2 : 4);
         try {
             if (nativeFileNew == j11) {
                 if (nativeFileNew != j11) {
@@ -371,7 +371,7 @@ public final /* synthetic */ class f implements Runnable {
                 g0.I3((EditText) this.b);
                 return;
             case 8:
-                DictationAsr.f0((ai.t) ((a0) this.b).b, new p2());
+                DictationAsr.f0((ai.t) ((a0) this.b).b, new q2());
                 return;
             case 9:
                 ((androidx.activity.l) this.b).invalidateOptionsMenu();
@@ -451,7 +451,7 @@ public final /* synthetic */ class f implements Runnable {
                 b1 b1Var = (b1) this.b;
                 Drawable drawable = b1Var.Q;
                 if (drawable != null && !b1Var.S) {
-                    drawable.setAlpha(ks.e4);
+                    drawable.setAlpha(ls.e4);
                 }
                 b1Var.a.setAlpha(1.0f);
                 if (b1Var.getParent() instanceof ViewGroup) {
@@ -486,18 +486,18 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 return;
             case 25:
-                ((a5) this.b).run();
+                ((z4) this.b).run();
                 return;
             case 26:
-                EditTextBoldCursor editTextBoldCursor = ((e5) this.b).o1;
+                EditTextBoldCursor editTextBoldCursor = ((d5) this.b).o1;
                 editTextBoldCursor.requestFocus();
                 g0.I3(editTextBoldCursor);
                 return;
             case 27:
-                ((t6) this.b).p();
+                ((s6) this.b).p();
                 return;
             case 28:
-                ((y7) this.b).c.a(Boolean.TRUE);
+                ((x7) this.b).c.a(Boolean.TRUE);
                 return;
             default:
                 ((c1.f) this.b).f().a(new w0.h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));

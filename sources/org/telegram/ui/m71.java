@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m71 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ x71 a;
@@ -58,10 +58,10 @@ public final class m71 extends org.telegram.ui.ActionBar.j {
                 j6Var.m = 4294967296L;
             }
             x71Var.b1();
-            org.telegram.messenger.ks.e().n(x71Var, org.telegram.messenger.ks.h4);
+            org.telegram.messenger.ls.e().n(x71Var, org.telegram.messenger.ls.h4);
             org.telegram.ui.ActionBar.m6.z1(x71Var.g0, true, false, false, true, false);
             org.telegram.ui.ActionBar.m6.p();
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, x71Var.g0, Boolean.valueOf(x71Var.h0), null, -1);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.w4, x71Var.g0, Boolean.valueOf(x71Var.h0), null, -1);
             x71Var.finishFragment();
             return;
         }
@@ -83,7 +83,7 @@ public final class m71 extends org.telegram.ui.ActionBar.j {
             if (obj instanceof TLRPC.TL_wallPaper) {
                 StringBuilder sb3 = new StringBuilder("https://");
                 i10 = ((org.telegram.ui.ActionBar.g2) x71Var).currentAccount;
-                sb3.append(org.telegram.messenger.mp.u1(i10).X2);
+                sb3.append(org.telegram.messenger.np.u1(i10).X2);
                 sb3.append("/bg/");
                 sb3.append(((TLRPC.TL_wallPaper) obj).slug);
                 b10 = sb3.toString();
@@ -111,22 +111,22 @@ public final class m71 extends org.telegram.ui.ActionBar.j {
                 if (!(obj2 instanceof sc1) || (file = ((sc1) obj2).e) == null) {
                     return;
                 }
-                org.telegram.messenger.ef efVar = new org.telegram.messenger.ef(0, file.getAbsolutePath(), 0, false, 0, 0);
-                efVar.b = false;
-                efVar.c = null;
+                org.telegram.messenger.ff ffVar = new org.telegram.messenger.ff(0, file.getAbsolutePath(), 0, false, 0, 0);
+                ffVar.b = false;
+                ffVar.c = null;
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(efVar);
+                arrayList.add(ffVar);
                 PhotoViewer.p1().I2(x71Var.getParentActivity(), null, null);
-                PhotoViewer.p1().f2(arrayList, 0, 3, false, new l71(this, efVar), null);
+                PhotoViewer.p1().f2(arrayList, 0, 3, false, new l71(this, ffVar), null);
                 return;
             }
             return;
         }
-        if (org.telegram.messenger.bz.S <= 3) {
-            org.telegram.messenger.bz.S = 10;
-            SharedPreferences.Editor edit = org.telegram.messenger.mp.g1().edit();
-            int i11 = org.telegram.messenger.bz.S + 1;
-            org.telegram.messenger.bz.S = i11;
+        if (org.telegram.messenger.cz.S <= 3) {
+            org.telegram.messenger.cz.S = 10;
+            SharedPreferences.Editor edit = org.telegram.messenger.np.g1().edit();
+            int i11 = org.telegram.messenger.cz.S + 1;
+            org.telegram.messenger.cz.S = i11;
             edit.putInt("dayNightWallpaperSwitchHint", i11);
             edit.apply();
         }

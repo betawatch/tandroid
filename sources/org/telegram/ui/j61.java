@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j61 implements Runnable {
     public final /* synthetic */ int a;
@@ -148,10 +148,10 @@ public final /* synthetic */ class j61 implements Runnable {
                 break;
             default:
                 if (x71Var.getParentActivity() != null && x71Var.getParentActivity() != null) {
-                    int i17 = org.telegram.messenger.bz.a;
-                    SharedPreferences.Editor edit = org.telegram.messenger.mp.g1().edit();
-                    int i18 = org.telegram.messenger.bz.S + 1;
-                    org.telegram.messenger.bz.S = i18;
+                    int i17 = org.telegram.messenger.cz.a;
+                    SharedPreferences.Editor edit = org.telegram.messenger.np.g1().edit();
+                    int i18 = org.telegram.messenger.cz.S + 1;
+                    org.telegram.messenger.cz.S = i18;
                     edit.putInt("dayNightWallpaperSwitchHint", i18);
                     edit.apply();
                     org.telegram.ui.Components.m30 m30Var = new org.telegram.ui.Components.m30(7, x71Var.getParentActivity(), null, true);
@@ -160,9 +160,9 @@ public final /* synthetic */ class j61 implements Runnable {
                     m30Var.setShowingDuration(4000L);
                     x71Var.m0.addView(m30Var, c8.ma.d(-2, -2.0f, 51, 4.0f, 0.0f, 4.0f, 0.0f));
                     if (x71Var.r1.d()) {
-                        m30Var.setText(org.telegram.messenger.gd.N0(2131746684, null));
+                        m30Var.setText(org.telegram.messenger.hd.N0(2131746684, null));
                     } else {
-                        m30Var.setText(org.telegram.messenger.gd.N0(2131746683, null));
+                        m30Var.setText(org.telegram.messenger.hd.N0(2131746683, null));
                     }
                     m30Var.b();
                     m30Var.c(x71Var.Q1);

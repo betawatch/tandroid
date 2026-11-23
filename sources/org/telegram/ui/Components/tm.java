@@ -23,9 +23,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.a20, org.telegram.messenger.oi, a5, org.telegram.messenger.jc, org.telegram.messenger.lr, p4.m0, m9.q, w5.b, v5.e, h2.j {
+public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.b20, org.telegram.messenger.pi, a5, org.telegram.messenger.kc, org.telegram.messenger.mr, p4.m0, m9.q, w5.b, v5.e, h2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -50,29 +50,29 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, o
         int i11;
         u40 u40Var = (u40) this.b;
         r40 r40Var = (r40) this.c;
-        org.telegram.messenger.e20 e20Var = (org.telegram.messenger.e20) this.d;
+        org.telegram.messenger.f20 f20Var = (org.telegram.messenger.f20) this.d;
         c50 c50Var = u40Var.I0;
-        org.telegram.messenger.ef efVar = new org.telegram.messenger.ef(0, u40Var.a.getAbsolutePath(), 0, true, 0, 0);
+        org.telegram.messenger.ff ffVar = new org.telegram.messenger.ff(0, u40Var.a.getAbsolutePath(), 0, true, 0, 0);
         if (r40Var != null) {
-            efVar.x = r40Var.c;
-            efVar.y = r40Var.d;
+            ffVar.x = r40Var.c;
+            ffVar.y = r40Var.d;
         }
         p40 p40Var = c50Var.h;
         boolean z11 = z10 || r40Var == null || r40Var.a;
         if (i7 == 0) {
             if (r40Var == null) {
                 i11 = 0;
-                p40Var.u(efVar, e20Var, z11, i11, i10 == 0 ? i10 : 0, false, r40Var == null ? r40Var.e : 0L);
+                p40Var.u(ffVar, f20Var, z11, i11, i10 == 0 ? i10 : 0, false, r40Var == null ? r40Var.e : 0L);
                 c50Var.s(false, false);
             }
             i7 = r40Var.b;
         }
         i11 = i7;
-        p40Var.u(efVar, e20Var, z11, i11, i10 == 0 ? i10 : 0, false, r40Var == null ? r40Var.e : 0L);
+        p40Var.u(ffVar, f20Var, z11, i11, i10 == 0 ? i10 : 0, false, r40Var == null ? r40Var.e : 0L);
         c50Var.s(false, false);
     }
 
-    @Override // org.telegram.messenger.a20
+    @Override // org.telegram.messenger.b20
     public void a(int i7, TLObject tLObject) {
         as asVar = (as) this.b;
         ArrayList arrayList = (ArrayList) this.c;
@@ -81,13 +81,13 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, o
         int size = arrayList.size();
         int i10 = 0;
         for (int i11 = 0; i11 < size; i11++) {
-            org.telegram.messenger.mp.u1(asVar.a).h0(-asVar.U1.id, ((Integer) arrayList.get(i11)).intValue(), d);
+            org.telegram.messenger.np.u1(asVar.a).h0(-asVar.U1.id, ((Integer) arrayList.get(i11)).intValue(), d);
         }
         int size2 = arrayList2.size();
         while (i10 < size2) {
             Object obj = arrayList2.get(i10);
             i10++;
-            org.telegram.messenger.mp.u1(asVar.a).h0(asVar.Y1, ((Integer) obj).intValue(), d);
+            org.telegram.messenger.np.u1(asVar.a).h0(asVar.Y1, ((Integer) obj).intValue(), d);
         }
     }
 
@@ -336,14 +336,14 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, o
         }
     }
 
-    @Override // org.telegram.messenger.lr
+    @Override // org.telegram.messenger.mr
     public void d(boolean z10) {
         TLRPC.Chat chat = (TLRPC.Chat) this.b;
         org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.c;
         org.telegram.ui.Components.voip.b2.l(chat, null, true, null, g2Var.getParentActivity(), g2Var, (org.telegram.messenger.c) this.d);
     }
 
-    @Override // org.telegram.messenger.oi
+    @Override // org.telegram.messenger.pi
     public void e(String str, ArrayList arrayList) {
         switch (this.a) {
             case 2:
@@ -366,7 +366,7 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, o
                 if (nyVar.x.N == nyVar.b) {
                     int size = arrayList.size();
                     for (int i7 = 0; i7 < size; i7++) {
-                        String str3 = ((org.telegram.messenger.ni) arrayList.get(i7)).a;
+                        String str3 = ((org.telegram.messenger.oi) arrayList.get(i7)).a;
                         ArrayList arrayList2 = (ArrayList) hashMap.get(str3);
                         if (arrayList2 != null && !arrayList2.isEmpty() && !hashMap2.containsKey(arrayList2)) {
                             hashMap2.put(arrayList2, str3);
@@ -437,7 +437,7 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, o
                 jt0 jt0Var = (jt0) obj3;
                 ArrayList arrayList = (ArrayList) obj;
                 ((fi.a6) obj2).F(arrayList);
-                lc.b0(jt0Var.y1).Q(R.raw.ic_delete, 36, org.telegram.messenger.gd.G(arrayList.size(), "BotPreviewsDeleted", new Object[0])).j();
+                lc.b0(jt0Var.y1).Q(R.raw.ic_delete, 36, org.telegram.messenger.hd.G(arrayList.size(), "BotPreviewsDeleted", new Object[0])).j();
                 jt0Var.V(false);
                 break;
             case 8:
@@ -457,20 +457,20 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, o
                 k0Var.dismiss();
                 for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                     TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
-                    org.telegram.messenger.mp.u1(k0Var.a).X3(chat, false);
-                    org.telegram.messenger.mp.u1(k0Var.a).f0(chat.id, user);
+                    org.telegram.messenger.np.u1(k0Var.a).X3(chat, false);
+                    org.telegram.messenger.np.u1(k0Var.a).f0(chat.id, user);
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        l01 l01Var = (l01) this.b;
+        k01 k01Var = (k01) this.b;
         mp mpVar = (mp) this.c;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.d;
-        org.telegram.messenger.hc p10 = imageReceiver.p();
+        org.telegram.messenger.ic p10 = imageReceiver.p();
         if (!z10 || p10 == null || (bitmap = p10.c) == null) {
             return;
         }
@@ -478,9 +478,9 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, o
         if (drawable instanceof cb0) {
             cb0 cb0Var = (cb0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            cb0Var.s((wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100, l01.e(bitmap));
-            cb0Var.t(l01Var.M);
-            l01Var.invalidate();
+            cb0Var.s((wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100, k01.e(bitmap));
+            cb0Var.t(k01Var.M);
+            k01Var.invalidate();
         }
     }
 
@@ -491,11 +491,11 @@ public final /* synthetic */ class tm implements org.telegram.ui.ActionBar.q1, o
         this.d = resultReceiver;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 

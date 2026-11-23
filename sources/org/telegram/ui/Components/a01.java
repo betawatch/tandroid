@@ -26,7 +26,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a01 extends FrameLayout {
     public LinearGradient E;
@@ -237,7 +237,7 @@ public final class a01 extends FrameLayout {
         int[] iArr = new int[13];
         float[] fArr = {0.0f, 1.0f, 1.0f};
         for (int i15 = 0; i15 < 13; i15++) {
-            fArr[0] = ((i15 * 30) + org.telegram.messenger.ks.K2) % 360;
+            fArr[0] = ((i15 * 30) + org.telegram.messenger.ls.K2) % 360;
             iArr[i15] = Color.HSVToColor(fArr);
         }
         iArr[12] = iArr[0];

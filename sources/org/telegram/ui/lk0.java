@@ -5,7 +5,7 @@ import android.webkit.WebView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lk0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final /* synthetic */ class lk0 implements Runnable {
                 break;
             case 1:
                 ml0 ml0Var = this.b;
-                org.telegram.messenger.x10 x10Var = ml0Var.e1;
+                org.telegram.messenger.y10 y10Var = ml0Var.e1;
                 TLObject tLObject = this.c;
-                if (x10Var != null) {
-                    x10Var.a((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
+                if (y10Var != null) {
+                    y10Var.a((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
                 }
                 ml0Var.J0(false);
                 ml0Var.A0 = true;

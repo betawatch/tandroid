@@ -12,9 +12,9 @@ import android.widget.TextView;
 import c8.ma;
 import c8.va;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.r80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s3 extends ka {
     public static final /* synthetic */ int x2 = 0;
@@ -51,9 +51,9 @@ public final class s3 extends ka {
     public final o3 p2;
     public int q2;
     public Runnable r2;
-    public x10 s2;
-    public ai.c1 t2;
-    public x10 u2;
+    public y10 s2;
+    public ai.j1 t2;
+    public y10 u2;
     public final ImageView v2;
     public final FrameLayout w2;
 
@@ -89,7 +89,7 @@ public final class s3 extends ka {
         imageView.setImageResource(R.drawable.msg_close);
         org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.m6, h6Var, PorterDuff.Mode.SRC_IN);
         imageView.setBackground(org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.i6, h6Var), 1, -1));
-        imageView.setContentDescription(gd.N0(2131752029, null));
+        imageView.setContentDescription(hd.N0(2131752029, null));
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: bi.q3
             public final /* synthetic */ s3 b;
 
@@ -186,7 +186,7 @@ public final class s3 extends ka {
         eVar.f();
         eVar.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(24.0f), org.telegram.ui.ActionBar.m6.r1(0.07f, org.telegram.ui.ActionBar.m6.w0(i12, h6Var))));
         eVar.setTextColorKey(i12);
-        eVar.i(gd.N0(2131752577, r14), false, r13);
+        eVar.i(hd.N0(2131752577, r14), false, r13);
         eVar.setOnClickListener(new View.OnClickListener(this) { // from class: bi.q3
             public final /* synthetic */ s3 b;
 
@@ -228,7 +228,7 @@ public final class s3 extends ka {
         hi.e eVar2 = new hi.e(context, h6Var, r13);
         this.d2 = eVar2;
         eVar2.f();
-        eVar2.i(gd.N0(2131751805, r14), false, r13);
+        eVar2.i(hd.N0(2131751805, r14), false, r13);
         final int i13 = 2;
         eVar2.setOnClickListener(new View.OnClickListener(this) { // from class: bi.q3
             public final /* synthetic */ s3 b;
@@ -269,7 +269,7 @@ public final class s3 extends ka {
         });
         linearLayout.addView(eVar2, ma.m(1.0f, 0, 48, 6, 0, 0));
         float f12 = f10 + 16.0f;
-        frameLayout2.addView(linearLayout, ma.d(-1, 48.0f, ks.E1, f12, 8.0f, f12, 16.0f));
+        frameLayout2.addView(linearLayout, ma.d(-1, 48.0f, ls.E1, f12, 8.0f, f12, 16.0f));
         this.b.addView(frameLayout2, ma.e(-1, -2, 87));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.w2 = frameLayout3;
@@ -284,14 +284,14 @@ public final class s3 extends ka {
         if (org.telegram.ui.Wallet.u0.D(i7).A() >= j3) {
             return true;
         }
-        String a02 = gd.a0(null, null, i10, org.telegram.ui.Wallet.u0.s(j3, false));
+        String a02 = hd.a0(null, null, i10, org.telegram.ui.Wallet.u0.s(j3, false));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
-        String N0 = gd.N0(2131742821, null);
+        String N0 = hd.N0(2131742819, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
         t1Var.U = a02;
-        alertDialog$Builder.h(gd.N0(2131742819, null), null);
-        alertDialog$Builder.k(gd.N0(2131742726, null), new ai.t1(context, i7, h6Var, i11));
+        alertDialog$Builder.h(hd.N0(2131742817, null), null);
+        alertDialog$Builder.k(hd.N0(2131742724, null), new ai.u1(context, i7, h6Var, i11));
         alertDialog$Builder.p();
         return false;
     }
@@ -348,14 +348,14 @@ public final class s3 extends ka {
         if (u0Var.A() >= j3) {
             this.h2 = true;
             this.d2.setLoading(true);
-            u0Var.o0(this.e2, new x10(this) { // from class: bi.p3
+            u0Var.o0(this.e2, new y10(this) { // from class: bi.p3
                 public final /* synthetic */ s3 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.messenger.x10
+                @Override // org.telegram.messenger.y10
                 public final void a(Object obj) {
                     switch (i7) {
                         case 0:
@@ -366,9 +366,9 @@ public final class s3 extends ka {
                                     s3Var.i2 = false;
                                     s3Var.h2 = false;
                                     s3Var.d2.setLoading(false);
-                                    x10 x10Var = s3Var.u2;
-                                    if (x10Var != null) {
-                                        x10Var.a("WALLET_SEND_FAILED");
+                                    y10 y10Var = s3Var.u2;
+                                    if (y10Var != null) {
+                                        y10Var.a("WALLET_SEND_FAILED");
                                         break;
                                     }
                                 } else {
@@ -384,16 +384,16 @@ public final class s3 extends ka {
                                     }
                                     if (!s3Var.k2) {
                                         s3Var.k2 = true;
-                                        ai.c1 c1Var = s3Var.t2;
-                                        if (c1Var != null) {
-                                            c1Var.run();
+                                        ai.j1 j1Var = s3Var.t2;
+                                        if (j1Var != null) {
+                                            j1Var.run();
                                         }
                                     }
                                 }
                             }
-                            x10 x10Var2 = s3Var.s2;
-                            if (x10Var2 != null) {
-                                x10Var2.a(bool);
+                            y10 y10Var2 = s3Var.s2;
+                            if (y10Var2 != null) {
+                                y10Var2.a(bool);
                                 break;
                             }
                             break;
@@ -414,14 +414,14 @@ public final class s3 extends ka {
                             break;
                     }
                 }
-            }, new x10(this) { // from class: bi.p3
+            }, new y10(this) { // from class: bi.p3
                 public final /* synthetic */ s3 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.messenger.x10
+                @Override // org.telegram.messenger.y10
                 public final void a(Object obj) {
                     switch (i10) {
                         case 0:
@@ -432,9 +432,9 @@ public final class s3 extends ka {
                                     s3Var.i2 = false;
                                     s3Var.h2 = false;
                                     s3Var.d2.setLoading(false);
-                                    x10 x10Var = s3Var.u2;
-                                    if (x10Var != null) {
-                                        x10Var.a("WALLET_SEND_FAILED");
+                                    y10 y10Var = s3Var.u2;
+                                    if (y10Var != null) {
+                                        y10Var.a("WALLET_SEND_FAILED");
                                         break;
                                     }
                                 } else {
@@ -450,16 +450,16 @@ public final class s3 extends ka {
                                     }
                                     if (!s3Var.k2) {
                                         s3Var.k2 = true;
-                                        ai.c1 c1Var = s3Var.t2;
-                                        if (c1Var != null) {
-                                            c1Var.run();
+                                        ai.j1 j1Var = s3Var.t2;
+                                        if (j1Var != null) {
+                                            j1Var.run();
                                         }
                                     }
                                 }
                             }
-                            x10 x10Var2 = s3Var.s2;
-                            if (x10Var2 != null) {
-                                x10Var2.a(bool);
+                            y10 y10Var2 = s3Var.s2;
+                            if (y10Var2 != null) {
+                                y10Var2.a(bool);
                                 break;
                             }
                             break;
@@ -486,14 +486,14 @@ public final class s3 extends ka {
         Context context = getContext();
         int i11 = this.a;
         org.telegram.ui.ActionBar.h6 h6Var = this.J0;
-        String a02 = gd.a0(null, null, this.q2, org.telegram.ui.Wallet.u0.s(j3, false));
+        String a02 = hd.a0(null, null, this.q2, org.telegram.ui.Wallet.u0.s(j3, false));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
-        String N0 = gd.N0(2131742821, null);
+        String N0 = hd.N0(2131742819, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
         t1Var.U = a02;
-        alertDialog$Builder.h(gd.N0(2131742819, null), null);
-        alertDialog$Builder.k(gd.N0(2131742726, null), new ai.t1(context, i11, h6Var, i7));
+        alertDialog$Builder.h(hd.N0(2131742817, null), null);
+        alertDialog$Builder.k(hd.N0(2131742724, null), new ai.u1(context, i11, h6Var, i7));
         alertDialog$Builder.p();
     }
 
@@ -507,10 +507,10 @@ public final class s3 extends ka {
         org.telegram.messenger.g0.h3(o3Var, Math.max(0L, (i7 - ConnectionsManager.getInstance(this.a).getCurrentTime()) * 1000));
     }
 
-    public final void i1(Runnable runnable, x10 x10Var, x10 x10Var2) {
+    public final void i1(Runnable runnable, y10 y10Var, y10 y10Var2) {
         this.r2 = runnable;
-        this.s2 = x10Var;
-        this.u2 = x10Var2;
+        this.s2 = y10Var;
+        this.u2 = y10Var2;
     }
 
     public final void j1(org.telegram.ui.Wallet.p0 p0Var) {

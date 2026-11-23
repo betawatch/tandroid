@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.sc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ep implements si {
     public final /* synthetic */ ui a;
@@ -70,15 +70,15 @@ public final class ep implements si {
             if (selectedPhotos.isEmpty()) {
                 return;
             }
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) selectedPhotos.values().iterator().next();
-            String str = efVar.h;
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) selectedPhotos.values().iterator().next();
+            String str = ffVar.h;
             if (str == null) {
-                str = efVar.I;
+                str = ffVar.I;
             }
             if (str != null) {
                 File file = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
                 Point c12 = org.telegram.messenger.g0.c1();
-                Bitmap K = org.telegram.messenger.ec.K(str, null, (float) c12.x, (float) c12.y, true);
+                Bitmap K = org.telegram.messenger.fc.K(str, null, (float) c12.x, (float) c12.y, true);
                 K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
                 dp dpVar = new dp(new sc1(file, file, ""), K, false, 0);
                 dpVar.X1 = this.b;

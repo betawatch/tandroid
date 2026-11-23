@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w8 extends org.telegram.ui.Components.du0 {
     public final /* synthetic */ int g0;
@@ -115,7 +115,7 @@ public final class w8 extends org.telegram.ui.Components.du0 {
                 }
                 break;
             case 5:
-                if (!org.telegram.messenger.bz.H0) {
+                if (!org.telegram.messenger.cz.H0) {
                     break;
                 } else {
                     int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.ua, false);
@@ -134,7 +134,7 @@ public final class w8 extends org.telegram.ui.Components.du0 {
     public boolean getNewDrawableMotion() {
         switch (this.g0) {
             case 5:
-                return !org.telegram.messenger.bz.H0 && super.getNewDrawableMotion();
+                return !org.telegram.messenger.cz.H0 && super.getNewDrawableMotion();
             default:
                 return super.getNewDrawableMotion();
         }
@@ -222,7 +222,7 @@ public final class w8 extends org.telegram.ui.Components.du0 {
                             i32 = 51;
                         }
                         int absoluteGravity = Gravity.getAbsoluteGravity(i32, getLayoutDirection());
-                        int i33 = i32 & org.telegram.messenger.ks.x1;
+                        int i33 = i32 & org.telegram.messenger.ls.x1;
                         int i34 = absoluteGravity & 7;
                         if (i34 == i29) {
                             i14 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;
@@ -309,7 +309,7 @@ public final class w8 extends org.telegram.ui.Components.du0 {
                         if (i36 == i27) {
                             i36 = 51;
                         }
-                        int i37 = i36 & org.telegram.messenger.ks.x1;
+                        int i37 = i36 & org.telegram.messenger.ls.x1;
                         int i38 = i36 & 7;
                         int i39 = i38 != 1 ? i38 != i26 ? layoutParams2.leftMargin : (i11 - measuredWidth2) - layoutParams2.rightMargin : ((((i11 - i7) - measuredWidth2) / 2) + layoutParams2.leftMargin) - layoutParams2.rightMargin;
                         if (i37 == 16) {

@@ -4,7 +4,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class za1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ bb1 a;
@@ -31,14 +31,14 @@ public final class za1 extends org.telegram.ui.ActionBar.j {
         if (i7 == 1) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bb1Var.getParentActivity());
             TL_account.Password password = bb1Var.V;
-            String N0 = (password == null || !password.has_password) ? org.telegram.messenger.gd.N0(2131752566, null) : org.telegram.messenger.gd.N0(2131752574, null);
-            String N02 = org.telegram.messenger.gd.N0(2131752573, null);
-            String N03 = org.telegram.messenger.gd.N0(2131754950, null);
+            String N0 = (password == null || !password.has_password) ? org.telegram.messenger.hd.N0(2131752566, null) : org.telegram.messenger.hd.N0(2131752574, null);
+            String N02 = org.telegram.messenger.hd.N0(2131752573, null);
+            String N03 = org.telegram.messenger.hd.N0(2131754950, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.U = N0;
             t1Var.S = N02;
             alertDialog$Builder.k(N03, new qi0(this, 22));
-            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
             bb1Var.showDialog(t1Var);
             TextView textView = (TextView) t1Var.d(-1);
             if (textView != null) {

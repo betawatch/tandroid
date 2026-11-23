@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kj extends org.telegram.ui.Components.v90 {
     public boolean W;
@@ -50,7 +50,7 @@ public final class kj extends org.telegram.ui.Components.v90 {
             bnVar.Za(0, botInlineResult.content.url, null, null, false);
             return;
         }
-        int[] g12 = org.telegram.messenger.fj.g1(botInlineResult);
+        int[] g12 = org.telegram.messenger.gj.g1(botInlineResult);
         rh rhVar = bnVar.gb;
         String str = botInlineResult.title;
         if (str == null) {
@@ -73,7 +73,7 @@ public final class kj extends org.telegram.ui.Components.v90 {
                 N0 = user.bot_inline_placeholder;
             } else {
                 String str = adapter.r0;
-                N0 = (str == null || !str.equals("gif")) ? null : org.telegram.messenger.gd.N0(2131745568, null);
+                N0 = (str == null || !str.equals("gif")) ? null : org.telegram.messenger.hd.N0(2131745568, null);
             }
             rjVar.setCaption(N0);
             org.telegram.ui.Components.qe qeVar = bnVar.a0.F2;
@@ -94,14 +94,14 @@ public final class kj extends org.telegram.ui.Components.v90 {
     public final void m() {
         bn bnVar = this.a0;
         if (bnVar.r5 && ((getAdapter().S == null || bnVar.s5 || bnVar.t5) && bnVar.h != null && getAdapter().S != null)) {
-            SharedPreferences g12 = org.telegram.messenger.mp.g1();
+            SharedPreferences g12 = org.telegram.messenger.np.g1();
             if (!g12.getBoolean("secretbot", false)) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar.getParentActivity(), bnVar.Ba);
-                String N0 = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                String N0 = org.telegram.messenger.hd.N0(R.string.AppName, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = org.telegram.messenger.gd.N0(2131745498, null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, null), null);
+                t1Var.U = org.telegram.messenger.hd.N0(2131745498, null);
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, null), null);
                 bnVar.showDialog(t1Var);
                 g12.edit().putBoolean("secretbot", true).commit();
             }

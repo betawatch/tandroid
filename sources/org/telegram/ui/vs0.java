@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vs0 extends LinearLayout {
     public final TextView a;
@@ -35,7 +35,7 @@ public final class vs0 extends LinearLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         int i7 = premiumPreviewFragment.h0;
-        int i10 = i7 == 1 ? org.telegram.messenger.ks.F2 : org.telegram.messenger.ks.U2;
+        int i10 = i7 == 1 ? org.telegram.messenger.ls.F2 : org.telegram.messenger.ls.U2;
         addView(frameLayout, c8.ma.r(i10, i10, 1));
         di.bc bcVar = new di.bc(this, context, premiumPreviewFragment.i0 ? 1 : 0, i7 == 1 ? 1 : 0, context);
         this.d = bcVar;
@@ -233,11 +233,11 @@ public final class vs0 extends LinearLayout {
         TextView textView = this.a;
         TextView textView2 = this.b;
         if (i7 == 0) {
-            textView.setText(org.telegram.messenger.gd.N0(premiumPreviewFragment.q0 ? 2131743987 : 2131743990, null));
-            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.q0) ? 2131743988 : 2131743986, null)));
+            textView.setText(org.telegram.messenger.hd.N0(premiumPreviewFragment.q0 ? 2131743985 : 2131743988, null));
+            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.q0) ? 2131743986 : 2131743984, null)));
         } else if (i7 == 1) {
-            textView.setText(org.telegram.messenger.gd.N0(premiumPreviewFragment.q0 ? 2131743987 : 2131744011, null));
-            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.q0) ? 2131744009 : 2131744006, null)));
+            textView.setText(org.telegram.messenger.hd.N0(premiumPreviewFragment.q0 ? 2131743985 : 2131744009, null));
+            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.q0) ? 2131744007 : 2131744004, null)));
         }
         textView2.getLayoutParams().width = Math.min(org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(42.0f), hi.l3.a(textView2.getText(), textView2.getPaint()));
         if (!premiumPreviewFragment.q0) {

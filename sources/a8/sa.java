@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sa implements Runnable {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class sa implements Runnable {
     public final void run() {
         boolean z10;
         boolean z11;
-        ai.g2[] g2VarArr;
+        ai.h2[] h2VarArr;
         int i7;
         int i10;
         Layout layout;
@@ -141,77 +141,77 @@ public final /* synthetic */ class sa implements Runnable {
                 }
                 return;
             case 3:
-                ai.j2 j2Var = (ai.j2) this.b;
-                TextView textView = j2Var.a;
+                ai.k2 k2Var = (ai.k2) this.b;
+                TextView textView = k2Var.a;
                 Editable editableText = textView.getEditableText();
                 if (editableText == null) {
-                    j2Var.g = false;
+                    k2Var.g = false;
                     return;
                 }
                 long uptimeMillis2 = SystemClock.uptimeMillis();
-                ai.h2[] h2VarArr = (ai.h2[]) editableText.getSpans(0, editableText.length(), ai.h2.class);
-                int length = h2VarArr.length;
+                ai.i2[] i2VarArr = (ai.i2[]) editableText.getSpans(0, editableText.length(), ai.i2.class);
+                int length = i2VarArr.length;
                 int i13 = 0;
                 boolean z14 = false;
                 while (i13 < length) {
-                    ai.h2 h2Var = h2VarArr[i13];
-                    int spanStart = editableText.getSpanStart(h2Var);
-                    int spanEnd = editableText.getSpanEnd(h2Var);
+                    ai.i2 i2Var = i2VarArr[i13];
+                    int spanStart = editableText.getSpanStart(i2Var);
+                    int spanEnd = editableText.getSpanEnd(i2Var);
                     if (spanStart < 0 || spanEnd <= spanStart) {
                         j3 = uptimeMillis2;
                     } else {
                         j3 = uptimeMillis2;
-                        if (j3 < (Math.max(0, h2Var.c - 1) * 22) + h2Var.a + 320) {
-                            editableText.setSpan(h2Var, spanStart, spanEnd, 33);
+                        if (j3 < (Math.max(0, i2Var.c - 1) * 22) + i2Var.a + 320) {
+                            editableText.setSpan(i2Var, spanStart, spanEnd, 33);
                             z14 = true;
                             i13++;
                             uptimeMillis2 = j3;
                         }
                     }
-                    editableText.removeSpan(h2Var);
+                    editableText.removeSpan(i2Var);
                     i13++;
                     uptimeMillis2 = j3;
                 }
                 long j12 = uptimeMillis2;
-                ai.g2[] g2VarArr2 = (ai.g2[]) editableText.getSpans(0, editableText.length(), ai.g2.class);
-                int length2 = g2VarArr2.length;
+                ai.h2[] h2VarArr2 = (ai.h2[]) editableText.getSpans(0, editableText.length(), ai.h2.class);
+                int length2 = h2VarArr2.length;
                 boolean z15 = z14;
                 int i14 = 0;
                 while (i14 < length2) {
-                    ai.g2 g2Var = g2VarArr2[i14];
-                    int spanStart2 = editableText.getSpanStart(g2Var);
-                    int spanEnd2 = editableText.getSpanEnd(g2Var);
+                    ai.h2 h2Var = h2VarArr2[i14];
+                    int spanStart2 = editableText.getSpanStart(h2Var);
+                    int spanEnd2 = editableText.getSpanEnd(h2Var);
                     if (spanStart2 < 0 || spanEnd2 <= spanStart2) {
-                        g2VarArr = g2VarArr2;
+                        h2VarArr = h2VarArr2;
                         i7 = length2;
                         i10 = i14;
-                        editableText.removeSpan(g2Var);
-                    } else if (p0.C(j12 - g2Var.a, 750.0f, 1.0f, 0.0f) >= 1.0f) {
-                        editableText.removeSpan(g2Var);
-                        g2VarArr = g2VarArr2;
+                        editableText.removeSpan(h2Var);
+                    } else if (p0.C(j12 - h2Var.a, 750.0f, 1.0f, 0.0f) >= 1.0f) {
+                        editableText.removeSpan(h2Var);
+                        h2VarArr = h2VarArr2;
                         i7 = length2;
                         i10 = i14;
                     } else {
-                        long j13 = g2Var.b;
+                        long j13 = h2Var.b;
                         if (j13 <= 0) {
-                            j13 = g2Var.a;
+                            j13 = h2Var.a;
                         }
                         if (j12 >= j13 - 16) {
-                            if (!g2Var.e) {
-                                g2Var.e = true;
-                                ai.a0 a0Var2 = j2Var.h;
+                            if (!h2Var.e) {
+                                h2Var.e = true;
+                                ai.a0 a0Var2 = k2Var.h;
                                 if (a0Var2 != null) {
                                     ai.p0 p0Var2 = a0Var2.b;
                                     float[] fArr = p0Var2.D0;
                                     org.telegram.ui.Components.d6 d6Var = p0Var2.Y;
                                     if (d6Var == null || d6Var.c < 0.2f || !p0Var2.r(fArr) || (layout = p0Var2.f.a.F0.getLayout()) == null || spanEnd2 > layout.getText().length()) {
-                                        g2VarArr = g2VarArr2;
+                                        h2VarArr = h2VarArr2;
                                         i7 = length2;
                                     } else {
                                         int lineForOffset = layout.getLineForOffset(spanStart2);
                                         float primaryHorizontal = layout.getPrimaryHorizontal(spanStart2);
                                         float primaryHorizontal2 = layout.getLineForOffset(spanEnd2) == lineForOffset ? layout.getPrimaryHorizontal(spanEnd2) : layout.getLineRight(lineForOffset);
-                                        g2VarArr = g2VarArr2;
+                                        h2VarArr = h2VarArr2;
                                         ai.u0 u0Var = p0Var2.x;
                                         float f10 = primaryHorizontal + fArr[0];
                                         i7 = length2;
@@ -239,52 +239,52 @@ public final /* synthetic */ class sa implements Runnable {
                                         }
                                     }
                                     i10 = i14;
-                                    editableText.setSpan(g2Var, spanStart2, spanEnd2, 33);
+                                    editableText.setSpan(h2Var, spanStart2, spanEnd2, 33);
                                 }
                             }
-                            g2VarArr = g2VarArr2;
+                            h2VarArr = h2VarArr2;
                             i7 = length2;
                             i10 = i14;
-                            editableText.setSpan(g2Var, spanStart2, spanEnd2, 33);
+                            editableText.setSpan(h2Var, spanStart2, spanEnd2, 33);
                         } else {
-                            g2VarArr = g2VarArr2;
+                            h2VarArr = h2VarArr2;
                             i7 = length2;
                             i10 = i14;
                         }
                         z15 = true;
                     }
                     i14 = i10 + 1;
-                    g2VarArr2 = g2VarArr;
+                    h2VarArr2 = h2VarArr;
                     length2 = i7;
                 }
-                for (ai.f2 f2Var : (ai.f2[]) editableText.getSpans(0, editableText.length(), ai.f2.class)) {
-                    if (f2Var.a != 0) {
-                        int spanStart3 = editableText.getSpanStart(f2Var);
-                        int spanEnd3 = editableText.getSpanEnd(f2Var);
+                for (ai.g2 g2Var : (ai.g2[]) editableText.getSpans(0, editableText.length(), ai.g2.class)) {
+                    if (g2Var.a != 0) {
+                        int spanStart3 = editableText.getSpanStart(g2Var);
+                        int spanEnd3 = editableText.getSpanEnd(g2Var);
                         if (spanStart3 >= 0 && spanEnd3 > spanStart3) {
-                            long j14 = f2Var.a;
+                            long j14 = g2Var.a;
                             if (j14 == 0 || j12 < j14 + 300) {
-                                editableText.setSpan(f2Var, spanStart3, spanEnd3, 33);
+                                editableText.setSpan(g2Var, spanStart3, spanEnd3, 33);
                                 z15 = true;
                             }
                         }
-                        editableText.removeSpan(f2Var);
+                        editableText.removeSpan(g2Var);
                     }
                 }
-                ai.i2 i2Var = j2Var.j;
-                if (i2Var == null || j2Var.m <= 0.0f || editableText.getSpanStart(i2Var) < 0) {
+                ai.j2 j2Var = k2Var.j;
+                if (j2Var == null || k2Var.m <= 0.0f || editableText.getSpanStart(j2Var) < 0) {
                     z10 = false;
                     z11 = z15;
                 } else {
                     z10 = false;
-                    editableText.setSpan(j2Var.j, 0, editableText.length(), 18);
+                    editableText.setSpan(k2Var.j, 0, editableText.length(), 18);
                     z11 = true;
                 }
                 if (z11) {
                     textView.postOnAnimation(this);
                     return;
                 } else {
-                    j2Var.g = z10;
+                    k2Var.g = z10;
                     return;
                 }
             case 4:

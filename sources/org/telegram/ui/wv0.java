@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class wv0 extends org.telegram.ui.Components.q9 implements org.telegram.ui.Components.au0 {
     public static final q0 h0 = new q0("crossfadeProgress", 4);
@@ -29,7 +29,7 @@ public class wv0 extends org.telegram.ui.Components.q9 implements org.telegram.u
     public ImageReceiver U;
     public final ImageReceiver V;
     public float W;
-    public org.telegram.messenger.hc a0;
+    public org.telegram.messenger.ic a0;
     public boolean b0;
     public float c0;
     public org.telegram.ui.Components.hg0 d0;
@@ -96,9 +96,9 @@ public class wv0 extends org.telegram.ui.Components.q9 implements org.telegram.u
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.V.R();
-        org.telegram.messenger.hc hcVar = this.a0;
-        if (hcVar != null) {
-            hcVar.a();
+        org.telegram.messenger.ic icVar = this.a0;
+        if (icVar != null) {
+            icVar.a();
             this.a0 = null;
         }
     }
@@ -242,16 +242,16 @@ public class wv0 extends org.telegram.ui.Components.q9 implements org.telegram.u
         invalidate();
     }
 
-    public void setForegroundImageDrawable(org.telegram.messenger.hc hcVar) {
-        if (hcVar != null) {
-            this.V.w0(hcVar.d);
+    public void setForegroundImageDrawable(org.telegram.messenger.ic icVar) {
+        if (icVar != null) {
+            this.V.w0(icVar.d);
         }
-        org.telegram.messenger.hc hcVar2 = this.a0;
-        if (hcVar2 != null) {
-            hcVar2.a();
+        org.telegram.messenger.ic icVar2 = this.a0;
+        if (icVar2 != null) {
+            icVar2.a();
             this.a0 = null;
         }
-        this.a0 = hcVar;
+        this.a0 = icVar;
     }
 
     public void setHasStories(boolean z10) {
@@ -306,11 +306,11 @@ public class wv0 extends org.telegram.ui.Components.q9 implements org.telegram.u
         this.N = true;
     }
 
-    public final void w(org.telegram.messenger.fc fcVar, String str, Drawable drawable) {
-        this.V.p0(fcVar, str, drawable, 0L, null, null, 0);
-        org.telegram.messenger.hc hcVar = this.a0;
-        if (hcVar != null) {
-            hcVar.a();
+    public final void w(org.telegram.messenger.gc gcVar, String str, Drawable drawable) {
+        this.V.p0(gcVar, str, drawable, 0L, null, null, 0);
+        org.telegram.messenger.ic icVar = this.a0;
+        if (icVar != null) {
+            icVar.a();
             this.a0 = null;
         }
     }

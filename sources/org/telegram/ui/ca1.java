@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ca1 extends rg.b {
     public final /* synthetic */ ea1 d;
@@ -49,13 +49,13 @@ public final class ca1 extends rg.b {
             }
             kaVar.c.setText(tL_forumTopic.title);
             TextView textView = kaVar.d;
-            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0);
+            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0);
             long j10 = tL_forumTopic.id;
             if (u12.getMessagesController().u2(j3, j10, null)) {
-                int i10 = u12.g7.getInt("notifyuntil_" + org.telegram.messenger.xs.v(j3, j10, false), 0);
-                N0 = i10 >= u12.getConnectionsManager().getCurrentTime() ? org.telegram.messenger.gd.a0("NotificationsMutedForHint", null, 2131747706, org.telegram.messenger.gd.c0(i10)) : org.telegram.messenger.gd.N0(2131747707, null);
+                int i10 = u12.g7.getInt("notifyuntil_" + org.telegram.messenger.ys.v(j3, j10, false), 0);
+                N0 = i10 >= u12.getConnectionsManager().getCurrentTime() ? org.telegram.messenger.hd.a0("NotificationsMutedForHint", null, 2131747706, org.telegram.messenger.hd.c0(i10)) : org.telegram.messenger.hd.N0(2131747707, null);
             } else {
-                N0 = org.telegram.messenger.gd.N0(2131747662, null);
+                N0 = org.telegram.messenger.hd.N0(2131747662, null);
             }
             textView.setText(N0);
             kaVar.a = i7 == arrayList.size() - 1 || ((da1) arrayList.get(i7 + 1)).a == 2;
@@ -68,7 +68,7 @@ public final class ca1 extends rg.b {
         View view2 = null;
         if (i7 == 1) {
             org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-            n8Var.o(R.drawable.msg_contact_add, org.telegram.messenger.gd.N0(2131747729, null), true);
+            n8Var.o(R.drawable.msg_contact_add, org.telegram.messenger.hd.N0(2131747729, null), true);
             n8Var.g(org.telegram.ui.ActionBar.m6.v6, org.telegram.ui.ActionBar.m6.u6);
             org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var, null);
             view = n8Var;
@@ -94,7 +94,7 @@ public final class ca1 extends rg.b {
             if (i7 != 3) {
                 if (i7 == 4) {
                     org.telegram.ui.Cells.n8 n8Var2 = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-                    n8Var2.k(org.telegram.messenger.gd.N0(2131747721, null), false);
+                    n8Var2.k(org.telegram.messenger.hd.N0(2131747721, null), false);
                     n8Var2.g(-1, org.telegram.ui.ActionBar.m6.p7);
                     org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var2, null);
                     view = n8Var2;

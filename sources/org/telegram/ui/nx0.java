@@ -10,10 +10,10 @@ import android.widget.TextView;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class nx0 extends FrameLayout implements org.telegram.messenger.fs {
-    public final bi.q5 a;
+public abstract class nx0 extends FrameLayout implements org.telegram.messenger.gs {
+    public final bi.p5 a;
     public final org.telegram.ui.Components.i71 b;
     public final fi.d6 c;
     public final mx0 d;
@@ -32,21 +32,21 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
         Objects.requireNonNull(d6Var);
         this.w = new ru0(d6Var, 8);
         final org.telegram.ui.Components.jq0 jq0Var = (org.telegram.ui.Components.jq0) this;
-        bi.q5 q5Var = new bi.q5(jq0Var, context, iq0Var, 2);
-        this.a = q5Var;
-        q5Var.setAllowDisallowInterceptTouch(true);
+        bi.p5 p5Var = new bi.p5(jq0Var, context, iq0Var, 2);
+        this.a = p5Var;
+        p5Var.setAllowDisallowInterceptTouch(true);
         mx0 mx0Var = new mx0(jq0Var);
         this.d = mx0Var;
         mx0Var.a = d6Var.a();
-        q5Var.setAdapter(mx0Var);
-        q5Var.setTranslationY(org.telegram.messenger.g0.L(42.0f));
-        org.telegram.ui.Components.i71 i7 = q5Var.i(10, true);
+        p5Var.setAdapter(mx0Var);
+        p5Var.setTranslationY(org.telegram.messenger.g0.L(42.0f));
+        org.telegram.ui.Components.i71 i7 = p5Var.i(10, true);
         this.b = i7;
         i7.h(org.telegram.ui.ActionBar.m6.xi, org.telegram.ui.ActionBar.m6.G6, org.telegram.ui.ActionBar.m6.vi, org.telegram.ui.ActionBar.m6.yi, org.telegram.ui.ActionBar.m6.s8);
         i7.r = 12;
         final int i10 = 0;
-        i7.setPreTabClick(new org.telegram.messenger.r10() { // from class: org.telegram.ui.kx0
-            @Override // org.telegram.messenger.r10
+        i7.setPreTabClick(new org.telegram.messenger.s10() { // from class: org.telegram.ui.kx0
+            @Override // org.telegram.messenger.s10
             public final Object g(Number number, Object obj) {
                 fi.p6 storiesController;
                 int i11 = i10;
@@ -74,9 +74,9 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                             storiesController = jt0Var.getStoriesController();
                             if (storiesController.i(jt0Var.m1)) {
                                 org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(g2Var, view);
-                                I.X(new bi.s5(iq0Var2));
+                                I.X(new bi.r5(iq0Var2));
                                 final int i12 = 0;
-                                I.c(R.drawable.menu_add_stories, org.telegram.messenger.gd.N0(2131744557, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
+                                I.c(R.drawable.menu_add_stories, org.telegram.messenger.hd.N0(2131744555, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i12) {
@@ -103,7 +103,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                                 }, false);
                                 jt0Var.B(new org.telegram.ui.Cells.c5(I), g2Var, jt0Var.m1, intValue);
                                 final int i13 = 1;
-                                I.c(R.drawable.msg_edit, org.telegram.messenger.gd.N0(2131744552, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
+                                I.c(R.drawable.msg_edit, org.telegram.messenger.hd.N0(2131744550, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i13) {
@@ -129,7 +129,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                                     }
                                 }, false);
                                 final int i14 = 2;
-                                I.c(R.drawable.tabs_reorder, org.telegram.messenger.gd.N0(2131744549, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
+                                I.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.N0(2131744547, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i14) {
@@ -155,7 +155,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                                     }
                                 }, false);
                                 final int i15 = 3;
-                                I.c(R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131744555, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
+                                I.c(R.drawable.msg_delete, org.telegram.messenger.hd.N0(2131744553, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i15) {
@@ -192,8 +192,8 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
             }
         });
         final int i11 = 1;
-        i7.setOnTabLongClick(new org.telegram.messenger.r10() { // from class: org.telegram.ui.kx0
-            @Override // org.telegram.messenger.r10
+        i7.setOnTabLongClick(new org.telegram.messenger.s10() { // from class: org.telegram.ui.kx0
+            @Override // org.telegram.messenger.s10
             public final Object g(Number number, Object obj) {
                 fi.p6 storiesController;
                 int i112 = i11;
@@ -221,9 +221,9 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                             storiesController = jt0Var.getStoriesController();
                             if (storiesController.i(jt0Var.m1)) {
                                 org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(g2Var, view);
-                                I.X(new bi.s5(iq0Var2));
+                                I.X(new bi.r5(iq0Var2));
                                 final int i12 = 0;
-                                I.c(R.drawable.menu_add_stories, org.telegram.messenger.gd.N0(2131744557, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
+                                I.c(R.drawable.menu_add_stories, org.telegram.messenger.hd.N0(2131744555, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i12) {
@@ -250,7 +250,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                                 }, false);
                                 jt0Var.B(new org.telegram.ui.Cells.c5(I), g2Var, jt0Var.m1, intValue);
                                 final int i13 = 1;
-                                I.c(R.drawable.msg_edit, org.telegram.messenger.gd.N0(2131744552, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
+                                I.c(R.drawable.msg_edit, org.telegram.messenger.hd.N0(2131744550, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i13) {
@@ -276,7 +276,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                                     }
                                 }, false);
                                 final int i14 = 2;
-                                I.c(R.drawable.tabs_reorder, org.telegram.messenger.gd.N0(2131744549, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
+                                I.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.N0(2131744547, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i14) {
@@ -302,7 +302,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
                                     }
                                 }, false);
                                 final int i15 = 3;
-                                I.c(R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131744555, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
+                                I.c(R.drawable.msg_delete, org.telegram.messenger.hd.N0(2131744553, null), new Runnable() { // from class: org.telegram.ui.Components.hq0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i15) {
@@ -391,9 +391,9 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.l3 && ((Long) objArr[0]).longValue() == this.c.b) {
+        if (i7 == org.telegram.messenger.ls.l3 && ((Long) objArr[0]).longValue() == this.c.b) {
             a();
         }
     }
@@ -419,7 +419,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         fi.d6 d6Var = this.c;
-        org.telegram.messenger.ks.f(d6Var.a).c(this, org.telegram.messenger.ks.l3);
+        org.telegram.messenger.ls.f(d6Var.a).c(this, org.telegram.messenger.ls.l3);
         if (this.r == d6Var.h.isEmpty() || this.d.a != d6Var.a()) {
             a();
         }
@@ -428,7 +428,7 @@ public abstract class nx0 extends FrameLayout implements org.telegram.messenger.
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.f(this.c.a).n(this, org.telegram.messenger.ks.l3);
+        org.telegram.messenger.ls.f(this.c.a).n(this, org.telegram.messenger.ls.l3);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

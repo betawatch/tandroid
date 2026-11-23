@@ -22,9 +22,9 @@ import java.util.TreeMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
@@ -80,7 +80,7 @@ public class FastDateParser implements DateParser, Serializable {
     private static final Strategy SECOND_STRATEGY = new NumberStrategy(13);
     private static final Strategy MILLISECOND_STRATEGY = new NumberStrategy(14);
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class CopyQuotedStrategy extends Strategy {
         private final String formatField;
 
@@ -105,7 +105,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class TextStrategy extends Strategy {
         private final int field;
         private final Map<String, Integer> keyValues;
@@ -146,7 +146,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class TimeZoneStrategy extends Strategy {
         private static final int ID = 0;
         private static final int LONG_DST = 3;
@@ -317,44 +317,44 @@ public class FastDateParser implements DateParser, Serializable {
                         return new CopyQuotedStrategy(e2.k(str, 1, 1));
                     }
                     break;
-                case ks.U0 /* 83 */:
+                case ls.U0 /* 83 */:
                     return MILLISECOND_STRATEGY;
-                case ks.Y0 /* 87 */:
+                case ls.Y0 /* 87 */:
                     return WEEK_OF_MONTH_STRATEGY;
-                case ks.b1 /* 90 */:
+                case ls.b1 /* 90 */:
                     break;
-                case ks.i1 /* 97 */:
+                case ls.i1 /* 97 */:
                     return getLocaleSpecificStrategy(9, calendar);
-                case ks.l1 /* 100 */:
+                case ls.l1 /* 100 */:
                     return DAY_OF_MONTH_STRATEGY;
-                case ks.p1 /* 104 */:
+                case ls.p1 /* 104 */:
                     return MODULO_HOUR_STRATEGY;
-                case ks.s1 /* 107 */:
+                case ls.s1 /* 107 */:
                     return HOUR_OF_DAY_STRATEGY;
-                case ks.u1 /* 109 */:
+                case ls.u1 /* 109 */:
                     return MINUTE_STRATEGY;
-                case ks.A1 /* 115 */:
+                case ls.A1 /* 115 */:
                     return SECOND_STRATEGY;
-                case ks.E1 /* 119 */:
+                case ls.E1 /* 119 */:
                     return WEEK_OF_YEAR_STRATEGY;
                 default:
                     switch (charAt) {
-                        case ks.F0 /* 68 */:
+                        case ls.F0 /* 68 */:
                             return DAY_OF_YEAR_STRATEGY;
-                        case ks.G0 /* 69 */:
+                        case ls.G0 /* 69 */:
                             return getLocaleSpecificStrategy(7, calendar);
-                        case ks.H0 /* 70 */:
+                        case ls.H0 /* 70 */:
                             return DAY_OF_WEEK_IN_MONTH_STRATEGY;
-                        case ks.I0 /* 71 */:
+                        case ls.I0 /* 71 */:
                             return getLocaleSpecificStrategy(0, calendar);
-                        case ks.J0 /* 72 */:
+                        case ls.J0 /* 72 */:
                             return MODULO_HOUR_OF_DAY_STRATEGY;
                         default:
                             switch (charAt) {
-                                case ks.M0 /* 75 */:
+                                case ls.M0 /* 75 */:
                                     return HOUR_STRATEGY;
-                                case ks.N0 /* 76 */:
-                                case ks.O0 /* 77 */:
+                                case ls.N0 /* 76 */:
+                                case ls.O0 /* 77 */:
                                     return str.length() >= 3 ? getLocaleSpecificStrategy(2, calendar) : NUMBER_MONTH_STRATEGY;
                             }
                     }
@@ -533,7 +533,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class NumberStrategy extends Strategy {
         private final int field;
 
@@ -569,7 +569,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static abstract class Strategy {
         private Strategy() {
         }

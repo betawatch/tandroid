@@ -3,21 +3,21 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.messenger.o10;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.s01;
+import org.telegram.ui.Components.r01;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class a0 extends View {
     public final org.telegram.ui.ActionBar.h6 a;
     public final b0 b;
-    public final s01 c;
+    public final r01 c;
     public int d;
     public float e;
 
@@ -25,9 +25,9 @@ public abstract class a0 extends View {
         super(context);
         this.a = h6Var;
         this.b = new b0(i7, context, h6Var);
-        s01 s01Var = new s01(i7, this, h6Var, true);
-        this.c = s01Var;
-        s01Var.e = new xy0("", 14.0f, org.telegram.messenger.g0.o());
+        r01 r01Var = new r01(i7, this, h6Var, true);
+        this.c = r01Var;
+        r01Var.e = new xy0("", 14.0f, org.telegram.messenger.g0.o());
     }
 
     public final void a(float f10, int i7) {
@@ -63,17 +63,17 @@ public abstract class a0 extends View {
 
     @Override // android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), n10.C(40.0f, this.b.i, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), o10.C(40.0f, this.b.i, TLObject.FLAG_30));
     }
 
     public void setDialogId(long j3) {
         b0 b0Var = this.b;
         xy0 xy0Var = b0Var.d;
-        TLRPC.User c22 = mp.u1(b0Var.b).c2(Long.valueOf(j3));
+        TLRPC.User c22 = np.u1(b0Var.b).c2(Long.valueOf(j3));
         xy0 xy0Var2 = b0Var.e;
         xy0Var2.m(1);
         xy0Var2.p(9999.0f);
-        xy0Var2.q(gd.a0(null, null, 2131753067, o10.q(c22)));
+        xy0Var2.q(hd.a0(null, null, 2131753067, p10.q(c22)));
         float b10 = (xy0Var2.b() / 2.0f) * 1.2f;
         xy0Var2.m(4);
         float f10 = (int) (org.telegram.messenger.g0.q.x * 0.95f);

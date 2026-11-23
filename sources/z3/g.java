@@ -4,10 +4,10 @@ import e2.u;
 import f3.i0;
 import h2.l0;
 import h2.x;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class g {
     public final i0 a;
@@ -112,11 +112,11 @@ public final class g {
             bArr2[0] = 0;
             bArr2[1] = 1;
             bArr2[2] = (byte) 0;
-            bArr2[3] = (byte) (i10 & ks.e4);
-            bArr2[4] = (byte) ((i7 >> 24) & ks.e4);
-            bArr2[5] = (byte) ((i7 >> 16) & ks.e4);
-            bArr2[6] = (byte) ((i7 >> 8) & ks.e4);
-            bArr2[7] = (byte) (i7 & ks.e4);
+            bArr2[3] = (byte) (i10 & ls.e4);
+            bArr2[4] = (byte) ((i7 >> 24) & ls.e4);
+            bArr2[5] = (byte) ((i7 >> 16) & ls.e4);
+            bArr2[6] = (byte) ((i7 >> 8) & ls.e4);
+            bArr2[7] = (byte) (i7 & ls.e4);
             i0Var.a(xVar4, 8, 1);
             return i11 + 9;
         }
@@ -129,8 +129,8 @@ public final class g {
             byte[] bArr3 = xVar4.a;
             xVar5.k(0, i12, bArr3);
             int i13 = (((bArr3[2] & 255) << 8) | (bArr3[3] & 255)) + i10;
-            bArr3[2] = (byte) ((i13 >> 8) & ks.e4);
-            bArr3[3] = (byte) (i13 & ks.e4);
+            bArr3[2] = (byte) ((i13 >> 8) & ls.e4);
+            bArr3[3] = (byte) (i13 & ls.e4);
         } else {
             xVar4 = xVar5;
         }

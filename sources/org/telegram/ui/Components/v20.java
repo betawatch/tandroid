@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v20 extends r51 {
     public final u20 O1;
@@ -135,7 +135,7 @@ public final class v20 extends r51 {
             ArrayList arrayList = org.telegram.messenger.i5.r(this.a).f0;
             ArrayList arrayList2 = this.T1;
             arrayList2.addAll(arrayList);
-            long j3 = org.telegram.messenger.j10.i(this.a).n;
+            long j3 = org.telegram.messenger.k10.i(this.a).n;
             int size = arrayList2.size();
             int i7 = 0;
             while (i7 < size) {
@@ -150,7 +150,7 @@ public final class v20 extends r51 {
                 }
                 i7++;
             }
-            Collections.sort(arrayList2, new jg.d(org.telegram.messenger.mp.u1(this.a), ConnectionsManager.getInstance(this.a).getCurrentTime(), 2));
+            Collections.sort(arrayList2, new jg.d(org.telegram.messenger.np.u1(this.a), ConnectionsManager.getInstance(this.a).getCurrentTime(), 2));
         }
     }
 
@@ -170,7 +170,7 @@ public final class v20 extends r51 {
                 dk0Var.f();
             }
             TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-            tL_channels_getParticipants.channel = org.telegram.messenger.mp.k1(chat);
+            tL_channels_getParticipants.channel = org.telegram.messenger.np.k1(chat);
             if (chatFull != null && chatFull.participants_count <= 200) {
                 tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
             } else if (this.U1) {
@@ -183,7 +183,7 @@ public final class v20 extends r51 {
             }
             tL_channels_getParticipants.filter.q = "";
             tL_channels_getParticipants.offset = 0;
-            tL_channels_getParticipants.limit = org.telegram.messenger.ks.e3;
+            tL_channels_getParticipants.limit = org.telegram.messenger.ls.e3;
             ConnectionsManager.getInstance(this.a).sendRequest(tL_channels_getParticipants, new org.telegram.ui.u7(18, this, tL_channels_getParticipants));
             return;
         }
@@ -195,14 +195,14 @@ public final class v20 extends r51 {
         hVar2.b();
         this.W1.b();
         if (chatFull != null) {
-            long j3 = org.telegram.messenger.j10.i(this.a).n;
+            long j3 = org.telegram.messenger.k10.i(this.a).n;
             int size = chatFull.participants.participants.size();
             for (int i7 = 0; i7 < size; i7++) {
                 TLRPC.ChatParticipant chatParticipant = chatFull.participants.participants.get(i7);
                 long j10 = chatParticipant.user_id;
                 if (j10 != j3 && ((hVar = this.Z1) == null || hVar.h(j10) < 0)) {
-                    TLRPC.User c22 = org.telegram.messenger.mp.u1(this.a).c2(Long.valueOf(chatParticipant.user_id));
-                    if (!org.telegram.messenger.o10.y(c22) && !c22.bot) {
+                    TLRPC.User c22 = org.telegram.messenger.np.u1(this.a).c2(Long.valueOf(chatParticipant.user_id));
+                    if (!org.telegram.messenger.p10.y(c22) && !c22.bot) {
                         arrayList.add(chatParticipant);
                         hVar2.k(chatParticipant, chatParticipant.user_id);
                     }

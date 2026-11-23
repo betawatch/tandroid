@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class db implements org.telegram.ui.Cells.m1 {
     public final /* synthetic */ ib a;
@@ -70,9 +70,9 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final void S1(org.telegram.messenger.fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    public final void S1(org.telegram.messenger.gj gjVar, String str, String str2, String str3, String str4, int i7, int i10) {
         lb lbVar = this.a.n;
-        org.telegram.ui.Components.iu.O0(lbVar, fjVar, lbVar.C0, str2, str3, str4, str, i7, i10, -1, false);
+        org.telegram.ui.Components.iu.O0(lbVar, gjVar, lbVar.C0, str2, str3, str4, str, i7, i10, -1, false);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -92,12 +92,12 @@ public final class db implements org.telegram.ui.Cells.m1 {
         if (characterStyle == null) {
             return;
         }
-        org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
+        org.telegram.messenger.gj messageObject = r1Var.getMessageObject();
         if (characterStyle instanceof org.telegram.ui.Components.r41) {
             org.telegram.ui.Components.r41 r41Var = (org.telegram.ui.Components.r41) characterStyle;
             org.telegram.messenger.g0.g(r41Var.a.subSequence(r41Var.b, r41Var.c).toString());
             if (org.telegram.messenger.g0.G3()) {
-                Toast.makeText(lbVar.getParentActivity(), org.telegram.messenger.gd.N0(2131743953, null), 0).show();
+                Toast.makeText(lbVar.getParentActivity(), org.telegram.messenger.hd.N0(2131743951, null), 0).show();
                 return;
             }
             return;
@@ -107,19 +107,19 @@ public final class db implements org.telegram.ui.Cells.m1 {
             long longValue = A.longValue();
             if (longValue > 0) {
                 i12 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-                TLRPC.User c22 = org.telegram.messenger.mp.u1(i12).c2(A);
+                TLRPC.User c22 = org.telegram.messenger.np.u1(i12).c2(A);
                 if (c22 != null) {
                     i13 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-                    org.telegram.messenger.mp.u1(i13).G3(c22, null, lbVar, 0);
+                    org.telegram.messenger.np.u1(i13).G3(c22, null, lbVar, 0);
                     return;
                 }
                 return;
             }
             i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-            TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i10).O0(Long.valueOf(-longValue));
+            TLRPC.Chat O0 = org.telegram.messenger.np.u1(i10).O0(Long.valueOf(-longValue));
             if (O0 != null) {
                 i11 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-                org.telegram.messenger.mp.u1(i11).G3(null, O0, lbVar, 0);
+                org.telegram.messenger.np.u1(i11).G3(null, O0, lbVar, 0);
                 return;
             }
             return;
@@ -128,7 +128,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
             String url = ((org.telegram.ui.Components.s41) characterStyle).getURL();
             if (url.startsWith("@")) {
                 i7 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-                org.telegram.messenger.mp.u1(i7).F3(url.substring(1), lbVar, 0, null);
+                org.telegram.messenger.np.u1(i7).F3(url.substring(1), lbVar, 0, null);
                 return;
             } else {
                 if (url.startsWith("#")) {
@@ -142,10 +142,10 @@ public final class db implements org.telegram.ui.Cells.m1 {
         }
         String url2 = ((URLSpan) characterStyle).getURL();
         if (z10) {
-            org.telegram.ui.ActionBar.w2 j3 = org.telegram.messenger.n10.j(lbVar.getParentActivity(), false, 1, null);
+            org.telegram.ui.ActionBar.w2 j3 = org.telegram.messenger.o10.j(lbVar.getParentActivity(), false, 1, null);
             j3.P = url2;
             j3.Q = false;
-            CharSequence[] charSequenceArr = {org.telegram.messenger.gd.N0(2131747623, null), org.telegram.messenger.gd.N0(2131751755, null)};
+            CharSequence[] charSequenceArr = {org.telegram.messenger.hd.N0(2131747623, null), org.telegram.messenger.hd.N0(2131751755, null)};
             og.j jVar = new og.j(2, this, url2);
             j3.M = charSequenceArr;
             j3.L = jVar;
@@ -159,12 +159,12 @@ public final class db implements org.telegram.ui.Cells.m1 {
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lbVar.getParentActivity());
-            String N0 = org.telegram.messenger.gd.N0(2131747585, null);
+            String N0 = org.telegram.messenger.hd.N0(2131747585, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = org.telegram.messenger.gd.a0(null, null, 2131747588, url3);
-            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747623, null), new oi.f0(7, lbVar, url3));
-            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+            t1Var.U = org.telegram.messenger.hd.a0(null, null, 2131747588, url3);
+            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747623, null), new oi.f0(7, lbVar, url3));
+            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
             lbVar.showDialog(t1Var);
             return;
         }
@@ -185,14 +185,14 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final boolean T1(org.telegram.ui.Cells.r1 r1Var, org.telegram.messenger.fj fjVar) {
-        if (org.telegram.messenger.fj.R4(fjVar.k) || fjVar.h4()) {
-            boolean S = MediaController.B().S(fjVar);
+    public final boolean T1(org.telegram.ui.Cells.r1 r1Var, org.telegram.messenger.gj gjVar) {
+        if (org.telegram.messenger.gj.R4(gjVar.k) || gjVar.h4()) {
+            boolean S = MediaController.B().S(gjVar);
             MediaController.B().r0(null, false);
             return S;
         }
-        if (fjVar.I3()) {
-            return MediaController.B().o0(this.a.n.p0, fjVar, 0L, true, null, 0L);
+        if (gjVar.I3()) {
+            return MediaController.B().o0(this.a.n.p0, gjVar, 0L, true, null, 0L);
         }
         return false;
     }
@@ -225,7 +225,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
             bundle.putInt("message_id", i7);
         }
         i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-        if (org.telegram.messenger.mp.u1(i10).E(bundle, lbVar, null, null)) {
+        if (org.telegram.messenger.np.u1(i10).E(bundle, lbVar, null, null)) {
             lbVar.presentFragment(new bn(bundle), true);
         }
     }
@@ -279,7 +279,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
         if (user != null) {
             long j3 = user.id;
             i7 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-            if (j3 != org.telegram.messenger.j10.i(i7).e()) {
+            if (j3 != org.telegram.messenger.k10.i(i7).e()) {
                 c5[] c5VarArr = {c5.d, c5.h};
                 TLRPC.UserFull d2 = lbVar.getMessagesController().d2(user.id);
                 if (d2 != null) {
@@ -298,8 +298,8 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ boolean f1(org.telegram.messenger.fj fjVar) {
-        return org.telegram.ui.Cells.c0.a(fjVar);
+    public final /* synthetic */ boolean f1(org.telegram.messenger.gj gjVar) {
+        return org.telegram.ui.Cells.c0.a(gjVar);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -309,21 +309,21 @@ public final class db implements org.telegram.ui.Cells.m1 {
 
     @Override // org.telegram.ui.Cells.m1
     public final void g2(org.telegram.ui.Cells.r1 r1Var, int i7, float f10, float f11, boolean z10) {
-        org.telegram.messenger.fj fjVar = r1Var.getMessageObject().C;
-        long B0 = org.telegram.messenger.fj.B0(fjVar.k);
+        org.telegram.messenger.gj gjVar = r1Var.getMessageObject().C;
+        long B0 = org.telegram.messenger.gj.B0(gjVar.k);
         lb lbVar = this.a.n;
         if (B0 == (-lbVar.f.id)) {
             for (int i10 = 0; i10 < lbVar.p0.size(); i10++) {
-                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) lbVar.p0.get(i10);
-                if (fjVar2 != null && fjVar2.U != 1 && fjVar2.L1() == fjVar.L1()) {
-                    lbVar.d1(fjVar2);
+                org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) lbVar.p0.get(i10);
+                if (gjVar2 != null && gjVar2.U != 1 && gjVar2.L1() == gjVar.L1()) {
+                    lbVar.d1(gjVar2);
                     return;
                 }
             }
         }
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", lbVar.f.id);
-        bundle.putInt("message_id", fjVar.L1());
+        bundle.putInt("message_id", gjVar.L1());
         lbVar.presentFragment(new bn(bundle));
     }
 
@@ -354,7 +354,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
 
     @Override // org.telegram.ui.Cells.m1
     public final void k1(org.telegram.ui.Cells.r1 r1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-        org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
+        org.telegram.messenger.gj messageObject = r1Var.getMessageObject();
         ib ibVar = this.a;
         if (ibVar.n.q0.contains(Long.valueOf(messageObject.T))) {
             ibVar.n.q0.remove(Long.valueOf(messageObject.T));
@@ -389,17 +389,17 @@ public final class db implements org.telegram.ui.Cells.m1 {
         TLRPC.WebPage webPage;
         int i10;
         lb lbVar = this.a.n;
-        org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
+        org.telegram.messenger.gj messageObject = r1Var.getMessageObject();
         TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = messageObject.L1;
         if (tL_channelAdminLogEvent != null && (tL_channelAdminLogEvent.action instanceof TLRPC.TL_channelAdminLogEventActionEditMessage)) {
             Bundle bundle = new Bundle();
-            bundle.putLong("chat_id", -org.telegram.messenger.fj.B0(messageObject.k));
+            bundle.putLong("chat_id", -org.telegram.messenger.gj.B0(messageObject.k));
             bundle.putInt("message_id", messageObject.L1());
             bn bnVar = new bn(bundle);
             if (org.telegram.messenger.v3.c0(lbVar.f)) {
-                long B0 = org.telegram.messenger.fj.B0(messageObject.k);
+                long B0 = org.telegram.messenger.gj.B0(messageObject.k);
                 i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-                qg.c.a(bnVar, org.telegram.messenger.sr.a(B0, org.telegram.messenger.fj.b2(i10, messageObject.k, true, false)));
+                qg.c.a(bnVar, org.telegram.messenger.tr.a(B0, org.telegram.messenger.gj.b2(i10, messageObject.k, true, false)));
             }
             lbVar.presentFragment(bnVar);
             return;
@@ -470,7 +470,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
         if (user != null) {
             long j3 = user.id;
             i7 = ((org.telegram.ui.ActionBar.g2) this.a.n).currentAccount;
-            if (j3 != org.telegram.messenger.j10.i(i7).e()) {
+            if (j3 != org.telegram.messenger.k10.i(i7).e()) {
                 a(user);
             }
         }
@@ -493,13 +493,13 @@ public final class db implements org.telegram.ui.Cells.m1 {
         int i7;
         File file;
         lb lbVar = this.a.n;
-        org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
-        if (org.telegram.messenger.fj.j1(messageObject.k) != null) {
-            lbVar.showDialog(new org.telegram.ui.Components.kw0(lbVar.getParentActivity(), lbVar, org.telegram.messenger.fj.j1(messageObject.k), null, null, null));
+        org.telegram.messenger.gj messageObject = r1Var.getMessageObject();
+        if (org.telegram.messenger.gj.j1(messageObject.k) != null) {
+            lbVar.showDialog(new org.telegram.ui.Components.kw0(lbVar.getParentActivity(), lbVar, org.telegram.messenger.gj.j1(messageObject.k), null, null, null));
             return;
         }
         File file2 = null;
-        if (org.telegram.messenger.fj.L4(messageObject.k) || (i7 = messageObject.D) == 1 || ((i7 == 0 && !messageObject.a5()) || org.telegram.messenger.fj.t3(messageObject.k))) {
+        if (org.telegram.messenger.gj.L4(messageObject.k) || (i7 = messageObject.D) == 1 || ((i7 == 0 && !messageObject.a5()) || org.telegram.messenger.gj.t3(messageObject.k))) {
             PhotoViewer.p1().I2(null, lbVar, null);
             PhotoViewer.p1().e2(messageObject, null, 0L, 0L, 0L, lbVar.C0);
             return;
@@ -593,7 +593,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ boolean y0(org.telegram.messenger.fj fjVar) {
+    public final /* synthetic */ boolean y0(org.telegram.messenger.gj gjVar) {
         return true;
     }
 
@@ -637,7 +637,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void L(org.telegram.messenger.cj cjVar) {
+    public final /* synthetic */ void L(org.telegram.messenger.dj djVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -649,7 +649,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void O1(org.telegram.messenger.fj fjVar) {
+    public final /* synthetic */ void O1(org.telegram.messenger.gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -657,7 +657,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void R(org.telegram.messenger.fj fjVar) {
+    public final /* synthetic */ void R(org.telegram.messenger.gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -761,7 +761,7 @@ public final class db implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void a2(org.telegram.ui.Cells.r1 r1Var, org.telegram.messenger.i10 i10Var) {
+    public final /* synthetic */ void a2(org.telegram.ui.Cells.r1 r1Var, org.telegram.messenger.j10 j10Var) {
     }
 
     @Override // org.telegram.ui.Cells.m1

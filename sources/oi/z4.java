@@ -3,12 +3,12 @@ package oi;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class z4 {
     public static ArrayList a(int i7, ArrayList arrayList) {
@@ -21,7 +21,7 @@ public abstract class z4 {
             b((TL_iv.PageBlock) obj, linkedHashSet);
         }
         ArrayList arrayList2 = new ArrayList(linkedHashSet.size());
-        mp u12 = mp.u1(i7);
+        np u12 = np.u1(i7);
         Iterator it = linkedHashSet.iterator();
         while (it.hasNext()) {
             Long l10 = (Long) it.next();

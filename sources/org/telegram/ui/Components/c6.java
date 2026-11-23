@@ -27,7 +27,7 @@ import org.telegram.messenger.AnimatedFileDrawableStream;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c6 extends BitmapDrawable implements Animatable, bg.g {
     public static final float[] W0 = new float[8];
@@ -117,8 +117,8 @@ public final class c6 extends BitmapDrawable implements Animatable, bg.g {
     public boolean y0;
     public int z0;
 
-    public c6(File file, boolean z10, long j3, int i7, TLRPC.Document document, org.telegram.messenger.fc fcVar, Object obj, long j10, int i10, boolean z11) {
-        this(file, z10, j3, i7, document, fcVar, obj, j10, i10, z11, 0, 0, null, document != null ? 1 : 0, true);
+    public c6(File file, boolean z10, long j3, int i7, TLRPC.Document document, org.telegram.messenger.gc gcVar, Object obj, long j10, int i10, boolean z11) {
+        this(file, z10, j3, i7, document, gcVar, obj, j10, i10, z11, 0, 0, null, document != null ? 1 : 0, true);
     }
 
     public final void A(boolean z10) {
@@ -997,7 +997,7 @@ public final class c6 extends BitmapDrawable implements Animatable, bg.g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public c6(File file, boolean z10, long j3, int i7, TLRPC.Document document, org.telegram.messenger.fc fcVar, Object obj, long j10, int i10, boolean z11, int i11, int i12, bg.f fVar, int i13, boolean z12) {
+    public c6(File file, boolean z10, long j3, int i7, TLRPC.Document document, org.telegram.messenger.gc gcVar, Object obj, long j10, int i10, boolean z11, int i11, int i12, bg.f fVar, int i13, boolean z12) {
         ?? r12;
         ?? r13;
         long j11;
@@ -1028,7 +1028,7 @@ public final class c6 extends BitmapDrawable implements Animatable, bg.g {
         this.J0 = new a6(this, 8);
         this.T0 = new b6(this, 0);
         this.H = file;
-        this.b = org.telegram.messenger.bz.o() >= 1;
+        this.b = org.telegram.messenger.cz.o() >= 1;
         this.I = j3;
         this.J = i7;
         this.K = i10;
@@ -1039,11 +1039,11 @@ public final class c6 extends BitmapDrawable implements Animatable, bg.g {
         this.m0 = z13;
         this.p0 = document;
         getPaint().setFlags(3);
-        if (j3 == 0 || (document == null && fcVar == null)) {
+        if (j3 == 0 || (document == null && gcVar == null)) {
             r12 = 1;
         } else {
             r12 = 1;
-            this.v0 = new AnimatedFileDrawableStream(document, fcVar, obj, i10, z11, i7, i13);
+            this.v0 = new AnimatedFileDrawableStream(document, gcVar, obj, i10, z11, i7, i13);
         }
         bg.i iVar = null;
         if (!z10 || z13) {

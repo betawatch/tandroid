@@ -16,7 +16,7 @@ import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class v01 extends org.telegram.ui.Components.ek0 {
     public final SparseArray f3;
@@ -212,9 +212,9 @@ public abstract class v01 extends org.telegram.ui.Components.ek0 {
                     canvas2.restore();
                     if (c11Var.getBackground() != null) {
                         c11Var.getBackground().setBounds((int) c11Var.getX(), (int) c11Var.getY(), c11Var.getWidth() + ((int) c11Var.getX()), c11Var.getHeight() + ((int) c11Var.getY()));
-                        c11Var.getBackground().setAlpha((int) (c11Var.getAlpha() * org.telegram.messenger.ks.e4));
+                        c11Var.getBackground().setAlpha((int) (c11Var.getAlpha() * org.telegram.messenger.ls.e4));
                         c11Var.getBackground().draw(canvas2);
-                        c11Var.getBackground().setAlpha(org.telegram.messenger.ks.e4);
+                        c11Var.getBackground().setAlpha(org.telegram.messenger.ls.e4);
                     }
                     if (arrayList5 == null) {
                         arrayList3 = !arrayList.isEmpty() ? (ArrayList) p5.c.g(1, arrayList) : new ArrayList();

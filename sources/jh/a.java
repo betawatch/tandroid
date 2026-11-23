@@ -1,10 +1,10 @@
 package jh;
 
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.bj;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a {
     public RecyclerView a;
@@ -13,12 +13,12 @@ public final class a {
     public int d;
     public boolean e;
 
-    public final boolean a(fj fjVar) {
-        if (fjVar == null) {
+    public final boolean a(gj gjVar) {
+        if (gjVar == null) {
             return false;
         }
-        if (fjVar.e1() != this.b) {
-            return this.c != 0 && fjVar.c1() == this.c;
+        if (gjVar.e1() != this.b) {
+            return this.c != 0 && gjVar.c1() == this.c;
         }
         return true;
     }

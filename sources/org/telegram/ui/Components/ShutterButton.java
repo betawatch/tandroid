@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import java.io.File;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
@@ -115,8 +115,8 @@ public class ShutterButton extends View {
         accessibilityNodeInfo.setClassName("android.widget.Button");
         accessibilityNodeInfo.setClickable(true);
         accessibilityNodeInfo.setLongClickable(true);
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), org.telegram.messenger.gd.N0(2131754926, null)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), org.telegram.messenger.gd.N0(2131754928, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), org.telegram.messenger.hd.N0(2131754926, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), org.telegram.messenger.hd.N0(2131754928, null)));
     }
 
     @Override // android.view.View

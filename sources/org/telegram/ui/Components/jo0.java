@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class jo0 implements org.telegram.messenger.fs {
+public final class jo0 implements org.telegram.messenger.gs {
     public final /* synthetic */ TLRPC.Dialog a;
     public final /* synthetic */ AtomicReference b;
     public final /* synthetic */ View c;
@@ -20,7 +20,7 @@ public final class jo0 implements org.telegram.messenger.fs {
         this.c = view;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         ap0 ap0Var = this.d;
         ek0 ek0Var = ap0Var.A1;
@@ -31,31 +31,31 @@ public final class jo0 implements org.telegram.messenger.fs {
         if (longValue == (-dialog.id)) {
             ArrayList arrayList = yo0Var.f;
             AtomicReference atomicReference = this.b;
-            boolean z10 = (arrayList == null && org.telegram.messenger.mp.u1(ap0Var.a).t7.l(-dialog.id) != null) || atomicReference.get() == null;
-            yo0Var.f = org.telegram.messenger.mp.u1(ap0Var.a).t7.l(-dialog.id);
-            yo0Var.d = org.telegram.messenger.o10.v(org.telegram.messenger.mp.u1(ap0Var.a).c2(Long.valueOf(dialog.id)));
-            yo0Var.e = org.telegram.messenger.o10.w(org.telegram.messenger.mp.u1(ap0Var.a).c2(Long.valueOf(dialog.id)));
+            boolean z10 = (arrayList == null && org.telegram.messenger.np.u1(ap0Var.a).t7.l(-dialog.id) != null) || atomicReference.get() == null;
+            yo0Var.f = org.telegram.messenger.np.u1(ap0Var.a).t7.l(-dialog.id);
+            yo0Var.d = org.telegram.messenger.p10.v(org.telegram.messenger.np.u1(ap0Var.a).c2(Long.valueOf(dialog.id)));
+            yo0Var.e = org.telegram.messenger.p10.w(org.telegram.messenger.np.u1(ap0Var.a).c2(Long.valueOf(dialog.id)));
             if (z10) {
                 yo0Var.f();
             }
             if (yo0Var.f != null) {
-                org.telegram.messenger.ks.f(ap0Var.a).n(this, org.telegram.messenger.ks.t5);
+                org.telegram.messenger.ls.f(ap0Var.a).n(this, org.telegram.messenger.ls.t5);
             }
             if (z10) {
                 ek0Var.setVisibility(0);
                 ek0Var.setAlpha(0.0f);
                 kVar.setVisibility(0);
                 kVar.setAlpha(0.0f);
-                if (org.telegram.messenger.o10.v(org.telegram.messenger.mp.u1(ap0Var.a).c2(Long.valueOf(dialog.id)))) {
-                    kVar.setTitle(org.telegram.messenger.n5.u(org.telegram.messenger.mp.u1(ap0Var.a).c2(Long.valueOf(dialog.id))));
-                    kVar.setSubtitle(org.telegram.messenger.gd.N0(2131745473, null));
+                if (org.telegram.messenger.p10.v(org.telegram.messenger.np.u1(ap0Var.a).c2(Long.valueOf(dialog.id)))) {
+                    kVar.setTitle(org.telegram.messenger.n5.u(org.telegram.messenger.np.u1(ap0Var.a).c2(Long.valueOf(dialog.id))));
+                    kVar.setSubtitle(org.telegram.messenger.hd.N0(2131745473, null));
                 } else if (org.telegram.messenger.v3.o0(ap0Var.a, dialog.id)) {
                     int i11 = ap0Var.a;
-                    kVar.setTitle(qg.c.j(i11, org.telegram.messenger.mp.u1(i11).O0(Long.valueOf(-dialog.id)), false));
-                    kVar.setSubtitle(org.telegram.messenger.gd.N0(2131745473, null));
+                    kVar.setTitle(qg.c.j(i11, org.telegram.messenger.np.u1(i11).O0(Long.valueOf(-dialog.id)), false));
+                    kVar.setSubtitle(org.telegram.messenger.hd.N0(2131745473, null));
                 } else {
-                    kVar.setTitle(org.telegram.messenger.mp.u1(ap0Var.a).O0(Long.valueOf(-dialog.id)).title);
-                    kVar.setSubtitle(org.telegram.messenger.gd.N0(2131745453, null));
+                    kVar.setTitle(org.telegram.messenger.np.u1(ap0Var.a).O0(Long.valueOf(-dialog.id)).title);
+                    kVar.setSubtitle(org.telegram.messenger.hd.N0(2131745453, null));
                 }
                 ap0Var.I2 = ap0Var.H2;
                 r1.g gVar = ap0Var.x2;

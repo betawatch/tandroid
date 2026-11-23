@@ -6,13 +6,13 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.b31;
 import org.telegram.ui.Components.ot;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g9 implements ActionMode.Callback {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final class g9 implements ActionMode.Callback {
     }
 
     public void b(Menu menu) {
-        gd.E0().y.getLanguage();
+        hd.E0().y.getLanguage();
         MenuItem findItem = menu.findItem(3);
         if (findItem == null) {
             return;
@@ -71,7 +71,7 @@ public final class g9 implements ActionMode.Callback {
                         }
                     } else if (itemId == 3) {
                         if (w9Var.k0 != null) {
-                            String language = gd.E0().y.getLanguage();
+                            String language = hd.E0().y.getLanguage();
                             org.telegram.ui.s sVar = w9Var.k0;
                             CharSequence r11 = w9Var.r();
                             String str = (String) this.b;
@@ -83,7 +83,7 @@ public final class g9 implements ActionMode.Callback {
                     } else if (itemId == R.id.menu_quote) {
                         if (w9Var.x()) {
                             r9 r9Var = w9Var.W;
-                            fj messageObject = r9Var instanceof r1 ? ((r1) r9Var).getMessageObject() : null;
+                            gj messageObject = r9Var instanceof r1 ? ((r1) r9Var).getMessageObject() : null;
                             if (messageObject != null && w9Var.r() != null) {
                                 w9Var.I(w9Var.u, w9Var.v, messageObject);
                                 w9Var.f(true);
@@ -119,8 +119,8 @@ public final class g9 implements ActionMode.Callback {
         switch (this.a) {
             case 0:
                 menu.add(0, android.R.id.copy, 0, android.R.string.copy);
-                menu.add(0, R.id.menu_quote, 1, gd.N0(2131746244, null));
-                menu.add(0, 3, 2, gd.N0(2131743713, null));
+                menu.add(0, R.id.menu_quote, 1, hd.N0(2131746244, null));
+                menu.add(0, 3, 2, hd.N0(2131743711, null));
                 menu.add(0, android.R.id.cut, 3, android.R.string.cut);
                 menu.add(0, android.R.id.paste, 4, android.R.string.paste);
                 menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);

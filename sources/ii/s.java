@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.l8;
+import bi.k8;
 import c8.ma;
 import di.y8;
 import di.za;
 import hi.d7;
 import hi.l3;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fs;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.g2;
@@ -31,9 +31,9 @@ import org.telegram.ui.Wallet.m7;
 import org.telegram.ui.bn;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class s extends sa implements fs {
+public final class s extends sa implements gs {
     public final cg.a T1;
     public final za U1;
     public final FrameLayout V1;
@@ -57,7 +57,7 @@ public final class s extends sa implements fs {
         ek0 ek0Var = this.o1;
         int i10 = this.u0;
         ek0Var.setPadding(i10, 0, i10, 0);
-        this.o1.setOnItemClickListener(new l8(this, 13));
+        this.o1.setOnItemClickListener(new k8(this, 13));
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;
@@ -69,9 +69,9 @@ public final class s extends sa implements fs {
         za zaVar = new za(2, context, h6Var);
         this.U1 = zaVar;
         final int i11 = 1;
-        ((TextView) zaVar.c).setText(gd.a0(null, null, 2131743804, cg.a.j(aVar.b - y8.y(this.a, true).s().b, cg.b.b).d()));
+        ((TextView) zaVar.c).setText(hd.a0(null, null, 2131743802, cg.a.j(aVar.b - y8.y(this.a, true).s().b, cg.b.b).d()));
         TextView textView = (TextView) zaVar.d;
-        textView.setText(g0.W2(gd.N0(2131750503, null)));
+        textView.setText(g0.W2(hd.N0(2131750503, null)));
         textView.setMaxWidth(l3.a(textView.getText(), textView.getPaint()));
         this.p1.setTitle(P0());
         FrameLayout frameLayout = new FrameLayout(context);
@@ -82,7 +82,7 @@ public final class s extends sa implements fs {
             t0.u();
             if (!s2.a()) {
                 t0.r();
-                eVar.i(gd.N0(2131752029, null), false, true);
+                eVar.i(hd.N0(2131752029, null), false, true);
                 eVar.setOnClickListener(new View.OnClickListener(this) { // from class: ii.r
                     public final /* synthetic */ s b;
 
@@ -96,7 +96,7 @@ public final class s extends sa implements fs {
                         s sVar = this.b;
                         switch (i12) {
                             case 0:
-                                vf.c.v(sVar.getContext(), gd.N0(2131743787, null), false);
+                                vf.c.v(sVar.getContext(), hd.N0(2131743785, null), false);
                                 break;
                             default:
                                 sVar.dismiss();
@@ -112,7 +112,7 @@ public final class s extends sa implements fs {
                 return;
             }
         }
-        eVar.i(gd.N0(2131743789, null), false, true);
+        eVar.i(hd.N0(2131743787, null), false, true);
         eVar.setOnClickListener(new View.OnClickListener(this) { // from class: ii.r
             public final /* synthetic */ s b;
 
@@ -126,7 +126,7 @@ public final class s extends sa implements fs {
                 s sVar = this.b;
                 switch (i12) {
                     case 0:
-                        vf.c.v(sVar.getContext(), gd.N0(2131743787, null), false);
+                        vf.c.v(sVar.getContext(), hd.N0(2131743785, null), false);
                         break;
                     default:
                         sVar.dismiss();
@@ -142,8 +142,8 @@ public final class s extends sa implements fs {
     @Override // org.telegram.ui.ActionBar.w2
     public final void L() {
         super.L();
-        ks.f(this.a).n(this, ks.x3);
-        ks.f(this.a).n(this, ks.A3);
+        ls.f(this.a).n(this, ls.x3);
+        ls.f(this.a).n(this, ls.A3);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -162,10 +162,10 @@ public final class s extends sa implements fs {
         return ((TextView) zaVar.c).getText();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         Runnable runnable;
-        if (i7 == ks.x3 || i7 == ks.A3) {
+        if (i7 == ls.x3 || i7 == ls.A3) {
             c51 c51Var = this.Y1;
             if (c51Var != null) {
                 c51Var.O(true);
@@ -173,7 +173,7 @@ public final class s extends sa implements fs {
             cg.a s5 = y8.y(this.a, true).s();
             TextView textView = (TextView) this.U1.c;
             cg.a aVar = this.T1;
-            textView.setText(gd.a0(null, null, 2131743804, cg.a.j(aVar.b - s5.b, cg.b.b).d()));
+            textView.setText(hd.a0(null, null, 2131743802, cg.a.j(aVar.b - s5.b, cg.b.b).d()));
             na naVar = this.p1;
             if (naVar != null) {
                 naVar.setTitle(P0());
@@ -230,7 +230,7 @@ public final class s extends sa implements fs {
             }
         }
         super.show();
-        ks.f(this.a).c(this, ks.x3);
-        ks.f(this.a).c(this, ks.A3);
+        ls.f(this.a).c(this, ls.x3);
+        ls.f(this.a).c(this, ls.A3);
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-import ai.w2;
+import ai.x2;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,8 +14,8 @@ import android.webkit.CookieManager;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
-import bi.g6;
-import bi.i5;
+import bi.f6;
+import bi.h5;
 import c8.cb;
 import c8.ma;
 import fi.c2;
@@ -27,16 +27,16 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.al;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.bl;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g2;
@@ -57,11 +57,11 @@ import org.telegram.ui.Wallet.u4;
 import org.telegram.ui.cr;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class n1 extends e51 implements fs {
+public final class n1 extends e51 implements gs {
     public c2 e;
-    public final x10 f;
+    public final y10 f;
     public long h;
     public long n;
     public long r;
@@ -124,24 +124,24 @@ public final class n1 extends e51 implements fs {
     public final void Z(ArrayList arrayList, c51 c51Var) {
         boolean S2 = getMessagesController().S2();
         arrayList.size();
-        String N0 = gd.N0(2131752845, null);
+        String N0 = hd.N0(2131752845, null);
         o41 o41Var = new o41(9);
         o41Var.d = 1;
         o41Var.m = N0;
         o41Var.L(S2);
         arrayList.add(o41Var);
-        arrayList.add(o41.C(gd.N0(2131752844, null)));
+        arrayList.add(o41.C(hd.N0(2131752844, null)));
         int i7 = 0;
         if (!S2) {
             getMessagesController().U2();
-            o41 i10 = o41.i(17, gd.N0(2131742670, null));
+            o41 i10 = o41.i(17, hd.N0(2131742668, null));
             i10.L(getMessagesController().U2());
             arrayList.add(i10);
-            arrayList.add(o41.C(gd.N0(2131742669, null)));
-            arrayList.add(o41.u(gd.N0(2131752853, null)));
+            arrayList.add(o41.C(hd.N0(2131742667, null)));
+            arrayList.add(o41.u(hd.N0(2131752853, null)));
             arrayList.size();
             c2 c2Var = this.e;
-            String N02 = gd.N0(2131752837, null);
+            String N02 = hd.N0(2131752837, null);
             o41 o41Var2 = new o41(3);
             o41Var2.d = 16;
             o41Var2.H = c2Var;
@@ -165,37 +165,37 @@ public final class n1 extends e51 implements fs {
                 K.C = j3;
                 arrayList.add(K);
             }
-            arrayList.add(o41.C(gd.N0(2131752854, null)));
+            arrayList.add(o41.C(hd.N0(2131752854, null)));
             if (arrayList2.isEmpty()) {
                 return;
             }
             arrayList.size();
-            o41 e10 = o41.e(5, gd.N0(2131752836, null));
+            o41 e10 = o41.e(5, hd.N0(2131752836, null));
             e10.s = true;
             arrayList.add(e10);
             arrayList.add(o41.C(null));
             return;
         }
         arrayList.size();
-        String N03 = gd.N0(2131752850, null);
+        String N03 = hd.N0(2131752850, null);
         long j10 = this.n;
         arrayList.add(o41.d(3, R.drawable.menu_clear_cookies, N03, j10 > 0 ? org.telegram.messenger.g0.i0(j10, false, false) : ""));
         arrayList.size();
-        String N04 = gd.N0(2131752852, null);
+        String N04 = hd.N0(2131752852, null);
         long j11 = this.h;
         arrayList.add(o41.d(2, R.drawable.menu_clear_cache, N04, j11 > 0 ? org.telegram.messenger.g0.i0(j11, false, false) : ""));
-        arrayList.add(o41.C(gd.N0(2131752848, null)));
+        arrayList.add(o41.C(hd.N0(2131752848, null)));
         if (this.r > 0) {
             arrayList.size();
-            arrayList.add(o41.c(9, R.drawable.menu_clear_recent, gd.N0(2131752838, null)));
+            arrayList.add(o41.c(9, R.drawable.menu_clear_recent, hd.N0(2131752838, null)));
             arrayList.size();
-            arrayList.add(o41.d(7, R.drawable.menu_clear_cache, gd.N0(2131752843, null), gd.H(',', "BrowserSettingsHistoryPages", (int) this.r)));
+            arrayList.add(o41.d(7, R.drawable.menu_clear_cache, hd.N0(2131752843, null), hd.H(',', "BrowserSettingsHistoryPages", (int) this.r)));
             arrayList.add(o41.C(null));
         }
-        arrayList.add(o41.u(gd.N0(2131752834, null)));
+        arrayList.add(o41.u(hd.N0(2131752834, null)));
         arrayList.size();
         c2 c2Var2 = this.e;
-        String N05 = gd.N0(2131752837, null);
+        String N05 = hd.N0(2131752837, null);
         o41 o41Var3 = new o41(3);
         o41Var3.d = 15;
         o41Var3.H = c2Var2;
@@ -220,23 +220,23 @@ public final class n1 extends e51 implements fs {
             K2.C = j12;
             arrayList.add(K2);
         }
-        arrayList.add(o41.C(gd.N0(2131752835, null)));
+        arrayList.add(o41.C(hd.N0(2131752835, null)));
         if (!arrayList3.isEmpty()) {
             arrayList.size();
-            o41 e11 = o41.e(5, gd.N0(2131752836, null));
+            o41 e11 = o41.e(5, hd.N0(2131752836, null));
             e11.s = true;
             arrayList.add(e11);
             arrayList.add(o41.C(null));
         }
         arrayList.size();
-        arrayList.add(o41.d(6, R.drawable.msg_search, gd.N0(2131745603, null), e1.a().a));
-        arrayList.add(o41.C(gd.N0(2131752830, null)));
+        arrayList.add(o41.d(6, R.drawable.msg_search, hd.N0(2131745603, null), e1.a().a));
+        arrayList.add(o41.C(hd.N0(2131752830, null)));
         boolean z10 = s2.a;
     }
 
     @Override // org.telegram.ui.Components.e51
     public final CharSequence a0() {
-        return gd.N0(2131752829, null);
+        return hd.N0(2131752829, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -247,22 +247,22 @@ public final class n1 extends e51 implements fs {
     public final void b0(o41 o41Var, View view) {
         int i7 = o41Var.d;
         if (i7 == 12) {
-            bz.J();
-            ((s8) view).setChecked(bz.v0);
+            cz.J();
+            ((s8) view).setChecked(cz.v0);
             return;
         }
         final int i10 = 1;
         if (i7 == 13) {
-            bz.w0 = !bz.w0;
-            SharedPreferences.Editor edit = mp.g1().edit();
-            edit.putBoolean("onlyLocalInstantView", bz.w0);
+            cz.w0 = !cz.w0;
+            SharedPreferences.Editor edit = np.g1().edit();
+            edit.putBoolean("onlyLocalInstantView", cz.w0);
             edit.apply();
-            ((s8) view).setChecked(bz.w0);
+            ((s8) view).setChecked(cz.w0);
             return;
         }
         if (i7 == 17) {
             boolean z10 = !getMessagesController().U2();
-            mp messagesController = getMessagesController();
+            np messagesController = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings = messagesController.E8;
             if (tL_webBrowserSettings != null) {
                 messagesController.G5(tL_webBrowserSettings.open_external_browser, z10);
@@ -274,7 +274,7 @@ public final class n1 extends e51 implements fs {
         ?? r62 = 0;
         Object[] objArr = 0;
         if (i7 == 1) {
-            mp messagesController2 = getMessagesController();
+            np messagesController2 = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = messagesController2.E8;
             if (tL_webBrowserSettings2 != null) {
                 messagesController2.G5(!tL_webBrowserSettings2.open_external_browser, tL_webBrowserSettings2.display_close_button);
@@ -287,7 +287,7 @@ public final class n1 extends e51 implements fs {
             return;
         }
         if (i7 == 10) {
-            mp messagesController3 = getMessagesController();
+            np messagesController3 = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings3 = messagesController3.E8;
             if (tL_webBrowserSettings3 != null) {
                 messagesController3.G5(tL_webBrowserSettings3.open_external_browser, true);
@@ -297,7 +297,7 @@ public final class n1 extends e51 implements fs {
         }
         int i11 = 11;
         if (i7 == 11) {
-            mp messagesController4 = getMessagesController();
+            np messagesController4 = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings4 = messagesController4.E8;
             if (tL_webBrowserSettings4 != null) {
                 messagesController4.G5(tL_webBrowserSettings4.open_external_browser, false);
@@ -308,11 +308,11 @@ public final class n1 extends e51 implements fs {
         final int i12 = 2;
         if (i7 == 2) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String N0 = gd.N0(2131752852, null);
+            String N0 = hd.N0(2131752852, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = gd.a0(null, null, 2131752851, this.h != 0 ? a8.p0.s(new StringBuilder(" ("), org.telegram.messenger.g0.i0(this.h, false, false), ")") : "");
-            String N02 = gd.N0(2131752089, null);
+            t1Var.U = hd.a0(null, null, 2131752851, this.h != 0 ? a8.p0.s(new StringBuilder(" ("), org.telegram.messenger.g0.i0(this.h, false, false), ")") : "");
+            String N02 = hd.N0(2131752089, null);
             final Object[] objArr2 = objArr == true ? 1 : 0;
             alertDialog$Builder.k(N02, new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.web.k1
                 public final /* synthetic */ n1 b;
@@ -396,7 +396,7 @@ public final class n1 extends e51 implements fs {
                             break;
                         default:
                             n1 n1Var4 = this.b;
-                            mp messagesController5 = n1Var4.getMessagesController();
+                            np messagesController5 = n1Var4.getMessagesController();
                             TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.E8;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
@@ -405,13 +405,13 @@ public final class n1 extends e51 implements fs {
                                 messagesController5.E8.inapp_exceptions.clear();
                                 messagesController5.c5(messagesController5.E8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new al(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new bl(messagesController5, 6));
                             n1Var4.a.g3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder.h(gd.N0(2131752577, null), null);
+            alertDialog$Builder.h(hd.N0(2131752577, null), null);
             alertDialog$Builder.d(-1);
             alertDialog$Builder.p();
             return;
@@ -419,11 +419,11 @@ public final class n1 extends e51 implements fs {
         final int i13 = 3;
         if (i7 == 3) {
             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String N03 = gd.N0(2131752850, null);
+            String N03 = hd.N0(2131752850, null);
             org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder2.a;
             t1Var2.S = N03;
-            t1Var2.U = gd.a0(null, null, 2131752849, this.n != 0 ? a8.p0.s(new StringBuilder(" ("), org.telegram.messenger.g0.i0(this.n, false, false), ")") : "");
-            alertDialog$Builder2.k(gd.N0(2131752089, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.web.k1
+            t1Var2.U = hd.a0(null, null, 2131752849, this.n != 0 ? a8.p0.s(new StringBuilder(" ("), org.telegram.messenger.g0.i0(this.n, false, false), ")") : "");
+            alertDialog$Builder2.k(hd.N0(2131752089, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.web.k1
                 public final /* synthetic */ n1 b;
 
                 {
@@ -505,7 +505,7 @@ public final class n1 extends e51 implements fs {
                             break;
                         default:
                             n1 n1Var4 = this.b;
-                            mp messagesController5 = n1Var4.getMessagesController();
+                            np messagesController5 = n1Var4.getMessagesController();
                             TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.E8;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
@@ -514,13 +514,13 @@ public final class n1 extends e51 implements fs {
                                 messagesController5.E8.inapp_exceptions.clear();
                                 messagesController5.c5(messagesController5.E8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new al(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new bl(messagesController5, 6));
                             n1Var4.a.g3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder2.h(gd.N0(2131752577, null), null);
+            alertDialog$Builder2.h(hd.N0(2131752577, null), null);
             alertDialog$Builder2.d(-1);
             alertDialog$Builder2.p();
             return;
@@ -536,11 +536,11 @@ public final class n1 extends e51 implements fs {
                 j3 = Math.min(j3, ((w0) obj).b);
             }
             AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String N04 = gd.N0(2131752843, null);
+            String N04 = hd.N0(2131752843, null);
             org.telegram.ui.ActionBar.t1 t1Var3 = alertDialog$Builder3.a;
             t1Var3.S = N04;
-            t1Var3.U = gd.a0(null, null, 2131752842, gd.u(j3 / 1000, false));
-            alertDialog$Builder3.k(gd.N0(2131752089, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.web.k1
+            t1Var3.U = hd.a0(null, null, 2131752842, hd.u(j3 / 1000, false));
+            alertDialog$Builder3.k(hd.N0(2131752089, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.web.k1
                 public final /* synthetic */ n1 b;
 
                 {
@@ -622,7 +622,7 @@ public final class n1 extends e51 implements fs {
                             break;
                         default:
                             n1 n1Var4 = this.b;
-                            mp messagesController5 = n1Var4.getMessagesController();
+                            np messagesController5 = n1Var4.getMessagesController();
                             TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.E8;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
@@ -631,13 +631,13 @@ public final class n1 extends e51 implements fs {
                                 messagesController5.E8.inapp_exceptions.clear();
                                 messagesController5.c5(messagesController5.E8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new al(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new bl(messagesController5, 6));
                             n1Var4.a.g3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder3.h(gd.N0(2131752577, null), null);
+            alertDialog$Builder3.h(hd.N0(2131752577, null), null);
             alertDialog$Builder3.d(-1);
             alertDialog$Builder3.p();
             return;
@@ -651,11 +651,11 @@ public final class n1 extends e51 implements fs {
         }
         if (i7 == 5) {
             AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String N05 = gd.N0(2131742673, null);
+            String N05 = hd.N0(2131742671, null);
             org.telegram.ui.ActionBar.t1 t1Var4 = alertDialog$Builder4.a;
             t1Var4.S = N05;
-            t1Var4.U = gd.N0(2131742674, null);
-            alertDialog$Builder4.k(gd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.web.k1
+            t1Var4.U = hd.N0(2131742672, null);
+            alertDialog$Builder4.k(hd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.web.k1
                 public final /* synthetic */ n1 b;
 
                 {
@@ -737,7 +737,7 @@ public final class n1 extends e51 implements fs {
                             break;
                         default:
                             n1 n1Var4 = this.b;
-                            mp messagesController5 = n1Var4.getMessagesController();
+                            np messagesController5 = n1Var4.getMessagesController();
                             TL_account.TL_webBrowserSettings tL_webBrowserSettings5 = messagesController5.E8;
                             if (tL_webBrowserSettings5 != null) {
                                 tL_webBrowserSettings5.open_external_browser = true;
@@ -746,13 +746,13 @@ public final class n1 extends e51 implements fs {
                                 messagesController5.E8.inapp_exceptions.clear();
                                 messagesController5.c5(messagesController5.E8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new al(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new bl(messagesController5, 6));
                             n1Var4.a.g3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder4.h(gd.N0(2131752577, null), null);
+            alertDialog$Builder4.h(hd.N0(2131752577, null), null);
             alertDialog$Builder4.d(-1);
             alertDialog$Builder4.p();
             return;
@@ -762,7 +762,7 @@ public final class n1 extends e51 implements fs {
             String str = m1Var.e;
             a70 G = a70.G((ViewGroup) this.fragmentView, null, m1Var);
             G.s = 40;
-            G.c(R.drawable.menu_delete_old, gd.N0(2131746125, null), new u4(25, this, str), false);
+            G.c(R.drawable.menu_delete_old, hd.N0(2131746125, null), new u4(25, this, str), false);
             G.a0();
             return;
         }
@@ -783,23 +783,23 @@ public final class n1 extends e51 implements fs {
                 k6 k6Var = new k6(getParentActivity(), null);
                 k6Var.setPadding(org.telegram.messenger.g0.L(4.0f), r62, org.telegram.messenger.g0.L(4.0f), r62);
                 k6Var.a(m6.x0(null, m6.g7, r62), m6.x0(null, m6.E5, r62));
-                k6Var.b(charSequenceArr[i16], i16 == bz.p0 ? true : r62);
+                k6Var.b(charSequenceArr[i16], i16 == cz.p0 ? true : r62);
                 int i17 = m6.i6;
                 org.telegram.ui.Cells.y h02 = m6.h0(m6.x0(null, i17, r62), 2, -1);
                 p6 M = t6.M(i17);
                 k6Var.setBackground(h02);
                 t6.j(k6Var, h02, null, M, null);
                 linearLayout.addView(k6Var);
-                k6Var.setOnClickListener(new i5(i16, view, atomicReference));
+                k6Var.setOnClickListener(new h5(i16, view, atomicReference));
                 i16++;
                 r62 = 0;
             }
             AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(getParentActivity());
-            String N06 = gd.N0(2131745603, null);
+            String N06 = hd.N0(2131745603, null);
             org.telegram.ui.ActionBar.t1 t1Var5 = alertDialog$Builder5.a;
             t1Var5.S = N06;
             alertDialog$Builder5.o(linearLayout);
-            alertDialog$Builder5.h(gd.N0(2131752577, null), null);
+            alertDialog$Builder5.h(hd.N0(2131752577, null), null);
             atomicReference.set(t1Var5);
             showDialog(t1Var5);
             return;
@@ -807,27 +807,27 @@ public final class n1 extends e51 implements fs {
         if (i15 == 15 || i15 == 16) {
             boolean S22 = getMessagesController().S2();
             if (getMessagesController().R2(S22)) {
-                c5.r0(this, gd.N0(2131742671, null), gd.N0(2131742672, null), null);
+                c5.r0(this, hd.N0(2131742669, null), hd.N0(2131742670, null), null);
                 return;
             }
             Activity parentActivity = getParentActivity();
             h6 resourceProvider = getResourceProvider();
-            w2 w2Var = new w2(i11, this, S22);
+            x2 x2Var = new x2(i11, this, S22);
             Pattern pattern = c5.a;
             Activity W = org.telegram.messenger.g0.W(parentActivity);
             View currentFocus = W != null ? W.getCurrentFocus() : null;
             org.telegram.ui.ActionBar.t1[] t1VarArr = new org.telegram.ui.ActionBar.t1[1];
             AlertDialog$Builder alertDialog$Builder6 = new AlertDialog$Builder(0, parentActivity, resourceProvider);
-            String N07 = gd.N0(S22 ? 2131752856 : 2131752855, null);
+            String N07 = hd.N0(S22 ? 2131752856 : 2131752855, null);
             org.telegram.ui.ActionBar.t1 t1Var6 = alertDialog$Builder6.a;
             t1Var6.S = N07;
-            t1Var6.U = gd.N0(S22 ? 2131752858 : 2131752857, null);
+            t1Var6.U = hd.N0(S22 ? 2131752858 : 2131752857, null);
             b5 b5Var = new b5(parentActivity);
             b5Var.setTextSize(1, 16.0f);
             int i18 = m6.j5;
             t6.U(b5Var, i18, resourceProvider);
             t6.D(b5Var, m6.Oi, resourceProvider);
-            b5Var.setHint(gd.N0(2131752859, null));
+            b5Var.setHint(hd.N0(2131752859, null));
             b5Var.setInputType(17);
             b5Var.setImeOptions(6);
             b5Var.setSingleLine(true);
@@ -839,7 +839,7 @@ public final class n1 extends e51 implements fs {
             p6 K = t6.K(0.06f, i18);
             b5Var.setBackground(d02);
             t6.j(b5Var, d02, K, null, resourceProvider);
-            org.telegram.messenger.camera.i iVar = new org.telegram.messenger.camera.i(b5Var, w2Var, t1VarArr, currentFocus, 20);
+            org.telegram.messenger.camera.i iVar = new org.telegram.messenger.camera.i(b5Var, x2Var, t1VarArr, currentFocus, 20);
             b5Var.setOnEditorActionListener(new org.telegram.ui.Components.h(iVar, i10));
             LinearLayout linearLayout2 = new LinearLayout(parentActivity);
             linearLayout2.setOrientation(1);
@@ -847,8 +847,8 @@ public final class n1 extends e51 implements fs {
             alertDialog$Builder6.c();
             alertDialog$Builder6.o(linearLayout2);
             t1Var6.a = Math.min(org.telegram.messenger.g0.L(320.0f), (org.telegram.messenger.g0.q.x * 85) / 100);
-            alertDialog$Builder6.k(gd.N0(2131751342, null), new org.telegram.ui.Components.c0(iVar, i12));
-            alertDialog$Builder6.h(gd.N0(2131752577, null), new cr(10));
+            alertDialog$Builder6.k(hd.N0(2131751342, null), new org.telegram.ui.Components.c0(iVar, i12));
+            alertDialog$Builder6.h(hd.N0(2131752577, null), new cr(10));
             t1VarArr[0] = t1Var6;
             t1Var6.k0 = false;
             t1Var6.setOnDismissListener(new org.telegram.ui.Components.z0(b5Var, i10));
@@ -880,21 +880,21 @@ public final class n1 extends e51 implements fs {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        g6 g6Var;
-        if (i7 != ks.U5 || (g6Var = this.a) == null) {
+        f6 f6Var;
+        if (i7 != ls.U5 || (f6Var = this.a) == null) {
             return;
         }
-        g6Var.g3.O(true);
+        f6Var.g3.O(true);
     }
 
     public final void f0() {
         c51 c51Var;
         if (cb.a(new s6(this, 24)) != null) {
             this.r = r0.size();
-            g6 g6Var = this.a;
-            if (g6Var != null && (c51Var = g6Var.g3) != null && g6Var.H) {
+            f6 f6Var = this.a;
+            if (f6Var != null && (c51Var = f6Var.g3) != null && f6Var.H) {
                 c51Var.O(true);
             }
         }
@@ -914,14 +914,14 @@ public final class n1 extends e51 implements fs {
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         f0();
-        getNotificationCenter().c(this, ks.U5);
+        getNotificationCenter().c(this, ls.U5);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, ks.U5);
+        getNotificationCenter().n(this, ls.U5);
     }
 
     @Override // org.telegram.ui.ActionBar.g2
@@ -945,9 +945,9 @@ public final class n1 extends e51 implements fs {
                 if (drawable2 != null) {
                     drawable2.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.MULTIPLY));
                 }
-                g6 g6Var = this.a;
-                if (g6Var != null) {
-                    g6Var.g1();
+                f6 f6Var = this.a;
+                if (f6Var != null) {
+                    f6Var.g1();
                 }
             }
         } catch (Exception e10) {

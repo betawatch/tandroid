@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class qn0 extends org.telegram.ui.ActionBar.g1 {
     public boolean A;
@@ -45,7 +45,7 @@ public abstract class qn0 extends org.telegram.ui.ActionBar.g1 {
             return;
         }
         int i10 = 2;
-        if (tL_sendAsPeer.premium_required && !org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q()) {
+        if (tL_sendAsPeer.premium_required && !org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q()) {
             int i11 = 3;
             try {
                 view.performHapticFeedback(3, 2);
@@ -84,9 +84,9 @@ public abstract class qn0 extends org.telegram.ui.ActionBar.g1 {
                 int themedColor = gn0Var.getThemedColor(org.telegram.ui.ActionBar.m6.yj);
                 gn0Var.c = themedColor;
                 q9Var.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.SRC_IN));
-                gn0Var.b.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131745459, null)));
+                gn0Var.b.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131745459, null)));
                 ec ecVar = new ec(context, zmVar, true);
-                ecVar.e(org.telegram.messenger.gd.N0(2131745458, null));
+                ecVar.e(org.telegram.messenger.hd.N0(2131745458, null));
                 ecVar.b = fm0Var2;
                 gn0Var.setButton(ecVar);
                 gc f10 = gc.f(nn0Var, gn0Var, 1500);
@@ -104,7 +104,7 @@ public abstract class qn0 extends org.telegram.ui.ActionBar.g1 {
         TLRPC.Peer peer = tL_sendAsPeer.peer;
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) hVar.c;
         TLRPC.ChatFull chatFull = (TLRPC.ChatFull) hVar.b;
-        org.telegram.messenger.mp mpVar = (org.telegram.messenger.mp) hVar.d;
+        org.telegram.messenger.np npVar = (org.telegram.messenger.np) hVar.d;
         if (chatActivityEnterView.r0 == null) {
             return;
         }
@@ -116,16 +116,16 @@ public abstract class qn0 extends org.telegram.ui.ActionBar.g1 {
         if (ngVar == null || !ngVar.e1(org.telegram.messenger.n5.o(peer))) {
             long j3 = chatActivityEnterView.G3;
             long o4 = org.telegram.messenger.n5.o(peer);
-            TLRPC.ChatFull P0 = mpVar.P0(-j3);
+            TLRPC.ChatFull P0 = npVar.P0(-j3);
             if (P0 != null) {
-                P0.default_send_as = mpVar.B1(o4);
-                mpVar.getMessagesStorage().N1(P0, false);
-                mpVar.getNotificationCenter().k(org.telegram.messenger.ks.G, Long.valueOf(j3), P0.default_send_as);
+                P0.default_send_as = npVar.B1(o4);
+                npVar.getMessagesStorage().N1(P0, false);
+                npVar.getNotificationCenter().k(org.telegram.messenger.ls.G, Long.valueOf(j3), P0.default_send_as);
             }
             TLRPC.TL_messages_saveDefaultSendAs tL_messages_saveDefaultSendAs = new TLRPC.TL_messages_saveDefaultSendAs();
-            tL_messages_saveDefaultSendAs.peer = mpVar.l1(j3);
-            tL_messages_saveDefaultSendAs.send_as = mpVar.l1(o4);
-            mpVar.getConnectionsManager().sendRequest(tL_messages_saveDefaultSendAs, new org.telegram.messenger.lj(mpVar, j3, 17), 64);
+            tL_messages_saveDefaultSendAs.peer = npVar.l1(j3);
+            tL_messages_saveDefaultSendAs.send_as = npVar.l1(o4);
+            npVar.getConnectionsManager().sendRequest(tL_messages_saveDefaultSendAs, new org.telegram.messenger.mj(npVar, j3, 17), 64);
         }
         int[] iArr = new int[2];
         ut0 ut0Var = pn0Var.a;
@@ -135,13 +135,13 @@ public abstract class qn0 extends org.telegram.ui.ActionBar.g1 {
         ut0 ut0Var2 = new ut0(chatActivityEnterView.getContext());
         long j10 = peer.channel_id;
         if (j10 != 0) {
-            TLRPC.Chat O0 = mpVar.O0(Long.valueOf(j10));
+            TLRPC.Chat O0 = npVar.O0(Long.valueOf(j10));
             if (O0 != null) {
                 ut0Var2.setAvatar(O0);
             }
         } else {
             long j11 = peer.user_id;
-            if (j11 != 0 && (c22 = mpVar.c2(Long.valueOf(j11))) != null) {
+            if (j11 != 0 && (c22 = npVar.c2(Long.valueOf(j11))) != null) {
                 ut0Var2.setAvatar(c22);
             }
         }

@@ -6,10 +6,10 @@ import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class n1 {
     public static final Unsafe a;
@@ -64,11 +64,11 @@ public abstract class n1 {
     }
 
     public static boolean b(Object obj, long j3) {
-        return ((byte) ((c.f(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & ks.e4)) != 0;
+        return ((byte) ((c.f(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & ls.e4)) != 0;
     }
 
     public static boolean c(Object obj, long j3) {
-        return ((byte) ((c.f(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & ks.e4)) != 0;
+        return ((byte) ((c.f(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & ls.e4)) != 0;
     }
 
     public static Object d(Class cls) {
@@ -155,13 +155,13 @@ public abstract class n1 {
         long j10 = (-4) & j3;
         int f10 = c.f(obj, j10);
         int i7 = ((~((int) j3)) & 3) << 3;
-        m(j10, obj, ((255 & b10) << i7) | (f10 & (~(ks.e4 << i7))));
+        m(j10, obj, ((255 & b10) << i7) | (f10 & (~(ls.e4 << i7))));
     }
 
     public static void l(Object obj, long j3, byte b10) {
         long j10 = (-4) & j3;
         int i7 = (((int) j3) & 3) << 3;
-        m(j10, obj, ((255 & b10) << i7) | (c.f(obj, j10) & (~(ks.e4 << i7))));
+        m(j10, obj, ((255 & b10) << i7) | (c.f(obj, j10) & (~(ls.e4 << i7))));
     }
 
     public static void m(long j3, Object obj, int i7) {

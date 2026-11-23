@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import android.widget.ImageView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zo0 implements Runnable {
     public final /* synthetic */ int a;
@@ -121,11 +121,11 @@ public final class zo0 implements Runnable {
                             if (elapsedRealtime2 - photoViewer10.d3 >= 1000) {
                                 String str = photoViewer10.b3;
                                 photoViewer10.d3 = SystemClock.elapsedRealtime();
-                                org.telegram.messenger.fj fjVar = this.b.T4;
-                                if (fjVar != null) {
-                                    fjVar.l3 = Float.valueOf(k12);
+                                org.telegram.messenger.gj gjVar = this.b.T4;
+                                if (gjVar != null) {
+                                    gjVar.l3 = Float.valueOf(k12);
                                 }
-                                Utilities.e.c(new org.telegram.messenger.te(str, 1, k12));
+                                Utilities.e.c(new org.telegram.messenger.ue(str, 1, k12));
                             }
                         }
                         this.b.B3();
@@ -239,7 +239,7 @@ public final class zo0 implements Runnable {
                         int width = photoViewer16.C2.getWidth();
                         int height = photoViewer16.C2.getHeight();
                         Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                        Bitmap c11 = org.telegram.messenger.vr.c(width, height);
+                        Bitmap c11 = org.telegram.messenger.wr.c(width, height);
                         photoViewer16.C3 = c11;
                         photoViewer16.C2.getBitmap(c11);
                         if (photoViewer16.C3 != null && (imageView = photoViewer16.x3) != null) {

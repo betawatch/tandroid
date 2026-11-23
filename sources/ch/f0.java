@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.ec;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.fc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class f0 {
     public static Runnable c;
@@ -21,7 +21,7 @@ public abstract class f0 {
     public static boolean g = false;
 
     public static void a() {
-        com.google.android.gms.internal.cast.b0 b0Var = ec.D().p;
+        com.google.android.gms.internal.cast.b0 b0Var = fc.D().p;
         CountDownLatch countDownLatch = (CountDownLatch) b0Var.c;
         if (countDownLatch != null) {
             countDownLatch.countDown();
@@ -47,7 +47,7 @@ public abstract class f0 {
 
     public static boolean c(View... viewArr) {
         if (h == null) {
-            h = Boolean.valueOf(bz.o() != 2);
+            h = Boolean.valueOf(cz.o() != 2);
         }
         if (!h.booleanValue()) {
             return false;

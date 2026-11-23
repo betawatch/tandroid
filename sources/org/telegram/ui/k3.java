@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k3 extends FrameLayout {
     public int E;
@@ -275,7 +275,7 @@ public final class k3 extends FrameLayout {
             int w10 = org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false), i7);
             k3Var.x = w10;
             if (k3Var == g4Var.v0[0]) {
-                if (org.telegram.messenger.bz.v0) {
+                if (org.telegram.messenger.cz.v0) {
                     g4Var.i0.d(w10, true);
                 }
                 if (t3Var != null) {
@@ -286,7 +286,7 @@ public final class k3 extends FrameLayout {
             int w11 = org.telegram.ui.ActionBar.m6.w(-1, i7);
             k3Var.y = w11;
             if (k3Var == g4Var.v0[0]) {
-                if (org.telegram.messenger.bz.v0) {
+                if (org.telegram.messenger.cz.v0) {
                     g4Var.i0.setMenuColors(w11);
                 }
                 if (t3Var != null) {
@@ -370,7 +370,7 @@ public final class k3 extends FrameLayout {
     }
 
     public int getActionBarColor() {
-        if (f() && org.telegram.messenger.bz.v0) {
+        if (f() && org.telegram.messenger.cz.v0) {
             return this.x;
         }
         int i7 = org.telegram.ui.ActionBar.m6.Gl;
@@ -383,7 +383,7 @@ public final class k3 extends FrameLayout {
     }
 
     public int getBackgroundColor() {
-        return (f() && org.telegram.messenger.bz.v0) ? this.n ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false) : this.y : org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false);
+        return (f() && org.telegram.messenger.cz.v0) ? this.n ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false) : this.y : org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false);
     }
 
     public float getListTop() {
@@ -594,13 +594,13 @@ public final class k3 extends FrameLayout {
                 i3 i3Var = this.f;
                 if (s0Var != null) {
                     s0Var.onResume();
-                    i3Var.O(org.telegram.messenger.j10.t0, x2Var.b, x2Var.d, x2Var.x, false);
+                    i3Var.O(org.telegram.messenger.k10.t0, x2Var.b, x2Var.d, x2Var.x, false);
                     a(this, true, x2Var.q);
                     a(this, false, x2Var.r);
                 } else {
                     String str = x2Var.x;
                     if (str != null) {
-                        i3Var.t(org.telegram.messenger.j10.t0, str, false);
+                        i3Var.t(org.telegram.messenger.k10.t0, str, false);
                     }
                 }
             }

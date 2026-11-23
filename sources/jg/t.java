@@ -2,18 +2,18 @@ package jg;
 
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.d61;
 import org.telegram.ui.mw;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -70,18 +70,18 @@ public final /* synthetic */ class t implements Runnable {
                     if (tL_error == null) {
                         h0Var.c0 = str;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
-                        tr.a0(i15).m1(messages_messages.users, messages_messages.chats, true, true);
-                        mp.u1(i15).f4(messages_messages.users, false);
-                        mp.u1(i15).Z3(messages_messages.chats, false);
+                        ur.a0(i15).m1(messages_messages.users, messages_messages.chats, true, true);
+                        np.u1(i15).f4(messages_messages.users, false);
+                        np.u1(i15).Z3(messages_messages.chats, false);
                         if (tL_messages_search.add_offset == 0) {
                             arrayList2.clear();
                         }
                         h0Var.d0 = messages_messages.next_rate;
                         for (int i16 = 0; i16 < messages_messages.messages.size(); i16++) {
                             TLRPC.Message message = messages_messages.messages.get(i16);
-                            int i17 = mp.u1(i15).U.get(fj.B0(message));
+                            int i17 = np.u1(i15).U.get(gj.B0(message));
                             if (i17 == 0 || message.id > i17) {
-                                arrayList2.add((fj) arrayList.get(i16));
+                                arrayList2.add((gj) arrayList.get(i16));
                             }
                         }
                         h0Var.O = true;
@@ -120,9 +120,9 @@ public final /* synthetic */ class t implements Runnable {
                     if (tL_error2 == null) {
                         h0Var2.c0 = str2;
                         TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject2;
-                        tr.a0(i18).m1(messages_messages2.users, messages_messages2.chats, true, true);
-                        mp.u1(i18).f4(messages_messages2.users, false);
-                        mp.u1(i18).Z3(messages_messages2.chats, false);
+                        ur.a0(i18).m1(messages_messages2.users, messages_messages2.chats, true, true);
+                        np.u1(i18).f4(messages_messages2.users, false);
+                        np.u1(i18).Z3(messages_messages2.chats, false);
                         if (tL_messages_searchGlobal.offset_id == 0) {
                             arrayList3.clear();
                         }
@@ -130,18 +130,18 @@ public final /* synthetic */ class t implements Runnable {
                         int i19 = 0;
                         while (i19 < messages_messages2.messages.size()) {
                             TLRPC.Message message2 = messages_messages2.messages.get(i19);
-                            int i20 = mp.u1(i18).U.get(fj.B0(message2));
+                            int i20 = np.u1(i18).U.get(gj.B0(message2));
                             if (i20 == 0 || message2.id > i20) {
-                                fj fjVar = (fj) arrayList.get(i19);
+                                gj gjVar = (gj) arrayList.get(i19);
                                 if (!arrayList4.isEmpty()) {
                                     for (int i21 = i14; i21 < arrayList4.size(); i21++) {
-                                        fj fjVar2 = (fj) arrayList4.get(i21);
-                                        if (fjVar2 == null || fjVar == null || fjVar.e1() != fjVar2.e1() || fj.B0(fjVar.k) != fj.B0(fjVar2.k)) {
+                                        gj gjVar2 = (gj) arrayList4.get(i21);
+                                        if (gjVar2 == null || gjVar == null || gjVar.e1() != gjVar2.e1() || gj.B0(gjVar.k) != gj.B0(gjVar2.k)) {
                                         }
                                     }
                                 }
-                                arrayList3.add(fjVar);
-                                Integer num = (Integer) (message2.out ? mp.u1(i18).Q : mp.u1(i18).P).get(Long.valueOf(fj.B0(message2)));
+                                arrayList3.add(gjVar);
+                                Integer num = (Integer) (message2.out ? np.u1(i18).Q : np.u1(i18).P).get(Long.valueOf(gj.B0(message2)));
                                 if (num != null) {
                                     message2.unread = num.intValue() < message2.id;
                                 }
@@ -180,7 +180,7 @@ public final /* synthetic */ class t implements Runnable {
                             TextView textView = (TextView) d61Var.b;
                             Object[] objArr = new Object[i10];
                             objArr[0] = str3;
-                            textView.setText(gd.a0(null, null, 2131745554, objArr));
+                            textView.setText(hd.a0(null, null, 2131745554, objArr));
                         }
                         h0Var2.f();
                         h0Var2.P = i7;
@@ -191,10 +191,10 @@ public final /* synthetic */ class t implements Runnable {
                 h0Var2.P = i7;
                 break;
             default:
-                ri riVar = (ri) obj3;
+                si siVar = (si) obj3;
                 a0.h hVar = (a0.h) obj2;
                 TLRPC.TL_messages_allStickers tL_messages_allStickers = (TLRPC.TL_messages_allStickers) tLObject;
-                riVar.getClass();
+                siVar.getClass();
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                 ArrayList arrayList5 = this.n;
                 arrayList5.set(i13, tL_messages_stickerSet);
@@ -207,16 +207,16 @@ public final /* synthetic */ class t implements Runnable {
                         }
                         i14++;
                     }
-                    riVar.C1(this.d, arrayList5, false, (int) (System.currentTimeMillis() / 1000), tL_messages_allStickers.hash2, null);
+                    siVar.C1(this.d, arrayList5, false, (int) (System.currentTimeMillis() / 1000), tL_messages_allStickers.hash2, null);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ t(ri riVar, TLObject tLObject, ArrayList arrayList, int i7, a0.h hVar, TLRPC.StickerSet stickerSet, TLRPC.TL_messages_allStickers tL_messages_allStickers, int i10) {
+    public /* synthetic */ t(si siVar, TLObject tLObject, ArrayList arrayList, int i7, a0.h hVar, TLRPC.StickerSet stickerSet, TLRPC.TL_messages_allStickers tL_messages_allStickers, int i10) {
         this.a = 2;
-        this.b = riVar;
+        this.b = siVar;
         this.h = tLObject;
         this.n = arrayList;
         this.c = i7;

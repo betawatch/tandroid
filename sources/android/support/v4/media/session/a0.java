@@ -85,13 +85,13 @@ import java.util.concurrent.TimeoutException;
 import javax.net.ssl.HttpsURLConnection;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.y10;
-import org.telegram.messenger.yy;
+import org.telegram.messenger.z10;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
@@ -101,7 +101,7 @@ import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.ui;
 import org.telegram.ui.pm0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal.q, ib.b, si {
     public static int e;
@@ -279,7 +279,7 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
             KeyguardManager a12 = h0.a(tVar.a);
             return !(a12 == null ? false : h0.b(a12)) ? e() : e() == 0 ? 0 : -1;
         }
-        if ((i7 & ks.e4) == 255) {
+        if ((i7 & ls.e4) == 255) {
             BiometricManager biometricManager3 = (BiometricManager) this.c;
             if (biometricManager3 != null) {
                 return androidx.biometric.r.a(biometricManager3);
@@ -363,11 +363,11 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
 
     @Override // org.telegram.ui.pm0
     public void d(ArrayList arrayList) {
-        String str = !arrayList.isEmpty() ? ((yy) arrayList.get(0)).c : null;
+        String str = !arrayList.isEmpty() ? ((zy) arrayList.get(0)).c : null;
         if (str == null) {
             return;
         }
-        Utilities.e.c(new ai.r(str, (y10) this.b, (g2) this.c, (x10) this.d, 6));
+        Utilities.e.c(new ai.r(str, (z10) this.b, (g2) this.c, (y10) this.d, 6));
     }
 
     public int e() {
@@ -971,8 +971,8 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
             return;
         }
         Object next = selectedPhotos.values().iterator().next();
-        if (next instanceof ef) {
-            c7 l10 = c7.l((ef) next);
+        if (next instanceof ff) {
+            c7 l10 = c7.l((ff) next);
             l10.J0 = j11;
             l10.K0 = str;
             l10.A();
@@ -982,7 +982,7 @@ public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal
             int i12 = D.c;
             WindowManager windowManager = D.f;
             if (!D.d) {
-                if (mp.u1(i12).A2()) {
+                if (np.u1(i12).A2()) {
                     org.telegram.ui.b.b(i12);
                 } else {
                     D.w0 = j11;

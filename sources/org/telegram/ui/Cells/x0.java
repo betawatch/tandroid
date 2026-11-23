@@ -19,8 +19,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.i70;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.s60;
 import org.telegram.ui.Components.sz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final class x0 extends FrameLayout {
                 textView.setGravity(17);
                 textView.setBackground(org.telegram.ui.ActionBar.m6.h0(-12763843, 0, -1));
                 textView.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
-                textView.setText(gd.N0(2131752577, null).toUpperCase());
+                textView.setText(hd.N0(2131752577, null).toUpperCase());
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 addView(textView, c8.ma.e(-2, -1, 51));
                 TextView textView2 = new TextView(context);
@@ -63,7 +63,7 @@ public final class x0 extends FrameLayout {
                 textView2.setGravity(17);
                 textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.h0(-12763843, 0, -1));
                 textView2.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
-                textView2.setText(gd.N0(2131745444, null).toUpperCase());
+                textView2.setText(hd.N0(2131745444, null).toUpperCase());
                 textView2.setTypeface(org.telegram.messenger.g0.o());
                 addView(textView2, c8.ma.e(-2, -1, 53));
                 TextView textView3 = new TextView(context);
@@ -125,7 +125,7 @@ public final class x0 extends FrameLayout {
                         int a10 = org.telegram.ui.Wallet.f8.a(-16216082, fArr);
                         int a11 = org.telegram.ui.Wallet.f8.a(-15291399, fArr);
                         paint.setShader(null);
-                        paint.setAlpha(ks.e4);
+                        paint.setAlpha(ls.e4);
                         paint.setColor(org.telegram.ui.Wallet.p6.d(0.82500005f, 0.0f, 0.0f, a10, a11));
                         path.rewind();
                         path.moveTo(fArr3[0], fArr3[1]);
@@ -136,7 +136,7 @@ public final class x0 extends FrameLayout {
                         path.close();
                         canvas.drawPath(path, paint);
                         paint2.setShader(null);
-                        paint2.setAlpha(ks.e4);
+                        paint2.setAlpha(ls.e4);
                         float f10 = 0.6f;
                         paint2.setStrokeWidth(p6Var.q * 0.6f);
                         int[] iArr = p6Var.o;
@@ -240,7 +240,7 @@ public final class x0 extends FrameLayout {
                 org.telegram.ui.ActionBar.m6.t0.setColor(Color.argb((int) ((1.0f - w0Var.getProgress()) * 31.0f), red, green, blue));
                 canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.ui.ActionBar.m6.t0);
                 boolean z11 = this.c;
-                String N0 = gd.N0(z11 ? 2131752211 : 2131752212, null);
+                String N0 = hd.N0(z11 ? 2131752211 : 2131752212, null);
                 int ceil = (int) Math.ceil(textPaint.measureText(N0));
                 textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
                 canvas.drawText(N0, (getMeasuredWidth() - ceil) / 2, org.telegram.messenger.g0.L(96.0f), textPaint);
@@ -352,7 +352,7 @@ public final class x0 extends FrameLayout {
                 accessibilityNodeInfo.setClassName(RadioButton.class.getName());
                 accessibilityNodeInfo.setChecked(((w0) this.d).f);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setContentDescription(gd.N0(this.c ? 2131752211 : 2131752212, null));
+                accessibilityNodeInfo.setContentDescription(hd.N0(this.c ? 2131752211 : 2131752212, null));
                 break;
             case 1:
             default:

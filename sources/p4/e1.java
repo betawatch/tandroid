@@ -21,11 +21,11 @@ import j$.util.DesugarCollections;
 import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.Set;
-import org.telegram.messenger.ja;
+import org.telegram.messenger.ka;
 import org.telegram.ui.Components.kt;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e1 extends Binder implements m {
     public final WeakReference a;
@@ -206,7 +206,7 @@ public final class e1 extends Binder implements m {
                 if (r10 == null) {
                     Binder.restoreCallingIdentity(clearCallingIdentity);
                 } else {
-                    h2.l0.W(e0Var.l, new ja(this, r10, k1Var, e0Var, i7, i10, c1Var));
+                    h2.l0.W(e0Var.l, new ka(this, r10, k1Var, e0Var, i7, i10, c1Var));
                     Binder.restoreCallingIdentity(clearCallingIdentity);
                 }
             }

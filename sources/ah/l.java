@@ -20,10 +20,10 @@ import hi.h3;
 import hi.m8;
 import hi.s2;
 import oi.b2;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.av;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.zu;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.m5;
@@ -58,7 +58,7 @@ import org.telegram.ui.um;
 import org.telegram.ui.yo;
 import tg.t1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -164,7 +164,7 @@ public final class l extends AnimatorListenerAdapter {
                 if (!zArr2[0]) {
                     zArr2[0] = true;
                     int i11 = ProfileStoriesView.t0;
-                    if (bz.o() > 0) {
+                    if (cz.o() > 0) {
                         g0.a4(profileStoriesView);
                         g0.h3(new f2.a(profileStoriesView, 9), 180L);
                     }
@@ -210,7 +210,7 @@ public final class l extends AnimatorListenerAdapter {
                     a8Var.run();
                 }
                 if (m8Var.M) {
-                    m8Var.fullScroll(ks.O1);
+                    m8Var.fullScroll(ls.O1);
                     m8Var.M = false;
                     break;
                 }
@@ -237,16 +237,16 @@ public final class l extends AnimatorListenerAdapter {
                 b2Var.w.setAlpha(1.0f);
                 b2Var.w.q2.setVisibility(0);
                 b2Var.y.r(g0.L(22.0f));
-                b2Var.y.setAlpha(ks.e4);
+                b2Var.y.setAlpha(ls.e4);
                 jh.f fVar = b2Var.s;
                 fVar.e = true;
                 fVar.invalidate();
                 ((Runnable) obj).run();
                 break;
             case 12:
-                zu zuVar = (zu) obj2;
-                zuVar.b = true;
-                zuVar.f = null;
+                av avVar = (av) obj2;
+                avVar.b = true;
+                avVar.f = null;
                 View view2 = (View) obj;
                 if (view2 != null) {
                     view2.invalidate();

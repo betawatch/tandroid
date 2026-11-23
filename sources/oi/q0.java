@@ -9,8 +9,8 @@ import android.widget.FrameLayout;
 import c8.ma;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
@@ -19,7 +19,7 @@ import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class q0 extends FrameLayout implements org.telegram.ui.ActionBar.b6, i9 {
     public final h6 a;
@@ -47,8 +47,8 @@ public final class q0 extends FrameLayout implements org.telegram.ui.ActionBar.b
         f1 f1Var = new f1(context, h6Var);
         this.d = f1Var;
         f1Var.setAllowNewlines(false);
-        f1Var.setTextSize(1, bz.W0);
-        f1Var.setHint(gd.N0(2131754015, null));
+        f1Var.setTextSize(1, cz.W0);
+        f1Var.setHint(hd.N0(2131754015, null));
         f1Var.setPadding(0, org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(12.66f));
         f1Var.setListener(new n0(this));
         f1Var.setDelegate(new kg.x1(this, 20));

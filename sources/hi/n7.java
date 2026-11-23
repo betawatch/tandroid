@@ -6,12 +6,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class n7 extends FrameLayout implements m2 {
     public final m7 a;
@@ -25,8 +25,8 @@ public abstract class n7 extends FrameLayout implements m2 {
     public float r;
     public int s;
     public ValueAnimator w;
-    public x10 x;
-    public x10 y;
+    public y10 x;
+    public y10 y;
 
     public n7(Context context) {
         super(context);
@@ -42,9 +42,9 @@ public abstract class n7 extends FrameLayout implements m2 {
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextColor(-1);
-        textView.setText(gd.N0(2131744390, null));
+        textView.setText(hd.N0(2131744388, null));
         frameLayout.addView(textView, c8.ma.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        m7Var.addView(frameLayout, c8.ma.s(-2, -1, ks.x1, 0.0f, 0.0f, 6.66f, 0.0f));
+        m7Var.addView(frameLayout, c8.ma.s(-2, -1, ls.x1, 0.0f, 0.0f, 6.66f, 0.0f));
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: hi.l7
             public final /* synthetic */ n7 b;
 
@@ -75,9 +75,9 @@ public abstract class n7 extends FrameLayout implements m2 {
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
         textView2.setTextColor(-1);
-        textView2.setText(gd.N0(2131744344, null));
+        textView2.setText(hd.N0(2131744342, null));
         frameLayout2.addView(textView2, c8.ma.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        m7Var.addView(frameLayout2, c8.ma.s(-2, -1, ks.x1, 0.0f, 0.0f, 6.66f, 0.0f));
+        m7Var.addView(frameLayout2, c8.ma.s(-2, -1, ls.x1, 0.0f, 0.0f, 6.66f, 0.0f));
         frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: hi.l7
             public final /* synthetic */ n7 b;
 
@@ -108,9 +108,9 @@ public abstract class n7 extends FrameLayout implements m2 {
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setTextColor(-1);
-        textView3.setText(gd.N0(2131744209, null));
+        textView3.setText(hd.N0(2131744207, null));
         frameLayout3.addView(textView3, c8.ma.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        m7Var.addView(frameLayout3, c8.ma.t(-2, -1, ks.x1, 0, 0, 0, 0));
+        m7Var.addView(frameLayout3, c8.ma.t(-2, -1, ls.x1, 0, 0, 0, 0));
         final int i11 = 2;
         frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: hi.l7
             public final /* synthetic */ n7 b;
@@ -135,7 +135,7 @@ public abstract class n7 extends FrameLayout implements m2 {
             }
         });
         c8.ra.a(frameLayout3);
-        addView(m7Var, c8.ma.e(-2, -1, ks.y1));
+        addView(m7Var, c8.ma.e(-2, -1, ls.y1));
     }
 
     public final void a(int i7) {
@@ -160,9 +160,9 @@ public abstract class n7 extends FrameLayout implements m2 {
             return;
         }
         a(i7);
-        x10 x10Var = this.x;
-        if (x10Var != null) {
-            x10Var.a(Integer.valueOf(i7));
+        y10 y10Var = this.x;
+        if (y10Var != null) {
+            y10Var.a(Integer.valueOf(i7));
         }
     }
 
@@ -188,11 +188,11 @@ public abstract class n7 extends FrameLayout implements m2 {
         this.h.setTextColor(i0.a.f(f10, -1, -16777216));
     }
 
-    public void setOnSwitchModeListener(x10 x10Var) {
-        this.x = x10Var;
+    public void setOnSwitchModeListener(y10 y10Var) {
+        this.x = y10Var;
     }
 
-    public void setOnSwitchingModeListener(x10 x10Var) {
-        this.y = x10Var;
+    public void setOnSwitchingModeListener(y10 y10Var) {
+        this.y = y10Var;
     }
 }

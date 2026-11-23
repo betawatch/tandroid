@@ -21,7 +21,7 @@ import android.view.ViewConfiguration;
 import java.lang.reflect.Array;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zi0 extends View {
     public float A0;
@@ -501,7 +501,7 @@ public final class zi0 extends View {
                 canvas.clipRect(0.0f, 0.0f, f35, getHeight());
             }
             Paint paint5 = this.Y0;
-            paint5.setAlpha(org.telegram.messenger.ks.e4);
+            paint5.setAlpha(org.telegram.messenger.ls.e4);
             canvas.drawBitmap(this.T0, 0.0f, 0.0f, paint5);
             canvas.restore();
             yu0 yu0Var2 = this.J0;
@@ -537,7 +537,7 @@ public final class zi0 extends View {
             return;
         }
         int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Uf, this.a);
-        int argb = Color.argb(org.telegram.messenger.ks.e4, Math.max(0, Color.red(w02) - 17), Math.max(0, Color.green(w02) - 18), Math.max(0, Color.blue(w02) - 18));
+        int argb = Color.argb(org.telegram.messenger.ls.e4, Math.max(0, Color.red(w02) - 17), Math.max(0, Color.green(w02) - 18), Math.max(0, Color.blue(w02) - 18));
         int f37 = i0.a.f(0.46f, w02, -1);
         boolean z12 = this.p0;
         d6 d6Var2 = this.m0;
@@ -1185,7 +1185,7 @@ public final class zi0 extends View {
             System.arraycopy(fArr9, 0, fArr8, 0, Math.min(fArr9.length, max3));
             this.P0 = fArr8;
             this.O0 = new float[max3];
-            this.H0 = new float[max3 * org.telegram.messenger.ks.K2];
+            this.H0 = new float[max3 * org.telegram.messenger.ls.K2];
             for (int i44 = 0; i44 < 6; i44++) {
                 fArr4[i44] = new float[max3 * 36];
             }
@@ -1648,7 +1648,7 @@ public final class zi0 extends View {
             }
             boolean z11 = false;
             String g02 = org.telegram.messenger.g0.g0(round, false, false);
-            if (z10 && !org.telegram.messenger.gd.a0) {
+            if (z10 && !org.telegram.messenger.hd.a0) {
                 z11 = true;
             }
             this.h.t(g02, z11, true);
@@ -1695,7 +1695,7 @@ public final class zi0 extends View {
             n6Var.w(L);
             n6Var.x(org.telegram.messenger.g0.o());
             n6Var.n(0.35f, 260L, nr.h);
-            this.f.h = org.telegram.messenger.ks.j4;
+            this.f.h = org.telegram.messenger.ls.j4;
         }
         Paint.Style style = Paint.Style.STROKE;
         Paint paint = this.k0;

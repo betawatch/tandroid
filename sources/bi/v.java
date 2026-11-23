@@ -12,7 +12,7 @@ import c8.l9;
 import j$.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.qn;
 import org.telegram.ui.Components.rn;
 import org.telegram.ui.Components.tn;
@@ -25,7 +25,7 @@ import org.telegram.ui.nr0;
 import org.telegram.ui.pr0;
 import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v implements TextWatcher {
     public final /* synthetic */ int a;
@@ -57,27 +57,27 @@ public final class v implements TextWatcher {
                 }
             case 1:
                 ((String[]) this.b)[0] = editable.toString();
-                ((j7) obj).g3.O(true);
+                ((i7) obj).g3.O(true);
                 break;
             case 2:
                 ((String[]) this.b)[0] = editable.toString();
-                ((j7) obj).g3.O(true);
+                ((i7) obj).g3.O(true);
                 break;
             case 3:
                 ((String[]) this.b)[0] = editable.toString();
-                ((j7) obj).g3.O(true);
+                ((i7) obj).g3.O(true);
                 break;
             case 4:
                 ((String[]) this.b)[0] = editable.toString();
-                ((j7) obj).g3.O(true);
+                ((i7) obj).g3.O(true);
                 break;
             case 5:
                 ((String[]) this.b)[0] = editable.toString();
-                ((j7) obj).g3.O(true);
+                ((i7) obj).g3.O(true);
                 break;
             case 6:
                 ((String[]) this.b)[0] = editable.toString();
-                ((j7) obj).g3.O(true);
+                ((i7) obj).g3.O(true);
                 break;
             case 7:
                 ((hi.c) this.b).run();
@@ -269,7 +269,7 @@ public final class v implements TextWatcher {
                 org.telegram.ui.t4 t4Var = (org.telegram.ui.t4) obj;
                 sg.q qVar = (sg.q) t4Var.h;
                 if (!t4Var.c && ((String) this.b) != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(((String) this.b).toString(), editable.toString())) {
-                    int b12 = l9.b(Integer.parseInt(editable.toString()), 0, ks.e4);
+                    int b12 = l9.b(Integer.parseInt(editable.toString()), 0, ls.e4);
                     int i11 = t4Var.b;
                     int argb = i11 != 1 ? i11 != 2 ? Color.argb(Color.alpha(qVar.q1), b12, Color.green(qVar.q1), Color.blue(qVar.q1)) : Color.argb(Color.alpha(qVar.q1), Color.red(qVar.q1), Color.green(qVar.q1), b12) : Color.argb(Color.alpha(qVar.q1), Color.red(qVar.q1), b12, Color.blue(qVar.q1));
                     int i12 = sg.q.u1;

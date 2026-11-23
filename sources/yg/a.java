@@ -6,13 +6,13 @@ import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
 import c8.ma;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final hi.e a;
@@ -40,7 +40,7 @@ public final class a extends FrameLayout {
         eVar.setShowZero(true);
         eVar.setEnabled(true);
         eVar.c(i7, z10);
-        eVar.i(gd.N0(2131753190, null), z10, true);
+        eVar.i(hd.N0(2131753190, null), z10, true);
         t6.h(m6.h5, this.b, this.c);
     }
 
@@ -55,7 +55,7 @@ public final class a extends FrameLayout {
             int w02 = m6.w0(m6.a7, this.c);
             Paint paint = this.d;
             paint.setColor(w02);
-            paint.setAlpha(ks.e4);
+            paint.setAlpha(ls.e4);
             canvas.drawRect(0.0f, 0.0f, getWidth(), 1.0f, paint);
         }
     }
@@ -65,7 +65,7 @@ public final class a extends FrameLayout {
         hi.e eVar = this.a;
         eVar.setShowZero(false);
         eVar.setEnabled(true);
-        eVar.i(gd.a0("Close", null, 2131752029, new Object[0]), false, true);
+        eVar.i(hd.a0("Close", null, 2131752029, new Object[0]), false, true);
         this.e = z10;
     }
 
@@ -74,7 +74,7 @@ public final class a extends FrameLayout {
         hi.e eVar = this.a;
         eVar.setShowZero(false);
         eVar.setEnabled(true);
-        eVar.i(z10 ? gd.a0("BoostingUseLink", null, 2131753171, new Object[0]) : gd.a0("OK", null, 2131747637, new Object[0]), false, true);
+        eVar.i(z10 ? hd.a0("BoostingUseLink", null, 2131753171, new Object[0]) : hd.a0("OK", null, 2131747637, new Object[0]), false, true);
     }
 
     @Override // android.view.View

@@ -6,8 +6,8 @@ import android.animation.AnimatorSet;
 import android.content.DialogInterface;
 import android.view.View;
 import oi.s4;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.qu;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.ru;
 import org.telegram.ui.Cells.g4;
 import org.telegram.ui.Components.a8;
 import org.telegram.ui.Components.b50;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.lx;
 import org.telegram.ui.Components.n6;
 import org.telegram.ui.yp;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -96,10 +96,10 @@ public final class e2 extends AnimatorListenerAdapter {
                 s4Var.invalidate();
                 break;
             case 3:
-                qu quVar = (qu) obj;
-                quVar.b0 = i10;
-                quVar.c0 = 0.0f;
-                View view = quVar.W;
+                ru ruVar = (ru) obj;
+                ruVar.b0 = i10;
+                ruVar.c0 = 0.0f;
+                View view = ruVar.W;
                 if (view != null) {
                     view.invalidate();
                     break;
@@ -125,7 +125,7 @@ public final class e2 extends AnimatorListenerAdapter {
                     }
                     org.telegram.messenger.g0.g3(new oi.c2(this, r1));
                 }
-                ks.e().k(99, 512);
+                ls.e().k(99, 512);
                 break;
             case 6:
                 g4 g4Var = (g4) obj;

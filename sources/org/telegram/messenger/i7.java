@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class i7 {
     public static bg.e0 l1;
@@ -72,7 +72,7 @@ public final class i7 {
     public boolean V0;
     public final TLRPC.InputWebFileLocation W;
     public int W0;
-    public final h20 X;
+    public final i20 X;
     public final e8 X0;
     public volatile int Y;
     public volatile boolean Y0;
@@ -143,7 +143,7 @@ public final class i7 {
     public static volatile q5 k1 = new q5("writeFileQueue");
     public static final Object m1 = new Object();
 
-    public i7(fc fcVar, Object obj, String str, long j3) {
+    public i7(gc gcVar, Object obj, String str, long j3) {
         this.g = 2;
         this.h = new y6(this, 0);
         this.n = 131072;
@@ -158,65 +158,65 @@ public final class i7 {
         this.p0 = obj;
         this.j = obj instanceof TL_stories.TL_storyItem;
         this.X0 = w7.E(obj);
-        this.r0 = fcVar.p == 2;
-        if (fcVar.c != null) {
+        this.r0 = gcVar.p == 2;
+        if (gcVar.c != null) {
             TLRPC.TL_inputEncryptedFileLocation tL_inputEncryptedFileLocation = new TLRPC.TL_inputEncryptedFileLocation();
             this.V = tL_inputEncryptedFileLocation;
-            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = fcVar.f;
+            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = gcVar.f;
             long j10 = tL_fileLocationToBeDeprecated.volume_id;
             tL_inputEncryptedFileLocation.id = j10;
             tL_inputEncryptedFileLocation.volume_id = j10;
             tL_inputEncryptedFileLocation.local_id = tL_fileLocationToBeDeprecated.local_id;
-            tL_inputEncryptedFileLocation.access_hash = fcVar.e;
+            tL_inputEncryptedFileLocation.access_hash = gcVar.e;
             byte[] bArr = new byte[32];
             this.i0 = bArr;
-            System.arraycopy(fcVar.d, 0, bArr, 0, 32);
-            this.h0 = fcVar.c;
-        } else if (fcVar.n != null) {
+            System.arraycopy(gcVar.d, 0, bArr, 0, 32);
+            this.h0 = gcVar.c;
+        } else if (gcVar.n != null) {
             TLRPC.TL_inputPeerPhotoFileLocation tL_inputPeerPhotoFileLocation = new TLRPC.TL_inputPeerPhotoFileLocation();
-            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated2 = fcVar.f;
+            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated2 = gcVar.f;
             long j11 = tL_fileLocationToBeDeprecated2.volume_id;
             tL_inputPeerPhotoFileLocation.id = j11;
             tL_inputPeerPhotoFileLocation.volume_id = j11;
             tL_inputPeerPhotoFileLocation.local_id = tL_fileLocationToBeDeprecated2.local_id;
-            tL_inputPeerPhotoFileLocation.photo_id = fcVar.s;
-            tL_inputPeerPhotoFileLocation.big = fcVar.m == 0;
-            tL_inputPeerPhotoFileLocation.peer = fcVar.n;
+            tL_inputPeerPhotoFileLocation.photo_id = gcVar.s;
+            tL_inputPeerPhotoFileLocation.big = gcVar.m == 0;
+            tL_inputPeerPhotoFileLocation.peer = gcVar.n;
             this.V = tL_inputPeerPhotoFileLocation;
-        } else if (fcVar.o != null) {
+        } else if (gcVar.o != null) {
             TLRPC.TL_inputStickerSetThumb tL_inputStickerSetThumb = new TLRPC.TL_inputStickerSetThumb();
-            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated3 = fcVar.f;
+            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated3 = gcVar.f;
             long j12 = tL_fileLocationToBeDeprecated3.volume_id;
             tL_inputStickerSetThumb.id = j12;
             tL_inputStickerSetThumb.volume_id = j12;
             tL_inputStickerSetThumb.local_id = tL_fileLocationToBeDeprecated3.local_id;
-            tL_inputStickerSetThumb.thumb_version = fcVar.q;
-            tL_inputStickerSetThumb.stickerset = fcVar.o;
+            tL_inputStickerSetThumb.thumb_version = gcVar.q;
+            tL_inputStickerSetThumb.stickerset = gcVar.o;
             this.V = tL_inputStickerSetThumb;
-        } else if (fcVar.u != null) {
-            if (fcVar.s != 0) {
+        } else if (gcVar.u != null) {
+            if (gcVar.s != 0) {
                 TLRPC.TL_inputPhotoFileLocation tL_inputPhotoFileLocation = new TLRPC.TL_inputPhotoFileLocation();
                 this.V = tL_inputPhotoFileLocation;
-                tL_inputPhotoFileLocation.id = fcVar.s;
-                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated4 = fcVar.f;
+                tL_inputPhotoFileLocation.id = gcVar.s;
+                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated4 = gcVar.f;
                 tL_inputPhotoFileLocation.volume_id = tL_fileLocationToBeDeprecated4.volume_id;
                 tL_inputPhotoFileLocation.local_id = tL_fileLocationToBeDeprecated4.local_id;
-                tL_inputPhotoFileLocation.access_hash = fcVar.e;
-                tL_inputPhotoFileLocation.file_reference = fcVar.b;
-                tL_inputPhotoFileLocation.thumb_size = fcVar.u;
-                if (fcVar.p == 2) {
+                tL_inputPhotoFileLocation.access_hash = gcVar.e;
+                tL_inputPhotoFileLocation.file_reference = gcVar.b;
+                tL_inputPhotoFileLocation.thumb_size = gcVar.u;
+                if (gcVar.p == 2) {
                     this.o0 = true;
                 }
             } else {
                 TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();
                 this.V = tL_inputDocumentFileLocation;
-                tL_inputDocumentFileLocation.id = fcVar.t;
-                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated5 = fcVar.f;
+                tL_inputDocumentFileLocation.id = gcVar.t;
+                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated5 = gcVar.f;
                 tL_inputDocumentFileLocation.volume_id = tL_fileLocationToBeDeprecated5.volume_id;
                 tL_inputDocumentFileLocation.local_id = tL_fileLocationToBeDeprecated5.local_id;
-                tL_inputDocumentFileLocation.access_hash = fcVar.e;
-                tL_inputDocumentFileLocation.file_reference = fcVar.b;
-                tL_inputDocumentFileLocation.thumb_size = fcVar.u;
+                tL_inputDocumentFileLocation.access_hash = gcVar.e;
+                tL_inputDocumentFileLocation.file_reference = gcVar.b;
+                tL_inputDocumentFileLocation.thumb_size = gcVar.u;
             }
             TLRPC.InputFileLocation inputFileLocation = this.V;
             if (inputFileLocation.file_reference == null) {
@@ -225,20 +225,20 @@ public final class i7 {
         } else {
             TLRPC.TL_inputFileLocation tL_inputFileLocation = new TLRPC.TL_inputFileLocation();
             this.V = tL_inputFileLocation;
-            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated6 = fcVar.f;
+            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated6 = gcVar.f;
             tL_inputFileLocation.volume_id = tL_fileLocationToBeDeprecated6.volume_id;
             tL_inputFileLocation.local_id = tL_fileLocationToBeDeprecated6.local_id;
-            tL_inputFileLocation.secret = fcVar.e;
-            byte[] bArr2 = fcVar.b;
+            tL_inputFileLocation.secret = gcVar.e;
+            byte[] bArr2 = gcVar.b;
             tL_inputFileLocation.file_reference = bArr2;
             if (bArr2 == null) {
                 tL_inputFileLocation.file_reference = new byte[0];
             }
             this.o0 = true;
         }
-        int i7 = fcVar.p;
+        int i7 = gcVar.p;
         this.a1 = i7 == 1 || i7 == 3;
-        int i10 = fcVar.a;
+        int i10 = gcVar.a;
         this.T = i10;
         this.U = i10;
         this.b1 = 16777216;
@@ -569,7 +569,7 @@ public final class i7 {
     public final File g() {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         File[] fileArr = new File[1];
-        Utilities.d.c(new yf(this, fileArr, countDownLatch, 21));
+        Utilities.d.c(new zf(this, fileArr, countDownLatch, 21));
         try {
             countDownLatch.await();
         } catch (Exception e10) {
@@ -654,7 +654,7 @@ public final class i7 {
             d();
             int i10 = 10;
             if (!this.y && !z11) {
-                k1.c(new yx(2, this, this.M0, this.N0, this.A, this.J0, z10));
+                k1.c(new zx(2, this, this.M0, this.N0, this.A, this.J0, z10));
                 this.M0 = null;
                 this.N0 = null;
                 this.A = null;
@@ -1167,7 +1167,7 @@ public final class i7 {
                     if (g0.F1(e10)) {
                         j(-1, false);
                     } else if (g0.G1(e10)) {
-                        bz.h(this.L0);
+                        cz.h(this.L0);
                         j(-1, true);
                     } else {
                         j(0, false);
@@ -1286,9 +1286,9 @@ public final class i7 {
         this.A0 = true;
         this.B0 = true;
         Object obj = this.p0;
-        if (obj instanceof fj) {
-            fj fjVar = (fj) obj;
-            if (fjVar.e1() < 0 && (message = fjVar.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
+        if (obj instanceof gj) {
+            gj gjVar = (gj) obj;
+            if (gjVar.e1() < 0 && (message = gjVar.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
                 this.p0 = webPage;
                 this.j = false;
             }
@@ -1704,7 +1704,7 @@ public final class i7 {
                         j(0, true);
                         return;
                     } else {
-                        bz.h(this.L0);
+                        cz.h(this.L0);
                         j(i7, true);
                         return;
                     }
@@ -1753,7 +1753,7 @@ public final class i7 {
                         a8.g(e, false);
                         z10 = z17;
                     } else if (g0.G1(e)) {
-                        bz.h(this.L0);
+                        cz.h(this.L0);
                         a8.g(e, false);
                         z10 = z17;
                     } else {
@@ -2087,14 +2087,14 @@ public final class i7 {
                 f8Var4.getClass();
                 int i18 = 24;
                 if (file6 != null && e8Var != null) {
-                    f8Var4.h(new yf(f8Var4, file6, e8Var, i18));
+                    f8Var4.h(new zf(f8Var4, file6, e8Var, i18));
                 }
                 f8 f8Var5 = w7.G(this.R).d;
                 File file7 = this.J0;
                 e8 e8Var2 = this.X0;
                 f8Var5.getClass();
                 if (file7 != null && e8Var2 != null) {
-                    f8Var5.h(new yf(f8Var5, file7, e8Var2, i18));
+                    f8Var5.h(new zf(f8Var5, file7, e8Var2, i18));
                 }
             }
             if (!this.J0.exists()) {
@@ -2170,7 +2170,7 @@ public final class i7 {
                         LaunchActivity.D(1);
                         a8.g(e25, false);
                     } else if (g0.G1(e25)) {
-                        bz.h(this.L0);
+                        cz.h(this.L0);
                         a8.g(e25, false);
                     } else {
                         a8.g(e25, true);
@@ -2207,7 +2207,7 @@ public final class i7 {
                 }
                 z12 = true;
                 if (g0.G1(e26)) {
-                    bz.h(this.L0);
+                    cz.h(this.L0);
                     a8.g(e26, false);
                     j(-1, true);
                     return;
@@ -2792,17 +2792,17 @@ public final class i7 {
     }
 
     public final void t() {
-        boolean z10 = !mp.u1(this.R).J3 && this.b0 > 0 && this.h0 == null && !this.n0 && !this.y && this.J == 0;
+        boolean z10 = !np.u1(this.R).J3 && this.b0 > 0 && this.h0 == null && !this.n0 && !this.y && this.J == 0;
         this.f = z10;
         if (z10) {
-            boolean q10 = j10.i(this.R).q();
+            boolean q10 = k10.i(this.R).q();
             this.g = q10 ? 8 : 2;
             this.k0 = ((q10 ? 16 : 2) * TLObject.FLAG_20) / this.j0;
         }
     }
 
     public final void u() {
-        if ((this.J > 0 || mp.u1(this.R).I3) && !this.e) {
+        if ((this.J > 0 || np.u1(this.R).I3) && !this.e) {
             this.n = TLObject.FLAG_19;
             this.o = 8;
             this.p = 8;
@@ -2818,7 +2818,7 @@ public final class i7 {
         this.q = (int) (2097152000 / this.n);
     }
 
-    public i7(yv yvVar) {
+    public i7(zv zvVar) {
         this.g = 2;
         this.h = new y6(this, 0);
         this.n = 131072;
@@ -2832,7 +2832,7 @@ public final class i7 {
         u();
         TLRPC.TL_inputSecureFileLocation tL_inputSecureFileLocation = new TLRPC.TL_inputSecureFileLocation();
         this.V = tL_inputSecureFileLocation;
-        TLRPC.TL_secureFile tL_secureFile = yvVar.b;
+        TLRPC.TL_secureFile tL_secureFile = zvVar.b;
         tL_inputSecureFileLocation.id = tL_secureFile.id;
         tL_inputSecureFileLocation.access_hash = tL_secureFile.access_hash;
         this.T = tL_secureFile.dc_id;
@@ -2842,7 +2842,7 @@ public final class i7 {
         this.P0 = ".jpg";
     }
 
-    public i7(int i7, h20 h20Var) {
+    public i7(int i7, i20 i20Var) {
         this.g = 2;
         this.h = new y6(this, 0);
         this.n = 131072;
@@ -2855,24 +2855,24 @@ public final class i7 {
         this.f1 = new y6(this, 5);
         u();
         this.R = i7;
-        this.X = h20Var;
-        this.W = h20Var.b;
-        this.b0 = h20Var.d;
-        int i10 = mp.u1(i7).Q3;
+        this.X = i20Var;
+        this.W = i20Var.b;
+        this.b0 = i20Var.d;
+        int i10 = np.u1(i7).Q3;
         this.T = i10;
         this.U = i10;
-        String H = w7.H(h20Var.e);
-        if (h20Var.e.startsWith("image/")) {
+        String H = w7.H(i20Var.e);
+        if (i20Var.e.startsWith("image/")) {
             this.b1 = 16777216;
-        } else if (h20Var.e.equals("audio/ogg")) {
+        } else if (i20Var.e.equals("audio/ogg")) {
             this.b1 = ConnectionsManager.FileTypeAudio;
-        } else if (h20Var.e.startsWith("video/")) {
+        } else if (i20Var.e.startsWith("video/")) {
             this.b1 = 33554432;
         } else {
             this.b1 = 67108864;
         }
         this.o0 = true;
-        this.P0 = ec.B(h20Var.a, H);
+        this.P0 = fc.B(i20Var.a, H);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x013d A[Catch: Exception -> 0x0087, TryCatch #0 {Exception -> 0x0087, blocks: (B:8:0x0050, B:11:0x0062, B:12:0x00e6, B:14:0x00f0, B:18:0x00fc, B:20:0x0106, B:22:0x0110, B:23:0x0118, B:25:0x0120, B:28:0x012a, B:29:0x0133, B:31:0x013d, B:32:0x0162, B:34:0x016a, B:39:0x0142, B:41:0x014c, B:43:0x0150, B:46:0x0159, B:47:0x015e, B:48:0x0131, B:50:0x008a, B:52:0x008e, B:54:0x00a5, B:55:0x00a9, B:57:0x00ba, B:61:0x00c4, B:59:0x00d3, B:62:0x00d6, B:64:0x00da, B:66:0x00de, B:68:0x00e2), top: B:7:0x0050 }] */
@@ -2897,8 +2897,8 @@ public final class i7 {
         this.Y = 0;
         this.F0 = new ArrayList();
         this.f1 = new y6(this, 5);
-        this.k = fj.K4(document);
-        if (document != null && !fj.N2(document)) {
+        this.k = gj.K4(document);
+        if (document != null && !gj.N2(document)) {
             "application/x-tgwallpattern".equals(document.mime_type);
         }
         u();
@@ -2968,7 +2968,7 @@ public final class i7 {
                         this.b1 = ConnectionsManager.FileTypeAudio;
                     } else {
                         String str = document.mime_type;
-                        if (!"video/mp4".equals(str) && (!bz.D0 || !"video/x-matroska".equals(str))) {
+                        if (!"video/mp4".equals(str) && (!cz.D0 || !"video/x-matroska".equals(str))) {
                             this.b1 = 67108864;
                         }
                         this.b1 = 33554432;

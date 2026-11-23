@@ -24,18 +24,18 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ue;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ve;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class d6 extends View implements m2 {
     public boolean A0;
@@ -310,29 +310,29 @@ public final class d6 extends View implements m2 {
         oq oqVar = this.c;
         ImageReceiver imageReceiver = this.b;
         if (b6Var != null) {
-            ArrayList arrayList2 = mp.u1(imageReceiver.d).R1().w.b;
+            ArrayList arrayList2 = np.u1(imageReceiver.d).R1().w.b;
             imageReceiver.G0(0, 0, true);
             if (arrayList2 != null && !arrayList2.isEmpty() && ((c7) arrayList2.get(0)).O0 != null) {
-                imageReceiver.r0(fc.g(((c7) arrayList2.get(0)).O0.getAbsolutePath()), "80_80", null, null, oqVar, 0L, null, null, 0);
+                imageReceiver.r0(gc.g(((c7) arrayList2.get(0)).O0.getAbsolutePath()), "80_80", null, null, oqVar, 0L, null, null, 0);
                 return;
             }
         }
-        ue ueVar = MediaController.a2;
-        ef efVar = (ueVar == null || (arrayList = ueVar.e) == null || arrayList.isEmpty()) ? null : (ef) arrayList.get(0);
-        if (efVar != null && (str = efVar.c) != null) {
-            imageReceiver.r0(fc.g(str), "80_80", null, null, oqVar, 0L, null, null, 0);
+        ve veVar = MediaController.a2;
+        ff ffVar = (veVar == null || (arrayList = veVar.e) == null || arrayList.isEmpty()) ? null : (ff) arrayList.get(0);
+        if (ffVar != null && (str = ffVar.c) != null) {
+            imageReceiver.r0(gc.g(str), "80_80", null, null, oqVar, 0L, null, null, 0);
             return;
         }
-        if (efVar != null) {
-            int i7 = efVar.C;
-            String str2 = efVar.I;
+        if (ffVar != null) {
+            int i7 = ffVar.C;
+            String str2 = ffVar.I;
             if (str2 != null) {
-                if (efVar.b) {
-                    imageReceiver.r0(fc.g("vthumb://" + i7 + ":" + str2), "80_80", null, null, oqVar, 0L, null, null, 0);
+                if (ffVar.b) {
+                    imageReceiver.r0(gc.g("vthumb://" + i7 + ":" + str2), "80_80", null, null, oqVar, 0L, null, null, 0);
                     return;
                 }
-                imageReceiver.G0(efVar.J, efVar.K, true);
-                imageReceiver.r0(fc.g("thumb://" + i7 + ":" + str2), "80_80", null, null, oqVar, 0L, null, null, 0);
+                imageReceiver.G0(ffVar.J, ffVar.K, true);
+                imageReceiver.r0(gc.g("thumb://" + i7 + ":" + str2), "80_80", null, null, oqVar, 0L, null, null, 0);
                 return;
             }
         }
@@ -488,7 +488,7 @@ public final class d6 extends View implements m2 {
             f22 = T13;
             rectF = rectF4;
             f23 = max;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ls.e4, 31);
         } else {
             f17 = f43;
             f18 = f42;
@@ -502,7 +502,7 @@ public final class d6 extends View implements m2 {
             canvas2.save();
         }
         canvas2.scale(f22, f22, this.j0, this.k0);
-        paint.setAlpha(ks.e4);
+        paint.setAlpha(ls.e4);
         canvas2.drawRoundRect(rectF, W1, W1, paint);
         if (f12 > f14) {
             float L6 = org.telegram.messenger.g0.L(4.0f);
@@ -552,7 +552,7 @@ public final class d6 extends View implements m2 {
         paint6.setAlpha((int) (org.telegram.messenger.g0.T1(1.0f, f24, f16) * 255.0f * f17));
         canvas2.drawCircle(this.j0, this.k0, T14, paint6);
         if ((e16 > 0.0f ? z10 : false) && ((f16 > 0.0f ? 1 : (f16 == 0.0f ? 0 : -1)) > 0 ? z10 : false)) {
-            paint6.setAlpha(ks.e4);
+            paint6.setAlpha(ls.e4);
             rectF3 = rectF5;
             canvas2.drawArc(rectF3, -90.0f, e16 * 360.0f, false, paint6);
         } else {
@@ -655,7 +655,7 @@ public final class d6 extends View implements m2 {
         int i12 = (f28 > 0.0f ? 1 : (f28 == 0.0f ? 0 : -1));
         if (i12 > 0) {
             Paint paint9 = this.E;
-            paint9.setAlpha(ks.e4);
+            paint9.setAlpha(ls.e4);
             canvas3.drawCircle(this.z0, this.k0, f28, paint9);
             float f61 = this.z0;
             float abs3 = 1.0f - ((Math.abs(i11) * f20) / 1.3f);
@@ -934,7 +934,7 @@ public final class d6 extends View implements m2 {
                             this.A0 = false;
                             this.H0.e(true, 1.0f);
                             i3 i3Var = ((p9) this.a).a.U0;
-                            i3Var.a.t(gd.N0(2131744420, null), true, true);
+                            i3Var.a.t(hd.N0(2131744418, null), true, true);
                             i3Var.invalidate();
                         } else {
                             this.s0 = false;

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class e10 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.b6 {
     public Runnable E;
@@ -55,7 +55,7 @@ public class e10 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.
         this.r = iVar;
         iVar.setTextSize(1, 15.0f);
         iVar.setCursorWidth(1.5f);
-        iVar.setInputType(iVar.getInputType() | org.telegram.messenger.ks.G2);
+        iVar.setInputType(iVar.getInputType() | org.telegram.messenger.ls.G2);
         iVar.setSingleLine(true);
         iVar.setBackground(null);
         iVar.setVerticalScrollBarEnabled(false);
@@ -63,34 +63,34 @@ public class e10 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.
         iVar.setPadding(org.telegram.messenger.g0.L(48.0f), 0, org.telegram.messenger.g0.L(48.0f), 0);
         iVar.setClipToPadding(true);
         iVar.setImeOptions(268435459);
-        iVar.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 16);
+        iVar.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
         iVar.addTextChangedListener(new ah.j(this, 23));
         if (Build.VERSION.SDK_INT >= 35) {
             iVar.setLocalePreferredLineHeightForMinimumUsed(false);
         }
-        addView(iVar, c8.ma.d(-1, -1.0f, org.telegram.messenger.ks.E1, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(iVar, c8.ma.d(-1, -1.0f, org.telegram.messenger.ls.E1, 0.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.outline_search_1_24);
-        addView(imageView, c8.ma.d(24, 24.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView, c8.ma.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.h = linearLayout;
         linearLayout.setOrientation(0);
-        addView(linearLayout, c8.ma.d(-2, -1.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 16, 32.0f, 0.0f, 32.0f, 0.0f));
+        addView(linearLayout, c8.ma.d(-2, -1.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 32.0f, 0.0f, 32.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.miniplayer_close);
         imageView2.setVisibility(8);
         imageView2.setOnClickListener(new o0(this, 18));
-        addView(imageView2, c8.ma.d(24, 24.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView2, c8.ma.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         org.telegram.ui.d61 d61Var = new org.telegram.ui.d61(13, getContext(), this);
         this.H = d61Var;
         d61Var.setOrientation(0);
         d61Var.setVisibility(0);
-        addView(d61Var, c8.ma.d(-2, 32.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(d61Var, c8.ma.d(-2, 32.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
         setWillNotDraw(false);
         b();
         updateColors();
@@ -124,7 +124,7 @@ public class e10 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.
     public final void b() {
         int max = Math.max(org.telegram.messenger.g0.L(6.0f) + ((int) this.c.f), org.telegram.messenger.g0.L(48.0f));
         int measuredWidth = this.h.getMeasuredWidth() + org.telegram.messenger.g0.L(48.0f);
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         int i7 = z10 ? measuredWidth : max;
         if (!z10) {
             max = measuredWidth;
@@ -211,7 +211,7 @@ public class e10 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.
             p0Var.updateColors();
             p0Var.setData(o0Var);
             p0Var.setOnClickListener(new m8(14, this, p0Var));
-            boolean z10 = org.telegram.messenger.gd.a0;
+            boolean z10 = org.telegram.messenger.hd.a0;
             d61Var.addView(p0Var, c8.ma.t(-2, -1, 0, z10 ? 6 : 0, 0, z10 ? 0 : 6, 0));
         }
         int i11 = 0;
@@ -282,7 +282,7 @@ public class e10 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.
     }
 
     public void setupBlurredBackground(fh.g gVar) {
-        org.telegram.messenger.n10.s(gVar, org.telegram.messenger.g0.L(20.0f), 4.0f);
+        org.telegram.messenger.o10.s(gVar, org.telegram.messenger.g0.L(20.0f), 4.0f);
         this.s = gVar;
     }
 

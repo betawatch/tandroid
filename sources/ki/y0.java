@@ -4,9 +4,9 @@ import android.content.Context;
 import android.os.SystemClock;
 import java.io.File;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.nb;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ob;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.g70;
 import org.telegram.ui.Components.i70;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -80,12 +80,12 @@ public final /* synthetic */ class y0 implements Runnable {
                         i70.E1 = SystemClock.elapsedRealtime();
                         int i10 = cVar.a;
                         i70.G1 = i10;
-                        mp.u1(i10).Z3(joinaspeers.chats, false);
-                        mp.u1(cVar.a).f4(joinaspeers.users, false);
+                        np.u1(i10).Z3(joinaspeers.chats, false);
+                        np.u1(cVar.a).f4(joinaspeers.users, false);
                         i70.M0(context2, j3, joinaspeers.peers, g2Var, this.e, peer, g70Var);
                         break;
                     } else {
-                        g70Var.a(mp.u1(cVar.a).l1(fj.B1(joinaspeers.peers.get(0))), false, false, false);
+                        g70Var.a(np.u1(cVar.a).l1(gj.B1(joinaspeers.peers.get(0))), false, false, false);
                         break;
                     }
                 }
@@ -112,9 +112,9 @@ public final /* synthetic */ class y0 implements Runnable {
                     e = e12;
                     i7 = org.telegram.ui.Wallet.l2.i("decode request", e);
                     h2Var = null;
-                    org.telegram.messenger.g0.g3(new nb(l2Var, h2Var, e0Var, i7, this.c, this.e, r0Var));
+                    org.telegram.messenger.g0.g3(new ob(l2Var, h2Var, e0Var, i7, this.c, this.e, r0Var));
                 }
-                org.telegram.messenger.g0.g3(new nb(l2Var, h2Var, e0Var, i7, this.c, this.e, r0Var));
+                org.telegram.messenger.g0.g3(new ob(l2Var, h2Var, e0Var, i7, this.c, this.e, r0Var));
         }
     }
 

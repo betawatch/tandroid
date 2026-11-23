@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import c8.ma;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.h6;
@@ -17,7 +17,7 @@ import org.telegram.ui.cx;
 import org.telegram.ui.wc1;
 import ug.h1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g0 extends h1 {
     public static g0 O2;
@@ -39,7 +39,7 @@ public final class g0 extends h1 {
             aVar2.e = true;
             hi.e eVar = aVar2.a;
             eVar.setEnabled(true);
-            eVar.i(gd.N0(2131749502, null), false, true);
+            eVar.i(hd.N0(2131749502, null), false, true);
             t6.h(m6.h5, aVar2.b, aVar2.c);
             this.b.addView(this.M2, ma.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
@@ -86,7 +86,7 @@ public final class g0 extends h1 {
         this.L2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         ((ViewGroup.MarginLayoutParams) this.L2.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(14.0f);
         ((ViewGroup.MarginLayoutParams) this.L2.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(12.0f);
-        this.L2.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.g0.R2(gd.N0(2131749506, "GiftPremiumAboutThisLink"), m6.Xc, 0, new e0(this, 0), null), org.telegram.messenger.g0.W2(gd.N0(2131749505, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
+        this.L2.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.g0.R2(hd.N0(2131749506, "GiftPremiumAboutThisLink"), m6.Xc, 0, new e0(this, 0), null), org.telegram.messenger.g0.W2(hd.N0(2131749505, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
     }
 
     @Override // ug.h1

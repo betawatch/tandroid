@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v41 {
     public TLRPC.User a;
@@ -34,7 +34,7 @@ public final class v41 {
     public final void b(org.telegram.ui.ActionBar.g2 g2Var) {
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", this.a.id);
-        org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).e4(this.a, false, false);
+        org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).e4(this.a, false, false);
         g2Var.presentFragment(new ProfileActivity(bundle, null));
     }
 
@@ -50,7 +50,7 @@ public final class v41 {
         String str;
         int i7;
         ArrayList<TLRPC.ChatParticipant> arrayList;
-        org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).e4(this.a, false, false);
+        org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).e4(this.a, false, false);
         ArrayList arrayList2 = new ArrayList();
         final ArrayList arrayList3 = new ArrayList();
         ArrayList arrayList4 = new ArrayList();
@@ -67,14 +67,14 @@ public final class v41 {
                 if (j3 == this.a.id && (chatParticipant instanceof TLRPC.TL_chatChannelParticipant)) {
                     tL_chatChannelParticipant = (TLRPC.TL_chatChannelParticipant) chatParticipant;
                 }
-                if (j3 == org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n && (chatParticipant instanceof TLRPC.TL_chatChannelParticipant)) {
+                if (j3 == org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).n && (chatParticipant instanceof TLRPC.TL_chatChannelParticipant)) {
                     tL_chatChannelParticipant2 = (TLRPC.TL_chatChannelParticipant) chatParticipant;
                 }
             }
         }
-        org.telegram.ui.Cells.c0.v("StatisticOpenProfile", 2131744655, arrayList2, R.drawable.msg_openprofile, arrayList4);
+        org.telegram.ui.Cells.c0.v("StatisticOpenProfile", 2131744653, arrayList2, R.drawable.msg_openprofile, arrayList4);
         arrayList3.add(2);
-        arrayList2.add(org.telegram.messenger.gd.N0(2131744653, "StatisticSearchUserHistory"));
+        arrayList2.add(org.telegram.messenger.hd.N0(2131744651, "StatisticSearchUserHistory"));
         arrayList4.add(Integer.valueOf(R.drawable.msg_msgbubble3));
         arrayList3.add(1);
         if (z10 && tL_chatChannelParticipant == null) {
@@ -84,10 +84,10 @@ public final class v41 {
                 t1Var.r(300L);
             }
             TLRPC.TL_channels_getParticipant tL_channels_getParticipant = new TLRPC.TL_channels_getParticipant();
-            tL_channels_getParticipant.channel = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).j1(chatFull.id);
-            tL_channels_getParticipant.participant = org.telegram.messenger.mp.p1(this.a);
+            tL_channels_getParticipant.channel = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).j1(chatFull.id);
+            tL_channels_getParticipant.participant = org.telegram.messenger.np.p1(this.a);
             final int i11 = 0;
-            ConnectionsManager.getInstance(org.telegram.messenger.j10.t0).sendRequest(tL_channels_getParticipant, new RequestDelegate(this) { // from class: org.telegram.ui.q41
+            ConnectionsManager.getInstance(org.telegram.messenger.k10.t0).sendRequest(tL_channels_getParticipant, new RequestDelegate(this) { // from class: org.telegram.ui.q41
                 public final /* synthetic */ v41 b;
 
                 {
@@ -147,7 +147,7 @@ public final class v41 {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) tLObject;
                                                         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant4 = new TLRPC.TL_chatChannelParticipant();
                                                         tL_chatChannelParticipant4.channelParticipant = tL_channels_channelParticipant2.participant;
-                                                        tL_chatChannelParticipant4.user_id = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n;
+                                                        tL_chatChannelParticipant4.user_id = org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).n;
                                                         chatFull4.participants.participants.add(0, tL_chatChannelParticipant4);
                                                         v41Var3.c(chatFull4, c51Var4, t1VarArr4, true);
                                                         break;
@@ -209,7 +209,7 @@ public final class v41 {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) tLObject;
                                                         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant4 = new TLRPC.TL_chatChannelParticipant();
                                                         tL_chatChannelParticipant4.channelParticipant = tL_channels_channelParticipant2.participant;
-                                                        tL_chatChannelParticipant4.user_id = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n;
+                                                        tL_chatChannelParticipant4.user_id = org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).n;
                                                         chatFull4.participants.participants.add(0, tL_chatChannelParticipant4);
                                                         v41Var3.c(chatFull4, c51Var4, t1VarArr4, true);
                                                         break;
@@ -233,10 +233,10 @@ public final class v41 {
                 t1Var2.r(300L);
             }
             TLRPC.TL_channels_getParticipant tL_channels_getParticipant2 = new TLRPC.TL_channels_getParticipant();
-            tL_channels_getParticipant2.channel = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).j1(chatFull.id);
-            tL_channels_getParticipant2.participant = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).l1(org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n);
+            tL_channels_getParticipant2.channel = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).j1(chatFull.id);
+            tL_channels_getParticipant2.participant = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).l1(org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).n);
             final int i12 = 1;
-            ConnectionsManager.getInstance(org.telegram.messenger.j10.t0).sendRequest(tL_channels_getParticipant2, new RequestDelegate(this) { // from class: org.telegram.ui.q41
+            ConnectionsManager.getInstance(org.telegram.messenger.k10.t0).sendRequest(tL_channels_getParticipant2, new RequestDelegate(this) { // from class: org.telegram.ui.q41
                 public final /* synthetic */ v41 b;
 
                 {
@@ -296,7 +296,7 @@ public final class v41 {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) tLObject;
                                                         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant4 = new TLRPC.TL_chatChannelParticipant();
                                                         tL_chatChannelParticipant4.channelParticipant = tL_channels_channelParticipant2.participant;
-                                                        tL_chatChannelParticipant4.user_id = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n;
+                                                        tL_chatChannelParticipant4.user_id = org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).n;
                                                         chatFull4.participants.participants.add(0, tL_chatChannelParticipant4);
                                                         v41Var3.c(chatFull4, c51Var4, t1VarArr4, true);
                                                         break;
@@ -358,7 +358,7 @@ public final class v41 {
                                                         TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant2 = (TLRPC.TL_channels_channelParticipant) tLObject;
                                                         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant4 = new TLRPC.TL_chatChannelParticipant();
                                                         tL_chatChannelParticipant4.channelParticipant = tL_channels_channelParticipant2.participant;
-                                                        tL_chatChannelParticipant4.user_id = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).n;
+                                                        tL_chatChannelParticipant4.user_id = org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).n;
                                                         chatFull4.participants.participants.add(0, tL_chatChannelParticipant4);
                                                         v41Var3.c(chatFull4, c51Var4, t1VarArr4, true);
                                                         break;
@@ -396,7 +396,7 @@ public final class v41 {
                     str = "EditAdminRights";
                     i7 = 2131751292;
                 }
-                arrayList2.add(org.telegram.messenger.gd.N0(i7, str));
+                arrayList2.add(org.telegram.messenger.hd.N0(i7, str));
                 arrayList4.add(Integer.valueOf(z11 ? R.drawable.msg_admins : R.drawable.msg_permissions));
                 arrayList3.add(0);
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(c51Var.getParentActivity());

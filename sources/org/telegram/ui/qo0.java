@@ -3,14 +3,14 @@ package org.telegram.ui;
 import android.app.Activity;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qo0 extends org.telegram.ui.Components.kw0 {
     public final /* synthetic */ ro0 s2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qo0(ro0 ro0Var, Activity activity, org.telegram.messenger.fj fjVar, TLObject tLObject, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(activity, fjVar, tLObject, h6Var);
+    public qo0(ro0 ro0Var, Activity activity, org.telegram.messenger.gj gjVar, TLObject tLObject, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(activity, gjVar, tLObject, h6Var);
         this.s2 = ro0Var;
     }
 

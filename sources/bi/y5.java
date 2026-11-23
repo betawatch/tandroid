@@ -1,64 +1,30 @@
 package bi;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.a70;
-import org.telegram.ui.PhotoViewer;
-
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a70 b;
-    public final /* synthetic */ a70 c;
+    public final /* synthetic */ m6 b;
 
-    public /* synthetic */ y5(a70 a70Var, a70 a70Var2, int i7) {
+    public /* synthetic */ y5(m6 m6Var, int i7) {
         this.a = i7;
-        this.b = a70Var;
-        this.c = a70Var2;
+        this.b = m6Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        a70 a70Var = this.c;
-        a70 a70Var2 = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                a70Var2.L(a70Var);
+                this.b.setReordering(true);
                 break;
             case 1:
-                a70Var2.L(a70Var);
+                this.b.setReordering(true);
                 break;
             case 2:
-                a70Var2.L(a70Var);
-                break;
-            case 3:
-                a70Var2.L(a70Var);
-                break;
-            case 4:
-                a70Var2.L(a70Var);
-                break;
-            case 5:
-                a70Var2.L(a70Var);
-                break;
-            case 6:
-                a70Var2.L(a70Var);
-                break;
-            case 7:
-                a70Var2.L(a70Var);
-                break;
-            case 8:
-                a70Var2.L(a70Var);
-                break;
-            case 9:
-                a70Var2.L(a70Var);
-                break;
-            case 10:
-                a70Var2.L(a70Var);
+                this.b.f(false);
                 break;
             default:
-                Drawable[] drawableArr = PhotoViewer.Z8;
-                a70Var2.L(a70Var);
+                this.b.setReordering(true);
                 break;
         }
     }

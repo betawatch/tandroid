@@ -1,12 +1,12 @@
 package kg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f {
     public static volatile f[] g = new f[4];
@@ -55,10 +55,10 @@ public final class f {
         c(null);
     }
 
-    public final void c(x10 x10Var) {
+    public final void c(y10 y10Var) {
         boolean z10;
-        if (x10Var != null) {
-            this.d.add(x10Var);
+        if (y10Var != null) {
+            this.d.add(y10Var);
         }
         if (this.e) {
             return;
@@ -77,11 +77,11 @@ public final class f {
             ArrayList arrayList = this.d;
             if (i7 >= arrayList.size()) {
                 arrayList.clear();
-                ks.f(this.a).k(ks.c4, new Object[0]);
+                ls.f(this.a).k(ls.c4, new Object[0]);
                 return;
             } else {
                 if (arrayList.get(i7) != null) {
-                    ((x10) arrayList.get(i7)).a(this.c);
+                    ((y10) arrayList.get(i7)).a(this.c);
                 }
                 i7++;
             }

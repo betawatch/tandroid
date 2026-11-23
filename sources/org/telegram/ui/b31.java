@@ -9,9 +9,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.fs {
+public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.gs {
     public final org.telegram.ui.Components.q9 a;
     public final org.telegram.ui.ActionBar.n2 b;
     public final org.telegram.ui.Components.voip.n c;
@@ -45,7 +45,7 @@ public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.
         m80Var.setTextSize(1, 15.0f);
         org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.J6, null);
         org.telegram.ui.ActionBar.t6.C(m80Var, org.telegram.ui.ActionBar.m6.K6, null);
-        String N0 = org.telegram.messenger.gd.N0(2131753886, null);
+        String N0 = org.telegram.messenger.hd.N0(2131753886, null);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(N0);
         int indexOf = N0.indexOf(42);
         int i12 = indexOf + 1;
@@ -54,7 +54,7 @@ public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.
             m80Var.setMovementMethod(new org.telegram.messenger.c0(false));
             spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, i12, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.s41(org.telegram.messenger.gd.N0(2131753890, null), (org.telegram.ui.Components.fz0) null), indexOf, indexOf2 - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.s41(org.telegram.messenger.hd.N0(2131753890, null), (org.telegram.ui.Components.fz0) null), indexOf, indexOf2 - 1, 33);
         }
         String spannableStringBuilder2 = spannableStringBuilder.toString();
         int indexOf3 = spannableStringBuilder2.indexOf(42);
@@ -64,7 +64,7 @@ public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.
             m80Var.setMovementMethod(new org.telegram.messenger.c0(false));
             spannableStringBuilder.replace(indexOf4, indexOf4 + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf3, i13, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.s41(org.telegram.messenger.gd.N0(2131753880, null), (org.telegram.ui.Components.fz0) null), indexOf3, indexOf4 - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.s41(org.telegram.messenger.hd.N0(2131753880, null), (org.telegram.ui.Components.fz0) null), indexOf3, indexOf4 - 1, 33);
         }
         m80Var.setText(spannableStringBuilder);
         org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2(6, context, this);
@@ -74,7 +74,7 @@ public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.
         n2Var.setTextSize(1, 14.0f);
         n2Var.setTypeface(org.telegram.messenger.g0.o());
         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-        spannableStringBuilder3.append((CharSequence) ".  ").append((CharSequence) org.telegram.messenger.gd.N0(2131748724, null));
+        spannableStringBuilder3.append((CharSequence) ".  ").append((CharSequence) org.telegram.messenger.hd.N0(2131748724, null));
         spannableStringBuilder3.setSpan(new org.telegram.ui.Components.nq(0, getContext().getDrawable(R.drawable.msg_mini_qr)), 0, 1, 0);
         n2Var.setText(spannableStringBuilder3);
         org.telegram.ui.ActionBar.t6.U(n2Var, org.telegram.ui.ActionBar.m6.Ji, null);
@@ -93,32 +93,32 @@ public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.
         int i11;
         SessionsActivity sessionsActivity = this.f;
         i7 = ((org.telegram.ui.ActionBar.g2) sessionsActivity).currentAccount;
-        TLRPC.TL_messages_stickerSet r02 = org.telegram.messenger.ri.d0(i7).r0("tg_placeholders_android");
+        TLRPC.TL_messages_stickerSet r02 = org.telegram.messenger.si.d0(i7).r0("tg_placeholders_android");
         if (r02 == null) {
             i11 = ((org.telegram.ui.ActionBar.g2) sessionsActivity).currentAccount;
-            r02 = org.telegram.messenger.ri.d0(i11).p0("tg_placeholders_android");
+            r02 = org.telegram.messenger.si.d0(i11).p0("tg_placeholders_android");
         }
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = r02;
         TLRPC.Document document = (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() <= 6) ? null : tL_messages_stickerSet.documents.get(6);
-        org.telegram.messenger.lz d = document != null ? org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.m6.c7, 0.2f, false) : null;
+        org.telegram.messenger.mz d = document != null ? org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.m6.c7, 0.2f, false) : null;
         if (d != null) {
             d.e = 512;
             d.f = 512;
         }
         if (document == null) {
             i10 = ((org.telegram.ui.ActionBar.g2) sessionsActivity).currentAccount;
-            org.telegram.messenger.ri.d0(i10).f1("tg_placeholders_android", false, tL_messages_stickerSet == null);
+            org.telegram.messenger.si.d0(i10).f1("tg_placeholders_android", false, tL_messages_stickerSet == null);
         } else {
-            org.telegram.messenger.fc b10 = org.telegram.messenger.fc.b(document);
+            org.telegram.messenger.gc b10 = org.telegram.messenger.gc.b(document);
             org.telegram.ui.Components.q9 q9Var = this.a;
             q9Var.k(b10, "130_130", "tgs", d, tL_messages_stickerSet);
             q9Var.getImageReceiver().W(2);
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.y0 && "tg_placeholders_android".equals((String) objArr[0])) {
+        if (i7 == org.telegram.messenger.ls.y0 && "tg_placeholders_android".equals((String) objArr[0])) {
             a();
         }
     }
@@ -129,7 +129,7 @@ public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.
         super.onAttachedToWindow();
         a();
         i7 = ((org.telegram.ui.ActionBar.g2) this.f).currentAccount;
-        org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.y0);
+        org.telegram.messenger.ls.f(i7).c(this, org.telegram.messenger.ls.y0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -137,7 +137,7 @@ public final class b31 extends FrameLayout implements org.telegram.ui.ActionBar.
         int i7;
         super.onDetachedFromWindow();
         i7 = ((org.telegram.ui.ActionBar.g2) this.f).currentAccount;
-        org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.y0);
+        org.telegram.messenger.ls.f(i7).n(this, org.telegram.messenger.ls.y0);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

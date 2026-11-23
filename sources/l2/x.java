@@ -8,16 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gb;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ob;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.uo;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hb;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.pb;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.vo;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.u2;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 import org.telegram.ui.ax;
 import org.telegram.ui.bn;
 import org.telegram.ui.bx;
@@ -35,7 +35,7 @@ import org.telegram.ui.fl;
 import org.telegram.ui.kl;
 import org.telegram.ui.mm;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class x implements Runnable {
     public final void run() {
         int i7;
         int i10 = this.a;
-        int i11 = 3;
+        int i11 = 2;
         final int i12 = 1;
         int i13 = this.b;
         int i14 = this.c;
@@ -72,22 +72,22 @@ public final /* synthetic */ class x implements Runnable {
                 break;
             case 1:
                 String str = (String) obj;
-                ec ecVar = ((ob) obj2).b;
+                fc fcVar = ((pb) obj2).b;
                 if (i13 != 1) {
-                    ecVar.s.c(new gb(ecVar, str, i12));
+                    fcVar.s.c(new hb(fcVar, str, i12));
                 }
-                ks.f(i14).k(ks.Z1, str, Integer.valueOf(i13));
+                ls.f(i14).k(ls.Z1, str, Integer.valueOf(i13));
                 break;
             case 2:
-                ((ri) obj2).A1((List) obj, i13, i14, true);
+                ((si) obj2).A1((List) obj, i13, i14, true);
                 break;
             case 3:
-                ri riVar = (ri) obj2;
+                si siVar = (si) obj2;
                 ArrayList arrayList = (ArrayList) obj;
                 try {
                     if (arrayList != null) {
-                        riVar.getMessagesStorage().b.executeFast("DELETE FROM reactions").stepThis().dispose();
-                        SQLitePreparedStatement executeFast = riVar.getMessagesStorage().b.executeFast("REPLACE INTO reactions VALUES(?, ?, ?)");
+                        siVar.getMessagesStorage().b.executeFast("DELETE FROM reactions").stepThis().dispose();
+                        SQLitePreparedStatement executeFast = siVar.getMessagesStorage().b.executeFast("REPLACE INTO reactions VALUES(?, ?, ?)");
                         executeFast.requery();
                         int i15 = 4;
                         for (int i16 = 0; i16 < arrayList.size(); i16++) {
@@ -107,7 +107,7 @@ public final /* synthetic */ class x implements Runnable {
                         executeFast.dispose();
                         break;
                     } else {
-                        SQLitePreparedStatement executeFast2 = riVar.getMessagesStorage().b.executeFast("UPDATE reactions SET date = ?");
+                        SQLitePreparedStatement executeFast2 = siVar.getMessagesStorage().b.executeFast("UPDATE reactions SET date = ?");
                         executeFast2.requery();
                         executeFast2.bindLong(1, i14);
                         executeFast2.step();
@@ -119,26 +119,26 @@ public final /* synthetic */ class x implements Runnable {
                     return;
                 }
             case 4:
-                mp mpVar = (mp) obj2;
-                mpVar.s1.clear();
-                mpVar.z1.clear();
-                tr messagesStorage = mpVar.getMessagesStorage();
+                np npVar = (np) obj2;
+                npVar.s1.clear();
+                npVar.z1.clear();
+                ur messagesStorage = npVar.getMessagesStorage();
                 messagesStorage.H();
-                mpVar.y4(true, messagesStorage.w, ((TLRPC.updates_Difference) obj).pts, this.b, this.c);
-                mpVar.R1().q();
+                npVar.y4(true, messagesStorage.w, ((TLRPC.updates_Difference) obj).pts, this.b, this.c);
+                npVar.R1().q();
                 break;
             case 5:
-                uo uoVar = (uo) obj2;
+                vo voVar = (vo) obj2;
                 TLRPC.photos_Photos photos_photos = (TLRPC.photos_Photos) obj;
-                uoVar.h.f4(photos_photos.users, false);
-                uoVar.d(i13, i14, photos_photos);
+                voVar.h.f4(photos_photos.users, false);
+                voVar.d(i13, i14, photos_photos);
                 break;
             case 6:
-                uo uoVar2 = (uo) obj2;
+                vo voVar2 = (vo) obj2;
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj;
-                mp mpVar2 = uoVar2.h;
-                mpVar2.f4(messages_messages.users, false);
-                mpVar2.Z3(messages_messages.chats, false);
+                np npVar2 = voVar2.h;
+                npVar2.f4(messages_messages.users, false);
+                npVar2.Z3(messages_messages.chats, false);
                 TLRPC.TL_photos_photos tL_photos_photos = new TLRPC.TL_photos_photos();
                 tL_photos_photos.count = messages_messages.count;
                 int i17 = 0;
@@ -157,14 +157,14 @@ public final /* synthetic */ class x implements Runnable {
                 if (i13 == 0 && messages_messages.messages.size() >= messages_messages.count) {
                     tL_photos_photos.count -= i17;
                 }
-                uoVar2.d(i13, i14, tL_photos_photos);
+                voVar2.d(i13, i14, tL_photos_photos);
                 break;
             case 7:
-                tr trVar = (tr) obj2;
+                ur urVar = (ur) obj2;
                 byte[] bArr = (byte[]) obj;
-                trVar.getClass();
+                urVar.getClass();
                 try {
-                    SQLitePreparedStatement executeFast3 = trVar.b.executeFast("UPDATE params SET lsv = ?, sg = ?, pbytes = ? WHERE id = 1");
+                    SQLitePreparedStatement executeFast3 = urVar.b.executeFast("UPDATE params SET lsv = ?, sg = ?, pbytes = ? WHERE id = 1");
                     executeFast3.bindInteger(1, i13);
                     executeFast3.bindInteger(2, i14);
                     NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(bArr != null ? bArr.length : 1);
@@ -177,13 +177,13 @@ public final /* synthetic */ class x implements Runnable {
                     nativeByteBuffer2.reuse();
                     break;
                 } catch (Exception e11) {
-                    trVar.o(e11, true);
+                    urVar.o(e11, true);
                     return;
                 }
             case 8:
-                ks ksVar = (ks) obj2;
-                ksVar.l((Object[]) obj, i13, false);
-                ksVar.q.remove(i14);
+                ls lsVar = (ls) obj2;
+                lsVar.l((Object[]) obj, i13, false);
+                lsVar.q.remove(i14);
                 break;
             case 9:
                 ConnectionsManager.lambda$onIntegrityCheckClassic$27(i13, (String) obj2, (String) obj, i14);
@@ -194,9 +194,9 @@ public final /* synthetic */ class x implements Runnable {
             case 11:
                 fl flVar = (fl) obj2;
                 flVar.getClass();
-                fj messageObject = ((org.telegram.ui.Cells.v0) obj).getMessageObject();
+                gj messageObject = ((org.telegram.ui.Cells.v0) obj).getMessageObject();
                 kl klVar = flVar.a;
-                klVar.R.Bb(this.b, messageObject.e1(), true, fj.B0(messageObject.k) == klVar.R.d7 ? 1 : 0, true, 0, Integer.valueOf(i14), null, null);
+                klVar.R.Bb(this.b, messageObject.e1(), true, gj.B0(messageObject.k) == klVar.R.d7 ? 1 : 0, true, 0, Integer.valueOf(i14), null, null);
                 break;
             case 12:
                 r1 r1Var = (r1) obj;
@@ -237,11 +237,11 @@ public final /* synthetic */ class x implements Runnable {
                         }
                         if (cxVar.Y2 == 0) {
                             if (d == 2) {
-                                boolean z10 = bz.q1;
+                                boolean z10 = cz.q1;
                                 if (z10) {
-                                    bz.q1 = !z10;
-                                    SharedPreferences.Editor edit = mp.g1().edit();
-                                    edit.putBoolean("archiveHidden", bz.q1);
+                                    cz.q1 = !z10;
+                                    SharedPreferences.Editor edit = np.g1().edit();
+                                    edit.putBoolean("archiveHidden", cz.q1);
                                     edit.apply();
                                 }
                                 bxVar.y.D();
@@ -251,9 +251,9 @@ public final /* synthetic */ class x implements Runnable {
                                     cxVar.z3();
                                 } else {
                                     bxVar.q(true);
-                                    if (!bz.q1 && bxVar.c.L0() == 0) {
+                                    if (!cz.q1 && bxVar.c.L0() == 0) {
                                         cxVar.g2 = true;
-                                        bxVar.a.w0(0, -org.telegram.messenger.g0.L(bz.p1 ? 76.0f : 70.0f), null);
+                                        bxVar.a.w0(0, -org.telegram.messenger.g0.L(cz.p1 ? 76.0f : 70.0f), null);
                                     }
                                 }
                                 i7 = ((g2) cxVar).currentAccount;
@@ -301,14 +301,14 @@ public final /* synthetic */ class x implements Runnable {
                                     }
                                 }, 300L);
                             }
-                            SharedPreferences g12 = mp.g1();
-                            r6 = (g12.getBoolean("archivehint_l", false) || bz.q1) ? 1 : 0;
+                            SharedPreferences g12 = np.g1();
+                            r6 = (g12.getBoolean("archivehint_l", false) || cz.q1) ? 1 : 0;
                             if (r6 == 0) {
                                 g12.edit().putBoolean("archivehint_l", true).commit();
                             }
                             UndoView l42 = cxVar.l4();
                             if (l42 != null) {
-                                l42.l(dialog.id, r6 != 0 ? 2 : 3, null, new j01(axVar, dialog, i18, i11));
+                                l42.l(dialog.id, r6 != 0 ? 2 : 3, null, new f21(axVar, dialog, i18, i11));
                             }
                         }
                         if (cxVar.Y2 != 0 && cxVar.T1.isEmpty()) {
@@ -338,9 +338,9 @@ public final /* synthetic */ class x implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ x(ks ksVar, int i7, Object[] objArr, int i10) {
+    public /* synthetic */ x(ls lsVar, int i7, Object[] objArr, int i10) {
         this.a = 8;
-        this.d = ksVar;
+        this.d = lsVar;
         this.b = i7;
         this.e = objArr;
         this.c = i10;

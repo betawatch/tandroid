@@ -24,20 +24,20 @@ import c8.ma;
 import di.yb;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.p10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.v60;
 import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
+public class z4 extends FrameLayout implements te.b, gs, b6, t4, x60 {
     public CharSequence E;
     public CharSequence F;
     public boolean G;
@@ -50,7 +50,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
     public gh.e N;
     public gh.a O;
     public dh.c P;
-    public p10 Q;
+    public q10 Q;
     public j5 R;
     public q0 S;
     public final te.a T;
@@ -116,7 +116,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         yb ybVar = new yb(this, context);
         this.b = ybVar;
         ybVar.setVisibility(8);
-        ybVar.setContentDescription(gd.N0(2131754878, null));
+        ybVar.setContentDescription(hd.N0(2131754878, null));
         ybVar.setOnClickListener(new w4(this, 0));
         addView(ybVar, ma.e(46, 46, 51));
     }
@@ -235,7 +235,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
     }
 
     public final void E(int i7, boolean z10) {
-        String E = gd.E(i7, ' ');
+        String E = hd.E(i7, ' ');
         q();
         this.f.c(E, z10 && y() && this.H, true);
     }
@@ -300,7 +300,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         this.U.a(true, y());
         l();
         this.b.b(true, y());
-        ks.e().k(ks.u4, new Object[0]);
+        ls.e().k(ls.u4, new Object[0]);
     }
 
     public final void K() {
@@ -374,9 +374,9 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         return true;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.q4) {
+        if (i7 == ls.q4) {
             updateColors();
         }
     }
@@ -465,7 +465,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         }
         fh.g c10 = cVar.c(j5Var, null, false);
         c10.p(this.N);
-        n10.s(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
+        o10.s(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
         return c10;
     }
 
@@ -550,9 +550,9 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
     }
 
     public j5 getMenuOverlay() {
-        p10 p10Var = this.Q;
-        if (p10Var != null) {
-            return (j5) p10Var.run();
+        q10 q10Var = this.Q;
+        if (q10Var != null) {
+            return (j5) q10Var.run();
         }
         return null;
     }
@@ -778,7 +778,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.d0 = true;
-        ks.e().c(this, ks.q4);
+        ls.e().c(this, ls.q4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -786,7 +786,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         super.onDetachedFromWindow();
         this.d0 = false;
         this.c0 = false;
-        ks.e().n(this, ks.q4);
+        ls.e().n(this, ls.q4);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -969,15 +969,15 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         }
         fh.g c10 = cVar.c(this, null, false);
         c10.p(aVar);
-        n10.s(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
+        o10.s(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
         this.I = c10;
         fh.g c11 = cVar.c(this, null, false);
         c11.p(aVar);
-        n10.s(c11, org.telegram.messenger.g0.L(23.0f), 6.0f);
+        o10.s(c11, org.telegram.messenger.g0.L(23.0f), 6.0f);
         this.J = c11;
         fh.g c12 = cVar.c(this, null, false);
         c12.p(aVar);
-        n10.s(c12, org.telegram.messenger.g0.L(23.0f), 6.0f);
+        o10.s(c12, org.telegram.messenger.g0.L(23.0f), 6.0f);
         this.K = c12;
         this.L = org.telegram.messenger.g0.L(23.0f);
         invalidate();
@@ -1091,8 +1091,8 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         this.n0 = z10;
     }
 
-    public void setMenuOverlayProvider(p10 p10Var) {
-        this.Q = p10Var;
+    public void setMenuOverlayProvider(q10 q10Var) {
+        this.Q = q10Var;
     }
 
     public void setOccupyStatusBar(boolean z10) {
@@ -1275,7 +1275,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         this.w = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.w.setImageResource(R.drawable.ic_close_white);
-        this.w.setContentDescription(gd.N0(2131752087, null));
+        this.w.setContentDescription(hd.N0(2131752087, null));
         this.w.setOnClickListener(new w4(this, i10));
         this.r.addView(this.w, ma.d(42, 42.0f, 21, 0.0f, 0.0f, 2.0f, 0.0f));
         K();
@@ -1349,7 +1349,7 @@ public class z4 extends FrameLayout implements te.b, fs, b6, t4, x60 {
         this.U.a(false, y());
         l();
         this.b.b(false, y());
-        ks.e().k(ks.u4, new Object[0]);
+        ls.e().k(ls.u4, new Object[0]);
     }
 
     public final boolean x() {

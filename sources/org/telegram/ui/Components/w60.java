@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w60 extends View {
     public final int[] E;
@@ -162,7 +162,7 @@ public final class w60 extends View {
                     canvas2.clipPath(path);
                 }
                 Paint paint2 = this.b;
-                paint2.setAlpha(org.telegram.messenger.ks.e4);
+                paint2.setAlpha(org.telegram.messenger.ls.e4);
                 canvas2.drawBitmap(bitmap, -rect.left, -rect.top, paint2);
                 canvas2.restore();
                 return;

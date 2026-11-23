@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l31 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -41,13 +41,13 @@ public final class l31 extends LinearLayout implements org.telegram.ui.ActionBar
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView f10 = org.telegram.messenger.n10.f(g10, textView, c8.ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView f10 = org.telegram.messenger.o10.f(g10, textView, c8.ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = f10;
         f10.setTextSize(1, 13.0f);
-        TextView f11 = org.telegram.messenger.n10.f(g10, f10, c8.ma.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView f11 = org.telegram.messenger.o10.f(g10, f10, c8.ma.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2), context);
         this.h = f11;
         f11.setTextSize(1, 16.0f);
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             addView(f11, c8.ma.t(-2, -2, 16, 20, 0, 0, 0));
             addView(g10, c8.ma.q(0, -2, 1.0f, 23, 20, 0, 18, 0));
             addView(frameLayout, c8.ma.t(28, 28, 21, 0, 0, 18, 0));

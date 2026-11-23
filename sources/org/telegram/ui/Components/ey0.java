@@ -22,7 +22,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -57,7 +57,7 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.ActionBar.t6.G(lVar, org.telegram.ui.ActionBar.m6.Xc, h6Var);
         lVar.setTextSize(1, 14.0f);
         lVar.setText(org.telegram.messenger.j6.m(charSequence, lVar.getPaint().getFontMetricsInt(), false, null, 0));
-        org.telegram.messenger.ks.i(lVar);
+        org.telegram.messenger.ls.i(lVar);
         lVar.setPadding(org.telegram.messenger.g0.L(12.66f), org.telegram.messenger.g0.L(9.33f), org.telegram.messenger.g0.L(12.66f), org.telegram.messenger.g0.L(9.33f));
         TableRow tableRow = new TableRow(getContext());
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(-2, -1);
@@ -73,9 +73,9 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.ActionBar.t6.U(x5Var, org.telegram.ui.ActionBar.m6.G6, this.a);
         x5Var.setTextSize(1, 14.0f);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-        org.telegram.messenger.fj.b(spannableStringBuilder, arrayList, false, false, false, false, 0);
-        x5Var.setText(org.telegram.messenger.fj.B5(org.telegram.messenger.j6.m(spannableStringBuilder, x5Var.getPaint().getFontMetricsInt(), false, null, 0), arrayList, x5Var.getPaint().getFontMetricsInt(), false));
-        org.telegram.messenger.ks.i(x5Var);
+        org.telegram.messenger.gj.b(spannableStringBuilder, arrayList, false, false, false, false, 0);
+        x5Var.setText(org.telegram.messenger.gj.B5(org.telegram.messenger.j6.m(spannableStringBuilder, x5Var.getPaint().getFontMetricsInt(), false, null, 0), arrayList, x5Var.getPaint().getFontMetricsInt(), false));
+        org.telegram.messenger.ls.i(x5Var);
         TableRow tableRow = new TableRow(getContext());
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(-2, -1);
         layoutParams.span = 2;
@@ -102,7 +102,7 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
             spannableStringBuilder.append((CharSequence) " ").append((CharSequence) oc.b(str, runnable, h6Var, num));
         }
         ncVar.setText(spannableStringBuilder);
-        org.telegram.messenger.ks.i(ncVar);
+        org.telegram.messenger.ls.i(ncVar);
         TableRow tableRow = new TableRow(getContext());
         tableRow.addView(new dy0(this, charSequence), new TableRow.LayoutParams(-2, -1));
         tableRow.addView(new by0(this, ncVar, false), new TableRow.LayoutParams(0, -1, 1.0f));
@@ -115,7 +115,7 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.ActionBar.t6.U(ncVar, org.telegram.ui.ActionBar.m6.G6, this.a);
         ncVar.setTextSize(1, 14.0f);
         ncVar.setText(org.telegram.messenger.j6.m(charSequence2, ncVar.getPaint().getFontMetricsInt(), false, null, 0));
-        org.telegram.messenger.ks.i(ncVar);
+        org.telegram.messenger.ls.i(ncVar);
         TableRow tableRow = new TableRow(getContext());
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(-2, -1);
         dy0 dy0Var = new dy0(this, charSequence);
@@ -137,7 +137,7 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
 
     public final void g(int i7, String str) {
         long j3 = i7 * 1000;
-        e(str, org.telegram.messenger.gd.a0(null, null, 2131742519, org.telegram.messenger.gd.E0().s0().format(new Date(j3)), org.telegram.messenger.gd.E0().p0().format(new Date(j3))), null, null);
+        e(str, org.telegram.messenger.hd.a0(null, null, 2131742517, org.telegram.messenger.hd.E0().s0().format(new Date(j3)), org.telegram.messenger.hd.E0().p0().format(new Date(j3))), null, null);
     }
 
     public final TableRow h(CharSequence charSequence, CharSequence charSequence2, Runnable runnable, String str, org.telegram.ui.Wallet.g5 g5Var) {
@@ -179,7 +179,7 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
         m80Var.setText(charSequence2);
         m80Var.setDisablePaddingsOffsetY(true);
         m80Var.setPadding(org.telegram.messenger.g0.L(12.66f), org.telegram.messenger.g0.L(9.33f), org.telegram.messenger.g0.L(10.66f), org.telegram.messenger.g0.L(9.33f));
-        frameLayout.addView(m80Var, c8.ma.d(-1, -1.0f, org.telegram.messenger.ks.E1, 0.0f, 0.0f, 34.0f, 0.0f));
+        frameLayout.addView(m80Var, c8.ma.d(-1, -1.0f, org.telegram.messenger.ls.E1, 0.0f, 0.0f, 34.0f, 0.0f));
         if (str != null) {
             oc ocVar = new oc(str, f5Var, h6Var);
             final nc ncVar = new nc(getContext(), h6Var);
@@ -251,7 +251,7 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.f5 f5Var = new org.telegram.ui.f5(24.0f, i7, ncVar);
         ImageReceiver imageReceiver = f5Var.b;
         if (j3 == 2666000) {
-            str3 = org.telegram.messenger.gd.N0(2131744708, null);
+            str3 = org.telegram.messenger.hd.N0(2131744706, null);
             oq a10 = di.kb.a(44, "anonymous");
             int L = org.telegram.messenger.g0.L(16.0f);
             int L2 = org.telegram.messenger.g0.L(16.0f);
@@ -260,8 +260,8 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
             imageReceiver.w0(a10);
             z10 = false;
             z11 = false;
-        } else if (org.telegram.messenger.o10.B(j3)) {
-            str3 = org.telegram.messenger.gd.N0(2131744684, null);
+        } else if (org.telegram.messenger.p10.B(j3)) {
+            str3 = org.telegram.messenger.hd.N0(2131744682, null);
             oq a11 = di.kb.a(44, "fragment");
             int L3 = org.telegram.messenger.g0.L(16.0f);
             int L4 = org.telegram.messenger.g0.L(16.0f);
@@ -272,12 +272,12 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
             z10 = false;
         } else {
             if (j3 >= 0) {
-                TLRPC.User c22 = org.telegram.messenger.mp.u1(i7).c2(Long.valueOf(j3));
+                TLRPC.User c22 = org.telegram.messenger.np.u1(i7).c2(Long.valueOf(j3));
                 z10 = c22 == null;
-                str2 = org.telegram.messenger.o10.q(c22);
+                str2 = org.telegram.messenger.p10.q(c22);
                 f5Var.e(c22);
             } else {
-                TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(-j3));
+                TLRPC.Chat O0 = org.telegram.messenger.np.u1(i7).O0(Long.valueOf(-j3));
                 z10 = O0 == null;
                 str2 = O0 == null ? "" : O0.title;
                 f5Var.b(O0);
@@ -318,7 +318,7 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.f5 f5Var = new org.telegram.ui.f5(24.0f, i7, k80Var);
         ImageReceiver imageReceiver = f5Var.b;
         if (j3 == 2666000) {
-            str2 = org.telegram.messenger.gd.N0(2131744708, null);
+            str2 = org.telegram.messenger.hd.N0(2131744706, null);
             oq a10 = di.kb.a(44, "anonymous");
             int L = org.telegram.messenger.g0.L(16.0f);
             int L2 = org.telegram.messenger.g0.L(16.0f);
@@ -327,8 +327,8 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
             imageReceiver.w0(a10);
             z10 = false;
         } else {
-            if (org.telegram.messenger.o10.B(j3)) {
-                str2 = org.telegram.messenger.gd.N0(2131744684, null);
+            if (org.telegram.messenger.p10.B(j3)) {
+                str2 = org.telegram.messenger.hd.N0(2131744682, null);
                 oq a11 = di.kb.a(44, "fragment");
                 int L3 = org.telegram.messenger.g0.L(16.0f);
                 int L4 = org.telegram.messenger.g0.L(16.0f);
@@ -336,12 +336,12 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
                 a11.f = L4;
                 imageReceiver.w0(a11);
             } else if (j3 >= 0) {
-                TLRPC.User c22 = org.telegram.messenger.mp.u1(i7).c2(Long.valueOf(j3));
-                String q10 = org.telegram.messenger.o10.q(c22);
+                TLRPC.User c22 = org.telegram.messenger.np.u1(i7).c2(Long.valueOf(j3));
+                String q10 = org.telegram.messenger.p10.q(c22);
                 f5Var.e(c22);
                 str2 = q10;
             } else {
-                TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(-j3));
+                TLRPC.Chat O0 = org.telegram.messenger.np.u1(i7).O0(Long.valueOf(-j3));
                 String str3 = O0 == null ? "" : O0.title;
                 f5Var.b(O0);
                 str2 = str3;
@@ -368,10 +368,10 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
         k80Var.addOnAttachStateChangeListener(new bi.s2(n5Var, 1));
         final Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_premium_liststar).mutate();
         org.telegram.ui.ActionBar.t6.x(this, mutate, i10, h6Var, PorterDuff.Mode.SRC_IN);
-        org.telegram.messenger.x10 x10Var = new org.telegram.messenger.x10() { // from class: org.telegram.ui.Components.ay0
+        org.telegram.messenger.y10 y10Var = new org.telegram.messenger.y10() { // from class: org.telegram.ui.Components.ay0
             /* JADX WARN: Removed duplicated region for block: B:16:0x0059  */
             /* JADX WARN: Removed duplicated region for block: B:20:0x0067  */
-            @Override // org.telegram.messenger.x10
+            @Override // org.telegram.messenger.y10
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
@@ -380,12 +380,12 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
                 boolean z11;
                 long f10;
                 long j10 = j3;
-                if (j10 == 2666000 || org.telegram.messenger.o10.B(j10)) {
+                if (j10 == 2666000 || org.telegram.messenger.p10.B(j10)) {
                     return;
                 }
                 int i11 = i7;
                 if (j10 > 0) {
-                    TLRPC.User c23 = org.telegram.messenger.mp.u1(i11).c2(Long.valueOf(j10));
+                    TLRPC.User c23 = org.telegram.messenger.np.u1(i11).c2(Long.valueOf(j10));
                     emojiStatus = c23 != null ? c23.emoji_status : null;
                     if (c23 != null && c23.premium) {
                         z11 = true;
@@ -406,7 +406,7 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
                         n5Var2.k(Integer.valueOf(w02));
                     }
                 } else {
-                    TLRPC.Chat O02 = org.telegram.messenger.mp.u1(i11).O0(Long.valueOf(-j10));
+                    TLRPC.Chat O02 = org.telegram.messenger.np.u1(i11).O0(Long.valueOf(-j10));
                     emojiStatus = O02 != null ? O02.emoji_status : null;
                 }
                 z11 = false;
@@ -418,10 +418,10 @@ public final class ey0 extends TableLayout implements org.telegram.ui.ActionBar.
                 n5Var22.k(Integer.valueOf(w02));
             }
         };
-        x10Var.a(null);
+        y10Var.a(null);
         k80Var.i(n5Var);
-        org.telegram.messenger.ks.f(i7).h(k80Var, org.telegram.messenger.ks.r, x10Var);
-        org.telegram.messenger.ks.f(i7).h(k80Var, org.telegram.messenger.ks.p5, x10Var);
+        org.telegram.messenger.ls.f(i7).h(k80Var, org.telegram.messenger.ls.r, y10Var);
+        org.telegram.messenger.ls.f(i7).h(k80Var, org.telegram.messenger.ls.p5, y10Var);
         k80Var.l(spannableStringBuilder, false);
         return l(k80Var, str);
     }

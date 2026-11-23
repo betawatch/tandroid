@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c3 {
     public final p50 a;
@@ -47,7 +47,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
         int L2 = org.telegram.messenger.g0.L(12.0f);
         layoutParams.bottomMargin = L2;
         layoutParams.topMargin = L2;
-        org.telegram.messenger.ks.i(d2Var);
+        org.telegram.messenger.ls.i(d2Var);
         c2Var.addView(d2Var, layoutParams);
         c2Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.b2
             @Override // android.view.View.OnScrollChangeListener
@@ -152,7 +152,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.i9, c
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.n10.a(this);
+        return org.telegram.messenger.o10.a(this);
     }
 
     @Override // android.view.View, org.telegram.ui.Cells.r9

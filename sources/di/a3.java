@@ -8,11 +8,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.e00;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.ro;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.f00;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.so;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -27,7 +27,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.fe;
 import org.telegram.ui.zy;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class a3 implements Runnable {
                 long j3 = this.b;
                 if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error != null && "BALANCE_TOO_LOW".equals(tL_error.text)) {
-                        if (!mp.u1(f6Var.a).m7) {
+                        if (!np.u1(f6Var.a).m7) {
                             y8 y10 = y8.y(f6Var.a, false);
                             m1 m1Var = new m1(f6Var, j3, 6);
                             y10.e = false;
@@ -88,8 +88,8 @@ public final /* synthetic */ class a3 implements Runnable {
                     }
                 } else {
                     TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) tLObject;
-                    mp.u1(f6Var.a).f4(tL_payments_paymentResult.updates.users, false);
-                    mp.u1(f6Var.a).Z3(tL_payments_paymentResult.updates.chats, false);
+                    np.u1(f6Var.a).f4(tL_payments_paymentResult.updates.users, false);
+                    np.u1(f6Var.a).Z3(tL_payments_paymentResult.updates.chats, false);
                     y8.y(f6Var.a, false).R(false);
                     y8.y(f6Var.a, false).N();
                     if (!TextUtils.isEmpty(str) && (savedStarGift = f6Var.B2) != null) {
@@ -109,9 +109,9 @@ public final /* synthetic */ class a3 implements Runnable {
                 long j10 = this.b;
                 TLObject tLObject2 = (TLObject) this.c;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.f;
-                q10 q10Var = (q10) this.h;
+                r10 r10Var = (r10) this.h;
                 zArr[0] = true;
-                y8Var.g(j10, tLObject2, tL_textWithEntities, q10Var);
+                y8Var.g(j10, tLObject2, tL_textWithEntities, r10Var);
                 break;
             case 2:
                 fi.h7 h7Var = (fi.h7) this.d;
@@ -119,29 +119,29 @@ public final /* synthetic */ class a3 implements Runnable {
                 long j11 = this.b;
                 View view = (View) this.e;
                 fi.e7 e7Var = (fi.e7) this.f;
-                mp mpVar = (mp) this.h;
+                np npVar = (np) this.h;
                 if (tLObject3 != null) {
                     TL_stories.TL_stories_peerStories tL_stories_peerStories = (TL_stories.TL_stories_peerStories) tLObject3;
-                    mp.u1(h7Var.a).f4(tL_stories_peerStories.users, false);
-                    mp.u1(h7Var.a).Z3(tL_stories_peerStories.chats, false);
+                    np.u1(h7Var.a).f4(tL_stories_peerStories.users, false);
+                    np.u1(h7Var.a).Z3(tL_stories_peerStories.chats, false);
                     TL_stories.PeerStories peerStories = tL_stories_peerStories.stories;
                     if (!peerStories.stories.isEmpty()) {
-                        mp.u1(h7Var.a).R1().d0(j11, peerStories);
+                        np.u1(h7Var.a).R1().d0(j11, peerStories);
                         fi.i7.n(peerStories, new j2(h7Var, view, j11, e7Var, 10));
                         z10 = false;
-                        if (j11 > 0 && (c22 = mpVar.c2(Long.valueOf(j11))) != null) {
+                        if (j11 > 0 && (c22 = npVar.c2(Long.valueOf(j11))) != null) {
                             c22.stories_unavailable = true;
-                            tr.a0(h7Var.a).m1(Collections.singletonList(c22), null, false, true);
-                            mpVar.e4(c22, false, false);
+                            ur.a0(h7Var.a).m1(Collections.singletonList(c22), null, false, true);
+                            npVar.e4(c22, false, false);
                         }
-                        if (j11 < 0 && (O0 = mpVar.O0(Long.valueOf(-j11))) != null) {
+                        if (j11 < 0 && (O0 = npVar.O0(Long.valueOf(-j11))) != null) {
                             O0.stories_unavailable = true;
-                            tr.a0(h7Var.a).m1(null, Collections.singletonList(O0), false, true);
-                            mpVar.X3(O0, false);
+                            ur.a0(h7Var.a).m1(null, Collections.singletonList(O0), false, true);
+                            npVar.X3(O0, false);
                         }
                         if (!z10) {
                             view.invalidate();
-                            mp.u1(h7Var.a).R1().h0(j11, false);
+                            np.u1(h7Var.a).R1().h0(j11, false);
                             break;
                         }
                     }
@@ -149,30 +149,30 @@ public final /* synthetic */ class a3 implements Runnable {
                 z10 = true;
                 if (j11 > 0) {
                     c22.stories_unavailable = true;
-                    tr.a0(h7Var.a).m1(Collections.singletonList(c22), null, false, true);
-                    mpVar.e4(c22, false, false);
+                    ur.a0(h7Var.a).m1(Collections.singletonList(c22), null, false, true);
+                    npVar.e4(c22, false, false);
                 }
                 if (j11 < 0) {
                     O0.stories_unavailable = true;
-                    tr.a0(h7Var.a).m1(null, Collections.singletonList(O0), false, true);
-                    mpVar.X3(O0, false);
+                    ur.a0(h7Var.a).m1(null, Collections.singletonList(O0), false, true);
+                    npVar.X3(O0, false);
                 }
                 if (!z10) {
                 }
                 break;
             case 3:
-                e00 e00Var = (e00) this.d;
+                f00 f00Var = (f00) this.d;
                 TLObject tLObject4 = (TLObject) this.c;
                 long j12 = this.b;
                 TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) this.e;
                 a0.h hVar = (a0.h) this.f;
                 Runnable runnable = (Runnable) this.h;
                 TLRPC.TL_messages_forumTopics tL_messages_forumTopics2 = (TLRPC.TL_messages_forumTopics) tLObject4;
-                e00Var.getMessagesController().f4(tL_messages_forumTopics2.users, false);
-                e00Var.getMessagesController().Z3(tL_messages_forumTopics2.chats, false);
-                e00Var.u(j12, tL_messages_forumTopics.topics, hVar, false, 2, -1);
-                e00Var.getMessagesStorage().C1(e00Var.getConnectionsManager().getCurrentTime(), -j12, (List) e00Var.a.f(j12), true);
-                e00Var.getMessagesStorage().j1(tL_messages_forumTopics.messages, false, true, false, 0, false, 0, 0L);
+                f00Var.getMessagesController().f4(tL_messages_forumTopics2.users, false);
+                f00Var.getMessagesController().Z3(tL_messages_forumTopics2.chats, false);
+                f00Var.u(j12, tL_messages_forumTopics.topics, hVar, false, 2, -1);
+                f00Var.getMessagesStorage().C1(f00Var.getConnectionsManager().getCurrentTime(), -j12, (List) f00Var.a.f(j12), true);
+                f00Var.getMessagesStorage().j1(tL_messages_forumTopics.messages, false, true, false, 0, false, 0, 0L);
                 if (runnable != null) {
                     runnable.run();
                     break;
@@ -199,7 +199,7 @@ public final /* synthetic */ class a3 implements Runnable {
             default:
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.d;
                 TLObject tLObject5 = (TLObject) this.c;
-                ro roVar = (ro) this.e;
+                so soVar = (so) this.e;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
                 Runnable runnable2 = (Runnable) this.f;
                 long j15 = this.b;
@@ -208,11 +208,11 @@ public final /* synthetic */ class a3 implements Runnable {
                         TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject5;
                         g2Var.getMessagesController().Z3(tL_chatlists_exportedInvites.chats, false);
                         g2Var.getMessagesController().f4(tL_chatlists_exportedInvites.users, false);
-                        new zy(g2Var, roVar, tL_chatlists_exportedInvites.invites).show();
-                    } else if (tL_error2 == null || !"FILTER_ID_INVALID".equals(tL_error2.text) || roVar.d()) {
-                        org.telegram.messenger.f3.o(null, 2131743636, org.telegram.ui.Components.lc.b0(g2Var), null);
+                        new zy(g2Var, soVar, tL_chatlists_exportedInvites.invites).show();
+                    } else if (tL_error2 == null || !"FILTER_ID_INVALID".equals(tL_error2.text) || soVar.d()) {
+                        org.telegram.messenger.f3.o(null, 2131743634, org.telegram.ui.Components.lc.b0(g2Var), null);
                     } else {
-                        new zy(g2Var, roVar, null).show();
+                        new zy(g2Var, soVar, null).show();
                     }
                     if (runnable2 != null) {
                         org.telegram.messenger.g0.h3(runnable2, Math.max(0L, 200 - (System.currentTimeMillis() - j15)));
@@ -223,14 +223,14 @@ public final /* synthetic */ class a3 implements Runnable {
         }
     }
 
-    public /* synthetic */ a3(y8 y8Var, boolean[] zArr, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, q10 q10Var) {
+    public /* synthetic */ a3(y8 y8Var, boolean[] zArr, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, r10 r10Var) {
         this.a = 1;
         this.d = y8Var;
         this.e = zArr;
         this.b = j3;
         this.c = tLObject;
         this.f = tL_textWithEntities;
-        this.h = q10Var;
+        this.h = r10Var;
     }
 
     public /* synthetic */ a3(Object obj, Object obj2, long j3, Object obj3, Object obj4, Object obj5, int i7) {
@@ -253,11 +253,11 @@ public final /* synthetic */ class a3 implements Runnable {
         this.b = j3;
     }
 
-    public /* synthetic */ a3(org.telegram.ui.ActionBar.g2 g2Var, TLObject tLObject, ro roVar, TLRPC.TL_error tL_error, Runnable runnable, long j3) {
+    public /* synthetic */ a3(org.telegram.ui.ActionBar.g2 g2Var, TLObject tLObject, so soVar, TLRPC.TL_error tL_error, Runnable runnable, long j3) {
         this.a = 6;
         this.d = g2Var;
         this.c = tLObject;
-        this.e = roVar;
+        this.e = soVar;
         this.h = tL_error;
         this.f = runnable;
         this.b = j3;

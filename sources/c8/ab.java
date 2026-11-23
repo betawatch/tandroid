@@ -2,9 +2,9 @@ package c8;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class ab {
     public static int[] a;
@@ -43,7 +43,7 @@ public abstract class ab {
         int i7 = bArr[4];
         boolean z10 = (i7 & 128) != 0;
         int i10 = i7 & 7;
-        int i11 = bArr[5] & ks.e4;
+        int i11 = bArr[5] & ls.e4;
         int c10 = c(6, i10, bArr);
         int i12 = 6 + i10;
         int c11 = c(i12, i10, bArr);
@@ -63,9 +63,9 @@ public abstract class ab {
             org.telegram.ui.Wallet.x3 x3Var = new org.telegram.ui.Wallet.x3();
             int i16 = i14 + 1;
             int i17 = bArr[i14];
-            x3Var.a = i17 & ks.e4;
+            x3Var.a = i17 & ls.e4;
             int i18 = i14 + 2;
-            int i19 = bArr[i16] & ks.e4;
+            int i19 = bArr[i16] & ls.e4;
             x3Var.b = i19;
             if ((i17 & 16) != 0) {
                 throw new IllegalArgumentException("Cells with cached hashes are not supported");
@@ -96,7 +96,7 @@ public abstract class ab {
 
     public static void d(ByteArrayOutputStream byteArrayOutputStream, int i7, int i10) {
         for (int i11 = i10 - 1; i11 >= 0; i11--) {
-            byteArrayOutputStream.write((i7 >>> (i11 * 8)) & ks.e4);
+            byteArrayOutputStream.write((i7 >>> (i11 * 8)) & ls.e4);
         }
     }
 }

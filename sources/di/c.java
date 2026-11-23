@@ -2,10 +2,10 @@ package di;
 
 import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.nq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class c implements Runnable {
                 tVar.b0.setEnabled(tVar.Z > 0 || tVar.Q > currentTime);
                 if (currentTime >= tVar.Q) {
                     tVar.b0.g(null, true);
-                    tVar.b0.i(pb.Z0(false, tVar.Y ? gd.N0(2131752957, null) : gd.H(' ', "BotStarsButtonWithdrawShort", (int) tVar.Z), tVar.d0), true, true);
+                    tVar.b0.i(pb.Z0(false, tVar.Y ? hd.N0(2131752957, null) : hd.H(' ', "BotStarsButtonWithdrawShort", (int) tVar.Z), tVar.d0), true, true);
                     break;
                 } else {
-                    tVar.b0.i(gd.N0(2131752956, null), true, true);
+                    tVar.b0.i(hd.N0(2131752956, null), true, true);
                     if (tVar.s0 == null) {
                         tVar.s0 = new SpannableStringBuilder("l");
                         nq nqVar = new nq(R.drawable.mini_switch_lock, 0);
@@ -56,16 +56,16 @@ public final /* synthetic */ class c implements Runnable {
                 t.b0(tVar);
                 break;
             case 2:
-                vf.c.t(tVar.getParentActivity(), gd.N0(2131752944, null));
+                vf.c.t(tVar.getParentActivity(), hd.N0(2131752944, null));
                 break;
             case 3:
                 t.Z(tVar);
                 break;
             case 4:
-                vf.c.t(tVar.getParentActivity(), gd.N0(2131753017, null));
+                vf.c.t(tVar.getParentActivity(), hd.N0(2131753017, null));
                 break;
             case 5:
-                vf.c.t(tVar.getParentActivity(), gd.N0(2131753037, null));
+                vf.c.t(tVar.getParentActivity(), hd.N0(2131753037, null));
                 break;
             default:
                 tVar.c0.setLoading(false);

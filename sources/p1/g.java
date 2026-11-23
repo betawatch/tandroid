@@ -1,11 +1,11 @@
 package p1;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class g {
-    public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, ks.n1, ks.o1, ks.p1, ks.q1, ks.r1, ks.s1, ks.t1, ks.u1, ks.v1, ks.w1, ks.x1, ks.y1, ks.z1, ks.A1, ks.B1, ks.C1, ks.D1, ks.E1, 120, ks.F1, ks.G1, ks.H1, ks.I1, ks.J1, ks.K1, ks.L1, 128, ks.N1, ks.O1, ks.P1, ks.Q1, 133, 134, ks.R1, ks.S1, ks.T1, ks.U1};
+    public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, ls.n1, ls.o1, ls.p1, ls.q1, ls.r1, ls.s1, ls.t1, ls.u1, ls.v1, ls.w1, ls.x1, ls.y1, ls.z1, ls.A1, ls.B1, ls.C1, ls.D1, ls.E1, 120, ls.F1, ls.G1, ls.H1, ls.I1, ls.J1, ls.K1, ls.L1, 128, ls.N1, ls.O1, ls.P1, ls.Q1, 133, 134, ls.R1, ls.S1, ls.T1, ls.U1};
 
     public static /* synthetic */ Integer a(int i7) {
         if (i7 == 0) {

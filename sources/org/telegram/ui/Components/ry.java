@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ry extends dk0 {
     public final boolean c;
@@ -36,7 +36,7 @@ public final class ry extends dk0 {
     @Override // v4.i0
     public final void t(v4.f1 f1Var, int i7) {
         ArrayList<TLRPC.Document> arrayList;
-        org.telegram.messenger.fc k10;
+        org.telegram.messenger.gc k10;
         q9 q9Var = (q9) f1Var.a;
         ty tyVar = this.d;
         boolean z10 = this.c;
@@ -45,7 +45,7 @@ public final class ry extends dk0 {
         if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
             arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
         } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-            TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.ri.d0(tyVar.d1).o0(org.telegram.messenger.ri.b0(stickerSetCovered.set), false);
+            TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.si.d0(tyVar.d1).o0(org.telegram.messenger.si.b0(stickerSetCovered.set), false);
             arrayList = o02 == null ? null : o02.documents;
         } else {
             arrayList = stickerSetCovered.covers;
@@ -73,43 +73,43 @@ public final class ry extends dk0 {
             return;
         }
         if (z10) {
-            q9Var.setColorFilter(org.telegram.messenger.fj.C4(document) ? org.telegram.ui.ActionBar.m6.o0(tyVar.a2) : null);
+            q9Var.setColorFilter(org.telegram.messenger.gj.C4(document) ? org.telegram.ui.ActionBar.m6.o0(tyVar.a2) : null);
         }
         TLObject w10 = org.telegram.messenger.w7.w(stickerSetCovered.set.thumbs, 90, false, null, false);
-        org.telegram.messenger.lz d = org.telegram.messenger.u5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.m6.c7, 0.2f, false);
+        org.telegram.messenger.mz d = org.telegram.messenger.u5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.m6.c7, 0.2f, false);
         if (d != null) {
             d.e = 512;
             d.f = 512;
         }
-        if (w10 == null || org.telegram.messenger.fj.N4(document)) {
+        if (w10 == null || org.telegram.messenger.gj.N4(document)) {
             w10 = document;
         }
         boolean z11 = w10 instanceof TLRPC.Document;
         if (z11) {
-            k10 = org.telegram.messenger.fc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document);
+            k10 = org.telegram.messenger.gc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document);
         } else if (!(w10 instanceof TLRPC.PhotoSize)) {
             return;
         } else {
-            k10 = org.telegram.messenger.fc.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
+            k10 = org.telegram.messenger.gc.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
         }
-        org.telegram.messenger.fc fcVar = k10;
-        if (fcVar == null) {
+        org.telegram.messenger.gc gcVar = k10;
+        if (gcVar == null) {
             return;
         }
-        String str = !org.telegram.messenger.pc.e(z10 ? 16388 : 1) ? "30_30_firstframe" : "30_30";
-        if (z11 && (org.telegram.messenger.fj.K2(document, true) || org.telegram.messenger.fj.N4(document))) {
+        String str = !org.telegram.messenger.qc.e(z10 ? 16388 : 1) ? "30_30_firstframe" : "30_30";
+        if (z11 && (org.telegram.messenger.gj.K2(document, true) || org.telegram.messenger.gj.N4(document))) {
             if (d != null) {
-                q9Var.p(org.telegram.messenger.fc.b(document), str, d, stickerSetCovered);
+                q9Var.p(org.telegram.messenger.gc.b(document), str, d, stickerSetCovered);
                 return;
             } else {
-                q9Var.l(org.telegram.messenger.fc.b(document), str, fcVar, null, 0, stickerSetCovered);
+                q9Var.l(org.telegram.messenger.gc.b(document), str, gcVar, null, 0, stickerSetCovered);
                 return;
             }
         }
-        if (fcVar.p == 1) {
-            q9Var.k(fcVar, str, "tgs", d, stickerSetCovered);
+        if (gcVar.p == 1) {
+            q9Var.k(gcVar, str, "tgs", d, stickerSetCovered);
         } else {
-            q9Var.k(fcVar, null, "webp", d, stickerSetCovered);
+            q9Var.k(gcVar, null, "webp", d, stickerSetCovered);
         }
     }
 

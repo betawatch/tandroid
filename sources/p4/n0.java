@@ -1,6 +1,7 @@
 package p4;
 
 import a8.la;
+import ai.u1;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
@@ -31,19 +32,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import org.telegram.messenger.pe;
+import org.telegram.messenger.qe;
 import org.telegram.ui.Components.es0;
 import org.telegram.ui.Components.tm;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class n0 extends android.support.v4.media.session.s {
     public static final int z;
     public final ab.c0 g;
     public final e0 h;
     public final q4.u i;
-    public final pe j;
+    public final qe j;
     public final android.support.v4.media.session.q k;
     public final boolean l;
     public final b m;
@@ -52,7 +53,7 @@ public final class n0 extends android.support.v4.media.session.s {
     public final ComponentName p;
     public final boolean q;
     public volatile long r;
-    public pe s;
+    public qe s;
     public int t;
     public final Bundle u;
     public h9.i0 v;
@@ -96,7 +97,7 @@ public final class n0 extends android.support.v4.media.session.s {
         this.u = new Bundle(bundle2);
         Context context = e0Var.f;
         this.i = q4.u.a(context);
-        this.j = new pe(this);
+        this.j = new qe(this);
         ab.c0 c0Var = new ab.c0(e0Var);
         this.g = c0Var;
         this.r = 300000L;
@@ -409,7 +410,7 @@ public final class n0 extends android.support.v4.media.session.s {
     @Override // android.support.v4.media.session.s
     public final void c(q4.h hVar) {
         if (hVar != null) {
-            i0(20, new ai.t1(this, hVar, -1, 18), ((q4.l) this.n.b).c(), false);
+            i0(20, new u1(this, hVar, -1, 18), ((q4.l) this.n.b).c(), false);
         }
     }
 
@@ -417,7 +418,7 @@ public final class n0 extends android.support.v4.media.session.s {
     public final void d(q4.h hVar, int i7) {
         if (hVar != null) {
             if (i7 == -1 || i7 >= 0) {
-                i0(20, new ai.t1(this, hVar, i7, 18), ((q4.l) this.n.b).c(), false);
+                i0(20, new u1(this, hVar, i7, 18), ((q4.l) this.n.b).c(), false);
             }
         }
     }

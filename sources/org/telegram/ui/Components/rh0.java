@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class rh0 extends ImageView {
     public HashMap a;
@@ -81,7 +81,7 @@ public class rh0 extends ImageView {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void g(int i7, int i10, TLRPC.Document document) {
-        org.telegram.messenger.fc fcVar;
+        org.telegram.messenger.gc gcVar;
         String str;
         ?? r12;
         ph0 ph0Var = this.c;
@@ -97,24 +97,24 @@ public class rh0 extends ImageView {
         ph0Var2.A1 = true;
         String str2 = document.localThumbPath;
         if (str2 != null) {
-            fcVar = org.telegram.messenger.fc.g(str2);
+            gcVar = org.telegram.messenger.gc.g(str2);
             str = com.google.android.gms.internal.vision.e2.j(i7, "_", i10);
         } else {
-            fcVar = null;
+            gcVar = null;
             str = null;
         }
         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
         if (this.n) {
-            this.c.u0(org.telegram.messenger.fc.b(document), i7 + "_" + i10 + "_lastframe", org.telegram.messenger.fc.c(w10, document), com.google.android.gms.internal.vision.e2.j(i7, "_", i10), fcVar, str, null, 0L, null, document, 1);
+            this.c.u0(org.telegram.messenger.gc.b(document), i7 + "_" + i10 + "_lastframe", org.telegram.messenger.gc.c(w10, document), com.google.android.gms.internal.vision.e2.j(i7, "_", i10), gcVar, str, null, 0L, null, document, 1);
         } else {
             if (!"video/webm".equals(document.mime_type)) {
-                org.telegram.messenger.lz d = org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.m6.m6, 0.2f, false);
+                org.telegram.messenger.mz d = org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.m6.m6, 0.2f, false);
                 if (d != null) {
                     d.e = 512;
                     d.f = 512;
                 }
                 r12 = 0;
-                this.c.u0(org.telegram.messenger.fc.b(document), i7 + "_" + i10 + "", org.telegram.messenger.fc.c(w10, document), com.google.android.gms.internal.vision.e2.j(i7, "_", i10), fcVar, str, d, 0L, null, document, 1);
+                this.c.u0(org.telegram.messenger.gc.b(document), i7 + "_" + i10 + "", org.telegram.messenger.gc.c(w10, document), com.google.android.gms.internal.vision.e2.j(i7, "_", i10), gcVar, str, d, 0L, null, document, 1);
                 ph0 ph0Var3 = this.c;
                 ph0Var3.S0 = true;
                 ph0Var3.H0(this);
@@ -138,12 +138,12 @@ public class rh0 extends ImageView {
                 return;
             }
             ph0 ph0Var6 = this.c;
-            org.telegram.messenger.fc b10 = org.telegram.messenger.fc.b(document);
+            org.telegram.messenger.gc b10 = org.telegram.messenger.gc.b(document);
             String str3 = i7 + "_" + i10 + "_g";
-            if (fcVar == null) {
-                fcVar = org.telegram.messenger.fc.c(w10, document);
+            if (gcVar == null) {
+                gcVar = org.telegram.messenger.gc.c(w10, document);
             }
-            ph0Var6.r0(b10, str3, fcVar, str, null, document.size, null, document, 1);
+            ph0Var6.r0(b10, str3, gcVar, str, null, document.size, null, document, 1);
         }
         r12 = 0;
         ph0 ph0Var32 = this.c;

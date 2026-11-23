@@ -3,10 +3,10 @@ package org.telegram.ui.Wallet;
 import android.graphics.Color;
 import android.util.LruCache;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class f8 {
     public static final LruCache a = new LruCache(128);
@@ -90,7 +90,7 @@ public abstract class f8 {
 
     public static int c(float f10) {
         float max = Math.max(0.0f, Math.min(1.0f, f10));
-        return Math.max(0, Math.min(ks.e4, (int) (((max <= 0.0031308f ? max * 12.92f : (((float) Math.pow(max, 0.4166666666666667d)) * 1.055f) - 0.055f) * 255.0f) + 0.5f)));
+        return Math.max(0, Math.min(ls.e4, (int) (((max <= 0.0031308f ? max * 12.92f : (((float) Math.pow(max, 0.4166666666666667d)) * 1.055f) - 0.055f) * 255.0f) + 0.5f)));
     }
 
     public static float d(int i7) {
@@ -128,7 +128,7 @@ public abstract class f8 {
     }
 
     public static float h(int i7, int i10) {
-        float f10 = ((i7 >> i10) & ks.e4) / 255.0f;
+        float f10 = ((i7 >> i10) & ls.e4) / 255.0f;
         return f10 <= 0.04045f ? f10 / 12.92f : (float) Math.pow((f10 + 0.055f) / 1.055f, 2.4d);
     }
 

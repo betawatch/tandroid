@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b50 implements org.telegram.ui.Components.rj0, na0 {
     public final /* synthetic */ f50 a;
@@ -48,20 +48,20 @@ public final /* synthetic */ class b50 implements org.telegram.ui.Components.rj0
         }
         org.telegram.ui.ActionBar.g1 g1Var = f50Var.x;
         if (g1Var == null || !g1Var.isShowing()) {
-            org.telegram.messenger.pe peVar = new org.telegram.messenger.pe(f50Var.getParentActivity(), null, new f(f50Var, 19), true, 1, null);
-            peVar.u(f50Var.X);
-            org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1((ActionBarPopupWindow$ActionBarPopupWindowLayout) peVar.b, -2, -2);
+            org.telegram.messenger.qe qeVar = new org.telegram.messenger.qe(f50Var.getParentActivity(), null, new f(f50Var, 19), true, 1, null);
+            qeVar.u(f50Var.X);
+            org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1((ActionBarPopupWindow$ActionBarPopupWindowLayout) qeVar.b, -2, -2);
             f50Var.x = g1Var2;
             g1Var2.e = true;
-            g1Var2.c = org.telegram.messenger.ks.x3;
+            g1Var2.c = org.telegram.messenger.ls.x3;
             g1Var2.setOutsideTouchable(true);
             f50Var.x.setClippingEnabled(true);
             f50Var.x.setAnimationStyle(R.style.PopupContextAnimation);
             f50Var.x.setFocusable(true);
-            ((ActionBarPopupWindow$ActionBarPopupWindowLayout) peVar.b).measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31));
+            ((ActionBarPopupWindow$ActionBarPopupWindowLayout) qeVar.b).measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31));
             f50Var.x.setInputMethodMode(2);
             f50Var.x.getContentView().setFocusableInTouchMode(true);
-            f50Var.x.showAtLocation(f50Var.getFragmentView(), 0, (int) (view.getX() + f10), (int) ((((ActionBarPopupWindow$ActionBarPopupWindowLayout) peVar.b).getMeasuredHeight() / 2.0f) + view.getY() + f11));
+            f50Var.x.showAtLocation(f50Var.getFragmentView(), 0, (int) (view.getX() + f10), (int) ((((ActionBarPopupWindow$ActionBarPopupWindowLayout) qeVar.b).getMeasuredHeight() / 2.0f) + view.getY() + f11));
             f50Var.x.b();
         }
     }

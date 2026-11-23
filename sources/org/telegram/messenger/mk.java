@@ -1,103 +1,60 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class mk implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ mp b;
+public final /* synthetic */ class mk implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ np b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ mk(mp mpVar, ArrayList arrayList, long j3, TLRPC.updates_ChannelDifference updates_channeldifference, TLRPC.Chat chat, a0.h hVar, int i7, long j10) {
-        this.b = mpVar;
-        this.f = arrayList;
+    public /* synthetic */ mk(int i7, long j3, long j10, np npVar) {
+        this.a = i7;
+        this.b = npVar;
         this.c = j3;
-        this.h = updates_channeldifference;
-        this.n = chat;
-        this.r = hVar;
-        this.d = i7;
-        this.e = j10;
+        this.d = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TLRPC.Chat chat;
-        a0.h hVar;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                mp mpVar = this.b;
-                boolean[] zArr = (boolean[]) this.f;
-                tr trVar = (tr) this.h;
-                long j3 = this.c;
-                Runnable[] runnableArr = (Runnable[]) this.n;
-                long j10 = this.e;
-                int i7 = this.d;
-                ap apVar = (ap) this.r;
-                if (!zArr[0]) {
-                    g0.g3(new nb(mpVar, zArr, trVar.O(j3), runnableArr, j10, i7, apVar));
+                np npVar = this.b;
+                npVar.getClass();
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    npVar.S3(tL_messages_affectedMessages.pts, tL_messages_affectedMessages.pts_count, this.c);
+                }
+                long j3 = this.d;
+                if (j3 != 0) {
+                    npVar.getMessagesStorage().q1(j3);
                     break;
                 }
                 break;
             default:
-                mp mpVar2 = this.b;
-                ArrayList arrayList = (ArrayList) this.f;
-                long j11 = this.c;
-                TLRPC.updates_ChannelDifference updates_channeldifference = (TLRPC.updates_ChannelDifference) this.h;
-                TLRPC.Chat chat2 = (TLRPC.Chat) this.n;
-                a0.h hVar2 = (a0.h) this.r;
-                int i10 = this.d;
-                long j12 = this.e;
-                if (arrayList.isEmpty()) {
-                    chat = chat2;
-                    hVar = hVar2;
-                } else {
-                    SparseArray sparseArray = new SparseArray();
-                    int size = arrayList.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        Object obj = arrayList.get(i11);
-                        i11++;
-                        TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) obj;
-                        TLRPC.Chat chat3 = chat2;
-                        a0.h hVar3 = hVar2;
-                        ArrayList arrayList2 = arrayList;
-                        long[] a22 = mpVar2.getMessagesStorage().a2(tL_updateMessageID.random_id, -j11, null, tL_updateMessageID.id, 0, -1, 0);
-                        if (a22 != null) {
-                            sparseArray.put(tL_updateMessageID.id, a22);
-                        }
-                        chat2 = chat3;
-                        hVar2 = hVar3;
-                        arrayList = arrayList2;
-                    }
-                    chat = chat2;
-                    hVar = hVar2;
-                    if (sparseArray.size() != 0) {
-                        g0.g3(new sl(mpVar2, sparseArray, 1));
+                np npVar2 = this.b;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
+                    if (!tL_messages_peerDialogs.dialogs.isEmpty()) {
+                        TLRPC.TL_dialog tL_dialog = (TLRPC.TL_dialog) tL_messages_peerDialogs.dialogs.get(0);
+                        TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
+                        tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
+                        tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
+                        tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
+                        tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
+                        npVar2.Q3(tL_messages_dialogs, null, null, tL_dialog.folder_id, 0, 1, npVar2.V7, false, false, false);
                     }
                 }
-                Utilities.d.c(new jm(mpVar2, updates_channeldifference, j11, chat, hVar, i10, j12));
+                long j10 = this.c;
+                if (j10 != 0) {
+                    npVar2.getMessagesStorage().q1(j10);
+                }
+                npVar2.d1.e(this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ mk(mp mpVar, boolean[] zArr, tr trVar, long j3, Runnable[] runnableArr, long j10, int i7, ap apVar) {
-        this.b = mpVar;
-        this.f = zArr;
-        this.h = trVar;
-        this.c = j3;
-        this.n = runnableArr;
-        this.e = j10;
-        this.d = i7;
-        this.r = apVar;
     }
 }

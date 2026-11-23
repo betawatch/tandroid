@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ax0 {
     public final int a;
@@ -42,17 +42,17 @@ public final class ax0 {
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             String[] strArr = dx0.s;
             tL_inputStickerSetShortName.short_name = "FestiveFontEmoji";
-            org.telegram.messenger.ri.d0(i7).n0(tL_inputStickerSetShortName, 0, false, false, new x(this, hashSet, arrayList, 11));
+            org.telegram.messenger.si.d0(i7).n0(tL_inputStickerSetShortName, 0, false, false, new x(this, hashSet, arrayList, 11));
         }
         String str = dx0.s[Utilities.b.nextInt(3)];
         TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName2 = new TLRPC.TL_inputStickerSetShortName();
         tL_inputStickerSetShortName2.short_name = "EmojiAnimations";
-        org.telegram.messenger.ri.d0(i7).n0(tL_inputStickerSetShortName2, 0, false, false, new org.telegram.ui.Components.rh(26, this, str));
+        org.telegram.messenger.si.d0(i7).n0(tL_inputStickerSetShortName2, 0, false, false, new org.telegram.ui.Components.rh(26, this, str));
     }
 
     public static ax0 c(int i7, TLRPC.UserFull userFull, ax0 ax0Var) {
         TL_account.TL_birthday tL_birthday;
-        if (!org.telegram.messenger.pc.e(2) || !org.telegram.messenger.v1.d(userFull)) {
+        if (!org.telegram.messenger.qc.e(2) || !org.telegram.messenger.v1.d(userFull)) {
             if (ax0Var == null) {
                 return null;
             }

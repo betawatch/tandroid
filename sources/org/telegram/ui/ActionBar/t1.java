@@ -35,13 +35,13 @@ import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.rh0;
@@ -50,9 +50,9 @@ import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.zt;
 import org.telegram.ui.p60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class t1 extends Dialog implements Drawable.Callback, fs {
+public class t1 extends Dialog implements Drawable.Callback, gs {
     public static final /* synthetic */ int k1 = 0;
     public final Drawable A0;
     public final Rect B0;
@@ -80,7 +80,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
     public final di.u3 N0;
     public DialogInterface.OnDismissListener O;
     public final ArrayList O0;
-    public x10 P;
+    public y10 P;
     public float P0;
     public CharSequence[] Q;
     public boolean Q0;
@@ -171,7 +171,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
         animatorSetArr[i7] = animatorSet2;
         BitmapDrawable bitmapDrawable = t1Var.E[i7];
         if (bitmapDrawable != null) {
-            animatorSet2.playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z10 ? ks.e4 : 0));
+            animatorSet2.playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z10 ? ls.e4 : 0));
         }
         animatorSetArr[i7].setDuration(150L);
         animatorSetArr[i7].addListener(new ki.e2(t1Var, i7, 4));
@@ -217,10 +217,10 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
         return null;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         zt ztVar;
-        if (i7 != ks.l4 || (ztVar = this.n) == null) {
+        if (i7 != ls.l4 || (ztVar = this.n) == null) {
             return;
         }
         ztVar.invalidate();
@@ -229,17 +229,17 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
     @Override // android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
         Bitmap bitmap;
-        x10 x10Var = this.P;
-        if (x10Var != null) {
+        y10 y10Var = this.P;
+        if (y10Var != null) {
             this.P = null;
-            x10Var.a(new di.u3(this, 2));
+            y10Var.a(new di.u3(this, 2));
             return;
         }
         if (this.i1) {
             return;
         }
         this.i1 = true;
-        ks.e().n(this, ks.l4);
+        ls.e().n(this, ls.l4);
         DialogInterface.OnDismissListener onDismissListener = this.O;
         if (onDismissListener != null) {
             onDismissListener.onDismiss(this);
@@ -340,7 +340,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
                 });
             }
             if (this.a1 == null) {
-                di.b bVar = new di.b(j10.t0, getContext(), h6Var);
+                di.b bVar = new di.b(k10.t0, getContext(), h6Var);
                 this.a1 = bVar;
                 ra.a(bVar);
                 this.a1.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ActionBar.k1
@@ -381,7 +381,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
         if (z10) {
             if (this.Y0) {
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
-                layoutParams.gravity = ks.E1;
+                layoutParams.gravity = ls.E1;
                 setContentView(viewGroup, layoutParams);
             } else if (this.a > 0) {
                 FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-2, -2);
@@ -463,7 +463,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
             this.b1.addView(frameLayout2, ma.t(-2, -2, this.X ? 1 : 0, 24, 0, 24, 0));
             xh.l lVar = new xh.l(getContext(), null, false);
             this.f = lVar;
-            ks.i(lVar);
+            ls.i(lVar);
             xh.l lVar2 = this.f;
             lVar2.s = 3;
             lVar2.setText(this.S);
@@ -473,11 +473,11 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
             lVar3.setTextColor(f14);
             this.f.setTextSize(1, 20.0f);
             this.f.setTypeface(org.telegram.messenger.g0.o());
-            this.f.setGravity((this.X ? 1 : gd.a0 ? 5 : 3) | 48);
+            this.f.setGravity((this.X ? 1 : hd.a0 ? 5 : 3) | 48);
             FrameLayout frameLayout3 = this.s;
             xh.l lVar4 = this.f;
             boolean z13 = this.X;
-            frameLayout3.addView(lVar4, ma.d(-2, -2.0f, (z13 ? 1 : gd.a0 ? 5 : 3) | 48, 0.0f, 19.0f, 0.0f, z13 ? 4.0f : this.T != null ? 2 : this.Q != null ? 14 : 10));
+            frameLayout3.addView(lVar4, ma.d(-2, -2.0f, (z13 ? 1 : hd.a0 ? 5 : 3) | 48, 0.0f, 19.0f, 0.0f, z13 ? 4.0f : this.T != null ? 2 : this.Q != null ? 14 : 10));
         } else {
             f11 = 4.0f;
         }
@@ -489,9 +489,9 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
             textView.setText(this.T);
             t6.U(this.h, m6.J5, r1Var);
             this.h.setTextSize(1, 14.0f);
-            this.h.setGravity((gd.a0 ? 5 : 3) | 48);
+            this.h.setGravity((hd.a0 ? 5 : 3) | 48);
             f12 = 20.0f;
-            this.b1.addView(this.h, ma.t(-2, -2, (gd.a0 ? 5 : 3) | 48, 24, 0, 24, this.Q != null ? 14 : 10));
+            this.b1.addView(this.h, ma.t(-2, -2, (hd.a0 ? 5 : 3) | 48, 24, 0, 24, this.Q != null ? 14 : 10));
         } else {
             f12 = 20.0f;
         }
@@ -516,7 +516,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
         }
         zt ztVar = new zt(getContext());
         this.n = ztVar;
-        ks.i(ztVar);
+        ls.i(ztVar);
         zt ztVar2 = this.n;
         int f15 = f(this.X ? m6.y6 : m6.j5);
         this.g1 = f15;
@@ -528,9 +528,9 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
             this.n.setClickable(false);
             this.n.setEnabled(false);
         }
-        this.n.setGravity((this.X ? 1 : gd.a0 ? 5 : 3) | 48);
+        this.n.setGravity((this.X ? 1 : hd.a0 ? 5 : 3) | 48);
         if (i10 == 2) {
-            this.b1.addView(this.n, ma.t(-2, -2, (gd.a0 ? 5 : 3) | 48, 24, this.S == null ? 19 : 0, 24, 20));
+            this.b1.addView(this.n, ma.t(-2, -2, (hd.a0 ? 5 : 3) | 48, 24, this.S == null ? 19 : 0, 24, 20));
             x70 x70Var = new x70(getContext());
             this.v0 = x70Var;
             x70Var.a(false, this.h0 / 100.0f);
@@ -540,10 +540,10 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
             TextView textView2 = new TextView(getContext());
             this.w0 = textView2;
             textView2.setTypeface(org.telegram.messenger.g0.o());
-            this.w0.setGravity((gd.a0 ? 5 : 3) | 48);
+            this.w0.setGravity((hd.a0 ? 5 : 3) | 48);
             t6.U(this.w0, m6.q5, r1Var);
             this.w0.setTextSize(1, 14.0f);
-            this.b1.addView(this.w0, ma.t(-2, -2, (gd.a0 ? 5 : 3) | 48, 23, 4, 23, 24));
+            this.b1.addView(this.w0, ma.t(-2, -2, (hd.a0 ? 5 : 3) | 48, 23, 4, 23, 24));
             this.w0.setText(String.format("%d%%", Integer.valueOf(this.h0)));
         } else if (i10 == 3) {
             super.setCanceledOnTouchOutside(false);
@@ -565,7 +565,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
             if (ztVar3 != null) {
                 this.x.addView(ztVar3, ma.k(22.0f, 4.0f, 22.0f, 12.0f, -1, -2));
             }
-            this.x.addView(this.n, ma.t(-2, -2, (this.X ? 1 : gd.a0 ? 5 : 3) | 48, 24, 0, 24, (this.b == null && this.Q == null) ? 0 : this.H));
+            this.x.addView(this.n, ma.t(-2, -2, (this.X ? 1 : hd.a0 ? 5 : 3) | 48, 24, 0, 24, (this.b == null && this.Q == null) ? 0 : this.H));
             TextView textView3 = this.c;
             if (textView3 != null) {
                 this.x.addView(textView3, ma.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
@@ -911,7 +911,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         g(true);
-        ks.e().c(this, ks.l4);
+        ls.e().c(this, ls.l4);
     }
 
     public final void p(int i7) {
@@ -929,12 +929,12 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
     public final void q() {
         if (this.j0 && this.L == null) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.S0);
-            String N0 = gd.N0(2131744591, null);
+            String N0 = hd.N0(2131744589, null);
             t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = gd.N0(2131744592, null);
-            alertDialog$Builder.k(gd.N0(2131742970, null), null);
-            alertDialog$Builder.h(gd.N0(2131744600, null), new org.telegram.tgnet.u(this, 3));
+            t1Var.U = hd.N0(2131744590, null);
+            alertDialog$Builder.k(hd.N0(2131742968, null), null);
+            alertDialog$Builder.h(hd.N0(2131744598, null), new org.telegram.tgnet.u(this, 3));
             alertDialog$Builder.j(new u9(this, 9));
             try {
                 this.L = alertDialog$Builder.p();
@@ -1020,7 +1020,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
         this.G = new AnimatorSet[2];
         this.H = 12;
         this.J = m6.H5;
-        this.b0 = ks.Q1;
+        this.b0 = ls.Q1;
         this.e0 = -1;
         this.i0 = true;
         this.j0 = true;
@@ -1042,7 +1042,7 @@ public class t1 extends Dialog implements Drawable.Callback, fs {
         int f10 = f(i10);
         this.V0 = f10;
         boolean z10 = org.telegram.messenger.g0.B(f10) < 0.721f;
-        this.U0 = bz.o() >= 2 && pc.e(256) && z10;
+        this.U0 = cz.o() >= 2 && qc.e(256) && z10;
         Rect rect = new Rect();
         this.B0 = rect;
         if (i7 != 3 || this.U0) {

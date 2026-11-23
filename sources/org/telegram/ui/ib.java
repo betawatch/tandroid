@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ib extends v4.i0 {
     public final Context c;
@@ -59,7 +59,7 @@ public final class ib extends v4.i0 {
             return i7 == this.e ? 2L : 5L;
         }
         ArrayList arrayList = this.n.p0;
-        return ((org.telegram.messenger.fj) arrayList.get((arrayList.size() - (i7 - this.f)) - 1)).m1;
+        return ((org.telegram.messenger.gj) arrayList.get((arrayList.size() - (i7 - this.f)) - 1)).m1;
     }
 
     @Override // v4.i0
@@ -67,7 +67,7 @@ public final class ib extends v4.i0 {
         if (i7 < this.f || i7 >= this.h) {
             return 4;
         }
-        return ((org.telegram.messenger.fj) this.n.p0.get((r0.size() - (i7 - this.f)) - 1)).U;
+        return ((org.telegram.messenger.gj) this.n.p0.get((r0.size() - (i7 - this.f)) - 1)).U;
     }
 
     @Override // v4.i0
@@ -163,11 +163,11 @@ public final class ib extends v4.i0 {
         if (i7 < this.f || i7 >= this.h) {
             return;
         }
-        org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList.get((arrayList.size() - (i7 - this.f)) - 1);
+        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList.get((arrayList.size() - (i7 - this.f)) - 1);
         if (!(view instanceof org.telegram.ui.Cells.r1)) {
             if (view instanceof org.telegram.ui.Cells.v0) {
                 org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
-                v0Var.setMessageObject(fjVar);
+                v0Var.setMessageObject(gjVar);
                 v0Var.setAlpha(1.0f);
                 return;
             }
@@ -178,22 +178,22 @@ public final class ib extends v4.i0 {
         int i14 = i7 + 1;
         int d = d(i14);
         int d2 = d(i7 - 1);
-        if (!(fjVar.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && d == f1Var.f) {
-            org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) arrayList.get((arrayList.size() - (i14 - this.f)) - 1);
-            z10 = fjVar2.P3() == fjVar.P3() && fjVar2.Z0() == fjVar.Z0() && Math.abs(fjVar2.k.date - fjVar.k.date) <= 300;
+        if (!(gjVar.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && d == f1Var.f) {
+            org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) arrayList.get((arrayList.size() - (i14 - this.f)) - 1);
+            z10 = gjVar2.P3() == gjVar.P3() && gjVar2.Z0() == gjVar.Z0() && Math.abs(gjVar2.k.date - gjVar.k.date) <= 300;
             if (z10) {
-                TLRPC.TL_forumTopic tL_forumTopic = fjVar.j1;
+                TLRPC.TL_forumTopic tL_forumTopic = gjVar.j1;
                 if (tL_forumTopic == null) {
                     i13 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-                    j11 = org.telegram.messenger.fj.b2(i13, fjVar.k, true, false);
+                    j11 = org.telegram.messenger.gj.b2(i13, gjVar.k, true, false);
                 } else {
                     j11 = tL_forumTopic.id;
                 }
-                TLRPC.TL_forumTopic tL_forumTopic2 = fjVar2.j1;
+                TLRPC.TL_forumTopic tL_forumTopic2 = gjVar2.j1;
                 if (tL_forumTopic2 == null) {
                     i12 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                     r1Var = r1Var2;
-                    j12 = org.telegram.messenger.fj.b2(i12, fjVar2.k, true, false);
+                    j12 = org.telegram.messenger.gj.b2(i12, gjVar2.k, true, false);
                 } else {
                     r1Var = r1Var2;
                     j12 = tL_forumTopic2.id;
@@ -202,22 +202,22 @@ public final class ib extends v4.i0 {
                 r1Var = r1Var2;
             }
             if (d2 != f1Var.f) {
-                org.telegram.messenger.fj fjVar3 = (org.telegram.messenger.fj) arrayList.get(arrayList.size() - (i7 - this.f));
-                boolean z13 = !(fjVar3.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && fjVar3.P3() == fjVar.P3() && fjVar3.Z0() == fjVar.Z0() && Math.abs(fjVar3.k.date - fjVar.k.date) <= 300;
+                org.telegram.messenger.gj gjVar3 = (org.telegram.messenger.gj) arrayList.get(arrayList.size() - (i7 - this.f));
+                boolean z13 = !(gjVar3.k.reply_markup instanceof TLRPC.TL_replyInlineMarkup) && gjVar3.P3() == gjVar.P3() && gjVar3.Z0() == gjVar.Z0() && Math.abs(gjVar3.k.date - gjVar.k.date) <= 300;
                 if (z13) {
-                    TLRPC.TL_forumTopic tL_forumTopic3 = fjVar.j1;
+                    TLRPC.TL_forumTopic tL_forumTopic3 = gjVar.j1;
                     if (tL_forumTopic3 == null) {
                         i11 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
                         z12 = true;
-                        j3 = org.telegram.messenger.fj.b2(i11, fjVar.k, true, false);
+                        j3 = org.telegram.messenger.gj.b2(i11, gjVar.k, true, false);
                     } else {
                         z12 = true;
                         j3 = tL_forumTopic3.id;
                     }
-                    TLRPC.TL_forumTopic tL_forumTopic4 = fjVar3.j1;
+                    TLRPC.TL_forumTopic tL_forumTopic4 = gjVar3.j1;
                     if (tL_forumTopic4 == null) {
                         i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-                        j10 = org.telegram.messenger.fj.b2(i10, fjVar3.k, z12, false);
+                        j10 = org.telegram.messenger.gj.b2(i10, gjVar3.k, z12, false);
                     } else {
                         j10 = tL_forumTopic4.id;
                     }
@@ -230,7 +230,7 @@ public final class ib extends v4.i0 {
                 z11 = false;
             }
             org.telegram.ui.Cells.r1 r1Var3 = r1Var;
-            r1Var3.y3(fjVar, null, z10, z11, false, false);
+            r1Var3.y3(gjVar, null, z10, z11, false, false);
             r1Var3.setHighlighted(false);
             r1Var3.u3(lbVar.w0);
         }
@@ -239,7 +239,7 @@ public final class ib extends v4.i0 {
         if (d2 != f1Var.f) {
         }
         org.telegram.ui.Cells.r1 r1Var32 = r1Var;
-        r1Var32.y3(fjVar, null, z10, z11, false, false);
+        r1Var32.y3(gjVar, null, z10, z11, false, false);
         r1Var32.setHighlighted(false);
         r1Var32.u3(lbVar.w0);
     }

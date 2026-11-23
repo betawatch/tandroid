@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class re implements Runnable {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class re implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         org.telegram.ui.Cells.r1 r1Var;
-        org.telegram.messenger.fj messageObject;
+        org.telegram.messenger.gj messageObject;
         switch (this.a) {
             case 0:
                 this.b.getConnectionsManager().cancelRequest(this.c, true);
@@ -53,7 +53,7 @@ public final /* synthetic */ class re implements Runnable {
                 bn.c0(this.b, this.c);
                 break;
             case 7:
-                this.b.actionBar.setSubtitle(org.telegram.messenger.gd.G(this.c, "messages", new Object[0]));
+                this.b.actionBar.setSubtitle(org.telegram.messenger.hd.G(this.c, "messages", new Object[0]));
                 break;
             case 8:
                 this.b.getConnectionsManager().cancelRequest(this.c, true);

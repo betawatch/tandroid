@@ -1,11 +1,11 @@
 package tg;
 
 import android.view.ViewGroup;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j1 extends dk0 {
     @Override // org.telegram.ui.Components.dk0
@@ -26,7 +26,7 @@ public final class j1 extends dk0 {
         e1Var.setTypeface(a0Var.d());
         String str = a0Var.c;
         if (str == null) {
-            str = gd.O0(a0Var.b);
+            str = hd.O0(a0Var.b);
         }
         e1Var.setText(str);
     }

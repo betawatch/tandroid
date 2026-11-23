@@ -8,12 +8,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
@@ -27,9 +27,9 @@ import org.telegram.ui.ne;
 import org.telegram.ui.p51;
 import org.telegram.ui.wt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j implements q10 {
+public final /* synthetic */ class j implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -44,7 +44,7 @@ public final /* synthetic */ class j implements q10 {
 
     /* JADX WARN: Removed duplicated region for block: B:65:0x0227  */
     /* JADX WARN: Removed duplicated region for block: B:67:0x0230  */
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -66,35 +66,35 @@ public final /* synthetic */ class j implements q10 {
             case 0:
                 u0 u0Var = (u0) obj3;
                 String str4 = (String) obj5;
-                q10 q10Var = (q10) obj4;
+                r10 r10Var = (r10) obj4;
                 TL_wallet.userAddresses useraddresses = (TL_wallet.userAddresses) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 int i12 = u0Var.a;
                 if (useraddresses != null && useraddresses.addresses.size() > 0) {
-                    mp.u1(i12).f4(useraddresses.users, false);
-                    tr.a0(i12).m1(useraddresses.users, null, true, true);
+                    np.u1(i12).f4(useraddresses.users, false);
+                    ur.a0(i12).m1(useraddresses.users, null, true, true);
                     TL_wallet.walletUserAddress walletuseraddress = useraddresses.addresses.get(0);
                     long j3 = walletuseraddress.user_id;
                     if (j3 != 0) {
                         u0Var.O.put(Long.valueOf(j3), walletuseraddress);
                     }
                     u0Var.P.put(walletuseraddress.address, walletuseraddress);
-                    q10Var.a(walletuseraddress, tL_error == null ? null : tL_error.text);
+                    r10Var.a(walletuseraddress, tL_error == null ? null : tL_error.text);
                     break;
                 } else {
-                    u0Var.k0(str4, new o(u0Var, q10Var, str4, i11));
+                    u0Var.k0(str4, new o(u0Var, r10Var, str4, i11));
                     break;
                 }
                 break;
             case 1:
                 u0 u0Var2 = (u0) obj3;
-                q10 q10Var2 = (q10) obj4;
+                r10 r10Var2 = (r10) obj4;
                 TLRPC.User user = (TLRPC.User) obj5;
                 TL_wallet.userAddresses useraddresses2 = (TL_wallet.userAddresses) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 u0Var2.getClass();
                 if (useraddresses2 != null && useraddresses2.addresses.size() > 0) {
-                    mp.u1(u0Var2.a).f4(useraddresses2.users, false);
+                    np.u1(u0Var2.a).f4(useraddresses2.users, false);
                     TL_wallet.walletUserAddress walletuseraddress2 = useraddresses2.addresses.get(0);
                     long j10 = walletuseraddress2.user_id;
                     if (j10 != 0) {
@@ -102,20 +102,20 @@ public final /* synthetic */ class j implements q10 {
                         if (j10 == j11) {
                             u0Var2.O.put(Long.valueOf(j11), walletuseraddress2);
                             u0Var2.P.put(walletuseraddress2.address, walletuseraddress2);
-                            q10Var2.a(walletuseraddress2, null);
+                            r10Var2.a(walletuseraddress2, null);
                             break;
                         }
                     }
-                    q10Var2.a(null, tL_error2 == null ? null : tL_error2.text);
+                    r10Var2.a(null, tL_error2 == null ? null : tL_error2.text);
                     break;
                 } else {
-                    q10Var2.a(null, tL_error2 == null ? null : tL_error2.text);
+                    r10Var2.a(null, tL_error2 == null ? null : tL_error2.text);
                     break;
                 }
                 break;
             case 2:
                 u0 u0Var3 = (u0) obj3;
-                x10 x10Var = (x10) obj5;
+                y10 y10Var = (y10) obj5;
                 TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) obj4;
                 r0 r0Var = (r0) obj;
                 String str5 = (String) obj2;
@@ -123,21 +123,21 @@ public final /* synthetic */ class j implements q10 {
                     z0 z0Var = u0Var3.c;
                     if (z0Var != null) {
                         if (!TextUtils.equals(z0Var.c, tL_walletState.address)) {
-                            x10Var.a("STORAGE_CHANGED");
+                            y10Var.a("STORAGE_CHANGED");
                             break;
                         } else {
-                            u0Var3.c.q(j10.i(u0Var3.a).e(), tL_walletState.public_key, r0Var, new p51(2, r0Var.b(), x10Var));
+                            u0Var3.c.q(k10.i(u0Var3.a).e(), tL_walletState.public_key, r0Var, new p51(2, r0Var.b(), y10Var));
                             break;
                         }
                     } else {
-                        x10Var.a("STORAGE_NULL");
+                        y10Var.a("STORAGE_NULL");
                         break;
                     }
                 } else {
                     if (str5 == null) {
                         str5 = "LOCAL_STORAGE_ERROR";
                     }
-                    x10Var.a(str5);
+                    y10Var.a(str5);
                     break;
                 }
             case 3:
@@ -346,13 +346,13 @@ public final /* synthetic */ class j implements q10 {
                         org.telegram.ui.ActionBar.h6 resourceProvider = d9Var.getResourceProvider();
                         d2Var.setBackground(h02);
                         org.telegram.ui.ActionBar.t6.j(d2Var, h02, null, M, resourceProvider);
-                        d2Var.e(gd.N0(2131742705, null), "", false, false, false);
+                        d2Var.e(hd.N0(2131742703, null), "", false, false, false);
                         d2Var.setMultiline(true);
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var.getCheckBoxView().getLayoutParams();
                         layoutParams.topMargin = 0;
-                        layoutParams.gravity = (gd.a0 ? 5 : 3) | 16;
+                        layoutParams.gravity = (hd.a0 ? 5 : 3) | 16;
                         d2Var.getCheckBoxView().setLayoutParams(layoutParams);
-                        d2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
+                        d2Var.setPadding(hd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
                         TextView textView = new TextView(parentActivity);
                         textView.setTextSize(1, 14.0f);
                         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, d9Var.getResourceProvider());
@@ -365,22 +365,22 @@ public final /* synthetic */ class j implements q10 {
                         textView.setBackground(d02);
                         org.telegram.ui.ActionBar.t6.j(textView, d02, M2, null, resourceProvider2);
                         textView.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f));
-                        textView.setText(l10.longValue() > 0 ? gd.V(null, null, 2131742703, u0.s(l10.longValue(), false), u0Var8.r(l10.longValue(), true)) : gd.N0(2131742704, null));
+                        textView.setText(l10.longValue() > 0 ? hd.V(null, null, 2131742701, u0.s(l10.longValue(), false), u0Var8.r(l10.longValue(), true)) : hd.N0(2131742702, null));
                         textView.setVisibility(8);
                         d2Var.setOnClickListener(new jg0(22, d2Var, textView));
                         LinearLayout f10 = org.telegram.messenger.f3.f(parentActivity, 1);
                         f10.addView(d2Var, c8.ma.t(-1, -2, 83, 8, 0, 8, 0));
                         f10.addView(textView, c8.ma.k(16.0f, 8.0f, 16.0f, 16.0f, -1, -2));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, d9Var.getResourceProvider());
-                        String N0 = gd.N0(2131742887, null);
+                        String N0 = hd.N0(2131742885, null);
                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         t1Var.S = N0;
-                        t1Var.U = gd.N0(2131742888, null);
+                        t1Var.U = hd.N0(2131742886, null);
                         t1Var.H = 6;
                         alertDialog$Builder.o(f10);
                         t1Var.a = org.telegram.messenger.g0.L(312.0f);
-                        alertDialog$Builder.h(gd.N0(2131752577, null), null);
-                        alertDialog$Builder.k(gd.N0(2131742892, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.Wallet.a9
+                        alertDialog$Builder.h(hd.N0(2131752577, null), null);
+                        alertDialog$Builder.k(hd.N0(2131742890, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.Wallet.a9
                             @Override // org.telegram.ui.ActionBar.q1
                             public final void h(org.telegram.ui.ActionBar.t1 t1Var2, int i16) {
                                 org.telegram.ui.Cells.d2 d2Var2 = d2Var;
@@ -400,16 +400,16 @@ public final /* synthetic */ class j implements q10 {
                                     if (A >= l11.longValue()) {
                                         y8 y8Var = new y8(d9Var2, h, u0Var9, 1);
                                         u0.P("prepare disable backup");
-                                        u0Var9.F(true, false, false, new bi.p6(29, u0Var9, y8Var));
+                                        u0Var9.F(true, false, false, new bi.o6(29, u0Var9, y8Var));
                                         return;
                                     }
                                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, d9Var2.getParentActivity(), d9Var2.getResourceProvider());
-                                    String N02 = gd.N0(2131742821, null);
+                                    String N02 = hd.N0(2131742819, null);
                                     org.telegram.ui.ActionBar.t1 t1Var3 = alertDialog$Builder2.a;
                                     t1Var3.S = N02;
-                                    t1Var3.U = gd.V(null, null, 2131742702, u0.s(l11.longValue(), false), u0Var9.r(l11.longValue(), true));
-                                    alertDialog$Builder2.h(gd.N0(2131742819, null), new ug.x(17));
-                                    alertDialog$Builder2.k(gd.N0(2131742726, null), new h3(d9Var2, 6));
+                                    t1Var3.U = hd.V(null, null, 2131742700, u0.s(l11.longValue(), false), u0Var9.r(l11.longValue(), true));
+                                    alertDialog$Builder2.h(hd.N0(2131742817, null), new ug.x(17));
+                                    alertDialog$Builder2.k(hd.N0(2131742724, null), new h3(d9Var2, 6));
                                     alertDialog$Builder2.p();
                                 }
                             }

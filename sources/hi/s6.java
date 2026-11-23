@@ -12,8 +12,8 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.TextureView;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
@@ -26,9 +26,9 @@ import org.telegram.ui.cx;
 import org.telegram.ui.kw;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s6 implements x10 {
+public final /* synthetic */ class s6 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -37,7 +37,7 @@ public final /* synthetic */ class s6 implements x10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         c51 c51Var;
         c51 c51Var2;
@@ -48,7 +48,7 @@ public final /* synthetic */ class s6 implements x10 {
                 u6 u6Var = (u6) this.b;
                 Long l10 = (Long) obj;
                 u6Var.A2 = false;
-                TLRPC.User c22 = l10 == null ? null : mp.u1(u6Var.a).c2(l10);
+                TLRPC.User c22 = l10 == null ? null : np.u1(u6Var.a).c2(l10);
                 u6Var.z2 = c22;
                 u6Var.B2 = c22 == null;
                 if (c22 != null) {
@@ -71,7 +71,7 @@ public final /* synthetic */ class s6 implements x10 {
                 ((g8) this.b).n.a0.C1 = ((Integer) obj).intValue();
                 break;
             case 3:
-                ((p9) this.b).h((x10) obj);
+                ((p9) this.b).h((y10) obj);
                 break;
             case 4:
                 ((jg.m) this.b).M((TLRPC.User) obj);
@@ -85,7 +85,7 @@ public final /* synthetic */ class s6 implements x10 {
                     if (cxVar != null) {
                         cxVar.W3();
                     }
-                    mp.u1(kwVar.K0).E3(null, user, null, 0, null, false, false);
+                    np.u1(kwVar.K0).E3(null, user, null, 0, null, false, false);
                     nm0Var.Q(user.id, user);
                     break;
                 }
@@ -345,17 +345,17 @@ public final /* synthetic */ class s6 implements x10 {
             case 23:
                 org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.b;
                 x0Var.f = (ArrayList) obj;
-                bi.g6 g6Var = x0Var.a;
-                if (g6Var.H) {
-                    g6Var.g3.O(true);
+                bi.f6 f6Var = x0Var.a;
+                if (f6Var.H) {
+                    f6Var.g3.O(true);
                     break;
                 }
                 break;
             case 24:
                 org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) this.b;
                 n1Var.r = ((ArrayList) obj).size();
-                bi.g6 g6Var2 = n1Var.a;
-                if (g6Var2 != null && (c51Var3 = g6Var2.g3) != null && g6Var2.H) {
+                bi.f6 f6Var2 = n1Var.a;
+                if (f6Var2 != null && (c51Var3 = f6Var2.g3) != null && f6Var2.H) {
                     c51Var3.O(true);
                     break;
                 }

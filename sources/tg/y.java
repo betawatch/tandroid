@@ -27,14 +27,14 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.ff;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class y implements si, com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a;
@@ -500,10 +500,10 @@ public final class y implements si, com.google.android.gms.common.api.internal.q
             if (selectedPhotos.isEmpty()) {
                 return;
             }
-            ef efVar = (ef) selectedPhotos.values().iterator().next();
-            String str = efVar.h;
+            ff ffVar = (ff) selectedPhotos.values().iterator().next();
+            String str = ffVar.h;
             if (str == null) {
-                str = efVar.I;
+                str = ffVar.I;
             }
             h0 h0Var = (h0) this.c;
             h0Var.d0(h0Var.f0(str, true));

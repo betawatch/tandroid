@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class p51 extends FrameLayout {
     public ValueAnimator a;
@@ -140,7 +140,7 @@ public class p51 extends FrameLayout {
                 ofFloat.addUpdateListener(new i51(1, this));
                 this.a.setDuration(250L);
                 this.a.setInterpolator(org.telegram.ui.ActionBar.i1.w);
-                this.a.addListener(new u11(this, 5));
+                this.a.addListener(new t11(this, 5));
                 this.a.start();
             } else if (this.a != null) {
                 setTranslationY(this.b);

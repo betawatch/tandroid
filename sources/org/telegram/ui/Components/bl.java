@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bl implements org.telegram.ui.ActionBar.l0, org.telegram.messenger.za, org.telegram.messenger.bb, org.telegram.ui.ActionBar.q1, jg.b {
+public final /* synthetic */ class bl implements org.telegram.ui.ActionBar.l0, org.telegram.messenger.ab, org.telegram.messenger.cb, org.telegram.ui.ActionBar.q1, jg.b {
     public final /* synthetic */ ml a;
 
     public /* synthetic */ bl(ml mlVar) {
@@ -19,8 +19,8 @@ public final /* synthetic */ class bl implements org.telegram.ui.ActionBar.l0, o
         mlVar.j0();
     }
 
-    @Override // org.telegram.messenger.za
-    public boolean b(MotionEvent motionEvent, org.telegram.messenger.ga gaVar) {
+    @Override // org.telegram.messenger.ab
+    public boolean b(MotionEvent motionEvent, org.telegram.messenger.ha haVar) {
         MotionEvent motionEvent2;
         ml mlVar = this.a;
         if (mlVar.H != 0.0f) {
@@ -30,14 +30,14 @@ public final /* synthetic */ class bl implements org.telegram.ui.ActionBar.l0, o
         } else {
             motionEvent2 = null;
         }
-        boolean booleanValue = gaVar.a(motionEvent).booleanValue();
+        boolean booleanValue = haVar.a(motionEvent).booleanValue();
         if (motionEvent2 != null) {
             motionEvent2.recycle();
         }
         return booleanValue;
     }
 
-    @Override // org.telegram.messenger.bb
+    @Override // org.telegram.messenger.cb
     public void c(int i7) {
         View childAt;
         ml mlVar = this.a;
@@ -54,23 +54,23 @@ public final /* synthetic */ class bl implements org.telegram.ui.ActionBar.l0, o
         int top = childAt.getTop();
         if (top < (-L)) {
             hi.u4 d = mlVar.E.d();
-            mlVar.G = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.ab) d.b, d.c);
+            mlVar.G = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.bb) d.b, d.c);
             b1Var.w0(0, top + L, null);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.l0
     public void g(int i7) {
-        org.telegram.messenger.da daVar = this.a.E;
-        if (daVar == null) {
+        org.telegram.messenger.ea eaVar = this.a.E;
+        if (eaVar == null) {
             return;
         }
         if (i7 == 2) {
-            daVar.j(0);
+            eaVar.j(0);
         } else if (i7 == 3) {
-            daVar.j(1);
+            eaVar.j(1);
         } else if (i7 == 4) {
-            daVar.j(2);
+            eaVar.j(2);
         }
     }
 

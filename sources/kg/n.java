@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.g6;
+import bi.f6;
 import c8.ma;
 import fi.n2;
 import hi.d7;
@@ -20,13 +20,13 @@ import hi.v5;
 import java.util.ArrayList;
 import m.r2;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.lz;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.mz;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
 import org.telegram.messenger.u5;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
@@ -47,9 +47,9 @@ import org.telegram.ui.Components.io;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class n extends e51 implements fs {
+public final class n extends e51 implements gs {
     public String E;
     public TLRPC.InputDocument F;
     public boolean G;
@@ -70,7 +70,7 @@ public final class n extends e51 implements fs {
     public boolean x = true;
 
     public n() {
-        ri mediaDataController = getMediaDataController();
+        si mediaDataController = getMediaDataController();
         TLRPC.Document document = mediaDataController.z0;
         mediaDataController.q1();
         this.y = document;
@@ -110,7 +110,7 @@ public final class n extends e51 implements fs {
         i iVar = nVar.n;
         if (iVar != null && iVar.isAttachedToWindow() && nVar.x) {
             i iVar2 = nVar.n;
-            ri d02 = ri.d0(nVar.currentAccount);
+            si d02 = si.d0(nVar.currentAccount);
             TLRPC.Document document = d02.z0;
             d02.q1();
             g gVar = new g(nVar, 2);
@@ -123,11 +123,11 @@ public final class n extends e51 implements fs {
                 animatorSet.cancel();
             }
             iVar2.n.getImageReceiver().h1 = new go(iVar2, gVar);
-            lz f10 = u5.f(document, m6.cd, 1.0f, null);
+            mz f10 = u5.f(document, m6.cd, 1.0f, null);
             if (f10 != null) {
-                iVar2.n.p(fc.b(document), io.b(document), f10, document);
+                iVar2.n.p(gc.b(document), io.b(document), f10, document);
             } else {
-                iVar2.n.l(fc.b(document), io.b(document), fc.c(w7.w(document.thumbs, 90, false, null, false), document), null, 0, document);
+                iVar2.n.l(gc.b(document), io.b(document), gc.c(w7.w(document.thumbs, 90, false, null, false), document), null, 0, document);
             }
             iVar2.n.setOnClickListener(new fo(iVar2, document, 1));
         }
@@ -147,13 +147,13 @@ public final class n extends e51 implements fs {
     @Override // org.telegram.ui.Components.e51
     public final void Z(ArrayList arrayList, c51 c51Var) {
         arrayList.add(o41.k(this.h));
-        arrayList.add(o41.u(gd.N0(2131752712, null)));
+        arrayList.add(o41.u(hd.N0(2131752712, null)));
         arrayList.add(o41.k(this.s));
         arrayList.add(o41.k(this.w));
         if (this.x) {
-            arrayList.add(o41.f(gd.N0(2131752708, null), gd.N0(2131752707, null), 1));
+            arrayList.add(o41.f(hd.N0(2131752708, null), hd.N0(2131752707, null), 1));
         } else if (this.E != null) {
-            String N0 = gd.N0(2131752708, null);
+            String N0 = hd.N0(2131752708, null);
             String str = this.E;
             o41 o41Var = new o41(3);
             o41Var.d = 1;
@@ -161,7 +161,7 @@ public final class n extends e51 implements fs {
             o41Var.H = str;
             arrayList.add(o41Var);
         } else {
-            String N02 = gd.N0(2131752708, null);
+            String N02 = hd.N0(2131752708, null);
             TLRPC.Document document = this.y;
             o41 o41Var2 = new o41(3);
             o41Var2.d = 1;
@@ -169,12 +169,12 @@ public final class n extends e51 implements fs {
             o41Var2.H = document;
             arrayList.add(o41Var2);
         }
-        arrayList.add(o41.C(gd.N0(2131752711, null)));
+        arrayList.add(o41.C(hd.N0(2131752711, null)));
         boolean l02 = l0();
         this.L = !l02;
         if (!l02) {
             arrayList.add(o41.C(null));
-            o41 e10 = o41.e(2, gd.N0(2131752709, null));
+            o41 e10 = o41.e(2, hd.N0(2131752709, null));
             e10.s = true;
             arrayList.add(e10);
         }
@@ -185,7 +185,7 @@ public final class n extends e51 implements fs {
 
     @Override // org.telegram.ui.Components.e51
     public final CharSequence a0() {
-        return gd.N0(2131752713, null);
+        return hd.N0(2131752713, null);
     }
 
     @Override // org.telegram.ui.Components.e51
@@ -218,7 +218,7 @@ public final class n extends e51 implements fs {
             this.x = true;
             this.n.d("", "");
             i iVar = this.n;
-            ri d02 = ri.d0(this.currentAccount);
+            si d02 = si.d0(this.currentAccount);
             TLRPC.Document document = d02.z0;
             d02.q1();
             this.y = document;
@@ -255,9 +255,9 @@ public final class n extends e51 implements fs {
         k kVar = new k(context, i7);
         kVar.setScaleType(ImageView.ScaleType.MATRIX);
         kVar.setImageDrawable(v5.e(null, this.currentAccount, getUserConfig().e(), m6.I.q()));
-        this.h.addView(kVar, ma.e(-1, -1, ks.E1));
+        this.h.addView(kVar, ma.e(-1, -1, ls.E1));
         this.h.addView(this.n, ma.d(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
-        l lVar = new l(this, context, gd.N0(2131752706, null), getMessagesController().I5, this.resourceProvider, 0);
+        l lVar = new l(this, context, hd.N0(2131752706, null), getMessagesController().I5, this.resourceProvider, 0);
         this.s = lVar;
         lVar.r = true;
         lVar.setShowLimitOnFocus(true);
@@ -273,7 +273,7 @@ public final class n extends e51 implements fs {
         j3Var.setImeOptions(6);
         int i13 = 2;
         j3Var.setOnEditorActionListener(new r2(fVar, i13));
-        l lVar4 = new l(this, context, gd.N0(2131752710, null), getMessagesController().J5, this.resourceProvider, 1);
+        l lVar4 = new l(this, context, hd.N0(2131752710, null), getMessagesController().J5, this.resourceProvider, 1);
         this.w = lVar4;
         lVar4.setShowLimitOnFocus(true);
         t6.h(i11, this.w, getResourceProvider());
@@ -292,13 +292,13 @@ public final class n extends e51 implements fs {
         this.a.g3.r = false;
         int i14 = 7;
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, i14));
-        this.f = this.simpleActionBar.s(gd.N0(2131745750, null));
+        this.f = this.simpleActionBar.s(hd.N0(2131745750, null));
         j0(false);
         this.a.addOnLayoutChangeListener(new m(this, i7));
         this.a.j(new bi.u1(this, 18));
-        g6 g6Var = this.a;
-        g6Var.i3 = true;
-        g6Var.setClipChildren(false);
+        f6 f6Var = this.a;
+        f6Var.i3 = true;
+        f6Var.setClipChildren(false);
         View view = this.fragmentView;
         if (view instanceof ViewGroup) {
             ((ViewGroup) view).setClipChildren(false);
@@ -308,9 +308,9 @@ public final class n extends e51 implements fs {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.E0) {
+        if (i7 == ls.E0) {
             n0();
         }
     }
@@ -330,12 +330,12 @@ public final class n extends e51 implements fs {
             return;
         }
         this.f.a(k0(), z10);
-        g6 g6Var = this.a;
-        if (g6Var == null || g6Var.g3 == null || this.L == (!l0())) {
+        f6 f6Var = this.a;
+        if (f6Var == null || f6Var.g3 == null || this.L == (!l0())) {
             return;
         }
-        g6 g6Var2 = this.a;
-        if (g6Var2 != null && g6Var2.getChildCount() > 0) {
+        f6 f6Var2 = this.a;
+        if (f6Var2 != null && f6Var2.getChildCount() > 0) {
             View view = null;
             int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i10 = -1;
@@ -361,8 +361,8 @@ public final class n extends e51 implements fs {
         this.a.g3.O(true);
         int i12 = this.c;
         if (i12 >= 0) {
-            g6 g6Var3 = this.a;
-            g6Var3.f3.h1(i12, this.d - g6Var3.getPaddingTop());
+            f6 f6Var3 = this.a;
+            f6Var3.f3.h1(i12, this.d - f6Var3.getPaddingTop());
         }
     }
 
@@ -419,7 +419,7 @@ public final class n extends e51 implements fs {
                 if (inputDocument != null) {
                     tL_inputBusinessIntro2.sticker = inputDocument;
                 } else {
-                    mp messagesController = getMessagesController();
+                    np messagesController = getMessagesController();
                     TLRPC.Document document2 = this.y;
                     messagesController.getClass();
                     if (document2 != null) {
@@ -495,7 +495,7 @@ public final class n extends e51 implements fs {
             i iVar2 = this.n;
             TLRPC.Document document2 = this.y;
             if (document2 == null || this.x) {
-                ri d02 = ri.d0(this.currentAccount);
+                si d02 = si.d0(this.currentAccount);
                 TLRPC.Document document3 = d02.z0;
                 d02.q1();
                 document2 = document3;
@@ -507,8 +507,8 @@ public final class n extends e51 implements fs {
             org.telegram.messenger.g0.r(gVar);
             org.telegram.messenger.g0.h3(gVar, 5000L);
         }
-        g6 g6Var = this.a;
-        if (g6Var != null && (c51Var = g6Var.g3) != null) {
+        f6 f6Var = this.a;
+        if (f6Var != null && (c51Var = f6Var.g3) != null) {
             c51Var.O(true);
         }
         this.K = true;
@@ -522,11 +522,11 @@ public final class n extends e51 implements fs {
         final int i7 = 0;
         if (z10) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String N0 = gd.N0(2131743592, null);
+            String N0 = hd.N0(2131743590, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = gd.N0(2131752705, null);
-            alertDialog$Builder.k(gd.N0(2131754213, null), new org.telegram.ui.ActionBar.q1(this) { // from class: kg.h
+            t1Var.U = hd.N0(2131752705, null);
+            alertDialog$Builder.k(hd.N0(2131754213, null), new org.telegram.ui.ActionBar.q1(this) { // from class: kg.h
                 public final /* synthetic */ n b;
 
                 {
@@ -546,7 +546,7 @@ public final class n extends e51 implements fs {
                 }
             });
             final int i10 = 1;
-            alertDialog$Builder.h(gd.N0(2131747386, null), new org.telegram.ui.ActionBar.q1(this) { // from class: kg.h
+            alertDialog$Builder.h(hd.N0(2131747386, null), new org.telegram.ui.ActionBar.q1(this) { // from class: kg.h
                 public final /* synthetic */ n b;
 
                 {
@@ -572,16 +572,16 @@ public final class n extends e51 implements fs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ks.E0);
-        ri.d0(this.currentAccount).D(0);
-        ri.d0(this.currentAccount).Y0(0, false, true, false);
-        ri.d0(this.currentAccount).Y0(2, false, true, false);
+        getNotificationCenter().c(this, ls.E0);
+        si.d0(this.currentAccount).D(0);
+        si.d0(this.currentAccount).Y0(0, false, true, false);
+        si.d0(this.currentAccount).Y0(2, false, true, false);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ks.E0);
+        getNotificationCenter().n(this, ls.E0);
         super.onFragmentDestroy();
     }
 

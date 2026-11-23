@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class u3 {
     public TLRPC.GroupCallParticipant a;
@@ -32,7 +32,7 @@ public final class u3 {
         }
         if (obj != null && u3.class == obj.getClass()) {
             u3 u3Var = (u3) obj;
-            if (this.b == u3Var.b && fj.B1(this.a.peer) == fj.B1(u3Var.a.peer)) {
+            if (this.b == u3Var.b && gj.B1(this.a.peer) == gj.B1(u3Var.a.peer)) {
                 return true;
             }
         }

@@ -2,8 +2,8 @@ package di;
 
 import android.text.TextUtils;
 import android.text.style.CharacterStyle;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -11,7 +11,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -68,10 +68,10 @@ public final /* synthetic */ class z1 implements Runnable {
                             y8.y(f6Var.a, false).O(C1);
                         }
                         if (C1 < 0) {
-                            org.telegram.ui.Components.lc.b0(T).s(document, gd.N0(z10 ? 2131750243 : 2131750241, null), gd.N0(z10 ? 2131750244 : 2131750242, null)).j();
+                            org.telegram.ui.Components.lc.b0(T).s(document, hd.N0(z10 ? 2131750243 : 2131750241, null), hd.N0(z10 ? 2131750244 : 2131750242, null)).j();
                             break;
                         } else {
-                            org.telegram.ui.Components.lc.b0(T).s(document, gd.N0(z10 ? 2131750106 : 2131750104, null), org.telegram.messenger.g0.T2(gd.N0(z10 ? 2131750107 : 2131750105, null), T instanceof ProfileActivity ? null : new ch.r0(C1, T))).k(true);
+                            org.telegram.ui.Components.lc.b0(T).s(document, hd.N0(z10 ? 2131750106 : 2131750104, null), org.telegram.messenger.g0.T2(hd.N0(z10 ? 2131750107 : 2131750105, null), T instanceof ProfileActivity ? null : new ch.r0(C1, T))).k(true);
                             break;
                         }
                     }
@@ -81,7 +81,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 bn bnVar = (bn) obj5;
                 String str = (String) obj;
                 CharacterStyle characterStyle = (CharacterStyle) obj4;
-                fj fjVar = (fj) obj2;
+                gj gjVar = (gj) obj2;
                 org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) obj3;
                 if (!str.startsWith("video?")) {
                     if (z11 && !z10) {
@@ -89,12 +89,12 @@ public final /* synthetic */ class z1 implements Runnable {
                         vf.c.o(str);
                         break;
                     } else {
-                        bnVar.ma(fjVar, false, false);
-                        bnVar.Ca(characterStyle, str, false, r1Var, fjVar);
+                        bnVar.ma(gjVar, false, false);
+                        bnVar.Ca(characterStyle, str, false, r1Var, gjVar);
                         break;
                     }
                 } else {
-                    bnVar.l8(characterStyle, false, fjVar, r1Var);
+                    bnVar.l8(characterStyle, false, gjVar, r1Var);
                     break;
                 }
             default:
@@ -118,11 +118,11 @@ public final /* synthetic */ class z1 implements Runnable {
         }
     }
 
-    public /* synthetic */ z1(bn bnVar, String str, CharacterStyle characterStyle, fj fjVar, org.telegram.ui.Cells.r1 r1Var, boolean z10, boolean z11) {
+    public /* synthetic */ z1(bn bnVar, String str, CharacterStyle characterStyle, gj gjVar, org.telegram.ui.Cells.r1 r1Var, boolean z10, boolean z11) {
         this.d = bnVar;
         this.e = str;
         this.f = characterStyle;
-        this.h = fjVar;
+        this.h = gjVar;
         this.n = r1Var;
         this.b = z10;
         this.c = z11;

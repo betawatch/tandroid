@@ -33,19 +33,19 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.fs {
+public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.gs {
     public static final /* synthetic */ int G0 = 0;
     public float A0;
     public final hl B0;
     public int C0;
     public int D0;
-    public org.telegram.messenger.da E;
+    public org.telegram.messenger.ea E;
     public int E0;
-    public org.telegram.messenger.xa F;
+    public org.telegram.messenger.ya F;
     public int F0;
-    public org.telegram.messenger.sa G;
+    public org.telegram.messenger.ta G;
     public float H;
     public boolean I;
     public final View J;
@@ -125,13 +125,13 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         this.W = c12;
         if (this.b.J1) {
             this.p0 = 7;
-        } else if (!z10 || bnVar == null || bnVar.h != null || bnVar.c() || org.telegram.messenger.o10.C(bnVar.j())) {
+        } else if (!z10 || bnVar == null || bnVar.h != null || bnVar.c() || org.telegram.messenger.p10.C(bnVar.j())) {
             this.p0 = 0;
         } else {
             this.p0 = 1;
         }
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.y4);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.z4);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.y4);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.z4);
         this.e0 = false;
         this.d0 = false;
         this.f0 = false;
@@ -150,8 +150,8 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         this.x = a10;
         this.b.getClass();
         a10.setVisibility(0);
-        a10.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
-        a10.setContentDescription(org.telegram.messenger.gd.N0(2131745640, null));
+        a10.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
+        a10.setContentDescription(org.telegram.messenger.hd.N0(2131745640, null));
         EditTextBoldCursor searchField = a10.getSearchField();
         int i10 = org.telegram.ui.ActionBar.m6.j5;
         org.telegram.ui.ActionBar.t6.U(searchField, i10, h6Var);
@@ -170,10 +170,10 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         q0Var.setSubMenuOpenSide(2);
         q0Var.setAdditionalXOffset(org.telegram.messenger.g0.L(10.0f));
         q0Var.setAdditionalYOffset(-org.telegram.messenger.g0.L(10.0f));
-        q0Var.d(2, R.drawable.msg_map, null, org.telegram.messenger.gd.N0(2131748497, null), true, false, h6Var);
-        q0Var.d(3, R.drawable.msg_satellite, null, org.telegram.messenger.gd.N0(2131745752, null), true, false, h6Var);
-        q0Var.d(4, R.drawable.msg_hybrid, null, org.telegram.messenger.gd.N0(2131749082, null), true, false, h6Var);
-        q0Var.setContentDescription(org.telegram.messenger.gd.N0(2131754838, null));
+        q0Var.d(2, R.drawable.msg_map, null, org.telegram.messenger.hd.N0(2131748497, null), true, false, h6Var);
+        q0Var.d(3, R.drawable.msg_satellite, null, org.telegram.messenger.hd.N0(2131745752, null), true, false, h6Var);
+        q0Var.d(4, R.drawable.msg_hybrid, null, org.telegram.messenger.hd.N0(2131749082, null), true, false, h6Var);
+        q0Var.setContentDescription(org.telegram.messenger.hd.N0(2131754838, null));
         int L = org.telegram.messenger.g0.L(40.0f);
         int i11 = org.telegram.ui.ActionBar.m6.nj;
         int w02 = org.telegram.ui.ActionBar.m6.w0(i11, this.a);
@@ -207,7 +207,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.t6.s(imageView, i13, h6Var, mode);
         imageView.setTag(Integer.valueOf(i13));
-        imageView.setContentDescription(org.telegram.messenger.gd.N0(2131754830, null));
+        imageView.setContentDescription(org.telegram.messenger.hd.N0(2131754830, null));
         e3Var.addView(imageView, c8.ma.d(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f));
         imageView.setOnClickListener(new m8(2, this, h6Var));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -229,7 +229,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         textView.setGravity(17);
         textView.setTypeface(org.telegram.messenger.g0.o());
         i5.c.r(17.0f, 1, 2131747986, textView, null);
-        TextView f10 = org.telegram.messenger.n10.f(linearLayout, textView, c8.ma.t(-2, -2, 17, 0, 11, 0, 0), context);
+        TextView f10 = org.telegram.messenger.o10.f(linearLayout, textView, c8.ma.t(-2, -2, 17, 0, 11, 0, 0), context);
         this.w = f10;
         org.telegram.ui.ActionBar.t6.U(f10, i15, h6Var);
         f10.setGravity(17);
@@ -277,7 +277,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         });
         r0Var2.P(this.q0);
         addView(e3Var, indexOfChild(b1Var), c8.ma.e(-1, -1, 51));
-        org.telegram.messenger.xa onCreateMapView = ((pb.b) org.telegram.messenger.t0.k()).onCreateMapView(context);
+        org.telegram.messenger.ya onCreateMapView = ((pb.b) org.telegram.messenger.t0.k()).onCreateMapView(context);
         this.F = onCreateMapView;
         a8.r7 r7Var = (a8.r7) onCreateMapView;
         r7Var.c = new bl(this);
@@ -337,7 +337,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         imageView.setTag(Integer.valueOf(i7));
         mlVar.L.L(null);
         mlVar.m0 = false;
-        mlVar.E.b(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLng(new org.telegram.messenger.ab(mlVar.i0.getLatitude(), mlVar.i0.getLongitude())));
+        mlVar.E.b(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLng(new org.telegram.messenger.bb(mlVar.i0.getLatitude(), mlVar.i0.getLongitude())));
     }
 
     public static /* synthetic */ void Q(ml mlVar, org.telegram.ui.bn bnVar, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, org.telegram.ui.ActionBar.h6 h6Var) {
@@ -359,12 +359,12 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         }
     }
 
-    public static void S(ml mlVar, org.telegram.messenger.xa xaVar) {
+    public static void S(ml mlVar, org.telegram.messenger.ya yaVar) {
         if (mlVar.F == null || mlVar.getParentActivity() == null) {
             return;
         }
         try {
-            ((a8.r7) xaVar).y();
+            ((a8.r7) yaVar).y();
             ((pb.b) org.telegram.messenger.t0.k()).initializeMaps(org.telegram.messenger.t0.b);
             ((a8.r7) mlVar.F).t(new fl(mlVar, 0));
             mlVar.g0 = true;
@@ -469,12 +469,12 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
                     if (mlVar2.o0 == null || mlVar2.getParentActivity() == null || mlVar2.i0 == null) {
                         return;
                     }
-                    c5.B(mlVar2.getParentActivity(), false, org.telegram.messenger.n5.E(j3) ? uiVar.a2.getMessagesController().c2(Long.valueOf(j3)) : null, new org.telegram.messenger.nr() { // from class: org.telegram.ui.Components.gl
-                        @Override // org.telegram.messenger.nr
+                    c5.B(mlVar2.getParentActivity(), false, org.telegram.messenger.n5.E(j3) ? uiVar.a2.getMessagesController().c2(Long.valueOf(j3)) : null, new org.telegram.messenger.or() { // from class: org.telegram.ui.Components.gl
+                        @Override // org.telegram.messenger.or
                         public final void a(int i11) {
                             ml mlVar3 = ml.this;
                             ui uiVar2 = mlVar3.b;
-                            c5.X(uiVar2.H3, uiVar2.Y0() + 1, uiVar2.c1(), new ai.a2(mlVar3, i11, 6));
+                            c5.X(uiVar2.H3, uiVar2.Y0() + 1, uiVar2.c1(), new ai.b2(mlVar3, i11, 6));
                         }
                     }, mlVar2.a).show();
                     return;
@@ -511,7 +511,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
                 if (r0Var != null) {
                     r0Var.O(mlVar.U, true);
                 }
-                parentActivity.requestPermissions(new String[]{"android.permission.ACCESS_MEDIA_LOCATION"}, org.telegram.messenger.ks.o3);
+                parentActivity.requestPermissions(new String[]{"android.permission.ACCESS_MEDIA_LOCATION"}, org.telegram.messenger.ls.o3);
             }
         }
     }
@@ -560,11 +560,11 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         }
     }
 
-    public static void Z(ml mlVar, org.telegram.messenger.da daVar) {
+    public static void Z(ml mlVar, org.telegram.messenger.ea eaVar) {
         PackageManager packageManager;
-        mlVar.E = daVar;
+        mlVar.E = eaVar;
         al alVar = new al(mlVar, 3);
-        k8.a aVar = daVar.a;
+        k8.a aVar = eaVar.a;
         int i7 = 5;
         org.telegram.messenger.j1 j1Var = new org.telegram.messenger.j1(alVar, i7);
         l8.e eVar = (l8.e) aVar.b;
@@ -594,9 +594,9 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
             mlVar.E.g().B2();
             mlVar.E.g().r2();
             mlVar.E.l(new bl(mlVar));
-            org.telegram.messenger.da daVar2 = mlVar.E;
+            org.telegram.messenger.ea eaVar2 = mlVar.E;
             al alVar2 = new al(mlVar, 4);
-            k8.a aVar2 = daVar2.a;
+            k8.a aVar2 = eaVar2.a;
             org.telegram.messenger.j1 j1Var2 = new org.telegram.messenger.j1(alVar2, 8);
             l8.e eVar2 = (l8.e) aVar2.b;
             try {
@@ -604,9 +604,9 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
                 Parcel p13 = eVar2.p1();
                 v7.b.c(p13, cVar2);
                 eVar2.t1(p13, 99);
-                org.telegram.messenger.da daVar3 = mlVar.E;
+                org.telegram.messenger.ea eaVar3 = mlVar.E;
                 fl flVar = new fl(mlVar, i10);
-                k8.a aVar3 = daVar3.a;
+                k8.a aVar3 = eaVar3.a;
                 org.telegram.messenger.j1 j1Var3 = new org.telegram.messenger.j1(flVar, 6);
                 l8.e eVar3 = (l8.e) aVar3.b;
                 try {
@@ -629,9 +629,9 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
                                 int i11 = org.telegram.ui.ActionBar.m6.L5;
                                 alertDialog$Builder.m(R.raw.permission_request_location, 72, org.telegram.ui.ActionBar.m6.w0(i11, mlVar.a), null);
                                 alertDialog$Builder.n(i11, mlVar.a);
-                                alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131749354, null);
-                                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751794, null), new bl(mlVar));
-                                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                                alertDialog$Builder.a.U = org.telegram.messenger.hd.N0(2131749354, null);
+                                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751794, null), new bl(mlVar));
+                                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
                                 alertDialog$Builder.p();
                             }
                         } catch (Exception e11) {
@@ -720,7 +720,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         return location;
     }
 
-    private org.telegram.messenger.qd getLocationController() {
+    private org.telegram.messenger.rd getLocationController() {
         return this.b.a2.getLocationController();
     }
 
@@ -732,19 +732,19 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         return org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m;
     }
 
-    private org.telegram.messenger.ab getMapTarget() {
+    private org.telegram.messenger.bb getMapTarget() {
         Location location;
         if (this.m0 && (location = this.j0) != null) {
-            return new org.telegram.messenger.ab(location.getLatitude(), this.j0.getLongitude());
+            return new org.telegram.messenger.bb(location.getLatitude(), this.j0.getLongitude());
         }
         Location location2 = this.i0;
         if (location2 != null) {
-            return new org.telegram.messenger.ab(location2.getLatitude(), this.i0.getLongitude());
+            return new org.telegram.messenger.bb(location2.getLatitude(), this.i0.getLongitude());
         }
         return null;
     }
 
-    private org.telegram.messenger.mp getMessagesController() {
+    private org.telegram.messenger.np getMessagesController() {
         return this.b.a2.getMessagesController();
     }
 
@@ -761,16 +761,16 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         return g2Var.getParentActivity();
     }
 
-    private org.telegram.messenger.j10 getUserConfig() {
+    private org.telegram.messenger.k10 getUserConfig() {
         return this.b.a2.getUserConfig();
     }
 
     @Override // org.telegram.ui.Components.mi
     public final void A() {
-        org.telegram.messenger.xa xaVar = this.F;
-        if (xaVar != null && this.g0) {
+        org.telegram.messenger.ya yaVar = this.F;
+        if (yaVar != null && this.g0) {
             try {
-                ((a8.r7) xaVar).B();
+                ((a8.r7) yaVar).B();
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
             }
@@ -814,10 +814,10 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
 
     @Override // org.telegram.ui.Components.mi
     public final void C() {
-        org.telegram.messenger.xa xaVar = this.F;
-        if (xaVar != null && this.g0) {
+        org.telegram.messenger.ya yaVar = this.F;
+        if (yaVar != null && this.g0) {
             try {
-                ((a8.r7) xaVar).F();
+                ((a8.r7) yaVar).F();
             } catch (Throwable th2) {
                 org.telegram.messenger.a8.g(th2, true);
             }
@@ -838,7 +838,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
     @Override // org.telegram.ui.Components.mi
     public final void I(mi miVar) {
         ui uiVar = this.b;
-        uiVar.V2.setTitle(org.telegram.messenger.gd.N0(2131745260, null));
+        uiVar.V2.setTitle(org.telegram.messenger.hd.N0(2131745260, null));
         int i7 = 1;
         if (((ai.l0) ((a8.r7) this.F).b).getParent() == null) {
             ai.l0 l0Var = (ai.l0) ((a8.r7) this.F).b;
@@ -848,19 +848,19 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
             e3Var.addView(this.J, 1, c8.ma.c(-1.0f, -1));
         }
         this.x.setVisibility(0);
-        org.telegram.messenger.xa xaVar = this.F;
-        if (xaVar != null && this.g0) {
+        org.telegram.messenger.ya yaVar = this.F;
+        if (yaVar != null && this.g0) {
             try {
-                ((a8.r7) xaVar).F();
+                ((a8.r7) yaVar).F();
             } catch (Throwable th2) {
                 org.telegram.messenger.a8.g(th2, true);
             }
         }
         this.h0 = true;
-        org.telegram.messenger.da daVar = this.E;
-        if (daVar != null) {
+        org.telegram.messenger.ea eaVar = this.E;
+        if (eaVar != null) {
             try {
-                daVar.k(true);
+                eaVar.k(true);
             } catch (Exception e11) {
                 org.telegram.messenger.a8.g(e11, true);
             }
@@ -959,9 +959,9 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         return (uhVar == null || uhVar.getVisibility() == 8) ? false : true;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = org.telegram.messenger.ks.y4;
+        int i11 = org.telegram.messenger.ls.y4;
         jg.r0 r0Var = this.L;
         if (i7 == i11) {
             this.U = false;
@@ -970,15 +970,15 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
             if (r0Var != null) {
                 r0Var.O(this.U, this.T);
             }
-            org.telegram.messenger.da daVar = this.E;
-            if (daVar != null) {
+            org.telegram.messenger.ea eaVar = this.E;
+            if (eaVar != null) {
                 try {
-                    daVar.k(true);
+                    eaVar.k(true);
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                 }
             }
-        } else if (i7 == org.telegram.messenger.ks.z4) {
+        } else if (i7 == org.telegram.messenger.ls.z4) {
             this.U = true;
             this.T = false;
             if (r0Var != null) {
@@ -998,7 +998,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
     public final void e0() {
         bi.e3 e3Var;
         di.b1 b1Var;
-        org.telegram.messenger.ab abVar;
+        org.telegram.messenger.bb bbVar;
         if (this.F == null || (e3Var = this.K) == null || (b1Var = this.M) == null) {
             return;
         }
@@ -1054,26 +1054,26 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         int measuredHeight = ((ai.l0) ((a8.r7) this.F).b).getMeasuredHeight() > 0 ? ((ai.l0) ((a8.r7) this.F).b).getMeasuredHeight() : getMapContentHeight();
         int max4 = Math.max(0, (int) (measuredHeight - (i7 - f13)));
         int i10 = ((ceil2 * 2) - measuredHeight) + max4;
-        org.telegram.messenger.da daVar = this.E;
-        if (daVar != null) {
+        org.telegram.messenger.ea eaVar = this.E;
+        if (eaVar != null) {
             int i11 = this.E0;
             if (i10 == i11 && max4 == this.F0) {
                 return;
             }
             if (i11 < 0) {
-                abVar = getMapTarget();
+                bbVar = getMapTarget();
             } else if (ceil2 != this.C0) {
-                daVar.d();
-                abVar = (org.telegram.messenger.ab) this.E.d().b;
+                eaVar.d();
+                bbVar = (org.telegram.messenger.bb) this.E.d().b;
             } else {
-                abVar = null;
+                bbVar = null;
             }
             this.C0 = ceil2;
             this.E0 = i10;
             this.F0 = max4;
             this.E.n(0, org.telegram.messenger.g0.L(6.0f) + i10, 0, org.telegram.messenger.g0.L(6.0f) + max4);
-            if (abVar != null) {
-                this.E.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLng(abVar));
+            if (bbVar != null) {
+                this.E.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLng(bbVar));
             }
         }
     }
@@ -1141,13 +1141,13 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         }
         Location location2 = new Location(location);
         this.i0 = location2;
-        org.telegram.messenger.da daVar = this.E;
+        org.telegram.messenger.ea eaVar = this.E;
         jg.r0 r0Var = this.L;
-        if (daVar == null) {
+        if (eaVar == null) {
             r0Var.M(location2);
             return;
         }
-        org.telegram.messenger.ab abVar = new org.telegram.messenger.ab(location.getLatitude(), location.getLongitude());
+        org.telegram.messenger.bb bbVar = new org.telegram.messenger.bb(location.getLatitude(), location.getLongitude());
         if (r0Var != null) {
             r0Var.M(this.i0);
         }
@@ -1156,11 +1156,11 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
         }
         this.j0 = new Location(location);
         if (this.n0) {
-            this.E.b(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLng(abVar));
+            this.E.b(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLng(bbVar));
             return;
         }
         this.n0 = true;
-        this.E.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(abVar, this.E.e() - 4.0f));
+        this.E.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(bbVar, this.E.e() - 4.0f));
     }
 
     @Override // org.telegram.ui.Components.mi
@@ -1220,7 +1220,7 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
     }
 
     public final void h0(double d, double d2) {
-        org.telegram.messenger.sa newCameraUpdateLatLngZoom;
+        org.telegram.messenger.ta newCameraUpdateLatLngZoom;
         if (this.E == null) {
             return;
         }
@@ -1237,11 +1237,11 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
             this.j0.setLatitude(d);
             this.j0.setLongitude(d2);
         }
-        org.telegram.messenger.ab abVar = new org.telegram.messenger.ab(d, d2);
+        org.telegram.messenger.bb bbVar = new org.telegram.messenger.bb(d, d2);
         if (d == 0.0d || d2 == 0.0d) {
-            newCameraUpdateLatLngZoom = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(abVar, this.E.f());
+            newCameraUpdateLatLngZoom = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(bbVar, this.E.f());
         } else {
-            newCameraUpdateLatLngZoom = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(abVar, this.E.e() - 4.0f);
+            newCameraUpdateLatLngZoom = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(bbVar, this.E.e() - 4.0f);
         }
         this.G = newCameraUpdateLatLngZoom;
         this.E.h(newCameraUpdateLatLngZoom);
@@ -1337,36 +1337,36 @@ public final class ml extends mi implements org.telegram.ui.ActionBar.b6, org.te
 
     @Override // org.telegram.ui.Components.mi
     public final void p() {
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.y4);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.z4);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.y4);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.z4);
         this.y = true;
         bi.e3 e3Var = this.K;
         if (e3Var != null) {
             e3Var.invalidate();
         }
         try {
-            org.telegram.messenger.da daVar = this.E;
-            if (daVar != null) {
-                daVar.k(false);
+            org.telegram.messenger.ea eaVar = this.E;
+            if (eaVar != null) {
+                eaVar.k(false);
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
-        org.telegram.messenger.xa xaVar = this.F;
-        if (xaVar != null) {
-            ((ai.l0) ((a8.r7) xaVar).b).setTranslationY((-org.telegram.messenger.g0.q.y) * 3);
+        org.telegram.messenger.ya yaVar = this.F;
+        if (yaVar != null) {
+            ((ai.l0) ((a8.r7) yaVar).b).setTranslationY((-org.telegram.messenger.g0.q.y) * 3);
         }
         try {
-            org.telegram.messenger.xa xaVar2 = this.F;
-            if (xaVar2 != null) {
-                ((a8.r7) xaVar2).B();
+            org.telegram.messenger.ya yaVar2 = this.F;
+            if (yaVar2 != null) {
+                ((a8.r7) yaVar2).B();
             }
         } catch (Exception unused) {
         }
         try {
-            org.telegram.messenger.xa xaVar3 = this.F;
-            if (xaVar3 != null) {
-                ((a8.r7) xaVar3).A();
+            org.telegram.messenger.ya yaVar3 = this.F;
+            if (yaVar3 != null) {
+                ((a8.r7) yaVar3).A();
                 this.F = null;
             }
         } catch (Exception unused2) {

@@ -2,9 +2,9 @@ package e2;
 
 import a8.la;
 import android.util.Pair;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class l1 {
     public static final h1 a = new h1();
@@ -117,7 +117,7 @@ public abstract class l1 {
     public int hashCode() {
         k1 k1Var = new k1();
         i1 i1Var = new i1();
-        int o4 = o() + ks.u3;
+        int o4 = o() + ls.u3;
         for (int i7 = 0; i7 < o(); i7++) {
             o4 = (o4 * 31) + m(i7, k1Var, 0L).hashCode();
         }

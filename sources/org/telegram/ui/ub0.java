@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ub0 extends org.telegram.ui.Components.iu0 {
     public boolean E;
@@ -58,7 +58,7 @@ public final class ub0 extends org.telegram.ui.Components.iu0 {
         float f11 = 2.0f;
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView.setGravity(49);
-        textView.setText(org.telegram.messenger.gd.N0(2131745326, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131745326, null));
         addView(textView, c8.ma.t(-2, -2, 1, 8, org.telegram.messenger.g0.O1() ? 16 : 72, 8, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
@@ -71,7 +71,7 @@ public final class ub0 extends org.telegram.ui.Components.iu0 {
         while (i13 < this.b.length) {
             org.telegram.ui.Components.yb0 yb0Var = new org.telegram.ui.Components.yb0(context, null);
             this.a[i13] = yb0Var;
-            yb0Var.setText(org.telegram.messenger.gd.N0(i7 == 0 ? i13 == 0 ? 2131747016 : 2131747014 : 2131747248, null));
+            yb0Var.setText(org.telegram.messenger.hd.N0(i7 == 0 ? i13 == 0 ? 2131747016 : 2131747014 : 2131747248, null));
             this.b[i13] = new EditTextBoldCursor(context);
             this.b[i13].setCursorSize(org.telegram.messenger.g0.L(20.0f));
             this.b[i13].setCursorWidth(1.5f);
@@ -82,16 +82,16 @@ public final class ub0 extends org.telegram.ui.Components.iu0 {
             int L = org.telegram.messenger.g0.L(16.0f);
             this.b[i13].setPadding(L, L, L, L);
             if (i7 == 0) {
-                this.b[i13].setInputType(org.telegram.messenger.ks.N1);
+                this.b[i13].setInputType(org.telegram.messenger.ls.N1);
                 this.b[i13].setTransformationMethod(PasswordTransformationMethod.getInstance());
             }
             this.b[i13].setTypeface(Typeface.DEFAULT);
             int i14 = 3;
-            this.b[i13].setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+            this.b[i13].setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
             EditTextBoldCursor editTextBoldCursor = this.b[i13];
             boolean z10 = i13 == 0 && i7 == 0;
             float f12 = f11;
-            editTextBoldCursor.addTextChangedListener(new bi.w5(this, z10));
+            editTextBoldCursor.addTextChangedListener(new bi.v5(this, z10));
             this.b[i13].setOnFocusChangeListener(new ed(yb0Var, i14));
             if (z10) {
                 LinearLayout linearLayout = new LinearLayout(context);
@@ -120,7 +120,7 @@ public final class ub0 extends org.telegram.ui.Components.iu0 {
                                 for (int i15 = 0; i15 < editTextBoldCursorArr.length; i15++) {
                                     int selectionStart = editTextBoldCursorArr[i15].getSelectionStart();
                                     int selectionEnd = editTextBoldCursorArr[i15].getSelectionEnd();
-                                    editTextBoldCursorArr[i15].setInputType((ub0Var.E ? org.telegram.messenger.ks.a2 : 128) | 1);
+                                    editTextBoldCursorArr[i15].setInputType((ub0Var.E ? org.telegram.messenger.ls.a2 : 128) | 1);
                                     editTextBoldCursorArr[i15].setSelection(selectionStart, selectionEnd);
                                 }
                                 imageView2.setTag(Boolean.valueOf(ub0Var.E));
@@ -170,9 +170,9 @@ public final class ub0 extends org.telegram.ui.Components.iu0 {
         }
         float f13 = f11;
         if (i7 == 0) {
-            this.d.setText(org.telegram.messenger.gd.N0(2131747015, "PleaseEnterNewFirstPasswordLogin"));
+            this.d.setText(org.telegram.messenger.hd.N0(2131747015, "PleaseEnterNewFirstPasswordLogin"));
         } else {
-            this.d.setText(org.telegram.messenger.gd.N0(2131747246, "PasswordHintTextLogin"));
+            this.d.setText(org.telegram.messenger.hd.N0(2131747246, "PasswordHintTextLogin"));
         }
         TextView textView3 = new TextView(context);
         this.e = textView3;
@@ -180,7 +180,7 @@ public final class ub0 extends org.telegram.ui.Components.iu0 {
         textView3.setTextSize(1, 15.0f);
         textView3.setLineSpacing(org.telegram.messenger.g0.L(f13), 1.0f);
         textView3.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        textView3.setText(org.telegram.messenger.gd.N0(2131742553, null));
+        textView3.setText(org.telegram.messenger.hd.N0(2131742551, null));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.addView(textView3, c8.ma.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
         addView(frameLayout, c8.ma.r(-1, -1, 80));
@@ -203,7 +203,7 @@ public final class ub0 extends org.telegram.ui.Components.iu0 {
                         for (int i15 = 0; i15 < editTextBoldCursorArr.length; i15++) {
                             int selectionStart = editTextBoldCursorArr[i15].getSelectionStart();
                             int selectionEnd = editTextBoldCursorArr[i15].getSelectionEnd();
-                            editTextBoldCursorArr[i15].setInputType((ub0Var.E ? org.telegram.messenger.ks.a2 : 128) | 1);
+                            editTextBoldCursorArr[i15].setInputType((ub0Var.E ? org.telegram.messenger.ls.a2 : 128) | 1);
                             editTextBoldCursorArr[i15].setSelection(selectionStart, selectionEnd);
                         }
                         imageView2.setTag(Boolean.valueOf(ub0Var.E));
@@ -243,7 +243,7 @@ public final class ub0 extends org.telegram.ui.Components.iu0 {
 
     @Override // org.telegram.ui.Components.iu0
     public String getHeaderName() {
-        return org.telegram.messenger.gd.N0(2131748073, "NewPassword");
+        return org.telegram.messenger.hd.N0(2131748073, "NewPassword");
     }
 
     @Override // org.telegram.ui.Components.iu0

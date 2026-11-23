@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Paint;
 import java.util.Random;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vc {
     public float a;
@@ -30,13 +30,13 @@ public final class vc {
     public int h = -11318601;
     public final Paint i = new Paint(1);
     public final Random j = new Random();
-    public int y = org.telegram.messenger.ks.e4;
+    public int y = org.telegram.messenger.ls.e4;
 
     public final void a() {
         int i7 = this.h;
         Paint paint = this.i;
         paint.setColor(i7);
-        paint.setAlpha((this.g * this.y) / org.telegram.messenger.ks.e4);
+        paint.setAlpha((this.g * this.y) / org.telegram.messenger.ls.e4);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0029, code lost:

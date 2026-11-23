@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jy extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ ky c;
@@ -71,10 +71,10 @@ public final class jy extends org.telegram.ui.Components.dk0 {
             }
             a9Var.setFixedSize(0);
             if (tL_exportedChatlistInvite == null || arrayList.isEmpty()) {
-                a9Var.setText(org.telegram.messenger.gd.N0(2131750734, null));
+                a9Var.setText(org.telegram.messenger.hd.N0(2131750734, null));
                 return;
             } else {
-                a9Var.setText(org.telegram.messenger.gd.N0(2131750735, null));
+                a9Var.setText(org.telegram.messenger.hd.N0(2131750735, null));
                 return;
             }
         }
@@ -135,7 +135,7 @@ public final class jy extends org.telegram.ui.Components.dk0 {
                     kyVar.P = null;
                 }
                 if (i7 == kyVar.J) {
-                    f00Var.b(org.telegram.messenger.gd.N0(2131748956, null), false);
+                    f00Var.b(org.telegram.messenger.hd.N0(2131748956, null), false);
                     f00Var.a("", null);
                     return;
                 }
@@ -144,7 +144,7 @@ public final class jy extends org.telegram.ui.Components.dk0 {
                     kyVar.k0(false);
                     return;
                 } else {
-                    f00Var.b(org.telegram.messenger.gd.N0(2131750741, null), false);
+                    f00Var.b(org.telegram.messenger.hd.N0(2131750741, null), false);
                     f00Var.a("", null);
                     return;
                 }
@@ -156,7 +156,7 @@ public final class jy extends org.telegram.ui.Components.dk0 {
         long longValue = l10.longValue();
         if (longValue >= 0) {
             TLRPC.User c22 = kyVar.getMessagesController().c2(l10);
-            str = c22 != null ? org.telegram.messenger.o10.q(c22) : null;
+            str = c22 != null ? org.telegram.messenger.p10.q(c22) : null;
             str2 = null;
             chat = c22;
         } else {
@@ -165,17 +165,17 @@ public final class jy extends org.telegram.ui.Components.dk0 {
                 str = O0.title;
                 if (O0.participants_count != 0) {
                     if (org.telegram.messenger.v3.V(O0)) {
-                        str2 = org.telegram.messenger.gd.H(',', "Subscribers", O0.participants_count);
+                        str2 = org.telegram.messenger.hd.H(',', "Subscribers", O0.participants_count);
                         chat = O0;
                     } else {
-                        str2 = org.telegram.messenger.gd.H(',', "Members", O0.participants_count);
+                        str2 = org.telegram.messenger.hd.H(',', "Members", O0.participants_count);
                         chat = O0;
                     }
                 } else if (org.telegram.messenger.v3.V(O0)) {
-                    str2 = org.telegram.messenger.gd.O0("ChannelPublic");
+                    str2 = org.telegram.messenger.hd.O0("ChannelPublic");
                     chat = O0;
                 } else {
-                    str2 = org.telegram.messenger.gd.O0("MegaPublic");
+                    str2 = org.telegram.messenger.hd.O0("MegaPublic");
                     chat = O0;
                 }
             } else {
@@ -191,9 +191,9 @@ public final class jy extends org.telegram.ui.Components.dk0 {
             i4Var.setForbiddenCheck(true);
             i4Var.c(false, false);
             if (chat instanceof TLRPC.User) {
-                str2 = ((TLRPC.User) chat).bot ? org.telegram.messenger.gd.N0(2131750759, null) : org.telegram.messenger.gd.N0(2131750727, null);
+                str2 = ((TLRPC.User) chat).bot ? org.telegram.messenger.hd.N0(2131750759, null) : org.telegram.messenger.hd.N0(2131750727, null);
             } else if (chat instanceof TLRPC.Chat) {
-                str2 = org.telegram.messenger.v3.V(chat) ? org.telegram.messenger.gd.N0(2131750757, null) : org.telegram.messenger.gd.N0(2131750746, null);
+                str2 = org.telegram.messenger.v3.V(chat) ? org.telegram.messenger.hd.N0(2131750757, null) : org.telegram.messenger.hd.N0(2131750746, null);
             }
         }
         i4Var.setTag(l10);

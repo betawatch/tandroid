@@ -29,12 +29,12 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import c8.ma;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j4 {
     public final Rect A = new Rect();
@@ -187,7 +187,7 @@ public final class j4 {
         f4Var.setImageDrawable(mutate2);
         TextView textView = new TextView(context);
         this.l = textView;
-        n10.l(16.0f, 2131753753, 1, textView, null);
+        o10.l(16.0f, 2131753753, 1, textView, null);
         textView.setAlpha(0.0f);
         View view2 = new View(context);
         this.j = view2;
@@ -299,7 +299,7 @@ public final class j4 {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(ObjectAnimator.ofFloat(relativeLayout, (Property<RelativeLayout, Float>) View.ALPHA, 0.0f, 1.0f).setDuration(150L));
         this.v = animatorSet;
-        this.w = l4.a(relativeLayout, ks.g2, new g4(this, 0));
+        this.w = l4.a(relativeLayout, ls.g2, new g4(this, 0));
         this.x = l4.a(relativeLayout, 0, new g4(this, 1));
     }
 
@@ -354,7 +354,7 @@ public final class j4 {
 
     public final int e() {
         int i7 = this.O;
-        return i7 < 150 ? Math.max(ks.e3, 0) : i7 > 300 ? ks.X4 : ks.Z3;
+        return i7 < 150 ? Math.max(ls.e3, 0) : i7 > 300 ? ls.X4 : ls.Z3;
     }
 
     public final boolean f() {
@@ -539,7 +539,7 @@ public final class j4 {
             i4Var.setAlpha(1.0f);
             i4Var.setVisibility(0);
             f4Var.setImageDrawable(this.m);
-            frameLayout.setContentDescription(gd.N0(2131754838, null));
+            frameLayout.setContentDescription(hd.N0(2131754838, null));
             relativeLayout.setX((popupWindow.getWidth() - r3.getWidth()) - i7);
             d61Var.setX(-relativeLayout.getX());
             frameLayout.setX(0.0f);
@@ -563,7 +563,7 @@ public final class j4 {
         i4Var.setAlpha(0.0f);
         i4Var.setVisibility(4);
         f4Var.setImageDrawable(this.n);
-        frameLayout.setContentDescription(gd.N0(2131754838, null));
+        frameLayout.setContentDescription(hd.N0(2131754838, null));
         if (this.I == null) {
             relativeLayout.setX(i7);
             relativeLayout.setY(i10);

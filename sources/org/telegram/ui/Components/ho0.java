@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ho0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -33,11 +33,11 @@ public final class ho0 implements TextWatcher {
                     String obj = e10Var.r.getText().toString();
                     if (obj.length() != 0) {
                         if (nv0Var != null) {
-                            nv0Var.d.setText(org.telegram.messenger.gd.N0(2131747974, null));
+                            nv0Var.d.setText(org.telegram.messenger.hd.N0(2131747974, null));
                         }
                     } else if (ap0Var.B1.getAdapter() != to0Var) {
                         int K0 = ap0.K0(ap0Var);
-                        nv0Var.d.setText(org.telegram.messenger.gd.N0(2131747974, null));
+                        nv0Var.d.setText(org.telegram.messenger.hd.N0(2131747974, null));
                         nv0Var.e(false, true);
                         ap0Var.L0(false);
                         to0Var.f();

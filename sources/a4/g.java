@@ -5,9 +5,9 @@ import e2.t0;
 import f3.p;
 import h2.x;
 import java.io.EOFException;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -15,8 +15,8 @@ public final class g {
     public int c;
     public int d;
     public int e;
-    public final int[] f = new int[ks.e4];
-    public final x g = new x(ks.e4);
+    public final int[] f = new int[ls.e4];
+    public final x g = new x(ls.e4);
 
     public final boolean a(p pVar, boolean z10) {
         boolean z11;

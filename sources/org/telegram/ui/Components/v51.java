@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v51 extends View {
     public final n6 a;
@@ -33,7 +33,7 @@ public final class v51 extends View {
         this.e = paint3;
         nr nrVar = nr.h;
         this.h = new d6(this, 0L, 300L, nrVar);
-        this.n = new int[]{org.telegram.messenger.ks.a2, org.telegram.messenger.ks.P3, 360, 480, 720, 1080, 1440, 2160};
+        this.n = new int[]{org.telegram.messenger.ls.a2, org.telegram.messenger.ls.P3, 360, 480, 720, 1080, 1440, 2160};
         n6 n6Var = new n6(true, false, false);
         this.a = n6Var;
         n6Var.n(0.4f, 360L, nrVar);
@@ -97,7 +97,7 @@ public final class v51 extends View {
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ls.e4, 31);
         float C = com.google.android.gms.internal.vision.e2.C(this.h.d(this.f), 0.35f, 1.0f, 255.0f);
         int i7 = (int) C;
         Paint paint = this.c;
@@ -121,7 +121,7 @@ public final class v51 extends View {
         rectF.set(rect);
         rectF.inset(-org.telegram.messenger.g0.N(1.33f), -org.telegram.messenger.g0.N(1.33f));
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(1.66f), org.telegram.messenger.g0.N(1.66f), this.e);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ls.e4, 31);
         rectF.set(rect);
         int i10 = (int) (n6Var2.i() * C);
         Paint paint2 = this.d;

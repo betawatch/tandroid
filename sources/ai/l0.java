@@ -41,13 +41,13 @@ import java.util.ArrayList;
 import m.o3;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
+import org.telegram.messenger.ab;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.ga;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.za;
+import org.telegram.messenger.ha;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -88,7 +88,7 @@ import org.telegram.ui.wp0;
 import org.telegram.ui.x01;
 import org.telegram.ui.y01;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -205,7 +205,7 @@ public final class l0 extends FrameLayout {
                 canvas.save();
                 canvas.clipRect(0.0f, 0.0f, getWidth(), getAlpha() * getHeight());
                 canvas.clipPath(path);
-                canvas.saveLayerAlpha(rectF2, ks.e4, 31);
+                canvas.saveLayerAlpha(rectF2, ls.e4, 31);
                 super.dispatchDraw(canvas);
                 rectF2.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), org.telegram.messenger.g0.L(6.0f) + getPaddingTop());
                 h6.m mVar = (h6.m) this.c;
@@ -233,7 +233,7 @@ public final class l0 extends FrameLayout {
                         paint4.setShader(new LinearGradient(0.0f, 0.0f, org.telegram.messenger.g0.L(18.0f), 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                         ((Paint) this.b).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                     }
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ks.e4, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ls.e4, 31);
                     super.dispatchDraw(canvas);
                     ((Paint) this.b).setAlpha((int) (gyVar.x * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, org.telegram.messenger.g0.L(18.0f), getMeasuredHeight(), (Paint) this.b);
@@ -404,8 +404,8 @@ public final class l0 extends FrameLayout {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 9:
-                za zaVar = (za) ((r7) this.c).c;
-                return zaVar != null ? zaVar.b(motionEvent, new ga(this, 0)) : super.dispatchTouchEvent(motionEvent);
+                ab abVar = (ab) ((r7) this.c).c;
+                return abVar != null ? abVar.b(motionEvent, new ha(this, 0)) : super.dispatchTouchEvent(motionEvent);
             case 10:
                 g4 g4Var = (g4) this.c;
                 v9 n10 = g4Var.R0.n(getContext());
@@ -544,7 +544,7 @@ public final class l0 extends FrameLayout {
     public void f(float f10) {
         o6 o6Var = (o6) this.b;
         o6Var.a();
-        o6Var.c(String.format("%d%%", Integer.valueOf((int) Math.ceil(l9.a(f10, 0.0f, 1.0f) * 100.0f))), !gd.a0, true);
+        o6Var.c(String.format("%d%%", Integer.valueOf((int) Math.ceil(l9.a(f10, 0.0f, 1.0f) * 100.0f))), !hd.a0, true);
         q6 q6Var = (q6) this.c;
         q6Var.c = f10;
         q6Var.invalidate();
@@ -871,8 +871,8 @@ public final class l0 extends FrameLayout {
         tc tcVar;
         switch (this.a) {
             case 9:
-                za zaVar = (za) ((r7) this.c).d;
-                return zaVar != null ? zaVar.b(motionEvent, new ga(this, 1)) : super.onInterceptTouchEvent(motionEvent);
+                ab abVar = (ab) ((r7) this.c).d;
+                return abVar != null ? abVar.b(motionEvent, new ha(this, 1)) : super.onInterceptTouchEvent(motionEvent);
             case 26:
                 return (((ProfileActivity) this.c).t5 == 0.0f && (tcVar = (tc) this.b) != null && tcVar.b(motionEvent)) || super.onInterceptTouchEvent(motionEvent);
             default:
@@ -895,7 +895,7 @@ public final class l0 extends FrameLayout {
                 super.onLayout(z10, i7, i10, i11, i12);
                 int i13 = (i12 - i10) / 4;
                 int i14 = i13 * 3;
-                int z11 = n10.z(275.0f, i14, 2);
+                int z11 = o10.z(275.0f, i14, 2);
                 v50 v50Var = (v50) this.c;
                 FrameLayout frameLayout = v50Var.r;
                 frameLayout.layout(0, z11, frameLayout.getMeasuredWidth(), v50Var.r.getMeasuredHeight() + z11);
@@ -923,7 +923,7 @@ public final class l0 extends FrameLayout {
                 }
                 break;
             case 25:
-                int L4 = org.telegram.messenger.g0.L(25.0f) + org.telegram.messenger.g0.L(150.0f) + n10.z(275.0f, ((i12 - i10) / 4) * 3, 2);
+                int L4 = org.telegram.messenger.g0.L(25.0f) + org.telegram.messenger.g0.L(150.0f) + o10.z(275.0f, ((i12 - i10) / 4) * 3, 2);
                 int L5 = org.telegram.messenger.g0.L(18.0f);
                 TextView textView2 = (TextView) this.b;
                 textView2.layout(L5, L4, textView2.getMeasuredWidth() + L5, textView2.getMeasuredHeight() + L4);
@@ -1077,7 +1077,7 @@ public final class l0 extends FrameLayout {
                 break;
             case 10:
                 super.onMeasure(i7, i10);
-                super.onMeasure(i7, n10.C(8.0f, ((LinearLayout) this.b).getMeasuredHeight(), TLObject.FLAG_30));
+                super.onMeasure(i7, o10.C(8.0f, ((LinearLayout) this.b).getMeasuredHeight(), TLObject.FLAG_30));
                 break;
             case 12:
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(350.0f), TLObject.FLAG_30));
@@ -1192,11 +1192,11 @@ public final class l0 extends FrameLayout {
                             if (motionEvent.getPointerCount() == 2 && !secretMediaViewer.o0 && secretMediaViewer.Y0) {
                                 secretMediaViewer.e1 = true;
                                 secretMediaViewer.x0 = (((float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0))) / secretMediaViewer.M0) * secretMediaViewer.N0;
-                                secretMediaViewer.v0 = n10.w(secretMediaViewer.x0, secretMediaViewer.N0, (secretMediaViewer.O0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.Q0, secretMediaViewer.O0 - (secretMediaViewer.e.getWidth() / 2));
+                                secretMediaViewer.v0 = o10.w(secretMediaViewer.x0, secretMediaViewer.N0, (secretMediaViewer.O0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.Q0, secretMediaViewer.O0 - (secretMediaViewer.e.getWidth() / 2));
                                 float height = secretMediaViewer.P0 - (secretMediaViewer.e.getHeight() / 2);
                                 float height2 = (secretMediaViewer.P0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.R0;
                                 float f11 = secretMediaViewer.x0;
-                                secretMediaViewer.w0 = n10.w(f11, secretMediaViewer.N0, height2, height);
+                                secretMediaViewer.w0 = o10.w(f11, secretMediaViewer.N0, height2, height);
                                 secretMediaViewer.o(f11);
                                 secretMediaViewer.e.invalidate();
                             } else if (motionEvent.getPointerCount() == 1) {
@@ -1280,8 +1280,8 @@ public final class l0 extends FrameLayout {
                                     secretMediaViewer.o(1.0f);
                                     secretMediaViewer.c(1.0f, 0.0f, 0.0f, true);
                                 } else if (f17 > 3.0f) {
-                                    float w10 = n10.w(3.0f, secretMediaViewer.N0, (secretMediaViewer.O0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.Q0, secretMediaViewer.O0 - (secretMediaViewer.e.getWidth() / 2));
-                                    float w11 = n10.w(3.0f, secretMediaViewer.N0, (secretMediaViewer.P0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getHeight() / 2));
+                                    float w10 = o10.w(3.0f, secretMediaViewer.N0, (secretMediaViewer.O0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.Q0, secretMediaViewer.O0 - (secretMediaViewer.e.getWidth() / 2));
+                                    float w11 = o10.w(3.0f, secretMediaViewer.N0, (secretMediaViewer.P0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getHeight() / 2));
                                     secretMediaViewer.o(3.0f);
                                     float f18 = secretMediaViewer.U0;
                                     if (w10 >= f18) {
@@ -1422,14 +1422,14 @@ public final class l0 extends FrameLayout {
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
-        n10.l(15.0f, 2131743011, 1, textView, null);
+        o10.l(15.0f, 2131743009, 1, textView, null);
         textView.setGravity(1);
         textView.setTypeface(org.telegram.messenger.g0.o());
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 15.0f);
         textView2.setTextColor(-1);
         textView2.setGravity(1);
-        textView2.setText(gd.N0(2131743012, null));
+        textView2.setText(hd.N0(2131743010, null));
         addView(textView, ma.d(-1, -2.0f, 3, 0.0f, 24.0f, 0.0f, 0.0f));
         addView(textView2, ma.d(-1, -2.0f, 3, 0.0f, 50.0f, 0.0f, 0.0f));
     }
@@ -1517,7 +1517,7 @@ public final class l0 extends FrameLayout {
         this.c = paint2;
         setWillNotDraw(false);
         TextView textView = new TextView(context);
-        n10.l(16.0f, 2131745070, 1, textView, null);
+        o10.l(16.0f, 2131745070, 1, textView, null);
         textView.setTextColor(i7);
         textView.setSingleLine(true);
         textView.setGravity(16);

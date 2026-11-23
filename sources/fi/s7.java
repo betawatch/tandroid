@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mc;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class s7 {
     public static CharSequence[] y;
@@ -132,7 +132,7 @@ public final class s7 {
             return;
         }
         this.q = true;
-        mp.u1(this.a).R1().g0(this.c.intValue(), this.b.longValue(), new ai.h0(this, 19));
+        np.u1(this.a).R1().g0(this.c.intValue(), this.b.longValue(), new ai.h0(this, 19));
     }
 
     public final void e(float f10, float f11, boolean z10) {

@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 {
     public CheckBoxBase E;
@@ -54,7 +54,7 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
         p50Var.getClass();
         int L = measuredWidth - org.telegram.messenger.g0.L(15);
         x3 x3Var = this.x.c;
-        return org.telegram.messenger.n10.B(12.0f, x3Var.f, L - x3Var.c);
+        return org.telegram.messenger.o10.B(12.0f, x3Var.f, L - x3Var.c);
     }
 
     @Override // org.telegram.ui.c3
@@ -130,7 +130,7 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.n10.a(this);
+        return org.telegram.messenger.o10.a(this);
     }
 
     @Override // android.view.View, org.telegram.ui.Cells.r9
@@ -195,7 +195,7 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
                 p50Var.getClass();
                 int L2 = measuredWidth - org.telegram.messenger.g0.L(15);
                 x3 x3Var = this.x.c;
-                canvas.translate(org.telegram.messenger.n10.B(12.0f, x3Var.f, L2 - x3Var.c), (this.f + this.h) - (this.y ? org.telegram.messenger.g0.L(1.0f) : 0));
+                canvas.translate(org.telegram.messenger.o10.B(12.0f, x3Var.f, L2 - x3Var.c), (this.f + this.h) - (this.y ? org.telegram.messenger.g0.L(1.0f) : 0));
             }
             this.x.i.d(canvas, this);
             canvas.restore();
@@ -268,11 +268,11 @@ public final class v1 extends ViewGroup implements org.telegram.ui.Cells.i9, c3 
             this.f = i11;
             this.h = 0;
             x3 x3Var = this.x.c;
-            if (x3Var.d == size && x3Var.e == org.telegram.messenger.bz.Z0) {
+            if (x3Var.d == size && x3Var.e == org.telegram.messenger.cz.Z0) {
                 p50Var = p50Var3;
             } else {
                 x3Var.d = size;
-                x3Var.e = org.telegram.messenger.bz.Z0;
+                x3Var.e = org.telegram.messenger.cz.Z0;
                 x3Var.c = 0;
                 int size2 = x3Var.b.size();
                 boolean z10 = true;

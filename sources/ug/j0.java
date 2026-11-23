@@ -16,11 +16,11 @@ import c8.ra;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g3;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -35,7 +35,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.bn;
 import org.telegram.ui.m40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j0 extends LinearLayout {
     public TextView a;
@@ -79,7 +79,7 @@ public final class j0 extends LinearLayout {
     
         r6 = (java.lang.Long) r0.get(r5);
         r6.getClass();
-        r3.b(r5, r44.a, org.telegram.messenger.mp.u1(r44.a).c2(r6));
+        r3.b(r5, r44.a, org.telegram.messenger.np.u1(r44.a).c2(r6));
         r5 = r5 + 1;
      */
     /* JADX WARN: Code restructure failed: missing block: B:236:0x05b2, code lost:
@@ -88,10 +88,10 @@ public final class j0 extends LinearLayout {
         addView(r3, c8.ma.t(((r4 - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
         r4 = new android.widget.TextView(r45);
         r4.setGravity(17);
-        org.telegram.messenger.n10.p(r4, r26, 20.0f);
+        org.telegram.messenger.o10.p(r4, r26, 20.0f);
         r5 = org.telegram.ui.ActionBar.m6.j5;
         org.telegram.ui.ActionBar.t6.U(r4, r5, r44.J0);
-        r4.setText(org.telegram.messenger.gd.M0(2131748935));
+        r4.setText(org.telegram.messenger.hd.M0(2131748935));
         addView(r4, c8.ma.t(-1, -2, 1, 32, 0, 32, 9));
         r4 = new android.widget.TextView(r45);
         r4.setGravity(17);
@@ -143,7 +143,7 @@ public final class j0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:248:0x065a, code lost:
     
-        r0 = org.telegram.messenger.gd.Z(r3, org.telegram.messenger.o10.l(org.telegram.messenger.mp.u1(r44.a).c2((java.lang.Long) r0.get(0))));
+        r0 = org.telegram.messenger.hd.Z(r3, org.telegram.messenger.p10.l(org.telegram.messenger.np.u1(r44.a).c2((java.lang.Long) r0.get(0))));
      */
     /* JADX WARN: Code restructure failed: missing block: B:249:0x07b4, code lost:
     
@@ -191,20 +191,20 @@ public final class j0 extends LinearLayout {
         r9 = 0;
         r0 = new ug.r0(r45, r44.J0, false);
         c8.ra.b(r0, 0.02f, 1.2f);
-        r0.b(org.telegram.messenger.gd.M0(2131748937), new ug.h0(r43, r9), false);
+        r0.b(org.telegram.messenger.hd.M0(2131748937), new ug.h0(r43, r9), false);
         addView(r0, c8.ma.k((r44.u0 / org.telegram.messenger.g0.p) + 4.0f, 0.0f, (r44.u0 / org.telegram.messenger.g0.p) + 4.0f, 18.0f, -1, 48));
         r0 = new gi.j(r43, r45);
         r0.setGravity(17);
         org.telegram.ui.ActionBar.t6.U(r0, org.telegram.ui.ActionBar.m6.z6, r44.J0);
-        r0.setText(" " + org.telegram.messenger.gd.M0(2131748938) + " ");
+        r0.setText(" " + org.telegram.messenger.hd.M0(2131748938) + " ");
         r0.setTextSize(14.0f);
-        addView(r0, c8.ma.t(org.telegram.messenger.ks.U2, -2, 1, 12, 0, 12, 20));
+        addView(r0, c8.ma.t(org.telegram.messenger.ls.U2, -2, 1, 12, 0, 12, 20));
         r0 = new android.widget.TextView(r45);
         r0.setGravity(17);
         r0.setTypeface(org.telegram.messenger.g0.o());
         r0.setTextSize(1, 20.0f);
         org.telegram.ui.ActionBar.t6.U(r0, r5, r44.J0);
-        r0.setText(org.telegram.messenger.gd.M0(2131748978));
+        r0.setText(org.telegram.messenger.hd.M0(2131748978));
         addView(r0, c8.ma.t(-1, -2, 1, 32, 0, 32, 9));
         r0 = new android.widget.TextView(r45);
         r0.setGravity(17);
@@ -218,7 +218,7 @@ public final class j0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:264:0x08bc, code lost:
     
-        r0.setText(org.telegram.messenger.gd.M0(2131748979));
+        r0.setText(org.telegram.messenger.hd.M0(2131748979));
      */
     /* JADX WARN: Code restructure failed: missing block: B:265:0x08d1, code lost:
     
@@ -234,7 +234,7 @@ public final class j0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:268:0x08c7, code lost:
     
-        r0.setText(org.telegram.messenger.gd.M0(2131748980));
+        r0.setText(org.telegram.messenger.hd.M0(2131748980));
      */
     /* JADX WARN: Code restructure failed: missing block: B:269:0x08e3, code lost:
     
@@ -277,7 +277,7 @@ public final class j0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:279:0x0690, code lost:
     
-        r0 = org.telegram.messenger.gd.Z(r3, org.telegram.messenger.o10.l(org.telegram.messenger.mp.u1(r44.a).c2((java.lang.Long) r0.get(0))), org.telegram.messenger.o10.l(org.telegram.messenger.mp.u1(r44.a).c2((java.lang.Long) r0.get(1))));
+        r0 = org.telegram.messenger.hd.Z(r3, org.telegram.messenger.p10.l(org.telegram.messenger.np.u1(r44.a).c2((java.lang.Long) r0.get(0))), org.telegram.messenger.p10.l(org.telegram.messenger.np.u1(r44.a).c2((java.lang.Long) r0.get(1))));
      */
     /* JADX WARN: Code restructure failed: missing block: B:280:0x0687, code lost:
     
@@ -305,7 +305,7 @@ public final class j0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:287:0x06dd, code lost:
     
-        r0 = org.telegram.messenger.gd.Z(r3, org.telegram.messenger.o10.l(org.telegram.messenger.mp.u1(r44.a).c2((java.lang.Long) r0.get(0))), org.telegram.messenger.o10.l(org.telegram.messenger.mp.u1(r44.a).c2((java.lang.Long) r0.get(1))), org.telegram.messenger.o10.l(org.telegram.messenger.mp.u1(r44.a).c2((java.lang.Long) r0.get(2))));
+        r0 = org.telegram.messenger.hd.Z(r3, org.telegram.messenger.p10.l(org.telegram.messenger.np.u1(r44.a).c2((java.lang.Long) r0.get(0))), org.telegram.messenger.p10.l(org.telegram.messenger.np.u1(r44.a).c2((java.lang.Long) r0.get(1))), org.telegram.messenger.p10.l(org.telegram.messenger.np.u1(r44.a).c2((java.lang.Long) r0.get(2))));
      */
     /* JADX WARN: Code restructure failed: missing block: B:288:0x06d4, code lost:
     
@@ -329,7 +329,7 @@ public final class j0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:293:0x073b, code lost:
     
-        r6 = org.telegram.messenger.gd.G(r0.size() - 2, r6, org.telegram.messenger.o10.l(org.telegram.messenger.mp.u1(r44.a).c2((java.lang.Long) r0.get(0))), org.telegram.messenger.o10.l(org.telegram.messenger.mp.u1(r44.a).c2((java.lang.Long) r0.get(1))));
+        r6 = org.telegram.messenger.hd.G(r0.size() - 2, r6, org.telegram.messenger.p10.l(org.telegram.messenger.np.u1(r44.a).c2((java.lang.Long) r0.get(0))), org.telegram.messenger.p10.l(org.telegram.messenger.np.u1(r44.a).c2((java.lang.Long) r0.get(1))));
         r0 = r0.size() - 2;
         r9 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, r44.J0);
         r3.b = new ug.a1(org.telegram.ui.ActionBar.m6.Ck, org.telegram.ui.ActionBar.m6.Dk, -1, -1, null);
@@ -447,11 +447,11 @@ public final class j0 extends LinearLayout {
         androidx.emoji2.text.q p12 = k0.p1(i18, k0Var.a);
         k0Var.I2 = p12;
         int i19 = p12.a;
-        mp u12 = mp.u1(k0Var.a);
+        np u12 = np.u1(k0Var.a);
         boolean K3 = u12.K3();
         boolean s12 = k0Var.s1();
         if (i18 == 31) {
-            str = gd.N0(s12 ? 2131753599 : 2131753598, null);
+            str = hd.N0(s12 ? 2131753599 : 2131753598, null);
         } else if (i18 == 32) {
             str = k0Var.m1(true);
         } else if (i18 == 19) {
@@ -460,16 +460,16 @@ public final class j0 extends LinearLayout {
                 int i20 = r1Var.getMessageObject().k.from_boosts_applied;
                 TLRPC.Chat o12 = k0Var.o1();
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) gd.G(i20, "GroupBoostedByUserWithTimes", o10.k(k0Var.c2.getCurrentUser(), true)));
+                spannableStringBuilder.append((CharSequence) hd.G(i20, "GroupBoostedByUserWithTimes", p10.k(k0Var.c2.getCurrentUser(), true)));
                 spannableStringBuilder.append((CharSequence) " ");
-                spannableStringBuilder.append((CharSequence) gd.a0(null, null, 2131749304, o12 == null ? "" : o12.title));
+                spannableStringBuilder.append((CharSequence) hd.a0(null, null, 2131749304, o12 == null ? "" : o12.title));
                 str = spannableStringBuilder.toString();
             } else if (g2Var instanceof m40) {
-                str = gd.G(wg.s.g(), "BoostingGroupBoostWhatAreBoostsDescription", new Object[0]);
+                str = hd.G(wg.s.g(), "BoostingGroupBoostWhatAreBoostsDescription", new Object[0]);
             } else {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(k0Var.m1(true));
                 if (v3.N(k0Var.o1()) && s12) {
-                    spannableStringBuilder2.append((CharSequence) " ").append((CharSequence) gd.N0(2131753326, null));
+                    spannableStringBuilder2.append((CharSequence) " ").append((CharSequence) hd.N0(2131753326, null));
                 }
                 str = spannableStringBuilder2.toString();
             }
@@ -478,84 +478,84 @@ public final class j0 extends LinearLayout {
             if (tL_premium_boostsStatus4.level == 0) {
                 int i21 = s12 ? 2131749228 : 2131752341;
                 int i22 = tL_premium_boostsStatus4.next_level_boosts;
-                str = gd.a0(null, null, i21, gd.G(i22, "MoreBoosts", Integer.valueOf(i22)));
+                str = hd.a0(null, null, i21, hd.G(i22, "MoreBoosts", Integer.valueOf(i22)));
             } else {
                 int i23 = s12 ? 2131749226 : 2131752339;
                 int i24 = tL_premium_boostsStatus4.next_level_boosts;
                 int i25 = tL_premium_boostsStatus4.boosts;
-                str = gd.a0(null, null, i23, gd.G(i24 - i25, "MoreBoosts", Integer.valueOf(i24 - i25)), gd.G(k0Var.X1.level + 1, "BoostStories", new Object[0]));
+                str = hd.a0(null, null, i23, hd.G(i24 - i25, "MoreBoosts", Integer.valueOf(i24 - i25)), hd.G(k0Var.X1.level + 1, "BoostStories", new Object[0]));
             }
         } else if (i18 == 20) {
-            str = gd.a0(null, null, s12 ? 2131749225 : 2131752337, Integer.valueOf(k0Var.k1()));
+            str = hd.a0(null, null, s12 ? 2131749225 : 2131752337, Integer.valueOf(k0Var.k1()));
         } else if (i18 == 24) {
-            str = gd.a0(null, null, s12 ? 2131749221 : 2131752334, Integer.valueOf(k0Var.k1()));
+            str = hd.a0(null, null, s12 ? 2131749221 : 2131752334, Integer.valueOf(k0Var.k1()));
         } else if (i18 == 29) {
-            str = gd.a0(null, null, 2131749224, Integer.valueOf(u12.A5));
+            str = hd.a0(null, null, 2131749224, Integer.valueOf(u12.A5));
         } else if (i18 == 30) {
-            str = gd.a0(null, null, 2131752331, Integer.valueOf(u12.C4));
+            str = hd.a0(null, null, 2131752331, Integer.valueOf(u12.C4));
         } else if (i18 == 35) {
-            str = gd.a0(null, null, 2131752338, Integer.valueOf(u12.D4));
+            str = hd.a0(null, null, 2131752338, Integer.valueOf(u12.D4));
         } else if (i18 == 25) {
-            str = gd.a0(null, null, s12 ? 2131749222 : 2131752335, Integer.valueOf(s12 ? u12.z5 : u12.v5));
+            str = hd.a0(null, null, s12 ? 2131749222 : 2131752335, Integer.valueOf(s12 ? u12.z5 : u12.v5));
         } else if (i18 == 26) {
-            str = gd.a0(null, null, s12 ? 2131749217 : 2131752329, Integer.valueOf(s12 ? u12.z5 : u12.v5));
+            str = hd.a0(null, null, s12 ? 2131749217 : 2131752329, Integer.valueOf(s12 ? u12.z5 : u12.v5));
         } else if (i18 == 27) {
-            str = gd.a0(null, null, s12 ? 2131749219 : 2131752332, Integer.valueOf(u12.t5));
+            str = hd.a0(null, null, s12 ? 2131749219 : 2131752332, Integer.valueOf(u12.t5));
         } else if (i18 == 28) {
-            str = gd.a0(null, null, s12 ? 2131749220 : 2131752333, Integer.valueOf(s12 ? u12.y5 : u12.u5));
+            str = hd.a0(null, null, s12 ? 2131749220 : 2131752333, Integer.valueOf(s12 ? u12.y5 : u12.u5));
         } else if (i18 == 22) {
-            str = gd.a0(null, null, s12 ? 2131749218 : 2131752330, Integer.valueOf(s12 ? u12.B5 : u12.w5));
+            str = hd.a0(null, null, s12 ? 2131749218 : 2131752330, Integer.valueOf(s12 ? u12.B5 : u12.w5));
         } else if (i18 == 23) {
-            str = gd.a0(null, null, s12 ? 2131749223 : 2131752336, Integer.valueOf(s12 ? u12.C5 : u12.x5));
+            str = hd.a0(null, null, s12 ? 2131749223 : 2131752336, Integer.valueOf(s12 ? u12.C5 : u12.x5));
         } else if (i18 == 21) {
             int i26 = k0Var.N2;
-            str = gd.G(i26, "ReactionReachLvlForReaction", Integer.valueOf(i26));
+            str = hd.G(i26, "ReactionReachLvlForReaction", Integer.valueOf(i26));
         } else if (i18 == 11) {
             if (k0Var.U1) {
                 if (v3.V(k0Var.K2)) {
                     arrayList9 = k0Var.x2;
                     if (arrayList9.size() == 1) {
                         arrayList12 = k0Var.x2;
-                        G = gd.Z(2131748962, i5.p((TLRPC.User) arrayList12.get(0)));
+                        G = hd.Z(2131748962, i5.p((TLRPC.User) arrayList12.get(0)));
                     } else {
                         arrayList10 = k0Var.x2;
                         int size = arrayList10.size();
                         arrayList11 = k0Var.x2;
-                        G = gd.G(size, "InviteChannelRestrictedUsers", Integer.valueOf(arrayList11.size()));
+                        G = hd.G(size, "InviteChannelRestrictedUsers", Integer.valueOf(arrayList11.size()));
                     }
                 } else {
                     arrayList5 = k0Var.x2;
                     if (arrayList5.size() == 1) {
                         arrayList8 = k0Var.x2;
-                        G = gd.Z(2131748927, i5.p((TLRPC.User) arrayList8.get(0)));
+                        G = hd.Z(2131748927, i5.p((TLRPC.User) arrayList8.get(0)));
                     } else {
                         arrayList6 = k0Var.x2;
                         int size2 = arrayList6.size();
                         arrayList7 = k0Var.x2;
-                        G = gd.G(size2, "InviteRestrictedUsers", Integer.valueOf(arrayList7.size()));
+                        G = hd.G(size2, "InviteRestrictedUsers", Integer.valueOf(arrayList7.size()));
                     }
                 }
             } else if (v3.V(k0Var.K2)) {
                 arrayList17 = k0Var.x2;
                 if (arrayList17.size() == 1) {
                     arrayList20 = k0Var.x2;
-                    G = gd.Z(2131748965, i5.p((TLRPC.User) arrayList20.get(0)));
+                    G = hd.Z(2131748965, i5.p((TLRPC.User) arrayList20.get(0)));
                 } else {
                     arrayList18 = k0Var.x2;
                     int size3 = arrayList18.size();
                     arrayList19 = k0Var.x2;
-                    G = gd.G(size3, "InviteChannelRestrictedUsers2", Integer.valueOf(arrayList19.size()));
+                    G = hd.G(size3, "InviteChannelRestrictedUsers2", Integer.valueOf(arrayList19.size()));
                 }
             } else {
                 arrayList13 = k0Var.x2;
                 if (arrayList13.size() == 1) {
                     arrayList16 = k0Var.x2;
-                    G = gd.Z(2131748930, i5.p((TLRPC.User) arrayList16.get(0)));
+                    G = hd.Z(2131748930, i5.p((TLRPC.User) arrayList16.get(0)));
                 } else {
                     arrayList14 = k0Var.x2;
                     int size4 = arrayList14.size();
                     arrayList15 = k0Var.x2;
-                    G = gd.G(size4, "InviteRestrictedUsers2", Integer.valueOf(arrayList15.size()));
+                    G = hd.G(size4, "InviteRestrictedUsers2", Integer.valueOf(arrayList15.size()));
                 }
             }
             str2 = G;
@@ -565,11 +565,11 @@ public final class j0 extends LinearLayout {
             int i28 = qVar.c;
             i7 = k0Var.s2;
             if (i18 != 3) {
-                i7 = mp.u1(k0Var.a).Q0.size() - 1;
+                i7 = np.u1(k0Var.a).Q0.size() - 1;
             } else if (i18 == 7) {
-                i7 = j10.c();
+                i7 = k10.c();
             } else if (i18 == 0) {
-                ArrayList Y0 = mp.u1(k0Var.a).Y0(0);
+                ArrayList Y0 = np.u1(k0Var.a).Y0(0);
                 i10 = 1;
                 int size5 = Y0.size();
                 int i29 = 0;
@@ -580,7 +580,7 @@ public final class j0 extends LinearLayout {
                     }
                 }
                 i7 = i29;
-                if (!j10.i(k0Var.a).q() || k0Var.J2) {
+                if (!k10.i(k0Var.a).q() || k0Var.J2) {
                     i7 = i28;
                     f10 = 1.0f;
                 } else {
@@ -601,7 +601,7 @@ public final class j0 extends LinearLayout {
                 float f14 = i27 / i28;
                 int i31 = (i18 != 18 || i18 == 20 || i18 == 24 || i18 == 25 || i18 == 26 || i18 == 29 || i18 == 22 || i18 == 23 || i18 == 19 || i18 == 30 || i18 == 35 || i18 == 21 || i18 == 27 || i18 == 28 || i18 == 32) ? i10 : 0;
                 i7 = i31 != 0 ? 0 : i7;
-                if ((i18 != 11 || i18 == 34) && !mp.u1(k0Var.a).K3()) {
+                if ((i18 != 11 || i18 == 34) && !np.u1(k0Var.a).K3()) {
                     arrayList21 = k0Var.z2;
                     if (arrayList21 != null) {
                         arrayList25 = k0Var.z2;
@@ -641,7 +641,7 @@ public final class j0 extends LinearLayout {
                                 rVar.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(3.0f));
                             }
                             i0Var3.K = true;
-                        } else if (j10.i(k0Var.a).q() || k0Var.J2) {
+                        } else if (k10.i(k0Var.a).q() || k0Var.J2) {
                             k0Var.t2.w.setVisibility(8);
                             if (i18 == 6) {
                                 k0Var.t2.x.setText("2 GB");
@@ -681,62 +681,62 @@ public final class j0 extends LinearLayout {
                 this.a = textView;
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 if (i18 == 31) {
-                    this.a.setText(gd.M0(2131753597));
+                    this.a.setText(hd.M0(2131753597));
                 } else if (i18 == 32) {
                     this.a.setText(k0Var.n1());
                 } else if (i18 == 19) {
                     if (g2Var instanceof m40) {
-                        this.a.setText(gd.M0(2131753350));
+                        this.a.setText(hd.M0(2131753350));
                     } else {
                         this.a.setText(k0Var.n1());
                     }
                 } else if (i18 == 30) {
                     this.a.setText(k0Var.n1());
                 } else if (i18 == 35) {
-                    this.a.setText(gd.M0(2131743632));
+                    this.a.setText(hd.M0(2131743630));
                 } else {
                     i13 = 18;
                     if (i18 == 18) {
                         tL_premium_boostsStatus = k0Var.X1;
                         if (tL_premium_boostsStatus.level == 0) {
-                            this.a.setText(gd.M0(2131753526));
+                            this.a.setText(hd.M0(2131753526));
                         } else {
-                            this.a.setText(gd.M0(2131753341));
+                            this.a.setText(hd.M0(2131753341));
                         }
                     } else if (i18 == 21) {
-                        this.a.setText(gd.M0(2131746209));
+                        this.a.setText(hd.M0(2131746209));
                     } else if (i18 == 20) {
-                        this.a.setText(gd.M0(2131753532));
+                        this.a.setText(hd.M0(2131753532));
                     } else if (i18 == 24) {
-                        this.a.setText(gd.M0(2131753528));
+                        this.a.setText(hd.M0(2131753528));
                     } else if (i18 == 27) {
-                        this.a.setText(gd.M0(2131753529));
+                        this.a.setText(hd.M0(2131753529));
                     } else {
                         if (i18 == 28) {
-                            this.a.setText(gd.M0(2131753527));
+                            this.a.setText(hd.M0(2131753527));
                         } else if (i18 == 25) {
-                            this.a.setText(gd.M0(2131753531));
+                            this.a.setText(hd.M0(2131753531));
                         } else if (i18 == 26) {
-                            this.a.setText(gd.M0(2131753522));
+                            this.a.setText(hd.M0(2131753522));
                         } else {
                             if (i18 != 29) {
                                 i14 = 22;
                                 if (i18 == 22 || i18 == 23) {
-                                    this.a.setText(gd.M0(2131753523));
+                                    this.a.setText(hd.M0(2131753523));
                                 } else if (i18 == 11) {
                                     if (k0Var.U1) {
-                                        this.a.setText(gd.M0(2131752390));
+                                        this.a.setText(hd.M0(2131752390));
                                     } else {
-                                        this.a.setText(gd.M0(2131752388));
+                                        this.a.setText(hd.M0(2131752388));
                                     }
                                 } else if (i18 == 34) {
-                                    this.a.setText(gd.M0(2131752609));
+                                    this.a.setText(hd.M0(2131752609));
                                 } else if (i18 == 6) {
-                                    this.a.setText(gd.M0(2131750815));
+                                    this.a.setText(hd.M0(2131750815));
                                 } else if (i18 != 14 || k0Var.T1 <= 1) {
-                                    this.a.setText(gd.M0(2131748785));
+                                    this.a.setText(hd.M0(2131748785));
                                 } else {
-                                    this.a.setText(gd.M0(2131751706));
+                                    this.a.setText(hd.M0(2131751706));
                                 }
                                 this.a.setTextSize(1, 20.0f);
                                 TextView textView2 = this.a;
@@ -761,7 +761,7 @@ public final class j0 extends LinearLayout {
                                         t6.B(frameLayout2, m6.d0(L3, m6.w0(i34, k0Var.J0)), t6.M(i34), k0Var.J0);
                                         q9 q9Var = new q9(getContext());
                                         q9Var.setRoundRadius(org.telegram.messenger.g0.L(14.0f));
-                                        TLRPC.Chat O0 = mp.u1(k0Var.a).O0(Long.valueOf(-k0Var.W1));
+                                        TLRPC.Chat O0 = np.u1(k0Var.a).O0(Long.valueOf(-k0Var.W1));
                                         b9 b9Var = new b9();
                                         b9Var.q(O0);
                                         q9Var.f(O0, b9Var);
@@ -866,7 +866,7 @@ public final class j0 extends LinearLayout {
                                 k0Var.G1();
                                 return;
                             }
-                            this.a.setText(gd.M0(2131753530));
+                            this.a.setText(hd.M0(2131753530));
                         }
                         i14 = 22;
                         this.a.setTextSize(1, 20.0f);
@@ -918,7 +918,7 @@ public final class j0 extends LinearLayout {
                 }
             }
             i10 = 1;
-            if (j10.i(k0Var.a).q()) {
+            if (k10.i(k0Var.a).q()) {
             }
             i7 = i28;
             f10 = 1.0f;
@@ -966,17 +966,17 @@ public final class j0 extends LinearLayout {
             arrayList = k0Var.x2;
             if (arrayList.size() == 1) {
                 arrayList4 = k0Var.x2;
-                str = gd.Z(2131748970, i5.p((TLRPC.User) arrayList4.get(0)));
+                str = hd.Z(2131748970, i5.p((TLRPC.User) arrayList4.get(0)));
             } else {
                 arrayList2 = k0Var.x2;
                 int size7 = arrayList2.size();
                 arrayList3 = k0Var.x2;
-                str = gd.G(size7, "InviteCallRestrictedUsers", Integer.valueOf(arrayList3.size()));
+                str = hd.G(size7, "InviteCallRestrictedUsers", Integer.valueOf(arrayList3.size()));
             }
         } else if (K3) {
             str = (String) k0Var.I2.f;
         } else {
-            str = (String) ((j10.i(k0Var.a).q() || k0Var.J2) ? k0Var.I2.e : k0Var.I2.d);
+            str = (String) ((k10.i(k0Var.a).q() || k0Var.J2) ? k0Var.I2.e : k0Var.I2.d);
         }
         str2 = str;
         z10 = K3;
@@ -987,7 +987,7 @@ public final class j0 extends LinearLayout {
         if (i18 != 3) {
         }
         i10 = 1;
-        if (j10.i(k0Var.a).q()) {
+        if (k10.i(k0Var.a).q()) {
         }
         i7 = i282;
         f10 = 1.0f;

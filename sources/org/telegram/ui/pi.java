@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pi extends gh.b {
     public final /* synthetic */ int s;
@@ -22,7 +22,7 @@ public final class pi extends gh.b {
                 bn bnVar = this.w;
                 i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
                 if (!c8.i0.d(i7, bnVar.Ba)) {
-                    return i0.a.o(bnVar.getThemedColor(org.telegram.ui.ActionBar.m6.Je), org.telegram.messenger.ks.e4);
+                    return i0.a.o(bnVar.getThemedColor(org.telegram.ui.ActionBar.m6.Je), org.telegram.messenger.ls.e4);
                 }
                 zm zmVar = bnVar.Ba;
                 if (zmVar == null || zmVar.d()) {
@@ -30,14 +30,14 @@ public final class pi extends gh.b {
                     return this.d;
                 }
                 a();
-                return i0.a.o(this.d, org.telegram.messenger.ks.t3);
+                return i0.a.o(this.d, org.telegram.messenger.ls.t3);
             case 1:
                 return this.w.x.A2();
             default:
                 bn bnVar2 = this.w;
                 i10 = ((org.telegram.ui.ActionBar.g2) bnVar2).currentAccount;
                 if (!c8.i0.d(i10, bnVar2.Ba)) {
-                    return i0.a.o(bnVar2.getThemedColor(org.telegram.ui.ActionBar.m6.d6), org.telegram.messenger.ks.e4);
+                    return i0.a.o(bnVar2.getThemedColor(org.telegram.ui.ActionBar.m6.d6), org.telegram.messenger.ls.e4);
                 }
                 zm zmVar2 = bnVar2.Ba;
                 if (zmVar2 == null || zmVar2.d()) {
@@ -45,7 +45,7 @@ public final class pi extends gh.b {
                     return this.d;
                 }
                 a();
-                return i0.a.o(this.d, org.telegram.messenger.ks.t3);
+                return i0.a.o(this.d, org.telegram.messenger.ls.t3);
         }
     }
 }

@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLObject;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.q9;
 import wg.y0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g extends c implements b6 {
     public int E;
@@ -44,10 +44,10 @@ public final class g extends c implements b6 {
         imageView.setBackground(m6.h0(x02, 1, -1));
         imageView.setImageResource(R.drawable.poll_remove);
         t6.s(imageView, m6.m6, null, PorterDuff.Mode.MULTIPLY);
-        imageView.setContentDescription(gd.N0(2131751586, null));
-        boolean z10 = gd.a0;
+        imageView.setContentDescription(hd.N0(2131751586, null));
+        boolean z10 = hd.a0;
         addView(imageView, ma.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
-        this.d.setPadding(g0.L(gd.a0 ? 24.0f : 0.0f), 0, g0.L(gd.a0 ? 0.0f : 24.0f), 0);
+        this.d.setPadding(g0.L(hd.a0 ? 24.0f : 0.0f), 0, g0.L(hd.a0 ? 0.0f : 24.0f), 0);
     }
 
     @Override // yg.c
@@ -71,13 +71,13 @@ public final class g extends c implements b6 {
         boolean V = v3.V(chat);
         if (z10) {
             if (i10 >= 1) {
-                N0 = gd.G(i10, V ? "Subscribers" : "Members", new Object[0]);
+                N0 = hd.G(i10, V ? "Subscribers" : "Members", new Object[0]);
             } else {
-                N0 = gd.N0(V ? 2131751378 : 2131754876, null);
+                N0 = hd.N0(V ? 2131751378 : 2131754876, null);
             }
             setSubtitle(N0);
         } else {
-            setSubtitle(gd.G(i7, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
+            setSubtitle(hd.G(i7, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
         }
         t6.X(this.e, m6.r5, this.a);
         setDivider(true);

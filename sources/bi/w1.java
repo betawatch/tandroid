@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.Timer;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.s00;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.t00;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ak;
 import org.telegram.ui.Components.ek;
@@ -51,7 +51,7 @@ import org.telegram.ui.vo;
 import org.telegram.ui.x50;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w1 extends org.telegram.ui.ActionBar.m0 {
     public final /* synthetic */ int a;
@@ -126,7 +126,7 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                 uc1 uc1Var = wallpapersListActivity.I;
                 uc1Var.n = null;
                 uc1Var.E(null, true);
-                wallpapersListActivity.K.setSearchFieldHint(gd.N0(2131745620, null));
+                wallpapersListActivity.K.setSearchFieldHint(hd.N0(2131745620, null));
                 break;
         }
     }
@@ -184,9 +184,9 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
             case 5:
                 tq tqVar = (tq) obj;
                 tqVar.n = null;
-                g6 g6Var = tqVar.a;
-                if (g6Var != null) {
-                    g6Var.g3.O(true);
+                f6 f6Var = tqVar.a;
+                if (f6Var != null) {
+                    f6Var.g3.O(true);
                     break;
                 }
                 break;
@@ -277,7 +277,7 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                     cxVar.i5(false, false, true, false);
                 }
                 cxVar.u5(false, false);
-                ks.e().k(ks.u4, Boolean.TRUE);
+                ls.e().k(ls.u4, Boolean.TRUE);
                 cxVar.Y.setCloseButtonVisible(false);
                 cxVar.t5(true);
                 cxVar.N3();
@@ -324,7 +324,7 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                 qa0Var.N0(false);
                 break;
             case 17:
-                l90 l90Var = (l90) ((c9) obj).b;
+                l90 l90Var = (l90) ((b9) obj).b;
                 l90Var.y = false;
                 l90Var.j(null);
                 break;
@@ -333,7 +333,7 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                 notificationsCustomSettingsActivity.d.F(null);
                 notificationsCustomSettingsActivity.f = false;
                 notificationsCustomSettingsActivity.getClass();
-                notificationsCustomSettingsActivity.c.setText(gd.N0(2131748018, "NoExceptions"));
+                notificationsCustomSettingsActivity.c.setText(hd.N0(2131748018, "NoExceptions"));
                 notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
                 notificationsCustomSettingsActivity.b.f();
                 notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
@@ -502,8 +502,8 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                 }
                 cxVar.u5(false, false);
                 kVar = ((org.telegram.ui.ActionBar.g2) cxVar).actionBar;
-                kVar.setBackButtonContentDescription(gd.N0(2131754878, null));
-                ks.e().k(ks.u4, new Object[0]);
+                kVar.setBackButtonContentDescription(hd.N0(2131754878, null));
+                ls.e().k(ls.u4, new Object[0]);
                 qVar = ((org.telegram.ui.ActionBar.g2) cxVar).glassEngine;
                 qVar.g();
                 kw kwVar2 = cxVar.D0;
@@ -533,7 +533,7 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                 ((qa0) obj).u0 = true;
                 break;
             case 17:
-                ((l90) ((c9) obj).b).y = true;
+                ((l90) ((b9) obj).b).y = true;
                 break;
             case 18:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
@@ -665,9 +665,9 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
             case 5:
                 tq tqVar = (tq) obj;
                 tqVar.n = editText.getText().toString();
-                g6 g6Var = tqVar.a;
-                if (g6Var != null) {
-                    g6Var.g3.O(true);
+                f6 f6Var = tqVar.a;
+                if (f6Var != null) {
+                    f6Var.g3.O(true);
                     break;
                 }
                 break;
@@ -833,8 +833,8 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                     a60Var.h.setVerticalScrollBarEnabled(true);
                     a60Var.r.e(true, true);
                     a60Var.r.setStickerType(1);
-                    a60Var.r.d.setText(gd.N0(2131747974, null));
-                    a60Var.r.e.setText(gd.N0(2131745611, null));
+                    a60Var.r.d.setText(hd.N0(2131747974, null));
+                    a60Var.r.e.setText(hd.N0(2131745611, null));
                     break;
                 } else {
                     a60.d0(a60Var);
@@ -898,7 +898,7 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                 }
                 break;
             case 17:
-                ((l90) ((c9) obj).b).j(editText.getText().toString());
+                ((l90) ((b9) obj).b).j(editText.getText().toString());
                 break;
             case 18:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
@@ -907,7 +907,7 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                     if (obj11.length() != 0) {
                         notificationsCustomSettingsActivity.getClass();
                         if (notificationsCustomSettingsActivity.a != null) {
-                            notificationsCustomSettingsActivity.c.setText(gd.N0(2131747974, "NoResult"));
+                            notificationsCustomSettingsActivity.c.setText(hd.N0(2131747974, "NoResult"));
                             notificationsCustomSettingsActivity.c.b();
                             notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
                             notificationsCustomSettingsActivity.d.f();
@@ -941,11 +941,11 @@ public final class w1 extends org.telegram.ui.ActionBar.m0 {
                         arrayList.clear();
                     }
                     for (int i10 = 0; i10 < sy0Var.h.size(); i10++) {
-                        s00 s00Var = (s00) sy0Var.h.get(i10);
-                        if (s00Var.d.startsWith(lowerCase)) {
-                            sy0Var.f.add(0, s00Var);
-                        } else if (s00Var.d.contains(lowerCase)) {
-                            sy0Var.f.add(s00Var);
+                        t00 t00Var = (t00) sy0Var.h.get(i10);
+                        if (t00Var.d.startsWith(lowerCase)) {
+                            sy0Var.f.add(0, t00Var);
+                        } else if (t00Var.d.contains(lowerCase)) {
+                            sy0Var.f.add(t00Var);
                         }
                     }
                     sy0Var.c.f();

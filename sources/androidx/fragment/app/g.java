@@ -1,6 +1,6 @@
 package androidx.fragment.app;
 
-import ai.t2;
+import ai.u2;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import hi.sa;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.en0;
 import org.telegram.ui.Components.iu0;
@@ -27,7 +27,7 @@ import org.telegram.ui.t3;
 import org.telegram.ui.uz0;
 import tg.l2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -169,7 +169,7 @@ public final class g extends AnimatorListenerAdapter {
                 if (yVar3 != null) {
                     yVar3.f = false;
                 }
-                ks.f(f40Var.o1.a).j(f40Var.c5);
+                ls.f(f40Var.o1.a).j(f40Var.c5);
                 f40Var.b5 = false;
                 boolean z10 = this.b;
                 float f11 = z10 ? 1.0f : 0.0f;
@@ -269,12 +269,12 @@ public final class g extends AnimatorListenerAdapter {
                 return;
             default:
                 l2 l2Var = (l2) this.d;
-                t2 t2Var = l2Var.c;
+                u2 u2Var = l2Var.c;
                 float f12 = this.b ? 1.0f : 0.0f;
                 l2Var.E = f12;
-                t2Var.setAlpha(f12);
-                t2Var.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
-                t2Var.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
+                u2Var.setAlpha(f12);
+                u2Var.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
+                u2Var.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
                 l2Var.b.invalidate();
                 Runnable runnable6 = (Runnable) this.c;
                 if (runnable6 != null) {

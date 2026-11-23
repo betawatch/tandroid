@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u20 extends dk0 {
     public final Context c;
@@ -115,11 +115,11 @@ public final class u20 extends dk0 {
             }
             org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
             if (i10 == this.s) {
-                y3Var.setText(org.telegram.messenger.gd.N0(2131752365, null));
+                y3Var.setText(org.telegram.messenger.hd.N0(2131752365, null));
                 return;
             } else {
                 if (i10 == this.w) {
-                    y3Var.setText(org.telegram.messenger.gd.N0(2131749359, null));
+                    y3Var.setText(org.telegram.messenger.hd.N0(2131749359, null));
                     return;
                 }
                 return;
@@ -135,14 +135,14 @@ public final class u20 extends dk0 {
                 if (z10) {
                     c22 = (TLRPC.User) tLObject;
                 } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                    c22 = org.telegram.messenger.mp.u1(v20Var.a).c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) tLObject).peer)));
+                    c22 = org.telegram.messenger.np.u1(v20Var.a).c2(Long.valueOf(org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) tLObject).peer)));
                 } else if (!(tLObject instanceof TLRPC.ChatParticipant)) {
                     return;
                 } else {
-                    c22 = org.telegram.messenger.mp.u1(v20Var.a).c2(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
+                    c22 = org.telegram.messenger.np.u1(v20Var.a).c2(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
                 }
                 TLRPC.User user = c22;
-                String o4 = org.telegram.messenger.o10.o(user);
+                String o4 = org.telegram.messenger.p10.o(user);
                 size = z1Var.g.size();
                 if (size != 0) {
                     int i13 = size + 1;
@@ -176,7 +176,7 @@ public final class u20 extends dk0 {
                             }
                         }
                         if (str != null) {
-                            String q10 = org.telegram.messenger.o10.q(user);
+                            String q10 = org.telegram.messenger.p10.q(user);
                             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(q10);
                             int A12 = org.telegram.messenger.g0.A1(q10, str);
                             if (A12 != -1) {
@@ -213,7 +213,7 @@ public final class u20 extends dk0 {
                 if (z10) {
                 }
                 TLRPC.User user2 = c22;
-                String o42 = org.telegram.messenger.o10.o(user2);
+                String o42 = org.telegram.messenger.p10.o(user2);
                 size = z1Var.g.size();
                 if (size != 0) {
                 }
@@ -236,7 +236,7 @@ public final class u20 extends dk0 {
         if (z10) {
         }
         TLRPC.User user22 = c22;
-        String o422 = org.telegram.messenger.o10.o(user22);
+        String o422 = org.telegram.messenger.p10.o(user22);
         size = z1Var.g.size();
         if (size != 0) {
         }

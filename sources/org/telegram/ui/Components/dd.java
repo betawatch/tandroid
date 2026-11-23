@@ -9,7 +9,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dd implements Runnable {
     public final /* synthetic */ int a;
@@ -58,11 +58,11 @@ public final /* synthetic */ class dd implements Runnable {
                         break;
                     }
                 } else if (!org.telegram.ui.s90.q(chatActivityEnterView.k0)) {
-                    TLRPC.User c22 = org.telegram.messenger.mp.u1(chatActivityEnterView.R).c2(Long.valueOf(chatActivityEnterView.G3));
-                    String H1 = org.telegram.messenger.mp.u1(chatActivityEnterView.R).H1(c22 != null ? c22.restriction_reason : null);
+                    TLRPC.User c22 = org.telegram.messenger.np.u1(chatActivityEnterView.R).c2(Long.valueOf(chatActivityEnterView.G3));
+                    String H1 = org.telegram.messenger.np.u1(chatActivityEnterView.R).H1(c22 != null ? c22.restriction_reason : null);
                     if (!TextUtils.isEmpty(H1)) {
-                        org.telegram.messenger.mp.u1(chatActivityEnterView.R);
-                        org.telegram.messenger.mp.d5(H1, bnVar);
+                        org.telegram.messenger.np.u1(chatActivityEnterView.R);
+                        org.telegram.messenger.np.d5(H1, bnVar);
                         break;
                     } else {
                         ki.s2 s2Var = new ki.s2(chatActivityEnterView.getContext(), chatActivityEnterView.M4);
@@ -156,10 +156,10 @@ public final /* synthetic */ class dd implements Runnable {
                 }
                 break;
             case 14:
-                if (chatActivityEnterView.H1 == ai.n1.J) {
-                    ai.n1 n1Var = chatActivityEnterView.o6;
-                    long j10 = n1Var.e;
-                    chatActivityEnterView.G1 = j10 != 0 ? n1Var.a + j10 : 0L;
+                if (chatActivityEnterView.H1 == ai.o1.J) {
+                    ai.o1 o1Var = chatActivityEnterView.o6;
+                    long j10 = o1Var.e;
+                    chatActivityEnterView.G1 = j10 != 0 ? o1Var.a + j10 : 0L;
                     break;
                 }
                 break;
@@ -252,7 +252,7 @@ public final /* synthetic */ class dd implements Runnable {
                 chatActivityEnterView.j1();
                 break;
             default:
-                lc.b0(chatActivityEnterView.F3).T(org.telegram.messenger.gd.N0(2131752699, null)).j();
+                lc.b0(chatActivityEnterView.F3).T(org.telegram.messenger.hd.N0(2131752699, null)).j();
                 break;
         }
     }

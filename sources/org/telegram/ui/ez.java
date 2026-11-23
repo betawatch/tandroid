@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public TL_chatlists.TL_exportedChatlistInvite E;
@@ -46,16 +46,16 @@ public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBa
         this.f = o6Var;
         o6Var.setTextSize(org.telegram.messenger.g0.L(15.66f));
         org.telegram.ui.ActionBar.t6.Y(o6Var, org.telegram.ui.ActionBar.m6.G6, null);
-        o6Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        o6Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
         o6Var.setEllipsizeByGradient(true);
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         addView(o6Var, c8.ma.d(-1, 20.0f, 55, z10 ? 56.0f : 64.0f, 10.33f, z10 ? 64.0f : 56.0f, 0.0f));
         org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(context, false, false, false);
         this.h = o6Var2;
         o6Var2.setTextSize(org.telegram.messenger.g0.L(13.0f));
         org.telegram.ui.ActionBar.t6.Y(o6Var2, org.telegram.ui.ActionBar.m6.z6, null);
-        o6Var2.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
-        boolean z11 = org.telegram.messenger.gd.a0;
+        o6Var2.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        boolean z11 = org.telegram.messenger.hd.a0;
         addView(o6Var2, c8.ma.d(-1, 16.0f, 55, z11 ? 56.0f : 64.0f, 33.33f, z11 ? 64.0f : 56.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_ab_other));
@@ -69,8 +69,8 @@ public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBa
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         org.telegram.ui.ActionBar.t6.s(imageView, i12, null, mode);
         imageView.setOnClickListener(new a(this, 24));
-        imageView.setContentDescription(org.telegram.messenger.gd.N0(2131754838, null));
-        boolean z12 = org.telegram.messenger.gd.a0;
+        imageView.setContentDescription(org.telegram.messenger.hd.N0(2131754838, null));
+        boolean z12 = org.telegram.messenger.hd.a0;
         addView(imageView, c8.ma.d(40, 40.0f, (z12 ? 3 : 5) | 16, z12 ? 8.0f : 4.0f, 4.0f, z12 ? 4.0f : 8.0f, 4.0f));
         Paint paint = new Paint();
         this.n = paint;
@@ -111,9 +111,9 @@ public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBa
             et etVar = ((kz) g2Var).a;
             org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(g2Var, this);
             I.X(etVar.U0(this, false));
-            I.c(R.drawable.msg_qrcode, org.telegram.messenger.gd.N0(2131750455, null), new dz(this, 0), false);
-            I.c(R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131751522, null), new dz(this, 1), true);
-            if (org.telegram.messenger.gd.a0) {
+            I.c(R.drawable.msg_qrcode, org.telegram.messenger.hd.N0(2131750455, null), new dz(this, 0), false);
+            I.c(R.drawable.msg_delete, org.telegram.messenger.hd.N0(2131751522, null), new dz(this, 1), true);
+            if (org.telegram.messenger.hd.a0) {
                 I.i = 3;
             }
             I.a0();
@@ -124,7 +124,7 @@ public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBa
         if (this.y == null) {
             return;
         }
-        org.telegram.ui.Components.ah0 ah0Var = new org.telegram.ui.Components.ah0(getContext(), org.telegram.messenger.gd.N0(2131748977, null), this.y, org.telegram.messenger.gd.N0(2131746310, null), false);
+        org.telegram.ui.Components.ah0 ah0Var = new org.telegram.ui.Components.ah0(getContext(), org.telegram.messenger.hd.N0(2131748977, null), this.y, org.telegram.messenger.hd.N0(2131746310, null), false);
         ah0Var.J0();
         ah0Var.show();
     }
@@ -147,7 +147,7 @@ public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBa
         } else {
             o6Var.c(tL_exportedChatlistInvite.title, z11, true);
         }
-        this.h.c(org.telegram.messenger.gd.G(tL_exportedChatlistInvite.peers.size(), "FilterInviteChats", new Object[0]), z11, true);
+        this.h.c(org.telegram.messenger.hd.G(tL_exportedChatlistInvite.peers.size(), "FilterInviteChats", new Object[0]), z11, true);
         if (this.w != z10) {
             this.w = z10;
             invalidate();
@@ -177,7 +177,7 @@ public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBa
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int measuredWidth = org.telegram.messenger.gd.a0 ? getMeasuredWidth() - org.telegram.messenger.g0.L(32.0f) : org.telegram.messenger.g0.L(32.0f);
+        int measuredWidth = org.telegram.messenger.hd.a0 ? getMeasuredWidth() - org.telegram.messenger.g0.L(32.0f) : org.telegram.messenger.g0.L(32.0f);
         float f10 = measuredWidth;
         canvas.drawCircle(f10, getMeasuredHeight() / 2.0f, org.telegram.messenger.g0.L(16.0f), this.n);
         if (this.s > 0.0f) {
@@ -198,7 +198,7 @@ public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBa
             drawable2.draw(canvas);
         }
         if (this.w) {
-            canvas.drawRect(org.telegram.messenger.gd.a0 ? 0.0f : org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(64.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawRect(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(64.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.m6.k0);
         }
     }
 
@@ -209,7 +209,7 @@ public abstract class ez extends FrameLayout implements org.telegram.ui.ActionBa
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = this.E;
         String str = "";
         sb2.append((tL_exportedChatlistInvite == null || TextUtils.isEmpty(tL_exportedChatlistInvite.title)) ? "" : a8.p0.s(new StringBuilder(), this.E.title, "\n "));
-        sb2.append(org.telegram.messenger.gd.N0(2131748956, null));
+        sb2.append(org.telegram.messenger.hd.N0(2131748956, null));
         sb2.append(", ");
         sb2.append((Object) this.h.getText());
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2 = this.E;

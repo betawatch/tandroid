@@ -15,7 +15,7 @@ import android.graphics.Typeface;
 import android.view.TextureView;
 import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sz0 extends org.telegram.ui.Cells.r1 {
     public final RectF Ad;
@@ -26,7 +26,7 @@ public final class sz0 extends org.telegram.ui.Cells.r1 {
     public final Path Fd;
     public Paint Gd;
     public final Paint Hd;
-    public org.telegram.ui.Components.o01 Id;
+    public org.telegram.ui.Components.n01 Id;
     public final org.telegram.ui.Components.d6 Jd;
     public final /* synthetic */ int Kd;
     public final /* synthetic */ int Ld;
@@ -92,7 +92,7 @@ public final class sz0 extends org.telegram.ui.Cells.r1 {
             this.Ed.postScale(width2, width2);
             this.Ed.postTranslate(rectF.centerX(), rectF.centerY());
             this.Cd.setLocalMatrix(this.Ed);
-            canvas.saveLayerAlpha(rectF, org.telegram.messenger.ks.e4, 31);
+            canvas.saveLayerAlpha(rectF, org.telegram.messenger.ls.e4, 31);
             super.N0(canvas);
             canvas.save();
             canvas.drawRect(rectF, this.Dd);
@@ -113,9 +113,9 @@ public final class sz0 extends org.telegram.ui.Cells.r1 {
         rectF2.inset(org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f));
         canvas.drawArc(rectF2, -90.0f, (1.0f - uz0Var.b0) * (-360.0f), false, paint3);
         if (this.Id == null) {
-            org.telegram.ui.Components.o01 o01Var = new org.telegram.ui.Components.o01(120);
-            this.Id = o01Var;
-            o01Var.b = true;
+            org.telegram.ui.Components.n01 n01Var = new org.telegram.ui.Components.n01(120);
+            this.Id = n01Var;
+            n01Var.b = true;
         }
         paint3.setStrokeWidth(org.telegram.messenger.g0.L(2.8f));
         this.Id.a((1.0f - uz0Var.b0) * (-360.0f), 1.0f, canvas, paint3, rectF2);
@@ -178,7 +178,7 @@ public final class sz0 extends org.telegram.ui.Cells.r1 {
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ls.e4, 31);
             }
             this.gd = 1.0f - uz0Var.s;
         } else {
@@ -211,11 +211,11 @@ public final class sz0 extends org.telegram.ui.Cells.r1 {
         uz0 uz0Var = this.Md;
         if (uz0Var.T) {
             int i7 = this.A9;
-            org.telegram.messenger.fj fjVar = uz0Var.N;
+            org.telegram.messenger.gj gjVar = uz0Var.N;
             int i10 = 0;
-            if (fjVar != null && fjVar.P3()) {
-                org.telegram.messenger.fj fjVar2 = uz0Var.N;
-                if (fjVar2 != null && fjVar2.D == 19) {
+            if (gjVar != null && gjVar.P3()) {
+                org.telegram.messenger.gj gjVar2 = uz0Var.N;
+                if (gjVar2 != null && gjVar2.D == 19) {
                     i10 = 4;
                 }
                 i10 += 20;

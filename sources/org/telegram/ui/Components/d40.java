@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d40 {
     public final int a;
@@ -39,7 +39,7 @@ public final class d40 {
         this.k = iArr;
         this.a = i7;
         this.b = i10;
-        float[] fArr = new float[org.telegram.messenger.ks.I3];
+        float[] fArr = new float[org.telegram.messenger.ls.I3];
         c(fArr, 0, 0.0f, 1.0f, 1.0f, 0.0f);
         c(fArr, 8, 0.0f, 0.0f, 1.0f, 1.0f);
         float[] fArr2 = new float[36];
@@ -140,10 +140,10 @@ public final class d40 {
         int i24 = i15;
         GLES20.glBindTexture(3553, i24);
         GLES20.glGenFramebuffers(1, this.j, i24);
-        FloatBuffer i25 = org.telegram.messenger.n10.i(ByteBuffer.allocateDirect(org.telegram.messenger.ks.a2));
+        FloatBuffer i25 = org.telegram.messenger.o10.i(ByteBuffer.allocateDirect(org.telegram.messenger.ls.a2));
         this.g = i25;
         i25.put(fArr2).position(i24);
-        FloatBuffer i26 = org.telegram.messenger.n10.i(ByteBuffer.allocateDirect(928));
+        FloatBuffer i26 = org.telegram.messenger.o10.i(ByteBuffer.allocateDirect(928));
         this.h = i26;
         i26.put(fArr).position(i24);
     }

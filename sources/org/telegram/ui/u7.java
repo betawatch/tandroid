@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new o1((bn) this.b, tLObject, (TLRPC.User) this.c, 21));
                 break;
             case 5:
-                org.telegram.messenger.g0.g3(new org.telegram.messenger.camera.i((bn) this.b, tLObject, tL_error, (org.telegram.messenger.tr) this.c, 13));
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.camera.i((bn) this.b, tLObject, tL_error, (org.telegram.messenger.ur) this.c, 13));
                 break;
             case 6:
                 bn bnVar2 = (bn) this.b;
@@ -65,7 +65,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 }
                 break;
             case 7:
-                org.telegram.messenger.g0.g3(new o1((el) this.b, tLObject, (org.telegram.messenger.fj) this.c, 23));
+                org.telegram.messenger.g0.g3(new o1((el) this.b, tLObject, (org.telegram.messenger.gj) this.c, 23));
                 break;
             case 8:
                 rn rnVar = (rn) this.b;
@@ -85,7 +85,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 break;
             case 11:
                 org.telegram.ui.Components.l5 l5Var = (org.telegram.ui.Components.l5) this.b;
-                org.telegram.messenger.ks.f(l5Var.e).d(new org.telegram.ui.Components.k5(l5Var, (ArrayList) this.c, tLObject, 0));
+                org.telegram.messenger.ls.f(l5Var.e).d(new org.telegram.ui.Components.k5(l5Var, (ArrayList) this.c, tLObject, 0));
                 break;
             case 12:
                 org.telegram.messenger.g0.g3(new org.telegram.ui.Components.g((org.telegram.ui.Components.f8) this.b, (org.telegram.ui.ActionBar.t1) this.c, tLObject, 1));
@@ -103,7 +103,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new org.telegram.ui.Components.ou(10, (org.telegram.ui.Components.i00) this.b, (Pair) this.c));
                 break;
             case 17:
-                org.telegram.messenger.g0.g3(new org.telegram.messenger.camera.i((org.telegram.ui.Components.i00) this.b, tL_error, tLObject, (org.telegram.messenger.x10) this.c, 28));
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.camera.i((org.telegram.ui.Components.i00) this.b, tL_error, tLObject, (org.telegram.messenger.y10) this.c, 28));
                 break;
             case 18:
                 org.telegram.messenger.g0.g3(new org.telegram.ui.Components.q20((org.telegram.ui.Components.v20) this.b, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0));
@@ -118,7 +118,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new org.telegram.ui.Components.fm0((org.telegram.ui.Components.ap0) this.b, tLObject, (Context) this.c, 4));
                 break;
             case 22:
-                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.q20((org.telegram.ui.Components.kw0) this.b, tL_error, tLObject, (org.telegram.messenger.ri) this.c, 8));
+                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.q20((org.telegram.ui.Components.kw0) this.b, tL_error, tLObject, (org.telegram.messenger.si) this.c, 8));
                 break;
             case 23:
                 org.telegram.messenger.g0.g3(new org.telegram.ui.Components.q20((qo0) this.b, tL_error, tLObject, (TLRPC.TL_messages_getAttachedStickers) this.c, 9));
@@ -130,7 +130,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new org.telegram.ui.Components.q20((org.telegram.ui.Components.b31) this.b, tL_error, tLObject, (TLRPC.TL_textWithEntities) this.c, 12));
                 break;
             case 26:
-                org.telegram.messenger.g0.g3(new up((nx) this.b, tLObject, (org.telegram.messenger.fj) this.c, 4));
+                org.telegram.messenger.g0.g3(new up((nx) this.b, tLObject, (org.telegram.messenger.gj) this.c, 4));
                 break;
             case 27:
                 org.telegram.messenger.g0.g3(new ss(13, (iy) this.b, (org.telegram.ui.ActionBar.t1) this.c));

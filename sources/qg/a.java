@@ -14,17 +14,17 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.lz;
 import org.telegram.messenger.mz;
+import org.telegram.messenger.nz;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a extends Drawable {
-    public static lz j;
+    public static mz j;
     public static final int[] k = {7322096, 16766590, 13338331, 9367192, 16749490, 16478047};
     public static final SparseArray l;
-    public final lz a;
+    public final mz a;
     public LinearGradient b;
     public int e;
     public final Paint f;
@@ -47,9 +47,9 @@ public final class a extends Drawable {
 
     public a(int i7) {
         if (j == null) {
-            j = mz.h(R.raw.topic_bubble, -1);
+            j = nz.h(R.raw.topic_bubble, -1);
         }
-        lz clone = j.clone();
+        mz clone = j.clone();
         SparseArray sparseArray = clone.r;
         this.a = clone;
         ArrayList arrayList = clone.a;
@@ -105,9 +105,9 @@ public final class a extends Drawable {
         matrix.setScale(1.0f, getBounds().height() / 100.0f);
         this.b.setLocalMatrix(matrix);
         Rect bounds = getBounds();
-        lz lzVar = this.a;
-        lzVar.setBounds(bounds);
-        lzVar.draw(canvas);
+        mz mzVar = this.a;
+        mzVar.setBounds(bounds);
+        mzVar.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable

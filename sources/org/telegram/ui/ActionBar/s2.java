@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final class s2 extends AnimatorListenerAdapter {
                 if (animatorSet != null && animatorSet.equals(animator)) {
                     t2Var.h = null;
                 }
-                ks.e().k(99, 512);
+                ls.e().k(99, 512);
                 break;
             case 1:
                 t2Var.E = 0.0f;

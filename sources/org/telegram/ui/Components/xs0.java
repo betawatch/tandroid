@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xs0 extends zj0 {
     public final Context r;
@@ -91,7 +91,7 @@ public final class xs0 extends zj0 {
         }
         if (i7 < jt0Var.w1[3].c.size()) {
             view.setAlpha(1.0f);
-            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.e0(((org.telegram.messenger.fj) ((ArrayList) jt0Var.w1[3].d.get((String) jt0Var.w1[3].c.get(i7))).get(0)).k.date, false));
+            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.e0(((org.telegram.messenger.gj) ((ArrayList) jt0Var.w1[3].d.get((String) jt0Var.w1[3].c.get(i7))).get(0)).k.date, false));
         }
         return view;
     }
@@ -117,9 +117,9 @@ public final class xs0 extends zj0 {
         ArrayList arrayList = (ArrayList) ys0VarArr[3].d.get((String) ys0VarArr[3].c.get(i7));
         int i12 = f1Var.f;
         if (i12 == 3) {
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList.get(0);
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList.get(0);
             if (view instanceof org.telegram.ui.Cells.y3) {
-                ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.e0(fjVar.k.date, false));
+                ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.e0(gjVar.k.date, false));
                 return;
             }
             return;
@@ -134,13 +134,13 @@ public final class xs0 extends zj0 {
             return;
         }
         org.telegram.ui.Cells.l7 l7Var = (org.telegram.ui.Cells.l7) view;
-        org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) arrayList.get(i10);
+        org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) arrayList.get(i10);
         l7Var.E = i10 != arrayList.size() - 1 || (i7 == ys0VarArr[3].c.size() - 1 && ys0VarArr[3].g);
         l7Var.e();
-        l7Var.c0 = fjVar2;
+        l7Var.c0 = gjVar2;
         l7Var.requestLayout();
         if (jt0Var.F1) {
-            l7Var.f(jt0Var.c1[(org.telegram.messenger.fj.B0(fjVar2.k) > jt0Var.m1 ? 1 : (org.telegram.messenger.fj.B0(fjVar2.k) == jt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(fjVar2.e1()) >= 0, !jt0Var.e1);
+            l7Var.f(jt0Var.c1[(org.telegram.messenger.gj.B0(gjVar2.k) > jt0Var.m1 ? 1 : (org.telegram.messenger.gj.B0(gjVar2.k) == jt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(gjVar2.e1()) >= 0, !jt0Var.e1);
         } else {
             l7Var.f(false, !jt0Var.e1);
         }

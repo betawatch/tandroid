@@ -10,13 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Components.k40;
 import org.telegram.ui.Components.y40;
 import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e {
     public static HashMap n;
@@ -59,7 +59,7 @@ public final class e {
         }
         e eVar = (e) n.get(Integer.valueOf(i7));
         if (eVar == null) {
-            int o4 = bz.o();
+            int o4 = cz.o();
             if (o4 == 1) {
                 Point point = g0.q;
                 min = Math.min(900, (int) (((point.x + point.y) / 2.0f) * 0.8f));

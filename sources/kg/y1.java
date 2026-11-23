@@ -10,10 +10,10 @@ import c8.ma;
 import hi.d7;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.g5;
@@ -26,12 +26,12 @@ import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class y1 extends g2 implements fs {
+public final class y1 extends g2 implements gs {
     public h51 a;
     public LinearLayout b;
-    public ai.x1 c;
+    public ai.y1 c;
     public boolean d;
     public String e;
     public String f;
@@ -45,9 +45,9 @@ public final class y1 extends g2 implements fs {
             if (!z10) {
                 String str = y1Var.f;
                 y1Var.n = str;
-                ai.x1 x1Var = y1Var.c;
-                if (x1Var != null) {
-                    x1Var.a(str);
+                ai.y1 y1Var2 = y1Var.c;
+                if (y1Var2 != null) {
+                    y1Var2.a(str);
                 }
             }
             ((s8) view).setChecked(y1Var.h);
@@ -68,9 +68,9 @@ public final class y1 extends g2 implements fs {
                 y1Var.h = false;
                 String str2 = tL_timezone.id;
                 y1Var.n = str2;
-                ai.x1 x1Var2 = y1Var.c;
-                if (x1Var2 != null) {
-                    x1Var2.a(str2);
+                ai.y1 y1Var3 = y1Var.c;
+                if (y1Var3 != null) {
+                    y1Var3.a(str2);
                 }
                 if (y1Var.d) {
                     y1Var.simpleActionBar.o(true);
@@ -86,18 +86,18 @@ public final class y1 extends g2 implements fs {
         ArrayList arrayList2 = b10.d;
         if (!z10) {
             c51Var.V();
-            String N0 = gd.N0(2131743879, null);
+            String N0 = hd.N0(2131743877, null);
             o41 o41Var = new o41(9);
             o41Var.d = -1;
             o41Var.m = N0;
             o41Var.L(y1Var.h);
             arrayList.add(o41Var);
             c51Var.U();
-            arrayList.add(o41.C(gd.a0(null, null, 2131743878, b10.d(y1Var.n, true))));
+            arrayList.add(o41.C(hd.a0(null, null, 2131743876, b10.d(y1Var.n, true))));
         }
         c51Var.V();
         if (!z10) {
-            i5.c.s(2131743877, null, arrayList);
+            i5.c.s(2131743875, null, arrayList);
         }
         boolean z11 = true;
         int i7 = 0;
@@ -141,12 +141,12 @@ public final class y1 extends g2 implements fs {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(gd.N0(2131743875, null));
+        this.simpleActionBar.setTitle(hd.N0(2131743873, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 14));
         g5 b10 = this.simpleActionBar.t().b(1, R.drawable.outline_header_search);
         b10.O();
         b10.C0 = new bi.w1(this, 1);
-        b10.setSearchFieldHint(gd.N0(2131745640, null));
+        b10.setSearchFieldHint(hd.N0(2131745640, null));
         FrameLayout frameLayout = new FrameLayout(context);
         h51 h51Var = new h51(this, new d7(this, 15), new x1(this, 0), null);
         this.a = h51Var;
@@ -160,10 +160,10 @@ public final class y1 extends g2 implements fs {
         this.b.setMinimumHeight(org.telegram.messenger.g0.L(500.0f));
         q9 q9Var = new q9(context);
         q9Var.getImageReceiver().A1 = false;
-        ri.d0(this.currentAccount).h2(q9Var, "RestrictedEmoji", "🌖", "130_130");
-        this.b.addView(q9Var, ma.t(ks.O1, ks.O1, 49, 0, 42, 0, 12));
+        si.d0(this.currentAccount).h2(q9Var, "RestrictedEmoji", "🌖", "130_130");
+        this.b.addView(q9Var, ma.t(ls.O1, ls.O1, 49, 0, 42, 0, 12));
         TextView textView = new TextView(context);
-        textView.setText(gd.N0(2131743876, null));
+        textView.setText(hd.N0(2131743874, null));
         t6.U(textView, m6.y6, this.resourceProvider);
         textView.setTextSize(1, 15.0f);
         this.b.addView(textView, ma.t(-2, -2, 49, 0, 0, 0, 0));
@@ -171,11 +171,11 @@ public final class y1 extends g2 implements fs {
         return frameLayout;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         h51 h51Var;
         c51 c51Var;
-        if (i7 != ks.t3 || (h51Var = this.a) == null || (c51Var = h51Var.g3) == null) {
+        if (i7 != ls.t3 || (h51Var = this.a) == null || (c51Var = h51Var.g3) == null) {
             return;
         }
         c51Var.O(true);
@@ -196,13 +196,13 @@ public final class y1 extends g2 implements fs {
         String c10 = z1.b(this.currentAccount).c();
         this.f = c10;
         this.h = TextUtils.equals(c10, this.n);
-        getNotificationCenter().c(this, ks.t3);
+        getNotificationCenter().c(this, ls.t3);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ks.t3);
+        getNotificationCenter().n(this, ls.t3);
         super.onFragmentDestroy();
     }
 

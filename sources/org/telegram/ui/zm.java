@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zm implements org.telegram.ui.ActionBar.h6, org.telegram.ui.Components.sa0 {
     public Bitmap A;
@@ -328,7 +328,7 @@ public final class zm implements org.telegram.ui.ActionBar.h6, org.telegram.ui.C
         } else {
             f10 = 0.0f;
         }
-        boolean z11 = !S9 && ((drawable2 instanceof org.telegram.ui.Components.cb0) || (drawable2 instanceof BitmapDrawable)) && org.telegram.messenger.bz.o() != 0;
+        boolean z11 = !S9 && ((drawable2 instanceof org.telegram.ui.Components.cb0) || (drawable2 instanceof BitmapDrawable)) && org.telegram.messenger.cz.o() != 0;
         this.C = z11;
         org.telegram.ui.ActionBar.s3 s3Var = this.f;
         if (s3Var != null) {
@@ -433,11 +433,11 @@ public final class zm implements org.telegram.ui.ActionBar.h6, org.telegram.ui.C
                                     org.telegram.messenger.g0.n2(colorMatrix, this.q ? 0.9f : 0.84f);
                                     org.telegram.messenger.g0.h(colorMatrix, this.q ? 0.04f : 0.06f);
                                 }
-                                g10.setAlpha(org.telegram.messenger.ks.e4);
+                                g10.setAlpha(org.telegram.messenger.ls.e4);
                                 g10.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
                                 g10.setShader(this.o);
                                 g10.setFilterBitmap(true);
-                                g12.setAlpha(org.telegram.messenger.ks.e4);
+                                g12.setAlpha(org.telegram.messenger.ls.e4);
                                 ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
                                 org.telegram.messenger.g0.i(colorMatrix2, 0.26f);
                                 org.telegram.messenger.g0.n2(colorMatrix2, 0.92f);
@@ -817,7 +817,7 @@ public final class zm implements org.telegram.ui.ActionBar.h6, org.telegram.ui.C
                         cb0Var2.y.P();
                     }
                 }
-                cb0Var2.y.q0(org.telegram.messenger.fc.b(e10), "80_80", null, null, null, 0);
+                cb0Var2.y.q0(org.telegram.messenger.gc.b(e10), "80_80", null, null, null, 0);
                 cb0Var2.y.X(1);
                 cb0Var2.y.W(1);
                 cb0Var2.o(k10, k11, k12, k13, 0, true);
@@ -857,12 +857,12 @@ public final class zm implements org.telegram.ui.ActionBar.h6, org.telegram.ui.C
                         z11 = z13 ? 1 : 0;
                     }
                     TLRPC.Document document2 = document;
-                    org.telegram.messenger.fc b11 = org.telegram.messenger.fc.b(document2);
+                    org.telegram.messenger.gc b11 = org.telegram.messenger.gc.b(document2);
                     ImageReceiver imageReceiver2 = new ImageReceiver(null);
                     imageReceiver2.A1 = false;
                     imageReceiver2.q0(b11, "40_40_firstframe", null, ".jpg", document2, 1);
                     imageReceiver2.h1 = new ai.d0(f0Var, h, 3);
-                    org.telegram.messenger.ec.D().M(imageReceiver2, null);
+                    org.telegram.messenger.fc.D().M(imageReceiver2, null);
                 }
                 s3Var2 = s3Var;
                 s3Var2.n(this.q ? 1 : 0, new org.telegram.messenger.r6(this, s3Var2, z11, cb0Var2, f10));
@@ -925,7 +925,7 @@ public final class zm implements org.telegram.ui.ActionBar.h6, org.telegram.ui.C
     public final void t() {
         bn bnVar = this.G;
         if (bnVar.za == null && this.f == null && this.g == null) {
-            boolean z10 = bnVar.S9() && !org.telegram.messenger.bz.H0;
+            boolean z10 = bnVar.S9() && !org.telegram.messenger.cz.H0;
             if (z10 || this.s) {
                 this.s = z10;
                 this.b.clear();

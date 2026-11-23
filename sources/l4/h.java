@@ -28,10 +28,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*+)?$");
@@ -41,23 +41,23 @@ public abstract class h {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(ks.e4, ks.e4, ks.e4)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, ks.e4, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, ks.e4, ks.e4)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(ks.e4, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(ks.e4, ks.e4, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(ks.e4, 0, ks.e4)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, ks.e4)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(ls.e4, ls.e4, ls.e4)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, ls.e4, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, ls.e4, ls.e4)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(ls.e4, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(ls.e4, ls.e4, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(ls.e4, 0, ls.e4)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, ls.e4)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         c = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(ks.e4, ks.e4, ks.e4)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, ks.e4, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, ks.e4, ks.e4)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(ks.e4, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(ks.e4, ks.e4, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(ks.e4, 0, ks.e4)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, ks.e4)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(ls.e4, ls.e4, ls.e4)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, ls.e4, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, ls.e4, ls.e4)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(ls.e4, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(ls.e4, ls.e4, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(ls.e4, 0, ls.e4)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, ls.e4)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         d = DesugarCollections.unmodifiableMap(hashMap2);
     }
@@ -81,35 +81,35 @@ public abstract class h {
                 }
                 c10 = 65535;
                 break;
-            case ks.j1 /* 98 */:
+            case ls.j1 /* 98 */:
                 if (str2.equals("b")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ks.k1 /* 99 */:
+            case ls.k1 /* 99 */:
                 if (str2.equals("c")) {
                     c10 = 2;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ks.q1 /* 105 */:
+            case ls.q1 /* 105 */:
                 if (str2.equals("i")) {
                     c10 = 3;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ks.C1 /* 117 */:
+            case ls.C1 /* 117 */:
                 if (str2.equals("u")) {
                     c10 = 4;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ks.D1 /* 118 */:
+            case ls.D1 /* 118 */:
                 if (str2.equals("v")) {
                     c10 = 5;
                     break;
@@ -578,35 +578,35 @@ public abstract class h {
                         String str5 = trim.split("[ \\.]", 2)[0];
                         str5.getClass();
                         switch (str5.hashCode()) {
-                            case ks.j1 /* 98 */:
+                            case ls.j1 /* 98 */:
                                 if (str5.equals("b")) {
                                     c10 = 0;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case ks.k1 /* 99 */:
+                            case ls.k1 /* 99 */:
                                 if (str5.equals("c")) {
                                     c10 = 1;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case ks.q1 /* 105 */:
+                            case ls.q1 /* 105 */:
                                 if (str5.equals("i")) {
                                     c10 = 2;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case ks.C1 /* 117 */:
+                            case ls.C1 /* 117 */:
                                 if (str5.equals("u")) {
                                     c10 = 3;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case ks.D1 /* 118 */:
+                            case ls.D1 /* 118 */:
                                 if (str5.equals("v")) {
                                     c10 = 4;
                                     break;

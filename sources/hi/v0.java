@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import java.io.File;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.up;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v0 extends ImageView {
     public int a;
@@ -36,7 +36,7 @@ public final class v0 extends ImageView {
         if ((i7 <= 28 || org.telegram.messenger.s2.b) && v0Var.getContext().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
             Activity W = org.telegram.messenger.g0.W(v0Var.getContext());
             if (W != null) {
-                W.requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, ks.y1);
+                W.requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, ls.y1);
                 return;
             }
             return;
@@ -98,7 +98,7 @@ public final class v0 extends ImageView {
             this.d = false;
             File q02 = org.telegram.messenger.g0.q0("png", false);
             if (q02 == null) {
-                this.n.b(R.raw.error, 3500, gd.O0("UnknownError"));
+                this.n.b(R.raw.error, 3500, hd.O0("UnknownError"));
                 this.c = false;
                 d();
                 return;

@@ -11,11 +11,11 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class CameraSession {
     public static final int ORIENTATION_HYSTERESIS = 5;
@@ -90,7 +90,7 @@ public class CameraSession {
             if (rotation == 1) {
                 i7 = 90;
             } else if (rotation == 2) {
-                i7 = ks.K2;
+                i7 = ls.K2;
             } else if (rotation == 3) {
                 i7 = 270;
             }
@@ -498,9 +498,9 @@ public class CameraSession {
                     if (i11 == 1) {
                         i7 = 90;
                     } else if (i11 == 2) {
-                        i7 = ks.K2;
+                        i7 = ls.K2;
                     } else if (i11 == 3) {
-                        i7 = ks.t4;
+                        i7 = ls.t4;
                     }
                     cameraInfo = this.info;
                     if (cameraInfo.orientation % 90 != 0) {

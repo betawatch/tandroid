@@ -16,13 +16,13 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import c8.ma;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.on;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class q2 extends FrameLayout {
     public int E;
@@ -298,7 +298,7 @@ public class q2 extends FrameLayout {
                                         drawableArr[i7].setColorFilter(new PorterDuffColorFilter(f16, PorterDuff.Mode.MULTIPLY));
                                         paint2.setColor(f16);
                                     }
-                                    drawableArr[i7].setAlpha(ks.e4);
+                                    drawableArr[i7].setAlpha(ls.e4);
                                 } else {
                                     if (i7 == 0) {
                                         f15 = 1.0f - f15;
@@ -322,14 +322,14 @@ public class q2 extends FrameLayout {
                             drawableArr[0].setColorFilter(new PorterDuffColorFilter(f17, PorterDuff.Mode.MULTIPLY));
                             paint2.setColor(f17);
                         }
-                        drawableArr[0].setAlpha(ks.e4);
+                        drawableArr[0].setAlpha(ls.e4);
                         float f18 = this.s;
                         if (f18 != 0.0f && this.H) {
                             int f19 = i0.a.f(f18, this.I, this.y);
                             drawableArr[0].setColorFilter(new PorterDuffColorFilter(f19, PorterDuff.Mode.MULTIPLY));
                             paint2.setColor(f19);
                         }
-                        drawableArr[0].setAlpha(ks.e4);
+                        drawableArr[0].setAlpha(ls.e4);
                         boolean z12 = this.M;
                         if (z12) {
                             float f20 = this.L;
@@ -348,7 +348,7 @@ public class q2 extends FrameLayout {
                                     nr nrVar = nr.f;
                                     float interpolation = (nrVar.getInterpolation(this.L) * L3) + (N - org.telegram.messenger.g0.L(1.0f));
                                     float interpolation2 = (nrVar.getInterpolation(this.L) * org.telegram.messenger.g0.L(17.0f)) + N2;
-                                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ks.e4, 31);
+                                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ls.e4, 31);
                                     drawableArr[0].setBounds((int) (width - (r2.getIntrinsicWidth() / 2.0f)), (int) (L - (drawableArr[0].getIntrinsicHeight() / 2.0f)), (int) ((drawableArr[0].getIntrinsicWidth() / 2.0f) + width), (int) ((drawableArr[0].getIntrinsicHeight() / 2.0f) + L));
                                     drawableArr[0].draw(canvas);
                                     canvas.drawLine(N, N2 - org.telegram.messenger.g0.L(2.0f), interpolation, interpolation2 - org.telegram.messenger.g0.L(2.0f), this.K);

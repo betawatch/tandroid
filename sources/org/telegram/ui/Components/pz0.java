@@ -21,7 +21,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.ThemeEditorView.EditorAlert;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pz0 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -181,7 +181,7 @@ public final class pz0 extends FrameLayout {
                                         f11 = com.google.android.gms.internal.vision.e2.c(i19, i16, 0.5f, 1.0f);
                                     } else {
                                         if (i19 > org.telegram.messenger.g0.q.x - layoutParams.width) {
-                                            f11 = org.telegram.messenger.n10.w((i19 - r9) + r7, i16, 0.5f, 1.0f);
+                                            f11 = org.telegram.messenger.o10.w((i19 - r9) + r7, i16, 0.5f, 1.0f);
                                         }
                                     }
                                     if (themeEditorView.c.getAlpha() != f11) {

@@ -49,11 +49,11 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.j1;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.q1;
 import org.telegram.messenger.r1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class b extends ba {
     public final Long A;
@@ -485,7 +485,7 @@ public class b extends ba {
                         }
                     }
                     if (fVar2 != z.g) {
-                        C(ks.t1, fVar2, j3, z11);
+                        C(ls.t1, fVar2, j3, z11);
                         E(fVar2);
                         return fVar2;
                     }
@@ -697,7 +697,7 @@ public class b extends ba {
                                         cVar = bVar.i;
                                     }
                                     if (cVar == null) {
-                                        return com.google.android.gms.internal.play_billing.u.c(z.h, ks.s1);
+                                        return com.google.android.gms.internal.play_billing.u.c(z.h, ls.s1);
                                     }
                                     return ((com.google.android.gms.internal.play_billing.a) cVar).A1(i25, bVar.g.getPackageName(), str18, str19, bundle2);
                                 } catch (DeadObjectException e11) {
@@ -1075,7 +1075,7 @@ public class b extends ba {
                                             } else if (this.b != 1) {
                                                 com.google.android.gms.internal.play_billing.u.h("BillingClient", "Client state no longer CONNECTING, returning service disconnected.");
                                                 fVar2 = z.h;
-                                                j(ks.q1, i7, fVar2);
+                                                j(ls.q1, i7, fVar2);
                                             } else {
                                                 t tVar = this.j;
                                                 if ((i7 <= 0 || Build.VERSION.SDK_INT < 29) ? this.g.bindService(intent2, tVar, 1) : this.g.bindService(intent2, 1, e(), tVar)) {

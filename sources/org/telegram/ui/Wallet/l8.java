@@ -13,9 +13,9 @@ import android.graphics.RectF;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l8 extends View {
     public final /* synthetic */ r8 a;
@@ -105,7 +105,7 @@ public final class l8 extends View {
             arrayList = arrayList2;
         }
         float f23 = 1.0f;
-        paint3.setAlpha(ks.e4);
+        paint3.setAlpha(ls.e4);
         ArrayList arrayList3 = r8Var2.n;
         int size2 = arrayList3.size();
         int i14 = 0;
@@ -141,7 +141,7 @@ public final class l8 extends View {
             paint5.setColor(Color.argb((int) (40.0f * l11), 0, 18, 48));
             canvas.drawPath(path4, paint5);
             paint5.setStrokeWidth(org.telegram.messenger.g0.L(1.8f));
-            paint5.setColor(Color.argb((int) (l11 * 180.0f), ks.e4, ks.e4, ks.e4));
+            paint5.setColor(Color.argb((int) (l11 * 180.0f), ls.e4, ls.e4, ls.e4));
             canvas.drawPath(path4, paint5);
         }
         float y10 = com.google.android.gms.internal.vision.e2.y(r8Var2.b0, 0.6f, r8Var2.c0, 10.0f);
@@ -302,7 +302,7 @@ public final class l8 extends View {
                     canvas2.drawBitmap(a10, (Rect) null, rectF8, paint);
                     canvas2.restore();
                 }
-                paint.setAlpha(ks.e4);
+                paint.setAlpha(ls.e4);
                 canvas2.drawRect(f38, f39, f40, f41, r8Var.V);
                 canvas2.restoreToCount(i11);
                 if (intersects) {

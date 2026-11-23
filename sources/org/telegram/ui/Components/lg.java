@@ -3,17 +3,17 @@ package org.telegram.ui.Components;
 import java.io.File;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lg extends org.telegram.ui.oq0 {
     public boolean a;
-    public final /* synthetic */ org.telegram.messenger.ef b;
+    public final /* synthetic */ org.telegram.messenger.ff b;
     public final /* synthetic */ File c;
     public final /* synthetic */ mg d;
 
-    public lg(mg mgVar, org.telegram.messenger.ef efVar, File file) {
+    public lg(mg mgVar, org.telegram.messenger.ff ffVar, File file) {
         this.d = mgVar;
-        this.b = efVar;
+        this.b = ffVar;
         this.c = file;
     }
 
@@ -34,8 +34,8 @@ public final class lg extends org.telegram.ui.oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
-        org.telegram.messenger.fj threadMessage;
+    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
+        org.telegram.messenger.gj threadMessage;
         String str;
         org.telegram.ui.bn bnVar;
         ChatActivityEnterView chatActivityEnterView = this.d.f2;
@@ -45,48 +45,48 @@ public final class lg extends org.telegram.ui.oq0 {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
-        org.telegram.messenger.ef efVar = this.b;
-        if (efVar.b || (str = efVar.h) == null) {
-            String str2 = efVar.I;
+        org.telegram.messenger.zy zyVar = new org.telegram.messenger.zy();
+        org.telegram.messenger.ff ffVar = this.b;
+        if (ffVar.b || (str = ffVar.h) == null) {
+            String str2 = ffVar.I;
             if (str2 != null) {
-                yyVar.c = str2;
+                zyVar.c = str2;
             }
         } else {
-            yyVar.c = str;
+            zyVar.c = str;
         }
-        yyVar.e = efVar.c;
-        yyVar.p = efVar.d();
-        yyVar.o = efVar.b;
-        yyVar.q = efVar.j();
-        yyVar.z = efVar.m;
-        yyVar.A = efVar.P;
-        CharSequence charSequence = efVar.a;
-        yyVar.d = charSequence != null ? charSequence.toString() : null;
-        yyVar.i = efVar.n;
-        yyVar.j = efVar.r;
-        yyVar.h = efVar.x;
-        yyVar.k = e20Var;
-        yyVar.r = true;
-        arrayList.add(yyVar);
-        efVar.e();
+        zyVar.e = ffVar.c;
+        zyVar.p = ffVar.d();
+        zyVar.o = ffVar.b;
+        zyVar.q = ffVar.j();
+        zyVar.z = ffVar.m;
+        zyVar.A = ffVar.P;
+        CharSequence charSequence = ffVar.a;
+        zyVar.d = charSequence != null ? charSequence.toString() : null;
+        zyVar.i = ffVar.n;
+        zyVar.j = ffVar.r;
+        zyVar.h = ffVar.x;
+        zyVar.k = f20Var;
+        zyVar.r = true;
+        arrayList.add(zyVar);
+        ffVar.e();
         this.a = true;
-        boolean h = org.telegram.messenger.zy.h(yyVar.d);
+        boolean h = org.telegram.messenger.az.h(zyVar.d);
         org.telegram.messenger.c cVar = chatActivityEnterView.S;
-        org.telegram.messenger.kj kjVar = null;
+        org.telegram.messenger.lj ljVar = null;
         long j3 = chatActivityEnterView.G3;
-        org.telegram.messenger.fj fjVar = chatActivityEnterView.J3;
+        org.telegram.messenger.gj gjVar = chatActivityEnterView.J3;
         threadMessage = chatActivityEnterView.getThreadMessage();
         org.telegram.ui.rm rmVar2 = chatActivityEnterView.L3;
-        org.telegram.messenger.fj fjVar2 = chatActivityEnterView.P2;
+        org.telegram.messenger.gj gjVar2 = chatActivityEnterView.P2;
         org.telegram.ui.bn bnVar2 = chatActivityEnterView.F3;
-        org.telegram.messenger.bw Y8 = bnVar2 != null ? bnVar2.Y8() : null;
+        org.telegram.messenger.cw Y8 = bnVar2 != null ? bnVar2.Y8() : null;
         long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
         org.telegram.ui.bn bnVar3 = chatActivityEnterView.F3;
         if (bnVar3 != null) {
-            kjVar = bnVar3.y5;
+            ljVar = bnVar3.y5;
         }
-        org.telegram.messenger.zy.X(cVar, arrayList, j3, fjVar, threadMessage, null, rmVar2, false, false, fjVar2, null, z10, i10, i11, h, null, Y8, 0L, false, 0L, sendMonoForumPeerId, kjVar, null, false);
+        org.telegram.messenger.az.X(cVar, arrayList, j3, gjVar, threadMessage, null, rmVar2, false, false, gjVar2, null, z10, i10, i11, h, null, Y8, 0L, false, 0L, sendMonoForumPeerId, ljVar, null, false);
         ng ngVar = chatActivityEnterView.P3;
         if (ngVar != null) {
             ngVar.H(null, true, i10, i11, 0L);

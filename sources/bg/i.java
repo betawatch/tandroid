@@ -22,12 +22,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.w7;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class i {
     public static int A;
@@ -91,7 +91,7 @@ public final class i {
         File file3 = new File(file2, a8.p0.s(sb2, i11 != 0 ? i5.c.i(i11, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i7 < org.telegram.messenger.g0.L(60.0f) && i10 < org.telegram.messenger.g0.L(60.0f);
-        if (bz.o() < 2) {
+        if (cz.o() < 2) {
             this.k = false;
             this.q = false;
             return;

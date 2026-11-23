@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class ov0 extends q9 implements org.telegram.messenger.fs {
+public final class ov0 extends q9 implements org.telegram.messenger.gs {
     public final int H;
     public int I;
     public String J;
@@ -16,9 +16,9 @@ public final class ov0 extends q9 implements org.telegram.messenger.fs {
         this.H = i7;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.y0) {
+        if (i7 == org.telegram.messenger.ls.y0) {
             if (this.J.equals((String) objArr[0])) {
                 v();
             }
@@ -29,13 +29,13 @@ public final class ov0 extends q9 implements org.telegram.messenger.fs {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         v();
-        org.telegram.messenger.ks.f(this.H).c(this, org.telegram.messenger.ks.y0);
+        org.telegram.messenger.ls.f(this.H).c(this, org.telegram.messenger.ls.y0);
     }
 
     @Override // org.telegram.ui.Components.q9, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.f(this.H).n(this, org.telegram.messenger.ks.y0);
+        org.telegram.messenger.ls.f(this.H).n(this, org.telegram.messenger.ls.y0);
     }
 
     public void setStickerNum(int i7) {
@@ -58,11 +58,11 @@ public final class ov0 extends q9 implements org.telegram.messenger.fs {
     */
     public final void v() {
         TLRPC.Document document;
-        org.telegram.messenger.lz d;
+        org.telegram.messenger.mz d;
         int i7 = this.H;
-        TLRPC.TL_messages_stickerSet r02 = org.telegram.messenger.ri.d0(i7).r0(this.J);
+        TLRPC.TL_messages_stickerSet r02 = org.telegram.messenger.si.d0(i7).r0(this.J);
         if (r02 == null) {
-            r02 = org.telegram.messenger.ri.d0(i7).p0(this.J);
+            r02 = org.telegram.messenger.si.d0(i7).p0(this.J);
         }
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = r02;
         if (tL_messages_stickerSet != null) {
@@ -76,11 +76,11 @@ public final class ov0 extends q9 implements org.telegram.messenger.fs {
                     d.f = 512;
                 }
                 if (document == null) {
-                    k(org.telegram.messenger.fc.b(document), "130_130", "tgs", d, tL_messages_stickerSet);
+                    k(org.telegram.messenger.gc.b(document), "130_130", "tgs", d, tL_messages_stickerSet);
                     return;
                 } else {
                     this.a.f();
-                    org.telegram.messenger.ri.d0(i7).f1(this.J, false, tL_messages_stickerSet == null);
+                    org.telegram.messenger.si.d0(i7).f1(this.J, false, tL_messages_stickerSet == null);
                     return;
                 }
             }

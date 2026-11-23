@@ -6,15 +6,15 @@ import android.graphics.Rect;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m8 extends h8 {
     public final ch.p0 J;
@@ -45,15 +45,15 @@ public final class m8 extends h8 {
         g0Var.e(d);
         nxVar.getClass();
         String str = d.f;
-        str = str == null ? fj.U(org.telegram.ui.Components.p5.e(nxVar.b, d.g)) : str;
+        str = str == null ? gj.U(org.telegram.ui.Components.p5.e(nxVar.b, d.g)) : str;
         if (str != null && (arrayList = (ArrayList) nxVar.e.get(str)) != null && !arrayList.isEmpty()) {
             int min = Math.min(1, arrayList.size());
             for (int i7 = 0; i7 < min; i7++) {
                 nxVar.l((TLRPC.Document) arrayList.get(i7));
             }
         }
-        if (this.J.f != null && (tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(j10.t0).r.get(this.J.f)) != null) {
-            this.M.q0(fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
+        if (this.J.f != null && (tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(k10.t0).r.get(this.J.f)) != null) {
+            this.M.q0(gc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
         }
         org.telegram.ui.Components.n6 n6Var = this.O;
         n6Var.b = 17;

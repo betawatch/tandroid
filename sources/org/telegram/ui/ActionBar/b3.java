@@ -6,16 +6,16 @@ import android.graphics.Paint;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.ui.bn;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b3 implements x10 {
+public final /* synthetic */ class b3 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -26,7 +26,7 @@ public final /* synthetic */ class b3 implements x10 {
         this.b = obj2;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7;
         bn bnVar;
@@ -138,7 +138,7 @@ public final /* synthetic */ class b3 implements x10 {
                             }
                             s2Var.C(e3Var.z, false, e3Var.A);
                             ki.e4 e4Var = e3Var.a;
-                            s2Var.I = e4Var != null ? e4Var.a : j10.t0;
+                            s2Var.I = e4Var != null ? e4Var.a : k10.t0;
                             org.telegram.ui.web.s0 s0Var = e3Var.b;
                             if (s0Var != null) {
                                 s0Var.onResume();
@@ -161,7 +161,7 @@ public final /* synthetic */ class b3 implements x10 {
                                 s2Var.X0 = true;
                                 s2Var.m();
                                 org.telegram.ui.b3 b3Var = s2Var.Z0;
-                                String q10 = s2Var.q() ? s2Var.x0.e : o10.q(mp.u1(s2Var.I).c2(Long.valueOf(s2Var.J)));
+                                String q10 = s2Var.q() ? s2Var.x0.e : p10.q(np.u1(s2Var.I).c2(Long.valueOf(s2Var.J)));
                                 String str2 = e3Var.H;
                                 s2Var.Y0 = str2;
                                 b3Var.a(q10, str2);

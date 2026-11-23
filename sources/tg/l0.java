@@ -4,10 +4,10 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
 import c8.ma;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.aj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l0 extends j {
     public final j0 r0;
@@ -60,8 +60,8 @@ public final class l0 extends j {
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float y10 = n10.y(L, 2.0f, getPositionX(), scaleX);
-        return new aj0(y10, n10.y(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + y10) - y10, L2 * scaleX);
+        float y10 = o10.y(L, 2.0f, getPositionX(), scaleX);
+        return new aj0(y10, o10.y(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + y10) - y10, L2 * scaleX);
     }
 
     @Override // tg.j

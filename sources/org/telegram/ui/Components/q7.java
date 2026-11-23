@@ -3,17 +3,17 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q7 extends zc {
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.messenger.fs c;
+    public final /* synthetic */ org.telegram.messenger.gs c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q7(org.telegram.messenger.fs fsVar, Context context, int i7) {
+    public /* synthetic */ q7(org.telegram.messenger.gs gsVar, Context context, int i7) {
         super(context);
         this.b = i7;
-        this.c = fsVar;
+        this.c = gsVar;
     }
 
     @Override // org.telegram.ui.Components.zc

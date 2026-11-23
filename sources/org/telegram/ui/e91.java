@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e91 implements View.OnClickListener {
     public final /* synthetic */ y91 a;
@@ -19,7 +19,7 @@ public final class e91 implements View.OnClickListener {
             return;
         }
         y91Var.getMessagesController().m(y91Var.a, y91Var.getUserConfig().f(), 0, null, y91Var, false, new y81(y91Var, 2), new z81(y91Var), null);
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.L4, new Object[0]);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.L4, new Object[0]);
         y91Var.S0(false);
     }
 }

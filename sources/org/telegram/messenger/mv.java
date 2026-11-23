@@ -1,60 +1,23 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import android.util.LongSparseArray;
-
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class mv extends lv {
-    public int d;
+public abstract class mv {
+    public boolean a;
+    public boolean b;
+    public long c = 104857600;
 
-    public static void c(mv mvVar, String str, SharedPreferences sharedPreferences) {
-        mvVar.getClass();
-        sharedPreferences.edit().putBoolean(str.concat("_save_gallery_photo"), mvVar.a).putBoolean(str.concat("_save_gallery_video"), mvVar.b).putLong(str.concat("_save_gallery_limitVideo"), mvVar.c).apply();
+    public final boolean a() {
+        return this.a || this.b;
     }
 
-    public static mv d(String str, SharedPreferences sharedPreferences) {
-        mv mvVar = new mv();
-        mvVar.a = sharedPreferences.getBoolean(str.concat("_save_gallery_photo"), false);
-        mvVar.b = sharedPreferences.getBoolean(str.concat("_save_gallery_video"), false);
-        mvVar.c = sharedPreferences.getLong(str.concat("_save_gallery_limitVideo"), 104857600L);
-        return mvVar;
-    }
-
-    @Override // org.telegram.messenger.lv
-    public final void b() {
-        super.b();
-        c6.o(this.d);
-    }
-
-    public final CharSequence e(int i7) {
-        StringBuilder sb2 = new StringBuilder();
+    public void b() {
         if (a()) {
-            if (this.a) {
-                sb2.append(gd.N0(2131745724, null));
-            }
-            if (this.b) {
-                if (sb2.length() != 0) {
-                    sb2.append(", ");
-                }
-                sb2.append(gd.N0(2131745717, null));
-                long j3 = this.c;
-                if (j3 > 0 && j3 < 4194304000L) {
-                    sb2.append(" (");
-                    sb2.append(g0.i0(this.c, true, false));
-                    sb2.append(")");
-                }
-            }
+            this.b = false;
+            this.a = false;
         } else {
-            sb2.append(gd.N0(2131745725, null));
+            this.a = true;
+            this.b = true;
         }
-        LongSparseArray m10 = j10.i(i7).m(this.d);
-        if (m10.size() != 0) {
-            if (sb2.length() != 0) {
-                sb2.append(", ");
-            }
-            sb2.append(gd.G(m10.size(), "Exception", Integer.valueOf(m10.size())));
-        }
-        return sb2;
     }
 }

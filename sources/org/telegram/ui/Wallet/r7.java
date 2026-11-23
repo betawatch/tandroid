@@ -1,16 +1,16 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x10 b;
+    public final /* synthetic */ y10 b;
 
-    public /* synthetic */ r7(x10 x10Var, int i7) {
+    public /* synthetic */ r7(y10 y10Var, int i7) {
         this.a = i7;
-        this.b = x10Var;
+        this.b = y10Var;
     }
 
     @Override // java.lang.Runnable

@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b80 implements Runnable {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class b80 implements Runnable {
                     if (!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? false : org.telegram.messenger.h1.e().j) {
                         return;
                     }
-                    if (z14 || d1Var == null || (org.telegram.messenger.bz.U(d1Var2.b, d1Var.b) && d1Var2.a > d1Var.a)) {
+                    if (z14 || d1Var == null || (org.telegram.messenger.cz.U(d1Var2.b, d1Var.b) && d1Var2.a > d1Var.a)) {
                         ((ApplicationLoaderImpl) org.telegram.messenger.t0.a).getClass();
                         try {
                             new org.telegram.ui.Components.n51(launchActivity2, d1Var2).show();
@@ -122,7 +122,7 @@ public final /* synthetic */ class b80 implements Runnable {
                 hk0 hk0Var = vj0Var.e;
                 if (z15) {
                     i10 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
-                    org.telegram.messenger.j10.i(i10).u();
+                    org.telegram.messenger.k10.i(i10).u();
                     hk0Var.O0 = 0;
                     hk0Var.W1();
                     ViewGroup[] viewGroupArr = hk0Var.a0;
@@ -139,21 +139,21 @@ public final /* synthetic */ class b80 implements Runnable {
                     return;
                 }
                 if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                    hk0Var.Q1(org.telegram.messenger.gd.N0(R.string.AppName, null), tL_error.text);
+                    hk0Var.Q1(org.telegram.messenger.hd.N0(R.string.AppName, null), tL_error.text);
                     return;
                 }
                 int intValue = Utilities.z(tL_error.text).intValue();
                 if (intValue < 60) {
                     c10 = 0;
-                    G = org.telegram.messenger.gd.G(intValue, "Seconds", new Object[0]);
+                    G = org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]);
                 } else {
                     c10 = 0;
-                    G = org.telegram.messenger.gd.G(intValue / 60, "Minutes", new Object[0]);
+                    G = org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0]);
                 }
-                String N0 = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                String N0 = org.telegram.messenger.hd.N0(R.string.AppName, null);
                 Object[] objArr = new Object[1];
                 objArr[c10] = G;
-                hk0Var.Q1(N0, org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, objArr));
+                hk0Var.Q1(N0, org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750669, objArr));
                 return;
             case 4:
                 cn0.Z((cn0) this.b, (TLObject) this.d, this.c);
@@ -350,7 +350,7 @@ public final /* synthetic */ class b80 implements Runnable {
                 boolean z20 = this.c;
                 org.telegram.ui.Components.fm0 fm0Var = (org.telegram.ui.Components.fm0) this.d;
                 if (z20) {
-                    org.telegram.messenger.mp.u1(a30Var.a).p0(true);
+                    org.telegram.messenger.np.u1(a30Var.a).p0(true);
                     fm0Var.run();
                 } else {
                     org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
@@ -502,7 +502,7 @@ public final /* synthetic */ class b80 implements Runnable {
                 org.telegram.ui.web.k kVar = (org.telegram.ui.web.k) this.b;
                 String str5 = (String) this.d;
                 boolean z24 = this.c;
-                bi.g6 g6Var = kVar.x;
+                bi.f6 f6Var = kVar.x;
                 ArrayList arrayList4 = kVar.y;
                 arrayList4.clear();
                 org.telegram.ui.web.e1.a().getClass();
@@ -535,9 +535,9 @@ public final /* synthetic */ class b80 implements Runnable {
                     }
                 }
                 arrayList4.addAll(arrayList5);
-                g6Var.g3.O(true);
+                f6Var.g3.O(true);
                 if (z24 != (!arrayList4.isEmpty())) {
-                    g6Var.f3.h1(0, 0);
+                    f6Var.f3.h1(0, 0);
                     return;
                 }
                 return;

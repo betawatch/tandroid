@@ -18,13 +18,13 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.r5;
 import org.telegram.messenger.s2;
 import org.telegram.ui.Components.ca;
 import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s0 extends r5 {
     public final /* synthetic */ u0 E;
@@ -126,7 +126,7 @@ public final class s0 extends r5 {
         boolean z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (s2.a) {
-                n10.v(this.b, new StringBuilder("eglGetDisplay failed "));
+                o10.v(this.b, new StringBuilder("eglGetDisplay failed "));
             }
             finish();
         } else {
@@ -154,7 +154,7 @@ public final class s0 extends r5 {
                         this.d = eglCreateContext;
                         if (eglCreateContext == null) {
                             if (s2.a) {
-                                n10.v(this.b, new StringBuilder("eglCreateContext failed "));
+                                o10.v(this.b, new StringBuilder("eglCreateContext failed "));
                             }
                             finish();
                         } else {
@@ -167,7 +167,7 @@ public final class s0 extends r5 {
                                 this.e = eglCreateWindowSurface;
                                 if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                                     if (s2.a) {
-                                        n10.v(this.b, new StringBuilder("createWindowSurface failed "));
+                                        o10.v(this.b, new StringBuilder("createWindowSurface failed "));
                                     }
                                     finish();
                                 } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -265,7 +265,7 @@ public final class s0 extends r5 {
                                     z10 = true;
                                 } else {
                                     if (s2.a) {
-                                        n10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                        o10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                                     }
                                     finish();
                                 }
@@ -282,13 +282,13 @@ public final class s0 extends r5 {
                     z10 = false;
                 } else {
                     if (s2.a) {
-                        n10.v(this.b, new StringBuilder("eglChooseConfig failed "));
+                        o10.v(this.b, new StringBuilder("eglChooseConfig failed "));
                     }
                     finish();
                 }
             } else {
                 if (s2.a) {
-                    n10.v(this.b, new StringBuilder("eglInitialize failed "));
+                    o10.v(this.b, new StringBuilder("eglInitialize failed "));
                 }
                 finish();
             }

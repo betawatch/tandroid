@@ -3,25 +3,25 @@ package di;
 import android.content.Context;
 import android.text.TextUtils;
 import j$.util.Objects;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y1 implements x10 {
+public final /* synthetic */ class y1 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f6 b;
-    public final /* synthetic */ bi.e5[] c;
+    public final /* synthetic */ bi.d5[] c;
     public final /* synthetic */ TL_stars.TL_starGiftUnique d;
 
-    public /* synthetic */ y1(f6 f6Var, bi.e5[] e5VarArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i7) {
+    public /* synthetic */ y1(f6 f6Var, bi.d5[] d5VarArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i7) {
         this.a = i7;
         this.b = f6Var;
-        this.c = e5VarArr;
+        this.c = d5VarArr;
         this.d = tL_starGiftUnique;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         Long l10 = (Long) obj;
         switch (this.a) {
@@ -42,7 +42,7 @@ public final /* synthetic */ class y1 implements x10 {
                     TL_stars.updateStarGiftOnchainPrice updatestargiftonchainprice = new TL_stars.updateStarGiftOnchainPrice();
                     updatestargiftonchainprice.slug = tL_starGiftUnique.slug;
                     updatestargiftonchainprice.amount = longValue;
-                    bi.y4.o(context, i7, updatestargiftonchainprice, tL_starGiftUnique.onchain_sale ? Boolean.valueOf(tL_starGiftUnique.fixed_sale) : null, h6Var, h0Var, k10, new bi.n4(longValue, tL_starGiftUnique, context, i7, h6Var, bi.y4.h(tL_starGiftUnique), k1Var));
+                    bi.x4.o(context, i7, updatestargiftonchainprice, tL_starGiftUnique.onchain_sale ? Boolean.valueOf(tL_starGiftUnique.fixed_sale) : null, h6Var, h0Var, k10, new bi.n4(longValue, tL_starGiftUnique, context, i7, h6Var, bi.x4.h(tL_starGiftUnique), k1Var));
                     break;
                 }
                 break;
@@ -63,7 +63,7 @@ public final /* synthetic */ class y1 implements x10 {
                     TL_stars.updateStarGiftOnchainPrice updatestargiftonchainprice2 = new TL_stars.updateStarGiftOnchainPrice();
                     updatestargiftonchainprice2.slug = tL_starGiftUnique2.slug;
                     updatestargiftonchainprice2.amount = longValue2;
-                    bi.y4.o(context2, i10, updatestargiftonchainprice2, Boolean.TRUE, h6Var2, h0Var2, k11, new bi.n4(tL_starGiftUnique2, longValue2, context2, i10, h6Var2, bi.y4.h(tL_starGiftUnique2), k1Var2));
+                    bi.x4.o(context2, i10, updatestargiftonchainprice2, Boolean.TRUE, h6Var2, h0Var2, k11, new bi.n4(tL_starGiftUnique2, longValue2, context2, i10, h6Var2, bi.x4.h(tL_starGiftUnique2), k1Var2));
                     break;
                 }
                 break;

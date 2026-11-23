@@ -7,9 +7,9 @@ import android.widget.PopupWindow;
 import c8.ma;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.cb;
@@ -23,7 +23,7 @@ import org.telegram.ui.l41;
 import org.telegram.ui.m41;
 import org.telegram.ui.ss;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class z1 implements View.OnLongClickListener {
                     org.telegram.messenger.g0.r(r1Var);
                     z3Var.j3 = null;
                 }
-                bz.H(true);
+                cz.H(true);
                 hi.l3 l3Var = z3Var.r0;
                 if (l3Var != null) {
                     l3Var.f(true);
@@ -91,7 +91,7 @@ public final /* synthetic */ class z1 implements View.OnLongClickListener {
                 org.telegram.ui.ActionBar.q0 q0Var = f8Var.P1;
                 q0Var.setDimMenu(0.15f);
                 q0Var.V(u0Var, null);
-                mp.h1().edit().putInt("speedhint", -15).apply();
+                np.h1().edit().putInt("speedhint", -15).apply();
                 break;
             case 3:
                 a70 a70Var = (a70) obj2;
@@ -104,9 +104,9 @@ public final /* synthetic */ class z1 implements View.OnLongClickListener {
             case 4:
                 PhotoViewer photoViewer = (PhotoViewer) obj2;
                 b bVar = (b) obj;
-                fj fjVar = photoViewer.T4;
-                if (fjVar != null) {
-                    if (org.telegram.messenger.g0.g(fjVar.T0)) {
+                gj gjVar = photoViewer.T4;
+                if (gjVar != null) {
+                    if (org.telegram.messenger.g0.g(gjVar.T0)) {
                         new lc(cb.a(photoViewer.F), bVar).k(false).j();
                     }
                     break;

@@ -12,12 +12,12 @@ import c8.ma;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements b6 {
     public final h6 a;
@@ -36,7 +36,7 @@ public final class c extends FrameLayout implements b6 {
         addView(imageView, ma.d(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
-        textView.setText(gd.N0(2131751154, null));
+        textView.setText(hd.N0(2131751154, null));
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(g0.o());
         textView.setSingleLine(true);

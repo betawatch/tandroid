@@ -12,11 +12,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.c8;
-import bi.d9;
-import bi.g6;
+import bi.b8;
+import bi.c9;
+import bi.f6;
+import bi.h8;
 import bi.i4;
-import bi.i8;
 import bi.l3;
 import di.k4;
 import di.y8;
@@ -40,13 +40,13 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.f20;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.q5;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
@@ -55,9 +55,9 @@ import org.telegram.ui.Components.we0;
 import org.telegram.ui.Components.y51;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h0 implements x10 {
+public final /* synthetic */ class h0 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -66,7 +66,7 @@ public final /* synthetic */ class h0 implements x10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         String str;
         String str2;
@@ -107,16 +107,16 @@ public final /* synthetic */ class h0 implements x10 {
                 ((hi.e) this.b).setLoading(((Boolean) obj).booleanValue());
                 break;
             case 4:
-                i8 i8Var = (i8) this.b;
+                h8 h8Var = (h8) this.b;
                 ((Boolean) obj).getClass();
-                c8 c8Var = i8Var.d;
-                if (c8Var != null) {
-                    c8Var.run();
+                b8 b8Var = h8Var.d;
+                if (b8Var != null) {
+                    b8Var.run();
                     break;
                 }
                 break;
             case 5:
-                wg.h.j(((d9) this.b).getContext(), (TLRPC.TL_error) obj);
+                wg.h.j(((c9) this.b).getContext(), (TLRPC.TL_error) obj);
                 break;
             case 6:
                 ci.s sVar = (ci.s) this.b;
@@ -210,13 +210,13 @@ public final /* synthetic */ class h0 implements x10 {
                 if (starGift != null) {
                     if (!(starGift instanceof TL_stars.TL_starGiftUnique)) {
                         int i12 = starGift.availability_remains;
-                        textView.setText(i12 <= 0 ? gd.H(',', "Gift2Availability2ValueNone", starGift.availability_total) : gd.K("Gift2Availability4Value", i12, ',', gd.E(starGift.availability_total, ',')));
+                        textView.setText(i12 <= 0 ? hd.H(',', "Gift2Availability2ValueNone", starGift.availability_total) : hd.K("Gift2Availability4Value", i12, ',', hd.E(starGift.availability_total, ',')));
                         break;
                     } else {
                         if (starGift.availability_remains <= 0) {
-                            str = gd.H(',', "Gift2QuantityIssuedNone", starGift.availability_total);
+                            str = hd.H(',', "Gift2QuantityIssuedNone", starGift.availability_total);
                         } else {
-                            str = gd.H(',', "Gift2QuantityIssued1", starGift.availability_issued) + gd.H(',', "Gift2QuantityIssued2", starGift.availability_total);
+                            str = hd.H(',', "Gift2QuantityIssued1", starGift.availability_issued) + hd.H(',', "Gift2QuantityIssued2", starGift.availability_total);
                         }
                         textView.setText(str);
                         break;
@@ -241,7 +241,7 @@ public final /* synthetic */ class h0 implements x10 {
                     }
                     c1Var.c();
                     c1Var.k();
-                    ks.f(c1Var.e).k(ks.G2, Long.valueOf(c1Var.f.id));
+                    ls.f(c1Var.e).k(ls.G2, Long.valueOf(c1Var.f.id));
                     break;
                 }
                 break;
@@ -319,10 +319,10 @@ public final /* synthetic */ class h0 implements x10 {
                 break;
             case 23:
                 hi.s0 s0Var = (hi.s0) this.b;
-                e20 e20Var = (e20) obj;
-                fj fjVar = s0Var.c;
-                if (fjVar != null) {
-                    fjVar.r0 = e20Var;
+                f20 f20Var = (f20) obj;
+                gj gjVar = s0Var.c;
+                if (gjVar != null) {
+                    gjVar.r0 = f20Var;
                     MediaController.B().h0(s0Var.c, false, true, false);
                     break;
                 }
@@ -338,11 +338,11 @@ public final /* synthetic */ class h0 implements x10 {
             case 26:
                 w3 w3Var = (w3) this.b;
                 View view2 = (View) obj;
-                g6 g6Var = w3Var.b;
+                f6 f6Var = w3Var.b;
                 if (view2 instanceof v3) {
-                    g6Var.getClass();
+                    f6Var.getClass();
                     int R = RecyclerView.R(view2);
-                    o41 G = g6Var.g3.G(R);
+                    o41 G = f6Var.g3.G(R);
                     if (G != null) {
                         v3 v3Var = (v3) view2;
                         v3Var.setPosition(w3Var.b(R));
@@ -358,10 +358,10 @@ public final /* synthetic */ class h0 implements x10 {
                 }
                 break;
             case 27:
-                g6 g6Var2 = (g6) this.b;
+                f6 f6Var2 = (f6) this.b;
                 View view3 = (View) obj;
                 if (view3 instanceof v3) {
-                    l9 l9Var = (l9) g6Var2.o3;
+                    l9 l9Var = (l9) f6Var2.o3;
                     l9Var.b.getClass();
                     ((v3) view3).setPosition(l9Var.b(RecyclerView.R(view3)));
                     view3.setPressed(false);
@@ -371,7 +371,7 @@ public final /* synthetic */ class h0 implements x10 {
             case 28:
                 u9 u9Var = (u9) ((k5) this.b);
                 sa saVar = u9Var.k2;
-                saVar.Y0.q((fj) obj);
+                saVar.Y0.q((gj) obj);
                 c7 c7Var = saVar.L1;
                 if (c7Var != null && saVar.P1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(c7Var.y);

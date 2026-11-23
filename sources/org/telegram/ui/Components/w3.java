@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w3 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class w3 extends LinearLayout {
             case 0:
                 int i7 = org.telegram.ui.ActionBar.m6.G6;
                 ((xy0) this.c).c((getWidth() - ((xy0) this.c).c) / 2.0f, getHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.m6.x0(null, i7, false), canvas);
-                if (!org.telegram.messenger.gd.c0) {
+                if (!org.telegram.messenger.hd.c0) {
                     boolean z10 = ((v3) this.e).getValue() % 24 < 12;
                     if (this.b != z10 || ((xy0) this.d) == null) {
                         this.b = z10;

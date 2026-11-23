@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.widget.Button;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pg0 extends Button {
     public final RectF a;
@@ -56,7 +56,7 @@ public final class pg0 extends Button {
             float L3 = org.telegram.messenger.g0.L(11.0f);
             RectF rectF = this.a;
             rectF.set(f10, L, L2, L3);
-            int min = Math.min(org.telegram.messenger.ks.e4, (int) (this.d * 255.0f));
+            int min = Math.min(org.telegram.messenger.ls.e4, (int) (this.d * 255.0f));
             Paint paint = this.b;
             paint.setAlpha(min);
             canvas.drawArc(rectF, this.f, 220.0f, false, paint);

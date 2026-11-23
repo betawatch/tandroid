@@ -3,20 +3,20 @@ package org.telegram.ui.Components;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kk implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.fj b;
+    public final /* synthetic */ org.telegram.messenger.gj b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ ViewGroup d;
     public final /* synthetic */ dk0 e;
 
-    public /* synthetic */ kk(dk0 dk0Var, ViewGroup viewGroup, org.telegram.messenger.fj fjVar, boolean z10, int i7) {
+    public /* synthetic */ kk(dk0 dk0Var, ViewGroup viewGroup, org.telegram.messenger.gj gjVar, boolean z10, int i7) {
         this.a = i7;
         this.e = dk0Var;
         this.d = viewGroup;
-        this.b = fjVar;
+        this.b = gjVar;
         this.c = z10;
     }
 
@@ -35,9 +35,9 @@ public final class kk implements ViewTreeObserver.OnPreDrawListener {
                     i7Var.b(false, z10);
                     break;
                 } else {
-                    org.telegram.messenger.fj fjVar = this.b;
-                    int e12 = fjVar.e1();
-                    vzVar.a = org.telegram.messenger.fj.B0(fjVar.k);
+                    org.telegram.messenger.gj gjVar = this.b;
+                    int e12 = gjVar.e1();
+                    vzVar.a = org.telegram.messenger.gj.B0(gjVar.k);
                     vzVar.b = e12;
                     i7Var.b(mkVar.U.containsKey(vzVar), z10);
                     break;
@@ -53,9 +53,9 @@ public final class kk implements ViewTreeObserver.OnPreDrawListener {
                     break;
                 } else {
                     org.telegram.ui.vz vzVar2 = c00Var.T;
-                    org.telegram.messenger.fj fjVar2 = this.b;
-                    int e13 = fjVar2.e1();
-                    vzVar2.a = org.telegram.messenger.fj.B0(fjVar2.k);
+                    org.telegram.messenger.gj gjVar2 = this.b;
+                    int e13 = gjVar2.e1();
+                    vzVar2.a = org.telegram.messenger.gj.B0(gjVar2.k);
                     vzVar2.b = e13;
                     u2Var.c0(c00Var.p0.r0(c00Var.T), z11);
                     break;
@@ -71,9 +71,9 @@ public final class kk implements ViewTreeObserver.OnPreDrawListener {
                     break;
                 } else {
                     org.telegram.ui.vz vzVar3 = c00Var2.T;
-                    org.telegram.messenger.fj fjVar3 = this.b;
-                    int e14 = fjVar3.e1();
-                    vzVar3.a = org.telegram.messenger.fj.B0(fjVar3.k);
+                    org.telegram.messenger.gj gjVar3 = this.b;
+                    int e14 = gjVar3.e1();
+                    vzVar3.a = org.telegram.messenger.gj.B0(gjVar3.k);
                     vzVar3.b = e14;
                     i7Var2.b(c00Var2.p0.r0(c00Var2.T), z12);
                     break;
@@ -89,9 +89,9 @@ public final class kk implements ViewTreeObserver.OnPreDrawListener {
                     break;
                 } else {
                     org.telegram.ui.vz vzVar4 = c00Var3.T;
-                    org.telegram.messenger.fj fjVar4 = this.b;
-                    int e15 = fjVar4.e1();
-                    vzVar4.a = org.telegram.messenger.fj.B0(fjVar4.k);
+                    org.telegram.messenger.gj gjVar4 = this.b;
+                    int e15 = gjVar4.e1();
+                    vzVar4.a = org.telegram.messenger.gj.B0(gjVar4.k);
                     vzVar4.b = e15;
                     h7Var.e(c00Var3.p0.r0(c00Var3.T), z13);
                     break;
@@ -107,9 +107,9 @@ public final class kk implements ViewTreeObserver.OnPreDrawListener {
                     break;
                 } else {
                     org.telegram.ui.vz vzVar5 = c00Var4.T;
-                    org.telegram.messenger.fj fjVar5 = this.b;
-                    int e16 = fjVar5.e1();
-                    vzVar5.a = org.telegram.messenger.fj.B0(fjVar5.k);
+                    org.telegram.messenger.gj gjVar5 = this.b;
+                    int e16 = gjVar5.e1();
+                    vzVar5.a = org.telegram.messenger.gj.B0(gjVar5.k);
                     vzVar5.b = e16;
                     l7Var.f(c00Var4.p0.r0(c00Var4.T), z14);
                     break;

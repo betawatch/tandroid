@@ -7,13 +7,13 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import java.util.ArrayList;
+import org.telegram.messenger.a10;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.z00;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -26,9 +26,9 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.h60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p9 implements x10 {
+public final /* synthetic */ class p9 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -43,7 +43,7 @@ public final /* synthetic */ class p9 implements x10 {
         this.e = obj3;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7 = this.a;
         int i10 = 1;
@@ -59,7 +59,7 @@ public final /* synthetic */ class p9 implements x10 {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ncVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.oc.b(gd.N0(2131744978, null), new bi.x4(this.b, context, h6Var, savedStarGift, 3), h6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.oc.b(hd.N0(2131744976, null), new ai.b1(this.b, context, h6Var, savedStarGift, 4), h6Var, null));
                     ncVar.setText(spannableStringBuilder);
                     break;
                 }
@@ -67,10 +67,10 @@ public final /* synthetic */ class p9 implements x10 {
             case 1:
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj3;
                 bi.w4 w4Var = (bi.w4) obj2;
-                ((ai.x1) obj4).a(Boolean.FALSE);
+                ((ai.y1) obj4).a(Boolean.FALSE);
                 if (((Boolean) obj).booleanValue()) {
-                    if (LaunchActivity.T() != g2Var || j10.t0 != i11) {
-                        org.telegram.ui.Components.gc Q = org.telegram.ui.Components.lc.Y().Q(R.raw.contact_check, 36, gd.N0(2131749334, null));
+                    if (LaunchActivity.T() != g2Var || k10.t0 != i11) {
+                        org.telegram.ui.Components.gc Q = org.telegram.ui.Components.lc.Y().Q(R.raw.contact_check, 36, hd.N0(2131749334, null));
                         Q.j = 5000;
                         Q.j();
                         break;
@@ -79,7 +79,7 @@ public final /* synthetic */ class p9 implements x10 {
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.gc Q2 = org.telegram.ui.Components.lc.Y().Q(R.raw.error, 36, gd.N0(2131749333, null));
+                    org.telegram.ui.Components.gc Q2 = org.telegram.ui.Components.lc.Y().Q(R.raw.error, 36, hd.N0(2131749333, null));
                     Q2.j = 5000;
                     Q2.j();
                     break;
@@ -87,7 +87,7 @@ public final /* synthetic */ class p9 implements x10 {
                 break;
             case 2:
                 DictationAsr.Z((String) obj4, ((String[]) obj3)[((Integer) obj).intValue()]);
-                ((x10) obj2).a(Integer.valueOf(i11));
+                ((y10) obj2).a(Integer.valueOf(i11));
                 break;
             case 3:
                 org.telegram.ui.ActionBar.g2 g2Var2 = (org.telegram.ui.ActionBar.g2) obj4;
@@ -98,12 +98,12 @@ public final /* synthetic */ class p9 implements x10 {
                 int i12 = this.b;
                 if (T) {
                     long j10 = chat.id;
-                    mp.u1(i12).W2(-j10, j3, false, booleanValue, new bi.n(g2Var2, j10, i10));
+                    np.u1(i12).W2(-j10, j3, false, booleanValue, new bi.n(g2Var2, j10, i10));
                     break;
                 } else {
                     org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, g2Var2.getContext(), null);
                     t1Var.r(250L);
-                    mp.u1(i12).T(g2Var2.getParentActivity(), chat.id, g2Var2, new li.f0(t1Var, g2Var2, i12, j3, booleanValue), null);
+                    np.u1(i12).T(g2Var2.getParentActivity(), chat.id, g2Var2, new li.f0(t1Var, g2Var2, i12, j3, booleanValue), null);
                     break;
                 }
             case 4:
@@ -161,14 +161,14 @@ public final /* synthetic */ class p9 implements x10 {
                 if (tL_storyAlbum == null) {
                     org.telegram.ui.Components.lc Y = org.telegram.ui.Components.lc.Y();
                     if (Y != null) {
-                        org.telegram.messenger.f3.n(null, 2131744489, Y, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.f3.n(null, 2131744487, Y, R.raw.story_bomb2, 36);
                         break;
                     }
                 } else {
                     Bundle bundle = new Bundle();
                     if (l10.longValue() > 0) {
                         bundle.putLong("user_id", l10.longValue());
-                        bundle.putBoolean("my_profile", l10.longValue() == j10.i(launchActivity.P).e());
+                        bundle.putBoolean("my_profile", l10.longValue() == k10.i(launchActivity.P).e());
                     } else {
                         bundle.putLong("chat_id", -l10.longValue());
                     }
@@ -179,12 +179,12 @@ public final /* synthetic */ class p9 implements x10 {
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) obj4;
-                z00 z00Var = (z00) obj3;
-                fj fjVar = (fj) obj2;
+                a10 a10Var = (a10) obj3;
+                gj gjVar = (gj) obj2;
                 String str3 = (String) obj;
                 if (i11 == photoViewer.Q4) {
                     photoViewer.o5 = str3;
-                    if (!z00Var.s() || !z00Var.b(fjVar, photoViewer.o5)) {
+                    if (!a10Var.s() || !a10Var.b(gjVar, photoViewer.o5)) {
                         photoViewer.p0.u(19);
                         photoViewer.p0.u(20);
                         break;

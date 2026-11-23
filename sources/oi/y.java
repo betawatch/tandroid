@@ -3,9 +3,9 @@ package oi;
 import android.content.Context;
 import android.widget.FrameLayout;
 import c8.ea;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class y extends FrameLayout implements j4 {
     public a a;
@@ -55,7 +55,7 @@ public abstract class y extends FrameLayout implements j4 {
         int i13 = d + d2;
         int i14 = this.d;
         int i15 = this.f;
-        if (gd.a0) {
+        if (hd.a0) {
             setPadding(i14 + i13, i10, i15 + i12, i11);
         } else {
             setPadding(i14 + i12, i10, i15 + i13, i11);
@@ -68,7 +68,7 @@ public abstract class y extends FrameLayout implements j4 {
         this.f = i11;
         this.h = i12;
         int i13 = this.c;
-        if (gd.a0) {
+        if (hd.a0) {
             setPadding(i7, i10, i11 + i13, i12);
         } else {
             setPadding(i7 + i13, i10, i11, i12);

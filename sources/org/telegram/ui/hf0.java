@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,21 +72,21 @@ public final /* synthetic */ class hf0 implements Runnable {
                     TLRPC.TL_help_passportConfig tL_help_passportConfig = (TLRPC.TL_help_passportConfig) tLObject;
                     String str = tL_help_passportConfig.countries_langs.data;
                     int i12 = tL_help_passportConfig.hash;
-                    org.telegram.messenger.bz.j0 = null;
-                    org.telegram.messenger.bz.i0 = str;
-                    org.telegram.messenger.bz.k0 = i12;
-                    org.telegram.messenger.bz.y();
-                    org.telegram.messenger.bz.n();
+                    org.telegram.messenger.cz.j0 = null;
+                    org.telegram.messenger.cz.i0 = str;
+                    org.telegram.messenger.cz.k0 = i12;
+                    org.telegram.messenger.cz.y();
+                    org.telegram.messenger.cz.n();
                     break;
                 } else {
-                    org.telegram.messenger.bz.n();
+                    org.telegram.messenger.cz.n();
                     break;
                 }
             case 6:
                 ((qj0) this.b).a.finishFragment();
                 break;
             case 7:
-                org.telegram.ui.Components.c5.u0(((vj0) this.b).e.getParentActivity(), org.telegram.messenger.gd.N0(2131743577, null), true);
+                org.telegram.ui.Components.c5.u0(((vj0) this.b).e.getParentActivity(), org.telegram.messenger.hd.N0(2131743575, null), true);
                 break;
             case 8:
                 h6.r rVar = (h6.r) this.b;
@@ -115,9 +115,9 @@ public final /* synthetic */ class hf0 implements Runnable {
                     int i17 = i15 - (i16 * 60);
                     int i18 = dk0Var2.N;
                     if (i18 == 4 || i18 == 3) {
-                        nb0Var.setText(org.telegram.messenger.gd.a0("CallText", null, 2131752589, Integer.valueOf(i16), Integer.valueOf(i17)));
+                        nb0Var.setText(org.telegram.messenger.hd.a0("CallText", null, 2131752589, Integer.valueOf(i16), Integer.valueOf(i17)));
                     } else if (i18 == 2) {
-                        nb0Var.setText(org.telegram.messenger.gd.a0("SmsText", null, 2131745099, Integer.valueOf(i16), Integer.valueOf(i17)));
+                        nb0Var.setText(org.telegram.messenger.hd.a0("SmsText", null, 2131745099, Integer.valueOf(i16), Integer.valueOf(i17)));
                     }
                     if (ek0Var != null) {
                         ek0Var.c = 1.0f - (dk0Var2.E / dk0Var2.Q);
@@ -133,7 +133,7 @@ public final /* synthetic */ class hf0 implements Runnable {
                     int i19 = dk0Var2.M;
                     if (i19 == 3) {
                         org.telegram.messenger.g0.B3(false);
-                        org.telegram.messenger.ks.e().n(dk0Var2, org.telegram.messenger.ks.k4);
+                        org.telegram.messenger.ls.e().n(dk0Var2, org.telegram.messenger.ls.k4);
                         dk0Var2.J = false;
                         dk0Var2.q();
                         dk0Var2.s();
@@ -143,7 +143,7 @@ public final /* synthetic */ class hf0 implements Runnable {
                         if (i20 != 4 && i20 != 2) {
                             if (i20 == 3) {
                                 org.telegram.messenger.g0.C3(false);
-                                org.telegram.messenger.ks.e().n(dk0Var2, org.telegram.messenger.ks.j4);
+                                org.telegram.messenger.ls.e().n(dk0Var2, org.telegram.messenger.ls.j4);
                                 dk0Var2.J = false;
                                 dk0Var2.q();
                                 dk0Var2.s();
@@ -151,9 +151,9 @@ public final /* synthetic */ class hf0 implements Runnable {
                             }
                         } else {
                             if (i20 == 4) {
-                                nb0Var.setText(org.telegram.messenger.gd.N0(2131752585, null));
+                                nb0Var.setText(org.telegram.messenger.hd.N0(2131752585, null));
                             } else {
-                                nb0Var.setText(org.telegram.messenger.gd.N0(2131745381, null));
+                                nb0Var.setText(org.telegram.messenger.hd.N0(2131745381, null));
                             }
                             dk0Var2.o();
                             TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
@@ -280,19 +280,19 @@ public final /* synthetic */ class hf0 implements Runnable {
                     TL_stars.StarGift starGift = (TL_stars.StarGift) fm0Var2.N.get(1);
                     fm0Var2.L = starGift;
                     if (starGift == null) {
-                        bi.y7 y7Var = fm0Var2.K;
-                        if (y7Var != null) {
-                            y7Var.i();
+                        bi.x7 x7Var = fm0Var2.K;
+                        if (x7Var != null) {
+                            x7Var.i();
                             fm0Var2.K = null;
                         }
                     } else {
-                        bi.y7 y7Var2 = fm0Var2.K;
-                        if (y7Var2 == null || y7Var2.b != starGift.id) {
+                        bi.x7 x7Var2 = fm0Var2.K;
+                        if (x7Var2 == null || x7Var2.b != starGift.id) {
                             i11 = ((org.telegram.ui.ActionBar.g2) lm0Var2).currentAccount;
-                            bi.y7 y7Var3 = new bi.y7(i11, fm0Var2.L.id, new r3(dm0Var, 19));
-                            y7Var3.w = true;
-                            fm0Var2.K = y7Var3;
-                            y7Var3.l(false);
+                            bi.x7 x7Var3 = new bi.x7(i11, fm0Var2.L.id, new r3(dm0Var, 19));
+                            x7Var3.w = true;
+                            fm0Var2.K = x7Var3;
+                            x7Var3.l(false);
                         }
                     }
                     fm0.a(fm0Var2);
@@ -406,7 +406,7 @@ public final /* synthetic */ class hf0 implements Runnable {
             default:
                 TLRPC.User user = (TLRPC.User) this.b;
                 RectF rectF2 = ProfileActivity.Z6;
-                org.telegram.messenger.g0.g("@" + org.telegram.messenger.o10.o(user));
+                org.telegram.messenger.g0.g("@" + org.telegram.messenger.p10.o(user));
                 break;
         }
     }

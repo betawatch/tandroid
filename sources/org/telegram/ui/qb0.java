@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qb0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -61,25 +61,25 @@ public final /* synthetic */ class qb0 implements Runnable {
                         if (tL_error != null) {
                             ub0Var.x = false;
                             if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                                de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error.text);
+                                de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error.text);
                                 break;
                             } else {
                                 int intValue = Utilities.z(tL_error.text).intValue();
-                                de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? org.telegram.messenger.gd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.gd.G(intValue / 60, "Minutes", new Object[0])));
+                                de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
                                 break;
                             }
                         }
                     } else {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(de0Var.getParentActivity());
-                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751759, null), new at(22, ub0Var, tLObject));
+                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751759, null), new at(22, ub0Var, tLObject));
                         boolean isEmpty = TextUtils.isEmpty(str2);
                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         if (isEmpty) {
-                            t1Var.U = org.telegram.messenger.gd.N0(2131742535, null);
+                            t1Var.U = org.telegram.messenger.hd.N0(2131742533, null);
                         } else {
-                            t1Var.U = org.telegram.messenger.gd.N0(2131742540, null);
+                            t1Var.U = org.telegram.messenger.hd.N0(2131742538, null);
                         }
-                        t1Var.S = org.telegram.messenger.gd.N0(2131743688, null);
+                        t1Var.S = org.telegram.messenger.hd.N0(2131743686, null);
                         Dialog showDialog = de0Var.showDialog(t1Var);
                         if (showDialog != null) {
                             showDialog.setCanceledOnTouchOutside(false);

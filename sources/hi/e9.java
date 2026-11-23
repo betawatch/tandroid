@@ -9,24 +9,24 @@ import j$.util.Objects;
 import java.util.Collection;
 import java.util.Iterator;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.w10;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.a20;
+import org.telegram.messenger.x10;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.vt0;
 import org.telegram.ui.Components.wt0;
 import org.telegram.ui.Components.xt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e9 implements z10, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6, ih.b, g9.k, org.telegram.ui.ActionBar.q1, w10, vt0, wt0, org.telegram.messenger.i9, h2.o, h2.p, u9.d {
+public final /* synthetic */ class e9 implements a20, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6, ih.b, g9.k, org.telegram.ui.ActionBar.q1, x10, vt0, wt0, org.telegram.messenger.j9, h2.o, h2.p, u9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e9(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.messenger.w10
+    @Override // org.telegram.messenger.x10
     public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
@@ -252,7 +252,7 @@ public final /* synthetic */ class e9 implements z10, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.j9
     public Object m(Object obj) {
         xt0 xt0Var = ki.r3.c0;
         return Boolean.FALSE;

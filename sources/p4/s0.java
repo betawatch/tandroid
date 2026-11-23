@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import kg.x1;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -24,7 +24,7 @@ import tg.c2;
 import tg.d2;
 import tg.f2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -179,21 +179,21 @@ public final /* synthetic */ class s0 implements Runnable {
                 }
                 f2Var2.getClass();
                 TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) tLObject;
-                d2Var.e = ri.c0(tL_messageMediaDocument.document, d2Var.c);
+                d2Var.e = si.c0(tL_messageMediaDocument.document, d2Var.c);
                 d2Var.f = tL_messageMediaDocument;
                 f2Var2.a();
                 return;
             case 6:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
-                x10 x10Var = (x10) this.d;
+                y10 y10Var = (y10) this.d;
                 TLObject tLObject2 = (TLObject) this.b;
-                x10 x10Var2 = (x10) this.e;
+                y10 y10Var2 = (y10) this.e;
                 if (tL_error2 != null) {
-                    x10Var.a(tL_error2);
+                    y10Var.a(tL_error2);
                     return;
                 } else {
                     if (tLObject2 instanceof TLRPC.payments_GiveawayInfo) {
-                        x10Var2.a((TLRPC.payments_GiveawayInfo) tLObject2);
+                        y10Var2.a((TLRPC.payments_GiveawayInfo) tLObject2);
                         return;
                     }
                     return;
@@ -228,7 +228,7 @@ public final /* synthetic */ class s0 implements Runnable {
                         a10 = zi.v0.a(n0Var == zi.n0.b ? 0 : 1);
                     }
                     tVar.b0 = a10;
-                    tVar.Z = ((Math.max(210, Math.min(ks.X4, 300 - ((Math.max(0, a10 - 400) * 3) / 20))) * 45) / 100) * 1000000;
+                    tVar.Z = ((Math.max(210, Math.min(ls.X4, 300 - ((Math.max(0, a10 - 400) * 3) / 20))) * 45) / 100) * 1000000;
                     tVar.a0 = (r3 - r4) * 1000000;
                     tVar.i.b("synthetic camera switch started: from=" + n0Var + ", to=" + n0Var2 + ", expectedWaitMs=" + tVar.b0 + ", targetBlurRadiusPx=" + (((tVar.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((tVar.Z + tVar.a0) / 1000000));
                     tVar.Q = -1L;

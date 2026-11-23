@@ -8,7 +8,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s implements TextWatcher {
     public final /* synthetic */ ImageView a;
@@ -55,12 +55,12 @@ public final class s implements TextWatcher {
             if (i12 >= arrayList.size() || i7 + i12 >= linearLayout.getChildCount()) {
                 break;
             }
-            org.telegram.messenger.s00 s00Var = (org.telegram.messenger.s00) arrayList.get(i12);
-            String str2 = s00Var.d;
+            org.telegram.messenger.t00 t00Var = (org.telegram.messenger.t00) arrayList.get(i12);
+            String str2 = t00Var.d;
             if (str2 == null) {
-                str2 = (s00Var.b + " " + s00Var.c).toLowerCase();
+                str2 = (t00Var.b + " " + t00Var.c).toLowerCase();
             }
-            boolean z10 = isEmpty || str2.contains(lowerCase) || ((str = s00Var.a) != null && str.toLowerCase().startsWith(lowerCase));
+            boolean z10 = isEmpty || str2.contains(lowerCase) || ((str = t00Var.a) != null && str.toLowerCase().startsWith(lowerCase));
             linearLayout.getChildAt(i7 + i12).setVisibility(z10 ? 0 : 8);
             if (z10) {
                 i13++;

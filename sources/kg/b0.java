@@ -5,10 +5,10 @@ import android.text.TextUtils;
 import android.view.View;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.q2;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final Context a;
@@ -83,7 +83,7 @@ public final class b0 {
             if (!arrayList2.isEmpty()) {
                 if (TextUtils.isEmpty(str2)) {
                     StringBuilder m10 = e2.m(str2);
-                    m10.append(gd.H(',', "Chats", arrayList2.size()));
+                    m10.append(hd.H(',', "Chats", arrayList2.size()));
                     str2 = m10.toString();
                 } else {
                     StringBuilder n10 = p5.c.n(str2, " + ");
@@ -92,9 +92,9 @@ public final class b0 {
                 }
             }
             if (TextUtils.isEmpty(str2)) {
-                str2 = gd.N0(2131752765, null);
+                str2 = hd.N0(2131752765, null);
             }
-            o41 f10 = o41.f(gd.N0(2131752766, null), str2, 101);
+            o41 f10 = o41.f(hd.N0(2131752766, null), str2, 101);
             f10.g = z10;
             arrayList.add(f10);
         }
@@ -127,7 +127,7 @@ public final class b0 {
             if (!arrayList3.isEmpty()) {
                 if (TextUtils.isEmpty(str)) {
                     StringBuilder m11 = e2.m(str);
-                    m11.append(gd.H(',', "Chats", arrayList3.size()));
+                    m11.append(hd.H(',', "Chats", arrayList3.size()));
                     str = m11.toString();
                 } else {
                     StringBuilder n11 = p5.c.n(str, " + ");
@@ -136,9 +136,9 @@ public final class b0 {
                 }
             }
             if (TextUtils.isEmpty(str)) {
-                str = gd.N0(2131752767, null);
+                str = hd.N0(2131752767, null);
             }
-            o41 f11 = o41.f(gd.N0(2131752768, null), str, ks.o1);
+            o41 f11 = o41.f(hd.N0(2131752768, null), str, ls.o1);
             f11.g = z10;
             arrayList.add(f11);
         }
@@ -158,7 +158,7 @@ public final class b0 {
         ArrayList arrayList = this.k;
         ArrayList arrayList2 = z10 ? arrayList : this.j;
         if (!arrayList2.isEmpty()) {
-            mp u12 = mp.u1(j10.t0);
+            np u12 = np.u1(k10.t0);
             tL_inputBusinessBotRecipients.flags |= 16;
             for (int i7 = 0; i7 < arrayList2.size(); i7++) {
                 Long l10 = (Long) arrayList2.get(i7);
@@ -167,7 +167,7 @@ public final class b0 {
             }
         }
         if (!this.h) {
-            mp u13 = mp.u1(j10.t0);
+            np u13 = np.u1(k10.t0);
             tL_inputBusinessBotRecipients.flags |= 64;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 Long l11 = (Long) arrayList.get(i10);
@@ -191,7 +191,7 @@ public final class b0 {
         ArrayList arrayList = this.k;
         ArrayList arrayList2 = z10 ? arrayList : this.j;
         if (!arrayList2.isEmpty()) {
-            mp u12 = mp.u1(j10.t0);
+            np u12 = np.u1(k10.t0);
             tL_businessBotRecipients.flags |= 16;
             for (int i7 = 0; i7 < arrayList2.size(); i7++) {
                 Long l10 = (Long) arrayList2.get(i7);
@@ -201,7 +201,7 @@ public final class b0 {
             }
         }
         if (!this.h) {
-            mp u13 = mp.u1(j10.t0);
+            np u13 = np.u1(k10.t0);
             tL_businessBotRecipients.flags |= 64;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 Long l11 = (Long) arrayList.get(i10);
@@ -229,7 +229,7 @@ public final class b0 {
         tL_inputBusinessRecipients.exclude_selected = z10;
         ArrayList arrayList = z10 ? this.k : this.j;
         if (!arrayList.isEmpty()) {
-            mp u12 = mp.u1(j10.t0);
+            np u12 = np.u1(k10.t0);
             tL_inputBusinessRecipients.flags |= 16;
             for (int i7 = 0; i7 < arrayList.size(); i7++) {
                 Long l10 = (Long) arrayList.get(i7);
@@ -252,7 +252,7 @@ public final class b0 {
         tL_businessRecipients.exclude_selected = z10;
         ArrayList arrayList = z10 ? this.k : this.j;
         if (!arrayList.isEmpty()) {
-            mp u12 = mp.u1(j10.t0);
+            np u12 = np.u1(k10.t0);
             tL_businessRecipients.flags |= 16;
             for (int i7 = 0; i7 < arrayList.size(); i7++) {
                 Long l10 = (Long) arrayList.get(i7);
@@ -338,14 +338,14 @@ public final class b0 {
             return false;
         }
         boolean z13 = o41Var.x;
-        String D1 = mp.u1(this.b).D1(o41Var.y, false);
+        String D1 = np.u1(this.b).D1(o41Var.y, false);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.a, this.c);
-        String N0 = gd.N0(!z13 ? 2131752674 : 2131752672, null);
+        String N0 = hd.N0(!z13 ? 2131752674 : 2131752672, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = gd.a0(null, null, !z13 ? 2131752675 : 2131752673, D1);
-        alertDialog$Builder.k(gd.N0(2131746125, null), new ab.j(this, z13, o41Var, i10));
-        alertDialog$Builder.h(gd.N0(2131752577, null), null);
+        t1Var.U = hd.a0(null, null, !z13 ? 2131752675 : 2131752673, D1);
+        alertDialog$Builder.k(hd.N0(2131746125, null), new ab.j(this, z13, o41Var, i10));
+        alertDialog$Builder.h(hd.N0(2131752577, null), null);
         if (g2Var != null) {
             g2Var.showDialog(t1Var);
             return true;

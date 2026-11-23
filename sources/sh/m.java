@@ -1,12 +1,12 @@
 package sh;
 
 import java.util.ArrayList;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m {
     public final int a;
@@ -14,19 +14,19 @@ public final class m {
     public final int c;
     public final byte[] d;
     public final z0 e;
-    public final x10 f;
+    public final y10 f;
     public String g;
     public boolean h;
     public boolean i;
     public final ArrayList j = new ArrayList();
 
-    public m(int i7, TLRPC.InputPeer inputPeer, int i10, byte[] bArr, z0 z0Var, x10 x10Var) {
+    public m(int i7, TLRPC.InputPeer inputPeer, int i10, byte[] bArr, z0 z0Var, y10 y10Var) {
         this.a = i7;
         this.b = inputPeer;
         this.c = i10;
         this.d = bArr;
         this.e = z0Var;
-        this.f = x10Var;
+        this.f = y10Var;
     }
 
     public final void a() {

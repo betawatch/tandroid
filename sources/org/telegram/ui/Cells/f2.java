@@ -3,11 +3,11 @@ package org.telegram.ui.Cells;
 import android.text.TextUtils;
 import java.io.File;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f2 implements Runnable {
     public final /* synthetic */ boolean a;
@@ -45,7 +45,7 @@ public final class f2 implements Runnable {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(Utilities.a(i2Var.K.content.url));
                     sb2.append(".");
-                    sb2.append(ec.B(i2Var.K.content.url, i2Var.Q == 5 ? "mp3" : "ogg"));
+                    sb2.append(fc.B(i2Var.K.content.url, i2Var.Q == 5 ? "mp3" : "ogg"));
                     str2 = sb2.toString();
                     file = new File(org.telegram.messenger.w7.z(4), str2);
                 }
@@ -76,7 +76,7 @@ public final class f2 implements Runnable {
                             sb3.append(Utilities.a(i2Var.K.content.url));
                             sb3.append(".");
                             TLRPC.WebDocument webDocument = i2Var.K.content;
-                            sb3.append(ec.B(webDocument.url, org.telegram.messenger.w7.H(webDocument.mime_type)));
+                            sb3.append(fc.B(webDocument.url, org.telegram.messenger.w7.H(webDocument.mime_type)));
                             r10 = sb3.toString();
                             I = new File(org.telegram.messenger.w7.z(4), r10);
                             if (i2Var.Q == 2) {
@@ -91,7 +91,7 @@ public final class f2 implements Runnable {
                                 sb4.append(Utilities.a(i2Var.K.thumb.url));
                                 sb4.append(".");
                                 TLRPC.WebDocument webDocument3 = i2Var.K.thumb;
-                                sb4.append(ec.B(webDocument3.url, org.telegram.messenger.w7.H(webDocument3.mime_type)));
+                                sb4.append(fc.B(webDocument3.url, org.telegram.messenger.w7.H(webDocument3.mime_type)));
                                 r10 = sb4.toString();
                                 I = new File(org.telegram.messenger.w7.z(4), r10);
                             }
@@ -100,7 +100,7 @@ public final class f2 implements Runnable {
                         }
                     }
                     document = i2Var.M;
-                    if (document == null && i2Var.Q == 2 && fj.J0(document) != null) {
+                    if (document == null && i2Var.Q == 2 && gj.J0(document) != null) {
                         file2 = I;
                         str = str2;
                     } else {

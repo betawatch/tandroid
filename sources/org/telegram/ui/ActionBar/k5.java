@@ -11,15 +11,15 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.ej0;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.fj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class k5 implements t4 {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public class k5 implements t4 {
     public fh.g g(j5 j5Var) {
         fh.g c10 = ((ri.a) this.f).d.c(j5Var, null, false);
         c10.p((gh.e) this.n);
-        n10.s(c10, org.telegram.messenger.g0.L(21.0f), 6.0f);
+        o10.s(c10, org.telegram.messenger.g0.L(21.0f), 6.0f);
         return c10;
     }
 
@@ -225,7 +225,7 @@ public class k5 implements t4 {
         if (eVar2 != null) {
             HashMap hashMap = eVar2.b;
             if (eVar2.d == vVar) {
-                Message obtainMessage = eVar2.a.obtainMessage(ks.m4, vVar);
+                Message obtainMessage = eVar2.a.obtainMessage(ls.m4, vVar);
                 obtainMessage.arg1 = i7;
                 obtainMessage.sendToTarget();
                 s4.q qVar = eVar2.e;
@@ -253,11 +253,11 @@ public class k5 implements t4 {
         eVar3.e = (s4.q) this.e;
         s4.v vVar3 = (s4.v) this.n;
         if (vVar3 == null) {
-            Message obtainMessage2 = bVar.obtainMessage(ks.l4, new q0.b(vVar, vVar2));
+            Message obtainMessage2 = bVar.obtainMessage(ls.l4, new q0.b(vVar, vVar2));
             obtainMessage2.arg1 = i7;
             obtainMessage2.sendToTarget();
         } else {
-            Message obtainMessage3 = bVar.obtainMessage(ks.n4, new q0.b(vVar3, vVar2));
+            Message obtainMessage3 = bVar.obtainMessage(ls.n4, new q0.b(vVar3, vVar2));
             obtainMessage3.arg1 = i7;
             obtainMessage3.sendToTarget();
         }
@@ -307,7 +307,7 @@ public class k5 implements t4 {
             return;
         }
         int childCount = ek0Var.getChildCount();
-        if (childCount == 0 || ek0Var.getVisibility() != 0 || !mp.g1().getBoolean("view_animations", true)) {
+        if (childCount == 0 || ek0Var.getVisibility() != 0 || !np.g1().getBoolean("view_animations", true)) {
             c0Var.i1(i7, i10, z10);
             return;
         }

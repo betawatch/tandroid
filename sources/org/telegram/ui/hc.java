@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hc extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -33,16 +33,16 @@ public final class hc extends FrameLayout implements org.telegram.ui.ActionBar.b
     }
 
     public final void a(int i7, boolean z10) {
-        org.telegram.messenger.cp cpVar = org.telegram.messenger.mp.u1(this.d).t4;
+        org.telegram.messenger.dp dpVar = org.telegram.messenger.np.u1(this.d).t4;
         int i10 = 0;
-        if (cpVar != null) {
-            ArrayList arrayList = cpVar.c;
+        if (dpVar != null) {
+            ArrayList arrayList = dpVar.c;
             int i11 = 0;
             while (true) {
                 if (i11 >= arrayList.size()) {
                     break;
                 }
-                if (((org.telegram.messenger.bp) arrayList.get(i11)).c == i7) {
+                if (((org.telegram.messenger.cp) arrayList.get(i11)).c == i7) {
                     i10 = i11;
                     break;
                 }
@@ -54,7 +54,7 @@ public final class hc extends FrameLayout implements org.telegram.ui.ActionBar.b
             if (!z10) {
                 this.c.h1(i10, (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(56.0f)) / 2);
             }
-            org.telegram.messenger.g0.d0(this.b, new ai.w2(5, this, z10));
+            org.telegram.messenger.g0.d0(this.b, new ai.x2(5, this, z10));
         }
     }
 
@@ -73,7 +73,7 @@ public final class hc extends FrameLayout implements org.telegram.ui.ActionBar.b
 
     @Override // org.telegram.ui.ActionBar.b6
     public final void updateColors() {
-        org.telegram.messenger.g0.d0(this.b, new li.d(11, this, org.telegram.messenger.mp.u1(this.d).t4));
+        org.telegram.messenger.g0.d0(this.b, new li.d(11, this, org.telegram.messenger.np.u1(this.d).t4));
     }
 
     @Override // org.telegram.ui.ActionBar.b6

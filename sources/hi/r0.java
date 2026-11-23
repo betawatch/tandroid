@@ -2,12 +2,12 @@ package hi;
 
 import android.net.Uri;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r0 implements x10 {
+public final /* synthetic */ class r0 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ v0 b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class r0 implements x10 {
         this.b = v0Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7 = this.a;
         v0 v0Var = this.b;
@@ -32,7 +32,7 @@ public final /* synthetic */ class r0 implements x10 {
             case 1:
                 Uri uri = (Uri) obj;
                 if (v0Var.c && v0Var.r != null) {
-                    v0Var.n.b(R.raw.ic_save_to_gallery, 3500, gd.O0("VideoSavedHint"));
+                    v0Var.n.b(R.raw.ic_save_to_gallery, 3500, hd.O0("VideoSavedHint"));
                     v0Var.c = false;
                     v0Var.d();
                     v0Var.w = uri;
@@ -50,7 +50,7 @@ public final /* synthetic */ class r0 implements x10 {
                 }
                 u0 u0Var3 = new u0(v0Var.getContext());
                 v0Var.n = u0Var3;
-                u0Var3.b(R.raw.ic_save_to_gallery, 2500, gd.O0("PhotoSavedHint"));
+                u0Var3.b(R.raw.ic_save_to_gallery, 2500, hd.O0("PhotoSavedHint"));
                 v0Var.b.addView(v0Var.n);
                 v0Var.w = uri2;
                 break;

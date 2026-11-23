@@ -5,7 +5,7 @@ import java.io.File;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rc1 {
     public String a;
@@ -49,13 +49,13 @@ public final class rc1 {
 
     public final String b() {
         int i7 = this.c;
-        String lowerCase = i7 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i7 >> 16)) & 255), Integer.valueOf(((byte) (i7 >> 8)) & 255), Byte.valueOf((byte) (i7 & org.telegram.messenger.ks.e4))).toLowerCase() : null;
+        String lowerCase = i7 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i7 >> 16)) & 255), Integer.valueOf(((byte) (i7 >> 8)) & 255), Byte.valueOf((byte) (i7 & org.telegram.messenger.ls.e4))).toLowerCase() : null;
         int i10 = this.b;
-        String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (i10 >> 8)) & 255), Byte.valueOf((byte) (i10 & org.telegram.messenger.ks.e4))).toLowerCase();
+        String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (i10 >> 8)) & 255), Byte.valueOf((byte) (i10 & org.telegram.messenger.ls.e4))).toLowerCase();
         int i11 = this.d;
-        String lowerCase3 = i11 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (i11 >> 8)) & 255), Byte.valueOf((byte) (i11 & org.telegram.messenger.ks.e4))).toLowerCase() : null;
+        String lowerCase3 = i11 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (i11 >> 8)) & 255), Byte.valueOf((byte) (i11 & org.telegram.messenger.ls.e4))).toLowerCase() : null;
         int i12 = this.e;
-        String lowerCase4 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (i12 >> 8)) & 255), Byte.valueOf((byte) (i12 & org.telegram.messenger.ks.e4))).toLowerCase() : null;
+        String lowerCase4 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (i12 >> 8)) & 255), Byte.valueOf((byte) (i12 & org.telegram.messenger.ls.e4))).toLowerCase() : null;
         if (lowerCase == null || lowerCase3 == null) {
             if (lowerCase != null) {
                 String E = a8.p0.E(lowerCase2, "-", lowerCase);
@@ -81,9 +81,9 @@ public final class rc1 {
             lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3;
         }
         if (this.g == null) {
-            return p5.c.m(org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).X2, "/bg/", lowerCase2, new StringBuilder("https://"));
+            return p5.c.m(org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).X2, "/bg/", lowerCase2, new StringBuilder("https://"));
         }
-        String str = "https://" + org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).X2 + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
+        String str = "https://" + org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).X2 + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
         return this.j ? p5.c.v(str, "&mode=motion") : str;
     }
 

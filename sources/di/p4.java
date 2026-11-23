@@ -3,17 +3,17 @@ package di;
 import android.app.Activity;
 import android.text.SpannableStringBuilder;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.bn;
 import org.telegram.ui.rg;
 import org.telegram.ui.ti;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p4 implements x10 {
+public final /* synthetic */ class p4 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ long c;
@@ -28,7 +28,7 @@ public final /* synthetic */ class p4 implements x10 {
 
     /* JADX WARN: Removed duplicated region for block: B:37:0x010c A[LOOP:1: B:35:0x0108->B:37:0x010c, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:41:0x0140  */
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -65,7 +65,7 @@ public final /* synthetic */ class p4 implements x10 {
                                 if (spannableStringBuilder.length() > 0) {
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
-                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(gd.N0(2131749737, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(hd.N0(2131749737, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
                                 x5Var.setText(spannableStringBuilder);
                                 break;
                             }
@@ -78,7 +78,7 @@ public final /* synthetic */ class p4 implements x10 {
                     }
                     if (spannableStringBuilder.length() > 0) {
                     }
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(gd.N0(2131749737, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(hd.N0(2131749737, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
                     x5Var.setText(spannableStringBuilder);
                 }
                 break;
@@ -91,12 +91,12 @@ public final /* synthetic */ class p4 implements x10 {
                 bn bnVar = tiVar.b;
                 if (bnVar.getParentActivity() != null) {
                     Activity parentActivity = bnVar.getParentActivity();
-                    String N0 = gd.N0(2131746095, null);
+                    String N0 = hd.N0(2131746095, null);
                     int i12 = org.telegram.messenger.v3.p0(bnVar.e) ? 2131746099 : 2131746100;
                     long j3 = this.b;
-                    SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, i12, org.telegram.messenger.n5.t(j3)));
-                    String H = l10.longValue() > 0 ? gd.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
-                    String N02 = gd.N0(2131751805, null);
+                    SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(hd.a0(null, null, i12, org.telegram.messenger.n5.t(j3)));
+                    String H = l10.longValue() > 0 ? hd.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
+                    String N02 = hd.N0(2131751805, null);
                     rg rgVar = new rg(tiVar, j3, this.c, l10, 1);
                     h6Var = ((org.telegram.ui.ActionBar.g2) bnVar).resourceProvider;
                     org.telegram.ui.Components.c5.f0(parentActivity, N0, W2, H, N02, rgVar, h6Var, true);

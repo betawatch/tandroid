@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kw extends ImageView {
     public final /* synthetic */ ty a;
@@ -23,7 +23,7 @@ public final class kw extends ImageView {
         if (action == 0) {
             tyVar.Q1 = true;
             tyVar.R1 = false;
-            org.telegram.messenger.g0.h3(new org.telegram.ui.ii(tyVar, org.telegram.messenger.ks.V5, 12), org.telegram.messenger.ks.V5);
+            org.telegram.messenger.g0.h3(new org.telegram.ui.ii(tyVar, org.telegram.messenger.ls.V5, 12), org.telegram.messenger.ls.V5);
         } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
             tyVar.Q1 = false;
             if (!tyVar.R1 && (txVar = tyVar.u1) != null && txVar.k()) {

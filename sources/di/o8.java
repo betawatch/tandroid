@@ -1,9 +1,9 @@
 package di;
 
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -15,7 +15,7 @@ import org.telegram.ui.te0;
 import org.telegram.ui.xd;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -49,16 +49,16 @@ public final /* synthetic */ class o8 implements RequestDelegate {
                 if (tL_error == null) {
                     TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject;
                     z1Var.n = str.toLowerCase();
-                    mp.u1(i7).f4(tL_channels_channelParticipants.users, false);
-                    mp.u1(i7).Z3(tL_channels_channelParticipants.chats, false);
+                    np.u1(i7).f4(tL_channels_channelParticipants.users, false);
+                    np.u1(i7).Z3(tL_channels_channelParticipants.chats, false);
                     arrayList.clear();
                     hVar.b();
                     arrayList.addAll(tL_channels_channelParticipants.participants);
-                    long e10 = j10.i(i7).e();
+                    long e10 = k10.i(i7).e();
                     int size = tL_channels_channelParticipants.participants.size();
                     for (int i10 = 0; i10 < size; i10++) {
                         TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
-                        long B1 = fj.B1(channelParticipant.peer);
+                        long B1 = gj.B1(channelParticipant.peer);
                         if (this.b || B1 != e10) {
                             hVar.k(channelParticipant, B1);
                         } else {

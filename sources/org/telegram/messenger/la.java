@@ -1,56 +1,35 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.ConnectionsManager;
+import j$.util.Objects;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class la {
-    public final int c;
-    public l7 e;
-    public boolean f;
-    public int g;
-    public int h;
-    public TLRPC.Peer i;
-    public String k;
-    public int l;
-    public int m;
-    public boolean n;
-    public final ArrayList a = new ArrayList();
-    public final HashMap b = new HashMap();
-    public int d = -1;
-    public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public final long a;
+    public final int b;
 
-    public la(int i7) {
-        this.c = i7;
+    public la(TLRPC.Message message) {
+        long B0 = gj.B0(message);
+        int i7 = message.id;
+        this.a = B0;
+        this.b = i7;
     }
 
-    public final void a() {
-        if (this.d >= 0) {
-            ConnectionsManager.getInstance(this.c).cancelRequest(this.d, true);
-            this.d = -1;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        l7 l7Var = this.e;
-        if (l7Var != null) {
-            l7Var.run();
-            this.e = null;
+        if (obj != null && la.class == obj.getClass()) {
+            la laVar = (la) obj;
+            if (this.a == laVar.a && this.b == laVar.b) {
+                return true;
+            }
         }
-        this.a.clear();
-        this.b.clear();
-        this.g = 0;
-        this.h = 0;
-        this.i = null;
-        this.j = 2147483637;
-        this.k = null;
-        this.l = 0;
-        this.m = 0;
-        this.n = false;
+        return false;
     }
 
-    public final int b() {
-        int i7 = this.l >= this.a.size() - 1 ? 0 : 1;
-        return this.l > 0 ? i7 | 2 : i7;
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Integer.valueOf(this.b));
     }
 }

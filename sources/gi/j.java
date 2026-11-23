@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.TextView;
 import oi.a6;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -28,7 +28,7 @@ import ug.j0;
 import ug.k0;
 import ug.s1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class j extends TextView {
     public final /* synthetic */ int a;
@@ -42,8 +42,8 @@ public final class j extends TextView {
         this.b = new RectF();
         this.c = l1Var;
         l1Var.a(this);
-        setText(gd.N0(2131743060, null));
-        setContentDescription(gd.N0(2131743060, null));
+        setText(hd.N0(2131743058, null));
+        setContentDescription(hd.N0(2131743058, null));
         setTextColor(-1);
         setTypeface(g0.o());
         setPadding(g0.L(14.0f), g0.L(4.0f), g0.L(14.0f), g0.L(4.0f));
@@ -220,7 +220,7 @@ public final class j extends TextView {
                 rectF3.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 Paint[] paintArr = (Paint[]) this.b;
                 w0 w0Var = (w0) this.c;
-                paintArr[w0Var.y].setAlpha(ks.e4);
+                paintArr[w0Var.y].setAlpha(ls.e4);
                 canvas.drawRoundRect(rectF3, g0.L(6.0f), g0.L(6.0f), paintArr[w0Var.y]);
                 float f10 = w0Var.x;
                 if (f10 > 0.0f) {

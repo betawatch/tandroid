@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class u implements Runnable {
                 x0 x0Var = (x0) this.b;
                 y0 y0Var = x0Var.g;
                 if (y0Var != null) {
-                    x0Var.a.a((p1) x0Var.c.b(y0Var).a(), ks.A3);
+                    x0Var.a.a((p1) x0Var.c.b(y0Var).a(), ls.A3);
                 }
                 x0Var.e();
                 return;
@@ -68,7 +68,7 @@ public final /* synthetic */ class u implements Runnable {
                     o1 m10 = p1.m();
                     m10.c();
                     p1.s((p1) m10.b, e1Var);
-                    a2Var.a.a((p1) m10.a(), ks.S3);
+                    a2Var.a.a((p1) m10.a(), ls.S3);
                     SharedPreferences.Editor edit = sharedPreferences.edit();
                     if (!hashSet2.equals(hashSet)) {
                         hashSet2.clear();

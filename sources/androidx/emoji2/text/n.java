@@ -16,10 +16,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import org.telegram.messenger.ht;
+import org.telegram.messenger.jt;
 import org.telegram.ui.Cells.c5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class n implements k, u2.k {
     public final Context a;
@@ -130,8 +130,8 @@ public final class n implements k, u2.k {
         }
     }
 
-    public Object c(Context context, v0.e eVar, ht htVar) {
-        zd.m mVar = new zd.m(1, x0.b(htVar));
+    public Object c(Context context, v0.e eVar, jt jtVar) {
+        zd.m mVar = new zd.m(1, x0.b(jtVar));
         mVar.s();
         CancellationSignal cancellationSignal = new CancellationSignal();
         mVar.u(new be.q(cancellationSignal, 1));

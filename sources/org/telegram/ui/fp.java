@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fp implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class fp implements Runnable {
                             String str = user.first_name;
                             org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(bnVar.getParentActivity(), bnVar.Ba);
                             obVar.d(R.raw.ic_admin, "Shield");
-                            org.telegram.messenger.f3.q("UserAddedAsAdminHint", null, 2131743525, new Object[]{str}, obVar.b);
+                            org.telegram.messenger.f3.q("UserAddedAsAdminHint", null, 2131743523, new Object[]{str}, obVar.b);
                             org.telegram.ui.Components.gc.g(bnVar, obVar, 1500).j();
                             break;
                         }

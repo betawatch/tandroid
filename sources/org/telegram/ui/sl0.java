@@ -9,7 +9,7 @@ import android.graphics.Typeface;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class sl0 extends View {
     public final Paint E;
@@ -42,26 +42,26 @@ public class sl0 extends View {
     }
 
     public final void b(int i7, int i10, boolean z10) {
-        org.telegram.messenger.cp cpVar;
-        org.telegram.messenger.bp bpVar = null;
-        if (i10 >= 0 && i7 >= 0 && (cpVar = org.telegram.messenger.mp.u1(i7).u4) != null) {
-            bpVar = cpVar.d(i10);
+        org.telegram.messenger.dp dpVar;
+        org.telegram.messenger.cp cpVar = null;
+        if (i10 >= 0 && i7 >= 0 && (dpVar = org.telegram.messenger.np.u1(i7).u4) != null) {
+            cpVar = dpVar.d(i10);
         }
-        c(bpVar, z10);
+        c(cpVar, z10);
     }
 
-    public final void c(org.telegram.messenger.bp bpVar, boolean z10) {
+    public final void c(org.telegram.messenger.cp cpVar, boolean z10) {
         this.d = false;
         org.telegram.ui.ActionBar.h6 h6Var = this.b;
-        if (bpVar == null) {
+        if (cpVar == null) {
             this.d = true;
             int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.s8, h6Var);
             this.f = w02;
             this.e = w02;
         } else {
             boolean d = h6Var != null ? h6Var.d() : org.telegram.ui.ActionBar.m6.I.q();
-            this.e = bpVar.c(d);
-            this.f = bpVar.d(d);
+            this.e = cpVar.c(d);
+            this.f = cpVar.d(d);
         }
         if (!z10) {
             this.h.a(this.e, true);
@@ -111,7 +111,7 @@ public class sl0 extends View {
             canvas2 = canvas;
             canvas2.drawColor(this.a);
         }
-        paint.setAlpha(this.F ? org.telegram.messenger.ks.e4 : (int) (this.c * 255.0f));
+        paint.setAlpha(this.F ? org.telegram.messenger.ls.e4 : (int) (this.c * 255.0f));
         canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
     }
 
@@ -138,7 +138,7 @@ public class sl0 extends View {
     @Override // android.view.View
     public final void onMeasure(int i7, int i10) {
         if (!this.G) {
-            i10 = org.telegram.messenger.n10.C(230.0f, org.telegram.messenger.g0.m, TLObject.FLAG_30);
+            i10 = org.telegram.messenger.o10.C(230.0f, org.telegram.messenger.g0.m, TLObject.FLAG_30);
         }
         super.onMeasure(i7, i10);
     }

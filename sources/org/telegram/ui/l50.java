@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l50 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -60,7 +60,7 @@ public final class l50 extends org.telegram.ui.Components.dk0 {
                 return;
             }
             i10 = ((org.telegram.ui.ActionBar.g2) n50Var).currentAccount;
-            ArrayList u02 = org.telegram.messenger.ri.d0(i10).u0(n50Var.h0());
+            ArrayList u02 = org.telegram.messenger.si.d0(i10).u0(n50Var.h0());
             int i12 = i7 - n50Var.F;
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) u02.get(i12);
             h8Var.d((TLRPC.TL_messages_stickerSet) u02.get(i12), i12 != u02.size() - 1, false);
@@ -72,12 +72,12 @@ public final class l50 extends org.telegram.ui.Components.dk0 {
         if (i11 == 1) {
             if (i7 != n50Var.y) {
                 if (i7 == n50Var.L) {
-                    ((org.telegram.ui.Cells.a9) view).setText(org.telegram.messenger.gd.N0(2131754426, null));
+                    ((org.telegram.ui.Cells.a9) view).setText(org.telegram.messenger.hd.N0(2131754426, null));
                     return;
                 }
                 return;
             }
-            String N0 = org.telegram.messenger.gd.N0(z10 ? 2131752117 : 2131752102, null);
+            String N0 = org.telegram.messenger.hd.N0(z10 ? 2131752117 : 2131752102, null);
             int indexOf = N0.indexOf("@stickers");
             if (indexOf == -1) {
                 ((org.telegram.ui.Cells.a9) view).setText(N0);
@@ -96,10 +96,10 @@ public final class l50 extends org.telegram.ui.Components.dk0 {
         }
         if (i11 == 4) {
             if (i7 == n50Var.I) {
-                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.N0(2131754431, null));
+                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.hd.N0(2131754431, null));
                 return;
             } else {
-                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.N0(z10 ? 2131752118 : 2131752103, null));
+                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.hd.N0(z10 ? 2131752118 : 2131752103, null));
                 return;
             }
         }

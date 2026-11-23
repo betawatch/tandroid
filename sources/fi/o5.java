@@ -2,13 +2,13 @@ package fi;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                 TLRPC.Updates updates = (TLRPC.Updates) tLObject;
                 if (updates != null) {
                     p6 p6Var = this.b;
-                    mp.u1(p6Var.a).U3(updates.updates, updates.users, updates.chats, false, updates.date);
+                    np.u1(p6Var.a).U3(updates.updates, updates.users, updates.chats, false, updates.date);
                     org.telegram.messenger.g0.g3(new v5(p6Var, 1));
                     break;
                 }
@@ -45,8 +45,8 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 instanceof TLRPC.TL_contacts_blocked) {
                                     TLRPC.TL_contacts_blocked tL_contacts_blocked = (TLRPC.TL_contacts_blocked) tLObject2;
-                                    mp.u1(i10).f4(tL_contacts_blocked.users, false);
-                                    mp.u1(i10).Z3(tL_contacts_blocked.chats, false);
+                                    np.u1(i10).f4(tL_contacts_blocked.users, false);
+                                    np.u1(i10).Z3(tL_contacts_blocked.chats, false);
                                     hashSet.clear();
                                     ArrayList<TLRPC.TL_peerBlocked> arrayList = tL_contacts_blocked.blocked;
                                     int size = arrayList.size();
@@ -60,8 +60,8 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                                     p6Var3.O = true;
                                 } else if (tLObject2 instanceof TLRPC.TL_contacts_blockedSlice) {
                                     TLRPC.TL_contacts_blockedSlice tL_contacts_blockedSlice = (TLRPC.TL_contacts_blockedSlice) tLObject2;
-                                    mp.u1(i10).f4(tL_contacts_blockedSlice.users, false);
-                                    mp.u1(i10).Z3(tL_contacts_blockedSlice.chats, false);
+                                    np.u1(i10).f4(tL_contacts_blockedSlice.users, false);
+                                    np.u1(i10).Z3(tL_contacts_blockedSlice.chats, false);
                                     ArrayList<TLRPC.TL_peerBlocked> arrayList2 = tL_contacts_blockedSlice.blocked;
                                     int size2 = arrayList2.size();
                                     int i12 = 0;
@@ -73,7 +73,7 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                                     p6Var3.N = tL_contacts_blockedSlice.count;
                                     p6Var3.O = hashSet.size() >= p6Var3.N;
                                 }
-                                ks.f(i10).k(ks.c3, new Object[0]);
+                                ls.f(i10).k(ls.c3, new Object[0]);
                                 p6Var3.P = false;
                                 p6Var3.Q = System.currentTimeMillis();
                                 break;
@@ -86,18 +86,18 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                                 TLObject tLObject3 = tLObject;
                                 if (tLObject3 instanceof TLRPC.TL_messages_chats) {
                                     ArrayList<TLRPC.Chat> arrayList4 = ((TLRPC.TL_messages_chats) tLObject3).chats;
-                                    mp.u1(i13).Z3(arrayList4, false);
+                                    np.u1(i13).Z3(arrayList4, false);
                                     int size3 = arrayList4.size();
                                     int i14 = 0;
                                     while (i14 < size3) {
                                         TLRPC.Chat chat = arrayList4.get(i14);
                                         i14++;
-                                        arrayList3.add(mp.n1(chat));
+                                        arrayList3.add(np.n1(chat));
                                     }
                                 }
                                 p6Var4.U = false;
                                 p6Var4.V = true;
-                                ks.f(i13).k(ks.e3, new Object[0]);
+                                ls.f(i13).k(ls.e3, new Object[0]);
                                 break;
                         }
                     }
@@ -117,8 +117,8 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 instanceof TLRPC.TL_contacts_blocked) {
                                     TLRPC.TL_contacts_blocked tL_contacts_blocked = (TLRPC.TL_contacts_blocked) tLObject2;
-                                    mp.u1(i102).f4(tL_contacts_blocked.users, false);
-                                    mp.u1(i102).Z3(tL_contacts_blocked.chats, false);
+                                    np.u1(i102).f4(tL_contacts_blocked.users, false);
+                                    np.u1(i102).Z3(tL_contacts_blocked.chats, false);
                                     hashSet.clear();
                                     ArrayList<TLRPC.TL_peerBlocked> arrayList = tL_contacts_blocked.blocked;
                                     int size = arrayList.size();
@@ -132,8 +132,8 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                                     p6Var32.O = true;
                                 } else if (tLObject2 instanceof TLRPC.TL_contacts_blockedSlice) {
                                     TLRPC.TL_contacts_blockedSlice tL_contacts_blockedSlice = (TLRPC.TL_contacts_blockedSlice) tLObject2;
-                                    mp.u1(i102).f4(tL_contacts_blockedSlice.users, false);
-                                    mp.u1(i102).Z3(tL_contacts_blockedSlice.chats, false);
+                                    np.u1(i102).f4(tL_contacts_blockedSlice.users, false);
+                                    np.u1(i102).Z3(tL_contacts_blockedSlice.chats, false);
                                     ArrayList<TLRPC.TL_peerBlocked> arrayList2 = tL_contacts_blockedSlice.blocked;
                                     int size2 = arrayList2.size();
                                     int i12 = 0;
@@ -145,7 +145,7 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                                     p6Var32.N = tL_contacts_blockedSlice.count;
                                     p6Var32.O = hashSet.size() >= p6Var32.N;
                                 }
-                                ks.f(i102).k(ks.c3, new Object[0]);
+                                ls.f(i102).k(ls.c3, new Object[0]);
                                 p6Var32.P = false;
                                 p6Var32.Q = System.currentTimeMillis();
                                 break;
@@ -158,18 +158,18 @@ public final /* synthetic */ class o5 implements RequestDelegate {
                                 TLObject tLObject3 = tLObject;
                                 if (tLObject3 instanceof TLRPC.TL_messages_chats) {
                                     ArrayList<TLRPC.Chat> arrayList4 = ((TLRPC.TL_messages_chats) tLObject3).chats;
-                                    mp.u1(i13).Z3(arrayList4, false);
+                                    np.u1(i13).Z3(arrayList4, false);
                                     int size3 = arrayList4.size();
                                     int i14 = 0;
                                     while (i14 < size3) {
                                         TLRPC.Chat chat = arrayList4.get(i14);
                                         i14++;
-                                        arrayList3.add(mp.n1(chat));
+                                        arrayList3.add(np.n1(chat));
                                     }
                                 }
                                 p6Var4.U = false;
                                 p6Var4.V = true;
-                                ks.f(i13).k(ks.e3, new Object[0]);
+                                ls.f(i13).k(ls.e3, new Object[0]);
                                 break;
                         }
                     }

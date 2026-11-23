@@ -9,13 +9,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class sb {
     public static pg.i a;
@@ -50,7 +50,7 @@ public abstract class sb {
             TextView textView = new TextView(launchActivity);
             iVar2.y = textView;
             textView.setTextSize(1, 20.0f);
-            textView.setText(org.telegram.messenger.gd.N0(2131751634, null));
+            textView.setText(org.telegram.messenger.hd.N0(2131751634, null));
             textView.setTypeface(org.telegram.messenger.g0.o());
             textView.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(19.0f));
             linearLayout.addView(textView, ma.o(-1, -2));
@@ -58,7 +58,7 @@ public abstract class sb {
             iVar2.E = ek0Var;
             ek0Var.setLayoutManager(new v4.c0());
             ek0Var.setAdapter(new org.telegram.ui.l4(iVar2, launchActivity));
-            ek0Var.setOnItemClickListener(new bi.l8(iVar2, 19));
+            ek0Var.setOnItemClickListener(new bi.k8(iVar2, 19));
             linearLayout.addView(ek0Var, ma.l(1.0f, -1, 0));
             iVar2.addView(linearLayout, ma.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             iVar2.d();
@@ -78,8 +78,8 @@ public abstract class sb {
             a = null;
         }
         if (z11) {
-            bz.x1 = z10;
-            bz.y();
+            cz.x1 = z10;
+            cz.y();
         }
     }
 }

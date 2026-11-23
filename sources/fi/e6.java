@@ -1,8 +1,8 @@
 package fi;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e6 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,12 +19,12 @@ public final /* synthetic */ class e6 implements Runnable {
         h6 h6Var = this.b;
         switch (i7) {
             case 0:
-                ks.f(h6Var.c).k(ks.A5, h6Var);
+                ls.f(h6Var.c).k(ls.A5, h6Var);
                 break;
             case 1:
                 h6Var.u = false;
                 h6Var.w = true;
-                ks.f(h6Var.c).k(ks.A5, h6Var, Boolean.FALSE);
+                ls.f(h6Var.c).k(ls.A5, h6Var, Boolean.FALSE);
                 break;
             case 2:
                 h6Var.z = false;

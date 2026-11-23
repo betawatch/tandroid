@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e2;
@@ -20,7 +20,7 @@ import org.telegram.ui.bn;
 import v4.p;
 import wg.b0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class y0 implements View.OnClickListener {
                 final e1 e1Var2 = (e1) obj2;
                 final TLRPC.User user = (TLRPC.User) obj;
                 a70 G = a70.G(e1Var2.c, e1Var2.J0, (View) view.getParent());
-                G.c(R.drawable.profile_discuss, gd.N0(2131745405, null), new Runnable() { // from class: wg.b1
+                G.c(R.drawable.profile_discuss, hd.N0(2131745405, null), new Runnable() { // from class: wg.b1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
@@ -114,7 +114,7 @@ public final /* synthetic */ class y0 implements View.OnClickListener {
                         }
                     }
                 }, false);
-                G.c(R.drawable.msg_openprofile, gd.N0(2131747592, null), new Runnable() { // from class: wg.b1
+                G.c(R.drawable.msg_openprofile, hd.N0(2131747592, null), new Runnable() { // from class: wg.b1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -176,8 +176,8 @@ public final /* synthetic */ class y0 implements View.OnClickListener {
                 } else if (!aVar.a.R) {
                     aVar.b(true);
                     String str = eVar.h;
-                    x10 x10Var = new x10() { // from class: xg.d
-                        @Override // org.telegram.messenger.x10
+                    y10 y10Var = new y10() { // from class: xg.d
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj4) {
                             switch (i10) {
                                 case 0:
@@ -194,8 +194,8 @@ public final /* synthetic */ class y0 implements View.OnClickListener {
                             }
                         }
                     };
-                    x10 x10Var2 = new x10() { // from class: xg.d
-                        @Override // org.telegram.messenger.x10
+                    y10 y10Var2 = new y10() { // from class: xg.d
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj4) {
                             switch (i11) {
                                 case 0:
@@ -212,10 +212,10 @@ public final /* synthetic */ class y0 implements View.OnClickListener {
                             }
                         }
                     };
-                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(j10.t0);
+                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(k10.t0);
                     TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
                     tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new n(x10Var2, x10Var, i10), 2);
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new n(y10Var2, y10Var, i10), 2);
                     break;
                 }
                 break;

@@ -9,9 +9,9 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q0 extends Drawable {
     public static final float[][] h = {new float[]{7.0f, 9.5f, 10.25f}, new float[]{12.0f, 17.0f, 10.25f}, new float[]{7.0f, 13.0f, 13.75f}, new float[]{15.5f, 17.0f, 13.75f}};
@@ -29,7 +29,7 @@ public final class q0 extends Drawable {
         Paint paint2 = new Paint(1);
         this.b = paint2;
         this.c = new RectF();
-        this.g = ks.e4;
+        this.g = ls.e4;
         this.e = z10;
         this.d = z10 ? 1.0f : 0.0f;
         paint.setColor(-1);
@@ -61,7 +61,7 @@ public final class q0 extends Drawable {
         Paint paint2 = this.b;
         paint2.setStrokeWidth(1.5f * L);
         Canvas canvas3 = canvas;
-        int saveLayerAlpha = canvas3.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, ks.e4);
+        int saveLayerAlpha = canvas3.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, ls.e4);
         float f11 = 12.0f * min;
         canvas3.translate(bounds.centerX() - f11, bounds.centerY() - f11);
         float f12 = this.e ? this.d : 1.0f - this.d;

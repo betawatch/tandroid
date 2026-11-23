@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wc extends org.telegram.ui.Components.du0 {
     public final /* synthetic */ int g0;
@@ -97,7 +97,7 @@ public final class wc extends org.telegram.ui.Components.du0 {
                         if (i38 == -1) {
                             i38 = 51;
                         }
-                        int i39 = i38 & org.telegram.messenger.ks.x1;
+                        int i39 = i38 & org.telegram.messenger.ls.x1;
                         int i40 = i38 & 7;
                         if (i40 == 1) {
                             i13 = (((i11 - i7) - measuredWidth) / 2) + layoutParams.leftMargin;
@@ -169,7 +169,7 @@ public final class wc extends org.telegram.ui.Components.du0 {
                         if (i42 == -1) {
                             i42 = 51;
                         }
-                        int i43 = i42 & org.telegram.messenger.ks.x1;
+                        int i43 = i42 & org.telegram.messenger.ls.x1;
                         int i44 = i42 & 7;
                         if (i44 == 1) {
                             i19 = (((i11 - i7) - measuredWidth2) / 2) + layoutParams2.leftMargin;
@@ -241,7 +241,7 @@ public final class wc extends org.telegram.ui.Components.du0 {
                         if (i46 == -1) {
                             i46 = 51;
                         }
-                        int i47 = i46 & org.telegram.messenger.ks.x1;
+                        int i47 = i46 & org.telegram.messenger.ls.x1;
                         int i48 = i46 & 7;
                         if (i48 == 1) {
                             i25 = (((i11 - i7) - measuredWidth3) / 2) + layoutParams3.leftMargin;
@@ -313,7 +313,7 @@ public final class wc extends org.telegram.ui.Components.du0 {
                         if (i51 == -1) {
                             i51 = 51;
                         }
-                        int i52 = i51 & org.telegram.messenger.ks.x1;
+                        int i52 = i51 & org.telegram.messenger.ls.x1;
                         int i53 = i51 & 7;
                         if (i53 == 1) {
                             i31 = (((i11 - i7) - measuredWidth4) / 2) + layoutParams4.leftMargin;

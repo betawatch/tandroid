@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hr0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ pr0 a;
@@ -39,7 +39,7 @@ public final class hr0 extends org.telegram.ui.ActionBar.j {
             if (pr0Var.e0) {
                 CharSequence[] charSequenceArr2 = {org.telegram.ui.Components.tn.d0(pr0Var.F)};
                 i14 = ((org.telegram.ui.ActionBar.g2) pr0Var).currentAccount;
-                ArrayList<TLRPC.MessageEntity> Y = org.telegram.messenger.ri.d0(i14).Y(charSequenceArr2, true, true);
+                ArrayList<TLRPC.MessageEntity> Y = org.telegram.messenger.si.d0(i14).Y(charSequenceArr2, true, true);
                 CharSequence charSequence = charSequenceArr2[0];
                 int size = Y.size();
                 for (int i18 = 0; i18 < size; i18++) {
@@ -74,7 +74,7 @@ public final class hr0 extends org.telegram.ui.ActionBar.j {
                     if (!TextUtils.isEmpty(org.telegram.ui.Components.tn.d0(charSequenceArr[i20]))) {
                         CharSequence[] charSequenceArr3 = {org.telegram.ui.Components.tn.d0(charSequenceArr[i20])};
                         i16 = ((org.telegram.ui.ActionBar.g2) pr0Var).currentAccount;
-                        ArrayList<TLRPC.MessageEntity> Y2 = org.telegram.messenger.ri.d0(i16).Y(charSequenceArr3, true, true);
+                        ArrayList<TLRPC.MessageEntity> Y2 = org.telegram.messenger.si.d0(i16).Y(charSequenceArr3, true, true);
                         CharSequence charSequence2 = charSequenceArr3[0];
                         int size2 = Y2.size();
                         for (int i21 = 0; i21 < size2; i21++) {
@@ -137,7 +137,7 @@ public final class hr0 extends org.telegram.ui.ActionBar.j {
             }
             CharSequence[] charSequenceArr4 = {org.telegram.ui.Components.tn.d0(pr0Var.F)};
             i10 = ((org.telegram.ui.ActionBar.g2) pr0Var).currentAccount;
-            ArrayList<TLRPC.MessageEntity> Y3 = org.telegram.messenger.ri.d0(i10).Y(charSequenceArr4, true, true);
+            ArrayList<TLRPC.MessageEntity> Y3 = org.telegram.messenger.si.d0(i10).Y(charSequenceArr4, true, true);
             CharSequence charSequence3 = charSequenceArr4[0];
             int size3 = Y3.size();
             for (int i24 = 0; i24 < size3; i24++) {
@@ -164,7 +164,7 @@ public final class hr0 extends org.telegram.ui.ActionBar.j {
                     CharSequence[] charSequenceArr5 = new CharSequence[1];
                     charSequenceArr5[i17] = org.telegram.ui.Components.tn.d0(charSequenceArr[i25]);
                     i12 = ((org.telegram.ui.ActionBar.g2) pr0Var).currentAccount;
-                    ArrayList<TLRPC.MessageEntity> Y4 = org.telegram.messenger.ri.d0(i12).Y(charSequenceArr5, true, true);
+                    ArrayList<TLRPC.MessageEntity> Y4 = org.telegram.messenger.si.d0(i12).Y(charSequenceArr5, true, true);
                     CharSequence charSequence4 = charSequenceArr5[i17];
                     int size4 = Y4.size();
                     int i26 = i17;
@@ -202,7 +202,7 @@ public final class hr0 extends org.telegram.ui.ActionBar.j {
                 CharSequence[] charSequenceArr6 = new CharSequence[1];
                 charSequenceArr6[i28] = d02;
                 i11 = ((org.telegram.ui.ActionBar.g2) pr0Var).currentAccount;
-                ArrayList<TLRPC.MessageEntity> Y5 = org.telegram.messenger.ri.d0(i11).Y(charSequenceArr6, true, true);
+                ArrayList<TLRPC.MessageEntity> Y5 = org.telegram.messenger.si.d0(i11).Y(charSequenceArr6, true, true);
                 if (Y5 != null && !Y5.isEmpty()) {
                     tL_messageMediaPoll.results.solution_entities = Y5;
                 }

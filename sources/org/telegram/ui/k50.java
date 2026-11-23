@@ -7,7 +7,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k50 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.ot a;
@@ -42,7 +42,7 @@ public final class k50 extends LinearLayout implements org.telegram.ui.ActionBar
         org.telegram.ui.ActionBar.t6.l(otVar, 30, org.telegram.ui.ActionBar.m6.Ne, null);
         org.telegram.ui.ActionBar.t6.l(otVar, 36, org.telegram.ui.ActionBar.m6.mg, null);
         otVar.setBackground(null);
-        otVar.setHint(org.telegram.messenger.gd.N0(2131754430, null));
+        otVar.setHint(org.telegram.messenger.hd.N0(2131754430, null));
         addView(textView, c8.ma.t(-2, -2, 16, 20, 0, 0, 0));
         addView(otVar, c8.ma.t(-1, -2, 16, -4, 0, 0, 0));
         org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, this, null);

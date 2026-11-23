@@ -15,16 +15,16 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.TreeSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class h6 {
     public static HashMap B;
@@ -56,12 +56,12 @@ public class h6 {
     public int s = -1;
     public int A = -1;
 
-    public h6(int i7, long j3, int i10, int i11, x10 x10Var) {
+    public h6(int i7, long j3, int i10, int i11, y10 y10Var) {
         this.c = i7;
         this.d = j3;
         this.e = i10;
         this.f = i11;
-        this.x = new l4(5, this, x10Var);
+        this.x = new l4(5, this, y10Var);
         if (i10 != 0 || i11 <= 0) {
             this.k = new TreeSet(Comparator$-CC.reverseOrder());
             this.l = new TreeSet(Comparator$-CC.reverseOrder());
@@ -72,24 +72,24 @@ public class h6 {
         s();
     }
 
-    public static long b(fj fjVar) {
-        if (fjVar == null) {
+    public static long b(gj gjVar) {
+        if (gjVar == null) {
             return 0L;
         }
-        long j3 = fjVar.k.date;
+        long j3 = gjVar.k.date;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(j3 * 1000);
         return (calendar.get(2) * 100) + (calendar.get(1) * 10000) + calendar.get(5);
     }
 
-    public static boolean e(fj fjVar, boolean z10, boolean z11) {
-        if (fjVar == null || !fjVar.x4()) {
+    public static boolean e(gj gjVar, boolean z10, boolean z11) {
+        if (gjVar == null || !gjVar.x4()) {
             return false;
         }
-        if (z10 && fj.S3(fjVar.k)) {
+        if (z10 && gj.S3(gjVar.k)) {
             return true;
         }
-        return (z11 && fj.L4(fjVar.k)) || (fjVar.l.media instanceof TLRPC.TL_messageMediaUnsupported);
+        return (z11 && gj.L4(gjVar.k)) || (gjVar.l.media instanceof TLRPC.TL_messageMediaUnsupported);
     }
 
     public static void v(AbstractSet abstractSet, ArrayList arrayList) {
@@ -159,7 +159,7 @@ public class h6 {
         if (z10) {
             TL_stories.TL_updateAlbum tL_updateAlbum = new TL_stories.TL_updateAlbum();
             int i7 = this.c;
-            tL_updateAlbum.peer = mp.u1(i7).l1(this.d);
+            tL_updateAlbum.peer = np.u1(i7).l1(this.d);
             tL_updateAlbum.album_id = this.f;
             tL_updateAlbum.order = new ArrayList<>(arrayList);
             ConnectionsManager.getInstance(i7).sendRequest(tL_updateAlbum, null);
@@ -173,7 +173,7 @@ public class h6 {
         }
         ArrayList arrayList2 = new ArrayList(arrayList);
         int i7 = this.c;
-        int i10 = mp.u1(i7).Q5;
+        int i10 = np.u1(i7).Q5;
         if (arrayList2.size() > i10) {
             arrayList2.subList(i10, arrayList2.size()).clear();
         }
@@ -188,14 +188,14 @@ public class h6 {
         if (z10) {
             TL_stories.TL_togglePinnedToTop tL_togglePinnedToTop = new TL_stories.TL_togglePinnedToTop();
             tL_togglePinnedToTop.id.addAll(arrayList3);
-            tL_togglePinnedToTop.peer = mp.u1(i7).l1(this.d);
+            tL_togglePinnedToTop.peer = np.u1(i7).l1(this.d);
             ConnectionsManager.getInstance(i7).sendRequest(tL_togglePinnedToTop, new l5(3));
         }
     }
 
     public final void D(List list, boolean z10) {
         int i7;
-        fj fjVar;
+        gj gjVar;
         TL_stories.StoryItem storyItem;
         StringBuilder sb2 = new StringBuilder("StoriesList ");
         int i10 = this.e;
@@ -265,7 +265,7 @@ public class h6 {
                         this.w = false;
                         p(Utilities.j(size2, 50, 10), true);
                     }
-                } else if (z12 && z13 && ((fjVar = (fj) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z10 || (storyItem = fjVar.l) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
+                } else if (z12 && z13 && ((gjVar = (gj) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z10 || (storyItem = gjVar.l) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
                     i5.c.t(storyItem2.id, new StringBuilder("StoriesList update story "));
                     hashMap.put(Integer.valueOf(storyItem2.id), y(storyItem2));
                 }
@@ -292,8 +292,8 @@ public class h6 {
             i10++;
             Integer num = (Integer) obj;
             num.getClass();
-            fj fjVar = (fj) this.j.get(num);
-            if (fjVar != null && (storyItem = fjVar.l) != null) {
+            gj gjVar = (gj) this.j.get(num);
+            if (gjVar != null && (storyItem = gjVar.l) != null) {
                 HashSet hashSet = storyItem.albums != null ? new HashSet(storyItem.albums) : new HashSet();
                 Integer valueOf = Integer.valueOf(i7);
                 boolean remove = z10 ? hashSet.remove(valueOf) : hashSet.add(valueOf);
@@ -334,19 +334,19 @@ public class h6 {
                 i11++;
                 Integer num = (Integer) obj;
                 num.getClass();
-                fj fjVar = (fj) hashMap.get(num);
-                if (e(fjVar, z10, z11)) {
-                    arrayList2.add(fjVar);
+                gj gjVar = (gj) hashMap.get(num);
+                if (e(gjVar, z10, z11)) {
+                    arrayList2.add(gjVar);
                 }
             }
         }
         int i12 = Integer.MAX_VALUE;
         for (Integer num2 : this.l) {
             int intValue = num2.intValue();
-            fj fjVar2 = (fj) hashMap.get(num2);
+            gj gjVar2 = (gj) hashMap.get(num2);
             if (i10 != 0 || i7 > 0 || !arrayList3.contains(num2)) {
-                if (e(fjVar2, z10, z11)) {
-                    arrayList2.add(fjVar2);
+                if (e(gjVar2, z10, z11)) {
+                    arrayList2.add(gjVar2);
                 }
                 if (intValue < i12) {
                     i12 = intValue;
@@ -359,9 +359,9 @@ public class h6 {
                 Integer num3 = (Integer) it.next();
                 int intValue2 = num3.intValue();
                 if (i10 != 0 || i7 > 0 || !arrayList3.contains(num3)) {
-                    fj fjVar3 = (fj) hashMap.get(num3);
-                    if (e(fjVar3, z10, z11)) {
-                        arrayList2.add(fjVar3);
+                    gj gjVar3 = (gj) hashMap.get(num3);
+                    if (e(gjVar3, z10, z11)) {
+                        arrayList2.add(gjVar3);
                     }
                 }
             }
@@ -379,8 +379,8 @@ public class h6 {
         }
     }
 
-    public fj f(int i7) {
-        return (fj) this.j.get(Integer.valueOf(i7));
+    public gj f(int i7) {
+        return (gj) this.j.get(Integer.valueOf(i7));
     }
 
     public int g() {
@@ -403,7 +403,7 @@ public class h6 {
             while (i7 < size) {
                 Object obj = arrayList4.get(i7);
                 i7++;
-                arrayList3.add(Integer.valueOf(((fj) obj).l.id));
+                arrayList3.add(Integer.valueOf(((gj) obj).l.id));
             }
             arrayList2.add(arrayList3);
             return arrayList2;
@@ -449,7 +449,7 @@ public class h6 {
             return;
         }
         w();
-        tr a02 = tr.a0(this.c);
+        ur a02 = ur.a0(this.c);
         a02.a.c(new f6(this, a02, 1));
     }
 
@@ -517,27 +517,27 @@ public class h6 {
         if (i11 == 0 && (i10 = this.f) > 0) {
             TL_stories.TL_stories_getAlbumStories tL_stories_getAlbumStories = new TL_stories.TL_stories_getAlbumStories();
             tL_stories_getAlbumStories.album_id = i10;
-            tL_stories_getAlbumStories.peer = mp.u1(i12).l1(j3);
+            tL_stories_getAlbumStories.peer = np.u1(i12).l1(j3);
             n10 = this.l.size();
             tL_stories_getAlbumStories.offset = n10;
             tL_stories_getAlbumStories.limit = i7;
             tL_stories_getStoriesArchive = tL_stories_getAlbumStories;
         } else if (i11 == 0) {
             TL_stories.TL_stories_getPinnedStories tL_stories_getPinnedStories = new TL_stories.TL_stories_getPinnedStories();
-            tL_stories_getPinnedStories.peer = mp.u1(i12).l1(j3);
+            tL_stories_getPinnedStories.peer = np.u1(i12).l1(j3);
             n10 = n();
             tL_stories_getPinnedStories.offset_id = n10;
             tL_stories_getPinnedStories.limit = i7;
             tL_stories_getStoriesArchive = tL_stories_getPinnedStories;
         } else if (i11 == 2) {
             TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-            tL_stories_getStoriesByID.peer = mp.u1(i12).l1(j3);
+            tL_stories_getStoriesByID.peer = np.u1(i12).l1(j3);
             tL_stories_getStoriesByID.id.addAll(list);
             n10 = -1;
             tL_stories_getStoriesArchive = tL_stories_getStoriesByID;
         } else {
             TL_stories.TL_stories_getStoriesArchive tL_stories_getStoriesArchive2 = new TL_stories.TL_stories_getStoriesArchive();
-            tL_stories_getStoriesArchive2.peer = mp.u1(i12).l1(j3);
+            tL_stories_getStoriesArchive2.peer = np.u1(i12).l1(j3);
             n10 = n();
             tL_stories_getStoriesArchive2.offset_id = n10;
             tL_stories_getStoriesArchive2.limit = i7;
@@ -563,10 +563,10 @@ public class h6 {
         x();
         TL_stories.TL_stories_incrementStoryViews tL_stories_incrementStoryViews = new TL_stories.TL_stories_incrementStoryViews();
         int i10 = this.c;
-        tL_stories_incrementStoryViews.peer = mp.u1(i10).l1(this.d);
+        tL_stories_incrementStoryViews.peer = np.u1(i10).l1(this.d);
         tL_stories_incrementStoryViews.id.add(Integer.valueOf(i7));
         ConnectionsManager.getInstance(i10).sendRequest(tL_stories_incrementStoryViews, new l5(9));
-        ks.f(i10).k(ks.I5, new Object[0]);
+        ls.f(i10).k(ls.I5, new Object[0]);
         return true;
     }
 
@@ -575,17 +575,17 @@ public class h6 {
             return;
         }
         this.t = true;
-        tr a02 = tr.a0(this.c);
+        ur a02 = ur.a0(this.c);
         a02.a.c(new f6(this, a02, 0));
     }
 
-    public final void t(fj fjVar, boolean z10) {
-        if (fjVar == null) {
+    public final void t(gj gjVar, boolean z10) {
+        if (gjVar == null) {
             return;
         }
-        this.j.put(Integer.valueOf(fjVar.e1()), fjVar);
-        (z10 ? this.k : this.l).add(Integer.valueOf(fjVar.e1()));
-        long b10 = b(fjVar);
+        this.j.put(Integer.valueOf(gjVar.e1()), gjVar);
+        (z10 ? this.k : this.l).add(Integer.valueOf(gjVar.e1()));
+        long b10 = b(gjVar);
         Long valueOf = Long.valueOf(b10);
         HashMap hashMap = this.h;
         TreeSet treeSet = (TreeSet) hashMap.get(valueOf);
@@ -595,18 +595,18 @@ public class h6 {
             hashMap.put(valueOf2, treeSet2);
             treeSet = treeSet2;
         }
-        treeSet.add(Integer.valueOf(fjVar.e1()));
+        treeSet.add(Integer.valueOf(gjVar.e1()));
     }
 
     public final void u(int i7, boolean z10) {
-        fj fjVar = (fj) this.j.remove(Integer.valueOf(i7));
+        gj gjVar = (gj) this.j.remove(Integer.valueOf(i7));
         if (z10) {
             this.k.remove(Integer.valueOf(i7));
         }
         this.l.remove(Integer.valueOf(i7));
         this.g.remove(Integer.valueOf(i7));
-        if (fjVar != null) {
-            long b10 = b(fjVar);
+        if (gjVar != null) {
+            long b10 = b(gjVar);
             Long valueOf = Long.valueOf(b10);
             HashMap hashMap = this.h;
             Collection collection = (Collection) hashMap.get(valueOf);
@@ -634,16 +634,16 @@ public class h6 {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList(this.g);
         c(arrayList, true, true);
-        tr a02 = tr.a0(this.c);
+        ur a02 = ur.a0(this.c);
         a02.a.c(new ai.r(this, arrayList, a02, arrayList2, 18));
     }
 
-    public final fj y(TL_stories.StoryItem storyItem) {
+    public final gj y(TL_stories.StoryItem storyItem) {
         storyItem.dialogId = this.d;
         storyItem.messageId = storyItem.id;
-        fj fjVar = new fj(this.c, storyItem);
-        fjVar.r0(false);
-        return fjVar;
+        gj gjVar = new gj(this.c, storyItem);
+        gjVar.r0(false);
+        return gjVar;
     }
 
     public final void z(int i7) {

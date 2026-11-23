@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nt0 implements org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
@@ -52,12 +52,12 @@ public final /* synthetic */ class nt0 implements org.telegram.ui.ActionBar.q1 {
                     org.telegram.messenger.a8.g(e10, true);
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
-                String N02 = org.telegram.messenger.gd.N0(2131746600, "PrivacyPaymentsClearAlertTitle");
+                String N02 = org.telegram.messenger.hd.N0(2131746600, "PrivacyPaymentsClearAlertTitle");
                 org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
                 t1Var2.S = N02;
-                t1Var2.U = org.telegram.messenger.gd.N0(2131746602, "PrivacyPaymentsClearAlert");
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752087, "ClearButton"), new nt0(privacySettingsActivity, i12));
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, "Cancel"), null);
+                t1Var2.U = org.telegram.messenger.hd.N0(2131746602, "PrivacyPaymentsClearAlert");
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752087, "ClearButton"), new nt0(privacySettingsActivity, i12));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, "Cancel"), null);
                 privacySettingsActivity.showDialog(t1Var2);
                 privacySettingsActivity.showDialog(t1Var2);
                 TextView textView = (TextView) t1Var2.d(-1);
@@ -76,11 +76,11 @@ public final /* synthetic */ class nt0 implements org.telegram.ui.ActionBar.q1 {
                 privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new fi.l5(9));
                 boolean z10 = zArr[0];
                 if (z10 && zArr[1]) {
-                    N0 = org.telegram.messenger.gd.N0(2131746598, "PrivacyPaymentsPaymentShippingCleared");
+                    N0 = org.telegram.messenger.hd.N0(2131746598, "PrivacyPaymentsPaymentShippingCleared");
                 } else if (z10) {
-                    N0 = org.telegram.messenger.gd.N0(2131746597, "PrivacyPaymentsShippingInfoCleared");
+                    N0 = org.telegram.messenger.hd.N0(2131746597, "PrivacyPaymentsShippingInfoCleared");
                 } else if (zArr[1]) {
-                    N0 = org.telegram.messenger.gd.N0(2131746599, "PrivacyPaymentsPaymentInfoCleared");
+                    N0 = org.telegram.messenger.hd.N0(2131746599, "PrivacyPaymentsPaymentInfoCleared");
                 }
                 org.telegram.ui.Components.lc.b0(privacySettingsActivity).Q(R.raw.chats_infotip, 36, N0).j();
                 break;
@@ -91,7 +91,7 @@ public final /* synthetic */ class nt0 implements org.telegram.ui.ActionBar.q1 {
                 privacySettingsActivity.c = p10;
                 p10.j0 = false;
                 if (privacySettingsActivity.T != privacySettingsActivity.U) {
-                    org.telegram.messenger.j10 userConfig = privacySettingsActivity.getUserConfig();
+                    org.telegram.messenger.k10 userConfig = privacySettingsActivity.getUserConfig();
                     boolean z11 = privacySettingsActivity.U;
                     userConfig.V = z11;
                     privacySettingsActivity.T = z11;

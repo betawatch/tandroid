@@ -11,16 +11,16 @@ import android.text.StaticLayout;
 import android.util.SparseArray;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.cj;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.dj;
-import org.telegram.messenger.ev;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ej;
+import org.telegram.messenger.fv;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class k9 extends w9 {
     public final SparseArray p0 = new SparseArray();
@@ -34,14 +34,14 @@ public abstract class k9 extends w9 {
     @Override // org.telegram.ui.Cells.w9
     public final boolean C() {
         r9 r9Var;
-        ev evVar;
+        fv fvVar;
         CharSequence r10;
         String str;
-        if (!this.u0 || (r9Var = this.W) == null || ((r1) r9Var).getMessageObject() == null || (evVar = ((r1) this.W).getMessageObject().y2) == null || evVar.n.isEmpty() || (r10 = r()) == null || r10.length() == 0) {
+        if (!this.u0 || (r9Var = this.W) == null || ((r1) r9Var).getMessageObject() == null || (fvVar = ((r1) this.W).getMessageObject().y2) == null || fvVar.n.isEmpty() || (r10 = r()) == null || r10.length() == 0) {
             return false;
         }
         try {
-            str = evVar.w(this.u, this.v);
+            str = fvVar.w(this.u, this.v);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
             str = null;
@@ -106,34 +106,34 @@ public abstract class k9 extends w9 {
         if (!z10) {
             r1Var.setSelectedBackgroundProgress(0.0f);
         }
-        int i11 = bz.a;
-        SharedPreferences.Editor edit = mp.g1().edit();
+        int i11 = cz.a;
+        SharedPreferences.Editor edit = np.g1().edit();
         edit.putInt("textSelectionHintShows", 3);
         edit.apply();
     }
 
-    public final void W(fj fjVar) {
+    public final void W(gj gjVar) {
         try {
-            int i7 = fjVar.k.edit_date;
+            int i7 = gjVar.k.edit_date;
         } catch (Exception unused) {
         }
-        if (this.w == fjVar.e1()) {
+        if (this.w == gjVar.e1()) {
             f(true);
         }
     }
 
-    public final void X(fj fjVar, cj cjVar, Canvas canvas) {
-        fj messageObject;
+    public final void X(gj gjVar, dj djVar, Canvas canvas) {
+        gj messageObject;
         r9 r9Var = this.W;
-        if (r9Var == null || ((r1) r9Var).getMessageObject() == null || this.q0 || this.s0 || this.u0 || (messageObject = ((r1) this.W).getMessageObject()) == null || messageObject.B2 == null || fjVar.e1() != this.w) {
+        if (r9Var == null || ((r1) r9Var).getMessageObject() == null || this.q0 || this.s0 || this.u0 || (messageObject = ((r1) this.W).getMessageObject()) == null || messageObject.B2 == null || gjVar.e1() != this.w) {
             return;
         }
         int i7 = this.u;
-        int i10 = cjVar.n;
+        int i10 = djVar.n;
         int i11 = this.v - i10;
         int i12 = 0;
-        int j3 = Utilities.j(i7 - i10, cjVar.e.getText().length(), 0);
-        int j10 = Utilities.j(i11, cjVar.e.getText().length(), 0);
+        int j3 = Utilities.j(i7 - i10, djVar.e.getText().length(), 0);
+        int j10 = Utilities.j(i11, djVar.e.getText().length(), 0);
         if (j3 != j10) {
             boolean P3 = messageObject.P3();
             Paint paint = this.p;
@@ -147,12 +147,12 @@ public abstract class k9 extends w9 {
                 paint2.setColor(t(i14));
                 paint.setColor(t(i14));
             }
-            if (cjVar.J) {
+            if (djVar.J) {
                 i12 = org.telegram.messenger.g0.L(10.0f);
-            } else if (cjVar.I) {
+            } else if (djVar.I) {
                 i12 = org.telegram.messenger.g0.L(0.0f);
             }
-            h(canvas, cjVar.e, j3, j10, true, true, i12);
+            h(canvas, djVar.e, j3, j10, true, true, i12);
         }
     }
 
@@ -173,17 +173,17 @@ public abstract class k9 extends w9 {
         }
     }
 
-    public final void Z(fj fjVar, ev evVar, Canvas canvas) {
+    public final void Z(gj gjVar, fv fvVar, Canvas canvas) {
         Canvas canvas2;
-        if (!this.u0 || evVar == null) {
+        if (!this.u0 || fvVar == null) {
             return;
         }
-        ArrayList arrayList = evVar.n;
+        ArrayList arrayList = fvVar.n;
         r9 r9Var = this.W;
-        if (r9Var == null || ((r1) r9Var).getMessageObject() == null || ((r1) this.W).getMessageObject().e1() != fjVar.e1()) {
+        if (r9Var == null || ((r1) r9Var).getMessageObject() == null || ((r1) this.W).getMessageObject().e1() != gjVar.e1()) {
             return;
         }
-        boolean P3 = fjVar.P3();
+        boolean P3 = gjVar.P3();
         Paint paint = this.p;
         Paint paint2 = this.o;
         if (P3) {
@@ -199,7 +199,7 @@ public abstract class k9 extends w9 {
         while (i11 < arrayList.size()) {
             Layout a10 = ((u9) arrayList.get(i11)).a();
             if (a10 != null && a10.getText() != null) {
-                int intValue = ((Integer) evVar.o.get(i11)).intValue();
+                int intValue = ((Integer) fvVar.o.get(i11)).intValue();
                 int length = a10.getText().length();
                 int j3 = Utilities.j(this.u - intValue, length, 0);
                 int j10 = Utilities.j(this.v - intValue, length, 0);
@@ -252,9 +252,9 @@ public abstract class k9 extends w9 {
 
     public final void b0(r1 r1Var) {
         ArrayList arrayList;
-        ev evVar;
+        fv fvVar;
         this.X = r1Var;
-        fj messageObject = r1Var.getMessageObject();
+        gj messageObject = r1Var.getMessageObject();
         y1 y1Var = r1Var.ib;
         boolean z10 = this.r0;
         Rect rect = this.B;
@@ -268,25 +268,25 @@ public abstract class k9 extends w9 {
             rect.set(i10, this.d, r1Var.getFactCheckLayout().getWidth() + i10, r1Var.getFactCheckLayout().getHeight() + this.d);
             return;
         }
-        if (this.v0 && messageObject != null && (evVar = messageObject.y2) != null && !evVar.n.isEmpty()) {
-            ev evVar2 = messageObject.y2;
+        if (this.v0 && messageObject != null && (fvVar = messageObject.y2) != null && !fvVar.n.isEmpty()) {
+            fv fvVar2 = messageObject.y2;
             int i11 = this.c;
             int i12 = this.d;
-            rect.set(i11, i12, evVar2.C + i11, evVar2.t() + i12);
+            rect.set(i11, i12, fvVar2.C + i11, fvVar2.t() + i12);
             return;
         }
         if (r1Var.d2() && r1Var.getCaptionLayout().e.size() > 0) {
-            cj cjVar = (cj) i5.c.h(1, r1Var.getCaptionLayout().e);
+            dj djVar = (dj) i5.c.h(1, r1Var.getCaptionLayout().e);
             int i13 = this.c;
-            rect.set(i13, this.d, cjVar.e.getWidth() + i13, (int) (cjVar.p(r1Var.getCaptionLayout().e, y1Var) + this.d + cjVar.f + cjVar.e.getHeight()));
+            rect.set(i13, this.d, djVar.e.getWidth() + i13, (int) (djVar.p(r1Var.getCaptionLayout().e, y1Var) + this.d + djVar.f + djVar.e.getHeight()));
         } else {
             if (messageObject == null || (arrayList = messageObject.B2) == null || arrayList.size() <= 0) {
                 this.X = null;
                 return;
             }
-            cj cjVar2 = (cj) i5.c.h(1, messageObject.B2);
+            dj djVar2 = (dj) i5.c.h(1, messageObject.B2);
             int i14 = this.c;
-            rect.set(i14, this.d, cjVar2.e.getWidth() + i14, (int) (cjVar2.p(messageObject.B2, y1Var) + this.d + cjVar2.f + cjVar2.e.getHeight()));
+            rect.set(i14, this.d, djVar2.e.getWidth() + i14, (int) (djVar2.p(messageObject.B2, y1Var) + this.d + djVar2.f + djVar2.e.getHeight()));
         }
     }
 
@@ -314,7 +314,7 @@ public abstract class k9 extends w9 {
             m9Var.d = null;
             return;
         }
-        fj messageObject = r1Var.getMessageObject();
+        gj messageObject = r1Var.getMessageObject();
         if (this.q0) {
             m9Var.d = r1Var.getDescriptionlayout();
             m9Var.b = 0.0f;
@@ -330,10 +330,10 @@ public abstract class k9 extends w9 {
             return;
         }
         if (this.u0) {
-            ev evVar = messageObject != null ? messageObject.y2 : null;
-            if (evVar != null) {
-                ArrayList arrayList = evVar.o;
-                ArrayList arrayList2 = evVar.n;
+            fv fvVar = messageObject != null ? messageObject.y2 : null;
+            if (fvVar != null) {
+                ArrayList arrayList = fvVar.o;
+                ArrayList arrayList2 = fvVar.n;
                 if (!arrayList2.isEmpty()) {
                     while (true) {
                         if (r4 >= arrayList2.size()) {
@@ -362,33 +362,33 @@ public abstract class k9 extends w9 {
             return;
         }
         if (r1Var.d2()) {
-            dj captionLayout = r1Var.getCaptionLayout();
+            ej captionLayout = r1Var.getCaptionLayout();
             ArrayList arrayList3 = captionLayout.e;
             float f10 = captionLayout.d;
             if (arrayList3.size() == 1) {
-                m9Var.d = ((cj) arrayList3.get(0)).e;
+                m9Var.d = ((dj) arrayList3.get(0)).e;
                 m9Var.b = r11.f;
-                cj cjVar = (cj) arrayList3.get(0);
-                float f11 = -(cjVar.l() ? ((int) Math.ceil(f10)) - (cjVar.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
+                dj djVar = (dj) arrayList3.get(0);
+                float f11 = -(djVar.l() ? ((int) Math.ceil(f10)) - (djVar.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
                 m9Var.c = f11;
-                if (cjVar.I && !cjVar.J) {
-                    m9Var.c = f11 + (cjVar.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
+                if (djVar.I && !djVar.J) {
+                    m9Var.c = f11 + (djVar.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
                 }
                 m9Var.a = 0;
                 return;
             }
             for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-                cj cjVar2 = (cj) arrayList3.get(i10);
-                int i11 = i7 - cjVar2.n;
-                if (i11 >= 0 && i11 <= cjVar2.e.getText().length()) {
-                    m9Var.d = cjVar2.e;
-                    m9Var.b = cjVar2.o(arrayList3) + cjVar2.f;
-                    float f12 = -(cjVar2.l() ? ((int) Math.ceil(f10)) - (cjVar2.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
+                dj djVar2 = (dj) arrayList3.get(i10);
+                int i11 = i7 - djVar2.n;
+                if (i11 >= 0 && i11 <= djVar2.e.getText().length()) {
+                    m9Var.d = djVar2.e;
+                    m9Var.b = djVar2.o(arrayList3) + djVar2.f;
+                    float f12 = -(djVar2.l() ? ((int) Math.ceil(f10)) - (djVar2.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
                     m9Var.c = f12;
-                    if (cjVar2.I && !cjVar2.J) {
-                        m9Var.c = f12 + (cjVar2.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
+                    if (djVar2.I && !djVar2.J) {
+                        m9Var.c = f12 + (djVar2.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
                     }
-                    m9Var.a = cjVar2.n;
+                    m9Var.a = djVar2.n;
                     return;
                 }
             }
@@ -401,29 +401,29 @@ public abstract class k9 extends w9 {
             return;
         }
         if (arrayList4.size() == 1) {
-            m9Var.d = ((cj) messageObject.B2.get(0)).e;
+            m9Var.d = ((dj) messageObject.B2.get(0)).e;
             m9Var.b = r11.f;
-            cj cjVar3 = (cj) messageObject.B2.get(0);
-            float f13 = -(cjVar3.l() ? ((int) Math.ceil(messageObject.x2)) - (cjVar3.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
+            dj djVar3 = (dj) messageObject.B2.get(0);
+            float f13 = -(djVar3.l() ? ((int) Math.ceil(messageObject.x2)) - (djVar3.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
             m9Var.c = f13;
-            if (cjVar3.I && !cjVar3.J) {
-                m9Var.c = f13 + (cjVar3.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
+            if (djVar3.I && !djVar3.J) {
+                m9Var.c = f13 + (djVar3.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
             }
             m9Var.a = 0;
             return;
         }
         for (int i12 = 0; i12 < messageObject.B2.size(); i12++) {
-            cj cjVar4 = (cj) messageObject.B2.get(i12);
-            int i13 = i7 - cjVar4.n;
-            if (i13 >= 0 && i13 <= cjVar4.e.getText().length()) {
-                m9Var.d = cjVar4.e;
-                m9Var.b = cjVar4.o(messageObject.B2) + cjVar4.f;
-                float f14 = -(cjVar4.l() ? ((int) Math.ceil(messageObject.x2)) - (cjVar4.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
+            dj djVar4 = (dj) messageObject.B2.get(i12);
+            int i13 = i7 - djVar4.n;
+            if (i13 >= 0 && i13 <= djVar4.e.getText().length()) {
+                m9Var.d = djVar4.e;
+                m9Var.b = djVar4.o(messageObject.B2) + djVar4.f;
+                float f14 = -(djVar4.l() ? ((int) Math.ceil(messageObject.x2)) - (djVar4.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
                 m9Var.c = f14;
-                if (cjVar4.I && !cjVar4.J) {
-                    m9Var.c = f14 + (cjVar4.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
+                if (djVar4.I && !djVar4.J) {
+                    m9Var.c = f14 + (djVar4.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
                 }
-                m9Var.a = cjVar4.n;
+                m9Var.a = djVar4.n;
                 return;
             }
         }
@@ -460,9 +460,9 @@ public abstract class k9 extends w9 {
         } else {
             if (!z12) {
                 if (z13) {
-                    ev evVar = r1Var.getMessageObject() != null ? r1Var.getMessageObject().y2 : null;
-                    if (evVar != null) {
-                        ArrayList arrayList = evVar.n;
+                    fv fvVar = r1Var.getMessageObject() != null ? r1Var.getMessageObject().y2 : null;
+                    if (fvVar != null) {
+                        ArrayList arrayList = fvVar.n;
                         if (!arrayList.isEmpty()) {
                             u9 u9Var = (u9) i5.c.h(1, arrayList);
                             layout = u9Var.a();
@@ -472,15 +472,15 @@ public abstract class k9 extends w9 {
                     return -1;
                 }
                 if (r1Var.d2()) {
-                    cj cjVar = (cj) r1Var.getCaptionLayout().e.get(r1Var.getCaptionLayout().e.size() - 1);
-                    layout = cjVar.e;
-                    o4 = cjVar.o(r1Var.getCaptionLayout().e);
-                    i13 = cjVar.f;
+                    dj djVar = (dj) r1Var.getCaptionLayout().e.get(r1Var.getCaptionLayout().e.size() - 1);
+                    layout = djVar.e;
+                    o4 = djVar.o(r1Var.getCaptionLayout().e);
+                    i13 = djVar.f;
                 } else {
-                    cj cjVar2 = (cj) r1Var.getMessageObject().B2.get(r1Var.getMessageObject().B2.size() - 1);
-                    layout = cjVar2.e;
-                    o4 = cjVar2.o(r1Var.getMessageObject().B2);
-                    i13 = cjVar2.f;
+                    dj djVar2 = (dj) r1Var.getMessageObject().B2.get(r1Var.getMessageObject().B2.size() - 1);
+                    layout = djVar2.e;
+                    o4 = djVar2.o(r1Var.getMessageObject().B2);
+                    i13 = djVar2.f;
                 }
                 f10 = i13 + o4;
                 Layout layout4 = layout;
@@ -495,7 +495,7 @@ public abstract class k9 extends w9 {
                         i16 = lineBottom - 1;
                     }
                     y1 y1Var = r1Var.ib;
-                    fj messageObject = r1Var.getMessageObject();
+                    gj messageObject = r1Var.getMessageObject();
                     m9 m9Var = this.a0;
                     if (!z10 ? this.q0 : this.r0) {
                         m9Var.d = r1Var.getDescriptionlayout();
@@ -512,49 +512,49 @@ public abstract class k9 extends w9 {
                                         if (i17 >= messageObject.B2.size()) {
                                             break;
                                         }
-                                        cj cjVar3 = (cj) messageObject.B2.get(i17);
+                                        dj djVar3 = (dj) messageObject.B2.get(i17);
                                         float f12 = i16;
-                                        if (f12 < cjVar3.o(messageObject.B2) || f12 > cjVar3.o(messageObject.B2) + cjVar3.f + cjVar3.j(y1Var)) {
+                                        if (f12 < djVar3.o(messageObject.B2) || f12 > djVar3.o(messageObject.B2) + djVar3.f + djVar3.j(y1Var)) {
                                             i17++;
                                         } else {
-                                            m9Var.d = cjVar3.e;
-                                            m9Var.b = cjVar3.o(messageObject.B2) + cjVar3.f;
-                                            float f13 = -(cjVar3.l() ? ((int) Math.ceil(messageObject.x2)) - (cjVar3.J ? org.telegram.messenger.g0.L(10.0f) : cjVar3.I ? org.telegram.messenger.g0.L(0.0f) : 0) : 0);
+                                            m9Var.d = djVar3.e;
+                                            m9Var.b = djVar3.o(messageObject.B2) + djVar3.f;
+                                            float f13 = -(djVar3.l() ? ((int) Math.ceil(messageObject.x2)) - (djVar3.J ? org.telegram.messenger.g0.L(10.0f) : djVar3.I ? org.telegram.messenger.g0.L(0.0f) : 0) : 0);
                                             m9Var.c = f13;
-                                            if (cjVar3.I && !cjVar3.J) {
-                                                m9Var.c = f13 + (cjVar3.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
+                                            if (djVar3.I && !djVar3.J) {
+                                                m9Var.c = f13 + (djVar3.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
                                             }
-                                            m9Var.a = cjVar3.n;
+                                            m9Var.a = djVar3.n;
                                         }
                                     }
                                 } else {
-                                    dj captionLayout = r1Var.getCaptionLayout();
+                                    ej captionLayout = r1Var.getCaptionLayout();
                                     int i18 = 0;
                                     while (true) {
                                         ArrayList arrayList2 = captionLayout.e;
                                         if (i18 >= arrayList2.size()) {
                                             break;
                                         }
-                                        cj cjVar4 = (cj) arrayList2.get(i18);
+                                        dj djVar4 = (dj) arrayList2.get(i18);
                                         float f14 = i16;
-                                        if (f14 < cjVar4.o(arrayList2) || f14 > cjVar4.o(arrayList2) + cjVar4.f + cjVar4.j(y1Var)) {
+                                        if (f14 < djVar4.o(arrayList2) || f14 > djVar4.o(arrayList2) + djVar4.f + djVar4.j(y1Var)) {
                                             i18++;
                                         } else {
-                                            m9Var.d = cjVar4.e;
-                                            m9Var.b = cjVar4.o(arrayList2) + cjVar4.f;
-                                            float f15 = -(cjVar4.l() ? ((int) Math.ceil(captionLayout.d)) - (cjVar4.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
+                                            m9Var.d = djVar4.e;
+                                            m9Var.b = djVar4.o(arrayList2) + djVar4.f;
+                                            float f15 = -(djVar4.l() ? ((int) Math.ceil(captionLayout.d)) - (djVar4.J ? org.telegram.messenger.g0.L(10.0f) : 0) : 0);
                                             m9Var.c = f15;
-                                            if (cjVar4.I && !cjVar4.J) {
-                                                m9Var.c = f15 + (cjVar4.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
+                                            if (djVar4.I && !djVar4.J) {
+                                                m9Var.c = f15 + (djVar4.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(8.0f));
                                             }
-                                            m9Var.a = cjVar4.n;
+                                            m9Var.a = djVar4.n;
                                         }
                                     }
                                 }
                             } else {
-                                ev evVar2 = messageObject != null ? messageObject.y2 : null;
-                                if (evVar2 != null) {
-                                    ArrayList arrayList3 = evVar2.n;
+                                fv fvVar2 = messageObject != null ? messageObject.y2 : null;
+                                if (fvVar2 != null) {
+                                    ArrayList arrayList3 = fvVar2.n;
                                     if (!arrayList3.isEmpty()) {
                                         int i19 = TLObject.FLAG_31;
                                         int i20 = -1;
@@ -601,7 +601,7 @@ public abstract class k9 extends w9 {
                                         m9Var.d = ((u9) arrayList3.get(i20)).a();
                                         m9Var.b = r2.getY();
                                         m9Var.c = r2.getX();
-                                        m9Var.a = ((Integer) evVar2.o.get(i20)).intValue();
+                                        m9Var.a = ((Integer) fvVar2.o.get(i20)).intValue();
                                     }
                                 }
                                 i14 = -1;
@@ -654,26 +654,26 @@ public abstract class k9 extends w9 {
         Layout layout;
         r9 r9Var = this.W;
         if (r9Var != null && ((r1) r9Var).getMessageObject() != null) {
-            fj messageObject = ((r1) this.W).getMessageObject();
+            gj messageObject = ((r1) this.W).getMessageObject();
             if (this.q0) {
                 layout = ((r1) this.W).getDescriptionlayout();
             } else if (this.s0) {
                 layout = ((r1) this.W).getFactCheckLayout();
             } else if (this.u0) {
-                ev evVar = messageObject != null ? messageObject.y2 : null;
-                if (evVar != null) {
-                    ArrayList arrayList = evVar.n;
+                fv fvVar = messageObject != null ? messageObject.y2 : null;
+                if (fvVar != null) {
+                    ArrayList arrayList = fvVar.n;
                     if (!arrayList.isEmpty()) {
                         layout = ((u9) arrayList.get(0)).a();
                     }
                 }
                 layout = null;
             } else if (((r1) this.W).d2()) {
-                layout = ((cj) ((r1) this.W).getCaptionLayout().e.get(0)).e;
+                layout = ((dj) ((r1) this.W).getCaptionLayout().e.get(0)).e;
             } else {
                 ArrayList arrayList2 = messageObject.B2;
                 if (arrayList2 != null) {
-                    layout = ((cj) arrayList2.get(0)).e;
+                    layout = ((dj) arrayList2.get(0)).e;
                 }
                 layout = null;
             }
@@ -700,8 +700,8 @@ public abstract class k9 extends w9 {
         if (!z10 ? this.u0 : this.v0) {
             return r1Var.d2() ? r1Var.getCaptionLayout().a : r1Var.getMessageObject().v;
         }
-        ev evVar = r1Var.getMessageObject().y2;
-        return evVar != null ? evVar.q : "";
+        fv fvVar = r1Var.getMessageObject().y2;
+        return fvVar != null ? fvVar.q : "";
     }
 
     @Override // org.telegram.ui.Cells.w9

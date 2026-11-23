@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class Switch extends View implements org.telegram.ui.ActionBar.b6 {
     public int E;
@@ -257,7 +257,7 @@ public class Switch extends View implements org.telegram.ui.ActionBar.b6 {
                     int green2 = Color.green(a11);
                     int blue = Color.blue(a10);
                     int blue2 = Color.blue(a11);
-                    int alpha = (((int) (((blue2 - blue) * f15) + blue)) & org.telegram.messenger.ks.e4) | ((((int) (((Color.alpha(a11) - r6) * f15) + Color.alpha(a10))) & org.telegram.messenger.ks.e4) << 24) | ((((int) (((red2 - red) * f15) + red)) & org.telegram.messenger.ks.e4) << 16) | ((((int) (((green2 - green) * f15) + green)) & org.telegram.messenger.ks.e4) << 8);
+                    int alpha = (((int) (((blue2 - blue) * f15) + blue)) & org.telegram.messenger.ls.e4) | ((((int) (((Color.alpha(a11) - r6) * f15) + Color.alpha(a10))) & org.telegram.messenger.ls.e4) << 24) | ((((int) (((red2 - red) * f15) + red)) & org.telegram.messenger.ls.e4) << 16) | ((((int) (((green2 - green) * f15) + green)) & org.telegram.messenger.ls.e4) << 8);
                     paint5.setColor(alpha);
                     paint.setColor(alpha);
                     float N = org.telegram.messenger.g0.N(f16) + measuredHeight;
@@ -314,7 +314,7 @@ public class Switch extends View implements org.telegram.ui.ActionBar.b6 {
                 int blue3 = Color.blue(w02);
                 int blue4 = Color.blue(a12);
                 float f19 = f11;
-                paint6.setColor((((int) (((blue4 - blue3) * f19) + blue3)) & org.telegram.messenger.ks.e4) | ((((int) (((red4 - red3) * f19) + red3)) & org.telegram.messenger.ks.e4) << 16) | ((((int) (((Color.alpha(a12) - r7) * f19) + Color.alpha(w02))) & org.telegram.messenger.ks.e4) << 24) | ((((int) (((green4 - green3) * f19) + green3)) & org.telegram.messenger.ks.e4) << 8));
+                paint6.setColor((((int) (((blue4 - blue3) * f19) + blue3)) & org.telegram.messenger.ls.e4) | ((((int) (((red4 - red3) * f19) + red3)) & org.telegram.messenger.ls.e4) << 16) | ((((int) (((Color.alpha(a12) - r7) * f19) + Color.alpha(w02))) & org.telegram.messenger.ls.e4) << 24) | ((((int) (((green4 - green3) * f19) + green3)) & org.telegram.messenger.ls.e4) << 8));
                 float f20 = L2;
                 float f21 = measuredHeight2;
                 canvas4.drawCircle(f20, f21, org.telegram.messenger.g0.L(8.0f), paint6);

@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.cast;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class b1 implements a0, e5 {
     public static final b1 a = new b1();
@@ -25,7 +25,7 @@ public final class b1 implements a0, e5 {
                                 int i13 = i11 + 2;
                                 int i14 = bArr[i12];
                                 if (i14 <= -65) {
-                                    if ((((i14 + ks.x1) + (i10 << 28)) >> 30) == 0) {
+                                    if ((((i14 + ls.x1) + (i10 << 28)) >> 30) == 0) {
                                         int i15 = i11 + 3;
                                         if (bArr[i13] <= 65471) {
                                             i11 += 4;

@@ -4,14 +4,14 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.u3;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.b11;
 import org.telegram.ui.Components.c11;
-import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.dx;
 import org.telegram.ui.Components.zj0;
 import org.telegram.ui.i40;
 import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g extends v4.o {
     public final /* synthetic */ int b;
@@ -55,7 +55,7 @@ public final class g extends v4.o {
             case 2:
                 return Objects.equals(this.c.get(i7), ((zj0) this.d).n.get(i10));
             case 3:
-                return ((d11) this.c.get(i7)).a() == ((d11) ((c11) this.d).c.get(i10)).a();
+                return ((c11) this.c.get(i7)).a() == ((c11) ((b11) this.d).c.get(i10)).a();
             case 4:
                 i40 i40Var = (i40) this.d;
                 ArrayList arrayList = this.c;
@@ -78,7 +78,7 @@ public final class g extends v4.o {
             case 2:
                 return ((zj0) this.d).n.size();
             case 3:
-                return ((c11) this.d).c.size();
+                return ((b11) this.d).c.size();
             case 4:
                 return ((i40) this.d).e.size();
             default:

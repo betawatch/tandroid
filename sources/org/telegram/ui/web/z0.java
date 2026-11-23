@@ -6,8 +6,8 @@ import android.os.Bundle;
 import fi.l7;
 import hi.a5;
 import java.io.File;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.si;
 import org.telegram.ui.ActionBar.k5;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.qf;
@@ -20,7 +20,7 @@ import org.telegram.ui.y91;
 import tg.d2;
 import tg.n2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class z0 implements Runnable {
                 a5Var.s();
                 return;
             case 20:
-                ri.d0(j10.t0).d(2, null, ((d2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
+                si.d0(k10.t0).d(2, null, ((d2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
                 return;
             case 21:
                 org.telegram.messenger.g0.I3(((n2) this.b).r0);

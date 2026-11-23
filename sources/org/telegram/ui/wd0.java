@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wd0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final /* synthetic */ class wd0 implements RequestDelegate {
                                     de0 de0Var = ce0Var2.h0;
                                     if (de0Var.G == 2) {
                                         i10 = ((org.telegram.ui.ActionBar.g2) de0Var).currentAccount;
-                                        String d = pf.b.d(org.telegram.messenger.j10.i(i10).d(), false);
+                                        String d = pf.b.d(org.telegram.messenger.k10.i(i10).d(), false);
                                         if (!TextUtils.isEmpty(d)) {
                                             if (d.length() > 4) {
                                                 for (int i14 = 4; i14 >= 1; i14--) {
@@ -92,7 +92,7 @@ public final /* synthetic */ class wd0 implements RequestDelegate {
                                                     if (list2 == null) {
                                                         psVar = null;
                                                     } else if (list2.size() > 1) {
-                                                        String string = org.telegram.messenger.mp.g1().getString("phone_code_last_matched_" + substring, null);
+                                                        String string = org.telegram.messenger.np.g1().getString("phone_code_last_matched_" + substring, null);
                                                         if (string != null) {
                                                             psVar = (ps) p5.c.h(1, list2);
                                                             int size = arrayList.size();
@@ -139,11 +139,11 @@ public final /* synthetic */ class wd0 implements RequestDelegate {
                                         de0Var2.M1(6, true, bundle, false);
                                         break;
                                     } else {
-                                        org.telegram.ui.Components.c5.u0(de0Var2.getParentActivity(), org.telegram.messenger.gd.N0(2131743577, "UpdateAppAlert"), true);
+                                        org.telegram.ui.Components.c5.u0(de0Var2.getParentActivity(), org.telegram.messenger.hd.N0(2131743575, "UpdateAppAlert"), true);
                                         break;
                                     }
                                 } else {
-                                    de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error2.text);
+                                    de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error2.text);
                                     break;
                                 }
                         }
@@ -206,7 +206,7 @@ public final /* synthetic */ class wd0 implements RequestDelegate {
                                     de0 de0Var = ce0Var22.h0;
                                     if (de0Var.G == 2) {
                                         i102 = ((org.telegram.ui.ActionBar.g2) de0Var).currentAccount;
-                                        String d = pf.b.d(org.telegram.messenger.j10.i(i102).d(), false);
+                                        String d = pf.b.d(org.telegram.messenger.k10.i(i102).d(), false);
                                         if (!TextUtils.isEmpty(d)) {
                                             if (d.length() > 4) {
                                                 for (int i14 = 4; i14 >= 1; i14--) {
@@ -215,7 +215,7 @@ public final /* synthetic */ class wd0 implements RequestDelegate {
                                                     if (list2 == null) {
                                                         psVar = null;
                                                     } else if (list2.size() > 1) {
-                                                        String string = org.telegram.messenger.mp.g1().getString("phone_code_last_matched_" + substring, null);
+                                                        String string = org.telegram.messenger.np.g1().getString("phone_code_last_matched_" + substring, null);
                                                         if (string != null) {
                                                             psVar = (ps) p5.c.h(1, list2);
                                                             int size = arrayList.size();
@@ -262,11 +262,11 @@ public final /* synthetic */ class wd0 implements RequestDelegate {
                                         de0Var2.M1(6, true, bundle, false);
                                         break;
                                     } else {
-                                        org.telegram.ui.Components.c5.u0(de0Var2.getParentActivity(), org.telegram.messenger.gd.N0(2131743577, "UpdateAppAlert"), true);
+                                        org.telegram.ui.Components.c5.u0(de0Var2.getParentActivity(), org.telegram.messenger.hd.N0(2131743575, "UpdateAppAlert"), true);
                                         break;
                                     }
                                 } else {
-                                    de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error2.text);
+                                    de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error2.text);
                                     break;
                                 }
                         }

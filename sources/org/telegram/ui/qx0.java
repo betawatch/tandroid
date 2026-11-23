@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.os.Trace;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qx0 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,17 +25,17 @@ public final /* synthetic */ class qx0 implements Runnable {
         Object obj = this.c;
         switch (i10) {
             case 0:
-                org.telegram.messenger.az azVar = (org.telegram.messenger.az) obj;
-                azVar.e = SystemClock.elapsedRealtime();
-                azVar.c = false;
+                org.telegram.messenger.bz bzVar = (org.telegram.messenger.bz) obj;
+                bzVar.e = SystemClock.elapsedRealtime();
+                bzVar.c = false;
                 if (j3 == -1) {
-                    azVar.d = false;
-                    azVar.b = 0L;
+                    bzVar.d = false;
+                    bzVar.b = 0L;
                 } else {
-                    azVar.b = j3;
-                    azVar.d = true;
+                    bzVar.b = j3;
+                    bzVar.d = true;
                 }
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.E4, azVar);
+                org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.E4, bzVar);
                 return;
             case 1:
                 ((li.d) obj).a(Long.valueOf(j3));

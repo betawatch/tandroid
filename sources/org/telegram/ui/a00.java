@@ -7,11 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.a00;
 import org.telegram.ui.c00;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a00 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -61,16 +61,16 @@ public final class a00 extends org.telegram.ui.Components.dk0 {
             }
             org.telegram.ui.Cells.u2 u2Var = (org.telegram.ui.Cells.u2) view;
             u2Var.t2 = i7 != b() - 1;
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList.get(i7);
-            boolean z10 = u2Var.getMessage() != null && u2Var.getMessage().e1() == fjVar.e1();
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList.get(i7);
+            boolean z10 = u2Var.getMessage() != null && u2Var.getMessage().e1() == gjVar.e1();
             u2Var.P = c00Var.q0;
-            u2Var.d0(org.telegram.messenger.fj.B0(fjVar.k), fjVar, fjVar.k.date, false, false);
+            u2Var.d0(org.telegram.messenger.gj.B0(gjVar.k), gjVar, gjVar.k.date, false, false);
             if (!c00Var.p0.V1()) {
                 u2Var.c0(false, z10);
                 return;
             }
-            int e12 = fjVar.e1();
-            vzVar.a = org.telegram.messenger.fj.B0(fjVar.k);
+            int e12 = gjVar.e1();
+            vzVar.a = org.telegram.messenger.gj.B0(gjVar.k);
             vzVar.b = e12;
             u2Var.c0(c00Var.p0.r0(vzVar), z10);
             return;
@@ -87,11 +87,11 @@ public final class a00 extends org.telegram.ui.Components.dk0 {
             }
             int i14 = (i13 * i7) + i12;
             if (i14 < arrayList.size()) {
-                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) arrayList.get(i14);
-                q7Var.c(i12, arrayList.indexOf(fjVar2), fjVar2);
+                org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) arrayList.get(i14);
+                q7Var.c(i12, arrayList.indexOf(gjVar2), gjVar2);
                 if (c00Var.p0.V1()) {
-                    int e13 = fjVar2.e1();
-                    vzVar.a = org.telegram.messenger.fj.B0(fjVar2.k);
+                    int e13 = gjVar2.e1();
+                    vzVar.a = org.telegram.messenger.gj.B0(gjVar2.k);
                     vzVar.b = e13;
                     q7Var.b(i12, c00Var.p0.r0(vzVar), true);
                 } else {
@@ -117,10 +117,10 @@ public final class a00 extends org.telegram.ui.Components.dk0 {
             final org.telegram.ui.Cells.q7 q7Var = new org.telegram.ui.Cells.q7(context);
             Paint paint = new Paint();
             q7Var.n = paint;
-            q7Var.s = org.telegram.messenger.j10.t0;
+            q7Var.s = org.telegram.messenger.k10.t0;
             q7Var.r = 1;
             paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ci, false));
-            q7Var.b = new org.telegram.messenger.fj[6];
+            q7Var.b = new org.telegram.messenger.gj[6];
             q7Var.a = new org.telegram.ui.Cells.n7[6];
             q7Var.c = new int[6];
             for (int i10 = 0; i10 < 6; i10++) {
@@ -139,16 +139,16 @@ public final class a00 extends org.telegram.ui.Components.dk0 {
                         int intValue = ((Integer) view.getTag()).intValue();
                         o7 o7Var = q7Var2.d;
                         int i11 = q7Var2.c[intValue];
-                        fj fjVar = q7Var2.b[intValue];
+                        gj gjVar = q7Var2.b[intValue];
                         org.telegram.ui.f fVar = (org.telegram.ui.f) o7Var;
                         c00 c00Var = ((a00) fVar.b).d;
                         if (!c00Var.p0.V1()) {
-                            c00.a(c00Var, fjVar, q7Var2, intValue);
+                            c00.a(c00Var, gjVar, q7Var2, intValue);
                             return true;
                         }
                         c00 c00Var2 = ((a00) fVar.b).d;
                         SpannableStringBuilder[] spannableStringBuilderArr = c00.t0;
-                        c00Var2.f(i11, q7Var2, fjVar, intValue);
+                        c00Var2.f(i11, q7Var2, gjVar, intValue);
                         return true;
                     }
                 });

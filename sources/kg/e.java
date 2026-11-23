@@ -8,8 +8,8 @@ import android.widget.LinearLayout;
 import c8.ma;
 import hi.o4;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public float E;
@@ -62,7 +62,7 @@ public final class e extends FrameLayout {
         o6Var.getDrawable().r(true, false);
         o6Var.setTypeface(org.telegram.messenger.g0.o());
         o6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        o6Var.setText(o10.q(c22));
+        o6Var.setText(p10.q(c22));
         t6.Y(o6Var, m6.G6, h6Var);
         o6Var.setEllipsizeByGradient(true);
         linearLayout.addView(o6Var, ma.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
@@ -71,7 +71,7 @@ public final class e extends FrameLayout {
         o6Var2.n = false;
         o6Var2.getDrawable().r(true, false);
         o6Var2.setTextSize(org.telegram.messenger.g0.L(13.0f));
-        o6Var2.setText(gd.N0(2131753697, null));
+        o6Var2.setText(hd.N0(2131753697, null));
         t6.Y(o6Var2, m6.Xe, h6Var);
         o6Var2.setEllipsizeByGradient(true);
         linearLayout.addView(o6Var2, ma.o(-1, 17));
@@ -96,7 +96,7 @@ public final class e extends FrameLayout {
         dqVar.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
         dqVar.setOnClickListener(new o4(this, 7));
         dqVar.setOnWidthUpdatedListener(new d(this, 0));
-        dqVar.setText(gd.N0(this.r ? 2131753698 : 2131753695, null));
+        dqVar.setText(hd.N0(this.r ? 2131753698 : 2131753695, null));
         addView(dqVar, ma.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         this.n = imageView;

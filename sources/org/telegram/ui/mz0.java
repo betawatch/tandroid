@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class mz0 implements Runnable {
                 if (ek0Var != null && (mj0Var = (org.telegram.ui.Components.mj0) ek0Var.K(themeActivity2.Z)) != null) {
                     View view2 = mj0Var.a;
                     if (view2 instanceof org.telegram.ui.Cells.x9) {
-                        ((org.telegram.ui.Cells.x9) view2).c(org.telegram.messenger.gd.N0(2131753778, "AutoNightUpdateLocation"), org.telegram.ui.ActionBar.m6.w, false, false);
+                        ((org.telegram.ui.Cells.x9) view2).c(org.telegram.messenger.hd.N0(2131753778, "AutoNightUpdateLocation"), org.telegram.ui.ActionBar.m6.w, false, false);
                         break;
                     }
                 }
@@ -114,7 +114,7 @@ public final /* synthetic */ class mz0 implements Runnable {
             case 12:
                 i81 i81Var2 = (i81) obj2;
                 i81Var2.getClass();
-                org.telegram.messenger.g0.g(org.telegram.messenger.fj.h0(((TLRPC.TodoItem) obj).title, false));
+                org.telegram.messenger.g0.g(org.telegram.messenger.gj.h0(((TLRPC.TodoItem) obj).title, false));
                 i81Var2.c(true);
                 break;
             case 13:
@@ -191,7 +191,7 @@ public final /* synthetic */ class mz0 implements Runnable {
                     arrayList5.clear();
                     arrayList5.addAll(((TLRPC.messages_Chats) tLObject).chats);
                 }
-                org.telegram.messenger.mp.u1(gb1Var.a).Z3(arrayList5, false);
+                org.telegram.messenger.np.u1(gb1Var.a).Z3(arrayList5, false);
                 gb1Var.d = false;
                 gb1Var.c = true;
                 int size = arrayList4.size();
@@ -230,10 +230,10 @@ public final /* synthetic */ class mz0 implements Runnable {
             case 24:
                 org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) obj2;
                 org.telegram.ui.Wallet.u0.P("enable backup: ready! getting secret phrase...");
-                u0Var.F(false, true, false, new bi.p6(28, u0Var, (org.telegram.ui.Wallet.v8) obj));
+                u0Var.F(false, true, false, new bi.o6(28, u0Var, (org.telegram.ui.Wallet.v8) obj));
                 break;
             case 25:
-                org.telegram.messenger.mp.u1(((org.telegram.ui.Wallet.u0) obj2).a).V3((TLRPC.Updates) obj, false);
+                org.telegram.messenger.np.u1(((org.telegram.ui.Wallet.u0) obj2).a).V3((TLRPC.Updates) obj, false);
                 break;
             case 26:
                 org.telegram.ui.Wallet.u0 u0Var2 = (org.telegram.ui.Wallet.u0) obj2;
@@ -263,7 +263,7 @@ public final /* synthetic */ class mz0 implements Runnable {
                 }
                 break;
             case 28:
-                org.telegram.messenger.mp.u1(((org.telegram.ui.Wallet.l2) obj2).a).V3((TLRPC.Updates) obj, false);
+                org.telegram.messenger.np.u1(((org.telegram.ui.Wallet.l2) obj2).a).V3((TLRPC.Updates) obj, false);
                 break;
             default:
                 org.telegram.ui.Wallet.y2 y2Var = (org.telegram.ui.Wallet.y2) obj2;

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jc extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final sl0 a;
@@ -32,7 +32,7 @@ public final class jc extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.a = sl0Var;
         sl0Var.setProgressToGradient(1.0f);
         sl0Var.G = true;
-        addView(sl0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(sl0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         Context context2 = getContext();
         i7 = ((org.telegram.ui.ActionBar.g2) qcVar).currentAccount;
         long j3 = qcVar.a;
@@ -48,7 +48,7 @@ public final class jc extends FrameLayout implements org.telegram.ui.ActionBar.b
             int i10 = org.telegram.ui.ActionBar.m6.A8;
             m5Var.setTextColor(qcVar.getThemedColor(i10));
             m5Var.setTypeface(org.telegram.messenger.g0.o());
-            m5Var.l(org.telegram.messenger.gd.N0(2131752539, null), false);
+            m5Var.l(org.telegram.messenger.hd.N0(2131752539, null), false);
             m5Var.setAlpha(0.0f);
             a();
             addView(m5Var, c8.ma.d(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
@@ -67,8 +67,8 @@ public final class jc extends FrameLayout implements org.telegram.ui.ActionBar.b
             textView2.setTextSize(1, 12.0f);
             textView2.setTextColor((qcVar.d && qcVar.s == -1) ? qcVar.getThemedColor(i10) : -1);
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = qcVar.c;
-            textView.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
-            textView2.setText(org.telegram.messenger.gd.N0(2131753350, null));
+            textView.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
+            textView2.setText(org.telegram.messenger.hd.N0(2131753350, null));
             linearLayout.addView(textView);
             linearLayout.addView(textView2, c8.ma.k(3.0f, 0.0f, 0.0f, 0.0f, -2, -2));
             addView(linearLayout, c8.ma.e(-1, -2, 80));

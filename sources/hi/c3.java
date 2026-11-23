@@ -4,16 +4,16 @@ import android.graphics.drawable.ColorDrawable;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class c3 extends dk0 {
     public boolean d;
@@ -43,7 +43,7 @@ public abstract class c3 extends dk0 {
         }
         this.d = true;
         F(true);
-        mp u12 = mp.u1(i7);
+        np u12 = np.u1(i7);
         String str = u12.O3;
         if (this.n == null) {
             TLObject h22 = u12.h2(str);
@@ -89,12 +89,12 @@ public abstract class c3 extends dk0 {
         boolean z10 = tLObject instanceof TLRPC.Document;
         ColorDrawable colorDrawable = this.s;
         if (z10) {
-            q9Var.j(fc.b((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
+            q9Var.j(gc.b((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
             return;
         }
         if (tLObject instanceof TLRPC.Photo) {
             TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-            q9Var.j(fc.i(org.telegram.messenger.w7.w(photo.sizes, ks.r5, false, null, false), photo), "200_200", colorDrawable, null);
+            q9Var.j(gc.i(org.telegram.messenger.w7.w(photo.sizes, ls.r5, false, null, false), photo), "200_200", colorDrawable, null);
         } else {
             if (!(tLObject instanceof TLRPC.BotInlineResult)) {
                 q9Var.b();
@@ -103,7 +103,7 @@ public abstract class c3 extends dk0 {
             TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) tLObject;
             TLRPC.WebDocument webDocument = botInlineResult.thumb;
             if (webDocument != null) {
-                q9Var.j(fc.g(webDocument.url), "200_200", colorDrawable, botInlineResult);
+                q9Var.j(gc.g(webDocument.url), "200_200", colorDrawable, botInlineResult);
             } else {
                 q9Var.b();
             }

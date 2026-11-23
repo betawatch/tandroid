@@ -26,16 +26,15 @@ import ki.e2;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -57,7 +56,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.qk;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -116,21 +115,21 @@ public final /* synthetic */ class q implements Runnable {
                 ((rh) this.b).a((ArrayList) this.c);
                 return;
             case 2:
-                tr trVar = (tr) this.b;
-                x10 x10Var = (x10) this.c;
-                HashMap h02 = trVar.h0();
+                ur urVar = (ur) this.b;
+                y10 y10Var = (y10) this.c;
+                HashMap h02 = urVar.h0();
                 if (h02.isEmpty()) {
                     return;
                 }
-                org.telegram.messenger.g0.g3(new g2(x10Var, h02, 1));
+                org.telegram.messenger.g0.g3(new g2(y10Var, h02, 1));
                 return;
             case 3:
-                gc I = lc.b0((bn) this.b).I(R.raw.stars_send, gd.N0(2131744851, null), org.telegram.messenger.g0.W2(gd.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)));
+                gc I = lc.b0((bn) this.b).I(R.raw.stars_send, hd.N0(2131744849, null), org.telegram.messenger.g0.W2(hd.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)));
                 I.j = 5000;
                 I.k(true);
                 return;
             case 4:
-                ks.f(j10.t0).k(ks.X2, ((a0) this.b).X1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.c);
+                ls.f(k10.t0).k(ls.X2, ((a0) this.b).X1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.c);
                 return;
             case 5:
                 e1 e1Var = (e1) this.b;
@@ -140,7 +139,7 @@ public final /* synthetic */ class q implements Runnable {
                 e1Var.r2 = -1;
                 if (tLObject instanceof TLRPC.TL_contacts_found) {
                     TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
-                    mp u12 = mp.u1(e1Var.a);
+                    np u12 = np.u1(e1Var.a);
                     u12.f4(tL_contacts_found.users, false);
                     u12.Z3(tL_contacts_found.chats, false);
                     HashSet hashSet = new HashSet();
@@ -198,7 +197,7 @@ public final /* synthetic */ class q implements Runnable {
                 }
             case 8:
                 wi.h hVar2 = (wi.h) this.b;
-                x10 x10Var2 = (x10) this.c;
+                y10 y10Var2 = (y10) this.c;
                 hVar2.l();
                 wi.o oVar2 = hVar2.j;
                 hVar2.j = null;
@@ -208,7 +207,7 @@ public final /* synthetic */ class q implements Runnable {
                     oVar2.a = null;
                     surfaceTexture = surfaceTexture2;
                 }
-                x10Var2.a(surfaceTexture);
+                y10Var2.a(surfaceTexture);
                 return;
             case 9:
                 wi.o oVar3 = (wi.o) this.b;
@@ -337,7 +336,7 @@ public final /* synthetic */ class q implements Runnable {
                             arrayList5.add(bVar2);
                         }
                         edit.apply();
-                        ks.f(cVar.c).k(ks.h5, new Object[0]);
+                        ls.f(cVar.c).k(ls.h5, new Object[0]);
                         SharedPreferences.Editor edit2 = cVar.d().edit();
                         long j3 = tL_savedRingtones.hash;
                         yf.c.g = j3;
@@ -375,13 +374,13 @@ public final /* synthetic */ class q implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
                 int i16 = eVar.a;
                 if (tL_error.text.equals("RINGTONE_DURATION_TOO_LONG")) {
-                    ks.e().k(ks.S4, 4, gd.a0("TooLongError", null, 2131743800, new Object[0]), gd.a0("ErrorRingtoneDurationTooLong", null, 2131751092, Integer.valueOf(mp.u1(i16).n4)));
+                    ls.e().k(ls.S4, 4, hd.a0("TooLongError", null, 2131743798, new Object[0]), hd.a0("ErrorRingtoneDurationTooLong", null, 2131751092, Integer.valueOf(np.u1(i16).n4)));
                     return;
                 } else if (tL_error.text.equals("RINGTONE_SIZE_TOO_BIG")) {
-                    ks.e().k(ks.S4, 4, gd.a0("TooLargeError", null, 2131743801, new Object[0]), gd.a0("ErrorRingtoneSizeTooBig", null, 2131751090, Integer.valueOf(mp.u1(i16).o4 / 1024)));
+                    ls.e().k(ls.S4, 4, hd.a0("TooLargeError", null, 2131743799, new Object[0]), hd.a0("ErrorRingtoneSizeTooBig", null, 2131751090, Integer.valueOf(np.u1(i16).o4 / 1024)));
                     return;
                 } else {
-                    ks.e().k(ks.S4, 4, gd.a0("InvalidFormatError", null, 2131748988, new Object[0]), gd.N0(2131751091, null));
+                    ls.e().k(ls.S4, 4, hd.a0("InvalidFormatError", null, 2131748988, new Object[0]), hd.N0(2131751091, null));
                     return;
                 }
             case 19:
@@ -430,16 +429,16 @@ public final /* synthetic */ class q implements Runnable {
                     hg0 hg0Var = kVar.h;
                     kVar.r = tL_chatInviteImporter;
                     kVar.w = avatarImageView;
-                    TLRPC.User c22 = mp.u1(i17).c2(Long.valueOf(tL_chatInviteImporter.user_id));
-                    fc m10 = fc.m(i17, 0, c22);
-                    fc m11 = fc.m(i17, 1, c22);
-                    if (mp.u1(i17).d2(tL_chatInviteImporter.user_id) == null) {
-                        mp.u1(i17).n3(c22, false, 0);
+                    TLRPC.User c22 = np.u1(i17).c2(Long.valueOf(tL_chatInviteImporter.user_id));
+                    org.telegram.messenger.gc m10 = org.telegram.messenger.gc.m(i17, 0, c22);
+                    org.telegram.messenger.gc m11 = org.telegram.messenger.gc.m(i17, 1, c22);
+                    if (np.u1(i17).d2(tL_chatInviteImporter.user_id) == null) {
+                        np.u1(i17).n3(c22, false, 0);
                     }
                     hg0Var.setParentAvatarImage(avatarImageView);
                     hg0Var.M(tL_chatInviteImporter.user_id, true);
                     hg0Var.H(null, m10, m11, true);
-                    kVar.d.setText(o10.q((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id)));
+                    kVar.d.setText(p10.q((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id)));
                     textView.setText(tL_chatInviteImporter.about);
                     textView.setVisibility(TextUtils.isEmpty(tL_chatInviteImporter.about) ? 8 : 0);
                     kVar.E.requestLayout();

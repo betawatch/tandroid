@@ -11,9 +11,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.ma;
 import di.bc;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.s10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final q9 a;
@@ -44,13 +44,13 @@ public final class f extends FrameLayout {
             this.a = q9Var;
             q9Var.setRoundRadius((int) (org.telegram.messenger.g0.L(65.0f) / 2.0f));
             addView(q9Var, ma.d(65, 65.0f, 1, 0.0f, 32.0f, 0.0f, 0.0f));
-            TLRPC.User f10 = j10.i(j10.t0).f();
+            TLRPC.User f10 = k10.i(k10.t0).f();
             b9 b9Var = new b9((h6) null);
             b9Var.r(f10);
             q9Var.getImageReceiver().i0(f10, b9Var, null);
             TextView textView = new TextView(context);
             i5.c.x(textView, 1, 20.0f);
-            n10.r(textView, m6.G6, h6Var, null, 2131743562);
+            o10.r(textView, m6.G6, h6Var, null, 2131743560);
             addView(textView, ma.d(-2, -2.0f, 1, 0.0f, 111.0f, 0.0f, 0.0f));
             s10Var.m = true;
             s10Var.a = true;
@@ -64,7 +64,7 @@ public final class f extends FrameLayout {
         }
         if (i7 == 1) {
             ki.e eVar = new ki.e(context, 4);
-            addView(eVar, ma.e(-1, ks.U2, 55));
+            addView(eVar, ma.e(-1, ls.U2, 55));
             bc bcVar = new bc(context, 1, 1, 3);
             bcVar.setStarParticlesView(eVar);
             Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
@@ -76,17 +76,17 @@ public final class f extends FrameLayout {
             fVar.z = i10;
             fVar.A = m6.Ck;
             fVar.b();
-            addView(bcVar, ma.e(ks.q2, ks.q2, 1));
+            addView(bcVar, ma.e(ls.q2, ls.q2, 1));
             bcVar.m(100L);
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 20.0f);
             textView2.setTypeface(org.telegram.messenger.g0.o());
-            n10.r(textView2, m6.G6, h6Var, null, 2131744011);
+            o10.r(textView2, m6.G6, h6Var, null, 2131744009);
             textView2.setGravity(17);
             addView(textView2, ma.d(-2, -2.0f, 1, 33.0f, 150.0f, 33.0f, 0.0f));
             TextView textView3 = new TextView(context);
             textView3.setTextSize(1, 14.0f);
-            n10.r(textView3, m6.z6, h6Var, null, 2131744007);
+            o10.r(textView3, m6.z6, h6Var, null, 2131744005);
             textView3.setGravity(17);
             addView(textView3, ma.d(-2, -2.0f, 1, 33.0f, 183.0f, 33.0f, 20.0f));
         }

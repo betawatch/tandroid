@@ -17,11 +17,11 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -30,7 +30,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.s11;
 import org.telegram.ui.ut0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q5 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class q5 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        x10 x10Var;
+        y10 y10Var;
         int i7 = this.a;
         int i10 = 4;
         boolean z10 = this.c;
@@ -76,7 +76,7 @@ public final /* synthetic */ class q5 implements Runnable {
                 org.telegram.messenger.a8.b("StoriesController loaded stories from server state=" + tL_stories_getAllStories.state + " more=" + tL_stories_getAllStories.next + "  " + tLObject);
                 if (tLObject instanceof TL_stories.TL_stories_allStories) {
                     TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) tLObject;
-                    tr.a0(i13).m1(tL_stories_allStories.users, null, true, true);
+                    ur.a0(i13).m1(tL_stories_allStories.users, null, true, true);
                     if (z11) {
                         p6Var.v = tL_stories_allStories.count;
                         p6Var.z = tL_stories_allStories.has_more;
@@ -101,7 +101,7 @@ public final /* synthetic */ class q5 implements Runnable {
                         sharedPreferences.edit().putString("last_stories_state", p6Var.o).apply();
                     }
                     if (z11 ? p6Var.z : p6Var.p) {
-                        ks.f(i13).k(ks.y5, new Object[0]);
+                        ls.f(i13).k(ls.y5, new Object[0]);
                         break;
                     }
                 }
@@ -111,8 +111,8 @@ public final /* synthetic */ class q5 implements Runnable {
                 ArrayList arrayList = (ArrayList) obj2;
                 ai.n nVar = (ai.n) obj;
                 int i14 = c7Var.a;
-                tr trVar = c7Var.b;
-                SQLiteDatabase sQLiteDatabase = trVar.b;
+                ur urVar = c7Var.b;
+                SQLiteDatabase sQLiteDatabase = urVar.b;
                 int i15 = 0;
                 while (i15 < arrayList.size()) {
                     TL_stories.PeerStories peerStories = (TL_stories.PeerStories) arrayList.get(i15);
@@ -140,18 +140,18 @@ public final /* synthetic */ class q5 implements Runnable {
                         while (queryFinalized.next()) {
                             long longValue = queryFinalized.longValue(0);
                             if (longValue > 0) {
-                                TLRPC.User c22 = mp.u1(i14).c2(Long.valueOf(longValue));
+                                TLRPC.User c22 = np.u1(i14).c2(Long.valueOf(longValue));
                                 if (c22 == null) {
-                                    c22 = tr.a0(i14).j0(longValue);
+                                    c22 = ur.a0(i14).j0(longValue);
                                 }
                                 if (c22 == null || (c22.stories_hidden == z10 && !arrayList3.contains(Long.valueOf(longValue)))) {
                                     arrayList3.add(Long.valueOf(longValue));
                                 }
                             } else {
                                 long j3 = -longValue;
-                                TLRPC.Chat O0 = mp.u1(i14).O0(Long.valueOf(j3));
+                                TLRPC.Chat O0 = np.u1(i14).O0(Long.valueOf(j3));
                                 if (O0 == null) {
-                                    O0 = tr.a0(i14).O(j3);
+                                    O0 = ur.a0(i14).O(j3);
                                 }
                                 if (O0 == null || (O0.stories_hidden == z10 && !arrayList3.contains(Long.valueOf(longValue)))) {
                                     arrayList3.add(Long.valueOf(longValue));
@@ -164,7 +164,7 @@ public final /* synthetic */ class q5 implements Runnable {
                         Locale locale = Locale.US;
                         sQLiteDatabase.executeFast("DELETE FROM stories WHERE dialog_id IN(" + TextUtils.join(",", arrayList3) + ")").stepThis().dispose();
                     } catch (Throwable th2) {
-                        trVar.o(th2, true);
+                        urVar.o(th2, true);
                     }
                 }
                 for (int i17 = 0; i17 < arrayList.size(); i17++) {
@@ -182,7 +182,7 @@ public final /* synthetic */ class q5 implements Runnable {
                 String[] strArr = (String[]) obj;
                 final LinkedHashSet linkedHashSet = new LinkedHashSet();
                 final LinkedHashSet linkedHashSet2 = new LinkedHashSet();
-                final HashMap hashMap = ri.d0(s11Var.W).r;
+                final HashMap hashMap = si.d0(s11Var.W).r;
                 final ArrayList arrayList4 = new ArrayList();
                 final ArrayList arrayList5 = new ArrayList();
                 boolean d = org.telegram.messenger.j6.d(str);
@@ -191,8 +191,8 @@ public final /* synthetic */ class q5 implements Runnable {
                 final ArrayList arrayList7 = new ArrayList();
                 final boolean z12 = this.b;
                 final boolean z13 = this.c;
-                x10 x10Var2 = new x10() { // from class: org.telegram.ui.a01
-                    @Override // org.telegram.messenger.x10
+                y10 y10Var2 = new y10() { // from class: org.telegram.ui.a01
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj4) {
                         final s11 s11Var2 = s11.this;
                         final String str2 = str;
@@ -297,21 +297,21 @@ public final /* synthetic */ class q5 implements Runnable {
                 };
                 int i18 = s11Var.a0;
                 if (i18 == 13) {
-                    Utilities.u(0, new x10() { // from class: org.telegram.ui.b01
-                        @Override // org.telegram.messenger.x10
+                    Utilities.u(0, new y10() { // from class: org.telegram.ui.b01
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj4) {
                             switch (i12) {
                                 case 0:
                                     s11 s11Var2 = s11Var;
-                                    org.telegram.messenger.ri.d0(s11Var2.W).X(s11.c2, str, false, new aj0(15, linkedHashSet2, (Runnable) obj4), false, false, false, false, 0);
+                                    org.telegram.messenger.si.d0(s11Var2.W).X(s11.c2, str, false, new aj0(15, linkedHashSet2, (Runnable) obj4), false, false, false, false, 0);
                                     break;
                                 default:
                                     s11 s11Var3 = s11Var;
                                     String str2 = str;
-                                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(s11Var3.W);
+                                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(s11Var3.W);
                                     d01 d01Var = new d01(linkedHashSet2, (Runnable) obj4, 0);
                                     if (str2 != null) {
-                                        Utilities.g.c(new org.telegram.messenger.tl(str2, d02.u0(5), d02.t0[1], d01Var, 16));
+                                        Utilities.g.c(new org.telegram.messenger.ul(str2, d02.u0(5), d02.t0[1], d01Var, 16));
                                         break;
                                     } else {
                                         d01Var.a(new ArrayList());
@@ -319,19 +319,19 @@ public final /* synthetic */ class q5 implements Runnable {
                                     }
                             }
                         }
-                    }, x10Var2);
+                    }, y10Var2);
                     break;
                 } else if (i18 == 14) {
                     if (d) {
                         final int i19 = 0;
-                        x10Var = new x10() { // from class: org.telegram.ui.c01
-                            @Override // org.telegram.messenger.x10
+                        y10Var = new y10() { // from class: org.telegram.ui.c01
+                            @Override // org.telegram.messenger.y10
                             public final void a(Object obj4) {
                                 switch (i19) {
                                     case 0:
                                         String str2 = str;
                                         Runnable runnable = (Runnable) obj4;
-                                        TLRPC.messages_AvailableEffects G0 = org.telegram.messenger.mp.u1(s11Var.W).G0();
+                                        TLRPC.messages_AvailableEffects G0 = org.telegram.messenger.np.u1(s11Var.W).G0();
                                         if (G0 != null) {
                                             for (int i20 = 0; i20 < G0.effects.size(); i20++) {
                                                 try {
@@ -347,21 +347,21 @@ public final /* synthetic */ class q5 implements Runnable {
                                         break;
                                     default:
                                         s11 s11Var2 = s11Var;
-                                        org.telegram.messenger.ri.d0(s11Var2.W).X(s11.c2, str, false, new a1.d(s11Var2, arrayList5, arrayList4, (Runnable) obj4, 18), false, false, false, false, 0);
+                                        org.telegram.messenger.si.d0(s11Var2.W).X(s11.c2, str, false, new a1.d(s11Var2, arrayList5, arrayList4, (Runnable) obj4, 18), false, false, false, false, 0);
                                         break;
                                 }
                             }
                         };
                     } else {
                         final int i20 = 1;
-                        x10Var = new x10() { // from class: org.telegram.ui.c01
-                            @Override // org.telegram.messenger.x10
+                        y10Var = new y10() { // from class: org.telegram.ui.c01
+                            @Override // org.telegram.messenger.y10
                             public final void a(Object obj4) {
                                 switch (i20) {
                                     case 0:
                                         String str2 = str;
                                         Runnable runnable = (Runnable) obj4;
-                                        TLRPC.messages_AvailableEffects G0 = org.telegram.messenger.mp.u1(s11Var.W).G0();
+                                        TLRPC.messages_AvailableEffects G0 = org.telegram.messenger.np.u1(s11Var.W).G0();
                                         if (G0 != null) {
                                             for (int i202 = 0; i202 < G0.effects.size(); i202++) {
                                                 try {
@@ -377,30 +377,30 @@ public final /* synthetic */ class q5 implements Runnable {
                                         break;
                                     default:
                                         s11 s11Var2 = s11Var;
-                                        org.telegram.messenger.ri.d0(s11Var2.W).X(s11.c2, str, false, new a1.d(s11Var2, arrayList5, arrayList4, (Runnable) obj4, 18), false, false, false, false, 0);
+                                        org.telegram.messenger.si.d0(s11Var2.W).X(s11.c2, str, false, new a1.d(s11Var2, arrayList5, arrayList4, (Runnable) obj4, 18), false, false, false, false, 0);
                                         break;
                                 }
                             }
                         };
                     }
-                    Utilities.u(0, x10Var, x10Var2);
+                    Utilities.u(0, y10Var, y10Var2);
                     break;
                 } else {
-                    Utilities.u(0, new kb(d, str, linkedHashSet, i10), new x10() { // from class: org.telegram.ui.b01
-                        @Override // org.telegram.messenger.x10
+                    Utilities.u(0, new kb(d, str, linkedHashSet, i10), new y10() { // from class: org.telegram.ui.b01
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj4) {
                             switch (i11) {
                                 case 0:
                                     s11 s11Var2 = s11Var;
-                                    org.telegram.messenger.ri.d0(s11Var2.W).X(s11.c2, str, false, new aj0(15, linkedHashSet, (Runnable) obj4), false, false, false, false, 0);
+                                    org.telegram.messenger.si.d0(s11Var2.W).X(s11.c2, str, false, new aj0(15, linkedHashSet, (Runnable) obj4), false, false, false, false, 0);
                                     break;
                                 default:
                                     s11 s11Var3 = s11Var;
                                     String str2 = str;
-                                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(s11Var3.W);
+                                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(s11Var3.W);
                                     d01 d01Var = new d01(linkedHashSet, (Runnable) obj4, 0);
                                     if (str2 != null) {
-                                        Utilities.g.c(new org.telegram.messenger.tl(str2, d02.u0(5), d02.t0[1], d01Var, 16));
+                                        Utilities.g.c(new org.telegram.messenger.ul(str2, d02.u0(5), d02.t0[1], d01Var, 16));
                                         break;
                                     } else {
                                         d01Var.a(new ArrayList());
@@ -408,7 +408,7 @@ public final /* synthetic */ class q5 implements Runnable {
                                     }
                             }
                         }
-                    }, new bi.m2(s11Var, strArr, str, linkedHashSet, 13), new ut0(s11Var, d, linkedHashSet, str, hashMap, arrayList4), new bi.m2(s11Var, str, arrayList6, hashMap2, 14), new org.telegram.ui.x(s11Var, str, arrayList7, 12), x10Var2);
+                    }, new bi.m2(s11Var, strArr, str, linkedHashSet, 13), new ut0(s11Var, d, linkedHashSet, str, hashMap, arrayList4), new bi.m2(s11Var, str, arrayList6, hashMap2, 14), new org.telegram.ui.x(s11Var, str, arrayList7, 12), y10Var2);
                     break;
                 }
             case 4:

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fx implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class fx implements DialogInterface.OnClickListener
             default:
                 ThemeActivity themeActivity = (ThemeActivity) this.c;
                 themeActivity.getClass();
-                SharedPreferences.Editor edit = org.telegram.messenger.mp.g1().edit();
+                SharedPreferences.Editor edit = org.telegram.messenger.np.g1().edit();
                 edit.putInt("sortContactsBy", i7);
                 edit.commit();
                 g61 g61Var = themeActivity.a;

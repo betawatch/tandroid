@@ -3,8 +3,8 @@ package bi;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.p31;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g4 implements x10 {
+public final /* synthetic */ class g4 implements y10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ Context b;
     public final /* synthetic */ int c;
@@ -36,7 +36,7 @@ public final /* synthetic */ class g4 implements x10 {
         this.h = lcVar;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         long j3;
         String a02;
@@ -60,13 +60,13 @@ public final /* synthetic */ class g4 implements x10 {
                 long max = Math.max(0L, tL_messageActionStarGiftOnchainOffer.amount - j10);
                 if (j10 > 0) {
                     j3 = 0;
-                    a02 = gd.a0(null, null, 2131749549, y4.k(j10), y4.k(max));
+                    a02 = hd.a0(null, null, 2131749549, x4.k(j10), x4.k(max));
                 } else {
                     j3 = 0;
-                    a02 = gd.a0(null, null, 2131749547, y4.k(max));
+                    a02 = hd.a0(null, null, 2131749547, x4.k(max));
                 }
                 SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(a02);
-                String a03 = j10 > 0 ? gd.a0(null, null, 2131749548, y4.k(j10)) : gd.N0(2131749551, null);
+                String a03 = j10 > 0 ? hd.a0(null, null, 2131749548, x4.k(j10)) : hd.N0(2131749551, null);
                 TL_wallet.walletOnchainGiftActionOfferCancel walletonchaingiftactionoffercancel = new TL_wallet.walletOnchainGiftActionOfferCancel();
                 walletonchaingiftactionoffercancel.offer_address = tL_messageActionStarGiftOnchainOffer.offer_address;
                 int i11 = walletonchaingiftactionoffercancel.flags;
@@ -90,9 +90,9 @@ public final /* synthetic */ class g4 implements x10 {
                 y3 y3Var = new y3(zArr, j12, 0);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.setOnDismissListener(y3Var);
-                t1Var.S = gd.N0(2131749545, null);
+                t1Var.S = hd.N0(2131749545, null);
                 t1Var.U = W2;
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
                 final int i12 = this.c;
                 alertDialog$Builder.k(a03, new org.telegram.ui.ActionBar.q1() { // from class: bi.z3
                     @Override // org.telegram.ui.ActionBar.q1

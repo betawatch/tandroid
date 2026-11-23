@@ -17,10 +17,10 @@ import hi.s6;
 import hi.u5;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.aj;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.bj;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.l6;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.ca;
 import org.telegram.ui.Components.ia0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class v0 extends j {
     public int A0;
@@ -49,7 +49,7 @@ public abstract class v0 extends j {
     public final n4 r0;
     public final q0 s0;
     public final ArrayList t0;
-    public final aj u0;
+    public final bj u0;
     public boolean v0;
     public boolean w0;
     public TextureView x0;
@@ -75,8 +75,8 @@ public abstract class v0 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            fj fjVar = (fj) arrayList.get(i7);
-            TLRPC.Message message2 = fjVar.k;
+            gj gjVar = (gj) arrayList.get(i7);
+            TLRPC.Message message2 = gjVar.k;
             int i10 = message2.date;
             if (message2 instanceof TLRPC.TL_message) {
                 tL_messageService = new TLRPC.TL_message();
@@ -84,7 +84,7 @@ public abstract class v0 extends j {
                 tL_messageService = new TLRPC.TL_messageService();
             } else {
                 message = message2;
-                D = c7.D(fjVar);
+                D = c7.D(gjVar);
                 if (D != null && D.booleanValue() && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
                     message.from_id = peer;
                     message.peer_id = peer;
@@ -92,10 +92,10 @@ public abstract class v0 extends j {
                     message.fwd_from = null;
                 }
                 message.voiceTranscriptionOpen = false;
-                int i11 = fjVar.K1;
-                fj fjVar2 = new fj(i11, message, fjVar.C, mp.u1(i11).d, mp.u1(fjVar.K1).b, null, null, true, true, 0L, true, z10, false, 0);
-                fjVar2.L5();
-                this.t0.add(fjVar2);
+                int i11 = gjVar.K1;
+                gj gjVar2 = new gj(i11, message, gjVar.C, np.u1(i11).d, np.u1(gjVar.K1).b, null, null, true, true, 0L, true, z10, false, 0);
+                gjVar2.L5();
+                this.t0.add(gjVar2);
             }
             tL_messageService.id = message2.id;
             tL_messageService.from_id = message2.from_id;
@@ -167,7 +167,7 @@ public abstract class v0 extends j {
             tL_messageService.translatedText = message2.translatedText;
             tL_messageService.replyStory = message2.replyStory;
             message = tL_messageService;
-            D = c7.D(fjVar);
+            D = c7.D(gjVar);
             if (D != null) {
                 message.from_id = peer;
                 message.peer_id = peer;
@@ -175,18 +175,18 @@ public abstract class v0 extends j {
                 message.fwd_from = null;
             }
             message.voiceTranscriptionOpen = false;
-            int i112 = fjVar.K1;
-            fj fjVar22 = new fj(i112, message, fjVar.C, mp.u1(i112).d, mp.u1(fjVar.K1).b, null, null, true, true, 0L, true, z10, false, 0);
-            fjVar22.L5();
-            this.t0.add(fjVar22);
+            int i112 = gjVar.K1;
+            gj gjVar22 = new gj(i112, message, gjVar.C, np.u1(i112).d, np.u1(gjVar.K1).b, null, null, true, true, 0L, true, z10, false, 0);
+            gjVar22.L5();
+            this.t0.add(gjVar22);
         }
         this.u0 = null;
         if (this.t0.size() > 1) {
-            aj ajVar = new aj();
-            this.u0 = ajVar;
-            ajVar.d.addAll(this.t0);
-            ajVar.a = ((fj) this.t0.get(0)).c1();
-            ajVar.a();
+            bj bjVar = new bj();
+            this.u0 = bjVar;
+            bjVar.d.addAll(this.t0);
+            bjVar.a = ((gj) this.t0.get(0)).c1();
+            bjVar.a();
         }
         n4 n4Var = new n4(a5Var, context);
         this.r0 = n4Var;
@@ -261,7 +261,7 @@ public abstract class v0 extends j {
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
     
-        if (((org.telegram.messenger.fj) r0.get(0)).U == 1) goto L12;
+        if (((org.telegram.messenger.gj) r0.get(0)).U == 1) goto L12;
      */
     @Override // android.widget.FrameLayout, android.view.View
     /*
@@ -308,7 +308,7 @@ public abstract class v0 extends j {
             q0 q0Var = this.s0;
             if (i7 >= q0Var.getChildCount()) {
                 rectF.set(f13, f15, f16, f14);
-                return org.telegram.messenger.g0.L(bz.Y0);
+                return org.telegram.messenger.g0.L(cz.Y0);
             }
             View childAt = q0Var.getChildAt(i7);
             boolean z10 = childAt instanceof org.telegram.ui.Cells.r1;

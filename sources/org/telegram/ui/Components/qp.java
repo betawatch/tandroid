@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qp extends ReplacementSpan {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class qp extends ReplacementSpan {
                     Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
                     int i11 = fontMetricsInt2.ascent;
                     int i12 = (fontMetricsInt2.descent + i11) / 2;
-                    int D = org.telegram.messenger.n10.D(12.0f, i12, i11);
+                    int D = org.telegram.messenger.o10.D(12.0f, i12, i11);
                     fontMetricsInt.top = D;
                     fontMetricsInt.ascent = D;
                     int b10 = org.telegram.messenger.f3.b(12.0f, i12, fontMetricsInt2.descent);

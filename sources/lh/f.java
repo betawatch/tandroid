@@ -9,12 +9,12 @@ import android.graphics.Shader;
 import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f extends View implements b6 {
     public LinearGradient E;
@@ -103,7 +103,7 @@ public final class f extends View implements b6 {
             }
             if (this.d > 0) {
                 paint.setShader(this.E);
-                paint.setAlpha(ks.e4);
+                paint.setAlpha(ls.e4);
                 canvas2 = canvas;
                 canvas2.drawRect(0.0f, measuredHeight - this.d, getMeasuredWidth(), measuredHeight, paint);
             } else {
@@ -132,7 +132,7 @@ public final class f extends View implements b6 {
                 this.s = b(false);
             }
             paint2.setShader(this.s);
-            paint2.setAlpha(ks.e4);
+            paint2.setAlpha(ls.e4);
             canvas.drawRect(0.0f, getMeasuredHeight() - this.d, getMeasuredWidth(), getMeasuredHeight(), paint2);
         }
     }

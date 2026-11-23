@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ih0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final class ih0 extends FrameLayout {
                 setPivotY(getMeasuredHeight());
                 break;
             case 7:
-                super.onMeasure(i7, org.telegram.messenger.n10.C(36.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+                super.onMeasure(i7, org.telegram.messenger.o10.C(36.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
                 break;
             case 8:
                 super.onMeasure(i7, i10);
@@ -177,7 +177,7 @@ public final class ih0 extends FrameLayout {
     public ih0(org.telegram.ui.Components.a30 a30Var, Context context, int i7, String str, CharSequence charSequence) {
         super(context);
         this.a = 6;
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         ImageView imageView = new ImageView(getContext());
         Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
         int i10 = org.telegram.ui.ActionBar.m6.G6;
@@ -202,7 +202,7 @@ public final class ih0 extends FrameLayout {
     public ih0(uy0 uy0Var, Context context, int i7, String str, CharSequence charSequence) {
         super(context);
         this.a = 5;
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         ImageView imageView = new ImageView(getContext());
         Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
         int i10 = org.telegram.ui.ActionBar.m6.G6;
@@ -227,18 +227,18 @@ public final class ih0 extends FrameLayout {
         super(context);
         this.a = 0;
         setPadding(0, org.telegram.messenger.g0.L(7.0f), 0, org.telegram.messenger.g0.L(7.0f));
-        ImageView e10 = org.telegram.messenger.n10.e(context, i7);
+        ImageView e10 = org.telegram.messenger.o10.e(context, i7);
         e10.setScaleType(ImageView.ScaleType.CENTER);
         int i10 = org.telegram.ui.ActionBar.m6.j5;
         org.telegram.ui.ActionBar.t6.s(e10, i10, null, PorterDuff.Mode.MULTIPLY);
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         addView(e10, c8.ma.d(24, 24.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 22.0f, 0.0f, z10 ? 22.0f : 0.0f, 0.0f));
         TextView textView = new TextView(context);
         org.telegram.ui.ActionBar.t6.U(textView, i10, null);
         textView.setTextSize(1, 14.0f);
-        textView.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        textView.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
         textView.setText(str);
-        boolean z11 = org.telegram.messenger.gd.a0;
+        boolean z11 = org.telegram.messenger.hd.a0;
         addView(textView, c8.ma.d(-1, -2.0f, 23, z11 ? 0.0f : 61.0f, 0.0f, z11 ? 61.0f : 0.0f, 0.0f));
     }
 

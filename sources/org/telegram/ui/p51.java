@@ -6,9 +6,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p51 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class p51 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -19,7 +19,7 @@ public final /* synthetic */ class p51 implements org.telegram.messenger.x10 {
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         v4.f1 K;
         int i7 = this.a;
@@ -33,8 +33,8 @@ public final /* synthetic */ class p51 implements org.telegram.messenger.x10 {
                 if (((Boolean) obj).booleanValue()) {
                     return;
                 }
-                org.telegram.messenger.bz.u0 = false;
-                org.telegram.messenger.bz.y();
+                org.telegram.messenger.cz.u0 = false;
+                org.telegram.messenger.cz.y();
                 themeActivity.P0 = true;
                 ((Dialog) atomicReference.get()).dismiss();
                 org.telegram.ui.Components.ek0 ek0Var = themeActivity.b;
@@ -50,13 +50,13 @@ public final /* synthetic */ class p51 implements org.telegram.messenger.x10 {
                     mz0Var.run();
                     return;
                 } else {
-                    org.telegram.ui.Components.lc.b0(themeActivity2).I(R.raw.error, org.telegram.messenger.gd.N0(2131754308, null), org.telegram.messenger.gd.N0(2131754309, null)).j();
+                    org.telegram.ui.Components.lc.b0(themeActivity2).I(R.raw.error, org.telegram.messenger.hd.N0(2131754308, null), org.telegram.messenger.hd.N0(2131754309, null)).j();
                     return;
                 }
             case 2:
                 org.telegram.ui.Wallet.r0 r0Var = (org.telegram.ui.Wallet.r0) obj3;
                 try {
-                    ((org.telegram.messenger.x10) obj2).a((String) obj);
+                    ((org.telegram.messenger.y10) obj2).a((String) obj);
                     if (r0Var != null) {
                         return;
                     } else {
@@ -72,7 +72,7 @@ public final /* synthetic */ class p51 implements org.telegram.messenger.x10 {
                 ((org.telegram.ui.Wallet.v8) obj2).a((String) obj);
                 return;
             case 4:
-                ((org.telegram.ui.Wallet.u0) obj3).q.put((TL_wallet.walletTransaction) obj, (org.telegram.messenger.x10) obj2);
+                ((org.telegram.ui.Wallet.u0) obj3).q.put((TL_wallet.walletTransaction) obj, (org.telegram.messenger.y10) obj2);
                 return;
             case 5:
                 org.telegram.ui.Wallet.o0 o0Var = (org.telegram.ui.Wallet.o0) obj3;
@@ -167,7 +167,7 @@ public final /* synthetic */ class p51 implements org.telegram.messenger.x10 {
             case 15:
                 org.telegram.ui.Wallet.na naVar = (org.telegram.ui.Wallet.na) obj3;
                 String str6 = (String) obj;
-                ((org.telegram.messenger.x10) obj2).a(str6);
+                ((org.telegram.messenger.y10) obj2).a(str6);
                 if (str6 != null || naVar.r) {
                     return;
                 }
@@ -181,20 +181,20 @@ public final /* synthetic */ class p51 implements org.telegram.messenger.x10 {
                 naVar.finishFragment();
                 return;
             case 16:
-                org.telegram.ui.Wallet.ya.d0((org.telegram.ui.Wallet.ya) obj3, (TL_wallet.tonConnectSession) obj2, (org.telegram.messenger.x10) obj);
+                org.telegram.ui.Wallet.ya.d0((org.telegram.ui.Wallet.ya) obj3, (TL_wallet.tonConnectSession) obj2, (org.telegram.messenger.y10) obj);
                 return;
             case 17:
                 org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) obj3;
                 org.telegram.ui.web.w0 w0Var = (org.telegram.ui.web.w0) obj;
                 n1Var.getClass();
                 ((org.telegram.ui.web.x0[]) obj2)[0].finishFragment();
-                org.telegram.messenger.x10 x10Var = n1Var.f;
-                if (x10Var == null) {
+                org.telegram.messenger.y10 y10Var = n1Var.f;
+                if (y10Var == null) {
                     vf.c.t(n1Var.getParentActivity(), w0Var.c);
                     return;
                 } else {
                     n1Var.finishFragment();
-                    x10Var.a(w0Var);
+                    y10Var.a(w0Var);
                     return;
                 }
             default:

@@ -8,7 +8,7 @@ import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.zm0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v2 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -29,18 +29,18 @@ public final class v2 implements View.OnAttachStateChangeListener {
                 ((c3) this.b).l.a();
                 break;
             case 2:
-                t7 t7Var = (t7) this.b;
-                r7 r7Var = t7Var.b0;
-                if (r7Var != null) {
-                    r7Var.a(t7Var.c);
+                s7 s7Var = (s7) this.b;
+                q7 q7Var = s7Var.b0;
+                if (q7Var != null) {
+                    q7Var.a(s7Var.c);
                     break;
                 }
                 break;
             case 3:
-                w7 w7Var = (w7) this.b;
-                u7 u7Var = w7Var.b0;
-                if (u7Var != null) {
-                    u7Var.a(w7Var.c);
+                v7 v7Var = (v7) this.b;
+                t7 t7Var = v7Var.b0;
+                if (t7Var != null) {
+                    t7Var.a(v7Var.c);
                     break;
                 }
                 break;
@@ -83,7 +83,7 @@ public final class v2 implements View.OnAttachStateChangeListener {
                 ((org.telegram.ui.Components.w6) this.b).c(null);
                 break;
             case 10:
-                ((l6) this.b).a(view);
+                ((k6) this.b).a(view);
                 break;
             case 11:
                 ca caVar = (ca) this.b;
@@ -123,18 +123,18 @@ public final class v2 implements View.OnAttachStateChangeListener {
                 ((c3) this.b).l.b();
                 break;
             case 2:
-                t7 t7Var = (t7) this.b;
-                r7 r7Var = t7Var.b0;
-                if (r7Var != null) {
-                    r7Var.n(t7Var.c);
+                s7 s7Var = (s7) this.b;
+                q7 q7Var = s7Var.b0;
+                if (q7Var != null) {
+                    q7Var.n(s7Var.c);
                     break;
                 }
                 break;
             case 3:
-                w7 w7Var = (w7) this.b;
-                u7 u7Var = w7Var.b0;
-                if (u7Var != null) {
-                    u7Var.n(w7Var.c);
+                v7 v7Var = (v7) this.b;
+                t7 t7Var = v7Var.b0;
+                if (t7Var != null) {
+                    t7Var.n(v7Var.c);
                     break;
                 }
                 break;
@@ -188,7 +188,7 @@ public final class v2 implements View.OnAttachStateChangeListener {
                 ((org.telegram.ui.Components.w6) this.b).b(null);
                 break;
             case 10:
-                ((l6) this.b).n(view);
+                ((k6) this.b).n(view);
                 break;
             case 11:
                 ((ca) this.b).c.clear();

@@ -13,11 +13,11 @@ import java.util.Date;
 import org.json.JSONObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a;
@@ -117,7 +117,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 z5Var.c.setAlpha(0.0f);
                 if (!f6Var.n2 || f6Var.V1 == null || f6Var.C2 == null || f6Var.I1() < 0 || f6Var.C2.b(f6Var.I1()) < 0) {
                     eVar.setFilled(true);
-                    eVar.i(gd.N0(2131747637, null), true, true);
+                    eVar.i(hd.N0(2131747637, null), true, true);
                     eVar.g(null, true);
                     eVar.setOnClickListener(new i1(f6Var, i14));
                     break;
@@ -125,7 +125,7 @@ public final /* synthetic */ class k1 implements Runnable {
                     eVar.setFilled(false);
                     int b10 = f6Var.C2.b(f6Var.I1());
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) gd.N0(2131749838, null));
+                    spannableStringBuilder.append((CharSequence) hd.N0(2131749838, null));
                     Object obj = f6Var.C2.get(b10);
                     if (!(obj instanceof TL_stars.SavedStarGift) || (starGift = ((TL_stars.SavedStarGift) obj).gift) == null || (document = starGift.getDocument()) == null) {
                         r82 = 1;
@@ -149,7 +149,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 } else {
                     str = "";
                 }
-                org.telegram.ui.Components.gc I = f6Var.k().I(R.raw.gift_upgrade, gd.N0(2131749832, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749833, str)));
+                org.telegram.ui.Components.gc I = f6Var.k().I(R.raw.gift_upgrade, hd.N0(2131749832, null), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749833, str)));
                 I.j = 5000;
                 I.t = true;
                 I.j();
@@ -164,7 +164,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 break;
             case 3:
                 f6Var.getClass();
-                new ug.y0((org.telegram.ui.ActionBar.g2) new bi.c9(f6Var, 1), 12, false).show();
+                new ug.y0((org.telegram.ui.ActionBar.g2) new bi.b9(f6Var, 1), 12, false).show();
                 break;
             case 4:
                 f6Var.dismiss();
@@ -193,7 +193,7 @@ public final /* synthetic */ class k1 implements Runnable {
                     int i17 = org.telegram.ui.ActionBar.m6.G6;
                     TextView b11 = c8.va.b(context, 20.0f, i17, true, null);
                     org.telegram.messenger.f3.k(b11, 17, null, 2131749851);
-                    b6Var3.setTitle(gd.N0(2131749851, null));
+                    b6Var3.setTitle(hd.N0(2131749851, null));
                     linearLayout.addView(b11, c8.ma.t(-1, -2, 17, 32, 0, 32, 0));
                     TextView b12 = c8.va.b(context, 14.0f, i17, false, null);
                     org.telegram.messenger.f3.k(b12, 17, null, 2131749852);
@@ -214,7 +214,7 @@ public final /* synthetic */ class k1 implements Runnable {
                                     i19++;
                                     TL_stars.StarGiftUpgradePrice starGiftUpgradePrice2 = (TL_stars.StarGiftUpgradePrice) obj2;
                                     Date date = new Date(starGiftUpgradePrice2.date * 1000);
-                                    ey0Var.e(gd.E0().p0().format(date) + ", " + gd.E0().q0().format(date), pb.b1(false, i5.c.l((int) starGiftUpgradePrice2.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                                    ey0Var.e(hd.E0().p0().format(date) + ", " + hd.E0().q0().format(date), pb.b1(false, i5.c.l((int) starGiftUpgradePrice2.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                                 }
                             }
                             float f13 = f10 + f12;
@@ -232,11 +232,11 @@ public final /* synthetic */ class k1 implements Runnable {
                             hi.e eVar2 = new hi.e(b6Var4.getContext(), b6Var4.J0, true);
                             b6Var4.V1 = eVar2;
                             float f15 = f14 + 16.0f;
-                            b6Var4.U1.addView(eVar2, c8.ma.d(-1, 48.0f, ks.E1, f15, 16.0f, f15, 16.0f));
+                            b6Var4.U1.addView(eVar2, c8.ma.d(-1, 48.0f, ls.E1, f15, 16.0f, f15, 16.0f));
                             b6Var4.b.addView(b6Var4.U1, c8.ma.e(-1, -2, 87));
                             ek0 ek0Var = b6Var4.o1;
                             ek0Var.setPadding(ek0Var.getPaddingLeft(), ek0Var.getPaddingTop(), ek0Var.getPaddingRight(), org.telegram.messenger.g0.L(80.0f) + ek0Var.getPaddingBottom());
-                            b6Var4.V1.i(f6.t2(gd.N0(2131743645, null)), false, true);
+                            b6Var4.V1.i(f6.t2(hd.N0(2131743643, null)), false, true);
                             b6Var4.V1.setOnClickListener(new ah.d(b6Var4, 18));
                             f6Var.m2 = b6Var4;
                             b6Var4.show();
@@ -245,7 +245,7 @@ public final /* synthetic */ class k1 implements Runnable {
                             if (currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i18)).date || ((i7 = i18 + 1) < arrayList.size() && currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i7)).date)) {
                                 b6Var = b6Var3;
                                 Date date2 = new Date(r11.date * 1000);
-                                ey0Var.e(gd.E0().p0().format(date2) + ", " + gd.E0().q0().format(date2), pb.b1(false, i5.c.l((int) r11.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                                ey0Var.e(hd.E0().p0().format(date2) + ", " + hd.E0().q0().format(date2), pb.b1(false, i5.c.l((int) r11.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                                 z12 = true;
                             } else {
                                 b6Var = b6Var3;
@@ -267,9 +267,9 @@ public final /* synthetic */ class k1 implements Runnable {
                 f6.e1(f6Var);
                 break;
             case 9:
-                bi.z5 z5Var2 = f6Var.j3;
-                if (z5Var2 != null) {
-                    z5Var2.run();
+                bi.y5 y5Var = f6Var.j3;
+                if (y5Var != null) {
+                    y5Var.run();
                 }
                 f6Var.dismiss();
                 break;
@@ -277,9 +277,9 @@ public final /* synthetic */ class k1 implements Runnable {
                 f6.f1(f6Var);
                 break;
             case 11:
-                bi.z5 z5Var3 = f6Var.j3;
-                if (z5Var3 != null) {
-                    z5Var3.run();
+                bi.y5 y5Var2 = f6Var.j3;
+                if (y5Var2 != null) {
+                    y5Var2.run();
                 }
                 f6Var.dismiss();
                 break;
@@ -291,7 +291,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 } else {
                     bundle.putLong("chat_id", -j10);
                 }
-                if (j10 == j10.i(f6Var.a).e()) {
+                if (j10 == k10.i(f6Var.a).e()) {
                     z10 = true;
                     bundle.putBoolean("my_profile", true);
                 } else {
@@ -302,9 +302,9 @@ public final /* synthetic */ class k1 implements Runnable {
                 f6.p2(new ProfileActivity(bundle, null));
                 break;
             case 13:
-                bi.z5 z5Var4 = f6Var.j3;
-                if (z5Var4 != null) {
-                    z5Var4.run();
+                bi.y5 y5Var3 = f6Var.j3;
+                if (y5Var3 != null) {
+                    y5Var3.run();
                 }
                 f6Var.dismiss();
                 break;
@@ -320,9 +320,9 @@ public final /* synthetic */ class k1 implements Runnable {
                 hi.e eVar3 = f6Var.g2;
                 if (f6Var.X2.c == 1 && !f6Var.J) {
                     TL_stars.InputSavedStarGift G1 = f6Var.G1();
-                    fj fjVar = f6Var.D2;
-                    if (fjVar != null) {
-                        TLRPC.MessageAction messageAction = fjVar.k.action;
+                    gj gjVar = f6Var.D2;
+                    if (gjVar != null) {
+                        TLRPC.MessageAction messageAction = gjVar.k.action;
                         if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
                             TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction;
                             long j11 = tL_messageActionStarGift.upgrade_stars;
@@ -376,7 +376,7 @@ public final /* synthetic */ class k1 implements Runnable {
                                         TLRPC.TL_inputInvoiceStarGiftPrepaidUpgrade tL_inputInvoiceStarGiftPrepaidUpgrade = new TLRPC.TL_inputInvoiceStarGiftPrepaidUpgrade();
                                         tL_inputInvoiceStarGiftPrepaidUpgrade.hash = str2;
                                         i12 = 1;
-                                        tL_inputInvoiceStarGiftPrepaidUpgrade.peer = mp.u1(f6Var.a).l1(f6Var.T1);
+                                        tL_inputInvoiceStarGiftPrepaidUpgrade.peer = np.u1(f6Var.a).l1(f6Var.T1);
                                         tL_payments_getPaymentForm.invoice = tL_inputInvoiceStarGiftPrepaidUpgrade;
                                     }
                                     JSONObject u10 = ki.s2.u(f6Var.J0, false);
@@ -392,11 +392,11 @@ public final /* synthetic */ class k1 implements Runnable {
                                 if (z11) {
                                     Object[] objArr = new Object[i11];
                                     objArr[0] = Long.valueOf(j14);
-                                    eVar3.i(pb.U0(gd.a0(null, null, 2131749860, objArr), 1.13f, nqVarArr), i11, i11);
+                                    eVar3.i(pb.U0(hd.a0(null, null, 2131749860, objArr), 1.13f, nqVarArr), i11, i11);
                                 } else {
                                     Object[] objArr2 = new Object[i11];
                                     objArr2[0] = Long.valueOf(j14);
-                                    eVar3.i(pb.U0(gd.a0(null, null, 2131750050, objArr2), 1.13f, nqVarArr), i11, i11);
+                                    eVar3.i(pb.U0(hd.a0(null, null, 2131750050, objArr2), 1.13f, nqVarArr), i11, i11);
                                 }
                                 b6Var2 = f6Var.m2;
                                 if (b6Var2 != null) {
@@ -409,7 +409,7 @@ public final /* synthetic */ class k1 implements Runnable {
                                         G = org.telegram.messenger.g0.g0(i23, false, true);
                                     } else {
                                         r10 = 0;
-                                        G = gd.G(Math.round(i23 / 86400.0f), "Days", new Object[0]);
+                                        G = hd.G(Math.round(i23 / 86400.0f), "Days", new Object[0]);
                                     }
                                     org.telegram.ui.Components.n6 n6Var = eVar3.e;
                                     n6Var.E = r10;
@@ -419,7 +419,7 @@ public final /* synthetic */ class k1 implements Runnable {
                                     n6Var.I = r10;
                                     Object[] objArr3 = new Object[1];
                                     objArr3[r10] = G;
-                                    eVar3.g(gd.a0(null, null, 2131749859, objArr3), true);
+                                    eVar3.g(hd.a0(null, null, 2131749859, objArr3), true);
                                     org.telegram.messenger.g0.h3(f6Var.t3, 1000L);
                                     break;
                                 } else {
@@ -466,13 +466,13 @@ public final /* synthetic */ class k1 implements Runnable {
                 TL_stars.SavedStarGift savedStarGift4 = f6Var.B2;
                 boolean z13 = savedStarGift4.pinned_to_top;
                 if (((p8) f6Var.C2).q(savedStarGift4, !z13, false)) {
-                    new bi.s6(f6Var.getContext(), f6Var.T1, f6Var.B2, f6Var.J0, new a2(f6Var, i15)).show();
+                    new bi.r6(f6Var.getContext(), f6Var.T1, f6Var.B2, f6Var.J0, new a2(f6Var, i15)).show();
                     break;
                 } else if (z13) {
                     org.telegram.messenger.f3.n(null, 2131749863, f6Var.k(), R.raw.ic_unpin, 36);
                     break;
                 } else {
-                    f6Var.k().I(R.raw.ic_pin, gd.N0(2131750059, null), gd.N0(2131750060, null)).j();
+                    f6Var.k().I(R.raw.ic_pin, hd.N0(2131750059, null), hd.N0(2131750060, null)).j();
                     break;
                 }
             case 19:
@@ -498,9 +498,9 @@ public final /* synthetic */ class k1 implements Runnable {
                 f6 f6Var2 = this.b;
                 TL_stars.InputSavedStarGift G12 = f6Var2.G1();
                 if (G12 != null) {
-                    long e10 = j10.i(f6Var2.a).e();
-                    fj fjVar2 = f6Var2.D2;
-                    if (fjVar2 != null && (message = fjVar2.k) != null) {
+                    long e10 = k10.i(f6Var2.a).e();
+                    gj gjVar2 = f6Var2.D2;
+                    if (gjVar2 != null && (message = gjVar2.k) != null) {
                         TLRPC.MessageAction messageAction2 = message.action;
                         if (messageAction2 instanceof TLRPC.TL_messageActionStarGift) {
                             TLRPC.Peer peer = ((TLRPC.TL_messageActionStarGift) messageAction2).peer;
@@ -509,12 +509,12 @@ public final /* synthetic */ class k1 implements Runnable {
                             }
                             long j15 = e10;
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f6Var2.getContext(), f6Var2.J0);
-                            String N0 = gd.N0(2131750201, null);
+                            String N0 = hd.N0(2131750201, null);
                             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                             t1Var.S = N0;
-                            t1Var.U = gd.N0(2131750200, null);
-                            alertDialog$Builder.k(gd.N0(2131751586, null), new h(f6Var2, G12, j15, 1));
-                            alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                            t1Var.U = hd.N0(2131750200, null);
+                            alertDialog$Builder.k(hd.N0(2131751586, null), new h(f6Var2, G12, j15, 1));
+                            alertDialog$Builder.h(hd.N0(2131752577, null), null);
                             alertDialog$Builder.d(-1);
                             alertDialog$Builder.p();
                             break;
@@ -524,12 +524,12 @@ public final /* synthetic */ class k1 implements Runnable {
                         e10 = f6Var2.T1;
                         long j152 = e10;
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, f6Var2.getContext(), f6Var2.J0);
-                        String N02 = gd.N0(2131750201, null);
+                        String N02 = hd.N0(2131750201, null);
                         org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder2.a;
                         t1Var2.S = N02;
-                        t1Var2.U = gd.N0(2131750200, null);
-                        alertDialog$Builder2.k(gd.N0(2131751586, null), new h(f6Var2, G12, j152, 1));
-                        alertDialog$Builder2.h(gd.N0(2131752577, null), null);
+                        t1Var2.U = hd.N0(2131750200, null);
+                        alertDialog$Builder2.k(hd.N0(2131751586, null), new h(f6Var2, G12, j152, 1));
+                        alertDialog$Builder2.h(hd.N0(2131752577, null), null);
                         alertDialog$Builder2.d(-1);
                         alertDialog$Builder2.p();
                     }
@@ -546,7 +546,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 break;
             case 28:
                 TL_stars.TL_starGiftUnique M1 = f6Var.M1();
-                new bi.d5(f6Var.a, org.telegram.messenger.n5.o(M1.owner_id), f6Var.getContext(), new k1(f6Var, 4), M1, f6Var.J0).show();
+                new bi.c5(f6Var.a, org.telegram.messenger.n5.o(M1.owner_id), f6Var.getContext(), new k1(f6Var, 4), M1, f6Var.J0).show();
                 break;
             default:
                 TL_stars.TL_starGiftUnique M12 = f6Var.M1();

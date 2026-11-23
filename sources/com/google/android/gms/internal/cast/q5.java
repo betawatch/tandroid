@@ -3,9 +3,9 @@ package com.google.android.gms.internal.cast;
 import android.content.SharedPreferences;
 import android.util.Log;
 import java.nio.charset.Charset;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class q5 implements g6.h {
     public static final z4 b = new z4(1);
@@ -28,7 +28,7 @@ public final class q5 implements g6.h {
         k1.p((k1) m10.b, z10);
         b10.c();
         p1.p((p1) b10.b, (k1) m10.a());
-        x0Var.a.a((p1) b10.a(), ks.E3);
+        x0Var.a.a((p1) b10.a(), ls.E3);
         x0.b(x0Var);
         x0Var.e();
     }
@@ -40,7 +40,7 @@ public final class q5 implements g6.h {
         x0Var.h = (g6.c) fVar;
         x0Var.c();
         q6.m.h(x0Var.g);
-        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ks.C3);
+        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ls.C3);
         x0.b(x0Var);
         x0Var.e.removeCallbacks(x0Var.d);
     }
@@ -82,7 +82,7 @@ public final class q5 implements g6.h {
         x0Var.c();
         y0 y0Var = x0Var.g;
         y0Var.f = str;
-        x0Var.a.a((p1) x0Var.c.b(y0Var).a(), ks.z3);
+        x0Var.a.a((p1) x0Var.c.b(y0Var).a(), ls.z3);
         x0.b(x0Var);
         x0Var.e();
     }
@@ -179,7 +179,7 @@ public final class q5 implements g6.h {
         k1.p((k1) m11.b, true);
         b10.c();
         p1.p((p1) b10.b, (k1) m11.a());
-        x0Var.a.a((p1) b10.a(), ks.D3);
+        x0Var.a.a((p1) b10.a(), ls.D3);
     }
 
     @Override // g6.h
@@ -201,7 +201,7 @@ public final class q5 implements g6.h {
             k1.r((k1) m10.b, 17);
             b10.e((k1) m10.a());
         }
-        x0Var.a.a((p1) b10.a(), ks.y3);
+        x0Var.a.a((p1) b10.a(), ls.y3);
     }
 
     @Override // g6.h

@@ -31,15 +31,15 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -52,7 +52,7 @@ import org.telegram.ui.ne;
 import org.telegram.ui.p51;
 import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l2 {
     public final int a;
@@ -79,7 +79,7 @@ public final class l2 {
 
     public static String C(String str) {
         if (TextUtils.isEmpty(str)) {
-            return gd.N0(2131742708, null);
+            return hd.N0(2131742706, null);
         }
         if (str.length() <= 10) {
             return str;
@@ -96,7 +96,7 @@ public final class l2 {
     /* JADX WARN: Removed duplicated region for block: B:34:0x01f6  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x0138  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x00fc  */
-    /* JADX WARN: Type inference failed for: r2v27, types: [org.telegram.messenger.fs, org.telegram.ui.Wallet.x1] */
+    /* JADX WARN: Type inference failed for: r2v27, types: [org.telegram.messenger.gs, org.telegram.ui.Wallet.x1] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -117,7 +117,7 @@ public final class l2 {
         TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr2 = {null};
         LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
-        final ImageView e10 = n10.e(context, R.drawable.ic_ab_close);
+        final ImageView e10 = o10.e(context, R.drawable.ic_ab_close);
         e10.setScaleType(ImageView.ScaleType.CENTER);
         int i11 = org.telegram.ui.ActionBar.m6.i6;
         org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i11, h6Var), 1, -1);
@@ -139,7 +139,7 @@ public final class l2 {
             if (tonconnectmanifest != null && (webDocument = tonconnectmanifest.icon) != null) {
                 z10 = z11;
                 inputtonconnectoauthsessionArr = inputtonconnectoauthsessionArr2;
-                q9Var.p(fc.p(h20.c(webDocument)), "76_76", null, tonconnectsession.manifest);
+                q9Var.p(gc.p(i20.c(webDocument)), "76_76", null, tonconnectsession.manifest);
                 frameLayout.addView(q9Var, c8.ma.d(76, 76.0f, 49, 0.0f, 32.0f, 0.0f, 0.0f));
                 g10.addView(frameLayout, c8.ma.o(-1, -2));
                 TextView textView2 = new TextView(context);
@@ -149,12 +149,12 @@ public final class l2 {
                 if (z10) {
                     TL_wallet.tonConnectManifest tonconnectmanifest2 = tonconnectsession.manifest;
                     if (tonconnectmanifest2 != null) {
-                        textView2.setText(gd.V(null, null, 2131742916, tonconnectmanifest2.name));
+                        textView2.setText(hd.V(null, null, 2131742914, tonconnectmanifest2.name));
                     } else {
-                        textView2.setText(gd.N0(2131742915, null));
+                        textView2.setText(hd.N0(2131742913, null));
                     }
                 } else {
-                    textView2.setText(gd.V(null, null, 2131742916, o10.q(tL_urlAuthResultRequest.bot)));
+                    textView2.setText(hd.V(null, null, 2131742914, p10.q(tL_urlAuthResultRequest.bot)));
                 }
                 org.telegram.ui.ActionBar.t6.U(textView2, i12, h6Var);
                 g10.addView(textView2, c8.ma.t(-2, -2, 49, 36, 16, 36, 0));
@@ -168,7 +168,7 @@ public final class l2 {
                 if (!z10) {
                     D.g.getClass();
                     if (!w(g2Var)) {
-                        N0 = gd.N0(2131742919, null);
+                        N0 = hd.N0(2131742917, null);
                         textView3.setText(N0);
                         org.telegram.ui.ActionBar.t6.U(textView3, i12, h6Var);
                         g10.addView(textView3, c8.ma.t(-2, -2, 49, 36, 16, 36, 28));
@@ -177,25 +177,25 @@ public final class l2 {
                         x6Var = new x6(context, R.drawable.wallet_card_qr, 46);
                         x6Var.l(D);
                         isAttachedToWindow = x6Var.isAttachedToWindow();
-                        i10 = ks.d4;
+                        i10 = ls.d4;
                         if (isAttachedToWindow || (u0Var = x6Var.a0) == null) {
                             textView = textView3;
                         } else {
                             textView = textView3;
                             int i13 = x6Var.W;
                             if (i13 != i7 || u0Var != D) {
-                                ks.f(i13).n(x6Var, i10);
+                                ls.f(i13).n(x6Var, i10);
                             }
                         }
                         x6Var.W = i7;
                         x6Var.a0 = D;
                         if (x6Var.isAttachedToWindow() && x6Var.a0 != null) {
-                            ks.f(i7).c(x6Var, i10);
+                            ls.f(i7).c(x6Var, i10);
                         }
                         frameLayout2.addView(x6Var);
                         TextView textView4 = new TextView(context);
                         textView4.setTextSize(1, 14.0f);
-                        org.telegram.messenger.f3.k(textView4, 17, null, 2131742918);
+                        org.telegram.messenger.f3.k(textView4, 17, null, 2131742916);
                         org.telegram.ui.ActionBar.t6.U(textView4, org.telegram.ui.ActionBar.m6.z6, h6Var);
                         g10.addView(textView4, c8.ma.t(-2, -2, 49, 36, 16, 36, 28));
                         LinearLayout linearLayout = new LinearLayout(context);
@@ -205,17 +205,17 @@ public final class l2 {
                         final hi.e eVar = new hi.e(context, h6Var, true);
                         eVar.setRoundRadius(24);
                         eVar.e();
-                        eVar.setText(gd.N0(2131742935, null));
+                        eVar.setText(hd.N0(2131742933, null));
                         linearLayout.addView(eVar, c8.ma.m(1.0f, 0, 44, 0, 6, 0));
-                        final hi.e g11 = n10.g(24, context, h6Var, true);
-                        g11.setText(gd.N0(2131742920, null));
+                        final hi.e g11 = o10.g(24, context, h6Var, true);
+                        g11.setText(hd.N0(2131742918, null));
                         linearLayout.addView(g11, c8.ma.m(1.0f, 0, 44, 6, 0, 0));
                         final e3 e3Var = new e3(context, g10, h6Var);
                         e3Var.z0 = new e2(g11);
                         final boolean z12 = z10;
                         final jg.w0 w0Var = new jg.w0(z12, g11, D, tonconnectsession, g2Var, textView2, q9Var, textView);
-                        final ?? r22 = new fs() { // from class: org.telegram.ui.Wallet.x1
-                            @Override // org.telegram.messenger.fs
+                        final ?? r22 = new gs() { // from class: org.telegram.ui.Wallet.x1
+                            @Override // org.telegram.messenger.gs
                             public final void didReceivedNotification(int i14, int i15, Object[] objArr) {
                                 if (!z12 && objArr.length > 1) {
                                     Object obj = objArr[1];
@@ -229,7 +229,7 @@ public final class l2 {
                                 w0Var.run();
                             }
                         };
-                        ks.f(i7).b(r22, i10);
+                        ls.f(i7).b(r22, i10);
                         w0Var.run();
                         final boolean[] zArr = {false};
                         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr3 = inputtonconnectoauthsessionArr;
@@ -237,7 +237,7 @@ public final class l2 {
                             @Override // android.content.DialogInterface.OnDismissListener
                             public final void onDismiss(DialogInterface dialogInterface) {
                                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
-                                ks.f(i7).n(r22, ks.d4);
+                                ls.f(i7).n(r22, ls.d4);
                                 boolean[] zArr2 = zArr;
                                 if (zArr2[0]) {
                                     return;
@@ -302,7 +302,7 @@ public final class l2 {
                         return e3Var;
                     }
                 }
-                N0 = gd.N0(2131742917, null);
+                N0 = hd.N0(2131742915, null);
                 textView3.setText(N0);
                 org.telegram.ui.ActionBar.t6.U(textView3, i12, h6Var);
                 g10.addView(textView3, c8.ma.t(-2, -2, 49, 36, 16, 36, 28));
@@ -311,19 +311,19 @@ public final class l2 {
                 x6Var = new x6(context, R.drawable.wallet_card_qr, 46);
                 x6Var.l(D);
                 isAttachedToWindow = x6Var.isAttachedToWindow();
-                i10 = ks.d4;
+                i10 = ls.d4;
                 if (isAttachedToWindow) {
                 }
                 textView = textView3;
                 x6Var.W = i7;
                 x6Var.a0 = D;
                 if (x6Var.isAttachedToWindow()) {
-                    ks.f(i7).c(x6Var, i10);
+                    ls.f(i7).c(x6Var, i10);
                 }
                 frameLayout22.addView(x6Var);
                 TextView textView42 = new TextView(context);
                 textView42.setTextSize(1, 14.0f);
-                org.telegram.messenger.f3.k(textView42, 17, null, 2131742918);
+                org.telegram.messenger.f3.k(textView42, 17, null, 2131742916);
                 org.telegram.ui.ActionBar.t6.U(textView42, org.telegram.ui.ActionBar.m6.z6, h6Var);
                 g10.addView(textView42, c8.ma.t(-2, -2, 49, 36, 16, 36, 28));
                 LinearLayout linearLayout2 = new LinearLayout(context);
@@ -333,17 +333,17 @@ public final class l2 {
                 final hi.e eVar2 = new hi.e(context, h6Var, true);
                 eVar2.setRoundRadius(24);
                 eVar2.e();
-                eVar2.setText(gd.N0(2131742935, null));
+                eVar2.setText(hd.N0(2131742933, null));
                 linearLayout2.addView(eVar2, c8.ma.m(1.0f, 0, 44, 0, 6, 0));
-                final hi.e g112 = n10.g(24, context, h6Var, true);
-                g112.setText(gd.N0(2131742920, null));
+                final hi.e g112 = o10.g(24, context, h6Var, true);
+                g112.setText(hd.N0(2131742918, null));
                 linearLayout2.addView(g112, c8.ma.m(1.0f, 0, 44, 6, 0, 0));
                 final e3 e3Var2 = new e3(context, g10, h6Var);
                 e3Var2.z0 = new e2(g112);
                 final boolean z122 = z10;
                 final jg.w0 w0Var2 = new jg.w0(z122, g112, D, tonconnectsession, g2Var, textView2, q9Var, textView);
-                final x1 r222 = new fs() { // from class: org.telegram.ui.Wallet.x1
-                    @Override // org.telegram.messenger.fs
+                final x1 r222 = new gs() { // from class: org.telegram.ui.Wallet.x1
+                    @Override // org.telegram.messenger.gs
                     public final void didReceivedNotification(int i14, int i15, Object[] objArr) {
                         if (!z122 && objArr.length > 1) {
                             Object obj = objArr[1];
@@ -357,7 +357,7 @@ public final class l2 {
                         w0Var2.run();
                     }
                 };
-                ks.f(i7).b(r222, i10);
+                ls.f(i7).b(r222, i10);
                 w0Var2.run();
                 final boolean[] zArr2 = {false};
                 final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr32 = inputtonconnectoauthsessionArr;
@@ -365,7 +365,7 @@ public final class l2 {
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
-                        ks.f(i7).n(r222, ks.d4);
+                        ls.f(i7).n(r222, ls.d4);
                         boolean[] zArr22 = zArr2;
                         if (zArr22[0]) {
                             return;
@@ -451,7 +451,7 @@ public final class l2 {
         textView32.setGravity(17);
         if (!z10) {
         }
-        N0 = gd.N0(2131742917, null);
+        N0 = hd.N0(2131742915, null);
         textView32.setText(N0);
         org.telegram.ui.ActionBar.t6.U(textView32, i12, h6Var);
         g10.addView(textView32, c8.ma.t(-2, -2, 49, 36, 16, 36, 28));
@@ -460,7 +460,7 @@ public final class l2 {
         x6Var = new x6(context, R.drawable.wallet_card_qr, 46);
         x6Var.l(D);
         isAttachedToWindow = x6Var.isAttachedToWindow();
-        i10 = ks.d4;
+        i10 = ls.d4;
         if (isAttachedToWindow) {
         }
         textView = textView32;
@@ -471,7 +471,7 @@ public final class l2 {
         frameLayout222.addView(x6Var);
         TextView textView422 = new TextView(context);
         textView422.setTextSize(1, 14.0f);
-        org.telegram.messenger.f3.k(textView422, 17, null, 2131742918);
+        org.telegram.messenger.f3.k(textView422, 17, null, 2131742916);
         org.telegram.ui.ActionBar.t6.U(textView422, org.telegram.ui.ActionBar.m6.z6, h6Var);
         g10.addView(textView422, c8.ma.t(-2, -2, 49, 36, 16, 36, 28));
         LinearLayout linearLayout22 = new LinearLayout(context);
@@ -481,17 +481,17 @@ public final class l2 {
         final hi.e eVar22 = new hi.e(context, h6Var, true);
         eVar22.setRoundRadius(24);
         eVar22.e();
-        eVar22.setText(gd.N0(2131742935, null));
+        eVar22.setText(hd.N0(2131742933, null));
         linearLayout22.addView(eVar22, c8.ma.m(1.0f, 0, 44, 0, 6, 0));
-        final hi.e g1122 = n10.g(24, context, h6Var, true);
-        g1122.setText(gd.N0(2131742920, null));
+        final hi.e g1122 = o10.g(24, context, h6Var, true);
+        g1122.setText(hd.N0(2131742918, null));
         linearLayout22.addView(g1122, c8.ma.m(1.0f, 0, 44, 6, 0, 0));
         final e3 e3Var22 = new e3(context, g10, h6Var);
         e3Var22.z0 = new e2(g1122);
         final boolean z1222 = z10;
         final jg.w0 w0Var22 = new jg.w0(z1222, g1122, D, tonconnectsession, g2Var, textView22, q9Var, textView);
-        final x1 r2222 = new fs() { // from class: org.telegram.ui.Wallet.x1
-            @Override // org.telegram.messenger.fs
+        final x1 r2222 = new gs() { // from class: org.telegram.ui.Wallet.x1
+            @Override // org.telegram.messenger.gs
             public final void didReceivedNotification(int i14, int i15, Object[] objArr) {
                 if (!z1222 && objArr.length > 1) {
                     Object obj = objArr[1];
@@ -505,7 +505,7 @@ public final class l2 {
                 w0Var22.run();
             }
         };
-        ks.f(i7).b(r2222, i10);
+        ls.f(i7).b(r2222, i10);
         w0Var22.run();
         final boolean[] zArr22 = {false};
         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr322 = inputtonconnectoauthsessionArr;
@@ -513,7 +513,7 @@ public final class l2 {
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession;
-                ks.f(i7).n(r2222, ks.d4);
+                ls.f(i7).n(r2222, ls.d4);
                 boolean[] zArr222 = zArr22;
                 if (zArr222[0]) {
                     return;
@@ -712,7 +712,7 @@ public final class l2 {
         linearLayout2.setOrientation(1);
         linearLayout2.setGravity((charSequence2 == null && str == null) ? 16 : 48);
         TextView textView = new TextView(context);
-        n10.p(textView, 1, 16.0f);
+        o10.p(textView, 1, 16.0f);
         int i7 = org.telegram.ui.ActionBar.m6.G6;
         org.telegram.ui.ActionBar.t6.U(textView, i7, h6Var);
         textView.setSingleLine(charSequence2 != null);
@@ -807,7 +807,7 @@ public final class l2 {
 
     public static TextView h(Context context, String str, org.telegram.ui.ActionBar.h6 h6Var) {
         TextView textView = new TextView(context);
-        n10.p(textView, 1, 14.0f);
+        o10.p(textView, 1, 14.0f);
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.Fi, h6Var);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) str);
@@ -828,7 +828,7 @@ public final class l2 {
         spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
         spannableStringBuilder.append((CharSequence) u0.t(-j3, true)).append((CharSequence) " ");
         int length = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) gd.N0(2131749340, null));
+        spannableStringBuilder.append((CharSequence) hd.N0(2131749340, null));
         spannableStringBuilder.setSpan(new ForegroundColorSpan(-9577217), length, spannableStringBuilder.length(), 33);
         return spannableStringBuilder;
     }
@@ -861,7 +861,7 @@ public final class l2 {
             n60Var.a(null, "A TON Connect request is already open");
             return;
         }
-        String string = mp.u1(l2Var.a).h7.getString(l(j3, i10), null);
+        String string = np.u1(l2Var.a).h7.getString(l(j3, i10), null);
         if (string == null) {
             l2Var.h = true;
             l2Var.b.x0(new bi.u3(l2Var, j3, n60Var, i10));
@@ -964,7 +964,7 @@ public final class l2 {
                     jSONObject2 = jSONObject;
                 }
                 JSONObject jSONObject5 = jSONObject2;
-                JSONObject put2 = new JSONObject().put("event", "connect").put("id", tonconnectchallenge.event_id).put("payload", new JSONObject().put("items", jSONArray3).put("device", new JSONObject().put("platform", "android").put("appName", "telegram").put("appVersion", org.telegram.messenger.s2.c).put("maxProtocolVersion", 2).put("features", new JSONArray().put(new JSONObject().put("name", "SendTransaction").put("maxMessages", ks.e4)).put(new JSONObject().put("name", "SignMessage").put("maxMessages", ks.e4)).put(new JSONObject().put("name", "SignData").put("types", new JSONArray().put("text").put("binary").put("cell"))))));
+                JSONObject put2 = new JSONObject().put("event", "connect").put("id", tonconnectchallenge.event_id).put("payload", new JSONObject().put("items", jSONArray3).put("device", new JSONObject().put("platform", "android").put("appName", "telegram").put("appVersion", org.telegram.messenger.s2.c).put("maxProtocolVersion", 2).put("features", new JSONArray().put(new JSONObject().put("name", "SendTransaction").put("maxMessages", ls.e4)).put(new JSONObject().put("name", "SignMessage").put("maxMessages", ls.e4)).put(new JSONObject().put("name", "SignData").put("types", new JSONArray().put("text").put("binary").put("cell"))))));
                 if (str3 != null) {
                     put2.put("response", new JSONObject().put("error", new JSONObject().put("code", 400).put("message", "Embedded request is not supported")));
                 }
@@ -1064,16 +1064,16 @@ public final class l2 {
         return Objects.equals(str, u0Var.y()) && Arrays.equals(h2Var.g, u0Var.E());
     }
 
-    public final void B(h2 h2Var, r0 r0Var, x10 x10Var) {
+    public final void B(h2 h2Var, r0 r0Var, y10 y10Var) {
         WalletEngine2 walletEngine2 = this.b.b;
         if (walletEngine2 != null) {
             boolean A = A(h2Var);
             int i7 = h2Var.b;
             TL_wallet.tonConnectSession tonconnectsession = h2Var.a;
             if (A && !j(h2Var)) {
-                String string = mp.u1(this.a).h7.getString(l(tonconnectsession.id, i7) + ".transfer", null);
+                String string = np.u1(this.a).h7.getString(l(tonconnectsession.id, i7) + ".transfer", null);
                 if (string == null) {
-                    walletEngine2.prepareTonConnectTransfer(r0Var, h2Var.f, "ton-connect:" + tonconnectsession.id + ":" + i7, new s(this, h2Var, r0Var, x10Var, 7));
+                    walletEngine2.prepareTonConnectTransfer(r0Var, h2Var.f, "ton-connect:" + tonconnectsession.id + ":" + i7, new s(this, h2Var, r0Var, y10Var, 7));
                     return;
                 }
                 try {
@@ -1082,24 +1082,24 @@ public final class l2 {
                     sendtransfer.user_id = new TLRPC.TL_inputUserEmpty();
                     sendtransfer.data_normal = Base64.decode(jSONObject.getString("boc"), 2);
                     sendtransfer.random_id = jSONObject.getLong("randomId");
-                    this.f.sendRequestTyped(sendtransfer, new d3.b(1), new ne(this, x10Var, h2Var, r0Var, sendtransfer, 6));
+                    this.f.sendRequestTyped(sendtransfer, new d3.b(1), new ne(this, y10Var, h2Var, r0Var, sendtransfer, 6));
                     return;
                 } catch (Exception e10) {
-                    x10Var.a(i("restore transfer", e10));
+                    y10Var.a(i("restore transfer", e10));
                     return;
                 }
             }
         }
-        y(h2Var, r0Var, null, 0, "Wallet unavailable or request expired", x10Var);
+        y(h2Var, r0Var, null, 0, "Wallet unavailable or request expired", y10Var);
     }
 
-    public final void E(long j3, int i7, JSONObject jSONObject, x10 x10Var) {
+    public final void E(long j3, int i7, JSONObject jSONObject, y10 y10Var) {
         TL_wallet.tonConnectSubmitResponse tonconnectsubmitresponse = new TL_wallet.tonConnectSubmitResponse();
         tonconnectsubmitresponse.session_id = j3;
         tonconnectsubmitresponse.msg_id = i7;
         tonconnectsubmitresponse.trace_id = jSONObject.optString("traceId", null);
         tonconnectsubmitresponse.body = Base64.decode(jSONObject.optString("body"), 2);
-        this.f.sendRequestTyped(tonconnectsubmitresponse, new d3.b(1), new bi.z(this, x10Var, jSONObject, j3, i7));
+        this.f.sendRequestTyped(tonconnectsubmitresponse, new d3.b(1), new bi.z(this, y10Var, jSONObject, j3, i7));
     }
 
     public final boolean d(g2 g2Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr) {
@@ -1117,29 +1117,29 @@ public final class l2 {
         return str.equals(u0Var.y()) && Arrays.equals(bArr, u0Var.E());
     }
 
-    public final void e(int i7, long j3, x10 x10Var) {
+    public final void e(int i7, long j3, y10 y10Var) {
         long j10 = i7;
-        mp.u1(this.a).h7.edit().remove(l(j3, j10)).remove(l(j3, j10) + ".transfer").apply();
+        np.u1(this.a).h7.edit().remove(l(j3, j10)).remove(l(j3, j10) + ".transfer").apply();
         h2 h2Var = this.g;
         if (h2Var != null && h2Var.a.id == j3 && h2Var.b == i7) {
             h2Var.n = true;
         }
-        x10Var.a(null);
+        y10Var.a(null);
     }
 
-    public final void f(h2 h2Var, boolean z10, x10 x10Var) {
+    public final void f(h2 h2Var, boolean z10, y10 y10Var) {
         boolean z11 = h2Var.m;
         TL_wallet.tonConnectSession tonconnectsession = h2Var.a;
         if (z11) {
             return;
         }
         if (h2Var.n || j(h2Var) || !A(h2Var) || !(z10 || h2Var.l >= 0 || "disconnect".equals(h2Var.e) || h2Var.p)) {
-            x10Var.a("Request expired, was processed, or the wallet changed");
+            y10Var.a("Request expired, was processed, or the wallet changed");
             return;
         }
         h2Var.m = true;
-        o oVar = new o(this, h2Var, x10Var, 3);
-        String string = mp.u1(this.a).h7.getString(l(tonconnectsession.id, h2Var.b), null);
+        o oVar = new o(this, h2Var, y10Var, 3);
+        String string = np.u1(this.a).h7.getString(l(tonconnectsession.id, h2Var.b), null);
         if (string == null) {
             this.b.F(true, false, false, new c0(this, oVar, h2Var, z10, 1));
             return;
@@ -1201,7 +1201,7 @@ public final class l2 {
                 o(h2Var.b, tonconnectsession.id);
             }
         }
-        ks.f(this.a).k(ks.d4, this.b, tonconnectsession);
+        ls.f(this.a).k(ls.d4, this.b, tonconnectsession);
     }
 
     public final void u(h2 h2Var) {
@@ -1212,7 +1212,7 @@ public final class l2 {
         this.g = null;
     }
 
-    public final void y(h2 h2Var, r0 r0Var, Object obj, int i7, String str, x10 x10Var) {
-        Utilities.e.c(new bi.g5(this, h2Var, i7, obj, str, r0Var, x10Var));
+    public final void y(h2 h2Var, r0 r0Var, Object obj, int i7, String str, y10 y10Var) {
+        Utilities.e.c(new bi.f5(this, h2Var, i7, obj, str, r0Var, y10Var));
     }
 }

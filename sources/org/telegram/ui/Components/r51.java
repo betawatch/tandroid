@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class r51 extends org.telegram.ui.ActionBar.w2 {
     public int A1;
@@ -99,10 +99,10 @@ public abstract class r51 extends org.telegram.ui.ActionBar.w2 {
         nv0 nv0Var = new nv0(context, yzVar, 1, null);
         this.u1 = nv0Var;
         nv0Var.addView(yzVar, 0, c8.ma.d(-1, -1.0f, 0, 0.0f, 2.0f, 0.0f, 0.0f));
-        String N0 = org.telegram.messenger.gd.N0(2131747974, null);
+        String N0 = org.telegram.messenger.hd.N0(2131747974, null);
         xh.l lVar = nv0Var.d;
         lVar.setText(N0);
-        String N02 = org.telegram.messenger.gd.N0(2131745611, null);
+        String N02 = org.telegram.messenger.hd.N0(2131745611, null);
         m80 m80Var = nv0Var.e;
         m80Var.setText(N02);
         nv0Var.setVisibility(8);
@@ -259,7 +259,7 @@ public abstract class r51 extends org.telegram.ui.ActionBar.w2 {
             this.m1.setLines(1);
             this.m1.setMaxLines(1);
             this.m1.setSingleLine(true);
-            this.m1.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 16);
+            this.m1.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
             this.m1.setEllipsize(TextUtils.TruncateAt.END);
             TextView textView2 = this.m1;
             FrameLayout.LayoutParams d = c8.ma.d(-1, 36.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f);

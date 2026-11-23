@@ -12,7 +12,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final int a;
@@ -36,7 +36,7 @@ public final class l0 extends FrameLayout implements org.telegram.ui.ActionBar.b
         addView(linearLayout, c8.ma.d(-2, -2.0f, 17, 0.0f, 2.0f, 0.0f, 2.0f));
         q9 q9Var = new q9(context);
         this.h = q9Var;
-        org.telegram.messenger.ks.i(q9Var);
+        org.telegram.messenger.ls.i(q9Var);
         linearLayout.addView(q9Var, c8.ma.t(24, 24, 49, 0, 4, 0, 0));
         TextView textView = new TextView(context);
         this.n = textView;
@@ -60,7 +60,7 @@ public final class l0 extends FrameLayout implements org.telegram.ui.ActionBar.b
         if (ConnectionsManager.getInstance(i10).isTestBackend()) {
             i7 = 0;
             while (i7 < 4) {
-                if (org.telegram.messenger.j10.i(i7).p() && !ConnectionsManager.getInstance(i7).isTestBackend()) {
+                if (org.telegram.messenger.k10.i(i7).p() && !ConnectionsManager.getInstance(i7).isTestBackend()) {
                     break;
                 } else {
                     i7++;
@@ -76,7 +76,7 @@ public final class l0 extends FrameLayout implements org.telegram.ui.ActionBar.b
             }
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-            org.telegram.messenger.ri.d0(i7).n0(tL_inputStickerSetShortName, null, false, false, new li.d(26, this, str));
+            org.telegram.messenger.si.d0(i7).n0(tL_inputStickerSetShortName, null, false, false, new li.d(26, this, str));
         }
     }
 

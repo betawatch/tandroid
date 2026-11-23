@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bi implements TextWatcher {
     public boolean a;
@@ -55,7 +55,7 @@ public final class bi implements TextWatcher {
                 i7 = -9999;
             }
             long j3 = i7;
-            o6Var2.c(org.telegram.messenger.gd.E(j3, ','), o6Var2.getVisibility() == 0, true);
+            o6Var2.c(org.telegram.messenger.hd.E(j3, ','), o6Var2.getVisibility() == 0, true);
             if (o6Var2.getVisibility() != 0) {
                 o6Var2.setVisibility(0);
                 o6Var2.setAlpha(0.0f);
@@ -71,14 +71,14 @@ public final class bi implements TextWatcher {
                 org.telegram.ui.ActionBar.t6.Y(o6Var2, org.telegram.ui.ActionBar.m6.y6, uiVar.J0);
                 z10 = true;
             }
-            o6Var.c(org.telegram.messenger.gd.E(j3, ','), false, true);
+            o6Var.c(org.telegram.messenger.hd.E(j3, ','), false, true);
             o6Var.setAlpha(1.0f);
         }
         if (uiVar.S2 != z10) {
             uiVar.S2 = z10;
             uiVar.G2.invalidate();
         }
-        if (!uiVar.g4 && !org.telegram.messenger.mp.u1(i10).K3() && !org.telegram.messenger.j10.i(i10).q() && uiVar.G1 > org.telegram.messenger.mp.u1(i10).W4 && uiVar.G1 < org.telegram.messenger.mp.u1(i10).X4) {
+        if (!uiVar.g4 && !org.telegram.messenger.np.u1(i10).K3() && !org.telegram.messenger.k10.i(i10).q() && uiVar.G1 > org.telegram.messenger.np.u1(i10).W4 && uiVar.G1 < org.telegram.messenger.np.u1(i10).X4) {
             uiVar.g4 = true;
             uiVar.E1(this.c);
         }

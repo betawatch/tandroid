@@ -56,9 +56,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public static final int A0;
     public boolean E;
     public boolean F;
@@ -123,7 +123,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public ra0 z0;
 
     static {
-        A0 = org.telegram.messenger.bz.o() <= 1 ? org.telegram.messenger.ks.g2 : 100;
+        A0 = org.telegram.messenger.cz.o() <= 1 ? org.telegram.messenger.ls.g2 : 100;
     }
 
     public de0() {
@@ -192,11 +192,11 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g2Var.getParentActivity());
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         if (z10) {
-            t1Var.S = org.telegram.messenger.gd.N0(2131745875, null);
-            t1Var.U = org.telegram.messenger.gd.N0(2131753722, "BannedPhoneNumber");
+            t1Var.S = org.telegram.messenger.hd.N0(2131745875, null);
+            t1Var.U = org.telegram.messenger.hd.N0(2131753722, "BannedPhoneNumber");
         } else if (md0Var == null || (list = (List) md0Var.c) == null || list.isEmpty() || ((ps) md0Var.b) == null) {
-            t1Var.S = org.telegram.messenger.gd.N0(2131745875, null);
-            t1Var.U = org.telegram.messenger.gd.N0(2131748986, null);
+            t1Var.S = org.telegram.messenger.hd.N0(2131745875, null);
+            t1Var.U = org.telegram.messenger.hd.N0(2131748986, null);
         } else {
             Iterator it = ((List) md0Var.c).iterator();
             int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -207,15 +207,15 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 }
             }
             if (pf.b.d(str, false).length() - ((ps) md0Var.b).c.length() < i7) {
-                t1Var.S = org.telegram.messenger.gd.N0(2131742593, null);
-                t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("ShortNumberInfo", null, 2131745160, ((ps) md0Var.b).a, (String) md0Var.d));
+                t1Var.S = org.telegram.messenger.hd.N0(2131742591, null);
+                t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("ShortNumberInfo", null, 2131745160, ((ps) md0Var.b).a, (String) md0Var.d));
             } else {
-                t1Var.S = org.telegram.messenger.gd.N0(2131745875, null);
-                t1Var.U = org.telegram.messenger.gd.N0(2131748986, null);
+                t1Var.S = org.telegram.messenger.hd.N0(2131745875, null);
+                t1Var.U = org.telegram.messenger.hd.N0(2131748986, null);
             }
         }
-        alertDialog$Builder.i(org.telegram.messenger.gd.N0(2131753058, "BotHelp"), new ab.j(str, g2Var, z10));
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, "OK"), null);
+        alertDialog$Builder.i(org.telegram.messenger.hd.N0(2131753058, "BotHelp"), new ab.j(str, g2Var, z10));
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, "OK"), null);
         g2Var.showDialog(t1Var);
     }
 
@@ -283,11 +283,11 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             return;
         }
         if (tL_error.text.equals("2FA_RECENT_CONFIRM")) {
-            de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.N0(2131745919, "ResetAccountCancelledAlert"));
+            de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.N0(2131745919, "ResetAccountCancelledAlert"));
             return;
         }
         if (!tL_error.text.startsWith("2FA_CONFIRM_WAIT_")) {
-            de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error.text);
+            de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error.text);
             return;
         }
         Bundle bundle2 = new Bundle();
@@ -423,12 +423,12 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(de0Var.getParentActivity());
-        String N0 = org.telegram.messenger.gd.N0(2131745901, "ResetMyAccountWarningText");
+        String N0 = org.telegram.messenger.hd.N0(2131745901, "ResetMyAccountWarningText");
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.U = N0;
-        t1Var.S = org.telegram.messenger.gd.N0(2131745903, "ResetMyAccountWarning");
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131745902, "ResetMyAccountWarningReset"), new a1.d(de0Var, str, str2, str3, 16));
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, "Cancel"), null);
+        t1Var.S = org.telegram.messenger.hd.N0(2131745903, "ResetMyAccountWarning");
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131745902, "ResetMyAccountWarningReset"), new a1.d(de0Var, str, str2, str3, 16));
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, "Cancel"), null);
         de0Var.showDialog(t1Var);
     }
 
@@ -495,7 +495,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = str;
         t1Var.U = str2;
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, "OK"), null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, "OK"), null);
         showDialog(t1Var);
     }
 
@@ -515,27 +515,27 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     }
 
     public final void G1(TLRPC.TL_auth_authorization tL_auth_authorization, boolean z10) {
-        org.telegram.messenger.mp.u1(this.currentAccount).Q();
+        org.telegram.messenger.np.u1(this.currentAccount).Q();
         ConnectionsManager.getInstance(this.currentAccount).setUserId(tL_auth_authorization.user.id);
-        org.telegram.messenger.j10.i(this.currentAccount).b();
-        org.telegram.messenger.mp.u1(this.currentAccount).Q();
-        org.telegram.messenger.j10.i(this.currentAccount).V = this.E;
-        org.telegram.messenger.j10.i(this.currentAccount).w(tL_auth_authorization.user);
-        org.telegram.messenger.j10.i(this.currentAccount).v(true);
-        org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(this.currentAccount);
-        a02.a.c(new org.telegram.messenger.yq(a02, true, 1 == true ? 1 : 0));
+        org.telegram.messenger.k10.i(this.currentAccount).b();
+        org.telegram.messenger.np.u1(this.currentAccount).Q();
+        org.telegram.messenger.k10.i(this.currentAccount).V = this.E;
+        org.telegram.messenger.k10.i(this.currentAccount).w(tL_auth_authorization.user);
+        org.telegram.messenger.k10.i(this.currentAccount).v(true);
+        org.telegram.messenger.ur a02 = org.telegram.messenger.ur.a0(this.currentAccount);
+        a02.a.c(new org.telegram.messenger.zq(a02, true, 1 == true ? 1 : 0));
         ArrayList arrayList = new ArrayList();
         arrayList.add(tL_auth_authorization.user);
-        org.telegram.messenger.tr.a0(this.currentAccount).m1(arrayList, null, true, true);
-        org.telegram.messenger.mp.u1(this.currentAccount).e4(tL_auth_authorization.user, false, false);
+        org.telegram.messenger.ur.a0(this.currentAccount).m1(arrayList, null, true, true);
+        org.telegram.messenger.np.u1(this.currentAccount).e4(tL_auth_authorization.user, false, false);
         org.telegram.messenger.i5 r10 = org.telegram.messenger.i5.r(this.currentAccount);
         r10.a = null;
         Utilities.e.c(new org.telegram.messenger.m4(r10, 0));
-        Utilities.d.c(new org.telegram.messenger.rj(org.telegram.messenger.mp.u1(this.currentAccount), 28));
+        Utilities.d.c(new org.telegram.messenger.sj(org.telegram.messenger.np.u1(this.currentAccount), 28));
         ConnectionsManager.getInstance(this.currentAccount).updateDcSettings();
-        org.telegram.messenger.mp.u1(this.currentAccount).X2(true);
-        org.telegram.messenger.mp.u1(this.currentAccount).o3();
-        org.telegram.messenger.mp.u1(this.currentAccount).M(false);
+        org.telegram.messenger.np.u1(this.currentAccount).X2(true);
+        org.telegram.messenger.np.u1(this.currentAccount).o3();
+        org.telegram.messenger.np.u1(this.currentAccount).M(false);
         byte[] bArr = tL_auth_authorization.future_auth_token;
         if (bArr != null) {
             boolean z11 = org.telegram.messenger.s2.a;
@@ -566,11 +566,11 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             org.telegram.messenger.a8.b("onAuthSuccess future_auth_token is empty");
         }
         if (z10) {
-            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(this.currentAccount);
+            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(this.currentAccount);
             u12.e2.put(0, true);
             u12.f2.put(0, true);
         }
-        org.telegram.messenger.ri.d0(this.currentAccount).f1("tg_placeholders_android", false, true);
+        org.telegram.messenger.si.d0(this.currentAccount).f1("tg_placeholders_android", false, true);
         boolean z12 = tL_auth_authorization.setup_password_required;
         int i11 = tL_auth_authorization.otherwise_relogin_days;
         if (getParentActivity() != null) {
@@ -614,8 +614,8 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             me0Var.r0(k10);
             presentFragment(me0Var, true);
         }
-        org.telegram.messenger.ks.f(this.currentAccount).k(org.telegram.messenger.ks.j0, new Object[0]);
-        org.telegram.messenger.gd.E0().W0(this.currentAccount, true);
+        org.telegram.messenger.ls.f(this.currentAccount).k(org.telegram.messenger.ls.j0, new Object[0]);
+        org.telegram.messenger.hd.E0().W0(this.currentAccount, true);
         sy0.a0(true);
     }
 
@@ -629,12 +629,12 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String N0 = org.telegram.messenger.gd.N0(2131744591, "StopLoadingTitle");
+            String N0 = org.telegram.messenger.hd.N0(2131744589, "StopLoadingTitle");
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = org.telegram.messenger.gd.N0(2131744592, "StopLoading");
-            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131742970, "WaitMore"), null);
-            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131744600, "Stop"), new ua0(this, 0));
+            t1Var.U = org.telegram.messenger.hd.N0(2131744590, "StopLoading");
+            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131742968, "WaitMore"), null);
+            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131744598, "Stop"), new ua0(this, 0));
             showDialog(t1Var);
         }
     }
@@ -797,12 +797,12 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             this.O.e(z10, z11);
         }
         animatorSetArr[this.K].addListener(new org.telegram.ui.ActionBar.g(this, z12, z10, 4));
-        int i11 = org.telegram.messenger.ks.g2;
+        int i11 = org.telegram.messenger.ls.g2;
         if (!z12) {
             timeInterpolator = null;
         } else if (z10) {
             timeInterpolator = org.telegram.messenger.g0.F;
-            i11 = org.telegram.messenger.ks.e3;
+            i11 = org.telegram.messenger.ls.e3;
         } else {
             timeInterpolator = org.telegram.messenger.g0.G;
         }
@@ -991,7 +991,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 P1(true, z10);
                 return;
             }
-            if ((!getMessagesController().B3 || org.telegram.messenger.bz.z1.isEmpty()) && !z14) {
+            if ((!getMessagesController().B3 || org.telegram.messenger.cz.z1.isEmpty()) && !z14) {
                 P1(false, z10);
                 return;
             }
@@ -1102,7 +1102,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         org.telegram.ui.Components.rr rrVar = new org.telegram.ui.Components.rr(context);
         this.c = rrVar;
         rrVar.setViewToFindFocus(this.a0);
-        this.Z.addView(this.c, c8.ma.o(-1, org.telegram.messenger.ks.G3));
+        this.Z.addView(this.c, c8.ma.o(-1, org.telegram.messenger.ls.G3));
         ce0 ce0Var = new ce0(this, context);
         org.telegram.ui.Components.iu0[] iu0VarArr = this.b;
         iu0VarArr[0] = ce0Var;
@@ -1164,7 +1164,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.O = c10Var;
         c10Var.e(zArr[0], false);
         this.P = new h6.m(this.O);
-        this.T.addView(this.O, c8.ma.d(56, 56.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f));
+        this.T.addView(this.O, c8.ma.d(56, 56.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f));
         this.O.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ab0
             public final /* synthetic */ de0 b;
 
@@ -1243,7 +1243,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 }
             }
         });
-        this.V.setContentDescription(org.telegram.messenger.gd.N0(2131754878, null));
+        this.V.setContentDescription(org.telegram.messenger.hd.N0(2131754878, null));
         int L = org.telegram.messenger.g0.L(4.0f);
         this.V.setPadding(L, L, L, L);
         this.T.addView(this.V, c8.ma.d(32, 32.0f, 51, 16.0f, 16.0f, 0.0f, 0.0f));
@@ -1254,7 +1254,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             this.g0.setTextSize(1, 15.0f);
             this.g0.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
             this.g0.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-            this.g0.setText(org.telegram.messenger.gd.N0(2131742553, null));
+            this.g0.setText(org.telegram.messenger.hd.N0(2131742551, null));
             org.telegram.ui.ActionBar.t6.U(this.g0, org.telegram.ui.ActionBar.m6.q6, null);
             this.T.addView(this.g0, c8.ma.d(-2, 30.0f, 53, 0.0f, 16.0f, 16.0f, 0.0f));
             this.g0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ab0
@@ -1352,7 +1352,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         k21Var.setTransformType(0);
         this.N.setProgress(1.0f);
         this.N.setDrawBackground(false);
-        this.O.setContentDescription(org.telegram.messenger.gd.N0(2131751342, null));
+        this.O.setContentDescription(org.telegram.messenger.hd.N0(2131751342, null));
         this.O.addView(this.N, c8.ma.e(56, 56, 17));
         this.O.a(this.N);
         if (B1 != null) {
@@ -1417,14 +1417,14 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.T1) {
+        if (i7 == org.telegram.messenger.ls.T1) {
             R1(true, false);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.s1 && this.i0) {
-            org.telegram.messenger.mp messagesController = getMessagesController();
+        if (i7 == org.telegram.messenger.ls.s1 && this.i0) {
+            org.telegram.messenger.np messagesController = getMessagesController();
             if (messagesController.V3.contains("SETUP_LOGIN_EMAIL") || messagesController.V3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
                 return;
             }
@@ -1557,8 +1557,8 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, org.telegram.messenger.ks.T1);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.s1);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.T1);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.s1);
         return super.onFragmentCreate();
     }
 
@@ -1587,8 +1587,8 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 org.telegram.messenger.g0.r(runnable);
             }
         }
-        getNotificationCenter().n(this, org.telegram.messenger.ks.T1);
-        getNotificationCenter().n(this, org.telegram.messenger.ks.s1);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.T1);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.s1);
     }
 
     @Override // org.telegram.ui.ActionBar.g2
@@ -1751,7 +1751,7 @@ public final class de0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         TLRPC.auth_SentCodeType auth_sentcodetype = auth_sentcode.type;
         final int i10 = 0;
         if ((auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeFirebaseSms) && !auth_sentcodetype.verifiedFirebase && !this.r0) {
-            if (!org.telegram.messenger.nt.b.hasServices()) {
+            if (!org.telegram.messenger.ot.b.hasServices()) {
                 org.telegram.messenger.a8.b("{GOOGLE_PLAY_SERVICES_NOT_AVAILABLE} Resend firebase sms because firebase is not available");
                 K1(bundle, auth_sentcode, "GOOGLE_PLAY_SERVICES_NOT_AVAILABLE");
                 return;

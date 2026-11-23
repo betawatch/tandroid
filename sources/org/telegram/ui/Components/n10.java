@@ -9,7 +9,7 @@ import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n10 {
     public static final int x;
@@ -80,7 +80,7 @@ public final class n10 {
         boolean z12;
         boolean z13;
         org.telegram.ui.dq0 dq0Var;
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         org.telegram.ui.dq0 dq0Var2;
         l10 l10Var;
         boolean z14;
@@ -97,7 +97,7 @@ public final class n10 {
             this.w = VelocityTracker.obtain();
         }
         this.w.addMovement(motionEvent);
-        int i10 = action & org.telegram.messenger.ks.e4;
+        int i10 = action & org.telegram.messenger.ls.e4;
         boolean z16 = i10 == 6;
         int actionIndex = z16 ? motionEvent.getActionIndex() : -1;
         int pointerCount = motionEvent.getPointerCount();
@@ -285,7 +285,7 @@ public final class n10 {
                 boolean[] zArr = photoViewer.x1;
                 if (!zArr[0] && !zArr[1]) {
                     float x10 = motionEvent.getX();
-                    if ((x10 < Math.min(org.telegram.messenger.ks.R1, photoViewer.f0.getMeasuredWidth() / 8) || x10 > photoViewer.f0.getMeasuredWidth() - r4) && (fjVar = photoViewer.T4) != null && ((!org.telegram.messenger.fj.L4(fjVar.k) && ((dq0Var2 = photoViewer.g0) == null || !dq0Var2.y)) || SystemClock.elapsedRealtime() - photoViewer.v1 < 500 || !photoViewer.j0(motionEvent))) {
+                    if ((x10 < Math.min(org.telegram.messenger.ls.R1, photoViewer.f0.getMeasuredWidth() / 8) || x10 > photoViewer.f0.getMeasuredWidth() - r4) && (gjVar = photoViewer.T4) != null && ((!org.telegram.messenger.gj.L4(gjVar.k) && ((dq0Var2 = photoViewer.g0) == null || !dq0Var2.y)) || SystemClock.elapsedRealtime() - photoViewer.v1 < 500 || !photoViewer.j0(motionEvent))) {
                         this.j = true;
                     }
                 }
@@ -331,7 +331,7 @@ public final class n10 {
                                                 m10Var2 = m10Var3;
                                                 long j12 = a61Var.o + 10000;
                                                 a61Var.o = j12;
-                                                a61Var.p = org.telegram.messenger.gd.G((int) (j12 / 1000), "Seconds", new Object[0]);
+                                                a61Var.p = org.telegram.messenger.hd.G((int) (j12 / 1000), "Seconds", new Object[0]);
                                                 photoViewer2.r2(j10);
                                                 photoViewer2.f0.invalidate();
                                                 photoViewer2.q3.h(true, j10 / x12);
@@ -406,8 +406,8 @@ public final class n10 {
                                 m10Var3 = m10Var;
                             }
                             if (photoViewer2.a6 == 1.0f) {
-                                float w10 = org.telegram.messenger.n10.w(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.g1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.g1(photoViewer2.u4) / 2));
-                                float w11 = org.telegram.messenger.n10.w(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.e1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.e1() / 2));
+                                float w10 = org.telegram.messenger.o10.w(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.g1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.g1(photoViewer2.u4) / 2));
+                                float w11 = org.telegram.messenger.o10.w(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.e1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.e1() / 2));
                                 photoViewer2.u3(3.0f);
                                 float f18 = photoViewer2.E6;
                                 if (w10 >= f18) {

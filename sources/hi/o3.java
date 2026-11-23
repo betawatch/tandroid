@@ -4,14 +4,14 @@ import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.WeakHashMap;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class o3 {
     public final View a;
     public View b;
-    public final x10 c;
+    public final y10 c;
     public boolean d;
     public boolean e;
     public boolean f;
@@ -24,7 +24,7 @@ public class o3 {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v1, types: [android.view.ViewTreeObserver$OnGlobalLayoutListener, hi.m3] */
-    public o3(View view, boolean z10, x10 x10Var) {
+    public o3(View view, boolean z10, y10 y10Var) {
         bi.s1 s1Var = new bi.s1(this, 1);
         this.i = s1Var;
         ?? r12 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: hi.m3
@@ -35,7 +35,7 @@ public class o3 {
         };
         this.j = r12;
         this.a = view;
-        this.c = x10Var;
+        this.c = y10Var;
         this.b = view;
         if (view.isAttachedToWindow()) {
             view.getViewTreeObserver().addOnGlobalLayoutListener(r12);
@@ -52,9 +52,9 @@ public class o3 {
                 this.e = false;
             }
         }
-        x10 x10Var = this.c;
-        if (x10Var != null) {
-            x10Var.a(Integer.valueOf(this.l));
+        y10 y10Var = this.c;
+        if (y10Var != null) {
+            y10Var.a(Integer.valueOf(this.l));
         }
     }
 

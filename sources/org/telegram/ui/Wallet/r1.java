@@ -4,12 +4,12 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import org.json.JSONObject;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class r1 implements View.OnClickListener {
                 d3 d3Var = (d3) this.c;
                 org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.d;
                 if (org.telegram.messenger.g0.g(jSONObject.optString("text"))) {
-                    n10.t(null, 2131742745, new lc(d3Var.F, h6Var));
+                    o10.t(null, 2131742743, new lc(d3Var.F, h6Var));
                     break;
                 }
                 break;

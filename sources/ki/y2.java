@@ -6,15 +6,15 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import bi.p4;
 import java.util.ArrayList;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.a70;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y2 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -48,9 +48,9 @@ public final /* synthetic */ class y2 implements View.OnClickListener {
                     break;
                 } else {
                     int i7 = this.b;
-                    TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(connectedbotstarref.bot_id));
+                    TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(connectedbotstarref.bot_id));
                     if (c22 != null) {
-                        mp.u1(i7).c3(c22, 0, true, new v2(this.c, this.f, i7, this.e, this.d, 0));
+                        np.u1(i7).c3(c22, 0, true, new v2(this.c, this.f, i7, this.e, this.d, 0));
                         break;
                     }
                 }
@@ -70,7 +70,7 @@ public final /* synthetic */ class y2 implements View.OnClickListener {
                 if (arrayList3 != null) {
                     arrayList.addAll(arrayList3);
                 }
-                arrayList.add(0, j10.i(i10).f());
+                arrayList.add(0, k10.i(i10).f());
                 org.telegram.ui.ActionBar.w2 w2Var = this.c;
                 ViewGroup viewGroup = w2Var.b;
                 h6 h6Var = this.d;

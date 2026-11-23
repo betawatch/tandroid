@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ji0 extends v4.o0 {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class ji0 extends v4.o0 {
                     }
                     rect.right = org.telegram.messenger.g0.L(4.0f);
                     if (R == xi0Var.b0.b() - 1) {
-                        if ((!xi0Var.V.isEmpty() && !org.telegram.messenger.mp.u1(xi0Var.K).K3()) || xi0Var.q()) {
+                        if ((!xi0Var.V.isEmpty() && !org.telegram.messenger.np.u1(xi0Var.K).K3()) || xi0Var.q()) {
                             rect.right = org.telegram.messenger.g0.L(2.0f);
                             break;
                         } else {

@@ -1,10 +1,10 @@
 package ki;
 
-import org.telegram.messenger.i9;
+import org.telegram.messenger.j9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t1 implements q3, i9, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class t1 implements q3, j9, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ s2 a;
 
     public /* synthetic */ t1(s2 s2Var) {
@@ -16,7 +16,7 @@ public final /* synthetic */ class t1 implements q3, i9, org.telegram.ui.ActionB
         this.a.o(false);
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.j9
     public Object m(Object obj) {
         return Boolean.valueOf(this.a.f.getKeyboardHeight() >= org.telegram.messenger.g0.L(20.0f));
     }

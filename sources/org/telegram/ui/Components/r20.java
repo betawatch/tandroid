@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r20 extends dk0 {
     public final Context c;
@@ -85,7 +85,7 @@ public final class r20 extends dk0 {
             if (i7 < v20Var.f2 || i7 >= (i10 = v20Var.g2)) {
                 i10 = v20Var.j2;
             }
-            TLRPC.User c22 = org.telegram.messenger.mp.u1(v20Var.a).c2(Long.valueOf(tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id));
+            TLRPC.User c22 = org.telegram.messenger.np.u1(v20Var.a).c2(Long.valueOf(tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id));
             if (c22 != null) {
                 b5Var.setCustomImageVisible(v20Var.a2.contains(Long.valueOf(c22.id)));
                 b5Var.c(c22, null, null, i7 != i10 - 1);
@@ -99,7 +99,7 @@ public final class r20 extends dk0 {
                 if ((!v20Var.X1 || v20Var.Y1) && v20Var.k2 == -1 && !arrayList.isEmpty()) {
                     r3 = true;
                 }
-                y4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.gd.N0(2131743147, null), r3);
+                y4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.hd.N0(2131743145, null), r3);
                 return;
             }
             return;
@@ -109,12 +109,12 @@ public final class r20 extends dk0 {
         }
         org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
         if (i7 == v20Var.k2) {
-            y3Var.setText(org.telegram.messenger.gd.N0(2131752324, null));
+            y3Var.setText(org.telegram.messenger.hd.N0(2131752324, null));
         } else if (i7 == v20Var.h2) {
             if (v20Var.c2) {
-                y3Var.setText(org.telegram.messenger.gd.N0(2131742561, null));
+                y3Var.setText(org.telegram.messenger.hd.N0(2131742559, null));
             } else {
-                y3Var.setText(org.telegram.messenger.gd.N0(2131749263, null));
+                y3Var.setText(org.telegram.messenger.hd.N0(2131749263, null));
             }
         }
     }

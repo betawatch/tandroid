@@ -5,7 +5,7 @@ import android.content.Context;
 import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j90 extends jt0 {
     public final /* synthetic */ k90 x2;
@@ -41,7 +41,7 @@ public final class j90 extends jt0 {
             eVar.setEnabled(size > 0);
             k90Var.O.c(size, true);
             if (k90Var.S.getClosestTab() == 8) {
-                k90Var.O.i(org.telegram.messenger.gd.G(size, "ArchiveStories", new Object[0]), true, true);
+                k90Var.O.i(org.telegram.messenger.hd.G(size, "ArchiveStories", new Object[0]), true, true);
             }
         }
     }

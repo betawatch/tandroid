@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v21 implements Runnable {
     public final /* synthetic */ int a;
@@ -88,10 +88,10 @@ public final /* synthetic */ class v21 implements Runnable {
                 String str2 = a81Var.E;
                 if (str2 != null && str2.equals(str)) {
                     if (tL_error3 == null || (!"THEME_SLUG_INVALID".equals(tL_error3.text) && !"THEME_SLUG_OCCUPIED".equals(tL_error3.text))) {
-                        a81Var.f0(org.telegram.ui.ActionBar.m6.w6, org.telegram.messenger.gd.a0("SetUrlAvailable", null, 2131745312, str));
+                        a81Var.f0(org.telegram.ui.ActionBar.m6.w6, org.telegram.messenger.hd.a0("SetUrlAvailable", null, 2131745312, str));
                         break;
                     } else {
-                        a81Var.f0(org.telegram.ui.ActionBar.m6.p7, org.telegram.messenger.gd.N0(2131745310, null));
+                        a81Var.f0(org.telegram.ui.ActionBar.m6.p7, org.telegram.messenger.hd.N0(2131745310, null));
                         break;
                     }
                 }
@@ -102,19 +102,19 @@ public final /* synthetic */ class v21 implements Runnable {
             case 5:
                 i81 i81Var = (i81) obj3;
                 bn bnVar = (bn) obj2;
-                org.telegram.messenger.fj fjVar = i81Var.H;
+                org.telegram.messenger.gj gjVar = i81Var.H;
                 int i12 = ((TLRPC.TodoItem) obj).id;
-                if (fjVar != null && (message = fjVar.k) != null && (message.media instanceof TLRPC.TL_messageMediaToDo)) {
-                    org.telegram.messenger.fj.B0(message);
+                if (gjVar != null && (message = gjVar.k) != null && (message.media instanceof TLRPC.TL_messageMediaToDo)) {
+                    org.telegram.messenger.gj.B0(message);
                     rmVar = new rm();
-                    rmVar.a = fjVar;
+                    rmVar.a = gjVar;
                     rmVar.b = -1;
                     rmVar.c = -1;
                     rmVar.g = true;
                     rmVar.d = i12;
                     rmVar.f();
                 }
-                bnVar.jc(fjVar, rmVar);
+                bnVar.jc(gjVar, rmVar);
                 i81Var.c(false);
                 break;
             case 6:
@@ -160,9 +160,9 @@ public final /* synthetic */ class v21 implements Runnable {
                         for (int i14 = 0; i14 < messages_messages.messages.size(); i14++) {
                             TLRPC.Message message2 = messages_messages.messages.get(i14);
                             i7 = ((org.telegram.ui.ActionBar.g2) u91Var.w0).currentAccount;
-                            org.telegram.messenger.fj fjVar2 = new org.telegram.messenger.fj(i7, message2, false, false);
-                            fjVar2.K5(str3, true);
-                            arrayList3.add(fjVar2);
+                            org.telegram.messenger.gj gjVar2 = new org.telegram.messenger.gj(i7, message2, false, false);
+                            gjVar2.K5(str3, true);
+                            arrayList3.add(gjVar2);
                         }
                         u91Var.J();
                         if (arrayList3.size() < messages_messages.count && !messages_messages.messages.isEmpty()) {

@@ -25,9 +25,9 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.p8;
 import org.telegram.ui.Cells.r1;
@@ -36,7 +36,7 @@ import tg.o1;
 import ug.z;
 import wg.q;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF c0 = new RectF();
@@ -45,7 +45,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public static final p8 f0 = new p8("openFactor", 11);
     public static final p8 g0 = new p8("openFactor", 12);
     public final r1 E;
-    public final fj F;
+    public final gj F;
     public float G;
     public Bitmap J;
     public BitmapShader K;
@@ -218,7 +218,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        e(canvas, false, ks.e4);
+        e(canvas, false, ls.e4);
     }
 
     public final void e(Canvas canvas, boolean z10, int i7) {

@@ -5,10 +5,10 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -32,23 +32,23 @@ public final /* synthetic */ class p implements Runnable {
                 final boolean z11 = this.b;
                 t tVar = this.c;
                 DictationAsr.s().mkdirs();
-                if (l1.d() && (e10 = l1.e()) != null) {
+                if (m1.d() && (e10 = m1.e()) != null) {
                     try {
                         e10.await(20000L, TimeUnit.MILLISECONDS);
                     } catch (InterruptedException unused) {
                     }
                 }
-                final ArrayList a10 = l1.a();
+                final ArrayList a10 = m1.a();
                 Future submit = DictationAsr.f.submit(new Callable() { // from class: ai.q
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
                         ArrayList arrayList = a10;
                         boolean z12 = z11;
                         t[] tVarArr = DictationAsr.a;
-                        return Integer.valueOf(DictationAsr.v("silero_vad.onnx", l1.f(arrayList, "silero-vad"), null, z12));
+                        return Integer.valueOf(DictationAsr.v("silero_vad.onnx", m1.f(arrayList, "silero-vad"), null, z12));
                     }
                 });
-                int v = DictationAsr.v(tVar.b(), l1.f(a10, tVar.c), tVar, z11);
+                int v = DictationAsr.v(tVar.b(), m1.f(a10, tVar.c), tVar, z11);
                 try {
                     i7 = ((Integer) submit.get()).intValue();
                 } catch (Exception unused2) {
@@ -73,7 +73,7 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 tVar.j = false;
                 if (z13) {
-                    mp.g1().edit().putLong("tinyasr_checked_" + tVar.a, System.currentTimeMillis()).apply();
+                    np.g1().edit().putLong("tinyasr_checked_" + tVar.a, System.currentTimeMillis()).apply();
                 }
                 if (DictationAsr.y(tVar) && (z12 || tVar.f == 0)) {
                     tVar.i = true;

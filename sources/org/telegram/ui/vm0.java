@@ -10,17 +10,17 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vm0 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ vm0(int i7, org.telegram.messenger.fj fjVar) {
+    public /* synthetic */ vm0(int i7, org.telegram.messenger.gj gjVar) {
         this.a = 1;
         this.b = i7;
-        this.c = fjVar;
+        this.c = gjVar;
     }
 
     @Override // android.view.View.OnClickListener
@@ -46,11 +46,11 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj;
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) obj;
                 int i13 = PopupNotificationActivity.c0;
                 TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) view.getTag();
                 if (keyboardButtonProto != null) {
-                    org.telegram.messenger.g0.g3(new org.telegram.messenger.ek(org.telegram.messenger.zy.C(i11), org.telegram.messenger.fj.B0(fjVar.k), fjVar.e1(), keyboardButtonProto.getData(), 10));
+                    org.telegram.messenger.g0.g3(new org.telegram.messenger.fk(org.telegram.messenger.az.C(i11), org.telegram.messenger.gj.B0(gjVar.k), gjVar.e1(), keyboardButtonProto.getData(), 10));
                     break;
                 }
                 break;
@@ -77,15 +77,15 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                 }
                 if (!org.telegram.ui.Components.jt0.J0(profileActivity.O.getClosestTab())) {
                     long e10 = profileActivity.getUserConfig().e();
-                    ai.n2 n2Var = profileActivity.D5;
-                    if (n2Var != null) {
-                        n2Var.run();
+                    ai.o2 o2Var = profileActivity.D5;
+                    if (o2Var != null) {
+                        o2Var.run();
                         profileActivity.D5 = null;
                     }
                     org.telegram.ui.Components.gc.e();
                     boolean z10 = profileActivity.O.getClosestTab() == 9;
                     ArrayList arrayList = new ArrayList();
-                    SparseArray<org.telegram.messenger.fj> actionModeSelected = profileActivity.O.getActionModeSelected();
+                    SparseArray<org.telegram.messenger.gj> actionModeSelected = profileActivity.O.getActionModeSelected();
                     if (actionModeSelected != null) {
                         int i14 = 0;
                         for (int i15 = 0; i15 < actionModeSelected.size(); i15++) {
@@ -113,9 +113,9 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                         profileActivity.getMessagesController().R1().q0(e10, arrayList, false);
                         boolean[] zArr2 = {false};
                         boolean z11 = z10;
-                        profileActivity.D5 = new ai.n2(profileActivity, e10, arrayList, z10, 3);
-                        bi.o2 o2Var = new bi.o2(profileActivity, zArr2, arrayList, zArr, e10, 15);
-                        (z11 ? org.telegram.ui.Components.lc.b0(profileActivity).L(R.raw.contact_check, org.telegram.messenger.gd.G(i7, "StorySavedTitle", new Object[0]), org.telegram.messenger.gd.N0(2131744243, null), org.telegram.messenger.gd.N0(2131743642, null), o2Var).j() : org.telegram.ui.Components.lc.b0(profileActivity).J(R.raw.chats_archived, org.telegram.messenger.gd.G(i7, "StoryArchived", new Object[0]), org.telegram.messenger.gd.N0(2131743642, null), 5000, false, o2Var).j()).v = new tr0(16, profileActivity, zArr2);
+                        profileActivity.D5 = new ai.o2(profileActivity, e10, arrayList, z10, 3);
+                        bi.o2 o2Var2 = new bi.o2(profileActivity, zArr2, arrayList, zArr, e10, 15);
+                        (z11 ? org.telegram.ui.Components.lc.b0(profileActivity).L(R.raw.contact_check, org.telegram.messenger.hd.G(i7, "StorySavedTitle", new Object[0]), org.telegram.messenger.hd.N0(2131744241, null), org.telegram.messenger.hd.N0(2131743640, null), o2Var2).j() : org.telegram.ui.Components.lc.b0(profileActivity).J(R.raw.chats_archived, org.telegram.messenger.hd.G(i7, "StoryArchived", new Object[0]), org.telegram.messenger.hd.N0(2131743640, null), 5000, false, o2Var2).j()).v = new tr0(16, profileActivity, zArr2);
                         break;
                     }
                 } else {
@@ -123,14 +123,14 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                     vv0 vv0Var3 = profileActivity.O;
                     int w12 = vv0Var3.w1(vv0Var3.getClosestTab());
                     String w10 = profileActivity.getMessagesController().R1().w(w12, a10);
-                    ai.n2 n2Var2 = profileActivity.D5;
-                    if (n2Var2 != null) {
-                        n2Var2.run();
+                    ai.o2 o2Var3 = profileActivity.D5;
+                    if (o2Var3 != null) {
+                        o2Var3.run();
                         profileActivity.D5 = null;
                     }
                     org.telegram.ui.Components.gc.e();
                     ArrayList arrayList2 = new ArrayList();
-                    SparseArray<org.telegram.messenger.fj> actionModeSelected2 = profileActivity.O.getActionModeSelected();
+                    SparseArray<org.telegram.messenger.gj> actionModeSelected2 = profileActivity.O.getActionModeSelected();
                     if (actionModeSelected2 != null) {
                         for (int i17 = 0; i17 < actionModeSelected2.size(); i17++) {
                             TL_stories.StoryItem storyItem3 = actionModeSelected2.valueAt(i17).l;
@@ -143,7 +143,7 @@ public final /* synthetic */ class vm0 implements View.OnClickListener {
                     if (!arrayList2.isEmpty()) {
                         bi.u3 u3Var = new bi.u3(profileActivity, a10, w12, arrayList2, 5);
                         profileActivity.getMessagesController().R1().f0(w12, a10, arrayList2);
-                        org.telegram.ui.Components.lc.b0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.gd.N0(2131743642, null), u3Var).j();
+                        org.telegram.ui.Components.lc.b0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.W2(org.telegram.messenger.hd.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.hd.N0(2131743640, null), u3Var).j();
                         break;
                     }
                 }

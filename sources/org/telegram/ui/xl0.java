@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xl0 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class xl0 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ yl0 b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class xl0 implements org.telegram.messenger.x10 {
         this.b = yl0Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7;
         jm0 jm0Var;
@@ -27,19 +27,19 @@ public final /* synthetic */ class xl0 implements org.telegram.messenger.x10 {
                 fm0Var2.L = starGift;
                 lm0 lm0Var = fm0Var2.q0;
                 if (starGift == null) {
-                    bi.y7 y7Var = fm0Var2.K;
-                    if (y7Var != null) {
-                        y7Var.i();
+                    bi.x7 x7Var = fm0Var2.K;
+                    if (x7Var != null) {
+                        x7Var.i();
                         fm0Var2.K = null;
                     }
                 } else {
-                    bi.y7 y7Var2 = fm0Var2.K;
-                    if (y7Var2 == null || y7Var2.b != starGift.id) {
+                    bi.x7 x7Var2 = fm0Var2.K;
+                    if (x7Var2 == null || x7Var2.b != starGift.id) {
                         i7 = ((org.telegram.ui.ActionBar.g2) lm0Var).currentAccount;
-                        bi.y7 y7Var3 = new bi.y7(i7, fm0Var2.L.id, new xl0(yl0Var, 2));
-                        y7Var3.w = true;
-                        fm0Var2.K = y7Var3;
-                        y7Var3.l(false);
+                        bi.x7 x7Var3 = new bi.x7(i7, fm0Var2.L.id, new xl0(yl0Var, 2));
+                        x7Var3.w = true;
+                        fm0Var2.K = x7Var3;
+                        x7Var3.l(false);
                     }
                 }
                 fm0.a(fm0Var2);

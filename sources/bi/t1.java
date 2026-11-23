@@ -9,13 +9,13 @@ import di.ab;
 import fi.f9;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.ek0;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.qj0;
 import org.telegram.ui.Components.va0;
 import org.telegram.ui.z80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements qj0 {
     public final /* synthetic */ int a;
@@ -91,8 +91,8 @@ public final /* synthetic */ class t1 implements qj0 {
                                         }
                                         abVar.show();
                                         break;
-                                    } else if (o10.b(user2.id)) {
-                                        n10.u(gd.a0(null, null, 2131743499, org.telegram.messenger.n5.t(user2.id)), new lc(m2Var, e2Var.J0), R.raw.error, 36);
+                                    } else if (p10.b(user2.id)) {
+                                        o10.u(hd.a0(null, null, 2131743497, org.telegram.messenger.n5.t(user2.id)), new lc(m2Var, e2Var.J0), R.raw.error, 36);
                                         break;
                                     } else {
                                         n3 n3Var = new n3(e2Var.getContext(), e2Var.a, user2.id, wg.s.c(wg.s.b(1, e2Var.i2)), new p1(e2Var, false ? 1 : 0));
@@ -112,7 +112,7 @@ public final /* synthetic */ class t1 implements qj0 {
                                         int size = linkedHashMap.size();
                                         e2Var.V1.getClass();
                                         if (size >= 10) {
-                                            new lc(m2Var, e2Var.J0).Q(R.raw.chats_infotip, 36, gd.G(10, "BotMultiContactsSelectorLimit", new Object[0])).k(true);
+                                            new lc(m2Var, e2Var.J0).Q(R.raw.chats_infotip, 36, hd.G(10, "BotMultiContactsSelectorLimit", new Object[0])).k(true);
                                             try {
                                                 m2Var.performHapticFeedback(3, 2);
                                                 break;
@@ -146,7 +146,7 @@ public final /* synthetic */ class t1 implements qj0 {
                             }
                         }
                     } else {
-                        org.telegram.ui.Components.c5.l(e2Var.getContext(), gd.N0(2131751226, null), gd.N0(2131751231, null), null, new p1(e2Var, i12), new n1(e2Var, i11), false, false, e2Var.J0).C2();
+                        org.telegram.ui.Components.c5.l(e2Var.getContext(), hd.N0(2131751226, null), hd.N0(2131751231, null), null, new p1(e2Var, i12), new n1(e2Var, i11), false, false, e2Var.J0).C2();
                         break;
                     }
                 }
@@ -156,21 +156,21 @@ public final /* synthetic */ class t1 implements qj0 {
                 fi.m0 m0Var = (fi.m0) view;
                 fi.r0 r0Var = m0Var.L;
                 a70 G3 = a70.G((ViewGroup) obj2, new fi.b(), view);
-                G3.p(15, -1, gd.a0(null, null, 2131748615, gd.x(r0Var.d, true)));
+                G3.p(15, -1, hd.a0(null, null, 2131748615, hd.x(r0Var.d, true)));
                 G3.k();
-                G3.c(R.drawable.msg_openprofile, gd.N0(2131747592, null), new di.f2(22, (f9) obj, r0Var), false);
-                G3.l(R.drawable.msg_copy, gd.N0(2131751755, null), new di.f2(23, a2Var2, m0Var), !r0Var.e);
-                G3.l(R.drawable.msg_delete, gd.N0(2131751586, null), new di.f2(24, a2Var2, r0Var), a2Var2.N == j10.i(a2Var2.O).e() || a2Var2.f());
+                G3.c(R.drawable.msg_openprofile, hd.N0(2131747592, null), new di.f2(22, (f9) obj, r0Var), false);
+                G3.l(R.drawable.msg_copy, hd.N0(2131751755, null), new di.f2(23, a2Var2, m0Var), !r0Var.e);
+                G3.l(R.drawable.msg_delete, hd.N0(2131751586, null), new di.f2(24, a2Var2, r0Var), a2Var2.N == k10.i(a2Var2.O).e() || a2Var2.f());
                 G3.a0();
                 break;
             case 2:
                 hi.u6 u6Var = (hi.u6) obj3;
-                x10 x10Var = (x10) obj2;
+                y10 y10Var = (y10) obj2;
                 org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj;
                 if (!(view instanceof org.telegram.ui.Cells.h7)) {
                     o41 G4 = u6Var.l2.G(i7 - 1);
                     if (G4 != null && G4.d == 1) {
-                        new hi.u6(u6Var.getContext(), true, u6Var, x10Var, h6Var).show();
+                        new hi.u6(u6Var.getContext(), true, u6Var, y10Var, h6Var).show();
                         break;
                     } else if (G4 != null && G4.d == 2) {
                         u6Var.a2.b();
@@ -183,7 +183,7 @@ public final /* synthetic */ class t1 implements qj0 {
                         break;
                     }
                 } else {
-                    fj message = ((org.telegram.ui.Cells.h7) view).getMessage();
+                    gj message = ((org.telegram.ui.Cells.h7) view).getMessage();
                     if (message != null) {
                         org.telegram.messenger.a6.q(u6Var.a).v(u6Var);
                         if (u6Var.c2 != null) {
@@ -229,7 +229,7 @@ public final /* synthetic */ class t1 implements qj0 {
                         i0Var.f = k7Var.j2;
                         hi.s6 s6Var = new hi.s6(k7Var, 1);
                         l2Var.H = i0Var;
-                        int i16 = (webPage2 == null || (webPage2.photo == null && !fj.K4(webPage2.document))) ? 8 : 0;
+                        int i16 = (webPage2 == null || (webPage2.photo == null && !gj.K4(webPage2.document))) ? 8 : 0;
                         va0 va0Var = l2Var.y;
                         va0Var.setVisibility(i16);
                         l2Var.f.b(l2Var.a, i0Var, false);
@@ -260,7 +260,7 @@ public final /* synthetic */ class t1 implements qj0 {
                 Context context2 = (Context) obj;
                 org.telegram.ui.Cells.s sVar = (org.telegram.ui.Cells.s) view;
                 z80 z80Var = (z80) tVar.f3.get(i7);
-                if (z80Var.e && !j10.o()) {
+                if (z80Var.e && !k10.o()) {
                     g2Var.showDialog(new ug.y0(g2Var, 10, true));
                     break;
                 } else if (!ya.a(z80Var)) {
@@ -276,7 +276,7 @@ public final /* synthetic */ class t1 implements qj0 {
                             sVar2.b(false, true);
                         }
                     }
-                    ks.e().k(ks.S4, 5, z80Var);
+                    ls.e().k(ls.S4, 5, z80Var);
                     break;
                 }
                 break;

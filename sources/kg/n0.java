@@ -1,14 +1,14 @@
 package kg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -41,7 +41,7 @@ public final /* synthetic */ class n0 implements RequestDelegate {
                 TLRPC.User user = (TLRPC.User) this.f;
                 TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) this.e;
                 if (tL_error == null) {
-                    mp.u1(lVar.k).V3((TLRPC.TL_updates) tLObject, false);
+                    np.u1(lVar.k).V3((TLRPC.TL_updates) tLObject, false);
                 }
                 org.telegram.messenger.g0.g3(new q0(lVar, tL_error, tLObject, tL_chatInviteImporter, this.b, user, tL_messages_hideChatJoinRequest));
                 break;

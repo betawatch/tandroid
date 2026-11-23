@@ -8,9 +8,9 @@ import android.os.SystemClock;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.u3;
 import org.telegram.messenger.voip.VoIPService;
@@ -23,9 +23,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.f40;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class j1 implements wi.l, fs {
+public final class j1 implements wi.l, gs {
     public static j1 w;
     public wi.n a;
     public TLRPC.GroupCallParticipant c;
@@ -40,8 +40,8 @@ public final class j1 implements wi.l, fs {
 
     public j1(int i7) {
         this.r = i7;
-        ks.f(i7).b(this, ks.w2);
-        ks.f(i7).b(this, ks.B2);
+        ls.f(i7).b(this, ls.w2);
+        ls.f(i7).b(this, ls.B2);
     }
 
     public static t3 g() {
@@ -67,7 +67,7 @@ public final class j1 implements wi.l, fs {
         }
         if (w == null) {
             VoIPService sharedInstance = VoIPService.getSharedInstance();
-            w = new j1(sharedInstance != null ? sharedInstance.getAccount() : j10.t0);
+            w = new j1(sharedInstance != null ? sharedInstance.getAccount() : k10.t0);
         }
         j1 j1Var = w;
         wi.n nVar = j1Var.a;
@@ -104,7 +104,7 @@ public final class j1 implements wi.l, fs {
         if (g() != null) {
             if (w == null) {
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
-                w = new j1(sharedInstance != null ? sharedInstance.getAccount() : j10.t0);
+                w = new j1(sharedInstance != null ? sharedInstance.getAccount() : k10.t0);
             }
             j1 j1Var = w;
             wi.n nVar = j1Var.a;
@@ -119,8 +119,8 @@ public final class j1 implements wi.l, fs {
         if (j1Var2 != null) {
             w = null;
             int i7 = j1Var2.r;
-            ks.f(i7).n(j1Var2, ks.w2);
-            ks.f(i7).n(j1Var2, ks.B2);
+            ls.f(i7).n(j1Var2, ls.w2);
+            ls.f(i7).n(j1Var2, ls.B2);
             wi.n nVar2 = j1Var2.a;
             if (nVar2 != null) {
                 j1Var2.a = null;
@@ -337,9 +337,9 @@ public final class j1 implements wi.l, fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.w2 || i7 == ks.B2) {
+        if (i7 == ls.w2 || i7 == ls.B2) {
             a();
             i1 i1Var = this.f;
             if (i1Var != null) {

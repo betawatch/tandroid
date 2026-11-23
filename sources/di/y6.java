@@ -3,14 +3,14 @@ package di;
 import android.app.Activity;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,26 +38,26 @@ public final /* synthetic */ class y6 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new j7(tLObject, (f5.m) this.b, (f5.f) this.c, (org.telegram.ui.Wallet.e0) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.g, this.e, tL_error, 0));
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new j7(tLObject, (f5.m) this.b, (f5.f) this.c, (bi.f8) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));
+                org.telegram.messenger.g0.g3(new j7(tLObject, (f5.m) this.b, (f5.f) this.c, (bi.e8) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));
                 break;
             case 2:
                 org.telegram.messenger.g0.g3(new j7((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.f, (TLRPC.UserFull) this.d, tLObject, (int[]) this.g, (ArrayList) this.e));
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new j7(tL_error, (x10) this.b, tLObject, this.e, (f5.f) this.c, (x10) this.f, (org.telegram.ui.ActionBar.g2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 9));
+                org.telegram.messenger.g0.g3(new j7(tL_error, (y10) this.b, tLObject, this.e, (f5.f) this.c, (y10) this.f, (org.telegram.ui.ActionBar.g2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 9));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new j7(tL_error, (x10) this.b, tLObject, this.e, (f5.f) this.c, (x10) this.f, (org.telegram.ui.ActionBar.g2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 10));
+                org.telegram.messenger.g0.g3(new j7(tL_error, (y10) this.b, tLObject, this.e, (f5.f) this.c, (y10) this.f, (org.telegram.ui.ActionBar.g2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 10));
                 break;
         }
     }
 
-    public /* synthetic */ y6(x10 x10Var, List list, f5.f fVar, x10 x10Var2, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, int i7) {
+    public /* synthetic */ y6(y10 y10Var, List list, f5.f fVar, y10 y10Var2, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, int i7) {
         this.a = i7;
-        this.b = x10Var;
+        this.b = y10Var;
         this.e = list;
         this.c = fVar;
-        this.f = x10Var2;
+        this.f = y10Var2;
         this.d = g2Var;
         this.g = inputStorePaymentPurpose;
     }

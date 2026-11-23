@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ai implements org.telegram.ui.web.c0 {
     public ValueAnimator a;
@@ -42,9 +42,9 @@ public final class ai implements org.telegram.ui.web.c0 {
     @Override // org.telegram.ui.web.c0
     public final boolean h() {
         ui uiVar = this.e;
-        org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(uiVar.H3);
+        org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(uiVar.H3);
         long j3 = this.d;
-        return d02.l(j3) || org.telegram.messenger.mp.u1(uiVar.H3).Z6.contains(Long.valueOf(j3));
+        return d02.l(j3) || org.telegram.messenger.np.u1(uiVar.H3).Z6.contains(Long.valueOf(j3));
     }
 
     @Override // org.telegram.ui.web.c0
@@ -84,7 +84,7 @@ public final class ai implements org.telegram.ui.web.c0 {
         }
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
-            org.telegram.messenger.mp.u1(i7).f4(paymentForm.users, false);
+            org.telegram.messenger.np.u1(i7).f4(paymentForm.users, false);
             ml0Var = new org.telegram.ui.ml0(paymentForm, null, str, g2Var);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
             ml0Var = new org.telegram.ui.ml0((TLRPC.PaymentReceipt) tLObject);
@@ -212,7 +212,7 @@ public final class ai implements org.telegram.ui.web.c0 {
         if (isEmpty) {
             org.telegram.ui.ActionBar.g2 g2Var = uiVar.a2;
             if (g2Var instanceof org.telegram.ui.bn) {
-                ((org.telegram.ui.bn) g2Var).a0.setFieldText("@" + org.telegram.messenger.o10.o(user) + " " + str);
+                ((org.telegram.ui.bn) g2Var).a0.setFieldText("@" + org.telegram.messenger.p10.o(user) + " " + str);
             }
             uiVar.a(true);
             return;

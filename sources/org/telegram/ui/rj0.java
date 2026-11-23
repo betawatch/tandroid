@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rj0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final class rj0 implements TextWatcher {
                     org.telegram.ui.Components.j30 j30Var = (org.telegram.ui.Components.j30) hk0Var.Z[2];
                     if (d.length() == 0) {
                         j30Var.setHintText((String) null);
-                        j30Var.setHint(org.telegram.messenger.gd.N0(2131747178, null));
-                        hk0Var.Z[0].setText(org.telegram.messenger.gd.N0(2131752122, null));
+                        j30Var.setHint(org.telegram.messenger.hd.N0(2131747178, null));
+                        hk0Var.Z[0].setText(org.telegram.messenger.hd.N0(2131752122, null));
                     } else {
                         int i10 = 4;
                         if (d.length() > 4) {
@@ -76,8 +76,8 @@ public final class rj0 implements TextWatcher {
                         String str3 = (String) hashMap.get(d);
                         if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
                             j30Var.setHintText((String) null);
-                            j30Var.setHint(org.telegram.messenger.gd.N0(2131747178, null));
-                            hk0Var.Z[0].setText(org.telegram.messenger.gd.N0(2131742595, null));
+                            j30Var.setHint(org.telegram.messenger.hd.N0(2131747178, null));
+                            hk0Var.Z[0].setText(org.telegram.messenger.hd.N0(2131742593, null));
                         } else {
                             hk0Var.Z[0].setText((CharSequence) arrayList.get(indexOf));
                             String str4 = (String) hk0Var.Y0.get(d);

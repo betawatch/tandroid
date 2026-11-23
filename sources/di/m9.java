@@ -3,17 +3,17 @@ package di;
 import android.os.Bundle;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.xy;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.yy;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.is0;
 import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m9 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,12 +36,12 @@ public final /* synthetic */ class m9 implements Runnable {
                     if (j3 < 0) {
                         int i7 = this.b;
                         long j10 = -j3;
-                        if (!org.telegram.messenger.v3.V(mp.u1(i7).O0(Long.valueOf(j10)))) {
+                        if (!org.telegram.messenger.v3.V(np.u1(i7).O0(Long.valueOf(j10)))) {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", j10);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
                             rq rqVar = new rq(bundle);
-                            rqVar.C0(mp.u1(i7).P0(j10));
+                            rqVar.C0(np.u1(i7).P0(j10));
                             T.presentFragment(rqVar);
                             break;
                         } else {
@@ -58,7 +58,7 @@ public final /* synthetic */ class m9 implements Runnable {
                 int i10 = this.b;
                 long j11 = this.c;
                 try {
-                    SQLitePreparedStatement executeFast = tr.a0(i10).b.executeFast("REPLACE INTO search_recent VALUES(?, ?)");
+                    SQLitePreparedStatement executeFast = ur.a0(i10).b.executeFast("REPLACE INTO search_recent VALUES(?, ?)");
                     executeFast.requery();
                     executeFast.bindLong(1, j11);
                     executeFast.bindInteger(2, (int) (System.currentTimeMillis() / 1000));
@@ -70,7 +70,7 @@ public final /* synthetic */ class m9 implements Runnable {
                     return;
                 }
             case 2:
-                zy.C(this.b).r0(xy.b("/privacy", this.c, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                az.C(this.b).r0(yy.b("/privacy", this.c, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             default:
                 org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();

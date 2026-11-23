@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import di.xb;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ni;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.oi;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h5 extends LinearLayout {
     public final org.telegram.ui.Components.q9 a;
@@ -164,12 +164,12 @@ public final class h5 extends LinearLayout {
         }
     }
 
-    public void setEmojiSuggestion(ni niVar) {
+    public void setEmojiSuggestion(oi oiVar) {
         this.a.setVisibility(4);
         this.c.setVisibility(4);
-        String str = niVar.a;
+        String str = oiVar.a;
         if (str == null || !str.startsWith("animated_")) {
-            this.f = org.telegram.messenger.j6.g(niVar.a);
+            this.f = org.telegram.messenger.j6.g(oiVar.a);
         } else {
             try {
                 Drawable drawable = this.f;
@@ -177,13 +177,13 @@ public final class h5 extends LinearLayout {
                     ((org.telegram.ui.Components.p5) drawable).n(this);
                     this.f = null;
                 }
-                org.telegram.ui.Components.p5 m10 = org.telegram.ui.Components.p5.m(j10.t0, Long.parseLong(niVar.a.substring(9)), null, 0);
+                org.telegram.ui.Components.p5 m10 = org.telegram.ui.Components.p5.m(k10.t0, Long.parseLong(oiVar.a.substring(9)), null, 0);
                 this.f = m10;
                 if (this.n) {
                     m10.a(this);
                 }
             } catch (Exception unused) {
-                this.f = org.telegram.messenger.j6.g(niVar.a);
+                this.f = org.telegram.messenger.j6.g(oiVar.a);
             }
         }
         Drawable drawable2 = this.f;
@@ -192,15 +192,15 @@ public final class h5 extends LinearLayout {
             xbVar.setPadding(org.telegram.messenger.g0.L(22.0f), 0, 0, 0);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(":  ");
-            sb2.append(niVar.b);
+            sb2.append(oiVar.b);
             xbVar.setText(sb2);
             return;
         }
         xbVar.setPadding(0, 0, 0, 0);
         StringBuilder sb3 = new StringBuilder();
-        sb3.append(niVar.a);
+        sb3.append(oiVar.a);
         sb3.append(":  ");
-        sb3.append(niVar.b);
+        sb3.append(oiVar.b);
         xbVar.setText(sb3);
     }
 
@@ -246,9 +246,9 @@ public final class h5 extends LinearLayout {
         } else {
             q9Var.f(user, b9Var);
         }
-        xbVar.setText(o10.q(user));
-        if (o10.o(user) != null) {
-            textView.setText("@" + o10.o(user));
+        xbVar.setText(p10.q(user));
+        if (p10.o(user) != null) {
+            textView.setText("@" + p10.o(user));
         } else {
             textView.setText("");
         }

@@ -3,9 +3,9 @@ package ge;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class m {
     public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(m.class, Object.class, "lastScheduledTask$volatile");
@@ -26,7 +26,7 @@ public final class m {
             if (i7 - c.get(this) == 0) {
                 return null;
             }
-            int i10 = i7 & ks.L1;
+            int i10 = i7 & ls.L1;
             if (atomicIntegerFieldUpdater.compareAndSet(this, i7, i7 + 1) && (iVar = (i) this.a.getAndSet(i10, null)) != null) {
                 if (iVar.b) {
                     e.decrementAndGet(this);
@@ -37,7 +37,7 @@ public final class m {
     }
 
     public final i b(int i7, boolean z10) {
-        int i10 = i7 & ks.L1;
+        int i10 = i7 & ls.L1;
         AtomicReferenceArray atomicReferenceArray = this.a;
         i iVar = (i) atomicReferenceArray.get(i10);
         if (iVar != null && iVar.b == z10) {

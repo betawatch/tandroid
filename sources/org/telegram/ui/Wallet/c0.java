@@ -1,16 +1,16 @@
 package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c0 implements q10 {
+public final /* synthetic */ class c0 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -25,13 +25,13 @@ public final /* synthetic */ class c0 implements q10 {
         this.b = z10;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
                 u0 u0Var = (u0) this.c;
                 r0 r0Var = (r0) this.d;
-                q10 q10Var = (q10) this.e;
+                r10 r10Var = (r10) this.e;
                 boolean z10 = this.b;
                 TL_wallet.proofChallenge proofchallenge = (TL_wallet.proofChallenge) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -42,11 +42,11 @@ public final /* synthetic */ class c0 implements q10 {
                     sb2.append(proofchallenge.expires - currentTime);
                     sb2.append("s");
                     u0.P(sb2.toString());
-                    Utilities.d.c(new oi.q2(u0Var, z10, r0Var, proofchallenge, currentTime, q10Var));
+                    Utilities.d.c(new oi.q2(u0Var, z10, r0Var, proofchallenge, currentTime, r10Var));
                     break;
                 } else {
                     r0Var.close();
-                    q10Var.a(null, tL_error == null ? "NULL_ERROR" : tL_error.text);
+                    r10Var.a(null, tL_error == null ? "NULL_ERROR" : tL_error.text);
                     break;
                 }
             default:
@@ -62,7 +62,7 @@ public final /* synthetic */ class c0 implements q10 {
                     String str2 = h2Var.e;
                     TL_wallet.tonConnectSession tonconnectsession = h2Var.a;
                     if ("sendTransaction".equals(str2)) {
-                        if (mp.u1(l2Var.a).h7.contains(l2.l(tonconnectsession.id, h2Var.b) + ".transfer")) {
+                        if (np.u1(l2Var.a).h7.contains(l2.l(tonconnectsession.id, h2Var.b) + ".transfer")) {
                             l2Var.B(h2Var, b10, p51Var);
                             break;
                         }

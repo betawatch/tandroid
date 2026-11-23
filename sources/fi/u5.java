@@ -1,11 +1,11 @@
 package fi;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u5 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -55,7 +55,7 @@ public final /* synthetic */ class u5 implements Runnable {
                             c7Var.b.a.c(new a7(c7Var, peerStories, 0));
                         }
                     }
-                    ks.f(p6Var.a).k(ks.y5, new Object[0]);
+                    ls.f(p6Var.a).k(ls.y5, new Object[0]);
                     break;
                 }
                 break;

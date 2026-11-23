@@ -10,9 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dq;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.q80;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class g6 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -47,7 +47,7 @@ public abstract class g6 extends FrameLayout implements org.telegram.ui.ActionBa
         this.b = textView;
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 14.0f);
-        textView.setText(gd.N0(2131746489, null));
+        textView.setText(hd.N0(2131746489, null));
         g10.addView(textView, c8.ma.r(-2, -2, 51));
         dq dqVar = new dq(context);
         this.c = dqVar;
@@ -58,7 +58,7 @@ public abstract class g6 extends FrameLayout implements org.telegram.ui.ActionBa
         dqVar.setPadding(org.telegram.messenger.g0.L(4.33f), 0, org.telegram.messenger.g0.L(4.33f), 0);
         dqVar.setGravity(3);
         g10.addView(dqVar, c8.ma.t(-1, 17, 51, 4, 1, 4, 0));
-        u2 u2Var = new u2(null, context, true, j10.t0, resourceProvider);
+        u2 u2Var = new u2(null, context, true, k10.t0, resourceProvider);
         this.d = u2Var;
         u2Var.setBackgroundColor(0);
         u2Var.setDialogCellDelegate(new c6((bw0) this, g2Var, context));
@@ -95,39 +95,39 @@ public abstract class g6 extends FrameLayout implements org.telegram.ui.ActionBa
                 iArr[0] = i7;
                 S = String.valueOf(i7);
             } else {
-                S = gd.S(iArr, chat.participants_count);
+                S = hd.S(iArr, chat.participants_count);
             }
-            dqVar.c(gd.G(iArr[0], "Subscribers", new Object[0]).replace(String.format("%d", Integer.valueOf(iArr[0])), S), true, true);
+            dqVar.c(hd.G(iArr[0], "Subscribers", new Object[0]).replace(String.format("%d", Integer.valueOf(iArr[0])), S), true, true);
             boolean z12 = arrayList == null || arrayList.isEmpty();
             this.e = z12;
             u2 u2Var = this.d;
             if (z12) {
                 u2Var.d0(-chat.id, null, 0, false, z10);
             } else {
-                fj fjVar = (fj) i5.c.h(1, arrayList);
+                gj gjVar = (gj) i5.c.h(1, arrayList);
                 long j3 = -chat.id;
-                int i10 = fjVar.k.date;
+                int i10 = gjVar.k.date;
                 if (u2Var.I0 != j3) {
                     u2Var.y4 = -1;
                 }
                 u2Var.I0 = j3;
                 u2Var.C4 = System.currentTimeMillis();
-                u2Var.g1 = fjVar;
+                u2Var.g1 = gjVar;
                 u2Var.v2 = false;
                 u2Var.O0 = false;
                 u2Var.S0 = i10;
-                int i11 = fjVar.k.edit_date;
+                int i11 = gjVar.k.edit_date;
                 u2Var.T0 = 0;
                 u2Var.U0 = false;
-                u2Var.m1 = fjVar.e1();
+                u2Var.m1 = gjVar.e1();
                 u2Var.V0 = 0;
                 u2Var.W0 = 0;
                 u2Var.X0 = 0;
-                u2Var.Y0 = fjVar.F4();
+                u2Var.Y0 = gjVar.F4();
                 u2Var.h1 = arrayList;
-                fj fjVar2 = u2Var.g1;
-                if (fjVar2 != null) {
-                    u2Var.Z0 = fjVar2.k.send_state;
+                gj gjVar2 = u2Var.g1;
+                if (gjVar2 != null) {
+                    u2Var.Z0 = gjVar2.k.send_state;
                 }
                 u2Var.i0(0, z10);
             }

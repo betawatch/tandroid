@@ -16,10 +16,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import p1.g;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class c {
     public static boolean a(int i7) {
@@ -30,7 +30,7 @@ public abstract /* synthetic */ class c {
     }
 
     public static int b(int i7) {
-        int[] d = g.d(ks.K1);
+        int[] d = g.d(ls.K1);
         if (i7 < 0 || i7 >= d.length) {
             return 0;
         }
@@ -108,9 +108,9 @@ public abstract /* synthetic */ class c {
                 return "Trip-Hop";
             case 29:
                 return "Vocal";
-            case ks.T /* 30 */:
+            case ls.T /* 30 */:
                 return "Jazz+Funk";
-            case ks.U /* 31 */:
+            case ls.U /* 31 */:
                 return "Fusion";
             case 32:
                 return "Trance";
@@ -150,157 +150,157 @@ public abstract /* synthetic */ class c {
                 return "Ethnic";
             case 50:
                 return "Gothic";
-            case ks.o0 /* 51 */:
+            case ls.o0 /* 51 */:
                 return "Darkwave";
-            case ks.p0 /* 52 */:
+            case ls.p0 /* 52 */:
                 return "Techno-Industrial";
-            case ks.q0 /* 53 */:
+            case ls.q0 /* 53 */:
                 return "Electronic";
-            case ks.r0 /* 54 */:
+            case ls.r0 /* 54 */:
                 return "Pop-Folk";
-            case ks.s0 /* 55 */:
+            case ls.s0 /* 55 */:
                 return "Eurodance";
-            case ks.t0 /* 56 */:
+            case ls.t0 /* 56 */:
                 return "Dream";
-            case ks.u0 /* 57 */:
+            case ls.u0 /* 57 */:
                 return "Southern Rock";
-            case ks.v0 /* 58 */:
+            case ls.v0 /* 58 */:
                 return "Comedy";
-            case ks.w0 /* 59 */:
+            case ls.w0 /* 59 */:
                 return "Cult";
-            case ks.x0 /* 60 */:
+            case ls.x0 /* 60 */:
                 return "Gangsta";
-            case ks.y0 /* 61 */:
+            case ls.y0 /* 61 */:
                 return "Top 40";
-            case ks.z0 /* 62 */:
+            case ls.z0 /* 62 */:
                 return "Christian Rap";
-            case ks.A0 /* 63 */:
+            case ls.A0 /* 63 */:
                 return "Pop/Funk";
             case 64:
                 return "Jungle";
             case 65:
                 return "Native American";
-            case ks.D0 /* 66 */:
+            case ls.D0 /* 66 */:
                 return "Cabaret";
-            case ks.E0 /* 67 */:
+            case ls.E0 /* 67 */:
                 return "New Wave";
-            case ks.F0 /* 68 */:
+            case ls.F0 /* 68 */:
                 return "Psychadelic";
-            case ks.G0 /* 69 */:
+            case ls.G0 /* 69 */:
                 return "Rave";
-            case ks.H0 /* 70 */:
+            case ls.H0 /* 70 */:
                 return "Showtunes";
-            case ks.I0 /* 71 */:
+            case ls.I0 /* 71 */:
                 return "Trailer";
-            case ks.J0 /* 72 */:
+            case ls.J0 /* 72 */:
                 return "Lo-Fi";
-            case ks.K0 /* 73 */:
+            case ls.K0 /* 73 */:
                 return "Tribal";
-            case ks.L0 /* 74 */:
+            case ls.L0 /* 74 */:
                 return "Acid Punk";
-            case ks.M0 /* 75 */:
+            case ls.M0 /* 75 */:
                 return "Acid Jazz";
-            case ks.N0 /* 76 */:
+            case ls.N0 /* 76 */:
                 return "Polka";
-            case ks.O0 /* 77 */:
+            case ls.O0 /* 77 */:
                 return "Retro";
-            case ks.P0 /* 78 */:
+            case ls.P0 /* 78 */:
                 return "Musical";
-            case ks.Q0 /* 79 */:
+            case ls.Q0 /* 79 */:
                 return "Rock & Roll";
             case 80:
                 return "Hard Rock";
-            case ks.S0 /* 81 */:
+            case ls.S0 /* 81 */:
                 return "Folk";
-            case ks.T0 /* 82 */:
+            case ls.T0 /* 82 */:
                 return "Folk-Rock";
-            case ks.U0 /* 83 */:
+            case ls.U0 /* 83 */:
                 return "National Folk";
-            case ks.V0 /* 84 */:
+            case ls.V0 /* 84 */:
                 return "Swing";
-            case ks.W0 /* 85 */:
+            case ls.W0 /* 85 */:
                 return "Fast Fusion";
-            case ks.X0 /* 86 */:
+            case ls.X0 /* 86 */:
                 return "Bebop";
-            case ks.Y0 /* 87 */:
+            case ls.Y0 /* 87 */:
                 return "Latin";
-            case ks.Z0 /* 88 */:
+            case ls.Z0 /* 88 */:
                 return "Revival";
-            case ks.a1 /* 89 */:
+            case ls.a1 /* 89 */:
                 return "Celtic";
-            case ks.b1 /* 90 */:
+            case ls.b1 /* 90 */:
                 return "Bluegrass";
-            case ks.c1 /* 91 */:
+            case ls.c1 /* 91 */:
                 return "Avantgarde";
-            case ks.d1 /* 92 */:
+            case ls.d1 /* 92 */:
                 return "Gothic Rock";
-            case ks.e1 /* 93 */:
+            case ls.e1 /* 93 */:
                 return "Progressive Rock";
-            case ks.f1 /* 94 */:
+            case ls.f1 /* 94 */:
                 return "Psychedelic Rock";
-            case ks.g1 /* 95 */:
+            case ls.g1 /* 95 */:
                 return "Symphonic Rock";
             case 96:
                 return "Slow Rock";
-            case ks.i1 /* 97 */:
+            case ls.i1 /* 97 */:
                 return "Big Band";
-            case ks.j1 /* 98 */:
+            case ls.j1 /* 98 */:
                 return "Chorus";
-            case ks.k1 /* 99 */:
+            case ls.k1 /* 99 */:
                 return "Easy Listening";
-            case ks.l1 /* 100 */:
+            case ls.l1 /* 100 */:
                 return "Acoustic";
             case 101:
                 return "Humour";
-            case ks.n1 /* 102 */:
+            case ls.n1 /* 102 */:
                 return "Speech";
-            case ks.o1 /* 103 */:
+            case ls.o1 /* 103 */:
                 return "Chanson";
-            case ks.p1 /* 104 */:
+            case ls.p1 /* 104 */:
                 return "Opera";
-            case ks.q1 /* 105 */:
+            case ls.q1 /* 105 */:
                 return "Chamber Music";
-            case ks.r1 /* 106 */:
+            case ls.r1 /* 106 */:
                 return "Sonata";
-            case ks.s1 /* 107 */:
+            case ls.s1 /* 107 */:
                 return "Symphony";
-            case ks.t1 /* 108 */:
+            case ls.t1 /* 108 */:
                 return "Booty Bass";
-            case ks.u1 /* 109 */:
+            case ls.u1 /* 109 */:
                 return "Primus";
-            case ks.v1 /* 110 */:
+            case ls.v1 /* 110 */:
                 return "Porn Groove";
-            case ks.w1 /* 111 */:
+            case ls.w1 /* 111 */:
                 return "Satire";
-            case ks.x1 /* 112 */:
+            case ls.x1 /* 112 */:
                 return "Slow Jam";
-            case ks.y1 /* 113 */:
+            case ls.y1 /* 113 */:
                 return "Club";
-            case ks.z1 /* 114 */:
+            case ls.z1 /* 114 */:
                 return "Tango";
-            case ks.A1 /* 115 */:
+            case ls.A1 /* 115 */:
                 return "Samba";
-            case ks.B1 /* 116 */:
+            case ls.B1 /* 116 */:
                 return "Folklore";
-            case ks.C1 /* 117 */:
+            case ls.C1 /* 117 */:
                 return "Ballad";
-            case ks.D1 /* 118 */:
+            case ls.D1 /* 118 */:
                 return "Power Ballad";
-            case ks.E1 /* 119 */:
+            case ls.E1 /* 119 */:
                 return "Rhythmic Soul";
             case 120:
                 return "Freestyle";
-            case ks.F1 /* 121 */:
+            case ls.F1 /* 121 */:
                 return "Duet";
-            case ks.G1 /* 122 */:
+            case ls.G1 /* 122 */:
                 return "Punk Rock";
-            case ks.H1 /* 123 */:
+            case ls.H1 /* 123 */:
                 return "Drum Solo";
-            case ks.I1 /* 124 */:
+            case ls.I1 /* 124 */:
                 return "A capella";
-            case ks.J1 /* 125 */:
+            case ls.J1 /* 125 */:
                 return "Euro-House";
-            case ks.K1 /* 126 */:
+            case ls.K1 /* 126 */:
                 return "Dance Hall";
             default:
                 throw null;

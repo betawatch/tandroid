@@ -1,11 +1,11 @@
 package ki;
 
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class m2 implements RequestDelegate {
             case 0:
                 s2 s2Var = this.b.d;
                 if (tLObject instanceof TLRPC.TL_updates) {
-                    mp.u1(s2Var.I).V3((TLRPC.TL_updates) tLObject, false);
+                    np.u1(s2Var.I).V3((TLRPC.TL_updates) tLObject, false);
                 }
                 org.telegram.messenger.g0.g3(new s1(s2Var, 16));
                 break;

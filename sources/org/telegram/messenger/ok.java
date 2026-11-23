@@ -1,37 +1,37 @@
 package org.telegram.messenger;
 
-import java.util.function.ToLongFunction;
-import org.telegram.ui.z41;
-
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ok implements ToLongFunction {
+public final /* synthetic */ class ok implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Runnable[] c;
 
-    public /* synthetic */ ok(int i7) {
+    public /* synthetic */ ok(boolean[] zArr, Runnable[] runnableArr, int i7) {
         this.a = i7;
+        this.b = zArr;
+        this.c = runnableArr;
     }
 
-    @Override // java.util.function.ToLongFunction
-    public final long applyAsLong(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return Long.parseLong((String) obj);
-            case 1:
-                return ((ws) obj).e;
-            case 2:
-                return ((ws) obj).e;
-            case 3:
-                return ((fj) obj).Z0();
-            case 4:
-                if (((z41) obj).b == null) {
-                    return 0L;
+                this.b[0] = true;
+                Runnable runnable = this.c[0];
+                if (runnable != null) {
+                    runnable.run();
+                    break;
                 }
-                return r3.k.date;
-            case 5:
-                return ((org.telegram.ui.Wallet.q8) obj).I;
+                break;
             default:
-                return ((org.telegram.ui.Wallet.q8) obj).J;
+                this.b[0] = true;
+                Runnable runnable2 = this.c[0];
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
+                break;
         }
     }
 }

@@ -6,14 +6,14 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v6 extends FrameLayout {
     public final int a;
@@ -43,7 +43,7 @@ public final class v6 extends FrameLayout {
         textView2.setTextSize(1, 12.0f);
         textView2.setTextColor(org.telegram.ui.ActionBar.m6.r1(0.85f, -1));
         addView(textView2, c8.ma.d(-1, -2.0f, 51, 53.0f, 29.33f, 12.0f, 0.0f));
-        textView2.setText(org.telegram.messenger.g0.J2(gd.N0(2131748614, null), false, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(0.33f), 1.0f, R.drawable.msg_mini_forumarrow));
+        textView2.setText(org.telegram.messenger.g0.J2(hd.N0(2131748614, null), false, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(0.33f), 1.0f, R.drawable.msg_mini_forumarrow));
         set(null);
     }
 
@@ -66,18 +66,18 @@ public final class v6 extends FrameLayout {
 
     public void set(TLRPC.InputPeer inputPeer) {
         int i7 = this.a;
-        long e10 = inputPeer == null ? j10.i(i7).e() : org.telegram.messenger.n5.n(inputPeer);
+        long e10 = inputPeer == null ? k10.i(i7).e() : org.telegram.messenger.n5.n(inputPeer);
         TextView textView = this.d;
         org.telegram.ui.Components.q9 q9Var = this.c;
         org.telegram.ui.Components.b9 b9Var = this.b;
         if (e10 >= 0) {
-            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(e10));
+            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(e10));
             b9Var.r(c22);
             q9Var.f(c22, b9Var);
-            textView.setText(o10.q(c22));
+            textView.setText(p10.q(c22));
             return;
         }
-        TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-e10));
+        TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-e10));
         b9Var.q(O0);
         q9Var.f(O0, b9Var);
         textView.setText(O0 == null ? "" : O0.title);

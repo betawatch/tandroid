@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class i30 extends c51 {
     public final int Q;
@@ -21,7 +21,7 @@ public abstract class i30 extends c51 {
     public String a0;
     public String b0;
     public int c0;
-    public org.telegram.ui.b0 d0;
+    public org.telegram.ui.f0 d0;
     public final boolean[] e0;
 
     public i30(ek0 ek0Var, Context context, int i7) {
@@ -101,8 +101,8 @@ public abstract class i30 extends c51 {
         }
         this.V = true;
         O(true);
-        org.telegram.ui.b0 b0Var = new org.telegram.ui.b0(this, i7, Y, 14);
-        this.d0 = b0Var;
-        org.telegram.messenger.g0.h3(b0Var, 300L);
+        org.telegram.ui.f0 f0Var = new org.telegram.ui.f0(this, i7, Y, 13);
+        this.d0 = f0Var;
+        org.telegram.messenger.g0.h3(f0Var, 300L);
     }
 }

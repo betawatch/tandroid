@@ -1,13 +1,13 @@
 package org.telegram.utils.twidget;
 
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class k0 {
     public boolean A;
@@ -74,7 +74,7 @@ public final class k0 {
             if (n5.E(j3)) {
                 str2 = "private";
             } else {
-                TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
+                TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-j3));
                 if (O0 != null) {
                     str2 = !v3.T(O0) ? "group" : O0.megagroup ? "supergroup" : "channel";
                 }

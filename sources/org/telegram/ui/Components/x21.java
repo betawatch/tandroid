@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x21 extends o6 {
     public final Paint s;
@@ -23,7 +23,7 @@ public final class x21 extends o6 {
 
     @Override // org.telegram.ui.Components.o6, android.view.View
     public final void onDraw(Canvas canvas) {
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
         } else {
             org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
@@ -60,7 +60,7 @@ public final class x21 extends o6 {
         n80 n80Var = new n80(null, b31Var.J0, motionEvent.getX(), motionEvent.getY(), 0);
         n80Var.d(org.telegram.ui.ActionBar.m6.r1(0.1175f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Gj, b31Var.J0)));
         h80 b10 = n80Var.b();
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
         } else {
             org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);

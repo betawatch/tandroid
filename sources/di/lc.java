@@ -14,13 +14,13 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
     public PorterDuffColorFilter a;
@@ -32,7 +32,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.d6 h;
     public float n;
     public kc r;
-    public x10 s;
+    public y10 s;
     public final /* synthetic */ mc w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -99,7 +99,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         kc kcVar;
-        x10 x10Var;
+        y10 y10Var;
         if (motionEvent.getAction() == 0) {
             kc kcVar2 = this.r;
             if (kcVar2 != null) {
@@ -123,8 +123,8 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
                 kcVar3.q.c(true);
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (motionEvent.getAction() == 1 && (kcVar = this.r) != null && !kcVar.p && kcVar.b.contains(motionEvent.getX(), motionEvent.getY()) && (x10Var = this.s) != null) {
-                x10Var.a(Long.valueOf(this.r.j));
+            if (motionEvent.getAction() == 1 && (kcVar = this.r) != null && !kcVar.p && kcVar.b.contains(motionEvent.getX(), motionEvent.getY()) && (y10Var = this.s) != null) {
+                y10Var.a(Long.valueOf(this.r.j));
             }
             kc kcVar4 = this.r;
             if (kcVar4 != null) {
@@ -151,8 +151,8 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
         }
     }
 
-    public void setOnSenderClickListener(x10 x10Var) {
-        this.s = x10Var;
+    public void setOnSenderClickListener(y10 y10Var) {
+        this.s = y10Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -291,7 +291,7 @@ public final class lc extends View implements org.telegram.ui.ActionBar.b6 {
                     r92.p = z14;
                     if (z14) {
                         r22 = null;
-                        t6 = gd.N0(2131744807, null);
+                        t6 = hd.N0(2131744805, null);
                     } else {
                         r22 = null;
                         t6 = org.telegram.messenger.n5.t(r92.j);

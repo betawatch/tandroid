@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ow implements org.telegram.ui.Components.w30 {
     public final /* synthetic */ cx a;
@@ -59,11 +59,11 @@ public final class ow implements org.telegram.ui.Components.w30 {
         Activity parentActivity2 = cxVar.getParentActivity();
         h6Var2 = ((org.telegram.ui.ActionBar.g2) cxVar).resourceProvider;
         org.telegram.ui.Components.ec ecVar = new org.telegram.ui.Components.ec(parentActivity2, h6Var2, true);
-        ecVar.e(org.telegram.messenger.gd.N0(2131743320, null));
+        ecVar.e(org.telegram.messenger.hd.N0(2131743318, null));
         ecVar.b = new bh(this, 23);
         xbVar.setButton(ecVar);
         xbVar.getButton().setVisibility(8);
-        o6Var.c(org.telegram.messenger.gd.N0(z11 ? 2131742528 : 2131742530, null), true, true);
+        o6Var.c(org.telegram.messenger.hd.N0(z11 ? 2131742526 : 2131742528, null), true, true);
         org.telegram.ui.Components.gc b10 = org.telegram.ui.Components.lc.b0(cxVar).b(xbVar, -1);
         cxVar.i4 = b10;
         b10.r = false;

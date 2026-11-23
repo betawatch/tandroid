@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ji implements org.telegram.ui.bn0 {
     public boolean a;
@@ -43,26 +43,26 @@ public final class ji implements org.telegram.ui.bn0 {
                 return;
             }
             Object obj = hashMap.get(arrayList2.get(i10));
-            org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
-            arrayList.add(yyVar);
-            org.telegram.messenger.hf hfVar = (org.telegram.messenger.hf) obj;
-            String str = hfVar.h;
+            org.telegram.messenger.zy zyVar = new org.telegram.messenger.zy();
+            arrayList.add(zyVar);
+            org.telegram.messenger.jf jfVar = (org.telegram.messenger.jf) obj;
+            String str = jfVar.h;
             if (str != null) {
-                yyVar.c = str;
+                zyVar.c = str;
             } else {
-                yyVar.l = hfVar;
+                zyVar.l = jfVar;
             }
-            yyVar.e = hfVar.c;
-            yyVar.k = hfVar.s;
-            CharSequence charSequence = hfVar.I;
-            yyVar.d = charSequence != null ? charSequence.toString() : null;
-            yyVar.i = hfVar.n;
-            yyVar.j = hfVar.r;
-            yyVar.h = hfVar.x;
-            TLRPC.BotInlineResult botInlineResult = hfVar.N;
-            if (botInlineResult != null && hfVar.H == 1) {
-                yyVar.m = botInlineResult;
-                yyVar.n = hfVar.O;
+            zyVar.e = jfVar.c;
+            zyVar.k = jfVar.s;
+            CharSequence charSequence = jfVar.I;
+            zyVar.d = charSequence != null ? charSequence.toString() : null;
+            zyVar.i = jfVar.n;
+            zyVar.j = jfVar.r;
+            zyVar.h = jfVar.x;
+            TLRPC.BotInlineResult botInlineResult = jfVar.N;
+            if (botInlineResult != null && jfVar.H == 1) {
+                zyVar.m = botInlineResult;
+                zyVar.n = jfVar.O;
             }
             System.currentTimeMillis();
             i10++;

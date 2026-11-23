@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class my0 implements org.telegram.ui.Cells.m1 {
     public final /* synthetic */ boolean a;
@@ -55,7 +55,7 @@ public final class my0 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ boolean T1(org.telegram.ui.Cells.r1 r1Var, org.telegram.messenger.fj fjVar) {
+    public final /* synthetic */ boolean T1(org.telegram.ui.Cells.r1 r1Var, org.telegram.messenger.gj gjVar) {
         return false;
     }
 
@@ -110,8 +110,8 @@ public final class my0 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ boolean f1(org.telegram.messenger.fj fjVar) {
-        return org.telegram.ui.Cells.c0.a(fjVar);
+    public final /* synthetic */ boolean f1(org.telegram.messenger.gj gjVar) {
+        return org.telegram.ui.Cells.c0.a(gjVar);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -170,13 +170,13 @@ public final class my0 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ boolean y0(org.telegram.messenger.fj fjVar) {
+    public final /* synthetic */ boolean y0(org.telegram.messenger.gj gjVar) {
         return true;
     }
 
     @Override // org.telegram.ui.Cells.m1
     public final String z(long j3) {
-        return org.telegram.messenger.gd.N0(this.a ? this.b ? 2131744036 : 2131744044 : 2131744038, null);
+        return org.telegram.messenger.hd.N0(this.a ? this.b ? 2131744034 : 2131744042 : 2131744036, null);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -214,7 +214,7 @@ public final class my0 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void L(org.telegram.messenger.cj cjVar) {
+    public final /* synthetic */ void L(org.telegram.messenger.dj djVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -226,7 +226,7 @@ public final class my0 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void O1(org.telegram.messenger.fj fjVar) {
+    public final /* synthetic */ void O1(org.telegram.messenger.gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -234,7 +234,7 @@ public final class my0 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void R(org.telegram.messenger.fj fjVar) {
+    public final /* synthetic */ void R(org.telegram.messenger.gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -346,7 +346,7 @@ public final class my0 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void a2(org.telegram.ui.Cells.r1 r1Var, org.telegram.messenger.i10 i10Var) {
+    public final /* synthetic */ void a2(org.telegram.ui.Cells.r1 r1Var, org.telegram.messenger.j10 j10Var) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -438,6 +438,6 @@ public final class my0 implements org.telegram.ui.Cells.m1 {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public final /* synthetic */ void S1(org.telegram.messenger.fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    public final /* synthetic */ void S1(org.telegram.messenger.gj gjVar, String str, String str2, String str3, String str4, int i7, int i10) {
     }
 }

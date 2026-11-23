@@ -11,14 +11,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.ln;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r8 extends FrameLayout {
     public int a;
@@ -36,29 +36,29 @@ public final class r8 extends FrameLayout {
         TextView textView = new TextView(context);
         this.b = textView;
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
-        n10.q(textView, 1, 16.0f, 1, 1);
+        o10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
-        textView.setGravity((gd.a0 ? 5 : 3) | 16);
+        textView.setGravity((hd.a0 ? 5 : 3) | 16);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        boolean z10 = gd.a0;
+        boolean z10 = hd.a0;
         addView(textView, c8.ma.d(-2, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 64.0f : 21.0f, 0.0f, z10 ? 21.0f : 64.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
         org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, null);
         textView2.setTextSize(1, 13.0f);
-        textView2.setGravity(gd.a0 ? 5 : 3);
+        textView2.setGravity(hd.a0 ? 5 : 3);
         textView2.setLines(1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setPadding(0, 0, 0, 0);
         textView2.setEllipsize(truncateAt);
-        boolean z11 = gd.a0;
+        boolean z11 = hd.a0;
         addView(textView2, c8.ma.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 64.0f : 21.0f, 35.0f, z11 ? 21.0f : 64.0f, 0.0f));
         Switch r22 = new Switch(context, null);
         this.d = r22;
         r22.setDrawIconType(1);
-        addView(r22, c8.ma.d(37, 40.0f, (gd.a0 ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        addView(r22, c8.ma.d(37, 40.0f, (hd.a0 ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
     }
 
     public final void a(Runnable runnable, String str, boolean z10) {
@@ -87,7 +87,7 @@ public final class r8 extends FrameLayout {
             ln lnVar = new ln(getContext(), 8);
             this.r = lnVar;
             lnVar.setBackground(org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.i6, false), 2, -1));
-            addView(this.r, c8.ma.e(76, -1, gd.a0 ? 3 : 5));
+            addView(this.r, c8.ma.e(76, -1, hd.a0 ? 3 : 5));
         }
         this.h.setText(str);
         this.n.animate().cancel();
@@ -144,7 +144,7 @@ public final class r8 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.e) {
-            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 
@@ -161,7 +161,7 @@ public final class r8 extends FrameLayout {
         super.onLayout(z10, i7, i10, i11, i12);
         LinearLayout linearLayout = this.f;
         if (linearLayout != null) {
-            boolean z11 = gd.a0;
+            boolean z11 = hd.a0;
             TextView textView = this.b;
             if (z11) {
                 linearLayout.setTranslationX((textView.getLeft() - this.f.getMeasuredWidth()) - org.telegram.messenger.g0.L(8.0f));

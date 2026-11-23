@@ -20,12 +20,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import oi.q3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.or;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.pr;
 import org.telegram.messenger.q2;
+import org.telegram.messenger.r10;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.xo;
+import org.telegram.messenger.yo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -36,9 +36,9 @@ import org.telegram.ui.Components.nw0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements p, ai.f, l5.g, or, q1, xo {
+public final /* synthetic */ class g implements p, ai.f, l5.g, pr, q1, yo {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -125,7 +125,7 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, or, q1, xo {
         p0.G(tL_error);
     }
 
-    @Override // org.telegram.messenger.xo
+    @Override // org.telegram.messenger.yo
     public boolean e(TLRPC.TL_error tL_error) {
         return ProfileActivity.d0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (g2) this.e, tL_error);
     }
@@ -177,11 +177,11 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, or, q1, xo {
                 break;
             case 5:
                 bn bnVar = (bn) this.c;
-                mp mpVar = (mp) this.d;
+                np npVar = (np) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z11 = this.b;
-                mpVar.J2 = 1;
-                mp.g1().edit().putInt("secretWebpage2", bnVar.getMessagesController().J2).commit();
+                npVar.J2 = 1;
+                np.g1().edit().putInt("secretWebpage2", bnVar.getMessagesController().J2).commit();
                 bnVar.Z5 = null;
                 bnVar.Cb(charSequence, z11);
                 break;
@@ -207,7 +207,7 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, or, q1, xo {
                 }
             default:
                 nw0 nw0Var = (nw0) this.c;
-                q10 q10Var = (q10) this.d;
+                r10 r10Var = (r10) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
                 String trim2 = nw0Var.getText().toString().trim();
@@ -215,7 +215,7 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, or, q1, xo {
                     g0.v1(nw0Var);
                     org.telegram.ui.ActionBar.t1 t1Var2 = new org.telegram.ui.ActionBar.t1(3, context2, z13 ? null : new fi.b());
                     t1Var2.r(250L);
-                    q10Var.a(trim2, new bi.j(t1Var2, t1Var, nw0Var, 14));
+                    r10Var.a(trim2, new bi.j(t1Var2, t1Var, nw0Var, 14));
                     break;
                 } else {
                     nw0Var.setErrorText(".");
@@ -228,7 +228,7 @@ public final /* synthetic */ class g implements p, ai.f, l5.g, or, q1, xo {
         }
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.pr
     public void run(long j3) {
         li.g gVar = (li.g) this.c;
         org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.d;

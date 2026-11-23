@@ -7,7 +7,7 @@ import java.io.File;
 import org.telegram.messenger.ApplicationLoaderImpl;
 import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o51 extends IUpdateLayout {
     public FrameLayout a;
@@ -43,7 +43,7 @@ public final class o51 extends IUpdateLayout {
         this.c.setTextColor(-1);
         this.c.setGravity(17);
         this.a.addView(this.c, c8.ma.g());
-        this.c.c(org.telegram.messenger.gd.N0(2131754226, null), false, true);
+        this.c.c(org.telegram.messenger.hd.N0(2131754226, null), false, true);
         RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
         this.b = radialProgress2;
         int i10 = org.telegram.ui.ActionBar.m6.Fi;
@@ -68,7 +68,7 @@ public final class o51 extends IUpdateLayout {
             }
             this.a.setTag(null);
             if (z10) {
-                this.a.animate().translationY(org.telegram.messenger.g0.L(44.0f)).setInterpolator(nr.g).setListener(new u11(this, 4)).setDuration(180L).start();
+                this.a.animate().translationY(org.telegram.messenger.g0.L(44.0f)).setInterpolator(nr.g).setListener(new t11(this, 4)).setDuration(180L).start();
                 return;
             } else {
                 this.a.setTranslationY(org.telegram.messenger.g0.L(44.0f));
@@ -82,14 +82,14 @@ public final class o51 extends IUpdateLayout {
             if (!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? false : org.telegram.messenger.h1.e().j) {
                 this.b.setIcon(3, true, z10);
                 this.b.p(true, !((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? 0.0f : org.telegram.messenger.h1.e().k);
-                this.c.c(org.telegram.messenger.gd.a0(null, null, 2131754223, Integer.valueOf((int) ((!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? 0.0f : org.telegram.messenger.h1.e().k) * 100.0f))), z10, true);
+                this.c.c(org.telegram.messenger.hd.a0(null, null, 2131754223, Integer.valueOf((int) ((!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? 0.0f : org.telegram.messenger.h1.e().k) * 100.0f))), z10, true);
             } else {
                 this.b.setIcon(2, true, z10);
-                this.c.c(org.telegram.messenger.gd.N0(2131754226, null), z10, true);
+                this.c.c(org.telegram.messenger.hd.N0(2131754226, null), z10, true);
             }
         } else {
             this.b.setIcon(15, true, z10);
-            this.c.c(org.telegram.messenger.gd.N0(2131754222, null), z10, true);
+            this.c.c(org.telegram.messenger.hd.N0(2131754222, null), z10, true);
         }
         if (this.a.getTag() != null) {
             return;
@@ -111,7 +111,7 @@ public final class o51 extends IUpdateLayout {
         if (!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? false : org.telegram.messenger.h1.e().j) {
             float f10 = !((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? 0.0f : org.telegram.messenger.h1.e().k;
             this.b.p(true, f10);
-            this.c.setText(org.telegram.messenger.gd.a0(null, null, 2131754223, Integer.valueOf((int) (f10 * 100.0f))));
+            this.c.setText(org.telegram.messenger.hd.a0(null, null, 2131754223, Integer.valueOf((int) (f10 * 100.0f))));
             this.a.invalidate();
         }
     }

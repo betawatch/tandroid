@@ -12,15 +12,15 @@ import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.TreeSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.j71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class n5 extends j71 {
     public boolean W;
@@ -40,8 +40,8 @@ public final class n5 extends j71 {
         this.d0 = i7;
         this.e0 = rect;
         this.f0 = viewArr;
-        this.a0 = new fs() { // from class: org.telegram.ui.Wallet.m5
-            @Override // org.telegram.messenger.fs
+        this.a0 = new gs() { // from class: org.telegram.ui.Wallet.m5
+            @Override // org.telegram.messenger.gs
             public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
                 ArrayList arrayList2 = arrayList;
                 ArrayList arrayList3 = t0Var.c;
@@ -129,7 +129,7 @@ public final class n5 extends j71 {
                     gVar.m = hVar;
                     m7Var.P.b(new g7(m7Var, 1));
                 }
-                float A = n10.A(m7Var.Q, L, org.telegram.messenger.g0.L(1600.0f), -org.telegram.messenger.g0.L(1600.0f));
+                float A = o10.A(m7Var.Q, L, org.telegram.messenger.g0.L(1600.0f), -org.telegram.messenger.g0.L(1600.0f));
                 m7Var.Q = A;
                 r1.g gVar2 = m7Var.P;
                 gVar2.a = A;
@@ -188,14 +188,14 @@ public final class n5 extends j71 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.d0).c(this.a0, ks.e4);
+        ls.f(this.d0).c(this.a0, ls.e4);
         H();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.d0).n(this.a0, ks.e4);
+        ls.f(this.d0).n(this.a0, ls.e4);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

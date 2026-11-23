@@ -15,7 +15,7 @@ import android.view.View;
 import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mc;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class n6 extends View {
     public boolean E;
@@ -254,7 +254,7 @@ public final class n6 extends View {
         int i7 = this.a;
         j6 j6Var = new j6(this, 0);
         try {
-            mp u12 = mp.u1(i7);
+            np u12 = np.u1(i7);
             String str2 = u12.X2;
             Uri parse = Uri.parse(str);
             if (TextUtils.equals(parse.getHost(), str2)) {

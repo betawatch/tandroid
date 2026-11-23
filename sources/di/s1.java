@@ -8,17 +8,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.json.JSONArray;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.m90;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s1 implements q10 {
+public final /* synthetic */ class s1 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -37,7 +37,7 @@ public final /* synthetic */ class s1 implements q10 {
         this.g = obj5;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         m90 m90Var;
         TL_wallet.tonConnectSession tonconnectsession;
@@ -54,7 +54,7 @@ public final /* synthetic */ class s1 implements q10 {
                     if (stargiftdepositpayload != null) {
                         stargiftdepositpayloadArr[0] = stargiftdepositpayload;
                         if (org.telegram.ui.Wallet.u0.D(f6Var.a).A() >= stargiftdepositpayload.amount) {
-                            runnableArr[0] = org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new bi.p6(2, textView, jArr));
+                            runnableArr[0] = org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new bi.o6(2, textView, jArr));
                             break;
                         } else {
                             textView.setVisibility(8);
@@ -175,13 +175,13 @@ public final /* synthetic */ class s1 implements q10 {
                         iArr[0] = 1;
                         SpannableStringBuilder s5 = org.telegram.ui.Wallet.u0.s(wallettransaction.fee, true);
                         CharSequence r10 = u0Var2.r(wallettransaction.fee, true);
-                        textView2.setText(TextUtils.isEmpty(r10) ? gd.V(null, null, 2131742875, s5) : gd.V(null, null, 2131742874, s5, r10));
+                        textView2.setText(TextUtils.isEmpty(r10) ? hd.V(null, null, 2131742873, s5) : hd.V(null, null, 2131742872, s5, r10));
                     } else if (u0Var2.A() < k2Var.c) {
                         iArr[0] = 2;
-                        textView2.setText(gd.N0(2131742821, null));
+                        textView2.setText(hd.N0(2131742819, null));
                     } else {
                         iArr[0] = 3;
-                        textView2.setText(gd.N0(2131742722, null));
+                        textView2.setText(hd.N0(2131742720, null));
                         if (str9 != null) {
                             org.telegram.ui.Wallet.l2.m("widget preview", str9);
                         }

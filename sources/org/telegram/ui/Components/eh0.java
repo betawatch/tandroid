@@ -12,7 +12,7 @@ import android.view.ViewParent;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class eh0 extends Path {
     public final org.telegram.ui.Cells.r1 a;
@@ -202,7 +202,7 @@ public final class eh0 extends Path {
                 }
                 int alpha = paint.getAlpha();
                 canvas.saveLayerAlpha(rect2.left - f10, rect2.top - f11, rect2.right - f10, rect2.bottom - f11, (int) (alpha * f12), 31);
-                paint.setAlpha(org.telegram.messenger.ks.e4);
+                paint.setAlpha(org.telegram.messenger.ls.e4);
                 while (i7 <= i11) {
                     canvas.drawPath((Path) arrayList.get(i7), paint);
                     i7++;
@@ -366,33 +366,33 @@ public final class eh0 extends Path {
         paint.setPathEffect(new CornerPathEffect(L));
         boolean z10 = false;
         for (int i14 = 0; i14 < arrayList.size(); i14++) {
-            org.telegram.messenger.cj cjVar = (org.telegram.messenger.cj) arrayList.get(i14);
-            if (cjVar != null && i10 <= cjVar.r && i11 >= (i12 = cjVar.n)) {
+            org.telegram.messenger.dj djVar = (org.telegram.messenger.dj) arrayList.get(i14);
+            if (djVar != null && i10 <= djVar.r && i11 >= (i12 = djVar.n)) {
                 int max = Math.max(0, i10 - i12);
-                int i15 = cjVar.n;
-                int min = Math.min(i11 - i15, cjVar.r - i15);
+                int i15 = djVar.n;
+                int min = Math.min(i11 - i15, djVar.r - i15);
                 float f11 = -f10;
                 this.n = f11;
-                if (cjVar.I && !cjVar.J) {
-                    this.n = f11 + (cjVar.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(10.0f));
+                if (djVar.I && !djVar.J) {
+                    this.n = f11 + (djVar.V ? org.telegram.messenger.g0.L(14.0f) : org.telegram.messenger.g0.L(10.0f));
                 }
-                this.o = cjVar.o(arrayList) + cjVar.f;
-                this.p = cjVar.J ? org.telegram.messenger.g0.L(10.0f) : 0.0f;
-                z10 = z10 || org.telegram.messenger.g0.L1(cjVar.e.getText());
+                this.o = djVar.o(arrayList) + djVar.f;
+                this.p = djVar.J ? org.telegram.messenger.g0.L(10.0f) : 0.0f;
+                z10 = z10 || org.telegram.messenger.g0.L1(djVar.e.getText());
                 if (z10) {
-                    cjVar.e.getSelectionPath(max, min, this);
+                    djVar.e.getSelectionPath(max, min, this);
                 } else {
-                    e(cjVar.e, max, min);
+                    e(djVar.e, max, min);
                 }
-                if (cjVar.K && cjVar.f()) {
-                    this.m.add(Integer.valueOf(cjVar.c));
+                if (djVar.K && djVar.f()) {
+                    this.m.add(Integer.valueOf(djVar.c));
                 }
             }
         }
         d();
     }
 
-    public eh0(final org.telegram.ui.Cells.r1 r1Var, final ViewParent viewParent, int i7, org.telegram.messenger.ev evVar, int i10, int i11) {
+    public eh0(final org.telegram.ui.Cells.r1 r1Var, final ViewParent viewParent, int i7, org.telegram.messenger.fv fvVar, int i10, int i11) {
         Paint paint = new Paint(1);
         this.i = paint;
         this.j = new rq();
@@ -430,10 +430,10 @@ public final class eh0 extends Path {
         this.d = i11;
         this.e = false;
         this.f = false;
-        if (evVar == null) {
+        if (fvVar == null) {
             return;
         }
-        ArrayList arrayList = evVar.n;
+        ArrayList arrayList = fvVar.n;
         int L = org.telegram.messenger.g0.L(4.0f);
         this.h = L;
         paint.setPathEffect(new CornerPathEffect(L));
@@ -442,7 +442,7 @@ public final class eh0 extends Path {
             org.telegram.ui.Cells.u9 u9Var = (org.telegram.ui.Cells.u9) arrayList.get(i13);
             Layout a10 = u9Var == null ? null : u9Var.a();
             if (a10 != null && a10.getText() != null) {
-                int intValue = ((Integer) evVar.o.get(i13)).intValue();
+                int intValue = ((Integer) fvVar.o.get(i13)).intValue();
                 int length = a10.getText().length();
                 int j3 = Utilities.j(i10 - intValue, length, 0);
                 int j10 = Utilities.j(i11 - intValue, length, 0);

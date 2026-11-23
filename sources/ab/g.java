@@ -1,7 +1,7 @@
 package ab;
 
 import a8.r7;
-import ai.x1;
+import ai.y1;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -14,14 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import bi.c4;
-import bi.e8;
+import bi.d8;
+import bi.h8;
 import bi.i8;
-import bi.j8;
 import bi.k2;
-import bi.n6;
+import bi.m6;
 import bi.o1;
-import bi.s6;
-import bi.u5;
+import bi.r6;
+import bi.t5;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,7 +36,6 @@ import fi.x0;
 import fi.x3;
 import fi.z3;
 import hi.b8;
-import hi.d8;
 import hi.k8;
 import hi.p8;
 import hi.r8;
@@ -60,14 +59,14 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.v10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.u10;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.w10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -97,9 +96,9 @@ import org.telegram.ui.qa0;
 import org.telegram.ui.t01;
 import org.telegram.ui.ul0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements OnCompleteListener, Continuation, q1, m4, v10, rj0, OnFailureListener, u9.d, t01, CameraView.CameraViewDelegate, jh.i, oa1, v7, t10, na0, sj0, h2.p, h2.o, oi.l0 {
+public final /* synthetic */ class g implements OnCompleteListener, Continuation, q1, m4, w10, rj0, OnFailureListener, u9.d, t01, CameraView.CameraViewDelegate, jh.i, oa1, v7, u10, na0, sj0, h2.p, h2.o, oi.l0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -112,24 +111,24 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
 
     @Override // di.m4
     public void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
-        n6 n6Var = (n6) this.b;
+        m6 m6Var = (m6) this.b;
         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-        gq0 gq0Var = n6Var.a;
-        n6Var.e.l.remove(savedStarGift);
-        n6Var.f(true);
-        int i7 = n6Var.b;
-        if (j3 == j10.i(i7).e()) {
+        gq0 gq0Var = m6Var.a;
+        m6Var.e.l.remove(savedStarGift);
+        m6Var.f(true);
+        int i7 = m6Var.b;
+        if (j3 == k10.i(i7).e()) {
             lc b02 = lc.b0(gq0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
-            String N0 = gd.N0(2131752875, null);
+            String N0 = hd.N0(2131752875, null);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(tL_starGiftUnique.title);
             sb2.append(" #");
-            gc O = b02.O(document, N0, gd.a0(null, null, 2131752876, i5.c.l(tL_starGiftUnique.num, ',', sb2)));
+            gc O = b02.O(document, N0, hd.a0(null, null, 2131752876, i5.c.l(tL_starGiftUnique.num, ',', sb2)));
             O.r = false;
             O.j();
         } else {
-            gc O2 = lc.b0(gq0Var.a).O(tL_starGiftUnique.getDocument(), gd.N0(2131752873, null), gd.a0(null, null, 2131752874, n5.s(i7, j3)));
+            gc O2 = lc.b0(gq0Var.a).O(tL_starGiftUnique.getDocument(), hd.N0(2131752873, null), hd.a0(null, null, 2131752874, n5.s(i7, j3)));
             O2.r = false;
             O2.j();
         }
@@ -315,24 +314,24 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         Object obj2 = this.b;
         switch (i10) {
             case 6:
-                j8 j8Var = (j8) obj2;
-                i8 i8Var = (i8) obj;
-                o41 G = j8Var.e2.G(i7 - 1);
+                i8 i8Var = (i8) obj2;
+                h8 h8Var = (h8) obj;
+                o41 G = i8Var.e2.G(i7 - 1);
                 if (G != null) {
                     Object obj3 = G.H;
                     if (obj3 instanceof TL_stars.StarGift) {
                         TL_stars.StarGift starGift = (TL_stars.StarGift) obj3;
                         boolean z10 = G.s;
-                        if (!TextUtils.isEmpty(starGift.gift_address) && j8Var.d2 && !((org.telegram.messenger.h0) mp.u1(j8Var.a).A7.x.b).c) {
-                            alertDialog$Builder = new AlertDialog$Builder(0, j8Var.getContext(), j8Var.J0);
+                        if (!TextUtils.isEmpty(starGift.gift_address) && i8Var.d2 && !((org.telegram.messenger.h0) np.u1(i8Var.a).A7.x.b).c) {
+                            alertDialog$Builder = new AlertDialog$Builder(0, i8Var.getContext(), i8Var.J0);
                             r42 = 0;
-                            String N0 = gd.N0(2131749775, null);
+                            String N0 = hd.N0(2131749775, null);
                             t1 t1Var = alertDialog$Builder.a;
                             t1Var.S = N0;
-                            t1Var.U = gd.N0(2131749776, null);
+                            t1Var.U = hd.N0(2131749776, null);
                         } else if (!z10 || !(starGift instanceof TL_stars.TL_starGiftUnique)) {
                             if (!z10) {
-                                ArrayList arrayList2 = i8Var.b.l;
+                                ArrayList arrayList2 = h8Var.b.l;
                                 int size = arrayList2.size();
                                 int i11 = 0;
                                 while (true) {
@@ -347,25 +346,25 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                         savedStarGift = null;
                                     }
                                 }
-                                if (savedStarGift != null && savedStarGift.can_craft_at > 0 && savedStarGift.can_craft_at > ConnectionsManager.getInstance(j8Var.a).getCurrentTime()) {
-                                    alertDialog$Builder = new AlertDialog$Builder(j8Var.getContext());
+                                if (savedStarGift != null && savedStarGift.can_craft_at > 0 && savedStarGift.can_craft_at > ConnectionsManager.getInstance(i8Var.a).getCurrentTime()) {
+                                    alertDialog$Builder = new AlertDialog$Builder(i8Var.getContext());
                                     r42 = 0;
-                                    String N02 = gd.N0(2131749738, null);
+                                    String N02 = hd.N0(2131749738, null);
                                     t1 t1Var2 = alertDialog$Builder.a;
                                     t1Var2.S = N02;
-                                    t1Var2.U = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749739, gd.x(savedStarGift.can_craft_at, true)));
+                                    t1Var2.U = org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749739, hd.x(savedStarGift.can_craft_at, true)));
                                 }
                             }
-                            j8Var.b2.a(starGift);
-                            j8Var.dismiss();
+                            i8Var.b2.a(starGift);
+                            i8Var.dismiss();
                             break;
                         } else {
                             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) G.H;
-                            t1 t1Var3 = new t1(3, j8Var.getContext(), null);
+                            t1 t1Var3 = new t1(3, i8Var.getContext(), null);
                             t1Var3.r(400L);
-                            long e10 = j10.i(j8Var.a).e();
+                            long e10 = k10.i(i8Var.a).e();
                             cg.b bVar = tL_starGiftUnique.resale_ton_only ? cg.b.b : cg.b.a;
-                            y8.x(j8Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new e8(j8Var, t1Var3, bVar, tL_starGiftUnique, e10));
+                            y8.x(i8Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new d8(i8Var, t1Var3, bVar, tL_starGiftUnique, e10));
                             break;
                         }
                         f3.m(r42, 2131747637, alertDialog$Builder, r42);
@@ -378,7 +377,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                 Context context = (Context) obj;
                 ArrayList arrayList3 = k8Var.M;
                 a0.h hVar = k8Var.b;
-                d8 d8Var = k8Var.y;
+                hi.d8 d8Var = k8Var.y;
                 ArrayList arrayList4 = k8Var.c;
                 HashMap hashMap = k8Var.d;
                 p8 p8Var = k8Var.a0;
@@ -416,11 +415,11 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                         }
                                     } else {
                                         TLRPC.InputPeer inputPeer2 = p8Var.n1;
-                                        long n10 = inputPeer2 != null ? n5.n(inputPeer2) : j10.i(p8Var.a).e();
+                                        long n10 = inputPeer2 != null ? n5.n(inputPeer2) : k10.i(p8Var.a).e();
                                         a70 G2 = a70.G(k8Var, p8Var.J0, view);
-                                        G2.c(R.drawable.msg_addfolder, gd.N0(2131744544, null), new c4(k8Var, n10, 8), false);
+                                        G2.c(R.drawable.msg_addfolder, hd.N0(2131744542, null), new c4(k8Var, n10, 8), false);
                                         G2.k();
-                                        a70.f(G2, mp.u1(p8Var.a).R1().B(n10, true), p8Var.v1, false, null, new x1(19, k8Var, G2));
+                                        a70.f(G2, np.u1(p8Var.a).R1().B(n10, true), p8Var.v1, false, null, new y1(19, k8Var, G2));
                                         G2.a0();
                                         break;
                                     }
@@ -449,11 +448,11 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                     p8Var.y1 = d;
                                     boolean z11 = p8Var.n1 instanceof TLRPC.TL_inputPeerChannel;
                                     if (d) {
-                                        gc G3 = new lc(m2Var, p8Var.J0).G(R.raw.msg_story_keep, 4, gd.N0(z11 ? 2131744466 : 2131744430, null));
+                                        gc G3 = new lc(m2Var, p8Var.J0).G(R.raw.msg_story_keep, 4, hd.N0(z11 ? 2131744464 : 2131744428, null));
                                         G3.j = 5000;
                                         G3.k(true);
                                     } else {
-                                        gc G4 = new lc(m2Var, p8Var.J0).G(R.raw.fire_on, 4, gd.N0(z11 ? 2131744467 : 2131744444, null));
+                                        gc G4 = new lc(m2Var, p8Var.J0).G(R.raw.fire_on, 4, hd.N0(z11 ? 2131744465 : 2131744442, null));
                                         G4.j = 5000;
                                         G4.k(true);
                                     }
@@ -465,12 +464,12 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                 p8Var.x1 = d2;
                                 r10 = p8Var.I1 == 4 ? 1 : 0;
                                 if (!d2) {
-                                    gc G5 = new lc(m2Var, p8Var.J0).G(R.raw.passcode_lock_close, 4, gd.N0(r10 != 0 ? 2131744442 : 2131744443, null));
+                                    gc G5 = new lc(m2Var, p8Var.J0).G(R.raw.passcode_lock_close, 4, hd.N0(r10 != 0 ? 2131744440 : 2131744441, null));
                                     G5.j = 5000;
                                     G5.k(true);
                                     break;
                                 } else {
-                                    gc G6 = new lc(m2Var, p8Var.J0).G(R.raw.ic_save_to_gallery, 4, gd.N0(r10 != 0 ? 2131744428 : 2131744429, null));
+                                    gc G6 = new lc(m2Var, p8Var.J0).G(R.raw.ic_save_to_gallery, 4, hd.N0(r10 != 0 ? 2131744426 : 2131744427, null));
                                     G6.j = 5000;
                                     G6.k(true);
                                     break;
@@ -498,10 +497,10 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                                     } catch (Throwable unused) {
                                                     }
                                                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, k8Var.getContext(), p8Var.J0);
-                                                    String N03 = gd.N0(2131749201, null);
+                                                    String N03 = hd.N0(2131749201, null);
                                                     t1 t1Var5 = alertDialog$Builder2.a;
                                                     t1Var5.S = N03;
-                                                    t1Var5.U = gd.N0(2131749200, null);
+                                                    t1Var5.U = hd.N0(2131749200, null);
                                                     f3.m(null, 2131747637, alertDialog$Builder2, null);
                                                 } else if (hashMap.containsKey(Long.valueOf(j3))) {
                                                     ArrayList arrayList5 = (ArrayList) hashMap.get(Long.valueOf(j3));
@@ -516,8 +515,8 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                                     hashMap.remove(Long.valueOf(j3));
                                                     k8Var.j(true);
                                                 } else {
-                                                    TLRPC.Chat O0 = mp.u1(p8Var.a).O0(Long.valueOf(j3));
-                                                    TLRPC.ChatFull P0 = mp.u1(p8Var.a).P0(j3);
+                                                    TLRPC.Chat O0 = np.u1(p8Var.a).O0(Long.valueOf(j3));
+                                                    TLRPC.ChatFull P0 = np.u1(p8Var.a).P0(j3);
                                                     if (P0 == null || (chatParticipants = P0.participants) == null || (arrayList = chatParticipants.participants) == null || arrayList.isEmpty() || P0.participants.participants.size() < P0.participants_count - 1) {
                                                         t1 t1Var6 = k8Var.H;
                                                         if (t1Var6 != null) {
@@ -528,7 +527,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                                         t1 t1Var7 = new t1(3, k8Var.getContext(), p8Var.J0);
                                                         k8Var.H = t1Var7;
                                                         t1Var7.r(50L);
-                                                        tr a02 = tr.a0(p8Var.a);
+                                                        ur a02 = ur.a0(p8Var.a);
                                                         a02.a.c(new j2(k8Var, O0, a02, j3, 11));
                                                     } else {
                                                         k8Var.e(j3, P0.participants);
@@ -637,7 +636,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                 z3 z3Var = (z3) this.b;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
                 TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
-                tL_stories_editStory.peer = mp.u1(z3Var.m2).l1(storyItem.dialogId);
+                tL_stories_editStory.peer = np.u1(z3Var.m2).l1(storyItem.dialogId);
                 tL_stories_editStory.id = storyItem.id;
                 tL_stories_editStory.flags |= 4;
                 tL_stories_editStory.privacy_rules = n8Var.b;
@@ -650,7 +649,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                 x3 x3Var = z3Var2.y1;
                 TL_stories.StoryItem storyItem2 = x3Var.a;
                 if ((storyItem2 != null && storyItem2.pinned) != z12) {
-                    mp.u1(z3Var2.m2).R1().r0(z3Var2.l1, z3Var2.f1, z12, null);
+                    np.u1(z3Var2.m2).R1().r0(z3Var2.l1, z3Var2.f1, z12, null);
                 }
                 TL_stories.StoryItem storyItem3 = x3Var.a;
                 if (storyItem3 != null) {
@@ -687,15 +686,15 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                     return;
                 }
             case 3:
-                u5 u5Var = (u5) this.b;
-                x10 x10Var = (x10) this.c;
-                String obj = u5Var.getText().toString();
+                t5 t5Var = (t5) this.b;
+                y10 y10Var = (y10) this.c;
+                String obj = t5Var.getText().toString();
                 if (obj.length() > 0 && obj.length() <= 12) {
-                    x10Var.a(obj);
+                    y10Var.a(obj);
                     t1Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.g0.D3(u5Var);
+                    org.telegram.messenger.g0.D3(t5Var);
                     break;
                 }
                 break;
@@ -762,31 +761,31 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         ((di.t) this.b).v0(false, 0L, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        s6 s6Var = (s6) this.b;
+        r6 r6Var = (r6) this.b;
         hi.e eVar = (hi.e) this.c;
         View view = (View) obj2;
         long j3 = ((TL_stars.SavedStarGift) ((o41) obj).H).gift.id;
-        if (s6Var.m1 == j3) {
-            s6Var.m1 = 0L;
+        if (r6Var.m1 == j3) {
+            r6Var.m1 = 0L;
         } else {
-            s6Var.m1 = j3;
+            r6Var.m1 = j3;
         }
-        eVar.setEnabled(s6Var.m1 != 0);
+        eVar.setEnabled(r6Var.m1 != 0);
         if (view.getParent() instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view.getParent();
             for (int i7 = 0; i7 < viewGroup.getChildCount(); i7++) {
                 View childAt = viewGroup.getChildAt(i7);
                 if (childAt instanceof ul0) {
                     ul0 ul0Var = (ul0) childAt;
-                    ul0Var.b(s6Var.m1 == ul0Var.getGiftId(), true);
+                    ul0Var.b(r6Var.m1 == ul0Var.getGiftId(), true);
                 }
             }
         }
     }
 
-    @Override // org.telegram.messenger.t10
+    @Override // org.telegram.messenger.u10
     public void m(Object obj, TLRPC.Document document, Boolean bool) {
         kg.n nVar = (kg.n) this.b;
         View view = (View) this.c;

@@ -1,9 +1,9 @@
 package org.telegram.tgnet;
 
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -23,10 +23,10 @@ public final /* synthetic */ class g implements Runnable {
                 ConnectionsManager.lambda$onUnparsedMessageReceived$12(this.b, this.c);
                 break;
             case 1:
-                mp.u1(this.b).V3(this.c, false);
+                np.u1(this.b).V3(this.c, false);
                 break;
             default:
-                mp.u1(this.b).V3(this.c, false);
+                np.u1(this.b).V3(this.c, false);
                 break;
         }
     }

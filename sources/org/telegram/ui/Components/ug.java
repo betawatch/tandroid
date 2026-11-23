@@ -19,7 +19,7 @@ import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class ug extends View implements z60 {
     public final n6 E;
@@ -158,7 +158,7 @@ public abstract class ug extends View implements z60 {
             super.draw(canvas);
             return;
         }
-        canvas.saveLayerAlpha(-org.telegram.messenger.g0.L(6.0f), -org.telegram.messenger.g0.L(6.0f), getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+        canvas.saveLayerAlpha(-org.telegram.messenger.g0.L(6.0f), -org.telegram.messenger.g0.L(6.0f), getWidth(), getHeight(), org.telegram.messenger.ls.e4, 31);
         super.draw(canvas);
         float L = org.telegram.messenger.g0.L(18.0f);
         RectF rectF = this.x0;
@@ -318,7 +318,7 @@ public abstract class ug extends View implements z60 {
             Drawable drawable = this.e;
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
             drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
-            this.f.setColorFilter(new PorterDuffColorFilter(Color.argb(org.telegram.messenger.ks.K2, Color.red(w03), Color.green(w03), Color.blue(w03)), mode));
+            this.f.setColorFilter(new PorterDuffColorFilter(Color.argb(org.telegram.messenger.ls.K2, Color.red(w03), Color.green(w03), Color.blue(w03)), mode));
             this.h.setColorFilter(new PorterDuffColorFilter(w04, mode));
         }
         boolean z11 = this.H;
@@ -414,7 +414,7 @@ public abstract class ug extends View implements z60 {
             canvas2 = canvas;
         } else {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ls.e4, 31);
         }
         k();
         float N = org.telegram.messenger.g0.N(3.0f);
@@ -537,7 +537,7 @@ public abstract class ug extends View implements z60 {
                                     float f34 = B;
                                     float f35 = 1.0f - f32;
                                     paint7.setStrokeWidth(Math.max(org.telegram.messenger.g0.L(0.5f), f34 * 0.55f * f35));
-                                    paint7.setColor(Color.argb((int) (sin2 * 255.0f * 0.55f * f35 * f35), org.telegram.messenger.ks.e4, org.telegram.messenger.ks.e4, org.telegram.messenger.ks.e4));
+                                    paint7.setColor(Color.argb((int) (sin2 * 255.0f * 0.55f * f35 * f35), org.telegram.messenger.ls.e4, org.telegram.messenger.ls.e4, org.telegram.messenger.ls.e4));
                                     float f36 = f31 * (-0.848f);
                                     float f37 = f28 - (f36 * f32);
                                     float f38 = f31 * 0.53f;
@@ -912,7 +912,7 @@ public abstract class ug extends View implements z60 {
     }
 
     public void setEffect(long j3) {
-        TLRPC.TL_availableEffect b12 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).b1(j3);
+        TLRPC.TL_availableEffect b12 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).b1(j3);
         setEmoji(b12 != null ? org.telegram.messenger.j6.g(b12.emoticon) : null);
     }
 

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mb implements org.telegram.ui.Components.qj0 {
     public final /* synthetic */ int a = 1;
@@ -69,7 +69,7 @@ public final /* synthetic */ class mb implements org.telegram.ui.Components.qj0 
                             if (z10 && boost.user_id == j3) {
                                 org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(c51Var.getParentActivity(), c51Var.getResourceProvider());
                                 obVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                                obVar.b.setText(org.telegram.messenger.gd.N0(2131753300, null));
+                                obVar.b.setText(org.telegram.messenger.hd.N0(2131753300, null));
                                 obVar.b.setSingleLine(false);
                                 obVar.b.setMaxLines(2);
                                 org.telegram.ui.Components.gc.g(c51Var, obVar, 2750).j();
@@ -80,7 +80,7 @@ public final /* synthetic */ class mb implements org.telegram.ui.Components.qj0 
                         TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = new TLRPC.TL_payments_checkedGiftCode();
                         tL_payments_checkedGiftCode.giveaway_msg_id = boost.giveaway_msg_id;
                         tL_payments_checkedGiftCode.to_id = boost.user_id;
-                        tL_payments_checkedGiftCode.from_id = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).B1(-sbVar.J.id);
+                        tL_payments_checkedGiftCode.from_id = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).B1(-sbVar.J.id);
                         int i10 = boost.date;
                         tL_payments_checkedGiftCode.date = i10;
                         tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
@@ -136,12 +136,12 @@ public final /* synthetic */ class mb implements org.telegram.ui.Components.qj0 
                         org.telegram.messenger.g0.v1(l60Var.w1.K);
                     }
                 } else if (i7 == l60Var.S1) {
-                    TLRPC.Chat O0 = org.telegram.messenger.mp.u1(l60Var.a).O0(Long.valueOf(j11));
-                    TLRPC.ChatFull P0 = org.telegram.messenger.mp.u1(l60Var.a).P0(j11);
+                    TLRPC.Chat O0 = org.telegram.messenger.np.u1(l60Var.a).O0(Long.valueOf(j11));
+                    TLRPC.ChatFull P0 = org.telegram.messenger.np.u1(l60Var.a).P0(j11);
                     if (O0 != null) {
                         String K = org.telegram.messenger.v3.K(O0, false);
                         if (!TextUtils.isEmpty(K)) {
-                            str = p5.c.m(org.telegram.messenger.mp.u1(l60Var.a).X2, "/", K, new StringBuilder("https://"));
+                            str = p5.c.m(org.telegram.messenger.np.u1(l60Var.a).X2, "/", K, new StringBuilder("https://"));
                             if (str == null) {
                                 ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", str));
                                 l60Var.dismiss();
@@ -154,7 +154,7 @@ public final /* synthetic */ class mb implements org.telegram.ui.Components.qj0 
                             l60Var.t2 = true;
                             TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
                             tL_messages_exportChatInvite.legacy_revoke_permanent = true;
-                            tL_messages_exportChatInvite.peer = org.telegram.messenger.mp.u1(l60Var.a).l1(-l60Var.q2);
+                            tL_messages_exportChatInvite.peer = org.telegram.messenger.np.u1(l60Var.a).l1(-l60Var.q2);
                             ConnectionsManager.getInstance(l60Var.a).sendRequest(tL_messages_exportChatInvite, new org.telegram.ui.Components.f2(l60Var, 6));
                         }
                         str = null;

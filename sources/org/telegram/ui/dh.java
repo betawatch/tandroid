@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.h9, er0, r0.m, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.i9, er0, r0.m, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ bn a;
 
     public /* synthetic */ dh(bn bnVar) {
@@ -64,7 +64,7 @@ public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.h9
         }
     }
 
-    @Override // org.telegram.messenger.h9
+    @Override // org.telegram.messenger.i9
     public boolean run() {
         bn bnVar = this.a;
         return bnVar.h != null || bnVar.W9();

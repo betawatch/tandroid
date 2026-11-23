@@ -25,12 +25,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a20;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.mc;
@@ -42,7 +42,7 @@ import org.telegram.ui.Components.ut;
 import org.telegram.ui.Components.xy0;
 import org.telegram.ui.bp0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class o extends FrameLayout {
     public final RectF A0;
@@ -98,8 +98,8 @@ public abstract class o extends FrameLayout {
     public final Drawable h;
     public dh.c h0;
     public fh.g i0;
-    public x10 j0;
-    public x10 k0;
+    public y10 j0;
+    public y10 k0;
     public ObjectAnimator l0;
     public boolean m0;
     public final oq n;
@@ -140,7 +140,7 @@ public abstract class o extends FrameLayout {
         Paint paint3 = new Paint(3);
         this.J = paint3;
         this.O = -4;
-        this.V = j10.t0;
+        this.V = k10.t0;
         this.d0 = new f(this, i7);
         this.f0 = new mc(this, 1.0f, 3.0f);
         this.n0 = new f(this, 1);
@@ -185,7 +185,7 @@ public abstract class o extends FrameLayout {
         hVar.getEditText().setSupportRtlHint(true);
         this.Q = new org.telegram.ui.Components.ga(caVar, hVar.getEditText(), g() ? 1 : 2, false);
         hVar.getEditText().setHintColor(-1);
-        hVar.getEditText().r(gd.N0(2131754451, null), false);
+        hVar.getEditText().r(hd.N0(2131754451, null), false);
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         hVar.getEditText().setTranslationX(org.telegram.messenger.g0.L(-26.0f));
         boolean z10 = this instanceof bp0;
@@ -212,7 +212,7 @@ public abstract class o extends FrameLayout {
         oqVar.n = L2;
         kVar.setImageDrawable(oqVar);
         kVar.setScaleType(ImageView.ScaleType.CENTER);
-        kVar.setContentDescription(gd.N0(2131751342, null));
+        kVar.setContentDescription(hd.N0(2131751342, null));
         kVar.setAlpha(0.0f);
         kVar.setVisibility(8);
         kVar.setOnClickListener(new ah.d(this, 27));
@@ -291,9 +291,9 @@ public abstract class o extends FrameLayout {
         int e10 = (int) this.v0.e(false, f17);
         if (e10 != this.w0) {
             r(e10);
-            x10 x10Var = this.j0;
-            if (x10Var != null) {
-                x10Var.a(Integer.valueOf(e10));
+            y10 y10Var = this.j0;
+            if (y10Var != null) {
+                y10Var.a(Integer.valueOf(e10));
             }
             this.w0 = L;
         }
@@ -396,7 +396,7 @@ public abstract class o extends FrameLayout {
         }
         oVar.n();
         if (d2 > 0.0f) {
-            canvas2.saveLayerAlpha(rectF, ks.e4, 31);
+            canvas2.saveLayerAlpha(rectF, ls.e4, 31);
         }
         if (!oVar.C0 || (gaVar = oVar.T) == null || (gaVar2 = oVar.R) == null) {
             i10 = i7;
@@ -432,7 +432,7 @@ public abstract class o extends FrameLayout {
                 i10 = i7;
                 i11 = 3;
                 rectF2 = rectF;
-                canvas.saveLayerAlpha(rectF.left, rectF.top, rectF.right, rectF.bottom, ks.e4, 31);
+                canvas.saveLayerAlpha(rectF.left, rectF.top, rectF.right, rectF.bottom, ls.e4, 31);
                 canvas2 = canvas;
             } else {
                 paint = c12;
@@ -534,7 +534,7 @@ public abstract class o extends FrameLayout {
             canvas2.drawRoundRect(rectF2, f11, f11, oVar.N0);
             canvas2.restore();
             canvas2.restore();
-            canvas2.saveLayerAlpha(rectF2, ks.e4, 31);
+            canvas2.saveLayerAlpha(rectF2, ls.e4, 31);
             oVar.j(canvas2, rectF2);
             oVar.R0.reset();
             oVar.R0.postTranslate(L6, L7);
@@ -631,7 +631,7 @@ public abstract class o extends FrameLayout {
         } else {
             max = (1.0f - this.o0) * Math.max(0, (r0.getHeight() - org.telegram.messenger.g0.L(82.0f)) - r0.getScrollY());
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ls.e4, 31);
         canvas.save();
         canvas.clipRect(rectF);
         canvas.translate(0.0f, max);
@@ -674,7 +674,7 @@ public abstract class o extends FrameLayout {
     }
 
     public int getCaptionLimit() {
-        return j10.i(this.V).q() ? getCaptionPremiumLimit() : getCaptionDefaultLimit();
+        return k10.i(this.V).q() ? getCaptionPremiumLimit() : getCaptionDefaultLimit();
     }
 
     public int getCaptionPremiumLimit() {
@@ -760,7 +760,7 @@ public abstract class o extends FrameLayout {
             TextPaint textPaint = this.I;
             textPaint.setColor(-16777216);
             textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
-            String N0 = gd.N0(2131754451, null);
+            String N0 = hd.N0(2131754451, null);
             this.H = Bitmap.createBitmap((int) Math.ceil(textPaint.measureText(N0)), (int) Math.ceil(textPaint.getFontMetrics().descent - textPaint.getFontMetrics().ascent), Bitmap.Config.ARGB_8888);
             new Canvas(this.H).drawText(N0, 0.0f, -((int) textPaint.getFontMetrics().ascent), textPaint);
         }
@@ -826,12 +826,12 @@ public abstract class o extends FrameLayout {
         }
     }
 
-    public void setOnHeightUpdate(x10 x10Var) {
-        this.j0 = x10Var;
+    public void setOnHeightUpdate(y10 y10Var) {
+        this.j0 = y10Var;
     }
 
-    public void setOnKeyboardOpen(x10 x10Var) {
-        this.k0 = x10Var;
+    public void setOnKeyboardOpen(y10 y10Var) {
+        this.k0 = y10Var;
     }
 
     @Override // android.view.View
@@ -935,7 +935,7 @@ public abstract class o extends FrameLayout {
     public void r(int i7) {
     }
 
-    public void setUiBlurBitmap(z10 z10Var) {
+    public void setUiBlurBitmap(a20 a20Var) {
     }
 
     public void j(Canvas canvas, RectF rectF) {

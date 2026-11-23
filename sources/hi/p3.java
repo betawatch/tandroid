@@ -19,8 +19,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.bf0;
@@ -31,7 +31,7 @@ import org.telegram.ui.cx;
 import org.telegram.ui.k01;
 import org.telegram.ui.me0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p3 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -46,16 +46,16 @@ public final class p3 extends FrameLayout {
         addView(g10, c8.ma.e(-2, -2, 17));
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.c = q9Var;
-        g10.addView(q9Var, c8.ma.r(ks.O1, ks.O1, 1));
+        g10.addView(q9Var, c8.ma.r(ls.O1, ls.O1, 1));
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
-        textView.setText(gd.N0(2131748629, null));
+        textView.setText(hd.N0(2131748629, null));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         g10.addView(textView, c8.ma.t(-2, -2, 1, 0, 8, 0, 0));
         e eVar = new e(context, null, true);
         this.d = eVar;
-        eVar.i(gd.N0(2131748628, null), false, true);
+        eVar.i(hd.N0(2131748628, null), false, true);
         g10.addView(eVar, c8.ma.t((int) ((eVar.d.e() + org.telegram.messenger.g0.L(24.0f)) / org.telegram.messenger.g0.p), 38, 1, 0, 18, 0, 0));
         eVar.setOnClickListener(new bi.o(7));
         setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-16777216, -11184811}));
@@ -95,7 +95,7 @@ public final class p3 extends FrameLayout {
                         paint3.setShader(new LinearGradient(0.0f, 0.0f, org.telegram.messenger.g0.L(18.0f), 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                         ((Paint) this.c).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                     }
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ks.e4, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ls.e4, 31);
                     super.dispatchDraw(canvas);
                     ((Paint) this.c).setAlpha((int) (k01Var.r * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, org.telegram.messenger.g0.L(18.0f), getMeasuredHeight(), (Paint) this.c);

@@ -6,7 +6,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class x5 extends TextView {
     public int a;
@@ -35,7 +35,7 @@ public class x5 extends TextView {
         Canvas canvas2;
         super.onDraw(canvas);
         float height = ((getGravity() & 16) == 0 || getLayout() == null) ? 0.0f : ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
-        float paddingRight = org.telegram.messenger.gd.a0 ? getPaddingRight() : getPaddingLeft();
+        float paddingRight = org.telegram.messenger.hd.a0 ? getPaddingRight() : getPaddingLeft();
         if (height == 0.0f && paddingRight == 0.0f) {
             canvas2 = canvas;
         } else {

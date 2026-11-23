@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e extends ViewGroup {
     public final /* synthetic */ int a;
@@ -130,7 +130,7 @@ public final class e extends ViewGroup {
                         gi.j jVar3 = gVar.c;
                         jVar3.layout(measuredWidth3, measuredHeight2, jVar3.getMeasuredWidth() + measuredWidth3, gVar.c.getMeasuredHeight() + measuredHeight2);
                         int measuredWidth4 = (i13 - gVar.d.getMeasuredWidth()) / 2;
-                        int x10 = org.telegram.messenger.n10.x(32.0f, gVar.d.getMeasuredHeight(), measuredHeight2);
+                        int x10 = org.telegram.messenger.o10.x(32.0f, gVar.d.getMeasuredHeight(), measuredHeight2);
                         TextView textView7 = gVar.d;
                         textView7.layout(measuredWidth4, x10, textView7.getMeasuredWidth() + measuredWidth4, gVar.d.getMeasuredHeight() + x10);
                         break;
@@ -155,7 +155,7 @@ public final class e extends ViewGroup {
                         gi.j jVar4 = gVar.c;
                         jVar4.layout(A2, i28, jVar4.getMeasuredWidth() + A2, gVar.c.getMeasuredHeight() + i28);
                         int A3 = (int) com.google.android.gms.internal.vision.e2.A(f19, gVar.d.getMeasuredWidth(), 2.0f, f18);
-                        int x11 = org.telegram.messenger.n10.x(16.0f, gVar.d.getMeasuredHeight(), i28);
+                        int x11 = org.telegram.messenger.o10.x(16.0f, gVar.d.getMeasuredHeight(), i28);
                         TextView textView10 = gVar.d;
                         textView10.layout(A3, x11, textView10.getMeasuredWidth() + A3, gVar.d.getMeasuredHeight() + x11);
                         break;
@@ -304,7 +304,7 @@ public final class e extends ViewGroup {
                 usersSelectActivity.e.layout(0, usersSelectActivity.a.getMeasuredHeight(), usersSelectActivity.f.getMeasuredWidth(), usersSelectActivity.e.getMeasuredHeight() + usersSelectActivity.a.getMeasuredHeight());
                 org.telegram.ui.Components.c10 c10Var = usersSelectActivity.r;
                 if (c10Var != null) {
-                    int measuredWidth12 = org.telegram.messenger.gd.a0 ? usersSelectActivity.s.leftMargin : ((i11 - i7) - usersSelectActivity.s.rightMargin) - c10Var.getMeasuredWidth();
+                    int measuredWidth12 = org.telegram.messenger.hd.a0 ? usersSelectActivity.s.leftMargin : ((i11 - i7) - usersSelectActivity.s.rightMargin) - c10Var.getMeasuredWidth();
                     int measuredHeight9 = ((i12 - i10) - usersSelectActivity.s.bottomMargin) - usersSelectActivity.r.getMeasuredHeight();
                     org.telegram.ui.Components.c10 c10Var2 = usersSelectActivity.r;
                     c10Var2.layout(measuredWidth12, measuredHeight9, c10Var2.getMeasuredWidth() + measuredWidth12, usersSelectActivity.r.getMeasuredHeight() + measuredHeight9);
@@ -348,7 +348,7 @@ public final class e extends ViewGroup {
                             gVar.e.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                             gVar.f.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                             gVar.d.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                            gVar.c.measure(org.telegram.messenger.n10.c(48.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
+                            gVar.c.measure(org.telegram.messenger.o10.c(48.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
                         }
                     } else if (i11 != 5) {
                         if (i11 == 6) {
@@ -366,9 +366,9 @@ public final class e extends ViewGroup {
                                 gVar.e.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                                 gVar.f.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                                 if (i11 == 6) {
-                                    gVar.c.measure(org.telegram.messenger.n10.c(48.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
+                                    gVar.c.measure(org.telegram.messenger.o10.c(48.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
                                 } else {
-                                    gVar.c.measure(org.telegram.messenger.n10.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
+                                    gVar.c.measure(org.telegram.messenger.o10.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
                                 }
                             }
                         }
@@ -396,7 +396,7 @@ public final class e extends ViewGroup {
                     gVar.a.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (size2 * 0.399f), TLObject.FLAG_30));
                     gVar.e.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
                     gVar.f.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
-                    gVar.c.measure(org.telegram.messenger.n10.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
+                    gVar.c.measure(org.telegram.messenger.o10.c(72.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
                 }
                 setMeasuredDimension(size, size2);
                 break;
@@ -415,12 +415,12 @@ public final class e extends ViewGroup {
                     bb1Var.e.measure(View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, 0));
                     bb1Var.b.measure(View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(42.0f), TLObject.FLAG_30));
                 } else {
-                    float f14 = bb1Var.P == 7 ? org.telegram.messenger.ks.q2 : org.telegram.messenger.ks.W1;
+                    float f14 = bb1Var.P == 7 ? org.telegram.messenger.ls.q2 : org.telegram.messenger.ls.W1;
                     bb1Var.a.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(f14), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(f14), TLObject.FLAG_30));
                     bb1Var.c.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, 0));
                     bb1Var.d.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, 0));
                     bb1Var.e.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, 0));
-                    bb1Var.b.measure(org.telegram.messenger.n10.c(48.0f, size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
+                    bb1Var.b.measure(org.telegram.messenger.o10.c(48.0f, size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
                 }
                 setMeasuredDimension(size3, size4);
                 break;

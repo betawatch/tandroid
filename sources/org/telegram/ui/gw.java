@@ -4,7 +4,7 @@ import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gw extends UndoView {
     public final /* synthetic */ cx k0;
@@ -50,7 +50,7 @@ public final class gw extends UndoView {
                 if (i10 >= 0) {
                     TLRPC.Dialog dialog = (TLRPC.Dialog) cxVar.T1.remove(i10);
                     cxVar.f0[0].d.f();
-                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.j01(this, i10, dialog, 2));
+                    org.telegram.messenger.g0.g3(new org.telegram.ui.Components.f21(this, i10, dialog, 1));
                 } else {
                     cxVar.U4(false, true);
                 }

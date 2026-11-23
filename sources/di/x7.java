@@ -1,12 +1,12 @@
 package di;
 
 import java.util.HashMap;
+import org.telegram.messenger.az;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ro;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.so;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hr0;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.ke0;
 import org.telegram.ui.Components.ul0;
 import org.telegram.ui.kz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x7 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,25 +61,25 @@ public final /* synthetic */ class x7 implements Runnable {
                 dVar.V(U, 1033, new li.c(U, i10, i11, z10));
                 break;
             case 2:
-                mp mpVar = (mp) obj;
+                np npVar = (np) obj;
                 int i12 = 0;
-                while (i12 < mpVar.Q0.size()) {
-                    if (((ro) mpVar.Q0.get(i12)).a == i10) {
-                        mpVar.Q0.remove(i12);
+                while (i12 < npVar.Q0.size()) {
+                    if (((so) npVar.Q0.get(i12)).a == i10) {
+                        npVar.Q0.remove(i12);
                         i12--;
                     }
                     i12++;
                 }
-                mpVar.R0 = null;
-                mpVar.S0.clear();
-                mpVar.getNotificationCenter().k(ks.O2, new Object[0]);
+                npVar.R0 = null;
+                npVar.S0.clear();
+                npVar.getNotificationCenter().k(ls.O2, new Object[0]);
                 if (z10) {
-                    mpVar.getNotificationCenter().k(3, new Object[0]);
+                    npVar.getNotificationCenter().k(3, new Object[0]);
                     break;
                 }
                 break;
             case 3:
-                HashMap hashMap = ((zy) obj).I;
+                HashMap hashMap = ((az) obj).I;
                 Boolean bool = (Boolean) hashMap.get(Integer.valueOf(i10));
                 if (bool != null && bool.booleanValue() == z10) {
                     hashMap.remove(Integer.valueOf(i10));
@@ -125,7 +125,7 @@ public final /* synthetic */ class x7 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0((kz) obj).I(z10 ? R.raw.folder_in : R.raw.folder_out, z10 ? gd.G(i10, "FolderLinkAddedChats", new Object[0]) : gd.G(i10, "FolderLinkRemovedChats", new Object[0]), gd.N0(2131750651, null));
+                org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0((kz) obj).I(z10 ? R.raw.folder_in : R.raw.folder_out, z10 ? hd.G(i10, "FolderLinkAddedChats", new Object[0]) : hd.G(i10, "FolderLinkRemovedChats", new Object[0]), hd.N0(2131750651, null));
                 I.j = 5000;
                 I.j();
                 break;

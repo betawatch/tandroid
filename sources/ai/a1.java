@@ -1,60 +1,49 @@
 package ai;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ThreadFactory;
-import org.telegram.ui.Components.oh0;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
-import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a1 implements ThreadFactory {
+public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ a1(int i7) {
+    public /* synthetic */ a1(int i7, Runnable runnable) {
         this.a = i7;
+        this.b = runnable;
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread lambda$new$0;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        Runnable runnable = this.b;
+        switch (i7) {
             case 0:
                 ExecutorService executorService = DictationLid.a;
-                return new Thread(new b1(0, runnable), "DictationLid");
+                DictationAsr.M();
+                runnable.run();
+                break;
             case 1:
-                return new Thread(runnable, "ExoPlayer:AudioTrackReleaseThread");
+                org.telegram.messenger.g0.r(runnable);
+                org.telegram.messenger.g0.g3(runnable);
+                break;
             case 2:
-                return new Thread(runnable, "Lottie-" + oh0.Q0.getAndIncrement());
+                org.telegram.messenger.g0.r(runnable);
+                org.telegram.messenger.g0.g3(runnable);
+                break;
             case 3:
-                return new Thread(runnable, "LottieLow-" + oh0.R0.getAndIncrement());
+                org.telegram.messenger.g0.r(runnable);
+                org.telegram.messenger.g0.g3(runnable);
+                break;
             case 4:
-                return new Thread(runnable, "GramWalletStorage");
-            case 5:
-                lambda$new$0 = WalletEngine2.lambda$new$0(runnable);
-                return lambda$new$0;
-            case 6:
-                String str = WidgetEngineService.b;
-                Thread thread = new Thread(runnable, "widget-engine-destroy");
-                thread.setDaemon(true);
-                return thread;
-            case 7:
-                Thread thread2 = new Thread(runnable, "widget-sandbox-io");
-                thread2.setDaemon(true);
-                return thread2;
-            case 8:
-                Thread thread3 = new Thread(runnable, "PrismaHighlight");
-                thread3.setDaemon(true);
-                return thread3;
-            case 9:
-                return new Thread(runnable, "AudioRecorderFiles");
-            case 10:
-                return new Thread(runnable, "AudioRecorderOutput");
-            case 11:
-                return new Thread(runnable, "RoundVideoFiles");
+                ConnectionsManager.lambda$cancelRequest$9(runnable);
+                break;
             default:
-                return new Thread(runnable, "RoundVideoOutput");
+                runnable.run();
+                break;
         }
     }
 }

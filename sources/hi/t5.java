@@ -25,12 +25,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import org.json.JSONObject;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.qd;
-import org.telegram.messenger.vy;
-import org.telegram.messenger.xy;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.rd;
+import org.telegram.messenger.wy;
+import org.telegram.messenger.yy;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.a70;
@@ -38,9 +38,9 @@ import org.telegram.ui.Components.i61;
 import org.telegram.ui.Components.ui;
 import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class t5 implements wa, i6.a, com.google.android.gms.common.api.internal.q, ib.b, jg.y1, m.e2, l.w, m.k, ce.c, o0.a, org.telegram.ui.Components.a5, oi.h0, oi.r3, oi.e1, org.telegram.messenger.va, org.telegram.messenger.pa, vy, gh.a {
+public final class t5 implements wa, i6.a, com.google.android.gms.common.api.internal.q, ib.b, jg.y1, m.e2, l.w, m.k, ce.c, o0.a, org.telegram.ui.Components.a5, oi.h0, oi.r3, oi.e1, org.telegram.messenger.wa, org.telegram.messenger.qa, wy, gh.a {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -454,11 +454,11 @@ public final class t5 implements wa, i6.a, com.google.android.gms.common.api.int
         }
     }
 
-    @Override // org.telegram.messenger.vy
+    @Override // org.telegram.messenger.wy
     public void b() {
-        zy zyVar = (zy) this.b;
-        HashMap hashMap = zyVar.n;
-        zyVar.getNotificationCenter().k(ks.R0, new HashMap(hashMap));
+        az azVar = (az) this.b;
+        HashMap hashMap = azVar.n;
+        azVar.getNotificationCenter().k(ls.R0, new HashMap(hashMap));
         hashMap.clear();
     }
 
@@ -582,19 +582,19 @@ public final class t5 implements wa, i6.a, com.google.android.gms.common.api.int
         v5Var.y(true);
     }
 
-    @Override // org.telegram.messenger.vy
+    @Override // org.telegram.messenger.wy
     public void f(Location location) {
-        zy zyVar = (zy) this.b;
+        az azVar = (az) this.b;
         TLRPC.TL_messageMediaGeo tL_messageMediaGeo = new TLRPC.TL_messageMediaGeo();
         TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
         tL_messageMediaGeo.geo = tL_geoPoint;
         tL_geoPoint.lat = org.telegram.messenger.g0.b0(location.getLatitude());
         tL_messageMediaGeo.geo._long = org.telegram.messenger.g0.b0(location.getLongitude());
-        HashMap hashMap = zyVar.n;
+        HashMap hashMap = azVar.n;
         Iterator it = hashMap.entrySet().iterator();
         while (it.hasNext()) {
-            fj fjVar = (fj) ((Map.Entry) it.next()).getValue();
-            zyVar.r0(xy.d(tL_messageMediaGeo, fj.B0(fjVar.k), fjVar, null, null, null, true, 0));
+            gj gjVar = (gj) ((Map.Entry) it.next()).getValue();
+            azVar.r0(yy.d(tL_messageMediaGeo, gj.B0(gjVar.k), gjVar, null, null, null, true, 0));
         }
         hashMap.clear();
     }
@@ -775,13 +775,13 @@ public final class t5 implements wa, i6.a, com.google.android.gms.common.api.int
         ((c7) v5Var.d.T.get(i7)).X = j3;
     }
 
-    public org.telegram.messenger.ba j() {
+    public org.telegram.messenger.ca j() {
         m8.d dVar = (m8.d) this.b;
         q6.m.j("no included points", !Double.isNaN(dVar.d));
         LatLngBounds latLngBounds = new LatLngBounds(new LatLng(dVar.b, dVar.d), new LatLng(dVar.c, dVar.e));
-        org.telegram.messenger.ba baVar = new org.telegram.messenger.ba();
-        baVar.a = latLngBounds;
-        return baVar;
+        org.telegram.messenger.ca caVar = new org.telegram.messenger.ca();
+        caVar.a = latLngBounds;
+        return caVar;
     }
 
     @Override // oi.r3
@@ -939,12 +939,12 @@ public final class t5 implements wa, i6.a, com.google.android.gms.common.api.int
         org.telegram.messenger.g0.h3(runnable, 1000L);
     }
 
-    @Override // org.telegram.messenger.pa
+    @Override // org.telegram.messenger.qa
     public void onLocationChanged(Location location) {
         if (location == null) {
             return;
         }
-        ((qd) this.b).m(location);
+        ((rd) this.b).m(location);
     }
 
     public LongSparseArray p(long j3, long j10) {
@@ -955,9 +955,9 @@ public final class t5 implements wa, i6.a, com.google.android.gms.common.api.int
         return (LongSparseArray) longSparseArray.get(j10);
     }
 
-    public t5 q(org.telegram.messenger.ab abVar) {
+    public t5 q(org.telegram.messenger.bb bbVar) {
         m8.d dVar = (m8.d) this.b;
-        LatLng latLng = new LatLng(abVar.a, abVar.b);
+        LatLng latLng = new LatLng(bbVar.a, bbVar.b);
         dVar.getClass();
         double d = dVar.b;
         double d2 = latLng.a;

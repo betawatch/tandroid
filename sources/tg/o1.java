@@ -17,7 +17,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
-import bi.h5;
+import bi.g5;
 import c8.ic;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -43,11 +43,11 @@ import java.util.concurrent.atomic.AtomicReference;
 import m.o3;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.jc;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.kc;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -62,9 +62,9 @@ import org.telegram.ui.md0;
 import org.telegram.ui.qx0;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o1 implements OnSuccessListener, jc, w5.b, u9.d, org.telegram.ui.ActionBar.q1, rj0, wh.a, ua.a, d5.a {
+public final /* synthetic */ class o1 implements OnSuccessListener, kc, w5.b, u9.d, org.telegram.ui.ActionBar.q1, rj0, wh.a, ua.a, d5.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -449,12 +449,12 @@ public final /* synthetic */ class o1 implements OnSuccessListener, jc, w5.b, u9
                         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
                         boolean V = v3.V(chat);
-                        String N0 = gd.N0(V ? 2131753394 : 2131753392, null);
+                        String N0 = hd.N0(V ? 2131753394 : 2131753392, null);
                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         t1Var.S = N0;
-                        t1Var.U = gd.N0(V ? 2131753393 : 2131753391, null);
-                        alertDialog$Builder.k(gd.N0(2131754483, "Add"), new wc1(21, atomicBoolean, r0Var));
-                        alertDialog$Builder.h(gd.N0(2131752577, "Cancel"), new ug.x(17));
+                        t1Var.U = hd.N0(V ? 2131753393 : 2131753391, null);
+                        alertDialog$Builder.k(hd.N0(2131754483, "Add"), new wc1(21, atomicBoolean, r0Var));
+                        alertDialog$Builder.h(hd.N0(2131752577, "Cancel"), new ug.x(17));
                         alertDialog$Builder.j(new di.u1(16, atomicBoolean, qx0Var));
                         alertDialog$Builder.p();
                     } else if (chat != null) {
@@ -469,7 +469,7 @@ public final /* synthetic */ class o1 implements OnSuccessListener, jc, w5.b, u9
                     } else {
                         hashSet.add(Long.valueOf(hashCode));
                     }
-                    if (hashSet.size() == mp.u1(j10.t0).q0 + j3 && w0Var.n2 == 3) {
+                    if (hashSet.size() == np.u1(k10.t0).q0 + j3 && w0Var.n2 == 3) {
                         hashSet.remove(Long.valueOf(hashCode));
                         w0Var.l1();
                         return;
@@ -636,7 +636,7 @@ public final /* synthetic */ class o1 implements OnSuccessListener, jc, w5.b, u9
         canvas.restore();
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         oh0 B;
         g2 g2Var = (g2) this.b;
@@ -657,7 +657,7 @@ public final /* synthetic */ class o1 implements OnSuccessListener, jc, w5.b, u9
                 p1Var.C0 = false;
                 break;
             case 1:
-                h5 h5Var = (h5) obj2;
+                g5 g5Var = (g5) obj2;
                 zb.b bVar = (zb.b) obj;
                 ArrayList arrayList = new ArrayList();
                 for (int i10 = 0; i10 < bVar.a.size(); i10++) {
@@ -670,7 +670,7 @@ public final /* synthetic */ class o1 implements OnSuccessListener, jc, w5.b, u9
                     e2Var.e = aVar.c;
                     arrayList.add(e2Var);
                 }
-                h5Var.a(arrayList);
+                g5Var.a(arrayList);
                 break;
             default:
                 f2 f2Var = (f2) obj2;
@@ -703,11 +703,11 @@ public final /* synthetic */ class o1 implements OnSuccessListener, jc, w5.b, u9
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 

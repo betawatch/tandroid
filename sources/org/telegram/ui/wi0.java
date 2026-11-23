@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wi0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -37,11 +37,11 @@ public final /* synthetic */ class wi0 implements View.OnTouchListener {
                 if (hk0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hk0Var.getParentActivity());
-                        String N0 = org.telegram.messenger.gd.N0(2131747272, null);
+                        String N0 = org.telegram.messenger.hd.N0(2131747272, null);
                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         t1Var.S = N0;
-                        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.gd.N0(2131747314, null), org.telegram.messenger.gd.N0(2131747375, null)}, new k4(hk0Var, i11));
-                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752577, null), null);
+                        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.hd.N0(2131747314, null), org.telegram.messenger.hd.N0(2131747375, null)}, new k4(hk0Var, i11));
+                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752577, null), null);
                         hk0Var.showDialog(t1Var);
                     }
                     break;

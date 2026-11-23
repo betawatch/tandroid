@@ -13,10 +13,10 @@ import androidx.datastore.preferences.protobuf.z;
 import h2.l0;
 import h2.x;
 import java.nio.charset.Charset;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class f {
     public final /* synthetic */ int a;
@@ -350,7 +350,7 @@ public final class f {
                 int min = Math.min(i7, 8 - this.e);
                 byte[] bArr = (byte[]) this.b;
                 int i11 = i10 + 1;
-                int i12 = ((bArr[i10] & 255) >> this.e) & (ks.e4 >> (8 - min));
+                int i12 = ((bArr[i10] & 255) >> this.e) & (ls.e4 >> (8 - min));
                 while (min < i7) {
                     i12 |= (bArr[i11] & 255) << min;
                     min += 8;
@@ -405,7 +405,7 @@ public final class f {
         if (i15 == 0) {
             return;
         }
-        byte b12 = (byte) (bArr[i10] & (ks.e4 >> i15));
+        byte b12 = (byte) (bArr[i10] & (ls.e4 >> i15));
         bArr[i10] = b12;
         int i16 = this.d;
         if (i16 + i15 > 8) {

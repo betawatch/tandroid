@@ -3,9 +3,9 @@ package d6;
 import a8.q;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class f extends q implements j {
     public final /* synthetic */ int b;
@@ -35,12 +35,12 @@ public final class f extends q implements j {
             case 101:
                 l7.f.b(parcel);
                 throw new UnsupportedOperationException();
-            case ks.n1 /* 102 */:
+            case ls.n1 /* 102 */:
                 Status status = (Status) l7.f.a(parcel, Status.CREATOR);
                 l7.f.b(parcel);
                 r0(status);
                 break;
-            case ks.o1 /* 103 */:
+            case ls.o1 /* 103 */:
                 Status status2 = (Status) l7.f.a(parcel, Status.CREATOR);
                 l7.f.b(parcel);
                 g0(status2);

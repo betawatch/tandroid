@@ -13,9 +13,9 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.xg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o implements org.telegram.ui.ActionBar.q1, RequestTimeDelegate, xo, xg0, QuickAckDelegate {
+public final /* synthetic */ class o implements org.telegram.ui.ActionBar.q1, RequestTimeDelegate, yo, xg0, QuickAckDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -28,17 +28,17 @@ public final /* synthetic */ class o implements org.telegram.ui.ActionBar.q1, Re
 
     @Override // org.telegram.ui.xg0
     public void a(Canvas canvas) {
-        wu wuVar = (wu) this.b;
+        xu xuVar = (xu) this.b;
         View view = (View) this.c;
-        dv dvVar = wuVar.X;
-        AtomicReference atomicReference = dvVar.E;
-        StaticLayout staticLayout = dvVar.b;
-        ArrayList arrayList = dvVar.x;
+        ev evVar = xuVar.X;
+        AtomicReference atomicReference = evVar.E;
+        StaticLayout staticLayout = evVar.b;
+        ArrayList arrayList = evVar.x;
         xh.f.g(view, false, -1, 0, atomicReference, 0, staticLayout, arrayList, canvas, false);
-        org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, dvVar.b, dvVar.F, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
+        org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, evVar.b, evVar.F, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
     }
 
-    @Override // org.telegram.messenger.xo
+    @Override // org.telegram.messenger.yo
     public boolean e(TLRPC.TL_error tL_error) {
         q0.a aVar = (q0.a) this.b;
         TLRPC.User user = (TLRPC.User) this.c;
@@ -62,9 +62,9 @@ public final /* synthetic */ class o implements org.telegram.ui.ActionBar.q1, Re
                 }
             default:
                 SharedPreferences sharedPreferences = (SharedPreferences) this.b;
-                yf yfVar = (yf) this.c;
+                zf zfVar = (zf) this.c;
                 sharedPreferences.edit().putBoolean("proxycheckstatusip", true).apply();
-                yfVar.run();
+                zfVar.run();
                 break;
         }
     }
@@ -76,8 +76,8 @@ public final /* synthetic */ class o implements org.telegram.ui.ActionBar.q1, Re
 
     @Override // org.telegram.tgnet.QuickAckDelegate
     public void run() {
-        zy zyVar = (zy) this.b;
+        az azVar = (az) this.b;
         TLRPC.Message message = (TLRPC.Message) this.c;
-        g0.g3(new pw(zyVar, message, message.id, 1));
+        g0.g3(new qw(azVar, message, message.id, 1));
     }
 }

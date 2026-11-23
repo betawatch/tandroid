@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import di.fa;
 import di.pb;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f3 extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -71,8 +71,8 @@ public final class f3 extends n41 {
             c3Var.d(null);
             c3Var.e(null);
             c3Var.g(null);
-            textView2.setText(gd.G(d, "Gift2Months", new Object[0]));
-            textView.setText(gd.N0(2131743989, null));
+            textView2.setText(hd.G(d, "Gift2Months", new Object[0]));
+            textView.setText(hd.N0(2131743987, null));
             textView2.setVisibility(0);
             textView.setVisibility(0);
             q9Var.setTranslationY(-org.telegram.messenger.g0.L(8.0f));
@@ -83,10 +83,10 @@ public final class f3 extends n41 {
             } else {
                 textView4.setTextColor(org.telegram.ui.ActionBar.m6.I.q() ? -1333971 : -2722014);
                 textView4.setVisibility(0);
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("" + gd.E(jVar.g(), ','));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("" + hd.E(jVar.g(), ','));
                 spannableStringBuilder.setSpan(new l41(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
                 nq[] nqVarArr = new nq[1];
-                textView4.setText(pb.b1(false, gd.V(null, null, 2131746834, spannableStringBuilder), 0.48f, nqVarArr));
+                textView4.setText(pb.b1(false, hd.V(null, null, 2131746834, spannableStringBuilder), 0.48f, nqVarArr));
                 nqVarArr[0].H = 0.8f;
             }
             FrameLayout.LayoutParams layoutParams = g3Var.F;

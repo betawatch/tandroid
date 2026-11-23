@@ -19,7 +19,7 @@ import android.widget.ScrollView;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class wm0 extends ScrollView implements eh.a {
     public boolean E;
@@ -185,7 +185,7 @@ public class wm0 extends ScrollView implements eh.a {
         }
         int i7 = org.telegram.ui.ActionBar.m6.a7;
         org.telegram.ui.ActionBar.h6 h6Var = this.a;
-        int o4 = i0.a.o(org.telegram.ui.ActionBar.m6.w0(i7, h6Var), org.telegram.messenger.ks.e4);
+        int o4 = i0.a.o(org.telegram.ui.ActionBar.m6.w0(i7, h6Var), org.telegram.messenger.ls.e4);
         this.d.setColor(o4);
         if (this.y != o4) {
             this.y = o4;
@@ -265,7 +265,7 @@ public class wm0 extends ScrollView implements eh.a {
         float f11;
         float f12;
         boolean z10;
-        int o4 = i0.a.o(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, this.a), org.telegram.messenger.ks.e4);
+        int o4 = i0.a.o(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, this.a), org.telegram.messenger.ls.e4);
         Paint paint = this.d;
         paint.setColor(o4);
         if (this.y != o4) {
@@ -279,7 +279,7 @@ public class wm0 extends ScrollView implements eh.a {
             float width = scrollX + getWidth();
             float height = getHeight() + scrollY;
             LinearLayout linearLayout = this.b;
-            float A = org.telegram.messenger.n10.A(linearLayout.getX(), linearLayout.getPaddingLeft(), width, scrollX);
+            float A = org.telegram.messenger.o10.A(linearLayout.getX(), linearLayout.getPaddingLeft(), width, scrollX);
             float max = Math.max(A, Math.min(width, (linearLayout.getX() + linearLayout.getWidth()) - linearLayout.getPaddingRight()));
             boolean z11 = false;
             this.I = 0;

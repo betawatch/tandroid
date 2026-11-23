@@ -2,11 +2,11 @@ package kg;
 
 import android.content.Context;
 import android.text.Editable;
-import bi.g6;
+import bi.f6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.l3;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l extends l3 {
     public final /* synthetic */ int F;
@@ -29,18 +29,18 @@ public final class l extends l3 {
 
     @Override // org.telegram.ui.Cells.l3
     public final void a(boolean z10) {
-        g6 g6Var;
-        g6 g6Var2;
+        f6 f6Var;
+        f6 f6Var2;
         switch (this.F) {
             case 0:
-                if (z10 && (g6Var = this.G.a) != null) {
-                    g6Var.y0(2);
+                if (z10 && (f6Var = this.G.a) != null) {
+                    f6Var.y0(2);
                     break;
                 }
                 break;
             default:
-                if (z10 && (g6Var2 = this.G.a) != null) {
-                    g6Var2.y0(3);
+                if (z10 && (f6Var2 = this.G.a) != null) {
+                    f6Var2.y0(3);
                     break;
                 }
                 break;

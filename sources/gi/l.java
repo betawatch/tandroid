@@ -10,10 +10,10 @@ import fi.o6;
 import hi.c7;
 import java.util.ArrayList;
 import m.o3;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.p7;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.mj0;
 import v4.f1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class l extends kj0 {
     public final Context c;
@@ -48,13 +48,13 @@ public class l extends kj0 {
 
     @Override // org.telegram.ui.Components.kj0
     public final String F(int i7) {
-        fj fjVar;
+        gj gjVar;
         TL_stories.StoryItem storyItem;
         h6 h6Var = this.e;
-        if (h6Var == null || i7 < 0 || i7 >= h6Var.i.size() || (fjVar = (fj) this.e.i.get(i7)) == null || (storyItem = fjVar.l) == null) {
+        if (h6Var == null || i7 < 0 || i7 >= h6Var.i.size() || (gjVar = (gj) this.e.i.get(i7)) == null || (storyItem = gjVar.l) == null) {
             return null;
         }
-        return gd.e0(storyItem.date, true);
+        return hd.e0(storyItem.date, true);
     }
 
     @Override // org.telegram.ui.Components.kj0
@@ -82,13 +82,13 @@ public class l extends kj0 {
             return false;
         }
         if (h6Var instanceof a6) {
-            TLRPC.User c22 = mp.u1(fq0Var.b).c2(Long.valueOf(fq0Var.d));
+            TLRPC.User c22 = np.u1(fq0Var.b).c2(Long.valueOf(fq0Var.d));
             return c22 != null && c22.bot && c22.bot_has_main_app && c22.bot_can_edit;
         }
         if (i7 < 0 || i7 >= h6Var.i.size()) {
             return false;
         }
-        return this.e.m(((fj) this.e.i.get(i7)).e1());
+        return this.e.m(((gj) this.e.i.get(i7)).e1());
     }
 
     public final void M() {
@@ -103,7 +103,7 @@ public class l extends kj0 {
                 mVar.I = max == 1;
             } else if (mVar.I || mVar.d == 1) {
                 mVar.I = false;
-                mVar.d = Math.max(2, bz.u1);
+                mVar.d = Math.max(2, cz.u1);
             }
             mVar.h.y1(mVar.d);
             mVar.J = true;
@@ -137,7 +137,7 @@ public class l extends kj0 {
             a6 a6Var = (a6) h6Var;
             ArrayList arrayList = this.d;
             arrayList.clear();
-            ArrayList F = mp.u1(this.e.c).R1().F(mVar.a0.d);
+            ArrayList F = np.u1(this.e.c).R1().F(mVar.a0.d);
             if (F != null) {
                 for (int i7 = 0; i7 < F.size(); i7++) {
                     o6 o6Var = (o6) F.get(i7);
@@ -197,15 +197,15 @@ public class l extends kj0 {
                 p7Var.e0 = true;
                 return;
             }
-            fj fjVar = (fj) this.e.i.get(size);
-            p7Var.g0 = fjVar != null && this.e.m(fjVar.e1());
+            gj gjVar = (gj) this.e.i.get(size);
+            p7Var.g0 = gjVar != null && this.e.m(gjVar.e1());
             p7Var.setReorder(true);
-            p7Var.k(fjVar, this == this.f ? mVar.e : mVar.d, false);
+            p7Var.k(gjVar, this == this.f ? mVar.e : mVar.d, false);
             fq0 fq0Var = mVar.a0;
-            if (!fq0Var.H.F1 || fjVar == null) {
+            if (!fq0Var.H.F1 || gjVar == null) {
                 p7Var.i(false, false);
             } else {
-                p7Var.i(fq0Var.c(fjVar), true);
+                p7Var.i(fq0Var.c(gjVar), true);
             }
         }
     }

@@ -1,9 +1,9 @@
 package ii;
 
 import di.p9;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ur;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -29,13 +29,13 @@ public final /* synthetic */ class k implements Runnable {
                 n.a(this.d, this.b, this.c, this.e + 1, p9Var);
                 break;
             default:
-                ((tr) this.f).e2(-this.b, this.c, this.d, this.e);
+                ((ur) this.f).e2(-this.b, this.c, this.d, this.e);
                 break;
         }
     }
 
-    public /* synthetic */ k(tr trVar, long j3, long j10, int i7, int i10) {
-        this.f = trVar;
+    public /* synthetic */ k(ur urVar, long j3, long j10, int i7, int i10) {
+        this.f = urVar;
         this.b = j3;
         this.c = j10;
         this.d = i7;

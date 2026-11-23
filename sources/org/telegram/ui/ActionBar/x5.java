@@ -8,11 +8,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.xi;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.yi;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x5 extends Drawable {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final class x5 extends Drawable {
     }
 
     public void e() {
-        xi xiVar;
+        yi yiVar;
         org.telegram.ui.Cells.x1 x1Var;
         Rect bounds = getBounds();
         float f10 = bounds.left;
@@ -86,21 +86,21 @@ public final class x5 extends Drawable {
             path.addRoundRect(rectF, L, L, Path.Direction.CW);
             return;
         }
-        fj fjVar = r1Var.Q5;
-        boolean z10 = fjVar != null && fjVar.P3();
+        gj gjVar = r1Var.Q5;
+        boolean z10 = gjVar != null && gjVar.P3();
         for (int i11 = 0; i11 < 4; i11++) {
             if (!r1Var.E2) {
                 if (i11 == (z10 ? 3 : 2)) {
                     float[] fArr = org.telegram.ui.Cells.r1.wd;
                     int i12 = i11 * 2;
-                    float L2 = org.telegram.messenger.g0.L(bz.Y0);
+                    float L2 = org.telegram.messenger.g0.L(cz.Y0);
                     fArr[i12 + 1] = L2;
                     fArr[i12] = L2;
                 } else if (((r1Var.C6 && r1Var.M == null) || r1Var.G) && (i11 == 2 || i11 == 3)) {
                     float[] fArr2 = org.telegram.ui.Cells.r1.wd;
                     int i13 = i11 * 2;
                     int i14 = i13 + 1;
-                    float L3 = org.telegram.messenger.g0.L(r1Var.G ? Math.min(5, bz.Y0) : bz.Y0);
+                    float L3 = org.telegram.messenger.g0.L(r1Var.G ? Math.min(5, cz.Y0) : cz.Y0);
                     fArr2[i14] = L3;
                     fArr2[i13] = L3;
                 }
@@ -110,7 +110,7 @@ public final class x5 extends Drawable {
             fArr3[i15 + 1] = 0.0f;
             fArr3[i15] = 0.0f;
         }
-        if (z10 || r1Var.K || (xiVar = r1Var.M) != null || (xiVar != null && ((x1Var = r1Var.x2) == null || !x1Var.b))) {
+        if (z10 || r1Var.K || (yiVar = r1Var.M) != null || (yiVar != null && ((x1Var = r1Var.x2) == null || !x1Var.b))) {
             path.addRoundRect(rectF, org.telegram.ui.Cells.r1.wd, Path.Direction.CW);
         } else {
             path.moveTo(rectF.left + org.telegram.messenger.g0.L(6.0f), rectF.top);

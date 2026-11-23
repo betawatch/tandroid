@@ -1,52 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class s11 extends Drawable {
-    public final Drawable a;
-    public final Paint b = new Paint(1);
-    public final RectF c = new RectF();
+public final /* synthetic */ class s11 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v11 b;
 
-    public s11(Context context) {
-        this.a = i5.c.g(context, R.drawable.menu_topic_add);
+    public /* synthetic */ s11(v11 v11Var, int i7) {
+        this.a = i7;
+        this.b = v11Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.drawRoundRect(this.c, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), this.b);
-        this.a.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.c.set(rect);
-        int centerX = rect.centerX() - org.telegram.messenger.g0.L(12.0f);
-        int centerY = rect.centerY() - org.telegram.messenger.g0.L(12.0f);
-        this.a.setBounds(centerX, centerY, org.telegram.messenger.g0.L(24.0f) + centerX, org.telegram.messenger.g0.L(24.0f) + centerY);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.b.setAlpha(i7);
-        this.a.setAlpha(i7);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                fi.u2 u2Var = this.b.f;
+                u2Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                u2Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                u2Var.invalidate();
+                break;
+            default:
+                v11 v11Var = this.b;
+                v11Var.getClass();
+                v11Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v11Var.h();
+                break;
+        }
     }
 }

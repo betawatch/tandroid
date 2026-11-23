@@ -36,14 +36,14 @@ import c8.ma;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.p10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a70;
-import org.telegram.ui.Components.m01;
+import org.telegram.ui.Components.l01;
 import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oh0;
@@ -52,7 +52,7 @@ import org.telegram.ui.ch;
 import org.telegram.ui.d61;
 import org.telegram.ui.fh;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class q0 extends FrameLayout {
     public int E;
@@ -107,7 +107,7 @@ public class q0 extends FrameLayout {
     public dh.c u0;
     public gh.e v0;
     public AnimatorSet w;
-    public p10 w0;
+    public q10 w0;
     public View x;
     public AnimatorSet x0;
     public final rh0 y;
@@ -124,7 +124,7 @@ public class q0 extends FrameLayout {
         y0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
         viewGroup.addView(y0Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) y0Var.getLayoutParams();
-        if (gd.a0) {
+        if (hd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -380,7 +380,7 @@ public class q0 extends FrameLayout {
             return;
         }
         findViewWithTag.setAlpha(0.0f);
-        n10.o(findViewWithTag.animate().alpha(1.0f), nr.f, 150L);
+        o10.o(findViewWithTag.animate().alpha(1.0f), nr.f, 150L);
         findViewWithTag.setVisibility(0);
     }
 
@@ -555,7 +555,7 @@ public class q0 extends FrameLayout {
                         if (cVar != null) {
                             fh.g c10 = cVar.c(this.b, null, true);
                             c10.p(this.v0);
-                            n10.s(c10, org.telegram.messenger.g0.L(12.0f), 8.0f);
+                            o10.s(c10, org.telegram.messenger.g0.L(12.0f), 8.0f);
                             c10.R.e = true;
                             frameLayout2.setBackground(c10);
                         } else {
@@ -599,7 +599,7 @@ public class q0 extends FrameLayout {
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setOnKeyListener(new ai.f0(4, this));
                 this.d.setOnDismissListener(new hi.k4(i7, this));
                 Point point = org.telegram.messenger.g0.q;
-                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(n10.c(40.0f, point.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(o10.c(40.0f, point.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31));
                 if (frameLayout != null && frameLayout.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     frameLayout.getLayoutParams().width = org.telegram.messenger.g0.L(16.0f) + childAt.getMeasuredWidth();
                 }
@@ -761,7 +761,7 @@ public class q0 extends FrameLayout {
         y0Var.setTag(Integer.valueOf(i7));
         this.b.addView(y0Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) y0Var.getLayoutParams();
-        if (gd.a0) {
+        if (hd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -792,7 +792,7 @@ public class q0 extends FrameLayout {
         TextView textView = new TextView(getContext());
         t6.U(textView, m6.E8, this.n0);
         textView.setBackgroundDrawable(m6.N0(false));
-        if (gd.a0) {
+        if (hd.a0) {
             textView.setGravity(21);
         } else {
             textView.setGravity(16);
@@ -806,7 +806,7 @@ public class q0 extends FrameLayout {
         textView.setText(str);
         this.b.addView(textView);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) textView.getLayoutParams();
-        if (gd.a0) {
+        if (hd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -849,9 +849,9 @@ public class q0 extends FrameLayout {
     }
 
     public j5 getSubMenuOverlay() {
-        p10 p10Var = this.w0;
-        if (p10Var != null) {
-            return (j5) p10Var.run();
+        q10 q10Var = this.w0;
+        if (q10Var != null) {
+            return (j5) q10Var.run();
         }
         return null;
     }
@@ -888,15 +888,15 @@ public class q0 extends FrameLayout {
         kVar.setBackgroundDrawable(m6.N0(false));
     }
 
-    public final y0 i(int i7, m01 m01Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public final y0 i(int i7, l01 l01Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         q();
         y0 y0Var = new y0(0, getContext(), this.n0, false, false);
-        y0Var.j(str, i7, m01Var);
+        y0Var.j(str, i7, l01Var);
         y0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
         y0Var.setRightIcon(R.drawable.msg_arrowright);
         this.b.addView(y0Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) y0Var.getLayoutParams();
-        if (gd.a0) {
+        if (hd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -1074,7 +1074,7 @@ public class q0 extends FrameLayout {
             this.h.setEllipsize(TextUtils.TruncateAt.END);
             this.h.setVisibility(8);
             int i12 = 3;
-            this.h.setGravity(gd.a0 ? 5 : 3);
+            this.h.setGravity(hd.a0 ? 5 : 3);
             ah.i iVar = new ah.i(i12, getContext(), this);
             this.e = iVar;
             iVar.setScrollContainer(false);
@@ -1106,7 +1106,7 @@ public class q0 extends FrameLayout {
             this.f = linearLayout;
             linearLayout.setOrientation(0);
             this.f.setVisibility(0);
-            if (gd.a0) {
+            if (hd.a0) {
                 this.G.addView(this.f, ma.d(-2, 32.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
                 this.G.addView(this.e, ma.d(-1, 36.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
                 this.G.addView(this.h, ma.d(-2, 36.0f, 21, 0.0f, 5.5f, 48.0f, 0.0f));
@@ -1128,7 +1128,7 @@ public class q0 extends FrameLayout {
             this.s.setScaleX(0.0f);
             this.s.setScaleY(0.0f);
             this.s.setOnClickListener(new z(this, i10));
-            this.s.setContentDescription(gd.N0(2131752087, null));
+            this.s.setContentDescription(hd.N0(2131752087, null));
             this.G.addView(this.s, ma.e(48, -1, 21));
         }
     }
@@ -1493,15 +1493,15 @@ public class q0 extends FrameLayout {
         super.setOnClickListener(onClickListener);
     }
 
-    public void setOnMenuDismiss(final x10 x10Var) {
+    public void setOnMenuDismiss(final y10 y10Var) {
         g1 g1Var = this.d;
         if (g1Var != null) {
             g1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.ActionBar.a0
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public final void onDismiss() {
-                    x10 x10Var2 = x10Var;
-                    if (x10Var2 != null) {
-                        x10Var2.a(Boolean.valueOf(q0.this.U));
+                    y10 y10Var2 = y10Var;
+                    if (y10Var2 != null) {
+                        y10Var2.a(Boolean.valueOf(q0.this.U));
                     }
                 }
             });
@@ -1601,8 +1601,8 @@ public class q0 extends FrameLayout {
         this.N = i7;
     }
 
-    public void setSubMenuOverlayProvider(p10 p10Var) {
-        this.w0 = p10Var;
+    public void setSubMenuOverlayProvider(q10 q10Var) {
+        this.w0 = q10Var;
     }
 
     public void setText(CharSequence charSequence) {
@@ -1696,7 +1696,7 @@ public class q0 extends FrameLayout {
                     y0Var.setTag(Integer.valueOf(o0Var.b));
                     this.b.addView(y0Var);
                     LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) y0Var.getLayoutParams();
-                    if (gd.a0) {
+                    if (hd.a0) {
                         layoutParams.gravity = 5;
                     }
                     layoutParams.width = -1;
@@ -1721,7 +1721,7 @@ public class q0 extends FrameLayout {
                     y0Var2.getRightIcon().setVisibility(o0Var.m);
                     this.b.addView(y0Var2);
                     LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) y0Var2.getLayoutParams();
-                    if (gd.a0) {
+                    if (hd.a0) {
                         layoutParams2.gravity = 5;
                     }
                     layoutParams2.width = -1;

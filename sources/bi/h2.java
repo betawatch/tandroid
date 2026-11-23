@@ -1,18 +1,18 @@
 package bi;
 
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h2 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ n3 b;
-    public final /* synthetic */ x10 c;
+    public final /* synthetic */ y10 c;
 
-    public /* synthetic */ h2(n3 n3Var, x10 x10Var, int i7) {
+    public /* synthetic */ h2(n3 n3Var, y10 y10Var, int i7) {
         this.a = i7;
         this.b = n3Var;
-        this.c = x10Var;
+        this.c = y10Var;
     }
 
     @Override // java.lang.Runnable
@@ -20,28 +20,28 @@ public final /* synthetic */ class h2 implements Runnable {
         switch (this.a) {
             case 0:
                 n3 n3Var = this.b;
-                x10 x10Var = this.c;
-                if (x10Var != null) {
+                y10 y10Var = this.c;
+                if (y10Var != null) {
                     n3Var.getClass();
-                    x10Var.a(Boolean.FALSE);
+                    y10Var.a(Boolean.FALSE);
                 }
                 n3Var.dismiss();
                 break;
             case 1:
                 n3 n3Var2 = this.b;
-                x10 x10Var2 = this.c;
-                if (x10Var2 != null) {
+                y10 y10Var2 = this.c;
+                if (y10Var2 != null) {
                     n3Var2.getClass();
-                    x10Var2.a(Boolean.FALSE);
+                    y10Var2.a(Boolean.FALSE);
                 }
                 n3Var2.dismiss();
                 break;
             default:
                 n3 n3Var3 = this.b;
-                x10 x10Var3 = this.c;
-                if (x10Var3 != null) {
+                y10 y10Var3 = this.c;
+                if (y10Var3 != null) {
                     n3Var3.getClass();
-                    x10Var3.a(Boolean.FALSE);
+                    y10Var3.a(Boolean.FALSE);
                 }
                 n3Var3.dismiss();
                 break;

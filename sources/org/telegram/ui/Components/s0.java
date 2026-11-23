@@ -8,7 +8,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class s0 {
     public static final LongSparseArray a = new LongSparseArray();
@@ -18,7 +18,7 @@ public abstract class s0 {
         if (inputAiComposeTone == null) {
             return null;
         }
-        ArrayList arrayList = org.telegram.messenger.mp.u1(i7).T1().b;
+        ArrayList arrayList = org.telegram.messenger.np.u1(i7).T1().b;
         int size = arrayList.size();
         int i10 = 0;
         while (i10 < size) {
@@ -44,7 +44,7 @@ public abstract class s0 {
             return null;
         }
         if (!org.telegram.messenger.n5.C(j3)) {
-            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i7);
+            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i7);
             d02.k();
             TL_aicompose.inputAiComposeStyle inputaicomposestyle = (TL_aicompose.inputAiComposeStyle) d02.r1.f(j3);
             if (inputaicomposestyle != null) {
@@ -65,7 +65,7 @@ public abstract class s0 {
                     r0Var2.e = L0;
                 } else {
                     if (str == null) {
-                        str = org.telegram.messenger.gd.N0(2131754963, null);
+                        str = org.telegram.messenger.hd.N0(2131754963, null);
                     }
                     r0Var2.e = str;
                 }
@@ -168,7 +168,7 @@ public abstract class s0 {
         if (org.telegram.messenger.n5.C(j3)) {
             return;
         }
-        final org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i7);
+        final org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i7);
         if (r0Var == null || z10) {
             inputaicomposestyle = null;
         } else {
@@ -183,26 +183,26 @@ public abstract class s0 {
         TLRPC.InputPeer l1 = d02.getMessagesController().l1(j3);
         d02.k();
         final TL_aicompose.inputAiComposeStyle inputaicomposestyle2 = (TL_aicompose.inputAiComposeStyle) d02.r1.f(j3);
-        final TL_aicompose.inputAiComposeStyle inputaicomposestyle3 = org.telegram.messenger.ri.B0(inputaicomposestyle) ? null : inputaicomposestyle;
-        if (org.telegram.messenger.ri.j(inputaicomposestyle2, inputaicomposestyle3)) {
+        final TL_aicompose.inputAiComposeStyle inputaicomposestyle3 = org.telegram.messenger.si.B0(inputaicomposestyle) ? null : inputaicomposestyle;
+        if (org.telegram.messenger.si.j(inputaicomposestyle2, inputaicomposestyle3)) {
             return;
         }
         d02.H1(j3, inputaicomposestyle3);
         TL_aicompose.setChatStyle setchatstyle = new TL_aicompose.setChatStyle();
         setchatstyle.peer = l1;
         setchatstyle.style = inputaicomposestyle3;
-        d02.getConnectionsManager().sendRequestTyped(setchatstyle, new d3.b(1), new org.telegram.messenger.q10() { // from class: org.telegram.messenger.yg
-            @Override // org.telegram.messenger.q10
+        d02.getConnectionsManager().sendRequestTyped(setchatstyle, new d3.b(1), new org.telegram.messenger.r10() { // from class: org.telegram.messenger.zg
+            @Override // org.telegram.messenger.r10
             public final void a(Object obj, Object obj2) {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error != null) {
                     a8.d("aicompose.setChatStyle failed: " + tL_error.text);
-                    ri riVar = ri.this;
-                    riVar.k();
-                    a0.h hVar = riVar.r1;
+                    si siVar = si.this;
+                    siVar.k();
+                    a0.h hVar = siVar.r1;
                     long j11 = j3;
-                    if (ri.j((TL_aicompose.inputAiComposeStyle) hVar.f(j11), inputaicomposestyle3)) {
-                        riVar.H1(j11, inputaicomposestyle2);
+                    if (si.j((TL_aicompose.inputAiComposeStyle) hVar.f(j11), inputaicomposestyle3)) {
+                        siVar.H1(j11, inputaicomposestyle2);
                     }
                 }
             }

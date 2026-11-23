@@ -11,9 +11,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public int E;
     public int F;
     public int G;
@@ -52,7 +52,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         }
         if (!n50Var.N) {
             if (i7 >= n50Var.F && i7 < n50Var.G) {
-                n50Var.i0((TLRPC.TL_messages_stickerSet) org.telegram.messenger.ri.d0(n50Var.currentAccount).u0(n50Var.h0()).get(i7 - n50Var.F), ((org.telegram.ui.Cells.h8) view).a(), false);
+                n50Var.i0((TLRPC.TL_messages_stickerSet) org.telegram.messenger.si.d0(n50Var.currentAccount).u0(n50Var.h0()).get(i7 - n50Var.F), ((org.telegram.ui.Cells.h8) view).a(), false);
             }
             if (i7 == n50Var.K) {
                 n50Var.i0(n50Var.r, true, false);
@@ -90,7 +90,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             } else {
                 n50Var.w.stickerset = stickerSet;
             }
-            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(n50Var.currentAccount);
+            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(n50Var.currentAccount);
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = n50Var.r;
             d02.N.k(tL_messages_stickerSet2, tL_messages_stickerSet2.set.id);
         } else if (z10) {
@@ -114,9 +114,9 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 chatFull2.flags &= -257;
             }
         }
-        org.telegram.messenger.tr.a0(n50Var.currentAccount).N1(n50Var.w, false);
-        org.telegram.messenger.ks.f(n50Var.currentAccount).k(org.telegram.messenger.ks.T, n50Var.w, 0, Boolean.TRUE, Boolean.FALSE);
-        org.telegram.messenger.ks.f(n50Var.currentAccount).k(org.telegram.messenger.ks.s3, Long.valueOf(n50Var.w.id), Boolean.valueOf(z10));
+        org.telegram.messenger.ur.a0(n50Var.currentAccount).N1(n50Var.w, false);
+        org.telegram.messenger.ls.f(n50Var.currentAccount).k(org.telegram.messenger.ls.T, n50Var.w, 0, Boolean.TRUE, Boolean.FALSE);
+        org.telegram.messenger.ls.f(n50Var.currentAccount).k(org.telegram.messenger.ls.s3, Long.valueOf(n50Var.w.id), Boolean.valueOf(z10));
         n50Var.finishFragment();
     }
 
@@ -184,13 +184,13 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(this.O ? 2131749250 : 2131749204, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(this.O ? 2131749250 : 2131749204, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new dv(this, 10));
         org.telegram.ui.ActionBar.g5 b10 = this.simpleActionBar.t().b(0, R.drawable.outline_header_search);
         this.M = b10;
         b10.O();
         b10.C0 = new bi.w1(this, 13);
-        this.M.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
+        this.M.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
         this.e = new l50(this, context);
         this.f = new m50(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -230,17 +230,17 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.x0) {
+        if (i7 == org.telegram.messenger.ls.x0) {
             if (((Integer) objArr[0]).intValue() == h0()) {
                 l0(true);
                 return;
             }
             return;
         }
-        if (i7 != org.telegram.messenger.ks.T) {
-            if (i7 == org.telegram.messenger.ks.B0) {
+        if (i7 != org.telegram.messenger.ls.T) {
+            if (i7 == org.telegram.messenger.ls.B0) {
                 long longValue = ((Long) objArr[0]).longValue();
                 if (g0(this.w) == null || g0(this.w).id != longValue) {
                     return;
@@ -253,7 +253,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
         if (chatFull.id == this.x) {
             if (this.w == null && g0(chatFull) != null) {
-                this.r = org.telegram.messenger.ri.d0(this.currentAccount).a0(g0(chatFull));
+                this.r = org.telegram.messenger.si.d0(this.currentAccount).a0(g0(chatFull));
             }
             this.w = chatFull;
             l0(true);
@@ -305,7 +305,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final void j0(TLRPC.ChatFull chatFull) {
         this.w = chatFull;
         if (g0(chatFull) != null) {
-            this.r = org.telegram.messenger.ri.d0(this.currentAccount).a0(g0(this.w));
+            this.r = org.telegram.messenger.si.d0(this.currentAccount).a0(g0(this.w));
         }
     }
 
@@ -363,7 +363,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             this.H = i7 + 1;
             this.L = i7;
         }
-        ArrayList u02 = org.telegram.messenger.ri.d0(this.currentAccount).u0(h0());
+        ArrayList u02 = org.telegram.messenger.si.d0(this.currentAccount).u0(h0());
         if (u02.isEmpty()) {
             this.E = -1;
             this.F = -1;
@@ -394,7 +394,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     */
     public final void m0() {
         long j3;
-        ArrayList u02 = org.telegram.messenger.ri.d0(this.currentAccount).u0(h0());
+        ArrayList u02 = org.telegram.messenger.si.d0(this.currentAccount).u0(h0());
         this.n = -1;
         if (!this.s) {
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = this.r;
@@ -422,10 +422,10 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         super.onFragmentCreate();
-        org.telegram.messenger.ri.d0(this.currentAccount).D(h0());
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.x0);
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.T);
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.B0);
+        org.telegram.messenger.si.d0(this.currentAccount).D(h0());
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.x0);
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.T);
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.B0);
         l0(true);
         return true;
     }
@@ -437,9 +437,9 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         TLRPC.TL_channels_setStickers tL_channels_setStickers;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
         super.onFragmentDestroy();
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.x0);
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.T);
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.B0);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.x0);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.T);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.B0);
         if ((this.r != null || this.s) && (chatFull = this.w) != null) {
             if (g0(chatFull) == null || (tL_messages_stickerSet = this.r) == null || tL_messages_stickerSet.set.id != g0(this.w).id) {
                 if (g0(this.w) == null && this.r == null) {
@@ -449,7 +449,7 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 long j3 = this.x;
                 if (z10) {
                     TLRPC.TL_channels_setEmojiStickers tL_channels_setEmojiStickers = new TLRPC.TL_channels_setEmojiStickers();
-                    tL_channels_setEmojiStickers.channel = org.telegram.messenger.mp.u1(this.currentAccount).j1(j3);
+                    tL_channels_setEmojiStickers.channel = org.telegram.messenger.np.u1(this.currentAccount).j1(j3);
                     if (this.s) {
                         tL_channels_setEmojiStickers.stickerset = new TLRPC.TL_inputStickerSetEmpty();
                         tL_channels_setStickers = tL_channels_setEmojiStickers;
@@ -463,12 +463,12 @@ public final class n50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                     }
                 } else {
                     TLRPC.TL_channels_setStickers tL_channels_setStickers2 = new TLRPC.TL_channels_setStickers();
-                    tL_channels_setStickers2.channel = org.telegram.messenger.mp.u1(this.currentAccount).j1(j3);
+                    tL_channels_setStickers2.channel = org.telegram.messenger.np.u1(this.currentAccount).j1(j3);
                     if (this.s) {
                         tL_channels_setStickers2.stickerset = new TLRPC.TL_inputStickerSetEmpty();
                         tL_channels_setStickers = tL_channels_setStickers2;
                     } else {
-                        org.telegram.messenger.mp.u1(this.currentAccount).i7.edit().remove("group_hide_stickers_" + this.w.id).apply();
+                        org.telegram.messenger.np.u1(this.currentAccount).i7.edit().remove("group_hide_stickers_" + this.w.id).apply();
                         TLRPC.TL_inputStickerSetID tL_inputStickerSetID2 = new TLRPC.TL_inputStickerSetID();
                         tL_channels_setStickers2.stickerset = tL_inputStickerSetID2;
                         TLRPC.StickerSet stickerSet2 = this.r.set;

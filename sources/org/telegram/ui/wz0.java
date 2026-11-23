@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class wz0 implements Runnable {
                 s11 s11Var = this.b;
                 s11Var.getClass();
                 HashSet hashSet = ch.f0.a;
-                com.google.android.gms.internal.cast.b0 b0Var = org.telegram.messenger.ec.D().p;
+                com.google.android.gms.internal.cast.b0 b0Var = org.telegram.messenger.fc.D().p;
                 if (((CountDownLatch) b0Var.c) == null) {
                     b0Var.c = new CountDownLatch(1);
                 }
@@ -55,10 +55,10 @@ public final /* synthetic */ class wz0 implements Runnable {
                 break;
             default:
                 s11 s11Var3 = this.b;
-                org.telegram.messenger.ks e10 = org.telegram.messenger.ks.e();
+                org.telegram.messenger.ls e10 = org.telegram.messenger.ls.e();
                 wz0 wz0Var = s11Var3.T1;
                 e10.e.remove(wz0Var);
-                org.telegram.messenger.ks.e().d(wz0Var);
+                org.telegram.messenger.ls.e().d(wz0Var);
                 break;
         }
     }

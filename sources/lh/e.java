@@ -19,7 +19,7 @@ import hi.l3;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.n30;
@@ -28,7 +28,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.dh;
 import org.telegram.ui.ee;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements te.b, b6 {
     public static final int[] I = {R.drawable.msg_search, R.drawable.input_gift_s, R.drawable.input_message, R.drawable.msg_help, R.drawable.msg_help};
@@ -117,11 +117,11 @@ public class e extends FrameLayout implements te.b, b6 {
                                                 bnVar2.a1.l(bnVar2.L);
                                                 bnVar2.a1.r(false);
                                                 hi.l3 l3Var3 = bnVar2.a1;
-                                                String N0 = org.telegram.messenger.gd.N0(2131744183, null);
+                                                String N0 = org.telegram.messenger.hd.N0(2131744181, null);
                                                 if (l3Var3.getMeasuredWidth() < 0) {
                                                     l3Var3.H = N0;
                                                 } else {
-                                                    l3Var3.I.t(N0, !org.telegram.messenger.gd.a0, true);
+                                                    l3Var3.I.t(N0, !org.telegram.messenger.hd.a0, true);
                                                 }
                                                 bnVar2.a1.o(1.0f, (-width) + 7.33f);
                                                 bnVar2.m1.addView(bnVar2.a1, c8.ma.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
@@ -141,7 +141,7 @@ public class e extends FrameLayout implements te.b, b6 {
                                                 l3Var5.setPadding(org.telegram.messenger.g0.L(7.33f), 0, org.telegram.messenger.g0.L(7.33f), 0);
                                                 bnVar2.Y0.l(bnVar2.L);
                                                 bnVar2.Y0.r(false);
-                                                bnVar2.Y0.v(org.telegram.messenger.gd.N0(2131750234, null));
+                                                bnVar2.Y0.v(org.telegram.messenger.hd.N0(2131750234, null));
                                                 bnVar2.Y0.o(1.0f, (-width2) + 7.33f);
                                                 bnVar2.m1.addView(bnVar2.Y0, c8.ma.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f12 + 50.0f));
                                                 hi.l3 l3Var6 = bnVar2.Y0;
@@ -177,11 +177,11 @@ public class e extends FrameLayout implements te.b, b6 {
                                                 bnVar2.a1.l(bnVar2.L);
                                                 bnVar2.a1.r(false);
                                                 hi.l3 l3Var3 = bnVar2.a1;
-                                                String N0 = org.telegram.messenger.gd.N0(2131744183, null);
+                                                String N0 = org.telegram.messenger.hd.N0(2131744181, null);
                                                 if (l3Var3.getMeasuredWidth() < 0) {
                                                     l3Var3.H = N0;
                                                 } else {
-                                                    l3Var3.I.t(N0, !org.telegram.messenger.gd.a0, true);
+                                                    l3Var3.I.t(N0, !org.telegram.messenger.hd.a0, true);
                                                 }
                                                 bnVar2.a1.o(1.0f, (-width) + 7.33f);
                                                 bnVar2.m1.addView(bnVar2.a1, c8.ma.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
@@ -201,7 +201,7 @@ public class e extends FrameLayout implements te.b, b6 {
                                                 l3Var5.setPadding(org.telegram.messenger.g0.L(7.33f), 0, org.telegram.messenger.g0.L(7.33f), 0);
                                                 bnVar2.Y0.l(bnVar2.L);
                                                 bnVar2.Y0.r(false);
-                                                bnVar2.Y0.v(org.telegram.messenger.gd.N0(2131750234, null));
+                                                bnVar2.Y0.v(org.telegram.messenger.hd.N0(2131750234, null));
                                                 bnVar2.Y0.o(1.0f, (-width2) + 7.33f);
                                                 bnVar2.m1.addView(bnVar2.Y0, c8.ma.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f12 + 50.0f));
                                                 hi.l3 l3Var6 = bnVar2.Y0;
@@ -365,13 +365,13 @@ public class e extends FrameLayout implements te.b, b6 {
                     te.a aVar = new te.a((i7 << 16) | 1, this, nr.h, 300L, false);
                     kh.a d = kh.a.d(getContext(), this.n, this.r, this.h, I[i7], 48);
                     if (i7 == 1) {
-                        d.setContentDescription(gd.N0(2131746541, null));
+                        d.setContentDescription(hd.N0(2131746541, null));
                     } else if (i7 == 2) {
-                        d.setContentDescription(gd.N0(2131752325, null));
+                        d.setContentDescription(hd.N0(2131752325, null));
                     } else if (i7 == 0) {
-                        d.setContentDescription(gd.N0(2131745640, null));
+                        d.setContentDescription(hd.N0(2131745640, null));
                     } else if (i7 == 3) {
-                        d.setContentDescription(gd.N0(2131752868, null));
+                        d.setContentDescription(hd.N0(2131752868, null));
                     }
                     ra.b(d, 0.13f, 2.0f);
                     d.setVisibility(8);

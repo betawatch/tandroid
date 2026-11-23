@@ -6,7 +6,7 @@ import android.graphics.Shader;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d40 extends LinearLayout {
     public final org.telegram.ui.Components.o6 a;
@@ -30,13 +30,13 @@ public final class d40 extends LinearLayout {
         textView.setTextColor(-1);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(org.telegram.messenger.gd.N0(2131743203, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131743201, null));
         addView(o6Var, c8.ma.o(-1, 46));
         addView(textView, c8.ma.o(-2, -2));
     }
 
     public void setWatchersCount(int i7) {
-        String E = org.telegram.messenger.gd.E(i7, ',');
+        String E = org.telegram.messenger.hd.E(i7, ',');
         org.telegram.ui.Components.o6 o6Var = this.a;
         float measureText = o6Var.getPaint().measureText((CharSequence) E, 0, E.length());
         if (this.b != measureText) {

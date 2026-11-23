@@ -12,9 +12,9 @@ import h2.l0;
 import h2.x;
 import java.lang.reflect.Array;
 import java.util.List;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c implements z3.b {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final class c implements z3.b {
             int i12 = 8 - i10;
             int min = Math.min(i7, i12);
             int i13 = i12 - min;
-            int i14 = (ks.e4 >> (8 - min)) << i13;
+            int i14 = (ls.e4 >> (8 - min)) << i13;
             int i15 = this.b;
             int i16 = (i14 & bArr[i15]) >> i13;
             i7 -= min;
@@ -86,7 +86,7 @@ public final class c implements z3.b {
             }
             if (i7 > 0) {
                 int i21 = 8 - i7;
-                int i22 = ((bArr[this.b] & ((ks.e4 >> i21) << i21)) >> i21) | (i11 << i7);
+                int i22 = ((bArr[this.b] & ((ls.e4 >> i21) << i21)) >> i21) | (i11 << i7);
                 this.c += i7;
                 return i22;
             }

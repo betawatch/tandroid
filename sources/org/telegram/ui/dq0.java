@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dq0 extends org.telegram.ui.Components.le0 {
     public final Rect N;
@@ -21,7 +21,7 @@ public final class dq0 extends org.telegram.ui.Components.le0 {
     public dq0(PhotoViewer photoViewer, PhotoViewer photoViewer2, Context context, org.telegram.ui.ActionBar.y0 y0Var) {
         super(context);
         this.O = photoViewer;
-        this.a = org.telegram.messenger.j10.t0;
+        this.a = org.telegram.messenger.k10.t0;
         this.w = new ArrayList();
         this.M = new org.telegram.ui.Components.hb0(this, 9);
         this.b = photoViewer2;

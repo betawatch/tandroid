@@ -6,7 +6,7 @@ import android.util.StateSet;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hb0 implements Runnable {
     public final /* synthetic */ int a;
@@ -161,14 +161,14 @@ public final /* synthetic */ class hb0 implements Runnable {
                 org.telegram.messenger.w7.G(i7).P(arrayList2);
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
                     org.telegram.messenger.w7.G(i7);
-                    if (org.telegram.messenger.w7.M(((org.telegram.messenger.fj) arrayList.get(i10)).k, false, true).exists()) {
-                        arrayList3.add((org.telegram.messenger.fj) arrayList.get(i10));
+                    if (org.telegram.messenger.w7.M(((org.telegram.messenger.gj) arrayList.get(i10)).k, false, true).exists()) {
+                        arrayList3.add((org.telegram.messenger.gj) arrayList.get(i10));
                     }
                 }
                 for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                     org.telegram.messenger.w7.G(i7);
-                    if (!org.telegram.messenger.w7.M(((org.telegram.messenger.fj) arrayList2.get(i11)).k, false, true).exists()) {
-                        arrayList4.add((org.telegram.messenger.fj) arrayList2.get(i11));
+                    if (!org.telegram.messenger.w7.M(((org.telegram.messenger.gj) arrayList2.get(i11)).k, false, true).exists()) {
+                        arrayList4.add((org.telegram.messenger.gj) arrayList2.get(i11));
                     }
                 }
                 org.telegram.messenger.g0.g3(new g(sl0Var, arrayList3, arrayList4, 23));

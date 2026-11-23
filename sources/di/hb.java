@@ -6,11 +6,11 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.np;
 import org.telegram.messenger.o10;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.r50;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hb extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -48,19 +48,19 @@ public final class hb extends n41 {
         long o4 = org.telegram.messenger.n5.o(starsSubscription.peer);
         ibVar.r = !TextUtils.isEmpty(starsSubscription.title);
         if (o4 < 0) {
-            TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-o4));
+            TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-o4));
             org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
             b9Var.q(O0);
             q9Var.f(O0, b9Var);
             q10 = O0 != null ? O0.title : null;
             z11 = false;
         } else {
-            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(o4));
+            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(o4));
             org.telegram.ui.Components.b9 b9Var2 = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
             b9Var2.r(c22);
             q9Var.f(c22, b9Var2);
-            q10 = o10.q(c22);
-            z11 = !o10.u(c22);
+            q10 = p10.q(c22);
+            z11 = !p10.u(c22);
         }
         long currentTime = ConnectionsManager.getInstance(i7).getCurrentTime();
         boolean z12 = z11;
@@ -77,7 +77,7 @@ public final class hb extends n41 {
                 SpannableString spannableString = new SpannableString("x");
                 m5Var = m5Var2;
                 spannableString.setSpan(r50Var, 0, 1, 33);
-                r50Var.b.q0(org.telegram.messenger.fc.p(h20.c(starsSubscription.photo)), "14_14", null, null, 0, 0);
+                r50Var.b.q0(org.telegram.messenger.gc.p(i20.c(starsSubscription.photo)), "14_14", null, null, 0, 0);
                 spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
             } else {
                 m5Var = m5Var2;
@@ -88,24 +88,24 @@ public final class hb extends n41 {
         textView2.setTextSize(1, ibVar.r ? 13.0f : 14.0f);
         if (starsSubscription.canceled || starsSubscription.bot_canceled) {
             long j3 = starsSubscription.until_date;
-            textView2.setText(gd.a0(null, null, j3 >= currentTime ? 2131744743 : 2131744749, gd.u(j3, false)));
+            textView2.setText(hd.a0(null, null, j3 >= currentTime ? 2131744741 : 2131744747, hd.u(j3, false)));
             textView.setVisibility(8);
             org.telegram.ui.ActionBar.t6.U(textView4, org.telegram.ui.ActionBar.m6.nk, h6Var);
-            textView4.setText(gd.N0(starsSubscription.bot_canceled ? z12 ? 2131744734 : 2131744733 : 2131744732, null));
+            textView4.setText(hd.N0(starsSubscription.bot_canceled ? z12 ? 2131744732 : 2131744731 : 2131744730, null));
         } else {
             long j10 = starsSubscription.until_date;
             if (j10 < currentTime) {
-                textView2.setText(gd.a0(null, null, 2131744749, gd.u(j10, false)));
+                textView2.setText(hd.a0(null, null, 2131744747, hd.u(j10, false)));
                 textView.setVisibility(8);
-                n10.r(textView4, org.telegram.ui.ActionBar.m6.nk, h6Var, null, 2131744731);
+                o10.r(textView4, org.telegram.ui.ActionBar.m6.nk, h6Var, null, 2131744729);
             } else {
-                textView2.setText(gd.a0(null, null, 2131744736, gd.u(j10, false)));
+                textView2.setText(hd.a0(null, null, 2131744734, hd.u(j10, false)));
                 textView.setVisibility(0);
                 textView.setText(pb.b1(false, "⭐️ " + Long.toString(starsSubscription.pricing.amount), 0.8f, null));
                 org.telegram.ui.ActionBar.t6.U(textView4, org.telegram.ui.ActionBar.m6.z6, h6Var);
                 int i10 = starsSubscription.pricing.period;
                 if (i10 == 2592000) {
-                    textView4.setText(gd.N0(2131744815, null));
+                    textView4.setText(hd.N0(2131744813, null));
                 } else if (i10 == 60) {
                     textView4.setText("per minute");
                 } else if (i10 == 300) {

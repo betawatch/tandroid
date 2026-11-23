@@ -15,7 +15,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class q9 extends View {
     public xy0 E;
@@ -79,8 +79,8 @@ public class q9 extends View {
         d();
     }
 
-    public final void g(int i7, long j3, Object obj, String str, String str2, String str3, org.telegram.messenger.fc fcVar, org.telegram.messenger.fc fcVar2) {
-        this.a.r0(fcVar, str, fcVar2, str2, null, j3, str3, obj, i7);
+    public final void g(int i7, long j3, Object obj, String str, String str2, String str3, org.telegram.messenger.gc gcVar, org.telegram.messenger.gc gcVar2) {
+        this.a.r0(gcVar, str, gcVar2, str2, null, j3, str3, obj, i7);
         d();
     }
 
@@ -104,28 +104,28 @@ public class q9 extends View {
     }
 
     public final void h(String str, String str2, Drawable drawable) {
-        n(org.telegram.messenger.fc.g(str), str2, null, null, drawable, null, 0, null);
+        n(org.telegram.messenger.gc.g(str), str2, null, null, drawable, null, 0, null);
     }
 
-    public final void j(org.telegram.messenger.fc fcVar, String str, Drawable drawable, Object obj) {
-        n(fcVar, str, null, null, drawable, null, 0, obj);
+    public final void j(org.telegram.messenger.gc gcVar, String str, Drawable drawable, Object obj) {
+        n(gcVar, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void k(org.telegram.messenger.fc fcVar, String str, String str2, Drawable drawable, Object obj) {
-        n(fcVar, str, null, null, drawable, str2, 0, obj);
+    public final void k(org.telegram.messenger.gc gcVar, String str, String str2, Drawable drawable, Object obj) {
+        n(gcVar, str, null, null, drawable, str2, 0, obj);
     }
 
-    public final void l(org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, String str2, int i7, Object obj) {
-        n(fcVar, str, fcVar2, str2, null, null, i7, obj);
+    public final void l(org.telegram.messenger.gc gcVar, String str, org.telegram.messenger.gc gcVar2, String str2, int i7, Object obj) {
+        n(gcVar, str, gcVar2, str2, null, null, i7, obj);
     }
 
-    public final void m(org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, String str2, Drawable drawable, Object obj) {
-        this.a.u0(fcVar, str, fcVar2, str2, null, null, drawable, 0L, null, obj, 1);
+    public final void m(org.telegram.messenger.gc gcVar, String str, org.telegram.messenger.gc gcVar2, String str2, Drawable drawable, Object obj) {
+        this.a.u0(gcVar, str, gcVar2, str2, null, null, drawable, 0L, null, obj, 1);
         d();
     }
 
-    public final void n(org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, String str2, Drawable drawable, String str3, int i7, Object obj) {
-        this.a.r0(fcVar, str, fcVar2, str2, drawable, i7, str3, obj, 0);
+    public final void n(org.telegram.messenger.gc gcVar, String str, org.telegram.messenger.gc gcVar2, String str2, Drawable drawable, String str3, int i7, Object obj) {
+        this.a.r0(gcVar, str, gcVar2, str2, drawable, i7, str3, obj, 0);
         d();
     }
 
@@ -201,15 +201,15 @@ public class q9 extends View {
         }
     }
 
-    public final void p(org.telegram.messenger.fc fcVar, String str, Drawable drawable, Object obj) {
-        n(fcVar, str, null, null, drawable, null, 0, obj);
+    public final void p(org.telegram.messenger.gc gcVar, String str, Drawable drawable, Object obj) {
+        n(gcVar, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void q(t51 t51Var, org.telegram.messenger.fc fcVar, String str, org.telegram.messenger.fc fcVar2, org.telegram.messenger.fc fcVar3, String str2, int i7, String str3) {
+    public final void q(t51 t51Var, org.telegram.messenger.gc gcVar, String str, org.telegram.messenger.gc gcVar2, org.telegram.messenger.gc gcVar3, String str2, int i7, String str3) {
         if (t51Var != null) {
             this.a.w0(t51Var);
         } else {
-            this.a.u0(fcVar, str, fcVar2, null, fcVar3, str2, null, i7, null, str3, 1);
+            this.a.u0(gcVar, str, gcVar2, null, gcVar3, str2, null, i7, null, str3, 1);
         }
         d();
     }

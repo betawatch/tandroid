@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class ba extends ek0 {
     public int f3;
@@ -18,7 +18,7 @@ public abstract class ba extends ek0 {
         if (getLayoutParams() == null) {
             return;
         }
-        if (!org.telegram.messenger.bz.f()) {
+        if (!org.telegram.messenger.cz.f()) {
             this.f3 = 0;
             ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
         } else {

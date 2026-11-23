@@ -13,9 +13,9 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class y9 extends FrameLayout implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.b6 {
+public final class y9 extends FrameLayout implements org.telegram.messenger.gs, org.telegram.ui.ActionBar.b6 {
     public boolean E;
     public int F;
     public int G;
@@ -60,9 +60,9 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
         this.h.start();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.Y1) {
+        if (i7 == org.telegram.messenger.ls.Y1) {
             String str = (String) objArr[0];
             String str2 = this.r;
             if (str2 == null || !str2.equals(str)) {
@@ -72,7 +72,7 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
             org.telegram.messenger.t0.a.v((Activity) getContext(), this.n.document);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.Z1) {
+        if (i7 == org.telegram.messenger.ls.Z1) {
             String str3 = (String) objArr[0];
             String str4 = this.r;
             if (str4 == null || !str4.equals(str3)) {
@@ -81,7 +81,7 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
             a(false);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.X1) {
+        if (i7 == org.telegram.messenger.ls.X1) {
             String str5 = (String) objArr[0];
             String str6 = this.r;
             if (str6 == null || !str6.equals(str5)) {
@@ -107,9 +107,9 @@ public final class y9 extends FrameLayout implements org.telegram.messenger.fs, 
     public void setVisibility(int i7) {
         super.setVisibility(i7);
         if (i7 == 8) {
-            org.telegram.messenger.ks.f(this.s).n(this, org.telegram.messenger.ks.Y1);
-            org.telegram.messenger.ks.f(this.s).n(this, org.telegram.messenger.ks.Z1);
-            org.telegram.messenger.ks.f(this.s).n(this, org.telegram.messenger.ks.X1);
+            org.telegram.messenger.ls.f(this.s).n(this, org.telegram.messenger.ls.Y1);
+            org.telegram.messenger.ls.f(this.s).n(this, org.telegram.messenger.ls.Z1);
+            org.telegram.messenger.ls.f(this.s).n(this, org.telegram.messenger.ls.X1);
         }
     }
 

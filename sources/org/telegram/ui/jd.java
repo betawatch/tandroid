@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class jd implements RequestDelegate {
                     if (tLObject instanceof TLRPC.Updates) {
                         xd xdVar = this.b;
                         org.telegram.messenger.g0.g3(new cd(xdVar, 3));
-                        org.telegram.messenger.mp.u1(xdVar.p0).V3((TLRPC.Updates) tLObject, false);
+                        org.telegram.messenger.np.u1(xdVar.p0).V3((TLRPC.Updates) tLObject, false);
                         break;
                     }
                 } else {
@@ -45,12 +45,12 @@ public final /* synthetic */ class jd implements RequestDelegate {
                             case 0:
                                 if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
                                     TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
-                                    xdVar3.m1 = c51.i0(tL_payments_starsRevenueStats.top_hours_graph, org.telegram.messenger.gd.N0(2131748209, null), 0, false);
+                                    xdVar3.m1 = c51.i0(tL_payments_starsRevenueStats.top_hours_graph, org.telegram.messenger.hd.N0(2131748209, null), 0, false);
                                     TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
                                     if (statsGraph != null) {
                                         statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
                                     }
-                                    xdVar3.n1 = c51.i0(statsGraph, org.telegram.messenger.gd.N0(2131748208, null), 2, false);
+                                    xdVar3.n1 = c51.i0(statsGraph, org.telegram.messenger.hd.N0(2131748208, null), 2, false);
                                     o41 o41Var = xdVar3.m1;
                                     if (o41Var != null) {
                                         o41Var.n = true;
@@ -87,12 +87,12 @@ public final /* synthetic */ class jd implements RequestDelegate {
                             case 0:
                                 if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
                                     TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
-                                    xdVar32.m1 = c51.i0(tL_payments_starsRevenueStats.top_hours_graph, org.telegram.messenger.gd.N0(2131748209, null), 0, false);
+                                    xdVar32.m1 = c51.i0(tL_payments_starsRevenueStats.top_hours_graph, org.telegram.messenger.hd.N0(2131748209, null), 0, false);
                                     TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
                                     if (statsGraph != null) {
                                         statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
                                     }
-                                    xdVar32.n1 = c51.i0(statsGraph, org.telegram.messenger.gd.N0(2131748208, null), 2, false);
+                                    xdVar32.n1 = c51.i0(statsGraph, org.telegram.messenger.hd.N0(2131748208, null), 2, false);
                                     o41 o41Var = xdVar32.m1;
                                     if (o41Var != null) {
                                         o41Var.n = true;

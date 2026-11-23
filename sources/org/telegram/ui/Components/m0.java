@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m0 extends FrameLayout {
     public final int a;
@@ -40,7 +40,7 @@ public final class m0 extends FrameLayout {
         this.s = new d6(k0Var, 0L, 320L, nrVar);
         if (!z10) {
             this.d = null;
-            addView(k0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+            addView(k0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
             return;
         }
         if (i10 == 0) {
@@ -53,10 +53,10 @@ public final class m0 extends FrameLayout {
             scrollView.setFillViewport(true);
         }
         this.d.addView(k0Var);
-        addView(this.d, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(this.d, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
     }
 
-    public final void a(int i7, String str, org.telegram.messenger.x10 x10Var) {
+    public final void a(int i7, String str, org.telegram.messenger.y10 y10Var) {
         k0 k0Var = this.c;
         int childCount = k0Var.getChildCount();
         l0 l0Var = new l0(this.a, getContext(), this.b);
@@ -65,11 +65,11 @@ public final class m0 extends FrameLayout {
         l0Var.f = false;
         l0Var.h.setImageResource(i7);
         l0Var.n.setText(str);
-        l0Var.setOnClickListener(new ci.q(x10Var, childCount, 9));
-        k0Var.addView(l0Var, c8.ma.p(k0Var.getOrientation() == 0 ? 0 : -1, k0Var.getOrientation() != 1 ? -1 : 0, 1.0f, org.telegram.messenger.ks.E1));
+        l0Var.setOnClickListener(new ci.q(y10Var, childCount, 9));
+        k0Var.addView(l0Var, c8.ma.p(k0Var.getOrientation() == 0 ? 0 : -1, k0Var.getOrientation() != 1 ? -1 : 0, 1.0f, org.telegram.messenger.ls.E1));
     }
 
-    public final void b(TL_aicompose.AiComposeTone aiComposeTone, org.telegram.messenger.x10 x10Var) {
+    public final void b(TL_aicompose.AiComposeTone aiComposeTone, org.telegram.messenger.y10 y10Var) {
         l0 l0Var = new l0(this.a, getContext(), this.b);
         l0Var.e = aiComposeTone;
         l0Var.c = this.e;
@@ -79,24 +79,24 @@ public final class m0 extends FrameLayout {
         if (aiComposeTone == null) {
             l0Var.d = false;
             l0Var.updateColors();
-            String N0 = org.telegram.messenger.gd.N0(2131754975, null);
+            String N0 = org.telegram.messenger.hd.N0(2131754975, null);
             l0Var.f = false;
             q9Var.setImageResource(R.drawable.tone_create);
             textView.setText(N0);
         } else if (aiComposeTone instanceof j0) {
             l0Var.d = false;
             l0Var.updateColors();
-            String N02 = org.telegram.messenger.gd.N0(2131754973, null);
+            String N02 = org.telegram.messenger.hd.N0(2131754973, null);
             l0Var.f = false;
             q9Var.setImageResource(R.drawable.iv_prompt);
             textView.setText(N02);
         } else {
             l0Var.a(null, aiComposeTone.title, Long.valueOf(aiComposeTone.emoji_id));
         }
-        l0Var.setOnClickListener(new oi.i1(21, x10Var, aiComposeTone));
+        l0Var.setOnClickListener(new oi.i1(21, y10Var, aiComposeTone));
         l0Var.setOnLongClickListener(new fi.z1(1, this, l0Var));
         k0 k0Var = this.c;
-        k0Var.addView(l0Var, c8.ma.p(k0Var.getOrientation() == 0 ? 0 : -1, k0Var.getOrientation() != 1 ? -1 : 0, 1.0f, org.telegram.messenger.ks.E1));
+        k0Var.addView(l0Var, c8.ma.p(k0Var.getOrientation() == 0 ? 0 : -1, k0Var.getOrientation() != 1 ? -1 : 0, 1.0f, org.telegram.messenger.ls.E1));
     }
 
     public final void c(int i7, boolean z10) {

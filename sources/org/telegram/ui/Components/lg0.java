@@ -10,7 +10,7 @@ import android.os.Build;
 import android.util.DisplayMetrics;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class lg0 extends FrameLayout {
     public final Paint a;
@@ -28,10 +28,10 @@ public class lg0 extends FrameLayout {
         this.a = paint;
         this.b = new Path();
         paint.setColor(-16777216);
-        if (Build.VERSION.SDK_INT < 31 || org.telegram.messenger.bz.o() < 1) {
+        if (Build.VERSION.SDK_INT < 31 || org.telegram.messenger.cz.o() < 1) {
             this.c = new ig0(this);
         } else {
-            this.c = new jg0(this, org.telegram.messenger.bz.o() == 2 ? 1.0f : 1.5f);
+            this.c = new jg0(this, org.telegram.messenger.cz.o() == 2 ? 1.0f : 1.5f);
         }
         setIntensity(15.0f);
         setBlurIntensity(0.0f);

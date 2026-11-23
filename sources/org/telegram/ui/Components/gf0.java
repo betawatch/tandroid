@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gf0 extends org.telegram.ui.Cells.z implements xm0, org.telegram.messenger.y5, org.telegram.ui.ActionBar.b6 {
     public int E;
@@ -24,7 +24,7 @@ public final class gf0 extends org.telegram.ui.Cells.z implements xm0, org.teleg
     public int K;
     public int L;
     public boolean f;
-    public org.telegram.messenger.fj h;
+    public org.telegram.messenger.gj h;
     public int n;
     public TextPaint r;
     public ym0 s;
@@ -44,15 +44,15 @@ public final class gf0 extends org.telegram.ui.Cells.z implements xm0, org.teleg
 
     @Override // org.telegram.ui.Components.xm0
     public final void a(float f10) {
-        org.telegram.messenger.fj fjVar = this.h;
-        if (fjVar == null) {
+        org.telegram.messenger.gj gjVar = this.h;
+        if (gjVar == null) {
             return;
         }
-        fjVar.b0 = f10;
+        gjVar.b0 = f10;
         MediaController.B().i0(this.h, f10);
     }
 
-    public final org.telegram.messenger.fj getMessageObject() {
+    public final org.telegram.messenger.gj getMessageObject() {
         return this.h;
     }
 
@@ -195,7 +195,7 @@ public final class gf0 extends org.telegram.ui.Cells.z implements xm0, org.teleg
                     if (!this.h.N3()) {
                         TLRPC.Message message = this.h.k;
                         if (message.media_unread && message.peer_id.channel_id == 0) {
-                            org.telegram.messenger.mp.u1(this.n).y3(this.h);
+                            org.telegram.messenger.np.u1(this.n).y3(this.h);
                             this.h.k.media_unread = false;
                         }
                     }
@@ -233,9 +233,9 @@ public final class gf0 extends org.telegram.ui.Cells.z implements xm0, org.teleg
         return !e10 ? super.onTouchEvent(motionEvent) : e10;
     }
 
-    public void setMessageObject(org.telegram.messenger.fj fjVar) {
-        if (this.h != fjVar) {
-            this.n = fjVar.K1;
+    public void setMessageObject(org.telegram.messenger.gj gjVar) {
+        if (this.h != gjVar) {
+            this.n = gjVar.K1;
             ym0 ym0Var = this.s;
             int i7 = org.telegram.ui.ActionBar.m6.le;
             int x02 = org.telegram.ui.ActionBar.m6.x0(null, i7, false);
@@ -245,7 +245,7 @@ public final class gf0 extends org.telegram.ui.Cells.z implements xm0, org.teleg
             qg0 qg0Var = this.w;
             qg0Var.a.setColor(-2497813);
             qg0Var.b.setColor(-7944712);
-            this.h = fjVar;
+            this.h = gjVar;
             this.f = false;
             requestLayout();
         }
@@ -287,7 +287,7 @@ public final class gf0 extends org.telegram.ui.Cells.z implements xm0, org.teleg
             org.telegram.messenger.a6.q(this.n).a(S0, null, this);
             if (org.telegram.messenger.w7.G(this.n).S(S0)) {
                 this.E = 3;
-                Float w10 = org.telegram.messenger.ec.D().w(S0);
+                Float w10 = org.telegram.messenger.fc.D().w(S0);
                 if (w10 != null) {
                     qg0Var.a(w10.floatValue());
                 } else {
@@ -304,13 +304,13 @@ public final class gf0 extends org.telegram.ui.Cells.z implements xm0, org.teleg
     public final void w() {
         int i7;
         TextPaint textPaint = this.r;
-        org.telegram.messenger.fj fjVar = this.h;
-        if (fjVar == null) {
+        org.telegram.messenger.gj gjVar = this.h;
+        if (gjVar == null) {
             return;
         }
         ym0 ym0Var = this.s;
         if (!ym0Var.e) {
-            ym0Var.h(fjVar.b0);
+            ym0Var.h(gjVar.b0);
         }
         if (!MediaController.B().I(this.h)) {
             int i10 = 0;

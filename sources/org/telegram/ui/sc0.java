@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sc0 extends org.telegram.ui.Components.iu0 {
     public GoogleSignInAccount E;
@@ -65,7 +65,7 @@ public final class sc0 extends org.telegram.ui.Components.iu0 {
                 this.c = textView;
                 i5.c.x(textView, 1, 18.0f);
                 int i10 = 3;
-                textView.setText(org.telegram.messenger.gd.N0(de0Var.G != 3 ? 2131751108 : 2131754438, null));
+                textView.setText(org.telegram.messenger.hd.N0(de0Var.G != 3 ? 2131751108 : 2131754438, null));
                 textView.setGravity(17);
                 textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                 addView(textView, c8.ma.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -74,11 +74,11 @@ public final class sc0 extends org.telegram.ui.Components.iu0 {
                 m80Var.setTextSize(1, 14.0f);
                 m80Var.setGravity(17);
                 m80Var.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-                m80Var.setText(org.telegram.messenger.gd.N0(2131754439, null));
+                m80Var.setText(org.telegram.messenger.hd.N0(2131754439, null));
                 addView(m80Var, c8.ma.t(-2, -2, 1, 32, 8, 32, 0));
                 org.telegram.ui.Components.yb0 yb0Var = new org.telegram.ui.Components.yb0(context, null);
                 this.a = yb0Var;
-                yb0Var.setText(org.telegram.messenger.gd.N0(de0Var.G != 3 ? 2131742543 : 2131742559, null));
+                yb0Var.setText(org.telegram.messenger.hd.N0(de0Var.G != 3 ? 2131742541 : 2131742557, null));
                 EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
                 this.b = editTextBoldCursor;
                 editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(20.0f));
@@ -107,7 +107,7 @@ public final class sc0 extends org.telegram.ui.Components.iu0 {
                 drawable.setBounds(0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(27.0f));
                 spannableStringBuilder.setSpan(new ImageSpan(drawable, 0), 0, 1, 33);
                 spannableStringBuilder.setSpan(new org.telegram.ui.Components.uy(i10), 1, 2, 33);
-                spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131745125, null));
+                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131745125, null));
                 textView2.setText(spannableStringBuilder);
                 org.telegram.ui.Components.t80 t80Var = new org.telegram.ui.Components.t80(context);
                 this.f = t80Var;
@@ -128,7 +128,7 @@ public final class sc0 extends org.telegram.ui.Components.iu0 {
         this.c = textView3;
         i5.c.x(textView3, 1, 18.0f);
         int i102 = 3;
-        textView3.setText(org.telegram.messenger.gd.N0(de0Var.G != 3 ? 2131751108 : 2131754438, null));
+        textView3.setText(org.telegram.messenger.hd.N0(de0Var.G != 3 ? 2131751108 : 2131754438, null));
         textView3.setGravity(17);
         textView3.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(textView3, c8.ma.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -137,11 +137,11 @@ public final class sc0 extends org.telegram.ui.Components.iu0 {
         m80Var2.setTextSize(1, 14.0f);
         m80Var2.setGravity(17);
         m80Var2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        m80Var2.setText(org.telegram.messenger.gd.N0(2131754439, null));
+        m80Var2.setText(org.telegram.messenger.hd.N0(2131754439, null));
         addView(m80Var2, c8.ma.t(-2, -2, 1, 32, 8, 32, 0));
         org.telegram.ui.Components.yb0 yb0Var2 = new org.telegram.ui.Components.yb0(context, null);
         this.a = yb0Var2;
-        yb0Var2.setText(org.telegram.messenger.gd.N0(de0Var.G != 3 ? 2131742543 : 2131742559, null));
+        yb0Var2.setText(org.telegram.messenger.hd.N0(de0Var.G != 3 ? 2131742541 : 2131742557, null));
         EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
         this.b = editTextBoldCursor2;
         editTextBoldCursor2.setCursorSize(org.telegram.messenger.g0.L(20.0f));
@@ -170,7 +170,7 @@ public final class sc0 extends org.telegram.ui.Components.iu0 {
         drawable2.setBounds(0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(27.0f));
         spannableStringBuilder2.setSpan(new ImageSpan(drawable2, 0), 0, 1, 33);
         spannableStringBuilder2.setSpan(new org.telegram.ui.Components.uy(i102), 1, 2, 33);
-        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.gd.N0(2131745125, null));
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.N0(2131745125, null));
         textView22.setText(spannableStringBuilder2);
         org.telegram.ui.Components.t80 t80Var2 = new org.telegram.ui.Components.t80(context);
         this.f = t80Var2;
@@ -191,7 +191,7 @@ public final class sc0 extends org.telegram.ui.Components.iu0 {
 
     @Override // org.telegram.ui.Components.iu0
     public String getHeaderName() {
-        return org.telegram.messenger.gd.N0(2131754438, "AddEmailTitle");
+        return org.telegram.messenger.hd.N0(2131754438, "AddEmailTitle");
     }
 
     @Override // org.telegram.ui.Components.iu0
@@ -292,7 +292,7 @@ public final class sc0 extends org.telegram.ui.Components.iu0 {
         this.w = this.n.getString("ephone");
         this.x = this.n.getString("phoneFormated");
         this.y = this.n.getString("phoneHash");
-        int i7 = (bundle.getBoolean("googleSignInAllowed") && org.telegram.messenger.nt.b.hasServices()) ? 0 : 8;
+        int i7 = (bundle.getBoolean("googleSignInAllowed") && org.telegram.messenger.ot.b.hasServices()) ? 0 : 8;
         this.f.setVisibility(i7);
         this.e.setVisibility(i7);
         de0.b1(this.F, editTextBoldCursor);

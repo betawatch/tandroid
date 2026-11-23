@@ -4,10 +4,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 import bi.m2;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ z0 a;
@@ -15,17 +15,17 @@ public final class o1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ u1 c;
     public final /* synthetic */ TextView d;
     public final /* synthetic */ m2 e;
-    public final /* synthetic */ x10 f;
+    public final /* synthetic */ y10 f;
     public final /* synthetic */ org.telegram.ui.ActionBar.t1[] g;
     public final /* synthetic */ View h;
 
-    public o1(z0 z0Var, int i7, u1 u1Var, TextView textView, m2 m2Var, x10 x10Var, org.telegram.ui.ActionBar.t1[] t1VarArr, View view) {
+    public o1(z0 z0Var, int i7, u1 u1Var, TextView textView, m2 m2Var, y10 y10Var, org.telegram.ui.ActionBar.t1[] t1VarArr, View view) {
         this.a = z0Var;
         this.b = i7;
         this.c = u1Var;
         this.d = textView;
         this.e = m2Var;
-        this.f = x10Var;
+        this.f = y10Var;
         this.g = t1VarArr;
         this.h = view;
     }
@@ -47,7 +47,7 @@ public final class o1 implements TextView.OnEditorActionListener {
         u1 d = f10.d(obj);
         if (d != null && d.a != i10) {
             org.telegram.messenger.g0.D3(z0Var);
-            this.d.setText(gd.N0(2131752650, null));
+            this.d.setText(hd.N0(2131752650, null));
             this.e.a(Boolean.TRUE);
             return true;
         }

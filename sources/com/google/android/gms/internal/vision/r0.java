@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.vision;
 
 import java.util.logging.Logger;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class r0 extends e1 {
     public static final Logger f = Logger.getLogger(r0.class.getName());
@@ -147,7 +147,7 @@ public final class r0 extends e1 {
             while ((j3 & (-128)) != 0) {
                 int i7 = this.e;
                 this.e = i7 + 1;
-                y2.e(bArr, i7, (byte) ((((int) j3) & ks.L1) | 128));
+                y2.e(bArr, i7, (byte) ((((int) j3) & ls.L1) | 128));
                 j3 >>>= 7;
             }
             int i10 = this.e;
@@ -159,7 +159,7 @@ public final class r0 extends e1 {
             try {
                 int i11 = this.e;
                 this.e = i11 + 1;
-                bArr[i11] = (byte) ((((int) j3) & ks.L1) | 128);
+                bArr[i11] = (byte) ((((int) j3) & ls.L1) | 128);
                 j3 >>>= 7;
             } catch (IndexOutOfBoundsException e10) {
                 throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e10);
@@ -182,7 +182,7 @@ public final class r0 extends e1 {
                 try {
                     int i10 = this.e;
                     this.e = i10 + 1;
-                    bArr[i10] = (byte) ((i7 & ks.L1) | 128);
+                    bArr[i10] = (byte) ((i7 & ls.L1) | 128);
                     i7 >>>= 7;
                 } catch (IndexOutOfBoundsException e10) {
                     throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e10);

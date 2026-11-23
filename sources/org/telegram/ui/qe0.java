@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qe0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class qe0 implements RequestDelegate {
                                         }
                                         tL_chatInviteExported2.revoked = true;
                                         xe0 l03 = ff0Var2.l0();
-                                        if (ff0Var2.p0 && ff0Var2.f == org.telegram.messenger.j10.i(ff0Var2.getAccountInstance().a).e()) {
+                                        if (ff0Var2.p0 && ff0Var2.f == org.telegram.messenger.k10.i(ff0Var2.getAccountInstance().a).e()) {
                                             arrayList.remove(tL_chatInviteExported2);
                                             arrayList.add(0, (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInviteReplaced.new_invite);
                                         } else if (ff0Var2.e != null) {
@@ -139,7 +139,7 @@ public final /* synthetic */ class qe0 implements RequestDelegate {
                                         }
                                         tL_chatInviteExported22.revoked = true;
                                         xe0 l03 = ff0Var22.l0();
-                                        if (ff0Var22.p0 && ff0Var22.f == org.telegram.messenger.j10.i(ff0Var22.getAccountInstance().a).e()) {
+                                        if (ff0Var22.p0 && ff0Var22.f == org.telegram.messenger.k10.i(ff0Var22.getAccountInstance().a).e()) {
                                             arrayList.remove(tL_chatInviteExported22);
                                             arrayList.add(0, (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInviteReplaced.new_invite);
                                         } else if (ff0Var22.e != null) {

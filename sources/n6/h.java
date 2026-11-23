@@ -9,10 +9,10 @@ import android.os.Build;
 import android.util.Log;
 import c8.lb;
 import java.util.Arrays;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class h {
     public static h b;
@@ -51,7 +51,7 @@ public final class h {
         if (packageInfo != null) {
             if (z10 && ("com.android.vending".equals(packageInfo.packageName) || "com.google.android.gms".equals(packageInfo.packageName))) {
                 ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-                z10 = (applicationInfo == null || (applicationInfo.flags & ks.N1) == 0) ? false : true;
+                z10 = (applicationInfo == null || (applicationInfo.flags & ls.N1) == 0) ? false : true;
             }
             try {
                 fVar = z10 ? n.c : n.b;

@@ -10,7 +10,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wg extends View {
     public StaticLayout E;
@@ -100,7 +100,7 @@ public final class wg extends View {
         }
         if (this.a && currentTimeMillis > this.f + 5000) {
             this.f = currentTimeMillis;
-            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(chatActivityEnterView.R);
+            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(chatActivityEnterView.R);
             long j13 = chatActivityEnterView.G3;
             threadMessageId = chatActivityEnterView.getThreadMessageId();
             u12.N4(chatActivityEnterView.d1 ? 7 : 1, 0, j13, threadMessageId, null);
@@ -217,7 +217,7 @@ public final class wg extends View {
             this.x.clearSpans();
             StaticLayout staticLayout = new StaticLayout(this.x, this.G, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             canvas.save();
-            org.telegram.messenger.n10.k(staticLayout.getHeight(), 2.0f, measuredHeight, 0.0f, canvas);
+            org.telegram.messenger.o10.k(staticLayout.getHeight(), 2.0f, measuredHeight, 0.0f, canvas);
             staticLayout.draw(canvas);
             canvas.restore();
             this.I = staticLayout.getLineWidth(0) + 0.0f;
@@ -239,9 +239,9 @@ public final class wg extends View {
                 canvas.restore();
             }
             canvas.save();
-            this.G.setAlpha(org.telegram.messenger.ks.e4);
+            this.G.setAlpha(org.telegram.messenger.ls.e4);
             StaticLayout staticLayout3 = new StaticLayout(this.x, this.G, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            org.telegram.messenger.n10.k(staticLayout3.getHeight(), 2.0f, measuredHeight, 0.0f, canvas);
+            org.telegram.messenger.o10.k(staticLayout3.getHeight(), 2.0f, measuredHeight, 0.0f, canvas);
             staticLayout3.draw(canvas);
             canvas.restore();
             this.I = staticLayout3.getLineWidth(0) + 0.0f;

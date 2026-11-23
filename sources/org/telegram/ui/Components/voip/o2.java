@@ -10,10 +10,10 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o2 extends View {
     public StaticLayout a;
@@ -42,7 +42,7 @@ public final class o2 extends View {
         textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
         textPaint.setColor(-1);
         paint.setColor(i0.a.o(-1, 229));
-        paint2.setColor(i0.a.o(-1, ks.n1));
+        paint2.setColor(i0.a.o(-1, ls.n1));
         Drawable drawable = activity.getDrawable(R.drawable.calls_decline);
         this.r = drawable;
         drawable.setBounds(0, 0, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));

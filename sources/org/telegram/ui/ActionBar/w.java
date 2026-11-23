@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public boolean E;
@@ -352,7 +352,7 @@ public final class w extends FrameLayout {
         getWindowVisibleDisplayFrame(this.a);
         f3 f3Var = actionBarLayout.F;
         if (f3Var != null) {
-            f3Var.setCurrentAccount(j10.t0);
+            f3Var.setCurrentAccount(k10.t0);
         }
         int i12 = 0;
         while (true) {

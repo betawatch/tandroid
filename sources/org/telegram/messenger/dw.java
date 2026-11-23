@@ -1,28 +1,39 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zy b;
-    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ az b;
+    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ dw(zy zyVar, TLRPC.Updates updates, int i7) {
+    public /* synthetic */ dw(az azVar, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, long j3, int i7) {
         this.a = i7;
-        this.b = zyVar;
-        this.c = updates;
+        this.b = azVar;
+        this.c = tL_updateNewChannelMessage;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.getMessagesController().V3(this.c, false);
+                az azVar = this.b;
+                azVar.getClass();
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(Integer.valueOf(this.c.message.id));
+                azVar.getMessagesStorage().c2(-this.d, arrayList, true, -1, 0, false, null);
                 break;
             default:
-                this.b.getMessagesController().V3(this.c, false);
+                az azVar2 = this.b;
+                azVar2.getClass();
+                ArrayList arrayList2 = new ArrayList();
+                arrayList2.add(Integer.valueOf(this.c.message.id));
+                azVar2.getMessagesStorage().c2(-this.d, arrayList2, true, -1, 0, false, null);
                 break;
         }
     }

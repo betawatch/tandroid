@@ -15,7 +15,7 @@ import android.os.SystemClock;
 import android.view.View;
 import java.util.Random;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q0 {
     public float[] D;
@@ -162,9 +162,9 @@ public final class q0 {
                 Region region = new Region(i15, i15, i16, i16);
                 Region region2 = new Region();
                 region2.setPath(d10, region);
-                this.D = new float[org.telegram.messenger.ks.z2];
-                this.E = new float[org.telegram.messenger.ks.z2];
-                this.F = new float[org.telegram.messenger.ks.z2];
+                this.D = new float[org.telegram.messenger.ls.z2];
+                this.E = new float[org.telegram.messenger.ls.z2];
+                this.F = new float[org.telegram.messenger.ls.z2];
                 this.G = 0;
                 float f19 = height * 0.09f;
                 float f20 = 0.2f * height;
@@ -313,7 +313,7 @@ public final class q0 {
                     jArr = jArr3;
                     Random random = this.C;
                     if (i26 < 0) {
-                        this.I = j10 + 200 + random.nextInt(org.telegram.messenger.ks.X4);
+                        this.I = j10 + 200 + random.nextInt(org.telegram.messenger.ls.X4);
                         iArr = iArr2;
                         f10 = height;
                         fArr3 = fArr9;
@@ -405,11 +405,11 @@ public final class q0 {
                             this.K = f36;
                         }
                         if (i25 == 0) {
-                            nextInt = random.nextInt(org.telegram.messenger.ks.Z3);
-                            i13 = org.telegram.messenger.ks.e3;
+                            nextInt = random.nextInt(org.telegram.messenger.ls.Z3);
+                            i13 = org.telegram.messenger.ls.e3;
                         } else {
                             nextInt = random.nextInt(600);
-                            i13 = org.telegram.messenger.ks.X4;
+                            i13 = org.telegram.messenger.ls.X4;
                         }
                         this.I = j10 + nextInt + i13;
                         Paint paint2 = this.h;
@@ -467,11 +467,11 @@ public final class q0 {
             double radians = Math.toRadians(sin);
             float cos2 = ((float) Math.cos(radians)) * L2;
             float sin2 = ((float) Math.sin(radians)) * L2;
-            int argb = Color.argb((int) (f11 * 110.0f), org.telegram.messenger.ks.e3, org.telegram.messenger.ks.U3, org.telegram.messenger.ks.e4);
+            int argb = Color.argb((int) (f11 * 110.0f), org.telegram.messenger.ls.e3, org.telegram.messenger.ls.U3, org.telegram.messenger.ls.e4);
             Paint paint4 = this.l;
             paint4.setColor(argb);
             canvas.drawCircle(cos2, sin2, org.telegram.messenger.g0.L(3.6f), paint4);
-            paint4.setColor(Color.argb(i30, org.telegram.messenger.ks.e4, org.telegram.messenger.ks.e4, org.telegram.messenger.ks.e4));
+            paint4.setColor(Color.argb(i30, org.telegram.messenger.ls.e4, org.telegram.messenger.ls.e4, org.telegram.messenger.ls.e4));
             canvas.drawCircle(cos2, sin2, org.telegram.messenger.g0.L(1.7f), paint4);
             canvas.restore();
         }

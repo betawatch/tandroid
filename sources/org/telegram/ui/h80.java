@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Intent;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h80 implements org.telegram.ui.Components.oc0, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ LaunchActivity a;
@@ -15,13 +15,13 @@ public final /* synthetic */ class h80 implements org.telegram.ui.Components.oc0
     @Override // org.telegram.ui.ActionBar.q1
     public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
         String str = LaunchActivity.C1;
-        org.telegram.messenger.mp.u1(this.a.P).H3(2);
+        org.telegram.messenger.np.u1(this.a.P).H3(2);
     }
 
     @Override // org.telegram.ui.Components.oc0
     public void p(org.telegram.ui.Components.qc0 qc0Var) {
         String str = LaunchActivity.C1;
-        org.telegram.messenger.bz.C = false;
+        org.telegram.messenger.cz.C = false;
         LaunchActivity launchActivity = this.a;
         Intent intent = launchActivity.K0;
         if (intent != null) {
@@ -49,9 +49,9 @@ public final /* synthetic */ class h80 implements org.telegram.ui.Components.oc0
                 launchActivity.r0.getView().setVisibility(0);
             }
         }
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.o0, qc0Var);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.o0, qc0Var);
         try {
-            org.telegram.messenger.xs.t(org.telegram.messenger.j10.t0).Y();
+            org.telegram.messenger.ys.t(org.telegram.messenger.k10.t0).Y();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }

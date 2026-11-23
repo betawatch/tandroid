@@ -31,11 +31,11 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBoxBase;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.xy0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class p7 extends FrameLayout {
     public static long F0;
@@ -97,7 +97,7 @@ public class p7 extends FrameLayout {
     public float k0;
     public float l0;
     public float m0;
-    public fj n;
+    public gj n;
     public xh.e n0;
     public final Path o0;
     public xy0 p0;
@@ -461,8 +461,8 @@ public class p7 extends FrameLayout {
             p7Var = this;
         } else {
             imageReceiver2.h(canvas2, null);
-            fj fjVar = this.n;
-            if (fjVar == null || !fjVar.t2() || this.n.P0) {
+            gj gjVar = this.n;
+            if (gjVar == null || !gjVar.t2() || this.n.P0) {
                 f16 = d;
                 f17 = measuredWidth;
                 imageReceiver = imageReceiver2;
@@ -521,7 +521,7 @@ public class p7 extends FrameLayout {
                     }
                     if (f20 < (org.telegram.messenger.g0.L(26) * 2) + xy0Var.c) {
                         if (p7Var.r0 == null) {
-                            p7Var.r0 = new xy0(new SpannableStringBuilder(gd.N0(2131748291, null)), 13.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
+                            p7Var.r0 = new xy0(new SpannableStringBuilder(hd.N0(2131748291, null)), 13.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                         }
                         xy0Var = p7Var.r0;
                         i10 = 10;
@@ -597,8 +597,8 @@ public class p7 extends FrameLayout {
             RectF rectF5 = org.telegram.messenger.g0.P;
             rectF5.set(imageReceiver.r() - L5, imageReceiver.s() - L5, imageReceiver.r() + L5, imageReceiver.s() + L5);
             float currentTimeMillis = ((System.currentTimeMillis() % 1500) / 1500.0f) * 360.0f;
-            fj fjVar2 = p7Var.n;
-            canvas2.drawArc(rectF5, currentTimeMillis, p7Var.v0.e(false, org.telegram.messenger.g0.T1(0.15f, 0.95f, fjVar2 != null ? fjVar2.G1() : 0.0f)) * 360.0f, false, paint2);
+            gj gjVar2 = p7Var.n;
+            canvas2.drawArc(rectF5, currentTimeMillis, p7Var.v0.e(false, org.telegram.messenger.g0.T1(0.15f, 0.95f, gjVar2 != null ? gjVar2.G1() : 0.0f)) * 360.0f, false, paint2);
             p7Var.invalidate();
         }
         float f44 = imageReceiver.L0;
@@ -726,12 +726,12 @@ public class p7 extends FrameLayout {
         }
     }
 
-    public final int g(fj fjVar) {
+    public final int g(gj gjVar) {
         TL_stories.StoryItem storyItem;
         if (this.g0) {
             return 100;
         }
-        if (!this.e0 || fjVar == null || (storyItem = fjVar.l) == null) {
+        if (!this.e0 || gjVar == null || (storyItem = gjVar.l) == null) {
             return -1;
         }
         if (storyItem.parsedPrivacy == null) {
@@ -749,14 +749,14 @@ public class p7 extends FrameLayout {
     }
 
     public int getMessageId() {
-        fj fjVar = this.n;
-        if (fjVar != null) {
-            return fjVar.e1();
+        gj gjVar = this.n;
+        if (gjVar != null) {
+            return gjVar.e1();
         }
         return 0;
     }
 
-    public fj getMessageObject() {
+    public gj getMessageObject() {
         return this.n;
     }
 
@@ -800,7 +800,7 @@ public class p7 extends FrameLayout {
             this.B0 = ofFloat;
             ofFloat.addUpdateListener(new fi.d4(this, 7));
             this.B0.setDuration(200L);
-            this.B0.addListener(new bi.h7(25, this, z10));
+            this.B0.addListener(new bi.g7(25, this, z10));
             this.B0.start();
         } else {
             this.C0 = z10 ? 1.0f : 0.0f;
@@ -824,7 +824,7 @@ public class p7 extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void k(fj fjVar, int i7, boolean z10) {
+    public final void k(gj gjVar, int i7, boolean z10) {
         String str;
         boolean z11;
         float f10;
@@ -842,37 +842,37 @@ public class p7 extends FrameLayout {
         }
         int i11 = this.r;
         this.r = i10;
-        fj fjVar2 = this.n;
-        if (fjVar2 == null && fjVar == null) {
+        gj gjVar2 = this.n;
+        if (gjVar2 == null && gjVar == null) {
             return;
         }
-        if (fjVar2 != null && fjVar != null && fjVar2.e1() == fjVar.e1()) {
-            fj fjVar3 = this.n;
-            if ((fjVar3 != null ? fjVar3.m : null) == fjVar.m) {
-                if ((fjVar3 != null ? fjVar3.j : null) == fjVar.j) {
-                    TLRPC.MessageMedia messageMedia = (fjVar3 == null || (storyItem = fjVar3.l) == null) ? null : storyItem.media;
-                    TL_stories.StoryItem storyItem2 = fjVar.l;
+        if (gjVar2 != null && gjVar != null && gjVar2.e1() == gjVar.e1()) {
+            gj gjVar3 = this.n;
+            if ((gjVar3 != null ? gjVar3.m : null) == gjVar.m) {
+                if ((gjVar3 != null ? gjVar3.j : null) == gjVar.j) {
+                    TLRPC.MessageMedia messageMedia = (gjVar3 == null || (storyItem = gjVar3.l) == null) ? null : storyItem.media;
+                    TL_stories.StoryItem storyItem2 = gjVar.l;
                     TLRPC.MessageMedia messageMedia2 = storyItem2 == null ? null : storyItem2.media;
                     if (((messageMedia == null && messageMedia2 == null) || (messageMedia != null && messageMedia2 != null && ((document = messageMedia.document) == null ? !((photo = messageMedia.photo) == null || (photo2 = messageMedia2.photo) == null || photo2.id != photo.id) : !((document2 = messageMedia2.document) == null || document2.id != document.id)))) && i11 == i10) {
                         int i12 = this.J;
-                        if ((i12 == 100) == this.g0 && i12 == g(fjVar) && !z10) {
+                        if ((i12 == 100) == this.g0 && i12 == g(gjVar) && !z10) {
                             return;
                         }
                     }
                 }
             }
         }
-        this.n = fjVar;
-        this.e0 = fjVar != null && fjVar.x4();
-        fj fjVar4 = this.n;
-        this.f0 = (fjVar4 == null || fjVar4.m == null) ? false : true;
+        this.n = gjVar;
+        this.e0 = gjVar != null && gjVar.x4();
+        gj gjVar4 = this.n;
+        this.f0 = (gjVar4 == null || gjVar4.m == null) ? false : true;
         p();
         org.telegram.ui.Components.n6 n6Var = this.O;
         org.telegram.ui.Components.d6 d6Var = this.N;
         ImageReceiver imageReceiver = this.b;
         ImageReceiver imageReceiver2 = this.c;
         ImageReceiver imageReceiver3 = this.d;
-        if (fjVar == null) {
+        if (gjVar == null) {
             imageReceiver2.R();
             imageReceiver.R();
             imageReceiver3.R();
@@ -891,7 +891,7 @@ public class p7 extends FrameLayout {
             o();
             return;
         }
-        TL_stories.StoryItem storyItem3 = fjVar.l;
+        TL_stories.StoryItem storyItem3 = gjVar.l;
         if (this.S) {
             imageReceiver2.P();
             imageReceiver.P();
@@ -899,7 +899,7 @@ public class p7 extends FrameLayout {
         }
         ImageReceiver imageReceiver4 = z10 ? imageReceiver : imageReceiver2;
         int i13 = this.f;
-        String H1 = mp.u1(i13).H1(fjVar.k.restriction_reason);
+        String H1 = np.u1(i13).H1(gjVar.k.restriction_reason);
         int i14 = org.telegram.messenger.g0.q.x;
         float f11 = org.telegram.messenger.g0.p;
         int i15 = (int) ((i14 / i10) / f11);
@@ -921,7 +921,7 @@ public class p7 extends FrameLayout {
         } else {
             str = H1;
         }
-        int Z0 = (i10 <= 2 || z10) ? org.telegram.messenger.g0.Z0(false) : ks.r5;
+        int Z0 = (i10 <= 2 || z10) ? org.telegram.messenger.g0.Z0(false) : ls.r5;
         this.H = null;
         this.G = null;
         this.E = false;
@@ -942,78 +942,78 @@ public class p7 extends FrameLayout {
             f10 = 0.0f;
         }
         d6Var.e(z11, this.M ? 1.0f : f10);
-        fj fjVar5 = fjVar.j != null ? storyItem3 : fjVar;
+        gj gjVar5 = gjVar.j != null ? storyItem3 : gjVar;
         if (TextUtils.isEmpty(str)) {
             if (storyItem3 == 0 || !(storyItem3.media instanceof TLRPC.TL_messageMediaUnsupported)) {
-                fi.o6 o6Var = fjVar.m;
+                fi.o6 o6Var = gjVar.m;
                 if (o6Var == null || (str2 = o6Var.f) == null) {
                     String str4 = str3;
-                    TLRPC.Document F02 = fjVar.F0();
-                    TLRPC.Photo C1 = fj.C1(fjVar.k);
-                    if (fj.K4(F02)) {
-                        this.E = !fjVar.D3();
-                        this.F = fjVar.D3();
-                        if (i10 != 9 && !fjVar.D3()) {
-                            this.H = org.telegram.messenger.g0.g0((int) fjVar.L0(), false, false);
+                    TLRPC.Document F02 = gjVar.F0();
+                    TLRPC.Photo C1 = gj.C1(gjVar.k);
+                    if (gj.K4(F02)) {
+                        this.E = !gjVar.D3();
+                        this.F = gjVar.D3();
+                        if (i10 != 9 && !gjVar.D3()) {
+                            this.H = org.telegram.messenger.g0.g0((int) gjVar.L0(), false, false);
                         }
-                        TLRPC.MessageMedia m12 = fj.m1(fjVar);
+                        TLRPC.MessageMedia m12 = gj.m1(gjVar);
                         if ((m12 instanceof TLRPC.TL_messageMediaDocument ? ((TLRPC.TL_messageMediaDocument) m12).video_cover : (m12 == null || (webPage = m12.webpage) == null || !webPage.video_cover_photo) ? null : webPage.photo) != null) {
-                            TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(fjVar.p0, 50, false, null, false);
-                            TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(fjVar.p0, Z0, false, w10, this.e0);
+                            TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(gjVar.p0, 50, false, null, false);
+                            TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(gjVar.p0, Z0, false, w10, this.e0);
                             if (w11 == w10) {
                                 w10 = null;
                             }
-                            if (fjVar.I1 != null) {
-                                imageReceiver4.r0(fc.f(w11, fjVar.n0), str4, null, null, fjVar.I1, w11 != null ? w11.size : 0L, null, fjVar5, fj.R5(fjVar.k) ? 2 : 1);
+                            if (gjVar.I1 != null) {
+                                imageReceiver4.r0(gc.f(w11, gjVar.n0), str4, null, null, gjVar.I1, w11 != null ? w11.size : 0L, null, gjVar5, gj.R5(gjVar.k) ? 2 : 1);
                             } else {
-                                imageReceiver4.r0(fc.f(w11, fjVar.n0), str4, fc.f(w10, fjVar.n0), p5.c.v(str4, "_b"), null, w11 != null ? w11.size : 0L, null, fjVar5, fj.R5(fjVar.k) ? 2 : 1);
+                                imageReceiver4.r0(gc.f(w11, gjVar.n0), str4, gc.f(w10, gjVar.n0), p5.c.v(str4, "_b"), null, w11 != null ? w11.size : 0L, null, gjVar5, gj.R5(gjVar.k) ? 2 : 1);
                             }
                         } else {
-                            TLRPC.Document F03 = fjVar.F0();
+                            TLRPC.Document F03 = gjVar.F0();
                             TLRPC.PhotoSize w12 = org.telegram.messenger.w7.w(F03.thumbs, 50, false, null, false);
                             TLRPC.PhotoSize w13 = org.telegram.messenger.w7.w(F03.thumbs, Z0, false, null, this.e0);
                             if (w12 == w13 && !this.e0) {
                                 w13 = null;
                             }
                             if (w12 != null) {
-                                if (fjVar.I1 != null) {
-                                    imageReceiver4.q0(fc.c(w13, F03), str4, fjVar.I1, null, fjVar5, 0);
+                                if (gjVar.I1 != null) {
+                                    imageReceiver4.q0(gc.c(w13, F03), str4, gjVar.I1, null, gjVar5, 0);
                                 } else {
-                                    imageReceiver4.r0(fc.c(w13, F03), str4, fc.c(w12, F03), p5.c.v(str4, "_b"), null, 0L, null, fjVar5, 0);
+                                    imageReceiver4.r0(gc.c(w13, F03), str4, gc.c(w12, F03), p5.c.v(str4, "_b"), null, 0L, null, gjVar5, 0);
                                 }
                             }
                         }
-                    } else if (C1 != null && !fjVar.p0.isEmpty()) {
-                        if (!fjVar.z0) {
+                    } else if (C1 != null && !gjVar.p0.isEmpty()) {
+                        if (!gjVar.z0) {
                             if (System.currentTimeMillis() - F0 > 5000) {
                                 F0 = System.currentTimeMillis();
-                                G0 = org.telegram.messenger.a6.q(i13).d(fjVar);
+                                G0 = org.telegram.messenger.a6.q(i13).d(gjVar);
                             }
                             if (!G0 && !this.e0) {
-                                BitmapDrawable bitmapDrawable = fjVar.I1;
+                                BitmapDrawable bitmapDrawable = gjVar.I1;
                                 if (bitmapDrawable != null) {
-                                    imageReceiver4.r0(null, null, null, null, bitmapDrawable, 0L, null, fjVar5, 0);
+                                    imageReceiver4.r0(null, null, null, null, bitmapDrawable, 0L, null, gjVar5, 0);
                                 } else {
-                                    imageReceiver4.r0(null, null, fc.f(org.telegram.messenger.w7.w(fjVar.p0, 50, false, null, false), fjVar.n0), "b", null, 0L, null, fjVar5, 0);
+                                    imageReceiver4.r0(null, null, gc.f(org.telegram.messenger.w7.w(gjVar.p0, 50, false, null, false), gjVar.n0), "b", null, 0L, null, gjVar5, 0);
                                 }
                             }
                         }
-                        TLRPC.PhotoSize w14 = org.telegram.messenger.w7.w(fjVar.p0, 50, false, null, false);
-                        TLRPC.PhotoSize w15 = org.telegram.messenger.w7.w(fjVar.p0, Z0, false, w14, this.e0);
+                        TLRPC.PhotoSize w14 = org.telegram.messenger.w7.w(gjVar.p0, 50, false, null, false);
+                        TLRPC.PhotoSize w15 = org.telegram.messenger.w7.w(gjVar.p0, Z0, false, w14, this.e0);
                         if (w15 == w14) {
                             w14 = null;
                         }
-                        if (fjVar.I1 != null) {
-                            imageReceiver4.r0(fc.f(w15, fjVar.n0), str4, null, null, fjVar.I1, w15 != null ? w15.size : 0L, null, fjVar5, fj.R5(fjVar.k) ? 2 : 1);
+                        if (gjVar.I1 != null) {
+                            imageReceiver4.r0(gc.f(w15, gjVar.n0), str4, null, null, gjVar.I1, w15 != null ? w15.size : 0L, null, gjVar5, gj.R5(gjVar.k) ? 2 : 1);
                         } else {
-                            imageReceiver4.r0(fc.f(w15, fjVar.n0), str4, z10 ? null : fc.f(w14, fjVar.n0), p5.c.v(str4, "_b"), null, w15 != null ? w15.size : 0L, null, fjVar5, fj.R5(fjVar.k) ? 2 : 1);
+                            imageReceiver4.r0(gc.f(w15, gjVar.n0), str4, z10 ? null : gc.f(w14, gjVar.n0), p5.c.v(str4, "_b"), null, w15 != null ? w15.size : 0L, null, gjVar5, gj.R5(gjVar.k) ? 2 : 1);
                         }
                     }
                 } else {
-                    imageReceiver4.q0(fc.g(str2), str3, null, null, fjVar5, 0);
+                    imageReceiver4.q0(gc.g(str2), str3, null, null, gjVar5, 0);
                 }
             } else {
-                storyItem3.dialogId = fj.B0(fjVar.k);
+                storyItem3.dialogId = gj.B0(gjVar.k);
                 Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_emoji_recent).mutate();
                 mutate.setColorFilter(new PorterDuffColorFilter(1090519039, PorterDuff.Mode.SRC_IN));
                 imageReceiver4.w0(new oq(new ColorDrawable(-13421773), mutate));
@@ -1028,11 +1028,11 @@ public class p7 extends FrameLayout {
             if (storyItem3 != 0) {
                 imageReceiver4.a(new fi.k9(storyItem3));
             }
-            setPrivacyType(g(fjVar));
+            setPrivacyType(g(gjVar));
             if (this.h) {
-                long B0 = fj.B0(fjVar.k);
+                long B0 = gj.B0(gjVar.k);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
-                spannableStringBuilder.append((CharSequence) mp.u1(i13).D1(B0, false));
+                spannableStringBuilder.append((CharSequence) np.u1(i13).D1(B0, false));
                 org.telegram.ui.f5 f5Var = new org.telegram.ui.f5(i10 == 2 ? 16.0f : 13.66f, i13, this);
                 f5Var.c(B0);
                 spannableStringBuilder.setSpan(f5Var, 0, 1, 33);
@@ -1049,7 +1049,7 @@ public class p7 extends FrameLayout {
         }
         if (storyItem3 != 0) {
         }
-        setPrivacyType(g(fjVar));
+        setPrivacyType(g(gjVar));
         if (this.h) {
         }
         o();
@@ -1107,36 +1107,36 @@ public class p7 extends FrameLayout {
         int i7;
         TL_stories.StoryViews storyViews;
         try {
-            fj fjVar = this.n;
-            if (fjVar == null) {
+            gj gjVar = this.n;
+            if (gjVar == null) {
                 setContentDescription(null);
                 return;
             }
-            TL_stories.StoryItem storyItem2 = fjVar.l;
-            boolean x42 = fjVar.x4();
+            TL_stories.StoryItem storyItem2 = gjVar.l;
+            boolean x42 = gjVar.x4();
             StringBuilder sb2 = new StringBuilder();
             if (x42 && this.g0) {
-                sb2.append(gd.N0(2131754752, null));
+                sb2.append(hd.N0(2131754752, null));
             }
-            if (!fjVar.D3()) {
-                if (fjVar.h4()) {
-                    N0 = gd.N0(2131754781, null);
-                    L0 = fjVar.L0();
+            if (!gjVar.D3()) {
+                if (gjVar.h4()) {
+                    N0 = hd.N0(2131754781, null);
+                    L0 = gjVar.L0();
                 } else {
-                    if (!fj.L4(fjVar.k)) {
-                        TLRPC.MessageMedia n1 = fj.n1(fjVar.k);
+                    if (!gj.L4(gjVar.k)) {
+                        TLRPC.MessageMedia n1 = gj.n1(gjVar.k);
                         if (n1 != null && (storyItem = n1.storyItem) != null && (messageMedia = storyItem.media) != null) {
-                            K4 = fj.K4(messageMedia.document);
+                            K4 = gj.K4(messageMedia.document);
                             if (K4) {
-                                N02 = gd.N0(2131753945, null);
+                                N02 = hd.N0(2131753945, null);
                             }
                         }
                         K4 = false;
                         if (K4) {
                         }
                     }
-                    N0 = gd.N0(2131753930, null);
-                    L0 = fjVar.L0();
+                    N0 = hd.N0(2131753930, null);
+                    L0 = gjVar.L0();
                 }
                 String str = N0;
                 i7 = (int) L0;
@@ -1147,22 +1147,22 @@ public class p7 extends FrameLayout {
                 sb2.append(N02);
                 if (i7 > 0) {
                     sb2.append(", ");
-                    sb2.append(gd.z(i7));
+                    sb2.append(hd.z(i7));
                 }
                 if (x42 && storyItem2 != null) {
                     storyViews = storyItem2.views;
                     if (storyViews != null && storyViews.views_count > 0) {
                         sb2.append(", ");
-                        sb2.append(gd.G(storyItem2.views.views_count, "Views", new Object[0]));
+                        sb2.append(hd.G(storyItem2.views.views_count, "Views", new Object[0]));
                     }
                     if (storyItem2.date > 0) {
                         sb2.append(", ");
-                        sb2.append(gd.a0(null, null, 2131754802, gd.s(storyItem2.date, false)));
+                        sb2.append(hd.a0(null, null, 2131754802, hd.s(storyItem2.date, false)));
                     }
                 }
                 setContentDescription(sb2.toString());
             }
-            N02 = gd.N0(2131754847, null);
+            N02 = hd.N0(2131754847, null);
             i7 = 0;
             if (sb2.length() > 0) {
             }
@@ -1173,7 +1173,7 @@ public class p7 extends FrameLayout {
                 storyViews = storyItem2.views;
                 if (storyViews != null) {
                     sb2.append(", ");
-                    sb2.append(gd.G(storyItem2.views.views_count, "Views", new Object[0]));
+                    sb2.append(hd.G(storyItem2.views.views_count, "Views", new Object[0]));
                 }
                 if (storyItem2.date > 0) {
                 }
@@ -1275,8 +1275,8 @@ public class p7 extends FrameLayout {
         if (getMeasuredHeight() <= 0 || getMeasuredWidth() <= 0) {
             return;
         }
-        fj fjVar = this.n;
-        if (fjVar != null && fjVar.t2()) {
+        gj gjVar = this.n;
+        if (gjVar != null && gjVar.t2()) {
             if (this.n0 == null) {
                 this.n0 = xh.e.e(this);
             }

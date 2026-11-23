@@ -22,12 +22,12 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -35,7 +35,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.n80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a;
@@ -74,10 +74,10 @@ public final /* synthetic */ class l4 implements Runnable {
                 b5.b(b5Var);
                 return;
             case 1:
-                x10 x10Var = (x10) this.b;
+                y10 y10Var = (y10) this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                if (x10Var != null) {
-                    x10Var.a(Boolean.valueOf(tL_error == null));
+                if (y10Var != null) {
+                    y10Var.a(Boolean.valueOf(tL_error == null));
                     return;
                 }
                 return;
@@ -90,8 +90,8 @@ public final /* synthetic */ class l4 implements Runnable {
                 b6Var.I = 0;
                 if (tLObject instanceof TL_stories.TL_foundStories) {
                     TL_stories.TL_foundStories tL_foundStories = (TL_stories.TL_foundStories) tLObject;
-                    mp.u1(i12).f4(tL_foundStories.users, false);
-                    mp.u1(i12).Z3(tL_foundStories.chats, false);
+                    np.u1(i12).f4(tL_foundStories.users, false);
+                    np.u1(i12).Z3(tL_foundStories.chats, false);
                     ArrayList<TL_stories.TL_foundStory> arrayList2 = tL_foundStories.stories;
                     int size = arrayList2.size();
                     int i13 = 0;
@@ -101,12 +101,12 @@ public final /* synthetic */ class l4 implements Runnable {
                         TL_stories.TL_foundStory tL_foundStory2 = tL_foundStory;
                         tL_foundStory2.storyItem.dialogId = org.telegram.messenger.n5.o(tL_foundStory2.peer);
                         tL_foundStory2.storyItem.messageId = arrayList.size();
-                        fj fjVar = new fj(i12, tL_foundStory2.storyItem);
-                        fjVar.r0(false);
+                        gj gjVar = new gj(i12, tL_foundStory2.storyItem);
+                        gjVar.r0(false);
                         ArrayList arrayList3 = new ArrayList();
                         arrayList3.add(Integer.valueOf(arrayList.size()));
                         b6Var.F.add(arrayList3);
-                        arrayList.add(fjVar);
+                        arrayList.add(gjVar);
                     }
                     b6Var.J = Math.max(arrayList.size(), tL_foundStories.count);
                     if (tL_foundStories.stories.isEmpty()) {
@@ -131,7 +131,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 d6Var.d = true;
                 d6Var.e = false;
                 d6Var.d();
-                ks.f(d6Var.a).k(ks.l3, Long.valueOf(d6Var.b), d6Var);
+                ls.f(d6Var.a).k(ls.l3, Long.valueOf(d6Var.b), d6Var);
                 return;
             case 4:
                 d6 d6Var2 = (d6) this.b;
@@ -144,7 +144,7 @@ public final /* synthetic */ class l4 implements Runnable {
                         arrayList6.addAll(arrayList5);
                         d6Var2.f = true;
                         d6Var2.e = false;
-                        ks.f(d6Var2.a).k(ks.l3, Long.valueOf(d6Var2.b), d6Var2);
+                        ls.f(d6Var2.a).k(ls.l3, Long.valueOf(d6Var2.b), d6Var2);
                         return;
                     }
                     return;
@@ -169,12 +169,12 @@ public final /* synthetic */ class l4 implements Runnable {
                 return;
             case 5:
                 h6 h6Var = (h6) this.b;
-                x10 x10Var2 = (x10) this.c;
+                y10 y10Var2 = (y10) this.c;
                 h6Var.getClass();
-                x10Var2.a(h6Var);
+                y10Var2.a(h6Var);
                 return;
             case 6:
-                mp.u1(((o6) this.b).N.a).R1().c0((TL_stories.TL_updateStory) this.c);
+                np.u1(((o6) this.b).N.a).R1().c0((TL_stories.TL_updateStory) this.c);
                 return;
             case 7:
                 o6 o6Var = (o6) this.b;
@@ -203,8 +203,8 @@ public final /* synthetic */ class l4 implements Runnable {
             case 10:
                 c7 c7Var2 = (c7) this.b;
                 TL_stories.TL_updateStory tL_updateStory = (TL_stories.TL_updateStory) this.c;
-                tr trVar = c7Var2.b;
-                SQLiteDatabase sQLiteDatabase = trVar.b;
+                ur urVar = c7Var2.b;
+                SQLiteDatabase sQLiteDatabase = urVar.b;
                 try {
                     long o4 = org.telegram.messenger.n5.o(tL_updateStory.peer);
                     TL_stories.StoryItem storyItem = tL_updateStory.story;
@@ -272,7 +272,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     sQLiteDatabase.executeFast("UPDATE stories_counter SET count = " + (r8 + i7) + " WHERE dialog_id = " + o4).stepThis().dispose();
                     return;
                 } catch (Throwable th2) {
-                    trVar.o(th2, true);
+                    urVar.o(th2, true);
                     return;
                 }
             case 11:
@@ -281,8 +281,8 @@ public final /* synthetic */ class l4 implements Runnable {
             case 12:
                 c7 c7Var3 = (c7) this.b;
                 p5 p5Var = (p5) this.c;
-                tr trVar2 = c7Var3.b;
-                SQLiteDatabase sQLiteDatabase2 = trVar2.b;
+                ur urVar2 = c7Var3.b;
+                SQLiteDatabase sQLiteDatabase2 = urVar2.b;
                 LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
                 try {
                     SQLiteCursor queryFinalized4 = sQLiteDatabase2.queryFinalized("SELECT dialog_id, max_read FROM stories_counter", new Object[0]);
@@ -290,7 +290,7 @@ public final /* synthetic */ class l4 implements Runnable {
                         longSparseIntArray.put(queryFinalized4.longValue(0), queryFinalized4.intValue(1));
                     }
                 } catch (Exception e10) {
-                    trVar2.o(e10, true);
+                    urVar2.o(e10, true);
                 }
                 org.telegram.messenger.g0.g3(new l4(14, p5Var, longSparseIntArray));
                 return;

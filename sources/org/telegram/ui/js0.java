@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class js0 extends FrameLayout {
     public final org.telegram.ui.ActionBar.m5 a;
@@ -55,7 +55,7 @@ public class js0 extends FrameLayout {
     }
 
     public final void a(ws0 ws0Var, boolean z10) {
-        boolean q10 = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q();
+        boolean q10 = org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q();
         ImageView imageView = this.d;
         if (q10 && ws0Var.a == 12 && ws0Var.b == R.drawable.filled_premium_status2) {
             imageView.setVisibility(8);
@@ -65,7 +65,7 @@ public class js0 extends FrameLayout {
                     this.h.a();
                 }
             }
-            Long i7 = org.telegram.messenger.o10.i(org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).f());
+            Long i7 = org.telegram.messenger.p10.i(org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).f());
             b(i7 == null ? 0L : i7.longValue(), false);
         } else {
             imageView.setVisibility(0);

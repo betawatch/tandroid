@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class te0 extends FrameLayout {
     public float a;
@@ -66,7 +66,7 @@ public final class te0 extends FrameLayout {
         ArrayList arrayList;
         boolean z11;
         boolean z12;
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         if (!this.d && !this.c) {
             return false;
         }
@@ -104,7 +104,7 @@ public final class te0 extends FrameLayout {
                     f11 = com.google.android.gms.internal.vision.e2.c(i13, i10, 0.5f, 1.0f);
                 } else {
                     if (i13 > org.telegram.messenger.g0.q.x - layoutParams.width) {
-                        f11 = org.telegram.messenger.n10.w((i13 - r11) + r10, i10, 0.5f, 1.0f);
+                        f11 = org.telegram.messenger.o10.w((i13 - r11) + r10, i10, 0.5f, 1.0f);
                     }
                 }
                 if (pipRoundVideoView.a.getAlpha() != f11) {
@@ -126,11 +126,11 @@ public final class te0 extends FrameLayout {
                 return true;
             }
         } else if (motionEvent.getAction() == 1) {
-            if (this.d && !this.c && (fjVar = MediaController.B().v0) != null) {
+            if (this.d && !this.c && (gjVar = MediaController.B().v0) != null) {
                 if (MediaController.B().H()) {
-                    MediaController.B().S(fjVar);
+                    MediaController.B().S(gjVar);
                 } else {
-                    MediaController.B().R(fjVar, true);
+                    MediaController.B().R(gjVar, true);
                 }
             }
             this.c = false;

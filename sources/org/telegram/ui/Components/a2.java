@@ -1,30 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.lr b;
+    public final /* synthetic */ org.telegram.messenger.mr b;
 
-    public /* synthetic */ a2(org.telegram.messenger.lr lrVar, int i7) {
+    public /* synthetic */ a2(org.telegram.messenger.mr mrVar, int i7) {
         this.a = i7;
-        this.b = lrVar;
+        this.b = mrVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.lr lrVar = this.b;
-                if (lrVar != null) {
-                    lrVar.d(false);
+                org.telegram.messenger.mr mrVar = this.b;
+                if (mrVar != null) {
+                    mrVar.d(false);
                     break;
                 }
                 break;
             default:
-                org.telegram.messenger.lr lrVar2 = this.b;
-                if (lrVar2 != null) {
-                    lrVar2.d(false);
+                org.telegram.messenger.mr mrVar2 = this.b;
+                if (mrVar2 != null) {
+                    mrVar2.d(false);
                     break;
                 }
                 break;

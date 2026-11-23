@@ -16,7 +16,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u10 extends FrameLayout implements org.telegram.ui.ActionBar.b6, org.telegram.ui.Components.voip.m0 {
     public int E;
@@ -113,7 +113,7 @@ public final class u10 extends FrameLayout implements org.telegram.ui.ActionBar.
     public final void c(Canvas canvas) {
         if (this.x != null) {
             canvas.save();
-            int z10 = org.telegram.messenger.n10.z(24.0f, getMeasuredWidth() - this.E, 2);
+            int z10 = org.telegram.messenger.o10.z(24.0f, getMeasuredWidth() - this.E, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.F;
             textPaint.setAlpha(alpha);
@@ -125,7 +125,7 @@ public final class u10 extends FrameLayout implements org.telegram.ui.ActionBar.
             if (xcVar.getDrawable() != null) {
                 xcVar.getDrawable().setAlpha((int) (getAlpha() * this.s * 255.0f));
                 xcVar.draw(canvas);
-                xcVar.getDrawable().setAlpha(org.telegram.messenger.ks.e4);
+                xcVar.getDrawable().setAlpha(org.telegram.messenger.ls.e4);
             }
             canvas.restore();
         }
@@ -217,20 +217,20 @@ public final class u10 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.f = u3Var;
         this.h = groupCallParticipant;
         long j3 = this.e;
-        long B1 = org.telegram.messenger.fj.B1(groupCallParticipant.peer);
+        long B1 = org.telegram.messenger.gj.B1(groupCallParticipant.peer);
         this.e = B1;
         q9 q9Var = this.d;
         b9 b9Var = this.a;
         if (B1 > 0) {
-            TLRPC.User c22 = org.telegram.messenger.mp.u1(org.telegram.messenger.c.a(i7).a).c2(Long.valueOf(this.e));
+            TLRPC.User c22 = org.telegram.messenger.np.u1(org.telegram.messenger.c.a(i7).a).c2(Long.valueOf(this.e));
             this.b = c22;
             this.c = null;
             b9Var.r(c22);
-            this.y = org.telegram.messenger.o10.k(this.b, true);
+            this.y = org.telegram.messenger.p10.k(this.b, true);
             q9Var.getImageReceiver().d = i7;
-            q9Var.j(org.telegram.messenger.fc.l(org.telegram.messenger.j10.t0, 1, this.b), "50_50", b9Var, this.b);
+            q9Var.j(org.telegram.messenger.gc.l(org.telegram.messenger.k10.t0, 1, this.b), "50_50", b9Var, this.b);
         } else {
-            TLRPC.Chat O0 = org.telegram.messenger.mp.u1(org.telegram.messenger.c.a(i7).a).O0(Long.valueOf(-this.e));
+            TLRPC.Chat O0 = org.telegram.messenger.np.u1(org.telegram.messenger.c.a(i7).a).O0(Long.valueOf(-this.e));
             this.c = O0;
             this.b = null;
             b9Var.q(O0);
@@ -238,12 +238,12 @@ public final class u10 extends FrameLayout implements org.telegram.ui.ActionBar.
             if (chat != null) {
                 this.y = chat.title;
                 q9Var.getImageReceiver().d = i7;
-                q9Var.j(org.telegram.messenger.fc.a(1, this.c), "50_50", b9Var, this.c);
+                q9Var.j(org.telegram.messenger.gc.a(1, this.c), "50_50", b9Var, this.c);
             }
         }
         boolean z10 = j3 == this.e;
         if (u3Var == null) {
-            this.I = v10Var.n.d == org.telegram.messenger.fj.B1(groupCallParticipant.peer);
+            this.I = v10Var.n.d == org.telegram.messenger.gj.B1(groupCallParticipant.peer);
         } else {
             org.telegram.messenger.u3 u3Var2 = v10Var.n.e;
             if (u3Var2 != null) {
@@ -440,7 +440,7 @@ public final class u10 extends FrameLayout implements org.telegram.ui.ActionBar.
             q9Var.setTranslationY(0.0f);
             q9Var.setScaleX(1.0f);
             q9Var.setScaleY(1.0f);
-            paint.setAlpha(org.telegram.messenger.ks.e4);
+            paint.setAlpha(org.telegram.messenger.ls.e4);
             invalidate();
             org.telegram.ui.Components.voip.y yVar = this.w;
             if (yVar != null) {

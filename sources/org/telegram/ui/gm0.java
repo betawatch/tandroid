@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gm0 extends Drawable {
     public static final /* synthetic */ int j = 0;
@@ -44,20 +44,20 @@ public final class gm0 extends Drawable {
             int[] iArr = org.telegram.ui.ActionBar.m6.r8;
             return new gm0(org.telegram.ui.ActionBar.m6.x0(null, iArr[i10], false), org.telegram.ui.ActionBar.m6.x0(null, iArr[i10], false), org.telegram.ui.ActionBar.m6.x0(null, iArr[i10], false));
         }
-        org.telegram.messenger.cp cpVar = org.telegram.messenger.mp.u1(i7).t4;
-        return b(cpVar != null ? cpVar.d(i10) : null, false);
+        org.telegram.messenger.dp dpVar = org.telegram.messenger.np.u1(i7).t4;
+        return b(dpVar != null ? dpVar.d(i10) : null, false);
     }
 
-    public static gm0 b(org.telegram.messenger.bp bpVar, boolean z10) {
-        if (bpVar == null) {
+    public static gm0 b(org.telegram.messenger.cp cpVar, boolean z10) {
+        if (cpVar == null) {
             return new gm0(0, 0, 0);
         }
-        return new gm0(bpVar.f(), (!z10 || bpVar.o(org.telegram.ui.ActionBar.m6.I.q())) ? bpVar.g() : bpVar.f(), z10 ? bpVar.f() : bpVar.i());
+        return new gm0(cpVar.f(), (!z10 || cpVar.o(org.telegram.ui.ActionBar.m6.I.q())) ? cpVar.g() : cpVar.f(), z10 ? cpVar.f() : cpVar.i());
     }
 
     public static gm0 c(int i7, int i10) {
-        org.telegram.messenger.cp cpVar = org.telegram.messenger.mp.u1(i7).u4;
-        return b(cpVar == null ? null : cpVar.d(i10), true);
+        org.telegram.messenger.dp dpVar = org.telegram.messenger.np.u1(i7).u4;
+        return b(dpVar == null ? null : dpVar.d(i10), true);
     }
 
     public final void d() {

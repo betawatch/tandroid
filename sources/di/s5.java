@@ -3,7 +3,7 @@ package di;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s5 extends org.telegram.ui.Components.nc {
     public final org.telegram.ui.ActionBar.h6 Q;
@@ -23,7 +23,7 @@ public final class s5 extends org.telegram.ui.Components.nc {
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.j6.m(str, getPaint().getFontMetricsInt(), false, null, 0));
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.oc.b(ki.j.J0(i7), q1Var != null ? new ai.c1(this, q1Var, i7, 7) : null, this.Q, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.oc.b(ki.j.J0(i7), q1Var != null ? new ai.j1(this, q1Var, i7, 6) : null, this.Q, null));
         setText(spannableStringBuilder);
         this.R = str;
         this.S = i7;

@@ -9,15 +9,15 @@ import android.util.LongSparseArray;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.al;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bf;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.bl;
+import org.telegram.messenger.cf;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -35,7 +35,7 @@ import org.telegram.ui.pc1;
 import org.telegram.ui.uc1;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u4 implements Runnable {
     public final /* synthetic */ int a;
@@ -63,14 +63,14 @@ public final /* synthetic */ class u4 implements Runnable {
         switch (i11) {
             case 0:
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                ((q10) obj2).a(wallettransaction.comment, Boolean.valueOf(wallettransaction.comment_encrypted));
+                ((r10) obj2).a(wallettransaction.comment, Boolean.valueOf(wallettransaction.comment_encrypted));
                 break;
             case 1:
                 TextView[] textViewArr = (TextView[]) obj2;
                 SpannableString[] spannableStringArr = (SpannableString[]) obj;
                 if (textViewArr[0] != null) {
                     if (spannableStringArr[0] == null) {
-                        SpannableString spannableString = new SpannableString(gd.N0(2131748586, null));
+                        SpannableString spannableString = new SpannableString(hd.N0(2131748586, null));
                         spannableStringArr[0] = spannableString;
                         spannableString.setSpan(new r80(org.telegram.messenger.g0.L(150.0f), textViewArr[0]), 0, spannableStringArr[0].length(), 33);
                     }
@@ -99,7 +99,7 @@ public final /* synthetic */ class u4 implements Runnable {
                 ((ViewGroup) obj).removeView(((e7) obj2).h);
                 break;
             case 8:
-                ((x10) obj2).a((TL_wallet.walletTransaction) obj);
+                ((y10) obj2).a((TL_wallet.walletTransaction) obj);
                 break;
             case 9:
                 r8 r8Var = (r8) obj2;
@@ -118,7 +118,7 @@ public final /* synthetic */ class u4 implements Runnable {
                 u8 u8Var = (u8) obj2;
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
                 if ((g2Var instanceof n6) && lc.a(g2Var)) {
-                    lc.b0(g2Var).I(R.raw.contact_check, gd.N0(2131742844, null), gd.N0(2131742843, null)).j();
+                    lc.b0(g2Var).I(R.raw.contact_check, hd.N0(2131742842, null), hd.N0(2131742841, null)).j();
                 }
                 u8Var.finishFragment();
                 break;
@@ -129,12 +129,12 @@ public final /* synthetic */ class u4 implements Runnable {
             case 12:
                 d9 d9Var = (d9) obj2;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, d9Var.getParentActivity(), d9Var.getResourceProvider());
-                String N0 = gd.N0(2131742887, null);
+                String N0 = hd.N0(2131742885, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = gd.N0(2131742889, null);
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
-                alertDialog$Builder.k(gd.N0(2131742892, null), new aj0(29, d9Var, (u0) obj));
+                t1Var.U = hd.N0(2131742887, null);
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
+                alertDialog$Builder.k(hd.N0(2131742890, null), new aj0(29, d9Var, (u0) obj));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;
@@ -172,9 +172,9 @@ public final /* synthetic */ class u4 implements Runnable {
                 TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) ((TLObject) obj);
                 WallpapersListActivity wallpapersListActivity = uc1Var2.F;
                 i7 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
-                mp.u1(i7).f4(tL_contacts_resolvedPeer.users, false);
+                np.u1(i7).f4(tL_contacts_resolvedPeer.users, false);
                 i10 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
-                mp.u1(i10).Z3(tL_contacts_resolvedPeer.chats, false);
+                np.u1(i10).Z3(tL_contacts_resolvedPeer.chats, false);
                 wallpapersListActivity.getMessagesStorage().m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
                 String str2 = uc1Var2.y;
                 uc1Var2.y = null;
@@ -184,18 +184,18 @@ public final /* synthetic */ class u4 implements Runnable {
                 String str3 = (String) obj;
                 cd1 cd1Var = ((bd1) obj2).a;
                 Activity parentActivity = cd1Var.getParentActivity();
-                fj fjVar = cd1Var.n;
+                gj gjVar = cd1Var.n;
                 if (parentActivity != null) {
                     if (org.telegram.messenger.s2.a) {
                         org.telegram.messenger.a8.b(str3);
                     }
                     str3.getClass();
                     if (str3.equals("share_game")) {
-                        fjVar.k.with_my_score = false;
+                        gjVar.k.with_my_score = false;
                     } else if (str3.equals("share_score")) {
-                        fjVar.k.with_my_score = true;
+                        gjVar.k.with_my_score = true;
                     }
-                    cd1Var.showDialog(ap0.O0(cd1Var.getParentActivity(), fjVar, null, false, cd1Var.h));
+                    cd1Var.showDialog(ap0.O0(cd1Var.getParentActivity(), gjVar, null, false, cd1Var.h));
                     break;
                 }
                 break;
@@ -229,7 +229,7 @@ public final /* synthetic */ class u4 implements Runnable {
                     while (i12 < size) {
                         Object obj3 = arrayList3.get(i12);
                         i12++;
-                        ((x10) obj3).a(arrayList2);
+                        ((y10) obj3).a(arrayList2);
                     }
                     c8.cb.e = null;
                     break;
@@ -241,9 +241,9 @@ public final /* synthetic */ class u4 implements Runnable {
                 arrayList4.clear();
                 arrayList4.addAll((ArrayList) obj);
                 x0Var.n = false;
-                bi.g6 g6Var = x0Var.a;
-                if (g6Var != null) {
-                    g6Var.g3.O(true);
+                bi.f6 f6Var = x0Var.a;
+                if (f6Var != null) {
+                    f6Var.g3.O(true);
                     break;
                 }
                 break;
@@ -257,12 +257,12 @@ public final /* synthetic */ class u4 implements Runnable {
                 break;
             case 25:
                 org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) obj2;
-                mp messagesController = n1Var.getMessagesController();
+                np messagesController = n1Var.getMessagesController();
                 messagesController.getClass();
                 TL_account.toggleWebBrowserSettingsException togglewebbrowsersettingsexception = new TL_account.toggleWebBrowserSettingsException();
                 togglewebbrowsersettingsexception.url = (String) obj;
                 togglewebbrowsersettingsexception.delete = true;
-                messagesController.getConnectionsManager().sendRequestTyped(togglewebbrowsersettingsexception, new al(messagesController, 3));
+                messagesController.getConnectionsManager().sendRequestTyped(togglewebbrowsersettingsexception, new bl(messagesController, 3));
                 n1Var.a.g3.O(true);
                 break;
             case 26:
@@ -272,8 +272,8 @@ public final /* synthetic */ class u4 implements Runnable {
                 t1Var2.g = true;
                 if (tLObject instanceof TLRPC.TL_messages_webPage) {
                     TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject;
-                    mp.u1(i15).f4(tL_messages_webPage.users, false);
-                    mp.u1(i15).Z3(tL_messages_webPage.chats, false);
+                    np.u1(i15).f4(tL_messages_webPage.users, false);
+                    np.u1(i15).Z3(tL_messages_webPage.chats, false);
                     t1Var2.h = tL_messages_webPage.webpage;
                 } else {
                     if (tLObject instanceof TLRPC.TL_webPage) {
@@ -288,7 +288,7 @@ public final /* synthetic */ class u4 implements Runnable {
                 if (webPage != null && webPage.cached_page == null) {
                     t1Var2.h = null;
                 }
-                if (!bz.w0 && t1Var2.h != null && (sVar = t1Var2.l) != null) {
+                if (!cz.w0 && t1Var2.h != null && (sVar = t1Var2.l) != null) {
                     sVar.run();
                 }
                 t1Var2.c();
@@ -305,9 +305,9 @@ public final /* synthetic */ class u4 implements Runnable {
                 p4.i1 i1Var = (p4.i1) obj;
                 p4.n0 n0Var = e0Var.h;
                 e0Var.t = i1Var;
-                bf bfVar = new bf(e0Var, i1Var);
-                i1Var.I0(bfVar);
-                e0Var.u = bfVar;
+                cf cfVar = new cf(e0Var, i1Var);
+                i1Var.I0(cfVar);
+                e0Var.u = cfVar;
                 try {
                     n0Var.j.p(0, i1Var);
                 } catch (RemoteException e10) {

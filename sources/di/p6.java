@@ -12,14 +12,14 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -55,7 +55,7 @@ import org.telegram.ui.ro;
 import org.telegram.ui.tw;
 import org.telegram.ui.vo;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
@@ -96,21 +96,21 @@ public final /* synthetic */ class p6 implements Runnable {
         Object obj2 = this.d;
         switch (i10) {
             case 0:
-                ((q10) obj2).a(Boolean.valueOf(z10), (String) obj);
+                ((r10) obj2).a(Boolean.valueOf(z10), (String) obj);
                 return;
             case 1:
                 ((org.telegram.ui.Wallet.e0) obj2).a(Boolean.valueOf(z10), (String) obj);
                 return;
             case 2:
-                ((bi.f8) obj2).a(Boolean.valueOf(z10), (String) obj);
+                ((bi.e8) obj2).a(Boolean.valueOf(z10), (String) obj);
                 return;
             case 3:
-                tr trVar = (tr) obj2;
-                x10 x10Var = (x10) obj;
+                ur urVar = (ur) obj2;
+                y10 y10Var = (y10) obj;
                 ArrayList arrayList2 = new ArrayList();
                 try {
                     try {
-                        sQLiteDatabase = trVar.b;
+                        sQLiteDatabase = urVar.b;
                     } catch (Throwable th2) {
                         throw th2;
                     }
@@ -148,7 +148,7 @@ public final /* synthetic */ class p6 implements Runnable {
                     }
                 }
                 sQLiteCursor.dispose();
-                org.telegram.messenger.g0.g3(new hi.c(i12, x10Var, arrayList2));
+                org.telegram.messenger.g0.g3(new hi.c(i12, y10Var, arrayList2));
                 return;
             case 4:
                 hi.c3 c3Var = (hi.c3) obj2;
@@ -182,13 +182,13 @@ public final /* synthetic */ class p6 implements Runnable {
                 return;
             case 5:
                 kg.z zVar = (kg.z) obj2;
-                tr trVar2 = (tr) obj;
+                ur urVar2 = (ur) obj;
                 ArrayList arrayList5 = new ArrayList();
                 ArrayList arrayList6 = new ArrayList();
                 ArrayList arrayList7 = new ArrayList();
                 try {
                     try {
-                        sQLiteCursor = trVar2.b.queryFinalized("SELECT data FROM business_links ORDER BY order_value ASC", new Object[0]);
+                        sQLiteCursor = urVar2.b.queryFinalized("SELECT data FROM business_links ORDER BY order_value ASC", new Object[0]);
                         while (sQLiteCursor.next()) {
                             NativeByteBuffer byteBufferValue2 = sQLiteCursor.byteBufferValue(0);
                             arrayList5.add(TL_account.TL_businessChatLink.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false));
@@ -210,10 +210,10 @@ public final /* synthetic */ class p6 implements Runnable {
                             }
                         }
                         if (!arrayList8.isEmpty()) {
-                            trVar2.n0(arrayList8, arrayList6, false);
+                            urVar2.n0(arrayList8, arrayList6, false);
                         }
                         if (!arrayList9.isEmpty()) {
-                            trVar2.Q(TextUtils.join(",", arrayList9), arrayList7);
+                            urVar2.Q(TextUtils.join(",", arrayList9), arrayList7);
                         }
                     } catch (Exception e12) {
                         org.telegram.messenger.a8.g(e12, true);
@@ -228,10 +228,10 @@ public final /* synthetic */ class p6 implements Runnable {
                     }
                 }
             case 6:
-                ((ni.a) obj2).e1((x10) obj, z10, false);
+                ((ni.a) obj2).e1((y10) obj, z10, false);
                 return;
             case 7:
-                ((q10) obj2).a((Bitmap) obj, Boolean.valueOf(z10));
+                ((r10) obj2).a((Bitmap) obj, Boolean.valueOf(z10));
                 return;
             case 8:
                 oi.t3 t3Var = (oi.t3) obj2;
@@ -310,36 +310,36 @@ public final /* synthetic */ class p6 implements Runnable {
                 if (!z10) {
                     HashMap hashMap = g6Var.b;
                     if (hashMap == null || hashMap.isEmpty()) {
-                        ks.f(i17).n(g6Var, ks.Y1);
-                        ks.f(i17).n(g6Var, ks.Z1);
+                        ls.f(i17).n(g6Var, ls.Y1);
+                        ls.f(i17).n(g6Var, ls.Z1);
                         return;
                     }
                     return;
                 }
                 if (g6Var.b != null) {
-                    ks.f(i17).b(g6Var, ks.Y1);
-                    ks.f(i17).b(g6Var, ks.Z1);
+                    ls.f(i17).b(g6Var, ls.Y1);
+                    ls.f(i17).b(g6Var, ls.Z1);
                     Iterator it2 = g6Var.b.entrySet().iterator();
                     while (it2.hasNext()) {
-                        org.telegram.messenger.w7.G(i17).V(org.telegram.messenger.fc.b(((org.telegram.ui.ActionBar.f6) ((Map.Entry) it2.next()).getValue()).a.document), "wallpaper", null, 0, 1);
+                        org.telegram.messenger.w7.G(i17).V(org.telegram.messenger.gc.b(((org.telegram.ui.ActionBar.f6) ((Map.Entry) it2.next()).getValue()).a.document), "wallpaper", null, 0, 1);
                     }
                     return;
                 }
                 return;
             case 14:
-                ((bn) obj2).Zc((fj) obj, z10);
+                ((bn) obj2).Zc((gj) obj, z10);
                 return;
             case 15:
                 TLObject tLObject2 = (TLObject) obj;
                 bn bnVar = ((mm) obj2).a;
                 bnVar.ec.b();
                 if (!(tLObject2 instanceof TLRPC.TL_messages_stickerSet)) {
-                    org.telegram.ui.Components.lc.b0(bnVar).Q(R.raw.error, 36, gd.N0(z10 ? 2131754432 : 2131754382, null)).k(true);
+                    org.telegram.ui.Components.lc.b0(bnVar).Q(R.raw.error, 36, hd.N0(z10 ? 2131754432 : 2131754382, null)).k(true);
                     return;
                 }
                 i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
-                ri.d0(i7).N1(tL_messages_stickerSet, false);
+                si.d0(i7).N1(tL_messages_stickerSet, false);
                 if (bnVar.getParentActivity() == null || bnVar.getParentActivity() == null) {
                     return;
                 }
@@ -367,11 +367,11 @@ public final /* synthetic */ class p6 implements Runnable {
                 go goVar = (go) obj2;
                 io ioVar = goVar.a;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ioVar.getContext(), ioVar.o2);
-                String N0 = gd.N0(2131743429, null);
+                String N0 = hd.N0(2131743427, null);
                 org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
                 t1Var2.S = N0;
-                t1Var2.U = gd.N0(2131743430, null);
-                alertDialog$Builder.k(gd.N0(2131747637, null), new ab.j(goVar, (TLRPC.TL_username) obj, z10, i11));
+                t1Var2.U = hd.N0(2131743428, null);
+                alertDialog$Builder.k(hd.N0(2131747637, null), new ab.j(goVar, (TLRPC.TL_username) obj, z10, i11));
                 alertDialog$Builder.p();
                 return;
             case 17:
@@ -477,7 +477,7 @@ public final /* synthetic */ class p6 implements Runnable {
                     }
                 }
                 org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(cxVar.getParentActivity(), null);
-                obVar.b.setText(z10 ? gd.G(i19, "NotificationsMutedHintChats", new Object[0]) : gd.G(i19, "NotificationsUnmutedHintChats", new Object[0]));
+                obVar.b.setText(z10 ? hd.G(i19, "NotificationsMutedHintChats", new Object[0]) : hd.G(i19, "NotificationsUnmutedHintChats", new Object[0]));
                 if (z10) {
                     obVar.d(R.raw.ic_mute, "Body Main", "Body Top", "Line", "Curve Big", "Curve Small");
                 } else {

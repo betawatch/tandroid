@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.ui.Components.rp0;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p1 {
     public static boolean e0;
@@ -124,7 +124,7 @@ public final class p1 {
 
     public static boolean a() {
         for (int i7 = 0; i7 < 4; i7++) {
-            if (j10.i(i7).p() && ((org.telegram.messenger.h0) mp.u1(i7).A7.u0.b).c) {
+            if (k10.i(i7).p() && ((org.telegram.messenger.h0) np.u1(i7).A7.u0.b).c) {
                 return true;
             }
         }
@@ -289,7 +289,7 @@ public final class p1 {
                 String str4 = this.f;
                 String str5 = this.H;
                 float f10 = this.l;
-                j3 = lVar.c(context, str4, str5, i7 / f10, f10, this.g, this.h, this.i, str3, gd.N0(2131742603, null), this.L, this.b);
+                j3 = lVar.c(context, str4, str5, i7 / f10, f10, this.g, this.h, this.i, str3, hd.N0(2131742601, null), this.L, this.b);
                 try {
                     SystemClock.uptimeMillis();
                     this.a.post(new bi.e0(this, j3, i7, this.H, str));

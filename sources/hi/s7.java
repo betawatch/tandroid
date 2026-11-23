@@ -2,13 +2,13 @@ package hi;
 
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class s7 extends dk0 {
     public final /* synthetic */ t7 c;
@@ -50,19 +50,19 @@ public final class s7 extends dk0 {
             TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) t7Var.n1.get(i7 - 2);
             boolean z11 = inputPeer instanceof TLRPC.TL_inputPeerSelf;
             if (z11) {
-                o8Var.setUser(j10.i(i10).f());
+                o8Var.setUser(k10.i(i10).f());
             } else if (inputPeer instanceof TLRPC.TL_inputPeerUser) {
-                o8Var.setUser(mp.u1(i10).c2(Long.valueOf(inputPeer.user_id)));
+                o8Var.setUser(np.u1(i10).c2(Long.valueOf(inputPeer.user_id)));
             } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
-                o8Var.a(0, mp.u1(i10).O0(Long.valueOf(inputPeer.chat_id)));
+                o8Var.a(0, np.u1(i10).O0(Long.valueOf(inputPeer.chat_id)));
             } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
-                o8Var.a(0, mp.u1(i10).O0(Long.valueOf(inputPeer.channel_id)));
+                o8Var.a(0, np.u1(i10).O0(Long.valueOf(inputPeer.channel_id)));
             }
             o8Var.f.setVisibility(8);
             o8Var.h.setVisibility(0);
             TLRPC.InputPeer inputPeer2 = t7Var.o1;
             if (inputPeer2 != null || i7 != 2) {
-                if ((inputPeer2 instanceof TLRPC.TL_inputPeerSelf ? j10.i(t7Var.m1).e() : org.telegram.messenger.n5.n(inputPeer2)) != (z11 ? j10.i(t7Var.m1).e() : org.telegram.messenger.n5.n(inputPeer))) {
+                if ((inputPeer2 instanceof TLRPC.TL_inputPeerSelf ? k10.i(t7Var.m1).e() : org.telegram.messenger.n5.n(inputPeer2)) != (z11 ? k10.i(t7Var.m1).e() : org.telegram.messenger.n5.n(inputPeer))) {
                     z10 = false;
                     o8Var.c(z10, false);
                     o8Var.setDivider(i7 != b() - 1);

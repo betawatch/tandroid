@@ -8,13 +8,13 @@ import android.graphics.RectF;
 import java.io.Serializable;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class q8 {
     public int[] A;
@@ -125,7 +125,7 @@ public final class q8 {
                 this.t = (TL_stars.starGiftAttributeBackdrop) starGiftAttribute2;
             }
             if (starGiftAttribute2 instanceof TL_stars.starGiftAttributePattern) {
-                this.d.q0(fc.b(((TL_stars.starGiftAttributePattern) starGiftAttribute2).document), "60_60_firstframe", null, null, nftitem.gift, 1);
+                this.d.q0(gc.b(((TL_stars.starGiftAttributePattern) starGiftAttribute2).document), "60_60_firstframe", null, null, nftitem.gift, 1);
             }
         }
         h3 h3Var = new h3(this, i7);
@@ -137,7 +137,7 @@ public final class q8 {
         fi.s2 s2Var2 = this.c;
         s2Var2.v0 = false;
         s2Var2.W(1);
-        this.c.q0(fc.b(nftitem.gift.getDocument()), "120_120_nolimit", null, null, nftitem.gift, 1);
+        this.c.q0(gc.b(nftitem.gift.getDocument()), "120_120_nolimit", null, null, nftitem.gift, 1);
         if (r8Var.isAttachedToWindow()) {
             this.c.P();
             this.d.P();
@@ -161,7 +161,7 @@ public final class q8 {
         this.G = n10;
         this.E = i7;
         if (bitmap == null) {
-            this.v = Bitmap.createBitmap(ks.L4, ks.L4, Bitmap.Config.ARGB_8888);
+            this.v = Bitmap.createBitmap(ls.L4, ls.L4, Bitmap.Config.ARGB_8888);
             this.x = new Canvas(this.v);
         }
         this.v.eraseColor(0);
@@ -187,9 +187,9 @@ public final class q8 {
             this.z = new int[82944];
             this.A = new int[82944];
             org.telegram.messenger.r5 r5Var = sa.a;
-            this.B = new int[ks.L4];
+            this.B = new int[ls.L4];
         }
-        this.v.getPixels(this.y, 0, ks.L4, 0, 0, ks.L4, ks.L4);
+        this.v.getPixels(this.y, 0, ls.L4, 0, 0, ls.L4, ls.L4);
         this.C = true;
         this.D = false;
         boolean z10 = this.w == null;

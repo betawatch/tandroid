@@ -1,33 +1,42 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
+import org.telegram.ui.Components.a70;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fe implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x10 b;
-    public final /* synthetic */ Uri c;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ gs c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ fe(x10 x10Var, Uri uri, int i7) {
+    public /* synthetic */ fe(gs gsVar, Object obj, float f10, int i7) {
         this.a = i7;
-        this.b = x10Var;
-        this.c = uri;
+        this.c = gsVar;
+        this.d = obj;
+        this.b = f10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        Uri uri = this.c;
-        x10 x10Var = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                String[] strArr = MediaController.W1;
-                x10Var.a(uri);
+                MediaController mediaController = (MediaController) this.c;
+                gj gjVar = (gj) this.d;
+                if (mediaController.j0 != null && mediaController.v0 != null && !mediaController.h0) {
+                    if (mediaController.L(gjVar)) {
+                        mediaController.i0(mediaController.v0, this.b);
+                    }
+                    mediaController.j0.h0();
+                    break;
+                }
                 break;
             default:
-                String[] strArr2 = MediaController.W1;
-                x10Var.a(uri);
+                org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) this.c;
+                a70 a70Var = (a70) this.d;
+                g4Var.i0.N.c(true, 0.0f);
+                a70Var.p = new org.telegram.ui.a0(g4Var, this.b, 0);
+                a70Var.a0();
                 break;
         }
     }

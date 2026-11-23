@@ -3,19 +3,19 @@ package org.telegram.ui;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ie implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ bn b;
-    public final /* synthetic */ org.telegram.messenger.mp c;
+    public final /* synthetic */ org.telegram.messenger.np c;
     public final /* synthetic */ CharSequence d;
     public final /* synthetic */ boolean e;
 
-    public /* synthetic */ ie(bn bnVar, CharSequence charSequence, org.telegram.messenger.mp mpVar, boolean z10) {
+    public /* synthetic */ ie(bn bnVar, CharSequence charSequence, org.telegram.messenger.np npVar, boolean z10) {
         this.b = bnVar;
         this.d = charSequence;
-        this.c = mpVar;
+        this.c = npVar;
         this.e = z10;
     }
 
@@ -28,24 +28,24 @@ public final /* synthetic */ class ie implements Runnable {
             default:
                 bn bnVar = this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, bnVar.getParentActivity(), bnVar.Ba);
-                String N0 = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                String N0 = org.telegram.messenger.hd.N0(R.string.AppName, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                String N02 = org.telegram.messenger.gd.N0(2131747637, null);
-                org.telegram.messenger.mp mpVar = this.c;
-                alertDialog$Builder.k(N02, new a3.g(bnVar, mpVar, this.d, this.e, 5));
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
-                t1Var.U = org.telegram.messenger.gd.N0(2131745489, null);
+                String N02 = org.telegram.messenger.hd.N0(2131747637, null);
+                org.telegram.messenger.np npVar = this.c;
+                alertDialog$Builder.k(N02, new a3.g(bnVar, npVar, this.d, this.e, 5));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
+                t1Var.U = org.telegram.messenger.hd.N0(2131745489, null);
                 bnVar.showDialog(t1Var);
-                mpVar.J2 = 0;
-                org.telegram.messenger.mp.g1().edit().putInt("secretWebpage2", mpVar.J2).commit();
+                npVar.J2 = 0;
+                org.telegram.messenger.np.g1().edit().putInt("secretWebpage2", npVar.J2).commit();
                 break;
         }
     }
 
-    public /* synthetic */ ie(bn bnVar, org.telegram.messenger.mp mpVar, CharSequence charSequence, boolean z10) {
+    public /* synthetic */ ie(bn bnVar, org.telegram.messenger.np npVar, CharSequence charSequence, boolean z10) {
         this.b = bnVar;
-        this.c = mpVar;
+        this.c = npVar;
         this.d = charSequence;
         this.e = z10;
     }

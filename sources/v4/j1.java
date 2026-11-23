@@ -1,8 +1,8 @@
 package v4;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class j1 {
     public int a;
@@ -21,7 +21,7 @@ public final class j1 {
                 return false;
             }
         }
-        if ((i7 & ks.x1) != 0) {
+        if ((i7 & ls.x1) != 0) {
             int i13 = this.d;
             int i14 = this.c;
             if ((((i13 > i14 ? 1 : i13 == i14 ? 2 : 4) << 4) & i7) == 0) {

@@ -8,7 +8,7 @@ import org.telegram.ui.Components.d71;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.o11;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.rz;
 import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.v90;
@@ -17,7 +17,7 @@ import org.telegram.ui.StickersActivity;
 import org.telegram.ui.rq;
 import org.telegram.ui.tw;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i0 extends v4.c0 {
     public final /* synthetic */ int I;
@@ -63,7 +63,7 @@ public final class i0 extends v4.c0 {
                     break;
                 }
             case 7:
-                if (!((o11) this.J).i3) {
+                if (!((n11) this.J).i3) {
                     break;
                 } else {
                     break;

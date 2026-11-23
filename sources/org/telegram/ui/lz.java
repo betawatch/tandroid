@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lz implements Runnable {
     public final /* synthetic */ int a;
@@ -50,12 +50,12 @@ public final /* synthetic */ class lz implements Runnable {
                 break;
             case 4:
                 FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) ((org.telegram.ui.Components.qz) obj).f;
-                if (!org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q()) {
+                if (!org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q()) {
                     ArrayList V0 = filtersSetupActivity.getMessagesController().V0();
                     int i12 = 0;
                     while (true) {
                         if (i12 < V0.size()) {
-                            if (!((org.telegram.messenger.ro) V0.get(i12)).d() || i12 == 0) {
+                            if (!((org.telegram.messenger.so) V0.get(i12)).d() || i12 == 0) {
                                 i12++;
                             } else {
                                 FiltersSetupActivity filtersSetupActivity2 = filtersSetupActivity.b.e;
@@ -63,9 +63,9 @@ public final /* synthetic */ class lz implements Runnable {
                                 if (i12 < 0 || i12 >= arrayList.size()) {
                                     i7 = 1;
                                 } else {
-                                    arrayList.add(0, (org.telegram.messenger.ro) arrayList.remove(i12));
+                                    arrayList.add(0, (org.telegram.messenger.so) arrayList.remove(i12));
                                     for (int i13 = 0; i13 <= i12; i13++) {
-                                        ((org.telegram.messenger.ro) arrayList.get(i13)).f = i13;
+                                        ((org.telegram.messenger.so) arrayList.get(i13)).f = i13;
                                     }
                                     i7 = 1;
                                     filtersSetupActivity2.e = true;
@@ -78,8 +78,8 @@ public final /* synthetic */ class lz implements Runnable {
                                 }
                                 org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(filtersSetupActivity);
                                 Object[] objArr = new Object[i7];
-                                objArr[0] = org.telegram.messenger.gd.N0(2131750795, null);
-                                b02.J(R.raw.filter_reorder, org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("LimitReachedReorderFolder", null, 2131748751, objArr)), org.telegram.messenger.gd.N0(2131746839, null), 5000, false, new d00(filtersSetupActivity, i11)).j();
+                                objArr[0] = org.telegram.messenger.hd.N0(2131750795, null);
+                                b02.J(R.raw.filter_reorder, org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("LimitReachedReorderFolder", null, 2131748751, objArr)), org.telegram.messenger.hd.N0(2131746839, null), 5000, false, new d00(filtersSetupActivity, i11)).j();
                             }
                         }
                     }
@@ -98,18 +98,18 @@ public final /* synthetic */ class lz implements Runnable {
                 o30 o30Var = (o30) obj;
                 f40 f40Var2 = o30Var.f;
                 d20 d20Var = f40Var2.m1;
-                org.telegram.messenger.fc fcVar = o30Var.d;
-                if (fcVar != null) {
-                    d20Var.L0 = fcVar;
+                org.telegram.messenger.gc gcVar = o30Var.d;
+                if (gcVar != null) {
+                    d20Var.L0 = gcVar;
                     d20Var.r1 = null;
                     d20Var.s1 = null;
                     o30Var.d = null;
                 }
-                TLRPC.Chat O0 = org.telegram.messenger.mp.u1(f40Var2.o1.a).O0(Long.valueOf(-o30Var.e));
-                org.telegram.messenger.fc a10 = org.telegram.messenger.fc.a(0, O0);
-                org.telegram.messenger.fc a11 = org.telegram.messenger.fc.a(1, O0);
-                if (org.telegram.messenger.fc.e(o30Var.b) == null) {
-                    a11 = org.telegram.messenger.fc.e(o30Var.c);
+                TLRPC.Chat O0 = org.telegram.messenger.np.u1(f40Var2.o1.a).O0(Long.valueOf(-o30Var.e));
+                org.telegram.messenger.gc a10 = org.telegram.messenger.gc.a(0, O0);
+                org.telegram.messenger.gc a11 = org.telegram.messenger.gc.a(1, O0);
+                if (org.telegram.messenger.gc.e(o30Var.b) == null) {
+                    a11 = org.telegram.messenger.gc.e(o30Var.c);
                 }
                 d20Var.setCreateThumbFromParent(false);
                 d20Var.H(null, a10, a11, true);
@@ -174,7 +174,7 @@ public final /* synthetic */ class lz implements Runnable {
                 }
                 break;
             case 13:
-                v50 v50Var3 = (v50) ((org.telegram.messenger.js) obj).c;
+                v50 v50Var3 = (v50) ((org.telegram.messenger.ks) obj).c;
                 v50Var3.presentFragment(new de0(), true);
                 v50Var3.N = true;
                 break;
@@ -271,11 +271,11 @@ public final /* synthetic */ class lz implements Runnable {
                     int i20 = ec0Var.F;
                     if (i20 != 4 && i20 != 3 && i20 != 11) {
                         if (i20 == 2) {
-                            ed0Var.setText(org.telegram.messenger.gd.a0(null, null, 2131745100, Integer.valueOf(i18), Integer.valueOf(i19)));
+                            ed0Var.setText(org.telegram.messenger.hd.a0(null, null, 2131745100, Integer.valueOf(i18), Integer.valueOf(i19)));
                             break;
                         }
                     } else {
-                        ed0Var.setText(org.telegram.messenger.gd.a0(null, null, 2131752617, Integer.valueOf(i18), Integer.valueOf(i19)));
+                        ed0Var.setText(org.telegram.messenger.hd.a0(null, null, 2131752617, Integer.valueOf(i18), Integer.valueOf(i19)));
                         break;
                     }
                 } else {
@@ -285,13 +285,13 @@ public final /* synthetic */ class lz implements Runnable {
                         ed0Var.setTextSize(1, 15.0f);
                         int i22 = ec0Var.F;
                         if (i22 == 4) {
-                            ed0Var.setText(org.telegram.messenger.gd.N0(2131745981, null));
+                            ed0Var.setText(org.telegram.messenger.hd.N0(2131745981, null));
                         } else if (i22 == 15) {
-                            ed0Var.setText(org.telegram.messenger.gd.N0(2131751435, null));
+                            ed0Var.setText(org.telegram.messenger.hd.N0(2131751435, null));
                         } else if (i22 == 11 || i22 == 3) {
-                            ed0Var.setText(org.telegram.messenger.gd.N0(2131745980, null));
+                            ed0Var.setText(org.telegram.messenger.hd.N0(2131745980, null));
                         } else {
-                            ed0Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.gd.N0(2131745982, null), true, 0.0f, 0.0f));
+                            ed0Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.hd.N0(2131745982, null), true, 0.0f, 0.0f));
                         }
                         int i23 = org.telegram.ui.ActionBar.m6.P9;
                         org.telegram.ui.ActionBar.t6.U(ed0Var, i23, null);
@@ -334,15 +334,15 @@ public final /* synthetic */ class lz implements Runnable {
                     if (i29 != 4 && i29 != 3 && i29 != 11) {
                         if (gd0Var2.i0 != 2 || (i29 != 2 && i29 != 17 && i29 != 16)) {
                             if (i29 == 2 || i29 == 17 || i29 == 16) {
-                                ed0Var3.setText(org.telegram.messenger.gd.a0("SmsAvailableIn", null, 2131745101, Integer.valueOf(i27), Integer.valueOf(i28)));
+                                ed0Var3.setText(org.telegram.messenger.hd.a0("SmsAvailableIn", null, 2131745101, Integer.valueOf(i27), Integer.valueOf(i28)));
                                 break;
                             }
                         } else {
-                            ed0Var3.setText(org.telegram.messenger.gd.a0("ResendSmsAvailableIn", null, 2131745923, Integer.valueOf(i27), Integer.valueOf(i28)));
+                            ed0Var3.setText(org.telegram.messenger.hd.a0("ResendSmsAvailableIn", null, 2131745923, Integer.valueOf(i27), Integer.valueOf(i28)));
                             break;
                         }
                     } else {
-                        ed0Var3.setText(org.telegram.messenger.gd.a0("CallAvailableIn", null, 2131752618, Integer.valueOf(i27), Integer.valueOf(i28)));
+                        ed0Var3.setText(org.telegram.messenger.hd.a0("CallAvailableIn", null, 2131752618, Integer.valueOf(i27), Integer.valueOf(i28)));
                         break;
                     }
                 } else {
@@ -350,11 +350,11 @@ public final /* synthetic */ class lz implements Runnable {
                     int i30 = gd0Var2.j0;
                     if (i30 == 3 || i30 == 4 || i30 == 2 || i30 == 17 || i30 == 16 || i30 == 11) {
                         if (i30 == 4) {
-                            ed0Var3.setText(org.telegram.messenger.gd.N0(2131745981, "RequestCallButton"));
+                            ed0Var3.setText(org.telegram.messenger.hd.N0(2131745981, "RequestCallButton"));
                         } else if (i30 == 11 || i30 == 3) {
-                            ed0Var3.setText(org.telegram.messenger.gd.N0(2131745980, null));
+                            ed0Var3.setText(org.telegram.messenger.hd.N0(2131745980, null));
                         } else {
-                            ed0Var3.setText(org.telegram.messenger.gd.N0(2131745979, "RequestSmsButton"));
+                            ed0Var3.setText(org.telegram.messenger.hd.N0(2131745979, "RequestSmsButton"));
                         }
                         int i31 = org.telegram.ui.ActionBar.m6.P9;
                         org.telegram.ui.ActionBar.t6.U(ed0Var3, i31, null);

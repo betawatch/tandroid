@@ -10,7 +10,7 @@ import org.telegram.ui.bb1;
 import org.telegram.ui.jw0;
 import org.telegram.ui.kw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kw0 extends org.telegram.ui.Cells.y6 {
     public final /* synthetic */ lw0 h;
@@ -19,16 +19,16 @@ public final class kw0 extends org.telegram.ui.Cells.y6 {
     public kw0(lw0 lw0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.h = lw0Var;
-        this.f = org.telegram.messenger.j10.t0;
+        this.f = org.telegram.messenger.k10.t0;
         final int i7 = 1;
         setOrientation(1);
         TextView textView = new TextView(context);
         this.a = textView;
         i5.c.x(textView, 1, 15.0f);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 16);
+        textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.L6, h6Var);
-        addView(textView, c8.ma.t(-1, -2, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 21, 15, 21, 0));
+        addView(textView, c8.ma.t(-1, -2, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 21, 15, 21, 0));
         org.telegram.ui.Components.m80 m80Var = new org.telegram.ui.Components.m80(context, h6Var);
         this.b = m80Var;
         org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.G6, h6Var);
@@ -37,8 +37,8 @@ public final class kw0 extends org.telegram.ui.Cells.y6 {
         org.telegram.ui.ActionBar.t6.C(m80Var, org.telegram.ui.ActionBar.m6.K6, h6Var);
         final int i10 = 0;
         m80Var.setMovementMethod(new org.telegram.messenger.c0(false));
-        m80Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
-        addView(m80Var, c8.ma.t(-2, -2, org.telegram.messenger.gd.a0 ? 5 : 3, 21, 14, 21, 0));
+        m80Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        addView(m80Var, c8.ma.t(-2, -2, org.telegram.messenger.hd.a0 ? 5 : 3, 21, 14, 21, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         addView(linearLayout, c8.ma.k(21.0f, 16.0f, 21.0f, 15.0f, -1, 44));

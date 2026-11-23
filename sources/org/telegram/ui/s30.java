@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s30 {
     public final int a;
@@ -69,7 +69,7 @@ public final class s30 {
         rectF2.set(rectF);
         float f12 = -L;
         rectF2.inset(f12, f12);
-        canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, org.telegram.messenger.ks.e4, 31);
+        canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, org.telegram.messenger.ls.e4, 31);
         long currentTimeMillis = (this.a * 45) + System.currentTimeMillis();
         long j10 = currentTimeMillis - this.g;
         float f13 = j10 / 180.0f;
@@ -84,9 +84,9 @@ public final class s30 {
             rectF2.offset(0.0f, (rectF.height() + L) * (min - 1.0f));
             canvas.translate(rectF2.left, rectF2.top);
             drawableArr[1].setBounds(0, 0, (int) rectF2.width(), (int) rectF2.height());
-            drawableArr[1].setAlpha(org.telegram.messenger.ks.L1);
+            drawableArr[1].setAlpha(org.telegram.messenger.ls.L1);
             drawableArr[1].draw(canvas);
-            drawableArr[1].setAlpha(org.telegram.messenger.ks.e4);
+            drawableArr[1].setAlpha(org.telegram.messenger.ls.e4);
             canvas.restore();
         } else {
             rectF2.set(rectF);
@@ -99,7 +99,7 @@ public final class s30 {
                 canvas.translate(rectF2.left, rectF2.top);
                 this.c.setAlpha((int) ((1.0f - f10) * 255.0f));
                 this.c.draw(canvas);
-                this.c.setAlpha(org.telegram.messenger.ks.e4);
+                this.c.setAlpha(org.telegram.messenger.ls.e4);
                 canvas.restore();
             } else {
                 j3 = j10;
@@ -112,7 +112,7 @@ public final class s30 {
                 canvas.translate(rectF2.left, rectF2.top);
                 this.d.setAlpha((int) (f10 * 255.0f));
                 this.d.draw(canvas);
-                this.d.setAlpha(org.telegram.messenger.ks.e4);
+                this.d.setAlpha(org.telegram.messenger.ls.e4);
                 canvas.restore();
             }
         }
@@ -121,9 +121,9 @@ public final class s30 {
         canvas.save();
         canvas.translate(rectF2.left, rectF2.top);
         drawableArr[0].setBounds(0, 0, (int) rectF2.width(), (int) rectF2.height());
-        drawableArr[0].setAlpha(org.telegram.messenger.ks.L1);
+        drawableArr[0].setAlpha(org.telegram.messenger.ls.L1);
         drawableArr[0].draw(canvas);
-        drawableArr[0].setAlpha(org.telegram.messenger.ks.e4);
+        drawableArr[0].setAlpha(org.telegram.messenger.ls.e4);
         canvas.restore();
         if (f13 >= 1.0f) {
             if (this.f && this.e) {
@@ -165,10 +165,10 @@ public final class s30 {
         if (this.d == null || this.l == null) {
             return;
         }
-        int l10 = org.telegram.messenger.j10.l();
+        int l10 = org.telegram.messenger.k10.l();
         TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
         tL_inputStickerSetShortName.short_name = "StaticEmoji";
-        TLRPC.TL_messages_stickerSet n02 = org.telegram.messenger.ri.d0(l10).n0(tL_inputStickerSetShortName, 0, false, true, new r3(this, 8));
+        TLRPC.TL_messages_stickerSet n02 = org.telegram.messenger.si.d0(l10).n0(tL_inputStickerSetShortName, 0, false, true, new r3(this, 8));
         if (n02 == null) {
             return;
         }
@@ -184,7 +184,7 @@ public final class s30 {
             TLRPC.Document document2 = arrayList.get(i7);
             i7++;
             TLRPC.Document document3 = document2;
-            if (TextUtils.equals(org.telegram.messenger.fj.V(document3, null, null).replace("️", ""), replace)) {
+            if (TextUtils.equals(org.telegram.messenger.gj.V(document3, null, null).replace("️", ""), replace)) {
                 document = document3;
                 break;
             }

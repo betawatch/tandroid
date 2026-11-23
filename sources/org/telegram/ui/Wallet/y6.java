@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.WindowManager;
 import java.util.Iterator;
 import java.util.WeakHashMap;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.t40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y6 implements SensorEventListener {
     public static y6 H;
@@ -69,12 +69,12 @@ public final class y6 implements SensorEventListener {
             this.y = rotation;
         }
         int i10 = this.y;
-        int i11 = ks.N1;
+        int i11 = ls.N1;
         if (i10 == 1) {
             i7 = 129;
             i11 = 2;
         } else {
-            i7 = ks.O1;
+            i7 = ls.O1;
             if (i10 != 2) {
                 if (i10 == 3) {
                     i11 = 130;

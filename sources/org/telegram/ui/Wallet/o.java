@@ -2,16 +2,16 @@ package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o implements x10 {
+public final /* synthetic */ class o implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -24,7 +24,7 @@ public final /* synthetic */ class o implements x10 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7 = this.a;
         boolean z10 = false;
@@ -34,7 +34,7 @@ public final /* synthetic */ class o implements x10 {
         switch (i7) {
             case 0:
                 u0 u0Var = (u0) obj4;
-                q10 q10Var = (q10) obj3;
+                r10 r10Var = (r10) obj3;
                 String str = (String) obj2;
                 byte[] bArr = (byte[]) obj;
                 u0Var.getClass();
@@ -44,19 +44,19 @@ public final /* synthetic */ class o implements x10 {
                     walletuseraddress.address = str;
                     walletuseraddress.public_key = bArr;
                     u0Var.P.put(str, walletuseraddress);
-                    q10Var.a(walletuseraddress, null);
+                    r10Var.a(walletuseraddress, null);
                     break;
                 } else {
-                    q10Var.a(null, null);
+                    r10Var.a(null, null);
                     break;
                 }
             case 1:
                 u0 u0Var2 = (u0) obj4;
-                x10 x10Var = (x10) obj3;
+                y10 y10Var = (y10) obj3;
                 Runnable runnable = (Runnable) obj2;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                if (x10Var != null) {
-                    u0Var2.q.put(wallettransaction, x10Var);
+                if (y10Var != null) {
+                    u0Var2.q.put(wallettransaction, y10Var);
                 }
                 if (runnable == null) {
                     u0Var2.getClass();
@@ -80,14 +80,14 @@ public final /* synthetic */ class o implements x10 {
             case 3:
                 l2 l2Var2 = (l2) obj4;
                 h2 h2Var2 = (h2) obj3;
-                x10 x10Var2 = (x10) obj2;
+                y10 y10Var2 = (y10) obj2;
                 String str3 = (String) obj;
                 l2Var2.getClass();
                 h2Var2.m = false;
                 if (h2Var2.r == null && l2Var2.g == h2Var2) {
                     l2Var2.g = null;
                 }
-                x10Var2.a(str3);
+                y10Var2.a(str3);
                 break;
             case 4:
                 l2 l2Var3 = (l2) obj4;
@@ -123,7 +123,7 @@ public final /* synthetic */ class o implements x10 {
                 }
                 break;
             case 7:
-                d9.f0((d9) obj4, (x10) obj3, (z0) obj2, (r0) obj);
+                d9.f0((d9) obj4, (y10) obj3, (z0) obj2, (r0) obj);
                 break;
             case 8:
                 na naVar = (na) obj3;
@@ -139,7 +139,7 @@ public final /* synthetic */ class o implements x10 {
                     } else {
                         naVar.h = false;
                         naVar.a0.setLoading(false);
-                        lc.b0(naVar).f0(TextUtils.isEmpty(str5) ? gd.N0(2131742775, null) : "WALLET_CHANGED", false);
+                        lc.b0(naVar).f0(TextUtils.isEmpty(str5) ? hd.N0(2131742773, null) : "WALLET_CHANGED", false);
                         break;
                     }
                 }
@@ -162,10 +162,10 @@ public final /* synthetic */ class o implements x10 {
         }
     }
 
-    public /* synthetic */ o(x10 x10Var, u0 u0Var, z0 z0Var, d9 d9Var) {
+    public /* synthetic */ o(y10 y10Var, u0 u0Var, z0 z0Var, d9 d9Var) {
         this.a = 7;
         this.b = d9Var;
-        this.c = x10Var;
+        this.c = y10Var;
         this.d = z0Var;
     }
 

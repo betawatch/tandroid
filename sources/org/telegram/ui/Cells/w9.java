@@ -19,11 +19,11 @@ import android.widget.Magnifier;
 import androidx.core.widget.NestedScrollView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class w9 {
     public final h9 A;
@@ -773,8 +773,8 @@ public abstract class w9 {
         return this.u >= 0 && this.v >= 0;
     }
 
-    public boolean z(fj fjVar) {
-        return fjVar != null && this.w == fjVar.e1();
+    public boolean z(gj gjVar) {
+        return gjVar != null && this.w == gjVar.e1();
     }
 
     public void E(boolean z10) {
@@ -798,6 +798,6 @@ public abstract class w9 {
     public void K(float f10, float f11) {
     }
 
-    public void I(int i7, int i10, fj fjVar) {
+    public void I(int i7, int i10, gj gjVar) {
     }
 }

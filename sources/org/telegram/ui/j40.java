@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j40 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -84,19 +84,19 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
             case 5:
                 k90 k90Var = (k90) this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(k90Var.getParentActivity());
-                alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131745830, null);
-                alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(2131745827, null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131745828, null), new a90(k90Var, 1 == true ? 1 : 0));
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                alertDialog$Builder.a.U = org.telegram.messenger.hd.N0(2131745830, null);
+                alertDialog$Builder.a.S = org.telegram.messenger.hd.N0(2131745827, null);
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131745828, null), new a90(k90Var, 1 == true ? 1 : 0));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
                 k90Var.showDialog(alertDialog$Builder.a);
                 return;
             case 6:
                 final hc0 hc0Var = (hc0) this.b;
                 de0 de0Var = hc0Var.E;
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(de0Var.getParentActivity());
-                alertDialog$Builder2.a.S = org.telegram.messenger.gd.N0(2131745875, "RestorePasswordNoEmailTitle");
-                alertDialog$Builder2.a.U = org.telegram.messenger.gd.N0(2131745879, "RestoreEmailTroubleText");
-                alertDialog$Builder2.k(org.telegram.messenger.gd.N0(2131747637, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.gc0
+                alertDialog$Builder2.a.S = org.telegram.messenger.hd.N0(2131745875, "RestorePasswordNoEmailTitle");
+                alertDialog$Builder2.a.U = org.telegram.messenger.hd.N0(2131745879, "RestoreEmailTroubleText");
+                alertDialog$Builder2.k(org.telegram.messenger.hd.N0(2131747637, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.gc0
                     @Override // org.telegram.ui.ActionBar.q1
                     public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i12) {
                         switch (r2) {
@@ -110,7 +110,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                         }
                     }
                 });
-                String N0 = org.telegram.messenger.gd.N0(2131745921, null);
+                String N0 = org.telegram.messenger.hd.N0(2131745921, null);
                 final char c10 = 1 == true ? 1 : 0;
                 alertDialog$Builder2.h(N0, new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.gc0
                     @Override // org.telegram.ui.ActionBar.q1
@@ -140,15 +140,15 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(de0Var2.getParentActivity());
-                alertDialog$Builder3.a.S = org.telegram.messenger.gd.N0(2131745903, "ResetMyAccountWarning");
-                alertDialog$Builder3.a.U = org.telegram.messenger.gd.N0(2131745901, "ResetMyAccountWarningText");
-                alertDialog$Builder3.k(org.telegram.messenger.gd.N0(2131745902, "ResetMyAccountWarningReset"), new zr(qc0Var, 21));
-                alertDialog$Builder3.h(org.telegram.messenger.gd.N0(2131752577, "Cancel"), null);
+                alertDialog$Builder3.a.S = org.telegram.messenger.hd.N0(2131745903, "ResetMyAccountWarning");
+                alertDialog$Builder3.a.U = org.telegram.messenger.hd.N0(2131745901, "ResetMyAccountWarningText");
+                alertDialog$Builder3.k(org.telegram.messenger.hd.N0(2131745902, "ResetMyAccountWarningReset"), new zr(qc0Var, 21));
+                alertDialog$Builder3.h(org.telegram.messenger.hd.N0(2131752577, "Cancel"), null);
                 de0Var2.showDialog(alertDialog$Builder3.a);
                 return;
             case 8:
                 sc0 sc0Var = (sc0) this.b;
-                org.telegram.messenger.ks.e().b(new x4(sc0Var, i11), org.telegram.messenger.ks.f5);
+                org.telegram.messenger.ls.e().b(new x4(sc0Var, i11), org.telegram.messenger.ls.f5);
                 Context context = sc0Var.getContext();
                 HashSet hashSet = new HashSet();
                 HashMap hashMap = new HashMap();
@@ -178,7 +178,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                 if (view2 instanceof ViewGroup) {
                     org.telegram.ui.Components.a70 G = org.telegram.ui.Components.a70.G((ViewGroup) view2, null, cf0Var);
                     if (cf0Var.n.revoked) {
-                        G.c(R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131751586, null), new Runnable() { // from class: org.telegram.ui.ze0
+                        G.c(R.drawable.msg_delete, org.telegram.messenger.hd.N0(2131751586, null), new Runnable() { // from class: org.telegram.ui.ze0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 final int i12 = 1;
@@ -187,9 +187,9 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var2 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
                                         AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
-                                        alertDialog$Builder4.a.S = org.telegram.messenger.gd.N0(2131751522, null);
-                                        alertDialog$Builder4.a.U = org.telegram.messenger.gd.N0(2131751521, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.a.S = org.telegram.messenger.hd.N0(2131751522, null);
+                                        alertDialog$Builder4.a.U = org.telegram.messenger.hd.N0(2131751521, null);
+                                        alertDialog$Builder4.k(org.telegram.messenger.hd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i13) {
                                                 switch (i12) {
@@ -247,10 +247,10 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var6 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
                                         AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
-                                        alertDialog$Builder5.a.U = org.telegram.messenger.gd.N0(2131745830, null);
-                                        alertDialog$Builder5.a.S = org.telegram.messenger.gd.N0(2131745827, null);
+                                        alertDialog$Builder5.a.U = org.telegram.messenger.hd.N0(2131745830, null);
+                                        alertDialog$Builder5.a.S = org.telegram.messenger.hd.N0(2131745827, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.hd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i13) {
@@ -269,7 +269,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                             }
                         }, true);
                     } else {
-                        String N02 = org.telegram.messenger.gd.N0(2131751750, null);
+                        String N02 = org.telegram.messenger.hd.N0(2131751750, null);
                         final char c11 = 1 == true ? 1 : 0;
                         G.c(R.drawable.msg_copy, N02, new Runnable() { // from class: org.telegram.ui.ze0
                             @Override // java.lang.Runnable
@@ -280,9 +280,9 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var2 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
                                         AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
-                                        alertDialog$Builder4.a.S = org.telegram.messenger.gd.N0(2131751522, null);
-                                        alertDialog$Builder4.a.U = org.telegram.messenger.gd.N0(2131751521, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.a.S = org.telegram.messenger.hd.N0(2131751522, null);
+                                        alertDialog$Builder4.a.U = org.telegram.messenger.hd.N0(2131751521, null);
+                                        alertDialog$Builder4.k(org.telegram.messenger.hd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i12) {
@@ -340,10 +340,10 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var6 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
                                         AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
-                                        alertDialog$Builder5.a.U = org.telegram.messenger.gd.N0(2131745830, null);
-                                        alertDialog$Builder5.a.S = org.telegram.messenger.gd.N0(2131745827, null);
+                                        alertDialog$Builder5.a.U = org.telegram.messenger.hd.N0(2131745830, null);
+                                        alertDialog$Builder5.a.S = org.telegram.messenger.hd.N0(2131745827, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.hd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i13) {
@@ -361,7 +361,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                 }
                             }
                         }, false);
-                        G.c(R.drawable.msg_share, org.telegram.messenger.gd.N0(2131745262, null), new Runnable() { // from class: org.telegram.ui.ze0
+                        G.c(R.drawable.msg_share, org.telegram.messenger.hd.N0(2131745262, null), new Runnable() { // from class: org.telegram.ui.ze0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 final int i12 = 1;
@@ -370,9 +370,9 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var2 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
                                         AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
-                                        alertDialog$Builder4.a.S = org.telegram.messenger.gd.N0(2131751522, null);
-                                        alertDialog$Builder4.a.U = org.telegram.messenger.gd.N0(2131751521, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.a.S = org.telegram.messenger.hd.N0(2131751522, null);
+                                        alertDialog$Builder4.a.U = org.telegram.messenger.hd.N0(2131751521, null);
+                                        alertDialog$Builder4.k(org.telegram.messenger.hd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i12) {
@@ -430,10 +430,10 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var6 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
                                         AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
-                                        alertDialog$Builder5.a.U = org.telegram.messenger.gd.N0(2131745830, null);
-                                        alertDialog$Builder5.a.S = org.telegram.messenger.gd.N0(2131745827, null);
+                                        alertDialog$Builder5.a.U = org.telegram.messenger.hd.N0(2131745830, null);
+                                        alertDialog$Builder5.a.S = org.telegram.messenger.hd.N0(2131745827, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.hd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i13) {
@@ -451,7 +451,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                 }
                             }
                         }, false);
-                        G.l(R.drawable.msg_edit, org.telegram.messenger.gd.N0(2131751265, null), new Runnable() { // from class: org.telegram.ui.ze0
+                        G.l(R.drawable.msg_edit, org.telegram.messenger.hd.N0(2131751265, null), new Runnable() { // from class: org.telegram.ui.ze0
                             @Override // java.lang.Runnable
                             public final void run() {
                                 final int i12 = 1;
@@ -460,9 +460,9 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var2 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
                                         AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
-                                        alertDialog$Builder4.a.S = org.telegram.messenger.gd.N0(2131751522, null);
-                                        alertDialog$Builder4.a.U = org.telegram.messenger.gd.N0(2131751521, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.a.S = org.telegram.messenger.hd.N0(2131751522, null);
+                                        alertDialog$Builder4.a.U = org.telegram.messenger.hd.N0(2131751521, null);
+                                        alertDialog$Builder4.k(org.telegram.messenger.hd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i12) {
@@ -520,10 +520,10 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var6 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
                                         AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
-                                        alertDialog$Builder5.a.U = org.telegram.messenger.gd.N0(2131745830, null);
-                                        alertDialog$Builder5.a.S = org.telegram.messenger.gd.N0(2131745827, null);
+                                        alertDialog$Builder5.a.U = org.telegram.messenger.hd.N0(2131745830, null);
+                                        alertDialog$Builder5.a.S = org.telegram.messenger.hd.N0(2131745827, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.hd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i13) {
@@ -550,9 +550,9 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var2 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported = cf0Var2.n;
                                         AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(cf0Var2.L.getParentActivity());
-                                        alertDialog$Builder4.a.S = org.telegram.messenger.gd.N0(2131751522, null);
-                                        alertDialog$Builder4.a.U = org.telegram.messenger.gd.N0(2131751521, null);
-                                        alertDialog$Builder4.k(org.telegram.messenger.gd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder4.a.S = org.telegram.messenger.hd.N0(2131751522, null);
+                                        alertDialog$Builder4.a.U = org.telegram.messenger.hd.N0(2131751521, null);
+                                        alertDialog$Builder4.k(org.telegram.messenger.hd.N0(2131751586, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i12) {
@@ -610,10 +610,10 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         final cf0 cf0Var6 = cf0Var;
                                         final TLRPC.TL_chatInviteExported tL_chatInviteExported3 = cf0Var6.n;
                                         AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(cf0Var6.L.getParentActivity());
-                                        alertDialog$Builder5.a.U = org.telegram.messenger.gd.N0(2131745830, null);
-                                        alertDialog$Builder5.a.S = org.telegram.messenger.gd.N0(2131745827, null);
+                                        alertDialog$Builder5.a.U = org.telegram.messenger.hd.N0(2131745830, null);
+                                        alertDialog$Builder5.a.S = org.telegram.messenger.hd.N0(2131745827, null);
                                         final int i13 = 0;
-                                        alertDialog$Builder5.k(org.telegram.messenger.gd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
+                                        alertDialog$Builder5.k(org.telegram.messenger.hd.N0(2131745828, null), new org.telegram.ui.ActionBar.q1() { // from class: org.telegram.ui.af0
                                             @Override // org.telegram.ui.ActionBar.q1
                                             public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i132) {
                                                 switch (i13) {
@@ -630,7 +630,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                                         break;
                                 }
                             }
-                        }, org.telegram.messenger.gd.N0(2131745827, null), ff0Var.q0, true);
+                        }, org.telegram.messenger.hd.N0(2131745827, null), ff0Var.q0, true);
                     }
                     G.X(ff0Var.b.U0(cf0Var, false));
                     G.a0();
@@ -662,9 +662,9 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                 Context context2 = (Context) this.b;
                 Pattern pattern = org.telegram.ui.Components.c5.a;
                 AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(context2);
-                alertDialog$Builder4.a.S = org.telegram.messenger.gd.N0(2131750576, null);
-                alertDialog$Builder4.a.U = org.telegram.messenger.gd.N0(2131750575, null);
-                alertDialog$Builder4.k(org.telegram.messenger.gd.N0(2131752029, null), null);
+                alertDialog$Builder4.a.S = org.telegram.messenger.hd.N0(2131750576, null);
+                alertDialog$Builder4.a.U = org.telegram.messenger.hd.N0(2131750575, null);
+                alertDialog$Builder4.k(org.telegram.messenger.hd.N0(2131752029, null), null);
                 alertDialog$Builder4.a.show();
                 return;
             case 14:
@@ -716,7 +716,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                     dk0Var.getContext().startActivity(Intent.createChooser(intent, "Send email..."));
                     return;
                 } catch (Exception unused) {
-                    org.telegram.ui.Components.c5.r0(dk0Var.R, null, org.telegram.messenger.gd.N0(2131748006, null), null);
+                    org.telegram.ui.Components.c5.r0(dk0Var.R, null, org.telegram.messenger.hd.N0(2131748006, null), null);
                     return;
                 }
             case 18:
@@ -892,7 +892,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
             case 28:
                 rx0 rx0Var = (rx0) this.b;
                 ProxyListActivity proxyListActivity = rx0Var.s;
-                org.telegram.messenger.az azVar = rx0Var.d;
+                org.telegram.messenger.bz bzVar = rx0Var.d;
                 yx0 yx0Var = new yx0(null);
                 yx0Var.e = new org.telegram.ui.Cells.z6[3];
                 yx0Var.f = new org.telegram.ui.Cells.a9[2];
@@ -901,7 +901,7 @@ public final /* synthetic */ class j40 implements View.OnClickListener {
                 yx0Var.F = new float[2];
                 yx0Var.G = true;
                 yx0Var.M = new sx0(yx0Var);
-                yx0Var.K = azVar;
+                yx0Var.K = bzVar;
                 proxyListActivity.presentFragment(yx0Var);
                 return;
             default:

@@ -4,8 +4,8 @@ import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Cells.k8;
 import org.telegram.ui.Components.dv;
 import org.telegram.ui.Components.ek0;
@@ -18,7 +18,7 @@ import org.telegram.ui.fm0;
 import org.telegram.ui.mf0;
 import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j0 extends v4.o0 {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final class j0 extends v4.o0 {
                         rect.right = org.telegram.messenger.g0.L(24.0f);
                         break;
                     } else {
-                        rect.right = n10.B(58.0f, b11, tVar.getWidth() - org.telegram.messenger.g0.L(36.0f)) / (b11 - 1);
+                        rect.right = o10.B(58.0f, b11, tVar.getWidth() - org.telegram.messenger.g0.L(36.0f)) / (b11 - 1);
                         break;
                     }
                 } else {
@@ -96,7 +96,7 @@ public final class j0 extends v4.o0 {
                 } else {
                     rect.left = org.telegram.messenger.g0.L(5.0f);
                     rect.right = org.telegram.messenger.g0.L(5.0f);
-                    if (RecyclerView.R(view) + 1 > tyVar.S.F && !j10.i(tyVar.d1).q() && !tyVar.V0) {
+                    if (RecyclerView.R(view) + 1 > tyVar.S.F && !k10.i(tyVar.d1).q() && !tyVar.V0) {
                         rect.top = org.telegram.messenger.g0.L(10.0f);
                         break;
                     }

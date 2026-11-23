@@ -2,12 +2,12 @@ package h2;
 
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import v4.c1;
 import v4.p0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -16,7 +16,7 @@ public final class f {
     public int[] d;
 
     public f(int[] iArr) {
-        this.a = j10.t0;
+        this.a = k10.t0;
         this.b = -1;
         this.c = -1;
         this.d = iArr;
@@ -125,19 +125,19 @@ public final class f {
 
     public void d() {
         int[] iArr = this.d;
-        int i7 = j10.t0;
+        int i7 = k10.t0;
         if (this.a != i7) {
-            ks.f(i7).j(this.b);
+            ls.f(i7).j(this.b);
             this.b = -1;
             this.a = i7;
         }
-        this.b = ks.f(i7).q(iArr, this.b, true);
-        this.c = ks.e().q(iArr, this.c, true);
+        this.b = ls.f(i7).q(iArr, this.b, true);
+        this.c = ls.e().q(iArr, this.c, true);
     }
 
     public void e() {
-        ks.f(this.a).j(this.b);
-        ks.e().j(this.c);
+        ls.f(this.a).j(this.b);
+        ls.e().j(this.c);
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

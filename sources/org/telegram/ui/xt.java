@@ -15,7 +15,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xt extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public int E;
@@ -89,22 +89,22 @@ public final class xt extends LinearLayout implements org.telegram.ui.ActionBar.
             addView(n8Var, c8.ma.c(-2.0f, -1));
             org.telegram.ui.Cells.n8 n8Var2 = new org.telegram.ui.Cells.n8(context);
             this.f = n8Var2;
-            n8Var2.o(R.drawable.msg_colors, org.telegram.messenger.gd.N0(2131745295, null), false);
+            n8Var2.o(R.drawable.msg_colors, org.telegram.messenger.hd.N0(2131745295, null), false);
             addView(n8Var2, c8.ma.c(-2.0f, -1));
             n8Var.setOnClickListener(new a7.d(i10, this, g2Var));
             oh0Var.h = true;
             n8Var2.setOnClickListener(new a(g2Var, 18));
             if (org.telegram.ui.ActionBar.m6.k1()) {
-                n8Var.p(org.telegram.messenger.gd.N0(2131745270, null), oh0Var, true);
+                n8Var.p(org.telegram.messenger.hd.N0(2131745270, null), oh0Var, true);
                 n8Var.x += 2;
             } else {
                 oh0Var.M(oh0Var.e[0] - 1);
-                n8Var.p(org.telegram.messenger.gd.N0(2131745271, null), oh0Var, true);
+                n8Var.p(org.telegram.messenger.hd.N0(2131745271, null), oh0Var, true);
                 n8Var.x += 2;
             }
         }
-        if (!org.telegram.messenger.ri.d0(g2Var.getCurrentAccount()).B0.isEmpty()) {
-            ArrayList arrayList = new ArrayList(org.telegram.messenger.ri.d0(g2Var.getCurrentAccount()).B0);
+        if (!org.telegram.messenger.si.d0(g2Var.getCurrentAccount()).B0.isEmpty()) {
+            ArrayList arrayList = new ArrayList(org.telegram.messenger.si.d0(g2Var.getCurrentAccount()).B0);
             if (i7 == 0) {
                 org.telegram.ui.ActionBar.s3 s3Var = new org.telegram.ui.ActionBar.s3(g2Var.getCurrentAccount());
                 s3Var.e = "🎨";
@@ -324,7 +324,7 @@ public final class xt extends LinearLayout implements org.telegram.ui.ActionBar.
                 if (!oh0Var.l0) {
                     this.d.M(org.telegram.ui.ActionBar.m6.k1() ? 0 : this.d.e[0] - 1);
                 }
-                this.e.p(org.telegram.messenger.gd.N0(org.telegram.ui.ActionBar.m6.k1() ? 2131745270 : 2131745271, null), this.d, true);
+                this.e.p(org.telegram.messenger.hd.N0(org.telegram.ui.ActionBar.m6.k1() ? 2131745270 : 2131745271, null), this.d, true);
                 this.e.x += 2;
             }
         }

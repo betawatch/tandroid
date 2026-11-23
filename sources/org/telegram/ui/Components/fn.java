@@ -4,14 +4,14 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fn implements tx {
-    public final /* synthetic */ org.telegram.messenger.x10 a;
+    public final /* synthetic */ org.telegram.messenger.y10 a;
     public final /* synthetic */ fi.n2 b;
 
-    public fn(org.telegram.messenger.x10 x10Var, fi.n2 n2Var) {
-        this.a = x10Var;
+    public fn(org.telegram.messenger.y10 y10Var, fi.n2 n2Var) {
+        this.a = y10Var;
         this.b = n2Var;
     }
 
@@ -56,7 +56,7 @@ public final class fn implements tx {
     }
 
     @Override // org.telegram.ui.Components.tx
-    public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10, int i7) {
+    public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10, int i7) {
         this.a.a(new th.h(obj, document));
         this.b.a(true);
     }

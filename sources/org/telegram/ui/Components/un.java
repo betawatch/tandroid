@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class un extends mi {
     public final vy n;
@@ -21,11 +21,11 @@ public final class un extends mi {
         this.s = i7;
         vy vyVar = new vy(context, h6Var);
         this.n = vyVar;
-        vyVar.setText(org.telegram.messenger.gd.N0(2131747987, null));
+        vyVar.setText(org.telegram.messenger.hd.N0(2131747987, null));
         vyVar.setOnTouchListener(null);
         vyVar.setTextSize(16);
         addView(vyVar, c8.ma.c(-2.0f, -1));
-        vyVar.a(R.raw.media_forbidden, org.telegram.messenger.ks.g2, org.telegram.messenger.ks.g2);
+        vyVar.a(R.raw.media_forbidden, org.telegram.messenger.ls.g2, org.telegram.messenger.ls.g2);
         TLRPC.Chat Z0 = this.b.Z0();
         int i10 = 4;
         int i11 = 7;

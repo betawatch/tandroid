@@ -4,9 +4,9 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.jc;
-import org.telegram.messenger.r10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.kc;
+import org.telegram.messenger.s10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.oh0;
@@ -14,9 +14,9 @@ import org.telegram.ui.Components.pp;
 import org.telegram.ui.Components.sj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ea implements sj0, bg.q, jc, org.telegram.messenger.h9, pp, r10 {
+public final /* synthetic */ class ea implements sj0, bg.q, kc, org.telegram.messenger.i9, pp, s10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -25,12 +25,12 @@ public final /* synthetic */ class ea implements sj0, bg.q, jc, org.telegram.mes
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
         int i7 = this.a;
     }
@@ -65,7 +65,7 @@ public final /* synthetic */ class ea implements sj0, bg.q, jc, org.telegram.mes
         return true;
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.s10
     public Object g(Number number, Object obj) {
         return (CharSequence) ((ci.y) this.b).a((Integer) obj);
     }
@@ -75,23 +75,23 @@ public final /* synthetic */ class ea implements sj0, bg.q, jc, org.telegram.mes
         ((l) this.b).b(j3);
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         oh0 B;
         s0 s0Var;
         int w10;
-        fj fjVar;
+        gj gjVar;
         switch (this.a) {
             case 2:
                 v0 v0Var = (v0) this.b;
                 if (z10 && (B = v0Var.J.B()) != null) {
-                    fj fjVar2 = v0Var.Q0;
-                    if (fjVar2 != null && !fjVar2.o1) {
-                        fjVar2.o1 = true;
+                    gj gjVar2 = v0Var.Q0;
+                    if (gjVar2 != null && !gjVar2.o1) {
+                        gjVar2.o1 = true;
                         B.N(0, false, false);
                         org.telegram.messenger.g0.g3(new p0(B, 0));
-                        if (fjVar2.n1 || v0Var.M1) {
-                            fjVar2.n1 = false;
+                        if (gjVar2.n1 || v0Var.M1) {
+                            gjVar2.n1 = false;
                             v0Var.M1 = false;
                             try {
                                 v0Var.performHapticFeedback(3, 2);
@@ -117,7 +117,7 @@ public final /* synthetic */ class ea implements sj0, bg.q, jc, org.telegram.mes
                 p7 p7Var = (p7) this.b;
                 ImageReceiver imageReceiver2 = p7Var.d;
                 ImageReceiver imageReceiver3 = p7Var.c;
-                if (z10 && !z11 && (fjVar = p7Var.n) != null && fjVar.t2() && imageReceiver3.n() != null) {
+                if (z10 && !z11 && (gjVar = p7Var.n) != null && gjVar.t2() && imageReceiver3.n() != null) {
                     if (imageReceiver2.n() != null) {
                         imageReceiver2.n().recycle();
                     }
@@ -137,17 +137,17 @@ public final /* synthetic */ class ea implements sj0, bg.q, jc, org.telegram.mes
         }
     }
 
-    @Override // org.telegram.messenger.h9
+    @Override // org.telegram.messenger.i9
     public boolean run() {
         TLRPC.Message message;
         m4 m4Var;
         r1 r1Var = (r1) this.b;
-        fj fjVar = r1Var.Q5;
-        if (fjVar == null || (message = fjVar.k) == null) {
+        gj gjVar = r1Var.Q5;
+        if (gjVar == null || (message = gjVar.k) == null) {
             return false;
         }
-        if (fjVar.D != 29 || ((m4Var = r1Var.X5) != null && m4Var.i)) {
-            return (message.noforwards && !fj.c3(message)) || r1Var.Q5.S4() || r1Var.Q5.y2();
+        if (gjVar.D != 29 || ((m4Var = r1Var.X5) != null && m4Var.i)) {
+            return (message.noforwards && !gj.c3(message)) || r1Var.Q5.S4() || r1Var.Q5.y2();
         }
         return true;
     }

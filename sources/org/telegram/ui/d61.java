@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d61 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -526,7 +526,7 @@ public final class d61 extends LinearLayout {
                 break;
             case 17:
                 super.onMeasure(i7, i10);
-                if (org.telegram.messenger.gd.a0) {
+                if (org.telegram.messenger.hd.a0) {
                     ((org.telegram.ui.Components.z21) this.b).c.setPivotX(getMeasuredWidth());
                     break;
                 }
@@ -604,7 +604,7 @@ public final class d61 extends LinearLayout {
                 org.telegram.ui.Components.q9 q9Var = nv0Var.b;
                 if (getVisibility() == 8 && i7 == 0) {
                     nv0Var.c();
-                    if (org.telegram.messenger.pc.e(3)) {
+                    if (org.telegram.messenger.qc.e(3)) {
                         q9Var.getImageReceiver().P0(false);
                     }
                 } else if (i7 == 8) {
@@ -631,7 +631,7 @@ public final class d61 extends LinearLayout {
         this.b = new org.telegram.ui.ActionBar.y0[]{r0, r0, r0, r0, r0};
         final int i7 = 1;
         setOrientation(1);
-        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_0_2, org.telegram.messenger.gd.N0(2131745022, null), false, null);
+        org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_0_2, org.telegram.messenger.hd.N0(2131745020, null), false, null);
         c10.d(-328966, -328966);
         final int i10 = 0;
         c10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
@@ -669,7 +669,7 @@ public final class d61 extends LinearLayout {
             }
         });
         c10.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.y0 c11 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_slow, org.telegram.messenger.gd.N0(2131745025, null), false, null);
+        org.telegram.ui.ActionBar.y0 c11 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_slow, org.telegram.messenger.hd.N0(2131745023, null), false, null);
         c11.d(-328966, -328966);
         c11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
             @Override // android.view.View.OnClickListener
@@ -706,7 +706,7 @@ public final class d61 extends LinearLayout {
             }
         });
         c11.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.y0 c12 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_normal, org.telegram.messenger.gd.N0(2131745026, null), false, null);
+        org.telegram.ui.ActionBar.y0 c12 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_normal, org.telegram.messenger.hd.N0(2131745024, null), false, null);
         c12.d(-328966, -328966);
         final int i11 = 2;
         c12.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
@@ -744,7 +744,7 @@ public final class d61 extends LinearLayout {
             }
         });
         c12.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.y0 c13 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_fast, org.telegram.messenger.gd.N0(2131745029, null), false, null);
+        org.telegram.ui.ActionBar.y0 c13 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_fast, org.telegram.messenger.hd.N0(2131745027, null), false, null);
         c13.d(-328966, -328966);
         final int i12 = 3;
         c13.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
@@ -782,7 +782,7 @@ public final class d61 extends LinearLayout {
             }
         });
         c13.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.y0 c14 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_superfast, org.telegram.messenger.gd.N0(2131745023, null), false, null);
+        org.telegram.ui.ActionBar.y0 c14 = org.telegram.ui.ActionBar.q0.c(false, false, this, R.drawable.msg_speed_superfast, org.telegram.messenger.hd.N0(2131745021, null), false, null);
         c14.d(-328966, -328966);
         final int i13 = 4;
         c14.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.p31
@@ -825,7 +825,7 @@ public final class d61 extends LinearLayout {
         ih0Var.setBackgroundColor(-15198184);
         addView(ih0Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) ih0Var.getLayoutParams();
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;

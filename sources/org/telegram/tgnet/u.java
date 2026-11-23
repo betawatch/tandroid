@@ -31,8 +31,8 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.jc;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.kc;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -67,9 +67,9 @@ import sg.j1;
 import sg.y;
 import tg.b0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u implements Vector.TLDeserializer, r0.m, e1, q1, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.e1, jc, d5.a, c0.j, d0, c1, h2.j, a1, g9.k, ri.m, y, te.b, t0.e, j1 {
+public final /* synthetic */ class u implements Vector.TLDeserializer, r0.m, e1, q1, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.e1, kc, d5.a, c0.j, d0, c1, h2.j, a1, g9.k, ri.m, y, te.b, t0.e, j1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -406,7 +406,7 @@ public final /* synthetic */ class u implements Vector.TLDeserializer, r0.m, e1,
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         h1 h1Var = (h1) this.b;
         if (!z10 || z11) {
@@ -421,7 +421,7 @@ public final /* synthetic */ class u implements Vector.TLDeserializer, r0.m, e1,
         if (bitmap == null || bitmap.getPixel(0, 0) == 0) {
             return;
         }
-        Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / ks.K2));
+        Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / ls.K2));
         g0.g3(new fm0(27, yVar, bitmap));
     }
 
@@ -444,7 +444,7 @@ public final /* synthetic */ class u implements Vector.TLDeserializer, r0.m, e1,
         this.b = hVar;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
@@ -454,7 +454,7 @@ public final /* synthetic */ class u implements Vector.TLDeserializer, r0.m, e1,
     private final /* synthetic */ void g(float f10, int i7) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 }

@@ -23,10 +23,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j0;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -49,7 +50,7 @@ import ug.i1;
 import ug.z;
 import v4.k;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g extends sa implements te.b {
     public static final /* synthetic */ int n2 = 0;
@@ -90,7 +91,7 @@ public final class g extends sa implements te.b {
         this.n = false;
         this.G1 = false;
         this.w1 = false;
-        this.i2 = ((j0) mp.u1(this.a).A7.M.b).c;
+        this.i2 = ((j0) np.u1(this.a).A7.M.b).c;
         g0.S(getWindow());
         ek0 ek0Var = this.o1;
         int i10 = this.u0;
@@ -102,12 +103,12 @@ public final class g extends sa implements te.b {
         this.a2 = eVar;
         eVar.f();
         eVar.setCountFilled(true);
-        eVar.setText(gd.N0(2131745750, null));
+        eVar.setText(hd.N0(2131745750, null));
         eVar.setOnClickListener(new a(this, 0));
         j jVar = new j(this, context);
         this.b2 = jVar;
         t6.U(jVar, m6.Ji, h6Var);
-        jVar.setText(gd.N0(2131745750, null));
+        jVar.setText(hd.N0(2131745750, null));
         jVar.setTypeface(g0.o());
         jVar.setTextSize(1, 14.0f);
         jVar.setGravity(17);
@@ -117,7 +118,7 @@ public final class g extends sa implements te.b {
         this.p1.s().addView(jVar, ma.t(-2, 48, 16, 12, 0, 12, 0));
         jVar.setOnClickListener(new a(this, i7));
         e10 e10Var = new e10(context, h6Var);
-        String N0 = gd.N0(2131746933, null);
+        String N0 = hd.N0(2131746933, null);
         i iVar = e10Var.r;
         iVar.setHint(N0);
         iVar.addTextChangedListener(new i9(this, 6));
@@ -134,9 +135,9 @@ public final class g extends sa implements te.b {
         this.e2 = y3Var;
         y3Var.setTranslationY(g0.L(48.0f));
         int i12 = 2;
-        y3Var.b(gd.N0(2131745614, null), gd.N0(2131751445, null), new a(this, i12));
+        y3Var.b(hd.N0(2131745614, null), hd.N0(2131751445, null), new a(this, i12));
         n4Var.addView(y3Var, ma.e(-1, 32, 48));
-        this.b.addView(n4Var, ma.e(-1, ks.t3, 48));
+        this.b.addView(n4Var, ma.e(-1, ls.t3, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(g0.L(10.0f) + this.u0, g0.L(10.0f), g0.L(10.0f) + this.u0, g0.L(10.0f) + g0.n);
         frameLayout.addView(eVar, ma.c(48.0f, -1));
@@ -144,7 +145,7 @@ public final class g extends sa implements te.b {
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.j2 = frameLayout2;
         frameLayout2.setTranslationY((-g0.n) - g0.L(68.0f));
-        this.b.addView(frameLayout2, ma.e(-1, ks.g2, 80));
+        this.b.addView(frameLayout2, ma.e(-1, ls.g2, 80));
         k kVar = new k();
         kVar.n(350L);
         kVar.o(nrVar);
@@ -153,9 +154,9 @@ public final class g extends sa implements te.b {
         this.o1.setItemAnimator(kVar);
         this.o1.i(new e(this, h6Var));
         z zVar = new z(this, i12);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(org.telegram.messenger.j10.t0);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(k10.t0);
         TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
-        tL_help_getCountriesList.lang_code = gd.E0().B != null ? gd.E0().B.c() : Locale.getDefault().getCountry();
+        tL_help_getCountriesList.lang_code = hd.E0().B != null ? hd.E0().B.c() : Locale.getDefault().getCountry();
         connectionsManager.sendRequest(tL_help_getCountriesList, new g1(zVar, 27));
         a0.i(this.c, new b(this));
     }
@@ -222,7 +223,7 @@ public final class g extends sa implements te.b {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.N0(2131753285, null);
+        return hd.N0(2131753285, null);
     }
 
     @Override // org.telegram.ui.ActionBar.w2

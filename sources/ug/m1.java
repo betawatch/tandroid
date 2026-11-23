@@ -3,20 +3,20 @@ package ug;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import bi.l8;
+import bi.k8;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class m1 extends ek0 implements fs, n0 {
+public abstract class m1 extends ek0 implements gs, n0 {
     public final ArrayList f3;
     public final v4.c0 g3;
     public boolean h3;
@@ -54,10 +54,10 @@ public abstract class m1 extends ek0 implements fs, n0 {
         setAdapter(new j1(u0Var));
         setClipChildren(false);
         setOnScrollListener(new i1(u0Var, 0));
-        setOnItemClickListener(new l8(u0Var, 23));
-        ri.d0(i7).r1();
+        setOnItemClickListener(new k8(u0Var, 23));
+        si.d0(i7).r1();
         arrayList.clear();
-        arrayList.addAll(ri.d0(i7).C0);
+        arrayList.addAll(si.d0(i7).C0);
         getAdapter().f();
         invalidate();
     }
@@ -70,12 +70,12 @@ public abstract class m1 extends ek0 implements fs, n0 {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.o5) {
+        if (i7 == ls.o5) {
             ArrayList arrayList = this.f3;
             arrayList.clear();
-            arrayList.addAll(ri.d0(this.j3).C0);
+            arrayList.addAll(si.d0(this.j3).C0);
             getAdapter().f();
             invalidate();
         }
@@ -130,14 +130,14 @@ public abstract class m1 extends ek0 implements fs, n0 {
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.j3).c(this, ks.o5);
+        ls.f(this.j3).c(this, ls.o5);
         A1();
     }
 
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.j3).n(this, ks.o5);
+        ls.f(this.j3).n(this, ls.o5);
     }
 
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View

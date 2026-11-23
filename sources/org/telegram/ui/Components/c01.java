@@ -9,14 +9,14 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c01 extends dk0 {
     public final Context c;
     public int d;
     public ArrayList e = new ArrayList();
     public ArrayList f = new ArrayList();
-    public org.telegram.ui.b0 h;
+    public org.telegram.ui.f0 h;
     public String n;
     public final /* synthetic */ ThemeEditorView.EditorAlert r;
 

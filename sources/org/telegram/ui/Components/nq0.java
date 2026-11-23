@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class nq0 extends zs0 {
     public float v3;
@@ -99,7 +99,7 @@ public final class nq0 extends zs0 {
                 int measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(60.0f);
                 StaticLayout staticLayout = this.p3;
                 if (staticLayout == null || staticLayout.getWidth() != measuredWidth) {
-                    this.p3 = new StaticLayout(org.telegram.messenger.gd.N0(jt0Var.A0() ? g2Var != null && org.telegram.messenger.v3.V(g2Var.getMessagesController().O0(Long.valueOf(-jt0Var.m1))) ? 2131746437 : 2131746433 : 2131746432, null), this.o3, measuredWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+                    this.p3 = new StaticLayout(org.telegram.messenger.hd.N0(jt0Var.A0() ? g2Var != null && org.telegram.messenger.v3.V(g2Var.getMessagesController().O0(Long.valueOf(-jt0Var.m1))) ? 2131746437 : 2131746433 : 2131746432, null), this.o3, measuredWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
                     this.q3 = 0.0f;
                     this.r3 = measuredWidth;
                     for (int i7 = 0; i7 < this.p3.getLineCount(); i7++) {
@@ -108,7 +108,7 @@ public final class nq0 extends zs0 {
                     }
                 }
                 canvas.save();
-                org.telegram.messenger.n10.k(this.p3.getHeight() + org.telegram.messenger.g0.L(64.0f), 2.0f, top, ((getWidth() - this.q3) / 2.0f) - this.r3, canvas);
+                org.telegram.messenger.o10.k(this.p3.getHeight() + org.telegram.messenger.g0.L(64.0f), 2.0f, top, ((getWidth() - this.q3) / 2.0f) - this.r3, canvas);
                 this.p3.draw(canvas);
                 canvas.restore();
             }
@@ -217,7 +217,7 @@ public final class nq0 extends zs0 {
                     arrayList.add(((org.telegram.ui.Cells.r1) childAt).getMessageObject());
                 }
             }
-            org.telegram.messenger.mp.u1(ss0Var.d).l(arrayList, ss0Var.s.m1);
+            org.telegram.messenger.np.u1(ss0Var.d).l(arrayList, ss0Var.s.m1);
         }
     }
 

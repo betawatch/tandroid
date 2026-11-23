@@ -4,10 +4,10 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.SurfaceView;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.Components.sh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class o8 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -129,7 +129,7 @@ public final class o8 extends AnimatorListenerAdapter {
                     f9Var3.w1 = false;
                     f9Var3.r();
                     org.telegram.messenger.g0.h3(new e3(f9Var3, 1), 30L);
-                } else if (!bz.U) {
+                } else if (!cz.U) {
                     if (f9Var3.u1 == null && f9Var3.w != null) {
                         t6 t6Var2 = new t6(f9Var3.w.getContext(), f9Var3.s);
                         f9Var3.u1 = t6Var2;
@@ -141,7 +141,7 @@ public final class o8 extends AnimatorListenerAdapter {
                         t6Var3.setOnClickListener(new ah.d(this, 25));
                         f9Var3.u1.animate().alpha(1.0f).setDuration(150L).setListener(new y8(this, 1)).start();
                     }
-                    bz.G(true);
+                    cz.G(true);
                 }
                 f9Var3.V();
                 f9Var3.J0.e();

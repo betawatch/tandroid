@@ -18,7 +18,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zf0 extends View {
     public int E;
@@ -66,7 +66,7 @@ public final class zf0 extends View {
         this.L = d6Var;
         this.M = new fi.e5(2, this);
         d6Var.e(true, 1.0f);
-        boolean z10 = this.a & org.telegram.messenger.bz.a0;
+        boolean z10 = this.a & org.telegram.messenger.cz.a0;
         this.a = z10;
         if (z10) {
             setLayerType(2, null);
@@ -128,7 +128,7 @@ public final class zf0 extends View {
     }
 
     private float getBlurRadius() {
-        int o4 = org.telegram.messenger.bz.o();
+        int o4 = org.telegram.messenger.cz.o();
         if (o4 != 1) {
             return o4 != 2 ? 8.0f : 20.0f;
         }
@@ -386,7 +386,7 @@ public final class zf0 extends View {
                     float f21 = this.F;
                     canvas2 = canvas;
                     canvas2.drawRect(0.0f, f21 * f12, this.E, f21, this.f[0]);
-                    this.f[0].setAlpha(org.telegram.messenger.ks.e4);
+                    this.f[0].setAlpha(org.telegram.messenger.ls.e4);
                     canvas2.restore();
                 } else {
                     f14 = 2.0f;
@@ -402,7 +402,7 @@ public final class zf0 extends View {
                     this.f[1].setAlpha((int) (f13 * 255.0f));
                     float f23 = this.F;
                     canvas.drawRect(0.0f, f23 * f12, this.E, f23, this.f[1]);
-                    this.f[1].setAlpha(org.telegram.messenger.ks.e4);
+                    this.f[1].setAlpha(org.telegram.messenger.ls.e4);
                     canvas.restore();
                 }
             } catch (Throwable th2) {

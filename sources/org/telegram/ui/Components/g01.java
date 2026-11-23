@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g01 extends FrameLayout {
     public final ImageView a;
@@ -51,7 +51,7 @@ public final class g01 extends FrameLayout {
         e01Var.setLines(1);
         e01Var.setSingleLine(true);
         e01Var.setImeOptions(268435459);
-        e01Var.setHint(org.telegram.messenger.gd.N0(2131745640, null));
+        e01Var.setHint(org.telegram.messenger.hd.N0(2131745640, null));
         e01Var.setCursorColor(-11491093);
         e01Var.setCursorSize(org.telegram.messenger.g0.L(20.0f));
         e01Var.setCursorWidth(1.5f);

@@ -27,7 +27,7 @@ import oi.a6;
 import oi.k0;
 import oi.l0;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.c0;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.a70;
 import org.telegram.ui.md0;
 import p5.e;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class d implements ib.b, q5.b {
     public final /* synthetic */ int a;
@@ -260,7 +260,7 @@ public final class d implements ib.b, q5.b {
         j3.T = true;
         j3.s = 0;
         j3.t = false;
-        j3.r((LinearLayout) this.e, ma.o(ks.x3, -2));
+        j3.r((LinearLayout) this.e, ma.o(ls.x3, -2));
         j3.a0 = g0.L(240.0f);
         j3.i = 3;
         j3.b0(-g0.L(12.0f), 0.0f);

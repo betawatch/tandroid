@@ -12,7 +12,7 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -104,14 +104,14 @@ public final class qp0 extends AnimatorListenerAdapter {
             photoViewer2.d = yq0Var.c;
             WindowManager.LayoutParams layoutParams = photoViewer2.e0;
             layoutParams.flags = -2147286784;
-            layoutParams.softInputMode = org.telegram.messenger.ks.v4;
+            layoutParams.softInputMode = org.telegram.messenger.ls.v4;
             photoViewer2.h0.setFocusable(false);
             photoViewer2.f0.setFocusable(false);
-            photoViewer2.M0.setAlpha(org.telegram.messenger.ks.e4);
+            photoViewer2.M0.setAlpha(org.telegram.messenger.ls.e4);
             photoViewer2.f0.setAlpha(1.0f);
             ArrayList arrayList = yq0Var.b;
             int i11 = yq0Var.a;
-            photoViewer2.X1(null, null, null, null, arrayList, null, null, i11, yq0Var.c.E((org.telegram.messenger.fj) arrayList.get(i11), null, yq0Var.a, true, false));
+            photoViewer2.X1(null, null, null, null, arrayList, null, null, i11, yq0Var.c.E((org.telegram.messenger.gj) arrayList.get(i11), null, yq0Var.a, true, false));
             photoViewer.i7 = null;
             gq0 gq0Var = new gq0();
             gq0Var.c = false;

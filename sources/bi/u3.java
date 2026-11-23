@@ -11,9 +11,9 @@ import org.json.JSONObject;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -26,7 +26,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.n60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u3 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,13 +60,13 @@ public final /* synthetic */ class u3 implements Runnable {
                 i4.j(j3, 60000L);
                 i4.d.put(i4.a(i10, j3), Long.valueOf(SystemClock.elapsedRealtime() + 600000));
                 i4.c();
-                gc Q = i4.h().Q(R.raw.contact_check, 36, gd.a0(null, null, 2131749569, (String) obj));
+                gc Q = i4.h().Q(R.raw.contact_check, 36, hd.a0(null, null, 2131749569, (String) obj));
                 Q.t = true;
                 Q.j();
                 return;
             case 1:
                 ArrayList arrayList = (ArrayList) obj;
-                SQLiteDatabase sQLiteDatabase = ((tr) obj2).b;
+                SQLiteDatabase sQLiteDatabase = ((ur) obj2).b;
                 try {
                     try {
                         sQLiteDatabase.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
@@ -126,8 +126,8 @@ public final /* synthetic */ class u3 implements Runnable {
                 g4Var.Z(false);
                 if (tLObject != null) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
-                    mp.u1(i10).f4(tL_contacts_resolvedPeer.users, false);
-                    tr.a0(i10).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
+                    np.u1(i10).f4(tL_contacts_resolvedPeer.users, false);
+                    ur.a0(i10).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
                     if (tL_contacts_resolvedPeer.users.isEmpty()) {
                         return;
                     }
@@ -178,11 +178,11 @@ public final /* synthetic */ class u3 implements Runnable {
                 return;
             default:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.h6) obj);
-                String N0 = gd.N0(2131742828, null);
+                String N0 = hd.N0(2131742826, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = org.telegram.messenger.g0.V2(gd.V(null, null, 2131742826, org.telegram.ui.Wallet.u0.D(i10).r(j3, true)));
-                org.telegram.messenger.f3.m(null, 2131742818, alertDialog$Builder, null);
+                t1Var.U = org.telegram.messenger.g0.V2(hd.V(null, null, 2131742824, org.telegram.ui.Wallet.u0.D(i10).r(j3, true)));
+                org.telegram.messenger.f3.m(null, 2131742816, alertDialog$Builder, null);
                 return;
         }
     }

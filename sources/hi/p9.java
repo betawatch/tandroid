@@ -8,10 +8,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p9 implements b6 {
     public final /* synthetic */ sa a;
@@ -82,12 +82,12 @@ public final class p9 implements b6 {
             if (Build.VERSION.SDK_INT >= 33) {
                 z11 = (activity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") == 0 && activity.checkSelfPermission("android.permission.READ_MEDIA_VIDEO") == 0) ? false : true;
                 if (z11) {
-                    activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, ks.z1);
+                    activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, ls.z1);
                 }
             } else {
                 z11 = activity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0;
                 if (z11) {
-                    activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, ks.z1);
+                    activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, ls.z1);
                 }
             }
             z10 = !z11;
@@ -209,7 +209,7 @@ public final class p9 implements b6 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void h(x10 x10Var) {
+    public final void h(y10 y10Var) {
         boolean z10;
         FileOutputStream fileOutputStream;
         sa saVar = this.a;
@@ -252,7 +252,7 @@ public final class p9 implements b6 {
             if (z5Var != null) {
                 z5Var.c(true);
             }
-            saVar.Q1 = CameraController.getInstance().takePicture(saVar.H1, true, saVar.C0.getCameraSessionObject(), new ai.x1(21, this, x10Var));
+            saVar.Q1 = CameraController.getInstance().takePicture(saVar.H1, true, saVar.C0.getCameraSessionObject(), new ai.y1(21, this, y10Var));
             return;
         }
         saVar.Q1 = false;
@@ -267,8 +267,8 @@ public final class p9 implements b6 {
             saVar.L1 = m10;
             q8.a(i7, m10);
             saVar.M1 = false;
-            if (x10Var != null) {
-                x10Var.a(new n9(this, 1));
+            if (y10Var != null) {
+                y10Var.a(new n9(this, 1));
                 return;
             } else {
                 saVar.J(1, true);
@@ -281,11 +281,11 @@ public final class p9 implements b6 {
             saVar.L1 = a10;
             q8.a(i7, a10);
             saVar.M1 = false;
-            if (x10Var != null) {
-                x10Var.a(null);
+            if (y10Var != null) {
+                y10Var.a(null);
             }
-        } else if (x10Var != null) {
-            x10Var.a(null);
+        } else if (y10Var != null) {
+            y10Var.a(null);
         }
         saVar.l0(true);
     }

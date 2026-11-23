@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sc extends Drawable {
     public final /* synthetic */ int a;
@@ -133,7 +133,7 @@ public final class sc extends Drawable {
     public void onBoundsChange(Rect rect) {
         switch (this.a) {
             case 4:
-                ((ImageReceiver) this.b).y0(org.telegram.messenger.g0.L(2.0f) + rect.left, org.telegram.messenger.g0.L(2.0f) + rect.top, org.telegram.messenger.n10.x(2.0f, rect.left, rect.right - org.telegram.messenger.g0.L(2.0f)), org.telegram.messenger.n10.x(2.0f, rect.top, rect.bottom - org.telegram.messenger.g0.L(2.0f)));
+                ((ImageReceiver) this.b).y0(org.telegram.messenger.g0.L(2.0f) + rect.left, org.telegram.messenger.g0.L(2.0f) + rect.top, org.telegram.messenger.o10.x(2.0f, rect.left, rect.right - org.telegram.messenger.g0.L(2.0f)), org.telegram.messenger.o10.x(2.0f, rect.top, rect.bottom - org.telegram.messenger.g0.L(2.0f)));
                 break;
             default:
                 super.onBoundsChange(rect);

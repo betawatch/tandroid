@@ -3,14 +3,14 @@ package org.telegram.ui.Wallet;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.ui.Components.ik;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i1 {
     public final int a;
@@ -217,10 +217,10 @@ public final class i1 {
             case 29:
                 str = "UNEXPECTED_RESERVED_BIT";
                 break;
-            case ks.T /* 30 */:
+            case ls.T /* 30 */:
                 str = "FRAME_MASKED";
                 break;
-            case ks.U /* 31 */:
+            case ls.U /* 31 */:
                 str = "UNKNOWN_OPCODE";
                 break;
             case 32:
@@ -330,8 +330,8 @@ public final class i1 {
             final long elapsedRealtime = SystemClock.elapsedRealtime();
             d("requesting streaming URL; retry=" + this.j);
             org.telegram.messenger.g0.h3(this.o, 30000L);
-            this.i = ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_toncenter.getStreamingUrl(), new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.g1
-                @Override // org.telegram.messenger.q10
+            this.i = ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_toncenter.getStreamingUrl(), new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.g1
+                @Override // org.telegram.messenger.r10
                 public final void a(Object obj, Object obj2) {
                     i1 i1Var = i1.this;
                     int i10 = i7;

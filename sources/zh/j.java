@@ -13,13 +13,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Cells.z9;
 import org.telegram.ui.Components.hg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j extends ViewGroup {
     public final GestureDetector a;
@@ -100,7 +100,7 @@ public final class j extends ViewGroup {
     public final void onMeasure(int i7, int i10) {
         setWillNotDraw(false);
         super.onMeasure(i7, i10);
-        int B = n10.B(12.0f, 2, Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)));
+        int B = o10.B(12.0f, 2, Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)));
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(B, TLObject.FLAG_31);
         k kVar = this.e;
         hg0 hg0Var = kVar.h;

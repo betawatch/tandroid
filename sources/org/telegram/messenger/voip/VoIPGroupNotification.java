@@ -20,12 +20,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.jn;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.kn;
+import org.telegram.messenger.np;
 import org.telegram.messenger.s2;
-import org.telegram.messenger.tn;
+import org.telegram.messenger.un;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.voip.b2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class VoIPGroupNotification {
     public static long currentCallId;
@@ -42,7 +42,7 @@ public class VoIPGroupNotification {
     private static HashSet<Integer> ignoreCalls;
     private static Runnable missRunnable;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static final class State implements VoIPServiceState {
         public final long call_id;
         private final int currentAccount;
@@ -115,7 +115,7 @@ public class VoIPGroupNotification {
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
         public TLRPC.User getUser() {
-            return mp.u1(this.currentAccount).c2(Long.valueOf(this.dialogId));
+            return np.u1(this.currentAccount).c2(Long.valueOf(this.dialogId));
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
@@ -206,7 +206,7 @@ public class VoIPGroupNotification {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$decline$3(int i7, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.Updates) {
-            mp.u1(i7).V3((TLRPC.Updates) tLObject, false);
+            np.u1(i7).V3((TLRPC.Updates) tLObject, false);
         }
     }
 
@@ -219,8 +219,8 @@ public class VoIPGroupNotification {
             ignoreCalls.add(Integer.valueOf(i10));
         } else {
             TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-            mp.u1(i7).f4(groupcall.users, false);
-            mp.u1(i7).Z3(groupcall.chats, false);
+            np.u1(i7).f4(groupcall.users, false);
+            np.u1(i7).Z3(groupcall.chats, false);
             currentState = new State(i7, j3, j10, i10, z10, groupcall.call, groupcall.participants);
             showNotification(context, i7, j10, i10, j3, str);
         }
@@ -228,7 +228,7 @@ public class VoIPGroupNotification {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$request$1(int i7, long j3, long j10, int i10, boolean z10, Context context, String str, TLObject tLObject, TLRPC.TL_error tL_error) {
-        org.telegram.messenger.g0.g3(new tn(tLObject, i7, j3, j10, i10, z10, context, str));
+        org.telegram.messenger.g0.g3(new un(tLObject, i7, j3, j10, i10, z10, context, str));
     }
 
     public static void open(Context context, int i7, int i10) {
@@ -263,7 +263,7 @@ public class VoIPGroupNotification {
                     hide(context);
                 }
             } else {
-                if (mp.u1(i7).T6) {
+                if (np.u1(i7).T6) {
                     return;
                 }
                 HashSet<Integer> hashSet = ignoreCalls;
@@ -274,7 +274,7 @@ public class VoIPGroupNotification {
                     getgroupcall.call = tL_inputGroupCallInviteMessage;
                     tL_inputGroupCallInviteMessage.msg_id = i10;
                     getgroupcall.limit = 3;
-                    ConnectionsManager.getInstance(i7).sendRequest(getgroupcall, new jn(context, i7, j3, str, j10, i10, z10));
+                    ConnectionsManager.getInstance(i7).sendRequest(getgroupcall, new kn(context, i7, j3, str, j10, i10, z10));
                 }
             }
         }
@@ -306,8 +306,8 @@ public class VoIPGroupNotification {
         }
         NotificationManager notificationManager2 = (NotificationManager) context.getSystemService("notification");
         Intent putExtra = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip").putExtra("group_call_invite_msg_id", i10).putExtra("currentAccount", i7);
-        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(gd.N0(2131743134, null)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, putExtra, 301989888));
-        SharedPreferences h12 = mp.h1();
+        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(hd.N0(2131743132, null)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, putExtra, 301989888));
+        SharedPreferences h12 = np.h1();
         int i13 = h12.getInt("calls_notification_channel", 0);
         NotificationChannel notificationChannel = notificationManager2.getNotificationChannel("incoming_calls2" + i13);
         if (notificationChannel != null) {
@@ -328,7 +328,7 @@ public class VoIPGroupNotification {
                     AudioAttributes build = new AudioAttributes.Builder().setContentType(4).setLegacyStreamType(2).setUsage(2).build();
                     intent = putExtra;
                     cls = LaunchActivity.class;
-                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i13, gd.N0(2131749010, null), 4);
+                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i13, hd.N0(2131749010, null), 4);
                     try {
                         notificationChannel4.setSound(null, build);
                         z11 = true;
@@ -336,7 +336,7 @@ public class VoIPGroupNotification {
                         z11 = true;
                         a8.g(e10, true);
                     }
-                    notificationChannel4.setDescription(gd.N0(2131749009, null));
+                    notificationChannel4.setDescription(hd.N0(2131749009, null));
                     notificationChannel4.enableVibration(false);
                     notificationChannel4.enableLights(false);
                     notificationChannel4.setBypassDnd(z11);
@@ -352,7 +352,7 @@ public class VoIPGroupNotification {
                 intent2.putExtra("call_id", j3);
                 intent2.putExtra("group_call_invite_msg_id", i10);
                 intent2.putExtra("currentAccount", i7);
-                String N02 = gd.N0(2131743175, null);
+                String N02 = hd.N0(2131743173, null);
                 i11 = Build.VERSION.SDK_INT;
                 if (i11 >= 24 || i11 >= 31) {
                     notificationManager = notificationManager2;
@@ -369,7 +369,7 @@ public class VoIPGroupNotification {
                 intent3.putExtra("call_id", j3);
                 intent3.putExtra("group_call_invite_msg_id", i10);
                 intent3.putExtra("currentAccount", i7);
-                N0 = gd.N0(2131743261, null);
+                N0 = hd.N0(2131743259, null);
                 if (i11 >= 24 && i11 < 31) {
                     SpannableString spannableString2 = new SpannableString(N0);
                     spannableString2.setSpan(new ForegroundColorSpan(-16733696), 0, spannableString2.length(), 0);
@@ -386,7 +386,7 @@ public class VoIPGroupNotification {
                 intent4.putExtra("group_call_invite_msg_id", i10);
                 intent4.putExtra("currentAccount", i7);
                 contentIntent.setDeleteIntent(PendingIntent.getBroadcast(org.telegram.messenger.t0.b, 0, intent4, 167772160));
-                TLObject g22 = mp.u1(i7).g2(j10);
+                TLObject g22 = np.u1(i7).g2(j10);
                 Bitmap roundAvatarBitmap = VoIPService.getRoundAvatarBitmap(context, i7, g22);
                 o4 = TextUtils.isEmpty(str) ? str : i5.o(g22);
                 if (TextUtils.isEmpty(o4)) {
@@ -403,7 +403,7 @@ public class VoIPGroupNotification {
                 }
                 jg.q qVar = new jg.q(context, i7, i10, 6);
                 missRunnable = qVar;
-                org.telegram.messenger.g0.h3(qVar, mp.u1(i7).k3);
+                org.telegram.messenger.g0.h3(qVar, np.u1(i7).k3);
             }
             if (s2.a) {
                 a8.b("User messed up the notification channel; deleting it and creating a proper one");
@@ -421,7 +421,7 @@ public class VoIPGroupNotification {
         intent22.putExtra("call_id", j3);
         intent22.putExtra("group_call_invite_msg_id", i10);
         intent22.putExtra("currentAccount", i7);
-        String N022 = gd.N0(2131743175, null);
+        String N022 = hd.N0(2131743173, null);
         i11 = Build.VERSION.SDK_INT;
         if (i11 >= 24) {
         }
@@ -433,7 +433,7 @@ public class VoIPGroupNotification {
         intent32.putExtra("call_id", j3);
         intent32.putExtra("group_call_invite_msg_id", i10);
         intent32.putExtra("currentAccount", i7);
-        N0 = gd.N0(2131743261, null);
+        N0 = hd.N0(2131743259, null);
         if (i11 >= 24) {
             SpannableString spannableString22 = new SpannableString(N0);
             spannableString22.setSpan(new ForegroundColorSpan(-16733696), 0, spannableString22.length(), 0);
@@ -450,7 +450,7 @@ public class VoIPGroupNotification {
         intent42.putExtra("group_call_invite_msg_id", i10);
         intent42.putExtra("currentAccount", i7);
         contentIntent.setDeleteIntent(PendingIntent.getBroadcast(org.telegram.messenger.t0.b, 0, intent42, 167772160));
-        TLObject g222 = mp.u1(i7).g2(j10);
+        TLObject g222 = np.u1(i7).g2(j10);
         Bitmap roundAvatarBitmap2 = VoIPService.getRoundAvatarBitmap(context, i7, g222);
         if (TextUtils.isEmpty(str)) {
         }
@@ -465,7 +465,7 @@ public class VoIPGroupNotification {
         }
         jg.q qVar2 = new jg.q(context, i7, i10, 6);
         missRunnable = qVar2;
-        org.telegram.messenger.g0.h3(qVar2, mp.u1(i7).k3);
+        org.telegram.messenger.g0.h3(qVar2, np.u1(i7).k3);
     }
 
     public static void hide(Context context, int i7, int i10) {

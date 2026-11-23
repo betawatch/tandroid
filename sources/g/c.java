@@ -18,8 +18,8 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
 import org.telegram.messenger.camera.Size;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.video.MP4Builder;
@@ -38,7 +38,7 @@ import s4.o0;
 import s4.p0;
 import s4.r0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -385,7 +385,7 @@ public final class c extends Handler {
                                             }
                                             EGLExt.eglPresentationTimeANDROID(u40Var.s, u40Var.E, u40Var.S);
                                             EGL14.eglSwapBuffers(u40Var.s, u40Var.E);
-                                            if (u40Var.C0 != null && bz.o() == 2 && u40Var.D0 % 33 == 0) {
+                                            if (u40Var.C0 != null && cz.o() == 2 && u40Var.D0 % 33 == 0) {
                                                 u40Var.C0.postRunnable(new ik(u40Var, 8));
                                             }
                                             u40Var.D0++;

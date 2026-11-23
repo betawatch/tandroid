@@ -13,11 +13,11 @@ import c8.ma;
 import c8.ra;
 import hi.d7;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.ut;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.vt;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -32,15 +32,15 @@ import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.sa;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v extends sa {
     public final int T1;
-    public final x10 U1;
+    public final y10 U1;
     public c51 V1;
     public final FrameLayout W1;
     public final FrameLayout X1;
-    public final ut Y1;
+    public final vt Y1;
     public final FrameLayout Z1;
     public final org.telegram.ui.Cells.l3 a2;
     public final hi.e b2;
@@ -48,17 +48,17 @@ public final class v extends sa {
     public int d2;
     public TL_iv.RichMessage e2;
 
-    public v(int i7, Context context, x10 x10Var, h6 h6Var) {
+    public v(int i7, Context context, y10 y10Var, h6 h6Var) {
         super(context, null, true, false, h6Var);
         this.T1 = i7;
-        this.U1 = x10Var;
+        this.U1 = y10Var;
         int i10 = m6.a7;
         w0(i10);
         Q(i10);
         FrameLayout frameLayout = new FrameLayout(context);
         this.W1 = frameLayout;
         TextView textView = new TextView(context);
-        textView.setText(gd.N0(2131754057, null));
+        textView.setText(hd.N0(2131754057, null));
         final int i11 = 1;
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
@@ -67,7 +67,7 @@ public final class v extends sa {
         textView.setGravity(19);
         frameLayout.addView(textView, ma.d(-1, 56.0f, 51, 22.0f, 6.0f, 56.0f, 0.0f));
         this.D1 = org.telegram.messenger.g0.L(-8.0f);
-        ImageView e10 = n10.e(context, R.drawable.ic_close_white);
+        ImageView e10 = o10.e(context, R.drawable.ic_close_white);
         e10.setScaleType(ImageView.ScaleType.CENTER);
         t6.s(e10, i12, h6Var, PorterDuff.Mode.SRC_IN);
         ra.a(e10);
@@ -104,9 +104,9 @@ public final class v extends sa {
                                     break;
                                 }
                             } else {
-                                x10 x10Var2 = vVar.U1;
-                                if (x10Var2 != null) {
-                                    x10Var2.a(richMessage);
+                                y10 y10Var2 = vVar.U1;
+                                if (y10Var2 != null) {
+                                    y10Var2.a(richMessage);
                                 }
                                 vVar.dismiss();
                                 break;
@@ -119,20 +119,20 @@ public final class v extends sa {
         frameLayout.addView(e10, ma.d(48, 48.0f, 53, 0.0f, 10.0f, 12.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.X1 = frameLayout2;
-        ut utVar = new ut(i7, context, h6Var);
-        this.Y1 = utVar;
-        utVar.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(12.0f));
+        vt vtVar = new vt(i7, context, h6Var);
+        this.Y1 = vtVar;
+        vtVar.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(12.0f));
         int L = org.telegram.messenger.g0.L(12.0f);
         int i14 = m6.d6;
         ShapeDrawable d02 = m6.d0(L, m6.w0(i14, h6Var));
         p6 M = t6.M(i14);
-        utVar.setBackground(d02);
-        t6.j(utVar, d02, M, null, h6Var);
-        frameLayout2.addView(utVar, ma.c(-2.0f, -1));
+        vtVar.setBackground(d02);
+        t6.j(vtVar, d02, M, null, h6Var);
+        frameLayout2.addView(vtVar, ma.c(-2.0f, -1));
         frameLayout2.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), 0);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.Z1 = frameLayout3;
-        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, gd.N0(2131754055, null), true, false, ((org.telegram.messenger.j0) mp.u1(i7).A7.W.b).c, h6Var);
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, hd.N0(2131754055, null), true, false, ((org.telegram.messenger.j0) np.u1(i7).A7.W.b).c, h6Var);
         this.a2 = l3Var;
         org.telegram.ui.Cells.j3 j3Var = l3Var.d;
         j3Var.setImeOptions(6);
@@ -144,9 +144,9 @@ public final class v extends sa {
         j3Var.addTextChangedListener(new u(this));
         frameLayout3.addView(l3Var, ma.c(-2.0f, -1));
         frameLayout3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
-        hi.e g10 = n10.g(24, context, h6Var, true);
+        hi.e g10 = o10.g(24, context, h6Var, true);
         this.b2 = g10;
-        g10.i(gd.N0(2131754056, null), false, true);
+        g10.i(hd.N0(2131754056, null), false, true);
         g10.setOnClickListener(new View.OnClickListener(this) { // from class: oi.s
             public final /* synthetic */ v b;
 
@@ -179,9 +179,9 @@ public final class v extends sa {
                                     break;
                                 }
                             } else {
-                                x10 x10Var2 = vVar.U1;
-                                if (x10Var2 != null) {
-                                    x10Var2.a(richMessage);
+                                y10 y10Var2 = vVar.U1;
+                                if (y10Var2 != null) {
+                                    y10Var2.a(richMessage);
                                 }
                                 vVar.dismiss();
                                 break;
@@ -217,7 +217,7 @@ public final class v extends sa {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.N0(2131754057, null);
+        return hd.N0(2131754057, null);
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2

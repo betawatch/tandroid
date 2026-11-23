@@ -70,13 +70,13 @@ import oi.r3;
 import oi.s3;
 import oi.t3;
 import oi.y3;
-import org.telegram.messenger.aw;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cj;
-import org.telegram.messenger.da;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.bw;
+import org.telegram.messenger.dj;
+import org.telegram.messenger.ea;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.i10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.j10;
 import org.telegram.messenger.p2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -121,7 +121,7 @@ import s2.t;
 import sg.h0;
 import ug.a1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     public final /* synthetic */ int a;
@@ -255,12 +255,12 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
         return ((py0) this.c).w;
     }
 
-    public void M(aw awVar, int i7) {
-        awVar.c = Integer.valueOf(i7);
-        int i10 = awVar.d;
+    public void M(bw bwVar, int i7) {
+        bwVar.c = Integer.valueOf(i7);
+        int i10 = bwVar.d;
         long j3 = i7;
-        awVar.a = j3;
-        awVar.b = j3;
+        bwVar.a = j3;
+        bwVar.b = j3;
         ((long[]) this.c)[i10] = j3;
     }
 
@@ -321,14 +321,14 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     public void Q0(int i7) {
-        aw[] awVarArr = (aw[]) this.b;
-        aw awVar = awVarArr[i7];
-        Integer num = awVar.c;
+        bw[] bwVarArr = (bw[]) this.b;
+        bw bwVar = bwVarArr[i7];
+        Integer num = bwVar.c;
         if (num != null) {
             int i10 = i7 * 2;
-            M(awVarArr[i10], num.intValue());
-            M(awVarArr[i10 + 1], awVar.c.intValue());
-            awVar.c = null;
+            M(bwVarArr[i10], num.intValue());
+            M(bwVarArr[i10 + 1], bwVar.c.intValue());
+            bwVar.c = null;
         }
     }
 
@@ -378,7 +378,7 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean T1(r1 r1Var, fj fjVar) {
+    public /* synthetic */ boolean T1(r1 r1Var, gj gjVar) {
         return false;
     }
 
@@ -430,18 +430,18 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     public long Y0(int i7, int i10, int i11) {
-        aw awVar = ((aw[]) this.b)[i7];
-        if (awVar.c != null) {
-            int i12 = awVar.d;
-            int i13 = awVar.e;
+        bw bwVar = ((bw[]) this.b)[i7];
+        if (bwVar.c != null) {
+            int i12 = bwVar.d;
+            int i13 = bwVar.e;
             if (i10 >= i12 && i11 <= i13) {
                 return r1.intValue();
             }
         }
-        int i14 = awVar.d;
-        int i15 = awVar.e;
+        int i14 = bwVar.d;
+        int i15 = bwVar.e;
         if (i14 >= i10 && i15 <= i11) {
-            return awVar.a;
+            return bwVar.a;
         }
         if ((i10 > i14 || i11 < i14) && (i10 < i14 || i10 > i15)) {
             return 0L;
@@ -522,18 +522,18 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     public long a1(int i7, int i10, int i11) {
-        aw awVar = ((aw[]) this.b)[i7];
-        if (awVar.c != null) {
-            int i12 = awVar.d;
-            int i13 = awVar.e;
+        bw bwVar = ((bw[]) this.b)[i7];
+        if (bwVar.c != null) {
+            int i12 = bwVar.d;
+            int i13 = bwVar.e;
             if (i10 >= i12 && i11 <= i13) {
                 return r1.intValue();
             }
         }
-        int i14 = awVar.d;
-        int i15 = awVar.e;
+        int i14 = bwVar.d;
+        int i15 = bwVar.e;
         if (i14 >= i10 && i15 <= i11) {
-            return awVar.b;
+            return bwVar.b;
         }
         if ((i10 > i14 || i11 < i14) && (i10 < i14 || i10 > i15)) {
             return 2147483647L;
@@ -561,7 +561,7 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
         try {
             v7.f fVar = (v7.f) aVar.a;
             fVar.t1(fVar.p1(), 1);
-            ((da) this.c).c.remove(aVar);
+            ((ea) this.c).c.remove(aVar);
         } catch (RemoteException e10) {
             throw new j(e10);
         }
@@ -733,8 +733,8 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean f1(fj fjVar) {
-        return c0.a(fjVar);
+    public /* synthetic */ boolean f1(gj gjVar) {
+        return c0.a(gjVar);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -929,16 +929,16 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     public void u(int i7, int i10, int i11) {
-        aw[] awVarArr = (aw[]) this.b;
-        aw awVar = new aw();
-        awVar.c = null;
-        awVarArr[i7] = awVar;
-        awVar.d = i10;
-        awVar.e = (i10 + i11) - 1;
+        bw[] bwVarArr = (bw[]) this.b;
+        bw bwVar = new bw();
+        bwVar.c = null;
+        bwVarArr[i7] = bwVar;
+        bwVar.d = i10;
+        bwVar.e = (i10 + i11) - 1;
         if (i11 == 1) {
             long j3 = ((long[]) this.c)[i10];
-            awVar.a = j3;
-            awVar.b = j3;
+            bwVar.a = j3;
+            bwVar.b = j3;
             return;
         }
         int i12 = i7 * 2;
@@ -946,14 +946,14 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
         u(i12, i10, i13);
         int i14 = i12 + 1;
         u(i14, i10 + i13, i11 - i13);
-        aw awVar2 = awVarArr[i7];
-        aw awVar3 = awVarArr[i12];
-        awVar3.getClass();
-        aw awVar4 = awVarArr[i14];
-        awVar4.getClass();
-        awVar2.getClass();
-        awVar2.a = Math.max(awVar3.a, awVar4.a);
-        awVarArr[i7].b = Math.min(awVarArr[i12].b, awVarArr[i14].b);
+        bw bwVar2 = bwVarArr[i7];
+        bw bwVar3 = bwVarArr[i12];
+        bwVar3.getClass();
+        bw bwVar4 = bwVarArr[i14];
+        bwVar4.getClass();
+        bwVar2.getClass();
+        bwVar2.a = Math.max(bwVar3.a, bwVar4.a);
+        bwVarArr[i7].b = Math.min(bwVarArr[i12].b, bwVarArr[i14].b);
     }
 
     public byte[] v0(q3.a aVar) {
@@ -1068,7 +1068,7 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean y0(fj fjVar) {
+    public /* synthetic */ boolean y0(gj gjVar) {
         return true;
     }
 
@@ -1139,7 +1139,7 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
         if (jArr.length < 30) {
             return;
         }
-        this.b = new aw[(int) (Math.pow(2.0d, Math.floor((Math.log(jArr.length) / Math.log(2.0d)) + 1.0d)) * 2.0d)];
+        this.b = new bw[(int) (Math.pow(2.0d, Math.floor((Math.log(jArr.length) / Math.log(2.0d)) + 1.0d)) * 2.0d)];
         u(1, 0, jArr.length);
     }
 
@@ -1231,7 +1231,7 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void L(cj cjVar) {
+    public /* synthetic */ void L(dj djVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -1243,7 +1243,7 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void O1(fj fjVar) {
+    public /* synthetic */ void O1(gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -1251,7 +1251,7 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void R(fj fjVar) {
+    public /* synthetic */ void R(gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -1348,7 +1348,7 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void a2(r1 r1Var, i10 i10Var) {
+    public /* synthetic */ void a2(r1 r1Var, j10 j10Var) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -1458,6 +1458,6 @@ public final class a implements j0, i, r3, an0, mt, m1, tj0, wj0, ui.a, d, t {
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void S1(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    public /* synthetic */ void S1(gj gjVar, String str, String str2, String str3, String str4, int i7, int i10) {
     }
 }

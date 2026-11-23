@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s8 extends org.telegram.ui.s11 {
     public boolean f2;
@@ -37,10 +37,10 @@ public final class s8 extends org.telegram.ui.s11 {
         y8 y8Var = this.g2;
         if (z11) {
             i10 = ((org.telegram.ui.ActionBar.g2) y8Var).currentAccount;
-            tL_emojiList = org.telegram.messenger.ri.d0(i10).M1;
+            tL_emojiList = org.telegram.messenger.si.d0(i10).M1;
         } else {
             i7 = ((org.telegram.ui.ActionBar.g2) y8Var).currentAccount;
-            tL_emojiList = org.telegram.messenger.ri.d0(i7).N1;
+            tL_emojiList = org.telegram.messenger.si.d0(i7).N1;
         }
         if (tL_emojiList != null) {
             z10 = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l10 != null ? l10.longValue() : 0L));

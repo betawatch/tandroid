@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class mg extends ot {
     public tc e2;
@@ -58,10 +58,10 @@ public abstract class mg extends ot {
         if (bnVar == null || bnVar.getParentActivity() == null) {
             return;
         }
-        org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) arrayList.get(0);
+        org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) arrayList.get(0);
         if (!chatActivityEnterView.p3) {
             PhotoViewer.p1().I2(null, bnVar, chatActivityEnterView.M4);
-            PhotoViewer.p1().f2(arrayList, 0, 2, false, new lg(this, efVar, file), chatActivityEnterView.F3);
+            PhotoViewer.p1().f2(arrayList, 0, 2, false, new lg(this, ffVar, file), chatActivityEnterView.F3);
         } else {
             org.telegram.messenger.g0.v1(this);
             org.telegram.messenger.g0.h3(new a9.h(this, arrayList, file, false, 9), 100L);
@@ -69,8 +69,8 @@ public abstract class mg extends ot {
     }
 
     public final void L(qf qfVar, boolean z10, int i7, int i10) {
-        org.telegram.messenger.fj threadMessage;
-        org.telegram.messenger.fj threadMessage2;
+        org.telegram.messenger.gj threadMessage;
+        org.telegram.messenger.gj threadMessage2;
         ChatActivityEnterView chatActivityEnterView = this.f2;
         org.telegram.ui.bn bnVar = chatActivityEnterView.F3;
         org.telegram.ui.eg0 eg0Var = chatActivityEnterView.M0;
@@ -88,16 +88,16 @@ public abstract class mg extends ot {
             org.telegram.messenger.c cVar = chatActivityEnterView.S;
             Uri c10 = hVar.c();
             long j3 = chatActivityEnterView.G3;
-            org.telegram.messenger.fj fjVar = chatActivityEnterView.J3;
+            org.telegram.messenger.gj gjVar = chatActivityEnterView.J3;
             threadMessage2 = chatActivityEnterView.getThreadMessage();
-            org.telegram.messenger.zy.T(cVar, null, null, c10, null, "image/gif", j3, fjVar, threadMessage2, null, chatActivityEnterView.L3, z10, qfVar, bnVar != null ? bnVar.Y8() : null);
+            org.telegram.messenger.az.T(cVar, null, null, c10, null, "image/gif", j3, gjVar, threadMessage2, null, chatActivityEnterView.L3, z10, qfVar, bnVar != null ? bnVar.Y8() : null);
         } else {
             org.telegram.messenger.c cVar2 = chatActivityEnterView.S;
             Uri c11 = hVar.c();
             long j10 = chatActivityEnterView.G3;
-            org.telegram.messenger.fj fjVar2 = chatActivityEnterView.J3;
+            org.telegram.messenger.gj gjVar2 = chatActivityEnterView.J3;
             threadMessage = chatActivityEnterView.getThreadMessage();
-            org.telegram.messenger.zy.Y(cVar2, c11, j10, fjVar2, threadMessage, qfVar, null, z10, 0, bnVar != null ? bnVar.Y8() : null);
+            org.telegram.messenger.az.Y(cVar2, c11, j10, gjVar2, threadMessage, qfVar, null, z10, 0, bnVar != null ? bnVar.Y8() : null);
         }
         ng ngVar = chatActivityEnterView.P3;
         if (ngVar != null) {

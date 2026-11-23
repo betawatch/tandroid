@@ -5,9 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m60 implements org.telegram.messenger.h9, org.telegram.messenger.i9, org.telegram.messenger.cb, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.pb0, org.telegram.messenger.r10, org.telegram.ui.Components.gu0, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6 {
+public final /* synthetic */ class m60 implements org.telegram.messenger.i9, org.telegram.messenger.j9, org.telegram.messenger.db, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.pb0, org.telegram.messenger.s10, org.telegram.ui.Components.gu0, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ m60(int i7) {
@@ -33,9 +33,9 @@ public final /* synthetic */ class m60 implements org.telegram.messenger.h9, org
         return 0;
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.s10
     public Object g(Number number, Object obj) {
-        return ((Integer) number).intValue() == 0 ? di.pb.b1(false, org.telegram.messenger.gd.H(',', "Stars", ((Integer) obj).intValue()), 0.66f, null) : org.telegram.messenger.gd.E(r4.intValue(), ',');
+        return ((Integer) number).intValue() == 0 ? di.pb.b1(false, org.telegram.messenger.hd.H(',', "Stars", ((Integer) obj).intValue()), 0.66f, null) : org.telegram.messenger.hd.E(r4.intValue(), ',');
     }
 
     @Override // org.telegram.ui.ActionBar.q1
@@ -89,32 +89,32 @@ public final /* synthetic */ class m60 implements org.telegram.messenger.h9, org
 
     @Override // org.telegram.ui.Components.pb0
     public String i(int i7) {
-        return i7 == 0 ? org.telegram.messenger.gd.N0(2131753796, null) : i7 == 1 ? org.telegram.messenger.gd.a0("AutoLockInTime", null, 2131753795, org.telegram.messenger.gd.G(1, "Minutes", new Object[0])) : i7 == 2 ? org.telegram.messenger.gd.a0("AutoLockInTime", null, 2131753795, org.telegram.messenger.gd.G(5, "Minutes", new Object[0])) : i7 == 3 ? org.telegram.messenger.gd.a0("AutoLockInTime", null, 2131753795, org.telegram.messenger.gd.G(1, "Hours", new Object[0])) : i7 == 4 ? org.telegram.messenger.gd.a0("AutoLockInTime", null, 2131753795, org.telegram.messenger.gd.G(5, "Hours", new Object[0])) : "";
+        return i7 == 0 ? org.telegram.messenger.hd.N0(2131753796, null) : i7 == 1 ? org.telegram.messenger.hd.a0("AutoLockInTime", null, 2131753795, org.telegram.messenger.hd.G(1, "Minutes", new Object[0])) : i7 == 2 ? org.telegram.messenger.hd.a0("AutoLockInTime", null, 2131753795, org.telegram.messenger.hd.G(5, "Minutes", new Object[0])) : i7 == 3 ? org.telegram.messenger.hd.a0("AutoLockInTime", null, 2131753795, org.telegram.messenger.hd.G(1, "Hours", new Object[0])) : i7 == 4 ? org.telegram.messenger.hd.a0("AutoLockInTime", null, 2131753795, org.telegram.messenger.hd.G(5, "Hours", new Object[0])) : "";
     }
 
     @Override // org.telegram.ui.Components.gu0
     public void k(int i7) {
-        org.telegram.messenger.bz.b1 = i7;
-        org.telegram.messenger.bz.y();
+        org.telegram.messenger.cz.b1 = i7;
+        org.telegram.messenger.cz.y();
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.j9
     public Object m(Object obj) {
         String str = LaunchActivity.C1;
         return new me0();
     }
 
-    @Override // org.telegram.messenger.h9
+    @Override // org.telegram.messenger.i9
     public boolean run() {
         String str = LaunchActivity.C1;
-        return org.telegram.messenger.bz.s.length() > 0 && !org.telegram.messenger.bz.A;
+        return org.telegram.messenger.cz.s.length() > 0 && !org.telegram.messenger.cz.A;
     }
 
     @Override // org.telegram.ui.Components.gu0
     public /* synthetic */ void o() {
     }
 
-    @Override // org.telegram.messenger.cb
+    @Override // org.telegram.messenger.db
     public void onClick() {
     }
 }

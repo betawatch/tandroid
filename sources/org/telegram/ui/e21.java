@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class e21 extends org.telegram.ui.Components.sa implements org.telegram.messenger.fs {
+public final class e21 extends org.telegram.ui.Components.sa implements org.telegram.messenger.gs {
     public final org.telegram.ui.Components.wy T1;
     public final hi.e U1;
     public final fi.h6 V1;
@@ -20,7 +20,7 @@ public final class e21 extends org.telegram.ui.Components.sa implements org.tele
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e21(org.telegram.ui.ActionBar.g2 g2Var, long j3, int i7, bi.b5 b5Var) {
+    public e21(org.telegram.ui.ActionBar.g2 g2Var, long j3, int i7, bi.a5 a5Var) {
         super(r2, g2Var, new org.telegram.ui.Components.ra(r3));
         Activity parentActivity = g2Var.getParentActivity();
         org.telegram.ui.Components.ra raVar = new org.telegram.ui.Components.ra();
@@ -30,7 +30,7 @@ public final class e21 extends org.telegram.ui.Components.sa implements org.tele
         raVar.g = g2Var.getResourceProvider();
         this.W1 = new HashMap();
         this.X1 = i7;
-        fi.h6 A = org.telegram.messenger.mp.u1(g2Var.getCurrentAccount()).R1().A(1, -1, j3, true);
+        fi.h6 A = org.telegram.messenger.np.u1(g2Var.getCurrentAccount()).R1().A(1, -1, j3, true);
         this.V1 = A;
         A.p(30, false);
         this.F1 = org.telegram.messenger.g0.L(12.0f);
@@ -46,10 +46,10 @@ public final class e21 extends org.telegram.ui.Components.sa implements org.tele
         frameLayout.addView(view, c8.ma.a(-1.0f, 1.0f / org.telegram.messenger.g0.p, 55));
         hi.e eVar = new hi.e(getContext(), this.J0, true);
         this.U1 = eVar;
-        eVar.i(org.telegram.messenger.gd.N0(2131744557, null), false, true);
+        eVar.i(org.telegram.messenger.hd.N0(2131744555, null), false, true);
         eVar.setEnabled(false);
-        eVar.setOnClickListener(new jg0(11, this, b5Var));
-        frameLayout.addView(eVar, c8.ma.d(-1, 48.0f, org.telegram.messenger.ks.E1, 10.0f, (1.0f / org.telegram.messenger.g0.p) + 10.0f, 10.0f, 10.0f));
+        eVar.setOnClickListener(new jg0(11, this, a5Var));
+        frameLayout.addView(eVar, c8.ma.d(-1, 48.0f, org.telegram.messenger.ls.E1, 10.0f, (1.0f / org.telegram.messenger.g0.p) + 10.0f, 10.0f, 10.0f));
         getContext();
         org.telegram.ui.Components.wy wyVar = new org.telegram.ui.Components.wy(i7, false);
         this.T1 = wyVar;
@@ -76,12 +76,12 @@ public final class e21 extends org.telegram.ui.Components.sa implements org.tele
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return org.telegram.messenger.gd.N0(2131744557, null);
+        return org.telegram.messenger.hd.N0(2131744555, null);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.A5 && ((fi.h6) objArr[0]) == this.V1) {
+        if (i7 == org.telegram.messenger.ls.A5 && ((fi.h6) objArr[0]) == this.V1) {
             this.Z1.O(false);
             e1();
         }
@@ -109,9 +109,9 @@ public final class e21 extends org.telegram.ui.Components.sa implements org.tele
             return false;
         }
         Object obj = G.H;
-        if (obj instanceof org.telegram.messenger.fj) {
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj;
-            int e12 = fjVar.e1();
+        if (obj instanceof org.telegram.messenger.gj) {
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) obj;
+            int e12 = gjVar.e1();
             Integer valueOf = Integer.valueOf(e12);
             HashMap hashMap = this.W1;
             if (hashMap.containsKey(valueOf)) {
@@ -119,7 +119,7 @@ public final class e21 extends org.telegram.ui.Components.sa implements org.tele
                 G.e = false;
                 ((org.telegram.ui.Cells.p7) view).i(false, true);
             } else {
-                hashMap.put(Integer.valueOf(e12), fjVar.l);
+                hashMap.put(Integer.valueOf(e12), gjVar.l);
                 G.e = true;
                 ((org.telegram.ui.Cells.p7) view).i(true, true);
             }
@@ -135,13 +135,13 @@ public final class e21 extends org.telegram.ui.Components.sa implements org.tele
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.Y1 = this.V1.o();
-        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.A5);
+        org.telegram.messenger.ls.f(this.a).c(this, org.telegram.messenger.ls.A5);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.V1.z(this.Y1);
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.A5);
+        org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.A5);
     }
 }

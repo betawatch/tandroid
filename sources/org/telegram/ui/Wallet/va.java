@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.si;
 import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.du0;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class va extends org.telegram.ui.ActionBar.g2 {
     public final String[] a;
@@ -186,20 +186,20 @@ public final class va extends org.telegram.ui.ActionBar.g2 {
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         q9Var.setAspectFit(true);
         q9Var.getImageReceiver().d = org.telegram.messenger.g0.t0();
-        ri.d0(org.telegram.messenger.g0.t0()).h2(q9Var, "RestrictedEmoji", "👨\u200d🏫", "100_100");
+        si.d0(org.telegram.messenger.g0.t0()).h2(q9Var, "RestrictedEmoji", "👨\u200d🏫", "100_100");
         q9Var.getImageReceiver().X(1);
         linearLayout.addView(q9Var, c8.ma.t(100, 100, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(1);
-        n10.r(textView, i11, this.resourceProvider, null, 2131742741);
-        TextView f10 = n10.f(linearLayout, textView, c8.ma.t(-1, -2, 1, 32, 0, 32, 10), context);
+        o10.r(textView, i11, this.resourceProvider, null, 2131742739);
+        TextView f10 = o10.f(linearLayout, textView, c8.ma.t(-1, -2, 1, 32, 0, 32, 10), context);
         f10.setTextSize(1, 14.0f);
         f10.setGravity(1);
         org.telegram.ui.ActionBar.t6.U(f10, org.telegram.ui.ActionBar.m6.z6, this.resourceProvider);
         int[] iArr = this.b;
-        org.telegram.messenger.f3.q(null, null, 2131742740, new Object[]{Integer.valueOf(iArr[0] + 1), Integer.valueOf(iArr[1] + 1), Integer.valueOf(iArr[2] + 1)}, f10);
+        org.telegram.messenger.f3.q(null, null, 2131742738, new Object[]{Integer.valueOf(iArr[0] + 1), Integer.valueOf(iArr[1] + 1), Integer.valueOf(iArr[2] + 1)}, f10);
         linearLayout.addView(f10, c8.ma.t(-1, -2, 1, 32, 0, 32, 8));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
@@ -223,7 +223,7 @@ public final class va extends org.telegram.ui.ActionBar.g2 {
                 dbVar.setText((String) arrayList.get(i14));
             }
             dbVar.setOnTextChangedListener(new m(this, 14));
-            dbVar.setOnNextListener(new j01(this, i14, dbVar, 22));
+            dbVar.setOnNextListener(new f21(this, i14, dbVar, 21));
             linearLayout2.addView(dbVar, c8.ma.t(-1, 50, 1, 0, i14 == 0 ? 0 : 12, 0, 0));
             arrayList2.add(dbVar);
             i14++;
@@ -232,7 +232,7 @@ public final class va extends org.telegram.ui.ActionBar.g2 {
         hi.e eVar = new hi.e(context, this.resourceProvider, true);
         this.h = eVar;
         eVar.f();
-        this.h.setText(gd.N0(2131742910, null));
+        this.h.setText(hd.N0(2131742908, null));
         this.h.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.ua
             public final /* synthetic */ va b;
 

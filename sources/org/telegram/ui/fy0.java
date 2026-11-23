@@ -2,27 +2,27 @@ package org.telegram.ui;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fy0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ bn b;
     public final /* synthetic */ Activity c;
     public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
-    public final /* synthetic */ org.telegram.messenger.fj e;
+    public final /* synthetic */ org.telegram.messenger.gj e;
 
-    public /* synthetic */ fy0(bn bnVar, Activity activity, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.messenger.fj fjVar, int i7) {
+    public /* synthetic */ fy0(bn bnVar, Activity activity, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.messenger.gj gjVar, int i7) {
         this.a = i7;
         this.b = bnVar;
         this.c = activity;
         this.d = h6Var;
-        this.e = fjVar;
+        this.e = gjVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        org.telegram.messenger.fj fjVar = this.e;
+        org.telegram.messenger.gj gjVar = this.e;
         org.telegram.ui.ActionBar.h6 h6Var = this.d;
         final Activity activity = this.c;
         bn bnVar = this.b;
@@ -30,7 +30,7 @@ public final /* synthetic */ class fy0 implements Runnable {
         switch (i7) {
             case 0:
                 final int i11 = 1;
-                org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.N0(2131754484, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
+                org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.g0.R2(org.telegram.messenger.hd.N0(2131754484, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -46,12 +46,12 @@ public final /* synthetic */ class fy0 implements Runnable {
                         }
                     }
                 }, h6Var)).j();
-                bnVar.ib(fjVar);
-                bnVar.kb(fjVar);
+                bnVar.ib(gjVar);
+                bnVar.kb(gjVar);
                 break;
             case 1:
                 final int i12 = 0;
-                org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.N0(2131754484, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
+                org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.g0.R2(org.telegram.messenger.hd.N0(2131754484, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
@@ -67,11 +67,11 @@ public final /* synthetic */ class fy0 implements Runnable {
                         }
                     }
                 }, h6Var)).j();
-                bnVar.ib(fjVar);
-                bnVar.kb(fjVar);
+                bnVar.ib(gjVar);
+                bnVar.kb(gjVar);
                 break;
             default:
-                org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.N0(2131754484, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
+                org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.g0.R2(org.telegram.messenger.hd.N0(2131754484, null), -1, 2, new Runnable() { // from class: org.telegram.ui.gy0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
@@ -87,8 +87,8 @@ public final /* synthetic */ class fy0 implements Runnable {
                         }
                     }
                 }, h6Var)).j();
-                bnVar.ib(fjVar);
-                bnVar.kb(fjVar);
+                bnVar.ib(gjVar);
+                bnVar.kb(gjVar);
                 break;
         }
     }

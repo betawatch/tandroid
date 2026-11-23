@@ -10,11 +10,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yq implements Runnable {
     public final /* synthetic */ boolean[] E;
-    public final /* synthetic */ org.telegram.messenger.x10 F;
+    public final /* synthetic */ org.telegram.messenger.y10 F;
     public final /* synthetic */ org.telegram.ui.ActionBar.w2 G;
     public final /* synthetic */ org.telegram.ui.ii H;
     public final /* synthetic */ org.telegram.ui.ActionBar.h6 I;
@@ -28,13 +28,13 @@ public final /* synthetic */ class yq implements Runnable {
     public final /* synthetic */ xq f;
     public final /* synthetic */ org.telegram.ui.Cells.l3 h;
     public final /* synthetic */ int[] n;
-    public final /* synthetic */ bi.x4 r;
+    public final /* synthetic */ ai.b1 r;
     public final /* synthetic */ hi.e s;
     public final /* synthetic */ boolean w;
     public final /* synthetic */ int x;
     public final /* synthetic */ TLRPC.User y;
 
-    public /* synthetic */ yq(boolean[] zArr, int[] iArr, org.telegram.ui.Cells.l3 l3Var, TreeSet treeSet, String[] strArr, xq xqVar, org.telegram.ui.Cells.l3 l3Var2, int[] iArr2, bi.x4 x4Var, hi.e eVar, boolean z10, int i7, TLRPC.User user, boolean[] zArr2, org.telegram.messenger.x10 x10Var, org.telegram.ui.ActionBar.w2 w2Var, org.telegram.ui.ii iiVar, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.Cells.a9 a9Var, Context context) {
+    public /* synthetic */ yq(boolean[] zArr, int[] iArr, org.telegram.ui.Cells.l3 l3Var, TreeSet treeSet, String[] strArr, xq xqVar, org.telegram.ui.Cells.l3 l3Var2, int[] iArr2, ai.b1 b1Var, hi.e eVar, boolean z10, int i7, TLRPC.User user, boolean[] zArr2, org.telegram.messenger.y10 y10Var, org.telegram.ui.ActionBar.w2 w2Var, org.telegram.ui.ii iiVar, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.Cells.a9 a9Var, Context context) {
         this.a = zArr;
         this.b = iArr;
         this.c = l3Var;
@@ -43,13 +43,13 @@ public final /* synthetic */ class yq implements Runnable {
         this.f = xqVar;
         this.h = l3Var2;
         this.n = iArr2;
-        this.r = x4Var;
+        this.r = b1Var;
         this.s = eVar;
         this.w = z10;
         this.x = i7;
         this.y = user;
         this.E = zArr2;
-        this.F = x10Var;
+        this.F = y10Var;
         this.G = w2Var;
         this.H = iiVar;
         this.I = h6Var;
@@ -101,20 +101,20 @@ public final /* synthetic */ class yq implements Runnable {
         createbot.username = strArr[0];
         createbot.name = trim;
         final int i10 = this.x;
-        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i10);
+        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i10);
         final TLRPC.User user = this.y;
         createbot.manager_id = u12.s1(user);
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
         d3.b bVar = new d3.b(1);
         final boolean[] zArr2 = this.E;
-        final org.telegram.messenger.x10 x10Var = this.F;
+        final org.telegram.messenger.y10 y10Var = this.F;
         final org.telegram.ui.ActionBar.w2 w2Var = this.G;
         final org.telegram.ui.ii iiVar = this.H;
         final org.telegram.ui.ActionBar.h6 h6Var = this.I;
         final org.telegram.ui.Cells.a9 a9Var = this.J;
         final Context context = this.K;
-        iArr[0] = connectionsManager.sendRequestTyped(createbot, bVar, new org.telegram.messenger.q10() { // from class: org.telegram.ui.Components.vq
-            @Override // org.telegram.messenger.q10
+        iArr[0] = connectionsManager.sendRequestTyped(createbot, bVar, new org.telegram.messenger.r10() { // from class: org.telegram.ui.Components.vq
+            @Override // org.telegram.messenger.r10
             public final void a(Object obj, Object obj2) {
                 String q10;
                 TLRPC.User user2 = (TLRPC.User) obj;
@@ -132,11 +132,11 @@ public final /* synthetic */ class yq implements Runnable {
                 org.telegram.ui.ActionBar.w2 w2Var2 = w2Var;
                 if (user2 != null) {
                     zArr2[0] = true;
-                    org.telegram.messenger.mp.u1(i11).e4(user2, false, false);
+                    org.telegram.messenger.np.u1(i11).e4(user2, false, false);
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(user2);
-                    org.telegram.messenger.tr.a0(i11).m1(arrayList, null, false, false);
-                    x10Var.a(user2);
+                    org.telegram.messenger.ur.a0(i11).m1(arrayList, null, false, false);
+                    y10Var.a(user2);
                     w2Var2.dismiss();
                     return;
                 }
@@ -158,11 +158,11 @@ public final /* synthetic */ class yq implements Runnable {
                         iArr3[0] = i12;
                         org.telegram.messenger.g0.E3(i12, a9Var2, null);
                     } else if ("BOT_CREATE_LIMIT_EXCEEDED".equalsIgnoreCase(tL_error.text)) {
-                        org.telegram.messenger.p0 p0Var = org.telegram.messenger.mp.u1(i11).A7;
-                        boolean q11 = org.telegram.messenger.j10.i(i11).q();
+                        org.telegram.messenger.p0 p0Var = org.telegram.messenger.np.u1(i11).A7;
+                        boolean q11 = org.telegram.messenger.k10.i(i11).q();
                         lc lcVar = new lc(w2Var2.F, h6Var2);
-                        String N0 = org.telegram.messenger.gd.N0(2131751723, null);
-                        SpannableStringBuilder O2 = org.telegram.messenger.g0.O2(q11 ? org.telegram.messenger.gd.a0(null, null, 2131751726, Integer.valueOf(((org.telegram.messenger.j0) p0Var.R.b).c)) : org.telegram.messenger.gd.a0(null, null, 2131751725, Integer.valueOf(((org.telegram.messenger.j0) p0Var.R.b).c), Integer.valueOf(((org.telegram.messenger.j0) p0Var.Q.b).c)), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var2), new oo(w2Var2, 4));
+                        String N0 = org.telegram.messenger.hd.N0(2131751723, null);
+                        SpannableStringBuilder O2 = org.telegram.messenger.g0.O2(q11 ? org.telegram.messenger.hd.a0(null, null, 2131751726, Integer.valueOf(((org.telegram.messenger.j0) p0Var.R.b).c)) : org.telegram.messenger.hd.a0(null, null, 2131751725, Integer.valueOf(((org.telegram.messenger.j0) p0Var.R.b).c), Integer.valueOf(((org.telegram.messenger.j0) p0Var.Q.b).c)), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var2), new oo(w2Var2, 4));
                         mf mfVar = new mf(22, w2Var2, context);
                         int t6 = org.telegram.messenger.g0.t(O2, "@BotFather");
                         if (t6 >= 0) {
@@ -174,15 +174,15 @@ public final /* synthetic */ class yq implements Runnable {
                     } else {
                         String str3 = tL_error.text;
                         if (str3 != null && str3.startsWith("FLOOD_WAIT_")) {
-                            new lc(w2Var2.F, h6Var2).I(R.raw.error, org.telegram.messenger.gd.N0(2131751723, null), org.telegram.messenger.gd.a0(null, null, 2131751724, org.telegram.messenger.gd.z(Integer.parseInt(tL_error.text.substring(11))))).j();
+                            new lc(w2Var2.F, h6Var2).I(R.raw.error, org.telegram.messenger.hd.N0(2131751723, null), org.telegram.messenger.hd.a0(null, null, 2131751724, org.telegram.messenger.hd.z(Integer.parseInt(tL_error.text.substring(11))))).j();
                         } else if ("MANAGER_PERMISSION_MISSING".equalsIgnoreCase(tL_error.text)) {
                             TLRPC.User user3 = user;
-                            if (TextUtils.isEmpty(org.telegram.messenger.o10.o(user3))) {
-                                q10 = org.telegram.messenger.o10.q(user3);
+                            if (TextUtils.isEmpty(org.telegram.messenger.p10.o(user3))) {
+                                q10 = org.telegram.messenger.p10.q(user3);
                             } else {
-                                q10 = "@" + org.telegram.messenger.o10.o(user3);
+                                q10 = "@" + org.telegram.messenger.p10.o(user3);
                             }
-                            new lc(w2Var2.F, h6Var2).Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var2), org.telegram.messenger.gd.a0(null, null, 2131751718, q10))).j();
+                            new lc(w2Var2.F, h6Var2).Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var2), org.telegram.messenger.hd.a0(null, null, 2131751718, q10))).j();
                         } else {
                             org.telegram.ui.Cells.c0.t(w2Var2.F, h6Var2, tL_error, false);
                         }

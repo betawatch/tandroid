@@ -2,11 +2,11 @@ package org.telegram.ui.Wallet;
 
 import android.graphics.Bitmap;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.t10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -18,7 +18,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.ne;
 import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class p implements Runnable {
                     while (i10 < size) {
                         Object obj4 = arrayList.get(i10);
                         i10++;
-                        ((x10) obj4).a(j0Var);
+                        ((y10) obj4).a(j0Var);
                     }
                     arrayList.clear();
                     u0Var.T();
@@ -62,10 +62,10 @@ public final /* synthetic */ class p implements Runnable {
             case 1:
                 WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj2;
                 Exception exc = (Exception) obj3;
-                q10 q10Var = (q10) obj;
+                r10 r10Var = (r10) obj;
                 if (importedWalletProof != null) {
                     u0.P("proof done");
-                    q10Var.a(importedWalletProof, null);
+                    r10Var.a(importedWalletProof, null);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("failed to prove: ");
@@ -75,7 +75,7 @@ public final /* synthetic */ class p implements Runnable {
                     if (exc != null && exc.getMessage() != null) {
                         str = exc.getMessage();
                     }
-                    q10Var.a(null, str);
+                    r10Var.a(null, str);
                     break;
                 }
             case 2:
@@ -88,7 +88,7 @@ public final /* synthetic */ class p implements Runnable {
             case 4:
                 h2 h2Var = (h2) obj3;
                 hi.e eVar = (hi.e) obj;
-                if (!((bi.k6) obj2).canScrollVertically(1)) {
+                if (!((bi.j6) obj2).canScrollVertically(1)) {
                     h2Var.p = true;
                 }
                 eVar.setEnabled((!h2Var.p || h2Var.m || h2Var.n) ? false : true);
@@ -97,7 +97,7 @@ public final /* synthetic */ class p implements Runnable {
                 l2 l2Var = (l2) obj2;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj3;
                 l2Var.getClass();
-                k kVar = new k((x10) obj, r4 ? 1 : 0);
+                k kVar = new k((y10) obj, r4 ? 1 : 0);
                 if (tonconnectsession != null && tonconnectsession.dapp_client_id != null && tonconnectsession.client_id != null && tonconnectsession.nonce != null) {
                     if (!l2Var.c.add(Long.valueOf(tonconnectsession.id))) {
                         kVar.a("A TON Connect operation is already in progress");
@@ -154,10 +154,10 @@ public final /* synthetic */ class p implements Runnable {
             case 8:
                 boolean[] zArr = (boolean[]) obj3;
                 w2 w2Var = (w2) obj;
-                z2.a.remove((bi.g5) obj2);
+                z2.a.remove((bi.f5) obj2);
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    lc.c0(gd.N0(2131742695, null));
+                    lc.c0(hd.N0(2131742693, null));
                     w2Var.a();
                     break;
                 }
@@ -182,7 +182,7 @@ public final /* synthetic */ class p implements Runnable {
             case 12:
                 e3[] e3VarArr = (e3[]) obj3;
                 TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = (TL_wallet.walletTransactionPeerUser) obj;
-                if (((s10) obj2) == null) {
+                if (((t10) obj2) == null) {
                     e3 e3Var = e3VarArr[0];
                     if (e3Var != null) {
                         e3Var.dismiss();
@@ -202,7 +202,7 @@ public final /* synthetic */ class p implements Runnable {
             case 14:
                 e3[] e3VarArr3 = (e3[]) obj3;
                 TL_wallet.WalletTransactionPeer walletTransactionPeer = (TL_wallet.WalletTransactionPeer) obj;
-                if (((s10) obj2) == null) {
+                if (((t10) obj2) == null) {
                     e3 e3Var2 = e3VarArr3[0];
                     if (e3Var2 != null) {
                         e3Var2.dismiss();
@@ -215,7 +215,7 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 break;
             case 15:
-                ((q10) obj2).a(((String[]) obj3)[0], Boolean.valueOf(((boolean[]) obj)[0]));
+                ((r10) obj2).a(((String[]) obj3)[0], Boolean.valueOf(((boolean[]) obj)[0]));
                 break;
             case 16:
                 s6 s6Var = (s6) obj2;
@@ -234,16 +234,16 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 break;
             case 17:
-                ((WalletEngine2) obj2).lambda$previewSignMessage$11((k2) obj3, (x10) obj);
+                ((WalletEngine2) obj2).lambda$previewSignMessage$11((k2) obj3, (y10) obj);
                 break;
             case 18:
-                ((q10) obj2).a((Long) obj, (String) obj3);
+                ((r10) obj2).a((Long) obj, (String) obj3);
                 break;
             case 19:
-                ((q10) obj2).a((String) obj3, (String) obj);
+                ((r10) obj2).a((String) obj3, (String) obj);
                 break;
             case 20:
-                ((WalletEngine2) obj2).lambda$previewTonConnect$2((k2) obj3, (q10) obj);
+                ((WalletEngine2) obj2).lambda$previewTonConnect$2((k2) obj3, (r10) obj);
                 break;
             case 21:
                 q8 q8Var = (q8) obj2;
@@ -255,14 +255,14 @@ public final /* synthetic */ class p implements Runnable {
                 x6 x6Var = r8Var.c;
                 if (!z10) {
                     if (q8Var.u == null) {
-                        q8Var.u = Bitmap.createBitmap(ks.L4, ks.L4, Bitmap.Config.ARGB_8888);
+                        q8Var.u = Bitmap.createBitmap(ls.L4, ls.L4, Bitmap.Config.ARGB_8888);
                         if (x6Var.isShown() && x6Var.getAlpha() > 0.0f) {
                             p8 p8Var = q8Var.r;
                             p8Var.a(0.0f);
                             p8Var.b = 1.0f;
                         }
                     }
-                    q8Var.u.setPixels(iArr, 0, ks.L4, 0, 0, ks.L4, ks.L4);
+                    q8Var.u.setPixels(iArr, 0, ls.L4, 0, 0, ls.L4, ls.L4);
                     if (bitmap != null && q8Var.w == null) {
                         q8Var.w = bitmap;
                     }
@@ -276,12 +276,12 @@ public final /* synthetic */ class p implements Runnable {
             default:
                 d9 d9Var = (d9) obj3;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, d9Var.getParentActivity(), d9Var.getResourceProvider());
-                String N0 = gd.N0(2131742887, null);
+                String N0 = hd.N0(2131742885, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = gd.N0(2131742890, null);
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
-                alertDialog$Builder.k(gd.N0(2131742892, null), new x8(d9Var, (u0) obj2, (o0) obj));
+                t1Var.U = hd.N0(2131742888, null);
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
+                alertDialog$Builder.k(hd.N0(2131742890, null), new x8(d9Var, (u0) obj2, (o0) obj));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;
@@ -295,11 +295,11 @@ public final /* synthetic */ class p implements Runnable {
         this.c = str;
     }
 
-    public /* synthetic */ p(u0 u0Var, WalletEngine2.ImportedWalletProof importedWalletProof, Exception exc, q10 q10Var) {
+    public /* synthetic */ p(u0 u0Var, WalletEngine2.ImportedWalletProof importedWalletProof, Exception exc, r10 r10Var) {
         this.a = 1;
         this.b = importedWalletProof;
         this.c = exc;
-        this.d = q10Var;
+        this.d = r10Var;
     }
 
     public /* synthetic */ p(d9 d9Var, u0 u0Var, o0 o0Var) {

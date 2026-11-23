@@ -4,8 +4,8 @@ import fi.f7;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.sr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.tr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -14,7 +14,7 @@ import org.telegram.ui.ug0;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y implements ug0, ww {
     public final /* synthetic */ v0 a;
@@ -50,8 +50,8 @@ public final /* synthetic */ class y implements ug0, ww {
         this.b[0] = true;
         TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
         v0 v0Var = this.a;
-        mp.u1(v0Var.N);
-        tL_messages_sendBotRequestedPeer.peer = mp.p1(v0Var.V);
+        np.u1(v0Var.N);
+        tL_messages_sendBotRequestedPeer.peer = np.p1(v0Var.V);
         String str = this.c;
         tL_messages_sendBotRequestedPeer.webapp_req_id = str;
         tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
@@ -59,7 +59,7 @@ public final /* synthetic */ class y implements ug0, ww {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            tL_messages_sendBotRequestedPeer.requested_peers.add(mp.u1(v0Var.N).l1(((Long) obj).longValue()));
+            tL_messages_sendBotRequestedPeer.requested_peers.add(np.u1(v0Var.N).l1(((Long) obj).longValue()));
         }
         ConnectionsManager.getInstance(v0Var.N).sendRequestTyped(tL_messages_sendBotRequestedPeer, new d3.b(1), new s(v0Var, this.e, str, 2));
     }
@@ -71,8 +71,8 @@ public final /* synthetic */ class y implements ug0, ww {
             this.b[0] = true;
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
             v0 v0Var = this.a;
-            mp.u1(v0Var.N);
-            tL_messages_sendBotRequestedPeer.peer = mp.p1(v0Var.V);
+            np.u1(v0Var.N);
+            tL_messages_sendBotRequestedPeer.peer = np.p1(v0Var.V);
             String str = this.c;
             tL_messages_sendBotRequestedPeer.webapp_req_id = str;
             tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
@@ -81,11 +81,11 @@ public final /* synthetic */ class y implements ug0, ww {
             while (i11 < size) {
                 Object obj = arrayList.get(i11);
                 i11++;
-                hashSet.add(Long.valueOf(((sr) obj).a));
+                hashSet.add(Long.valueOf(((tr) obj).a));
             }
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                tL_messages_sendBotRequestedPeer.requested_peers.add(mp.u1(v0Var.N).l1(((Long) it.next()).longValue()));
+                tL_messages_sendBotRequestedPeer.requested_peers.add(np.u1(v0Var.N).l1(((Long) it.next()).longValue()));
             }
             ConnectionsManager.getInstance(v0Var.N).sendRequestTyped(tL_messages_sendBotRequestedPeer, new d3.b(1), new s(v0Var, this.e, str, 1));
         }

@@ -26,10 +26,10 @@ import java.lang.reflect.Array;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p6 {
     public static volatile boolean j0;
@@ -72,10 +72,10 @@ public final class p6 {
     public final RectF f = new RectF(0.0f, 0.0f, 336.0f, 205.0f);
     public final RectF g = new RectF();
     public final RectF h = new RectF(-42.0f, -107.5f, 378.0f, 312.5f);
-    public final float[] i = new float[ks.i2];
-    public final float[] j = new float[ks.i2];
-    public final float[] k = new float[ks.i2];
-    public final float[] l = new float[ks.i2];
+    public final float[] i = new float[ls.i2];
+    public final float[] j = new float[ls.i2];
+    public final float[] k = new float[ls.i2];
+    public final float[] l = new float[ls.i2];
     public final float[] m = new float[76];
     public final float[] n = new float[76];
     public final int[] o = new int[76];
@@ -237,8 +237,8 @@ public final class p6 {
             }
             n0 = bitmapArr;
         }
-        int[] iArr2 = new int[ks.N1];
-        int[] iArr3 = new int[ks.N1];
+        int[] iArr2 = new int[ls.N1];
+        int[] iArr3 = new int[ls.N1];
         int i32 = i27;
         while (true) {
             d = 128.0d;
@@ -249,8 +249,8 @@ public final class p6 {
             }
             float f19 = f12;
             double d10 = ((i32 * 3.141592653589793d) * 2.0d) / 128.0d;
-            iArr2[i32] = Color.argb(Math.round(((float) Math.pow(Math.pow(Math.sin(d10) / 0.64d, 2.0d) + 1.0d, -2.0d)) * 64.0f), ks.e4, ks.e4, ks.e4);
-            iArr3[i32] = Color.argb(Math.round(l(0.18f, 0.88f, (float) Math.abs(Math.cos(Math.atan2(Math.sin(d10) / 2.0d, Math.cos(d10))))) * 255.0f), ks.e4, ks.e4, ks.e4);
+            iArr2[i32] = Color.argb(Math.round(((float) Math.pow(Math.pow(Math.sin(d10) / 0.64d, 2.0d) + 1.0d, -2.0d)) * 64.0f), ls.e4, ls.e4, ls.e4);
+            iArr3[i32] = Color.argb(Math.round(l(0.18f, 0.88f, (float) Math.abs(Math.cos(Math.atan2(Math.sin(d10) / 2.0d, Math.cos(d10))))) * 255.0f), ls.e4, ls.e4, ls.e4);
             i32++;
             z11 = z10 ? 1 : 0;
             f12 = f19;
@@ -292,7 +292,7 @@ public final class p6 {
                 BitmapShader bitmapShader3 = new BitmapShader(bitmap5, tileMode3, tileMode3);
                 this.e.setScale(f20 / m0[i34].getWidth(), f21 / m0[i34].getHeight());
                 bitmapShader3.setLocalMatrix(this.e);
-                int[] iArr4 = new int[ks.N1];
+                int[] iArr4 = new int[ls.N1];
                 int i35 = i27;
                 while (i35 <= i11) {
                     double d11 = ((i35 * 3.141592653589793d) * 2.0d) / d2;
@@ -383,7 +383,7 @@ public final class p6 {
 
     public static int d(float f10, float f11, float f12, int i7, int i10) {
         float f13 = f12 * 255.0f;
-        return Color.rgb(Math.min(ks.e4, Math.round((Color.red(i10) * f11) + (Color.red(i7) * f10) + f13)), Math.min(ks.e4, Math.round((Color.green(i10) * f11) + (Color.green(i7) * f10) + f13)), Math.min(ks.e4, Math.round((Color.blue(i10) * f11) + (Color.blue(i7) * f10) + f13)));
+        return Color.rgb(Math.min(ls.e4, Math.round((Color.red(i10) * f11) + (Color.red(i7) * f10) + f13)), Math.min(ls.e4, Math.round((Color.green(i10) * f11) + (Color.green(i7) * f10) + f13)), Math.min(ls.e4, Math.round((Color.blue(i10) * f11) + (Color.blue(i7) * f10) + f13)));
     }
 
     public static float g(int i7) {
@@ -463,7 +463,7 @@ public final class p6 {
         Paint paint = this.b;
         paint.setAlpha(i7);
         canvas.drawBitmap(bitmap, (Rect) null, rectF, paint);
-        paint.setAlpha(ks.e4);
+        paint.setAlpha(ls.e4);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -558,7 +558,7 @@ public final class p6 {
                     int i22 = 0;
                     for (int i23 = 3; i22 < i23; i23 = 3) {
                         int i24 = 16 - (i22 * 8);
-                        float g10 = g((i17 >> i24) & ks.e4) * 0.73f;
+                        float g10 = g((i17 >> i24) & ls.e4) * 0.73f;
                         float[] fArr4 = fArr2;
                         if (g10 <= 0.0031308f) {
                             pow2 = g10 * 12.92f;
@@ -570,7 +570,7 @@ public final class p6 {
                             pow2 = (((float) Math.pow(g10, 0.4166666567325592d)) * 1.055f) - 0.055f;
                         }
                         fArr4[i22] = pow2;
-                        float g11 = g((i12 >> i24) & ks.e4) * 0.73f;
+                        float g11 = g((i12 >> i24) & ls.e4) * 0.73f;
                         fArr3[i22] = g11 <= 0.0031308f ? g11 * 12.92f : (((float) Math.pow(g11, 0.4166666567325592d)) * 1.055f) - 0.055f;
                         i22++;
                         i16 = i12;
@@ -654,7 +654,7 @@ public final class p6 {
                 canvas.clipPath(path);
             }
             canvas.rotate((float) Math.toDegrees(this.U), 168.0f, 102.5f);
-            int round = (i14 != 1 || fArr[9] <= 0.5f) ? ks.e4 : Math.round(fArr[8] * 255.0f);
+            int round = (i14 != 1 || fArr[9] <= 0.5f) ? ls.e4 : Math.round(fArr[8] * 255.0f);
             RectF rectF2 = this.h;
             int saveLayerAlpha = round < 255 ? canvas.saveLayerAlpha(rectF2, round) : -1;
             paint.setShader(null);
@@ -672,7 +672,7 @@ public final class p6 {
             if (saveLayerAlpha != -1) {
                 canvas.restoreToCount(saveLayerAlpha);
             }
-            paint.setAlpha(ks.e4);
+            paint.setAlpha(ls.e4);
             canvas.restoreToCount(save);
             i14++;
         }
@@ -722,8 +722,8 @@ public final class p6 {
                         }
                     }
                     paint.setShader(null);
-                    i7 = ks.e4;
-                    paint.setAlpha(ks.e4);
+                    i7 = ls.e4;
+                    paint.setAlpha(ls.e4);
                 } else {
                     blendMode = BlendMode.SOFT_LIGHT;
                     paint.setBlendMode(blendMode);
@@ -732,10 +732,10 @@ public final class p6 {
                     paint.setAlpha(Math.round(53.55f));
                     canvas.drawRect(rectF, paint);
                     paint.setShader(null);
-                    paint.setAlpha(ks.e4);
+                    paint.setAlpha(ls.e4);
                     blendMode2 = BlendMode.SRC_OVER;
                     paint.setBlendMode(blendMode2);
-                    i7 = ks.e4;
+                    i7 = ls.e4;
                 }
                 rgb = fArr != null ? -13003265 : Color.rgb(Math.min(i7, Math.round(Color.red(this.h0) * 1.12f)), Math.min(i7, Math.round(Color.green(this.h0) * 1.12f)), Math.min(i7, Math.round(Color.blue(this.h0) * 1.12f)));
                 if (this.A != null || this.z != rgb) {
@@ -752,7 +752,7 @@ public final class p6 {
                 }
                 paint2.setColorFilter(null);
                 paint2.setShader(null);
-                paint2.setAlpha(ks.e4);
+                paint2.setAlpha(ls.e4);
             }
         }
         z10 = false;
@@ -781,8 +781,8 @@ public final class p6 {
         while (r7 < r6) {
         }
         paint.setShader(null);
-        i7 = ks.e4;
-        paint.setAlpha(ks.e4);
+        i7 = ls.e4;
+        paint.setAlpha(ls.e4);
         if (fArr != null) {
         }
         if (this.A != null) {
@@ -794,7 +794,7 @@ public final class p6 {
         }
         paint22.setColorFilter(null);
         paint22.setShader(null);
-        paint22.setAlpha(ks.e4);
+        paint22.setAlpha(ls.e4);
     }
 
     public final void f(Bitmap[] bitmapArr) {

@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e4 extends org.telegram.ui.Components.dk0 {
     public TLRPC.WebPage F;
@@ -257,7 +257,7 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
         int i13;
         int i14;
         float f12;
-        org.telegram.messenger.xi xiVar;
+        org.telegram.messenger.yi yiVar;
         float f13;
         int i15;
         TLRPC.Document a10;
@@ -451,10 +451,10 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
                                     i17++;
                                 } else {
                                     w10 = org.telegram.messenger.w7.w(e12.sizes, org.telegram.messenger.g0.Z0(false), false, null, false);
-                                    org.telegram.messenger.xi xiVar2 = new org.telegram.messenger.xi();
-                                    xiVar2.h = i17 != size + (-1);
+                                    org.telegram.messenger.yi yiVar2 = new org.telegram.messenger.yi();
+                                    yiVar2.h = i17 != size + (-1);
                                     f14 = w10 != null ? 1.0f : w10.w / w10.h;
-                                    xiVar2.g = f14;
+                                    yiVar2.g = f14;
                                     if (f14 <= 1.2f) {
                                         sb2.append("w");
                                     } else if (f14 < 0.8f) {
@@ -462,31 +462,31 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
                                     } else {
                                         sb2.append("q");
                                     }
-                                    f15 = xiVar2.g;
+                                    f15 = yiVar2.g;
                                     f16 += f15;
                                     if (f15 > 2.0f) {
                                         z13 = true;
                                     }
-                                    hashMap2.put(pageBlock3, xiVar2);
-                                    arrayList.add(xiVar2);
+                                    hashMap2.put(pageBlock3, yiVar2);
+                                    arrayList.add(yiVar2);
                                     i17++;
                                 }
                             } else {
                                 if ((pageBlock3 instanceof TL_iv.pageBlockVideo) && (a10 = d4.a(e4Var.F, ((TL_iv.pageBlockVideo) pageBlock3).video_id)) != null) {
                                     w10 = org.telegram.messenger.w7.w(a10.thumbs, 90, false, null, false);
-                                    org.telegram.messenger.xi xiVar22 = new org.telegram.messenger.xi();
-                                    xiVar22.h = i17 != size + (-1);
+                                    org.telegram.messenger.yi yiVar22 = new org.telegram.messenger.yi();
+                                    yiVar22.h = i17 != size + (-1);
                                     if (w10 != null) {
                                     }
-                                    xiVar22.g = f14;
+                                    yiVar22.g = f14;
                                     if (f14 <= 1.2f) {
                                     }
-                                    f15 = xiVar22.g;
+                                    f15 = yiVar22.g;
                                     f16 += f15;
                                     if (f15 > 2.0f) {
                                     }
-                                    hashMap2.put(pageBlock3, xiVar22);
-                                    arrayList.add(xiVar22);
+                                    hashMap2.put(pageBlock3, yiVar22);
+                                    arrayList.add(yiVar22);
                                 }
                                 i17++;
                             }
@@ -508,10 +508,10 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
                             while (i18 < i12) {
                                 if (f20 > 1.1f) {
                                     f12 = f17;
-                                    fArr[i18] = Math.max(f12, ((org.telegram.messenger.xi) arrayList.get(i18)).g);
+                                    fArr[i18] = Math.max(f12, ((org.telegram.messenger.yi) arrayList.get(i18)).g);
                                 } else {
                                     f12 = f17;
-                                    fArr[i18] = Math.min(f12, ((org.telegram.messenger.xi) arrayList.get(i18)).g);
+                                    fArr[i18] = Math.min(f12, ((org.telegram.messenger.yi) arrayList.get(i18)).g);
                                 }
                                 fArr[i18] = Math.max(0.66667f, Math.min(1.7f, fArr[i18]));
                                 i18++;
@@ -663,11 +663,11 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
                                     float f27 = f1Var5.b[i39];
                                     int i42 = i26;
                                     int i43 = 0;
-                                    org.telegram.messenger.xi xiVar3 = null;
+                                    org.telegram.messenger.yi yiVar3 = null;
                                     while (i43 < i41) {
                                         int i44 = (int) (fArr[i40] * f27);
                                         i42 -= i44;
-                                        org.telegram.messenger.xi xiVar4 = (org.telegram.messenger.xi) arrayList.get(i40);
+                                        org.telegram.messenger.yi yiVar4 = (org.telegram.messenger.yi) arrayList.get(i40);
                                         int i45 = i39 == 0 ? 4 : 0;
                                         int i46 = i40;
                                         if (i39 == iArr2.length - 1) {
@@ -678,134 +678,134 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
                                         }
                                         if (i43 == i41 - 1) {
                                             i45 |= 2;
-                                            xiVar3 = xiVar4;
+                                            yiVar3 = yiVar4;
                                         }
                                         int i47 = i39;
                                         int i48 = i43;
-                                        xiVar4.a(f27 / 814.0f, i48, i43, i47, i39, i44, i45);
+                                        yiVar4.a(f27 / 814.0f, i48, i43, i47, i39, i44, i45);
                                         i43 = i48 + 1;
                                         i40 = i46 + 1;
                                         i39 = i47;
                                     }
-                                    xiVar3.e += i42;
-                                    xiVar3.i += i42;
+                                    yiVar3.e += i42;
+                                    yiVar3.i += i42;
                                     i39++;
                                     i40 = i40;
                                 }
                             }
                         } else if (size == 2) {
-                            org.telegram.messenger.xi xiVar5 = (org.telegram.messenger.xi) arrayList.get(0);
-                            org.telegram.messenger.xi xiVar6 = (org.telegram.messenger.xi) arrayList.get(1);
+                            org.telegram.messenger.yi yiVar5 = (org.telegram.messenger.yi) arrayList.get(0);
+                            org.telegram.messenger.yi yiVar6 = (org.telegram.messenger.yi) arrayList.get(1);
                             String sb3 = sb2.toString();
                             if (sb3.equals("ww")) {
                                 i15 = size;
                                 f13 = f18;
                                 if (f20 > f19 * 1.4d) {
-                                    float f28 = xiVar5.g;
-                                    float f29 = xiVar6.g;
+                                    float f28 = yiVar5.g;
+                                    float f29 = yiVar6.g;
                                     if (f28 - f29 < 0.2d) {
                                         float round = Math.round(Math.min(f13 / f28, Math.min(f13 / f29, 407.0f))) / 814.0f;
-                                        xiVar5.a(round, 0, 0, 0, 0, g1Var2.c, 7);
-                                        xiVar6.a(round, 0, 0, 1, 1, g1Var2.c, 11);
+                                        yiVar5.a(round, 0, 0, 0, 0, g1Var2.c, 7);
+                                        yiVar6.a(round, 0, 0, 1, 1, g1Var2.c, 11);
                                         i12 = i15;
                                     }
                                 }
-                                xiVar = xiVar6;
+                                yiVar = yiVar6;
                             } else {
-                                xiVar = xiVar6;
+                                yiVar = yiVar6;
                                 f13 = f18;
                                 i15 = size;
                             }
                             if (sb3.equals("ww") || sb3.equals("qq")) {
                                 int i49 = i16 / 2;
                                 float f30 = i49;
-                                float round2 = Math.round(Math.min(f30 / xiVar5.g, Math.min(f30 / xiVar.g, 814.0f))) / 814.0f;
-                                xiVar5.a(round2, 0, 0, 0, 0, i49, 13);
-                                xiVar.a(round2, 1, 1, 0, 0, i49, 14);
+                                float round2 = Math.round(Math.min(f30 / yiVar5.g, Math.min(f30 / yiVar.g, 814.0f))) / 814.0f;
+                                yiVar5.a(round2, 0, 0, 0, 0, i49, 13);
+                                yiVar.a(round2, 1, 1, 0, 0, i49, 14);
                             } else {
-                                float f31 = xiVar5.g;
-                                int max = (int) Math.max(f13 * 0.4f, Math.round((f13 / f31) / ((1.0f / xiVar.g) + (1.0f / f31))));
+                                float f31 = yiVar5.g;
+                                int max = (int) Math.max(f13 * 0.4f, Math.round((f13 / f31) / ((1.0f / yiVar.g) + (1.0f / f31))));
                                 int i50 = i16 - max;
                                 if (i50 < min) {
                                     max -= min - i50;
                                 } else {
                                     min = i50;
                                 }
-                                float min2 = Math.min(814.0f, Math.round(Math.min(min / xiVar5.g, max / xiVar.g))) / 814.0f;
-                                xiVar5.a(min2, 0, 0, 0, 0, min, 13);
-                                xiVar.a(min2, 1, 1, 0, 0, max, 14);
+                                float min2 = Math.min(814.0f, Math.round(Math.min(min / yiVar5.g, max / yiVar.g))) / 814.0f;
+                                yiVar5.a(min2, 0, 0, 0, 0, min, 13);
+                                yiVar.a(min2, 1, 1, 0, 0, max, 14);
                             }
                             i12 = i15;
                         } else {
                             i12 = size;
                             if (i12 == 3) {
-                                org.telegram.messenger.xi xiVar7 = (org.telegram.messenger.xi) arrayList.get(0);
-                                org.telegram.messenger.xi xiVar8 = (org.telegram.messenger.xi) arrayList.get(1);
-                                org.telegram.messenger.xi xiVar9 = (org.telegram.messenger.xi) arrayList.get(2);
+                                org.telegram.messenger.yi yiVar7 = (org.telegram.messenger.yi) arrayList.get(0);
+                                org.telegram.messenger.yi yiVar8 = (org.telegram.messenger.yi) arrayList.get(1);
+                                org.telegram.messenger.yi yiVar9 = (org.telegram.messenger.yi) arrayList.get(2);
                                 if (sb2.charAt(0) == 'n') {
-                                    float f32 = xiVar8.g;
-                                    float min3 = Math.min(407.0f, Math.round((f32 * f18) / (xiVar9.g + f32)));
-                                    int max2 = (int) Math.max(min, Math.min(0.5f * f18, Math.round(Math.min(xiVar9.g * min3, xiVar8.g * r10))));
-                                    int round3 = Math.round(Math.min((xiVar7.g * 814.0f) + L3, i16 - max2));
-                                    xiVar7.a(1.0f, 0, 0, 0, 1, round3, 13);
+                                    float f32 = yiVar8.g;
+                                    float min3 = Math.min(407.0f, Math.round((f32 * f18) / (yiVar9.g + f32)));
+                                    int max2 = (int) Math.max(min, Math.min(0.5f * f18, Math.round(Math.min(yiVar9.g * min3, yiVar8.g * r10))));
+                                    int round3 = Math.round(Math.min((yiVar7.g * 814.0f) + L3, i16 - max2));
+                                    yiVar7.a(1.0f, 0, 0, 0, 1, round3, 13);
                                     float f33 = (814.0f - min3) / 814.0f;
-                                    xiVar8.a(f33, 1, 1, 0, 0, max2, 6);
+                                    yiVar8.a(f33, 1, 1, 0, 0, max2, 6);
                                     float f34 = min3 / 814.0f;
-                                    xiVar9.a(f34, 0, 1, 1, 1, max2, 10);
-                                    xiVar9.i = i16;
-                                    xiVar7.m = new float[]{f34, f33};
-                                    xiVar8.i = i16 - round3;
-                                    xiVar9.j = round3;
+                                    yiVar9.a(f34, 0, 1, 1, 1, max2, 10);
+                                    yiVar9.i = i16;
+                                    yiVar7.m = new float[]{f34, f33};
+                                    yiVar8.i = i16 - round3;
+                                    yiVar9.j = round3;
                                 } else {
-                                    float round4 = Math.round(Math.min(f18 / xiVar7.g, 537.24005f)) / 814.0f;
-                                    xiVar7.a(round4, 0, 1, 0, 0, g1Var2.c, 7);
+                                    float round4 = Math.round(Math.min(f18 / yiVar7.g, 537.24005f)) / 814.0f;
+                                    yiVar7.a(round4, 0, 1, 0, 0, g1Var2.c, 7);
                                     int i51 = i16 / 2;
                                     float f35 = i51;
-                                    float min4 = Math.min(814.0f - round4, Math.round(Math.min(f35 / xiVar8.g, f35 / xiVar9.g))) / 814.0f;
-                                    xiVar8.a(min4, 0, 0, 1, 1, i51, 9);
-                                    xiVar9.a(min4, 1, 1, 1, 1, i51, 10);
+                                    float min4 = Math.min(814.0f - round4, Math.round(Math.min(f35 / yiVar8.g, f35 / yiVar9.g))) / 814.0f;
+                                    yiVar8.a(min4, 0, 0, 1, 1, i51, 9);
+                                    yiVar9.a(min4, 1, 1, 1, 1, i51, 10);
                                 }
                             } else if (i12 == 4) {
-                                org.telegram.messenger.xi xiVar10 = (org.telegram.messenger.xi) arrayList.get(0);
-                                org.telegram.messenger.xi xiVar11 = (org.telegram.messenger.xi) arrayList.get(1);
-                                org.telegram.messenger.xi xiVar12 = (org.telegram.messenger.xi) arrayList.get(2);
-                                org.telegram.messenger.xi xiVar13 = (org.telegram.messenger.xi) arrayList.get(3);
+                                org.telegram.messenger.yi yiVar10 = (org.telegram.messenger.yi) arrayList.get(0);
+                                org.telegram.messenger.yi yiVar11 = (org.telegram.messenger.yi) arrayList.get(1);
+                                org.telegram.messenger.yi yiVar12 = (org.telegram.messenger.yi) arrayList.get(2);
+                                org.telegram.messenger.yi yiVar13 = (org.telegram.messenger.yi) arrayList.get(3);
                                 if (sb2.charAt(0) == 'w') {
-                                    float round5 = Math.round(Math.min(f18 / xiVar10.g, 537.24005f)) / 814.0f;
-                                    xiVar10.a(round5, 0, 2, 0, 0, g1Var2.c, 7);
-                                    float round6 = Math.round(f18 / ((xiVar11.g + xiVar12.g) + xiVar13.g));
+                                    float round5 = Math.round(Math.min(f18 / yiVar10.g, 537.24005f)) / 814.0f;
+                                    yiVar10.a(round5, 0, 2, 0, 0, g1Var2.c, 7);
+                                    float round6 = Math.round(f18 / ((yiVar11.g + yiVar12.g) + yiVar13.g));
                                     float f36 = min;
-                                    int max3 = (int) Math.max(f36, Math.min(f18 * 0.4f, xiVar11.g * round6));
-                                    int max4 = (int) Math.max(Math.max(f36, f18 * 0.33f), xiVar13.g * round6);
+                                    int max3 = (int) Math.max(f36, Math.min(f18 * 0.4f, yiVar11.g * round6));
+                                    int max4 = (int) Math.max(Math.max(f36, f18 * 0.33f), yiVar13.g * round6);
                                     float min5 = Math.min(814.0f - round5, round6) / 814.0f;
-                                    xiVar11.a(min5, 0, 0, 1, 1, max3, 9);
-                                    xiVar12.a(min5, 1, 1, 1, 1, (i16 - max3) - max4, 8);
-                                    xiVar13.a(min5, 2, 2, 1, 1, max4, 10);
+                                    yiVar11.a(min5, 0, 0, 1, 1, max3, 9);
+                                    yiVar12.a(min5, 1, 1, 1, 1, (i16 - max3) - max4, 8);
+                                    yiVar13.a(min5, 2, 2, 1, 1, max4, 10);
                                 } else {
-                                    int max5 = Math.max(min, Math.round(814.0f / ((1.0f / ((org.telegram.messenger.xi) arrayList.get(3)).g) + ((1.0f / xiVar12.g) + (1.0f / xiVar11.g)))));
+                                    int max5 = Math.max(min, Math.round(814.0f / ((1.0f / ((org.telegram.messenger.yi) arrayList.get(3)).g) + ((1.0f / yiVar12.g) + (1.0f / yiVar11.g)))));
                                     float f37 = L;
                                     float f38 = max5;
-                                    float min6 = Math.min(0.33f, Math.max(f37, f38 / xiVar11.g) / 814.0f);
-                                    float min7 = Math.min(0.33f, Math.max(f37, f38 / xiVar12.g) / 814.0f);
+                                    float min6 = Math.min(0.33f, Math.max(f37, f38 / yiVar11.g) / 814.0f);
+                                    float min7 = Math.min(0.33f, Math.max(f37, f38 / yiVar12.g) / 814.0f);
                                     float f39 = (1.0f - min6) - min7;
-                                    int round7 = Math.round(Math.min((xiVar10.g * 814.0f) + L3, i16 - max5));
-                                    xiVar10.a(min6 + min7 + f39, 0, 0, 0, 2, round7, 13);
-                                    xiVar11.a(min6, 1, 1, 0, 0, max5, 6);
-                                    xiVar12.a(min7, 0, 1, 1, 1, max5, 2);
-                                    xiVar12.i = i16;
-                                    xiVar13.a(f39, 0, 1, 2, 2, max5, 10);
-                                    xiVar13.i = i16;
-                                    xiVar11.i = i16 - round7;
-                                    xiVar12.j = round7;
-                                    xiVar13.j = round7;
-                                    xiVar10.m = new float[]{min6, min7, f39};
+                                    int round7 = Math.round(Math.min((yiVar10.g * 814.0f) + L3, i16 - max5));
+                                    yiVar10.a(min6 + min7 + f39, 0, 0, 0, 2, round7, 13);
+                                    yiVar11.a(min6, 1, 1, 0, 0, max5, 6);
+                                    yiVar12.a(min7, 0, 1, 1, 1, max5, 2);
+                                    yiVar12.i = i16;
+                                    yiVar13.a(f39, 0, 1, 2, 2, max5, 10);
+                                    yiVar13.i = i16;
+                                    yiVar11.i = i16 - round7;
+                                    yiVar12.j = round7;
+                                    yiVar13.j = round7;
+                                    yiVar10.m = new float[]{min6, min7, f39};
                                 }
                             }
                         }
                         for (int i52 = 0; i52 < i12; i52++) {
-                            org.telegram.messenger.xi xiVar14 = (org.telegram.messenger.xi) arrayList.get(i52);
-                            if ((xiVar14.l & 1) != 0) {
-                                xiVar14.k = true;
+                            org.telegram.messenger.yi yiVar14 = (org.telegram.messenger.yi) arrayList.get(i52);
+                            if ((yiVar14.l & 1) != 0) {
+                                yiVar14.k = true;
                             }
                         }
                     }
@@ -823,10 +823,10 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
                 z11 = i10 == 0;
                 p50 p50Var = x0Var.a;
                 x0Var.L = pageblockaudio;
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) x0Var.b.s.get(pageblockaudio);
-                x0Var.N = fjVar;
-                if (fjVar != null) {
-                    x0Var.M = fjVar.F0();
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) x0Var.b.s.get(pageblockaudio);
+                x0Var.N = gjVar;
+                if (gjVar != null) {
+                    x0Var.M = gjVar.F0();
                 }
                 x0Var.h = z11;
                 org.telegram.ui.Components.ym0 ym0Var = x0Var.f;
@@ -1400,14 +1400,14 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
                     break;
                 default:
                     switch (i7) {
-                        case org.telegram.messenger.ks.b1 /* 90 */:
+                        case org.telegram.messenger.ls.b1 /* 90 */:
                             v2Var = new n3(g4Var, context, false);
                             view = v2Var;
                             break;
-                        case org.telegram.messenger.ks.c1 /* 91 */:
+                        case org.telegram.messenger.ls.c1 /* 91 */:
                             view = new n3(g4Var, context, true);
                             break;
-                        case org.telegram.messenger.ks.d1 /* 92 */:
+                        case org.telegram.messenger.ls.d1 /* 92 */:
                             view = new x1(context, g4Var);
                             break;
                         default:
@@ -1446,7 +1446,7 @@ public final class e4 extends org.telegram.ui.Components.dk0 {
                 n3Var.c = true;
                 textView.setVisibility(0);
                 textView2.setGravity(21);
-                textView.setText(org.telegram.messenger.gd.H(',', "Views", i10));
+                textView.setText(org.telegram.messenger.hd.H(',', "Views", i10));
             }
             int i11 = org.telegram.ui.ActionBar.m6.M6;
             int x02 = org.telegram.ui.ActionBar.m6.x0(null, i11, false);

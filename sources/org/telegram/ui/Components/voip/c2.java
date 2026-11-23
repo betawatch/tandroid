@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import c8.ma;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c2 extends FrameLayout {
     public String a;
@@ -51,7 +51,7 @@ public final class c2 extends FrameLayout {
         Paint paint = l1Var.l;
         int alpha = (this.d ? paint : l1Var.b()).getAlpha();
         canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), alpha, 31);
-        (this.d ? paint : l1Var.b()).setAlpha(ks.e4);
+        (this.d ? paint : l1Var.b()).setAlpha(ls.e4);
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), this.d ? paint : l1Var.b());
         if (!this.d) {
             paint = l1Var.b();
@@ -59,7 +59,7 @@ public final class c2 extends FrameLayout {
         paint.setAlpha(alpha);
         if (l1Var.e) {
             int alpha2 = ((Paint) l1Var.d.a).getAlpha();
-            ((Paint) l1Var.d.a).setAlpha(ks.e4);
+            ((Paint) l1Var.d.a).setAlpha(ls.e4);
             canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), (Paint) l1Var.d.a);
             ((Paint) l1Var.d.a).setAlpha(alpha2);
         }

@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dd implements Runnable {
     public final /* synthetic */ int a;
@@ -24,18 +24,18 @@ public final /* synthetic */ class dd implements Runnable {
         xd xdVar = this.b;
         switch (i7) {
             case 0:
-                vf.c.t(xdVar.getContext(), org.telegram.messenger.gd.N0(i10, null));
+                vf.c.t(xdVar.getContext(), org.telegram.messenger.hd.N0(i10, null));
                 break;
             case 1:
                 dd ddVar = xdVar.g1;
                 di.q qVar = xdVar.P0;
                 org.telegram.ui.Components.gc.e();
-                if (xdVar.E0.amount < org.telegram.messenger.mp.u1(i10).U5) {
+                if (xdVar.E0.amount < org.telegram.messenger.np.u1(i10).U5) {
                     xdVar.N0 = true;
                     xdVar.O0 = xdVar.E0.amount;
                 } else {
                     xdVar.N0 = false;
-                    xdVar.O0 = org.telegram.messenger.mp.u1(i10).U5;
+                    xdVar.O0 = org.telegram.messenger.np.u1(i10).U5;
                 }
                 xdVar.M0 = true;
                 qVar.setText(Long.toString(xdVar.O0));
@@ -51,10 +51,10 @@ public final /* synthetic */ class dd implements Runnable {
                 ndVar.setEnabled(xdVar.O0 > 0 || xdVar.C0 > currentTime);
                 if (currentTime >= xdVar.C0) {
                     ndVar.g(null, true);
-                    ndVar.i(di.pb.Z0(false, xdVar.N0 ? org.telegram.messenger.gd.N0(2131748175, null) : org.telegram.messenger.gd.H(' ', "MonetizationStarsWithdraw", (int) xdVar.O0), xdVar.I0), true, true);
+                    ndVar.i(di.pb.Z0(false, xdVar.N0 ? org.telegram.messenger.hd.N0(2131748175, null) : org.telegram.messenger.hd.H(' ', "MonetizationStarsWithdraw", (int) xdVar.O0), xdVar.I0), true, true);
                     break;
                 } else {
-                    ndVar.i(org.telegram.messenger.gd.N0(2131748174, null), true, true);
+                    ndVar.i(org.telegram.messenger.hd.N0(2131748174, null), true, true);
                     if (xdVar.f1 == null) {
                         xdVar.f1 = new SpannableStringBuilder("l");
                         org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.mini_switch_lock, 0);

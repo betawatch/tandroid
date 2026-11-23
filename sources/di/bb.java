@@ -5,7 +5,7 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.r80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bb extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -30,7 +30,7 @@ public final class bb extends n41 {
         K.A = i10;
         long j3 = tL_starsTopupOption.stars;
         K.C = j3;
-        K.m = gd.H(' ', "StarsCount", (int) j3);
+        K.m = hd.H(' ', "StarsCount", (int) j3);
         K.n = tL_starsTopupOption.loadingStorePrice ? null : org.telegram.messenger.r1.i().f(tL_starsTopupOption.amount, tL_starsTopupOption.currency);
         K.H = tL_starsTopupOption;
         return K;
@@ -59,7 +59,7 @@ public final class bb extends n41 {
             charSequence2 = cbVar.f;
         }
         o6Var.setText(charSequence2);
-        float f10 = gd.a0 ? -1.0f : 1.0f;
+        float f10 = hd.a0 ? -1.0f : 1.0f;
         if (equals) {
             textView.animate().translationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f)).setDuration(320L).setInterpolator(nr.h).start();
         } else {

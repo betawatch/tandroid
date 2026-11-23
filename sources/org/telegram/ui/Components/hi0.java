@@ -18,7 +18,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hi0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final Paint a;
@@ -67,7 +67,7 @@ public final class hi0 extends FrameLayout implements org.telegram.ui.ActionBar.
     public final void a(int i7, TLRPC.ReactionCount reactionCount) {
         int i10 = reactionCount.count;
         this.s = i10;
-        this.f.setText(org.telegram.messenger.gd.S(null, i10));
+        this.f.setText(org.telegram.messenger.hd.S(null, i10));
         ch.p0 d = ch.p0.d(reactionCount.reaction);
         this.w = d;
         String str = d.f;
@@ -79,7 +79,7 @@ public final class hi0 extends FrameLayout implements org.telegram.ui.ActionBar.
             imageView.setVisibility(8);
             return;
         }
-        ArrayList arrayList = org.telegram.messenger.ri.d0(i7).h;
+        ArrayList arrayList = org.telegram.messenger.si.d0(i7).h;
         int size = arrayList.size();
         int i11 = 0;
         while (i11 < size) {
@@ -87,7 +87,7 @@ public final class hi0 extends FrameLayout implements org.telegram.ui.ActionBar.
             i11++;
             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) obj;
             if (tL_availableReaction.reaction.equals(this.w.f)) {
-                q9Var.k(org.telegram.messenger.fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", "webp", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.m6.a7, 1.0f, null), tL_availableReaction);
+                q9Var.k(org.telegram.messenger.gc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", "webp", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.m6.a7, 1.0f, null), tL_availableReaction);
                 q9Var.setVisibility(0);
                 imageView.setVisibility(8);
                 return;
@@ -121,15 +121,15 @@ public final class hi0 extends FrameLayout implements org.telegram.ui.ActionBar.
         }
         ch.p0 p0Var = this.w;
         if (p0Var != null) {
-            accessibilityNodeInfo.setText(org.telegram.messenger.gd.G(this.s, "AccDescrNumberOfPeopleReactions", p0Var));
+            accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(this.s, "AccDescrNumberOfPeopleReactions", p0Var));
         } else {
-            accessibilityNodeInfo.setText(org.telegram.messenger.gd.G(this.s, "ReactionsCount", new Object[0]));
+            accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(this.s, "ReactionsCount", new Object[0]));
         }
     }
 
     public void setCounter(int i7) {
         this.s = i7;
-        this.f.setText(org.telegram.messenger.gd.S(null, i7));
+        this.f.setText(org.telegram.messenger.hd.S(null, i7));
         this.e.setVisibility(0);
         this.d.setVisibility(8);
     }

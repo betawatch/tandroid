@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ia0 extends jg.r0 {
     public boolean e0;
@@ -25,13 +25,13 @@ public final class ia0 extends jg.r0 {
     public final void N(ArrayList arrayList) {
         int i7;
         qa0 qa0Var = this.f0;
-        org.telegram.messenger.fj fjVar = qa0Var.J0;
-        if (fjVar != null && fjVar.C3()) {
+        org.telegram.messenger.gj gjVar = qa0Var.J0;
+        if (gjVar != null && gjVar.C3()) {
             if (arrayList != null) {
                 i7 = 0;
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
                     ma0 ma0Var = (ma0) arrayList.get(i10);
-                    if (ma0Var != null && !org.telegram.messenger.o10.C(ma0Var.c)) {
+                    if (ma0Var != null && !org.telegram.messenger.p10.C(ma0Var.c)) {
                         i7++;
                     }
                 }

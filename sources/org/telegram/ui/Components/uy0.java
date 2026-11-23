@@ -5,7 +5,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uy0 implements org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
@@ -26,12 +26,12 @@ public final /* synthetic */ class uy0 implements org.telegram.ui.ActionBar.q1 {
                 break;
             case 1:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wy0Var.getContext());
-                String N0 = org.telegram.messenger.gd.N0(2131743733, null);
+                String N0 = org.telegram.messenger.hd.N0(2131743731, null);
                 org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
                 t1Var2.U = N0;
-                t1Var2.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751640, null), new uy0(wy0Var, 2));
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                t1Var2.S = org.telegram.messenger.hd.N0(R.string.AppName, null);
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751640, null), new uy0(wy0Var, 2));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
                 alertDialog$Builder.p();
                 break;
             default:

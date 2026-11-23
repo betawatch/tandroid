@@ -1,30 +1,34 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class x11 {
-    public static final x11 a;
-    public static final x11 b;
-    public static final x11 c;
-    public static final /* synthetic */ x11[] d;
+public final /* synthetic */ class x11 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z11 b;
 
-    static {
-        x11 x11Var = new x11("TOP", 0);
-        a = x11Var;
-        x11 x11Var2 = new x11("LEFT", 1);
-        b = x11Var2;
-        x11 x11Var3 = new x11("BOTTOM", 2);
-        c = x11Var3;
-        d = new x11[]{x11Var, x11Var2, x11Var3};
+    public /* synthetic */ x11(z11 z11Var, int i7) {
+        this.a = i7;
+        this.b = z11Var;
     }
 
-    public static x11 valueOf(String str) {
-        return (x11) Enum.valueOf(x11.class, str);
-    }
-
-    public static x11[] values() {
-        return (x11[]) d.clone();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                z11 z11Var = this.b;
+                z11Var.getClass();
+                z11Var.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z11Var.h();
+                z11Var.g();
+                break;
+            default:
+                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                z11 z11Var2 = this.b;
+                z11Var2.M = max;
+                z11Var2.h.invalidate();
+                break;
+        }
     }
 }

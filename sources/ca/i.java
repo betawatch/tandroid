@@ -19,10 +19,10 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.f20;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.t1;
@@ -39,7 +39,7 @@ import org.telegram.ui.xo0;
 import v4.e0;
 import v4.i0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class i implements l, e0, g61, a0 {
     public final /* synthetic */ int a;
@@ -235,12 +235,12 @@ public class i implements l, e0, g61, a0 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, photoViewer.E, photoViewer.w2);
-        String N0 = gd.N0(R.string.AppName, "AppName");
+        String N0 = hd.N0(R.string.AppName, "AppName");
         t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = gd.N0(2131752550, null);
-        alertDialog$Builder.k(gd.N0(2131747623, "Open"), new qi0(this, 2));
-        alertDialog$Builder.h(gd.N0(2131752577, "Cancel"), null);
+        t1Var.U = hd.N0(2131752550, null);
+        alertDialog$Builder.k(hd.N0(2131747623, "Open"), new qi0(this, 2));
+        alertDialog$Builder.h(hd.N0(2131752577, "Cancel"), null);
         photoViewer.Q2(alertDialog$Builder);
     }
 
@@ -263,7 +263,7 @@ public class i implements l, e0, g61, a0 {
     public void onStateChanged(boolean z10, int i7) {
         i61 i61Var;
         int i10;
-        e20 e20Var;
+        f20 f20Var;
         PhotoViewer photoViewer = (PhotoViewer) this.c;
         ArrayList arrayList = photoViewer.g7;
         i61 i61Var2 = photoViewer.G2;
@@ -274,13 +274,13 @@ public class i implements l, e0, g61, a0 {
             this.b = false;
             if (photoViewer.Y6.isEmpty() && photoViewer.e7.isEmpty() && photoViewer.a7.isEmpty() && !arrayList.isEmpty() && (i10 = photoViewer.Q4) >= 0 && i10 < arrayList.size()) {
                 Object obj = arrayList.get(photoViewer.Q4);
-                if (obj instanceof ef) {
-                    ef efVar = (ef) obj;
-                    if (efVar.b && (e20Var = efVar.s) != null) {
-                        photoViewer.G2.p0((long) (e20Var.d * r3.U()));
+                if (obj instanceof ff) {
+                    ff ffVar = (ff) obj;
+                    if (ffVar.b && (f20Var = ffVar.s) != null) {
+                        photoViewer.G2.p0((long) (f20Var.d * r3.U()));
                         xo0 xo0Var = photoViewer.S7;
                         if (xo0Var != null) {
-                            xo0Var.setProgress(efVar.s.d);
+                            xo0Var.setProgress(ffVar.s.d);
                         }
                     }
                 }

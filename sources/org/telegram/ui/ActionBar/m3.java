@@ -30,15 +30,16 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.z8;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m3 extends View {
     public float E;
@@ -113,9 +114,9 @@ public final class m3 extends View {
             b3Var.a(null);
             return;
         }
-        final SurfaceTexture d = f9.b.d();
-        d.setDefaultBufferSize(viewGroup.getWidth(), viewGroup.getHeight());
-        final Surface surface = new Surface(d);
+        final SurfaceTexture c10 = z8.c();
+        c10.setDefaultBufferSize(viewGroup.getWidth(), viewGroup.getHeight());
+        final Surface surface = new Surface(c10);
         final Bitmap createBitmap = Bitmap.createBitmap(viewGroup.getWidth(), viewGroup.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas lockHardwareCanvas = surface.lockHardwareCanvas();
         lockHardwareCanvas.translate(0.0f, f10);
@@ -127,7 +128,7 @@ public final class m3 extends View {
                 b3 b3Var2 = b3.this;
                 Bitmap bitmap = createBitmap;
                 Surface surface2 = surface;
-                SurfaceTexture surfaceTexture = d;
+                SurfaceTexture surfaceTexture = c10;
                 if (i7 == 0) {
                     b3Var2.a(bitmap);
                 } else {
@@ -342,7 +343,7 @@ public final class m3 extends View {
             m3Var.P.setAlpha((int) (m3Var.W * 255.0f));
             canvas.drawRect(0.0f, 0.0f, width, height, m3Var.P);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, width, height, ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, width, height, ls.e4, 31);
         float f20 = width;
         float L = org.telegram.messenger.g0.L(55.0f) + org.telegram.messenger.g0.L(40.0f) + org.telegram.messenger.g0.m;
         float L2 = org.telegram.messenger.g0.L(68.0f);
@@ -562,7 +563,7 @@ public final class m3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.h0 == null) {
-            this.h0 = new xy0(gd.N0(2131753096, null), 14.0f, org.telegram.messenger.g0.o());
+            this.h0 = new xy0(hd.N0(2131753096, null), 14.0f, org.telegram.messenger.g0.o());
         }
         if (this.j0 == null || this.i0 != m6.I.q()) {
             boolean q10 = m6.I.q();
@@ -817,14 +818,14 @@ public final class m3 extends View {
                         if (this.y) {
                             final l3 l3Var8 = this.x;
                             final int i7 = 1;
-                            this.a.g(l3Var8.c, new x10(this) { // from class: org.telegram.ui.ActionBar.h3
+                            this.a.g(l3Var8.c, new y10(this) { // from class: org.telegram.ui.ActionBar.h3
                                 public final /* synthetic */ m3 b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // org.telegram.messenger.x10
+                                @Override // org.telegram.messenger.y10
                                 public final void a(Object obj) {
                                     Boolean bool = (Boolean) obj;
                                     switch (i7) {
@@ -886,14 +887,14 @@ public final class m3 extends View {
             } else {
                 final l3 l3Var9 = this.x;
                 final int i10 = 0;
-                this.a.g(l3Var9.c, new x10(this) { // from class: org.telegram.ui.ActionBar.h3
+                this.a.g(l3Var9.c, new y10(this) { // from class: org.telegram.ui.ActionBar.h3
                     public final /* synthetic */ m3 b;
 
                     {
                         this.b = this;
                     }
 
-                    @Override // org.telegram.messenger.x10
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj) {
                         Boolean bool = (Boolean) obj;
                         switch (i10) {

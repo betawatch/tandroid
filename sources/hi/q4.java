@@ -4,10 +4,10 @@ import android.content.Context;
 import android.util.SparseIntArray;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.a70;
@@ -15,9 +15,9 @@ import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.eh;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q4 implements y10 {
+public final /* synthetic */ class q4 implements z10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -30,7 +30,7 @@ public final /* synthetic */ class q4 implements y10 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.z10
     public final Object a(Object obj) {
         int i7 = this.a;
         int i10 = 17;
@@ -61,7 +61,7 @@ public final /* synthetic */ class q4 implements y10 {
                 int i15 = 3;
                 if (num.intValue() == 5) {
                     zArr[0] = false;
-                    c8.na.c(R.raw.permission_request_location, 2131747108, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new ai.w2(i14, new ai.w2(i15, new ai.x1(i10, k5Var, y4Var), c12 == true ? 1 : 0), c11 == true ? 1 : 0));
+                    c8.na.c(R.raw.permission_request_location, 2131747108, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new ai.x2(i14, new ai.x2(i15, new ai.y1(i10, k5Var, y4Var), c12 == true ? 1 : 0), c11 == true ? 1 : 0));
                     return Boolean.FALSE;
                 }
                 int i16 = 2;
@@ -89,12 +89,12 @@ public final /* synthetic */ class q4 implements y10 {
                 if (num.intValue() != 4) {
                     return Boolean.FALSE;
                 }
-                if (!j10.i(k5Var.p1).q()) {
+                if (!k10.i(k5Var.p1).q()) {
                     try {
                         m2Var.performHapticFeedback(3);
                     } catch (Exception unused) {
                     }
-                    new lc(m2Var, c5Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(gd.N0(2131744394, null), new h4(k5Var, c10 == true ? 1 : 0))).k(true);
+                    new lc(m2Var, c5Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(hd.N0(2131744392, null), new h4(k5Var, c10 == true ? 1 : 0))).k(true);
                     return Boolean.FALSE;
                 }
                 int i17 = 0;
@@ -104,7 +104,7 @@ public final /* synthetic */ class q4 implements y10 {
                     }
                 }
                 if (i17 >= 3) {
-                    new lc(m2Var, c5Var).I(R.raw.linkbroken, gd.N0(2131744397, null), gd.G(3, "StoryLinkLimitMessage", new Object[0])).k(true);
+                    new lc(m2Var, c5Var).I(R.raw.linkbroken, hd.N0(2131744395, null), hd.G(3, "StoryLinkLimitMessage", new Object[0])).k(true);
                     return Boolean.FALSE;
                 }
                 zArr[0] = false;
@@ -123,7 +123,7 @@ public final /* synthetic */ class q4 implements y10 {
                 final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
                 a70 G = a70.G(n0Var.c, h6Var, l0Var);
                 G.X(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(12.0f), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, h6Var)));
-                G.l(R.drawable.msg_edit, gd.N0(2131754996, null), new Runnable() { // from class: org.telegram.ui.Components.e
+                G.l(R.drawable.msg_edit, hd.N0(2131754996, null), new Runnable() { // from class: org.telegram.ui.Components.e
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i19 = i11;
@@ -139,8 +139,8 @@ public final /* synthetic */ class q4 implements y10 {
                                 i0Var.W1.setText(i0Var.f2.title);
                                 i0Var.X1.setText(i0Var.f2.prompt);
                                 i0Var.Z1.a(i0Var.f2.author_id != 0, false);
-                                i0Var.p1.setTitle(org.telegram.messenger.gd.N0(2131754996, null));
-                                i0Var.c2.setText(org.telegram.messenger.gd.N0(2131754979, null));
+                                i0Var.p1.setTitle(org.telegram.messenger.hd.N0(2131754996, null));
+                                i0Var.c2.setText(org.telegram.messenger.hd.N0(2131754979, null));
                                 i0Var.f1();
                                 i0Var.j2.O(false);
                                 i0Var.h2 = new f(n0Var2, 2);
@@ -148,20 +148,20 @@ public final /* synthetic */ class q4 implements y10 {
                                 break;
                             default:
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, n0Var2.getContext(), h6Var2);
-                                String N0 = org.telegram.messenger.gd.N0(2131754998, null);
+                                String N0 = org.telegram.messenger.hd.N0(2131754998, null);
                                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                                 t1Var.S = N0;
-                                t1Var.U = org.telegram.messenger.gd.N0(2131754997, null);
-                                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
-                                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751586, null), new oi.f0(24, n0Var2, tL_aiComposeTone2));
+                                t1Var.U = org.telegram.messenger.hd.N0(2131754997, null);
+                                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
+                                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new oi.f0(24, n0Var2, tL_aiComposeTone2));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.p();
                                 break;
                         }
                     }
                 }, tL_aiComposeTone.creator);
-                G.c(R.drawable.msg_share, gd.N0(2131754983, null), new org.telegram.messenger.camera.i(n0Var, tL_aiComposeTone, context, h6Var, 19), false);
-                G.m(R.drawable.msg_delete, new eh(i10, n0Var, tL_aiComposeTone), gd.N0(2131754985, null), !tL_aiComposeTone.creator, true);
+                G.c(R.drawable.msg_share, hd.N0(2131754983, null), new org.telegram.messenger.camera.i(n0Var, tL_aiComposeTone, context, h6Var, 19), false);
+                G.m(R.drawable.msg_delete, new eh(i10, n0Var, tL_aiComposeTone), hd.N0(2131754985, null), !tL_aiComposeTone.creator, true);
                 G.m(R.drawable.msg_delete, new Runnable() { // from class: org.telegram.ui.Components.e
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -178,8 +178,8 @@ public final /* synthetic */ class q4 implements y10 {
                                 i0Var.W1.setText(i0Var.f2.title);
                                 i0Var.X1.setText(i0Var.f2.prompt);
                                 i0Var.Z1.a(i0Var.f2.author_id != 0, false);
-                                i0Var.p1.setTitle(org.telegram.messenger.gd.N0(2131754996, null));
-                                i0Var.c2.setText(org.telegram.messenger.gd.N0(2131754979, null));
+                                i0Var.p1.setTitle(org.telegram.messenger.hd.N0(2131754996, null));
+                                i0Var.c2.setText(org.telegram.messenger.hd.N0(2131754979, null));
                                 i0Var.f1();
                                 i0Var.j2.O(false);
                                 i0Var.h2 = new f(n0Var2, 2);
@@ -187,34 +187,34 @@ public final /* synthetic */ class q4 implements y10 {
                                 break;
                             default:
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, n0Var2.getContext(), h6Var2);
-                                String N0 = org.telegram.messenger.gd.N0(2131754998, null);
+                                String N0 = org.telegram.messenger.hd.N0(2131754998, null);
                                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                                 t1Var.S = N0;
-                                t1Var.U = org.telegram.messenger.gd.N0(2131754997, null);
-                                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
-                                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751586, null), new oi.f0(24, n0Var2, tL_aiComposeTone2));
+                                t1Var.U = org.telegram.messenger.hd.N0(2131754997, null);
+                                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
+                                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new oi.f0(24, n0Var2, tL_aiComposeTone2));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.p();
                                 break;
                         }
                     }
-                }, gd.N0(2131754998, null), tL_aiComposeTone.creator, true);
+                }, hd.N0(2131754998, null), tL_aiComposeTone.creator, true);
                 G.a0();
                 return Boolean.TRUE;
             case 2:
                 View view = (View) obj;
-                fj fjVar = ((th.g) obj2).b;
-                return th.c.d(view, (String) obj4, (String) obj3, fjVar.F0(), fjVar);
+                gj gjVar = ((th.g) obj2).b;
+                return th.c.d(view, (String) obj4, (String) obj3, gjVar.F0(), gjVar);
             default:
                 ek0 ek0Var = (ek0) obj4;
-                y10 y10Var = (y10) obj3;
+                z10 z10Var = (z10) obj3;
                 SparseIntArray sparseIntArray = (SparseIntArray) obj2;
                 View view2 = (View) obj;
                 try {
                     if (view2.getParent() != ek0Var) {
                         return Boolean.FALSE;
                     }
-                    Boolean bool = (Boolean) y10Var.a(view2);
+                    Boolean bool = (Boolean) z10Var.a(view2);
                     boolean booleanValue = bool.booleanValue();
                     v4.f1 T = ek0Var.T(view2);
                     if (T != null) {

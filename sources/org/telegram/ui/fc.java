@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fc extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ Context c;
@@ -26,11 +26,11 @@ public final class fc extends org.telegram.ui.Components.dk0 {
 
     @Override // v4.i0
     public final int b() {
-        org.telegram.messenger.cp cpVar = org.telegram.messenger.mp.u1(this.e).t4;
-        if (cpVar == null) {
+        org.telegram.messenger.dp dpVar = org.telegram.messenger.np.u1(this.e).t4;
+        if (dpVar == null) {
             return 0;
         }
-        return cpVar.c.size();
+        return dpVar.c.size();
     }
 
     @Override // v4.i0
@@ -41,13 +41,13 @@ public final class fc extends org.telegram.ui.Components.dk0 {
         gcVar.s = z10;
         gcVar.w.f(z10, true);
         gcVar.invalidate();
-        org.telegram.messenger.cp cpVar = org.telegram.messenger.mp.u1(this.e).t4;
-        if (cpVar != null) {
-            ArrayList arrayList = cpVar.c;
+        org.telegram.messenger.dp dpVar = org.telegram.messenger.np.u1(this.e).t4;
+        if (dpVar != null) {
+            ArrayList arrayList = dpVar.c;
             if (i7 < 0 || i7 >= arrayList.size()) {
                 return;
             }
-            gcVar.a((org.telegram.messenger.bp) arrayList.get(i7));
+            gcVar.a((org.telegram.messenger.cp) arrayList.get(i7));
         }
     }
 

@@ -15,18 +15,18 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.si;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.du0;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.m80;
 import org.telegram.ui.jw0;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class u8 extends org.telegram.ui.ActionBar.g2 {
     public int a;
@@ -51,11 +51,11 @@ public final class u8 extends org.telegram.ui.ActionBar.g2 {
         u8Var.d.setLoading(false);
         if ("WRONG_CONTRACT".equalsIgnoreCase(str2) || "INVALID_PHRASE".equalsIgnoreCase(str2)) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, u8Var.getParentActivity(), u8Var.getResourceProvider());
-            String N0 = gd.N0(2131742838, null);
+            String N0 = hd.N0(2131742836, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = gd.N0(2131742837, null);
-            org.telegram.messenger.f3.m(null, 2131742818, alertDialog$Builder, null);
+            t1Var.U = hd.N0(2131742835, null);
+            org.telegram.messenger.f3.m(null, 2131742816, alertDialog$Builder, null);
             return;
         }
         if (str2 != null) {
@@ -147,13 +147,13 @@ public final class u8 extends org.telegram.ui.ActionBar.g2 {
                     u8Var.d.setLoading(false);
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, u8Var.getParentActivity(), u8Var.getResourceProvider());
                     org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                    t1Var.S = gd.N0(2131742838, null);
-                    t1Var.U = gd.N0(2131742837, null);
-                    alertDialog$Builder.k(gd.N0(2131742818, null), null);
+                    t1Var.S = hd.N0(2131742836, null);
+                    t1Var.U = hd.N0(2131742835, null);
+                    alertDialog$Builder.k(hd.N0(2131742816, null), null);
                     alertDialog$Builder.p();
                 } else if (Arrays.equals(bArr, u8Var.s)) {
                     u0 D2 = u0.D(u8Var.currentAccount);
-                    D2.c.q(j10.i(u8Var.currentAccount).e(), bArr, r0Var, new p51(13, u8Var, D2));
+                    D2.c.q(k10.i(u8Var.currentAccount).e(), bArr, r0Var, new p51(13, u8Var, D2));
                 } else {
                     try {
                         str = WalletEngine2.secretPhraseToAddress(r0Var);
@@ -184,10 +184,10 @@ public final class u8 extends org.telegram.ui.ActionBar.g2 {
                     u8Var.d.setLoading(false);
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, u8Var.getParentActivity(), u8Var.getResourceProvider());
                     org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder2.a;
-                    t1Var2.S = gd.N0(2131742693, null);
-                    t1Var2.U = gd.N0(2131742692, null);
+                    t1Var2.S = hd.N0(2131742691, null);
+                    t1Var2.U = hd.N0(2131742690, null);
                     alertDialog$Builder2.o(frameLayout);
-                    alertDialog$Builder2.k(gd.N0(2131747637, null), null);
+                    alertDialog$Builder2.k(hd.N0(2131747637, null), null);
                     alertDialog$Builder2.p();
                 }
                 r0Var.close();
@@ -253,7 +253,7 @@ public final class u8 extends org.telegram.ui.ActionBar.g2 {
             db dbVar = new db(i10, context, this.resourceProvider, i10 == 0);
             dbVar.setOnTextChangedListener(new t8(this, 1));
             dbVar.setOnPasteListener(new jw0(this, i10, 9));
-            dbVar.setOnNextListener(new j01(this, i10, dbVar, 21));
+            dbVar.setOnNextListener(new f21(this, i10, dbVar, 20));
             this.c.addView(dbVar, c8.ma.t(-1, 50, 1, 0, i10 == 0 ? 0 : 12, 0, 0));
             arrayList2.add(dbVar);
             i10++;
@@ -320,7 +320,7 @@ public final class u8 extends org.telegram.ui.ActionBar.g2 {
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         q9Var.setAspectFit(true);
         q9Var.getImageReceiver().d = org.telegram.messenger.g0.t0();
-        ri.d0(org.telegram.messenger.g0.t0()).h2(q9Var, "RestrictedEmoji", "📝", "100_100");
+        si.d0(org.telegram.messenger.g0.t0()).h2(q9Var, "RestrictedEmoji", "📝", "100_100");
         q9Var.getImageReceiver().X(1);
         linearLayout.addView(q9Var, c8.ma.t(100, 100, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
@@ -328,7 +328,7 @@ public final class u8 extends org.telegram.ui.ActionBar.g2 {
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(1);
         org.telegram.ui.ActionBar.t6.U(textView, i11, this.resourceProvider);
-        textView.setText(gd.N0(this.s != null ? 2131742760 : 2131742850, null));
+        textView.setText(hd.N0(this.s != null ? 2131742758 : 2131742848, null));
         linearLayout.addView(textView, c8.ma.t(-1, -2, 1, 32, 0, 32, 10));
         m80 m80Var = new m80(context, null);
         this.h = m80Var;
@@ -337,12 +337,12 @@ public final class u8 extends org.telegram.ui.ActionBar.g2 {
         org.telegram.ui.ActionBar.t6.U(this.h, org.telegram.ui.ActionBar.m6.z6, this.resourceProvider);
         org.telegram.ui.ActionBar.t6.G(this.h, org.telegram.ui.ActionBar.m6.Xc, this.resourceProvider);
         if (this.s != null) {
-            this.h.setText(org.telegram.messenger.g0.T2(gd.N0(2131742881, null), new t8(this, 0)));
+            this.h.setText(org.telegram.messenger.g0.T2(hd.N0(2131742879, null), new t8(this, 0)));
         } else {
-            this.h.setText(gd.V(null, null, 2131742846, 12));
+            this.h.setText(hd.V(null, null, 2131742844, 12));
         }
         linearLayout.addView(this.h, c8.ma.t(-1, -2, 1, 32, 0, 32, 8));
-        i6 i6Var = new i6(context, new CharSequence[]{gd.G(12, "WalletPhraseWords", new Object[0]), gd.G(24, "WalletPhraseWords", new Object[0])}, new k(this, 4), this.resourceProvider);
+        i6 i6Var = new i6(context, new CharSequence[]{hd.G(12, "WalletPhraseWords", new Object[0]), hd.G(24, "WalletPhraseWords", new Object[0])}, new k(this, 4), this.resourceProvider);
         this.b = i6Var;
         i6Var.e = true;
         i6Var.updateColors();
@@ -358,7 +358,7 @@ public final class u8 extends org.telegram.ui.ActionBar.g2 {
         hi.e eVar = new hi.e(context, this.resourceProvider, true);
         this.d = eVar;
         eVar.f();
-        this.d.setText(gd.N0(2131742849, null));
+        this.d.setText(hd.N0(2131742847, null));
         this.d.setEnabled(false);
         this.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.s8
             public final /* synthetic */ u8 b;

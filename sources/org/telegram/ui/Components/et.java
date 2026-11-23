@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class et extends View {
     public final xy0 a;
@@ -41,7 +41,7 @@ public class et extends View {
     public final void a(TLRPC.Photo photo, Object obj) {
         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.L(48.0f), false, null, true);
         TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.L(24.0f), false, w10, false);
-        this.c.r0(org.telegram.messenger.fc.i(w10, photo), "24_24", org.telegram.messenger.fc.i(w11, photo), "24_24", null, 0L, null, obj, 0);
+        this.c.r0(org.telegram.messenger.gc.i(w10, photo), "24_24", org.telegram.messenger.gc.i(w11, photo), "24_24", null, 0L, null, obj, 0);
     }
 
     @Override // android.view.View

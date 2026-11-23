@@ -7,7 +7,7 @@ import java.util.Iterator;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lh0 implements ww, org.telegram.ui.ActionBar.q1, ix0 {
     public final /* synthetic */ NotificationsCustomSettingsActivity a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class lh0 implements ww, org.telegram.ui.ActionBar.
         notificationsCustomSettingsActivity.x.clear();
         notificationsCustomSettingsActivity.y.clear();
         notificationsCustomSettingsActivity.q0(true);
-        notificationsCustomSettingsActivity.getNotificationCenter().k(org.telegram.messenger.ks.f0, new Object[0]);
+        notificationsCustomSettingsActivity.getNotificationCenter().k(org.telegram.messenger.ls.f0, new Object[0]);
     }
 
     @Override // org.telegram.ui.ix0
@@ -65,7 +65,7 @@ public final /* synthetic */ class lh0 implements ww, org.telegram.ui.ActionBar.
     @Override // org.telegram.ui.ww
     public boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
         int i11 = 0;
-        long j3 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
+        long j3 = ((org.telegram.messenger.tr) arrayList.get(0)).a;
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
         if (notificationsCustomSettingsActivity.s != 3) {
             Bundle bundle = new Bundle();

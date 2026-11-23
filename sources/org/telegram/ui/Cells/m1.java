@@ -3,16 +3,16 @@ package org.telegram.ui.Cells;
 import android.graphics.RectF;
 import android.text.style.CharacterStyle;
 import java.util.ArrayList;
-import org.telegram.messenger.cj;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.i10;
+import org.telegram.messenger.dj;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.j10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public interface m1 {
     void A0();
@@ -49,7 +49,7 @@ public interface m1 {
 
     void K1(r1 r1Var, int i7);
 
-    void L(cj cjVar);
+    void L(dj djVar);
 
     boolean L0(long j3);
 
@@ -61,25 +61,25 @@ public interface m1 {
 
     void O0(r1 r1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton);
 
-    void O1(fj fjVar);
+    void O1(gj gjVar);
 
     void P(r1 r1Var);
 
     void Q1(r1 r1Var, TLRPC.WebPage webPage, String str, boolean z10);
 
-    void R(fj fjVar);
+    void R(gj gjVar);
 
     CharacterStyle R1(r1 r1Var);
 
     boolean S(r1 r1Var, TLRPC.TodoItem todoItem, boolean z10);
 
-    void S1(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10);
+    void S1(gj gjVar, String str, String str2, String str3, String str4, int i7, int i10);
 
     boolean T();
 
     void T0(r1 r1Var, CharacterStyle characterStyle, boolean z10);
 
-    boolean T1(r1 r1Var, fj fjVar);
+    boolean T1(r1 r1Var, gj gjVar);
 
     boolean U(r1 r1Var);
 
@@ -105,7 +105,7 @@ public interface m1 {
 
     boolean Z1(r1 r1Var, TLRPC.PollAnswer pollAnswer);
 
-    void a2(r1 r1Var, i10 i10Var);
+    void a2(r1 r1Var, j10 j10Var);
 
     boolean b();
 
@@ -121,7 +121,7 @@ public interface m1 {
 
     void e2(String str, String str2);
 
-    boolean f1(fj fjVar);
+    boolean f1(gj gjVar);
 
     boolean f2(long j3);
 
@@ -197,7 +197,7 @@ public interface m1 {
 
     void y(r1 r1Var);
 
-    boolean y0(fj fjVar);
+    boolean y0(gj gjVar);
 
     void y2(r1 r1Var, int i7, int i10);
 

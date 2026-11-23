@@ -6,10 +6,10 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.n5;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.q9;
 import v4.q0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -48,10 +48,10 @@ public final class g extends n41 {
         hVar.G = j3;
         hVar.H = user.id;
         int i7 = hVar.b;
-        TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
-        TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
-        hVar.f.setText(n5.l(j10.t0, j3));
-        hVar.h.setText(g0.Q2(gd.a0(null, null, c22 != null ? 2131751886 : v3.V(O0) ? 2131751885 : 2131751884, n5.u(user)), m6.Zl, null, new n(23), false));
+        TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-j3));
+        TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(j3));
+        hVar.f.setText(n5.l(k10.t0, j3));
+        hVar.h.setText(g0.Q2(hd.a0(null, null, c22 != null ? 2131751886 : v3.V(O0) ? 2131751885 : 2131751884, n5.u(user)), m6.Zl, null, new n(23), false));
         if (c22 != null) {
             textView2.setVisibility(8);
         } else if (O0 == null || O0.participants_count <= 0) {
@@ -60,7 +60,7 @@ public final class g extends n41 {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("* ");
             spannableStringBuilder.setSpan(hVar.s, 0, 1, 33);
             long j10 = O0.participants_count;
-            spannableStringBuilder.append((CharSequence) (j10 < 1000000 ? gd.E(j10, ',') : g0.o0((int) j10, 1000000)));
+            spannableStringBuilder.append((CharSequence) (j10 < 1000000 ? hd.E(j10, ',') : g0.o0((int) j10, 1000000)));
             textView2.setText(spannableStringBuilder);
             textView2.setVisibility(0);
         }

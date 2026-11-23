@@ -7,7 +7,7 @@ import android.util.Pair;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qv implements ri.m, sj0, el0, te.b {
     public final /* synthetic */ int a;
@@ -46,13 +46,13 @@ public final /* synthetic */ class qv implements ri.m, sj0, el0, te.b {
                             yxVar.h1(i10, -org.telegram.messenger.g0.L(4.0f));
                         }
                         if (i7 == tyVar.t0) {
-                            ArrayList arrayList = org.telegram.messenger.mp.u1(i11).e4;
+                            ArrayList arrayList = org.telegram.messenger.np.u1(i11).e4;
                             if (!arrayList.isEmpty()) {
                                 ayVar.a((String) arrayList.get(0), true);
                             }
                         }
                     } else {
-                        ArrayList arrayList2 = org.telegram.messenger.mp.u1(i11).e4;
+                        ArrayList arrayList2 = org.telegram.messenger.np.u1(i11).e4;
                         tyVar.k0.H((String) arrayList2.get(i7 - tyVar.u0));
                         int i12 = i7 - tyVar.u0;
                         if (i12 > 0) {

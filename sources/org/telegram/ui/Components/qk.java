@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qk implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -67,12 +67,12 @@ public final /* synthetic */ class qk implements View.OnTouchListener {
                             if (u0Var.a0 == 5 && (f0Var = u0Var.W) != null) {
                                 f0Var.T(!z10 ? 0.0f : 1.0f);
                             }
-                            org.telegram.messenger.e20 e20Var = b50Var.U;
-                            if (e20Var != null) {
-                                e20Var.t = b50Var.k0;
+                            org.telegram.messenger.f20 f20Var = b50Var.U;
+                            if (f20Var != null) {
+                                f20Var.t = b50Var.k0;
                             }
                             imageView.animate().cancel();
-                            org.telegram.messenger.n10.n(imageView.animate(), b50Var.k0 ? 1.0f : 0.0f, 180L);
+                            org.telegram.messenger.o10.n(imageView.animate(), b50Var.k0 ? 1.0f : 0.0f, 180L);
                         }
                     }
                 } else {

@@ -7,7 +7,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gu implements Runnable {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class gu implements Runnable {
                             q0Var.getLocationInWindow(iArr);
                             int i11 = iArr[0];
                             int i12 = iArr[1];
-                            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), null, null, null, Boolean.TRUE);
+                            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), null, null, null, Boolean.TRUE);
                         }
                         org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(cxVar5);
                         gu guVar = new gu(cxVar5, 20);
@@ -96,7 +96,7 @@ public final /* synthetic */ class gu implements Runnable {
                         if (i7 == 0) {
                             if (b02 != null) {
                                 try {
-                                    b02.J(R.raw.auto_night_off, i7 == 3 ? org.telegram.messenger.gd.N0(2131753782, "AutoNightSystemModeOff") : org.telegram.messenger.gd.N0(2131753787, "AutoNightModeOff"), org.telegram.messenger.gd.N0(2131745299, "Settings"), 5000, false, guVar).j();
+                                    b02.J(R.raw.auto_night_off, i7 == 3 ? org.telegram.messenger.hd.N0(2131753782, "AutoNightSystemModeOff") : org.telegram.messenger.hd.N0(2131753787, "AutoNightModeOff"), org.telegram.messenger.hd.N0(2131745299, "Settings"), 5000, false, guVar).j();
                                 } catch (Exception e10) {
                                     org.telegram.messenger.a8.g(e10, true);
                                 }
@@ -155,7 +155,7 @@ public final /* synthetic */ class gu implements Runnable {
                 if (cxVar9.E2 != null && !arrayList.isEmpty()) {
                     ArrayList arrayList2 = new ArrayList();
                     while (i10 < arrayList.size()) {
-                        arrayList2.add(org.telegram.messenger.sr.a(((Long) arrayList.get(i10)).longValue(), 0L));
+                        arrayList2.add(org.telegram.messenger.tr.a(((Long) arrayList.get(i10)).longValue(), 0L));
                         i10++;
                     }
                     cxVar9.E2.y(cxVar9, arrayList2, cxVar9.D1.getFieldText(), false, cxVar9.L2, cxVar9.M2, cxVar9.N2, null);
@@ -170,7 +170,7 @@ public final /* synthetic */ class gu implements Runnable {
                 if (cxVar10.E2 != null && !arrayList3.isEmpty()) {
                     ArrayList arrayList4 = new ArrayList();
                     while (i10 < arrayList3.size()) {
-                        arrayList4.add(org.telegram.messenger.sr.a(((Long) arrayList3.get(i10)).longValue(), 0L));
+                        arrayList4.add(org.telegram.messenger.tr.a(((Long) arrayList3.get(i10)).longValue(), 0L));
                         i10++;
                     }
                     cxVar10.E2.y(cxVar10, arrayList4, cxVar10.D1.getFieldText(), false, cxVar10.L2, cxVar10.M2, cxVar10.N2, null);
@@ -231,12 +231,12 @@ public final /* synthetic */ class gu implements Runnable {
                 break;
             case 23:
                 cx cxVar18 = this.b;
-                org.telegram.messenger.tr messagesStorage = cxVar18.getMessagesStorage();
-                messagesStorage.a.c(new org.telegram.messenger.pq(messagesStorage, 16));
-                Toast.makeText(cxVar18.getParentActivity(), org.telegram.messenger.gd.N0(2131751639, null), 0).show();
+                org.telegram.messenger.ur messagesStorage = cxVar18.getMessagesStorage();
+                messagesStorage.a.c(new org.telegram.messenger.qq(messagesStorage, 16));
+                Toast.makeText(cxVar18.getParentActivity(), org.telegram.messenger.hd.N0(2131751639, null), 0).show();
                 break;
             case 24:
-                org.telegram.messenger.mp messagesController = this.b.getMessagesController();
+                org.telegram.messenger.np messagesController = this.b.getMessagesController();
                 messagesController.E1.b();
                 messagesController.F1.b();
                 break;

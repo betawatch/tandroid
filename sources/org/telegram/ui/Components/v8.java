@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v8 extends ek0 {
     public final ArrayList f3;
@@ -19,7 +19,7 @@ public final class v8 extends ek0 {
         super(activity, null);
         this.k3 = y8Var;
         this.f3 = new ArrayList();
-        this.g3 = org.telegram.messenger.ks.e3;
+        this.g3 = org.telegram.messenger.ls.e3;
         this.h3 = -1;
         v4.c0 c0Var = new v4.c0();
         c0Var.j1(0);

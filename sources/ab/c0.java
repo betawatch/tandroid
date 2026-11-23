@@ -25,10 +25,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import m1.x0;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.h6;
@@ -54,7 +54,7 @@ import p4.g1;
 import p4.k1;
 import p4.l1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c0 implements ib.b, wi0, ly0 {
     public static c0 f;
@@ -406,19 +406,19 @@ public final class c0 implements ib.b, wi0, ly0 {
         RectF rectF = org.telegram.messenger.g0.P;
         float f10 = i7;
         rectF.set(0.0f, 0.0f, f10, org.telegram.messenger.g0.L(14.66f));
-        canvas.saveLayerAlpha(rectF, ks.e4, 31);
-        if (gd.a0) {
+        canvas.saveLayerAlpha(rectF, ls.e4, 31);
+        if (hd.a0) {
             canvas.translate(f10, 0.0f);
         }
         int L = i7 - org.telegram.messenger.g0.L(25.0f);
         int i10 = 0;
         while (i10 < arrayList.size()) {
             bs bsVar = (bs) arrayList.get(i10);
-            L = n10.x(4.0f, bsVar.g, L);
+            L = o10.x(4.0f, bsVar.g, L);
             if (L < 0) {
                 break;
             }
-            if (gd.a0) {
+            if (hd.a0) {
                 canvas.translate(-bsVar.g, 0.0f);
                 bsVar.a(canvas);
                 canvas.translate(-org.telegram.messenger.g0.L(4.0f), 0.0f);
@@ -448,7 +448,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                 bsVar3.d = m6.x0(null, i11, false);
                 this.e = bsVar3;
             }
-            if (gd.a0) {
+            if (hd.a0) {
                 canvas.translate(-((bs) this.e).g, 0.0f);
                 ((bs) this.e).a(canvas);
                 canvas.translate(-org.telegram.messenger.g0.L(4.0f), 0.0f);
@@ -482,7 +482,7 @@ public final class c0 implements ib.b, wi0, ly0 {
         switch (this.a) {
             case 10:
                 bn bnVar = (bn) this.b;
-                org.telegram.ui.Cells.z J8 = bnVar.J8(((fj) this.c).e1(), true);
+                org.telegram.ui.Cells.z J8 = bnVar.J8(((gj) this.c).e1(), true);
                 float f16 = 0.0f;
                 if (J8 instanceof r1) {
                     q0 q0Var3 = ((r1) J8).O;
@@ -490,7 +490,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                     if (k12 == null) {
                         f12 = 0.0f;
                         f10 = f12;
-                        bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                        bnVar.Eb(J8, (gj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                         ((as0) this.e).c(false);
                         break;
                     } else {
@@ -500,7 +500,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                     }
                 } else if (!(J8 instanceof v0) || (k10 = (q0Var = ((v0) J8).F0).k(p0Var)) == null) {
                     f10 = 0.0f;
-                    bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                    bnVar.Eb(J8, (gj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                     ((as0) this.e).c(false);
                 } else {
                     f16 = q0Var.b + k10.w + (k10.z / 2.0f);
@@ -509,12 +509,12 @@ public final class c0 implements ib.b, wi0, ly0 {
                 }
                 f12 = f11 + (i7 / 2.0f);
                 f10 = f12;
-                bnVar.Eb(J8, (fj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                bnVar.Eb(J8, (gj) this.c, (xi0) this.d, view, f16, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                 ((as0) this.e).c(false);
                 break;
             default:
                 bn bnVar2 = (bn) this.b;
-                org.telegram.ui.Cells.z J82 = bnVar2.J8(((fj) this.c).e1(), true);
+                org.telegram.ui.Cells.z J82 = bnVar2.J8(((gj) this.c).e1(), true);
                 float f17 = 0.0f;
                 if (J82 instanceof r1) {
                     q0 q0Var4 = ((r1) J82).O;
@@ -522,7 +522,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                     if (k13 == null) {
                         f15 = 0.0f;
                         f13 = f15;
-                        bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                        bnVar2.Eb(J82, (gj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                         ((i81) this.e).c(false);
                         break;
                     } else {
@@ -532,7 +532,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                     }
                 } else if (!(J82 instanceof v0) || (k11 = (q0Var2 = ((v0) J82).F0).k(p0Var)) == null) {
                     f13 = 0.0f;
-                    bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                    bnVar2.Eb(J82, (gj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                     ((i81) this.e).c(false);
                 } else {
                     f17 = q0Var2.b + k11.w + (k11.z / 2.0f);
@@ -541,7 +541,7 @@ public final class c0 implements ib.b, wi0, ly0 {
                 }
                 f15 = f14 + (i10 / 2.0f);
                 f13 = f15;
-                bnVar2.Eb(J82, (fj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                bnVar2.Eb(J82, (gj) this.c, (xi0) this.d, view, f17, f13, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
                 ((i81) this.e).c(false);
                 break;
         }

@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONObject;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.si;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -27,9 +27,9 @@ import org.telegram.ui.Components.tn;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j implements x10 {
+public final /* synthetic */ class j implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -42,7 +42,7 @@ public final /* synthetic */ class j implements x10 {
         this.c = obj3;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         fi.a6 a6Var;
         ArrayList<TLRPC.Document> arrayList;
@@ -72,7 +72,7 @@ public final /* synthetic */ class j implements x10 {
                 }
                 break;
             case 2:
-                y4.s((TL_stars.TL_starGiftUnique) obj4, gd.a0(null, null, !((Boolean) obj).booleanValue() ? 2131749619 : ((Boolean) obj3).booleanValue() ? 2131749616 : 2131749617, (String) obj2));
+                x4.s((TL_stars.TL_starGiftUnique) obj4, hd.a0(null, null, !((Boolean) obj).booleanValue() ? 2131749619 : ((Boolean) obj3).booleanValue() ? 2131749616 : 2131749617, (String) obj2));
                 break;
             case 3:
                 di.f6 f6Var = (di.f6) obj4;
@@ -130,10 +130,10 @@ public final /* synthetic */ class j implements x10 {
                 fi.r3 r3Var = (fi.r3) obj4;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
                 TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) obj2;
-                x10 x10Var = (x10) obj;
+                y10 y10Var = (y10) obj;
                 fi.z3 z3Var = r3Var.x;
                 if ((storyItem instanceof fi.z5) && (a6Var = ((fi.z5) storyItem).a) != null) {
-                    di.a8 a8Var = new di.a8(a6Var, storyItem2, x10Var, 4);
+                    di.a8 a8Var = new di.a8(a6Var, storyItem2, y10Var, 4);
                     if (a6Var.F != 0) {
                         ConnectionsManager.getInstance(a6Var.c).cancelRequest(a6Var.F, true);
                         a6Var.F = 0;
@@ -144,9 +144,9 @@ public final /* synthetic */ class j implements x10 {
                     break;
                 } else {
                     TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-                    tL_stories_getStoriesByID.peer = mp.u1(z3Var.m2).l1(storyItem.dialogId);
+                    tL_stories_getStoriesByID.peer = np.u1(z3Var.m2).l1(storyItem.dialogId);
                     tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem.id));
-                    ConnectionsManager.getInstance(z3Var.m2).sendRequest(tL_stories_getStoriesByID, new q1(r3Var, storyItem, x10Var, 8));
+                    ConnectionsManager.getInstance(z3Var.m2).sendRequest(tL_stories_getStoriesByID, new q1(r3Var, storyItem, y10Var, 8));
                     break;
                 }
                 break;
@@ -154,15 +154,15 @@ public final /* synthetic */ class j implements x10 {
                 fi.i6 i6Var = (fi.i6) obj;
                 fi.z3 z3Var2 = ((fi.r3) obj4).x;
                 z3Var2.C1.c(i6Var.a, z3Var2.l1, (TL_stories.StoryItem) obj3);
-                n10.u(gd.a0(null, null, 2131744490, i6Var.b), new lc(z3Var2.M0, (org.telegram.ui.ActionBar.h6) obj2), R.raw.contact_check, 36);
+                o10.u(hd.a0(null, null, 2131744488, i6Var.b), new lc(z3Var2.M0, (org.telegram.ui.ActionBar.h6) obj2), R.raw.contact_check, 36);
                 break;
             case 9:
                 hi.j6 j6Var = (hi.j6) obj4;
-                mp mpVar = (mp) obj3;
+                np npVar = (np) obj3;
                 String str2 = (String) obj2;
                 Long l10 = (Long) obj;
                 if (l10 != null) {
-                    TLObject g22 = mpVar.g2(l10.longValue());
+                    TLObject g22 = npVar.g2(l10.longValue());
                     if (!(g22 instanceof TLRPC.User)) {
                         if (g22 instanceof TLRPC.Chat) {
                             j6Var.a(new hi.l6(str2, (TLRPC.Chat) g22));
@@ -178,11 +178,11 @@ public final /* synthetic */ class j implements x10 {
                 }
                 break;
             case 10:
-                x10 x10Var2 = (x10) obj3;
+                y10 y10Var2 = (y10) obj3;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj2;
                 ((org.telegram.ui.ActionBar.t1) obj4).dismiss();
-                if (((Boolean) obj).booleanValue() && x10Var2 != null) {
-                    x10Var2.a(inputPeer);
+                if (((Boolean) obj).booleanValue() && y10Var2 != null) {
+                    y10Var2.a(inputPeer);
                     break;
                 }
                 break;
@@ -193,7 +193,7 @@ public final /* synthetic */ class j implements x10 {
                 TLRPC.InputFile inputFile = (TLRPC.InputFile) obj;
                 if (inputFile != null) {
                     TLRPC.TL_messages_uploadMedia tL_messages_uploadMedia = new TLRPC.TL_messages_uploadMedia();
-                    tL_messages_uploadMedia.peer = mp.u1(f8Var.a).l1(j10.i(f8Var.a).e());
+                    tL_messages_uploadMedia.peer = np.u1(f8Var.a).l1(k10.i(f8Var.a).e());
                     TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument = new TLRPC.TL_inputMediaUploadedDocument();
                     tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument;
                     tL_inputMediaUploadedDocument.file = inputFile;
@@ -231,7 +231,7 @@ public final /* synthetic */ class j implements x10 {
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                         arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        TLRPC.TL_messages_stickerSet n02 = ri.d0(rxVar.a.G.d1).n0(ri.b0(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true, false, null);
+                        TLRPC.TL_messages_stickerSet n02 = si.d0(rxVar.a.G.d1).n0(si.b0(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true, false, null);
                         arrayList = n02 != null ? n02.documents : null;
                     } else {
                         arrayList = stickerSetCovered.covers;
@@ -277,7 +277,7 @@ public final /* synthetic */ class j implements x10 {
                 ((p80) obj3).setLoading(false);
                 if (tL_premium_boostsStatus != null) {
                     k0Var.X1.boosts++;
-                    if (k0Var.d2 == 32 && (P0 = mp.u1(k0Var.a).P0(-k0Var.W1)) != null) {
+                    if (k0Var.d2 == 32 && (P0 = np.u1(k0Var.a).P0(-k0Var.W1)) != null) {
                         P0.boosts_applied++;
                     }
                     k0Var.u1();

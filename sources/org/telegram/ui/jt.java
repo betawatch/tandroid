@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jt implements org.telegram.ui.Components.nj0, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ mt a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class jt implements org.telegram.ui.Components.nj0,
             lt[] ltVarArr = mtVar.o3;
             if (i13 >= ltVarArr.length) {
                 i10 = ((org.telegram.ui.ActionBar.g2) ptVar).currentAccount;
-                org.telegram.messenger.cz.e(i10).l(0);
+                org.telegram.messenger.dz.e(i10).l(0);
                 i11 = ((org.telegram.ui.ActionBar.g2) ptVar).currentAccount;
-                org.telegram.messenger.cz.e(i11).l(1);
+                org.telegram.messenger.dz.e(i11).l(1);
                 i12 = ((org.telegram.ui.ActionBar.g2) ptVar).currentAccount;
-                org.telegram.messenger.cz.e(i12).l(2);
+                org.telegram.messenger.dz.e(i12).l(2);
                 mtVar.f3 = true;
                 mtVar.C1();
                 mtVar.D1(true);

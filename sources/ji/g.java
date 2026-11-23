@@ -1,23 +1,23 @@
 package ji;
 
-import ai.e2;
+import ai.f2;
 import ai.z;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.vr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.wr;
+import org.telegram.messenger.y10;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.rf;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g implements x10 {
+public final /* synthetic */ class g implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ o b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class g implements x10 {
         this.b = oVar;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         r rVar;
         int G0;
@@ -53,12 +53,12 @@ public final /* synthetic */ class g implements x10 {
                         g0.r(oVar2.k0);
                         g0.r(oVar2.j0);
                         Drawable drawable = null;
-                        if (vr.k == oVar2) {
-                            vr.k = null;
+                        if (wr.k == oVar2) {
+                            wr.k = null;
                         }
-                        e2 e2Var = oVar2.f;
-                        if (e2Var != null) {
-                            e2Var.c();
+                        f2 f2Var = oVar2.f;
+                        if (f2Var != null) {
+                            f2Var.d();
                             oVar2.f = null;
                         }
                         z zVar = oVar2.d;

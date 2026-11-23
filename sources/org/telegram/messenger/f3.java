@@ -11,7 +11,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class f3 {
     public static float A(float f10, float f11, float f12, float f13) {
@@ -69,9 +69,9 @@ public abstract /* synthetic */ class f3 {
         return arrayList;
     }
 
-    public static ArrayList i(fj fjVar) {
+    public static ArrayList i(gj gjVar) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(fjVar);
+        arrayList.add(gjVar);
         return arrayList;
     }
 
@@ -83,7 +83,7 @@ public abstract /* synthetic */ class f3 {
 
     public static void k(TextView textView, int i7, String str, int i10) {
         textView.setGravity(i7);
-        textView.setText(gd.N0(i10, str));
+        textView.setText(hd.N0(i10, str));
     }
 
     public static void l(TextView textView, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10, float f10) {
@@ -93,30 +93,30 @@ public abstract /* synthetic */ class f3 {
     }
 
     public static void m(String str, int i7, AlertDialog$Builder alertDialog$Builder, org.telegram.ui.ActionBar.q1 q1Var) {
-        alertDialog$Builder.k(gd.N0(i7, str), q1Var);
+        alertDialog$Builder.k(hd.N0(i7, str), q1Var);
         alertDialog$Builder.p();
     }
 
     public static void n(String str, int i7, org.telegram.ui.Components.lc lcVar, int i10, int i11) {
-        lcVar.Q(i10, i11, gd.N0(i7, str)).j();
+        lcVar.Q(i10, i11, hd.N0(i7, str)).j();
     }
 
     public static void o(String str, int i7, org.telegram.ui.Components.lc lcVar, org.telegram.ui.ActionBar.h6 h6Var) {
-        lcVar.t(gd.N0(i7, str), h6Var).j();
+        lcVar.t(hd.N0(i7, str), h6Var).j();
     }
 
     public static void p(String str, String str2, int i7, Object[] objArr, SpannableStringBuilder spannableStringBuilder) {
-        spannableStringBuilder.append((CharSequence) g0.W2(gd.a0(str, str2, i7, objArr)));
+        spannableStringBuilder.append((CharSequence) g0.W2(hd.a0(str, str2, i7, objArr)));
     }
 
     public static void q(String str, String str2, int i7, Object[] objArr, TextView textView) {
-        textView.setText(g0.W2(gd.a0(str, str2, i7, objArr)));
+        textView.setText(g0.W2(hd.a0(str, str2, i7, objArr)));
     }
 
     public static void r(StringBuilder sb2, char c10, char c11, int i7) {
         sb2.append(c10);
         sb2.append(c11);
-        sb2.append(gd.N0(i7, null));
+        sb2.append(hd.N0(i7, null));
     }
 
     public static void s(SQLiteDatabase sQLiteDatabase, String str) {

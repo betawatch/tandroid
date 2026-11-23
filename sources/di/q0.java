@@ -8,14 +8,14 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.json.JSONObject;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.az;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.lj;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.sr;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.xy;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.np;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.yy;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
@@ -24,7 +24,7 @@ import org.telegram.ui.ld0;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -35,13 +35,13 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ q0(r0 r0Var, bn bnVar, int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, x10 x10Var) {
+    public /* synthetic */ q0(r0 r0Var, bn bnVar, int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, y10 y10Var) {
         this.d = r0Var;
         this.b = i7;
         this.e = context;
         this.f = h6Var;
         this.c = j3;
-        this.h = x10Var;
+        this.h = y10Var;
     }
 
     @Override // android.view.View.OnClickListener
@@ -53,10 +53,10 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                 r0 r0Var = (r0) this.d;
                 Context context = (Context) this.e;
                 org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.f;
-                x10 x10Var = (x10) this.h;
+                y10 y10Var = (y10) this.h;
                 if (r0Var.u1.e0) {
                     int i7 = this.b;
-                    if (!mp.u1(i7).A2()) {
+                    if (!np.u1(i7).A2()) {
                         y8 x10 = y8.x(i7, r0Var.C1.a);
                         cg.a m10 = x10.e ? cg.a.m(x10.p()) : null;
                         if (!r0Var.n1 && (m10 == null || m10.b < r0Var.C1.b)) {
@@ -74,7 +74,7 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                                 break;
                             }
                         } else {
-                            x10Var.a(new kj(r0Var.C1, r0Var.D1));
+                            y10Var.a(new lj(r0Var.C1, r0Var.D1));
                             r0Var.dismiss();
                             break;
                         }
@@ -158,22 +158,22 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                             while (true) {
                                 r5 = null;
                                 r5 = null;
-                                fj fjVar = null;
+                                gj gjVar = null;
                                 if (i14 >= size2) {
                                     break;
                                 }
                                 Object obj = arrayList2.get(i14);
                                 i14++;
-                                sr srVar = (sr) obj;
-                                long j11 = srVar.a;
-                                long j12 = srVar.b;
+                                tr trVar = (tr) obj;
+                                long j11 = trVar.a;
+                                long j12 = trVar.b;
                                 if (!n5.C(j11)) {
                                     int i15 = i11;
-                                    if (j12 != 0 && (f10 = mp.u1(i15).t7.f(-j11, j12)) != null && (message = f10.topicStartMessage) != null) {
-                                        fjVar = new fj(i15, message, false, false);
-                                        fjVar.p = true;
+                                    if (j12 != 0 && (f10 = np.u1(i15).t7.f(-j11, j12)) != null && (message = f10.topicStartMessage) != null) {
+                                        gjVar = new gj(i15, message, false, false);
+                                        gjVar.p = true;
                                     }
-                                    fj fjVar2 = fjVar;
+                                    gj gjVar2 = gjVar;
                                     HashMap hashMap = new HashMap();
                                     StringBuilder sb2 = new StringBuilder("");
                                     TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage4 = tL_messages_preparedInlineMessage3;
@@ -181,9 +181,9 @@ public final /* synthetic */ class q0 implements View.OnClickListener {
                                     hashMap.put("query_id", sb2.toString());
                                     hashMap.put("id", "" + tL_messages_preparedInlineMessage4.result.id);
                                     hashMap.put("bot", "" + j10);
-                                    zy.S(i12, j11, 0L, 0L, hashMap, org.telegram.messenger.c.a(i15), fjVar2, fjVar2, null, tL_messages_preparedInlineMessage4.result, null, T, null, z12);
+                                    az.S(i12, j11, 0L, 0L, hashMap, org.telegram.messenger.c.a(i15), gjVar2, gjVar2, null, tL_messages_preparedInlineMessage4.result, null, T, null, z12);
                                     if (charSequence != null) {
-                                        zy.C(i15).r0(xy.b(charSequence.toString(), j11, fjVar2, fjVar2, null, true, null, null, null, true, 0, 0, null, false));
+                                        az.C(i15).r0(yy.b(charSequence.toString(), j11, gjVar2, gjVar2, null, true, null, null, null, true, 0, 0, null, false));
                                     }
                                     arrayList3.add(Long.valueOf(j11));
                                 }

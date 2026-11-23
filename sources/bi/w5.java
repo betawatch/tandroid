@@ -1,137 +1,95 @@
 package bi;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.content.Context;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.ui.ub0;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.kj;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.ga0;
+import org.telegram.ui.Components.gq0;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.va0;
+import org.telegram.ui.Components.wa0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class w5 implements TextWatcher {
+public final /* synthetic */ class w5 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ w5(int i7, View view) {
+    public /* synthetic */ w5(FrameLayout frameLayout, boolean z10, Object obj, Object obj2, Object obj3, int i7) {
         this.a = i7;
-        this.c = view;
+        this.c = frameLayout;
+        this.b = z10;
+        this.d = obj;
+        this.e = obj2;
+        this.f = obj3;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int j3;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         int i7 = this.a;
-        View view = this.c;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        boolean z10 = this.b;
+        FrameLayout frameLayout = this.c;
+        int i10 = 0;
         switch (i7) {
             case 0:
-                u5 u5Var = (u5) view;
-                if (!this.b && editable.length() > 12) {
-                    this.b = true;
-                    editable.delete(12, editable.length());
-                    org.telegram.messenger.g0.D3(u5Var);
-                    try {
-                        u5Var.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    this.b = false;
-                    break;
+                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
+                a70 a70Var = (a70) obj;
+                gq0 gq0Var = ((m6) frameLayout).a;
+                if (z10) {
+                    gq0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
+                    lc.b0(gq0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131750020, di.f6.F1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                } else {
+                    di.n8 n8Var = gq0Var.e;
+                    int i11 = tL_starGiftCollection.collection_id;
+                    n8Var.getClass();
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(savedStarGift);
+                    n8Var.a(i11, arrayList);
+                    lc.b0(gq0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131750376, di.f6.F1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
-                break;
-            case 1:
-                ub0 ub0Var = (ub0) view;
-                if (this.b) {
-                    if (ub0Var.f.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        if (ub0Var.E) {
-                            ub0Var.f.callOnClick();
-                        }
-                        org.telegram.messenger.g0.X3(ub0Var.f, true, 0.1f, true, true);
-                        break;
-                    } else if (ub0Var.f.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        org.telegram.messenger.g0.X3(ub0Var.f, false, 0.1f, true, true);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                boolean isEmpty = TextUtils.isEmpty(editable);
-                if (isEmpty != this.b) {
-                    TextView textView = (TextView) view;
-                    this.b = isEmpty;
-                    textView.setText(gd.N0(isEmpty ? 2131746125 : 2131754483, null));
-                    break;
-                }
+                a70Var.v();
+                gq0Var.o();
                 break;
             default:
-                tg.n2 n2Var = (tg.n2) view;
-                tg.m2 m2Var = n2Var.r0;
-                if (this.b && n2Var.x0 > 0 && n2Var.y0 > 0 && !n2Var.A0 && m2Var.getLayout() != null) {
-                    float f10 = org.telegram.messenger.g0.q.y / 3.0f;
-                    float height = m2Var.getLayout().getHeight();
-                    if (height > f10 && (j3 = Utilities.j((int) ((f10 / height) * n2Var.getBaseFontSize()), n2Var.y0, n2Var.x0)) != n2Var.getBaseFontSize()) {
-                        n2Var.setBaseFontSize(j3);
-                        Runnable runnable = n2Var.z0;
-                        if (runnable != null) {
-                            runnable.run();
+                qa0 qa0Var = (qa0) frameLayout;
+                Context context = (Context) obj3;
+                va0 va0Var = (va0) obj2;
+                va0 va0Var2 = (va0) obj;
+                wa0 wa0Var = qa0Var.d0;
+                kj kjVar = wa0Var.d;
+                if (!z10) {
+                    new lc(wa0Var, wa0Var.G).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.T2(hd.N0(2131750566, null), new ga0(qa0Var, context, i10))).j();
+                    break;
+                } else {
+                    boolean z11 = kjVar.k;
+                    kjVar.k = !z11;
+                    wa0Var.y = false;
+                    if (z11) {
+                        kjVar.l = false;
+                        if (va0Var != null) {
+                            va0Var.a(false, true);
                         }
                     }
+                    va0Var2.a(kjVar.k, true);
+                    qa0Var.i();
+                    qa0Var.l(true);
+                    break;
                 }
-                n2Var.s();
-                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-            case 1:
-            case 2:
-                break;
-            default:
-                this.b = i11 > 3;
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    public w5(kg.z0 z0Var, TextView textView) {
-        this.a = 2;
-        this.c = textView;
-        this.b = TextUtils.isEmpty(z0Var.getText());
-    }
-
-    public w5(ub0 ub0Var, boolean z10) {
-        this.a = 1;
-        this.c = ub0Var;
-        this.b = z10;
-    }
-
-    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void g(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

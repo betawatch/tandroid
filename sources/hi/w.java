@@ -10,11 +10,11 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class w extends Drawable {
     public final /* synthetic */ int a = 1;
@@ -54,7 +54,7 @@ public final class w extends Drawable {
             case 0:
                 boolean z10 = this.f;
                 if (z10) {
-                    canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, ks.e4, 31);
+                    canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, ls.e4, 31);
                 } else {
                     canvas.save();
                 }
@@ -81,7 +81,7 @@ public final class w extends Drawable {
                 rectF.set(centerX - N3, centerY - N3, centerX + N3, N3 + centerY);
                 canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(8.33f), org.telegram.messenger.g0.N(8.33f), paint);
                 if (d > 0.0f) {
-                    canvas.saveLayerAlpha(rectF, ks.e4, 31);
+                    canvas.saveLayerAlpha(rectF, ls.e4, 31);
                 } else {
                     canvas.save();
                 }

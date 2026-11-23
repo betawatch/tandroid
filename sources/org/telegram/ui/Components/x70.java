@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x70 extends View {
     public static DecelerateInterpolator w;
@@ -73,7 +73,7 @@ public final class x70 extends View {
         canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
         if (this.f > 0.0f) {
             if (this.s == null) {
-                org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n(org.telegram.messenger.ks.q2, 0);
+                org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n(org.telegram.messenger.ls.q2, 0);
                 this.s = nVar;
                 nVar.k = false;
                 nVar.n = 0.8f;

@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qn0 implements org.telegram.ui.Components.a5, org.telegram.ui.ActionBar.q1, org.telegram.messenger.jc, r0.m {
+public final /* synthetic */ class qn0 implements org.telegram.ui.Components.a5, org.telegram.ui.ActionBar.q1, org.telegram.messenger.kc, r0.m {
     public final /* synthetic */ PhotoViewer a;
 
     public /* synthetic */ qn0(PhotoViewer photoViewer) {
@@ -72,7 +72,7 @@ public final /* synthetic */ class qn0 implements org.telegram.ui.Components.a5,
         this.a.c3(0);
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         uq0 uq0Var;
         int i7;
@@ -101,11 +101,11 @@ public final /* synthetic */ class qn0 implements org.telegram.ui.Components.a5,
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 }

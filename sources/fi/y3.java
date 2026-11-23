@@ -7,12 +7,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.at;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y3 {
     public boolean a;
@@ -42,15 +42,15 @@ public final class y3 {
         y3 y3Var = new y3();
         y3Var.b = new org.telegram.messenger.j5(y3Var, 0);
         y3Var.d = atVar;
-        int i7 = j10.t0;
+        int i7 = k10.t0;
         y3Var.g = new org.telegram.messenger.a(y3Var, 6);
         y3Var.f = org.telegram.messenger.i5.r(i7);
-        y3Var.e = ks.f(i7);
+        y3Var.e = ls.f(i7);
         y3Var.c = new Handler(Looper.myLooper());
         if (y3Var.d(false)) {
             return;
         }
-        ((ks) y3Var.e).b((org.telegram.messenger.j5) y3Var.b, ks.O);
+        ((ls) y3Var.e).b((org.telegram.messenger.j5) y3Var.b, ls.O);
         ((Handler) y3Var.c).postDelayed((org.telegram.messenger.a) y3Var.g, 1000L);
     }
 
@@ -104,9 +104,9 @@ public final class y3 {
             return false;
         }
         if (!z11) {
-            ks ksVar = (ks) this.e;
-            if (ksVar != null) {
-                ksVar.n((org.telegram.messenger.j5) this.b, ks.O);
+            ls lsVar = (ls) this.e;
+            if (lsVar != null) {
+                lsVar.n((org.telegram.messenger.j5) this.b, ls.O);
             }
             Handler handler = (Handler) this.c;
             if (handler != null) {

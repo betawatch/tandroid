@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.h2;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.m80;
 import org.telegram.ui.jw0;
 import v4.f1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m0 extends dk0 {
     public final /* synthetic */ q0 c;
@@ -73,7 +73,7 @@ public final class m0 extends dk0 {
             o4 o4Var = (o4) view;
             o4Var.setTextSize(15.0f);
             o4Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(2.0f));
-            o4Var.setText(gd.N0(2131753292, null));
+            o4Var.setText(hd.N0(2131753292, null));
             return;
         }
         if (i10 == 0) {
@@ -82,8 +82,8 @@ public final class m0 extends dk0 {
             TLRPC.Chat chat = q0Var.V1;
             m80 m80Var = p0Var.e;
             try {
-                SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.G((int) mp.u1(j10.t0).s0, "BoostingReassignBoostTextPluralWithLink", chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder R2 = org.telegram.messenger.g0.R2(gd.N0(2131753317, "BoostingReassignBoostTextLink"), m6.Xc, 2, new h2(q0Var, i11), null);
+                SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(hd.G((int) np.u1(k10.t0).s0, "BoostingReassignBoostTextPluralWithLink", chat == null ? "" : chat.title, "%3$s"));
+                SpannableStringBuilder R2 = org.telegram.messenger.g0.R2(hd.N0(2131753317, "BoostingReassignBoostTextLink"), m6.Xc, 2, new h2(q0Var, i11), null);
                 int indexOf = TextUtils.indexOf(W2, "%3$s");
                 W2.replace(indexOf, indexOf + 4, (CharSequence) R2);
                 m80Var.setText(W2, TextView.BufferType.EDITABLE);

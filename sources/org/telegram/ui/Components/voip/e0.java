@@ -8,7 +8,7 @@ import android.view.View;
 import c8.md;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.u3;
 import org.telegram.messenger.voip.VoIPService;
@@ -20,7 +20,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.b20;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e0 implements wi.l {
     public static e0 e;
@@ -55,7 +55,7 @@ public final class e0 implements wi.l {
         if (u3Var == t3Var.z || (groupCallParticipant = u3Var.a) == null || groupCallParticipant.self) {
             return false;
         }
-        long B1 = fj.B1(groupCallParticipant.peer);
+        long B1 = gj.B1(groupCallParticipant.peer);
         if (B1 == j3 || t3Var.d.f(B1) == null) {
             return false;
         }

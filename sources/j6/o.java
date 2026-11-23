@@ -41,28 +41,28 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a6;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.e20;
+import org.telegram.messenger.dz;
+import org.telegram.messenger.f20;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.jf;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ku;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.kf;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.lu;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.nu;
-import org.telegram.messenger.pe;
+import org.telegram.messenger.ou;
+import org.telegram.messenger.qe;
 import org.telegram.messenger.r5;
-import org.telegram.messenger.re;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.s5;
-import org.telegram.messenger.su;
+import org.telegram.messenger.se;
 import org.telegram.messenger.t0;
+import org.telegram.messenger.tu;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.messenger.vr;
-import org.telegram.messenger.xf;
-import org.telegram.messenger.yd;
+import org.telegram.messenger.wr;
+import org.telegram.messenger.yf;
+import org.telegram.messenger.zd;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.i1;
 import org.telegram.ui.ActionBar.i2;
@@ -83,7 +83,7 @@ import org.telegram.ui.Components.r6;
 import org.telegram.ui.Components.s41;
 import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -115,27 +115,27 @@ public final /* synthetic */ class o implements Runnable {
         boolean z11;
         boolean z12;
         MediaController B = MediaController.B();
-        jf jfVar = (jf) this.b;
-        fj fjVar = jfVar.a;
-        e20 e20Var = jfVar.b;
-        if (fjVar == null || e20Var == null) {
+        kf kfVar = (kf) this.b;
+        gj gjVar = kfVar.a;
+        f20 f20Var = kfVar.b;
+        if (gjVar == null || f20Var == null) {
             return;
         }
-        String str2 = e20Var.o;
-        long j11 = e20Var.p;
-        long j12 = e20Var.a;
-        long j13 = e20Var.c;
-        long j14 = e20Var.b;
-        int i13 = e20Var.k;
-        int i14 = e20Var.l;
-        int i15 = e20Var.g;
-        int i16 = e20Var.h;
-        int i17 = e20Var.i;
-        int i18 = e20Var.n;
-        int i19 = e20Var.m;
-        int i20 = e20Var.j;
-        boolean z13 = n5.C(fj.B0(fjVar.k)) || e20Var.V;
-        File file2 = new File(fjVar.k.attachPath);
+        String str2 = f20Var.o;
+        long j11 = f20Var.p;
+        long j12 = f20Var.a;
+        long j13 = f20Var.c;
+        long j14 = f20Var.b;
+        int i13 = f20Var.k;
+        int i14 = f20Var.l;
+        int i15 = f20Var.g;
+        int i16 = f20Var.h;
+        int i17 = f20Var.i;
+        int i18 = f20Var.n;
+        int i19 = f20Var.m;
+        int i20 = f20Var.j;
+        boolean z13 = n5.C(gj.B0(gjVar.k)) || f20Var.V;
+        File file2 = new File(gjVar.k.attachPath);
         if (file2.exists()) {
             file2.delete();
         }
@@ -184,11 +184,11 @@ public final /* synthetic */ class o implements Runnable {
             } else if (j12 > 0) {
                 i11 = i10;
                 i12 = i7;
-                j10 = e20Var.v - j12;
+                j10 = f20Var.v - j12;
             } else {
                 i11 = i10;
                 i12 = i7;
-                j3 = e20Var.v;
+                j3 = f20Var.v;
             }
             if (i18 != 0) {
                 i18 = 25;
@@ -199,25 +199,25 @@ public final /* synthetic */ class o implements Runnable {
                 i14 = i13;
                 i13 = i14;
             }
-            if (!e20Var.Z && i18 > 40 && Math.min(i13, i14) <= 480) {
+            if (!f20Var.Z && i18 > 40 && Math.min(i13, i14) <= 480) {
                 i18 = 30;
             }
             int i21 = i18;
-            boolean z14 = (j13 != -1 && e20Var.H == null && e20Var.G == null && e20Var.B == null && e20Var.A == null && i14 == i16 && i13 == i17 && i15 == 0 && !e20Var.s && j12 == -1 && e20Var.b0.isEmpty()) ? false : true;
+            boolean z14 = (j13 != -1 && f20Var.H == null && f20Var.G == null && f20Var.B == null && f20Var.A == null && i14 == i16 && i13 == i17 && i15 == 0 && !f20Var.s && j12 == -1 && f20Var.b0.isEmpty()) ? false : true;
             SharedPreferences sharedPreferences = t0.b.getSharedPreferences("videoconvert", 0);
             long currentTimeMillis = System.currentTimeMillis();
             String str4 = str3;
             File file3 = file;
-            pe peVar = new pe(B, e20Var, file3, jfVar);
-            e20Var.X = true;
+            qe qeVar = new qe(B, f20Var, file3, kfVar);
+            f20Var.X = true;
             MediaCodecVideoConvertor mediaCodecVideoConvertor = new MediaCodecVideoConvertor();
-            MediaCodecVideoConvertor.ConvertVideoParams of2 = MediaCodecVideoConvertor.ConvertVideoParams.of(str4, file3, j11, i15, z13, i16, i17, i14, i13, i21, i12, i11, j12, j14, j13, z14, j3, peVar, e20Var);
-            of2.soundInfos.addAll(e20Var.b0);
+            MediaCodecVideoConvertor.ConvertVideoParams of2 = MediaCodecVideoConvertor.ConvertVideoParams.of(str4, file3, j11, i15, z13, i16, i17, i14, i13, i21, i12, i11, j12, j14, j13, z14, j3, qeVar, f20Var);
+            of2.soundInfos.addAll(f20Var.b0);
             convertVideo = mediaCodecVideoConvertor.convertVideo(of2);
-            z10 = e20Var.W;
+            z10 = f20Var.W;
             if (!z10) {
                 synchronized (B.b) {
-                    z10 = e20Var.W;
+                    z10 = f20Var.W;
                 }
             }
             if (s2.a) {
@@ -230,12 +230,12 @@ public final /* synthetic */ class o implements Runnable {
             if (!convertVideo && !z10) {
                 z11 = false;
             }
-            e20 e20Var2 = jfVar.b;
-            z12 = e20Var2.X;
+            f20 f20Var2 = kfVar.b;
+            z12 = f20Var2.X;
             if (z12) {
-                e20Var2.X = false;
+                f20Var2.X = false;
             }
-            g0.g3(new yd(B, z11, true, jfVar, file3, 1.0f, lastFrameTimestamp, z12, length));
+            g0.g3(new zd(B, z11, true, kfVar, file3, 1.0f, lastFrameTimestamp, z12, length));
         }
         j10 = j14 - j12;
         i11 = i10;
@@ -247,7 +247,7 @@ public final /* synthetic */ class o implements Runnable {
             i14 = i13;
             i13 = i14;
         }
-        if (!e20Var.Z) {
+        if (!f20Var.Z) {
             i18 = 30;
         }
         int i212 = i18;
@@ -257,13 +257,13 @@ public final /* synthetic */ class o implements Runnable {
         long currentTimeMillis2 = System.currentTimeMillis();
         String str42 = str3;
         File file32 = file;
-        pe peVar2 = new pe(B, e20Var, file32, jfVar);
-        e20Var.X = true;
+        qe qeVar2 = new qe(B, f20Var, file32, kfVar);
+        f20Var.X = true;
         MediaCodecVideoConvertor mediaCodecVideoConvertor2 = new MediaCodecVideoConvertor();
-        MediaCodecVideoConvertor.ConvertVideoParams of22 = MediaCodecVideoConvertor.ConvertVideoParams.of(str42, file32, j11, i15, z13, i16, i17, i14, i13, i212, i12, i11, j12, j14, j13, z14, j3, peVar2, e20Var);
-        of22.soundInfos.addAll(e20Var.b0);
+        MediaCodecVideoConvertor.ConvertVideoParams of22 = MediaCodecVideoConvertor.ConvertVideoParams.of(str42, file32, j11, i15, z13, i16, i17, i14, i13, i212, i12, i11, j12, j14, j13, z14, j3, qeVar2, f20Var);
+        of22.soundInfos.addAll(f20Var.b0);
         convertVideo = mediaCodecVideoConvertor2.convertVideo(of22);
-        z10 = e20Var.W;
+        z10 = f20Var.W;
         if (!z10) {
         }
         if (s2.a) {
@@ -275,11 +275,11 @@ public final /* synthetic */ class o implements Runnable {
         if (!convertVideo) {
             z11 = false;
         }
-        e20 e20Var22 = jfVar.b;
-        z12 = e20Var22.X;
+        f20 f20Var22 = kfVar.b;
+        z12 = f20Var22.X;
         if (z12) {
         }
-        g0.g3(new yd(B, z11, true, jfVar, file32, 1.0f, lastFrameTimestamp2, z12, length2));
+        g0.g3(new zd(B, z11, true, kfVar, file32, 1.0f, lastFrameTimestamp2, z12, length2));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:327:0x0712  */
@@ -369,7 +369,7 @@ public final /* synthetic */ class o implements Runnable {
             case 8:
                 a6 a6Var = (a6) this.b;
                 a6Var.J.clear();
-                a6Var.getNotificationCenter().k(ks.e5, new Object[0]);
+                a6Var.getNotificationCenter().k(ls.e5, new Object[0]);
                 return;
             case 9:
                 MediaController mediaController = (MediaController) this.b;
@@ -396,7 +396,7 @@ public final /* synthetic */ class o implements Runnable {
                     }
                     byteBuffer.limit(read);
                     int i13 = mediaController.B1;
-                    ji.o oVar = vr.k;
+                    ji.o oVar = wr.k;
                     if (oVar != null && read > 0) {
                         try {
                             oVar.n(byteBuffer, read, i13, 1);
@@ -439,9 +439,9 @@ public final /* synthetic */ class o implements Runnable {
                                         a8.g(e, true);
                                         byteBuffer.position(0);
                                         double sqrt = Math.sqrt((d / read) / 2.0d);
-                                        mediaController.O1.c(new xf(this, byteBuffer, read != byteBuffer.capacity(), 6));
+                                        mediaController.O1.c(new yf(this, byteBuffer, read != byteBuffer.capacity(), 6));
                                         mediaController.N1.c(mediaController.P1);
-                                        g0.g3(new re(this, sqrt, 0));
+                                        g0.g3(new se(this, sqrt, 0));
                                         return;
                                     }
                                 }
@@ -463,16 +463,16 @@ public final /* synthetic */ class o implements Runnable {
                         a8.g(e, true);
                         byteBuffer.position(0);
                         double sqrt2 = Math.sqrt((d / read) / 2.0d);
-                        mediaController.O1.c(new xf(this, byteBuffer, read != byteBuffer.capacity(), 6));
+                        mediaController.O1.c(new yf(this, byteBuffer, read != byteBuffer.capacity(), 6));
                         mediaController.N1.c(mediaController.P1);
-                        g0.g3(new re(this, sqrt2, 0));
+                        g0.g3(new se(this, sqrt2, 0));
                         return;
                     }
                     byteBuffer.position(0);
                     double sqrt22 = Math.sqrt((d / read) / 2.0d);
-                    mediaController.O1.c(new xf(this, byteBuffer, read != byteBuffer.capacity(), 6));
+                    mediaController.O1.c(new yf(this, byteBuffer, read != byteBuffer.capacity(), 6));
                     mediaController.N1.c(mediaController.P1);
-                    g0.g3(new re(this, sqrt22, 0));
+                    g0.g3(new se(this, sqrt22, 0));
                     return;
                 }
                 return;
@@ -497,105 +497,105 @@ public final /* synthetic */ class o implements Runnable {
                 t0.b.sendBroadcast((Intent) this.b);
                 return;
             case 13:
-                ku kuVar = (ku) this.b;
-                OverScroller overScroller = kuVar.n0;
-                if (overScroller == null || kuVar.W == null || !overScroller.computeScrollOffset()) {
+                lu luVar = (lu) this.b;
+                OverScroller overScroller = luVar.n0;
+                if (overScroller == null || luVar.W == null || !overScroller.computeScrollOffset()) {
                     return;
                 }
-                int currX = kuVar.n0.getCurrX();
+                int currX = luVar.n0.getCurrX();
                 r15 = currX >= 0 ? currX : 0;
-                int i17 = kuVar.d0;
+                int i17 = luVar.d0;
                 if (r15 > i17) {
                     r15 = i17;
                 }
-                if (r15 != kuVar.e0) {
-                    kuVar.e0 = r15;
-                    kuVar.W.invalidate();
+                if (r15 != luVar.e0) {
+                    luVar.e0 = r15;
+                    luVar.W.invalidate();
                 }
-                if (kuVar.n0.isFinished()) {
+                if (luVar.n0.isFinished()) {
                     return;
                 }
-                kuVar.W.postOnAnimation(this);
+                luVar.W.postOnAnimation(this);
                 return;
             case 14:
-                nu nuVar = (nu) this.b;
-                OverScroller overScroller2 = nuVar.v0;
-                if (overScroller2 == null || nuVar.W == null || !overScroller2.computeScrollOffset()) {
+                ou ouVar = (ou) this.b;
+                OverScroller overScroller2 = ouVar.v0;
+                if (overScroller2 == null || ouVar.W == null || !overScroller2.computeScrollOffset()) {
                     return;
                 }
-                int currX2 = nuVar.v0.getCurrX();
+                int currX2 = ouVar.v0.getCurrX();
                 r15 = currX2 >= 0 ? currX2 : 0;
-                int i18 = nuVar.b0;
+                int i18 = ouVar.b0;
                 if (r15 > i18) {
                     r15 = i18;
                 }
-                if (r15 != nuVar.c0) {
-                    nuVar.c0 = r15;
-                    nuVar.Z(nuVar.T, nuVar.U, nuVar.V);
-                    nuVar.W.invalidate();
+                if (r15 != ouVar.c0) {
+                    ouVar.c0 = r15;
+                    ouVar.Z(ouVar.T, ouVar.U, ouVar.V);
+                    ouVar.W.invalidate();
                 }
-                if (nuVar.v0.isFinished()) {
+                if (ouVar.v0.isFinished()) {
                     return;
                 }
-                nuVar.W.postOnAnimation(this);
+                ouVar.W.postOnAnimation(this);
                 return;
             case 15:
-                su suVar = (su) this.b;
-                OverScroller overScroller3 = suVar.z0;
-                if (overScroller3 == null || suVar.W == null || !overScroller3.computeScrollOffset()) {
+                tu tuVar = (tu) this.b;
+                OverScroller overScroller3 = tuVar.z0;
+                if (overScroller3 == null || tuVar.W == null || !overScroller3.computeScrollOffset()) {
                     return;
                 }
-                int currX3 = suVar.z0.getCurrX();
+                int currX3 = tuVar.z0.getCurrX();
                 r15 = currX3 >= 0 ? currX3 : 0;
-                int i19 = suVar.i0;
+                int i19 = tuVar.i0;
                 if (r15 > i19) {
                     r15 = i19;
                 }
-                if (r15 != suVar.j0) {
-                    suVar.j0 = r15;
-                    suVar.Z(suVar.T, suVar.U, suVar.V);
-                    suVar.W.invalidate();
+                if (r15 != tuVar.j0) {
+                    tuVar.j0 = r15;
+                    tuVar.Z(tuVar.T, tuVar.U, tuVar.V);
+                    tuVar.W.invalidate();
                 }
-                if (suVar.z0.isFinished()) {
+                if (tuVar.z0.isFinished()) {
                     return;
                 }
-                suVar.W.postOnAnimation(this);
+                tuVar.W.postOnAnimation(this);
                 return;
             case 16:
                 long currentTimeMillis = System.currentTimeMillis();
-                cz czVar = (cz) this.b;
-                if (Math.abs(currentTimeMillis - czVar.b) < 2000) {
+                dz dzVar = (dz) this.b;
+                if (Math.abs(currentTimeMillis - dzVar.b) < 2000) {
                     return;
                 }
-                czVar.b = currentTimeMillis;
+                dzVar.b = currentTimeMillis;
                 try {
-                    czVar.s.b();
+                    dzVar.s.b();
                     int i20 = 0;
                     while (true) {
                         if (i20 >= 3) {
                             int i21 = 0;
                             for (int i22 = 3; i21 < i22; i22 = 3) {
-                                czVar.s.write(cz.a(czVar, czVar.c[i21][7]), 0, 8);
-                                czVar.s.write(cz.a(czVar, czVar.d[i21][7]), 0, 8);
-                                czVar.s.write(cz.b(czVar, czVar.e[i21][7]), 0, 4);
-                                czVar.s.write(cz.b(czVar, czVar.f[i21][7]), 0, 4);
+                                dzVar.s.write(dz.a(dzVar, dzVar.c[i21][7]), 0, 8);
+                                dzVar.s.write(dz.a(dzVar, dzVar.d[i21][7]), 0, 8);
+                                dzVar.s.write(dz.b(dzVar, dzVar.e[i21][7]), 0, 4);
+                                dzVar.s.write(dz.b(dzVar, dzVar.f[i21][7]), 0, 4);
                                 i21++;
                             }
-                            czVar.r.seek(0L);
-                            RandomAccessFile randomAccessFile = czVar.r;
-                            bg.e0 e0Var = czVar.s;
+                            dzVar.r.seek(0L);
+                            RandomAccessFile randomAccessFile = dzVar.r;
+                            bg.e0 e0Var = dzVar.s;
                             randomAccessFile.write(e0Var.a, 0, e0Var.b);
-                            czVar.r.getFD().sync();
+                            dzVar.r.getFD().sync();
                             return;
                         }
                         for (int i23 = 0; i23 < 7; i23++) {
-                            czVar.s.write(cz.a(czVar, czVar.c[i20][i23]), 0, 8);
-                            czVar.s.write(cz.a(czVar, czVar.d[i20][i23]), 0, 8);
-                            czVar.s.write(cz.b(czVar, czVar.e[i20][i23]), 0, 4);
-                            czVar.s.write(cz.b(czVar, czVar.f[i20][i23]), 0, 4);
+                            dzVar.s.write(dz.a(dzVar, dzVar.c[i20][i23]), 0, 8);
+                            dzVar.s.write(dz.a(dzVar, dzVar.d[i20][i23]), 0, 8);
+                            dzVar.s.write(dz.b(dzVar, dzVar.e[i20][i23]), 0, 4);
+                            dzVar.s.write(dz.b(dzVar, dzVar.f[i20][i23]), 0, 4);
                         }
-                        czVar.s.write(cz.b(czVar, czVar.n[i20]), 0, 4);
-                        czVar.s.write(cz.a(czVar, czVar.h[i20]), 0, 8);
+                        dzVar.s.write(dz.b(dzVar, dzVar.n[i20]), 0, 4);
+                        dzVar.s.write(dz.a(dzVar, dzVar.h[i20]), 0, 8);
                         i20++;
                     }
                 } catch (Exception unused) {
@@ -672,7 +672,7 @@ public final /* synthetic */ class o implements Runnable {
                 w2Var.M0.d();
                 w2Var.A0.addListener(new o2(w2Var, r15));
                 if (w2Var.L0) {
-                    ks.e().k(98, 512);
+                    ls.e().k(98, 512);
                 }
                 w2Var.A0.start();
                 return;
@@ -699,7 +699,7 @@ public final /* synthetic */ class o implements Runnable {
                         w2 j11 = f3.j(1, jVar.getContext(), null, false);
                         j11.P = url;
                         j11.Q = false;
-                        CharSequence[] charSequenceArr = {gd.N0(2131747623, null), gd.N0(2131751755, null)};
+                        CharSequence[] charSequenceArr = {hd.N0(2131747623, null), hd.N0(2131751755, null)};
                         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i24) {
@@ -714,7 +714,7 @@ public final /* synthetic */ class o implements Runnable {
                                     org.telegram.messenger.g0.g(str);
                                     if (org.telegram.messenger.g0.G3()) {
                                         if (str.startsWith("@")) {
-                                            org.telegram.messenger.f3.n(null, 2131743422, lc.b0(g2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.f3.n(null, 2131743420, lc.b0(g2Var), R.raw.copy, 36);
                                         } else if (str.startsWith("#") || str.startsWith("$")) {
                                             org.telegram.messenger.f3.n(null, 2131749169, lc.b0(g2Var), R.raw.copy, 36);
                                         } else {
@@ -834,12 +834,12 @@ public final /* synthetic */ class o implements Runnable {
                     f15 = 0.0f;
                 }
                 f8Var2.C2 = f15;
-                fj fjVar = MediaController.B().v0;
-                if (fjVar != null && fjVar.I3()) {
+                gj gjVar = MediaController.B().v0;
+                if (gjVar != null && gjVar.I3()) {
                     if (!MediaController.B().H()) {
                         MediaController.B().v0.b0 = f8Var2.C2;
                     }
-                    f8Var2.c1(fjVar, false);
+                    f8Var2.c1(gjVar, false);
                 }
                 if (f8Var2.B2 == 1 && f8Var2.D2 > 0 && MediaController.B().H()) {
                     if (j13 > 200 || f8Var2.C2 == 0.0f) {

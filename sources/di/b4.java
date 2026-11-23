@@ -2,15 +2,15 @@ package di;
 
 import android.content.Context;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b4 implements x10 {
+public final /* synthetic */ class b4 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ String c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class b4 implements x10 {
         this.c = str;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7 = this.a;
         Object obj2 = this.f;
@@ -46,13 +46,13 @@ public final /* synthetic */ class b4 implements x10 {
                 break;
             default:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                mp mpVar = (mp) obj3;
+                np npVar = (np) obj3;
                 vf.b bVar = (vf.b) obj2;
                 Long l10 = (Long) obj;
                 String str = LaunchActivity.C1;
-                TLRPC.User c22 = (l10 == null || l10.longValue() <= 0 || l10.longValue() == Long.MAX_VALUE) ? null : mpVar.c2(l10);
+                TLRPC.User c22 = (l10 == null || l10.longValue() <= 0 || l10.longValue() == Long.MAX_VALUE) ? null : npVar.c2(l10);
                 int i10 = this.b;
-                if (c22 != null && !o10.C(c22)) {
+                if (c22 != null && !p10.C(c22)) {
                     launchActivity.Y(i10, c22, this.c, bVar);
                     break;
                 } else {

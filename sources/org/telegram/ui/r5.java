@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r5 extends FrameLayout {
     public final /* synthetic */ t5 a;
@@ -21,9 +21,9 @@ public final class r5 extends FrameLayout {
         di.n4 n4Var = new di.n4(t5Var, getContext());
         di.n4 n4Var2 = new di.n4(t5Var, getContext());
         di.n4 n4Var3 = new di.n4(t5Var, getContext());
-        n4Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.gd.N0(2131753661, null));
-        n4Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.gd.N0(2131749377, null));
-        n4Var3.c(R.drawable.filled_info, org.telegram.messenger.gd.N0(2131750818, null));
+        n4Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.hd.N0(2131753661, null));
+        n4Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.hd.N0(2131749377, null));
+        n4Var3.c(R.drawable.filled_info, org.telegram.messenger.hd.N0(2131750818, null));
         n4Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
             public final /* synthetic */ r5 b;
 
@@ -170,7 +170,7 @@ public final class r5 extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
         linearLayout.addView(n4Var, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        if (org.telegram.messenger.mp.u1(t5Var.T).s4 && org.telegram.messenger.v3.N(t5Var.j0)) {
+        if (org.telegram.messenger.np.u1(t5Var.T).s4 && org.telegram.messenger.v3.N(t5Var.j0)) {
             linearLayout.addView(n4Var2, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
         linearLayout.addView(n4Var3, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));

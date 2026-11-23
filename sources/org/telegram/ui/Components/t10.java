@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t10 extends v4.o {
     public final /* synthetic */ ArrayList b;
@@ -33,9 +33,9 @@ public final class t10 extends v4.o {
         int size3 = i10 - v10Var.e.size();
         ArrayList arrayList2 = this.c;
         if (size3 < 0 || size3 >= v10Var.f.size() || size2 < 0 || size2 >= arrayList2.size()) {
-            return org.telegram.messenger.fj.B1((i7 < arrayList.size() ? ((org.telegram.messenger.u3) arrayList.get(i7)).a : (TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == org.telegram.messenger.fj.B1((i10 < v10Var.e.size() ? ((org.telegram.messenger.u3) v10Var.e.get(i10)).a : (TLRPC.GroupCallParticipant) v10Var.f.get(size3)).peer);
+            return org.telegram.messenger.gj.B1((i7 < arrayList.size() ? ((org.telegram.messenger.u3) arrayList.get(i7)).a : (TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == org.telegram.messenger.gj.B1((i10 < v10Var.e.size() ? ((org.telegram.messenger.u3) v10Var.e.get(i10)).a : (TLRPC.GroupCallParticipant) v10Var.f.get(size3)).peer);
         }
-        return org.telegram.messenger.fj.B1(((TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == org.telegram.messenger.fj.B1(((TLRPC.GroupCallParticipant) v10Var.f.get(size3)).peer);
+        return org.telegram.messenger.gj.B1(((TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == org.telegram.messenger.gj.B1(((TLRPC.GroupCallParticipant) v10Var.f.get(size3)).peer);
     }
 
     @Override // v4.o

@@ -5,10 +5,10 @@ import android.view.View;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xu extends View {
-    public org.telegram.messenger.gc[] a;
+    public org.telegram.messenger.hc[] a;
     public fi.s2 b;
     public y5 c;
     public ValueAnimator d;
@@ -23,7 +23,7 @@ public final class xu extends View {
         if (document != null) {
             return document;
         }
-        return p5.e(org.telegram.messenger.j10.t0, y5Var.getDocumentId());
+        return p5.e(org.telegram.messenger.k10.t0, y5Var.getDocumentId());
     }
 
     @Override // android.view.View

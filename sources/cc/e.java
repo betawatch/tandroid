@@ -10,9 +10,9 @@ import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e implements q {
     public int a;
@@ -181,7 +181,7 @@ public final class e implements q {
 
     public int s(short[] sArr, int i7, int i10, int i11) {
         int i12 = i7 * ((r) this.h).b;
-        int i13 = ks.e4;
+        int i13 = ls.e4;
         int i14 = 1;
         int i15 = 0;
         int i16 = 0;

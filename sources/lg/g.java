@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import ki.m3;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.m41;
 import org.telegram.ui.qi0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean B1;
@@ -538,7 +538,7 @@ public abstract class g extends View implements i {
                 this.x = f16;
                 arrayList.clear();
                 arrayList.add(f10);
-                f10.f = ks.e4;
+                f10.f = ls.e4;
                 return;
             }
             arrayList.add(f10);
@@ -693,12 +693,12 @@ public abstract class g extends View implements i {
                     double d = highestOneBit;
                     double d2 = 0.2d * d;
                     ng.b bVar4 = new ng.b(highestOneBit, (int) (d + d2), (int) (d - d2));
-                    bVar4.d = ks.e4;
+                    bVar4.d = ls.e4;
                     ng.b bVar5 = this.j0;
                     ArrayList arrayList = this.c;
                     if (bVar5 == null) {
                         this.j0 = bVar4;
-                        bVar4.d = ks.e4;
+                        bVar4.d = ls.e4;
                         arrayList.add(bVar4);
                         return;
                     }

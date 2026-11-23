@@ -7,12 +7,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import fi.d4;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.m41;
 import org.telegram.ui.qi0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] E1;
@@ -366,7 +366,7 @@ public final class p extends g {
                 Paint paint = fVar3.c;
                 Paint paint2 = fVar3.c;
                 paint.setStrokeWidth(max * f16);
-                paint2.setAlpha(ks.e4);
+                paint2.setAlpha(ls.e4);
                 canvas.drawLines(fVar3.k, 0, fVar3.j, paint2);
             }
         }

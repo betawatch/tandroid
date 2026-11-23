@@ -1,12 +1,12 @@
 package hi;
 
 import android.view.KeyEvent;
-import org.telegram.messenger.t10;
+import org.telegram.messenger.u10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.e1, t10 {
+public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.e1, u10 {
     public final /* synthetic */ k5 a;
 
     public /* synthetic */ j4(k5 k5Var) {
@@ -23,7 +23,7 @@ public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.e1, t
         }
     }
 
-    @Override // org.telegram.messenger.t10
+    @Override // org.telegram.messenger.u10
     public void m(Object obj, TLRPC.Document document, Boolean bool) {
         k5 k5Var = this.a;
         k5Var.V1 = true;

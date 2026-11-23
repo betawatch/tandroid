@@ -5,11 +5,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ce;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.de;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -20,7 +20,7 @@ import org.telegram.ui.h60;
 import org.telegram.ui.hk0;
 import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,17 +34,17 @@ public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ k8(y8 y8Var, boolean[] zArr, fj fjVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i7, x10 x10Var, x10 x10Var2) {
+    public /* synthetic */ k8(y8 y8Var, boolean[] zArr, gj gjVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i7, y10 y10Var, y10 y10Var2) {
         this.a = 0;
         this.c = y8Var;
         this.d = zArr;
-        this.f = fjVar;
+        this.f = gjVar;
         this.h = inputInvoice;
         this.n = tL_payments_paymentFormStars;
         this.e = zArr2;
         this.b = i7;
-        this.r = x10Var;
-        this.s = x10Var2;
+        this.r = y10Var;
+        this.s = y10Var2;
     }
 
     @Override // java.lang.Runnable
@@ -63,7 +63,7 @@ public final /* synthetic */ class k8 implements Runnable {
             case 0:
                 y8 y8Var = (y8) obj8;
                 ((boolean[]) obj7)[0] = true;
-                y8Var.Y((fj) obj5, (TLRPC.InputInvoice) obj4, (TLRPC.TL_payments_paymentFormStars) obj3, new u6(y8Var, (boolean[]) obj6, this.b, (x10) obj2, (x10) obj));
+                y8Var.Y((gj) obj5, (TLRPC.InputInvoice) obj4, (TLRPC.TL_payments_paymentFormStars) obj3, new u6(y8Var, (boolean[]) obj6, this.b, (y10) obj2, (y10) obj));
                 break;
             case 1:
                 rf rfVar = (rf) obj8;
@@ -77,7 +77,7 @@ public final /* synthetic */ class k8 implements Runnable {
                 layoutParams.leftMargin = Math.round((rectF.left + r2[0]) - r0[0]);
                 layoutParams.topMargin = Math.round((rectF.top + r2[1]) - r0[1]);
                 view.setLayoutParams(layoutParams);
-                view.post(new ce(rfVar, view, frameLayout, layoutParams, (ArrayList) obj3, (ArrayList) obj2, this.b, (ji.f) obj));
+                view.post(new de(rfVar, view, frameLayout, layoutParams, (ArrayList) obj3, (ArrayList) obj2, this.b, (ji.f) obj));
                 break;
             case 2:
                 LaunchActivity launchActivity = (LaunchActivity) obj8;
@@ -92,7 +92,7 @@ public final /* synthetic */ class k8 implements Runnable {
                 if (tLObject instanceof TLRPC.TL_messages_chats) {
                     TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
                     if (!tL_messages_chats.chats.isEmpty()) {
-                        mp.u1(launchActivity.P).Z3(tL_messages_chats.chats, false);
+                        np.u1(launchActivity.P).Z3(tL_messages_chats.chats, false);
                         iArr[0] = launchActivity.z0(this.b, h60Var, num, num2, l10, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
                         break;
                     }
@@ -102,7 +102,7 @@ public final /* synthetic */ class k8 implements Runnable {
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                 }
-                launchActivity.F0(org.telegram.ui.Components.c5.E(launchActivity, gd.N0(2131751442, null), gd.N0(2131748702, null)));
+                launchActivity.F0(org.telegram.ui.Components.c5.E(launchActivity, hd.N0(2131751442, null), hd.N0(2131748702, null)));
                 break;
             case 3:
                 LaunchActivity launchActivity2 = (LaunchActivity) obj8;
@@ -120,7 +120,7 @@ public final /* synthetic */ class k8 implements Runnable {
                     org.telegram.messenger.a8.g(e11, true);
                 }
                 if (tLObject2 != null) {
-                    mp.u1(i10).f4(authorizationform.users, false);
+                    np.u1(i10).f4(authorizationform.users, false);
                     launchActivity2.t0(new hk0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str2, str3, str4, authorizationform, (TL_account.Password) tLObject2));
                     break;
                 }
@@ -146,12 +146,12 @@ public final /* synthetic */ class k8 implements Runnable {
                         }
                     } else {
                         ld0Var.e = "RESPONSE_FALSE";
-                        new org.telegram.ui.Components.lc(de0Var.a0, null).H(R.raw.error, gd.a0(null, null, 2131743635, "RESPONSE_FALSE"));
+                        new org.telegram.ui.Components.lc(de0Var.a0, null).H(R.raw.error, hd.a0(null, null, 2131743633, "RESPONSE_FALSE"));
                         break;
                     }
                 } else {
-                    eVar.i(gd.a0(null, null, 2131745771, iVar.a), false, true);
-                    eVar.g(i10 == 7 ? gd.N0(2131745775, null) : gd.H(',', "SMSFeePurchaseTextDays", i10), false);
+                    eVar.i(hd.a0(null, null, 2131745771, iVar.a), false, true);
+                    eVar.g(i10 == 7 ? hd.N0(2131745775, null) : hd.H(',', "SMSFeePurchaseTextDays", i10), false);
                     eVar.setLoading(false);
                     eVar.setOnClickListener(new fi.d0(ld0Var, mVar, tL_inputStorePaymentAuthCode, str6, tL_payments_canPurchaseStore, 14));
                     break;

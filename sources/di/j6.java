@@ -4,14 +4,14 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.we;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.xe;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.rd0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.q30;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j6 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -69,8 +69,8 @@ public final class j6 extends AnimatorListenerAdapter {
                 saVar.n.invalidate();
                 runnable.run();
                 saVar.Q.e();
-                ks.e().k(99, 512);
-                ks.e().o();
+                ls.e().k(99, 512);
+                ls.e().o();
                 saVar.n();
                 Runnable runnable2 = saVar.R;
                 if (runnable2 != null) {
@@ -120,12 +120,12 @@ public final class j6 extends AnimatorListenerAdapter {
                         photoViewer.c1.setColorFilter((ColorFilter) null);
                     }
                 }
-                we weVar = photoViewer.X4.c;
-                if (weVar != null) {
-                    weVar.b = 0.0f;
-                    weVar.a = 0.0f;
-                    weVar.f = 1.0f;
-                    weVar.e = 1.0f;
+                xe xeVar = photoViewer.X4.c;
+                if (xeVar != null) {
+                    xeVar.b = 0.0f;
+                    xeVar.a = 0.0f;
+                    xeVar.f = 1.0f;
+                    xeVar.e = 1.0f;
                 }
                 if (runnable != null) {
                     runnable.run();

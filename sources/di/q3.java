@@ -1,13 +1,13 @@
 package di;
 
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -39,8 +39,8 @@ public final /* synthetic */ class q3 implements Runnable {
                     break;
                 } else {
                     TL_account.tmpPassword tmppassword = (TL_account.tmpPassword) tLObject;
-                    j10.i(f6Var.a).y = tmppassword;
-                    j10.i(f6Var.a).v(false);
+                    k10.i(f6Var.a).y = tmppassword;
+                    k10.i(f6Var.a).v(false);
                     f6Var.O1(tmppassword.tmp_password, twoStepVerificationActivity, z11, null);
                     break;
                 }

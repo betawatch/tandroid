@@ -21,7 +21,7 @@ import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.hc1;
 import org.telegram.ui.nb1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h10 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -324,7 +324,7 @@ public final class h10 extends AnimatorListenerAdapter {
                 h1Var.o2.invalidate();
                 Drawable drawable = (Drawable) obj;
                 if (drawable != null) {
-                    ValueAnimator ofInt = ValueAnimator.ofInt(0, org.telegram.messenger.ks.e4);
+                    ValueAnimator ofInt = ValueAnimator.ofInt(0, org.telegram.messenger.ls.e4);
                     ofInt.addUpdateListener(new v4.e(i10, this, drawable));
                     ofInt.start();
                 }

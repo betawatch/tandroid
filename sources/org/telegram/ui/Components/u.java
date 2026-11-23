@@ -5,9 +5,9 @@ import java.util.Locale;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements org.telegram.messenger.q10 {
+public final /* synthetic */ class u implements org.telegram.messenger.r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -18,7 +18,7 @@ public final /* synthetic */ class u implements org.telegram.messenger.q10 {
         this.b = i7;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         String str;
         int i7 = this.a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class u implements org.telegram.messenger.q10 {
                     if (z10) {
                         long j3 = ((org.telegram.messenger.l0) n6Var.getMessagesController().A7.r0.b).c;
                         if (j3 > 0) {
-                            arrayList.add(o41.C(org.telegram.messenger.gd.V(null, null, 2131742853, org.telegram.ui.Wallet.u0.x(j3, false))));
+                            arrayList.add(o41.C(org.telegram.messenger.hd.V(null, null, 2131742851, org.telegram.ui.Wallet.u0.x(j3, false))));
                             break;
                         }
                     }
@@ -94,7 +94,7 @@ public final /* synthetic */ class u implements org.telegram.messenger.q10 {
                         if (arrayList.isEmpty() && !n6Var.l0.isEmpty()) {
                             org.telegram.ui.Wallet.l0 l0Var2 = n6Var.H0;
                             if (!l0Var2.i && l0Var2.g) {
-                                arrayList.add(o41.r(org.telegram.messenger.gd.N0(2131747974, null)));
+                                arrayList.add(o41.r(org.telegram.messenger.hd.N0(2131747974, null)));
                             }
                         }
                         org.telegram.ui.Wallet.l0 l0Var3 = n6Var.H0;
@@ -108,7 +108,7 @@ public final /* synthetic */ class u implements org.telegram.messenger.q10 {
                             }
                             break;
                         } else if (l0Var3.m != null) {
-                            arrayList.add(o41.e(-10001, org.telegram.messenger.gd.N0(2131745856, null)));
+                            arrayList.add(o41.e(-10001, org.telegram.messenger.hd.N0(2131745856, null)));
                             break;
                         }
                     }

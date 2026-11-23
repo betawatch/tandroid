@@ -22,13 +22,13 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.messenger.s2;
 import org.telegram.ui.Components.es0;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class z0 extends l {
     public int i;
@@ -871,7 +871,7 @@ public final class z0 extends l {
             return 1;
         }
         try {
-            i7 = ((org.telegram.messenger.j0) mp.u1(j10.t0).A7.v0.b).c;
+            i7 = ((org.telegram.messenger.j0) np.u1(k10.t0).A7.v0.b).c;
         } catch (Exception unused) {
             i7 = 6;
         }

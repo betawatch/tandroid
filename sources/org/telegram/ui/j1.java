@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j1 extends View implements Drawable.Callback, org.telegram.ui.Cells.i9 {
     public final p50 a;
@@ -94,9 +94,9 @@ public final class j1 extends View implements Drawable.Callback, org.telegram.ui
         if (z2Var != null && (h = g4.h(this.a, this.b, z2Var)) != null) {
             spannableStringBuilder.append(h).append((CharSequence) ", ");
         }
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131754868, null)).append((CharSequence) ", ");
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131754868, null)).append((CharSequence) ", ");
         TL_iv.pageBlockDetails pageblockdetails = this.h;
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0((pageblockdetails == null || !pageblockdetails.open) ? 2131754869 : 2131754865, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0((pageblockdetails == null || !pageblockdetails.open) ? 2131754869 : 2131754865, null));
         accessibilityNodeInfo.setText(spannableStringBuilder);
     }
 

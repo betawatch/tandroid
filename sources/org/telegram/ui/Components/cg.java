@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cg implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -24,7 +24,7 @@ public final class cg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.messenger.fj threadMessage;
+        org.telegram.messenger.gj threadMessage;
         ChatActivityEnterView chatActivityEnterView = this.a;
         oe oeVar = chatActivityEnterView.a1;
         te teVar = chatActivityEnterView.x4;
@@ -57,7 +57,7 @@ public final class cg implements Runnable {
                 } else {
                     strArr[0] = "android.permission.RECORD_AUDIO";
                 }
-                activity.requestPermissions(strArr, org.telegram.messenger.ks.g2);
+                activity.requestPermissions(strArr, org.telegram.messenger.ls.g2);
                 return;
             }
             if (CameraController.getInstance().isCameraInitied()) {
@@ -112,27 +112,28 @@ public final class cg implements Runnable {
         }
         chatActivityEnterView.P3.a1(1);
         if (DictationAsr.D()) {
-            if (DictationAsr.z()) {
+            boolean z12 = DictationAsr.z(chatActivityEnterView.G3);
+            if (z12) {
                 Context context = chatActivityEnterView.getContext();
                 if (i10 >= 33 && ai.d.c == 0 && !ai.d.d) {
                     org.telegram.messenger.g0.g3(new ai.a(context.getApplicationContext(), i7));
                 }
             }
             ArrayList c10 = ai.w0.c(chatActivityEnterView.getContext(), chatActivityEnterView.G3);
-            android.support.v4.media.session.a0 T = DictationAsr.T(c10, true);
+            android.support.v4.media.session.a0 T = DictationAsr.T(c10, z12);
             if (T != null) {
                 ai.t tVar = (ai.t) T.b;
                 long currentTimeMillis = System.currentTimeMillis();
-                SharedPreferences g12 = org.telegram.messenger.mp.g1();
+                SharedPreferences g12 = org.telegram.messenger.np.g1();
                 StringBuilder sb2 = new StringBuilder("tinyasr_checked_");
                 sb2.append(tVar.a);
-                boolean z12 = currentTimeMillis - g12.getLong(sb2.toString(), 0L) > 86400000;
+                boolean z13 = currentTimeMillis - g12.getLong(sb2.toString(), 0L) > 86400000;
                 boolean y10 = DictationAsr.y(tVar);
                 if (y10 && !tVar.i) {
                     tVar.i = true;
                     DictationAsr.d.execute(new ai.o(tVar, 0));
                 }
-                if ((y10 || ai.l1.b()) && (!y10 || z12)) {
+                if ((y10 || ai.m1.b()) && (!y10 || z13)) {
                     DictationAsr.u(tVar, false);
                 }
                 Context context2 = chatActivityEnterView.getContext();
@@ -153,11 +154,11 @@ public final class cg implements Runnable {
         MediaController B = MediaController.B();
         int i11 = chatActivityEnterView.R;
         long j3 = chatActivityEnterView.G3;
-        org.telegram.messenger.fj fjVar = chatActivityEnterView.J3;
+        org.telegram.messenger.gj gjVar = chatActivityEnterView.J3;
         threadMessage = chatActivityEnterView.getThreadMessage();
         int i12 = chatActivityEnterView.w3;
         org.telegram.ui.bn bnVar = chatActivityEnterView.F3;
-        B.x0(i11, j3, fjVar, threadMessage, c12, i12, true, bnVar != null ? bnVar.Y8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+        B.x0(i11, j3, gjVar, threadMessage, c12, i12, true, bnVar != null ? bnVar.Y8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
         chatActivityEnterView.v3 = true;
         chatActivityEnterView.s2(0, true);
         wg wgVar2 = chatActivityEnterView.Z0;

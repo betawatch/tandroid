@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oo0 extends FrameLayout {
     public final View a;
@@ -53,7 +53,7 @@ public final class oo0 extends FrameLayout {
         m5Var.setTextSize(13);
         m5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
         final int i12 = 0;
-        m5Var.l(org.telegram.messenger.gd.N0(2131743132, null), false);
+        m5Var.l(org.telegram.messenger.hd.N0(2131743130, null), false);
         m5Var.setGravity(17);
         addView(m5Var, c8.ma.d(-1, -1.0f, 51, 14.0f, 0.0f, 0.0f, 0.0f));
         m5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zo0
@@ -80,7 +80,7 @@ public final class oo0 extends FrameLayout {
         org.telegram.ui.ActionBar.t6.X(m5Var2, i11, ap0Var.J0);
         m5Var2.setTextSize(13);
         m5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
-        m5Var2.l(org.telegram.messenger.gd.N0(2131743131, null), false);
+        m5Var2.l(org.telegram.messenger.hd.N0(2131743129, null), false);
         m5Var2.setGravity(17);
         addView(m5Var2, c8.ma.d(-1, -1.0f, 51, 0.0f, 0.0f, 14.0f, 0.0f));
         m5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.zo0

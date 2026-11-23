@@ -1,12 +1,12 @@
 package di;
 
 import java.util.HashMap;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                                     hashMap.put(Long.valueOf(j10), null);
                                 }
                                 e0Var2.d.put(Long.valueOf(j10), Long.valueOf(System.currentTimeMillis()));
-                                ks.f(e0Var2.a).k(ks.E3, Long.valueOf(j10));
+                                ls.f(e0Var2.a).k(ls.E3, Long.valueOf(j10));
                                 break;
                             default:
                                 HashMap hashMap2 = e0Var2.c;
@@ -52,7 +52,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                                     hashMap2.put(Long.valueOf(j10), null);
                                 }
                                 e0Var2.b.put(Long.valueOf(j10), Long.valueOf(System.currentTimeMillis()));
-                                ks.f(e0Var2.a).k(ks.E3, Long.valueOf(j10));
+                                ls.f(e0Var2.a).k(ls.E3, Long.valueOf(j10));
                                 break;
                         }
                     }
@@ -78,7 +78,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                                     hashMap.put(Long.valueOf(j102), null);
                                 }
                                 e0Var22.d.put(Long.valueOf(j102), Long.valueOf(System.currentTimeMillis()));
-                                ks.f(e0Var22.a).k(ks.E3, Long.valueOf(j102));
+                                ls.f(e0Var22.a).k(ls.E3, Long.valueOf(j102));
                                 break;
                             default:
                                 HashMap hashMap2 = e0Var22.c;
@@ -88,7 +88,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                                     hashMap2.put(Long.valueOf(j102), null);
                                 }
                                 e0Var22.b.put(Long.valueOf(j102), Long.valueOf(System.currentTimeMillis()));
-                                ks.f(e0Var22.a).k(ks.E3, Long.valueOf(j102));
+                                ls.f(e0Var22.a).k(ls.E3, Long.valueOf(j102));
                                 break;
                         }
                     }

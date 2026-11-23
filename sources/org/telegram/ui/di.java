@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class di implements Runnable {
     public final /* synthetic */ boolean a;
@@ -11,10 +11,10 @@ public final class di implements Runnable {
     public final /* synthetic */ float f;
     public final /* synthetic */ float h;
     public final /* synthetic */ ch.p0 n;
-    public final /* synthetic */ org.telegram.messenger.fj r;
+    public final /* synthetic */ org.telegram.messenger.gj r;
     public final /* synthetic */ bn s;
 
-    public di(bn bnVar, boolean z10, boolean z11, int i7, boolean z12, org.telegram.ui.Components.xi0 xi0Var, float f10, float f11, ch.p0 p0Var, org.telegram.messenger.fj fjVar) {
+    public di(bn bnVar, boolean z10, boolean z11, int i7, boolean z12, org.telegram.ui.Components.xi0 xi0Var, float f10, float f11, ch.p0 p0Var, org.telegram.messenger.gj gjVar) {
         this.s = bnVar;
         this.a = z10;
         this.b = z11;
@@ -24,7 +24,7 @@ public final class di implements Runnable {
         this.f = f10;
         this.h = f11;
         this.n = p0Var;
-        this.r = fjVar;
+        this.r = gjVar;
     }
 
     @Override // java.lang.Runnable

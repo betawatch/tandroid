@@ -7,11 +7,11 @@ import android.view.inputmethod.InputMethodSubtype;
 import java.util.Currency;
 import java.util.LinkedHashSet;
 import java.util.Locale;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g {
     public final int a;
@@ -93,7 +93,7 @@ public final class g {
         TL_wallet.currencyRate currencyrate = new TL_wallet.currencyRate();
         currencyrate.currency = "USD";
         currencyrate.rate = 1.0d;
-        currencyrate.title = gd.N0(2131742903, null);
+        currencyrate.title = hd.N0(2131742901, null);
         currencyrate.symbol = "$";
         currencyrate.thousandsSeparator = ",";
         currencyrate.decimalSeparator = ".";
@@ -106,7 +106,7 @@ public final class g {
 
     public final TL_wallet.currencyRates f() {
         if (this.d != null) {
-            Locale locale = gd.E0().y;
+            Locale locale = hd.E0().y;
             String language = (locale == null || TextUtils.isEmpty(locale.getLanguage())) ? "en" : locale.getLanguage();
             if (!TextUtils.equals(this.e, language)) {
                 boolean equals = TextUtils.equals(language, "en");

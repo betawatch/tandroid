@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qe implements org.telegram.messenger.p10 {
+public final /* synthetic */ class qe implements org.telegram.messenger.q10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.ui.ActionBar.g2 b;
 
@@ -11,7 +11,7 @@ public final /* synthetic */ class qe implements org.telegram.messenger.p10 {
         this.b = g2Var;
     }
 
-    @Override // org.telegram.messenger.p10
+    @Override // org.telegram.messenger.q10
     public final Object run() {
         org.telegram.ui.ActionBar.g2 g2Var;
         switch (this.a) {
@@ -20,7 +20,7 @@ public final /* synthetic */ class qe implements org.telegram.messenger.p10 {
                 break;
             case 1:
                 bn bnVar = (bn) this.b;
-                if (org.telegram.messenger.pc.e(65536) && org.telegram.ui.Components.oz0.c()) {
+                if (org.telegram.messenger.qc.e(65536) && org.telegram.ui.Components.oz0.c()) {
                     org.telegram.ui.Components.oz0 oz0Var = bnVar.y0;
                     if (oz0Var == null || oz0Var.e) {
                         if (bnVar.getParentActivity() != null && org.telegram.ui.Components.oz0.c() && bnVar.A0 != null && bnVar.m1 != null) {
@@ -40,7 +40,7 @@ public final /* synthetic */ class qe implements org.telegram.messenger.p10 {
                 return null;
             case 2:
                 ((bn) this.b).getClass();
-                return Boolean.valueOf(org.telegram.ui.Components.oz0.c() && org.telegram.messenger.pc.e(65536));
+                return Boolean.valueOf(org.telegram.ui.Components.oz0.c() && org.telegram.messenger.qc.e(65536));
             default:
                 g2Var = (ProfileActivity) this.b;
                 break;

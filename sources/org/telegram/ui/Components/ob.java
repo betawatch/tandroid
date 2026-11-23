@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ob extends eb {
     public final rh0 a;
@@ -23,7 +23,7 @@ public class ob extends eb {
         bi.u2 u2Var = new bi.u2(3, context, null);
         u2Var.setDisablePaddingsOffset(true);
         this.b = u2Var;
-        org.telegram.messenger.ks.i(u2Var);
+        org.telegram.messenger.ls.i(u2Var);
         this.b.setSingleLine();
         this.b.setTypeface(Typeface.SANS_SERIF);
         this.b.setTextSize(1, 15.0f);

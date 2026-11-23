@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class i71 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int t0 = 0;
@@ -40,7 +40,7 @@ public class i71 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public boolean W;
     public float a;
     public float a0;
-    public org.telegram.messenger.r10 b;
+    public org.telegram.messenger.s10 b;
     public final nr b0;
     public final TextPaint c;
     public final SparseIntArray c0;
@@ -57,7 +57,7 @@ public class i71 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final ik j0;
     public final org.telegram.ui.ActionBar.h6 k0;
     public ValueAnimator l0;
-    public org.telegram.messenger.r10 m0;
+    public org.telegram.messenger.s10 m0;
     public boolean n;
     public boolean n0;
     public v4.z o0;
@@ -417,7 +417,7 @@ public class i71 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
         ofFloat.addUpdateListener(new i51(2, this));
         this.l0.setDuration(250L);
         this.l0.setInterpolator(nr.f);
-        this.l0.addListener(new u11(this, 6));
+        this.l0.addListener(new t11(this, 6));
         this.l0.start();
     }
 
@@ -609,12 +609,12 @@ public class i71 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
         invalidate();
     }
 
-    public void setOnTabLongClick(org.telegram.messenger.r10 r10Var) {
-        this.b = r10Var;
+    public void setOnTabLongClick(org.telegram.messenger.s10 s10Var) {
+        this.b = s10Var;
     }
 
-    public void setPreTabClick(org.telegram.messenger.r10 r10Var) {
-        this.m0 = r10Var;
+    public void setPreTabClick(org.telegram.messenger.s10 s10Var) {
+        this.m0 = s10Var;
     }
 
     public void setReordering(boolean z10) {
@@ -639,7 +639,7 @@ public class i71 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
             zVar.h(z10 ? b1Var : null);
         }
         b1Var.setItemAnimator(z10 ? this.p0 : null);
-        org.telegram.messenger.g0.d0(b1Var, new ai.w2(7, this, z10));
+        org.telegram.messenger.g0.d0(b1Var, new ai.x2(7, this, z10));
     }
 
     @Override // org.telegram.ui.ActionBar.b6

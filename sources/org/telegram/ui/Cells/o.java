@@ -7,14 +7,14 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final int a;
@@ -38,11 +38,11 @@ public final class o extends View {
         TLRPC.TL_availableReaction tL_availableReaction;
         TLRPC.Document document;
         String V;
-        TLRPC.TL_availableReaction tL_availableReaction2 = p0Var.f != null ? (TLRPC.TL_availableReaction) ri.d0(j10.t0).r.get(p0Var.f) : null;
+        TLRPC.TL_availableReaction tL_availableReaction2 = p0Var.f != null ? (TLRPC.TL_availableReaction) si.d0(k10.t0).r.get(p0Var.f) : null;
         if (tL_availableReaction2 == null) {
-            document = org.telegram.ui.Components.p5.e(j10.t0, p0Var.g);
-            if (document != null && (V = fj.V(document, null, null)) != null) {
-                tL_availableReaction2 = (TLRPC.TL_availableReaction) ri.d0(j10.t0).r.get(V);
+            document = org.telegram.ui.Components.p5.e(k10.t0, p0Var.g);
+            if (document != null && (V = gj.V(document, null, null)) != null) {
+                tL_availableReaction2 = (TLRPC.TL_availableReaction) si.d0(k10.t0).r.get(V);
             }
             tL_availableReaction = tL_availableReaction2;
         } else {
@@ -51,7 +51,7 @@ public final class o extends View {
         }
         ArrayList arrayList = this.e;
         if (document != null || tL_availableReaction == null) {
-            org.telegram.ui.Components.p5 m10 = document == null ? org.telegram.ui.Components.p5.m(2, p0Var.g, null, j10.t0) : org.telegram.ui.Components.p5.l(2, j10.t0, document);
+            org.telegram.ui.Components.p5 m10 = document == null ? org.telegram.ui.Components.p5.m(2, p0Var.g, null, k10.t0) : org.telegram.ui.Components.p5.l(2, k10.t0, document);
             if (this.n != null) {
                 m10.setColorFilter(new PorterDuffColorFilter(this.n.intValue(), PorterDuff.Mode.MULTIPLY));
             }
@@ -66,7 +66,7 @@ public final class o extends View {
         int i7 = this.d;
         this.d = i7 + 1;
         imageReceiver.w1 = Integer.toString(i7);
-        fc b10 = fc.b(tL_availableReaction.around_animation);
+        gc b10 = gc.b(tL_availableReaction.around_animation);
         StringBuilder sb2 = new StringBuilder();
         int i10 = this.b;
         sb2.append(i10);

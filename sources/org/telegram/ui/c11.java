@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c11 extends View {
     public boolean E;
@@ -41,7 +41,7 @@ public final class c11 extends View {
     public int c;
     public TLRPC.Document d;
     public org.telegram.ui.Components.y5 e;
-    public final org.telegram.messenger.gc[] f;
+    public final org.telegram.messenger.hc[] f;
     public ImageReceiver h;
     public final ImageReceiver n;
     public ImageReceiver r;
@@ -56,7 +56,7 @@ public final class c11 extends View {
         this.W = s11Var;
         this.a = false;
         this.b = false;
-        this.f = new org.telegram.messenger.gc[2];
+        this.f = new org.telegram.messenger.hc[2];
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.n = imageReceiver;
         this.U = 1.0f;
@@ -101,11 +101,11 @@ public final class c11 extends View {
     public final void c(TLRPC.Document document, v01 v01Var) {
         this.d = document;
         a(v01Var);
-        org.telegram.messenger.lz f10 = org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.m6.m6, 0.2f, null);
+        org.telegram.messenger.mz f10 = org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.m6.m6, 0.2f, null);
         if (this.W.a0 == 6) {
-            this.h.r0(org.telegram.messenger.fc.b(document), !org.telegram.messenger.pc.e(16388) ? "34_34_firstframe" : "34_34", null, null, f10, document.size, null, document, 0);
+            this.h.r0(org.telegram.messenger.gc.b(document), !org.telegram.messenger.qc.e(16388) ? "34_34_firstframe" : "34_34", null, null, f10, document.size, null, document, 0);
         } else {
-            this.h.r0(org.telegram.messenger.fc.b(document), "100_100_firstframe", null, null, f10, 0L, "tgs", document, 0);
+            this.h.r0(org.telegram.messenger.gc.b(document), "100_100_firstframe", null, null, f10, 0L, "tgs", document, 0);
         }
         this.R = true;
         this.e = null;
@@ -225,7 +225,7 @@ public final class c11 extends View {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         String str2 = null;
         if (this.a) {
-            str2 = org.telegram.messenger.gd.N0(2131746092, null);
+            str2 = org.telegram.messenger.hd.N0(2131746092, null);
         } else {
             ch.p0 p0Var = this.y;
             if (p0Var == null || (str = p0Var.f) == null) {
@@ -234,7 +234,7 @@ public final class c11 extends View {
                     document = org.telegram.ui.Components.p5.e(this.W.W, y5Var.getDocumentId());
                 }
                 if (document != null) {
-                    str2 = org.telegram.messenger.fj.V(document, null, null);
+                    str2 = org.telegram.messenger.gj.V(document, null, null);
                 }
             } else {
                 str2 = str;

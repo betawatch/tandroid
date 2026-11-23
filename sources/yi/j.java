@@ -1,8 +1,8 @@
 package yi;
 
 import a8.p0;
-import ai.a1;
 import ai.g0;
+import ai.z0;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
@@ -20,15 +20,15 @@ import ji.l;
 import l2.f0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ke;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.le;
+import org.telegram.messenger.ls;
 import wg.p;
 import wg.q;
 import yi.g;
 import yi.h;
 import yi.j;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class j {
     public static final sa.d H = new sa.d(29);
@@ -59,8 +59,8 @@ public final class j {
     public boolean y;
     public volatile h z;
     public final Handler i = new Handler(Looper.getMainLooper());
-    public final ExecutorService j = Executors.newSingleThreadExecutor(new a1(9));
-    public final ExecutorService k = Executors.newSingleThreadExecutor(new a1(10));
+    public final ExecutorService j = Executors.newSingleThreadExecutor(new z0(9));
+    public final ExecutorService k = Executors.newSingleThreadExecutor(new z0(10));
     public final Object l = new Object();
     public final ArrayList m = new ArrayList();
     public int G = 1;
@@ -277,10 +277,10 @@ public final class j {
         if (hVar != null) {
             this.k.execute(new c(this, hVar, exc));
         }
-        MediaController mediaController = ((ke) this.f.b).a;
+        MediaController mediaController = ((le) this.f.b).a;
         String[] strArr = MediaController.W1;
         a8.e("AudioRecorderV2 failed", exc);
-        ks.f(mediaController.i1).k(ks.m2, Integer.valueOf(mediaController.h1));
+        ls.f(mediaController.i1).k(ls.m2, Integer.valueOf(mediaController.h1));
         mediaController.x(false);
         org.telegram.utils.recorder.audio.d dVar = this.n;
         if (dVar != null) {
@@ -372,8 +372,8 @@ public final class j {
             return;
         }
         this.h.b("recording rejected as too short: durationMs=" + j3);
-        MediaController mediaController = ((ke) this.f.b).a;
-        ks.f(mediaController.i1).k(ks.t2, Integer.valueOf(mediaController.h1), Boolean.FALSE, Integer.valueOf((int) j3));
+        MediaController mediaController = ((le) this.f.b).a;
+        ls.f(mediaController.i1).k(ls.t2, Integer.valueOf(mediaController.h1), Boolean.FALSE, Integer.valueOf((int) j3));
         mediaController.x(false);
         k(2);
         s(10);
@@ -418,7 +418,7 @@ public final class j {
     public final void m() {
         b7.l e10 = e();
         l lVar = this.f;
-        MediaController mediaController = ((ke) lVar.b).a;
+        MediaController mediaController = ((le) lVar.b).a;
         int i7 = e10.a;
         e0.g gVar = (e0.g) lVar.c;
         int i10 = gVar.a;
@@ -429,11 +429,11 @@ public final class j {
                 System.currentTimeMillis();
                 String[] strArr = MediaController.W1;
                 if (!mediaController.J1) {
-                    ks.f(mediaController.i1).k(ks.l2, Integer.valueOf(mediaController.h1), Boolean.TRUE);
+                    ls.f(mediaController.i1).k(ls.l2, Integer.valueOf(mediaController.h1), Boolean.TRUE);
                 }
             } else if (!z10 && i10 == 6) {
                 mediaController.Y(true);
-                ks.f(mediaController.i1).k(ks.p2, new Object[0]);
+                ls.f(mediaController.i1).k(ls.p2, new Object[0]);
             }
             if (gVar.b) {
                 if (i7 == 3 || i7 == 5) {

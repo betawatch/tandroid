@@ -1,11 +1,11 @@
 package di;
 
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class w3 implements RequestDelegate {
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
-                                    mp.u1(f6Var2.a).f4(paymentForm.users, false);
+                                    np.u1(f6Var2.a).f4(paymentForm.users, false);
                                     f6Var2.r3 = paymentForm;
                                     org.telegram.messenger.g0.r(k1Var);
                                     org.telegram.messenger.g0.g3(k1Var);
@@ -55,7 +55,7 @@ public final /* synthetic */ class w3 implements RequestDelegate {
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject3;
-                                    mp.u1(f6Var3.a).f4(paymentForm2.users, false);
+                                    np.u1(f6Var3.a).f4(paymentForm2.users, false);
                                     f6Var3.r3 = paymentForm2;
                                     f6Var3.n2();
                                     break;
@@ -83,7 +83,7 @@ public final /* synthetic */ class w3 implements RequestDelegate {
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
-                                    mp.u1(f6Var22.a).f4(paymentForm.users, false);
+                                    np.u1(f6Var22.a).f4(paymentForm.users, false);
                                     f6Var22.r3 = paymentForm;
                                     org.telegram.messenger.g0.r(k1Var);
                                     org.telegram.messenger.g0.g3(k1Var);
@@ -100,7 +100,7 @@ public final /* synthetic */ class w3 implements RequestDelegate {
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject3;
-                                    mp.u1(f6Var3.a).f4(paymentForm2.users, false);
+                                    np.u1(f6Var3.a).f4(paymentForm2.users, false);
                                     f6Var3.r3 = paymentForm2;
                                     f6Var3.n2();
                                     break;

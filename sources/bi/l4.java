@@ -4,18 +4,18 @@ import android.text.TextUtils;
 import android.util.LongSparseArray;
 import java.util.ArrayList;
 import java.util.Iterator;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.xs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.ys;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l4 implements x10 {
+public final /* synthetic */ class l4 implements y10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -33,7 +33,7 @@ public final /* synthetic */ class l4 implements x10 {
         this.d = j10;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7 = this.a;
         Object obj2 = this.g;
@@ -77,7 +77,7 @@ public final /* synthetic */ class l4 implements x10 {
                     long j3 = this.c;
                     if (j3 != 0) {
                         di.y8.y(i10, false).O(j3);
-                        y4.s(tL_starGiftUnique, gd.a0(null, null, 2131749661, str, org.telegram.messenger.n5.s(i10, j3)));
+                        x4.s(tL_starGiftUnique, hd.a0(null, null, 2131749661, str, org.telegram.messenger.n5.s(i10, j3)));
                         break;
                     } else {
                         di.y8.y(i10, false).O(this.d);
@@ -97,11 +97,11 @@ public final /* synthetic */ class l4 implements x10 {
                             D.A = i14 + 1;
                             org.telegram.messenger.g0.h3(hVar, jArr[i14]);
                         }
-                        y4.s(tL_starGiftUnique, gd.a0(null, null, 2131749662, str));
+                        x4.s(tL_starGiftUnique, hd.a0(null, null, 2131749662, str));
                         break;
                     }
                 } else {
-                    y4.s(tL_starGiftUnique, gd.a0(null, null, 2131749619, str));
+                    x4.s(tL_starGiftUnique, hd.a0(null, null, 2131749619, str));
                     break;
                 }
                 break;
@@ -114,15 +114,15 @@ public final /* synthetic */ class l4 implements x10 {
                 long j10 = this.c;
                 long j11 = this.d;
                 if (intValue == 0) {
-                    if (mp.u1(i10).u2(j10, j11, null)) {
-                        xs.t(i10).G(j10, j11, false);
+                    if (np.u1(i10).u2(j10, j11, null)) {
+                        ys.t(i10).G(j10, j11, false);
                     }
                     if (lc.a(g2Var)) {
                         lc.z(g2Var, 4, num.intValue(), h6Var).j();
                         break;
                     }
                 } else {
-                    xs.t(i10).H(j10, num.intValue(), j11);
+                    ys.t(i10).H(j10, num.intValue(), j11);
                     if (lc.a(g2Var)) {
                         lc.z(g2Var, 5, num.intValue(), h6Var).j();
                         break;

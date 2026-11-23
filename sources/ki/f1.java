@@ -1,12 +1,12 @@
 package ki;
 
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class f1 extends fj {
+public final class f1 extends gj {
     public TL_iv.RichMessage u3;
     public final /* synthetic */ boolean v3;
     public final /* synthetic */ TLRPC.BotInlineResult w3;
@@ -18,7 +18,7 @@ public final class f1 extends fj {
         this.w3 = botInlineResult;
     }
 
-    @Override // org.telegram.messenger.fj
+    @Override // org.telegram.messenger.gj
     public final TL_iv.RichMessage E0() {
         if (!this.v3) {
             return super.E0();
@@ -29,12 +29,12 @@ public final class f1 extends fj {
         return this.u3;
     }
 
-    @Override // org.telegram.messenger.fj
+    @Override // org.telegram.messenger.gj
     public final boolean N3() {
         return false;
     }
 
-    @Override // org.telegram.messenger.fj
+    @Override // org.telegram.messenger.gj
     public final boolean P3() {
         return false;
     }

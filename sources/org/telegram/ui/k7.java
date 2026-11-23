@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k7 extends f7 {
     public final ArrayList n;
@@ -31,7 +31,7 @@ public final class k7 extends f7 {
             if (i7 >= arrayList2.size()) {
                 return;
             }
-            arrayList.add(new org.telegram.messenger.ef(0, ((l7) arrayList2.get(i7)).d.a.getPath(), 0, ((l7) arrayList2.get(i7)).d.d == 1, 0, 0));
+            arrayList.add(new org.telegram.messenger.ff(0, ((l7) arrayList2.get(i7)).d.a.getPath(), 0, ((l7) arrayList2.get(i7)).d.d == 1, 0, 0));
             i7++;
         }
     }
@@ -48,8 +48,8 @@ public final class k7 extends f7 {
         view.setTag(bVar);
         File file = bVar.a;
         long lastModified = file.lastModified();
-        String N0 = bVar.h == 5 ? org.telegram.messenger.gd.N0(2131753938, null) : file.getName();
-        String s5 = org.telegram.messenger.gd.s(lastModified / 1000, true);
+        String N0 = bVar.h == 5 ? org.telegram.messenger.hd.N0(2131753938, null) : file.getName();
+        String s5 = org.telegram.messenger.hd.s(lastModified / 1000, true);
         String name = file.getName();
         Pattern pattern = Utilities.a;
         int lastIndexOf = name.lastIndexOf(46);

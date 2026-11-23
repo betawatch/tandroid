@@ -3,8 +3,8 @@ package kg;
 import android.os.Bundle;
 import android.view.View;
 import java.io.Serializable;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.w10;
 import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.a5;
@@ -12,9 +12,9 @@ import org.telegram.ui.Components.c5;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class a implements w10, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ c b;
 
@@ -35,7 +35,7 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q
         }
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         o41 o41Var = (o41) obj;
         final View view = (View) obj2;
@@ -94,7 +94,7 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q
             cVar.a0(true);
         } else {
             if (i7 == 8) {
-                c5.x(cVar.getParentActivity(), gd.N0(2131752811, null), gd.N0(2131752813, null), cVar.F, new a5() { // from class: kg.b
+                c5.x(cVar.getParentActivity(), hd.N0(2131752811, null), hd.N0(2131752813, null), cVar.F, new a5() { // from class: kg.b
                     @Override // org.telegram.ui.Components.a5
                     public final void O(int i12, int i13, boolean z10) {
                         switch (i11) {
@@ -103,7 +103,7 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q
                                 cVar2.getClass();
                                 n8 n8Var = (n8) view;
                                 cVar2.F = i12;
-                                n8Var.w(gd.Q(i12), true);
+                                n8Var.w(hd.Q(i12), true);
                                 cVar2.a0(true);
                                 break;
                             default:
@@ -111,7 +111,7 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q
                                 cVar3.getClass();
                                 n8 n8Var2 = (n8) view;
                                 cVar3.G = i12;
-                                n8Var2.w(gd.Q(i12), true);
+                                n8Var2.w(hd.Q(i12), true);
                                 cVar3.a0(true);
                                 break;
                         }
@@ -120,7 +120,7 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q
                 return;
             }
             if (i7 == 9) {
-                c5.x(cVar.getParentActivity(), gd.N0(2131752814, null), gd.N0(2131752813, null), cVar.G, new a5() { // from class: kg.b
+                c5.x(cVar.getParentActivity(), hd.N0(2131752814, null), hd.N0(2131752813, null), cVar.G, new a5() { // from class: kg.b
                     @Override // org.telegram.ui.Components.a5
                     public final void O(int i12, int i13, boolean z10) {
                         switch (i10) {
@@ -129,7 +129,7 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q
                                 cVar2.getClass();
                                 n8 n8Var = (n8) view;
                                 cVar2.F = i12;
-                                n8Var.w(gd.Q(i12), true);
+                                n8Var.w(hd.Q(i12), true);
                                 cVar2.a0(true);
                                 break;
                             default:
@@ -137,7 +137,7 @@ public final /* synthetic */ class a implements v10, org.telegram.ui.ActionBar.q
                                 cVar3.getClass();
                                 n8 n8Var2 = (n8) view;
                                 cVar3.G = i12;
-                                n8Var2.w(gd.Q(i12), true);
+                                n8Var2.w(hd.Q(i12), true);
                                 cVar3.a0(true);
                                 break;
                         }

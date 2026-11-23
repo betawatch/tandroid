@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -31,9 +31,9 @@ import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class e1 extends g2 implements fs {
+public final class e1 extends g2 implements gs {
     public h51 a;
     public c5 b;
     public boolean c;
@@ -59,7 +59,7 @@ public final class e1 extends g2 implements fs {
                     return;
                 }
                 e1Var.b.b(false);
-                f3.o(null, 2131743636, lc.b0(e1Var), null);
+                f3.o(null, 2131743634, lc.b0(e1Var), null);
                 return;
             }
             if (e1Var.isFinished || e1Var.finishing) {
@@ -70,14 +70,14 @@ public final class e1 extends g2 implements fs {
     }
 
     public static void a0(e1 e1Var, ArrayList arrayList) {
-        String N0 = gd.N0(2131752752, null);
-        String N02 = gd.N0(2131752737, null);
+        String N0 = hd.N0(2131752752, null);
+        String N02 = hd.N0(2131752737, null);
         o41 o41Var = new o41(2);
         o41Var.m = N0;
         o41Var.p = N02;
         o41Var.k = R.raw.biz_clock;
         arrayList.add(o41Var);
-        o41 i7 = o41.i(-1, gd.N0(2131752717, null));
+        o41 i7 = o41.i(-1, hd.N0(2131752717, null));
         i7.L(e1Var.d);
         arrayList.add(i7);
         arrayList.add(o41.B(-100, null));
@@ -90,14 +90,14 @@ public final class e1 extends g2 implements fs {
             ArrayList[] arrayListArr = e1Var.f;
             if (i10 >= arrayListArr.length) {
                 arrayList.add(o41.B(-101, null));
-                arrayList.add(o41.f(gd.N0(2131752716, null), z1.b(e1Var.currentAccount).d(e1Var.n, false), -2));
+                arrayList.add(o41.f(hd.N0(2131752716, null), z1.b(e1Var.currentAccount).d(e1Var.n, false), -2));
                 arrayList.add(o41.B(-102, null));
                 return;
             }
             if (arrayListArr[i10] == null) {
                 arrayListArr[i10] = new ArrayList();
             }
-            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, gd.E0().y);
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
             String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
             String f02 = f0(e1Var.f[i10]);
             o41 o41Var2 = new o41(5);
@@ -172,10 +172,10 @@ public final class e1 extends g2 implements fs {
 
     public static String f0(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
-            return gd.N0(2131752743, null);
+            return hd.N0(2131752743, null);
         }
         if (h0(arrayList)) {
-            return gd.N0(2131752742, null);
+            return hd.N0(2131752742, null);
         }
         String str = "";
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
@@ -214,18 +214,18 @@ public final class e1 extends g2 implements fs {
         ArrayList[] e02 = e0(tL_businessWorkHours.weekly_open);
         StringBuilder sb2 = new StringBuilder();
         if (user != null) {
-            sb2.append(gd.a0(null, null, 2131752747, o10.q(user)));
+            sb2.append(hd.a0(null, null, 2131752747, p10.q(user)));
             sb2.append("\n");
         }
         for (int i10 = 0; i10 < 7; i10++) {
             ArrayList arrayList = e02[i10];
-            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, gd.E0().y);
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
             sb2.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
             sb2.append(": ");
             if (h0(arrayList)) {
-                sb2.append(gd.N0(2131752729, null));
+                sb2.append(hd.N0(2131752729, null));
             } else if (arrayList.isEmpty()) {
-                sb2.append(gd.N0(2131752733, null));
+                sb2.append(hd.N0(2131752733, null));
             } else {
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                     if (i11 > 0) {
@@ -242,7 +242,7 @@ public final class e1 extends g2 implements fs {
         TLRPC.TL_timezone a10 = z1.b(i7).a(tL_businessWorkHours.timezone_id);
         if (((Calendar.getInstance().getTimeZone().getRawOffset() / 1000) - (a10 == null ? 0 : a10.utc_offset)) / 60 != 0 && a10 != null) {
             z1.b(i7);
-            sb2.append(gd.a0(null, null, 2131752748, z1.e(a10, true)));
+            sb2.append(hd.a0(null, null, 2131752748, z1.e(a10, true)));
         }
         return sb2.toString();
     }
@@ -272,9 +272,9 @@ public final class e1 extends g2 implements fs {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(gd.N0(2131752752, null));
+        this.simpleActionBar.setTitle(hd.N0(2131752752, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 11));
-        this.b = this.simpleActionBar.s(gd.N0(2131745750, null));
+        this.b = this.simpleActionBar.s(hd.N0(2131745750, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         h51 h51Var = new h51(this, new d7(this, 13), new v6(this, 27), null);
@@ -296,14 +296,14 @@ public final class e1 extends g2 implements fs {
         this.b.a(g0(), z10);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         c51 c51Var;
-        if (i7 == ks.E0) {
+        if (i7 == ls.E0) {
             j0();
             return;
         }
-        if (i7 == ks.t3) {
+        if (i7 == ls.t3) {
             if (this.e == null) {
                 this.n = z1.b(this.currentAccount).c();
             }
@@ -457,13 +457,13 @@ public final class e1 extends g2 implements fs {
     public final boolean onFragmentCreate() {
         z1.b(this.currentAccount).g();
         this.n = z1.b(this.currentAccount).c();
-        getNotificationCenter().c(this, ks.E0);
+        getNotificationCenter().c(this, ls.E0);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ks.E0);
+        getNotificationCenter().n(this, ls.E0);
         super.onFragmentDestroy();
         i0();
     }

@@ -5,8 +5,8 @@ import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.fn0;
 import org.telegram.ui.LaunchActivity;
@@ -14,7 +14,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e1 implements wi.l {
     public static e1 w;
@@ -169,11 +169,11 @@ public final class e1 implements wi.l {
         if (c1Var != null) {
             int i7 = c1Var.e;
             if (!c1Var.x) {
-                if (i7 != j10.t0 && (launchActivity = LaunchActivity.H1) != null) {
+                if (i7 != k10.t0 && (launchActivity = LaunchActivity.H1) != null) {
                     launchActivity.O0(i7);
                 }
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
-                TL_stories.StoryItem u10 = mp.u1(i7).R1().u(c1Var.c, c1Var.b);
+                TL_stories.StoryItem u10 = np.u1(i7).R1().u(c1Var.c, c1Var.b);
                 if (u10 == null) {
                     u10 = c1Var.a;
                 }
@@ -318,7 +318,7 @@ public final class e1 implements wi.l {
     @Override // wi.l
     public final View v(LaunchActivity launchActivity) {
         c1 c1Var = this.b;
-        return new hi.q3(launchActivity, c1Var != null ? c1Var.e : j10.t0);
+        return new hi.q3(launchActivity, c1Var != null ? c1Var.e : k10.t0);
     }
 
     @Override // wi.l

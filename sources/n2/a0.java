@@ -6,14 +6,14 @@ import android.graphics.Typeface;
 import android.os.SystemClock;
 import com.google.android.gms.tasks.OnSuccessListener;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.i9;
+import org.telegram.messenger.j9;
 import org.telegram.messenger.s2;
 import org.telegram.ui.ActionBar.q1;
 import org.telegram.ui.ActionBar.t1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a0 implements h2.o, g9.k, l5.g, i9, OnSuccessListener, q1 {
+public final /* synthetic */ class a0 implements h2.o, g9.k, l5.g, j9, OnSuccessListener, q1 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a0(int i7) {
@@ -98,7 +98,7 @@ public final /* synthetic */ class a0 implements h2.o, g9.k, l5.g, i9, OnSuccess
         }
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.j9
     public Object m(Object obj) {
         Integer num = (Integer) obj;
         switch (this.a) {

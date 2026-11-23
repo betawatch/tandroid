@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wh implements org.telegram.ui.Components.tj0 {
     public final /* synthetic */ bn a;
@@ -32,7 +32,7 @@ public final class wh implements org.telegram.ui.Components.tj0 {
                 bnVar.R4 = true;
                 if (view instanceof org.telegram.ui.Cells.v0) {
                     org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
-                    org.telegram.messenger.fj messageObject = v0Var.getMessageObject();
+                    org.telegram.messenger.gj messageObject = v0Var.getMessageObject();
                     if (messageObject != null) {
                         if (!(messageObject.k.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && v0Var.getMessageObject().D != 21 && !v0Var.getMessageObject().X4() && v0Var.getMessageObject().D != 30) {
                             z11 = false;

@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u7 extends FrameLayout {
     public final RectF a;
@@ -129,7 +129,7 @@ public final class u7 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0053, code lost:
     
-        if (r5.getY() < (getMeasuredHeight() - org.telegram.messenger.g0.L(((r0.P0() || r0.t2) ? 0 : 52) + org.telegram.messenger.ks.V2))) goto L21;
+        if (r5.getY() < (getMeasuredHeight() - org.telegram.messenger.g0.L(((r0.P0() || r0.t2) ? 0 : 52) + org.telegram.messenger.ls.V2))) goto L21;
      */
     @Override // android.view.ViewGroup
     /*
@@ -177,7 +177,7 @@ public final class u7 extends FrameLayout {
         ((FrameLayout.LayoutParams) r7Var.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m;
         ((FrameLayout.LayoutParams) f8Var.o1.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m;
         ((FrameLayout.LayoutParams) m7Var2.getLayoutParams()).topMargin = -getPaddingTop();
-        int L2 = org.telegram.messenger.g0.L(org.telegram.messenger.ks.J2 + ((f8Var.P0() || f8Var.t2) ? 0 : 52));
+        int L2 = org.telegram.messenger.g0.L(org.telegram.messenger.ls.J2 + ((f8Var.P0() || f8Var.t2) ? 0 : 52));
         if (f8Var.r2.size() > 1) {
             L2 += (org.telegram.messenger.g0.L(56.0f) * f8Var.r2.size()) + f8Var.t0;
         }
@@ -188,8 +188,8 @@ public final class u7 extends FrameLayout {
                 L2 = (int) ((paddingTop / 5) * 3.5f);
             }
             L = org.telegram.messenger.g0.L(8.0f) + (paddingTop - L2);
-            if (L > paddingTop - org.telegram.messenger.g0.L(((f8Var.P0() || f8Var.t2) ? 0 : 52) + org.telegram.messenger.ks.A5)) {
-                L = paddingTop - org.telegram.messenger.g0.L(((f8Var.P0() || f8Var.t2) ? 0 : 52) + org.telegram.messenger.ks.A5);
+            if (L > paddingTop - org.telegram.messenger.g0.L(((f8Var.P0() || f8Var.t2) ? 0 : 52) + org.telegram.messenger.ls.A5)) {
+                L = paddingTop - org.telegram.messenger.g0.L(((f8Var.P0() || f8Var.t2) ? 0 : 52) + org.telegram.messenger.ls.A5);
             }
             if (L < 0) {
                 L = 0;

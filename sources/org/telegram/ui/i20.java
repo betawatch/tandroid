@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.os.Bundle;
 import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i20 implements nh.a {
     public final /* synthetic */ f40 a;
@@ -32,7 +32,7 @@ public final class i20 implements nh.a {
             bundle.putLong("chat_id", -j3);
         }
         boolean z11 = true;
-        if (groupCallMessage.fromId == org.telegram.messenger.j10.i(f40Var.o1.a).e()) {
+        if (groupCallMessage.fromId == org.telegram.messenger.k10.i(f40Var.o1.a).e()) {
             bundle.putBoolean("my_profile", true);
         }
         ProfileActivity profileActivity = new ProfileActivity(bundle, null);

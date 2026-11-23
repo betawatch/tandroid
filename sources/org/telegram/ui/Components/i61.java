@@ -46,9 +46,9 @@ import s2.t;
 import sg.h0;
 import x2.f0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
+public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.gs {
     public static int k0;
     public static final HashSet l0 = new HashSet();
     public static HashMap m0;
@@ -144,7 +144,7 @@ public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
             if (bool != null) {
                 return bool.booleanValue();
             }
-            if (!org.telegram.messenger.mp.g1().getBoolean("unsupport_".concat(concat), false)) {
+            if (!org.telegram.messenger.np.g1().getBoolean("unsupport_".concat(concat), false)) {
                 int codecCount = MediaCodecList.getCodecCount();
                 for (int i7 = 0; i7 < codecCount; i7++) {
                     MediaCodecInfo codecInfoAt = MediaCodecList.getCodecInfoAt(i7);
@@ -195,7 +195,7 @@ public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
         if (document != null) {
             arrayList2.add(document);
         }
-        if (!org.telegram.messenger.mp.u1(i7).I6 && arrayList != null) {
+        if (!org.telegram.messenger.np.u1(i7).I6 && arrayList != null) {
             arrayList2.addAll(arrayList);
         }
         LongSparseArray longSparseArray = new LongSparseArray();
@@ -268,7 +268,7 @@ public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
                         break;
                     }
                 }
-                if (f61Var == null || org.telegram.messenger.bz.R0) {
+                if (f61Var == null || org.telegram.messenger.cz.R0) {
                     arrayList6.add(new f61(h61Var2));
                 } else {
                     f61Var.d.add(h61Var2);
@@ -398,19 +398,19 @@ public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
         return h61Var2;
     }
 
-    public static void n0(org.telegram.messenger.fj fjVar, boolean z10) {
-        if (fjVar == null) {
+    public static void n0(org.telegram.messenger.gj gjVar, boolean z10) {
+        if (gjVar == null) {
             return;
         }
-        org.telegram.messenger.t0.b.getSharedPreferences("media_saved_pos", 0).edit().putBoolean(org.telegram.messenger.fj.B0(fjVar.k) + "_" + fjVar.e1() + "loop", z10).apply();
+        org.telegram.messenger.t0.b.getSharedPreferences("media_saved_pos", 0).edit().putBoolean(org.telegram.messenger.gj.B0(gjVar.k) + "_" + gjVar.e1() + "loop", z10).apply();
     }
 
-    public static void o0(f61 f61Var, org.telegram.messenger.fj fjVar) {
-        if (fjVar == null) {
+    public static void o0(f61 f61Var, org.telegram.messenger.gj gjVar) {
+        if (gjVar == null) {
             return;
         }
-        long B0 = org.telegram.messenger.fj.B0(fjVar.k);
-        int e12 = fjVar.e1();
+        long B0 = org.telegram.messenger.gj.B0(gjVar.k);
+        int e12 = gjVar.e1();
         SharedPreferences.Editor edit = org.telegram.messenger.t0.b.getSharedPreferences("media_saved_pos", 0).edit();
         if (f61Var == null) {
             edit.remove(B0 + "_" + e12 + "q2");
@@ -490,7 +490,7 @@ public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
             }
         }
         if (z10 && i7 == 3 && !c0() && this.X) {
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.K4, this);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.K4, this);
         }
         if (!this.H && i7 == 3) {
             this.H = true;
@@ -809,9 +809,9 @@ public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
         return f0Var != null && f0Var.u();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != org.telegram.messenger.ks.K4 || ((i61) objArr[0]) == this || !d0() || this.E) {
+        if (i7 != org.telegram.messenger.ls.K4 || ((i61) objArr[0]) == this || !d0() || this.E) {
             return;
         }
         g0();
@@ -1233,7 +1233,7 @@ public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
             this.e = null;
         }
         if (this.X) {
-            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.K4);
+            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.K4);
         }
     }
 
@@ -1636,7 +1636,7 @@ public class i61 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.fs {
         this.M = 1;
         this.X = z10;
         if (z10) {
-            org.telegram.messenger.ks.e().b(this, org.telegram.messenger.ks.K4);
+            org.telegram.messenger.ls.e().b(this, org.telegram.messenger.ls.K4);
         }
     }
 

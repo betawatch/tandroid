@@ -5,7 +5,7 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sb1 implements org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.voip.p1, r0.m, org.telegram.ui.Components.voip.c3 {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class sb1 implements org.telegram.ui.ActionBar.q1, 
                     boolean isMicMute = sharedInstance.isMicMute();
                     boolean z10 = !isMicMute;
                     if (hc1Var.w0.isTouchExplorationEnabled()) {
-                        d3Var.announceForAccessibility(org.telegram.messenger.gd.N0(!isMicMute ? 2131754728 : 2131754727, null));
+                        d3Var.announceForAccessibility(org.telegram.messenger.hd.N0(!isMicMute ? 2131754728 : 2131754727, null));
                     }
                     sharedInstance.setMicMute(z10, false, true);
                     hc1Var.q0 = hc1Var.p0;
@@ -72,7 +72,7 @@ public final /* synthetic */ class sb1 implements org.telegram.ui.ActionBar.q1, 
                     hc1Var.t();
                     break;
                 } else {
-                    hc1Var.b.requestPermissions(new String[]{"android.permission.CAMERA"}, org.telegram.messenger.ks.n1);
+                    hc1Var.b.requestPermissions(new String[]{"android.permission.CAMERA"}, org.telegram.messenger.ls.n1);
                     break;
                 }
         }

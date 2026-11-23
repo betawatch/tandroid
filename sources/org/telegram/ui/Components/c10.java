@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c10 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.b6 {
     public int E;
@@ -36,11 +36,11 @@ public final class c10 extends FrameLayout implements te.b, org.telegram.ui.Acti
     }
 
     public static FrameLayout.LayoutParams b() {
-        return c8.ma.d(48, 48.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
+        return c8.ma.d(48, 48.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static FrameLayout.LayoutParams c() {
-        return c8.ma.d(48, 48.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
+        return c8.ma.d(48, 48.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static void d(View view, float f10) {
@@ -259,7 +259,7 @@ public final class c10 extends FrameLayout implements te.b, org.telegram.ui.Acti
             fVar.i = N;
             fVar.j = N2;
             gVar2.P = null;
-            org.telegram.messenger.n10.s(gVar2, org.telegram.messenger.g0.L(18.0f), 5.66f);
+            org.telegram.messenger.o10.s(gVar2, org.telegram.messenger.g0.L(18.0f), 5.66f);
         }
         updateColors();
     }

@@ -5,11 +5,11 @@ import c8.dd;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fl;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gl;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.n5;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -22,30 +22,30 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.bn;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class l0 {
-    public static SpannableStringBuilder a(fj fjVar, String str, String str2, boolean z10, boolean z11) {
-        TLRPC.Message message = fjVar.k;
+    public static SpannableStringBuilder a(gj gjVar, String str, String str2, boolean z10, boolean z11) {
+        TLRPC.Message message = gjVar.k;
         TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) message.action;
         boolean z12 = n5.o(message.peer_id) == n5.o(message.from_id);
         boolean z13 = tL_messageActionChangeCommunity.community_id == 0;
         if (z12) {
             if (z13) {
-                return org.telegram.messenger.g0.W2(gd.N0(z11 ? 2131751856 : z10 ? 2131751850 : 2131751844, null));
+                return org.telegram.messenger.g0.W2(hd.N0(z11 ? 2131751856 : z10 ? 2131751850 : 2131751844, null));
             }
-            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751858 : z10 ? 2131751852 : 2131751846, str));
+            return org.telegram.messenger.g0.W2(hd.a0(null, null, z11 ? 2131751858 : z10 ? 2131751852 : 2131751846, str));
         }
-        if (fjVar.N3()) {
+        if (gjVar.N3()) {
             if (z13) {
-                return org.telegram.messenger.g0.W2(gd.N0(z11 ? 2131751854 : z10 ? 2131751848 : 2131751842, null));
+                return org.telegram.messenger.g0.W2(hd.N0(z11 ? 2131751854 : z10 ? 2131751848 : 2131751842, null));
             }
-            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751855 : z10 ? 2131751849 : 2131751843, str));
+            return org.telegram.messenger.g0.W2(hd.a0(null, null, z11 ? 2131751855 : z10 ? 2131751849 : 2131751843, str));
         }
         if (z13) {
-            return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751857 : z10 ? 2131751851 : 2131751845, str2));
+            return org.telegram.messenger.g0.W2(hd.a0(null, null, z11 ? 2131751857 : z10 ? 2131751851 : 2131751845, str2));
         }
-        return org.telegram.messenger.g0.W2(gd.a0(null, null, z11 ? 2131751859 : z10 ? 2131751853 : 2131751847, str2, str));
+        return org.telegram.messenger.g0.W2(hd.a0(null, null, z11 ? 2131751859 : z10 ? 2131751853 : 2131751847, str2, str));
     }
 
     public static int b(int i7, long j3) {
@@ -55,7 +55,7 @@ public abstract class l0 {
         TLRPC.ChatFull P0;
         ArrayList<TL_communities.CommunityPeer> arrayList;
         if (j3 > 0) {
-            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
+            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(j3));
             if (c22 == null) {
                 return 0;
             }
@@ -63,14 +63,14 @@ public abstract class l0 {
             user = c22;
             O0 = null;
         } else {
-            O0 = mp.u1(i7).O0(Long.valueOf(-j3));
+            O0 = np.u1(i7).O0(Long.valueOf(-j3));
             if (O0 == null) {
                 return 0;
             }
             j10 = O0.linked_community_id;
             user = null;
         }
-        if (j10 != 0 && (P0 = mp.u1(i7).P0(j10)) != null && (arrayList = P0.linked_peers) != null) {
+        if (j10 != 0 && (P0 = np.u1(i7).P0(j10)) != null && (arrayList = P0.linked_peers) != null) {
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
@@ -78,7 +78,7 @@ public abstract class l0 {
                 i10++;
                 TL_communities.CommunityPeer communityPeer2 = communityPeer;
                 if (n5.o(communityPeer2.peer) == j3) {
-                    return c(O0, user != null ? mp.u1(i7).U0(user.id) : null, user, communityPeer2);
+                    return c(O0, user != null ? np.u1(i7).U0(user.id) : null, user, communityPeer2);
                 }
             }
         }
@@ -165,11 +165,11 @@ public abstract class l0 {
         if (t1VarArr[0] != null) {
             return;
         }
-        mp u12 = mp.u1(i7);
+        np u12 = np.u1(i7);
         di.j0 j0Var = new di.j0(t1VarArr, g2Var, i7, chat);
         TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
         tL_channels_getAdminedPublicChannels.for_community_peer = true;
-        int sendRequestTyped = u12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new d3.b(1), new fl(u12, j0Var, 0));
+        int sendRequestTyped = u12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new d3.b(1), new gl(u12, j0Var, 0));
         ConnectionsManager.getInstance(i7).bindRequestToGuid(sendRequestTyped, g2Var.getClassGuid());
         t1 t1Var = new t1(3, g2Var.getContext(), null);
         t1VarArr[0] = t1Var;
@@ -182,11 +182,11 @@ public abstract class l0 {
         int i10 = i7 == 2 ? R.raw.timer_toast : R.raw.contact_check;
         int i11 = i7 == 2 ? 24 : 36;
         if (i7 == 0) {
-            N0 = gd.N0(2131751931, null);
+            N0 = hd.N0(2131751931, null);
         } else if (i7 == 1) {
-            N0 = gd.N0(z10 ? 2131751930 : 2131751929, null);
+            N0 = hd.N0(z10 ? 2131751930 : 2131751929, null);
         } else {
-            N0 = gd.N0(2131751928, null);
+            N0 = hd.N0(2131751928, null);
         }
         lcVar.G(i10, i11, N0).j();
     }

@@ -9,7 +9,7 @@ import android.text.Layout;
 import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
-import bi.j8;
+import bi.i8;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import e2.m1;
@@ -21,8 +21,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.i9;
-import org.telegram.messenger.w10;
+import org.telegram.messenger.j9;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -35,16 +35,16 @@ import org.telegram.ui.Wallet.n6;
 import org.telegram.ui.md0;
 import x2.r1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, q1, w10, i9, u9.d {
+public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, q1, x10, j9, u9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.messenger.w10
+    @Override // org.telegram.messenger.x10
     public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
@@ -372,9 +372,9 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
         }
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.j9
     public Object m(Object obj) {
-        int i7 = j8.g2;
+        int i7 = i8.g2;
         return 0;
     }
 

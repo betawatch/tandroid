@@ -2,7 +2,7 @@ package androidx.emoji2.text;
 
 import java.util.concurrent.ThreadFactory;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements ThreadFactory {
     public final /* synthetic */ int a;

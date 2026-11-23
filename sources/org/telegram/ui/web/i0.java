@@ -26,13 +26,13 @@ import java.util.Map;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.messenger.s2;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.w2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i0 extends WebViewClient {
     public boolean a = true;
@@ -272,9 +272,9 @@ public final class i0 extends WebViewClient {
             v0 v0Var = s0Var.R;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, v0Var == null ? null : v0Var.e);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-            t1Var.S = gd.N0(2131752092, null);
-            t1Var.U = org.telegram.messenger.g0.T2(gd.N0(2131752093, null), new h0(this, 2));
-            alertDialog$Builder.k(gd.N0(2131747637, null), null);
+            t1Var.S = hd.N0(2131752092, null);
+            t1Var.U = org.telegram.messenger.g0.T2(hd.N0(2131752093, null), new h0(this, 2));
+            alertDialog$Builder.k(hd.N0(2131747637, null), null);
             t1Var.setOnDismissListener(new u9(this, 11));
             alertDialog$Builder.p();
             return true;
@@ -430,7 +430,7 @@ public final class i0 extends WebViewClient {
                 return false;
             }
             if (z10 || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
-                if (mp.u1(s0Var.R.N).E4 != null && mp.u1(s0Var.R.N).E4.contains(parse.getScheme())) {
+                if (np.u1(s0Var.R.N).E4 != null && np.u1(s0Var.R.N).E4.contains(parse.getScheme())) {
                     v0 v0Var = s0Var.R;
                     if (s0Var.f != null) {
                         c0 c0Var4 = v0Var.c;

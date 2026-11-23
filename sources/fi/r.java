@@ -6,14 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.t10;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.ey0;
 import org.telegram.ui.Components.nq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r implements x10 {
+public final /* synthetic */ class r implements y10 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class r implements x10 {
     public final /* synthetic */ Object k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ r(LinearLayout linearLayout, org.telegram.ui.Wallet.q5 q5Var, org.telegram.ui.ActionBar.h6 h6Var, int i7, TextView textView, org.telegram.ui.Wallet.e3[] e3VarArr, ey0 ey0Var, s10 s10Var, Context context, TextView[] textViewArr, SpannableString[] spannableStringArr) {
+    public /* synthetic */ r(LinearLayout linearLayout, org.telegram.ui.Wallet.q5 q5Var, org.telegram.ui.ActionBar.h6 h6Var, int i7, TextView textView, org.telegram.ui.Wallet.e3[] e3VarArr, ey0 ey0Var, t10 t10Var, Context context, TextView[] textViewArr, SpannableString[] spannableStringArr) {
         this.c = linearLayout;
         this.d = q5Var;
         this.e = h6Var;
@@ -35,7 +35,7 @@ public final /* synthetic */ class r implements x10 {
         this.f = textView;
         this.g = e3VarArr;
         this.h = ey0Var;
-        this.i = s10Var;
+        this.i = t10Var;
         this.j = context;
         this.k = textViewArr;
         this.l = spannableStringArr;
@@ -48,7 +48,7 @@ public final /* synthetic */ class r implements x10 {
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:96)
         */
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(java.lang.Object r34) {
         /*
             Method dump skipped, instructions count: 1574

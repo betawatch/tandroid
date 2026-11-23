@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ec extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public org.telegram.ui.ActionBar.m5 a;
@@ -24,17 +24,17 @@ public final class ec extends FrameLayout implements org.telegram.ui.ActionBar.b
         } else if (i10 < 7) {
             this.f = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.r8[i10], this.d);
         } else {
-            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
-            org.telegram.messenger.cp cpVar = z10 ? u12.t4 : u12.u4;
-            b(cpVar != null ? cpVar.d(i10) : null);
+            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i7);
+            org.telegram.messenger.dp dpVar = z10 ? u12.t4 : u12.u4;
+            b(dpVar != null ? dpVar.d(i10) : null);
         }
         invalidate();
     }
 
-    public final void b(org.telegram.messenger.bp bpVar) {
+    public final void b(org.telegram.messenger.cp cpVar) {
         org.telegram.ui.ActionBar.h6 h6Var = this.d;
-        if (bpVar != null) {
-            this.f = bpVar.e(0, h6Var);
+        if (cpVar != null) {
+            this.f = cpVar.e(0, h6Var);
             return;
         }
         int i7 = org.telegram.ui.ActionBar.m6.s8;
@@ -52,7 +52,7 @@ public final class ec extends FrameLayout implements org.telegram.ui.ActionBar.b
         if (j3 == 0) {
             n5Var.g(null, z11);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.xy0(org.telegram.messenger.gd.N0(2131752299, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.xy0(org.telegram.messenger.hd.N0(2131752299, null), 16.0f, null);
             }
         } else {
             n5Var.j(j3, z11);
@@ -66,7 +66,7 @@ public final class ec extends FrameLayout implements org.telegram.ui.ActionBar.b
         if (document == null) {
             n5Var.g(null, false);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.xy0(org.telegram.messenger.gd.N0(2131752299, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.xy0(org.telegram.messenger.hd.N0(2131752299, null), 16.0f, null);
             }
         } else {
             n5Var.i(document, false);
@@ -94,7 +94,7 @@ public final class ec extends FrameLayout implements org.telegram.ui.ActionBar.b
         if (this.e) {
             Paint g10 = h6Var != null ? h6Var.g("paintDivider") : org.telegram.ui.ActionBar.m6.k0;
             if (g10 != null) {
-                canvas2.drawLine(org.telegram.messenger.gd.a0 ? 0.0f : org.telegram.messenger.g0.L(23.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(23.0f) : 0), getMeasuredHeight() - 1, g10);
+                canvas2.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(23.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(23.0f) : 0), getMeasuredHeight() - 1, g10);
             }
         }
     }

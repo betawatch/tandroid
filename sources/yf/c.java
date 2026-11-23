@@ -8,8 +8,8 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import wg.q;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile long g;
@@ -34,7 +34,7 @@ public final class c {
 
     public c(int i7) {
         this.c = i7;
-        this.a = j10.i(i7).n;
+        this.a = k10.i(i7).n;
         SharedPreferences d = d();
         try {
             g = d.getLong("hash", 0L);
@@ -169,7 +169,7 @@ public final class c {
             if (i7 >= arrayList.size()) {
                 edit.putInt("count", i10);
                 edit.apply();
-                ks.f(this.c).k(ks.h5, new Object[0]);
+                ls.f(this.c).k(ls.h5, new Object[0]);
                 return;
             }
             if (!((b) arrayList.get(i7)).d) {

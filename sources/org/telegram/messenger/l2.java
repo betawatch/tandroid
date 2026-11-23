@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class l2 extends c1 {
     public static volatile l2[] b = new l2[4];
@@ -42,7 +42,7 @@ public final class l2 extends c1 {
 
     public final void a(long j3, long j10, TLRPC.JoinChatBotResult joinChatBotResult) {
         this.a.get(j10, 0L);
-        getNotificationCenter().k(ks.T5, new k2(j3, joinChatBotResult));
+        getNotificationCenter().k(ls.T5, new k2(j3, joinChatBotResult));
         HashSet hashSet = ki.s2.b1;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();

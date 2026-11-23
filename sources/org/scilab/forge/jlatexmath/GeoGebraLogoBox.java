@@ -1,18 +1,18 @@
 package org.scilab.forge.jlatexmath;
 
 import a8.p0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import ru.noties.jlatexmath.awt.BasicStroke;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class GeoGebraLogoBox extends Box {
-    private static final Color gray = new Color(ks.n1, ks.n1, ks.n1);
-    private static final Color blue = new Color(ks.j2, ks.j2, ks.e4);
+    private static final Color gray = new Color(ls.n1, ls.n1, ls.n1);
+    private static final Color blue = new Color(ls.j2, ls.j2, ls.e4);
     private static final BasicStroke st = new BasicStroke(3.8f, 0, 0, 4.0f);
 
     public GeoGebraLogoBox(float f10, float f11) {

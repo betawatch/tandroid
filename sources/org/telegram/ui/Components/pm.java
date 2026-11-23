@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pm {
     public long i;
@@ -77,11 +77,11 @@ public final class pm {
             if (i7 >= size) {
                 break;
             }
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) arrayList2.get(i7);
-            org.telegram.messenger.xi xiVar = (org.telegram.messenger.xi) hashMap.get(efVar);
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) arrayList2.get(i7);
+            org.telegram.messenger.yi yiVar = (org.telegram.messenger.yi) hashMap.get(ffVar);
             long j11 = j10;
             int i10 = i7;
-            pmVar.i = Math.max(pmVar.i, efVar.N);
+            pmVar.i = Math.max(pmVar.i, ffVar.N);
             int size2 = arrayList.size();
             int i11 = 0;
             while (true) {
@@ -89,7 +89,7 @@ public final class pm {
                     break;
                 }
                 om omVar2 = (om) arrayList.get(i11);
-                if (omVar2.b == efVar) {
+                if (omVar2.b == ffVar) {
                     omVar = omVar2;
                     break;
                 }
@@ -97,11 +97,11 @@ public final class pm {
             }
             if (omVar == null) {
                 om omVar3 = new om(pmVar);
-                om.a(omVar3, efVar);
-                om.b(omVar3, lmVar, xiVar, z10);
+                om.a(omVar3, ffVar);
+                om.b(omVar3, lmVar, yiVar, z10);
                 arrayList.add(omVar3);
             } else {
-                om.b(omVar, lmVar, xiVar, z10);
+                om.b(omVar, lmVar, yiVar, z10);
             }
             i7 = i10 + 1;
             j10 = j11;

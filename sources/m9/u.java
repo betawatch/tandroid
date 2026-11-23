@@ -21,9 +21,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import org.telegram.messenger.WearAuthListenerService;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fi;
+import org.telegram.messenger.gi;
 import org.telegram.messenger.j1;
-import org.telegram.messenger.oz;
+import org.telegram.messenger.pz;
 import org.telegram.messenger.q1;
 import org.telegram.messenger.r1;
 import org.telegram.tgnet.TLRPC;
@@ -38,7 +38,7 @@ import org.telegram.ui.nq;
 import org.telegram.ui.nx;
 import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final class u implements Runnable {
                         a8.e("wear-auth: failed to pop LaunchActivity", e11);
                     }
                 }
-                org.telegram.messenger.g0.g3(new oz(bArr, str, str2));
+                org.telegram.messenger.g0.g3(new pz(bArr, str, str2));
                 return;
             case 4:
                 ((a9.d) this.c).c.getClass();
@@ -481,7 +481,7 @@ public final class u implements Runnable {
                         ((mp) arrayList.get(i17)).a.m(0);
                     }
                 }
-                org.telegram.messenger.g0.g3(new fi(i7, this, arrayList));
+                org.telegram.messenger.g0.g3(new gi(i7, this, arrayList));
                 return;
             case 27:
                 bn bnVar = ((ml) this.c).b;

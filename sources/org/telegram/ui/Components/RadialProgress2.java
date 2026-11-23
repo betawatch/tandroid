@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class RadialProgress2 {
     public float A;
@@ -407,17 +407,17 @@ public class RadialProgress2 {
         this.w.o0(str, str2, null, null, -1L);
     }
 
-    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, org.telegram.messenger.fj fjVar) {
+    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, org.telegram.messenger.gj gjVar) {
         Locale locale = Locale.US;
-        org.telegram.messenger.fc c10 = org.telegram.messenger.fc.c(photoSize, document);
+        org.telegram.messenger.gc c10 = org.telegram.messenger.gc.c(photoSize, document);
         int i7 = this.x;
-        this.w.q0(c10, com.google.android.gms.internal.vision.e2.j(i7 * 2, "_", i7 * 2), null, null, fjVar, 1);
+        this.w.q0(c10, com.google.android.gms.internal.vision.e2.j(i7 * 2, "_", i7 * 2), null, null, gjVar, 1);
     }
 
     public final void j(TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, TLRPC.Document document, Object obj) {
         Locale locale = Locale.US;
         String j3 = com.google.android.gms.internal.vision.e2.j(this.x * 2, "_", this.x * 2);
-        this.w.r0(photoSize == null ? null : org.telegram.messenger.fc.c(photoSize, document), j3, photoSize2 != null ? org.telegram.messenger.fc.c(photoSize2, document) : null, j3, null, 0L, null, obj, 1);
+        this.w.r0(photoSize == null ? null : org.telegram.messenger.gc.c(photoSize, document), j3, photoSize2 != null ? org.telegram.messenger.gc.c(photoSize2, document) : null, j3, null, 0L, null, obj, 1);
     }
 
     public final void k(int i7, boolean z10, boolean z11) {

@@ -9,11 +9,11 @@ import android.graphics.Shader;
 import android.os.Build;
 import bg.d0;
 import c8.kc;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m6;
 import ri.r;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class f extends ri.e {
     public g E;
@@ -39,8 +39,8 @@ public final class f extends ri.e {
         this.E = gVar;
         this.F = gVar;
         this.G = gVar;
-        this.J = ks.e4;
-        this.L = ks.e4;
+        this.J = ls.e4;
+        this.L = ls.e4;
         this.M = new RectF();
         this.f = aVar;
         this.h = aVar instanceof a ? (a) aVar : null;

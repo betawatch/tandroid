@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p81 extends org.telegram.ui.ActionBar.g2 {
     public ValueAnimator E;
@@ -138,13 +138,13 @@ public final class p81 extends org.telegram.ui.ActionBar.g2 {
         this.H = this.arguments.getInt(TeXSymbolParser.TYPE_ATTR, 0);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(org.telegram.messenger.gd.N0(2131748785, null));
+        this.actionBar.setTitle(org.telegram.messenger.hd.N0(2131748785, null));
         this.actionBar.setActionBarMenuOnItemClick(new hs0(this, 18));
         org.telegram.ui.ActionBar.q0 a10 = this.actionBar.s().a(0, R.drawable.outline_header_search);
         a10.O();
         a10.I = new k81(this);
-        a10.setContentDescription(org.telegram.messenger.gd.N0(2131745640, null));
-        a10.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
+        a10.setContentDescription(org.telegram.messenger.hd.N0(2131745640, null));
+        a10.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
@@ -174,7 +174,7 @@ public final class p81 extends org.telegram.ui.ActionBar.g2 {
         org.telegram.ui.Components.vy vyVar = new org.telegram.ui.Components.vy(context, null);
         this.r = vyVar;
         vyVar.setShowAtCenter(true);
-        this.r.setText(org.telegram.messenger.gd.N0(2131747974, null));
+        this.r.setText(org.telegram.messenger.hd.N0(2131747974, null));
         this.r.c();
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.G = radialProgressView;

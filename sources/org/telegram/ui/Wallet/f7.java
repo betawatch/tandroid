@@ -8,9 +8,9 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class f7 extends Drawable {
     public static float[] k;
@@ -26,7 +26,7 @@ public final class f7 extends Drawable {
     public static final int[] o = new int[2];
     public final Paint a = new Paint(3);
     public float e = -1.0f;
-    public int h = ks.e4;
+    public int h = ls.e4;
     public float i = 1.0f;
 
     public f7(int i7, int i10) {

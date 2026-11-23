@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cn implements org.telegram.ui.ls {
     public int a;
@@ -33,7 +33,7 @@ public final class cn implements org.telegram.ui.ls {
         final int i7 = 0;
         G.s = 0;
         G.t = false;
-        String N0 = org.telegram.messenger.gd.N0(2131746075, null);
+        String N0 = org.telegram.messenger.hd.N0(2131746075, null);
         final int i10 = this.a;
         G.c(R.drawable.msg_replace, N0, new Runnable(this) { // from class: org.telegram.ui.Components.bn
             public final /* synthetic */ cn b;
@@ -55,7 +55,7 @@ public final class cn implements org.telegram.ui.ls {
             }
         }, false);
         final int i11 = 1;
-        G.c(R.drawable.msg_delete, org.telegram.messenger.gd.N0(2131751586, null), new Runnable(this) { // from class: org.telegram.ui.Components.bn
+        G.c(R.drawable.msg_delete, org.telegram.messenger.hd.N0(2131751586, null), new Runnable(this) { // from class: org.telegram.ui.Components.bn
             public final /* synthetic */ cn b;
 
             {
@@ -177,7 +177,7 @@ public final class cn implements org.telegram.ui.ls {
     }
 
     @Override // org.telegram.ui.ls
-    public /* synthetic */ org.telegram.messenger.fj z() {
+    public /* synthetic */ org.telegram.messenger.gj z() {
         return null;
     }
 
@@ -198,7 +198,7 @@ public final class cn implements org.telegram.ui.ls {
     }
 
     @Override // org.telegram.ui.ls
-    public /* synthetic */ void i(org.telegram.messenger.sy syVar) {
+    public /* synthetic */ void i(org.telegram.messenger.ty tyVar) {
     }
 
     @Override // org.telegram.ui.ls

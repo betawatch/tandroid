@@ -12,7 +12,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class og implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class og implements Runnable {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = ((rg) obj).Q0;
                 if (!MediaController.B().K()) {
-                    org.telegram.messenger.mp.g1().edit().putInt("voicepausehint", 3).apply();
+                    org.telegram.messenger.np.g1().edit().putInt("voicepausehint", 3).apply();
                 }
                 if (chatActivityEnterView.i5) {
                     chatActivityEnterView.z4 = true;
@@ -66,7 +66,7 @@ public final /* synthetic */ class og implements Runnable {
                 l5 l5Var = (l5) obj;
                 ArrayList arrayList = new ArrayList(l5Var.c);
                 l5Var.c.clear();
-                org.telegram.messenger.tr.a0(l5Var.e).a.c(new i5(l5Var, arrayList, i10));
+                org.telegram.messenger.ur.a0(l5Var.e).a.c(new i5(l5Var, arrayList, i10));
                 l5Var.d = null;
                 break;
             case 6:
@@ -89,7 +89,7 @@ public final /* synthetic */ class og implements Runnable {
                 ((e8) obj).n.s1.setVisibility(8);
                 break;
             case 10:
-                ((j8) ((org.telegram.messenger.pe) obj).d).d1();
+                ((j8) ((org.telegram.messenger.qe) obj).d).d1();
                 break;
             case 11:
                 aa aaVar = (aa) obj;
@@ -139,7 +139,7 @@ public final /* synthetic */ class og implements Runnable {
             case 16:
                 wc wcVar = (wc) obj;
                 wcVar.getClass();
-                if (org.telegram.messenger.pc.e(512)) {
+                if (org.telegram.messenger.qc.e(512)) {
                     wcVar.invalidateSelf();
                     break;
                 }
@@ -211,7 +211,7 @@ public final /* synthetic */ class og implements Runnable {
                 if (rmVar.R && (chatAttachAlertPhotoLayout = uiVar.e2) != null) {
                     org.telegram.ui.ActionBar.y0 y0Var = chatAttachAlertPhotoLayout.d1;
                     y0Var.setIcon(R.drawable.ic_ab_back);
-                    y0Var.setText(org.telegram.messenger.gd.N0(2131753753, null));
+                    y0Var.setText(org.telegram.messenger.hd.N0(2131753753, null));
                     y0Var.setRightIcon(0);
                     break;
                 }

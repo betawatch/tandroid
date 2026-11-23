@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class yf0 implements Runnable {
                             mg0VarArr4[i11] = mg0Var3;
                         }
                         Bitmap bitmap2 = mg0Var2.b;
-                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / org.telegram.messenger.ks.K2));
+                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / org.telegram.messenger.ls.K2));
                         synchronized (zf0Var.b) {
                             if (!mg0Var3.d) {
                                 mg0Var3.f = false;

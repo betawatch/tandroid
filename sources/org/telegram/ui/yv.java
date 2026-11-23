@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yv extends s11 {
     public final /* synthetic */ j11[] f2;
@@ -26,7 +26,7 @@ public final class yv extends s11 {
             return true;
         }
         i7 = ((org.telegram.ui.ActionBar.g2) this.g2).currentAccount;
-        return di.y8.y(i7, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.mp.g1().getInt("statusgiftpage", 0) >= 2;
+        return di.y8.y(i7, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.np.g1().getInt("statusgiftpage", 0) >= 2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -46,12 +46,12 @@ public final class yv extends s11 {
             if (tL_starGiftUnique != null) {
                 i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
                 TL_stars.SavedStarGift n10 = di.y8.y(i7, false).n(tL_starGiftUnique.id);
-                if (n10 != null && org.telegram.messenger.mp.g1().getInt("statusgiftpage", 0) < 2) {
-                    org.telegram.messenger.mp.g1().edit().putInt("statusgiftpage", org.telegram.messenger.mp.g1().getInt("statusgiftpage", 0) + 1).apply();
+                if (n10 != null && org.telegram.messenger.np.g1().getInt("statusgiftpage", 0) < 2) {
+                    org.telegram.messenger.np.g1().edit().putInt("statusgiftpage", org.telegram.messenger.np.g1().getInt("statusgiftpage", 0) + 1).apply();
                     Context context = getContext();
                     i10 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
                     i11 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                    long e10 = org.telegram.messenger.j10.i(i11).e();
+                    long e10 = org.telegram.messenger.k10.i(i11).e();
                     h6Var = ((org.telegram.ui.ActionBar.g2) cxVar).resourceProvider;
                     di.f6 f6Var = new di.f6(context, i10, e10, h6Var, null);
                     f6Var.w2(n10, null);

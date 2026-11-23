@@ -1,375 +1,190 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class cp {
-    public final int a;
-    public final int b;
-    public final ArrayList c = new ArrayList();
-    public final a0.h d = new a0.h();
+    public boolean b;
+    public int c;
+    public boolean d;
+    public int e;
+    public int f;
+    public int a = 0;
+    public final int[] g = new int[6];
+    public final int[] h = new int[6];
 
-    public cp(int i7, int i10) {
-        this.a = i7;
-        this.b = i10;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0181 A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static cp b(int i7, String str) {
-        int i10;
-        int i11;
-        int i12;
-        bp bpVar;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int[] iArr;
-        int indexOf;
-        int i17;
-        int indexOf2;
-        String str2 = str;
-        bp bpVar2 = null;
-        if (str2 == null) {
+    public static cp a(TLRPC.EmojiStatus emojiStatus) {
+        if (!(emojiStatus instanceof TLRPC.TL_emojiStatusCollectible)) {
             return null;
         }
-        int i18 = 0;
-        int i19 = 1;
-        if (!str2.startsWith("@") || (indexOf2 = str2.indexOf("^")) < 0) {
-            i10 = 0;
-        } else {
-            i10 = Utilities.z(str2.substring(1, indexOf2)).intValue();
-            str2 = str2.substring(indexOf2 + 1);
-        }
-        cp cpVar = new cp(i7, i10);
-        String[] split = str2.split(";");
-        int i20 = 0;
-        while (i20 < split.length) {
-            String str3 = split[i20];
-            if (str3 == null || str3.isEmpty() || str3.charAt(i18) != '#') {
-                i11 = i18;
-                i12 = i19;
-            } else {
-                boolean z10 = (str3.length() <= i19 || str3.charAt(i19) != 'H') ? i18 : i19;
-                int i21 = z10 != 0 ? 2 : i19;
-                if (str3.length() <= i21 || str3.charAt(i21) != '[' || (indexOf = str3.indexOf(93)) <= i21) {
-                    i14 = i18;
-                    i15 = i14;
-                } else {
-                    String substring = str3.substring(i21 + 1, indexOf);
-                    if (substring.contains(",")) {
-                        String[] split2 = substring.split(",");
-                        i15 = Utilities.z(split2[i18]).intValue();
-                        i17 = Utilities.z(split2[i19]).intValue();
-                    } else {
-                        i15 = Utilities.z(substring).intValue();
-                        i17 = i18;
-                    }
-                    int i22 = indexOf + 1;
-                    i14 = i17;
-                    i21 = i22;
-                }
-                int indexOf3 = str3.indexOf(ks.H1);
-                if (indexOf3 < 0) {
-                    bpVar = bpVar2;
-                    i11 = i18;
-                    i13 = i19;
-                } else {
-                    try {
-                        try {
-                            bp bpVar3 = new bp();
-                            i11 = i18;
-                            try {
-                                iArr = bpVar3.h;
-                                i16 = i19;
-                            } catch (Exception e10) {
-                                e = e10;
-                                i16 = i19;
-                                boolean z11 = i16;
-                                a8.g(e, z11);
-                                i12 = z11;
-                                bpVar = null;
-                                i13 = i12;
-                                if (bpVar != null) {
-                                }
-                                i20++;
-                                i19 = i13;
-                                i18 = i11;
-                                bpVar2 = null;
-                            }
-                            try {
-                                int[] iArr2 = bpVar3.g;
-                                bpVar3.c = Utilities.z(str3.substring(i21, indexOf3)).intValue();
-                                bpVar3.d = z10;
-                                bpVar3.e = i15;
-                                bpVar3.f = i14;
-                                String[] split3 = str3.substring(indexOf3 + 1, str3.length() - 1).split("@");
-                                String[] split4 = split3[i11].split(",");
-                                int i23 = i11;
-                                while (i23 < 6) {
-                                    int i24 = i23 + 1;
-                                    iArr2[i23] = split4.length >= i24 ? Utilities.z(split4[i23]).intValue() : iArr2[i11];
-                                    i23 = i24;
-                                }
-                                if (split3.length >= 2) {
-                                    String[] split5 = split3[i16].split(",");
-                                    int i25 = i11;
-                                    while (i25 < 6) {
-                                        int i26 = i25 + 1;
-                                        iArr[i25] = split5.length >= i26 ? Utilities.z(split5[i25]).intValue() : iArr[i11];
-                                        i25 = i26;
-                                    }
-                                } else {
-                                    for (int i27 = i11; i27 < 6; i27++) {
-                                        iArr[i27] = iArr2[i27];
-                                    }
-                                }
-                                bpVar = bpVar3;
-                                i13 = i16;
-                            } catch (Exception e11) {
-                                e = e11;
-                                boolean z112 = i16;
-                                a8.g(e, z112);
-                                i12 = z112;
-                                bpVar = null;
-                                i13 = i12;
-                                if (bpVar != null) {
-                                }
-                                i20++;
-                                i19 = i13;
-                                i18 = i11;
-                                bpVar2 = null;
-                            }
-                        } catch (Exception e12) {
-                            e = e12;
-                            i11 = i18;
-                        }
-                    } catch (Exception e13) {
-                        e = e13;
-                        i11 = i18;
-                    }
-                }
-                if (bpVar != null) {
-                    bpVar.b = (bpVar.c >= 7 || i7 != 0) ? i11 : i13;
-                    if (!bpVar.d) {
-                        cpVar.c.add(bpVar);
-                    }
-                    cpVar.d.k(bpVar, bpVar.c);
-                }
-                i20++;
-                i19 = i13;
-                i18 = i11;
-                bpVar2 = null;
-            }
-            bpVar = null;
-            i13 = i12;
-            if (bpVar != null) {
-            }
-            i20++;
-            i19 = i13;
-            i18 = i11;
-            bpVar2 = null;
-        }
+        TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = (TLRPC.TL_emojiStatusCollectible) emojiStatus;
+        cp cpVar = new cp();
+        cpVar.c = -1;
+        cpVar.d = true;
+        int i7 = tL_emojiStatusCollectible.edge_color;
+        int[] iArr = cpVar.g;
+        iArr[0] = i7 | (-16777216);
+        int i10 = tL_emojiStatusCollectible.center_color;
+        iArr[1] = i10 | (-16777216);
+        iArr[2] = i7 | (-16777216);
+        iArr[3] = i10 | (-16777216);
+        int i11 = tL_emojiStatusCollectible.text_color;
+        iArr[4] = i11 | (-16777216);
+        iArr[5] = i11 | (-16777216);
+        System.arraycopy(iArr, 0, cpVar.h, 0, 6);
+        cpVar.a = tL_emojiStatusCollectible.pattern_color | (-16777216);
         return cpVar;
     }
 
-    public static cp c(int i7, TLRPC.TL_help_peerColors tL_help_peerColors) {
-        try {
-            cp cpVar = new cp(i7, tL_help_peerColors.hash);
-            for (int i10 = 0; i10 < tL_help_peerColors.colors.size(); i10++) {
-                bp b10 = bp.b(tL_help_peerColors.colors.get(i10));
-                if (b10 != null) {
-                    b10.b = b10.c < 7 && i7 == 0;
-                    if (!b10.d) {
-                        cpVar.c.add(b10);
-                    }
-                    cpVar.d.k(b10, b10.c);
-                }
-            }
-            return cpVar;
-        } catch (Exception e10) {
-            a8.g(e10, true);
+    public static cp b(TLRPC.TL_help_peerColorOption tL_help_peerColorOption) {
+        if (tL_help_peerColorOption == null) {
             return null;
         }
-    }
-
-    public final int a(int i7, boolean z10) {
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i10 >= arrayList.size()) {
-                return i11;
-            }
-            bp bpVar = (bp) arrayList.get(i10);
-            if (!bpVar.d && i7 >= bpVar.l(z10)) {
-                i11++;
-            }
-            i10++;
+        cp cpVar = new cp();
+        cpVar.c = tL_help_peerColorOption.color_id;
+        cpVar.d = tL_help_peerColorOption.hidden;
+        int i7 = tL_help_peerColorOption.flags;
+        if ((i7 & 8) != 0) {
+            cpVar.e = tL_help_peerColorOption.channel_min_level;
         }
-    }
-
-    public final bp d(int i7) {
-        return (bp) this.d.f(i7);
-    }
-
-    public final int e(boolean z10) {
-        int i7 = 0;
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i7 >= arrayList.size()) {
-                return i10;
-            }
-            bp bpVar = (bp) arrayList.get(i7);
-            if (!bpVar.d) {
-                i10 = Math.max(i10, bpVar.l(z10));
-            }
-            i7++;
+        if ((i7 & 16) != 0) {
+            cpVar.f = tL_help_peerColorOption.group_min_level;
         }
+        System.arraycopy(p(tL_help_peerColorOption.colors), 0, cpVar.g, 0, 6);
+        System.arraycopy(p(tL_help_peerColorOption.dark_colors), 0, cpVar.h, 0, 6);
+        return cpVar;
+    }
+
+    public static int[] p(TLRPC.help_PeerColorSet help_peercolorset) {
+        ArrayList<Integer> arrayList;
+        int[] iArr = new int[6];
+        iArr[0] = 0;
+        iArr[1] = 0;
+        iArr[2] = 0;
+        iArr[3] = 0;
+        iArr[4] = 0;
+        iArr[5] = 0;
+        if (help_peercolorset instanceof TLRPC.TL_help_peerColorSet) {
+            arrayList = ((TLRPC.TL_help_peerColorSet) help_peercolorset).colors;
+        } else if (help_peercolorset instanceof TLRPC.TL_help_peerColorProfileSet) {
+            TLRPC.TL_help_peerColorProfileSet tL_help_peerColorProfileSet = (TLRPC.TL_help_peerColorProfileSet) help_peercolorset;
+            ArrayList<Integer> arrayList2 = tL_help_peerColorProfileSet.palette_colors;
+            ArrayList<Integer> arrayList3 = tL_help_peerColorProfileSet.bg_colors;
+            ArrayList<Integer> arrayList4 = tL_help_peerColorProfileSet.story_colors;
+            ArrayList<Integer> arrayList5 = new ArrayList<>();
+            if (arrayList2 != null) {
+                for (int i7 = 0; i7 < Math.min(2, arrayList2.size()); i7++) {
+                    arrayList5.add(arrayList2.get(i7));
+                }
+            }
+            if (arrayList3 != null) {
+                for (int i10 = 0; i10 < Math.min(2, arrayList3.size()); i10++) {
+                    arrayList5.add(arrayList3.get(i10));
+                }
+            }
+            if (arrayList4 != null) {
+                for (int i11 = 0; i11 < Math.min(2, arrayList4.size()); i11++) {
+                    arrayList5.add(arrayList4.get(i11));
+                }
+            }
+            arrayList = arrayList5;
+        } else {
+            arrayList = null;
+        }
+        if (arrayList != null) {
+            if (arrayList.size() > 0) {
+                Arrays.fill(iArr, arrayList.get(0).intValue() | (-16777216));
+            }
+            for (int i12 = 0; i12 < Math.min(6, arrayList.size()); i12++) {
+                iArr[i12] = arrayList.get(i12).intValue() | (-16777216);
+            }
+        }
+        return iArr;
+    }
+
+    public final int c(boolean z10) {
+        return o(z10) ? j(z10) : h(z10);
+    }
+
+    public final int d(boolean z10) {
+        if (o(z10)) {
+            return (z10 ? this.h : this.g)[3];
+        }
+        return h(z10);
+    }
+
+    public final int e(int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        int i10;
+        if (i7 < 0 || i7 > 5) {
+            return 0;
+        }
+        if (!this.b || (i10 = this.c) < 0 || i10 >= 7) {
+            return (h6Var != null ? h6Var.d() : org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[i7];
+        }
+        return org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.r8[i10], h6Var);
     }
 
     public final int f() {
-        int i7 = 0;
-        int e10 = e(false);
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i7 >= arrayList.size()) {
-                return e10;
-            }
-            bp bpVar = (bp) arrayList.get(i7);
-            if (!bpVar.d) {
-                e10 = Math.min(e10, bpVar.e);
-            }
-            i7++;
-        }
+        return (org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[0];
     }
 
-    public final boolean g() {
-        ArrayList arrayList;
-        boolean z10 = true;
-        int i7 = 0;
-        boolean z11 = false;
-        while (true) {
-            arrayList = this.c;
-            if (i7 >= arrayList.size()) {
-                break;
-            }
-            if (((bp) arrayList.get(i7)).e > 0) {
-                z10 = false;
-            }
-            if (((bp) arrayList.get(i7)).c < 7) {
-                z11 = true;
-            }
-            i7++;
-        }
-        int i10 = this.a;
-        if (i10 == 1 && !z10) {
-            int size = arrayList.size();
-            int i11 = 0;
-            while (true) {
-                if (i11 >= size) {
-                    z10 = true;
-                    break;
-                }
-                Object obj = arrayList.get(i11);
-                i11++;
-                if (((bp) obj).f > 0) {
-                    z10 = false;
-                    break;
-                }
-            }
-        }
-        return z10 || (i10 == 0 && !z11);
+    public final int g() {
+        return (org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[1];
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        int i7 = this.b;
-        if (i7 != 0) {
-            sb2.append("@");
-            sb2.append(i7);
-            sb2.append("^");
+    public final int h(boolean z10) {
+        return (z10 ? this.h : this.g)[1];
+    }
+
+    public final int i() {
+        return (org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[2];
+    }
+
+    public final int j(boolean z10) {
+        return (z10 ? this.h : this.g)[2];
+    }
+
+    public final int k() {
+        return (org.telegram.ui.ActionBar.m6.I.q() ? this.h : this.g)[4];
+    }
+
+    public final int l(boolean z10) {
+        return z10 ? this.f : this.e;
+    }
+
+    public final int m(boolean z10) {
+        if (o(z10)) {
+            return (z10 ? this.h : this.g)[4];
         }
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i10 >= arrayList.size()) {
-                return sb2.toString();
+        return j(z10);
+    }
+
+    public final int n(boolean z10) {
+        boolean o4 = o(z10);
+        int[] iArr = this.g;
+        int[] iArr2 = this.h;
+        if (o4) {
+            if (z10) {
+                iArr = iArr2;
             }
-            bp bpVar = (bp) arrayList.get(i10);
-            if (i10 > 0) {
-                sb2.append(";");
-            }
-            int[] iArr = bpVar.h;
-            int[] iArr2 = bpVar.g;
-            sb2.append("#");
-            if (bpVar.d) {
-                sb2.append("H");
-            }
-            if (bpVar.e != 0 || bpVar.f != 0) {
-                sb2.append("[");
-                sb2.append(bpVar.e);
-                sb2.append(",");
-                sb2.append(bpVar.f);
-                sb2.append("]");
-            }
-            sb2.append(bpVar.c);
-            sb2.append("{");
-            sb2.append(iArr2[0]);
-            if (iArr2[1] != iArr2[0]) {
-                sb2.append(",");
-                sb2.append(iArr2[1]);
-                int i11 = iArr2[2];
-                int i12 = iArr2[0];
-                if (i11 != i12 || iArr2[3] != i12) {
-                    sb2.append(",");
-                    sb2.append(iArr2[2]);
-                    sb2.append(",");
-                    sb2.append(iArr2[3]);
-                    int i13 = iArr2[4];
-                    int i14 = iArr2[0];
-                    if (i13 != i14 || iArr2[5] != i14) {
-                        sb2.append(",");
-                        sb2.append(iArr2[4]);
-                        sb2.append(",");
-                        sb2.append(iArr2[5]);
-                    }
-                }
-            }
-            if (iArr[0] != iArr2[0] || iArr[1] != iArr2[1] || iArr[2] != iArr2[2]) {
-                sb2.append("@");
-                sb2.append(iArr[0]);
-                if (iArr[1] != iArr[0]) {
-                    sb2.append(",");
-                    sb2.append(iArr[1]);
-                    int i15 = iArr[2];
-                    int i16 = iArr[0];
-                    if (i15 != i16 || iArr[3] != i16) {
-                        sb2.append(",");
-                        sb2.append(iArr[2]);
-                        sb2.append(",");
-                        sb2.append(iArr[3]);
-                        int i17 = iArr[4];
-                        int i18 = iArr[0];
-                        if (i17 != i18 || iArr[5] != i18) {
-                            sb2.append(",");
-                            sb2.append(iArr[4]);
-                            sb2.append(",");
-                            sb2.append(iArr[5]);
-                        }
-                    }
-                }
-            }
-            sb2.append("}");
-            i10++;
+            return iArr[5];
         }
+        if (z10) {
+            iArr = iArr2;
+        }
+        return iArr[3];
+    }
+
+    public final boolean o(boolean z10) {
+        int[] iArr = this.g;
+        int[] iArr2 = this.h;
+        int i7 = (z10 ? iArr2 : iArr)[5];
+        if (z10) {
+            iArr = iArr2;
+        }
+        return i7 != iArr[0];
     }
 }

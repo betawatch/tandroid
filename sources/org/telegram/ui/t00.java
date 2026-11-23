@@ -15,7 +15,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t00 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class t00 implements View.OnClickListener {
                 break;
             case 2:
                 f40Var.f3.p();
-                f40Var.d2.t0(new ai.z2());
+                f40Var.d2.t0(new ai.a3());
                 f40Var.dismiss();
                 break;
             case 3:
@@ -82,7 +82,7 @@ public final /* synthetic */ class t00 implements View.OnClickListener {
                 Editable text = f40Var.C1.getText();
                 TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
                 tL_textWithEntities.text = text.toString();
-                tL_textWithEntities.entities = org.telegram.messenger.ri.d0(f40Var.a).Y(new CharSequence[]{text}, true, true);
+                tL_textWithEntities.entities = org.telegram.messenger.si.d0(f40Var.a).Y(new CharSequence[]{text}, true, true);
                 f40Var.G1(tL_textWithEntities);
                 break;
             case 6:
@@ -218,7 +218,7 @@ public final /* synthetic */ class t00 implements View.OnClickListener {
                         int currentAudioRoute = VoIPService.getSharedInstance().getCurrentAudioRoute();
                         if (currentAudioRoute == 2) {
                             y0Var3.setIcon(R.drawable.msg_voice_bluetooth);
-                            y0Var3.setSubtext(VoIPService.getSharedInstance().currentBluetoothDeviceName != null ? VoIPService.getSharedInstance().currentBluetoothDeviceName : org.telegram.messenger.gd.N0(2131743260, null));
+                            y0Var3.setSubtext(VoIPService.getSharedInstance().currentBluetoothDeviceName != null ? VoIPService.getSharedInstance().currentBluetoothDeviceName : org.telegram.messenger.hd.N0(2131743258, null));
                         } else {
                             int i16 = R.drawable.msg_voice_phone;
                             if (currentAudioRoute == 0) {
@@ -226,14 +226,14 @@ public final /* synthetic */ class t00 implements View.OnClickListener {
                                     i16 = R.drawable.msg_voice_headphones;
                                 }
                                 y0Var3.setIcon(i16);
-                                y0Var3.setSubtext(org.telegram.messenger.gd.N0(VoIPService.getSharedInstance().isHeadsetPlugged() ? 2131743258 : 2131743257, null));
+                                y0Var3.setSubtext(org.telegram.messenger.hd.N0(VoIPService.getSharedInstance().isHeadsetPlugged() ? 2131743256 : 2131743255, null));
                             } else if (currentAudioRoute == 1) {
                                 if (VoipAudioManager.get().isSpeakerphoneOn()) {
                                     y0Var3.setIcon(R.drawable.msg_voice_speaker);
-                                    y0Var3.setSubtext(org.telegram.messenger.gd.N0(2131743256, null));
+                                    y0Var3.setSubtext(org.telegram.messenger.hd.N0(2131743254, null));
                                 } else {
                                     y0Var3.setIcon(R.drawable.msg_voice_phone);
-                                    y0Var3.setSubtext(org.telegram.messenger.gd.N0(2131743257, null));
+                                    y0Var3.setSubtext(org.telegram.messenger.hd.N0(2131743255, null));
                                 }
                             }
                         }

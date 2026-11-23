@@ -14,7 +14,7 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class q4 extends View implements org.telegram.ui.Components.dg0 {
     public final GradientDrawable[] E;
@@ -216,7 +216,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.dg0 
                 paint6.setAlpha((int) (this.H * 85.0f));
                 paint5.setAlpha((int) (this.H * 255.0f));
             }
-            int z11 = org.telegram.messenger.n10.z((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.g0.L(10.0f), realCount);
+            int z11 = org.telegram.messenger.o10.z((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.g0.L(10.0f), realCount);
             int L = org.telegram.messenger.g0.L(8.0f);
             int i14 = 0;
             z10 = false;
@@ -265,7 +265,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.dg0 
                     if (i14 != this.N) {
                         this.I[i14] = 0.75f;
                     } else if (this.b == 3) {
-                        paint6.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.nr.j.getInterpolation(this.I[i14]), i10, org.telegram.messenger.ks.e4) * this.H));
+                        paint6.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.nr.j.getInterpolation(this.I[i14]), i10, org.telegram.messenger.ls.e4) * this.H));
                     }
                     canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), i14 != this.N ? paint3 : paint6);
                     i14++;

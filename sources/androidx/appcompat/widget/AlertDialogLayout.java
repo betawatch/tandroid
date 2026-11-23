@@ -11,11 +11,11 @@ import java.util.WeakHashMap;
 import m.v1;
 import m.w1;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends w1 {
     public AlertDialogLayout(Context context) {
@@ -53,7 +53,7 @@ public class AlertDialogLayout extends w1 {
         int measuredHeight = getMeasuredHeight();
         int childCount = getChildCount();
         int gravity = getGravity();
-        int i16 = gravity & ks.x1;
+        int i16 = gravity & ls.x1;
         int i17 = gravity & 8388615;
         int paddingTop = i16 != 16 ? i16 != 80 ? getPaddingTop() : ((getPaddingTop() + i12) - i10) - measuredHeight : (((i12 - i10) - measuredHeight) / 2) + getPaddingTop();
         Drawable dividerDrawable = getDividerDrawable();

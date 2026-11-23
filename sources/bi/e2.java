@@ -22,14 +22,14 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.o10;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.si;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c51;
@@ -41,9 +41,9 @@ import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class e2 extends sa implements fs {
+public final class e2 extends sa implements gs {
     public static e2 t2;
     public final boolean T1;
     public final org.telegram.messenger.t1 U1;
@@ -125,10 +125,10 @@ public final class e2 extends sa implements fs {
         }
         z4Var.setActionBarMenuOnItemClick(new v1(this, 0));
         org.telegram.ui.ActionBar.g5 b10 = z4Var.t().b(2, R.drawable.outline_header_search);
-        b10.setContentDescription(gd.N0(2131745640, null));
+        b10.setContentDescription(hd.N0(2131745640, null));
         b10.O();
         b10.C0 = new w1(this, 0);
-        z4Var.setSearchFieldHint(gd.N0(2131745640, null));
+        z4Var.setSearchFieldHint(hd.N0(2131745640, null));
         aVar.f((FrameLayout) this.b, this.o1, z4Var, h6Var);
         int i13 = this.u0;
         org.telegram.messenger.g0.z3(z4Var, i13, 0, i13, 0);
@@ -150,7 +150,7 @@ public final class e2 extends sa implements fs {
             ViewGroup viewGroup = this.b;
             int i16 = this.u0;
             viewGroup.addView(fVar, ma.f(72.0f, -1, 80, i16, 0, i16, 0));
-            hi.e g10 = n10.g(24, context, h6Var, true);
+            hi.e g10 = o10.g(24, context, h6Var, true);
             this.b2 = g10;
             g10.setShowZero(false);
             g10.i(a2Var.b, false, true);
@@ -162,7 +162,7 @@ public final class e2 extends sa implements fs {
         arrayList.addAll(org.telegram.messenger.i5.r(i7).f0);
         hashMap.putAll(org.telegram.messenger.i5.r(i7).h0);
         arrayList2.addAll(org.telegram.messenger.i5.r(i7).i0);
-        arrayList3.addAll(ri.d0(i7).j1);
+        arrayList3.addAll(si.d0(i7).j1);
         if (!z10 && a2Var == null && c2Var == null) {
             wg.s.j(i7, null, new p1(this, i14));
             z11 = false;
@@ -285,7 +285,7 @@ public final class e2 extends sa implements fs {
         if (c2Var != null) {
             return (String) c2Var.d;
         }
-        return gd.N0(this.T1 ? 2131749431 : 2131749425, null);
+        return hd.N0(this.T1 ? 2131749431 : 2131749425, null);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -311,13 +311,13 @@ public final class e2 extends sa implements fs {
         this.j2.O(false);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.U2) {
+        if (i7 == ls.U2) {
             dismiss();
             return;
         }
-        if (i7 == ks.O) {
+        if (i7 == ls.O) {
             ArrayList arrayList = this.c2;
             if (arrayList.isEmpty()) {
                 org.telegram.messenger.i5 r10 = org.telegram.messenger.i5.r(this.a);
@@ -329,14 +329,14 @@ public final class e2 extends sa implements fs {
             }
             return;
         }
-        if (i7 != ks.S0) {
-            if (i7 == ks.E0) {
+        if (i7 != ls.S0) {
+            if (i7 == ls.E0) {
                 this.j2.O(true);
             }
         } else {
             ArrayList arrayList2 = this.f2;
             if (arrayList2.isEmpty()) {
-                arrayList2.addAll(ri.d0(this.a).j1);
+                arrayList2.addAll(si.d0(this.a).j1);
                 this.j2.O(true);
             }
         }
@@ -349,7 +349,7 @@ public final class e2 extends sa implements fs {
     }
 
     public final void f1(ArrayList arrayList, HashSet hashSet) {
-        mp u12 = mp.u1(this.a);
+        np u12 = np.u1(this.a);
         int size = arrayList.size();
         int i7 = 0;
         while (i7 < size) {
@@ -379,7 +379,7 @@ public final class e2 extends sa implements fs {
         int i10 = 0;
         while (it.hasNext()) {
             TLRPC.User user = (TLRPC.User) it.next();
-            if (user != null && !user.bot && !o10.B(user.id) && ((a2Var = this.V1) == null || (!user.self && !o10.y(user)))) {
+            if (user != null && !user.bot && !p10.B(user.id) && ((a2Var = this.V1) == null || (!user.self && !p10.y(user)))) {
                 if (z10) {
                     i10 += o1(str, arrayList);
                     z10 = false;
@@ -394,14 +394,14 @@ public final class e2 extends sa implements fs {
                     K.e = containsKey;
                     arrayList.add(K);
                 } else {
-                    ai.x2 x2Var = (str2 == null && this.W1 == null) ? new ai.x2(2, this, user) : null;
+                    ai.y2 y2Var = (str2 == null && this.W1 == null) ? new ai.y2(2, this, user) : null;
                     int i12 = d2.b;
                     o41 K2 = o41.K(d2.class);
                     K2.d = i7;
                     K2.y = user.id;
                     K2.H = user;
                     K2.n = str2;
-                    K2.E = x2Var;
+                    K2.E = y2Var;
                     arrayList.add(K2);
                 }
                 i10 += org.telegram.messenger.g0.L(56.0f);
@@ -443,20 +443,20 @@ public final class e2 extends sa implements fs {
 
     public final void n1(long j3) {
         org.telegram.messenger.g0.v1(this.q2);
-        x10 x10Var = (x10) this.W1.e;
-        if (x10Var != null) {
-            x10Var.a(Long.valueOf(j3));
+        y10 y10Var = (y10) this.W1.e;
+        if (y10Var != null) {
+            y10Var.a(Long.valueOf(j3));
         }
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks f10 = ks.f(this.a);
-        f10.c(this, ks.U2);
-        f10.c(this, ks.E0);
-        f10.c(this, ks.O);
-        f10.c(this, ks.S0);
+        ls f10 = ls.f(this.a);
+        f10.c(this, ls.U2);
+        f10.c(this, ls.E0);
+        f10.c(this, ls.O);
+        f10.c(this, ls.S0);
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
@@ -470,11 +470,11 @@ public final class e2 extends sa implements fs {
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks f10 = ks.f(this.a);
-        f10.n(this, ks.U2);
-        f10.n(this, ks.E0);
-        f10.n(this, ks.O);
-        f10.n(this, ks.S0);
+        ls f10 = ls.f(this.a);
+        f10.n(this, ls.U2);
+        f10.n(this, ls.E0);
+        f10.n(this, ls.O);
+        f10.n(this, ls.S0);
     }
 
     public final void p1() {

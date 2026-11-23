@@ -4,13 +4,13 @@ import android.text.SpannableString;
 import android.text.style.CharacterStyle;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.sr;
+import org.telegram.messenger.cj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.a70;
@@ -31,9 +31,9 @@ import org.telegram.ui.gg;
 import org.telegram.ui.hq0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n2 implements x10 {
+public final /* synthetic */ class n2 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class n2 implements x10 {
     /* JADX WARN: Type inference failed for: r15v10 */
     /* JADX WARN: Type inference failed for: r15v8 */
     /* JADX WARN: Type inference failed for: r15v9, types: [boolean, int] */
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         boolean z10;
         ?? r15;
@@ -79,7 +79,7 @@ public final /* synthetic */ class n2 implements x10 {
                     z10 = false;
                 } else {
                     z10 = false;
-                    f6Var.C2(ncVarArr[0], gd.a0(null, null, 2131750029, ki.j.J0(starGiftAttribute.getRarityPermille())), false);
+                    f6Var.C2(ncVarArr[0], hd.a0(null, null, 2131750029, ki.j.J0(starGiftAttribute.getRarityPermille())), false);
                 }
                 zArr[z10 ? 1 : 0] = z10;
                 break;
@@ -99,25 +99,25 @@ public final /* synthetic */ class n2 implements x10 {
                 J.p = new fe(yk0Var, i10);
                 org.telegram.ui.x xVar = new org.telegram.ui.x(bnVar, user, str, 3);
                 a70 K = J.K();
-                K.c(R.drawable.ic_ab_back, gd.N0(2131753753, null), new hq0(J, 27), false);
+                K.c(R.drawable.ic_ab_back, hd.N0(2131753753, null), new hq0(J, 27), false);
                 K.k();
-                K.c(R.drawable.msg_addbot, gd.N0(2131751705, null), new org.telegram.ui.o1(bnVar, J, str), false);
-                K.c(R.drawable.menu_contact_existing, gd.N0(2131754372, null), new hq0(xVar, 28), false);
+                K.c(R.drawable.msg_addbot, hd.N0(2131751705, null), new org.telegram.ui.o1(bnVar, J, str), false);
+                K.c(R.drawable.menu_contact_existing, hd.N0(2131754372, null), new hq0(xVar, 28), false);
                 if (tL_contact == null && (user == null || !bnVar.getContactsController().g0.containsKey(Long.valueOf(user.id)))) {
-                    J.c(R.drawable.msg_contact_add, gd.N0(2131754374, null), new bi.y5(J, K, 5), false);
+                    J.c(R.drawable.msg_contact_add, hd.N0(2131754374, null), new bi.x5(J, K, 5), false);
                     J.k();
                 }
                 if (user == null) {
-                    J.c(R.drawable.menu_invit_telegram, gd.N0(2131748914, null), new ge(bnVar, str, 10), false);
-                    J.c(R.drawable.msg_calls_regular, gd.N0(2131743279, null), new ge(bnVar, str, 11), false);
-                    J.c(R.drawable.msg_copy, gd.N0(2131751748, null), new ge(bnVar, str, 12), false);
+                    J.c(R.drawable.menu_invit_telegram, hd.N0(2131748914, null), new ge(bnVar, str, 10), false);
+                    J.c(R.drawable.msg_calls_regular, hd.N0(2131743277, null), new ge(bnVar, str, 11), false);
+                    J.c(R.drawable.msg_copy, hd.N0(2131751748, null), new ge(bnVar, str, 12), false);
                     J.k();
-                    J.p(13, -1, gd.N0(2131747639, null));
+                    J.p(13, -1, hd.N0(2131747639, null));
                 } else {
                     final int i12 = 0;
-                    J.c(R.drawable.msg_discussion, gd.N0(2131745405, null), new gg(bnVar, user, i12), false);
-                    if (!o10.C(user)) {
-                        J.c(R.drawable.msg_calls, gd.N0(2131743278, null), new Runnable() { // from class: org.telegram.ui.fg
+                    J.c(R.drawable.msg_discussion, hd.N0(2131745405, null), new gg(bnVar, user, i12), false);
+                    if (!p10.C(user)) {
+                        J.c(R.drawable.msg_calls, hd.N0(2131743276, null), new Runnable() { // from class: org.telegram.ui.fg
                             @Override // java.lang.Runnable
                             public final void run() {
                                 boolean z11;
@@ -157,7 +157,7 @@ public final /* synthetic */ class n2 implements x10 {
                             }
                         }, false);
                         final int i13 = 1;
-                        J.c(R.drawable.msg_videocall, gd.N0(2131743365, null), new Runnable() { // from class: org.telegram.ui.fg
+                        J.c(R.drawable.msg_videocall, hd.N0(2131743363, null), new Runnable() { // from class: org.telegram.ui.fg
                             @Override // java.lang.Runnable
                             public final void run() {
                                 boolean z11;
@@ -197,10 +197,10 @@ public final /* synthetic */ class n2 implements x10 {
                             }
                         }, false);
                     }
-                    J.c(R.drawable.msg_calls_regular, gd.N0(2131743279, null), new ge(bnVar, str, 8), false);
-                    J.c(R.drawable.msg_copy, gd.N0(2131751748, null), new ge(bnVar, str, 9), false);
+                    J.c(R.drawable.msg_calls_regular, hd.N0(2131743277, null), new ge(bnVar, str, 8), false);
+                    J.c(R.drawable.msg_copy, hd.N0(2131751748, null), new ge(bnVar, str, 9), false);
                     J.k();
-                    J.n(user, gd.N0(2131743303, null), new org.telegram.ui.o1(bnVar, yk0Var, user, 18));
+                    J.n(user, hd.N0(2131743301, null), new org.telegram.ui.o1(bnVar, yk0Var, user, 18));
                 }
                 yk0Var.e(J);
                 if (characterStyle instanceof u41) {
@@ -212,7 +212,7 @@ public final /* synthetic */ class n2 implements x10 {
                     if (trim.length() > 204) {
                         StringBuilder sb2 = new StringBuilder();
                         r15 = 0;
-                        sb2.append(trim.substring(0, ks.i3));
+                        sb2.append(trim.substring(0, ls.i3));
                         sb2.append("…");
                         trim = sb2.toString();
                     } else {
@@ -230,14 +230,14 @@ public final /* synthetic */ class n2 implements x10 {
                 bn bnVar2 = (bn) obj6;
                 TLRPC.TL_document tL_document = (TLRPC.TL_document) obj5;
                 String str2 = (String) obj4;
-                bj bjVar = (bj) obj3;
+                cj cjVar = (cj) obj3;
                 Long l10 = (Long) obj;
                 int i14 = bnVar2.g4;
                 Object obj7 = this.e;
                 if (i14 == 1) {
                     org.telegram.ui.Components.c5.J(bnVar2.getParentActivity(), bnVar2.l6, new a1.d(bnVar2, tL_document, str2, obj7, 7), bnVar2.Ba);
                 } else {
-                    bnVar2.getSendMessagesHelper().v0(tL_document, str2, bnVar2.l6, bnVar2.F5, bnVar2.m4, null, bnVar2.D5, bjVar, true, 0, 0, false, obj7, bnVar2.Y8(), l10.longValue(), bnVar2.j9(), bnVar2.y5);
+                    bnVar2.getSendMessagesHelper().v0(tL_document, str2, bnVar2.l6, bnVar2.F5, bnVar2.m4, null, bnVar2.D5, cjVar, true, 0, 0, false, obj7, bnVar2.Y8(), l10.longValue(), bnVar2.j9(), bnVar2.y5);
                     tL_document = tL_document;
                 }
                 bnVar2.D9(false);
@@ -306,7 +306,7 @@ public final /* synthetic */ class n2 implements x10 {
                 ((org.telegram.ui.ActionBar.g2) obj3).finishFragment();
                 if (wwVar != null) {
                     ArrayList arrayList8 = new ArrayList();
-                    arrayList8.add(sr.a(-l11.longValue(), 0L));
+                    arrayList8.add(tr.a(-l11.longValue(), 0L));
                     wwVar.y(cxVar, arrayList8, null, false, cxVar.L2, cxVar.M2, cxVar.N2, null);
                     break;
                 }

@@ -1,8 +1,8 @@
 package org.telegram.ui.ActionBar;
 
 import android.view.ViewGroup;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.an0;
 import org.telegram.ui.Components.bn0;
 import org.telegram.ui.Components.en0;
@@ -10,7 +10,7 @@ import org.telegram.ui.Components.pu0;
 import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t0 extends zz {
     public final /* synthetic */ int e;
@@ -29,7 +29,7 @@ public final class t0 extends zz {
         ViewGroup viewGroup = this.f;
         switch (i7) {
             case 0:
-                return pu0.a(((u0) viewGroup).getSpeed()) + "x  " + gd.N0(2131754758, null);
+                return pu0.a(((u0) viewGroup).getSpeed()) + "x  " + hd.N0(2131754758, null);
             case 1:
             default:
                 return super.d();
@@ -95,7 +95,7 @@ public final class t0 extends zz {
                     i7 = j1Var.f;
                     i10 = ym0.E;
                 } else {
-                    if (!fj.R4(r1Var.Q5.k)) {
+                    if (!gj.R4(r1Var.Q5.k)) {
                         if (r1Var.Q5.h4()) {
                             return r1Var.Q5.b0;
                         }
@@ -127,7 +127,7 @@ public final class t0 extends zz {
                 org.telegram.ui.Cells.j1 j1Var = r1Var.D4;
                 if (r1Var.Q5.I3()) {
                     j1Var.h(f10);
-                } else if (fj.R4(r1Var.Q5.k)) {
+                } else if (gj.R4(r1Var.Q5.k)) {
                     if (r1Var.C4) {
                         en0Var.g(false, f10);
                     } else {

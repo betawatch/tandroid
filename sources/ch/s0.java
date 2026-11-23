@@ -6,7 +6,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.g2;
@@ -14,7 +14,7 @@ import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class s0 {
     public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, n nVar, Paint.FontMetricsInt fontMetricsInt) {
@@ -98,7 +98,7 @@ public abstract class s0 {
         if (Q == null || tL_premium_boostsStatus == null) {
             return;
         }
-        ug.k0 k0Var = new ug.k0(21, j10.t0, Q.getContext(), Q, Q.getResourceProvider());
+        ug.k0 k0Var = new ug.k0(21, k10.t0, Q.getContext(), Q, Q.getResourceProvider());
         k0Var.N2 = i7;
         k0Var.A1(tL_premium_boostsStatus, true);
         k0Var.C1(j3);

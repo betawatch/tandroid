@@ -16,13 +16,13 @@ import c8.ma;
 import hi.n4;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final Paint a;
@@ -45,14 +45,14 @@ public final class f extends FrameLayout {
         Paint.Style style = Paint.Style.FILL;
         paint.setStyle(style);
         paint.setColor(-1);
-        paint.setAlpha(ks.e4);
+        paint.setAlpha(ls.e4);
         final int i7 = 1;
         paint.setAntiAlias(true);
         Paint paint2 = new Paint();
         this.b = paint2;
         paint2.setStyle(style);
         paint2.setColor(-11420173);
-        paint2.setAlpha(ks.e4);
+        paint2.setAlpha(ls.e4);
         paint2.setAntiAlias(true);
         ImageView imageView = new ImageView(context);
         this.e = imageView;
@@ -99,7 +99,7 @@ public final class f extends FrameLayout {
         });
         final int i11 = 2;
         imageView.setOnLongClickListener(new n4(this, i11));
-        imageView.setContentDescription(gd.N0(2131754839, null));
+        imageView.setContentDescription(hd.N0(2131754839, null));
         addView(imageView, ma.e(70, 64, 19));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
@@ -143,7 +143,7 @@ public final class f extends FrameLayout {
             }
         });
         imageView2.setVisibility(8);
-        imageView2.setContentDescription(gd.N0(2131754922, null));
+        imageView2.setContentDescription(hd.N0(2131754922, null));
         addView(imageView2, ma.e(70, 64, 19));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
@@ -186,7 +186,7 @@ public final class f extends FrameLayout {
                 }
             }
         });
-        imageView3.setContentDescription(gd.N0(2131754782, null));
+        imageView3.setContentDescription(hd.N0(2131754782, null));
         addView(imageView3, ma.e(70, 64, 21));
         TextPaint textPaint = new TextPaint(1);
         this.h = textPaint;
@@ -200,7 +200,7 @@ public final class f extends FrameLayout {
         int L = (int) ((i10 / 2.0f) - g0.L(70.0f));
         int cos = (i10 / 2) + ((int) (Math.cos(Math.toRadians(90.0f - ((i7 * 5) + f10))) * L));
         float abs = Math.abs(r8) / L;
-        int min = Math.min(ks.e4, Math.max(0, (int) ((1.0f - (abs * abs)) * 255.0f)));
+        int min = Math.min(ls.e4, Math.max(0, (int) ((1.0f - (abs * abs)) * 255.0f)));
         if (z10) {
             paint = this.b;
         }
@@ -238,11 +238,11 @@ public final class f extends FrameLayout {
             Paint paint = this.b;
             if (i7 >= 16) {
                 Canvas canvas2 = canvas;
-                paint.setAlpha(ks.e4);
+                paint.setAlpha(ls.e4);
                 float L = (width - g0.L(2.5f)) / 2;
                 RectF rectF = this.r;
                 rectF.left = L;
-                rectF.top = n10.z(22.0f, height, 2);
+                rectF.top = o10.z(22.0f, height, 2);
                 rectF.right = (g0.L(2.5f) + width) / 2;
                 rectF.bottom = (g0.L(22.0f) + height) / 2;
                 canvas2.drawRoundRect(rectF, g0.L(2.0f), g0.L(2.0f), paint);
@@ -290,7 +290,7 @@ public final class f extends FrameLayout {
                 return true;
             }
             if (actionMasked == 2) {
-                float A = n10.A(this.n, (float) ((((this.s - x10) / g0.p) / 3.141592653589793d) / 1.649999976158142d), 45.0f, -45.0f);
+                float A = o10.A(this.n, (float) ((((this.s - x10) / g0.p) / 3.141592653589793d) / 1.649999976158142d), 45.0f, -45.0f);
                 if (Build.VERSION.SDK_INT >= 27) {
                     try {
                         if ((Math.abs(A - 45.0f) < 0.001f && Math.abs(this.n - 45.0f) >= 0.001f) || (Math.abs(A - (-45.0f)) < 0.001f && Math.abs(this.n - (-45.0f)) >= 0.001f)) {

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j51 extends org.telegram.ui.Components.n41 {
     public static final /* synthetic */ int c = 0;
@@ -21,7 +21,7 @@ public final class j51 extends org.telegram.ui.Components.n41 {
     @Override // org.telegram.ui.Components.n41
     public final void b(View view, org.telegram.ui.Components.o41 o41Var, boolean z10, org.telegram.ui.Components.c51 c51Var, org.telegram.ui.Components.h51 h51Var) {
         org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
-        p7Var.k((org.telegram.messenger.fj) o41Var.H, o41Var.w, false);
+        p7Var.k((org.telegram.messenger.gj) o41Var.H, o41Var.w, false);
         p7Var.i(o41Var.e, false);
         p7Var.l(o41Var.h, false);
     }

@@ -16,7 +16,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ws extends org.telegram.ui.Components.sa {
     public final FrameLayout T1;
@@ -42,7 +42,7 @@ public final class ws extends org.telegram.ui.Components.sa {
         this.T1 = frameLayout;
         final int i10 = 1;
         LinearLayout f10 = org.telegram.messenger.f3.f(activity, 1);
-        frameLayout.addView(f10, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        frameLayout.addView(f10, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         ImageView imageView = new ImageView(activity);
         imageView.setImageResource(R.drawable.ic_close_white);
         imageView.setColorFilter(new PorterDuffColorFilter(-8090220, PorterDuff.Mode.SRC_IN));
@@ -84,11 +84,11 @@ public final class ws extends org.telegram.ui.Components.sa {
         f10.addView(frameLayout2, c8.ma.t(80, 80, 1, 2, 21, 2, 13));
         int i12 = org.telegram.ui.ActionBar.m6.G6;
         org.telegram.ui.Components.m80 a10 = c8.va.a(activity, 20.0f, i12, true, this.J0);
-        a10.setText(org.telegram.messenger.gd.N0(2131749290, null));
+        a10.setText(org.telegram.messenger.hd.N0(2131749290, null));
         a10.setGravity(17);
         f10.addView(a10, c8.ma.t(-1, -2, 1, 2, 0, 2, 4));
         org.telegram.ui.Components.m80 a11 = c8.va.a(activity, 14.0f, i12, false, this.J0);
-        a11.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131749291, null)));
+        a11.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131749291, null)));
         a11.setGravity(17);
         a11.setMaxWidth(hi.l3.a(a11.getText(), a11.getPaint()));
         f10.addView(a11, c8.ma.t(-1, -2, 1, 2, 0, 2, 23));
@@ -112,9 +112,9 @@ public final class ws extends org.telegram.ui.Components.sa {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "x  ");
         spannableStringBuilder.setSpan(new org.telegram.ui.Components.nq(R.drawable.profile_phone, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131749288, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131749288, null));
         eVar.i(spannableStringBuilder, false, true);
-        f11.addView(eVar, c8.ma.q(-1, 48, 1.0f, org.telegram.messenger.ks.E1, 0, 0, 6, 0));
+        f11.addView(eVar, c8.ma.q(-1, 48, 1.0f, org.telegram.messenger.ls.E1, 0, 0, 6, 0));
         eVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.vs
             public final /* synthetic */ ws b;
 
@@ -142,9 +142,9 @@ public final class ws extends org.telegram.ui.Components.sa {
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         spannableStringBuilder2.append((CharSequence) "x  ");
         spannableStringBuilder2.setSpan(new org.telegram.ui.Components.nq(R.drawable.profile_video, 0), 0, 1, 33);
-        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.gd.N0(2131749289, null));
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.N0(2131749289, null));
         eVar2.i(spannableStringBuilder2, false, true);
-        f11.addView(eVar2, c8.ma.q(-1, 48, 1.0f, org.telegram.messenger.ks.E1, 6, 0, 0, 0));
+        f11.addView(eVar2, c8.ma.q(-1, 48, 1.0f, org.telegram.messenger.ls.E1, 6, 0, 0, 0));
         final int i13 = 2;
         eVar2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.vs
             public final /* synthetic */ ws b;
@@ -183,7 +183,7 @@ public final class ws extends org.telegram.ui.Components.sa {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return org.telegram.messenger.gd.N0(2131749290, null);
+        return org.telegram.messenger.hd.N0(2131749290, null);
     }
 
     public final void e1(boolean z10) {

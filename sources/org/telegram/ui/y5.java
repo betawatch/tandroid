@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y5 implements te.b, c60, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.pt0, org.telegram.ui.Components.rj0 {
     public final /* synthetic */ int a;
@@ -140,7 +140,7 @@ public final /* synthetic */ class y5 implements te.b, c60, org.telegram.ui.Acti
                 if (isEmpty) {
                     org.telegram.ui.ActionBar.m5 m5Var = e60Var.a;
                     org.telegram.ui.Components.e9 e9Var = e60Var.b;
-                    m5Var.l(org.telegram.messenger.gd.N0(2131754472, null), false);
+                    m5Var.l(org.telegram.messenger.hd.N0(2131754472, null), false);
                     e60Var.a.setRightPadding(org.telegram.messenger.g0.L(8.0f));
                     e9Var.b(0, g2Var.getCurrentAccount(), null);
                     e9Var.b(1, g2Var.getCurrentAccount(), null);
@@ -151,7 +151,7 @@ public final /* synthetic */ class y5 implements te.b, c60, org.telegram.ui.Acti
                     org.telegram.ui.ActionBar.m5 m5Var2 = e60Var.a;
                     org.telegram.ui.Components.e9 e9Var2 = e60Var.b;
                     m5Var2.setRightPadding(org.telegram.messenger.g0.L((Math.max(0, min - 1) * 12) + 64));
-                    e60Var.a.l(org.telegram.messenger.gd.G(f60Var.g0.size(), "ExceptionShort", Integer.valueOf(f60Var.g0.size())), false);
+                    e60Var.a.l(org.telegram.messenger.hd.G(f60Var.g0.size(), "ExceptionShort", Integer.valueOf(f60Var.g0.size())), false);
                     for (int i17 = 0; i17 < min; i17++) {
                         e9Var2.b(i17, g2Var.getCurrentAccount(), g2Var.getMessagesController().g2(((org.telegram.messenger.t2) f60Var.g0.get(i17)).a));
                     }

@@ -1,9 +1,9 @@
 package di;
 
 import android.content.Context;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wb extends jc {
     public final /* synthetic */ boolean n0;
@@ -25,7 +25,7 @@ public final class wb extends jc {
         mcVar.O0(j3);
         hi.e eVar = mcVar.x1;
         if (eVar != null) {
-            eVar.i(pb.Z0(false, gd.a0(null, null, 2131744806, gd.E(j3, ',')), mcVar.N1), true, true);
+            eVar.i(pb.Z0(false, hd.a0(null, null, 2131744804, hd.E(j3, ',')), mcVar.N1), true, true);
         }
         if (this.n0) {
             fi.r0 r0Var = mcVar.B1;

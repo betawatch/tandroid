@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
-import bi.i5;
+import bi.h5;
 import c8.ma;
 import hi.j3;
 import java.util.List;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.rh0;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i1 extends LinearLayout {
     public final rh0[] a;
@@ -91,7 +91,7 @@ public final class i1 extends LinearLayout {
                 sg.h hVar = (sg.h) list2.get(i11 - 1);
                 if (z10 || !(hVar instanceof sg.b)) {
                     this.a[i12].f(hVar.e(), 28, 28, null);
-                    this.a[i12].setOnClickListener(new i5(this, i12, hVar, 25));
+                    this.a[i12].setOnClickListener(new h5(this, i12, hVar, 25));
                 } else {
                     i11++;
                 }

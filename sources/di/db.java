@@ -6,10 +6,10 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.ui.az;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class db extends org.telegram.ui.Components.o6 {
     public final /* synthetic */ int s = 0;
@@ -30,7 +30,7 @@ public final class db extends org.telegram.ui.Components.o6 {
                 ((eb) this.x).getClass();
                 int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().c()) - org.telegram.messenger.g0.L(20.0f));
                 Drawable drawable = (Drawable) this.w;
-                drawable.setBounds(measuredWidth, n10.z(17.0f, getMeasuredHeight(), 2), org.telegram.messenger.g0.L(17.0f) + measuredWidth, (org.telegram.messenger.g0.L(17.0f) + getMeasuredHeight()) / 2);
+                drawable.setBounds(measuredWidth, o10.z(17.0f, getMeasuredHeight(), 2), org.telegram.messenger.g0.L(17.0f) + measuredWidth, (org.telegram.messenger.g0.L(17.0f) + getMeasuredHeight()) / 2);
                 drawable.draw(canvas);
                 super.dispatchDraw(canvas);
                 break;

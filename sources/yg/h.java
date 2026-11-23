@@ -6,14 +6,14 @@ import android.widget.FrameLayout;
 import c8.ma;
 import java.util.Date;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m5;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
     public final m5 a;
@@ -24,18 +24,18 @@ public final class h extends FrameLayout {
         m5 m5Var = new m5(context);
         m5Var.setTextSize(16);
         t6.X(m5Var, m6.j5, h6Var);
-        m5Var.setGravity(gd.a0 ? 5 : 3);
+        m5Var.setGravity(hd.a0 ? 5 : 3);
         addView(m5Var);
         m5 m5Var2 = new m5(context);
         this.a = m5Var2;
         m5Var2.setTextSize(16);
         t6.X(m5Var2, m6.L6, h6Var);
-        m5Var2.setGravity(gd.a0 ? 3 : 5);
+        m5Var2.setGravity(hd.a0 ? 3 : 5);
         addView(m5Var2);
-        m5Var.l(gd.a0("BoostingDateAndTime", null, 2131753536, new Object[0]), false);
-        boolean z10 = gd.a0;
+        m5Var.l(hd.a0("BoostingDateAndTime", null, 2131753536, new Object[0]), false);
+        boolean z10 = hd.a0;
         m5Var.setLayoutParams(ma.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 21.0f, 0.0f, z10 ? 21.0f : 0.0f, 0.0f));
-        boolean z11 = gd.a0;
+        boolean z11 = hd.a0;
         m5Var2.setLayoutParams(ma.d(-1, -2.0f, (z11 ? 3 : 5) | 16, z11 ? 21.0f : 0.0f, 0.0f, z11 ? 0.0f : 21.0f, 0.0f));
         t6.h(m6.h5, this, h6Var);
     }
@@ -52,6 +52,6 @@ public final class h extends FrameLayout {
     public void setDate(long j3) {
         this.b = j3;
         Date date = new Date(j3);
-        this.a.l(gd.a0("formatDateAtTime", null, 2131742519, gd.E0().q0().format(date), gd.E0().p0().format(date)), false);
+        this.a.l(hd.a0("formatDateAtTime", null, 2131742517, hd.E0().q0().format(date), hd.E0().p0().format(date)), false);
     }
 }

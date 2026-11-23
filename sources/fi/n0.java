@@ -8,9 +8,9 @@ import android.graphics.RectF;
 import android.view.animation.LinearInterpolator;
 import android.widget.LinearLayout;
 import di.ec;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class n0 extends LinearLayout {
     public ec a;
@@ -58,14 +58,14 @@ public final class n0 extends LinearLayout {
             this.d = q0Var.f.b;
             Paint paint = this.c;
             paint.setColor(b11);
-            paint.setAlpha(ks.L1);
+            paint.setAlpha(ls.L1);
             canvas2 = canvas;
             canvas2.drawRect(getWidth() * e10, 0.0f, getWidth(), getHeight(), paint);
         } else {
             canvas2 = canvas;
         }
         if (this.a == null) {
-            this.a = new ec(1, ks.Z3);
+            this.a = new ec(1, ls.Z3);
         }
         this.a.f(0, 0, getWidth(), getHeight());
         ec ecVar = this.a;

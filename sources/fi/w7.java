@@ -24,10 +24,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Cells.t9;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class w7 extends View implements s9 {
     public final boolean E;
@@ -96,7 +96,7 @@ public final class w7 extends View implements s9 {
             return new StaticLayout(charSequence, textPaint, i7, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i7).setBreakStrategy(0).setHyphenationFrequency(0);
-        if (gd.a0) {
+        if (hd.a0) {
             alignment = zu0.a();
         } else {
             Layout.Alignment[] alignmentArr = zu0.a;
@@ -111,8 +111,8 @@ public final class w7 extends View implements s9 {
         }
         v7[] v7VarArr = this.r;
         CharSequence charSequence2 = v7VarArr[0].n;
-        Pattern pattern = ri.U1;
-        if ((charSequence2 == null || !TextUtils.equals(charSequence2, charSequence)) ? false : ri.M(ri.d0(j10.t0).Y(new CharSequence[]{new SpannableStringBuilder(charSequence2)}, true, true), ri.d0(j10.t0).Y(new CharSequence[]{new SpannableStringBuilder(charSequence)}, true, true))) {
+        Pattern pattern = si.U1;
+        if ((charSequence2 == null || !TextUtils.equals(charSequence2, charSequence)) ? false : si.M(si.d0(k10.t0).Y(new CharSequence[]{new SpannableStringBuilder(charSequence2)}, true, true), si.d0(k10.t0).Y(new CharSequence[]{new SpannableStringBuilder(charSequence)}, true, true))) {
             v7 v7Var = v7VarArr[0];
             if (v7Var.o == s7Var && v7Var.p == s7Var2) {
                 v7Var.q = z10;
@@ -426,7 +426,7 @@ public final class w7 extends View implements s9 {
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         if (this.w != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ks.e4, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ls.e4, 31);
             canvas2 = canvas;
         } else {
             canvas2 = canvas;

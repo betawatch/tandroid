@@ -3,13 +3,13 @@ package org.telegram.ui.Components.voip;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.u3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.f40;
 import org.telegram.ui.i40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class r extends FrameLayout {
     public int a;
@@ -55,7 +55,7 @@ public abstract class r extends FrameLayout {
             super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
         } else {
             float f10 = f40.E5 ? 3.0f : 2.0f;
-            float B = n10.B(14.0f, 2, org.telegram.messenger.g0.q.x) + (f40.E5 ? -org.telegram.messenger.g0.L(90.0f) : 0);
+            float B = o10.B(14.0f, 2, org.telegram.messenger.g0.q.x) + (f40.E5 ? -org.telegram.messenger.g0.L(90.0f) : 0);
             super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) ((f40.F5 ? B / 2.0f : B / f10) + org.telegram.messenger.g0.L(4.0f)), TLObject.FLAG_30));
         }
     }

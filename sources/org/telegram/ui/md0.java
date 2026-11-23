@@ -45,7 +45,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Adler32;
 import java.util.zip.InflaterInputStream;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class md0 implements ly0, t0.h, q5.b, oa.a {
     public final /* synthetic */ int a;
@@ -453,11 +453,11 @@ public class md0 implements ly0, t0.h, q5.b, oa.a {
 
     @Override // org.telegram.ui.ly0
     public void a() {
-        org.telegram.messenger.x10 x10Var;
+        org.telegram.messenger.y10 y10Var;
         boolean[] zArr = (boolean[]) this.b;
-        if (!zArr[0] && (x10Var = (org.telegram.messenger.x10) this.c) != null) {
+        if (!zArr[0] && (y10Var = (org.telegram.messenger.y10) this.c) != null) {
             zArr[0] = true;
-            x10Var.a(Boolean.TRUE);
+            y10Var.a(Boolean.TRUE);
         }
         org.telegram.messenger.g0.h3(new ru0((org.telegram.ui.Components.lc) this.d, 9), 200L);
     }

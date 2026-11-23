@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import java.util.Iterator;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k71 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -113,9 +113,9 @@ public final class k71 extends AnimatorListenerAdapter {
                 ((org.telegram.ui.web.v0) obj).s.setVisibility(8);
                 break;
             case 15:
-                org.telegram.messenger.zi ziVar = (org.telegram.messenger.zi) obj;
-                ziVar.j = false;
-                ziVar.i = false;
+                org.telegram.messenger.aj ajVar = (org.telegram.messenger.aj) obj;
+                ajVar.j = false;
+                ajVar.i = false;
                 break;
             case 16:
                 sg.v vVar = (sg.v) obj;

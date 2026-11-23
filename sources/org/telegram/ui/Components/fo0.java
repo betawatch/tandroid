@@ -7,7 +7,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fo0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final class fo0 extends FrameLayout {
         switch (this.a) {
             case 1:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(org.telegram.messenger.gd.G(this.b.Q1.m(), "AccDescrShareInChats", new Object[0]));
+                accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(this.b.Q1.m(), "AccDescrShareInChats", new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);

@@ -8,16 +8,16 @@ import java.util.List;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oh extends c5.a {
     public final /* synthetic */ int c;
     public final /* synthetic */ SparseArray d;
     public final /* synthetic */ boolean e;
     public final /* synthetic */ List f;
-    public final /* synthetic */ org.telegram.messenger.fj g;
+    public final /* synthetic */ org.telegram.messenger.gj g;
     public final /* synthetic */ org.telegram.ui.Components.wh0 h;
-    public final /* synthetic */ org.telegram.messenger.fj i;
+    public final /* synthetic */ org.telegram.messenger.gj i;
     public final /* synthetic */ SparseIntArray j;
     public final /* synthetic */ int k;
     public final /* synthetic */ c5.l l;
@@ -26,15 +26,15 @@ public final class oh extends c5.a {
     public final /* synthetic */ int o;
     public final /* synthetic */ bn p;
 
-    public oh(bn bnVar, int i7, SparseArray sparseArray, boolean z10, List list, org.telegram.messenger.fj fjVar, org.telegram.ui.Components.wh0 wh0Var, org.telegram.messenger.fj fjVar2, SparseIntArray sparseIntArray, int i10, c5.l lVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i11) {
+    public oh(bn bnVar, int i7, SparseArray sparseArray, boolean z10, List list, org.telegram.messenger.gj gjVar, org.telegram.ui.Components.wh0 wh0Var, org.telegram.messenger.gj gjVar2, SparseIntArray sparseIntArray, int i10, c5.l lVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i11) {
         this.p = bnVar;
         this.c = i7;
         this.d = sparseArray;
         this.e = z10;
         this.f = list;
-        this.g = fjVar;
+        this.g = gjVar;
         this.h = wh0Var;
-        this.i = fjVar2;
+        this.i = gjVar2;
         this.j = sparseIntArray;
         this.k = i10;
         this.l = lVar;

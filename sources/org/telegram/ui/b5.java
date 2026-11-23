@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class b5 extends FrameLayout implements org.telegram.messenger.fs {
+public abstract class b5 extends FrameLayout implements org.telegram.messenger.gs {
     public static final /* synthetic */ int G = 0;
     public y4 E;
     public boolean F;
@@ -103,17 +103,17 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.f
                 y4Var2.a();
             }
         }
-        int i7 = org.telegram.messenger.j10.t0;
-        org.telegram.messenger.fc fcVar = w4Var.c;
+        int i7 = org.telegram.messenger.k10.t0;
+        org.telegram.messenger.gc gcVar = w4Var.c;
         String str = w4Var.e;
-        org.telegram.messenger.fc fcVar2 = w4Var.a;
-        org.telegram.messenger.fc fcVar3 = w4Var.b;
+        org.telegram.messenger.gc gcVar2 = w4Var.a;
+        org.telegram.messenger.gc gcVar3 = w4Var.b;
         String str2 = w4Var.d;
         BitmapDrawable bitmapDrawable = w4Var.g;
         Object obj = w4Var.h;
         org.telegram.ui.Components.q9 q9Var = (org.telegram.ui.Components.q9) t4Var.d;
         q9Var.getImageReceiver().d = i7;
-        q9Var.getImageReceiver().u0(fcVar, str, fcVar2, null, fcVar3, str2, bitmapDrawable, 0L, null, obj, 1);
+        q9Var.getImageReceiver().u0(gcVar, str, gcVar2, null, gcVar3, str2, bitmapDrawable, 0L, null, obj, 1);
         q9Var.d();
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;
         actionBarPopupWindow$ActionBarPopupWindowLayout.d();
@@ -126,7 +126,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.f
             }
             c5 c5Var = c5VarArr[i10];
             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-            org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(i10 == 0, i10 == this.s.length - 1, actionBarPopupWindow$ActionBarPopupWindowLayout2, c5Var.c, org.telegram.messenger.gd.N0(c5Var.b, c5Var.a), false, this.f);
+            org.telegram.ui.ActionBar.y0 c10 = org.telegram.ui.ActionBar.q0.c(i10 == 0, i10 == this.s.length - 1, actionBarPopupWindow$ActionBarPopupWindowLayout2, c5Var.c, org.telegram.messenger.hd.N0(c5Var.b, c5Var.a), false, this.f);
             c10.setTag(Integer.valueOf(i10));
             c10.setOnClickListener(new oi.i1(5, this, c5Var));
             i10++;
@@ -236,11 +236,11 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.f
         this.n = animatorSet2;
         animatorSet2.setDuration(z10 ? 190L : 150L);
         this.n.playTogether(ofFloat, ofFloat2);
-        this.n.addListener(new bi.h7(21, this, z10));
+        this.n.addListener(new bi.g7(21, this, z10));
         this.n.start();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         t4 t4Var = this.c;
         boolean z10 = t4Var.c;
@@ -248,11 +248,11 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.f
         if (!z10 || TextUtils.isEmpty(this.y)) {
             return;
         }
-        if (i7 == org.telegram.messenger.ks.Y1) {
+        if (i7 == org.telegram.messenger.ls.Y1) {
             if (TextUtils.equals((String) objArr[0], this.y)) {
                 radialProgress2.p(true, 1.0f);
             }
-        } else if (i7 == org.telegram.messenger.ks.X1 && TextUtils.equals((String) objArr[0], this.y)) {
+        } else if (i7 == org.telegram.messenger.ls.X1 && TextUtils.equals((String) objArr[0], this.y)) {
             radialProgress2.p(true, Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue()));
         }
     }
@@ -283,15 +283,15 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.f
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.f(org.telegram.messenger.j10.t0).c(this, org.telegram.messenger.ks.Y1);
-        org.telegram.messenger.ks.f(org.telegram.messenger.j10.t0).c(this, org.telegram.messenger.ks.X1);
+        org.telegram.messenger.ls.f(org.telegram.messenger.k10.t0).c(this, org.telegram.messenger.ls.Y1);
+        org.telegram.messenger.ls.f(org.telegram.messenger.k10.t0).c(this, org.telegram.messenger.ls.X1);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.f(org.telegram.messenger.j10.t0).n(this, org.telegram.messenger.ks.Y1);
-        org.telegram.messenger.ks.f(org.telegram.messenger.j10.t0).n(this, org.telegram.messenger.ks.X1);
+        org.telegram.messenger.ls.f(org.telegram.messenger.k10.t0).n(this, org.telegram.messenger.ls.Y1);
+        org.telegram.messenger.ls.f(org.telegram.messenger.k10.t0).n(this, org.telegram.messenger.ls.X1);
     }
 
     @Override // android.view.View

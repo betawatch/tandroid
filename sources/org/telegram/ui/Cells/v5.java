@@ -15,12 +15,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.er0;
 import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v5 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -50,7 +50,7 @@ public final class v5 extends FrameLayout {
         textView.setEllipsize(truncateAt);
         textView.setMaxLines(1);
         textView.setGravity(80);
-        TextView f10 = n10.f(linearLayout, textView, c8.ma.m(1.0f, 0, -1, 8, 0, 5), context);
+        TextView f10 = o10.f(linearLayout, textView, c8.ma.m(1.0f, 0, -1, 8, 0, 5), context);
         this.d = f10;
         f10.setTextSize(1, 13.0f);
         f10.setTextColor(-1);

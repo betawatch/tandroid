@@ -32,8 +32,8 @@ import m.z0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.t0;
 import org.telegram.ui.Components.i61;
 import org.telegram.ui.LaunchActivity;
@@ -42,7 +42,7 @@ import org.telegram.ui.u9;
 import org.webrtc.MediaStreamTrack;
 import q6.m;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static int a;
@@ -97,17 +97,17 @@ public abstract class f {
                 long a10 = e11 == null ? -1L : e11.a();
                 long D = B.D(B.v0);
                 if (D >= 0 && a10 >= 0 && Math.abs(D - a10) > 1000) {
-                    fj fjVar = B.v0;
-                    if ((B.j0 != null || B.F0 != null) && fjVar != null && B.L(fjVar)) {
+                    gj gjVar = B.v0;
+                    if ((B.j0 != null || B.F0 != null) && gjVar != null && B.L(gjVar)) {
                         try {
                             i61 i61Var = B.j0;
                             if (i61Var != null) {
                                 j3 = i61Var.U();
                                 if (j3 != -9223372036854775807L) {
-                                    fjVar.b0 = Utilities.l(a10 / j3);
+                                    gjVar.b0 = Utilities.l(a10 / j3);
                                 }
                                 B.j0.q0(a10, false);
-                                fjVar.e0 = a10;
+                                gjVar.e0 = a10;
                                 if (!B.U1) {
                                     v(a10);
                                 }
@@ -124,7 +124,7 @@ public abstract class f {
                                 }
                             }
                             if (j3 != 0) {
-                                ks.f(fjVar.K1).k(ks.i2, Integer.valueOf(fjVar.e1()), Float.valueOf(Utilities.l(a10 / j3)));
+                                ls.f(gjVar.K1).k(ls.i2, Integer.valueOf(gjVar.e1()), Float.valueOf(Utilities.l(a10 / j3)));
                             }
                         } catch (Exception e12) {
                             a8.g(e12, true);

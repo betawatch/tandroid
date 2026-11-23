@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s91 extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ u91 c;
@@ -50,10 +50,10 @@ public final class s91 extends org.telegram.ui.Components.dk0 {
         if (d(i7) == 1) {
             org.telegram.ui.Cells.y3 y3Var = (org.telegram.ui.Cells.y3) view;
             if (i7 == u91Var.h0) {
-                y3Var.setText(org.telegram.messenger.gd.N0(2131743753, null));
+                y3Var.setText(org.telegram.messenger.hd.N0(2131743751, null));
             }
             if (i7 == u91Var.k0) {
-                y3Var.setText(org.telegram.messenger.gd.N0(2131745560, null));
+                y3Var.setText(org.telegram.messenger.hd.N0(2131745560, null));
             }
         }
         if (d(i7) == 2) {
@@ -62,17 +62,17 @@ public final class s91 extends org.telegram.ui.Components.dk0 {
             laVar.d = i7 != u91Var.j0 - 1;
         }
         if (d(i7) == 3) {
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) u91Var.g0.get(i7 - u91Var.l0);
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) u91Var.g0.get(i7 - u91Var.l0);
             v91 v91Var = (v91) view;
             v91Var.b5 = i7 != u91Var.m0 - 1;
             i10 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
-            long b22 = org.telegram.messenger.fj.b2(i10, fjVar.k, true, false);
+            long b22 = org.telegram.messenger.gj.b2(i10, gjVar.k, true, false);
             if (b22 == 0) {
                 b22 = 1;
             }
             TLRPC.TL_forumTopic f10 = y91Var.s.f(y91Var.a, b22);
             if (f10 != null) {
-                v91Var.f0(f10, org.telegram.messenger.fj.B0(fjVar.k), fjVar, false, false);
+                v91Var.f0(f10, org.telegram.messenger.gj.B0(gjVar.k), gjVar, false, false);
                 v91Var.setTopicIcon(f10);
             } else {
                 org.telegram.messenger.a8.b("cant find topic " + b22);

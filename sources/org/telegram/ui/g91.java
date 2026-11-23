@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g91 extends org.telegram.ui.Components.du0 {
     public boolean g0;
@@ -29,7 +29,7 @@ public final class g91 extends org.telegram.ui.Components.du0 {
 
     @Override // org.telegram.ui.Components.du0
     public final void H(Canvas canvas, float f10, Rect rect, Paint paint, boolean z10) {
-        if (Build.VERSION.SDK_INT >= 29 && org.telegram.messenger.bz.f()) {
+        if (Build.VERSION.SDK_INT >= 29 && org.telegram.messenger.cz.f()) {
             y91 y91Var = this.i0;
             if (y91Var.j1 != null) {
                 canvas.save();
@@ -37,7 +37,7 @@ public final class g91 extends org.telegram.ui.Components.du0 {
                 y91Var.j1.o(rect.left, rect.top + f10, rect.right, rect.bottom + f10, canvas);
                 canvas.restore();
                 int alpha = paint.getAlpha();
-                paint.setAlpha(org.telegram.messenger.ks.I2);
+                paint.setAlpha(org.telegram.messenger.ls.I2);
                 canvas.drawRect(rect, paint);
                 paint.setAlpha(alpha);
                 return;
@@ -171,7 +171,7 @@ public final class g91 extends org.telegram.ui.Components.du0 {
                     i20 = 0;
                 }
                 int absoluteGravity = Gravity.getAbsoluteGravity(i20, getLayoutDirection());
-                int i21 = i20 & org.telegram.messenger.ks.x1;
+                int i21 = i20 & org.telegram.messenger.ls.x1;
                 int i22 = absoluteGravity & 7;
                 if (i22 == 1) {
                     i13 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;

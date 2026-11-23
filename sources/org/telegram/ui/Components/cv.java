@@ -4,9 +4,9 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class cv implements org.telegram.messenger.fs {
+public abstract class cv implements org.telegram.messenger.gs {
     public final ArrayList a;
     public ArrayList b;
     public ArrayList[] c;
@@ -60,13 +60,13 @@ public abstract class cv implements org.telegram.messenger.fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         TLRPC.StickerSet stickerSet;
-        if (i7 == org.telegram.messenger.ks.B0) {
+        if (i7 == org.telegram.messenger.ls.B0) {
             for (int i11 = 0; i11 < this.b.size(); i11++) {
                 if (this.b.get(i11) == null) {
-                    TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.ri.d0(this.d).o0((TLRPC.InputStickerSet) this.a.get(i11), true);
+                    TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.si.d0(this.d).o0((TLRPC.InputStickerSet) this.a.get(i11), true);
                     if (this.b.size() == 1 && o02 != null && (stickerSet = o02.set) != null && !stickerSet.emojis) {
                         ev evVar = this.f;
                         evVar.dismiss();

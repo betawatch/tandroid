@@ -9,10 +9,10 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class d0 extends Drawable {
     public static final PathInterpolator i = new PathInterpolator(0.42f, 0.0f, 0.58f, 1.0f);
@@ -23,7 +23,7 @@ public final class d0 extends Drawable {
     public int g;
     public final Paint c = new Paint(1);
     public final Rect d = new Rect();
-    public int h = ks.e4;
+    public int h = ls.e4;
 
     public d0(int i7) {
         GradientDrawable gradientDrawable = new GradientDrawable();

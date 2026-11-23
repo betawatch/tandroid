@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vv0 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,16 +23,16 @@ public final /* synthetic */ class vv0 implements Runnable {
             case 2:
                 kw0 kw0Var = this.b;
                 kw0Var.dismiss();
-                org.telegram.messenger.ri.d0(kw0Var.a).k2(kw0Var.getContext(), kw0Var.N1, 1, kw0Var.G1, false, false);
+                org.telegram.messenger.si.d0(kw0Var.a).k2(kw0Var.getContext(), kw0Var.N1, 1, kw0Var.G1, false, false);
                 break;
             case 3:
                 kw0 kw0Var2 = this.b;
-                org.telegram.messenger.mp.u1(kw0Var2.a).F3("stickers", kw0Var2.G1, 1, null);
+                org.telegram.messenger.np.u1(kw0Var2.a).F3("stickers", kw0Var2.G1, 1, null);
                 break;
             default:
                 kw0 kw0Var3 = this.b;
                 kw0Var3.dismiss();
-                org.telegram.messenger.ri.d0(kw0Var3.a).k2(kw0Var3.getContext(), kw0Var3.N1, 1, kw0Var3.G1, false, false);
+                org.telegram.messenger.si.d0(kw0Var3.a).k2(kw0Var3.getContext(), kw0Var3.N1, 1, kw0Var3.G1, false, false);
                 break;
         }
     }

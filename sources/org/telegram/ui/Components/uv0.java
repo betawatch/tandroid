@@ -4,16 +4,16 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uv0 implements org.telegram.ui.ActionBar.l0, org.telegram.messenger.rr {
+public final /* synthetic */ class uv0 implements org.telegram.ui.ActionBar.l0, org.telegram.messenger.sr {
     public final /* synthetic */ kw0 a;
 
     public /* synthetic */ uv0(kw0 kw0Var) {
         this.a = kw0Var;
     }
 
-    @Override // org.telegram.messenger.rr
+    @Override // org.telegram.messenger.sr
     public void a(String str) {
         kw0 kw0Var = this.a;
         new z30(kw0Var.getContext(), kw0Var.j2, null, kw0Var.J0).show();
@@ -30,9 +30,9 @@ public final /* synthetic */ class uv0 implements org.telegram.ui.ActionBar.l0, 
         }
         TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
         if (stickerSet == null || !stickerSet.emojis) {
-            str = "https://" + org.telegram.messenger.mp.u1(kw0Var.a).X2 + "/addstickers/" + kw0Var.N1.set.short_name;
+            str = "https://" + org.telegram.messenger.np.u1(kw0Var.a).X2 + "/addstickers/" + kw0Var.N1.set.short_name;
         } else {
-            str = "https://" + org.telegram.messenger.mp.u1(kw0Var.a).X2 + "/addemoji/" + kw0Var.N1.set.short_name;
+            str = "https://" + org.telegram.messenger.np.u1(kw0Var.a).X2 + "/addemoji/" + kw0Var.N1.set.short_name;
         }
         String str2 = str;
         if (i7 == 1) {

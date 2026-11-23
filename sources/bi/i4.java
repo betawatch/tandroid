@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class i4 {
     public static final HashMap a = new HashMap();
@@ -43,18 +43,18 @@ public abstract class i4 {
     }
 
     public static void c() {
-        ks.e().k(ks.L3, new Object[0]);
+        ls.e().k(ls.L3, new Object[0]);
     }
 
     public static SpannableStringBuilder d(TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
         TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
-        String p10 = p(starGift != null ? y4.h(starGift) : "");
-        String p11 = p(y4.k(tL_messageActionStarGiftOnchainOffer.amount));
+        String p10 = p(starGift != null ? x4.h(starGift) : "");
+        String p11 = p(x4.k(tL_messageActionStarGiftOnchainOffer.amount));
         if (tL_messageActionStarGiftOnchainOffer.buyer) {
-            return org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749579, p11, p10));
+            return org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749579, p11, p10));
         }
-        String p12 = p(y4.t(tL_messageActionStarGiftOnchainOffer.amount));
-        return org.telegram.messenger.g0.W2(p12 != null ? gd.a0(null, null, 2131749590, p11, p12, p10) : gd.a0(null, null, 2131749589, p11, p10));
+        String p12 = p(x4.t(tL_messageActionStarGiftOnchainOffer.amount));
+        return org.telegram.messenger.g0.W2(p12 != null ? hd.a0(null, null, 2131749590, p11, p12, p10) : hd.a0(null, null, 2131749589, p11, p10));
     }
 
     public static void e(Activity activity, int i7, int i10, TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer, org.telegram.ui.ActionBar.h6 h6Var, lc lcVar) {
@@ -70,14 +70,14 @@ public abstract class i4 {
             return;
         }
         TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
-        String h = starGift != null ? y4.h(starGift) : "";
+        String h = starGift != null ? x4.h(starGift) : "";
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
-        String N0 = gd.N0(2131749602, null);
+        String N0 = hd.N0(2131749602, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749603, y4.k(tL_messageActionStarGiftOnchainOffer.amount), h));
-        alertDialog$Builder.h(gd.N0(2131752577, null), null);
-        alertDialog$Builder.k(gd.N0(2131749604, null), new org.telegram.ui.ActionBar.q1() { // from class: bi.h4
+        t1Var.U = org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749603, x4.k(tL_messageActionStarGiftOnchainOffer.amount), h));
+        alertDialog$Builder.h(hd.N0(2131752577, null), null);
+        alertDialog$Builder.k(hd.N0(2131749604, null), new org.telegram.ui.ActionBar.q1() { // from class: bi.h4
             @Override // org.telegram.ui.ActionBar.q1
             public final void h(org.telegram.ui.ActionBar.t1 t1Var2, int i11) {
                 TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer2 = tL_messageActionStarGiftOnchainOffer;
@@ -179,7 +179,7 @@ public abstract class i4 {
             return org.telegram.ui.Wallet.p0.b(tL_payments_starGiftOnchainOfferTx.message);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
-            y4.q(context, i7, h6Var, lcVar, "WALLET_UNSUPPORTED_SEND_MODE", null);
+            x4.q(context, i7, h6Var, lcVar, "WALLET_UNSUPPORTED_SEND_MODE", null);
             return null;
         }
     }
@@ -187,31 +187,31 @@ public abstract class i4 {
     public static SpannableStringBuilder r(TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
         ArrayList arrayList = new ArrayList();
         TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
-        String p10 = p(starGift != null ? y4.h(starGift) : "");
-        String p11 = p(y4.k(tL_messageActionStarGiftOnchainOffer.amount));
+        String p10 = p(starGift != null ? x4.h(starGift) : "");
+        String p11 = p(x4.k(tL_messageActionStarGiftOnchainOffer.amount));
         boolean z10 = tL_messageActionStarGiftOnchainOffer.accepted || tL_messageActionStarGiftOnchainOffer.settled;
         if (tL_messageActionStarGiftOnchainOffer.buyer) {
             if (z10) {
-                arrayList.add(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749587, p11, p10)));
+                arrayList.add(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749587, p11, p10)));
             } else if (tL_messageActionStarGiftOnchainOffer.declined) {
-                arrayList.add(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749586, p11, p10)));
+                arrayList.add(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749586, p11, p10)));
             } else if (tL_messageActionStarGiftOnchainOffer.cancelled) {
-                arrayList.add(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749583, p11, p10)));
+                arrayList.add(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749583, p11, p10)));
             }
             if (!z10 && (tL_messageActionStarGiftOnchainOffer.flags & 16) != 0) {
-                arrayList.add(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749584, p(y4.k(tL_messageActionStarGiftOnchainOffer.buyer_refund)))));
+                arrayList.add(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749584, p(x4.k(tL_messageActionStarGiftOnchainOffer.buyer_refund)))));
             }
             if (tL_messageActionStarGiftOnchainOffer.cancelled && (tL_messageActionStarGiftOnchainOffer.flags & 32) != 0) {
                 long j3 = tL_messageActionStarGiftOnchainOffer.fine;
                 if (j3 > 0) {
-                    arrayList.add(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749585, p(y4.k(j3)))));
+                    arrayList.add(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749585, p(x4.k(j3)))));
                 }
             }
         } else if (z10) {
-            arrayList.add(gd.N0(2131749582, null));
-            arrayList.add(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749580, p10, p11)));
+            arrayList.add(hd.N0(2131749582, null));
+            arrayList.add(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749580, p10, p11)));
         } else if (tL_messageActionStarGiftOnchainOffer.declined) {
-            arrayList.add(gd.N0(2131749581, null));
+            arrayList.add(hd.N0(2131749581, null));
         }
         if (arrayList.isEmpty()) {
             return u(tL_messageActionStarGiftOnchainOffer);
@@ -234,29 +234,29 @@ public abstract class i4 {
     }
 
     public static void t(int i7, TL_stars.StarGift starGift) {
-        org.telegram.messenger.g0.g3(new ai.y0(i7, starGift != null ? y4.h(starGift) : "", 2));
+        org.telegram.messenger.g0.g3(new ai.c1(i7, starGift != null ? x4.h(starGift) : "", 2));
     }
 
     public static SpannableStringBuilder u(TLRPC.TL_messageActionStarGiftOnchainOffer tL_messageActionStarGiftOnchainOffer) {
         TL_stars.StarGift starGift = tL_messageActionStarGiftOnchainOffer.gift;
-        String p10 = p(starGift != null ? y4.h(starGift) : "");
-        String p11 = p(y4.k(tL_messageActionStarGiftOnchainOffer.amount));
+        String p10 = p(starGift != null ? x4.h(starGift) : "");
+        String p11 = p(x4.k(tL_messageActionStarGiftOnchainOffer.amount));
         boolean z10 = tL_messageActionStarGiftOnchainOffer.accepted || tL_messageActionStarGiftOnchainOffer.settled;
         boolean z11 = tL_messageActionStarGiftOnchainOffer.buyer;
         if (z11) {
             if (z10) {
-                return org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749587, p11, p10));
+                return org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749587, p11, p10));
             }
             if (tL_messageActionStarGiftOnchainOffer.declined) {
-                return org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749586, p11, p10));
+                return org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749586, p11, p10));
             }
             if (tL_messageActionStarGiftOnchainOffer.cancelled) {
-                return org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749583, p11, p10));
+                return org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749583, p11, p10));
             }
         } else if (z10) {
-            return org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749580, p10, p11));
+            return org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749580, p10, p11));
         }
         int i7 = tL_messageActionStarGiftOnchainOffer.declined ? 2131749554 : tL_messageActionStarGiftOnchainOffer.cancelled ? 2131749555 : tL_messageActionStarGiftOnchainOffer.expired ? z11 ? 2131749553 : 2131749556 : 0;
-        return i7 == 0 ? d(tL_messageActionStarGiftOnchainOffer) : org.telegram.messenger.g0.W2(gd.a0(null, null, i7, p11, p10));
+        return i7 == 0 ? d(tL_messageActionStarGiftOnchainOffer) : org.telegram.messenger.g0.W2(hd.a0(null, null, i7, p11, p10));
     }
 }

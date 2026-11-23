@@ -16,9 +16,9 @@ import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.internal.play_billing.l3;
 import com.google.android.gms.internal.play_billing.z3;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class t implements ServiceConnection {
     public final c a;
@@ -144,7 +144,7 @@ public final class t implements ServiceConnection {
                 g3.t((g3) u10.b, 6);
                 j3 s5 = k3.s();
                 s5.c();
-                k3.q((k3) s5.b, ks.v1);
+                k3.q((k3) s5.b, ls.v1);
                 u10.d(s5);
                 c4 r10 = d4.r();
                 int i7 = this.d;
@@ -214,7 +214,7 @@ public final class t implements ServiceConnection {
                 g3.t((g3) u10.b, 6);
                 j3 s5 = k3.s();
                 s5.c();
-                k3.q((k3) s5.b, ks.u1);
+                k3.q((k3) s5.b, ls.u1);
                 u10.d(s5);
                 c4 r10 = d4.r();
                 int i7 = this.d;

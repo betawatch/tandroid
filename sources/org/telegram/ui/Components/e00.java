@@ -12,7 +12,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e00 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public float E;
@@ -134,7 +134,7 @@ public final class e00 extends FrameLayout implements org.telegram.ui.ActionBar.
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) this.b.i);
         if (this.y > 0) {
-            str = ", " + org.telegram.messenger.gd.G(this.y, "Chats", new Object[0]);
+            str = ", " + org.telegram.messenger.hd.G(this.y, "Chats", new Object[0]);
         } else {
             str = "";
         }

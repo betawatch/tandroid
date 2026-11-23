@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v91 extends org.telegram.ui.Cells.u2 {
     public boolean b5;
@@ -119,7 +119,7 @@ public final class v91 extends org.telegram.ui.Cells.u2 {
         canvas.translate(this.x1, 0.0f);
         if (this.b5) {
             int L = this.u2 ? 0 : org.telegram.messenger.g0.L(this.J);
-            if (org.telegram.messenger.gd.a0) {
+            if (org.telegram.messenger.hd.a0) {
                 canvas.drawLine(0.0f - this.x1, getMeasuredHeight() - 1, getMeasuredWidth() - L, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
             } else {
                 canvas.drawLine(L - this.x1, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
@@ -131,14 +131,14 @@ public final class v91 extends org.telegram.ui.Cells.u2 {
             int L4 = org.telegram.messenger.g0.L(28.0f);
             org.telegram.ui.Components.p5 p5Var = this.e5;
             if (p5Var != null) {
-                if (org.telegram.messenger.gd.a0) {
+                if (org.telegram.messenger.hd.a0) {
                     p5Var.setBounds((getWidth() - L2) - L4, L3, getWidth() - L2, L4 + L3);
                 } else {
                     p5Var.setBounds(L2, L3, L2 + L4, L4 + L3);
                 }
                 this.e5.draw(canvas);
             } else {
-                if (org.telegram.messenger.gd.a0) {
+                if (org.telegram.messenger.hd.a0) {
                     this.f5.setBounds((getWidth() - L2) - L4, L3, getWidth() - L2, L4 + L3);
                 } else {
                     this.f5.setBounds(L2, L3, L2 + L4, L4 + L3);
@@ -187,7 +187,7 @@ public final class v91 extends org.telegram.ui.Cells.u2 {
                 this.N1 = org.telegram.ui.ActionBar.m6.d9;
                 this.O1 = org.telegram.ui.ActionBar.m6.c9;
                 this.P1 = "Unhide";
-                this.Q1 = 2131743641;
+                this.Q1 = 2131743639;
                 this.R1 = org.telegram.ui.ActionBar.m6.y1;
             } else {
                 this.M1 = true;

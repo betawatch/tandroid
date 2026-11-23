@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v71 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -77,7 +77,7 @@ public final class v71 extends org.telegram.ui.Components.dk0 {
         u71 u71Var = new u71(this);
         org.telegram.ui.Cells.k5 k5Var = new org.telegram.ui.Cells.k5(this.c);
         k5Var.H = new RectF();
-        int i11 = org.telegram.messenger.j10.t0;
+        int i11 = org.telegram.messenger.k10.t0;
         k5Var.K = i11;
         k5Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
         k5Var.V = i10;

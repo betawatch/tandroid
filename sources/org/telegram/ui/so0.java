@@ -16,7 +16,7 @@ import org.telegram.messenger.BringAppForegroundService;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class so0 implements org.telegram.ui.ActionBar.n0, org.telegram.ui.Components.z51, org.telegram.ui.Components.j61, org.telegram.ui.Components.qd0, wi.l {
     public final /* synthetic */ PhotoViewer a;
@@ -553,7 +553,7 @@ public final class so0 implements org.telegram.ui.ActionBar.n0, org.telegram.ui.
             return true;
         }
         dq0 dq0Var = this.a.g0;
-        return (dq0Var.y && "inapp".equals(org.telegram.messenger.mp.u1(dq0Var.a).D3)) ? false : true;
+        return (dq0Var.y && "inapp".equals(org.telegram.messenger.np.u1(dq0Var.a).D3)) ? false : true;
     }
 
     @Override // wi.l

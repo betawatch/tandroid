@@ -11,7 +11,7 @@ import android.os.SystemClock;
 import android.view.MotionEvent;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d81 {
     public boolean A;
@@ -287,7 +287,7 @@ public final class d81 {
                     Handler handler = this.c;
                     b81 b81Var = this.n;
                     handler.removeCallbacks(b81Var);
-                    if (org.telegram.messenger.bz.K0) {
+                    if (org.telegram.messenger.cz.K0) {
                         if (z15) {
                             d0Var.f();
                         } else {
@@ -450,7 +450,7 @@ public final class d81 {
             d1Var2.c();
         }
         org.telegram.utils.twidget.d1 d1Var3 = this.p;
-        canvas.drawText(org.telegram.messenger.gd.N0(((d1Var3 != null && (p1Var = d1Var3.f) != null) ? p1Var.U : null) == null ? 2131742611 : 2131742612, null), 12.0f * f10, f10 * 28.0f, this.d);
+        canvas.drawText(org.telegram.messenger.hd.N0(((d1Var3 != null && (p1Var = d1Var3.f) != null) ? p1Var.U : null) == null ? 2131742609 : 2131742610, null), 12.0f * f10, f10 * 28.0f, this.d);
         return false;
     }
 
@@ -541,7 +541,7 @@ public final class d81 {
 
     public final float j(float f10) {
         int i7;
-        return (!org.telegram.messenger.gd.a0 || (i7 = this.R) <= 0) ? f10 : (i7 / this.b) - f10;
+        return (!org.telegram.messenger.hd.a0 || (i7 = this.R) <= 0) ? f10 : (i7 / this.b) - f10;
     }
 
     public final void l(boolean z10, boolean z11, boolean z12) {

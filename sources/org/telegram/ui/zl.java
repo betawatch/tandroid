@@ -6,7 +6,7 @@ import java.util.Locale;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.q1, h2.j {
     public final /* synthetic */ int a = 2;
@@ -61,16 +61,16 @@ public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.q1, h
                 org.telegram.ui.Components.tb0 tb0Var = (org.telegram.ui.Components.tb0) obj4;
                 org.telegram.ui.Components.tb0 tb0Var2 = (org.telegram.ui.Components.tb0) obj3;
                 org.telegram.ui.Components.tb0 tb0Var3 = (org.telegram.ui.Components.tb0) obj2;
-                ai.t1 t1Var2 = (ai.t1) obj;
+                ai.u1 u1Var = (ai.u1) obj;
                 if (z10) {
                     org.telegram.ui.Components.c5.d(tb0Var, tb0Var2, tb0Var3);
                 }
                 int value = tb0Var3.getValue();
                 int value2 = tb0Var2.getValue();
                 int value3 = tb0Var.getValue();
-                hk0 hk0Var = (hk0) t1Var2.c;
-                int i12 = t1Var2.b;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) t1Var2.d;
+                hk0 hk0Var = (hk0) u1Var.c;
+                int i12 = u1Var.b;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) u1Var.d;
                 if (i12 == 8) {
                     int[] iArr = hk0Var.y;
                     iArr[0] = value;
@@ -92,11 +92,11 @@ public final /* synthetic */ class zl implements org.telegram.ui.ActionBar.q1, h
         this.f = contentsettings;
     }
 
-    public /* synthetic */ zl(boolean z10, org.telegram.ui.Components.tb0 tb0Var, org.telegram.ui.Components.tb0 tb0Var2, org.telegram.ui.Components.tb0 tb0Var3, ai.t1 t1Var) {
+    public /* synthetic */ zl(boolean z10, org.telegram.ui.Components.tb0 tb0Var, org.telegram.ui.Components.tb0 tb0Var2, org.telegram.ui.Components.tb0 tb0Var3, ai.u1 u1Var) {
         this.b = z10;
         this.c = tb0Var;
         this.d = tb0Var2;
         this.e = tb0Var3;
-        this.f = t1Var;
+        this.f = u1Var;
     }
 }

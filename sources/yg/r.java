@@ -18,9 +18,9 @@ import di.ta;
 import n2.o0;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.nr;
 import ug.s1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final bc a;
@@ -57,7 +57,7 @@ public final class r extends FrameLayout {
         fVar.z = i7;
         fVar.A = m6.Ck;
         fVar.b();
-        g10.addView(bcVar, ma.r(ks.q2, ks.q2, 1));
+        g10.addView(bcVar, ma.r(ls.q2, ls.q2, 1));
         o oVar = new o(this, context);
         this.b = oVar;
         this.h = new Paint[20];
@@ -72,7 +72,7 @@ public final class r extends FrameLayout {
         bcVar.setStarParticlesView(oVar);
         TextView textView = new TextView(context);
         this.c = textView;
-        n10.p(textView, 1, 22.0f);
+        o10.p(textView, 1, 22.0f);
         int i10 = m6.G6;
         t6.U(textView, i10, h6Var);
         textView.setGravity(1);
@@ -145,8 +145,8 @@ public final class r extends FrameLayout {
         int i7 = m6.a7;
         h6 h6Var = this.e;
         t6.h(i7, this, h6Var);
-        this.c.setText(gd.a0("BoostingBoostsViaGifts", null, 2131753559, new Object[0]));
-        String a02 = gd.a0(null, null, v3.V(chat) ? 2131753507 : 2131753502, new Object[0]);
+        this.c.setText(hd.a0("BoostingBoostsViaGifts", null, 2131753559, new Object[0]));
+        String a02 = hd.a0(null, null, v3.V(chat) ? 2131753507 : 2131753502, new Object[0]);
         m80 m80Var = this.d;
         m80Var.setText(a02);
         t6.U(m80Var, m6.r5, h6Var);

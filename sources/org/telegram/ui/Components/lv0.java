@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class lv0 extends ek0 implements org.telegram.ui.ActionBar.b6 {
     public static final jv0 F3 = new jv0();
@@ -39,13 +39,13 @@ public abstract class lv0 extends ek0 implements org.telegram.ui.ActionBar.b6 {
     public final Paint m3;
     public int n3;
     public int o3;
-    public org.telegram.messenger.x10 p3;
-    public org.telegram.messenger.x10 q3;
+    public org.telegram.messenger.y10 p3;
+    public org.telegram.messenger.y10 q3;
     public boolean r3;
     public boolean s3;
     public bi.m3 t3;
     public int u3;
-    public org.telegram.messenger.x10 v3;
+    public org.telegram.messenger.y10 v3;
     public float w3;
     public ValueAnimator x3;
     public boolean y3;
@@ -86,7 +86,7 @@ public abstract class lv0 extends ek0 implements org.telegram.ui.ActionBar.b6 {
         setWillNotDraw(false);
         setOnItemClickListener(new o(this, 15));
         long currentTimeMillis = System.currentTimeMillis();
-        F3.c(org.telegram.messenger.j10.t0, Integer.valueOf(i7), new hi.c8(this, currentTimeMillis, 3));
+        F3.c(org.telegram.messenger.k10.t0, Integer.valueOf(i7), new hi.c8(this, currentTimeMillis, 3));
     }
 
     public static void A1(lv0 lv0Var, TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups, long j3) {
@@ -274,7 +274,7 @@ public abstract class lv0 extends ek0 implements org.telegram.ui.ActionBar.b6 {
                 canvas2 = canvas;
                 canvas2.drawRect(z10, 0.0f, z11, getHeight(), this.l3);
                 if (z11 < getWidth() && (drawable2 = this.j3) != null) {
-                    drawable2.setAlpha(org.telegram.messenger.ks.e4);
+                    drawable2.setAlpha(org.telegram.messenger.ls.e4);
                     Drawable drawable3 = this.j3;
                     drawable3.setBounds(z11, 0, drawable3.getIntrinsicWidth() + z11, getHeight());
                     this.j3.draw(canvas2);
@@ -364,7 +364,7 @@ public abstract class lv0 extends ek0 implements org.telegram.ui.ActionBar.b6 {
     public final void l0(int i7) {
         boolean z10;
         boolean z11;
-        org.telegram.messenger.x10 x10Var;
+        org.telegram.messenger.y10 y10Var;
         if (getChildCount() > 0) {
             View childAt = getChildAt(0);
             if (childAt instanceof gv0) {
@@ -380,19 +380,19 @@ public abstract class lv0 extends ek0 implements org.telegram.ui.ActionBar.b6 {
         boolean z12 = this.r3;
         if (z12 != z11) {
             this.r3 = z11;
-            org.telegram.messenger.x10 x10Var2 = this.p3;
-            if (x10Var2 != null) {
-                x10Var2.a(Integer.valueOf(z11 ? Math.max(0, getScrollToStartWidth() - (this.n3 - this.o3)) : 0));
+            org.telegram.messenger.y10 y10Var2 = this.p3;
+            if (y10Var2 != null) {
+                y10Var2.a(Integer.valueOf(z11 ? Math.max(0, getScrollToStartWidth() - (this.n3 - this.o3)) : 0));
             }
             invalidate();
-        } else if (z12 && (x10Var = this.p3) != null) {
-            x10Var.a(Integer.valueOf(Math.max(0, getScrollToStartWidth() - (this.n3 - this.o3))));
+        } else if (z12 && (y10Var = this.p3) != null) {
+            y10Var.a(Integer.valueOf(Math.max(0, getScrollToStartWidth() - (this.n3 - this.o3))));
         }
         if (this.s3 != z10) {
             this.s3 = z10;
-            org.telegram.messenger.x10 x10Var3 = this.q3;
-            if (x10Var3 != null) {
-                x10Var3.a(Boolean.valueOf(z10));
+            org.telegram.messenger.y10 y10Var3 = this.q3;
+            if (y10Var3 != null) {
+                y10Var3.a(Boolean.valueOf(z10));
             }
             invalidate();
         }
@@ -432,16 +432,16 @@ public abstract class lv0 extends ek0 implements org.telegram.ui.ActionBar.b6 {
         this.o3 = i7;
     }
 
-    public void setOnCategoryClick(org.telegram.messenger.x10 x10Var) {
-        this.v3 = x10Var;
+    public void setOnCategoryClick(org.telegram.messenger.y10 y10Var) {
+        this.v3 = y10Var;
     }
 
-    public void setOnScrollFully(org.telegram.messenger.x10 x10Var) {
-        this.q3 = x10Var;
+    public void setOnScrollFully(org.telegram.messenger.y10 y10Var) {
+        this.q3 = y10Var;
     }
 
-    public void setOnScrollIntoOccupiedWidth(org.telegram.messenger.x10 x10Var) {
-        this.p3 = x10Var;
+    public void setOnScrollIntoOccupiedWidth(org.telegram.messenger.y10 y10Var) {
+        this.p3 = y10Var;
     }
 
     public void setShownButtonsAtStart(float f10) {

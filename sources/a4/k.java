@@ -33,12 +33,12 @@ import m4.e0;
 import m4.f0;
 import m4.g0;
 import m6.n;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.mx0;
 import org.telegram.ui.Components.ox0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class k implements a0 {
     public final /* synthetic */ int a;
@@ -200,9 +200,9 @@ public class k implements a0 {
                                 int A3 = xVar.A();
                                 if (A3 != 21) {
                                     if (A3 == 14) {
-                                        i15 = ks.S1;
+                                        i15 = ls.S1;
                                     } else if (A3 == 33) {
-                                        i15 = ks.V1;
+                                        i15 = ls.V1;
                                     }
                                 }
                                 i15 = 172;
@@ -870,7 +870,7 @@ public class k implements a0 {
     public String toString() {
         switch (this.a) {
             case 2:
-                StringBuilder sb2 = new StringBuilder(ks.e3);
+                StringBuilder sb2 = new StringBuilder(ls.e3);
                 sb2.append("<<\n mode: ");
                 sb2.append((gc.d) this.c);
                 sb2.append("\n ecLevel: ");

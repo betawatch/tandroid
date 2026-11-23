@@ -12,7 +12,7 @@ import android.view.animation.DecelerateInterpolator;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vb0 extends bj0 implements org.telegram.messenger.y5 {
     public static final Paint I;
@@ -36,7 +36,7 @@ public final class vb0 extends bj0 implements org.telegram.messenger.y5 {
     public float f;
     public boolean h;
     public View n;
-    public org.telegram.messenger.fj r;
+    public org.telegram.messenger.gj r;
     public int s;
     public boolean w;
     public boolean x;
@@ -93,12 +93,12 @@ public final class vb0 extends bj0 implements org.telegram.messenger.y5 {
     */
     public final void a() {
         String r10;
-        org.telegram.messenger.fj fjVar = this.r;
-        if (fjVar != null) {
-            TLRPC.Message message = fjVar.k;
+        org.telegram.messenger.gj gjVar = this.r;
+        if (gjVar != null) {
+            TLRPC.Message message = gjVar.k;
             if (message.media != null) {
                 if (TextUtils.isEmpty(message.attachPath) || !new File(this.r.k.attachPath).exists()) {
-                    org.telegram.messenger.w7.G(org.telegram.messenger.j10.t0);
+                    org.telegram.messenger.w7.G(org.telegram.messenger.k10.t0);
                     if (!org.telegram.messenger.w7.M(this.r.k, false, true).exists()) {
                         r10 = org.telegram.messenger.w7.r(null, this.r.F0());
                         this.x = false;
@@ -113,7 +113,7 @@ public final class vb0 extends bj0 implements org.telegram.messenger.y5 {
                             this.w = S;
                             if (S) {
                                 this.h = true;
-                                Float w10 = org.telegram.messenger.ec.D().w(r10);
+                                Float w10 = org.telegram.messenger.fc.D().w(r10);
                                 if (w10 == null) {
                                     w10 = Float.valueOf(0.0f);
                                 }
@@ -168,8 +168,8 @@ public final class vb0 extends bj0 implements org.telegram.messenger.y5 {
         canvas.save();
         canvas.translate(bounds.left, bounds.top);
         canvas.drawRect(0.0f, 0.0f, width, height, I);
-        int z10 = org.telegram.messenger.n10.z(240.0f, height, 2);
-        int z11 = org.telegram.messenger.n10.z(48.0f, width, 2);
+        int z10 = org.telegram.messenger.o10.z(240.0f, height, 2);
+        int z11 = org.telegram.messenger.o10.z(48.0f, width, 2);
         Drawable drawable = this.y;
         drawable.setBounds(z11, z10, org.telegram.messenger.g0.L(48.0f) + z11, org.telegram.messenger.g0.L(48.0f) + z10);
         drawable.draw(canvas);
@@ -177,11 +177,11 @@ public final class vb0 extends bj0 implements org.telegram.messenger.y5 {
         canvas.drawText(this.F, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, org.telegram.messenger.g0.L(96.0f) + z10, L);
         canvas.drawText(this.G, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, org.telegram.messenger.g0.L(125.0f) + z10, M);
         if (this.x) {
-            upperCase = org.telegram.messenger.gd.N0(2131747612, null);
+            upperCase = org.telegram.messenger.hd.N0(2131747612, null);
             textPaint = P;
             L2 = 0;
         } else {
-            upperCase = this.w ? org.telegram.messenger.gd.N0(2131752577, null).toUpperCase() : org.telegram.messenger.gd.N0(2131744017, null);
+            upperCase = this.w ? org.telegram.messenger.hd.N0(2131752577, null).toUpperCase() : org.telegram.messenger.hd.N0(2131744015, null);
             L2 = org.telegram.messenger.g0.L(28.0f);
             textPaint = N;
         }
@@ -190,7 +190,7 @@ public final class vb0 extends bj0 implements org.telegram.messenger.y5 {
             if (this.H != null) {
                 canvas.drawText(this.H, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, org.telegram.messenger.g0.L(210.0f) + z10, O);
             }
-            int z12 = org.telegram.messenger.n10.z(240.0f, width, 2);
+            int z12 = org.telegram.messenger.o10.z(240.0f, width, 2);
             int L3 = org.telegram.messenger.g0.L(232.0f) + z10;
             Paint paint = J;
             paint.setColor(-10327179);

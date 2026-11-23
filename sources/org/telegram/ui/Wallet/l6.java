@@ -14,14 +14,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qc;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l6 extends FrameLayout {
     public final TextView a;
@@ -42,18 +42,18 @@ public final class l6 extends FrameLayout {
         this.c = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(20.0f), -1));
         frameLayout.setCameraDistance(org.telegram.messenger.g0.L(8000.0f));
-        addView(frameLayout, c8.ma.d(ks.p3, 244.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
+        addView(frameLayout, c8.ma.d(ls.p3, 244.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
         frameLayout.addView(frameLayout2, c8.ma.c(-1.0f, -1));
         FrameLayout frameLayout3 = new FrameLayout(context);
-        frameLayout2.addView(frameLayout3, c8.ma.d(ks.u2, 164.0f, 49, 0.0f, 24.0f, 0.0f, 0.0f));
+        frameLayout2.addView(frameLayout3, c8.ma.d(ls.u2, 164.0f, 49, 0.0f, 24.0f, 0.0f, 0.0f));
         final int i7 = 0;
         ci.e c10 = ci.f.c("ton://transfer/".concat(str), 768, gc.b.d, 1.0f, new ColorDrawable(0));
         frameLayout3.addView(new fi.u2(context, c10), c8.ma.c(-1.0f, -1));
         float f10 = c10 == null ? 0.0f : c10.l / c10.b;
         if (f10 > 0.0f) {
-            if (bz.o() == 0 || pc.f() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.getDeviceConfigurationInfo().reqGlEsVersion < 196608) {
+            if (cz.o() == 0 || qc.f() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.getDeviceConfigurationInfo().reqGlEsVersion < 196608) {
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.FIT_XY);
                 imageView.setImageResource(R.drawable.mini_gram_72);
@@ -66,7 +66,7 @@ public final class l6 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setText(gd.N0(2131742908, null));
+        textView.setText(hd.N0(2131742906, null));
         textView.setTextColor(-15556886);
         textView.setTextSize(1, 14.0f);
         textView.setGravity(17);
@@ -113,7 +113,7 @@ public final class l6 extends FrameLayout {
         textView2.setMaxLines(4);
         textView2.setLineSpacing(0.0f, 1.0f);
         TextView m10 = org.telegram.ui.Cells.c0.m(this.e, textView2, c8.ma.d(-1, 112.0f, 55, 8.0f, 32.0f, 8.0f, 0.0f), context);
-        m10.setText(gd.N0(2131742956, null));
+        m10.setText(hd.N0(2131742954, null));
         m10.setTextColor(-15556886);
         m10.setTextSize(1, 14.0f);
         m10.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
@@ -125,7 +125,7 @@ public final class l6 extends FrameLayout {
         m10.setCompoundDrawables(mutate, null, null, null);
         TextView m11 = org.telegram.ui.Cells.c0.m(this.e, m10, c8.ma.d(-2, 28.0f, 49, 0.0f, 149.0f, 0.0f, 0.0f), context);
         this.b = m11;
-        m11.setText(gd.N0(2131742749, null));
+        m11.setText(hd.N0(2131742747, null));
         m11.setTextColor(-15556886);
         m11.setTextSize(1, 14.0f);
         m11.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));

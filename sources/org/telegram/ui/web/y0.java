@@ -8,19 +8,19 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y0 extends AsyncTask {
     public final /* synthetic */ int a = 1;
     public final HashMap b = new HashMap();
     public Exception c;
-    public final x10 d;
+    public final y10 d;
 
-    public y0(x10 x10Var) {
-        this.d = x10Var;
+    public y0(y10 y10Var) {
+        this.d = y10Var;
     }
 
     @Override // android.os.AsyncTask
@@ -99,13 +99,13 @@ public final class y0 extends AsyncTask {
                 break;
             default:
                 String str = (String) obj;
-                x10 x10Var = this.d;
-                if (x10Var != null) {
+                y10 y10Var = this.d;
+                if (y10Var != null) {
                     if (this.c != null) {
-                        x10Var.a(null);
+                        y10Var.a(null);
                         break;
                     } else {
-                        x10Var.a(str);
+                        y10Var.a(str);
                         break;
                     }
                 }

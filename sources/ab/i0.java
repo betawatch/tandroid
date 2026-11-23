@@ -6,10 +6,10 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Callable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class i0 implements Callable {
                 }
                 return new j0(vVar, h0Var, new android.support.v4.media.session.a0(gVar, firebaseMessaging, dVar, 6), context, scheduledThreadPoolExecutor);
             default:
-                lambda$emulateSendNFT$23 = ((WalletEngine2) this.b).lambda$emulateSendNFT$23((AtomicBoolean) this.c, (String) this.d, (String) this.e, (String) this.f, (q10) this.g);
+                lambda$emulateSendNFT$23 = ((WalletEngine2) this.b).lambda$emulateSendNFT$23((AtomicBoolean) this.c, (String) this.d, (String) this.e, (String) this.f, (r10) this.g);
                 return lambda$emulateSendNFT$23;
         }
     }

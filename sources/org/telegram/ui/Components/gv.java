@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gv extends LinearLayout {
     public final a0.h a;
@@ -138,7 +138,7 @@ public final class gv extends LinearLayout {
         int i13 = (i12 - i10) / 2;
         if (!this.h) {
             int childCount = (getChildCount() - (!ovVar.a0 ? 1 : 0)) - (!ovVar.c0 ? 1 : 0);
-            int B = (int) (org.telegram.messenger.n10.B(30.0f, childCount, ((i11 - i7) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
+            int B = (int) (org.telegram.messenger.o10.B(30.0f, childCount, ((i11 - i7) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
             int paddingLeft = getPaddingLeft();
             for (int i14 = 0; i14 < childCount; i14++) {
                 View childAt = getChildAt((!ovVar.a0 ? 1 : 0) + (!ovVar.c0 ? 1 : 0) + i14);

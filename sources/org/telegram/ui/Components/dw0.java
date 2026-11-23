@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dw0 extends v4.y {
     public int e;
@@ -43,7 +43,7 @@ public final class dw0 extends v4.y {
         } else {
             TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
             tL_stickers_changeStickerPosition.position = this.e;
-            tL_stickers_changeStickerPosition.sticker = org.telegram.messenger.ri.c0(kw0Var.q1, "").document;
+            tL_stickers_changeStickerPosition.sticker = org.telegram.messenger.si.c0(kw0Var.q1, "").document;
             this.e = -1;
             kw0Var.q1 = null;
         }

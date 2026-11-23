@@ -6,12 +6,12 @@ import android.text.TextUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import org.telegram.messenger.ec;
+import org.telegram.messenger.az;
+import org.telegram.messenger.fc;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class w4 implements Runnable {
                     try {
                         String str3 = document.mime_type;
                         String lowerCase = str3 == null ? "" : str3.toLowerCase();
-                        bitmap = lowerCase.startsWith("image/") ? ec.K(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? zy.r(1, str) : null;
+                        bitmap = lowerCase.startsWith("image/") ? fc.K(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? az.r(1, str) : null;
                         if (bitmap != null) {
                             try {
                                 ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
@@ -77,7 +77,7 @@ public final /* synthetic */ class w4 implements Runnable {
                                         document.attributes.add(tL_documentAttributeImageSize);
                                     }
                                 }
-                                TLRPC.PhotoSize Z = ec.Z(bitmap, 320.0f, 320.0f, 80, false);
+                                TLRPC.PhotoSize Z = fc.Z(bitmap, 320.0f, 320.0f, 80, false);
                                 if (Z != null) {
                                     document.thumbs.clear();
                                     document.thumbs.add(Z);
@@ -119,9 +119,9 @@ public final /* synthetic */ class w4 implements Runnable {
                     String str5 = options.outMimeType;
                     boolean z10 = str5 != null && (str5.equalsIgnoreCase("image/jpeg") || str5.equalsIgnoreCase("image/jpg"));
                     float Z0 = org.telegram.messenger.g0.Z0(false);
-                    Bitmap K = ec.K(str4, null, Z0, Z0, true);
+                    Bitmap K = fc.K(str4, null, Z0, Z0, true);
                     if (K == null) {
-                        K = ec.K(str4, null, 800.0f, 800.0f, true);
+                        K = fc.K(str4, null, 800.0f, 800.0f, true);
                     }
                     if (K != null) {
                         File file = new File(w7.z(4), "rich_jpeg_" + Math.abs(str4.hashCode()) + ".jpg");

@@ -6,9 +6,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
+public final /* synthetic */ class m6 implements org.telegram.messenger.r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -21,7 +21,7 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
         final int i10 = 1;
@@ -59,8 +59,8 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
                 org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj3;
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
                 final Long l10 = (Long) obj2;
-                Utilities.u(0, new bi.m2(cxVar, l10, adVar, g2Var, 12), new x(cxVar, t1Var, l10, 8), new org.telegram.messenger.x10() { // from class: org.telegram.ui.ru
-                    @Override // org.telegram.messenger.x10
+                Utilities.u(0, new bi.m2(cxVar, l10, adVar, g2Var, 12), new x(cxVar, t1Var, l10, 8), new org.telegram.messenger.y10() { // from class: org.telegram.ui.ru
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj6) {
                         switch (i11) {
                             case 0:
@@ -71,7 +71,7 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
                                     break;
                                 } else {
                                     TLRPC.User c22 = cxVar2.getMessagesController().c2(Long.valueOf(cxVar2.I));
-                                    org.telegram.messenger.mp messagesController = cxVar2.getMessagesController();
+                                    org.telegram.messenger.np messagesController = cxVar2.getMessagesController();
                                     long longValue = l10.longValue();
                                     TLRPC.RequestPeerType requestPeerType = cxVar2.H;
                                     TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
@@ -86,15 +86,15 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
                                     runnable2.run();
                                     break;
                                 } else {
-                                    org.telegram.messenger.mp messagesController2 = cxVar3.getMessagesController();
+                                    org.telegram.messenger.np messagesController2 = cxVar3.getMessagesController();
                                     Long l11 = l10;
-                                    cxVar3.getMessagesController().b5(l11.longValue(), org.telegram.messenger.j10.i(cxVar3.getAccountInstance().a).f(), np.x0(messagesController2.O0(l11).admin_rights, cxVar3.H.user_admin_rights), null, true, cxVar3, false, true, null, runnable2, new ve(3, runnable2));
+                                    cxVar3.getMessagesController().b5(l11.longValue(), org.telegram.messenger.k10.i(cxVar3.getAccountInstance().a).f(), np.x0(messagesController2.O0(l11).admin_rights, cxVar3.H.user_admin_rights), null, true, cxVar3, false, true, null, runnable2, new ve(3, runnable2));
                                     break;
                                 }
                         }
                     }
-                }, new org.telegram.messenger.x10() { // from class: org.telegram.ui.ru
-                    @Override // org.telegram.messenger.x10
+                }, new org.telegram.messenger.y10() { // from class: org.telegram.ui.ru
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj6) {
                         switch (i10) {
                             case 0:
@@ -105,7 +105,7 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
                                     break;
                                 } else {
                                     TLRPC.User c22 = cxVar2.getMessagesController().c2(Long.valueOf(cxVar2.I));
-                                    org.telegram.messenger.mp messagesController = cxVar2.getMessagesController();
+                                    org.telegram.messenger.np messagesController = cxVar2.getMessagesController();
                                     long longValue = l10.longValue();
                                     TLRPC.RequestPeerType requestPeerType = cxVar2.H;
                                     TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
@@ -120,9 +120,9 @@ public final /* synthetic */ class m6 implements org.telegram.messenger.q10 {
                                     runnable2.run();
                                     break;
                                 } else {
-                                    org.telegram.messenger.mp messagesController2 = cxVar3.getMessagesController();
+                                    org.telegram.messenger.np messagesController2 = cxVar3.getMessagesController();
                                     Long l11 = l10;
-                                    cxVar3.getMessagesController().b5(l11.longValue(), org.telegram.messenger.j10.i(cxVar3.getAccountInstance().a).f(), np.x0(messagesController2.O0(l11).admin_rights, cxVar3.H.user_admin_rights), null, true, cxVar3, false, true, null, runnable2, new ve(3, runnable2));
+                                    cxVar3.getMessagesController().b5(l11.longValue(), org.telegram.messenger.k10.i(cxVar3.getAccountInstance().a).f(), np.x0(messagesController2.O0(l11).admin_rights, cxVar3.H.user_admin_rights), null, true, cxVar3, false, true, null, runnable2, new ve(3, runnable2));
                                     break;
                                 }
                         }

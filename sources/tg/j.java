@@ -16,17 +16,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
-    public static final List q0 = Arrays.asList(-90, 0, 90, Integer.valueOf(ks.K2));
+    public static final List q0 = Arrays.asList(-90, 0, 90, Integer.valueOf(ls.K2));
     public boolean E;
     public boolean F;
     public h G;
@@ -260,7 +260,7 @@ public abstract class j extends FrameLayout {
                 }
                 h hVar5 = this.G;
                 if (hVar5 != null) {
-                    hVar5.B(n10.w((float) getHeight(), 2.0f, scaleX, this.H.y) < ((float) org.telegram.messenger.g0.L(66.0f)));
+                    hVar5.B(o10.w((float) getHeight(), 2.0f, scaleX, this.H.y) < ((float) org.telegram.messenger.g0.L(66.0f)));
                     this.G.d(com.google.android.gms.internal.vision.e2.c((float) getHeight(), 2.0f, scaleX, this.H.y) > ((float) (((View) getParent()).getHeight() - org.telegram.messenger.g0.L(114.0f))));
                 }
                 h hVar6 = this.G;

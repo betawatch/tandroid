@@ -10,33 +10,33 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.f20;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Stories.recorder.StoryUploadingService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class o6 implements fs {
+public final class o6 implements gs {
     public long E;
-    public fj F;
-    public e20 G;
+    public gj F;
+    public f20 G;
     public boolean H;
     public boolean I;
     public boolean J;
     public final long K;
-    public fj L;
+    public gj L;
     public TL_bots.botPreviewMedia M;
     public final /* synthetic */ p6 N;
     public final boolean b;
@@ -75,7 +75,7 @@ public final class o6 implements fs {
         }
         TLRPC.InputPeer inputPeer = c7Var.v0;
         if (inputPeer == null || (inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
-            this.K = j10.i(p6Var.a).n;
+            this.K = k10.i(p6Var.a).n;
         } else {
             this.K = org.telegram.messenger.n5.n(inputPeer);
         }
@@ -111,12 +111,12 @@ public final class o6 implements fs {
         ArrayList arrayList;
         p6 p6Var = this.N;
         int i7 = p6Var.a;
-        ks.f(i7).n(this, ks.U1);
-        ks.f(i7).n(this, ks.V1);
-        ks.f(i7).n(this, ks.W1);
-        ks.f(i7).n(this, ks.c2);
-        ks.f(i7).n(this, ks.a2);
-        ks.f(i7).n(this, ks.b2);
+        ls.f(i7).n(this, ls.U1);
+        ls.f(i7).n(this, ls.V1);
+        ls.f(i7).n(this, ls.W1);
+        ls.f(i7).n(this, ls.c2);
+        ls.f(i7).n(this, ls.a2);
+        ls.f(i7).n(this, ls.b2);
         boolean z10 = this.J;
         long j3 = this.K;
         if (!z10 && (arrayList = (ArrayList) p6Var.b.f(j3)) != null) {
@@ -206,12 +206,12 @@ public final class o6 implements fs {
             }
             this.M = null;
         }
-        ks.f(i7).k(ks.y5, new Object[0]);
+        ls.f(i7).k(ls.y5, new Object[0]);
         if (c7Var != null && !c7Var.h && !this.d) {
             c7Var.i(false);
             this.d = true;
         }
-        ks.e().k(ks.E5, this.e);
+        ls.e().k(ls.E5, this.e);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:66:0x0164, code lost:
@@ -313,7 +313,7 @@ public final class o6 implements fs {
                             i11++;
                         }
                     } else {
-                        zy.x(this.e, tL_documentAttributeVideo, null);
+                        az.x(this.e, tL_documentAttributeVideo, null);
                     }
                     tL_inputMediaUploadedDocument.attributes.add(tL_documentAttributeVideo);
                     tL_documentAttributeVideo.supports_streaming = true;
@@ -340,20 +340,20 @@ public final class o6 implements fs {
                     inputMedia = tL_inputMediaUploadedDocument;
                 }
             }
-            int i13 = !j10.i(i7).q() ? mp.u1(i7).Z4 : mp.u1(i7).Y4;
+            int i13 = !k10.i(i7).q() ? np.u1(i7).Z4 : np.u1(i7).Y4;
             z11 = this.b;
             long j3 = this.K;
             if (z11) {
                 if (c7Var.J0 != 0) {
                     TL_bots.addPreviewMedia addpreviewmedia = new TL_bots.addPreviewMedia();
-                    addpreviewmedia.bot = mp.u1(i7).q1(c7Var.J0);
+                    addpreviewmedia.bot = np.u1(i7).q1(c7Var.J0);
                     addpreviewmedia.media = inputMedia;
                     addpreviewmedia.lang_code = c7Var.K0;
                     tL_stories_sendStory = addpreviewmedia;
                 } else {
                     TL_stories.TL_stories_sendStory tL_stories_sendStory2 = new TL_stories.TL_stories_sendStory();
                     tL_stories_sendStory2.random_id = this.a;
-                    tL_stories_sendStory2.peer = mp.u1(i7).l1(j3);
+                    tL_stories_sendStory2.peer = np.u1(i7).l1(j3);
                     tL_stories_sendStory2.media = inputMedia;
                     tL_stories_sendStory2.privacy_rules.addAll(arrayList2);
                     tL_stories_sendStory2.pinned = c7Var.G0;
@@ -371,8 +371,8 @@ public final class o6 implements fs {
                         if (charSequence2.length() > i13) {
                             charSequenceArr[0] = charSequenceArr[0].subSequence(0, i13);
                         }
-                        if (mp.u1(i7).j5()) {
-                            tL_stories_sendStory2.entities = ri.d0(i7).Y(charSequenceArr, true, true);
+                        if (np.u1(i7).j5()) {
+                            tL_stories_sendStory2.entities = si.d0(i7).Y(charSequenceArr, true, true);
                         } else {
                             tL_stories_sendStory2.entities.clear();
                         }
@@ -383,7 +383,7 @@ public final class o6 implements fs {
                     }
                     if (c7Var.n) {
                         tL_stories_sendStory2.flags |= 64;
-                        tL_stories_sendStory2.fwd_from_id = mp.u1(i7).o1(c7Var.q);
+                        tL_stories_sendStory2.fwd_from_id = np.u1(i7).o1(c7Var.q);
                         tL_stories_sendStory2.fwd_from_story = c7Var.r;
                         tL_stories_sendStory2.fwd_modified = !z10;
                     }
@@ -396,7 +396,7 @@ public final class o6 implements fs {
                     }
                     if (c7Var.T0 != null) {
                         for (int i15 = 0; i15 < c7Var.T0.size(); i15++) {
-                            TL_stories.MediaArea mediaArea = ((c20) c7Var.T0.get(i15)).M;
+                            TL_stories.MediaArea mediaArea = ((d20) c7Var.T0.get(i15)).M;
                             if (mediaArea != null) {
                                 tL_stories_sendStory2.media_areas.add(mediaArea);
                             }
@@ -409,7 +409,7 @@ public final class o6 implements fs {
                 }
             } else if (c7Var.J0 != 0) {
                 TL_bots.editPreviewMedia editpreviewmedia = new TL_bots.editPreviewMedia();
-                editpreviewmedia.bot = mp.u1(i7).q1(c7Var.J0);
+                editpreviewmedia.bot = np.u1(i7).q1(c7Var.J0);
                 editpreviewmedia.media = c7Var.L0;
                 editpreviewmedia.new_media = inputMedia;
                 editpreviewmedia.lang_code = c7Var.K0;
@@ -417,7 +417,7 @@ public final class o6 implements fs {
             } else {
                 TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
                 tL_stories_editStory.id = c7Var.f;
-                tL_stories_editStory.peer = mp.u1(i7).l1(j3);
+                tL_stories_editStory.peer = np.u1(i7).l1(j3);
                 tL_stories_editStory.flags |= 16;
                 TLRPC.InputDocument inputDocument2 = c7Var.z;
                 if (inputDocument2 != null) {
@@ -435,8 +435,8 @@ public final class o6 implements fs {
                     if (charSequence.length() > i13) {
                         charSequenceArr2[0] = charSequenceArr2[0].subSequence(0, i13);
                     }
-                    if (mp.u1(i7).j5()) {
-                        tL_stories_editStory.entities = ri.d0(i7).Y(charSequenceArr2, true, true);
+                    if (np.u1(i7).j5()) {
+                        tL_stories_editStory.entities = si.d0(i7).Y(charSequenceArr2, true, true);
                     } else {
                         tL_stories_editStory.entities.clear();
                     }
@@ -455,7 +455,7 @@ public final class o6 implements fs {
                 }
                 if (c7Var.T0 != null) {
                     for (int i16 = 0; i16 < c7Var.T0.size(); i16++) {
-                        TL_stories.MediaArea mediaArea2 = ((c20) c7Var.T0.get(i16)).M;
+                        TL_stories.MediaArea mediaArea2 = ((d20) c7Var.T0.get(i16)).M;
                         if (mediaArea2 != null) {
                             tL_stories_editStory.media_areas.add(mediaArea2);
                         }
@@ -478,7 +478,7 @@ public final class o6 implements fs {
             if (c7Var.E()) {
             }
         }
-        if (!j10.i(i7).q()) {
+        if (!k10.i(i7).q()) {
         }
         z11 = this.b;
         long j32 = this.K;
@@ -494,7 +494,7 @@ public final class o6 implements fs {
         if (c7Var.b0) {
             TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
             TLRPC.Document document = this.c.c0;
-            int i7 = mp.I8;
+            int i7 = np.I8;
             TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
             tL_inputDocument.id = document.id;
             tL_inputDocument.access_hash = document.access_hash;
@@ -508,12 +508,12 @@ public final class o6 implements fs {
         hi.n8 n8Var = this.c.E0;
         int i10 = 1;
         this.H = n8Var != null && n8Var.a == 1;
-        ks.f(this.N.a).b(this, ks.U1);
-        ks.f(this.N.a).b(this, ks.V1);
-        ks.f(this.N.a).b(this, ks.W1);
-        ks.f(this.N.a).b(this, ks.c2);
-        ks.f(this.N.a).b(this, ks.a2);
-        ks.f(this.N.a).b(this, ks.b2);
+        ls.f(this.N.a).b(this, ls.U1);
+        ls.f(this.N.a).b(this, ls.V1);
+        ls.f(this.N.a).b(this, ls.W1);
+        ls.f(this.N.a).b(this, ls.c2);
+        ls.f(this.N.a).b(this, ls.a2);
+        ls.f(this.N.a).b(this, ls.b2);
         boolean E = this.c.E();
         this.s = E;
         if (E) {
@@ -522,7 +522,7 @@ public final class o6 implements fs {
             String absolutePath = hi.c7.x(this.N.a, true).getAbsolutePath();
             tL_message.attachPath = absolutePath;
             this.e = absolutePath;
-            this.F = new fj(this.N.a, tL_message, null, false, false);
+            this.F = new gj(this.N.a, tL_message, null, false, false);
             this.c.s(new n6(this, i10));
         } else {
             File w10 = hi.c7.w(this.N.a, "jpg");
@@ -539,11 +539,11 @@ public final class o6 implements fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         p6 p6Var = this.N;
         int i11 = p6Var.a;
-        if (i7 == ks.a2) {
+        if (i7 == ls.a2) {
             if (objArr[0] == this.F) {
                 this.e = (String) objArr[1];
                 e();
@@ -551,8 +551,8 @@ public final class o6 implements fs {
             }
             return;
         }
-        int i12 = ks.b2;
-        int i13 = ks.D5;
+        int i12 = ls.b2;
+        int i13 = ls.D5;
         if (i7 == i12) {
             if (objArr[0] == this.F) {
                 String str = (String) objArr[1];
@@ -561,7 +561,7 @@ public final class o6 implements fs {
                 float floatValue = ((Float) objArr[4]).floatValue();
                 this.n = floatValue;
                 this.h = (this.r * 0.7f) + (floatValue * 0.3f);
-                ks.f(i11).k(i13, this.e, Float.valueOf(this.h));
+                ls.f(i11).k(i13, this.e, Float.valueOf(this.h));
                 if (this.y < 0 && this.n * this.E >= 1000.0f) {
                     this.y = longValue;
                 }
@@ -574,7 +574,7 @@ public final class o6 implements fs {
             }
             return;
         }
-        if (i7 == ks.c2) {
+        if (i7 == ls.c2) {
             if (objArr[0] == this.F) {
                 if (!this.b) {
                     hi.c7 c7Var = this.c;
@@ -593,7 +593,7 @@ public final class o6 implements fs {
             }
             return;
         }
-        if (i7 == ks.U1) {
+        if (i7 == ls.U1) {
             String str2 = (String) objArr[0];
             String str3 = this.e;
             if (str3 == null || !str2.equals(str3)) {
@@ -602,21 +602,21 @@ public final class o6 implements fs {
             c((TLRPC.InputFile) objArr[1]);
             return;
         }
-        if (i7 == ks.V1) {
+        if (i7 == ls.V1) {
             String str4 = (String) objArr[0];
             String str5 = this.e;
             if (str5 == null || !str4.equals(str5)) {
                 return;
             }
-            ks.e().k(ks.S4, 1, gd.N0(2131744211, null));
+            ls.e().k(ls.S4, 1, hd.N0(2131744209, null));
             b();
             return;
         }
-        if (i7 == ks.W1 && ((String) objArr[0]).equals(this.e)) {
+        if (i7 == ls.W1 && ((String) objArr[0]).equals(this.e)) {
             float min = Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue());
             this.r = min;
             this.h = (min * 0.7f) + (this.n * 0.3f);
-            ks.f(i11).k(i13, this.e, Float.valueOf(this.h));
+            ls.f(i11).k(i13, this.e, Float.valueOf(this.h));
         }
     }
 
@@ -627,8 +627,8 @@ public final class o6 implements fs {
         String str = this.e;
         boolean z10 = !c7Var.K;
         if (this.s) {
-            e20 e20Var = this.G;
-            r6 = Math.max(1, (int) (e20Var != null ? e20Var.q : 0L));
+            f20 f20Var = this.G;
+            r6 = Math.max(1, (int) (f20Var != null ? f20Var.q : 0L));
         }
         G.g0(str, false, z10, r6, c7Var.K ? 33554432 : 16777216, true);
     }

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qy0 extends org.telegram.ui.ActionBar.w2 {
     public static final /* synthetic */ int w1 = 0;
@@ -51,7 +51,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
         } else {
             if (qy0Var.q1) {
                 ?? tL_stories_report = new TL_stories.TL_stories_report();
-                tL_stories_report.peer = org.telegram.messenger.mp.u1(qy0Var.a).l1(j3);
+                tL_stories_report.peer = org.telegram.messenger.np.u1(qy0Var.a).l1(j3);
                 if (arrayList != null) {
                     tL_stories_report.id.addAll(arrayList);
                 }
@@ -60,7 +60,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
                 tL_messages_report = tL_stories_report;
             } else if (qy0Var.r1) {
                 ?? tL_reportMessage = new TL_ephemeral.TL_reportMessage();
-                tL_reportMessage.peer = org.telegram.messenger.mp.u1(qy0Var.a).l1(j3);
+                tL_reportMessage.peer = org.telegram.messenger.np.u1(qy0Var.a).l1(j3);
                 if (arrayList != null && !arrayList.isEmpty()) {
                     tL_reportMessage.id = ((Integer) arrayList.get(0)).intValue();
                 }
@@ -69,7 +69,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
                 tL_messages_report = tL_reportMessage;
             } else {
                 TLRPC.TL_messages_report tL_messages_report2 = new TLRPC.TL_messages_report();
-                tL_messages_report2.peer = org.telegram.messenger.mp.u1(qy0Var.a).l1(j3);
+                tL_messages_report2.peer = org.telegram.messenger.np.u1(qy0Var.a).l1(j3);
                 if (arrayList != null) {
                     tL_messages_report2.id.addAll(arrayList);
                 }
@@ -83,7 +83,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static void K0(int i7, final Context context, final long j3, final boolean z10, final boolean z11, final ArrayList arrayList, final org.telegram.ui.Components.lc lcVar, final org.telegram.ui.ActionBar.h6 h6Var, byte[] bArr, String str, final org.telegram.messenger.x10 x10Var) {
+    public static void K0(int i7, final Context context, final long j3, final boolean z10, final boolean z11, final ArrayList arrayList, final org.telegram.ui.Components.lc lcVar, final org.telegram.ui.ActionBar.h6 h6Var, byte[] bArr, String str, final org.telegram.messenger.y10 y10Var) {
         TLRPC.TL_messages_report tL_messages_report;
         TLRPC.TL_messages_report tL_messages_report2;
         if (context != null) {
@@ -91,7 +91,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
             final boolean[] zArr = {false};
             if (z10) {
                 TL_stories.TL_stories_report tL_stories_report = new TL_stories.TL_stories_report();
-                tL_stories_report.peer = org.telegram.messenger.mp.u1(i7).l1(j3);
+                tL_stories_report.peer = org.telegram.messenger.np.u1(i7).l1(j3);
                 tL_stories_report.id.addAll(arrayList);
                 tL_stories_report.option = bArr;
                 tL_stories_report.message = TextUtils.isEmpty(str) ? "" : str;
@@ -99,22 +99,22 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
             } else {
                 if (z11) {
                     TL_ephemeral.TL_reportMessage tL_reportMessage = new TL_ephemeral.TL_reportMessage();
-                    tL_reportMessage.peer = org.telegram.messenger.mp.u1(i7).l1(j3);
+                    tL_reportMessage.peer = org.telegram.messenger.np.u1(i7).l1(j3);
                     if (!arrayList.isEmpty()) {
                         tL_reportMessage.id = ((Integer) arrayList.get(0)).intValue();
                     }
                     tL_reportMessage.message = TextUtils.isEmpty(str) ? "" : str;
                     tL_reportMessage.option = bArr;
                     tL_messages_report = tL_reportMessage;
-                    ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_report, new d3.b(i10), new org.telegram.messenger.q10() { // from class: org.telegram.ui.jy0
-                        @Override // org.telegram.messenger.q10
+                    ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_report, new d3.b(i10), new org.telegram.messenger.r10() { // from class: org.telegram.ui.jy0
+                        @Override // org.telegram.messenger.r10
                         public final void a(Object obj, Object obj2) {
                             TLRPC.ReportResult reportResult = (TLRPC.ReportResult) obj;
                             boolean z12 = reportResult instanceof TLRPC.TL_reportResultChooseOption;
                             boolean[] zArr2 = zArr;
-                            org.telegram.messenger.x10 x10Var2 = x10Var;
+                            org.telegram.messenger.y10 y10Var2 = y10Var;
                             if (!z12 && !(reportResult instanceof TLRPC.TL_reportResultAddComment)) {
-                                org.telegram.messenger.g0.h3(new di.g8(1, x10Var2, zArr2), 200L);
+                                org.telegram.messenger.g0.h3(new di.g8(1, y10Var2, zArr2), 200L);
                                 return;
                             }
                             qy0 qy0Var = new qy0(false, context, h6Var, j3, z10, z11, arrayList, null);
@@ -133,29 +133,29 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
                                     ((py0) view2).a(1);
                                 }
                             }
-                            qy0Var.v1 = new md0(zArr2, x10Var2, lcVar, 1);
-                            qy0Var.n(new di.g8(2, x10Var2, zArr2));
+                            qy0Var.v1 = new md0(zArr2, y10Var2, lcVar, 1);
+                            qy0Var.n(new di.g8(2, y10Var2, zArr2));
                             qy0Var.show();
                         }
                     });
                 }
                 TLRPC.TL_messages_report tL_messages_report3 = new TLRPC.TL_messages_report();
-                tL_messages_report3.peer = org.telegram.messenger.mp.u1(i7).l1(j3);
+                tL_messages_report3.peer = org.telegram.messenger.np.u1(i7).l1(j3);
                 tL_messages_report3.id.addAll(arrayList);
                 tL_messages_report3.option = bArr;
                 tL_messages_report3.message = TextUtils.isEmpty(str) ? "" : str;
                 tL_messages_report2 = tL_messages_report3;
             }
             tL_messages_report = tL_messages_report2;
-            ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_report, new d3.b(i10), new org.telegram.messenger.q10() { // from class: org.telegram.ui.jy0
-                @Override // org.telegram.messenger.q10
+            ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_report, new d3.b(i10), new org.telegram.messenger.r10() { // from class: org.telegram.ui.jy0
+                @Override // org.telegram.messenger.r10
                 public final void a(Object obj, Object obj2) {
                     TLRPC.ReportResult reportResult = (TLRPC.ReportResult) obj;
                     boolean z12 = reportResult instanceof TLRPC.TL_reportResultChooseOption;
                     boolean[] zArr2 = zArr;
-                    org.telegram.messenger.x10 x10Var2 = x10Var;
+                    org.telegram.messenger.y10 y10Var2 = y10Var;
                     if (!z12 && !(reportResult instanceof TLRPC.TL_reportResultAddComment)) {
-                        org.telegram.messenger.g0.h3(new di.g8(1, x10Var2, zArr2), 200L);
+                        org.telegram.messenger.g0.h3(new di.g8(1, y10Var2, zArr2), 200L);
                         return;
                     }
                     qy0 qy0Var = new qy0(false, context, h6Var, j3, z10, z11, arrayList, null);
@@ -174,8 +174,8 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
                             ((py0) view2).a(1);
                         }
                     }
-                    qy0Var.v1 = new md0(zArr2, x10Var2, lcVar, 1);
-                    qy0Var.n(new di.g8(2, x10Var2, zArr2));
+                    qy0Var.v1 = new md0(zArr2, y10Var2, lcVar, 1);
+                    qy0Var.n(new di.g8(2, y10Var2, zArr2));
                     qy0Var.show();
                 }
             });
@@ -191,16 +191,16 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
         K0(currentAccount, context, j3, false, false, new ArrayList(), null, null, new byte[0], null, null);
     }
 
-    public static void M0(bn bnVar, org.telegram.messenger.fj fjVar) {
+    public static void M0(bn bnVar, org.telegram.messenger.gj gjVar) {
         int currentAccount = bnVar.getCurrentAccount();
         Activity parentActivity = bnVar.getParentActivity();
         if (parentActivity == null) {
             return;
         }
-        K0(currentAccount, parentActivity, org.telegram.messenger.fj.B0(fjVar.k), false, org.telegram.messenger.fj.c3(fjVar.k), new ArrayList(Collections.singleton(Integer.valueOf(org.telegram.messenger.fj.c3(fjVar.k) ? fjVar.P0() : fjVar.e1()))), org.telegram.ui.Components.lc.b0(bnVar), bnVar.getResourceProvider(), new byte[0], null, null);
+        K0(currentAccount, parentActivity, org.telegram.messenger.gj.B0(gjVar.k), false, org.telegram.messenger.gj.c3(gjVar.k), new ArrayList(Collections.singleton(Integer.valueOf(org.telegram.messenger.gj.c3(gjVar.k) ? gjVar.P0() : gjVar.e1()))), org.telegram.ui.Components.lc.b0(bnVar), bnVar.getResourceProvider(), new byte[0], null, null);
     }
 
-    public static void N0(bn bnVar, org.telegram.messenger.fj fjVar, org.telegram.ui.ActionBar.h6 h6Var) {
+    public static void N0(bn bnVar, org.telegram.messenger.gj gjVar, org.telegram.ui.ActionBar.h6 h6Var) {
         int currentAccount = bnVar.getCurrentAccount();
         Activity parentActivity = bnVar.getParentActivity();
         long a10 = bnVar.a();
@@ -208,10 +208,10 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
             return;
         }
         TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
-        byte[] bArr = fjVar.R0;
+        byte[] bArr = gjVar.R0;
         tL_messages_reportSponsoredMessage.random_id = bArr;
         tL_messages_reportSponsoredMessage.option = new byte[0];
-        ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new ii.f(parentActivity, h6Var, a10, bArr, bnVar, fjVar, currentAccount));
+        ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new ii.f(parentActivity, h6Var, a10, bArr, bnVar, gjVar, currentAccount));
     }
 
     @Override // org.telegram.ui.ActionBar.w2
@@ -308,7 +308,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.w2 {
         this.m1 = i1Var;
         int i10 = this.u0;
         i1Var.setPadding(i10, 0, i10, 0);
-        this.b.addView(i1Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        this.b.addView(i1Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         i1Var.setAdapter(new di.i4(5, context, this));
         if (arrayList == null && bArr == null) {
             if (z10) {

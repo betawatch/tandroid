@@ -90,8 +90,8 @@ import org.json.JSONException;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.jc;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.kc;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
@@ -105,9 +105,9 @@ import q6.m;
 import q7.l1;
 import q7.m1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class i implements SuccessContinuation, androidx.activity.result.b, b3.k, te.b, q0, i0, q, qt0, jc, WebMessageListenerBoundaryInterface, b9, w, OnSuccessListener, OnCompleteListener, ib.b {
+public final class i implements SuccessContinuation, androidx.activity.result.b, b3.k, te.b, q0, i0, q, qt0, kc, WebMessageListenerBoundaryInterface, b9, w, OnSuccessListener, OnCompleteListener, ib.b {
     public static i c;
     public final /* synthetic */ int a;
     public final Object b;
@@ -157,7 +157,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         if (callback == null) {
             return true;
         }
-        callback.onMenuOpened(ks.t1, kVar);
+        callback.onMenuOpened(ls.t1, kVar);
         return true;
     }
 
@@ -171,7 +171,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                 pVar.F.setFocusableInTouchMode(false);
             }
         }
-        ks.e().k(ks.k1, 512);
+        ls.e().k(ls.k1, 512);
     }
 
     public synchronized void E() {
@@ -378,7 +378,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         } else {
             qVar.m0.k = null;
         }
-        if (qVar.Q() && new a0(new androidx.biometric.t(k10, 0)).c(ks.e4) != 0) {
+        if (qVar.Q() && new a0(new androidx.biometric.t(k10, 0)).c(ls.e4) != 0) {
             qVar.m0.n = true;
             qVar.S();
         } else if (qVar.m0.p) {
@@ -529,7 +529,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         oh0 B;
         boolean[] zArr = (boolean[]) this.b;
@@ -1614,11 +1614,11 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
                         i7 = 1;
                         int f13 = cVar.f(8);
                         if ((f13 & 128) == 0) {
-                            f11 = f13 & ks.L1;
-                        } else if ((f13 & ks.W2) == 128) {
+                            f11 = f13 & ls.L1;
+                        } else if ((f13 & ls.W2) == 128) {
                             f11 = ((f13 & 63) << 8) | cVar.f(8);
                         } else {
-                            if ((f13 & ks.B3) != 192) {
+                            if ((f13 & ls.B3) != 192) {
                                 throw bc.c.a();
                             }
                             f11 = ((f13 & 31) << 16) | cVar.f(16);
@@ -2032,7 +2032,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
         throw new IllegalArgumentException("Executor must not be null.");
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
@@ -2044,7 +2044,7 @@ public final class i implements SuccessContinuation, androidx.activity.result.b,
     public /* synthetic */ void b(boolean z10) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 

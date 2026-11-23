@@ -6,11 +6,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class n5 {
     public static boolean A() {
-        TLRPC.User c22 = mp.u1(j10.t0).c2(0L);
+        TLRPC.User c22 = np.u1(k10.t0).c2(0L);
         if (c22 == null) {
             return false;
         }
@@ -61,8 +61,8 @@ public abstract class n5 {
             return str;
         }
         TLRPC.User user = (TLRPC.User) tLObject;
-        if (o10.A(user)) {
-            String N0 = gd.N0(2131746070, null);
+        if (p10.A(user)) {
+            String N0 = hd.N0(2131746070, null);
             if (b9Var != null) {
                 b9Var.g(12);
             }
@@ -71,8 +71,8 @@ public abstract class n5 {
             }
             return N0;
         }
-        if (o10.C(user)) {
-            String N02 = gd.N0(2131745705, null);
+        if (p10.C(user)) {
+            String N02 = hd.N0(2131745705, null);
             if (b9Var != null) {
                 b9Var.g(1);
             }
@@ -81,7 +81,7 @@ public abstract class n5 {
             }
             return N02;
         }
-        String q10 = o10.q(user);
+        String q10 = p10.q(user);
         if (b9Var != null) {
             b9Var.r(user);
         }
@@ -234,11 +234,11 @@ public abstract class n5 {
     }
 
     public static String l(int i7, long j3) {
-        return m(mp.u1(i7).g2(j3));
+        return m(np.u1(i7).g2(j3));
     }
 
     public static String m(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(o10.q((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
+        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(p10.q((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
     }
 
     public static long n(TLRPC.InputPeer inputPeer) {
@@ -306,15 +306,15 @@ public abstract class n5 {
     }
 
     public static String s(int i7, long j3) {
-        return u(mp.u1(i7).g2(j3));
+        return u(np.u1(i7).g2(j3));
     }
 
     public static String t(long j3) {
-        return u(mp.u1(j10.t0).g2(j3));
+        return u(np.u1(k10.t0).g2(j3));
     }
 
     public static String u(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(o10.l((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? g0.F2(g0.D2(((TLRPC.Chat) tLObject).title)) : "";
+        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(p10.l((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? g0.F2(g0.D2(((TLRPC.Chat) tLObject).title)) : "";
     }
 
     public static String v(String str, ArrayList arrayList, String str2) {
@@ -341,16 +341,16 @@ public abstract class n5 {
     }
 
     public static String w(long j3) {
-        int i7 = j10.t0;
-        TLObject g22 = mp.u1(i7).g2(j3);
+        int i7 = k10.t0;
+        TLObject g22 = np.u1(i7).g2(j3);
         if (g22 instanceof TLRPC.User) {
-            return gd.d0(i7, (TLRPC.User) g22, null, null);
+            return hd.d0(i7, (TLRPC.User) g22, null, null);
         }
         if (!(g22 instanceof TLRPC.Chat)) {
             return "";
         }
         TLRPC.Chat chat = (TLRPC.Chat) g22;
-        return chat.participants_count > 1 ? v3.V(chat) ? gd.H(',', "Subscribers", chat.participants_count) : gd.H(',', "Members", chat.participants_count) : v3.V(chat) ? gd.N0(2131751378, null) : gd.N0(2131754876, null);
+        return chat.participants_count > 1 ? v3.V(chat) ? hd.H(',', "Subscribers", chat.participants_count) : hd.H(',', "Members", chat.participants_count) : v3.V(chat) ? hd.N0(2131751378, null) : hd.N0(2131754876, null);
     }
 
     public static void x(TLRPC.Dialog dialog) {

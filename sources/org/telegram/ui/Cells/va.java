@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class va extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public int a;
@@ -51,8 +51,8 @@ public abstract class va extends FrameLayout implements org.telegram.ui.ActionBa
             uaVarArr[i10] = uaVar;
             uaVar.setClipToOutline(true);
             addView(uaVar);
-            uaVar.setOnClickListener(new bi.i5(this, uaVar, i10, 5));
-            uaVar.setOnLongClickListener(new bi.j5(this, uaVar, i10));
+            uaVar.setOnClickListener(new bi.h5(this, uaVar, i10, 5));
+            uaVar.setOnLongClickListener(new bi.i5(this, uaVar, i10));
             i10++;
         }
     }
@@ -81,7 +81,7 @@ public abstract class va extends FrameLayout implements org.telegram.ui.ActionBa
             uaVar.f = animatorSet2;
             animatorSet2.playTogether(ObjectAnimator.ofFloat(t3Var, "scaleX", z10 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(t3Var, "scaleY", z10 ? 0.8875f : 1.0f));
             uaVar.f.setDuration(200L);
-            uaVar.f.addListener(new bi.h7(26, uaVar, z10));
+            uaVar.f.addListener(new bi.g7(26, uaVar, z10));
             uaVar.f.start();
         } else {
             t3Var.setScaleX(z10 ? 0.8875f : 1.0f);
@@ -172,7 +172,7 @@ public abstract class va extends FrameLayout implements org.telegram.ui.ActionBa
     public final void onMeasure(int i7, int i10) {
         int i11 = 0;
         if (this.d == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), n10.C(3.0f, this.a, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), o10.C(3.0f, this.a, TLObject.FLAG_30));
             setPadding(0, 0, 0, org.telegram.messenger.g0.L(3.0f));
             return;
         }

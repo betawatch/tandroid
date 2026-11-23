@@ -5,7 +5,7 @@ import android.os.StatFs;
 import java.io.File;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u70 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class u70 implements Runnable {
                 break;
             default:
                 String str2 = LaunchActivity.C1;
-                if (org.telegram.messenger.j10.i(launchActivity.P).p()) {
+                if (org.telegram.messenger.k10.i(launchActivity.P).p()) {
                     try {
-                        SharedPreferences g12 = org.telegram.messenger.mp.g1();
+                        SharedPreferences g12 = org.telegram.messenger.np.g1();
                         int i11 = 2;
                         if ((((i10 == 2 || i10 == 1) && Math.abs(launchActivity.x1 - System.currentTimeMillis()) > 240000) || Math.abs(g12.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (z10 = org.telegram.messenger.w7.z(4)) != null) {
                             StatFs statFs = new StatFs(z10.getAbsolutePath());

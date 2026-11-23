@@ -16,19 +16,19 @@ import java.util.HashMap;
 import oi.h4;
 import oi.q3;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.c20;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.d20;
 import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.n5;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -39,7 +39,6 @@ import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.ay;
 import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.db;
-import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.h21;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.ot;
@@ -58,7 +57,7 @@ import org.telegram.ui.ns;
 import org.telegram.ui.ow;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
@@ -166,9 +165,9 @@ public final /* synthetic */ class i implements Runnable {
                 arrayList5.clear();
                 arrayList5.addAll(arrayList2);
                 int i18 = zVar.a;
-                mp.u1(i18).f4(arrayList3, true);
-                mp.u1(i18).Z3(arrayList4, true);
-                ks.f(i18).k(ks.F1, new Object[0]);
+                np.u1(i18).f4(arrayList3, true);
+                np.u1(i18).Z3(arrayList4, true);
+                ls.f(i18).k(ls.F1, new Object[0]);
                 zVar.c = false;
                 zVar.e(false, z15);
                 return;
@@ -248,7 +247,7 @@ public final /* synthetic */ class i implements Runnable {
                 TextView textView = (TextView) this.f;
                 ClipboardManager clipboardManager = (ClipboardManager) otVar.getContext().getSystemService("clipboard");
                 boolean z20 = z19 && (TextUtils.isEmpty(qVar.getText()) || TextUtils.equals(qVar.getText().toString(), str4)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                n10.o(textView.animate().alpha(z20 ? 1.0f : 0.0f).scaleX(z20 ? 1.0f : 0.7f).scaleY(z20 ? 1.0f : 0.7f), nr.h, 300L);
+                o10.o(textView.animate().alpha(z20 ? 1.0f : 0.0f).scaleX(z20 ? 1.0f : 0.7f).scaleY(z20 ? 1.0f : 0.7f), nr.h, 300L);
                 return;
             case 10:
                 ay ayVar = (ay) this.d;
@@ -281,7 +280,7 @@ public final /* synthetic */ class i implements Runnable {
                 bn bnVar2 = (bn) this.f;
                 boolean z22 = this.b;
                 File w10 = c7.w(g2Var.getCurrentAccount(), "webp");
-                int o10 = bz.o();
+                int o10 = cz.o();
                 float f10 = 512;
                 float f11 = o10 != 0 ? o10 != 2 ? 2560 : 3840 : 1280;
                 double d2 = (f11 * f10) / f10;
@@ -297,31 +296,31 @@ public final /* synthetic */ class i implements Runnable {
                 }
                 createBitmap.recycle();
                 ArrayList arrayList6 = new ArrayList();
-                ef efVar = new ef(0, w10.getAbsolutePath(), 0, false, 0, 0);
-                arrayList6.add(efVar);
-                c20 c20Var = new c20();
-                c20Var.a = (byte) 0;
-                c20Var.C = tL_messages_stickerSet;
-                w7.G(j10.t0);
-                c20Var.j = w7.J(document, null, true, true).getAbsolutePath();
-                c20Var.c = 0.5f - ((Math.min(512, 512) / f10) / 2.0f);
-                c20Var.d = 0.5f - ((Math.min(512, 512) / f10) / 2.0f);
-                c20Var.f = Math.min(512, 512) / f10;
-                c20Var.g = Math.min(512, 512) / f10;
+                ff ffVar = new ff(0, w10.getAbsolutePath(), 0, false, 0, 0);
+                arrayList6.add(ffVar);
+                d20 d20Var = new d20();
+                d20Var.a = (byte) 0;
+                d20Var.C = tL_messages_stickerSet;
+                w7.G(k10.t0);
+                d20Var.j = w7.J(document, null, true, true).getAbsolutePath();
+                d20Var.c = 0.5f - ((Math.min(512, 512) / f10) / 2.0f);
+                d20Var.d = 0.5f - ((Math.min(512, 512) / f10) / 2.0f);
+                d20Var.f = Math.min(512, 512) / f10;
+                d20Var.g = Math.min(512, 512) / f10;
                 int floor = (int) Math.floor(f12 * 0.5d);
-                c20Var.q = floor;
-                c20Var.r = floor;
-                c20Var.v = 2.0f;
-                c20Var.B = document;
-                if (fj.K2(document, true) || fj.O4(document)) {
-                    c20Var.b = (byte) (c20Var.b | (fj.K2(document, true) ? (byte) 1 : (byte) 4));
+                d20Var.q = floor;
+                d20Var.r = floor;
+                d20Var.v = 2.0f;
+                d20Var.B = document;
+                if (gj.K2(document, true) || gj.O4(document)) {
+                    d20Var.b = (byte) (d20Var.b | (gj.K2(document, true) ? (byte) 1 : (byte) 4));
                 }
                 ArrayList arrayList7 = new ArrayList();
-                efVar.p = arrayList7;
-                arrayList7.add(c20Var);
-                efVar.t = 3000L;
-                if (fj.K2(document, true)) {
-                    w7.G(j10.t0);
+                ffVar.p = arrayList7;
+                arrayList7.add(d20Var);
+                ffVar.t = 3000L;
+                if (gj.K2(document, true)) {
+                    w7.G(k10.t0);
                     File J = w7.J(document, null, true, true);
                     if (J != null) {
                         try {
@@ -335,13 +334,13 @@ public final /* synthetic */ class i implements Runnable {
                             } else {
                                 d = 0.0d;
                             }
-                            efVar.t = (long) (d * 1000.0d);
+                            ffVar.t = (long) (d * 1000.0d);
                         } catch (Exception e11) {
                             a8.g(e11, true);
                         }
                     }
-                } else if (fj.O4(document)) {
-                    efVar.t = (long) (fj.H0(document) * 1000.0d);
+                } else if (gj.O4(document)) {
+                    ffVar.t = (long) (gj.H0(document) * 1000.0d);
                 }
                 PhotoViewer.p1().I2(g2Var.getParentActivity(), null, g2Var.getResourceProvider());
                 PhotoViewer.p1().f2(arrayList6, 0, 11, false, new bw0(), bnVar2);
@@ -370,7 +369,7 @@ public final /* synthetic */ class i implements Runnable {
                     }
                     TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject5;
                     ArrayList<TLRPC.PhotoSize> arrayList8 = tL_photos_photo.photo.sizes;
-                    TLRPC.PhotoSize w11 = w7.w(arrayList8, ks.g2, z10, null, z10);
+                    TLRPC.PhotoSize w11 = w7.w(arrayList8, ls.g2, z10, null, z10);
                     TLRPC.PhotoSize w12 = w7.w(arrayList8, 800, z10, null, z10);
                     TLRPC.VideoSize x10 = tL_photos_photo.photo.video_sizes.isEmpty() ? null : w7.x(1000, tL_photos_photo.photo.video_sizes);
                     TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
@@ -399,10 +398,10 @@ public final /* synthetic */ class i implements Runnable {
                         sb3.append(w11.location.volume_id);
                         sb3.append("_");
                         String n11 = a8.p0.n(w11.location.local_id, "@50_50", sb3);
-                        ec D = ec.D();
+                        fc D = fc.D();
                         i16 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
                         z11 = true;
-                        D.S(n10, n11, fc.m(i16, 1, c22));
+                        D.S(n10, n11, gc.m(i16, 1, c22));
                     }
                     if (x10 != null && str7 != null) {
                         i13 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
@@ -431,27 +430,27 @@ public final /* synthetic */ class i implements Runnable {
                 }
                 cxVar.g4 = null;
                 cxVar.h4 = null;
-                ks notificationCenter = cxVar.getNotificationCenter();
+                ls notificationCenter = cxVar.getNotificationCenter();
                 Object[] objArr = new Object[1];
-                objArr[i7] = Integer.valueOf(mp.I8);
+                objArr[i7] = Integer.valueOf(np.I8);
                 notificationCenter.k(2, objArr);
                 cxVar.getNotificationCenter().k(46, new Object[i7]);
                 cxVar.getUserConfig().v(true);
                 i10 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                mp.u1(i10).s4(0L, "USERPIC_SETUP");
+                np.u1(i10).s4(0L, "USERPIC_SETUP");
                 cxVar.o5();
-                gc gcVar = cxVar.i4;
+                org.telegram.ui.Components.gc gcVar = cxVar.i4;
                 if (gcVar != null) {
                     xb xbVar = (xb) gcVar.e;
-                    xbVar.d.c(gd.N0(z23 ? 2131742529 : 2131742531, null), true, true);
+                    xbVar.d.c(hd.N0(z23 ? 2131742527 : 2131742529, null), true, true);
                     xbVar.setProgress(1.0f);
                     db button = xbVar.getButton();
                     button.setScaleX(0.6f);
                     button.setScaleY(0.6f);
                     button.setAlpha(0.0f);
                     button.setVisibility(0);
-                    n10.o(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), nr.h, 360L);
-                    gc gcVar2 = cxVar.i4;
+                    o10.o(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), nr.h, 360L);
+                    org.telegram.ui.Components.gc gcVar2 = cxVar.i4;
                     gcVar2.j = 5000;
                     gcVar2.i(false);
                     cxVar.i4.i(true);

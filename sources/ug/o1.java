@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import di.ec;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.qc;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Components.rh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o1 extends n8 {
     public final ec a0;
@@ -26,7 +26,7 @@ public final class o1 extends n8 {
 
     @Override // org.telegram.ui.Cells.n8, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        boolean e10 = pc.e(131072);
+        boolean e10 = qc.e(131072);
         org.telegram.ui.web.z0 z0Var = this.c0;
         if (e10) {
             ec ecVar = this.a0;

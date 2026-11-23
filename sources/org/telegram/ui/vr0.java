@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vr0 implements View.OnClickListener {
     public final /* synthetic */ mf0 a;
@@ -54,12 +54,12 @@ public final class vr0 implements View.OnClickListener {
             as0Var.c(false);
             return;
         }
-        if (org.telegram.messenger.bz.c1 > 0 && bnVar.m1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
-            org.telegram.ui.Components.gc t6 = new org.telegram.ui.Components.lc(org.telegram.ui.Components.cb.a(as0Var.getContext()), as0Var.b).t(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131748295, null)), null);
+        if (org.telegram.messenger.cz.c1 > 0 && bnVar.m1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
+            org.telegram.ui.Components.gc t6 = new org.telegram.ui.Components.lc(org.telegram.ui.Components.cb.a(as0Var.getContext()), as0Var.b).t(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131748295, null)), null);
             bnVar.C1 = t6;
             t6.j = 4000;
             t6.j();
-            org.telegram.messenger.bz.S(org.telegram.messenger.bz.c1 - 1);
+            org.telegram.messenger.cz.S(org.telegram.messenger.cz.c1 - 1);
         }
         org.telegram.ui.Components.ek0 ek0Var = this.c;
         ek0Var.requestLayout();

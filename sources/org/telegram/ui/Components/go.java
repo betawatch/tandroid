@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class go implements org.telegram.messenger.jc {
+public final class go implements org.telegram.messenger.kc {
     public boolean a;
     public final /* synthetic */ kg.g b;
     public final /* synthetic */ io c;
@@ -15,7 +15,7 @@ public final class go implements org.telegram.messenger.jc {
         this.b = gVar;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public final void G0(int i7, Drawable drawable) {
         oh0 oh0Var;
         bg.i iVar;
@@ -35,11 +35,11 @@ public final class go implements org.telegram.messenger.jc {
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public final /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public final void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
     }
 }

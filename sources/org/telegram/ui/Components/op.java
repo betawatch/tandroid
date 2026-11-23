@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class op extends View {
     public final CheckBoxBase a;
@@ -84,12 +84,12 @@ public class op extends View {
         this.a.e(0, 0, i11 - i7, i12 - i10);
     }
 
-    public void setCirclePaintProvider(org.telegram.messenger.i9 i9Var) {
+    public void setCirclePaintProvider(org.telegram.messenger.j9 j9Var) {
         CheckBoxBase checkBoxBase = this.a;
-        if (checkBoxBase.G == i9Var) {
+        if (checkBoxBase.G == j9Var) {
             return;
         }
-        checkBoxBase.G = i9Var;
+        checkBoxBase.G = j9Var;
         checkBoxBase.b();
     }
 

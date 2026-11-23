@@ -13,9 +13,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -37,7 +37,7 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
@@ -98,7 +98,7 @@ public class Track {
             lc.d dVar = new lc.d();
             dVar.k = new ArrayList();
             if ("audio/mpeg".equals(string)) {
-                dVar.d = ks.q1;
+                dVar.d = ls.q1;
             } else {
                 dVar.d = 64;
             }
@@ -122,14 +122,14 @@ public class Track {
             gVar.m = dVar;
             ByteBuffer allocate = ByteBuffer.allocate(gVar.c());
             h5.b.r(3, allocate);
-            allocate.put((byte) ((gVar.c() - 2) & ks.e4));
+            allocate.put((byte) ((gVar.c() - 2) & ls.e4));
             h5.b.p(gVar.d, allocate);
-            allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & ks.e4));
+            allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & ls.e4));
             if (gVar.e > 0) {
                 h5.b.p(gVar.k, allocate);
             }
             if (gVar.f > 0) {
-                allocate.put((byte) (gVar.i & ks.e4));
+                allocate.put((byte) (gVar.i & ls.e4));
                 allocate.put(h5.b.b(gVar.j));
                 allocate.put((byte) 0);
             }
@@ -155,9 +155,9 @@ public class Track {
                 }
                 i12 = 4;
             }
-            allocate2.put((byte) ((i12 + i10) & ks.e4));
-            allocate2.put((byte) (dVar2.d & ks.e4));
-            allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & ks.e4));
+            allocate2.put((byte) ((i12 + i10) & ls.e4));
+            allocate2.put((byte) (dVar2.d & ls.e4));
+            allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & ls.e4));
             h5.b.q(dVar2.g, allocate2);
             allocate2.putInt((int) dVar2.h);
             allocate2.putInt((int) dVar2.i);
@@ -186,7 +186,7 @@ public class Track {
             ByteBuffer allocate4 = ByteBuffer.allocate(3);
             h5.b.r(6, allocate4);
             allocate4.put((byte) 1);
-            allocate4.put((byte) (mVar2.d & ks.e4));
+            allocate4.put((byte) (mVar2.d & ls.e4));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
             i5.c.w(ze.a.c(kc.a.h, bVar2, bVar2, allocate));
@@ -364,11 +364,11 @@ public class Track {
             } else if (integer2 == 8) {
                 aVar5.e(100);
             } else if (integer2 == 16) {
-                aVar5.e(ks.v1);
+                aVar5.e(ls.v1);
             } else if (integer2 == 32) {
-                aVar5.e(ks.G1);
+                aVar5.e(ls.G1);
             } else if (integer2 == 64) {
-                aVar5.e(ks.T3);
+                aVar5.e(ls.T3);
             }
         } else {
             aVar5.e(100);

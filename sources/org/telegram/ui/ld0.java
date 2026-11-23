@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ld0 extends org.telegram.ui.Components.iu0 {
     public final ImageView a;
@@ -60,9 +60,9 @@ public final class ld0 extends org.telegram.ui.Components.iu0 {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        addView(frameLayout, c8.ma.o(-1, org.telegram.messenger.ks.e3));
+        addView(frameLayout, c8.ma.o(-1, org.telegram.messenger.ls.e3));
         ki.e eVar = new ki.e(context, 3);
-        frameLayout.addView(eVar, c8.ma.e(-1, org.telegram.messenger.ks.e3, org.telegram.messenger.ks.E1));
+        frameLayout.addView(eVar, c8.ma.e(-1, org.telegram.messenger.ls.e3, org.telegram.messenger.ls.E1));
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setImageResource(R.drawable.ic_ab_other);
@@ -87,26 +87,26 @@ public final class ld0 extends org.telegram.ui.Components.iu0 {
         fVar.z = i11;
         fVar.A = org.telegram.ui.ActionBar.m6.Ck;
         fVar.b();
-        frameLayout.addView(bcVar, c8.ma.e(org.telegram.messenger.ks.q2, org.telegram.messenger.ks.q2, 1));
+        frameLayout.addView(bcVar, c8.ma.e(org.telegram.messenger.ls.q2, org.telegram.messenger.ls.q2, 1));
         TextView textView = new TextView(context);
-        textView.setText(org.telegram.messenger.gd.N0(2131745770, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131745770, null));
         org.telegram.messenger.f3.l(textView, i7, null, 1, 20.0f);
         textView.setGravity(17);
         frameLayout.addView(textView, c8.ma.d(-1, -2.0f, 49, 16.0f, 152.0f, 16.0f, 0.0f));
         h6Var2 = ((org.telegram.ui.ActionBar.g2) de0Var).resourceProvider;
         di.h0 h0Var = new di.h0(1, context, h6Var2);
-        h0Var.a(R.drawable.menu_high_price, org.telegram.messenger.gd.N0(2131745784, null), org.telegram.messenger.gd.N0(2131745786, null));
+        h0Var.a(R.drawable.menu_high_price, org.telegram.messenger.hd.N0(2131745784, null), org.telegram.messenger.hd.N0(2131745786, null));
         addView(h0VarArr[0], c8.ma.t(-1, -2, 55, 0, 0, 0, 6));
         h6Var3 = ((org.telegram.ui.ActionBar.g2) de0Var).resourceProvider;
         di.h0 h0Var2 = new di.h0(1, context, h6Var3);
-        h0Var2.a(R.drawable.menu_feature_code, org.telegram.messenger.gd.N0(2131745782, null), org.telegram.messenger.gd.N0(2131745783, null));
+        h0Var2.a(R.drawable.menu_feature_code, org.telegram.messenger.hd.N0(2131745782, null), org.telegram.messenger.hd.N0(2131745783, null));
         addView(h0VarArr[1], c8.ma.t(-1, -2, 55, 0, 0, 0, 6));
         h6Var4 = ((org.telegram.ui.ActionBar.g2) de0Var).resourceProvider;
         di.h0 h0Var3 = new di.h0(1, context, h6Var4);
-        h0Var3.a(R.drawable.menu_feature_hands, org.telegram.messenger.g0.I2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.N0(2131745777, null), new hd0(this, 1)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)), org.telegram.messenger.gd.N0(2131745781, null));
+        h0Var3.a(R.drawable.menu_feature_hands, org.telegram.messenger.g0.I2(org.telegram.messenger.g0.T2(org.telegram.messenger.hd.N0(2131745777, null), new hd0(this, 1)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)), org.telegram.messenger.hd.N0(2131745781, null));
         addView(h0VarArr[2], c8.ma.t(-1, -2, 55, 0, 0, 0, 6));
-        addView(new Space(context), c8.ma.p(0, 0, 1.0f, org.telegram.messenger.ks.E1));
-        hi.e g10 = org.telegram.messenger.n10.g(24, context, null, true);
+        addView(new Space(context), c8.ma.p(0, 0, 1.0f, org.telegram.messenger.ls.E1));
+        hi.e g10 = org.telegram.messenger.o10.g(24, context, null, true);
         this.b = g10;
         g10.setLoading(true);
         addView(g10, c8.ma.t(-1, 48, 7, 0, 16, 0, 16));
@@ -298,7 +298,7 @@ public final class ld0 extends org.telegram.ui.Components.iu0 {
             intent.putExtra("android.intent.extra.TEXT", sb2.toString());
             ld0Var.getContext().startActivity(Intent.createChooser(intent, "Send email..."));
         } catch (Exception unused2) {
-            ld0Var.w.D1(org.telegram.messenger.gd.N0(R.string.AppName, null), org.telegram.messenger.gd.N0(2131748006, "NoMailInstalled"));
+            ld0Var.w.D1(org.telegram.messenger.hd.N0(R.string.AppName, null), org.telegram.messenger.hd.N0(2131748006, "NoMailInstalled"));
         }
     }
 
@@ -318,7 +318,7 @@ public final class ld0 extends org.telegram.ui.Components.iu0 {
     public final void m(Bundle bundle, boolean z10) {
         int i7;
         this.d = bundle;
-        String i02 = org.telegram.messenger.gd.i0(2131750504, bundle == null ? null : bundle.getString("country"));
+        String i02 = org.telegram.messenger.hd.i0(2131750504, bundle == null ? null : bundle.getString("country"));
         String string = bundle == null ? null : bundle.getString("product");
         String string2 = bundle == null ? null : bundle.getString("phoneFormated");
         String string3 = bundle == null ? null : bundle.getString("phoneHash");
@@ -330,14 +330,14 @@ public final class ld0 extends org.telegram.ui.Components.iu0 {
         boolean isEmpty = TextUtils.isEmpty(i02);
         di.h0[] h0VarArr = this.c;
         if (isEmpty) {
-            h0VarArr[0].c.setText(org.telegram.messenger.gd.N0(2131745786, null));
+            h0VarArr[0].c.setText(org.telegram.messenger.hd.N0(2131745786, null));
             i7 = 0;
         } else {
             i7 = 0;
-            h0VarArr[0].c.setText(org.telegram.messenger.gd.a0(null, null, 2131745785, i02));
+            h0VarArr[0].c.setText(org.telegram.messenger.hd.a0(null, null, 2131745785, i02));
         }
-        h0VarArr[2].setSubtitle(i10 == 7 ? org.telegram.messenger.gd.N0(2131745781, null) : org.telegram.messenger.gd.H(',', "SMSFee3TextDays", i10));
-        this.a.setOnClickListener(new bi.q6(this, string4, string5, string2, 15));
+        h0VarArr[2].setSubtitle(i10 == 7 ? org.telegram.messenger.hd.N0(2131745781, null) : org.telegram.messenger.hd.H(',', "SMSFee3TextDays", i10));
+        this.a.setOnClickListener(new bi.p6(this, string4, string5, string2, 15));
         hi.e eVar = this.b;
         eVar.setEnabled(true);
         eVar.setOnClickListener(null);
@@ -365,7 +365,7 @@ public final class ld0 extends org.telegram.ui.Components.iu0 {
             eVar.setVisibility(z11 ? 1 : 0);
             eVar.setLoading(z11);
             eVar.setEnabled(z11);
-            eVar.i(org.telegram.messenger.gd.N0(2131743670, null), z11, true);
+            eVar.i(org.telegram.messenger.hd.N0(2131743668, null), z11, true);
             return;
         }
         boolean z12 = i7;
@@ -373,8 +373,8 @@ public final class ld0 extends org.telegram.ui.Components.iu0 {
         eVar.setLoading(z12);
         Object[] objArr = new Object[1];
         objArr[z12 ? 1 : 0] = org.telegram.messenger.r1.i().f(j3, string6);
-        eVar.i(org.telegram.messenger.gd.a0(null, null, 2131745771, objArr), z12, true);
-        eVar.g(i10 == 7 ? org.telegram.messenger.gd.N0(2131745775, null) : org.telegram.messenger.gd.H(',', "SMSFeePurchaseTextDays", i10), z12);
+        eVar.i(org.telegram.messenger.hd.a0(null, null, 2131745771, objArr), z12, true);
+        eVar.g(i10 == 7 ? org.telegram.messenger.hd.N0(2131745775, null) : org.telegram.messenger.hd.H(',', "SMSFeePurchaseTextDays", i10), z12);
         eVar.setOnClickListener(new di.q0(this, string6, j3, string3, string2, i10));
     }
 

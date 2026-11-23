@@ -1,9 +1,9 @@
 package bi;
 
 import android.text.TextUtils;
-import org.telegram.messenger.aj;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.xi;
+import org.telegram.messenger.bj;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.yi;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.hj;
@@ -21,7 +21,7 @@ import org.telegram.ui.eg0;
 import org.telegram.ui.fm0;
 import org.telegram.ui.kl;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w2 extends g.p {
     public final /* synthetic */ int c;
@@ -39,12 +39,12 @@ public final class w2 extends g.p {
         int i12;
         int i13;
         int i14;
-        fj fjVar;
-        aj u92;
-        fj fjVar2;
-        aj a10;
+        gj gjVar;
+        bj u92;
+        gj gjVar2;
+        bj a10;
         int i15;
-        xi d;
+        yi d;
         switch (this.c) {
             case 0:
                 n3 n3Var = (n3) this.d;
@@ -56,15 +56,15 @@ public final class w2 extends g.p {
                 o41 G = c51Var.G(i7 - 1);
                 return (G == null || (i10 = G.v) == -1) ? wyVar.J : i10;
             case 1:
-                o41 G2 = ((j8) this.d).e2.G(i7 - 1);
+                o41 G2 = ((i8) this.d).e2.G(i7 - 1);
                 if (G2 == null || (i11 = G2.v) == -1) {
                     return 3;
                 }
                 return i11;
             case 2:
-                o8 o8Var = (o8) this.d;
-                wy wyVar2 = o8Var.W1;
-                c51 c51Var2 = o8Var.c2;
+                n8 n8Var = (n8) this.d;
+                wy wyVar2 = n8Var.W1;
+                c51 c51Var2 = n8Var.c2;
                 if (c51Var2 == null) {
                     return wyVar2.J;
                 }
@@ -104,10 +104,10 @@ public final class w2 extends g.p {
                 bn bnVar = (bn) this.d;
                 kl klVar = bnVar.D0;
                 int i16 = klVar.K;
-                if (i7 < i16 || i7 >= klVar.L || (i14 = i7 - i16) < 0 || i14 >= klVar.L().size() || (u92 = bnVar.u9((fjVar = (fj) bnVar.D0.L().get(i14)))) == null) {
+                if (i7 < i16 || i7 >= klVar.L || (i14 = i7 - i16) < 0 || i14 >= klVar.L().size() || (u92 = bnVar.u9((gjVar = (gj) bnVar.D0.L().get(i14)))) == null) {
                     return 1000;
                 }
-                return u92.d(fjVar).i;
+                return u92.d(gjVar).i;
             case 9:
                 hj hjVar = (hj) this.d;
                 int i17 = hjVar.r;
@@ -140,10 +140,10 @@ public final class w2 extends g.p {
                 return yxVar.R.get(i7);
             case 12:
                 qa0 qa0Var = (qa0) this.d;
-                if (i7 < 0 || i7 >= qa0Var.r.f.size() || (a10 = qa0.a(qa0Var, (fjVar2 = (fj) qa0Var.r.f.get(i7)))) == null) {
+                if (i7 < 0 || i7 >= qa0Var.r.f.size() || (a10 = qa0.a(qa0Var, (gjVar2 = (gj) qa0Var.r.f.get(i7)))) == null) {
                     return 1000;
                 }
-                return a10.d(fjVar2).i;
+                return a10.d(gjVar2).i;
             case 13:
                 kw0 kw0Var = (kw0) this.d;
                 if ((kw0Var.R1 == null || !(kw0Var.o1.e.get(i7) instanceof Integer)) && i7 != kw0Var.o1.h) {
@@ -152,10 +152,10 @@ public final class w2 extends g.p {
                 return kw0Var.o1.d;
             case 14:
                 eg0 eg0Var = (eg0) this.d;
-                fj fjVar3 = (fj) eg0Var.N.get((r1.size() - 1) - i7);
-                aj l10 = eg0Var.l(fjVar3);
+                gj gjVar3 = (gj) eg0Var.N.get((r1.size() - 1) - i7);
+                bj l10 = eg0Var.l(gjVar3);
                 if (l10 != null) {
-                    return l10.d(fjVar3).i;
+                    return l10.d(gjVar3).i;
                 }
                 return 1000;
             case 15:
@@ -183,8 +183,8 @@ public final class w2 extends g.p {
                 return (G5 == null || (i15 = G5.v) == -1) ? wyVar4.J : i15;
             default:
                 int size = (r0.t0.size() - 1) - i7;
-                aj ajVar = ((hi.a5) this.d).u0;
-                if (ajVar == null || size < 0 || size >= ajVar.d.size() || (d = ajVar.d((fj) ajVar.d.get(size))) == null) {
+                bj bjVar = ((hi.a5) this.d).u0;
+                if (bjVar == null || size < 0 || size >= bjVar.d.size() || (d = bjVar.d((gj) bjVar.d.get(size))) == null) {
                     return 1000;
                 }
                 return d.i;

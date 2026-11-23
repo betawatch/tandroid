@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m81 extends org.telegram.ui.Components.dk0 {
     public int c;
@@ -120,7 +120,7 @@ public final class m81 extends org.telegram.ui.Components.dk0 {
             } else {
                 org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(viewGroup.getContext(), org.telegram.ui.ActionBar.m6.L6, 21, 8, false, null);
                 o4Var.setHeight(54);
-                o4Var.setText(org.telegram.messenger.gd.N0(2131749017, null));
+                o4Var.setText(org.telegram.messenger.hd.N0(2131749017, null));
                 view = o4Var;
             }
             view = view2;
@@ -148,12 +148,12 @@ public final class m81 extends org.telegram.ui.Components.dk0 {
             d1Var.setWillNotDraw(false);
             d1Var.addView(imageView, c8.ma.e(-2, -2, 1));
             jaVar.addView(d1Var, c8.ma.d(-2, -2.0f, 49, 0.0f, 12.0f, 0.0f, 6.0f));
-            textView.setText(org.telegram.messenger.gd.N0(2131743799, null));
+            textView.setText(org.telegram.messenger.hd.N0(2131743797, null));
             imageView.setImageResource(R.drawable.groups_limit1);
             p81 p81Var = this.r;
             p81Var.y = jaVar;
             int i12 = p81Var.H;
-            p81Var.y.setMessageText(i12 == 0 ? org.telegram.messenger.gd.N0(2131743796, null) : i12 == 1 ? org.telegram.messenger.gd.N0(2131743797, null) : org.telegram.messenger.gd.N0(2131743798, null));
+            p81Var.y.setMessageText(i12 == 0 ? org.telegram.messenger.hd.N0(2131743794, null) : i12 == 1 ? org.telegram.messenger.hd.N0(2131743795, null) : org.telegram.messenger.hd.N0(2131743796, null));
             v4.q0 q0Var = new v4.q0(-1, -2);
             ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin = org.telegram.messenger.g0.L(16.0f);
             ((ViewGroup.MarginLayoutParams) q0Var).topMargin = org.telegram.messenger.g0.L(23.0f);

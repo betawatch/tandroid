@@ -7,15 +7,15 @@ import android.view.View;
 import android.widget.TextView;
 import c8.ma;
 import hi.x4;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.a6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.e3;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h extends e3 {
     public final /* synthetic */ m f;
@@ -24,7 +24,7 @@ public final class h extends e3 {
     public h(m mVar, Context context) {
         super(context);
         this.f = mVar;
-        this.a = j10.t0;
+        this.a = k10.t0;
         final int i7 = 1;
         setOrientation(1);
         t6.h(m6.a7, this, null);
@@ -60,7 +60,7 @@ public final class h extends e3 {
             }
         });
         a();
-        x4Var.addView(q9Var, ma.r(ks.O1, ks.O1, 49));
+        x4Var.addView(q9Var, ma.r(ls.O1, ls.O1, 49));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setGravity(17);

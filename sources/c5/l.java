@@ -31,13 +31,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import q4.q;
 import r0.a0;
 import r0.i0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class l extends ViewGroup {
     public static final b u0;
@@ -952,7 +952,7 @@ public class l extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction() & ks.e4;
+        int action = motionEvent.getAction() & ls.e4;
         if (action == 3 || action == 1) {
             v();
             return false;
@@ -1069,7 +1069,7 @@ public class l extends ViewGroup {
                 if (fVar.a) {
                     int i19 = fVar.b;
                     int i20 = i19 & 7;
-                    int i21 = i19 & ks.x1;
+                    int i21 = i19 & ls.x1;
                     if (i20 != 1) {
                         if (i20 == 3) {
                             i13 = childAt.getMeasuredWidth() + paddingLeft;
@@ -1184,7 +1184,7 @@ public class l extends ViewGroup {
             if (childAt.getVisibility() != 8 && (fVar2 = (f) childAt.getLayoutParams()) != null && fVar2.a) {
                 int i14 = fVar2.b;
                 int i15 = i14 & 7;
-                int i16 = i14 & ks.x1;
+                int i16 = i14 & ls.x1;
                 boolean z11 = i16 == 48 || i16 == 80;
                 if (i15 != 3 && i15 != 5) {
                     z10 = false;
@@ -1302,7 +1302,7 @@ public class l extends ViewGroup {
                 this.a0 = VelocityTracker.obtain();
             }
             this.a0.addMovement(motionEvent);
-            int action = motionEvent.getAction() & ks.e4;
+            int action = motionEvent.getAction() & ls.e4;
             if (action == 0) {
                 this.r.abortAnimation();
                 this.L = false;

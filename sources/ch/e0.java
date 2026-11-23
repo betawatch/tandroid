@@ -13,8 +13,8 @@ import android.view.MotionEvent;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class e0 extends ot implements b6 {
     public final h6 e2;
@@ -69,7 +69,7 @@ public abstract class e0 extends ot implements b6 {
         if (((b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)).length == 0) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
             b bVar = new b(this.e2);
-            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, ks.e4);
+            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, ls.e4);
             ofInt.addUpdateListener(new a(bVar, this, 0));
             ofInt.setDuration(200L);
             ofInt.start();
@@ -126,7 +126,7 @@ public abstract class e0 extends ot implements b6 {
     @Override // org.telegram.ui.Components.EditTextBoldCursor
     public final void o(ActionMode actionMode, Menu menu) {
         menu.clear();
-        menu.add(R.id.menu_delete, R.id.menu_delete, 0, gd.N0(2131751586, null));
+        menu.add(R.id.menu_delete, R.id.menu_delete, 0, hd.N0(2131751586, null));
     }
 
     @Override // org.telegram.ui.Components.rt, android.widget.TextView

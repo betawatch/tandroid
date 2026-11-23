@@ -3,12 +3,12 @@ package org.telegram.messenger.voip;
 import android.content.Context;
 import android.content.Intent;
 import android.text.Spannable;
-import bi.g5;
+import bi.f5;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import org.json.JSONObject;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.g2;
@@ -19,7 +19,7 @@ import org.telegram.ui.Wallet.z2;
 import org.telegram.utils.twidget.d1;
 import org.telegram.utils.twidget.p1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -88,7 +88,7 @@ public final /* synthetic */ class p implements Runnable {
                 if (h7 != null) {
                     long j10 = h7.n;
                     if (j10 != 0) {
-                        user = mp.u1(h7.b).c2(Long.valueOf(j10));
+                        user = np.u1(h7.b).c2(Long.valueOf(j10));
                         g2 T = LaunchActivity.T();
                         if (h7 != null || !org.telegram.utils.twidget.n0.F(h7) || user == null || !user.bot) {
                             d1Var.b(5, null, j3);
@@ -107,14 +107,14 @@ public final /* synthetic */ class p implements Runnable {
                         w2 w2Var = new w2(new boolean[]{false}, i0Var);
                         org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(i10);
                         boolean[] zArr = {false};
-                        g5 g5Var = new g5(zArr, context, i10, user, jSONObject, resourceProvider, w2Var);
+                        f5 f5Var = new f5(zArr, context, i10, user, jSONObject, resourceProvider, w2Var);
                         if (D.N()) {
-                            g5Var.run();
+                            f5Var.run();
                             return;
                         }
-                        z2.a.add(g5Var);
-                        D.x0(g5Var);
-                        org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.p(g5Var, zArr, w2Var, 8), 10000L);
+                        z2.a.add(f5Var);
+                        D.x0(f5Var);
+                        org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.p(f5Var, zArr, w2Var, 8), 10000L);
                         return;
                     }
                 }
@@ -153,7 +153,7 @@ public final /* synthetic */ class p implements Runnable {
                                     }
                                 }
                                 if (z10) {
-                                    ks.e().k(ks.l4, new Object[0]);
+                                    ls.e().k(ls.l4, new Object[0]);
                                 }
                                 return;
                             }

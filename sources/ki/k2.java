@@ -3,11 +3,11 @@ package ki;
 import android.content.Context;
 import android.graphics.Paint;
 import android.view.MotionEvent;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class k2 extends org.telegram.ui.web.v0 {
     public final /* synthetic */ int U0;
@@ -28,7 +28,7 @@ public final class k2 extends org.telegram.ui.web.v0 {
                 Paint paint = s2Var.R;
                 if (z10) {
                     s2Var.m();
-                    s2Var.Z0.a(s2Var.q() ? s2Var.x0.e : o10.q(mp.u1(s2Var.I).c2(Long.valueOf(s2Var.J))), str);
+                    s2Var.Z0.a(s2Var.q() ? s2Var.x0.e : p10.q(np.u1(s2Var.I).c2(Long.valueOf(s2Var.J))), str);
                     s2Var.Z0.b(org.telegram.messenger.g0.B(paint.getColor()) <= 0.721f, false);
                     s2Var.Z0.setBackgroundColor(paint.getColor());
                     s2Var.Y0 = str;

@@ -12,10 +12,10 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d3 extends View {
     public ValueAnimator E;
@@ -174,7 +174,7 @@ public final class d3 extends View {
             if (this.x > 20) {
                 Paint paint4 = this.f;
                 paint4.setAlpha((int) ((r1 * 35) / 100.0f));
-                paint2.setAlpha((int) ((this.x * ks.e4) / 100.0f));
+                paint2.setAlpha((int) ((this.x * ls.e4) / 100.0f));
                 canvas.drawCircle(width, height, i11, paint2);
                 this.c.q(canvas, paint3, false, 0L, 0);
                 this.c.q(canvas, paint4, false, 0L, 0);
@@ -205,7 +205,7 @@ public final class d3 extends View {
         } else {
             canvas.drawCircle(width, height, i13, paint2);
             canvas.drawCircle(width, height, this.r, paint3);
-            this.b.setAlpha(ks.e4);
+            this.b.setAlpha(ls.e4);
             i7 = i11;
             this.b.q(canvas, paint3, false, 0L, 0);
             this.b.setAlpha(35);
@@ -232,7 +232,7 @@ public final class d3 extends View {
             path.addCircle(width, height, this.s, Path.Direction.CW);
             canvas.clipPath(path);
             canvas.drawCircle(width, height, this.s, paint2);
-            this.b.setAlpha(ks.e4);
+            this.b.setAlpha(ls.e4);
             this.b.q(canvas, paint3, false, 0L, 0);
             this.b.setAlpha(35);
             this.b.draw(canvas);

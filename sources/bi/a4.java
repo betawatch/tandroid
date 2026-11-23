@@ -3,19 +3,19 @@ package bi;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.j91;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a4 implements x10 {
+public final /* synthetic */ class a4 implements y10 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -33,7 +33,7 @@ public final /* synthetic */ class a4 implements x10 {
         this.e = h6Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7;
         SpannableStringBuilder W2;
@@ -53,7 +53,7 @@ public final /* synthetic */ class a4 implements x10 {
                 if (str != null) {
                     i4.g(j3);
                     rVar.run();
-                    y4.q(context, this.b, h6Var, lcVar, str, null);
+                    x4.q(context, this.b, h6Var, lcVar, str, null);
                     break;
                 }
                 break;
@@ -70,9 +70,9 @@ public final /* synthetic */ class a4 implements x10 {
                     ki.h3.K0(context2, i11, connectedbotstarref2, j10, h6Var2);
                     break;
                 } else {
-                    TLRPC.User c22 = mp.u1(i11).c2(Long.valueOf(connectedbotstarref.bot_id));
+                    TLRPC.User c22 = np.u1(i11).c2(Long.valueOf(connectedbotstarref.bot_id));
                     if (c22 != null) {
-                        mp.u1(i11).c3(c22, 0, true, new ki.v2(w2Var, context2, i11, j10, h6Var2, 1));
+                        np.u1(i11).c3(c22, 0, true, new ki.v2(w2Var, context2, i11, j10, h6Var2, 1));
                         break;
                     }
                 }
@@ -101,11 +101,11 @@ public final /* synthetic */ class a4 implements x10 {
                         if (arrayList.size() == 0) {
                             W2 = null;
                         } else if (arrayList.size() != 1) {
-                            W2 = org.telegram.messenger.v3.V(O02) ? org.telegram.messenger.g0.W2(gd.G(arrayList.size(), "AddedMembersToChannel", new Object[0])) : org.telegram.messenger.g0.W2(gd.G(arrayList.size(), "AddedSubscribersToChannel", new Object[0]));
+                            W2 = org.telegram.messenger.v3.V(O02) ? org.telegram.messenger.g0.W2(hd.G(arrayList.size(), "AddedMembersToChannel", new Object[0])) : org.telegram.messenger.g0.W2(hd.G(arrayList.size(), "AddedSubscribersToChannel", new Object[0]));
                         } else if (org.telegram.messenger.v3.V(O02)) {
-                            W2 = org.telegram.messenger.g0.W2(gd.a0("HasBeenAddedToChannel", null, 2131749171, "**" + o10.k((TLRPC.User) arrayList.get(0), true) + "**"));
+                            W2 = org.telegram.messenger.g0.W2(hd.a0("HasBeenAddedToChannel", null, 2131749171, "**" + p10.k((TLRPC.User) arrayList.get(0), true) + "**"));
                         } else {
-                            W2 = org.telegram.messenger.g0.W2(gd.a0("HasBeenAddedToGroup", null, 2131749170, "**" + o10.k((TLRPC.User) arrayList.get(0), true) + "**"));
+                            W2 = org.telegram.messenger.g0.W2(hd.a0("HasBeenAddedToGroup", null, 2131749170, "**" + p10.k((TLRPC.User) arrayList.get(0), true) + "**"));
                         }
                         b02.V(arrayList, W2, null, null).j();
                         break;

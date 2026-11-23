@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hd implements org.telegram.messenger.s10 {
+public final /* synthetic */ class hd implements org.telegram.messenger.t10 {
     public final /* synthetic */ ChatActivityEnterView a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ ji.h c;
@@ -15,7 +15,7 @@ public final /* synthetic */ class hd implements org.telegram.messenger.s10 {
         this.d = str;
     }
 
-    @Override // org.telegram.messenger.s10
+    @Override // org.telegram.messenger.t10
     public final void a(Object obj, Object obj2, Object obj3) {
         Boolean bool = (Boolean) obj;
         Integer num = (Integer) obj2;

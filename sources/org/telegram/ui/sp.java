@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.a5 {
     public final /* synthetic */ String a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.q1, o
 
     @Override // org.telegram.ui.Components.a5
     public void O(int i7, int i10, boolean z10) {
-        ((org.telegram.ui.Components.ig) this.c).B((View) this.d, this.e, this.a, this.f, z10, i7, i10, (org.telegram.messenger.ef) this.h, this.b);
+        ((org.telegram.ui.Components.ig) this.c).B((View) this.d, this.e, this.a, this.f, z10, i7, i10, (org.telegram.messenger.ff) this.h, this.b);
     }
 
     @Override // org.telegram.ui.ActionBar.q1
@@ -41,13 +41,13 @@ public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.q1, o
         rqVar.y0(user.id, tLObject, tL_chatAdminRights, tL_chatBannedRights, this.a, this.b, rqVar.e1 == 1 ? 0 : 1, false);
     }
 
-    public /* synthetic */ sp(org.telegram.ui.Components.ig igVar, View view, Object obj, String str, Object obj2, org.telegram.messenger.ef efVar, boolean z10) {
+    public /* synthetic */ sp(org.telegram.ui.Components.ig igVar, View view, Object obj, String str, Object obj2, org.telegram.messenger.ff ffVar, boolean z10) {
         this.c = igVar;
         this.d = view;
         this.e = obj;
         this.a = str;
         this.f = obj2;
-        this.h = efVar;
+        this.h = ffVar;
         this.b = z10;
     }
 }

@@ -5,22 +5,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dg implements Runnable {
-    public final /* synthetic */ org.telegram.messenger.fj a;
+    public final /* synthetic */ org.telegram.messenger.gj a;
     public final /* synthetic */ long b;
     public final /* synthetic */ TL_keyboard.KeyboardButtonProto c;
-    public final /* synthetic */ org.telegram.messenger.fj d;
+    public final /* synthetic */ org.telegram.messenger.gj d;
     public final /* synthetic */ TLRPC.User e;
     public final /* synthetic */ ChatActivityEnterView f;
 
-    public dg(ChatActivityEnterView chatActivityEnterView, org.telegram.messenger.fj fjVar, long j3, TL_keyboard.KeyboardButtonProto keyboardButtonProto, org.telegram.messenger.fj fjVar2, TLRPC.User user) {
+    public dg(ChatActivityEnterView chatActivityEnterView, org.telegram.messenger.gj gjVar, long j3, TL_keyboard.KeyboardButtonProto keyboardButtonProto, org.telegram.messenger.gj gjVar2, TLRPC.User user) {
         this.f = chatActivityEnterView;
-        this.a = fjVar;
+        this.a = gjVar;
         this.b = j3;
         this.c = keyboardButtonProto;
-        this.d = fjVar2;
+        this.d = gjVar2;
         this.e = user;
     }
 
@@ -43,8 +43,8 @@ public final class dg implements Runnable {
         String text = keyboardButtonProto.getText();
         String url = keyboardButtonProto.getUrl();
         boolean c10 = cg.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
-        org.telegram.messenger.fj fjVar = this.d;
-        ki.e4 b10 = ki.e4.b(i7, j3, this.b, text, url, c10 ? 1 : 0, fjVar != null ? fjVar.k.id : 0, bnVar == null ? 0L : bnVar.j9(), null, false, null, null, 0, false, false);
+        org.telegram.messenger.gj gjVar = this.d;
+        ki.e4 b10 = ki.e4.b(i7, j3, this.b, text, url, c10 ? 1 : 0, gjVar != null ? gjVar.k.id : 0, bnVar == null ? 0L : bnVar.j9(), null, false, null, null, 0, false, false);
         LaunchActivity launchActivity = LaunchActivity.H1;
         if (launchActivity != null && launchActivity.N() != null && LaunchActivity.H1.N().k(b10) != null) {
             ki.y yVar = chatActivityEnterView.m0;
@@ -55,10 +55,10 @@ public final class dg implements Runnable {
             return;
         }
         TLRPC.User user = this.e;
-        String H1 = user == null ? null : org.telegram.messenger.mp.u1(chatActivityEnterView.R).H1(user.restriction_reason);
+        String H1 = user == null ? null : org.telegram.messenger.np.u1(chatActivityEnterView.R).H1(user.restriction_reason);
         if (!TextUtils.isEmpty(H1)) {
-            org.telegram.messenger.mp.u1(chatActivityEnterView.R);
-            org.telegram.messenger.mp.d5(H1, bnVar);
+            org.telegram.messenger.np.u1(chatActivityEnterView.R);
+            org.telegram.messenger.np.d5(H1, bnVar);
         } else {
             ki.s2 s2Var = new ki.s2(chatActivityEnterView.getContext(), chatActivityEnterView.M4);
             s2Var.m0 = chatActivityEnterView.E3;

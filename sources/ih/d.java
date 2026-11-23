@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import fh.g;
 import jh.k;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final Matrix a = new Matrix();
@@ -18,7 +18,7 @@ public abstract class d {
     public static final RectF c = new RectF();
 
     public static void a(eh.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
-        b(aVar, canvas, rectF, view, viewGroup, ks.e4);
+        b(aVar, canvas, rectF, view, viewGroup, ls.e4);
     }
 
     public static void b(eh.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i7) {

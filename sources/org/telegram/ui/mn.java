@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mn implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class mn implements Runnable {
                 break;
             default:
                 rnVar.e.setImageDrawable(rnVar.r);
-                rnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.N0(2131752200, "ChatSetPhotoOrVideo"), true);
+                rnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.hd.N0(2131752200, "ChatSetPhotoOrVideo"), true);
                 TLRPC.User user = rnVar.D0;
                 if (user != null) {
                     user.photo = null;

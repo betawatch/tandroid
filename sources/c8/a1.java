@@ -1,8 +1,8 @@
 package c8;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class a1 {
     public static boolean a(int i7, CharSequence charSequence) {
@@ -29,29 +29,29 @@ public abstract class a1 {
                 return true;
             default:
                 switch (charAt) {
-                    case ks.v0 /* 58 */:
-                    case ks.w0 /* 59 */:
-                    case ks.x0 /* 60 */:
-                    case ks.y0 /* 61 */:
-                    case ks.z0 /* 62 */:
-                    case ks.A0 /* 63 */:
+                    case ls.v0 /* 58 */:
+                    case ls.w0 /* 59 */:
+                    case ls.x0 /* 60 */:
+                    case ls.y0 /* 61 */:
+                    case ls.z0 /* 62 */:
+                    case ls.A0 /* 63 */:
                     case '@':
                         return true;
                     default:
                         switch (charAt) {
-                            case ks.c1 /* 91 */:
-                            case ks.d1 /* 92 */:
-                            case ks.e1 /* 93 */:
-                            case ks.f1 /* 94 */:
-                            case ks.g1 /* 95 */:
+                            case ls.c1 /* 91 */:
+                            case ls.d1 /* 92 */:
+                            case ls.e1 /* 93 */:
+                            case ls.f1 /* 94 */:
+                            case ls.g1 /* 95 */:
                             case '`':
                                 return true;
                             default:
                                 switch (charAt) {
-                                    case ks.H1 /* 123 */:
-                                    case ks.I1 /* 124 */:
-                                    case ks.J1 /* 125 */:
-                                    case ks.K1 /* 126 */:
+                                    case ls.H1 /* 123 */:
+                                    case ls.I1 /* 124 */:
+                                    case ls.J1 /* 125 */:
+                                    case ls.K1 /* 126 */:
                                         return true;
                                     default:
                                         return false;

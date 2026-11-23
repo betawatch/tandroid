@@ -7,12 +7,12 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import p5.c;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class PredefMacros {
     static {
@@ -150,7 +150,7 @@ public class PredefMacros {
         TeXFormula teXFormula = new TeXFormula("\\mathbb{G}\\mathsf{e}");
         teXFormula.add(new GeoGebraLogoAtom());
         teXFormula.add("\\mathsf{Gebra}");
-        return new ColorAtom(teXFormula.root, (Color) null, new Color(ks.n1, ks.n1, ks.n1));
+        return new ColorAtom(teXFormula.root, (Color) null, new Color(ls.n1, ls.n1, ls.n1));
     }
 
     public static final Atom Hstrok_macro(TeXParser teXParser, String[] strArr) {
@@ -259,13 +259,13 @@ public class PredefMacros {
             str = "mathring";
         } else if (charAt != '~') {
             switch (charAt) {
-                case ks.B1 /* 116 */:
+                case ls.B1 /* 116 */:
                     str = "tie";
                     break;
-                case ks.C1 /* 117 */:
+                case ls.C1 /* 117 */:
                     str = "breve";
                     break;
-                case ks.D1 /* 118 */:
+                case ls.D1 /* 118 */:
                     str = "check";
                     break;
                 default:

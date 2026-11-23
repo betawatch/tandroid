@@ -10,16 +10,16 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xb0 implements wt0, org.telegram.messenger.jc, gh.d, r0.m, org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6, vt0, org.telegram.messenger.i9, org.telegram.messenger.mc, pb0 {
+public final /* synthetic */ class xb0 implements wt0, org.telegram.messenger.kc, gh.d, r0.m, org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6, vt0, org.telegram.messenger.j9, org.telegram.messenger.nc, pb0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ xb0(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
         int i10 = this.a;
     }
@@ -29,7 +29,7 @@ public final /* synthetic */ class xb0 implements wt0, org.telegram.messenger.jc
         return r0.l1.b;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
         int i7 = this.a;
     }
@@ -84,7 +84,7 @@ public final /* synthetic */ class xb0 implements wt0, org.telegram.messenger.jc
             case 19:
             case 21:
             default:
-                org.telegram.messenger.mp.h1().edit().putBoolean("askedAboutFSILockscreen", true).commit();
+                org.telegram.messenger.np.h1().edit().putBoolean("askedAboutFSILockscreen", true).commit();
                 break;
             case 12:
                 t1Var.dismiss();
@@ -110,7 +110,7 @@ public final /* synthetic */ class xb0 implements wt0, org.telegram.messenger.jc
             case 23:
                 break;
             case 24:
-                org.telegram.messenger.mp.h1().edit().putBoolean("askedAboutMiuiLockscreen", true).commit();
+                org.telegram.messenger.np.h1().edit().putBoolean("askedAboutMiuiLockscreen", true).commit();
                 break;
         }
     }
@@ -128,7 +128,7 @@ public final /* synthetic */ class xb0 implements wt0, org.telegram.messenger.jc
         return (((int) a8.p0.f(ci.c1.b[3], 255.0f, 100.0f, 0.5f)) << 24) | 16777215;
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.j9
     public Object m(Object obj) {
         switch (this.a) {
             case 11:
@@ -154,7 +154,7 @@ public final /* synthetic */ class xb0 implements wt0, org.telegram.messenger.jc
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         oh0 B;
         switch (this.a) {
@@ -173,7 +173,7 @@ public final /* synthetic */ class xb0 implements wt0, org.telegram.messenger.jc
         }
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public void q(Exception exc) {
         org.telegram.messenger.a8.g(exc, true);
     }

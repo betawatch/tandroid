@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jw0 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,14 +33,14 @@ public final /* synthetic */ class jw0 implements Runnable {
             case 0:
                 kw0 kw0Var = (kw0) obj;
                 ProfileActivity profileActivity = kw0Var.h.e;
-                profileActivity.getNotificationCenter().n(profileActivity, org.telegram.messenger.ks.s1);
+                profileActivity.getNotificationCenter().n(profileActivity, org.telegram.messenger.ls.s1);
                 if (i14 == 2) {
                     profileActivity.getMessagesController().s4(0L, "PREMIUM_GRACE");
                     vf.c.t(kw0Var.getContext(), profileActivity.getMessagesController().O5);
                 } else {
                     profileActivity.getMessagesController().s4(0L, i14 == 0 ? "VALIDATE_PHONE_NUMBER" : "VALIDATE_PASSWORD");
                 }
-                profileActivity.getNotificationCenter().c(profileActivity, org.telegram.messenger.ks.s1);
+                profileActivity.getNotificationCenter().c(profileActivity, org.telegram.messenger.ls.s1);
                 profileActivity.H5(false, false);
                 break;
             case 1:
@@ -93,7 +93,7 @@ public final /* synthetic */ class jw0 implements Runnable {
                     org.telegram.ui.Components.voip.x2 x2Var2 = hc1Var.w;
                     if (x2Var2.W != 3) {
                         x2Var2.W = 3;
-                        ValueAnimator ofInt2 = ValueAnimator.ofInt(x2Var2.I, org.telegram.messenger.ks.e4);
+                        ValueAnimator ofInt2 = ValueAnimator.ofInt(x2Var2.I, org.telegram.messenger.ls.e4);
                         x2Var2.P = ofInt2;
                         ofInt2.addUpdateListener(new org.telegram.ui.Components.voip.v2(x2Var2, 2));
                         x2Var2.P.setDuration(500L);
@@ -104,9 +104,9 @@ public final /* synthetic */ class jw0 implements Runnable {
                 }
             case 4:
                 org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(i14);
-                org.telegram.messenger.ks f10 = org.telegram.messenger.ks.f(i14);
+                org.telegram.messenger.ls f10 = org.telegram.messenger.ls.f(i14);
                 org.telegram.ui.Wallet.h0 h0Var = new org.telegram.ui.Wallet.h0(f10, (fe0) obj, D);
-                f10.b(h0Var, org.telegram.messenger.ks.d4);
+                f10.b(h0Var, org.telegram.messenger.ls.d4);
                 org.telegram.messenger.g0.h3(h0Var, 10000L);
                 if (D.e == null && D.C < 0) {
                     D.h0();
@@ -124,11 +124,11 @@ public final /* synthetic */ class jw0 implements Runnable {
                 }
                 break;
             case 6:
-                org.telegram.messenger.ks.f(i14).n((org.telegram.ui.Wallet.m2) obj, org.telegram.messenger.ks.d4);
+                org.telegram.messenger.ls.f(i14).n((org.telegram.ui.Wallet.m2) obj, org.telegram.messenger.ls.d4);
                 break;
             case 7:
                 org.telegram.ui.Wallet.p6 p6Var = (org.telegram.ui.Wallet.p6) obj;
-                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.j01(p6Var, i14, org.telegram.ui.Wallet.p6.h(p6Var.R, i14), 20));
+                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.f21(p6Var, i14, org.telegram.ui.Wallet.p6.h(p6Var.R, i14), 19));
                 break;
             case 8:
                 org.telegram.ui.Wallet.m7 m7Var = (org.telegram.ui.Wallet.m7) obj;
@@ -197,7 +197,7 @@ public final /* synthetic */ class jw0 implements Runnable {
                 sg.k0.e(i14).j(h1Var.c);
                 break;
             case 14:
-                org.telegram.messenger.ks.f(i14).k(org.telegram.messenger.ks.u3, Boolean.FALSE);
+                org.telegram.messenger.ls.f(i14).k(org.telegram.messenger.ls.u3, Boolean.FALSE);
                 ((tg.f2) obj).h();
                 break;
             case 15:

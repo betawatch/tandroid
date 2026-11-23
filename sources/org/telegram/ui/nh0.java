@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.SharedPreferences;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class nh0 implements org.telegram.ui.Components.qo {
     public final /* synthetic */ long a;
@@ -122,10 +122,10 @@ public final class nh0 implements org.telegram.ui.Components.qo {
     @Override // org.telegram.ui.Components.qo
     public final void w() {
         int i7;
-        String v = org.telegram.messenger.xs.v(this.a, 0, false);
+        String v = org.telegram.messenger.ys.v(this.a, 0, false);
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.h;
         i7 = ((org.telegram.ui.ActionBar.g2) notificationsCustomSettingsActivity).currentAccount;
-        SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(i7).g7;
+        SharedPreferences sharedPreferences = org.telegram.messenger.np.u1(i7).g7;
         boolean z10 = sharedPreferences.getBoolean("sound_enabled_" + v, true);
         boolean z11 = !z10;
         sharedPreferences.edit().putBoolean("sound_enabled_" + v, z11).apply();

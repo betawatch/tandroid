@@ -11,12 +11,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class j6 extends FrameLayout {
     public final TextView a;
@@ -56,7 +56,7 @@ public class j6 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.c) {
-            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 
@@ -89,17 +89,17 @@ public class j6 extends FrameLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, h6Var);
-        n10.q(textView, 1, 16.0f, 1, 1);
+        o10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity((gd.a0 ? 5 : 3) | 16);
+        textView.setGravity((hd.a0 ? 5 : 3) | 16);
         float f10 = 21;
-        addView(textView, c8.ma.d(-1, -1.0f, (gd.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
+        addView(textView, c8.ma.d(-1, -1.0f, (hd.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
         RadioButton radioButton = new RadioButton(context);
         this.b = radioButton;
         radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
         org.telegram.ui.ActionBar.t6.O(radioButton, org.telegram.ui.ActionBar.m6.g7, org.telegram.ui.ActionBar.m6.h7, h6Var);
-        boolean z10 = gd.a0;
+        boolean z10 = hd.a0;
         addView(radioButton, c8.ma.d(22, 22.0f, (z10 ? 3 : 5) | 48, z10 ? 22 : 0, 14.0f, z10 ? 0 : 22, 0.0f));
     }
 }

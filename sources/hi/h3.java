@@ -3,24 +3,24 @@ package hi;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class h3 extends org.telegram.ui.ActionBar.w2 {
     public final g3 m1;
     public ValueAnimator n1;
     public r1.g o1;
     public Boolean p1;
-    public x10 q1;
+    public y10 q1;
 
     public h3(Context context, org.telegram.ui.ActionBar.h6 h6Var, String str, float f10) {
         super(1, context, h6Var, false);
         P(-14737633);
-        g3 g3Var = new g3(j10.t0, context, new fi.b(), f10, str);
+        g3 g3Var = new g3(k10.t0, context, new fi.b(), f10, str);
         this.m1 = g3Var;
         g3Var.H.setVisibility(8);
         g3Var.setMultipleOnClick(false);

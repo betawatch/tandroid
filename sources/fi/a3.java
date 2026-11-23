@@ -12,8 +12,8 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
@@ -33,7 +33,7 @@ import org.telegram.ui.cx;
 import org.telegram.ui.s11;
 import org.telegram.ui.wt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class a3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final class a3 extends AnimatorListenerAdapter {
                     chatActivityEnterView.m0.setScaleX(0.0f);
                     chatActivityEnterView.m0.setScaleY(0.0f);
                 }
-                if (chatActivityEnterView.E2 != null && chatActivityEnterView.Q && !chatActivityEnterView.P && mp.g1().getInt("voiceoncehint", 0) < 3) {
+                if (chatActivityEnterView.E2 != null && chatActivityEnterView.Q && !chatActivityEnterView.P && np.g1().getInt("voiceoncehint", 0) < 3) {
                     chatActivityEnterView.E2.i();
                     break;
                 }
@@ -261,7 +261,7 @@ public final class a3 extends AnimatorListenerAdapter {
                 if (rh0Var2 != null) {
                     rh0Var2.setImageDrawable((oh0) this.c);
                 }
-                ks.e().k(ks.t4, new Object[0]);
+                ls.e().k(ls.t4, new Object[0]);
                 if (rh0Var2 != null) {
                     rh0Var2.setVisibility(0);
                 }

@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d11 extends org.telegram.ui.Components.dk0 {
     public int c;
@@ -192,11 +192,11 @@ public final class d11 extends org.telegram.ui.Components.dk0 {
                     y01Var.b(false);
                 }
             } else if (i7 == this.e) {
-                y01Var.a(org.telegram.messenger.gd.N0(2131751184, null), false);
+                y01Var.a(org.telegram.messenger.hd.N0(2131751184, null), false);
             } else if (i13 == 14) {
-                y01Var.a(org.telegram.messenger.gd.N0(2131744635, null), false);
+                y01Var.a(org.telegram.messenger.hd.N0(2131744633, null), false);
             } else {
-                y01Var.a(org.telegram.messenger.gd.N0(2131754755, null), false);
+                y01Var.a(org.telegram.messenger.hd.N0(2131754755, null), false);
             }
             y01Var.c.setVisibility(8);
             return;
@@ -205,7 +205,7 @@ public final class d11 extends org.telegram.ui.Components.dk0 {
             TLRPC.Document document3 = (TLRPC.Document) s11Var.E1.get((i7 - this.c) - 1);
             c11 c11Var = (c11) view;
             c11Var.a(g01Var);
-            c11Var.h.r0(org.telegram.messenger.fc.b(document3), "100_100_firstframe", null, null, org.telegram.messenger.u5.f(document3, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), 0L, "tgs", document3, 0);
+            c11Var.h.r0(org.telegram.messenger.gc.b(document3), "100_100_firstframe", null, null, org.telegram.messenger.u5.f(document3, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), 0L, "tgs", document3, 0);
             c11Var.R = true;
             c11Var.d = document3;
             c11Var.e = null;
@@ -241,7 +241,7 @@ public final class d11 extends org.telegram.ui.Components.dk0 {
                         return;
                     }
                     l10 = Long.valueOf(j3);
-                    if (i13 == 14 && !org.telegram.messenger.j10.i(i14).q() && p0Var2.b && p0Var2.d) {
+                    if (i13 == 14 && !org.telegram.messenger.k10.i(i14).q() && p0Var2.b && p0Var2.d) {
                         c11Var2.b();
                         c11Var2.K.setVisibility(0);
                     } else {
@@ -321,18 +321,18 @@ public final class d11 extends org.telegram.ui.Components.dk0 {
             c11Var3.setDrawable(p5Var2);
         } else {
             c11Var3.s = true;
-            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ri.d0(i14).r.get(p0Var.f);
+            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.si.d0(i14).r.get(p0Var.f);
             if (tL_availableReaction != null) {
-                org.telegram.messenger.lz f10 = org.telegram.messenger.u5.f(tL_availableReaction.activate_animation, org.telegram.ui.ActionBar.m6.m6, 0.2f, null);
-                if (org.telegram.messenger.pc.e(8200)) {
+                org.telegram.messenger.mz f10 = org.telegram.messenger.u5.f(tL_availableReaction.activate_animation, org.telegram.ui.ActionBar.m6.m6, 0.2f, null);
+                if (org.telegram.messenger.qc.e(8200)) {
                     ch.p0 p0Var3 = p0Var;
-                    c11Var3.h.u0(org.telegram.messenger.fc.b(tL_availableReaction.select_animation), "60_60_pcache", org.telegram.messenger.fc.b(tL_availableReaction.select_animation), "30_30_firstframe", null, null, f10, 0L, "tgs", p0Var3, 0);
+                    c11Var3.h.u0(org.telegram.messenger.gc.b(tL_availableReaction.select_animation), "60_60_pcache", org.telegram.messenger.gc.b(tL_availableReaction.select_animation), "30_30_firstframe", null, null, f10, 0L, "tgs", p0Var3, 0);
                     p0Var = p0Var3;
                 } else {
-                    c11Var3.h.r0(org.telegram.messenger.fc.b(tL_availableReaction.select_animation), "60_60_firstframe", null, null, f10, 0L, "tgs", p0Var, 0);
+                    c11Var3.h.r0(org.telegram.messenger.gc.b(tL_availableReaction.select_animation), "60_60_firstframe", null, null, f10, 0L, "tgs", p0Var, 0);
                 }
-                org.telegram.messenger.ri.d0(i14);
-                org.telegram.messenger.ri.p1(imageReceiver, org.telegram.messenger.fc.b(tL_availableReaction.around_animation), ch.l0.a());
+                org.telegram.messenger.si.d0(i14);
+                org.telegram.messenger.si.p1(imageReceiver, org.telegram.messenger.gc.b(tL_availableReaction.around_animation), ch.l0.a());
             } else {
                 c11Var3.h.f();
                 imageReceiver.f();
@@ -349,7 +349,7 @@ public final class d11 extends org.telegram.ui.Components.dk0 {
                 c11Var3.setDrawable(org.telegram.messenger.j6.g(p0Var.f));
             }
         }
-        if (!org.telegram.messenger.j10.i(i14).q() && i13 == 14 && p0Var.b && p0Var.d) {
+        if (!org.telegram.messenger.k10.i(i14).q() && i13 == 14 && p0Var.b && p0Var.d) {
             c11Var3.b();
             c11Var3.K.setVisibility(0);
             c11Var3.setEmojicon(null);

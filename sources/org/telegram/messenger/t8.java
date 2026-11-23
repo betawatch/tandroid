@@ -12,7 +12,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t8 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class t8 implements Runnable {
         int i10;
         boolean z15;
         int i11;
-        xv xvVar;
+        yv yvVar;
         TLRPC.EncryptedChat encryptedChat;
         int i12;
         long j11;
@@ -127,10 +127,10 @@ public final /* synthetic */ class t8 implements Runnable {
                 }
                 return;
             case 1:
-                ri riVar = (ri) obj2;
+                si siVar = (si) obj2;
                 TLRPC.Message message = (TLRPC.Message) obj;
-                a0.h hVar = riVar.v1;
-                a0.h hVar2 = (a0.h) riVar.u1.f(j13);
+                a0.h hVar = siVar.v1;
+                a0.h hVar2 = (a0.h) siVar.u1.f(j13);
                 TLRPC.DraftMessage draftMessage = hVar2 != null ? (TLRPC.DraftMessage) hVar2.f(j12) : null;
                 if (draftMessage == null || (inputReplyTo = draftMessage.reply_to) == null || inputReplyTo.reply_to_msg_id != message.id) {
                     return;
@@ -145,7 +145,7 @@ public final /* synthetic */ class t8 implements Runnable {
                 hVar4.k(message, j12);
                 SerializedData serializedData = new SerializedData(message.getObjectSize());
                 message.serializeToStream(serializedData);
-                SharedPreferences.Editor edit = riVar.w1.edit();
+                SharedPreferences.Editor edit = siVar.w1.edit();
                 if (j12 == 0) {
                     sb2 = a8.p0.o(j13, "r_");
                 } else {
@@ -154,29 +154,29 @@ public final /* synthetic */ class t8 implements Runnable {
                     sb2 = t6.toString();
                 }
                 edit.putString(sb2, Utilities.f(serializedData.toByteArray())).commit();
-                riVar.getNotificationCenter().k(85, Long.valueOf(j13));
+                siVar.getNotificationCenter().k(85, Long.valueOf(j13));
                 serializedData.cleanup();
                 return;
             case 2:
-                ((ri) obj2).S0(this.b, this.c, (ArrayList) obj, false);
+                ((si) obj2).S0(this.b, this.c, (ArrayList) obj, false);
                 return;
             case 3:
-                ((tr) obj2).getMessagesController().a0(null, null, null, this.b, true, 1, false, this.c, (TLRPC.TL_messages_deleteScheduledMessages) obj, 0);
+                ((ur) obj2).getMessagesController().a0(null, null, null, this.b, true, 1, false, this.c, (TLRPC.TL_messages_deleteScheduledMessages) obj, 0);
                 return;
             case 4:
-                ((tr) obj2).getMessagesController().r3(this.b, (TLRPC.InputPeer) obj, this.c);
+                ((ur) obj2).getMessagesController().r3(this.b, (TLRPC.InputPeer) obj, this.c);
                 return;
             case 5:
-                tr trVar = (tr) obj2;
+                ur urVar = (ur) obj2;
                 org.telegram.ui.cg cgVar = (org.telegram.ui.cg) obj;
                 try {
                     if (j13 != 0) {
-                        SQLiteDatabase sQLiteDatabase = trVar.b;
+                        SQLiteDatabase sQLiteDatabase = urVar.b;
                         Locale locale = Locale.US;
                         queryFinalized = sQLiteDatabase.queryFinalized("SELECT MIN(mid) FROM messages_topics WHERE uid = " + j12 + " AND topic_id = " + j13 + " AND mention = 1 AND read_state IN(0, 1)", new Object[0]);
                         i7 = 0;
                     } else {
-                        SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                        SQLiteDatabase sQLiteDatabase2 = urVar.b;
                         Locale locale2 = Locale.US;
                         i7 = 0;
                         queryFinalized = sQLiteDatabase2.queryFinalized("SELECT MIN(mid) FROM messages_v2 WHERE uid = " + j12 + " AND mention = 1 AND read_state IN(0, 1)", new Object[0]);
@@ -189,7 +189,7 @@ public final /* synthetic */ class t8 implements Runnable {
                             g0.g3(new x0(cgVar, intValue, 10));
                         } catch (Exception e10) {
                             e = e10;
-                            trVar.o(e, true);
+                            urVar.o(e, true);
                             if (sQLiteCursor == null) {
                                 return;
                             }
@@ -216,19 +216,19 @@ public final /* synthetic */ class t8 implements Runnable {
                 sQLiteCursor.dispose();
                 return;
             case 6:
-                ys ysVar = (ys) obj2;
+                zs zsVar = (zs) obj2;
                 TLRPC.PeerNotifySettings peerNotifySettings = (TLRPC.PeerNotifySettings) obj;
                 long j14 = this.b;
                 long j15 = this.c;
-                String v = xs.v(j14, j15, true);
-                int i15 = ysVar.a;
-                mp u12 = mp.u1(i15);
+                String v = ys.v(j14, j15, true);
+                int i15 = zsVar.a;
+                np u12 = np.u1(i15);
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i15);
-                tr a02 = tr.a0(i15);
-                xs t10 = xs.t(i15);
-                int c11 = f3.c("notify2_", v, ysVar.b(), -1);
-                int c12 = f3.c("notifyuntil_", v, ysVar.b(), 0);
-                SharedPreferences.Editor edit2 = ysVar.b().edit();
+                ur a02 = ur.a0(i15);
+                ys t10 = ys.t(i15);
+                int c11 = f3.c("notify2_", v, zsVar.b(), -1);
+                int c12 = f3.c("notifyuntil_", v, zsVar.b(), 0);
+                SharedPreferences.Editor edit2 = zsVar.b().edit();
                 if ((peerNotifySettings.flags & 2) != 0) {
                     j10 = j15;
                     edit2.putBoolean(p5.c.k("silent_", v), peerNotifySettings.silent);
@@ -288,12 +288,12 @@ public final /* synthetic */ class t8 implements Runnable {
                             a02.E1(j14, (i11 << 32) | 1);
                             t10.N(j14);
                         }
-                        ysVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
+                        zsVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
                         edit2.apply();
                         if (z14) {
                             return;
                         }
-                        g0.g3(new xr(ysVar, 1));
+                        g0.g3(new yr(zsVar, 1));
                         return;
                     }
                     if (c11 == 0 || c11 == 1) {
@@ -314,16 +314,16 @@ public final /* synthetic */ class t8 implements Runnable {
                     }
                 }
                 z14 = z13;
-                ysVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
+                zsVar.a(peerNotifySettings.android_sound, edit2, j14, j10, 0);
                 edit2.apply();
                 if (z14) {
                 }
                 break;
             default:
-                xv xvVar2 = (xv) obj2;
+                yv yvVar2 = (yv) obj2;
                 TLRPC.EncryptedChat encryptedChat2 = (TLRPC.EncryptedChat) obj;
                 try {
-                    if (encryptedChat2.admin_id == xvVar2.getUserConfig().e() && (j13 & 1) == 0) {
+                    if (encryptedChat2.admin_id == yvVar2.getUserConfig().e() && (j13 & 1) == 0) {
                         j13++;
                     }
                     if (j13 > j12) {
@@ -331,7 +331,7 @@ public final /* synthetic */ class t8 implements Runnable {
                     }
                     int i16 = (int) j13;
                     int i17 = (int) j12;
-                    SQLiteDatabase sQLiteDatabase3 = xvVar2.getMessagesStorage().b;
+                    SQLiteDatabase sQLiteDatabase3 = yvVar2.getMessagesStorage().b;
                     Locale locale3 = Locale.US;
                     SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT uid FROM requested_holes WHERE uid = " + encryptedChat2.id + " AND ((seq_out_start >= " + i16 + " AND " + i16 + " <= seq_out_end) OR (seq_out_start >= " + i17 + " AND " + i17 + " <= seq_out_end))", new Object[0]);
                     boolean next = queryFinalized2.next();
@@ -346,7 +346,7 @@ public final /* synthetic */ class t8 implements Runnable {
                         sparseArray.put((int) j13, null);
                         j13 += 2;
                     }
-                    SQLiteDatabase sQLiteDatabase4 = xvVar2.getMessagesStorage().b;
+                    SQLiteDatabase sQLiteDatabase4 = yvVar2.getMessagesStorage().b;
                     Locale locale4 = Locale.US;
                     ?? queryFinalized3 = sQLiteDatabase4.queryFinalized("SELECT m.data, r.random_id, s.seq_in, s.seq_out, m.ttl, s.mid FROM messages_seq as s LEFT JOIN randoms_v2 as r ON r.mid = s.mid LEFT JOIN messages_v2 as m ON m.mid = s.mid WHERE m.uid = " + F + " AND m.out = 1 AND s.seq_out >= " + i16 + " AND s.seq_out <= " + i17 + " ORDER BY seq_out ASC", new Object[0]);
                     while (queryFinalized3.next()) {
@@ -362,7 +362,7 @@ public final /* synthetic */ class t8 implements Runnable {
                         if (byteBufferValue != 0) {
                             c10 = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r14), r14);
                             i12 = i16;
-                            c10.readAttachPath(byteBufferValue, xvVar2.getUserConfig().n);
+                            c10.readAttachPath(byteBufferValue, yvVar2.getUserConfig().n);
                             byteBufferValue.reuse();
                             c10.random_id = longValue;
                             c10.dialog_id = F;
@@ -375,7 +375,7 @@ public final /* synthetic */ class t8 implements Runnable {
                             i12 = i16;
                             long j16 = longValue;
                             j11 = F;
-                            c10 = xvVar2.c(intValue4, intValue3, intValue2, j16, encryptedChat3);
+                            c10 = yvVar2.c(intValue4, intValue3, intValue2, j16, encryptedChat3);
                             i13 = intValue3;
                         }
                         arrayList.add(c10);
@@ -392,28 +392,28 @@ public final /* synthetic */ class t8 implements Runnable {
                         int i19 = 0;
                         while (i19 < sparseArray.size()) {
                             int keyAt = sparseArray.keyAt(i19);
-                            arrayList.add(xvVar2.c(xvVar2.getUserConfig().j(), keyAt, keyAt + 1, Utilities.b.nextLong(), encryptedChat4));
+                            arrayList.add(yvVar2.c(yvVar2.getUserConfig().j(), keyAt, keyAt + 1, Utilities.b.nextLong(), encryptedChat4));
                             i19++;
-                            xvVar2 = xvVar2;
+                            yvVar2 = yvVar2;
                             encryptedChat4 = encryptedChat4;
                         }
-                        xvVar = xvVar2;
+                        yvVar = yvVar2;
                         encryptedChat = encryptedChat4;
-                        xvVar.getUserConfig().v(false);
+                        yvVar.getUserConfig().v(false);
                     } else {
-                        xvVar = xvVar2;
+                        yvVar = yvVar2;
                         encryptedChat = encryptedChat4;
                     }
-                    Collections.sort(arrayList, new dl(18));
+                    Collections.sort(arrayList, new el(18));
                     ArrayList arrayList2 = new ArrayList();
                     arrayList2.add(encryptedChat);
-                    g0.g3(new vv(xvVar, arrayList, 0));
-                    zy sendMessagesHelper = xvVar.getSendMessagesHelper();
+                    g0.g3(new wv(yvVar, arrayList, 0));
+                    az sendMessagesHelper = yvVar.getSendMessagesHelper();
                     ArrayList arrayList3 = new ArrayList();
                     ArrayList arrayList4 = new ArrayList();
                     sendMessagesHelper.getClass();
-                    g0.g3(new tj(sendMessagesHelper, arrayList3, arrayList4, arrayList2, arrayList, (Object) null, 1));
-                    SQLiteDatabase sQLiteDatabase5 = xvVar.getMessagesStorage().b;
+                    g0.g3(new uj(sendMessagesHelper, arrayList3, arrayList4, arrayList2, arrayList, (Object) null, 1));
+                    SQLiteDatabase sQLiteDatabase5 = yvVar.getMessagesStorage().b;
                     Locale locale5 = Locale.US;
                     sQLiteDatabase5.executeFast("REPLACE INTO requested_holes VALUES(" + encryptedChat.id + ", " + i18 + ", " + i17 + ")").stepThis().dispose();
                     return;

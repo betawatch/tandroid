@@ -1,8 +1,8 @@
 package dd;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public enum t0 extends b2 {
     public t0() {
@@ -42,10 +42,10 @@ public enum t0 extends b2 {
                     }
                     if (d != '\'') {
                         switch (d) {
-                            case ks.x0 /* 60 */:
-                            case ks.y0 /* 61 */:
+                            case ls.x0 /* 60 */:
+                            case ls.y0 /* 61 */:
                                 break;
-                            case ks.z0 /* 62 */:
+                            case ls.z0 /* 62 */:
                                 lVar.k();
                                 lVar.c = wVar;
                                 break;

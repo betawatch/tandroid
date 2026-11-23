@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -26,7 +26,7 @@ import org.telegram.ui.kx;
 import org.telegram.ui.ml0;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -57,9 +57,9 @@ public final /* synthetic */ class d3 implements View.OnClickListener {
                 if (Q != null) {
                     org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();
                     e2Var.a = true;
-                    bi.k8 k8Var = new bi.k8(f6Var.T1, str, this.b, f6Var.J0);
-                    k8Var.e = new n1(f6Var, i10);
-                    Q.showAsSheet(k8Var, e2Var);
+                    bi.j8 j8Var = new bi.j8(f6Var.T1, str, this.b, f6Var.J0);
+                    j8Var.e = new n1(f6Var, i10);
+                    Q.showAsSheet(j8Var, e2Var);
                     break;
                 }
                 break;
@@ -76,8 +76,8 @@ public final /* synthetic */ class d3 implements View.OnClickListener {
                     }
                     org.telegram.messenger.h3 I0 = rnVar.getMessagesController().I0();
                     final long j10 = this.b;
-                    I0.a(j10, new x10() { // from class: org.telegram.ui.nn
-                        @Override // org.telegram.messenger.x10
+                    I0.a(j10, new y10() { // from class: org.telegram.ui.nn
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj3) {
                             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj3;
                             rn rnVar2 = rn.this;
@@ -102,7 +102,7 @@ public final /* synthetic */ class d3 implements View.OnClickListener {
                             }
                             TLRPC.TL_channels_toggleAutotranslation tL_channels_toggleAutotranslation = new TLRPC.TL_channels_toggleAutotranslation();
                             rnVar2.getMessagesController();
-                            tL_channels_toggleAutotranslation.channel = org.telegram.messenger.mp.k1(rnVar2.x0);
+                            tL_channels_toggleAutotranslation.channel = org.telegram.messenger.np.k1(rnVar2.x0);
                             tL_channels_toggleAutotranslation.enabled = z11;
                             rnVar2.N.setChecked(z11);
                             zArr2[0] = false;
@@ -144,12 +144,12 @@ public final /* synthetic */ class d3 implements View.OnClickListener {
                         break;
                     } else {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(W);
-                        String G = gd.G(hVar.m(), "AddManyMembersAlertTitle", new Object[0]);
+                        String G = hd.G(hVar.m(), "AddManyMembersAlertTitle", new Object[0]);
                         org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
                         t1Var2.S = G;
                         StringBuilder sb2 = new StringBuilder();
                         for (int i12 = 0; i12 < hVar.m(); i12++) {
-                            TLRPC.User c22 = mp.u1(l60Var.a).c2(Long.valueOf(hVar.j(i12)));
+                            TLRPC.User c22 = np.u1(l60Var.a).c2(Long.valueOf(hVar.j(i12)));
                             if (c22 != null) {
                                 if (sb2.length() > 0) {
                                     sb2.append(", ");
@@ -159,10 +159,10 @@ public final /* synthetic */ class d3 implements View.OnClickListener {
                                 sb2.append("**");
                             }
                         }
-                        TLRPC.Chat O0 = mp.u1(l60Var.a).O0(Long.valueOf(j3));
+                        TLRPC.Chat O0 = np.u1(l60Var.a).O0(Long.valueOf(j3));
                         int i13 = 5;
                         if (hVar.m() > 5) {
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.W2(gd.G(hVar.m(), "AddManyMembersAlertNamesText", O0.title)));
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.W2(hd.G(hVar.m(), "AddManyMembersAlertNamesText", O0.title)));
                             String format = String.format("%d", Integer.valueOf(hVar.m()));
                             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
                             if (indexOf >= 0) {
@@ -170,10 +170,10 @@ public final /* synthetic */ class d3 implements View.OnClickListener {
                             }
                             t1Var2.U = spannableStringBuilder;
                         } else {
-                            t1Var2.U = org.telegram.messenger.g0.W2(gd.a0("AddMembersAlertNamesText", null, 2131754396, sb2, O0.title));
+                            t1Var2.U = org.telegram.messenger.g0.W2(hd.a0("AddMembersAlertNamesText", null, 2131754396, sb2, O0.title));
                         }
-                        alertDialog$Builder.k(gd.N0(2131754483, null), new ky(l60Var, i13));
-                        alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                        alertDialog$Builder.k(hd.N0(2131754483, null), new ky(l60Var, i13));
+                        alertDialog$Builder.h(hd.N0(2131752577, null), null);
                         alertDialog$Builder.p();
                         break;
                     }
@@ -196,7 +196,7 @@ public final /* synthetic */ class d3 implements View.OnClickListener {
                 long longValue = ((Long) ((TextView) obj).getTag()).longValue();
                 Long l10 = ml0Var.I0;
                 if (l10 == null || longValue != l10.longValue()) {
-                    ml0Var.f[0].setText(gd.E0().q(this.b, false, true, true, ml0Var.D0.invoice.currency));
+                    ml0Var.f[0].setText(hd.E0().q(this.b, false, true, true, ml0Var.D0.invoice.currency));
                 } else {
                     ml0Var.n0 = true;
                     ml0Var.f[0].setText("");

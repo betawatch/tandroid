@@ -4,11 +4,11 @@ import a8.xa;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class e3 {
     public boolean A;
@@ -68,9 +68,9 @@ public class e3 {
 
     public String b() {
         if (this.J != null) {
-            return TextUtils.isEmpty(this.E) ? gd.N0(2131742662, null) : this.E;
+            return TextUtils.isEmpty(this.E) ? hd.N0(2131742660, null) : this.E;
         }
         ki.e4 e4Var = this.a;
-        return e4Var == null ? "" : e4Var.g == 6 ? e4Var.e : o10.q(mp.u1(e4Var.a).c2(Long.valueOf(this.a.c)));
+        return e4Var == null ? "" : e4Var.g == 6 ? e4Var.e : p10.q(np.u1(e4Var.a).c2(Long.valueOf(this.a.c)));
     }
 }

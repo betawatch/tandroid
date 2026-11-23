@@ -7,7 +7,7 @@ import android.view.TextureView;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oz0 extends TextureView {
     public static Boolean f;
@@ -39,7 +39,7 @@ public final class oz0 extends TextureView {
 
     public static boolean c() {
         if (f == null) {
-            f = Boolean.valueOf(org.telegram.messenger.mp.g1().getBoolean("nothanos", false));
+            f = Boolean.valueOf(org.telegram.messenger.np.g1().getBoolean("nothanos", false));
         }
         Boolean bool = f;
         return bool == null || !bool.booleanValue();

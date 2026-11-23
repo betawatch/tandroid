@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vg0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final class vg0 extends AnimatorListenerAdapter {
                 if (animatorSet != null && animatorSet.equals(animator)) {
                     wg0Var.h = null;
                 }
-                org.telegram.messenger.ks.e().k(99, 512);
+                org.telegram.messenger.ls.e().k(99, 512);
                 break;
             case 1:
                 AnimatorSet animatorSet2 = wg0Var.s;
@@ -62,7 +62,7 @@ public final class vg0 extends AnimatorListenerAdapter {
                         wg0Var.setLayerType(0, null);
                     }
                 }
-                org.telegram.messenger.ks.e().k(99, 512);
+                org.telegram.messenger.ls.e().k(99, 512);
                 break;
             default:
                 AnimatorSet animatorSet3 = wg0Var.s;
@@ -70,7 +70,7 @@ public final class vg0 extends AnimatorListenerAdapter {
                     wg0Var.s = null;
                     org.telegram.messenger.g0.g3(new hb0(this, 11));
                 }
-                org.telegram.messenger.ks.e().k(99, 512);
+                org.telegram.messenger.ls.e().k(99, 512);
                 break;
         }
     }

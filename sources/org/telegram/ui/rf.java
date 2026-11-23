@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rf implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class rf implements ValueAnimator.AnimatorUpdateLis
                 ImageView imageView = rx0Var.c;
                 imageView.setTranslationX(T1);
                 org.telegram.ui.Components.op opVar = rx0Var.f;
-                opVar.setTranslationX((org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(32.0f) : -org.telegram.messenger.g0.L(32.0f)) + T1);
+                opVar.setTranslationX((org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(32.0f) : -org.telegram.messenger.g0.L(32.0f)) + T1);
                 float f10 = (floatValue5 * 0.5f) + 0.5f;
                 opVar.setScaleX(f10);
                 opVar.setScaleY(f10);

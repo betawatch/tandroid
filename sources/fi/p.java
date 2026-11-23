@@ -19,10 +19,10 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mc;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.s10;
 import org.telegram.ui.Components.sh0;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p extends FrameLayout {
     public org.telegram.ui.ActionBar.m5 E;
@@ -121,7 +121,7 @@ public final class p extends FrameLayout {
         this.E.setGravity(17);
         this.E.setTextSize(11);
         this.E.setTextColor(this.c0.getTextColor());
-        ks.i(this.E);
+        ls.i(this.E);
         this.E.setMaxLines(1);
         this.y.addView(this.E, ma.d(-1, -2.0f, 0, 1.0f, 0.0f, 1.0f, 0.0f));
         this.r.J0(org.telegram.messenger.g0.L(48.0f) / 2);
@@ -301,7 +301,7 @@ public final class p extends FrameLayout {
             }
             this.S.q = 0;
             Paint o4 = z11 ? i7.o(imageReceiver4) : i7.t(imageReceiver4, true);
-            o4.setAlpha(ks.e4);
+            o4.setAlpha(ls.e4);
             sh0 sh0Var4 = this.S;
             sh0Var4.t = o4;
             sh0Var4.f((int) (imageReceiver4.L0 - org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.M0 - org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.y() + org.telegram.messenger.g0.L(3.0f)), (int) (imageReceiver4.A() + org.telegram.messenger.g0.L(3.0f)));
@@ -528,12 +528,12 @@ public final class p extends FrameLayout {
                 return;
             }
             if (j3 > 0) {
-                TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
+                TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(j3));
                 this.f = c22;
                 this.h = null;
                 chat = c22;
             } else {
-                TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
+                TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-j3));
                 this.h = O0;
                 this.f = null;
                 chat = O0;
@@ -567,15 +567,15 @@ public final class p extends FrameLayout {
             this.e = null;
         }
         this.F = j3;
-        this.G = j3 == j10.i(i7).e();
+        this.G = j3 == k10.i(i7).e();
         this.H = p6Var.Q(j3);
         if (j3 > 0) {
-            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
+            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(j3));
             this.f = c22;
             this.h = null;
             chat = c22;
         } else {
-            TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
+            TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-j3));
             this.h = O0;
             this.f = null;
             chat = O0;
@@ -595,7 +595,7 @@ public final class p extends FrameLayout {
         this.E.i(null);
         if (p6Var.Q(j3)) {
             this.E.setTextSize(10);
-            this.E.l(gd.N0(2131750833, null), false);
+            this.E.l(hd.N0(2131750833, null), false);
             this.V = false;
             return;
         }
@@ -638,7 +638,7 @@ public final class p extends FrameLayout {
                     org.telegram.messenger.g0.h3(tvVar.l0, 500L);
                     this.V = false;
                     this.E.setTextSize(10);
-                    this.E.l(gd.N0(2131748108, null), false);
+                    this.E.l(hd.N0(2131748108, null), false);
                     return;
                 }
                 if (this.f == null) {

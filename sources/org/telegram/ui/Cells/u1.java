@@ -16,10 +16,10 @@ import android.text.TextPaint;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.cb0;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.q80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u1 {
     public final r1 a;
@@ -153,7 +153,7 @@ public final class u1 {
         int i29;
         int i30;
         org.telegram.ui.j4 j4Var;
-        fj fjVar;
+        gj gjVar;
         ok0 ok0Var;
         float f38;
         ImageReceiver imageReceiver3;
@@ -267,7 +267,7 @@ public final class u1 {
                             RectF rectF6 = org.telegram.messenger.g0.P;
                             rectF6.set(f13, i10 - org.telegram.messenger.g0.L(6.0f), i15 + i14, i10 + i38 + (r1Var.u2 ? org.telegram.messenger.g0.L(42.0f) : 0));
                             r1Var.o8.q(z10);
-                            float floor = (float) Math.floor(bz.Y0 / (r1Var.Q5.r4() ? f48 : 3.0f));
+                            float floor = (float) Math.floor(cz.Y0 / (r1Var.Q5.r4() ? f48 : 3.0f));
                             ok0 ok0Var3 = r1Var.o8;
                             if (z16) {
                                 float f49 = f12 - (y1Var2.t1 ? r1Var.x1 ? y1Var2.L1 : f12 - y1Var2.L1 : r1Var.x1 ? f12 : 0.0f);
@@ -616,7 +616,7 @@ public final class u1 {
                                         canvas2.drawRoundRect(rectF5, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.m6.M2);
                                     }
                                     org.telegram.ui.ActionBar.m6.M2.setShader(null);
-                                    org.telegram.ui.ActionBar.m6.M2.setAlpha(ks.e4);
+                                    org.telegram.ui.ActionBar.m6.M2.setAlpha(ls.e4);
                                 } else {
                                     i31 = i18;
                                     f41 = f39;
@@ -675,11 +675,11 @@ public final class u1 {
                                 if (y1Var2 == null || !y1Var2.h) {
                                     f19 = f42;
                                     f25 = 6.0f;
-                                    b10 = n10.b(s2Var3.v(), org.telegram.messenger.g0.L(6.0f), f41, i31);
+                                    b10 = o10.b(s2Var3.v(), org.telegram.messenger.g0.L(6.0f), f41, i31);
                                 } else {
                                     f19 = f42;
                                     f25 = 6.0f;
-                                    b10 = n10.b(y1Var2.q0, org.telegram.messenger.g0.L(6.0f), f41, i31);
+                                    b10 = o10.b(y1Var2.q0, org.telegram.messenger.g0.L(6.0f), f41, i31);
                                 }
                                 i18 = (int) b10;
                                 if (r1Var.Q5.P3()) {
@@ -763,7 +763,7 @@ public final class u1 {
                                         r1Var.Sa.z2().Y(r1Var.Q5.P3(), r1Var.p2, canvas2);
                                     }
                                     TextPaint paint3 = r1Var.p2.getPaint();
-                                    if (z13 && (fjVar = r1Var.Q5) != null && !fjVar.P3() && (ok0Var = r1Var.o8) != null) {
+                                    if (z13 && (gjVar = r1Var.Q5) != null && !gjVar.P3() && (ok0Var = r1Var.o8) != null) {
                                         paint3.linkColor = ok0Var.i();
                                     }
                                     int alpha5 = paint3.getAlpha();
@@ -900,7 +900,7 @@ public final class u1 {
                                     canvas2.translate(w10, v13);
                                     this.h.draw(canvas2);
                                     canvas2.restore();
-                                    org.telegram.ui.ActionBar.m6.J2.setAlpha(ks.e4);
+                                    org.telegram.ui.ActionBar.m6.J2.setAlpha(ls.e4);
                                 } else {
                                     f31 = 8.0f;
                                     f32 = f30;

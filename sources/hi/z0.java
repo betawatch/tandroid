@@ -4,20 +4,20 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tr b;
+    public final /* synthetic */ ur b;
     public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ z0(tr trVar, ArrayList arrayList, int i7) {
+    public /* synthetic */ z0(ur urVar, ArrayList arrayList, int i7) {
         this.a = i7;
-        this.b = trVar;
+        this.b = urVar;
         this.c = arrayList;
     }
 
@@ -25,10 +25,10 @@ public final /* synthetic */ class z0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                tr trVar = this.b;
+                ur urVar = this.b;
                 ArrayList arrayList = this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase = trVar.b;
+                    SQLiteDatabase sQLiteDatabase = urVar.b;
                     if (sQLiteDatabase == null) {
                         return;
                     }
@@ -39,12 +39,12 @@ public final /* synthetic */ class z0 implements Runnable {
                     return;
                 }
             case 1:
-                tr trVar2 = this.b;
+                ur urVar2 = this.b;
                 ArrayList arrayList2 = this.c;
                 SQLitePreparedStatement sQLitePreparedStatement = null;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase2 = trVar2.b;
+                        SQLiteDatabase sQLiteDatabase2 = urVar2.b;
                         sQLiteDatabase2.executeFast("DELETE FROM business_links").stepThis().dispose();
                         sQLitePreparedStatement = sQLiteDatabase2.executeFast("REPLACE INTO business_links VALUES(?, ?)");
                         for (int i7 = 0; i7 < arrayList2.size(); i7++) {
@@ -74,10 +74,10 @@ public final /* synthetic */ class z0 implements Runnable {
                     throw th2;
                 }
             default:
-                tr trVar3 = this.b;
+                ur urVar3 = this.b;
                 ArrayList arrayList3 = this.c;
                 try {
-                    trVar3.b.executeFast("DELETE FROM quick_replies_messages WHERE topic_id IN (" + TextUtils.join(", ", arrayList3) + ")").stepThis().dispose();
+                    urVar3.b.executeFast("DELETE FROM quick_replies_messages WHERE topic_id IN (" + TextUtils.join(", ", arrayList3) + ")").stepThis().dispose();
                     return;
                 } catch (Exception e12) {
                     org.telegram.messenger.a8.g(e12, true);

@@ -1,6 +1,6 @@
 package kg;
 
-import ai.x2;
+import ai.y2;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
@@ -9,14 +9,14 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.l8;
+import bi.k8;
 import c8.ma;
 import hi.d7;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.h6;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k0 extends sa {
     public static final int g2 = -1;
@@ -54,7 +54,7 @@ public final class k0 extends sa {
     public k0(Activity activity, TL_account.TL_connectedBot tL_connectedBot, jw0 jw0Var, h6 h6Var) {
         super(2, (Context) activity, h6Var, false);
         this.T1 = tL_connectedBot;
-        TLRPC.User c22 = mp.u1(this.a).c2(Long.valueOf(tL_connectedBot.bot_id));
+        TLRPC.User c22 = np.u1(this.a).c2(Long.valueOf(tL_connectedBot.bot_id));
         this.U1 = c22;
         this.F1 = org.telegram.messenger.g0.L(36.0f);
         this.v1 = 0.15f;
@@ -78,15 +78,15 @@ public final class k0 extends sa {
         int i7 = 17;
         textView.setGravity(17);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(o10.q(c22));
+        textView.setText(p10.q(c22));
         linearLayout.addView(textView, ma.s(-1, -2, 1, 32.0f, 15.66f, 32.0f, 3.66f));
-        this.p1.setTitle(o10.q(c22));
+        this.p1.setTitle(p10.q(c22));
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 14.0f);
         t6.U(textView2, m6.y6, h6Var);
         f3.k(textView2, 17, null, 2131745364);
         linearLayout.addView(textView2, ma.s(-1, -2, 1, 32.0f, 0.0f, 32.0f, 3.66f));
-        String o4 = o10.o(c22);
+        String o4 = p10.o(c22);
         if (!TextUtils.isEmpty(o4)) {
             TextView textView3 = new TextView(activity);
             textView3.setTextSize(1, 14.0f);
@@ -103,7 +103,7 @@ public final class k0 extends sa {
         int i11 = this.u0;
         ek0Var.setPadding(i11, 0, i11, org.telegram.messenger.g0.L(72.0f));
         this.o1.r1();
-        this.o1.setOnItemClickListener(new l8(this, 16));
+        this.o1.setOnItemClickListener(new k8(this, 16));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.X1 = frameLayout;
         frameLayout.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f));
@@ -114,14 +114,14 @@ public final class k0 extends sa {
         int w02 = m6.w0(m6.nk, this.J0);
         this.f2 = w02;
         eVar.setColor(w02);
-        eVar.setText(gd.N0(2131743964, null));
+        eVar.setText(hd.N0(2131743962, null));
         eVar.setOnClickListener(new ah.h(this, tL_connectedBot, jw0Var, i7));
         frameLayout.addView(eVar, ma.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         hi.e eVar2 = new hi.e(activity, h6Var, true);
         eVar2.setRoundRadius(24);
         this.Z1 = eVar2;
-        eVar2.setText(gd.N0(2131752773, null));
-        eVar2.setOnClickListener(new x2(25, this, tL_connectedBot));
+        eVar2.setText(hd.N0(2131752773, null));
+        eVar2.setOnClickListener(new y2(25, this, tL_connectedBot));
         frameLayout.addView(eVar2, ma.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         e1(false);
         FrameLayout.LayoutParams e10 = ma.e(-1, -2, 80);

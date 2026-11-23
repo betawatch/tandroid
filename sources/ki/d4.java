@@ -5,9 +5,9 @@ import android.view.View;
 import c8.ma;
 import hi.d7;
 import java.util.ArrayList;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
@@ -16,9 +16,9 @@ import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class d4 extends org.telegram.ui.ActionBar.g2 implements fs {
+public final class d4 extends org.telegram.ui.ActionBar.g2 implements gs {
     public final long a;
     public org.telegram.ui.ActionBar.x1 b;
     public h51 c;
@@ -68,19 +68,19 @@ public final class d4 extends org.telegram.ui.ActionBar.g2 implements fs {
         t6.b(this.actionBar, i7, null, true);
         t6.l(this.actionBar, 3, m6.z8, null);
         t6.l(this.actionBar, 5, i7, null);
-        this.actionBar.setTitle(gd.N0(2131752459, null));
+        this.actionBar.setTitle(hd.N0(2131752459, null));
         du0 du0Var = new du0(context, null);
         h51 h51Var = new h51(this, new d7(this, 22), new kg.x1(this, 4), null);
         this.c = h51Var;
-        du0Var.addView(h51Var, ma.e(-1, -1, ks.E1));
+        du0Var.addView(h51Var, ma.e(-1, -1, ls.E1));
         this.fragmentView = du0Var;
         return du0Var;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         h51 h51Var;
-        if (i7 == ks.N3 && ((Long) objArr[0]).longValue() == this.a && (h51Var = this.c) != null && (h51Var.getAdapter() instanceof c51)) {
+        if (i7 == ls.N3 && ((Long) objArr[0]).longValue() == this.a && (h51Var = this.c) != null && (h51Var.getAdapter() instanceof c51)) {
             ((c51) this.c.getAdapter()).O(true);
         }
     }
@@ -101,13 +101,13 @@ public final class d4 extends org.telegram.ui.ActionBar.g2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        ks.f(this.currentAccount).c(this, ks.N3);
+        ls.f(this.currentAccount).c(this, ls.N3);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        ks.f(this.currentAccount).n(this, ks.N3);
+        ls.f(this.currentAccount).n(this, ls.N3);
         super.onFragmentDestroy();
     }
 }

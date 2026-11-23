@@ -12,7 +12,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vd extends LinearLayout {
     public final LinearLayout a;
@@ -35,7 +35,7 @@ public final class vd extends LinearLayout {
         for (int i7 = 0; i7 < 2; i7++) {
             this.b[i7] = new LinearLayout(context);
             this.b[i7].setOrientation(0);
-            this.a.addView(this.b[i7], c8.ma.p(-1, -2, 1.0f, org.telegram.messenger.ks.E1));
+            this.a.addView(this.b[i7], c8.ma.p(-1, -2, 1.0f, org.telegram.messenger.ls.E1));
             this.c[i7] = new org.telegram.ui.Components.x5(context);
             this.c[i7].setTypeface(org.telegram.messenger.g0.o());
             this.c[i7].setTextSize(1, 16.0f);
@@ -85,7 +85,7 @@ public final class vd extends LinearLayout {
                     int indexOf2 = format.indexOf(46);
                     if (indexOf2 >= 0) {
                         i7 = i10;
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.E((long) Math.floor(udVar.d / 1.0E9d), ' '));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.E((long) Math.floor(udVar.d / 1.0E9d), ' '));
                         spannableStringBuilder.append((CharSequence) format.substring(indexOf2));
                     } else {
                         i7 = i10;
@@ -96,7 +96,7 @@ public final class vd extends LinearLayout {
                     i7 = i10;
                     if ("XTR".equalsIgnoreCase(str)) {
                         if (i7 == 0) {
-                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.E(udVar.d, ' '));
+                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.E(udVar.d, ' '));
                         } else {
                             spannableStringBuilder.append((CharSequence) di.pb.M0(udVar.i, 0.8f, ' '));
                         }

@@ -13,13 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.c51;
@@ -27,20 +27,20 @@ import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class ya extends e51 implements fs {
-    public static void d0(ya yaVar, TL_wallet.tonConnectSession tonconnectsession, x10 x10Var) {
+public final class ya extends e51 implements gs {
+    public static void d0(ya yaVar, TL_wallet.tonConnectSession tonconnectsession, y10 y10Var) {
         l2 l2Var = u0.D(yaVar.currentAccount).g;
         l2Var.getClass();
-        org.telegram.messenger.g0.g3(new p(l2Var, tonconnectsession, x10Var, 5));
+        org.telegram.messenger.g0.g3(new p(l2Var, tonconnectsession, y10Var, 5));
     }
 
     @Override // org.telegram.ui.Components.e51
     public final void Z(ArrayList arrayList, c51 c51Var) {
         l2 l2Var = u0.D(this.currentAccount).g;
         if (!l2Var.d.isEmpty()) {
-            i5.c.s(2131742962, null, arrayList);
+            i5.c.s(2131742960, null, arrayList);
         }
         ArrayList arrayList2 = l2Var.d;
         int size = arrayList2.size();
@@ -54,12 +54,12 @@ public final class ya extends e51 implements fs {
             arrayList.add(K);
         }
         l2Var.getClass();
-        arrayList.add(o41.C(gd.N0(2131742911, null)));
+        arrayList.add(o41.C(hd.N0(2131742909, null)));
     }
 
     @Override // org.telegram.ui.Components.e51
     public final CharSequence a0() {
-        return gd.N0(2131742912, null);
+        return hd.N0(2131742910, null);
     }
 
     @Override // org.telegram.ui.Components.e51
@@ -89,7 +89,7 @@ public final class ya extends e51 implements fs {
             q9Var.setRoundRadius(org.telegram.messenger.g0.L(38.0f));
             TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession.manifest;
             if (tonconnectmanifest != null && (webDocument = tonconnectmanifest.icon) != null) {
-                q9Var.p(fc.p(h20.c(webDocument)), "76_76", null, tonconnectsession.manifest);
+                q9Var.p(gc.p(i20.c(webDocument)), "76_76", null, tonconnectsession.manifest);
             }
             frameLayout.addView(q9Var, c8.ma.d(76, 76.0f, 49, 0.0f, 32.0f, 0.0f, 0.0f));
             f10.addView(frameLayout, c8.ma.o(-1, -2));
@@ -98,14 +98,14 @@ public final class ya extends e51 implements fs {
             textView.setTextSize(1, 20.0f);
             textView.setGravity(17);
             TL_wallet.tonConnectManifest tonconnectmanifest2 = tonconnectsession.manifest;
-            textView.setText(tonconnectmanifest2 != null ? tonconnectmanifest2.name : gd.N0(2131742914, null));
+            textView.setText(tonconnectmanifest2 != null ? tonconnectmanifest2.name : hd.N0(2131742912, null));
             org.telegram.ui.ActionBar.t6.U(textView, i10, resourceProvider);
             f10.addView(textView, c8.ma.t(-2, -2, 49, 36, 16, 36, 0));
             TL_wallet.tonConnectManifest tonconnectmanifest3 = tonconnectsession.manifest;
             String K0 = org.telegram.messenger.g0.K0(tonconnectmanifest3 != null ? tonconnectmanifest3.url : null, false);
             if (!TextUtils.isEmpty(K0)) {
                 TextView textView2 = new TextView(parentActivity);
-                n10.p(textView2, 1, 14.0f);
+                o10.p(textView2, 1, 14.0f);
                 org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.Fi, resourceProvider);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) K0);
@@ -115,12 +115,12 @@ public final class ya extends e51 implements fs {
             TextView textView3 = new TextView(parentActivity);
             textView3.setTextSize(1, 14.0f);
             textView3.setGravity(17);
-            textView3.setText(gd.N0(2131742913, null));
+            textView3.setText(hd.N0(2131742911, null));
             org.telegram.ui.ActionBar.t6.U(textView3, i10, resourceProvider);
             f10.addView(textView3, c8.ma.t(-2, -2, 49, 36, 16, 36, 28));
             hi.e eVar = new hi.e(parentActivity, resourceProvider, true);
             eVar.setRoundRadius(24);
-            eVar.setText(gd.N0(2131742886, null));
+            eVar.setText(hd.N0(2131742884, null));
             int i11 = org.telegram.ui.ActionBar.m6.q7;
             eVar.setColor(org.telegram.ui.ActionBar.m6.w0(i11, resourceProvider));
             if (eVar.getBackground() != null) {
@@ -151,13 +151,13 @@ public final class ya extends e51 implements fs {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        bi.g6 g6Var;
-        if (i7 != ks.d4 || (g6Var = this.a) == null) {
+        bi.f6 f6Var;
+        if (i7 != ls.d4 || (f6Var = this.a) == null) {
             return;
         }
-        g6Var.g3.O(true);
+        f6Var.g3.O(true);
     }
 
     @Override // org.telegram.ui.ActionBar.g2
@@ -167,13 +167,13 @@ public final class ya extends e51 implements fs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ks.d4);
+        getNotificationCenter().c(this, ls.d4);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ks.d4);
+        getNotificationCenter().n(this, ls.d4);
         super.onFragmentDestroy();
     }
 

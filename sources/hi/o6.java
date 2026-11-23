@@ -3,20 +3,20 @@ package hi;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.gp;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.cj;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o6 implements q10 {
+public final /* synthetic */ class o6 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ u6 b;
 
@@ -25,7 +25,7 @@ public final /* synthetic */ class o6 implements q10 {
         this.b = u6Var;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         boolean z10 = false;
         switch (this.a) {
@@ -33,32 +33,32 @@ public final /* synthetic */ class o6 implements q10 {
                 ArrayList arrayList = (ArrayList) obj;
                 c51 c51Var = (c51) obj2;
                 u6 u6Var = this.b;
-                gp gpVar = u6Var.a2;
+                hp hpVar = u6Var.a2;
                 c51Var.G = 1;
                 int L = org.telegram.messenger.g0.L(64.0f);
                 arrayList.add(o41.D(org.telegram.messenger.g0.L(64.0f)));
                 if (u6Var.V1 || u6Var.d2) {
-                    L += u6Var.e1(true, arrayList, gd.N0(2131753902, null), u6Var.X1, false, false, -1);
+                    L += u6Var.e1(true, arrayList, hd.N0(2131753902, null), u6Var.X1, false, false, -1);
                 }
                 if (!u6Var.V1) {
                     if (TextUtils.isEmpty(u6Var.n2) && !u6Var.d2) {
                         c51Var.V();
-                        o41 c10 = o41.c(1, R.drawable.msg2_folder, gd.N0(2131744368, null));
+                        o41 c10 = o41.c(1, R.drawable.msg2_folder, hd.N0(2131744366, null));
                         c10.r = true;
                         arrayList.add(c10);
                         c51Var.U();
                         L += org.telegram.messenger.g0.L(50.0f);
                     }
-                    if (!u6Var.d2 && gpVar != null) {
-                        L += u6Var.e1(true, arrayList, gd.N0(2131753901, null), gpVar.c, gpVar.f, !gpVar.e, 2);
+                    if (!u6Var.d2 && hpVar != null) {
+                        L += u6Var.e1(true, arrayList, hd.N0(2131753901, null), hpVar.c, hpVar.f, !hpVar.e, 2);
                     }
-                    L = L + u6Var.e1(false, arrayList, gd.N0(2131753904, null), u6Var.Y1, u6Var.r2 || u6Var.q2, u6Var.p2, 3) + u6Var.e1(false, arrayList, gd.N0(2131753903, null), u6Var.Z1, u6Var.y2 || u6Var.x2, u6Var.w2, 4);
+                    L = L + u6Var.e1(false, arrayList, hd.N0(2131753904, null), u6Var.Y1, u6Var.r2 || u6Var.q2, u6Var.p2, 3) + u6Var.e1(false, arrayList, hd.N0(2131753903, null), u6Var.Z1, u6Var.y2 || u6Var.x2, u6Var.w2, 4);
                 }
                 if (arrayList.size() <= ((u6Var.V1 || !TextUtils.isEmpty(u6Var.n2) || u6Var.d2) ? 1 : 2)) {
                     if (TextUtils.isEmpty(u6Var.n2)) {
-                        arrayList.add(cj.i(gd.N0(2131748051, null), gd.N0(2131748050, null)));
+                        arrayList.add(cj.i(hd.N0(2131748051, null), hd.N0(2131748050, null)));
                     } else {
-                        arrayList.add(cj.i(org.telegram.messenger.g0.W2(gd.a0(null, null, u6Var.n2.length() >= 3 ? 2131748048 : 2131748049, u6Var.n2)), gd.N0(2131748050, null)));
+                        arrayList.add(cj.i(org.telegram.messenger.g0.W2(hd.a0(null, null, u6Var.n2.length() >= 3 ? 2131748048 : 2131748049, u6Var.n2)), hd.N0(2131748050, null)));
                     }
                 }
                 arrayList.add(o41.C(null));
@@ -74,7 +74,7 @@ public final /* synthetic */ class o6 implements q10 {
                     u6Var2.l2.O(true);
                     break;
                 } else {
-                    mp.u1(u6Var2.a).f4(messages_botresults.users, false);
+                    np.u1(u6Var2.a).f4(messages_botresults.users, false);
                     ArrayList<TLRPC.BotInlineResult> arrayList3 = messages_botresults.results;
                     int size = arrayList3.size();
                     int i7 = 0;
@@ -94,7 +94,7 @@ public final /* synthetic */ class o6 implements q10 {
                                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
                                 tL_message.from_id = tL_peerUser;
                                 TLRPC.Peer peer = tL_message.peer_id;
-                                long e10 = j10.i(u6Var2.a).e();
+                                long e10 = k10.i(u6Var2.a).e();
                                 tL_peerUser.user_id = e10;
                                 peer.user_id = e10;
                                 tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -104,7 +104,7 @@ public final /* synthetic */ class o6 implements q10 {
                                 tL_messageMediaDocument.flags |= 3;
                                 tL_messageMediaDocument.document = tL_botInlineMediaResult.document;
                                 tL_message.flags |= 768;
-                                arrayList2.add(new fj(u6Var2.a, tL_message, false, true));
+                                arrayList2.add(new gj(u6Var2.a, tL_message, false, true));
                             }
                         }
                     }

@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e60 extends dk0 {
     public final /* synthetic */ l60 c;
@@ -28,7 +28,7 @@ public final class e60 extends dk0 {
             return (TLObject) l60Var.Z1.get(i7 - l60Var.T1);
         }
         TLRPC.Dialog dialog = (TLRPC.Dialog) l60Var.i2.get(i7 - l60Var.T1);
-        return org.telegram.messenger.n5.E(dialog.id) ? org.telegram.messenger.mp.u1(l60Var.a).c2(Long.valueOf(dialog.id)) : org.telegram.messenger.mp.u1(l60Var.a).O0(Long.valueOf(-dialog.id));
+        return org.telegram.messenger.n5.E(dialog.id) ? org.telegram.messenger.np.u1(l60Var.a).c2(Long.valueOf(dialog.id)) : org.telegram.messenger.np.u1(l60Var.a).O0(Long.valueOf(-dialog.id));
     }
 
     @Override // v4.i0
@@ -99,7 +99,7 @@ public final class e60 extends dk0 {
                 boolean z10 = false;
                 if (i7 != 5) {
                     org.telegram.ui.Cells.y4 y4Var = new org.telegram.ui.Cells.y4(context);
-                    y4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.gd.N0(2131743147, null), true);
+                    y4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.hd.N0(2131743145, null), true);
                     int i11 = org.telegram.ui.ActionBar.m6.n5;
                     y4Var.a(i11, i11);
                     view = y4Var;
@@ -110,9 +110,9 @@ public final class e60 extends dk0 {
                     org.telegram.ui.zr zrVar = l60Var.h2;
                     xh.l lVar = d60Var.d;
                     if (zrVar != null) {
-                        lVar.setText(org.telegram.messenger.gd.N0(2131750714, null));
+                        lVar.setText(org.telegram.messenger.hd.N0(2131750714, null));
                     } else {
-                        lVar.setText(org.telegram.messenger.gd.N0(2131748030, null));
+                        lVar.setText(org.telegram.messenger.hd.N0(2131748030, null));
                     }
                     d60Var.setAnimateLayoutChange(true);
                     view = d60Var;

@@ -26,10 +26,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.UUID;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class h implements f3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -1453,7 +1453,7 @@ public final class h implements f3.o {
                                 sVar2.g = new int[i43];
                             }
                             if (sVar2.h.length < i44) {
-                                int i45 = (i44 * ks.J1) / 100;
+                                int i45 = (i44 * ls.J1) / 100;
                                 sVar2.h = new int[i45];
                                 sVar2.i = new long[i45];
                                 sVar2.j = new boolean[i45];
@@ -1695,7 +1695,7 @@ public final class h implements f3.o {
                                         }
                                         xVar11.O(1);
                                         int A3 = xVar11.A();
-                                        int i62 = (A3 & ks.P3) >> 4;
+                                        int i62 = (A3 & ls.P3) >> 4;
                                         int i63 = A3 & 15;
                                         boolean z22 = xVar11.A() == 1;
                                         if (z22) {

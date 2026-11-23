@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u01 extends org.telegram.ui.Components.xs {
     public int N;
@@ -21,7 +21,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
     public ArrayList P;
     public final ArrayList Q = new ArrayList();
     public float R = 1.0f;
-    public final boolean S = org.telegram.messenger.pc.e(8200);
+    public final boolean S = org.telegram.messenger.qc.e(8200);
     public final OvershootInterpolator T = new OvershootInterpolator(3.0f);
     public final /* synthetic */ v01 U;
 
@@ -172,7 +172,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
                             rect.inset((int) ((-rect.width()) * 0.15f), (int) ((-rect.height()) * 0.15f));
                         }
                         drawable.setBounds(rect);
-                        drawable.setAlpha(org.telegram.messenger.ks.e4);
+                        drawable.setAlpha(org.telegram.messenger.ls.e4);
                     } else if (c11Var.s || c11Var.R) {
                         ImageReceiver imageReceiver = c11Var.h;
                         if (imageReceiver != null) {
@@ -180,7 +180,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
                         }
                         drawable = null;
                     } else if ((c11Var.e != null || s11Var.a0 == 13) && !c11Var.b && (drawable = c11Var.F) != null) {
-                        drawable.setAlpha(org.telegram.messenger.ks.e4);
+                        drawable.setAlpha(org.telegram.messenger.ls.e4);
                         drawable.setBounds(rect);
                     }
                     PorterDuffColorFilter porterDuffColorFilter = s11Var.l1;
@@ -233,9 +233,9 @@ public final class u01 extends org.telegram.ui.Components.xs {
                 this.U.m3.i0.invalidate();
                 return;
             }
-            org.telegram.messenger.gc gcVar = ((c11) arrayList.get(i7)).f[this.L];
-            if (gcVar != null) {
-                gcVar.a();
+            org.telegram.messenger.hc hcVar = ((c11) arrayList.get(i7)).f[this.L];
+            if (hcVar != null) {
+                hcVar.a();
             }
             i7++;
         }
@@ -251,7 +251,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
     */
     public final void i(long j3) {
         int i7;
-        org.telegram.messenger.gc[] gcVarArr;
+        org.telegram.messenger.hc[] hcVarArr;
         float alpha;
         ImageReceiver imageReceiver;
         Rect rect;
@@ -267,7 +267,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
         while (i14 < this.P.size()) {
             c11 c11Var = (c11) this.P.get(i14);
             boolean z10 = c11Var.b;
-            org.telegram.messenger.gc[] gcVarArr2 = c11Var.f;
+            org.telegram.messenger.hc[] hcVarArr2 = c11Var.f;
             if (!z10) {
                 if (c11Var.a) {
                     premiumStar = s11Var.getPremiumStar();
@@ -278,7 +278,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
                         f10 *= ((1.0f - Math.max(c11Var.T * 0.8f, f11)) * 0.2f) + 0.8f;
                     }
                     if (premiumStar != null) {
-                        premiumStar.setAlpha(org.telegram.messenger.ks.e4);
+                        premiumStar.setAlpha(org.telegram.messenger.ls.e4);
                         int width = (c11Var.getWidth() - c11Var.getPaddingLeft()) - c11Var.getPaddingRight();
                         int height = (c11Var.getHeight() - c11Var.getPaddingTop()) - c11Var.getPaddingBottom();
                         Rect rect2 = org.telegram.messenger.g0.Q;
@@ -301,7 +301,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
                     if (s11Var.R1 > 0) {
                         int i16 = i14;
                         if (SystemClock.elapsedRealtime() - s11Var.R1 >= s11Var.g() || s11Var.P1 < 0 || s11Var.Q1 < 0 || s11Var.R1 <= 0) {
-                            gcVarArr = gcVarArr2;
+                            hcVarArr = hcVarArr2;
                             i7 = i16;
                         } else {
                             int R = RecyclerView.R(c11Var);
@@ -309,11 +309,11 @@ public final class u01 extends org.telegram.ui.Components.xs {
                             int i18 = R - i17;
                             int i19 = s11Var.Q1 - i17;
                             if (i18 < 0 || i18 >= i19) {
-                                gcVarArr = gcVarArr2;
+                                hcVarArr = hcVarArr2;
                                 i7 = i16;
                                 alpha = 1.0f;
                             } else {
-                                gcVarArr = gcVarArr2;
+                                hcVarArr = hcVarArr2;
                                 i7 = i16;
                                 float a10 = c8.l9.a((SystemClock.elapsedRealtime() - s11Var.R1) / s11Var.f(), 0.0f, 1.0f);
                                 float f15 = i18;
@@ -349,8 +349,8 @@ public final class u01 extends org.telegram.ui.Components.xs {
                                 imageReceiver.J0(org.telegram.messenger.g0.L(4.0f));
                             }
                             int i20 = this.L;
-                            org.telegram.messenger.gc e02 = imageReceiver.e0(gcVarArr[i20], i20);
-                            gcVarArr[i20] = e02;
+                            org.telegram.messenger.hc e02 = imageReceiver.e0(hcVarArr[i20], i20);
+                            hcVarArr[i20] = e02;
                             e02.c = j3;
                             c11Var.r = imageReceiver;
                             if (imageReceiver.B() != null) {
@@ -372,7 +372,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
                             }
                             i10 = 0;
                             rect.offset((c11Var.getLeft() + ((int) c11Var.getTranslationX())) - this.O, 0);
-                            gcVarArr[i20].b(rect);
+                            hcVarArr[i20].b(rect);
                             c11Var.P = 1.0f;
                             i11 = i7;
                             c11Var.Q = i11;
@@ -382,7 +382,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
                         }
                     } else {
                         i7 = i14;
-                        gcVarArr = gcVarArr2;
+                        hcVarArr = hcVarArr2;
                     }
                     alpha = c11Var.getAlpha() * 1.0f;
                     if (c11Var.s) {
@@ -394,8 +394,8 @@ public final class u01 extends org.telegram.ui.Components.xs {
                     if (c11Var.M) {
                     }
                     int i202 = this.L;
-                    org.telegram.messenger.gc e022 = imageReceiver.e0(gcVarArr[i202], i202);
-                    gcVarArr[i202] = e022;
+                    org.telegram.messenger.hc e022 = imageReceiver.e0(hcVarArr[i202], i202);
+                    hcVarArr[i202] = e022;
                     e022.c = j3;
                     c11Var.r = imageReceiver;
                     if (imageReceiver.B() != null) {
@@ -415,7 +415,7 @@ public final class u01 extends org.telegram.ui.Components.xs {
                     }
                     i10 = 0;
                     rect.offset((c11Var.getLeft() + ((int) c11Var.getTranslationX())) - this.O, 0);
-                    gcVarArr[i202].b(rect);
+                    hcVarArr[i202].b(rect);
                     c11Var.P = 1.0f;
                     i11 = i7;
                     c11Var.Q = i11;

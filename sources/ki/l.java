@@ -11,16 +11,15 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.q6;
 import c8.ma;
 import c8.ra;
 import hi.o4;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -34,7 +33,7 @@ import org.telegram.ui.Components.q9;
 import org.telegram.ui.af;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -52,7 +51,7 @@ public final class l extends FrameLayout {
         LinearLayout f10 = org.telegram.messenger.f3.f(activity, 0);
         f10.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(5.0f));
         ra.b(f10, 0.025f, 1.4f);
-        addView(f10, ma.e(-1, -1, ks.E1));
+        addView(f10, ma.e(-1, -1, ls.E1));
         int i7 = m6.Fi;
         Drawable a02 = m6.a0(m6.r1(0.1f, m6.w0(i7, h6Var)), 0, 0);
         p6 K = t6.K(0.1f, i7);
@@ -70,7 +69,7 @@ public final class l extends FrameLayout {
         t6.U(textView, i10, h6Var);
         textView.setTypeface(org.telegram.messenger.g0.o());
         linearLayout.addView(textView, ma.p(-2, -2, 0.0f, 16));
-        ks.i(textView);
+        ls.i(textView);
         TextView textView2 = new TextView(activity);
         this.f = textView2;
         textView2.setTextSize(1, 11.0f);
@@ -81,7 +80,7 @@ public final class l extends FrameLayout {
         p6 K2 = t6.K(0.1f, i7);
         textView2.setBackground(d02);
         t6.j(textView2, d02, K2, null, h6Var);
-        textView2.setText(gd.N0(2131753152, null));
+        textView2.setText(hd.N0(2131753152, null));
         linearLayout.addView(textView2, ma.q(-2, 17, 0.0f, 19, 5, 1, 0, 0));
         TextView textView3 = new TextView(activity);
         this.e = textView3;
@@ -90,14 +89,14 @@ public final class l extends FrameLayout {
         t6.U(textView3, i10, h6Var);
         textView3.setTypeface(org.telegram.messenger.g0.o());
         f11.addView(textView3, ma.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
-        ks.i(textView3);
+        ls.i(textView3);
         m80 m80Var = new m80(activity, null);
         this.h = m80Var;
         m80Var.setTextSize(1, 13.0f);
         t6.G(m80Var, m6.Xc, h6Var);
         t6.U(m80Var, i10, h6Var);
         f11.addView(m80Var, ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-        ks.i(m80Var);
+        ls.i(m80Var);
         q9 q9Var = new q9(activity);
         this.b = q9Var;
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(4.0f));
@@ -122,54 +121,54 @@ public final class l extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(final bn bnVar, final fj fjVar, af afVar, af afVar2) {
+    public final void a(final bn bnVar, final gj gjVar, af afVar, af afVar2) {
         boolean z10;
         boolean z11;
         float measureText;
         float measureText2;
-        if (fjVar == null) {
+        if (gjVar == null) {
             return;
         }
-        String str = fjVar.S0;
+        String str = gjVar.S0;
         TextView textView = this.d;
         CharSequence m10 = j6.m(str, textView.getPaint().getFontMetricsInt(), false, null, 0);
-        CharSequence charSequence = fjVar.v;
+        CharSequence charSequence = gjVar.v;
         m80 m80Var = this.h;
         CharSequence m11 = j6.m(charSequence, m80Var.getPaint().getFontMetricsInt(), false, null, 0);
-        String str2 = fjVar.T0;
-        TLRPC.MessageMedia messageMedia = fjVar.a1;
+        String str2 = gjVar.T0;
+        TLRPC.MessageMedia messageMedia = gjVar.a1;
         ImageView imageView = this.c;
         q9 q9Var = this.b;
         if (messageMedia != null) {
             q9Var.setVisibility(0);
             imageView.setVisibility(8);
-            TLRPC.MessageMedia messageMedia2 = fjVar.a1;
+            TLRPC.MessageMedia messageMedia2 = gjVar.a1;
             TLRPC.Document document = messageMedia2.document;
             if (document != null) {
                 TLRPC.PhotoSize w10 = w7.w(document.thumbs, 48, false, null, false);
-                fc b10 = fc.b(fjVar.a1.document);
-                fc c10 = fc.c(w10, fjVar.a1.document);
+                gc b10 = gc.b(gjVar.a1.document);
+                gc c10 = gc.c(w10, gjVar.a1.document);
                 z10 = true;
                 q9Var.g(0, 0L, null, "48_48", "48_48", null, b10, c10);
             } else {
                 TLRPC.Photo photo = messageMedia2.photo;
                 if (photo != null) {
                     TLRPC.PhotoSize w11 = w7.w(photo.sizes, 48, true, null, true);
-                    TLRPC.PhotoSize w12 = w7.w(fjVar.a1.photo.sizes, 48, true, w11, false);
+                    TLRPC.PhotoSize w12 = w7.w(gjVar.a1.photo.sizes, 48, true, w11, false);
                     z10 = true;
-                    q9Var.g(0, 0L, null, "48_48", "48_48", null, fc.i(w11, fjVar.a1.photo), fc.i(w12, fjVar.a1.photo));
+                    q9Var.g(0, 0L, null, "48_48", "48_48", null, gc.i(w11, gjVar.a1.photo), gc.i(w12, gjVar.a1.photo));
                 } else {
                     z10 = true;
                 }
             }
         } else {
             z10 = true;
-            TLRPC.Photo photo2 = fjVar.V0;
+            TLRPC.Photo photo2 = gjVar.V0;
             if (photo2 == null) {
                 q9Var.setVisibility(8);
                 imageView.setVisibility(0);
                 z11 = false;
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gd.N0(2131745017, null));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.N0(2131745015, null));
                 int i7 = m6.Fi;
                 h6 h6Var = this.a;
                 spannableStringBuilder.setSpan(new k00(i7, h6Var), 0, spannableStringBuilder.length(), 33);
@@ -181,7 +180,7 @@ public final class l extends FrameLayout {
                 measureText2 = ((L - textView2.getPaint().measureText(textView2.getText().toString())) - org.telegram.messenger.g0.L(32.0f)) - org.telegram.messenger.g0.L(!z11 ? 58.0f : 0.0f);
                 TextView textView3 = this.e;
                 if (measureText <= measureText2) {
-                    spannableStringBuilder = new SpannableStringBuilder(gd.N0(2131745017, null));
+                    spannableStringBuilder = new SpannableStringBuilder(hd.N0(2131745015, null));
                     spannableStringBuilder.setSpan(new k00(i7, h6Var), 0, spannableStringBuilder.length(), 33);
                     textView3.setVisibility(0);
                     textView3.setText(m10);
@@ -197,7 +196,7 @@ public final class l extends FrameLayout {
                         lVar.getClass();
                         bn bnVar2 = bnVar;
                         if (bnVar2 != null) {
-                            bnVar2.ma(fjVar, false, false);
+                            bnVar2.ma(gjVar, false, false);
                         }
                         if (clickableSpan instanceof URLSpan) {
                             String url = ((URLSpan) clickableSpan).getURL();
@@ -213,16 +212,16 @@ public final class l extends FrameLayout {
                     }
                 });
                 textView2.setOnClickListener(new o4(afVar, 9));
-                setOnClickListener(new q6(this, bnVar, fjVar, str2, 2));
+                setOnClickListener(new bi.p6(this, bnVar, gjVar, str2, 2));
                 imageView.setOnClickListener(new o4(afVar2, 10));
             }
             TLRPC.PhotoSize w13 = w7.w(photo2.sizes, 48, true, null, true);
-            q9Var.g(0, 0L, null, "48_48", "48_48", null, fc.i(w13, fjVar.V0), fc.i(w7.w(fjVar.V0.sizes, 48, true, w13, false), fjVar.V0));
+            q9Var.g(0, 0L, null, "48_48", "48_48", null, gc.i(w13, gjVar.V0), gc.i(w7.w(gjVar.V0.sizes, 48, true, w13, false), gjVar.V0));
             q9Var.setVisibility(0);
             imageView.setVisibility(8);
         }
         z11 = z10;
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(gd.N0(2131745017, null));
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(hd.N0(2131745015, null));
         int i72 = m6.Fi;
         h6 h6Var2 = this.a;
         spannableStringBuilder2.setSpan(new k00(i72, h6Var2), 0, spannableStringBuilder2.length(), 33);
@@ -244,7 +243,7 @@ public final class l extends FrameLayout {
                 lVar.getClass();
                 bn bnVar2 = bnVar;
                 if (bnVar2 != null) {
-                    bnVar2.ma(fjVar, false, false);
+                    bnVar2.ma(gjVar, false, false);
                 }
                 if (clickableSpan instanceof URLSpan) {
                     String url = ((URLSpan) clickableSpan).getURL();
@@ -260,7 +259,7 @@ public final class l extends FrameLayout {
             }
         });
         textView22.setOnClickListener(new o4(afVar, 9));
-        setOnClickListener(new q6(this, bnVar, fjVar, str2, 2));
+        setOnClickListener(new bi.p6(this, bnVar, gjVar, str2, 2));
         imageView.setOnClickListener(new o4(afVar2, 10));
     }
 }

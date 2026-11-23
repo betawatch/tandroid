@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c71 implements rj0, sj0 {
     public final /* synthetic */ i71 a;
@@ -18,11 +18,11 @@ public final /* synthetic */ class c71 implements rj0, sj0 {
 
     @Override // org.telegram.ui.Components.sj0
     public boolean c(int i7, View view) {
-        org.telegram.messenger.r10 r10Var = this.a.b;
-        if (r10Var == null) {
+        org.telegram.messenger.s10 s10Var = this.a.b;
+        if (s10Var == null) {
             return false;
         }
-        return ((Boolean) r10Var.g(Integer.valueOf(((g71) view).a.a), view)).booleanValue();
+        return ((Boolean) s10Var.g(Integer.valueOf(((g71) view).a.a), view)).booleanValue();
     }
 
     @Override // org.telegram.ui.Components.rj0
@@ -32,8 +32,8 @@ public final /* synthetic */ class c71 implements rj0, sj0 {
         if (h71Var == null || h71Var.b()) {
             g71 g71Var = (g71) view;
             if (i7 != i71Var.G || i71Var.E == null) {
-                org.telegram.messenger.r10 r10Var = i71Var.m0;
-                if (r10Var == null || !((Boolean) r10Var.g(Integer.valueOf(g71Var.a.a), Integer.valueOf(i7))).booleanValue()) {
+                org.telegram.messenger.s10 s10Var = i71Var.m0;
+                if (s10Var == null || !((Boolean) s10Var.g(Integer.valueOf(g71Var.a.a), Integer.valueOf(i7))).booleanValue()) {
                     i71Var.e(g71Var.a.a, i7);
                 }
             }

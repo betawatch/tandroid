@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -18,9 +18,9 @@ import org.telegram.ui.Components.p31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.gi0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e2 implements q10 {
+public final /* synthetic */ class e2 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -35,10 +35,10 @@ public final /* synthetic */ class e2 implements q10 {
         this.e = obj4;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         AlertDialog$Builder alertDialog$Builder;
-        fj fjVar;
+        gj gjVar;
         int i7 = this.a;
         Object obj3 = this.e;
         Object obj4 = this.d;
@@ -47,13 +47,13 @@ public final /* synthetic */ class e2 implements q10 {
         switch (i7) {
             case 0:
                 f6 f6Var = (f6) obj6;
-                q10 q10Var = (q10) obj5;
+                r10 r10Var = (r10) obj5;
                 ArrayList arrayList = (ArrayList) obj4;
                 Runnable runnable = (Runnable) obj3;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (updates != null) {
-                    ArrayList A0 = mp.A0(updates, TL_update.TL_updateNewMessage.class);
+                    ArrayList A0 = np.A0(updates, TL_update.TL_updateNewMessage.class);
                     int size = A0.size();
                     int i10 = 0;
                     while (true) {
@@ -62,33 +62,33 @@ public final /* synthetic */ class e2 implements q10 {
                             i10++;
                             TLRPC.Message message = ((TL_update.TL_updateNewMessage) obj7).message;
                             if (message != null && (message.action instanceof TLRPC.TL_messageActionStarGiftUnique)) {
-                                fjVar = new fj(f6Var.a, message, false, false);
+                                gjVar = new gj(f6Var.a, message, false, false);
                             }
                         } else {
-                            fjVar = null;
+                            gjVar = null;
                         }
                     }
-                    mp.u1(f6Var.a).V3(updates, false);
-                    if (fjVar == null) {
-                        q10Var.a(null, null);
+                    np.u1(f6Var.a).V3(updates, false);
+                    if (gjVar == null) {
+                        r10Var.a(null, null);
                         y8.y(f6Var.a, false).N();
-                        p8 G = y8.y(f6Var.a, false).G(j10.i(f6Var.a).e(), false);
+                        p8 G = y8.y(f6Var.a, false).G(k10.i(f6Var.a).e(), false);
                         if (G != null) {
                             G.l(arrayList, null);
                             break;
                         }
                     } else {
-                        TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) fjVar.k.action).gift;
-                        q10Var.a(starGift, new ai.r(f6Var, fjVar, arrayList, starGift, 12));
+                        TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) gjVar.k.action).gift;
+                        r10Var.a(starGift, new ai.r(f6Var, gjVar, arrayList, starGift, 12));
                         break;
                     }
                 } else if (tL_error != null) {
                     if ("STARGIFT_CRAFT_UNAVAILABLE".equalsIgnoreCase(tL_error.text)) {
                         alertDialog$Builder = new AlertDialog$Builder(0, f6Var.getContext(), new fi.b());
-                        String N0 = gd.N0(2131749738, null);
+                        String N0 = hd.N0(2131749738, null);
                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         t1Var.S = N0;
-                        t1Var.U = org.telegram.messenger.g0.W2(gd.N0(2131749740, null));
+                        t1Var.U = org.telegram.messenger.g0.W2(hd.N0(2131749740, null));
                     } else {
                         String str = tL_error.text;
                         if (str == null || !str.startsWith("STARGIFT_CRAFT_TOO_EARLY_")) {
@@ -98,10 +98,10 @@ public final /* synthetic */ class e2 implements q10 {
                         } else {
                             long parseLong = Long.parseLong(tL_error.text.substring(25)) + ConnectionsManager.getInstance(f6Var.a).getCurrentTime();
                             alertDialog$Builder = new AlertDialog$Builder(0, f6Var.getContext(), new fi.b());
-                            String N02 = gd.N0(2131749738, null);
+                            String N02 = hd.N0(2131749738, null);
                             org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
                             t1Var2.S = N02;
-                            t1Var2.U = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749739, gd.x(parseLong, true)));
+                            t1Var2.U = org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749739, hd.x(parseLong, true)));
                         }
                     }
                     org.telegram.messenger.f3.m(null, 2131747637, alertDialog$Builder, null);
@@ -134,7 +134,7 @@ public final /* synthetic */ class e2 implements q10 {
                         w2Var2.dismiss();
                         gi0.a = null;
                     }
-                    gi0.a().I(R.raw.error, gd.N0(2131753125, null), TextUtils.isEmpty(str2) ? gd.N0(2131753126, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), gd.a0(null, null, 2131753127, str2))).j();
+                    gi0.a().I(R.raw.error, hd.N0(2131753125, null), TextUtils.isEmpty(str2) ? hd.N0(2131753126, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), hd.a0(null, null, 2131753127, str2))).j();
                     break;
                 } else {
                     p31Var.run();
@@ -159,7 +159,7 @@ public final /* synthetic */ class e2 implements q10 {
                         break;
                     }
                 } else {
-                    mp.u1(v0Var.N).V3(updates2, false);
+                    np.u1(v0Var.N).V3(updates2, false);
                     v0Var.x(f7Var, "requested_chat_sent", org.telegram.ui.web.v0.A(str3, "req_id"));
                     long j3 = v0Var.V.id;
                     Bundle bundle = new Bundle();

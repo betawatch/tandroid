@@ -14,8 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.l30;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s0 extends LinearLayout {
     public final ArrayList a;
@@ -84,8 +84,8 @@ public final class s0 extends LinearLayout {
                 return;
             }
             r0Var = new r0(this, getContext(), j10);
-            TLObject g22 = mp.u1(i7).g2(j3);
-            String k10 = g22 instanceof TLRPC.User ? o10.k((TLRPC.User) g22, true) : g22 instanceof TLRPC.Chat ? ((TLRPC.Chat) g22).title : "";
+            TLObject g22 = np.u1(i7).g2(j3);
+            String k10 = g22 instanceof TLRPC.User ? p10.k((TLRPC.User) g22, true) : g22 instanceof TLRPC.Chat ? ((TLRPC.Chat) g22).title : "";
             b9 b9Var = new b9((h6) null);
             b9Var.p(g22);
             r0Var.d.i0(g22, b9Var, null);

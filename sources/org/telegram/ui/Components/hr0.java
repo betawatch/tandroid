@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hr0 implements jl0 {
     public final /* synthetic */ jt0 a;
@@ -115,7 +115,7 @@ public final class hr0 implements jl0 {
                         if (profileTab != null || (i7 != jt0.p0(profileTab) && jt0Var.V1 != i7)) {
                             a70 I = a70.I(g2Var, view);
                             I.X(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(24.0f), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false)));
-                            I.c(R.drawable.tabs_reorder, org.telegram.messenger.gd.N0(2131746426, null), new di.x7(this, C0, i7, 6), false);
+                            I.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.N0(2131746426, null), new di.x7(this, C0, i7, 6), false);
                             I.a0();
                             return true;
                         }
@@ -126,7 +126,7 @@ public final class hr0 implements jl0 {
                     }
                     a70 I2 = a70.I(g2Var, view);
                     I2.X(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(24.0f), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false)));
-                    I2.c(R.drawable.tabs_reorder, org.telegram.messenger.gd.N0(2131746426, null), new di.x7(this, C0, i7, 6), false);
+                    I2.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.N0(2131746426, null), new di.x7(this, C0, i7, 6), false);
                     I2.a0();
                     return true;
                 }

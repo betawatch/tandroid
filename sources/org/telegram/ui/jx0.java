@@ -24,9 +24,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public int E;
     public int F;
     public int G;
@@ -75,7 +75,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     }
 
     public static void Z(jx0 jx0Var, String str, int i7, int i10) {
-        org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit().putInt("smart_max_count_" + str, i7).putInt("smart_delay_" + str, i10).apply();
+        org.telegram.messenger.np.u1(jx0Var.currentAccount).g7.edit().putInt("smart_max_count_" + str, i7).putInt("smart_delay_" + str, i10).apply();
         hx0 hx0Var = jx0Var.c;
         if (hx0Var != null) {
             hx0Var.g(jx0Var.J);
@@ -89,12 +89,12 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             Parcelable parcelable = null;
             if (i7 == jx0Var.Y) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
-                String N0 = org.telegram.messenger.gd.N0(2131745906, null);
+                String N0 = org.telegram.messenger.hd.N0(2131745906, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = org.telegram.messenger.gd.N0(2131745907, null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131745922, null), new ex0(jx0Var, str));
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                t1Var.U = org.telegram.messenger.hd.N0(2131745907, null);
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131745922, null), new ex0(jx0Var, str));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
                 jx0Var.showDialog(t1Var);
                 TextView textView = (TextView) t1Var.d(-1);
                 if (textView != null) {
@@ -118,7 +118,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                     intent.putExtra("android.intent.extra.ringtone.SHOW_DEFAULT", true);
                     intent.putExtra("android.intent.extra.ringtone.SHOW_SILENT", true);
                     intent.putExtra("android.intent.extra.ringtone.DEFAULT_URI", RingtoneManager.getDefaultUri(1));
-                    SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7;
+                    SharedPreferences sharedPreferences = org.telegram.messenger.np.u1(jx0Var.currentAccount).g7;
                     Uri uri = Settings.System.DEFAULT_NOTIFICATION_URI;
                     String path = uri != null ? uri.getPath() : null;
                     String string = sharedPreferences.getString("ringtone_path_" + str, path);
@@ -235,7 +235,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             if (i7 == jx0Var.G) {
                 org.telegram.ui.Cells.s8 s8Var2 = (org.telegram.ui.Cells.s8) view;
                 Switch r32 = s8Var2.e;
-                org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit().putBoolean(p5.c.k("content_preview_", str), !r32.h).apply();
+                org.telegram.messenger.np.u1(jx0Var.currentAccount).g7.edit().putBoolean(p5.c.k("content_preview_", str), !r32.h).apply();
                 s8Var2.setChecked(!r32.h);
                 return;
             }
@@ -388,7 +388,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                     return;
                 }
                 if (i7 == jx0Var.N) {
-                    org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit().putInt("popup_" + str, 1).apply();
+                    org.telegram.messenger.np.u1(jx0Var.currentAccount).g7.edit().putInt("popup_" + str, 1).apply();
                     ((org.telegram.ui.Cells.j6) view).a(true, true);
                     View findViewWithTag = jx0Var.b.findViewWithTag(2);
                     if (findViewWithTag != null) {
@@ -398,7 +398,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                     return;
                 }
                 if (i7 == jx0Var.O) {
-                    org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit().putInt("popup_" + str, 2).apply();
+                    org.telegram.messenger.np.u1(jx0Var.currentAccount).g7.edit().putInt("popup_" + str, 2).apply();
                     ((org.telegram.ui.Cells.j6) view).a(true, true);
                     View findViewWithTag2 = jx0Var.b.findViewWithTag(1);
                     if (findViewWithTag2 != null) {
@@ -412,7 +412,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                     boolean z11 = s8Var3.e.h;
                     boolean z12 = !z11;
                     s8Var3.setChecked(z12);
-                    SharedPreferences.Editor edit = org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit();
+                    SharedPreferences.Editor edit = org.telegram.messenger.np.u1(jx0Var.currentAccount).g7.edit();
                     if (!jx0Var.b0 || z11) {
                         edit.putBoolean("stories_" + str, z12);
                     } else {
@@ -427,9 +427,9 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             if (jx0Var.getParentActivity() == null) {
                 return;
             }
-            SharedPreferences sharedPreferences2 = org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7;
+            SharedPreferences sharedPreferences2 = org.telegram.messenger.np.u1(jx0Var.currentAccount).g7;
             int c10 = org.telegram.messenger.f3.c("smart_max_count_", str, sharedPreferences2, 2);
-            int c11 = org.telegram.messenger.f3.c("smart_delay_", str, sharedPreferences2, org.telegram.messenger.ks.K2);
+            int c11 = org.telegram.messenger.f3.c("smart_delay_", str, sharedPreferences2, org.telegram.messenger.ls.K2);
             r9 = c10 != 0 ? c10 : 2;
             Activity parentActivity2 = jx0Var.getParentActivity();
             ex0 ex0Var = new ex0(jx0Var, str);
@@ -505,7 +505,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             FrameLayout frameLayout = new FrameLayout(parentActivity2);
             w3Var.addView(frameLayout, c8.ma.t(-1, -2, 51, 22, 0, 0, 4));
             TextView textView2 = new TextView(parentActivity2);
-            textView2.setText(org.telegram.messenger.gd.N0(2131747927, null));
+            textView2.setText(org.telegram.messenger.hd.N0(2131747927, null));
             textView2.setTextColor(i15);
             i5.c.x(textView2, 1, 20.0f);
             frameLayout.addView(textView2, c8.ma.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
@@ -515,9 +515,9 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             linearLayout.setWeightSum(1.0f);
             w3Var.addView(linearLayout, c8.ma.q(-1, -2, 1.0f, 0, 0, 12, 0, 12));
             di.xb xbVar = new di.xb(parentActivity2, 18);
-            linearLayout.addView(n4Var, c8.ma.l(0.4f, 0, org.telegram.messenger.ks.t4));
+            linearLayout.addView(n4Var, c8.ma.l(0.4f, 0, org.telegram.messenger.ls.t4));
             linearLayout.addView(tb0Var, c8.ma.p(0, -2, 0.2f, 16));
-            linearLayout.addView(o4Var, c8.ma.l(0.4f, 0, org.telegram.messenger.ks.t4));
+            linearLayout.addView(o4Var, c8.ma.l(0.4f, 0, org.telegram.messenger.ls.t4));
             xbVar.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
             xbVar.setGravity(17);
             xbVar.setTextColor(i24);
@@ -525,12 +525,12 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             xbVar.setTypeface(org.telegram.messenger.g0.o());
             int L = org.telegram.messenger.g0.L(8.0f);
             xbVar.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.k0(L, L, L, L, i26, i28, i28));
-            xbVar.setText(org.telegram.messenger.gd.N0(2131753863, null));
+            xbVar.setText(org.telegram.messenger.hd.N0(2131753863, null));
             w3Var.addView(xbVar, c8.ma.t(-1, 48, 83, 16, 15, 16, 16));
             cr crVar = new cr(11);
             n4Var.setOnValueChangedListener(crVar);
             o4Var.setOnValueChangedListener(crVar);
-            xbVar.setOnClickListener(new bi.q6(n4Var, o4Var, ex0Var, w4Var, 8));
+            xbVar.setOnClickListener(new bi.p6(n4Var, o4Var, ex0Var, w4Var, 8));
             org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) w4Var.b;
             w2Var.O = w3Var;
             w2Var.show();
@@ -541,7 +541,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
 
     public static void b0(jx0 jx0Var, String str) {
         jx0Var.c0 = true;
-        org.telegram.messenger.mp.u1(jx0Var.currentAccount).g7.edit().putBoolean("custom_" + str, false).remove("notify2_" + str).apply();
+        org.telegram.messenger.np.u1(jx0Var.currentAccount).g7.edit().putBoolean("custom_" + str, false).remove("notify2_" + str).apply();
         jx0Var.finishFragment();
         ix0 ix0Var = jx0Var.s;
         if (ix0Var != null) {
@@ -582,7 +582,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         long j3 = this.f;
         long j10 = this.h;
-        String v = org.telegram.messenger.xs.v(j3, j10, false);
+        String v = org.telegram.messenger.ys.v(j3, j10, false);
         this.simpleActionBar.setActionBarMenuOnItemClick(new gx0(this, v));
         org.telegram.ui.ActionBar.h6 h6Var = this.e;
         org.telegram.ui.Components.co coVar = new org.telegram.ui.Components.co(context, null, false, h6Var);
@@ -604,10 +604,10 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             this.simpleActionBar.setTitle(O0.title);
         }
         if (this.n) {
-            this.simpleActionBar.setSubtitle(org.telegram.messenger.gd.N0(2131747701, null));
-            this.simpleActionBar.s(org.telegram.messenger.gd.N0(2131745750, null));
+            this.simpleActionBar.setSubtitle(org.telegram.messenger.hd.N0(2131747701, null));
+            this.simpleActionBar.s(org.telegram.messenger.hd.N0(2131745750, null));
         } else {
-            this.simpleActionBar.setSubtitle(org.telegram.messenger.gd.N0(2131751672, null));
+            this.simpleActionBar.setSubtitle(org.telegram.messenger.hd.N0(2131751672, null));
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
@@ -628,9 +628,9 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.f0) {
+        if (i7 == org.telegram.messenger.ls.f0) {
             try {
                 this.c.f();
             } catch (Exception unused) {
@@ -673,11 +673,11 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         Uri uri = (Uri) intent.getParcelableExtra("android.intent.extra.ringtone.PICKED_URI");
         String str = null;
         if (uri != null && (ringtone = RingtoneManager.getRingtone(org.telegram.messenger.t0.b, uri)) != null) {
-            str = i7 == 13 ? uri.equals(Settings.System.DEFAULT_RINGTONE_URI) ? org.telegram.messenger.gd.N0(2131751587, null) : ringtone.getTitle(getParentActivity()) : uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? org.telegram.messenger.gd.N0(2131745084, null) : ringtone.getTitle(getParentActivity());
+            str = i7 == 13 ? uri.equals(Settings.System.DEFAULT_RINGTONE_URI) ? org.telegram.messenger.hd.N0(2131751587, null) : ringtone.getTitle(getParentActivity()) : uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? org.telegram.messenger.hd.N0(2131745084, null) : ringtone.getTitle(getParentActivity());
             ringtone.stop();
         }
-        SharedPreferences.Editor edit = org.telegram.messenger.mp.u1(this.currentAccount).g7.edit();
-        String v = org.telegram.messenger.xs.v(this.f, this.h, false);
+        SharedPreferences.Editor edit = org.telegram.messenger.np.u1(this.currentAccount).g7.edit();
+        String v = org.telegram.messenger.ys.v(this.f, this.h, false);
         if (i7 == 12) {
             if (str != null) {
                 edit.putString("sound_" + v, str);
@@ -781,7 +781,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.a0 = i16 + 2;
         this.L = i16 + 1;
         if (org.telegram.messenger.n5.z(j3)) {
-            TLRPC.Chat O0 = org.telegram.messenger.mp.u1(this.currentAccount).O0(Long.valueOf(-j3));
+            TLRPC.Chat O0 = org.telegram.messenger.np.u1(this.currentAccount).O0(Long.valueOf(-j3));
             if (org.telegram.messenger.v3.T(O0) && !O0.megagroup) {
                 z10 = true;
                 if (!org.telegram.messenger.n5.C(j3) || z10) {
@@ -824,17 +824,17 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                     this.Y = -1;
                     this.Z = -1;
                 }
-                boolean D = org.telegram.messenger.xs.t(this.currentAccount).D(this.f, null, false, false);
+                boolean D = org.telegram.messenger.ys.t(this.currentAccount).D(this.f, null, false, false);
                 if (z11) {
-                    SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(this.currentAccount).g7;
-                    String v = org.telegram.messenger.xs.v(j3, j10, false);
+                    SharedPreferences sharedPreferences = org.telegram.messenger.np.u1(this.currentAccount).g7;
+                    String v = org.telegram.messenger.ys.v(j3, j10, false);
                     boolean contains = sharedPreferences.contains("notify2_" + v);
                     int c10 = org.telegram.messenger.f3.c("notify2_", v, sharedPreferences, 0);
                     if (c10 == 0) {
                         if (contains) {
                             this.r = true;
                         } else {
-                            this.r = org.telegram.messenger.xs.t(this.currentAccount).D(this.f, null, false, false);
+                            this.r = org.telegram.messenger.ys.t(this.currentAccount).D(this.f, null, false, false);
                         }
                     } else if (c10 == 1) {
                         this.r = true;
@@ -846,7 +846,7 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 } else {
                     this.r = !D;
                 }
-                org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.f0);
+                org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.f0);
                 return super.onFragmentCreate();
             }
         }
@@ -867,10 +867,10 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.X = i192 + 2;
         if (z11) {
         }
-        boolean D2 = org.telegram.messenger.xs.t(this.currentAccount).D(this.f, null, false, false);
+        boolean D2 = org.telegram.messenger.ys.t(this.currentAccount).D(this.f, null, false, false);
         if (z11) {
         }
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.f0);
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.f0);
         return super.onFragmentCreate();
     }
 
@@ -878,10 +878,10 @@ public final class jx0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         if (!this.c0) {
-            String v = org.telegram.messenger.xs.v(this.f, this.h, false);
-            org.telegram.messenger.mp.u1(this.currentAccount).g7.edit().putBoolean("custom_" + v, true).apply();
+            String v = org.telegram.messenger.ys.v(this.f, this.h, false);
+            org.telegram.messenger.np.u1(this.currentAccount).g7.edit().putBoolean("custom_" + v, true).apply();
         }
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.f0);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.f0);
     }
 
     @Override // org.telegram.ui.ActionBar.g2

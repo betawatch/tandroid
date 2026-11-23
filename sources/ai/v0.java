@@ -3,9 +3,9 @@ package ai;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class v0 {
     public static boolean d;
@@ -46,7 +46,7 @@ public abstract class v0 {
             return;
         }
         d = true;
-        SharedPreferences g12 = mp.g1();
+        SharedPreferences g12 = np.g1();
         e = g12.getInt("dict_glow_day2_preset", 0);
         g12.getBoolean("dict_glow_day2_contrast", true);
         c = g12.getInt("dict_glow_day2_rimMode", 1);

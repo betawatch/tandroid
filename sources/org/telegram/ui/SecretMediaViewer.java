@@ -45,9 +45,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
+public class SecretMediaViewer implements org.telegram.messenger.gs, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer w1;
     public float A0;
     public float B0;
@@ -116,9 +116,9 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
     public View f;
     public WindowInsets f0;
     public org.telegram.ui.Components.ll0 f1;
-    public org.telegram.messenger.fj g0;
+    public org.telegram.messenger.gj g0;
     public boolean g1;
-    public org.telegram.messenger.hc h0;
+    public org.telegram.messenger.ic h0;
     public final fz0 h1;
     public boolean i0;
     public final int[] i1;
@@ -160,7 +160,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
     public boolean j0 = true;
     public final PhotoBackgroundDrawable k0 = new PhotoBackgroundDrawable();
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class PhotoBackgroundDrawable extends ColorDrawable {
         public tr0 a;
         public int b;
@@ -372,7 +372,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
             }
             if (secretMediaViewer.l0 != 3) {
                 if (secretMediaViewer.x0 != f11 || f14 == f10 || secretMediaViewer.d1) {
-                    photoBackgroundDrawable.setAlpha(org.telegram.messenger.ks.e4);
+                    photoBackgroundDrawable.setAlpha(org.telegram.messenger.ls.e4);
                 } else {
                     float height = secretMediaViewer.e.getHeight() / 4.0f;
                     photoBackgroundDrawable.setAlpha((int) Math.max(127.0f, (f11 - (Math.min(Math.abs(f14), height) / height)) * 255.0f));
@@ -535,7 +535,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         this.J0 = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, "animationValue", 0.0f, 1.0f));
         this.J0.setInterpolator(this.L0);
-        this.J0.setDuration(org.telegram.messenger.ks.Z3);
+        this.J0.setDuration(org.telegram.messenger.ls.Z3);
         this.J0.addListener(new lz0(this, 3));
         this.J0.start();
     }
@@ -570,9 +570,9 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         c(this.x0, f10, f11, z10);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.w) {
+        if (i7 == org.telegram.messenger.ls.w) {
             if (!((Boolean) objArr[2]).booleanValue() && this.g0 != null && ((Long) objArr[1]).longValue() == 0 && ((ArrayList) objArr[0]).contains(Integer.valueOf(this.g0.e1()))) {
                 if (this.K && !this.I) {
                     this.J = true;
@@ -587,8 +587,8 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
             }
             return;
         }
-        if (i7 != org.telegram.messenger.ks.i0) {
-            if (i7 == org.telegram.messenger.ks.l0) {
+        if (i7 != org.telegram.messenger.ls.i0) {
+            if (i7 == org.telegram.messenger.ls.l0) {
                 if (this.g0.e1() == ((TLRPC.Message) objArr[0]).id) {
                     if (this.K && !this.I) {
                         this.J = true;
@@ -679,17 +679,17 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
                     v0Var.a();
                     this.k1 = null;
                 }
-                org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.w);
-                org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.l0);
-                org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.i0);
+                org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.w);
+                org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.l0);
+                org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.i0);
                 this.j0 = false;
                 System.currentTimeMillis();
                 uq0 uq0Var = this.M;
                 if (uq0Var != null) {
-                    org.telegram.messenger.fj fjVar = this.g0;
-                    TLRPC.MessageMedia messageMedia = fjVar.k.media;
+                    org.telegram.messenger.gj gjVar = this.g0;
+                    TLRPC.MessageMedia messageMedia = gjVar.k.media;
                     if (!(messageMedia.photo instanceof TLRPC.TL_photoEmpty) && !(messageMedia.document instanceof TLRPC.TL_documentEmpty)) {
-                        wq0Var = uq0Var.E(fjVar, null, 0, true, false);
+                        wq0Var = uq0Var.E(gjVar, null, 0, true, false);
                         lp0Var = this.E;
                         if (lp0Var != null) {
                             lp0Var.g0();
@@ -898,7 +898,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v3 */
-    public final void h(org.telegram.messenger.fj fjVar, vk vkVar, he heVar, bi.q2 q2Var) {
+    public final void h(org.telegram.messenger.gj gjVar, vk vkVar, he heVar, bi.q2 q2Var) {
         wq0 E;
         ?? r17;
         String str;
@@ -908,10 +908,10 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         float f10;
         boolean z10;
         File M;
-        if (this.b == null || !fjVar.m5() || vkVar == null || (E = vkVar.E(fjVar, null, 0, true, false)) == null) {
+        if (this.b == null || !gjVar.m5() || vkVar == null || (E = vkVar.E(gjVar, null, 0, true, false)) == null) {
             return;
         }
-        this.p1 = fjVar.k.ttl == Integer.MAX_VALUE;
+        this.p1 = gjVar.k.ttl == Integer.MAX_VALUE;
         this.o1 = q2Var;
         this.M = vkVar;
         System.currentTimeMillis();
@@ -1013,15 +1013,15 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         }
         LaunchActivity launchActivity = LaunchActivity.H1;
         this.k1 = launchActivity != null ? new bg.v0(launchActivity, z11) : null;
-        org.telegram.messenger.ks.f(this.a).b(this, org.telegram.messenger.ks.w);
-        org.telegram.messenger.ks.f(this.a).b(this, org.telegram.messenger.ks.l0);
-        org.telegram.messenger.ks.f(this.a).b(this, org.telegram.messenger.ks.i0);
-        this.w = org.telegram.messenger.fj.B1(fjVar.k.peer_id);
-        this.g0 = fjVar;
-        TLRPC.Document F0 = fjVar.F0();
-        org.telegram.messenger.hc hcVar = this.h0;
-        if (hcVar != null) {
-            hcVar.a();
+        org.telegram.messenger.ls.f(this.a).b(this, org.telegram.messenger.ls.w);
+        org.telegram.messenger.ls.f(this.a).b(this, org.telegram.messenger.ls.l0);
+        org.telegram.messenger.ls.f(this.a).b(this, org.telegram.messenger.ls.i0);
+        this.w = org.telegram.messenger.gj.B1(gjVar.k.peer_id);
+        this.g0 = gjVar;
+        TLRPC.Document F0 = gjVar.F0();
+        org.telegram.messenger.ic icVar = this.h0;
+        if (icVar != null) {
+            icVar.a();
             this.h0 = null;
         }
         ImageReceiver imageReceiver2 = E.a;
@@ -1039,7 +1039,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
                 bitmap = null;
             }
         }
-        this.h0 = bitmap != null ? new org.telegram.messenger.hc(bitmap, str, 0) : null;
+        this.h0 = bitmap != null ? new org.telegram.messenger.ic(bitmap, str, 0) : null;
         this.T.setVisibility(8);
         if (F0 != null) {
             int i11 = 0;
@@ -1056,29 +1056,29 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
                 }
                 i11++;
             }
-            if (org.telegram.messenger.fj.s3(F0, false)) {
-                this.G.setTitle(org.telegram.messenger.gd.N0(2131751397, null));
-                String str2 = fjVar.k.attachPath;
+            if (org.telegram.messenger.gj.s3(F0, false)) {
+                this.G.setTitle(org.telegram.messenger.hd.N0(2131751397, null));
+                String str2 = gjVar.k.attachPath;
                 f10 = 1.0f;
                 photoBackgroundDrawable = photoBackgroundDrawable2;
                 i7 = 2;
-                imageReceiver.p0((str2 == null || !fjVar.y0) ? org.telegram.messenger.fc.b(F0) : org.telegram.messenger.fc.g(str2), null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, fjVar, 1);
+                imageReceiver.p0((str2 == null || !gjVar.y0) ? org.telegram.messenger.gc.b(F0) : org.telegram.messenger.gc.g(str2), null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, gjVar, 1);
             } else {
                 i7 = 2;
                 photoBackgroundDrawable = photoBackgroundDrawable2;
                 f10 = 1.0f;
                 this.a0 = 1;
-                this.G.setTitle(org.telegram.messenger.gd.N0(2131751395, null));
-                File file = new File(fjVar.k.attachPath);
+                this.G.setTitle(org.telegram.messenger.hd.N0(2131751395, null));
+                File file = new File(gjVar.k.attachPath);
                 if (file.exists()) {
                     i(file);
                 } else {
-                    if (fjVar.D3()) {
+                    if (gjVar.D3()) {
                         org.telegram.messenger.w7.G(this.a);
                         M = org.telegram.messenger.w7.J(F0, null, true, true);
                     } else {
                         org.telegram.messenger.w7.G(this.a);
-                        M = org.telegram.messenger.w7.M(fjVar.k, false, true);
+                        M = org.telegram.messenger.w7.M(gjVar.k, false, true);
                     }
                     File file2 = new File(M.getAbsolutePath() + ".enc");
                     if (file2.exists()) {
@@ -1088,22 +1088,22 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
                 }
                 this.K = true;
                 this.T.setVisibility(0);
-                imageReceiver.p0(null, null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, fjVar, 2);
+                imageReceiver.p0(null, null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, gjVar, 2);
             }
         } else {
             i7 = 2;
             photoBackgroundDrawable = photoBackgroundDrawable2;
             f10 = 1.0f;
-            this.G.setTitle(org.telegram.messenger.gd.N0(2131751396, null));
-            TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(fjVar.p0, org.telegram.messenger.g0.Z0(false), false, null, false);
-            imageReceiver.p0(org.telegram.messenger.fc.f(w10, fjVar.n0), null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, fjVar, 2);
+            this.G.setTitle(org.telegram.messenger.hd.N0(2131751396, null));
+            TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(gjVar.p0, org.telegram.messenger.g0.Z0(false), false, null, false);
+            imageReceiver.p0(org.telegram.messenger.gc.f(w10, gjVar.n0), null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, gjVar, 2);
             if (w10 != null) {
                 this.N = w10.w;
                 this.O = w10.h;
             }
         }
-        k(fjVar, "", false);
-        k(fjVar, fjVar.z, true);
+        k(gjVar, "", false);
+        k(gjVar, gjVar.z, true);
         n(true, false);
         l(false, false);
         this.V.a(true, true);
@@ -1170,7 +1170,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         fArr3[0] = 0.0f;
         fArr3[1] = 1.0f;
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.r, (Property<hi.l3, Float>) property, fArr3);
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(photoBackgroundDrawable, org.telegram.ui.Components.r6.d, 0, org.telegram.messenger.ks.e4);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(photoBackgroundDrawable, org.telegram.ui.Components.r6.d, 0, org.telegram.messenger.ls.e4);
         float[] fArr4 = new float[i7];
         // fill-array-data instruction
         fArr4[0] = 0.0f;
@@ -1195,11 +1195,11 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         animatorSet.playTogether(animatorArr);
         this.l0 = 3;
         int i14 = 29;
-        this.n0 = new mc0(this, heVar, fjVar, i14);
+        this.n0 = new mc0(this, heVar, gjVar, i14);
         this.J0.setDuration(250L);
         this.J0.addListener(new lz0(this, 0));
         this.m0 = System.currentTimeMillis();
-        if (org.telegram.messenger.bz.o() == 0) {
+        if (org.telegram.messenger.cz.o() == 0) {
             this.e.setLayerType(i13, null);
         }
         this.J0.setInterpolator(new DecelerateInterpolator());
@@ -1263,7 +1263,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         this.F = false;
     }
 
-    public final void k(org.telegram.messenger.fj fjVar, CharSequence charSequence, boolean z10) {
+    public final void k(org.telegram.messenger.gj gjVar, CharSequence charSequence, boolean z10) {
         boolean z11;
         CharSequence cloneSpans = org.telegram.ui.Components.y5.cloneSpans(charSequence, 3);
         if (this.Z == null) {
@@ -1332,15 +1332,15 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
             this.Y.setTag(null);
         } else {
             org.telegram.ui.ActionBar.m6.P();
-            TLRPC.Message message = fjVar.k;
+            TLRPC.Message message = gjVar.k;
             if (message == null || message.translatedText == null || !TextUtils.equals(message.translatedToLanguage, org.telegram.ui.Components.b31.N0())) {
-                if (fjVar.k.entities.isEmpty()) {
+                if (gjVar.k.entities.isEmpty()) {
                     cloneSpans = org.telegram.messenger.j6.m(new SpannableStringBuilder(cloneSpans), nextView.getPaint().getFontMetricsInt(), false, null, 0);
                 } else {
                     SpannableString spannableString = new SpannableString(cloneSpans);
-                    fjVar.c(spannableString, true, false);
-                    if (org.telegram.messenger.fj.L4(fjVar.k)) {
-                        org.telegram.messenger.fj.h(fjVar.P3(), spannableString, false, 3, (int) fjVar.L0(), false);
+                    gjVar.c(spannableString, true, false);
+                    if (org.telegram.messenger.gj.L4(gjVar.k)) {
+                        org.telegram.messenger.gj.h(gjVar.P3(), spannableString, false, 3, (int) gjVar.L0(), false);
                     }
                     cloneSpans = org.telegram.messenger.j6.m(spannableString, nextView.getPaint().getFontMetricsInt(), false, null, 0);
                 }
@@ -1382,7 +1382,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
 
     public final void m() {
         this.r.r(true);
-        String N0 = org.telegram.messenger.gd.N0(this.K ? 2131743337 : 2131747068, null);
+        String N0 = org.telegram.messenger.hd.N0(this.K ? 2131743335 : 2131747068, null);
         hi.l3 l3Var = this.r;
         l3Var.h = hi.l3.a(N0, l3Var.getTextPaint());
         this.r.v(N0);
@@ -1397,7 +1397,7 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
         oh0Var.start();
         l3Var3.m(oh0Var);
         this.r.x();
-        org.telegram.messenger.mp.g1().edit().putInt("viewoncehint", org.telegram.messenger.mp.g1().getInt("viewoncehint", 0) + 1).commit();
+        org.telegram.messenger.np.g1().edit().putInt("viewoncehint", org.telegram.messenger.np.g1().getInt("viewoncehint", 0) + 1).commit();
     }
 
     public final void n(boolean z10, boolean z11) {
@@ -1482,8 +1482,8 @@ public class SecretMediaViewer implements org.telegram.messenger.fs, GestureDete
             return false;
         }
         if (f10 == 1.0f) {
-            float w10 = org.telegram.messenger.n10.w(3.0f, this.x0, (motionEvent.getX() - (this.e.getWidth() / 2)) - this.v0, motionEvent.getX() - (this.e.getWidth() / 2));
-            float w11 = org.telegram.messenger.n10.w(3.0f, this.x0, (motionEvent.getY() - (this.e.getHeight() / 2)) - this.w0, motionEvent.getY() - (this.e.getHeight() / 2));
+            float w10 = org.telegram.messenger.o10.w(3.0f, this.x0, (motionEvent.getX() - (this.e.getWidth() / 2)) - this.v0, motionEvent.getX() - (this.e.getWidth() / 2));
+            float w11 = org.telegram.messenger.o10.w(3.0f, this.x0, (motionEvent.getY() - (this.e.getHeight() / 2)) - this.w0, motionEvent.getY() - (this.e.getHeight() / 2));
             o(3.0f);
             float f11 = this.U0;
             if (w10 >= f11) {

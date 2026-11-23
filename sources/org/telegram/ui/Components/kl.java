@@ -3,11 +3,11 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kl extends jg.s0 {
     public final /* synthetic */ int E = 0;
-    public final /* synthetic */ org.telegram.messenger.fs F;
+    public final /* synthetic */ org.telegram.messenger.gs F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public kl(ml mlVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
@@ -18,10 +18,10 @@ public final class kl extends jg.s0 {
     @Override // v4.i0
     public final void f() {
         int i7 = this.E;
-        org.telegram.messenger.fs fsVar = this.F;
+        org.telegram.messenger.gs gsVar = this.F;
         switch (i7) {
             case 0:
-                ml mlVar = (ml) fsVar;
+                ml mlVar = (ml) gsVar;
                 kl klVar = mlVar.O;
                 org.telegram.ui.ActionBar.q0 q0Var = mlVar.x;
                 if (q0Var != null) {
@@ -29,19 +29,19 @@ public final class kl extends jg.s0 {
                 }
                 TextView textView = mlVar.w;
                 if (textView != null) {
-                    textView.setText(org.telegram.messenger.gd.a0(null, null, 2131747972, klVar.h));
+                    textView.setText(org.telegram.messenger.hd.a0(null, null, 2131747972, klVar.h));
                 }
                 super.f();
                 break;
             default:
-                org.telegram.ui.qa0 qa0Var = (org.telegram.ui.qa0) fsVar;
+                org.telegram.ui.qa0 qa0Var = (org.telegram.ui.qa0) gsVar;
                 org.telegram.ui.ActionBar.g5 g5Var = qa0Var.r;
                 if (g5Var != null) {
                     g5Var.setShowSearchProgress(qa0Var.T.w);
                 }
                 TextView textView2 = qa0Var.n;
                 if (textView2 != null) {
-                    textView2.setText(org.telegram.messenger.gd.a0(null, null, 2131747972, qa0Var.T.h));
+                    textView2.setText(org.telegram.messenger.hd.a0(null, null, 2131747972, qa0Var.T.h));
                 }
                 super.f();
                 break;

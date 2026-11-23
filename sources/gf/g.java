@@ -14,9 +14,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import kf.r;
 import kf.t;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class g {
     public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(kf.b.class, kf.i.class, kf.h.class, kf.j.class, t.class, kf.n.class, kf.l.class));
@@ -704,13 +704,13 @@ public final class g {
                                                                 case '0':
                                                                 case '1':
                                                                 case '2':
-                                                                case ks.o0 /* 51 */:
-                                                                case ks.p0 /* 52 */:
-                                                                case ks.q0 /* 53 */:
-                                                                case ks.r0 /* 54 */:
-                                                                case ks.s0 /* 55 */:
-                                                                case ks.t0 /* 56 */:
-                                                                case ks.u0 /* 57 */:
+                                                                case ls.o0 /* 51 */:
+                                                                case ls.p0 /* 52 */:
+                                                                case ls.q0 /* 53 */:
+                                                                case ls.r0 /* 54 */:
+                                                                case ls.s0 /* 55 */:
+                                                                case ls.t0 /* 56 */:
+                                                                case ls.u0 /* 57 */:
                                                                     i56++;
                                                                     if (i56 > 9) {
                                                                         break;

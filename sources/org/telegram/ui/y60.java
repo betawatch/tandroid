@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y60 implements ww {
     public final /* synthetic */ int a = 0;
@@ -45,13 +45,13 @@ public final /* synthetic */ class y60 implements ww {
         switch (i11) {
             case 0:
                 String str2 = LaunchActivity.C1;
-                long j3 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
+                long j3 = ((org.telegram.messenger.tr) arrayList.get(0)).a;
                 TLRPC.TL_inputMediaGame tL_inputMediaGame = new TLRPC.TL_inputMediaGame();
                 TLRPC.TL_inputGameShortName tL_inputGameShortName = new TLRPC.TL_inputGameShortName();
                 tL_inputMediaGame.id = tL_inputGameShortName;
                 tL_inputGameShortName.short_name = str;
-                tL_inputGameShortName.bot_id = org.telegram.messenger.mp.u1(i12).s1(user);
-                org.telegram.messenger.zy.C(i12).p0(org.telegram.messenger.mp.u1(i12).l1(j3), tL_inputMediaGame, 0L, 0L);
+                tL_inputGameShortName.bot_id = org.telegram.messenger.np.u1(i12).s1(user);
+                org.telegram.messenger.az.C(i12).p0(org.telegram.messenger.np.u1(i12).l1(j3), tL_inputMediaGame, 0L, 0L);
                 Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
                 if (org.telegram.messenger.n5.C(j3)) {
                     k10.putInt("enc_id", (int) (j3 & 4294967295L));
@@ -60,15 +60,15 @@ public final /* synthetic */ class y60 implements ww {
                 } else {
                     k10.putLong("chat_id", -j3);
                 }
-                if (org.telegram.messenger.mp.u1(i12).E(k10, cxVar, null, null)) {
-                    org.telegram.messenger.ks.f(i12).k(4, new Object[0]);
+                if (org.telegram.messenger.np.u1(i12).E(k10, cxVar, null, null)) {
+                    org.telegram.messenger.ls.f(i12).k(4, new Object[0]);
                     ((ActionBarLayout) launchActivity.M()).V(new bn(k10), true, false);
                     break;
                 }
                 break;
             default:
                 String str3 = LaunchActivity.C1;
-                long j10 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
+                long j10 = ((org.telegram.messenger.tr) arrayList.get(0)).a;
                 Bundle k11 = a8.p0.k("scrollToTopOnResume", true);
                 if (org.telegram.messenger.n5.C(j10)) {
                     k11.putInt("enc_id", (int) (j10 & 4294967295L));
@@ -77,12 +77,12 @@ public final /* synthetic */ class y60 implements ww {
                 } else {
                     k11.putLong("chat_id", -j10);
                 }
-                k11.putString("attach_bot", org.telegram.messenger.o10.o(user));
+                k11.putString("attach_bot", org.telegram.messenger.p10.o(user));
                 if (str != null) {
                     k11.putString("attach_bot_start_command", str);
                 }
-                if (org.telegram.messenger.mp.u1(i12).E(k11, cxVar, null, null)) {
-                    org.telegram.messenger.ks.f(i12).k(4, new Object[0]);
+                if (org.telegram.messenger.np.u1(i12).E(k11, cxVar, null, null)) {
+                    org.telegram.messenger.ls.f(i12).k(4, new Object[0]);
                     ((ActionBarLayout) launchActivity.M()).V(new bn(k11), true, false);
                     break;
                 }

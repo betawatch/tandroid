@@ -8,7 +8,7 @@ import android.view.TextureView;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xi implements org.telegram.ui.ActionBar.n0, dr0, org.telegram.ui.Components.f50, ll, pm0 {
     public final /* synthetic */ bn a;
@@ -18,11 +18,11 @@ public final class xi implements org.telegram.ui.ActionBar.n0, dr0, org.telegram
     }
 
     @Override // org.telegram.ui.dr0
-    public void G0(org.telegram.messenger.fj fjVar) {
+    public void G0(org.telegram.messenger.gj gjVar) {
         bn bnVar = this.a;
         bnVar.A0.I0(true);
         bnVar.A0.C0();
-        if (MediaController.B().I(fjVar)) {
+        if (MediaController.B().I(gjVar)) {
             bnVar.m1.removeView(bnVar.J8);
             bnVar.J8 = null;
             bnVar.M8 = null;
@@ -31,7 +31,7 @@ public final class xi implements org.telegram.ui.ActionBar.n0, dr0, org.telegram
         for (int i7 = 0; i7 < bnVar.A0.getChildCount(); i7++) {
             if (bnVar.A0.getChildAt(i7) instanceof org.telegram.ui.Cells.r1) {
                 org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) bnVar.A0.getChildAt(i7);
-                if (r1Var.getMessageObject() != null && r1Var.getMessageObject().e1() == fjVar.e1()) {
+                if (r1Var.getMessageObject() != null && r1Var.getMessageObject().e1() == gjVar.e1()) {
                     r1Var.getPhotoImage().O0(false, true);
                 }
             }
@@ -39,15 +39,15 @@ public final class xi implements org.telegram.ui.ActionBar.n0, dr0, org.telegram
     }
 
     @Override // org.telegram.ui.dr0
-    public void H(org.telegram.messenger.fj fjVar) {
-        if (fjVar == null) {
+    public void H(org.telegram.messenger.gj gjVar) {
+        if (gjVar == null) {
             return;
         }
-        if (MediaController.B().I(fjVar)) {
+        if (MediaController.B().I(gjVar)) {
             for (int i7 = 0; i7 < this.a.A0.getChildCount(); i7++) {
                 if (this.a.A0.getChildAt(i7) instanceof org.telegram.ui.Cells.r1) {
                     org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) this.a.A0.getChildAt(i7);
-                    if (r1Var.getMessageObject() != null && r1Var.getMessageObject().e1() == fjVar.e1()) {
+                    if (r1Var.getMessageObject() != null && r1Var.getMessageObject().e1() == gjVar.e1()) {
                         org.telegram.ui.Components.c6 m10 = r1Var.getPhotoImage().m();
                         if (m10.c0) {
                             m10.stop();

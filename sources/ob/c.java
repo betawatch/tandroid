@@ -73,7 +73,7 @@ import kd.j;
 import og.n;
 import org.json.JSONObject;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.qo0;
@@ -82,7 +82,7 @@ import org.telegram.ui.dr0;
 import sg.t0;
 import t3.g;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c implements a0, androidx.activity.result.b, ce.c, wi0, ci.a0, g0, d, q, qo0, dr0, OnSuccessListener, ib.b, k, n, t0 {
     public final /* synthetic */ int a;
@@ -338,12 +338,12 @@ public final class c implements a0, androidx.activity.result.b, ce.c, wi0, ci.a0
     }
 
     @Override // org.telegram.ui.dr0
-    public void G0(fj fjVar) {
+    public void G0(gj gjVar) {
         ((w8) ((z3) this.b).A1).f(true);
     }
 
     @Override // org.telegram.ui.dr0
-    public void H(fj fjVar) {
+    public void H(gj gjVar) {
         ((w8) ((z3) this.b).A1).f(false);
     }
 

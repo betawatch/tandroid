@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.media.projection.MediaProjectionManager;
 import android.util.LongSparseArray;
 import android.view.View;
-import org.telegram.messenger.fl;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gl;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -23,7 +23,7 @@ import org.telegram.ui.af;
 import org.telegram.ui.bc1;
 import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        x10 x10Var;
+        y10 y10Var;
         oi.a aVar;
         oi.k4 k4Var;
         int i7 = this.a;
@@ -45,12 +45,12 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
         Object obj = this.b;
         switch (i7) {
             case 0:
-                ((ai.c1) obj).run();
+                ((ai.j1) obj).run();
                 break;
             case 1:
                 o5 o5Var = ((n5) obj).y;
-                if (o5Var.r && (x10Var = o5Var.f) != null) {
-                    x10Var.a(5);
+                if (o5Var.r && (y10Var = o5Var.f) != null) {
+                    y10Var.a(5);
                     break;
                 }
                 break;
@@ -63,8 +63,8 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 break;
             case 3:
                 jg.m mVar = (jg.m) obj;
-                mp.u1(mVar.G).s.clear();
-                mp.g1().edit().remove("installReferer").commit();
+                np.u1(mVar.G).s.clear();
+                np.g1().edit().remove("installReferer").commit();
                 mVar.f();
                 break;
             case 4:
@@ -95,17 +95,17 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                 int i12 = eVar.a;
                 boolean z10 = eVar.r;
                 eVar.r = !z10;
-                eVar.h.c(gd.N0(!z10 ? 2131753698 : 2131753695, null), true, true);
+                eVar.h.c(hd.N0(!z10 ? 2131753698 : 2131753695, null), true, true);
                 o6Var.a();
-                o6Var.c(gd.N0(eVar.r ? 2131753696 : 2131753697, null), true, true);
+                o6Var.c(hd.N0(eVar.r ? 2131753696 : 2131753697, null), true, true);
                 if (eVar.r) {
                     eVar.x |= 1;
                 } else {
                     eVar.x &= -2;
                 }
-                mp.u1(i12).g7.edit().putInt("dialog_botflags" + eVar.s, eVar.x).apply();
+                np.u1(i12).g7.edit().putInt("dialog_botflags" + eVar.s, eVar.x).apply();
                 TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
-                toggleconnectedbotpaused.peer = mp.u1(i12).l1(eVar.s);
+                toggleconnectedbotpaused.peer = np.u1(i12).l1(eVar.s);
                 toggleconnectedbotpaused.paused = eVar.r;
                 ConnectionsManager.getInstance(i12).sendRequest(toggleconnectedbotpaused, null);
                 break;
@@ -157,11 +157,11 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
                     e eVar2 = d0Var.s1;
                     if (!eVar2.R) {
                         eVar2.setLoading(true);
-                        mp u12 = mp.u1(d0Var.a);
+                        np u12 = np.u1(d0Var.a);
                         li.t tVar = new li.t(d0Var, 2);
                         TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
                         tL_channels_getAdminedPublicChannels.for_community_peer = true;
-                        u12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new d3.b(i11), new fl(u12, tVar, i10));
+                        u12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new d3.b(i11), new gl(u12, tVar, i10));
                         break;
                     }
                 }
@@ -287,12 +287,12 @@ public final /* synthetic */ class o4 implements View.OnClickListener {
             case 27:
                 org.telegram.ui.web.k kVar2 = (org.telegram.ui.web.k) obj;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kVar2.getContext());
-                String N0 = gd.N0(2131742650, null);
+                String N0 = hd.N0(2131742648, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = gd.N0(2131742651, null);
-                alertDialog$Builder.k(gd.N0(2131747637, null), new org.telegram.ui.web.a(kVar2));
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                t1Var.U = hd.N0(2131742649, null);
+                alertDialog$Builder.k(hd.N0(2131747637, null), new org.telegram.ui.web.a(kVar2));
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
                 alertDialog$Builder.p();
                 break;
             case 28:

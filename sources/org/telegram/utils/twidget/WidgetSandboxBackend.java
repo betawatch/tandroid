@@ -29,15 +29,15 @@ import java.util.zip.Inflater;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Components.cz;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 final class WidgetSandboxBackend implements g1, h {
     private static final int MAX_CANVAS_WORDS = 2097152;
@@ -697,7 +697,7 @@ final class WidgetSandboxBackend implements g1, h {
         if (f10 <= 0.0f || f10 > 10000.0f) {
             f10 = 16.0f;
         }
-        Paint paint = new Paint(ks.N1);
+        Paint paint = new Paint(ls.N1);
         paint.setTextSize(f10);
         paint.setTypeface(typeface(str, i7, z10));
         String featureSettings = featureSettings(str2);
@@ -1300,7 +1300,7 @@ final class WidgetSandboxBackend implements g1, h {
                         if (str2.length() > 80) {
                             str2 = str2.substring(0, 80) + "…";
                         }
-                        lc.b0(T).Q(R.raw.copy, 36, gd.a0(null, null, 2131742602, str2)).j();
+                        lc.b0(T).Q(R.raw.copy, 36, hd.a0(null, null, 2131742600, str2)).j();
                     }
                 });
                 return;

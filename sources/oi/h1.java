@@ -6,14 +6,14 @@ import android.widget.FrameLayout;
 import c8.ma;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.ty;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -120,12 +120,12 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                 final a70 I = a70.I(b2Var, view);
                 I.T = true;
                 a T2 = b2Var.Q.T2();
-                I.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, gd.N0(2131753996, null), new l1(b2Var, T2, 5));
-                I.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, gd.N0(2131754002, null), new l1(b2Var, T2, 6));
-                I.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, gd.N0(2131753999, null), new l1(b2Var, T2, 7));
-                I.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, gd.N0(2131754001, null), new l1(b2Var, T2, 8));
+                I.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, hd.N0(2131753996, null), new l1(b2Var, T2, 5));
+                I.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, hd.N0(2131754002, null), new l1(b2Var, T2, 6));
+                I.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, hd.N0(2131753999, null), new l1(b2Var, T2, 7));
+                I.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, hd.N0(2131754001, null), new l1(b2Var, T2, 8));
                 boolean z10 = T2 != null && (T2.b instanceof TL_iv.pageBlockDetails);
-                String N0 = gd.N0(2131753984, null);
+                String N0 = hd.N0(2131753984, null);
                 t3 t3Var = b2Var.Q;
                 Objects.requireNonNull(t3Var);
                 I.j(z10, R.drawable.iv_details, null, N0, new b(t3Var, i12));
@@ -134,7 +134,7 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                 if (p22 || s22) {
                     I.k();
                     if (p22) {
-                        I.c(R.drawable.iv_list_tab, gd.N0(2131754010, null), new Runnable() { // from class: oi.o1
+                        I.c(R.drawable.iv_list_tab, hd.N0(2131754010, null), new Runnable() { // from class: oi.o1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i11) {
@@ -151,7 +151,7 @@ public final /* synthetic */ class h1 implements View.OnClickListener {
                         }, false);
                     }
                     if (s22) {
-                        I.c(R.drawable.iv_list_untab, gd.N0(2131753995, null), new Runnable() { // from class: oi.o1
+                        I.c(R.drawable.iv_list_untab, hd.N0(2131753995, null), new Runnable() { // from class: oi.o1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i12) {

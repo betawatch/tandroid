@@ -9,14 +9,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.cn0;
 import org.telegram.ui.hf0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class s2 extends org.telegram.ui.ActionBar.m0 {
     public final /* synthetic */ int a;
@@ -105,9 +105,9 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
                     iVar.c();
                     mVar.f = null;
                 }
-                bi.g6 g6Var = mVar.a;
-                if (g6Var != null) {
-                    g6Var.g3.O(true);
+                bi.f6 f6Var = mVar.a;
+                if (f6Var != null) {
+                    f6Var.g3.O(true);
                     mVar.a.f3.h1(0, 0);
                     break;
                 }
@@ -117,12 +117,12 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
                 x0Var.r = null;
                 x0Var.n = false;
                 org.telegram.messenger.g0.r((oi.c2) this.b);
-                bi.g6 g6Var2 = x0Var.a;
-                if (g6Var2 != null) {
-                    g6Var2.g3.O(true);
+                bi.f6 f6Var2 = x0Var.a;
+                if (f6Var2 != null) {
+                    f6Var2.g3.O(true);
                     x0Var.a.f3.h1(0, 0);
                 }
-                x0Var.y.d.setText(gd.N0(TextUtils.isEmpty(x0Var.r) ? 2131742654 : 2131742653, null));
+                x0Var.y.d.setText(hd.N0(TextUtils.isEmpty(x0Var.r) ? 2131742652 : 2131742651, null));
                 break;
         }
     }
@@ -232,7 +232,7 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
                         ConnectionsManager.getInstance(i7).cancelRequest(cn0Var.y, true);
                         cn0Var.y = 0;
                     }
-                    cn0Var.O.d.setText(gd.N0(2131747976, null));
+                    cn0Var.O.d.setText(hd.N0(2131747976, null));
                     cn0Var.O.e(false, true);
                     cn0Var.o0();
                     break;
@@ -255,9 +255,9 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
                     org.telegram.messenger.g0.r(c2Var);
                     org.telegram.messenger.g0.h3(c2Var, 500L);
                 }
-                bi.g6 g6Var = mVar.a;
-                if (g6Var != null) {
-                    g6Var.g3.O(true);
+                bi.f6 f6Var = mVar.a;
+                if (f6Var != null) {
+                    f6Var.g3.O(true);
                     if (z10 != (!TextUtils.isEmpty(obj3))) {
                         mVar.a.f3.h1(0, 0);
                         break;
@@ -274,11 +274,11 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
                     oi.c2 c2Var2 = (oi.c2) this.b;
                     org.telegram.messenger.g0.r(c2Var2);
                     org.telegram.messenger.g0.h3(c2Var2, 500L);
-                    x0Var.y.d.setText(gd.N0(TextUtils.isEmpty(obj4) ? 2131742654 : 2131742653, null));
+                    x0Var.y.d.setText(hd.N0(TextUtils.isEmpty(obj4) ? 2131742652 : 2131742651, null));
                 }
-                bi.g6 g6Var2 = x0Var.a;
-                if (g6Var2 != null) {
-                    g6Var2.g3.O(true);
+                bi.f6 f6Var2 = x0Var.a;
+                if (f6Var2 != null) {
+                    f6Var2.g3.O(true);
                     if (z11 != (!TextUtils.isEmpty(obj4))) {
                         x0Var.a.f3.h1(0, 0);
                         break;

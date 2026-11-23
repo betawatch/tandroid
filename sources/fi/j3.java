@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                 }
                 hi.p8 p8Var = new hi.p8(86400, z3Var2.getContext(), h6Var);
                 p8Var.V0();
-                p8Var.W0(mp.u1(z3Var2.m2).l1(z3Var2.l1));
+                p8Var.W0(np.u1(z3Var2.m2).l1(z3Var2.l1));
                 p8Var.G1 = true;
                 View[] viewPages = p8Var.m1.getViewPages();
                 View view4 = viewPages[0];
@@ -146,12 +146,12 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                     r3Var4.a();
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, z3Var3.getContext(), h6Var);
-                String N0 = gd.N0(2131748624, null);
+                String N0 = hd.N0(2131748624, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = gd.N0(2131748625, null);
-                alertDialog$Builder.k(gd.N0(2131748626, null), new ab.g(17, r3Var, f9Var));
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                t1Var.U = hd.N0(2131748625, null);
+                alertDialog$Builder.k(hd.N0(2131748626, null), new ab.g(17, r3Var, f9Var));
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;

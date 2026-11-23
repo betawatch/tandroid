@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gj extends v4.u0 {
     public boolean b;
@@ -31,11 +31,11 @@ public final class gj extends v4.u0 {
             bnVar.B3 = false;
             bnVar.E9(true);
             bnVar.F9(true);
-            if (org.telegram.messenger.bz.o() == 0) {
+            if (org.telegram.messenger.cz.o() == 0) {
                 int i10 = bn.md;
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.k1, 512);
+                org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.k1, 512);
             }
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.m1, new Object[0]);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.m1, new Object[0]);
             bnVar.A0.setOverScrollMode(0);
             bnVar.u9.V();
             bnVar.Gd(false);
@@ -61,11 +61,11 @@ public final class gj extends v4.u0 {
             bnVar.B3 = true;
             bnVar.A3 = true;
         }
-        if (org.telegram.messenger.bz.o() == 0) {
+        if (org.telegram.messenger.cz.o() == 0) {
             int i11 = bn.md;
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.j1, 512);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.j1, 512);
         }
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.l1, new Object[0]);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.l1, new Object[0]);
         ch.s sVar = bnVar.va;
         if (sVar == null || !sVar.d()) {
             return;
@@ -86,7 +86,7 @@ public final class gj extends v4.u0 {
                 bnVar.b5 = 0;
             } else if (!bnVar.A0.W1 && L0 != -1) {
                 int N0 = bnVar.C0.N0();
-                org.telegram.messenger.fj fjVar = null;
+                org.telegram.messenger.gj gjVar = null;
                 while (true) {
                     if (N0 < L0) {
                         z10 = false;
@@ -94,17 +94,17 @@ public final class gj extends v4.u0 {
                     }
                     View m10 = bnVar.C0.m(N0);
                     if (m10 instanceof org.telegram.ui.Cells.r1) {
-                        fjVar = ((org.telegram.ui.Cells.r1) m10).getMessageObject();
+                        gjVar = ((org.telegram.ui.Cells.r1) m10).getMessageObject();
                     } else if (m10 instanceof org.telegram.ui.Cells.v0) {
-                        fjVar = ((org.telegram.ui.Cells.v0) m10).getMessageObject();
+                        gjVar = ((org.telegram.ui.Cells.v0) m10).getMessageObject();
                     }
-                    if (fjVar != null && bnVar.b5 == fjVar.e1()) {
+                    if (gjVar != null && bnVar.b5 == gjVar.e1()) {
                         z10 = true;
                         break;
                     }
                     N0--;
                 }
-                if (!z10 && fjVar != null && fjVar.e1() < bnVar.b5) {
+                if (!z10 && gjVar != null && gjVar.e1() < bnVar.b5) {
                     bnVar.b5 = 0;
                 }
             }

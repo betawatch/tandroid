@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k5 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class k5 implements Runnable {
                 TLObject tLObject = this.d;
                 if (tLObject instanceof Vector) {
                     ArrayList arrayList = ((Vector) tLObject).objects;
-                    org.telegram.messenger.tr.a0(i7).a.c(new i5(l5Var, arrayList, 1));
+                    org.telegram.messenger.ur.a0(i7).a.c(new i5(l5Var, arrayList, 1));
                     l5Var.d(arrayList);
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
                         if (arrayList.get(i10) instanceof TLRPC.Document) {

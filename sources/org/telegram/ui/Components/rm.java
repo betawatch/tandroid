@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rm extends mi {
     public static final HashMap V = new HashMap();
@@ -305,7 +305,7 @@ public final class rm extends mi {
 
     @Override // org.telegram.ui.Components.mi
     public final void t() {
-        org.telegram.messenger.ef efVar;
+        org.telegram.messenger.ff ffVar;
         this.K = null;
         UndoView undoView = this.x;
         if (undoView != null) {
@@ -324,8 +324,8 @@ public final class rm extends mi {
                 Object obj2 = arrayList2.get(i10);
                 i10++;
                 om omVar = (om) obj2;
-                if (omVar.e && (efVar = omVar.b) != null) {
-                    efVar.R = false;
+                if (omVar.e && (ffVar = omVar.b) != null) {
+                    ffVar.R = false;
                 }
             }
         }
@@ -345,7 +345,7 @@ public final class rm extends mi {
         interpolator.start();
         if (getSelectedItemsCount() > 1 && (chatAttachAlertPhotoLayout = (uiVar = this.b).e2) != null) {
             chatAttachAlertPhotoLayout.d1.setIcon(R.drawable.msg_view_file);
-            uiVar.e2.d1.setText(org.telegram.messenger.gd.N0(2131753954, null));
+            uiVar.e2.d1.setText(org.telegram.messenger.hd.N0(2131753954, null));
             uiVar.e2.d1.setRightIcon(R.drawable.msg_arrowright);
         }
         this.w.i(this.Q, true);

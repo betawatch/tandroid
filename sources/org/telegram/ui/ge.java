@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ge implements Runnable {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class ge implements Runnable {
                         break;
                     }
                 }
-                bnVar.getSendMessagesHelper().r0(org.telegram.messenger.xy.b("/start", bnVar.l6, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                bnVar.getSendMessagesHelper().r0(org.telegram.messenger.yy.b("/start", bnVar.l6, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 4:
                 bnVar.Oa(str);
@@ -69,7 +69,7 @@ public final /* synthetic */ class ge implements Runnable {
                 break;
             case 9:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.n10.t(null, 2131747101, org.telegram.ui.Components.lc.b0(bnVar));
+                org.telegram.messenger.o10.t(null, 2131747101, org.telegram.ui.Components.lc.b0(bnVar));
                 break;
             case 10:
                 bn.a0(bnVar, str);
@@ -79,7 +79,7 @@ public final /* synthetic */ class ge implements Runnable {
                 break;
             case 12:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.n10.t(null, 2131747101, org.telegram.ui.Components.lc.b0(bnVar));
+                org.telegram.messenger.o10.t(null, 2131747101, org.telegram.ui.Components.lc.b0(bnVar));
                 break;
             default:
                 vf.c.t(bnVar.getParentActivity(), "https://fragment.com/username/" + str);

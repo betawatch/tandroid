@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f91 implements org.telegram.ui.Components.qo {
     public final /* synthetic */ TLRPC.TL_forumTopic a;
@@ -46,7 +46,7 @@ public final class f91 implements org.telegram.ui.Components.qo {
     public final void s() {
         y91 y91Var = this.b;
         y91Var.finishPreviewFragment();
-        org.telegram.messenger.mp messagesController = y91Var.getMessagesController();
+        org.telegram.messenger.np messagesController = y91Var.getMessagesController();
         long j3 = y91Var.a;
         TLRPC.TL_forumTopic tL_forumTopic = this.a;
         boolean u22 = messagesController.u2(-j3, tL_forumTopic.id, null);
@@ -67,14 +67,14 @@ public final class f91 implements org.telegram.ui.Components.qo {
         int i7;
         y91 y91Var = this.b;
         i7 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
-        SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(i7).g7;
+        SharedPreferences sharedPreferences = org.telegram.messenger.np.u1(i7).g7;
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j3 = y91Var.a;
         TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        sb2.append(org.telegram.messenger.xs.v(-j3, tL_forumTopic.id, false));
+        sb2.append(org.telegram.messenger.ys.v(-j3, tL_forumTopic.id, false));
         boolean z10 = sharedPreferences.getBoolean(sb2.toString(), true);
         boolean z11 = !z10;
-        sharedPreferences.edit().putBoolean("sound_enabled_" + org.telegram.messenger.xs.v(-j3, tL_forumTopic.id, false), z11).apply();
+        sharedPreferences.edit().putBoolean("sound_enabled_" + org.telegram.messenger.ys.v(-j3, tL_forumTopic.id, false), z11).apply();
         y91Var.finishPreviewFragment();
         if (org.telegram.ui.Components.lc.a(y91Var)) {
             org.telegram.ui.Components.lc.S(z10 ? 1 : 0, y91Var, y91Var.getResourceProvider()).j();

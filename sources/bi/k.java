@@ -5,9 +5,9 @@ import android.content.DialogInterface;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class k implements DialogInterface.OnDismissListene
                 }
                 break;
             case 1:
-                t6 t6Var = (t6) this.c;
-                u5 u5Var = (u5) this.d;
+                s6 s6Var = (s6) this.c;
+                t5 t5Var = (t5) this.d;
                 Activity activity2 = (Activity) this.b;
-                org.telegram.messenger.g0.v1(u5Var);
-                org.telegram.messenger.g0.Z2(activity2, t6Var.a.getClassGuid());
+                org.telegram.messenger.g0.v1(t5Var);
+                org.telegram.messenger.g0.Z2(activity2, s6Var.a.getClassGuid());
                 break;
             case 2:
                 ki.r0 r0Var = (ki.r0) this.c;
@@ -63,10 +63,10 @@ public final /* synthetic */ class k implements DialogInterface.OnDismissListene
             case 3:
                 boolean[] zArr2 = (boolean[]) this.c;
                 boolean[] zArr3 = (boolean[]) this.d;
-                x10 x10Var = (x10) this.b;
+                y10 y10Var = (y10) this.b;
                 if (!zArr2[0] && !zArr3[0]) {
                     zArr3[0] = true;
-                    x10Var.a("USER_DECLINED");
+                    y10Var.a("USER_DECLINED");
                     break;
                 }
                 break;
@@ -81,10 +81,10 @@ public final /* synthetic */ class k implements DialogInterface.OnDismissListene
                 }
                 break;
             case 5:
-                x10 x10Var2 = (x10) this.c;
+                y10 y10Var2 = (y10) this.c;
                 org.telegram.ui.Components.v3 v3Var = (org.telegram.ui.Components.v3) this.d;
                 org.telegram.ui.Components.x3 x3Var = (org.telegram.ui.Components.x3) this.b;
-                x10Var2.a(Integer.valueOf(x3Var.getValue() + (v3Var.getValue() * 60)));
+                y10Var2.a(Integer.valueOf(x3Var.getValue() + (v3Var.getValue() * 60)));
                 break;
             default:
                 org.telegram.ui.web.v0 v0Var = (org.telegram.ui.web.v0) this.c;

@@ -35,12 +35,12 @@ import org.json.JSONObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ok;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.pk;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -51,7 +51,7 @@ import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.xf;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class r8 extends View {
     public static final /* synthetic */ int J1 = 0;
@@ -196,7 +196,7 @@ public final class r8 extends View {
         this.I = new RectF();
         this.J = new Path();
         this.K = new float[450];
-        this.L = new int[ks.C3];
+        this.L = new int[ls.C3];
         this.O = new p8(0.0f, 260.0f, 0.78f);
         this.P = new p8(0.0f, 420.0f, 0.72f);
         this.Q = new p8(1.0f, 420.0f, 0.38f);
@@ -258,7 +258,7 @@ public final class r8 extends View {
         }
         this.e = sharedPreferences;
         this.Q0 = z10 ? null : sharedPreferences.getString("style", null);
-        this.i1 = (z10 || mp.g1().getBoolean("walletcardstickerhint", false)) ? false : true;
+        this.i1 = (z10 || np.g1().getBoolean("walletcardstickerhint", false)) ? false : true;
         Paint.Style style = Paint.Style.STROKE;
         paint4.setStyle(style);
         Paint.Cap cap = Paint.Cap.ROUND;
@@ -283,8 +283,8 @@ public final class r8 extends View {
             return;
         }
         int currentAccount = g2Var.getCurrentAccount();
-        mp u12 = mp.u1(currentAccount);
-        long e10 = j10.i(currentAccount).e();
+        np u12 = np.u1(currentAccount);
+        long e10 = k10.i(currentAccount).e();
         TLRPC.UserFull d2 = u12.d2(e10);
         if (d2 == null) {
             u12.c3(u12.c2(Long.valueOf(e10)), 0, true, new k(this, i7));
@@ -298,7 +298,7 @@ public final class r8 extends View {
     public static boolean F(int i7, String str) {
         if (!TextUtils.isEmpty(str)) {
             int lastIndexOf = str.lastIndexOf(45);
-            HashSet hashSet = ((org.telegram.messenger.o0) mp.u1(i7).A7.s0.b).c;
+            HashSet hashSet = ((org.telegram.messenger.o0) np.u1(i7).A7.s0.b).c;
             if (hashSet != null) {
                 if (lastIndexOf > 0) {
                     str = str.substring(0, lastIndexOf);
@@ -490,12 +490,12 @@ public final class r8 extends View {
     }
 
     public static void e0(int i7, TL_wallet.card cardVar) {
-        TLRPC.UserFull d2 = mp.u1(i7).d2(j10.i(i7).e());
+        TLRPC.UserFull d2 = np.u1(i7).d2(k10.i(i7).e());
         if (d2 == null) {
             return;
         }
         d2.wallet_card = cardVar;
-        tr.a0(i7).j2(d2, false);
+        ur.a0(i7).j2(d2, false);
     }
 
     public static float n(RectF rectF, RectF rectF2) {
@@ -545,12 +545,12 @@ public final class r8 extends View {
         l3Var.L = Layout.Alignment.ALIGN_NORMAL;
         l3Var.s(12.0f);
         l3Var.d = -1L;
-        String N0 = gd.N0(i7, null);
+        String N0 = hd.N0(i7, null);
         l3Var.h = hi.l3.a(N0, l3Var.getTextPaint());
         l3Var.v(N0);
         l3Var.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
         l3Var.setTranslationZ(getTranslationZ() + 1.0f);
-        ((ViewGroup) getParent()).addView(l3Var, c8.ma.e(-1, ks.g2, 48));
+        ((ViewGroup) getParent()).addView(l3Var, c8.ma.e(-1, ls.g2, 48));
         return l3Var;
     }
 
@@ -623,7 +623,7 @@ public final class r8 extends View {
 
     public final ArrayList G() {
         ArrayList arrayList = new ArrayList(this.f.values());
-        List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new ok(5)));
+        List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new pk(5)));
         return arrayList;
     }
 
@@ -642,7 +642,7 @@ public final class r8 extends View {
                 }
             }
             if (arrayList.size() >= 10) {
-                List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new ok(6)));
+                List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new pk(6)));
                 for (int i7 = 0; i7 <= arrayList.size() - 10; i7++) {
                     q8 q8Var3 = (q8) arrayList.get(i7);
                     if (this.d.J0()) {
@@ -955,7 +955,7 @@ public final class r8 extends View {
         a70 J = a70.J(this.a, e8Var);
         J.s = 51;
         if (m(v) || str.equals(this.Q0)) {
-            J.c(R.drawable.msg_colors, gd.N0(str.equals(this.Q0) ? 2131742858 : 2131742864, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.j8
+            J.c(R.drawable.msg_colors, hd.N0(str.equals(this.Q0) ? 2131742856 : 2131742862, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.j8
                 public final /* synthetic */ r8 b;
 
                 {
@@ -977,7 +977,7 @@ public final class r8 extends View {
                 }
             }, false);
         }
-        J.c(R.drawable.msg_sticker, gd.N0(v.b() ? 2131742857 : 2131742865, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.j8
+        J.c(R.drawable.msg_sticker, hd.N0(v.b() ? 2131742855 : 2131742863, null), new Runnable(this) { // from class: org.telegram.ui.Wallet.j8
             public final /* synthetic */ r8 b;
 
             {
@@ -1034,7 +1034,7 @@ public final class r8 extends View {
             this.j1 = q8Var == this.l1 && !z10;
             this.k1 = false;
             this.i1 = false;
-            mp.g1().edit().putBoolean("walletcardstickerhint", true).apply();
+            np.g1().edit().putBoolean("walletcardstickerhint", true).apply();
         }
         boolean z11 = q8Var.N;
         p8 p8Var = q8Var.m;
@@ -1641,7 +1641,7 @@ public final class r8 extends View {
                     float L = org.telegram.messenger.g0.L(15.0f);
                     Paint paint = this.H;
                     paint.setTextSize(L);
-                    f10 = (getWidth() / 2.0f) - ((paint.measureText(gd.N0(2131746125, null)) + org.telegram.messenger.g0.L(72.0f)) / 2.0f);
+                    f10 = (getWidth() / 2.0f) - ((paint.measureText(hd.N0(2131746125, null)) + org.telegram.messenger.g0.L(72.0f)) / 2.0f);
                     f12 = org.telegram.messenger.g0.L(30.0f);
                 }
                 p8Var.b = f10 + f12;
@@ -1834,7 +1834,7 @@ public final class r8 extends View {
             i7 = 16;
         }
         paint.setColorFilter(null);
-        paint.setAlpha(ks.e4);
+        paint.setAlpha(ls.e4);
         canvas.restore();
     }
 
@@ -1935,7 +1935,7 @@ public final class r8 extends View {
                     float L = org.telegram.messenger.g0.L(15.0f);
                     Paint paint = this.H;
                     paint.setTextSize(L);
-                    p8Var4.b = ((getWidth() / 2.0f) - ((paint.measureText(gd.N0(2131746125, null)) + org.telegram.messenger.g0.L(72.0f)) / 2.0f)) + org.telegram.messenger.g0.L(30.0f);
+                    p8Var4.b = ((getWidth() / 2.0f) - ((paint.measureText(hd.N0(2131746125, null)) + org.telegram.messenger.g0.L(72.0f)) / 2.0f)) + org.telegram.messenger.g0.L(30.0f);
                     p8Var3.d = 500.0f;
                     p8Var3.e = 0.9f;
                     p8Var3.b = h();

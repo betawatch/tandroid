@@ -25,9 +25,9 @@ import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
 import ki.s3;
 import oi.y4;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -37,7 +37,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Wallet.u4;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -80,9 +80,9 @@ public final /* synthetic */ class g1 implements RequestDelegate {
                             }
                         }
                     }
-                    synchronized (l1.class) {
-                        l1.a = arrayList;
-                        l1.k(arrayList);
+                    synchronized (m1.class) {
+                        m1.a = arrayList;
+                        m1.k(arrayList);
                     }
                     Log.d("Dictation", "speech models: " + arrayList.size() + " from the server");
                     DictationAsr.P();
@@ -90,8 +90,8 @@ public final /* synthetic */ class g1 implements RequestDelegate {
                 } else {
                     p5.c.t(new StringBuilder("speech models: list failed: "), tL_error != null ? tL_error.text : null, "Dictation");
                 }
-                synchronized (l1.class) {
-                    l1.c = null;
+                synchronized (m1.class) {
+                    m1.c = null;
                 }
                 countDownLatch.countDown();
                 return;
@@ -110,7 +110,7 @@ public final /* synthetic */ class g1 implements RequestDelegate {
             case 5:
                 mc mcVar = (mc) this.b;
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    tr.a0(mcVar.n1).j1(new ArrayList(Arrays.asList(mcVar.G1.k)), true, true, true, 0, false, 0, 0L);
+                    ur.a0(mcVar.n1).j1(new ArrayList(Arrays.asList(mcVar.G1.k)), true, true, true, 0, false, 0, 0L);
                     return;
                 } else {
                     mcVar.getClass();
@@ -138,7 +138,7 @@ public final /* synthetic */ class g1 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new hi.c(15, (k7) this.b, tLObject));
                 return;
             case 13:
-                org.telegram.messenger.g0.g3(new ii.a((q10) this.b, tLObject, tL_error, i18));
+                org.telegram.messenger.g0.g3(new ii.a((r10) this.b, tLObject, tL_error, i18));
                 return;
             case 14:
                 org.telegram.messenger.g0.g3(new hi.c(22, (ii.m) this.b, tLObject));
@@ -202,7 +202,7 @@ public final /* synthetic */ class g1 implements RequestDelegate {
                         }
                     }
                     if (Build.VERSION.SDK_INT >= 24) {
-                        Collator collator = Collator.getInstance(gd.E0().y != null ? gd.E0().y : Locale.getDefault());
+                        Collator collator = Collator.getInstance(hd.E0().y != null ? hd.E0().y : Locale.getDefault());
                         Objects.requireNonNull(collator);
                         qw0Var = new s4(collator, 6);
                     } else {
@@ -244,7 +244,7 @@ public final /* synthetic */ class g1 implements RequestDelegate {
                         }
                         if (!tL_help_country2.hidden || equalsIgnoreCase) {
                             if (equalsIgnoreCase) {
-                                String N0 = gd.N0(2131750504, null);
+                                String N0 = hd.N0(2131750504, null);
                                 tL_help_country2.default_name = N0;
                                 tL_help_country2.name = N0;
                             }
@@ -259,7 +259,7 @@ public final /* synthetic */ class g1 implements RequestDelegate {
                         }
                     }
                     if (Build.VERSION.SDK_INT >= 24) {
-                        Collator collator2 = Collator.getInstance(gd.E0().y != null ? gd.E0().y : Locale.getDefault());
+                        Collator collator2 = Collator.getInstance(hd.E0().y != null ? hd.E0().y : Locale.getDefault());
                         Objects.requireNonNull(collator2);
                         qw0Var2 = new s4(collator2, 6);
                     } else {

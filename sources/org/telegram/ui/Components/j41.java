@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j41 extends dk0 {
     public final Context c;
@@ -46,7 +46,7 @@ public final class j41 extends dk0 {
         LongSparseArray longSparseArray2 = k41Var.d;
         TLRPC.StickerSetCovered[] stickerSetCoveredArr = k41Var.c;
         int i10 = k41Var.a;
-        org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i10);
+        org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i10);
         int i11 = this.x;
         ArrayList arrayList = this.e;
         SparseArray sparseArray = this.d;
@@ -71,7 +71,7 @@ public final class j41 extends dk0 {
                 break;
             }
             if (stickerSetCoveredArr[i12] != null) {
-                TLRPC.TL_messages_stickerSet q02 = org.telegram.messenger.ri.d0(i10).q0(stickerSetCoveredArr[i12].set.id);
+                TLRPC.TL_messages_stickerSet q02 = org.telegram.messenger.si.d0(i10).q0(stickerSetCoveredArr[i12].set.id);
                 if (q02 != null && !q02.set.archived) {
                     stickerSetCoveredArr[i12] = null;
                 } else if (stickerSetCoveredArr[i12].set.id == stickerSetCovered2.set.id) {
@@ -219,7 +219,7 @@ public final class j41 extends dk0 {
                 break;
             }
             if (stickerSetCoveredArr[i7] != null) {
-                TLRPC.TL_messages_stickerSet q02 = org.telegram.messenger.ri.d0(k41Var.a).q0(stickerSetCoveredArr[i7].set.id);
+                TLRPC.TL_messages_stickerSet q02 = org.telegram.messenger.si.d0(k41Var.a).q0(stickerSetCoveredArr[i7].set.id);
                 if (q02 != null && !q02.set.archived) {
                     stickerSetCoveredArr[i7] = null;
                     break;
@@ -257,7 +257,7 @@ public final class j41 extends dk0 {
         ArrayList arrayList = this.e;
         arrayList.clear();
         this.x = 0;
-        org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(k41Var.a);
+        org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(k41Var.a);
         ArrayList arrayList2 = new ArrayList(d02.t0[0]);
         int size = arrayList2.size();
         arrayList2.addAll(this.n);
@@ -345,7 +345,7 @@ public final class j41 extends dk0 {
             }
             if (i10 != 2) {
                 if (i10 == 4) {
-                    ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.N0(2131747570, null));
+                    ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.N0(2131747570, null));
                     return;
                 } else if (i10 != 5) {
                     return;

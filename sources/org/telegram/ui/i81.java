@@ -17,13 +17,13 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i81 extends Dialog {
     public float E;
     public final ui.b F;
     public final dh.c G;
-    public org.telegram.messenger.fj H;
+    public org.telegram.messenger.gj H;
     public boolean I;
     public g81 J;
     public zr0 K;
@@ -83,18 +83,18 @@ public final class i81 extends Dialog {
         f81 f81Var2 = new f81(this, activity, 1);
         this.c = f81Var2;
         f81Var2.setClipToPadding(false);
-        f81Var.addView(f81Var2, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        f81Var.addView(f81Var2, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         hi.i1 i1Var = new hi.i1(7, activity, this);
         this.e = i1Var;
         i1Var.setAdapter(new di.i4(6, activity, this));
-        f81Var2.addView(i1Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        f81Var2.addView(i1Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         f81 f81Var3 = new f81(this, activity, 2);
         this.d = f81Var3;
-        f81Var2.addView(f81Var3, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        f81Var2.addView(f81Var3, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         org.telegram.ui.Components.ua0 ua0Var = new org.telegram.ui.Components.ua0(activity, h6Var);
         this.h = ua0Var;
-        ua0Var.a(0, org.telegram.messenger.gd.N0(2131743828, null));
-        ua0Var.a(1, org.telegram.messenger.gd.N0(2131743829, null));
+        ua0Var.a(0, org.telegram.messenger.hd.N0(2131743826, null));
+        ua0Var.a(1, org.telegram.messenger.hd.N0(2131743827, null));
         f81Var2.addView(ua0Var, c8.ma.e(-1, 66, 80));
         ua0Var.setOnTabClick(new r3(i1Var, 26));
         fh.g c10 = cVar.c(ua0Var, null, false);
@@ -107,7 +107,7 @@ public final class i81 extends Dialog {
         this.f = textView;
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(ua0Var.getColor());
-        textView.setText(org.telegram.messenger.gd.N0(2131743830, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131743828, null));
         textView.setGravity(17);
         f81Var2.addView(textView, c8.ma.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
         xr0 xr0Var = new xr0(this, 5);
@@ -390,7 +390,7 @@ public final class i81 extends Dialog {
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.height = -1;
-        attributes.gravity = org.telegram.messenger.ks.E1;
+        attributes.gravity = org.telegram.messenger.ls.E1;
         attributes.dimAmount = 0.0f;
         int i7 = attributes.flags & (-3);
         attributes.softInputMode = 48;

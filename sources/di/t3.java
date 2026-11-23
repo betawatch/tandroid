@@ -3,19 +3,19 @@ package di;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t3 implements q10 {
+public final /* synthetic */ class t3 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f6 b;
     public final /* synthetic */ TL_stars.TL_starGiftUnique c;
@@ -26,7 +26,7 @@ public final /* synthetic */ class t3 implements q10 {
         this.c = tL_starGiftUnique;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -80,7 +80,7 @@ public final /* synthetic */ class t3 implements q10 {
                                         break;
                                     }
                                 } else {
-                                    mp.u1(f6Var2.a).V3((TLRPC.Updates) tLObject, false);
+                                    np.u1(f6Var2.a).V3((TLRPC.Updates) tLObject, false);
                                     final int i11 = 0;
                                     final TL_stars.TL_starGiftUnique tL_starGiftUnique2 = tL_starGiftUnique;
                                     final cg.a aVar2 = aVar;
@@ -103,14 +103,14 @@ public final /* synthetic */ class t3 implements q10 {
                                                     arrayList.add(aVar3.e(bVar).q());
                                                     tL_starGiftUnique3.resell_amount.add(aVar3.e(bVar2).q());
                                                     f6Var3.b2.setResellPrice(aVar3);
-                                                    bi.z5 z5Var = f6Var3.j3;
-                                                    if (z5Var != null) {
-                                                        z5Var.run();
+                                                    bi.y5 y5Var = f6Var3.j3;
+                                                    if (y5Var != null) {
+                                                        y5Var.run();
                                                     }
                                                     if (runnable3 != null) {
                                                         runnable3.run();
                                                     }
-                                                    f6Var3.k().Q(R.raw.contact_check, 36, gd.a0(null, null, 2131750011, f6Var3.E1())).j();
+                                                    f6Var3.k().Q(R.raw.contact_check, 36, hd.a0(null, null, 2131750011, f6Var3.E1())).j();
                                                     break;
                                                 default:
                                                     tL_starGiftUnique3.flags |= 16;
@@ -120,9 +120,9 @@ public final /* synthetic */ class t3 implements q10 {
                                                     arrayList2.add(aVar3.e(bVar).q());
                                                     tL_starGiftUnique3.resell_amount.add(aVar3.e(bVar2).q());
                                                     f6Var3.b2.setResellPrice(aVar3);
-                                                    bi.z5 z5Var2 = f6Var3.j3;
-                                                    if (z5Var2 != null) {
-                                                        z5Var2.run();
+                                                    bi.y5 y5Var2 = f6Var3.j3;
+                                                    if (y5Var2 != null) {
+                                                        y5Var2.run();
                                                     }
                                                     if (runnable3 != null) {
                                                         runnable3.run();
@@ -168,7 +168,7 @@ public final /* synthetic */ class t3 implements q10 {
                                         break;
                                     }
                                 } else {
-                                    mp.u1(f6Var3.a).V3((TLRPC.Updates) tLObject, false);
+                                    np.u1(f6Var3.a).V3((TLRPC.Updates) tLObject, false);
                                     final int i13 = 1;
                                     final TL_stars.TL_starGiftUnique tL_starGiftUnique3 = tL_starGiftUnique;
                                     final cg.a aVar3 = aVar;
@@ -191,14 +191,14 @@ public final /* synthetic */ class t3 implements q10 {
                                                     arrayList.add(aVar32.e(bVar).q());
                                                     tL_starGiftUnique32.resell_amount.add(aVar32.e(bVar2).q());
                                                     f6Var32.b2.setResellPrice(aVar32);
-                                                    bi.z5 z5Var = f6Var32.j3;
-                                                    if (z5Var != null) {
-                                                        z5Var.run();
+                                                    bi.y5 y5Var = f6Var32.j3;
+                                                    if (y5Var != null) {
+                                                        y5Var.run();
                                                     }
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    f6Var32.k().Q(R.raw.contact_check, 36, gd.a0(null, null, 2131750011, f6Var32.E1())).j();
+                                                    f6Var32.k().Q(R.raw.contact_check, 36, hd.a0(null, null, 2131750011, f6Var32.E1())).j();
                                                     break;
                                                 default:
                                                     tL_starGiftUnique32.flags |= 16;
@@ -208,9 +208,9 @@ public final /* synthetic */ class t3 implements q10 {
                                                     arrayList2.add(aVar32.e(bVar).q());
                                                     tL_starGiftUnique32.resell_amount.add(aVar32.e(bVar2).q());
                                                     f6Var32.b2.setResellPrice(aVar32);
-                                                    bi.z5 z5Var2 = f6Var32.j3;
-                                                    if (z5Var2 != null) {
-                                                        z5Var2.run();
+                                                    bi.y5 y5Var2 = f6Var32.j3;
+                                                    if (y5Var2 != null) {
+                                                        y5Var2.run();
                                                     }
                                                     if (runnable32 != null) {
                                                         runnable32.run();
@@ -228,28 +228,28 @@ public final /* synthetic */ class t3 implements q10 {
                 });
                 break;
             case 1:
-                x10 x10Var = (x10) obj;
+                y10 y10Var = (y10) obj;
                 Boolean bool = (Boolean) obj2;
                 f6 f6Var2 = this.b;
-                bi.i8 i8Var = f6Var2.S2;
+                bi.h8 h8Var = f6Var2.S2;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = this.c;
-                if (i8Var == null) {
-                    bi.i8 i8Var2 = new bi.i8(f6Var2.a, tL_starGiftUnique2.gift_id);
-                    f6Var2.S2 = i8Var2;
-                    i8Var2.a();
+                if (h8Var == null) {
+                    bi.h8 h8Var2 = new bi.h8(f6Var2.a, tL_starGiftUnique2.gift_id);
+                    f6Var2.S2 = h8Var2;
+                    h8Var2.a();
                 }
                 HashSet hashSet = new HashSet();
                 int i10 = 0;
                 while (true) {
                     z4[] z4VarArr = f6Var2.b2.N.n;
                     if (i10 >= z4VarArr.length) {
-                        bi.j8 j8Var = new bi.j8(f6Var2.getContext(), tL_starGiftUnique2.title, f6Var2.S2);
-                        j8Var.c2.addAll(hashSet);
-                        j8Var.e2.O(true);
-                        j8Var.d2 = bool.booleanValue();
-                        j8Var.a2.set(org.telegram.messenger.g0.W2(gd.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
-                        j8Var.b2 = new c2(x10Var, 0);
-                        j8Var.show();
+                        bi.i8 i8Var = new bi.i8(f6Var2.getContext(), tL_starGiftUnique2.title, f6Var2.S2);
+                        i8Var.c2.addAll(hashSet);
+                        i8Var.e2.O(true);
+                        i8Var.d2 = bool.booleanValue();
+                        i8Var.a2.set(org.telegram.messenger.g0.W2(hd.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
+                        i8Var.b2 = new c2(y10Var, 0);
+                        i8Var.show();
                         break;
                     } else {
                         TL_stars.StarGift starGift = z4VarArr[i10].h;
@@ -313,7 +313,7 @@ public final /* synthetic */ class t3 implements q10 {
                                         break;
                                     }
                                 } else {
-                                    mp.u1(f6Var22.a).V3((TLRPC.Updates) tLObject, false);
+                                    np.u1(f6Var22.a).V3((TLRPC.Updates) tLObject, false);
                                     final int i112 = 0;
                                     final TL_stars.TL_starGiftUnique tL_starGiftUnique22 = tL_starGiftUnique3;
                                     final cg.a aVar22 = aVar2;
@@ -336,14 +336,14 @@ public final /* synthetic */ class t3 implements q10 {
                                                     arrayList.add(aVar32.e(bVar).q());
                                                     tL_starGiftUnique32.resell_amount.add(aVar32.e(bVar2).q());
                                                     f6Var32.b2.setResellPrice(aVar32);
-                                                    bi.z5 z5Var = f6Var32.j3;
-                                                    if (z5Var != null) {
-                                                        z5Var.run();
+                                                    bi.y5 y5Var = f6Var32.j3;
+                                                    if (y5Var != null) {
+                                                        y5Var.run();
                                                     }
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    f6Var32.k().Q(R.raw.contact_check, 36, gd.a0(null, null, 2131750011, f6Var32.E1())).j();
+                                                    f6Var32.k().Q(R.raw.contact_check, 36, hd.a0(null, null, 2131750011, f6Var32.E1())).j();
                                                     break;
                                                 default:
                                                     tL_starGiftUnique32.flags |= 16;
@@ -353,9 +353,9 @@ public final /* synthetic */ class t3 implements q10 {
                                                     arrayList2.add(aVar32.e(bVar).q());
                                                     tL_starGiftUnique32.resell_amount.add(aVar32.e(bVar2).q());
                                                     f6Var32.b2.setResellPrice(aVar32);
-                                                    bi.z5 z5Var2 = f6Var32.j3;
-                                                    if (z5Var2 != null) {
-                                                        z5Var2.run();
+                                                    bi.y5 y5Var2 = f6Var32.j3;
+                                                    if (y5Var2 != null) {
+                                                        y5Var2.run();
                                                     }
                                                     if (runnable32 != null) {
                                                         runnable32.run();
@@ -401,7 +401,7 @@ public final /* synthetic */ class t3 implements q10 {
                                         break;
                                     }
                                 } else {
-                                    mp.u1(f6Var32.a).V3((TLRPC.Updates) tLObject, false);
+                                    np.u1(f6Var32.a).V3((TLRPC.Updates) tLObject, false);
                                     final int i13 = 1;
                                     final TL_stars.TL_starGiftUnique tL_starGiftUnique32 = tL_starGiftUnique3;
                                     final cg.a aVar3 = aVar2;
@@ -424,14 +424,14 @@ public final /* synthetic */ class t3 implements q10 {
                                                     arrayList.add(aVar32.e(bVar).q());
                                                     tL_starGiftUnique322.resell_amount.add(aVar32.e(bVar2).q());
                                                     f6Var322.b2.setResellPrice(aVar32);
-                                                    bi.z5 z5Var = f6Var322.j3;
-                                                    if (z5Var != null) {
-                                                        z5Var.run();
+                                                    bi.y5 y5Var = f6Var322.j3;
+                                                    if (y5Var != null) {
+                                                        y5Var.run();
                                                     }
                                                     if (runnable32 != null) {
                                                         runnable32.run();
                                                     }
-                                                    f6Var322.k().Q(R.raw.contact_check, 36, gd.a0(null, null, 2131750011, f6Var322.E1())).j();
+                                                    f6Var322.k().Q(R.raw.contact_check, 36, hd.a0(null, null, 2131750011, f6Var322.E1())).j();
                                                     break;
                                                 default:
                                                     tL_starGiftUnique322.flags |= 16;
@@ -441,9 +441,9 @@ public final /* synthetic */ class t3 implements q10 {
                                                     arrayList2.add(aVar32.e(bVar).q());
                                                     tL_starGiftUnique322.resell_amount.add(aVar32.e(bVar2).q());
                                                     f6Var322.b2.setResellPrice(aVar32);
-                                                    bi.z5 z5Var2 = f6Var322.j3;
-                                                    if (z5Var2 != null) {
-                                                        z5Var2.run();
+                                                    bi.y5 y5Var2 = f6Var322.j3;
+                                                    if (y5Var2 != null) {
+                                                        y5Var2.run();
                                                     }
                                                     if (runnable32 != null) {
                                                         runnable32.run();

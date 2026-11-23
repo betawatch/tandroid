@@ -15,15 +15,15 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bp;
 import org.telegram.messenger.cp;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.dp;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.o10;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m6;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class j0 extends View {
     public final Drawable E;
@@ -197,7 +197,7 @@ public class j0 extends View {
             canvas2.drawPath(path2, paint2);
             canvas2.save();
             canvas2.clipPath(path2);
-            paint2.setAlpha(ks.e4);
+            paint2.setAlpha(ls.e4);
             canvas2.drawRect(f20 * 10.0f, f14, 13.0f * f20, f23, paint2);
             float f24 = f14;
             canvas.restore();
@@ -243,7 +243,7 @@ public class j0 extends View {
                         imageReceiver.y0(f26, f27, width, height);
                         imageReceiver.setAlpha(d * d10);
                         imageReceiver.h(canvas2, null);
-                        f16 = n10.b(f20 * f18, this.e0, f10 - d12, f16);
+                        f16 = o10.b(f20 * f18, this.e0, f10 - d12, f16);
                     }
                     f19 = (5.0f * f20) + (7.0f * f20) + f16;
                     xy0Var = this.H;
@@ -367,9 +367,9 @@ public class j0 extends View {
             this.c0 = 0.0f;
             this.b0 = 0.0f;
             this.d0 = 0.0f;
-            int f16 = o10.f(j10.i(this.a).f());
-            cp cpVar = mp.u1(this.a).t4;
-            bp d = (cpVar == null || f16 < 7) ? null : cpVar.d(f16);
+            int f16 = p10.f(k10.i(this.a).f());
+            dp dpVar = np.u1(this.a).t4;
+            cp d = (dpVar == null || f16 < 7) ? null : dpVar.d(f16);
             if (d == null) {
                 int[] iArr = m6.r8;
                 f10 = m6.x0(null, iArr[f16 % iArr.length], false);
@@ -387,7 +387,7 @@ public class j0 extends View {
             this.b0 = Math.max(this.b0, Math.min(f17 + xy0Var.c, f15));
             float f18 = 7.0f * f14;
             this.c0 = this.H.i() + this.c0 + f18;
-            this.S = webPage.photo != null || fj.K4(webPage.document);
+            this.S = webPage.photo != null || gj.K4(webPage.document);
             i0 i0Var = this.a0;
             boolean z10 = i0Var.e;
             this.T = !z10;
@@ -406,7 +406,7 @@ public class j0 extends View {
                     i7 = 0;
                     i10 = 0;
                 }
-                imageReceiver.r0(fc.i(w11, webPage.photo), com.google.android.gms.internal.vision.e2.j(i13, "_", i13), this.V ? null : fc.i(w10, webPage.photo), this.V ? null : com.google.android.gms.internal.vision.e2.j(i13, "_", i13), null, 0L, null, null, 0);
+                imageReceiver.r0(gc.i(w11, webPage.photo), com.google.android.gms.internal.vision.e2.j(i13, "_", i13), this.V ? null : gc.i(w10, webPage.photo), this.V ? null : com.google.android.gms.internal.vision.e2.j(i13, "_", i13), null, 0L, null, null, 0);
             } else {
                 f11 = 48.0f;
                 TLRPC.Document document = webPage.document;
@@ -420,7 +420,7 @@ public class j0 extends View {
                         i7 = 0;
                         i10 = 0;
                     }
-                    imageReceiver.r0(fc.c(w13, webPage.document), com.google.android.gms.internal.vision.e2.j(i13, "_", i13), this.V ? null : fc.c(w12, webPage.document), this.V ? null : com.google.android.gms.internal.vision.e2.j(i13, "_", i13), null, 0L, null, null, 0);
+                    imageReceiver.r0(gc.c(w13, webPage.document), com.google.android.gms.internal.vision.e2.j(i13, "_", i13), this.V ? null : gc.c(w12, webPage.document), this.V ? null : com.google.android.gms.internal.vision.e2.j(i13, "_", i13), null, 0L, null, null, 0);
                 } else {
                     i7 = 0;
                     i10 = 0;

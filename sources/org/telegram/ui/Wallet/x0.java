@@ -5,14 +5,14 @@ import android.text.TextUtils;
 import java.util.Iterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class x0 {
     public static final long[] o = {500, 1000, 3000, 5000, 10000};
@@ -70,10 +70,10 @@ public final class x0 {
                             performapirequest.endpoint = "/api/v3/traces";
                             performapirequest.query = "msg_hash=" + Uri.encode(x0Var2.b) + "&include_actions=false";
                             final int i14 = 1;
-                            x0Var2.k = ConnectionsManager.getInstance(i12).sendRequestTyped(performapirequest, new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.w0
+                            x0Var2.k = ConnectionsManager.getInstance(i12).sendRequestTyped(performapirequest, new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.w0
                                 /* JADX WARN: Removed duplicated region for block: B:14:0x0062  */
                                 /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
-                                @Override // org.telegram.messenger.q10
+                                @Override // org.telegram.messenger.r10
                                 /*
                                     Code decompiled incorrectly, please refer to instructions dump.
                                 */
@@ -108,8 +108,8 @@ public final class x0 {
                                                         Iterator<TL_wallet.walletTransaction> it = wallettransactions.transactions.iterator();
                                                         if (it.hasNext()) {
                                                             TL_wallet.walletTransaction next = it.next();
-                                                            mp.u1(i17).f4(wallettransactions.users, false);
-                                                            mp.u1(i17).Z3(wallettransactions.chats, false);
+                                                            np.u1(i17).f4(wallettransactions.users, false);
+                                                            np.u1(i17).Z3(wallettransactions.chats, false);
                                                             u0Var.d(wallettransaction, next);
                                                             u0Var.K();
                                                             x0Var3.c();
@@ -159,7 +159,7 @@ public final class x0 {
                                             break;
                                     }
                                 }
-                            }, mp.u1(i12).Q3, 0);
+                            }, np.u1(i12).Q3, 0);
                             break;
                         }
                         break;
@@ -172,10 +172,10 @@ public final class x0 {
                             gettransactionsbymsghash.msg_hash.add(x0Var3.b);
                             org.telegram.messenger.g0.h3(x0Var3.l, 45000L);
                             final int i16 = 0;
-                            x0Var3.i = ConnectionsManager.getInstance(x0Var3.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.w0
+                            x0Var3.i = ConnectionsManager.getInstance(x0Var3.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.w0
                                 /* JADX WARN: Removed duplicated region for block: B:14:0x0062  */
                                 /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
-                                @Override // org.telegram.messenger.q10
+                                @Override // org.telegram.messenger.r10
                                 /*
                                     Code decompiled incorrectly, please refer to instructions dump.
                                 */
@@ -210,8 +210,8 @@ public final class x0 {
                                                         Iterator<TL_wallet.walletTransaction> it = wallettransactions.transactions.iterator();
                                                         if (it.hasNext()) {
                                                             TL_wallet.walletTransaction next = it.next();
-                                                            mp.u1(i17).f4(wallettransactions.users, false);
-                                                            mp.u1(i17).Z3(wallettransactions.chats, false);
+                                                            np.u1(i17).f4(wallettransactions.users, false);
+                                                            np.u1(i17).Z3(wallettransactions.chats, false);
                                                             u0Var.d(wallettransaction, next);
                                                             u0Var.K();
                                                             x0Var32.c();
@@ -303,10 +303,10 @@ public final class x0 {
                             performapirequest.endpoint = "/api/v3/traces";
                             performapirequest.query = "msg_hash=" + Uri.encode(x0Var2.b) + "&include_actions=false";
                             final int i14 = 1;
-                            x0Var2.k = ConnectionsManager.getInstance(i12).sendRequestTyped(performapirequest, new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.w0
+                            x0Var2.k = ConnectionsManager.getInstance(i12).sendRequestTyped(performapirequest, new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.w0
                                 /* JADX WARN: Removed duplicated region for block: B:14:0x0062  */
                                 /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
-                                @Override // org.telegram.messenger.q10
+                                @Override // org.telegram.messenger.r10
                                 /*
                                     Code decompiled incorrectly, please refer to instructions dump.
                                 */
@@ -341,8 +341,8 @@ public final class x0 {
                                                         Iterator<TL_wallet.walletTransaction> it = wallettransactions.transactions.iterator();
                                                         if (it.hasNext()) {
                                                             TL_wallet.walletTransaction next = it.next();
-                                                            mp.u1(i17).f4(wallettransactions.users, false);
-                                                            mp.u1(i17).Z3(wallettransactions.chats, false);
+                                                            np.u1(i17).f4(wallettransactions.users, false);
+                                                            np.u1(i17).Z3(wallettransactions.chats, false);
                                                             u0Var.d(wallettransaction, next);
                                                             u0Var.K();
                                                             x0Var32.c();
@@ -392,7 +392,7 @@ public final class x0 {
                                             break;
                                     }
                                 }
-                            }, mp.u1(i12).Q3, 0);
+                            }, np.u1(i12).Q3, 0);
                             break;
                         }
                         break;
@@ -405,10 +405,10 @@ public final class x0 {
                             gettransactionsbymsghash.msg_hash.add(x0Var3.b);
                             org.telegram.messenger.g0.h3(x0Var3.l, 45000L);
                             final int i16 = 0;
-                            x0Var3.i = ConnectionsManager.getInstance(x0Var3.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.w0
+                            x0Var3.i = ConnectionsManager.getInstance(x0Var3.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.w0
                                 /* JADX WARN: Removed duplicated region for block: B:14:0x0062  */
                                 /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
-                                @Override // org.telegram.messenger.q10
+                                @Override // org.telegram.messenger.r10
                                 /*
                                     Code decompiled incorrectly, please refer to instructions dump.
                                 */
@@ -443,8 +443,8 @@ public final class x0 {
                                                         Iterator<TL_wallet.walletTransaction> it = wallettransactions.transactions.iterator();
                                                         if (it.hasNext()) {
                                                             TL_wallet.walletTransaction next = it.next();
-                                                            mp.u1(i17).f4(wallettransactions.users, false);
-                                                            mp.u1(i17).Z3(wallettransactions.chats, false);
+                                                            np.u1(i17).f4(wallettransactions.users, false);
+                                                            np.u1(i17).Z3(wallettransactions.chats, false);
                                                             u0Var.d(wallettransaction, next);
                                                             u0Var.K();
                                                             x0Var32.c();
@@ -536,10 +536,10 @@ public final class x0 {
                             performapirequest.endpoint = "/api/v3/traces";
                             performapirequest.query = "msg_hash=" + Uri.encode(x0Var2.b) + "&include_actions=false";
                             final int i14 = 1;
-                            x0Var2.k = ConnectionsManager.getInstance(i122).sendRequestTyped(performapirequest, new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.w0
+                            x0Var2.k = ConnectionsManager.getInstance(i122).sendRequestTyped(performapirequest, new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.w0
                                 /* JADX WARN: Removed duplicated region for block: B:14:0x0062  */
                                 /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
-                                @Override // org.telegram.messenger.q10
+                                @Override // org.telegram.messenger.r10
                                 /*
                                     Code decompiled incorrectly, please refer to instructions dump.
                                 */
@@ -574,8 +574,8 @@ public final class x0 {
                                                         Iterator<TL_wallet.walletTransaction> it = wallettransactions.transactions.iterator();
                                                         if (it.hasNext()) {
                                                             TL_wallet.walletTransaction next = it.next();
-                                                            mp.u1(i17).f4(wallettransactions.users, false);
-                                                            mp.u1(i17).Z3(wallettransactions.chats, false);
+                                                            np.u1(i17).f4(wallettransactions.users, false);
+                                                            np.u1(i17).Z3(wallettransactions.chats, false);
                                                             u0Var.d(wallettransaction, next);
                                                             u0Var.K();
                                                             x0Var32.c();
@@ -625,7 +625,7 @@ public final class x0 {
                                             break;
                                     }
                                 }
-                            }, mp.u1(i122).Q3, 0);
+                            }, np.u1(i122).Q3, 0);
                             break;
                         }
                         break;
@@ -638,10 +638,10 @@ public final class x0 {
                             gettransactionsbymsghash.msg_hash.add(x0Var3.b);
                             org.telegram.messenger.g0.h3(x0Var3.l, 45000L);
                             final int i16 = 0;
-                            x0Var3.i = ConnectionsManager.getInstance(x0Var3.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.w0
+                            x0Var3.i = ConnectionsManager.getInstance(x0Var3.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.w0
                                 /* JADX WARN: Removed duplicated region for block: B:14:0x0062  */
                                 /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
-                                @Override // org.telegram.messenger.q10
+                                @Override // org.telegram.messenger.r10
                                 /*
                                     Code decompiled incorrectly, please refer to instructions dump.
                                 */
@@ -676,8 +676,8 @@ public final class x0 {
                                                         Iterator<TL_wallet.walletTransaction> it = wallettransactions.transactions.iterator();
                                                         if (it.hasNext()) {
                                                             TL_wallet.walletTransaction next = it.next();
-                                                            mp.u1(i17).f4(wallettransactions.users, false);
-                                                            mp.u1(i17).Z3(wallettransactions.chats, false);
+                                                            np.u1(i17).f4(wallettransactions.users, false);
+                                                            np.u1(i17).Z3(wallettransactions.chats, false);
                                                             u0Var.d(wallettransaction, next);
                                                             u0Var.K();
                                                             x0Var32.c();

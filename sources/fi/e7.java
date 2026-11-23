@@ -7,15 +7,15 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class e7 {
     public int A;
@@ -76,15 +76,15 @@ public class e7 {
         boolean z10;
         TLRPC.TL_recentStory tL_recentStory4;
         this.R = view;
-        p6 R1 = mp.u1(j10.t0).R1();
+        p6 R1 = np.u1(k10.t0).R1();
         boolean z11 = false;
         if (motionEvent.getAction() == 0) {
             if (this.F.contains(motionEvent.getX(), motionEvent.getY())) {
                 TLRPC.Chat chat = null;
                 if (this.x > 0) {
-                    user = mp.u1(j10.t0).c2(Long.valueOf(this.x));
+                    user = np.u1(k10.t0).c2(Long.valueOf(this.x));
                 } else {
-                    chat = mp.u1(j10.t0).O0(Long.valueOf(-this.x));
+                    chat = np.u1(k10.t0).O0(Long.valueOf(-this.x));
                     user = null;
                 }
                 if (c(chat, user)) {
@@ -92,12 +92,12 @@ public class e7 {
                 } else if (this.r) {
                     z10 = !R1.h.isEmpty();
                 } else {
-                    if (this.x <= 0 ? mp.u1(j10.t0).R1().K(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : mp.u1(j10.t0).R1().K(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
+                    if (this.x <= 0 ? np.u1(k10.t0).R1().K(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : np.u1(k10.t0).R1().K(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
                         z11 = true;
                     }
                     z10 = z11;
                 }
-                if (this.x != j10.i(j10.t0).n && z10) {
+                if (this.x != k10.i(k10.t0).n && z10) {
                     mc mcVar = this.H;
                     if (mcVar == null) {
                         this.H = new mc(view, 1.5f, 5.0f);
@@ -143,11 +143,11 @@ public class e7 {
                 mcVar3.c(false);
             }
             if (this.N && motionEvent.getAction() == 1 && !d(this.x)) {
-                mp u12 = mp.u1(j10.t0);
+                np u12 = np.u1(k10.t0);
                 p6 R12 = u12.R1();
                 if (this.r) {
                     f(0L);
-                } else if (this.x != j10.i(j10.t0).e()) {
+                } else if (this.x != k10.i(k10.t0).e()) {
                     if (R12.K(this.x)) {
                         f(this.x);
                     } else {

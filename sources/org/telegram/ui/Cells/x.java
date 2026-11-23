@@ -8,16 +8,16 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x extends FrameLayout {
     public final org.telegram.ui.ActionBar.m5 a;
@@ -34,7 +34,7 @@ public final class x extends FrameLayout {
         this.h = z11;
         org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(context);
         this.a = m5Var;
-        ks.i(m5Var);
+        ls.i(m5Var);
         org.telegram.ui.ActionBar.t6.X(m5Var, org.telegram.ui.ActionBar.m6.G6, null);
         m5Var.setTextSize(16);
         m5Var.setTypeface(org.telegram.messenger.g0.o());
@@ -74,8 +74,8 @@ public final class x extends FrameLayout {
         String str = tL_availableReaction.title;
         org.telegram.ui.ActionBar.m5 m5Var = this.a;
         m5Var.l(org.telegram.messenger.j6.m(str, m5Var.getPaint().getFontMetricsInt(), false, null, 0), false);
-        this.b.k(fc.b(tL_availableReaction.activate_animation), "30_30_pcache", "tgs", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.m6.a7, 1.0f, null), tL_availableReaction);
-        boolean z12 = this.h && tL_availableReaction.premium && !j10.i(i7).q();
+        this.b.k(gc.b(tL_availableReaction.activate_animation), "30_30_pcache", "tgs", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.m6.a7, 1.0f, null), tL_availableReaction);
+        boolean z12 = this.h && tL_availableReaction.premium && !k10.i(i7).q();
         this.n = z12;
         if (z12) {
             Drawable drawable = getContext().getDrawable(R.drawable.other_lockedfolders2);
@@ -99,7 +99,7 @@ public final class x extends FrameLayout {
         float strokeWidth = org.telegram.ui.ActionBar.m6.k0.getStrokeWidth();
         int L = org.telegram.messenger.g0.L(81.0f);
         int i7 = 0;
-        if (gd.a0) {
+        if (hd.a0) {
             i7 = L;
             L = 0;
         }

@@ -3,13 +3,13 @@ package cg;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.MathContext;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i0;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class a {
     public final b a;
@@ -49,10 +49,10 @@ public final class a {
     public static a k(double d, b bVar) {
         b bVar2 = b.b;
         if (bVar == bVar2) {
-            return new a((long) ((d / ((i0) mp.u1(j10.t0).A7.l.b).a) * 1000000000), bVar2).o(2);
+            return new a((long) ((d / ((i0) np.u1(k10.t0).A7.l.b).a) * 1000000000), bVar2).o(2);
         }
         b bVar3 = b.a;
-        return bVar == bVar3 ? new a((long) (((d * 100000.0d) / mp.u1(j10.t0).e6) * 1000000000), bVar3).o(0) : h(0L, bVar);
+        return bVar == bVar3 ? new a((long) (((d * 100000.0d) / np.u1(k10.t0).e6) * 1000000000), bVar3).o(0) : h(0L, bVar);
     }
 
     public static a m(TL_stars.StarsAmount starsAmount) {
@@ -84,7 +84,7 @@ public final class a {
     }
 
     public final String d() {
-        StringBuilder sb2 = new StringBuilder(gd.E(a(), ','));
+        StringBuilder sb2 = new StringBuilder(hd.E(a(), ','));
         long j3 = this.b % 1000000000;
         if (j3 == 0) {
             return sb2.toString();
@@ -119,10 +119,10 @@ public final class a {
         b bVar = b.a;
         b bVar2 = this.a;
         if (bVar2 == bVar) {
-            return ((c() / 1000.0d) * mp.u1(j10.t0).e6) / 100.0d;
+            return ((c() / 1000.0d) * np.u1(k10.t0).e6) / 100.0d;
         }
         if (bVar2 == b.b) {
-            return c() * ((i0) mp.u1(j10.t0).A7.l.b).a;
+            return c() * ((i0) np.u1(k10.t0).A7.l.b).a;
         }
         return 0.0d;
     }
@@ -132,10 +132,10 @@ public final class a {
         b bVar = this.a;
         if (j3 == 0) {
             int ordinal = bVar.ordinal();
-            return ordinal != 0 ? ordinal != 1 ? "" : gd.H(' ', "TonCount", (int) a()) : gd.H(' ', "StarsCount", (int) a());
+            return ordinal != 0 ? ordinal != 1 ? "" : hd.H(' ', "TonCount", (int) a()) : hd.H(' ', "StarsCount", (int) a());
         }
         int ordinal2 = bVar.ordinal();
-        return ordinal2 != 0 ? ordinal2 != 1 ? "" : gd.a0(null, null, 2131743809, b()) : gd.a0(null, null, 2131744872, b());
+        return ordinal2 != 0 ? ordinal2 != 1 ? "" : hd.a0(null, null, 2131743807, b()) : hd.a0(null, null, 2131744870, b());
     }
 
     public final boolean l() {

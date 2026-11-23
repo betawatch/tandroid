@@ -29,12 +29,12 @@ import hi.pb;
 import java.util.ArrayList;
 import java.util.Random;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -44,7 +44,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.mx;
 import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class j8 extends FrameLayout implements View.OnClickListener {
     public final org.telegram.ui.Components.d6 E;
@@ -97,8 +97,8 @@ public abstract class j8 extends FrameLayout implements View.OnClickListener {
         }
         ArrayList arrayList = new ArrayList();
         for (int i7 = 0; i7 < c7Var.T0.size(); i7++) {
-            if (((c20) c7Var.T0.get(i7)).M instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                arrayList.add(((c20) c7Var.T0.get(i7)).M);
+            if (((d20) c7Var.T0.get(i7)).M instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
+                arrayList.add(((d20) c7Var.T0.get(i7)).M);
             }
         }
         return arrayList;
@@ -159,7 +159,7 @@ public abstract class j8 extends FrameLayout implements View.OnClickListener {
                     tg.n0 n0Var = new tg.n0(getContext(), org.telegram.messenger.g0.p);
                     n0Var.setMaxWidth(org.telegram.messenger.g0.q.x);
                     n0Var.setIsVideo(true);
-                    n0Var.d(j10.t0, pbVar.c);
+                    n0Var.d(k10.t0, pbVar.c);
                     n0Var.setText(pbVar.a());
                     n0Var.e(3, tL_mediaAreaWeather.color);
                     view = new i8(getContext(), n0Var, mediaArea);
@@ -193,7 +193,7 @@ public abstract class j8 extends FrameLayout implements View.OnClickListener {
             if (d > 0.0f) {
                 rectF = rectF2;
                 canvas2 = canvas;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ks.e4, 31);
+                canvas2.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ls.e4, 31);
                 canvas2.drawColor(org.telegram.ui.ActionBar.m6.r1(d, 402653184));
                 for (int i7 = 0; i7 < getChildCount(); i7++) {
                     View childAt = getChildAt(i7);
@@ -347,7 +347,7 @@ public abstract class j8 extends FrameLayout implements View.OnClickListener {
                 ch.p0 d2 = ch.p0.d(mediaArea.reaction);
                 String str = d2.f;
                 if (str == null) {
-                    str = fj.U(org.telegram.ui.Components.p5.e(nxVar.b, d2.g));
+                    str = gj.U(org.telegram.ui.Components.p5.e(nxVar.b, d2.g));
                 }
                 float measuredHeight = m8Var.getMeasuredHeight();
                 float measuredWidth = m8Var.getMeasuredWidth();
@@ -456,7 +456,7 @@ public abstract class j8 extends FrameLayout implements View.OnClickListener {
                 }
                 if (mediaArea2 instanceof TL_stories.TL_mediaAreaStarGift) {
                     String str2 = ((TL_stories.TL_mediaAreaStarGift) mediaArea2).slug;
-                    vf.c.t(getContext(), "https://" + mp.u1(j10.t0).X2 + "/nft/" + str2);
+                    vf.c.t(getContext(), "https://" + np.u1(k10.t0).X2 + "/nft/" + str2);
                     this.b = null;
                     invalidate();
                     return;
@@ -488,7 +488,7 @@ public abstract class j8 extends FrameLayout implements View.OnClickListener {
                     tL_message.media = tL_messageMediaGeo;
                 }
                 f8Var.V0 = false;
-                f8Var.G0(new fj(j10.t0, tL_message, false, false));
+                f8Var.G0(new gj(k10.t0, tL_message, false, false));
                 ((y2) this).I.N(f8Var);
                 this.b = null;
                 invalidate();
@@ -516,13 +516,13 @@ public abstract class j8 extends FrameLayout implements View.OnClickListener {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             TL_stories.MediaArea mediaArea4 = this.b.b;
             if (mediaArea4 instanceof TL_stories.TL_mediaAreaChannelPost) {
-                spannableStringBuilder.append((CharSequence) gd.N0(2131744206, null));
+                spannableStringBuilder.append((CharSequence) hd.N0(2131744204, null));
             } else if (mediaArea4 instanceof TL_stories.TL_mediaAreaStarGift) {
-                spannableStringBuilder.append((CharSequence) gd.N0(2131744208, null));
+                spannableStringBuilder.append((CharSequence) hd.N0(2131744206, null));
             } else {
                 if (mediaArea4 instanceof TL_stories.TL_mediaAreaUrl) {
                     l3Var2.r(true);
-                    spannableStringBuilder.append((CharSequence) gd.N0(2131744352, null));
+                    spannableStringBuilder.append((CharSequence) hd.N0(2131744350, null));
                     spannableStringBuilder.append((CharSequence) "\n");
                     TL_stories.TL_mediaAreaUrl tL_mediaAreaUrl = (TL_stories.TL_mediaAreaUrl) this.b.b;
                     int length = spannableStringBuilder.length();
@@ -571,7 +571,7 @@ public abstract class j8 extends FrameLayout implements View.OnClickListener {
                     l3Var2.x();
                     b(true);
                 }
-                spannableStringBuilder.append((CharSequence) gd.N0(2131744207, null));
+                spannableStringBuilder.append((CharSequence) hd.N0(2131744205, null));
             }
             z10 = false;
             SpannableString spannableString3 = new SpannableString(">");

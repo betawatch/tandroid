@@ -7,12 +7,12 @@ import fi.b6;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ma;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.na;
+import org.telegram.messenger.si;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -21,9 +21,9 @@ import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class l1 extends dk0 implements fs {
+public final class l1 extends dk0 implements gs {
     public b6 E;
     public final Context c;
     public final bn f;
@@ -35,7 +35,7 @@ public final class l1 extends dk0 implements fs {
     public String y;
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
-    public final int r = j10.t0;
+    public final int r = k10.t0;
     public final hi.l F = new hi.l(this, 26);
 
     public l1(Context context, bn bnVar, h6 h6Var, int i7, boolean z10) {
@@ -73,9 +73,9 @@ public final class l1 extends dk0 implements fs {
         return i7 < this.e.size() ? 0 : 1;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.A5 && objArr[0] == this.E) {
+        if (i7 == ls.A5 && objArr[0] == this.E) {
             f();
         }
     }
@@ -89,25 +89,25 @@ public final class l1 extends dk0 implements fs {
         hashSet.clear();
         int i7 = this.r;
         int i10 = this.w;
-        ArrayList arrayList2 = i10 == 0 ? ri.d0(i7).Z0 : ma.a(i7).b(i10).a;
+        ArrayList arrayList2 = i10 == 0 ? si.d0(i7).Z0 : na.a(i7).b(i10).a;
         int i11 = 0;
         for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-            fj fjVar = (fj) arrayList2.get(i12);
-            if ((!fjVar.z2() || fjVar.S2) && !hashSet.contains(Integer.valueOf(fjVar.e1()))) {
-                arrayList.add(fjVar);
-                hashSet.add(Integer.valueOf(fjVar.e1()));
+            gj gjVar = (gj) arrayList2.get(i12);
+            if ((!gjVar.z2() || gjVar.S2) && !hashSet.contains(Integer.valueOf(gjVar.e1()))) {
+                arrayList.add(gjVar);
+                hashSet.add(Integer.valueOf(gjVar.e1()));
             }
         }
         int i13 = this.n;
         this.h = arrayList.size();
         if (i10 != 0) {
-            if (!ma.a(i7).b(i10).n && this.h != 0) {
-                i11 = Utilities.j(ma.a(i7).b(i10).m - this.h, 3, 0);
+            if (!na.a(i7).b(i10).n && this.h != 0) {
+                i11 = Utilities.j(na.a(i7).b(i10).m - this.h, 3, 0);
             }
             this.n = i11;
         } else {
-            if (!ri.d0(i7).b2() && this.h != 0) {
-                i11 = Utilities.j(ri.d0(i7).l0() - this.h, 3, 0);
+            if (!si.d0(i7).b2() && this.h != 0) {
+                i11 = Utilities.j(si.d0(i7).l0() - this.h, 3, 0);
             }
             this.n = i11;
         }
@@ -138,13 +138,13 @@ public final class l1 extends dk0 implements fs {
         }
         u2 u2Var = (u2) view;
         u2Var.t2 = true;
-        fj fjVar = (fj) E(i7);
-        long B0 = fj.B0(fjVar.k);
-        int i13 = fjVar.k.date;
+        gj gjVar = (gj) E(i7);
+        long B0 = gj.B0(gjVar.k);
+        int i13 = gjVar.k.date;
         if (this.x) {
             u2Var.s0 = true;
-            long P1 = fjVar.P1();
-            TLRPC.Message message = fjVar.k;
+            long P1 = gjVar.P1();
+            TLRPC.Message message = gjVar.k;
             TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
             if (messageFwdHeader == null || ((i10 = messageFwdHeader.date) == 0 && messageFwdHeader.saved_date == 0)) {
                 i11 = message.date;
@@ -159,13 +159,13 @@ public final class l1 extends dk0 implements fs {
             z10 = false;
             B0 = P1;
         } else {
-            if (fjVar.P3() || v3.o0(this.r, B0)) {
-                B0 = fjVar.Z0();
+            if (gjVar.P3() || v3.o0(this.r, B0)) {
+                B0 = gjVar.Z0();
             }
             z10 = true;
             i10 = i13;
         }
-        u2Var.d0(B0, fjVar, i10, z10, false);
+        u2Var.d0(B0, gjVar, i10, z10, false);
         u2Var.setDialogCellDelegate(new i1(this));
     }
 

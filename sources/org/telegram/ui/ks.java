@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ks extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ ArrayList c;
@@ -34,7 +34,7 @@ public final class ks extends org.telegram.ui.Components.dk0 {
         org.telegram.ui.Components.q9 q9Var = msVar.a;
         msVar.d = stickerSetCovered;
         if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-            m5Var.l(org.telegram.messenger.gd.N0(2131748069, null), false);
+            m5Var.l(org.telegram.messenger.hd.N0(2131748069, null), false);
             q9Var.setImageResource(R.drawable.msg_addbot);
             return;
         }
@@ -45,13 +45,13 @@ public final class ks extends org.telegram.ui.Components.dk0 {
             return;
         }
         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
-        org.telegram.messenger.lz f10 = org.telegram.messenger.u5.f(stickerSetCovered.cover, org.telegram.ui.ActionBar.m6.a7, 1.0f, msVar.c);
+        org.telegram.messenger.mz f10 = org.telegram.messenger.u5.f(stickerSetCovered.cover, org.telegram.ui.ActionBar.m6.a7, 1.0f, msVar.c);
         if (f10 == null) {
-            q9Var.k(org.telegram.messenger.fc.c(w10, stickerSetCovered.cover), null, "webp", null, stickerSetCovered);
+            q9Var.k(org.telegram.messenger.gc.c(w10, stickerSetCovered.cover), null, "webp", null, stickerSetCovered);
         } else if (w10 != null) {
-            q9Var.k(org.telegram.messenger.fc.c(w10, stickerSetCovered.cover), null, "webp", f10, stickerSetCovered);
+            q9Var.k(org.telegram.messenger.gc.c(w10, stickerSetCovered.cover), null, "webp", f10, stickerSetCovered);
         } else {
-            q9Var.k(org.telegram.messenger.fc.b(stickerSetCovered.cover), null, "webp", f10, stickerSetCovered);
+            q9Var.k(org.telegram.messenger.gc.b(stickerSetCovered.cover), null, "webp", f10, stickerSetCovered);
         }
     }
 

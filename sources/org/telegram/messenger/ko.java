@@ -1,62 +1,35 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
-/* loaded from: classes.dex */
-public final class ko implements fs {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ ap e;
-    public final /* synthetic */ mp f;
+import org.telegram.tgnet.TLRPC;
 
-    public ko(mp mpVar, int i7, int i10, int i11, long j3, ap apVar) {
-        this.f = mpVar;
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
-        this.d = j3;
-        this.e = apVar;
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* loaded from: classes.dex */
+public final class ko extends y2 {
+    public final /* synthetic */ np e;
+
+    public ko(np npVar) {
+        this.e = npVar;
     }
 
-    @Override // org.telegram.messenger.fs
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ks.I;
-        ap apVar = this.e;
-        int i12 = this.a;
-        mp mpVar = this.f;
-        int i13 = ks.H;
-        if (i7 != i13 || ((Integer) objArr[0]).intValue() != i12) {
-            if (i7 == i11 && ((Integer) objArr[0]).intValue() == i12) {
-                mpVar.getNotificationCenter().n(this, i13);
-                mpVar.getNotificationCenter().n(this, i11);
-                if (apVar != null) {
-                    apVar.a();
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        int intValue = ((Integer) objArr[1]).intValue();
-        boolean booleanValue = ((Boolean) objArr[2]).booleanValue();
-        boolean booleanValue2 = ((Boolean) objArr[3]).booleanValue();
-        int intValue2 = ((Integer) objArr[4]).intValue();
-        int i14 = this.b;
-        if (intValue >= i14 / 2 || booleanValue2 || !booleanValue) {
-            mpVar.getNotificationCenter().n(this, i13);
-            mpVar.getNotificationCenter().n(this, i11);
-            if (apVar != null) {
-                apVar.f(booleanValue);
-                return;
-            }
-            return;
-        }
-        int i15 = this.c;
-        if (i15 != 0) {
-            mpVar.f3(this.d, 0L, false, i14, i15, 0, false, 0, this.a, 3, intValue2, 0, 0L, -1, 0, 0, 0, false, 0, true, false, false, null, 0L);
-        } else {
-            mpVar.f3(this.d, 0L, false, i14, i15, 0, false, 0, this.a, 2, intValue2, 0, 0L, -1, 0, 0, 0, false, 0, true, false, false, null, 0L);
-        }
+    @Override // org.telegram.messenger.y2
+    public final void e(int i7, Object obj, r10 r10Var) {
+        this.e.getMessagesStorage().a.c(new io(i7, (w2) r10Var, 0));
+    }
+
+    @Override // org.telegram.messenger.y2
+    public final void f(int i7, Object obj, long j3, x2 x2Var) {
+        TLRPC.TL_help_getAppConfig tL_help_getAppConfig = new TLRPC.TL_help_getAppConfig();
+        tL_help_getAppConfig.hash = (int) j3;
+        this.e.getConnectionsManager().sendRequest(tL_help_getAppConfig, new jo(x2Var, 0));
+    }
+
+    @Override // org.telegram.messenger.y2
+    public final void g(int i7, Object obj, Object obj2) {
+        ur.a0(i7).a.c(new x0(i7, (TLRPC.TL_help_appConfig) obj2, 5));
+    }
+
+    @Override // org.telegram.messenger.y2
+    public final /* bridge */ /* synthetic */ boolean j(Object obj) {
+        return false;
     }
 }

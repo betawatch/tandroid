@@ -27,9 +27,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class c20 implements org.telegram.messenger.fs {
+public final class c20 implements org.telegram.messenger.gs {
     public static c20 f0 = null;
     public static boolean g0 = true;
     public boolean E;
@@ -93,7 +93,7 @@ public final class c20 implements org.telegram.messenger.fs {
         e9Var.setVisibility(8);
         e9Var.setDelegate(new oo(this, 20));
         h(false);
-        a20Var.addView(e9Var, c8.ma.e(org.telegram.messenger.ks.t1, 36, 49));
+        a20Var.addView(e9Var, c8.ma.e(org.telegram.messenger.ls.t1, 36, 49));
         bi.e3 e3Var = new bi.e3(21, context, this);
         this.b = e3Var;
         hi.l5 l5Var = new hi.l5(this, context);
@@ -141,10 +141,10 @@ public final class c20 implements org.telegram.messenger.fs {
         textView.setMaxLines(2);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        TextView f10 = org.telegram.messenger.n10.f(linearLayout, textView, c8.ma.o(-1, -2), context);
+        TextView f10 = org.telegram.messenger.o10.f(linearLayout, textView, c8.ma.o(-1, -2), context);
         g20Var.b = f10;
         f10.setTextSize(12.0f);
-        f10.setTextColor(i0.a.o(-1, org.telegram.messenger.ks.j2));
+        f10.setTextColor(i0.a.o(-1, org.telegram.messenger.ls.j2));
         linearLayout.addView(f10, c8.ma.o(-1, -2));
         f20Var.addView(linearLayout, c8.ma.d(-1, -2.0f, 16, 55.0f, 0.0f, 0.0f, 0.0f));
         g20Var.addView(f20Var, c8.ma.t(-1, -2, 0, 10, 10, 10, 10));
@@ -244,7 +244,7 @@ public final class c20 implements org.telegram.messenger.fs {
         });
         org.telegram.ui.Components.voip.q2 q2Var3 = new org.telegram.ui.Components.voip.q2(context, 44.0f);
         q2Var3.setTextSize(12);
-        q2Var3.c(R.drawable.calls_decline, -1, -3257782, 0.3f, false, org.telegram.messenger.gd.N0(2131743121, null), false, false);
+        q2Var3.c(R.drawable.calls_decline, -1, -3257782, 0.3f, false, org.telegram.messenger.hd.N0(2131743119, null), false, false);
         q2Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.d20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -328,7 +328,7 @@ public final class c20 implements org.telegram.messenger.fs {
             f0.e();
             f0 = null;
             org.telegram.ui.Components.voip.e0.k();
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.F2, new Object[0]);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.F2, new Object[0]);
         }
     }
 
@@ -401,9 +401,9 @@ public final class c20 implements org.telegram.messenger.fs {
                 f0.a.setScaleY(0.5f);
                 f0.a.setAlpha(0.0f);
                 f0.a.animate().alpha(0.7f).scaleY(1.0f).scaleX(1.0f).setDuration(350L).setInterpolator(new OvershootInterpolator()).start();
-                org.telegram.messenger.ks.f(f0.h).b(f0, org.telegram.messenger.ks.w2);
-                org.telegram.messenger.ks.e().b(f0, org.telegram.messenger.ks.R4);
-                org.telegram.messenger.ks.e().b(f0, org.telegram.messenger.ks.D2);
+                org.telegram.messenger.ls.f(f0.h).b(f0, org.telegram.messenger.ls.w2);
+                org.telegram.messenger.ls.e().b(f0, org.telegram.messenger.ls.R4);
+                org.telegram.messenger.ls.e().b(f0, org.telegram.messenger.ls.D2);
                 org.telegram.ui.Components.voip.e0.k();
             }
         }
@@ -439,20 +439,20 @@ public final class c20 implements org.telegram.messenger.fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.w2 || i7 == org.telegram.messenger.ks.R4) {
+        if (i7 == org.telegram.messenger.ls.w2 || i7 == org.telegram.messenger.ls.R4) {
             h(true);
-        } else if (i7 == org.telegram.messenger.ks.D2) {
+        } else if (i7 == org.telegram.messenger.ls.D2) {
             k(org.telegram.messenger.t0.b);
         }
     }
 
     public final void e() {
-        org.telegram.messenger.ks.f(this.h).n(this, org.telegram.messenger.ks.w2);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.R4);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.F2);
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.D2);
+        org.telegram.messenger.ls.f(this.h).n(this, org.telegram.messenger.ls.w2);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.R4);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.F2);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.D2);
     }
 
     public final void f(boolean z10) {
@@ -540,7 +540,7 @@ public final class c20 implements org.telegram.messenger.fs {
         while (i7 < 2) {
             if (i11 < size) {
                 TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList.get(i11);
-                if (org.telegram.messenger.fj.B1(groupCallParticipant.peer) != selfId && SystemClock.uptimeMillis() - groupCallParticipant.lastSpeakTime <= 500) {
+                if (org.telegram.messenger.gj.B1(groupCallParticipant.peer) != selfId && SystemClock.uptimeMillis() - groupCallParticipant.lastSpeakTime <= 500) {
                     e9Var.b(i7, i10, groupCallParticipant);
                 }
                 i11++;

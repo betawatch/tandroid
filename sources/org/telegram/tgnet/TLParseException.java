@@ -3,9 +3,9 @@ package org.telegram.tgnet;
 import oi.c2;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class TLParseException extends RuntimeException {
     private TLParseException(String str) {
@@ -26,6 +26,6 @@ public class TLParseException extends RuntimeException {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$doThrowOrLog$0(TLParseException tLParseException) {
-        ks.e().k(ks.P5, tLParseException);
+        ls.e().k(ls.P5, tLParseException);
     }
 }

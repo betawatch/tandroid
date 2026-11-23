@@ -7,16 +7,16 @@ import android.util.Property;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashSet;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.op;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q7 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public n7[] a;
-    public fj[] b;
+    public gj[] b;
     public int[] c;
     public o7 d;
     public int e;
@@ -54,18 +54,18 @@ public final class q7 extends FrameLayout implements org.telegram.ui.ActionBar.b
         n7Var.h.start();
     }
 
-    public final void c(int i7, int i10, fj fjVar) {
+    public final void c(int i7, int i10, gj gjVar) {
         n7[] n7VarArr = this.a;
-        fj[] fjVarArr = this.b;
-        fjVarArr[i7] = fjVar;
+        gj[] gjVarArr = this.b;
+        gjVarArr[i7] = gjVar;
         this.c[i7] = i10;
-        if (fjVar != null) {
+        if (gjVar != null) {
             n7VarArr[i7].setVisibility(0);
-            n7VarArr[i7].setMessageObject(fjVar);
+            n7VarArr[i7].setMessageObject(gjVar);
         } else {
             n7VarArr[i7].clearAnimation();
             n7VarArr[i7].setVisibility(4);
-            fjVarArr[i7] = null;
+            gjVarArr[i7] = null;
         }
     }
 
@@ -94,7 +94,7 @@ public final class q7 extends FrameLayout implements org.telegram.ui.ActionBar.b
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         View[] viewArr = this.a;
-        int B = this.r == 1 ? n10.B(2.0f, this.e - 1, View.MeasureSpec.getSize(i7)) / this.e : a(this.e);
+        int B = this.r == 1 ? o10.B(2.0f, this.e - 1, View.MeasureSpec.getSize(i7)) / this.e : a(this.e);
         this.h = true;
         for (int i11 = 0; i11 < this.e; i11++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i11].getLayoutParams();

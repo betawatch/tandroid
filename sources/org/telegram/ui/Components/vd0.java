@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vd0 extends FrameLayout {
     public static final float O = org.telegram.messenger.g0.L(20.0f);
@@ -163,7 +163,7 @@ public final class vd0 extends FrameLayout {
                 float height = getHeight();
                 float f21 = yt0Var.b;
                 float A = com.google.android.gms.internal.vision.e2.A(height, f21, 2.0f, i12);
-                PointF pointF = new PointF(org.telegram.messenger.n10.A(this.a.x, f19, yt0Var.a + width, width), org.telegram.messenger.n10.A(this.a.y, f20, f21 + A, A));
+                PointF pointF = new PointF(org.telegram.messenger.o10.A(this.a.x, f19, yt0Var.a + width, width), org.telegram.messenger.o10.A(this.a.y, f20, f21 + A, A));
                 float f22 = pointF.x - width;
                 float f23 = yt0Var.a;
                 this.e = new PointF(f22 / f23, (((f23 - yt0Var.b) / 2.0f) + (pointF.y - A)) / f23);
@@ -191,7 +191,7 @@ public final class vd0 extends FrameLayout {
                 float height2 = getHeight();
                 float f28 = yt0Var.b;
                 float A2 = com.google.android.gms.internal.vision.e2.A(height2, f28, 2.0f, i13);
-                PointF pointF2 = new PointF(org.telegram.messenger.n10.A(this.a.x, f26, yt0Var.a + width2, width2), org.telegram.messenger.n10.A(this.a.y, f27, f28 + A2, A2));
+                PointF pointF2 = new PointF(org.telegram.messenger.o10.A(this.a.x, f26, yt0Var.a + width2, width2), org.telegram.messenger.o10.A(this.a.y, f27, f28 + A2, A2));
                 float f29 = pointF2.x - width2;
                 float f30 = yt0Var.a;
                 this.e = new PointF(f29 / f30, (((f30 - yt0Var.b) / 2.0f) + (pointF2.y - A2)) / f30);

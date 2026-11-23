@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wt implements tx {
     public final /* synthetic */ yt a;
@@ -95,12 +95,12 @@ public final class wt implements tx {
     public final void n() {
         yt ytVar = this.a;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ytVar.getContext(), ytVar.N);
-        String N0 = org.telegram.messenger.gd.N0(2131752056, null);
+        String N0 = org.telegram.messenger.hd.N0(2131752056, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.gd.N0(2131752057, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752087, null), new c0(this, 27));
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        t1Var.U = org.telegram.messenger.hd.N0(2131752057, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752087, null), new c0(this, 27));
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
         org.telegram.ui.ActionBar.g2 g2Var = ytVar.h;
         if (g2Var != null) {
             g2Var.showDialog(t1Var);
@@ -118,7 +118,7 @@ public final class wt implements tx {
     public final void q() {
         org.telegram.ui.ActionBar.g2 g2Var = this.a.h;
         if (g2Var == null) {
-            new ug.y0((org.telegram.ui.ActionBar.g2) new bi.c9(this, 6), 11, false).show();
+            new ug.y0((org.telegram.ui.ActionBar.g2) new bi.b9(this, 6), 11, false).show();
         } else {
             g2Var.showDialog(new ug.y0(g2Var, 11, false));
         }
@@ -193,7 +193,7 @@ public final class wt implements tx {
     }
 
     @Override // org.telegram.ui.Components.tx
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10, int i7) {
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10, int i7) {
     }
 
     @Override // org.telegram.ui.Components.tx

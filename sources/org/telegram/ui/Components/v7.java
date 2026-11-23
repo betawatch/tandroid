@@ -13,7 +13,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v7 extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ int G1;
@@ -304,9 +304,9 @@ public final class v7 extends org.telegram.ui.ActionBar.k {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v7(org.telegram.messenger.fs fsVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+    public /* synthetic */ v7(org.telegram.messenger.gs gsVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
         super(context, h6Var);
         this.G1 = i7;
-        this.H1 = fsVar;
+        this.H1 = gsVar;
     }
 }

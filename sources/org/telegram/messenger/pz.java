@@ -1,183 +1,201 @@
 package org.telegram.messenger;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.regex.Pattern;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.jg0;
+import org.telegram.ui.qw0;
+import org.telegram.ui.xc1;
+import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class pz extends android.support.v4.media.session.s {
-    public final /* synthetic */ qz g;
+public final /* synthetic */ class pz implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pz(qz qzVar) {
-        super(0);
-        this.g = qzVar;
+    public /* synthetic */ pz(Object obj, Object obj2, Object obj3, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // android.support.v4.media.session.s
-    public final void A(String str, Bundle bundle) {
-        t(str);
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void G(long j3) {
-        fj fjVar = MediaController.B().v0;
-        if (fjVar != null) {
-            MediaController.B().i0(fjVar, (float) ((j3 / 1000.0d) / fjVar.L0()));
-        }
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void M(int i7) {
-        bz.E(i7 != 1 ? (i7 == 2 || i7 == 3) ? 1 : 0 : 2);
-        this.g.f();
-        g0.g3(new xr(this, 16));
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void P(int i7) {
-        boolean z10 = true;
-        if (i7 != 1 && i7 != 2) {
-            z10 = false;
-        }
-        if (z10 != bz.N0) {
-            MediaController.B().l0(z10 ? 2 : 0);
-        }
-        this.g.b.x(bz.N0 ? 1 : 0);
-        g0.g3(new xr(this, 16));
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void S() {
-        fj fjVar = MediaController.B().v0;
-        if (fjVar == null || !fjVar.I3()) {
-            return;
-        }
-        MediaController.B().U(false);
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void V() {
-        fj fjVar = MediaController.B().v0;
-        if (fjVar == null || !fjVar.I3()) {
-            return;
-        }
-        MediaController.B().V();
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void Y(long j3) {
-        MediaController.B().T((int) j3);
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void f(String str) {
-        boolean equals = "org.telegram.android.musicplayer.repeat".equals(str);
-        qz qzVar = this.g;
-        if (equals) {
-            bz.E((bz.S0 + 1) % 3);
-            qzVar.f();
-        } else if ("org.telegram.android.musicplayer.shuffle".equals(str)) {
-            MediaController.B().l0(bz.N0 ? 0 : 2);
-            qzVar.b.x(bz.N0 ? 1 : 0);
-        }
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void k() {
-        MediaController.B().R(MediaController.B().v0, true);
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void n() {
-        fj fjVar = MediaController.B().v0;
-        if (fjVar != null) {
-            MediaController.B().S(fjVar);
-            return;
-        }
-        qz qzVar = this.g;
-        if (qzVar.d != 0) {
-            q(a8.p0.r(new StringBuilder(), qzVar.d, "_0"), null);
-        }
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void q(String str, Bundle bundle) {
-        qz qzVar = this.g;
-        android.support.v4.media.session.a0 a0Var = qzVar.b;
-        if (TextUtils.isEmpty(str)) {
-            return;
-        }
-        String[] split = str.split("_");
-        if (split.length != 2) {
-            return;
-        }
-        try {
-            long parseLong = Long.parseLong(split[0]);
-            int parseInt = Integer.parseInt(split[1]);
-            ArrayList arrayList = (ArrayList) qzVar.j.f(parseLong);
-            if (arrayList == null) {
-                qzVar.e(new oz(this, str, bundle, 0), parseLong);
-                return;
-            }
-            ArrayList arrayList2 = (ArrayList) qzVar.k.f(parseLong);
-            if (parseInt >= 0 && parseInt < arrayList.size()) {
-                qzVar.d = parseLong;
-                mp.u1(qzVar.c).g7.edit().putLong("auto_lastSelectedDialog", parseLong).apply();
-                MediaController.B().o0(arrayList, (fj) arrayList.get(parseInt), 0L, false, null, 0L);
-                a0Var.v(arrayList2);
-                if (n5.E(parseLong)) {
-                    TLRPC.User user = (TLRPC.User) qzVar.h.f(parseLong);
-                    ((android.support.v4.media.session.u) a0Var.b).a.setQueueTitle(user != null ? i5.m(0, user.first_name, user.last_name) : "DELETED USER");
-                } else {
-                    TLRPC.Chat chat = (TLRPC.Chat) qzVar.i.f(-parseLong);
-                    ((android.support.v4.media.session.u) a0Var.b).a.setQueueTitle(chat != null ? chat.title : "DELETED CHAT");
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((qz) this.b).q((String) this.c, (Bundle) this.d);
+                break;
+            case 1:
+                a10 a10Var = (a10) this.b;
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
+                y00 y00Var = (y00) this.d;
+                storyItem.detectedLng = "und";
+                a10Var.getMessagesController().R1().k.h(storyItem.dialogId, storyItem);
+                a10Var.J.remove(y00Var);
+                break;
+            case 2:
+                int[] iArr = (int[]) this.b;
+                y10[] y10VarArr = (y10[]) this.c;
+                Runnable runnable = (Runnable) this.d;
+                Pattern pattern = Utilities.a;
+                int i7 = iArr[0] + 1;
+                iArr[0] = i7;
+                if (i7 == y10VarArr.length && runnable != null) {
+                    runnable.run();
+                    break;
                 }
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
-    }
-
-    @Override // android.support.v4.media.session.s
-    public final void t(String str) {
-        String str2;
-        qz qzVar = this.g;
-        ArrayList arrayList = qzVar.g;
-        if (str == null || str.length() == 0) {
-            return;
-        }
-        String lowerCase = str.toLowerCase();
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            long longValue = ((Long) arrayList.get(i7)).longValue();
-            if (n5.E(longValue)) {
-                TLRPC.User user = (TLRPC.User) qzVar.h.f(longValue);
-                if (user != null) {
-                    String str3 = user.first_name;
-                    String lowerCase2 = str3 != null ? str3.toLowerCase() : null;
-                    String str4 = user.last_name;
-                    String lowerCase3 = str4 != null ? str4.toLowerCase() : null;
-                    if ((lowerCase2 != null && lowerCase2.contains(lowerCase)) || (lowerCase3 != null && lowerCase3.contains(lowerCase))) {
-                        q(longValue + "_0", null);
-                        return;
+                break;
+            default:
+                String str = (String) this.c;
+                String str2 = (String) this.b;
+                byte[] bArr = (byte[]) this.d;
+                int i10 = WearAuthListenerService.r;
+                str.getClass();
+                if (str.equals("/tg-wear-auth/offer")) {
+                    StringBuilder u10 = a8.p0.u("wear-auth: offer from ", str2, " (");
+                    u10.append(bArr.length);
+                    u10.append(" bytes)");
+                    a8.b(u10.toString());
+                    BigInteger bigInteger = yc1.a;
+                    if (bArr.length != 272) {
+                        a8.b("wear-auth: malformed offer (" + bArr.length + ")");
+                        break;
+                    } else {
+                        byte[] copyOfRange = Arrays.copyOfRange(bArr, 0, 16);
+                        byte[] copyOfRange2 = Arrays.copyOfRange(bArr, 16, bArr.length);
+                        a8.r7 r7Var = yc1.d;
+                        if (r7Var != null && Arrays.equals((byte[]) r7Var.b, copyOfRange)) {
+                            a8.b("wear-auth: duplicate offer (same sessionId) — ignoring");
+                            break;
+                        } else {
+                            a8.b("wear-auth: new session " + yc1.d(copyOfRange) + " from " + str2);
+                            yc1.d = new a8.r7(copyOfRange, copyOfRange2, str2);
+                            Context context = LaunchActivity.H1;
+                            if (context == null) {
+                                context = t0.b;
+                            }
+                            if (context != null) {
+                                org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
+                                org.telegram.ui.ActionBar.h6 resourceProvider = T != null ? T.getResourceProvider() : null;
+                                org.telegram.ui.ActionBar.w2 w2Var = yc1.c;
+                                if (w2Var != null) {
+                                    w2Var.dismiss();
+                                    yc1.c = null;
+                                }
+                                org.telegram.ui.ActionBar.w2 j3 = f3.j(1, context, resourceProvider, false);
+                                xc1 xc1Var = new xc1(context);
+                                j3.O = xc1Var;
+                                int i11 = k10.t0;
+                                ArrayList arrayList = new ArrayList();
+                                arrayList.clear();
+                                for (int i12 = 0; i12 < 4; i12++) {
+                                    if (k10.i(i12).p()) {
+                                        if (!ConnectionsManager.getInstance(i12).isTestBackend()) {
+                                            i11 = i12;
+                                        }
+                                        arrayList.add(Integer.valueOf(i12));
+                                    }
+                                }
+                                Collections.sort(arrayList, new qw0(6));
+                                if (!arrayList.isEmpty()) {
+                                    FrameLayout frameLayout = new FrameLayout(context);
+                                    FrameLayout frameLayout2 = new FrameLayout(context);
+                                    int L = g0.L(14.0f);
+                                    int i13 = org.telegram.ui.ActionBar.m6.i5;
+                                    Drawable d02 = org.telegram.ui.ActionBar.m6.d0(L, org.telegram.ui.ActionBar.m6.w0(i13, resourceProvider));
+                                    org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i13);
+                                    frameLayout2.setBackground(d02);
+                                    org.telegram.ui.ActionBar.t6.j(frameLayout2, d02, M, null, resourceProvider);
+                                    org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
+                                    q9Var.setRoundRadius(g0.L(14.0f));
+                                    q9Var.getImageReceiver().B0 = true;
+                                    org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
+                                    int[] iArr2 = {k10.t0};
+                                    TLRPC.User f10 = k10.i(iArr2[0]).f();
+                                    b9Var.r(f10);
+                                    q9Var.f(f10, b9Var);
+                                    frameLayout2.addView(q9Var, c8.ma.e(28, 28, ls.A1));
+                                    ImageView imageView = new ImageView(context);
+                                    imageView.setScaleType(ImageView.ScaleType.CENTER);
+                                    org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.r5, resourceProvider, PorterDuff.Mode.SRC_IN);
+                                    imageView.setImageResource(R.drawable.arrows_select);
+                                    frameLayout2.addView(imageView, c8.ma.d(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+                                    frameLayout.addView(frameLayout2, c8.ma.e(52, 28, 17));
+                                    frameLayout.setPadding(g0.L(8.0f), g0.L(4.0f), g0.L(8.0f), 0);
+                                    xc1Var.addView(frameLayout, c8.ma.q(-2, -2, 0.0f, 51, 6, 4, 6, 0));
+                                    c8.ra.a(frameLayout);
+                                    if (arrayList.size() <= 1) {
+                                        frameLayout.setVisibility(8);
+                                    }
+                                    LinearLayout g10 = f3.g(context, 1);
+                                    xc1Var.addView(g10, c8.ma.e(-1, -1, ls.E1));
+                                    org.telegram.ui.Components.q9 q9Var2 = new org.telegram.ui.Components.q9(context);
+                                    g10.addView(q9Var2, c8.ma.s(ls.O1, ls.O1, 49, 32.0f, 32.0f, 32.0f, 9.66f));
+                                    si.d0(i11).h2(q9Var2, "Utya3D", "😎", "130_130");
+                                    int i14 = org.telegram.ui.ActionBar.m6.j5;
+                                    TextView b10 = c8.va.b(context, 20.0f, i14, true, resourceProvider);
+                                    f3.k(b10, 17, null, 2131742678);
+                                    g10.addView(b10, c8.ma.s(-1, -2, 49, 32.0f, 24.0f, 32.0f, 9.66f));
+                                    TextView b11 = c8.va.b(context, 14.0f, i14, false, null);
+                                    f3.k(b11, 17, null, 2131742679);
+                                    g10.addView(b11, c8.ma.t(-1, -2, 49, 32, 0, 32, 24));
+                                    hi.e g11 = o10.g(24, context, resourceProvider, true);
+                                    g11.setText(hd.N0(2131748057, null));
+                                    g10.addView(g11, c8.ma.t(-1, 48, 7, 12, 12, 12, 8));
+                                    int i15 = org.telegram.ui.ActionBar.m6.a7;
+                                    j3.w0(i15);
+                                    j3.Q(i15);
+                                    frameLayout.setOnClickListener(new org.telegram.ui.Components.w1(j3, frameLayout2, arrayList, iArr2, b9Var, q9Var, 4));
+                                    g11.setOnClickListener(new jg0(23, g11, iArr2));
+                                    yc1.c = j3;
+                                    j3.show();
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                } else if (str.equals("/tg-wear-auth/cancel")) {
+                    a8.b("wear-auth: cancel from " + str2);
+                    BigInteger bigInteger2 = yc1.a;
+                    a8.b("wear-auth: cancel received; dropping session and dismissing sheet");
+                    yc1.d = null;
+                    org.telegram.ui.ActionBar.w2 w2Var2 = yc1.c;
+                    if (w2Var2 != null) {
+                        w2Var2.dismiss();
+                        yc1.c = null;
+                        break;
                     }
                 } else {
-                    continue;
+                    a8.b("wear-auth: unexpected path ".concat(str));
+                    break;
                 }
-            } else {
-                TLRPC.Chat chat = (TLRPC.Chat) qzVar.i.f(-longValue);
-                if (chat != null && (str2 = chat.title) != null && str2.toLowerCase().contains(lowerCase)) {
-                    q(longValue + "_0", null);
-                    return;
-                }
-            }
+                break;
         }
     }
 
-    @Override // android.support.v4.media.session.s
-    public final void x(String str, Bundle bundle) {
-        q(str, bundle);
+    public /* synthetic */ pz(byte[] bArr, String str, String str2) {
+        this.a = 3;
+        this.c = str;
+        this.b = str2;
+        this.d = bArr;
     }
 }

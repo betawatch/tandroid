@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w00 implements org.telegram.ui.Components.sj0, r0.m, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.e1, org.telegram.ui.ActionBar.l0 {
     public final /* synthetic */ int a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class w00 implements org.telegram.ui.Components.sj0
                 if (b20Var.b) {
                     for (int i10 = 0; i10 < x10Var.getChildCount(); i10++) {
                         org.telegram.ui.Components.u10 u10Var = (org.telegram.ui.Components.u10) x10Var.getChildAt(i10);
-                        if (org.telegram.messenger.fj.B1(u10Var.getParticipant().peer) == org.telegram.messenger.fj.B1(groupCallParticipant.peer)) {
+                        if (org.telegram.messenger.gj.B1(u10Var.getParticipant().peer) == org.telegram.messenger.gj.B1(groupCallParticipant.peer)) {
                             u10Var.setAmplitude(fArr[i7] * 15.0f);
                         }
                     }

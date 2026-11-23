@@ -6,16 +6,16 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.m80;
 import org.telegram.ui.aj0;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -24,10 +24,10 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ w8(hi.e eVar, x10 x10Var, org.telegram.ui.ActionBar.w2 w2Var, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+    public /* synthetic */ w8(hi.e eVar, y10 y10Var, org.telegram.ui.ActionBar.w2 w2Var, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
         this.a = i7;
         this.d = eVar;
-        this.e = x10Var;
+        this.e = y10Var;
         this.b = w2Var;
         this.c = h6Var;
     }
@@ -45,19 +45,19 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
         switch (i7) {
             case 0:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj3, h6Var);
-                String N0 = gd.N0(2131742894, null);
+                String N0 = hd.N0(2131742892, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = gd.N0(2131742895, null);
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
-                alertDialog$Builder.k(gd.N0(2131751586, null), new aj0(28, (Runnable) obj2, (org.telegram.ui.ActionBar.w2) obj));
+                t1Var.U = hd.N0(2131742893, null);
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
+                alertDialog$Builder.k(hd.N0(2131751586, null), new aj0(28, (Runnable) obj2, (org.telegram.ui.ActionBar.w2) obj));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;
             case 1:
                 hi.e eVar = (hi.e) obj3;
                 eVar.setLoading(true);
-                ((x10) obj2).a(new x4(eVar, (org.telegram.ui.ActionBar.w2) obj, h6Var, i11));
+                ((y10) obj2).a(new x4(eVar, (org.telegram.ui.ActionBar.w2) obj, h6Var, i11));
                 break;
             case 2:
                 g9 g9Var = (g9) obj3;
@@ -71,7 +71,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                     linearLayout.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
                     TLRPC.User user = g9Var.r;
                     if (user != null) {
-                        String l10 = o10.l(user);
+                        String l10 = p10.l(user);
                         f10 = 4.0f;
                         LinearLayout linearLayout2 = new LinearLayout(g9Var.getContext());
                         linearLayout2.setOrientation(0);
@@ -86,7 +86,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                         int i12 = org.telegram.ui.ActionBar.m6.G6;
                         org.telegram.ui.ActionBar.t6.U(textView, i12, h6Var);
                         textView.setTextSize(1, 20.0f);
-                        textView.setText(gd.a0(null, null, 2131742700, l10));
+                        textView.setText(hd.a0(null, null, 2131742698, l10));
                         textView.setTypeface(org.telegram.messenger.g0.o());
                         textView.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
                         linearLayout2.addView(textView, c8.ma.t(-1, -2, 16, 9, 0, 0, 0));
@@ -96,7 +96,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                         org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.Xc, h6Var);
                         m80Var.setTextSize(1, 16.0f);
                         m80Var.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
-                        m80Var.setText(org.telegram.messenger.g0.T2(gd.a0(null, null, 2131742955, o10.q(g9Var.r)), new u4(13, t1VarArr, runnable)));
+                        m80Var.setText(org.telegram.messenger.g0.T2(hd.a0(null, null, 2131742953, p10.q(g9Var.r)), new u4(13, t1VarArr, runnable)));
                         linearLayout.addView(m80Var, c8.ma.t(-1, -2, 55, 0, 14, 0, 0));
                     } else {
                         f10 = 4.0f;
@@ -125,7 +125,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                     textView2.setOnClickListener(new r1(g9Var, t1VarArr, runnable2, 3));
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, g9Var.getContext(), h6Var);
                     alertDialog$Builder2.o(linearLayout);
-                    alertDialog$Builder2.k(gd.N0(2131747637, null), null);
+                    alertDialog$Builder2.k(hd.N0(2131747637, null), null);
                     t1VarArr[0] = alertDialog$Builder2.p();
                     break;
                 }

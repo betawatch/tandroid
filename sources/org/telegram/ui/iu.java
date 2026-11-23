@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iu implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -30,15 +30,15 @@ public final /* synthetic */ class iu implements View.OnClickListener {
         switch (i7) {
             case 0:
                 if (cxVar.o4() && (arrayList = cxVar.F2) != null && !arrayList.isEmpty() && cxVar.getParentActivity() != null) {
-                    org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) cxVar.F2.get(0);
+                    org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) cxVar.F2.get(0);
                     nv nvVar = cxVar.D1;
-                    CharSequence fieldText = nvVar != null ? nvVar.getFieldText() : efVar.a;
+                    CharSequence fieldText = nvVar != null ? nvVar.getFieldText() : ffVar.a;
                     ArrayList arrayList2 = cxVar.F2;
                     int size = arrayList2.size();
                     while (i11 < size) {
                         Object obj = arrayList2.get(i11);
                         i11++;
-                        ((org.telegram.messenger.ef) obj).a = fieldText;
+                        ((org.telegram.messenger.ff) obj).a = fieldText;
                     }
                     PhotoViewer.p1().I2(null, cxVar, cxVar.getResourceProvider());
                     PhotoViewer.p1().p7 = true;
@@ -96,7 +96,7 @@ public final /* synthetic */ class iu implements View.OnClickListener {
                     cxVar2.O2 = false;
                     ArrayList arrayList5 = new ArrayList();
                     while (i11 < arrayList4.size()) {
-                        arrayList5.add(org.telegram.messenger.sr.a(((Long) arrayList4.get(i11)).longValue(), 0L));
+                        arrayList5.add(org.telegram.messenger.tr.a(((Long) arrayList4.get(i11)).longValue(), 0L));
                         i11++;
                     }
                     cxVar2.E2.y(cxVar2, arrayList5, cxVar2.D1.getFieldText(), false, cxVar2.L2, cxVar2.M2, cxVar2.N2, null);
@@ -134,7 +134,7 @@ public final /* synthetic */ class iu implements View.OnClickListener {
                 cx.u0(cxVar);
                 break;
             case 15:
-                cxVar.showDialog((org.telegram.ui.ActionBar.w2) org.telegram.ui.Components.c5.l(cxVar.getParentActivity(), org.telegram.messenger.gd.N0(2131751226, null), org.telegram.messenger.gd.N0(2131751231, null), null, new hu(cxVar, 1), new zu(cxVar, 12), false, false, cxVar.getResourceProvider()).b);
+                cxVar.showDialog((org.telegram.ui.ActionBar.w2) org.telegram.ui.Components.c5.l(cxVar.getParentActivity(), org.telegram.messenger.hd.N0(2131751226, null), org.telegram.messenger.hd.N0(2131751231, null), null, new hu(cxVar, 1), new zu(cxVar, 12), false, false, cxVar.getResourceProvider()).b);
                 break;
             case 16:
                 cx.B0(cxVar);

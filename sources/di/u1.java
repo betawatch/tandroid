@@ -8,10 +8,10 @@ import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
@@ -23,7 +23,7 @@ import org.telegram.ui.i01;
 import org.telegram.ui.nl0;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -52,17 +52,17 @@ public final /* synthetic */ class u1 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 1:
-                x10 x10Var = (x10) obj;
+                y10 y10Var = (y10) obj;
                 boolean[] zArr = (boolean[]) obj2;
-                if (x10Var != null && !zArr[0]) {
-                    x10Var.a(Boolean.FALSE);
+                if (y10Var != null && !zArr[0]) {
+                    y10Var.a(Boolean.FALSE);
                     break;
                 }
                 break;
             case 2:
-                bi.p8 p8Var = (bi.p8) obj;
+                bi.o8 o8Var = (bi.o8) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    p8Var.a(Boolean.FALSE, null);
+                    o8Var.a(Boolean.FALSE, null);
                     break;
                 }
                 break;
@@ -117,7 +117,7 @@ public final /* synthetic */ class u1 implements DialogInterface.OnDismissListen
                     ActionBarLayout actionBarLayout = launchActivity.p0;
                     org.telegram.ui.ActionBar.g2 lastFragment = actionBarLayout == null ? null : actionBarLayout.getLastFragment();
                     try {
-                        String str = gd.E0().B.c;
+                        String str = hd.E0().B.c;
                         if (lastFragment != null) {
                             org.telegram.ui.Components.gc Q = org.telegram.ui.Components.lc.b0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.U(2131752533, "ChangeLanguageLater", str.equals("en") ? launchActivity.J0 : launchActivity.I0));
                             Q.j = 5000;
@@ -132,12 +132,12 @@ public final /* synthetic */ class u1 implements DialogInterface.OnDismissListen
                     }
                     launchActivity.G0 = null;
                 } else if (t1Var == launchActivity.E0) {
-                    mp.g1();
-                    SharedPreferences.Editor edit = mp.g1().edit();
+                    np.g1();
+                    SharedPreferences.Editor edit = np.g1().edit();
                     edit.putBoolean("proxy_enabled", false);
                     edit.commit();
                     ConnectionsManager.setProxySettings(false, null);
-                    ks.e().k(ks.D4, new Object[0]);
+                    ls.e().k(ls.D4, new Object[0]);
                     launchActivity.E0 = null;
                 }
                 launchActivity.D0.remove(t1Var);

@@ -1,90 +1,151 @@
 package org.telegram.messenger;
 
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class al implements q10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mp b;
+public final /* synthetic */ class al implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ TLObject e;
 
-    public /* synthetic */ al(mp mpVar, int i7) {
-        this.a = i7;
-        this.b = mpVar;
+    public /* synthetic */ al(np npVar, TLRPC.Chat chat, boolean z10, long j3) {
+        this.b = npVar;
+        this.e = chat;
+        this.c = z10;
+        this.d = j3;
     }
 
-    @Override // org.telegram.messenger.q10
-    public final void a(Object obj, Object obj2) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        long j3;
+        ArrayList arrayList;
         switch (this.a) {
             case 0:
-                g0.g3(new jl(this.b, (TL_account.TL_webBrowserSettings) obj2, 0));
-                break;
-            case 1:
-                TL_account.WebBrowserSettings webBrowserSettings = (TL_account.WebBrowserSettings) obj;
-                boolean z10 = webBrowserSettings instanceof TL_account.TL_webBrowserSettings;
-                mp mpVar = this.b;
-                if (!z10) {
-                    mpVar.getClass();
-                    break;
-                } else {
-                    mpVar.c5((TL_account.TL_webBrowserSettings) webBrowserSettings);
-                    break;
+                TLRPC.Chat chat = (TLRPC.Chat) this.e;
+                TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) tLObject;
+                if (tL_channels_channelParticipant != null) {
+                    TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipant.participant;
+                    if (channelParticipant instanceof TLRPC.TL_channelParticipantSelf) {
+                        TLRPC.TL_channelParticipantSelf tL_channelParticipantSelf = (TLRPC.TL_channelParticipantSelf) channelParticipant;
+                        boolean z10 = chat.megagroup;
+                        np npVar = this.b;
+                        if (z10) {
+                            ur messagesStorage = npVar.getMessagesStorage();
+                            long j10 = chat.id;
+                            messagesStorage.getClass();
+                            CountDownLatch countDownLatch = new CountDownLatch(1);
+                            boolean[] zArr = new boolean[1];
+                            messagesStorage.a.c(new bq(messagesStorage, j10, zArr, countDownLatch, 0));
+                            try {
+                                countDownLatch.await();
+                            } catch (Exception e10) {
+                                messagesStorage.o(e10, true);
+                            }
+                            if (zArr[0]) {
+                            }
+                        }
+                        g0.g3(new gi(16, npVar, tL_channels_channelParticipant));
+                        npVar.getMessagesStorage().m1(tL_channels_channelParticipant.users, tL_channels_channelParticipant.chats, true, true);
+                        boolean z11 = this.c;
+                        long j11 = this.d;
+                        if (z11 && Math.abs(npVar.getConnectionsManager().getCurrentTime() - tL_channels_channelParticipant.participant.date) < 86400) {
+                            ur messagesStorage2 = npVar.getMessagesStorage();
+                            messagesStorage2.getClass();
+                            j3 = j11;
+                            CountDownLatch countDownLatch2 = new CountDownLatch(1);
+                            boolean[] zArr2 = new boolean[1];
+                            messagesStorage2.a.c(new bq(messagesStorage2, j3, zArr2, countDownLatch2, 1));
+                            try {
+                                countDownLatch2.await();
+                            } catch (Exception e11) {
+                                messagesStorage2.o(e11, true);
+                            }
+                            if (!zArr2[0]) {
+                                TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
+                                tL_messageService.flags = 256;
+                                int j12 = npVar.getUserConfig().j();
+                                tL_messageService.id = j12;
+                                tL_messageService.local_id = j12;
+                                tL_messageService.date = tL_channels_channelParticipant.participant.date;
+                                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                                tL_messageService.from_id = tL_peerUser;
+                                tL_peerUser.user_id = tL_channels_channelParticipant.participant.inviter_id;
+                                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+                                tL_messageService.peer_id = tL_peerChannel;
+                                tL_peerChannel.channel_id = j3;
+                                tL_messageService.media_unread = true;
+                                tL_messageService.unread = true;
+                                tL_messageService.post = true;
+                                if (tL_channelParticipantSelf.via_invite && tL_channelParticipantSelf.inviter_id == npVar.getUserConfig().e()) {
+                                    tL_messageService.action = new TLRPC.TL_messageActionChatJoinedByRequest();
+                                } else {
+                                    tL_messageService.action = new TLRPC.TL_messageActionChatAddUser();
+                                }
+                                tL_messageService.action.users.add(Long.valueOf(npVar.getUserConfig().e()));
+                                tL_messageService.dialog_id = -j3;
+                                npVar.getUserConfig().v(false);
+                                arrayList = new ArrayList();
+                                ArrayList arrayList2 = new ArrayList();
+                                ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+                                for (int i7 = 0; i7 < tL_channels_channelParticipant.users.size(); i7++) {
+                                    TLRPC.User user = tL_channels_channelParticipant.users.get(i7);
+                                    concurrentHashMap.put(Long.valueOf(user.id), user);
+                                }
+                                arrayList2.add(tL_messageService);
+                                arrayList.add(new gj(npVar.currentAccount, (TLRPC.Message) tL_messageService, (AbstractMap) concurrentHashMap, (AbstractMap) null, true, false));
+                                if (tL_messageService.from_id.user_id != npVar.getUserConfig().e()) {
+                                    npVar.getMessagesStorage().a.c(new yj(npVar, arrayList, 3));
+                                }
+                                npVar.getMessagesStorage().j1(arrayList2, true, true, false, 0, false, 0, 0L);
+                                ArrayList arrayList3 = arrayList;
+                                ur messagesStorage3 = npVar.getMessagesStorage();
+                                long j13 = j3;
+                                messagesStorage3.a.c(new op(2, tL_channels_channelParticipant.participant.inviter_id, j13, messagesStorage3));
+                                g0.g3(new gm(npVar, j13, arrayList3, tL_channels_channelParticipant, 4));
+                                break;
+                            }
+                        } else {
+                            j3 = j11;
+                        }
+                        arrayList = null;
+                        ArrayList arrayList32 = arrayList;
+                        ur messagesStorage32 = npVar.getMessagesStorage();
+                        long j132 = j3;
+                        messagesStorage32.a.c(new op(2, tL_channels_channelParticipant.participant.inviter_id, j132, messagesStorage32));
+                        g0.g3(new gm(npVar, j132, arrayList32, tL_channels_channelParticipant, 4));
+                    }
                 }
-            case 2:
-                TLRPC.Updates updates = (TLRPC.Updates) obj;
-                mp mpVar2 = this.b;
-                if (updates == null) {
-                    mpVar2.getClass();
-                    break;
-                } else {
-                    mpVar2.V3(updates, false);
-                    break;
-                }
-            case 3:
-                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
-                mp mpVar3 = this.b;
-                if (updates2 != null) {
-                    mpVar3.V3(updates2, false);
-                }
-                g0.g3(new rj(mpVar3, 23));
-                break;
-            case 4:
-                TLRPC.Updates updates3 = (TLRPC.Updates) obj;
-                mp mpVar4 = this.b;
-                if (updates3 != null) {
-                    mpVar4.V3(updates3, false);
-                }
-                g0.g3(new rj(mpVar4, 21));
-                break;
-            case 5:
-                TLRPC.EmojiGameInfo emojiGameInfo = (TLRPC.EmojiGameInfo) obj;
-                mp mpVar5 = this.b;
-                if (emojiGameInfo != null) {
-                    mpVar5.C8 = emojiGameInfo;
-                }
-                ArrayList arrayList = mpVar5.B8;
-                int size = arrayList.size();
-                int i7 = 0;
-                while (i7 < size) {
-                    Object obj3 = arrayList.get(i7);
-                    i7++;
-                    ((x10) obj3).a(Boolean.valueOf(mpVar5.C8 instanceof TLRPC.TL_emojiGameDiceInfo));
-                }
-                mpVar5.B8 = null;
                 break;
             default:
-                TL_account.WebBrowserSettings webBrowserSettings2 = (TL_account.WebBrowserSettings) obj;
-                boolean z11 = webBrowserSettings2 instanceof TL_account.TL_webBrowserSettings;
-                mp mpVar6 = this.b;
-                if (!z11) {
-                    mpVar6.getClass();
-                    break;
-                } else {
-                    mpVar6.c5((TL_account.TL_webBrowserSettings) webBrowserSettings2);
-                    break;
+                TLRPC.User user2 = (TLRPC.User) this.e;
+                if (tL_error == null) {
+                    boolean z12 = tLObject instanceof TLRPC.Updates;
+                    np npVar2 = this.b;
+                    if (z12) {
+                        npVar2.V3((TLRPC.Updates) tLObject, false);
+                    }
+                    if (this.c && !p10.C(user2)) {
+                        g0.h3(new jk(npVar2, this.d, 11), 1000L);
+                        break;
+                    }
                 }
+                break;
         }
+    }
+
+    public /* synthetic */ al(np npVar, boolean z10, TLRPC.User user, long j3) {
+        this.b = npVar;
+        this.c = z10;
+        this.e = user;
+        this.d = j3;
     }
 }

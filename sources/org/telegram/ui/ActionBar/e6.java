@@ -3,24 +3,24 @@ package org.telegram.ui.ActionBar;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e6 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fs b;
+    public final /* synthetic */ gs b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ e6(fs fsVar, Object obj, int i7) {
+    public /* synthetic */ e6(gs gsVar, Object obj, int i7) {
         this.a = i7;
-        this.b = fsVar;
+        this.b = gsVar;
         this.c = obj;
     }
 
@@ -57,7 +57,7 @@ public final /* synthetic */ class e6 implements RequestDelegate {
                             if (wallPaper instanceof TLRPC.TL_wallPaper) {
                                 TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) wallPaper;
                                 if (tL_wallPaper.pattern) {
-                                    w7.G(j10.t0);
+                                    w7.G(k10.t0);
                                     File J = w7.J(tL_wallPaper.document, str, true, true);
                                     int size2 = arrayList.size();
                                     String str2 = str;

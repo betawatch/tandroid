@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.AnimatorSet;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class te implements Runnable {
     public final /* synthetic */ int a;
@@ -36,15 +36,15 @@ public final class te implements Runnable {
                 return;
             case 1:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                ai.n1 n1Var = chatActivityEnterView2.o6;
-                if (n1Var == null || !n1Var.d) {
+                ai.o1 o1Var = chatActivityEnterView2.o6;
+                if (o1Var == null || !o1Var.d) {
                     j3 = 0;
                 } else {
-                    long j11 = n1Var.e;
+                    long j11 = o1Var.e;
                     if (j11 == 0) {
                         j10 = 0;
                     } else {
-                        j10 = j11 + n1Var.a + (n1Var.C ? 180L : 0L);
+                        j10 = j11 + o1Var.a + (o1Var.C ? 180L : 0L);
                     }
                     j3 = j10 - SystemClock.uptimeMillis();
                 }
@@ -56,9 +56,9 @@ public final class te implements Runnable {
                 chatActivityEnterView2.q6 = false;
                 chatActivityEnterView2.r6 = true;
                 chatActivityEnterView2.t6 = SystemClock.uptimeMillis();
-                ai.n1 n1Var2 = chatActivityEnterView2.o6;
-                if (n1Var2 != null) {
-                    n1Var2.c();
+                ai.o1 o1Var2 = chatActivityEnterView2.o6;
+                if (o1Var2 != null) {
+                    o1Var2.c();
                 }
                 try {
                     chatActivityEnterView2.v1();

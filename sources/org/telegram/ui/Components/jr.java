@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jr extends sa {
     public final boolean T1;
@@ -20,12 +20,12 @@ public final class jr extends sa {
     public SpannableStringBuilder Z1;
     public c51 a2;
     public final boolean b2;
-    public ai.t2 c2;
+    public ai.u2 c2;
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, org.telegram.ui.ActionBar.w2, org.telegram.ui.Components.jr, org.telegram.ui.Components.sa] */
     /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.ActionBar.w2] */
-    public jr(Context context, int i7, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ai.x1 x1Var, fi.b bVar) {
+    public jr(Context context, int i7, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ai.y1 y1Var, fi.b bVar) {
         int i10;
         TLRPC.Chat O0;
         jr saVar = new sa(context, null, false, false, bVar);
@@ -34,18 +34,18 @@ public final class jr extends sa {
         saVar.U1 = null;
         saVar.W1 = false;
         long n10 = org.telegram.messenger.n5.n(getgroupcallstreamrtmpurl.peer);
-        boolean z10 = x1Var != null && (n10 >= 0 || ((O0 = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(-n10))) != null && O0.creator));
-        if (x1Var != null) {
+        boolean z10 = y1Var != null && (n10 >= 0 || ((O0 = org.telegram.messenger.np.u1(i7).O0(Long.valueOf(-n10))) != null && O0.creator));
+        if (y1Var != null) {
             saVar.b2 = true;
             hi.e eVar = new hi.e(context, bVar, true);
-            eVar.i(org.telegram.messenger.gd.N0(2131748609, null), false, true);
+            eVar.i(org.telegram.messenger.hd.N0(2131748609, null), false, true);
             saVar.b.addView(eVar, c8.ma.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z10 ? 52 : 0) + 12));
-            eVar.setOnClickListener(new ah.h((Object) saVar, x1Var, eVar, 27));
+            eVar.setOnClickListener(new ah.h((Object) saVar, y1Var, eVar, 27));
             if (z10) {
                 hi.e eVar2 = new hi.e(context, bVar, false);
                 eVar2.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.r7, false));
                 eVar2.d.x(org.telegram.messenger.g0.o());
-                eVar2.i(org.telegram.messenger.gd.N0(2131748607, null), false, true);
+                eVar2.i(org.telegram.messenger.hd.N0(2131748607, null), false, true);
                 saVar = this;
                 eVar2.setOnClickListener(new di.z9(this, context, bVar, eVar2, getgroupcallstreamrtmpurl, i7));
                 saVar.b.addView(eVar2, c8.ma.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
@@ -99,7 +99,7 @@ public final class jr extends sa {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return org.telegram.messenger.gd.N0(2131744197, null);
+        return org.telegram.messenger.hd.N0(2131744195, null);
     }
 
     public jr(org.telegram.ui.ActionBar.g2 g2Var, TLRPC.Peer peer, long j3, boolean z10, g70 g70Var) {
@@ -109,7 +109,7 @@ public final class jr extends sa {
         this.U1 = g70Var;
         this.W1 = z10;
         Context context = this.b.getContext();
-        TLRPC.Chat O0 = org.telegram.messenger.mp.u1(this.a).O0(Long.valueOf(-j3));
+        TLRPC.Chat O0 = org.telegram.messenger.np.u1(this.a).O0(Long.valueOf(-j3));
         boolean z11 = O0 != null && O0.creator;
         this.b2 = true;
         TextView textView = new TextView(context);
@@ -118,7 +118,7 @@ public final class jr extends sa {
         textView.setSingleLine(true);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(org.telegram.messenger.gd.N0(2131743213, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131743211, null));
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.Ji, this.J0);
         int L = org.telegram.messenger.g0.L(8.0f);
         int i7 = org.telegram.ui.ActionBar.m6.Fi;
@@ -137,7 +137,7 @@ public final class jr extends sa {
             hi.e eVar = new hi.e(context, this.J0, false);
             eVar.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.r7, false));
             eVar.d.x(org.telegram.messenger.g0.o());
-            eVar.i(org.telegram.messenger.gd.N0(2131748607, null), false, true);
+            eVar.i(org.telegram.messenger.hd.N0(2131748607, null), false, true);
             eVar.setOnClickListener(new hr(this, context, eVar, j3, 0));
             this.b.addView(eVar, c8.ma.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
         }
@@ -153,7 +153,7 @@ public final class jr extends sa {
         O();
         c1();
         TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
-        getgroupcallstreamrtmpurl.peer = org.telegram.messenger.mp.u1(this.a).l1(j3);
+        getgroupcallstreamrtmpurl.peer = org.telegram.messenger.np.u1(this.a).l1(j3);
         getgroupcallstreamrtmpurl.revoke = false;
         ConnectionsManager.getInstance(this.a).sendRequest(getgroupcallstreamrtmpurl, new f2(this, 1));
     }

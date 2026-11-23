@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wc1 implements OnSuccessListener, org.telegram.ui.ActionBar.q1, p4.m0, h2.j, p4.c1, qi.m, OnFailureListener, u2.v, w5.b, ua.a, androidx.car.app.utils.b, v5.e, ll0, ww, f3.r {
     public final /* synthetic */ int a;
@@ -219,15 +219,15 @@ public final /* synthetic */ class wc1 implements OnSuccessListener, org.telegra
                 }
                 break;
             default:
-                org.telegram.messenger.x10 x10Var = (org.telegram.messenger.x10) this.b;
-                org.telegram.messenger.x10 x10Var2 = (org.telegram.messenger.x10) this.c;
+                org.telegram.messenger.y10 y10Var = (org.telegram.messenger.y10) this.b;
+                org.telegram.messenger.y10 y10Var2 = (org.telegram.messenger.y10) this.c;
                 if (i7 != 1) {
                     if (i7 != 3) {
-                        x10Var2.a(null);
+                        y10Var2.a(null);
                         break;
                     }
                 } else {
-                    x10Var.a(null);
+                    y10Var.a(null);
                     break;
                 }
                 break;
@@ -308,7 +308,7 @@ public final /* synthetic */ class wc1 implements OnSuccessListener, org.telegra
                 org.telegram.ui.web.v0 v0Var = (org.telegram.ui.web.v0) this.b;
                 String[] strArr = (String[]) this.c;
                 TL_bots.allowSendMessage allowsendmessage = new TL_bots.allowSendMessage();
-                allowsendmessage.bot = org.telegram.messenger.mp.u1(v0Var.N).s1(v0Var.V);
+                allowsendmessage.bot = org.telegram.messenger.np.u1(v0Var.N).s1(v0Var.V);
                 ConnectionsManager.getInstance(v0Var.N).sendRequest(allowsendmessage, new bi.q1(v0Var, strArr, t1Var, 23));
                 break;
             case 3:
@@ -326,7 +326,7 @@ public final /* synthetic */ class wc1 implements OnSuccessListener, org.telegra
                 k0Var.dismiss();
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
                     TLRPC.TL_channels_updateUsername tL_channels_updateUsername = new TLRPC.TL_channels_updateUsername();
-                    tL_channels_updateUsername.channel = org.telegram.messenger.mp.k1((TLRPC.Chat) arrayList.get(i10));
+                    tL_channels_updateUsername.channel = org.telegram.messenger.np.k1((TLRPC.Chat) arrayList.get(i10));
                     tL_channels_updateUsername.username = "";
                     ConnectionsManager.getInstance(k0Var.a).sendRequest(tL_channels_updateUsername, new ug.u(k0Var, 1), 64);
                 }
@@ -388,8 +388,8 @@ public final /* synthetic */ class wc1 implements OnSuccessListener, org.telegra
                 String str = (String) this.c;
                 long j3 = 0;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    j3 = ((org.telegram.messenger.sr) arrayList.get(i11)).a;
-                    g0Var.s1.getSendMessagesHelper().r0(org.telegram.messenger.xy.b(str, j3, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                    j3 = ((org.telegram.messenger.tr) arrayList.get(i11)).a;
+                    g0Var.s1.getSendMessagesHelper().r0(org.telegram.messenger.yy.b(str, j3, null, null, null, true, null, null, null, true, 0, 0, null, false));
                 }
                 cxVar.finishFragment();
                 wg.h.h(j3);
@@ -400,8 +400,8 @@ public final /* synthetic */ class wc1 implements OnSuccessListener, org.telegra
                 long j10 = 0;
                 int i12 = 0;
                 while (i12 < arrayList.size()) {
-                    j10 = ((org.telegram.messenger.sr) arrayList.get(i12)).a;
-                    eVar.e.getSendMessagesHelper().r0(org.telegram.messenger.xy.b(str2, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                    j10 = ((org.telegram.messenger.tr) arrayList.get(i12)).a;
+                    eVar.e.getSendMessagesHelper().r0(org.telegram.messenger.yy.b(str2, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
                     i12++;
                     eVar = eVar;
                 }

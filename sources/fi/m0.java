@@ -21,11 +21,11 @@ import di.pb;
 import di.za;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.nq;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m0 extends FrameLayout implements z60 {
     public final xh.l E;
@@ -104,7 +104,7 @@ public final class m0 extends FrameLayout implements z60 {
         lVar3.setTextColor(-1);
         lVar3.setTextSize(1, 14.0f);
         lVar3.setShadowLayer(org.telegram.messenger.g0.L(2.5f), 0.0f, org.telegram.messenger.g0.L(1.5f), org.telegram.ui.ActionBar.m6.r1(0.6f, -16777216));
-        ks.i(lVar3);
+        ls.i(lVar3);
         linearLayout.addView(lVar3, ma.o(-2, -2));
         TextView textView = new TextView(context);
         this.F = textView;
@@ -199,12 +199,12 @@ public final class m0 extends FrameLayout implements z60 {
         org.telegram.ui.Components.b9 b9Var = this.y;
         int i12 = this.c;
         if (j3 >= 0) {
-            TLRPC.User c22 = mp.u1(i12).c2(Long.valueOf(r0Var.c));
+            TLRPC.User c22 = np.u1(i12).c2(Long.valueOf(r0Var.c));
             b9Var.r(c22);
             q9Var.f(c22, b9Var);
-            str = o10.l(c22);
+            str = p10.l(c22);
         } else {
-            TLRPC.Chat O0 = mp.u1(i12).O0(Long.valueOf(-r0Var.c));
+            TLRPC.Chat O0 = np.u1(i12).O0(Long.valueOf(-r0Var.c));
             b9Var.q(O0);
             q9Var.f(O0, b9Var);
             str = O0 == null ? "" : O0.title;
@@ -244,7 +244,7 @@ public final class m0 extends FrameLayout implements z60 {
         int b14 = t.b(i12, (int) r0Var.g, 2);
         TLRPC.TL_textWithEntities tL_textWithEntities = r0Var.f;
         if (tL_textWithEntities != null) {
-            CharSequence j02 = fj.j0(tL_textWithEntities, false, false, lVar.getPaint());
+            CharSequence j02 = gj.j0(tL_textWithEntities, false, false, lVar.getPaint());
             this.w = j02;
             Typeface typeface = org.telegram.messenger.g0.a;
             if (j02 == null) {
@@ -396,10 +396,10 @@ public final class m0 extends FrameLayout implements z60 {
             spannableStringBuilder2.append((CharSequence) org.telegram.messenger.n5.l(i12, r0Var.c));
             spannableStringBuilder2.append((CharSequence) str2);
             int length2 = spannableStringBuilder2.length();
-            spannableStringBuilder2.append((CharSequence) gd.N0(2131748632, null));
+            spannableStringBuilder2.append((CharSequence) hd.N0(2131748632, null));
             spannableStringBuilder2.setSpan(new j0(0), length2, spannableStringBuilder2.length(), 33);
             this.r.setText(spannableStringBuilder2);
-            this.s.setText(gd.N0(2131748635, null));
+            this.s.setText(hd.N0(2131748635, null));
             textView.setVisibility(8);
             textView2.setVisibility(8);
         } else {

@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f01 implements TextWatcher {
     public final /* synthetic */ g01 a;
@@ -24,14 +24,14 @@ public final class f01 implements TextWatcher {
         if (obj.length() != 0) {
             vy vyVar = this.a.c.p1;
             if (vyVar != null) {
-                vyVar.setText(org.telegram.messenger.gd.N0(2131747974, null));
+                vyVar.setText(org.telegram.messenger.hd.N0(2131747974, null));
             }
         } else {
             v4.i0 adapter = this.a.c.n1.getAdapter();
             ThemeEditorView.EditorAlert editorAlert = this.a.c;
             if (adapter != editorAlert.s1) {
                 int K0 = ThemeEditorView.EditorAlert.K0(editorAlert);
-                this.a.c.p1.setText(org.telegram.messenger.gd.N0(2131748037, null));
+                this.a.c.p1.setText(org.telegram.messenger.hd.N0(2131748037, null));
                 this.a.c.p1.c();
                 ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
                 editorAlert2.n1.setAdapter(editorAlert2.s1);
@@ -53,7 +53,7 @@ public final class f01 implements TextWatcher {
         if (obj.length() != 0) {
             int i7 = c01Var.d + 1;
             c01Var.d = i7;
-            c01Var.h = new org.telegram.ui.b0(c01Var, obj, i7, 29);
+            c01Var.h = new org.telegram.ui.f0(c01Var, obj, i7, 28);
             Utilities.g.d(c01Var.h, 300L);
             return;
         }

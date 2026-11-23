@@ -4,9 +4,9 @@ import cc.j;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final char[] a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
@@ -220,8 +220,8 @@ public abstract class a {
             int f10 = cVar.f(13);
             int i11 = (f10 % 96) | ((f10 / 96) << 8);
             int i12 = i11 + (i11 < 2560 ? 41377 : 42657);
-            bArr[i10] = (byte) ((i12 >> 8) & ks.e4);
-            bArr[i10 + 1] = (byte) (i12 & ks.e4);
+            bArr[i10] = (byte) ((i12 >> 8) & ls.e4);
+            bArr[i10 + 1] = (byte) (i12 & ls.e4);
             i10 += 2;
             i7--;
         }
@@ -239,7 +239,7 @@ public abstract class a {
         int i10 = 0;
         while (i7 > 0) {
             int f10 = cVar.f(13);
-            int i11 = (f10 % ks.W2) | ((f10 / ks.W2) << 8);
+            int i11 = (f10 % ls.W2) | ((f10 / ls.W2) << 8);
             int i12 = i11 + (i11 < 7936 ? 33088 : 49472);
             bArr[i10] = (byte) (i12 >> 8);
             bArr[i10 + 1] = (byte) i12;

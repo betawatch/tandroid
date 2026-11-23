@@ -19,12 +19,12 @@ import android.view.ViewConfiguration;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.no;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.oo;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m0 {
     public boolean A;
@@ -47,7 +47,7 @@ public final class m0 {
     public final r1 a;
     public int b;
     public long c;
-    public fj d;
+    public gj d;
     public long e;
     public StaticLayout g;
     public float h;
@@ -557,7 +557,7 @@ public final class m0 {
                         float k11 = (f36 - (xy0Var2.k() + org.telegram.messenger.g0.L(drawable != null ? 17.0f : f12))) / f14;
                         float L6 = org.telegram.messenger.g0.L(54.0f) + org.telegram.messenger.g0.L(4.165f);
                         if (drawable != null) {
-                            drawable.setBounds((int) ((z11 ? xy0Var2.k() + org.telegram.messenger.g0.L(1.33f) : 0.0f) + k11 + org.telegram.messenger.g0.L(3.0f)), (int) n10.w(drawable.getIntrinsicHeight(), f14, 0.625f, L6), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z11 ? org.telegram.messenger.g0.L(1.33f) + xy0Var2.k() : 0.0f) + k11 + org.telegram.messenger.g0.L(3.0f)), (int) com.google.android.gms.internal.vision.e2.c(drawable.getIntrinsicHeight(), 2.0f, 0.625f, L6));
+                            drawable.setBounds((int) ((z11 ? xy0Var2.k() + org.telegram.messenger.g0.L(1.33f) : 0.0f) + k11 + org.telegram.messenger.g0.L(3.0f)), (int) o10.w(drawable.getIntrinsicHeight(), f14, 0.625f, L6), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z11 ? org.telegram.messenger.g0.L(1.33f) + xy0Var2.k() : 0.0f) + k11 + org.telegram.messenger.g0.L(3.0f)), (int) com.google.android.gms.internal.vision.e2.c(drawable.getIntrinsicHeight(), 2.0f, 0.625f, L6));
                             drawable.draw(canvas2);
                         }
                         float L7 = org.telegram.messenger.g0.L(!z11 ? 12.66f : 4.0f) + k11;
@@ -648,15 +648,15 @@ public final class m0 {
         return this.d.i1 && this.q.size() > 0;
     }
 
-    public final void e(fj fjVar) {
+    public final void e(gj gjVar) {
         ArrayList arrayList;
         int i7;
         int i10;
         ArrayList arrayList2;
-        this.b = fjVar.K1;
-        this.d = fjVar;
-        this.c = fj.B0(fjVar.k);
-        mp.u1(this.b).O0(Long.valueOf(-this.c));
+        this.b = gjVar.K1;
+        this.d = gjVar;
+        this.c = gj.B0(gjVar.k);
+        np.u1(this.b).O0(Long.valueOf(-this.c));
         this.e = -this.c;
         Typeface o4 = org.telegram.messenger.g0.o();
         TextPaint textPaint = this.f;
@@ -665,7 +665,7 @@ public final class m0 {
         int i11 = org.telegram.ui.ActionBar.m6.Zc;
         r1 r1Var = this.a;
         textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(i11, r1Var.Qb));
-        this.g = new StaticLayout(gd.N0(2131752379, null), textPaint, this.d.l1(), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        this.g = new StaticLayout(hd.N0(2131752379, null), textPaint, this.d.l1(), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         this.h = r0.getWidth();
         this.i = 0.0f;
         for (int i12 = 0; i12 < this.g.getLineCount(); i12++) {
@@ -698,7 +698,7 @@ public final class m0 {
             i13++;
         }
         arrayList.clear();
-        no N0 = mp.u1(this.b).N0(this.c);
+        oo N0 = np.u1(this.b).N0(this.c);
         ArrayList arrayList3 = (N0 == null || (arrayList2 = N0.b) == null) ? new ArrayList() : new ArrayList(arrayList2);
         int i15 = 0;
         while (i15 < arrayList3.size()) {
@@ -709,12 +709,12 @@ public final class m0 {
             }
             i15++;
         }
-        boolean z10 = arrayList3.isEmpty() || (!j10.i(this.b).q() && arrayList3.size() == 1);
+        boolean z10 = arrayList3.isEmpty() || (!k10.i(this.b).q() && arrayList3.size() == 1);
         this.t = z10;
         if (!z10) {
             int size = arrayList3.size();
-            if (!j10.i(this.b).q() && N0.c > 0) {
-                size = Math.min(size - 1, mp.u1(this.b).z4);
+            if (!k10.i(this.b).q() && N0.c > 0) {
+                size = Math.min(size - 1, np.u1(this.b).z4);
             }
             int min = Math.min(size, 10);
             for (int i16 = 0; i16 < min; i16++) {
@@ -725,7 +725,7 @@ public final class m0 {
             }
         }
         if (this.v == null) {
-            xy0 xy0Var = new xy0(gd.N0(this.c > 0 ? 2131745123 : 2131745121, null), 14.0f, org.telegram.messenger.g0.o());
+            xy0 xy0Var = new xy0(hd.N0(this.c > 0 ? 2131745123 : 2131745121, null), 14.0f, org.telegram.messenger.g0.o());
             xy0Var.o = true;
             this.v = xy0Var;
         }

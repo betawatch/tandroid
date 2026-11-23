@@ -1,21 +1,21 @@
 package hi;
 
 import android.animation.ValueAnimator;
-import org.telegram.messenger.fs;
+import org.telegram.messenger.gs;
 import org.telegram.ui.lm0;
 import org.telegram.ui.qc;
 import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class ba implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public boolean b = false;
-    public final /* synthetic */ fs c;
+    public final /* synthetic */ gs c;
 
-    public /* synthetic */ ba(fs fsVar, int i7) {
+    public /* synthetic */ ba(gs gsVar, int i7) {
         this.a = i7;
-        this.c = fsVar;
+        this.c = gsVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener

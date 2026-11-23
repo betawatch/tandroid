@@ -1,12 +1,12 @@
 package ki;
 
-import org.telegram.messenger.mp;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,29 +32,29 @@ public final /* synthetic */ class j3 implements Runnable {
                 s3 s3Var = this.b;
                 if (!s3Var.U) {
                     TLRPC.TL_messages_prolongWebView tL_messages_prolongWebView = new TLRPC.TL_messages_prolongWebView();
-                    tL_messages_prolongWebView.bot = mp.u1(s3Var.G).q1(s3Var.w);
-                    tL_messages_prolongWebView.peer = mp.u1(s3Var.G).l1(s3Var.x);
+                    tL_messages_prolongWebView.bot = np.u1(s3Var.G).q1(s3Var.w);
+                    tL_messages_prolongWebView.peer = np.u1(s3Var.G).l1(s3Var.x);
                     tL_messages_prolongWebView.query_id = s3Var.y;
                     tL_messages_prolongWebView.silent = false;
                     if (s3Var.E != 0) {
-                        zy.C(s3Var.G);
+                        az.C(s3Var.G);
                         int i7 = s3Var.E;
                         TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = new TLRPC.TL_inputReplyToMessage();
                         tL_inputReplyToMessage.reply_to_msg_id = i7;
                         tL_messages_prolongWebView.reply_to = tL_inputReplyToMessage;
                         if (s3Var.F != 0) {
-                            tL_inputReplyToMessage.monoforum_peer_id = mp.u1(s3Var.G).l1(s3Var.F);
+                            tL_inputReplyToMessage.monoforum_peer_id = np.u1(s3Var.G).l1(s3Var.F);
                             tL_messages_prolongWebView.reply_to.flags |= 32;
                         }
                         tL_messages_prolongWebView.flags |= 1;
                     } else if (s3Var.F != 0) {
                         TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
                         tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
-                        tL_inputReplyToMonoForum.monoforum_peer_id = mp.u1(s3Var.G).l1(s3Var.F);
+                        tL_inputReplyToMonoForum.monoforum_peer_id = np.u1(s3Var.G).l1(s3Var.F);
                         tL_messages_prolongWebView.flags |= 1;
                     }
-                    if (s3Var.x < 0 && (P0 = mp.u1(s3Var.G).P0(-s3Var.x)) != null && (peer = P0.default_send_as) != null) {
-                        tL_messages_prolongWebView.send_as = mp.u1(s3Var.G).o1(peer);
+                    if (s3Var.x < 0 && (P0 = np.u1(s3Var.G).P0(-s3Var.x)) != null && (peer = P0.default_send_as) != null) {
+                        tL_messages_prolongWebView.send_as = np.u1(s3Var.G).o1(peer);
                         tL_messages_prolongWebView.flags |= TLObject.FLAG_13;
                     }
                     ConnectionsManager.getInstance(s3Var.G).sendRequest(tL_messages_prolongWebView, new ai.g1(s3Var, 22));

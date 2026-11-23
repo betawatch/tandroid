@@ -2,11 +2,11 @@ package ch;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j0 extends q9 {
     public boolean H;
@@ -55,7 +55,7 @@ public final class j0 extends q9 {
         p5 p5Var = this.I;
         if (p5Var != null) {
             p5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            this.I.setAlpha(ks.e4);
+            this.I.setAlpha(ls.e4);
             this.I.draw(canvas);
             this.H = true;
             return;

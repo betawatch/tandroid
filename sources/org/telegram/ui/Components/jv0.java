@@ -3,12 +3,12 @@ package org.telegram.ui.Components;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jv0 extends org.telegram.messenger.y2 {
     @Override // org.telegram.messenger.y2
-    public final void e(int i7, Object obj, org.telegram.messenger.q10 q10Var) {
-        org.telegram.messenger.tr.a0(i7).a.c(new org.telegram.ui.b0(i7, (Integer) obj, (org.telegram.messenger.w2) q10Var, 25));
+    public final void e(int i7, Object obj, org.telegram.messenger.r10 r10Var) {
+        org.telegram.messenger.ur.a0(i7).a.c(new org.telegram.ui.f0(i7, (Integer) obj, (org.telegram.messenger.w2) r10Var, 24));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -38,6 +38,6 @@ public final class jv0 extends org.telegram.messenger.y2 {
 
     @Override // org.telegram.messenger.y2
     public final void g(int i7, Object obj, Object obj2) {
-        org.telegram.messenger.tr.a0(i7).a.c(new org.telegram.ui.b0(i7, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 26));
+        org.telegram.messenger.ur.a0(i7).a.c(new org.telegram.ui.f0(i7, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 25));
     }
 }

@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class n0 extends sa implements org.telegram.messenger.fs {
+public final class n0 extends sa implements org.telegram.messenger.gs {
     public final LinearLayout A2;
     public final hi.e B2;
     public final hi.e C2;
@@ -66,11 +66,11 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
     public CharSequence c2;
     public TL_iv.RichMessage d2;
     public CharSequence e2;
-    public org.telegram.messenger.x10 f2;
-    public org.telegram.messenger.x10 g2;
+    public org.telegram.messenger.y10 f2;
+    public org.telegram.messenger.y10 g2;
     public long h2;
     public boolean i2;
-    public org.telegram.messenger.u10 j2;
+    public org.telegram.messenger.v10 j2;
     public vd k2;
     public final boolean[] l2;
     public final boolean[] m2;
@@ -97,7 +97,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         int i7 = 3;
         this.X2 = new TLRPC.TL_messages_composeMessageWithAI[3];
         this.Y2 = new TLRPC.TL_messages_composeRichMessageWithAI[3];
-        org.telegram.messenger.e T1 = org.telegram.messenger.mp.u1(this.a).T1();
+        org.telegram.messenger.e T1 = org.telegram.messenger.np.u1(this.a).T1();
         this.s2 = T1;
         T1.b();
         T1.d = true;
@@ -127,14 +127,14 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         org.telegram.ui.ActionBar.t6.j(m0Var, d02, M, null, h6Var);
         int i12 = 28;
         m0Var.setRoundRadius(28);
-        m0Var.a(R.drawable.outline_ai_translate2, org.telegram.messenger.gd.N0(2131754962, null), new f(this, i7));
-        m0Var.a(R.drawable.menu_rewrite, org.telegram.messenger.gd.N0(2131754963, null), new f(this, i7));
-        m0Var.a(R.drawable.menu_proofread, org.telegram.messenger.gd.N0(2131754964, null), new f(this, i7));
+        m0Var.a(R.drawable.outline_ai_translate2, org.telegram.messenger.hd.N0(2131754962, null), new f(this, i7));
+        m0Var.a(R.drawable.menu_rewrite, org.telegram.messenger.hd.N0(2131754963, null), new f(this, i7));
+        m0Var.a(R.drawable.menu_proofread, org.telegram.messenger.hd.N0(2131754964, null), new f(this, i7));
         m0Var.c(1, true);
-        frameLayout.addView(m0Var, c8.ma.d(-1, -1.0f, org.telegram.messenger.ks.E1, 12.0f, 0.0f, 12.0f, 0.0f));
+        frameLayout.addView(m0Var, c8.ma.d(-1, -1.0f, org.telegram.messenger.ls.E1, 12.0f, 0.0f, 12.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.x2 = frameLayout2;
-        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.N0(2131754055, null), true, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c, h6Var);
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.hd.N0(2131754055, null), true, false, ((org.telegram.messenger.j0) org.telegram.messenger.np.u1(this.a).A7.W.b).c, h6Var);
         this.y2 = l3Var;
         org.telegram.ui.Cells.j3 j3Var = l3Var.d;
         j3Var.setImeOptions(6);
@@ -159,7 +159,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         String N0 = b31.N0();
         this.o2 = N0;
         if (N0 == null) {
-            this.o2 = org.telegram.messenger.z00.j();
+            this.o2 = org.telegram.messenger.a10.j();
         }
         this.G1 = false;
         this.F1 = org.telegram.messenger.g0.L(12.0f);
@@ -175,15 +175,15 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         eVar.setRoundRadius(24);
         this.C2 = eVar;
         eVar.setScaleLoading(true);
-        linearLayout.addView(eVar, c8.ma.p(-1, 48, 1.0f, org.telegram.messenger.ks.E1));
-        hi.e g10 = org.telegram.messenger.n10.g(24, context, h6Var, true);
+        linearLayout.addView(eVar, c8.ma.p(-1, 48, 1.0f, org.telegram.messenger.ls.E1));
+        hi.e g10 = org.telegram.messenger.o10.g(24, context, h6Var, true);
         this.D2 = g10;
         g10.setOnClickListener(new c(this, 10));
         g10.setOnLongClickListener(new n(this, h6Var, context, i13));
         linearLayout.addView(g10, c8.ma.t(48, 48, 5, 10, 0, 0, 0));
-        hi.e g11 = org.telegram.messenger.n10.g(24, context, h6Var, true);
+        hi.e g11 = org.telegram.messenger.o10.g(24, context, h6Var, true);
         this.B2 = g11;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.gd.N0(2131754991, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.hd.N0(2131754991, null));
         spannableStringBuilder.append((CharSequence) " ");
         int length = spannableStringBuilder.length();
         spannableStringBuilder.append((CharSequence) "x50");
@@ -227,7 +227,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         this.o1.setOnScrollListener(new bi.u1(this, i12));
         this.P2.O(false);
         org.telegram.messenger.g0.g3(new a(this, i13));
-        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.b4);
+        org.telegram.messenger.ls.f(this.a).c(this, org.telegram.messenger.ls.b4);
     }
 
     public static void e1(n0 n0Var, View view) {
@@ -275,7 +275,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
                     i7++;
                 }
             }
-            if (i7 + 1 > (org.telegram.messenger.j10.i(n0Var.a).q() ? ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(n0Var.a).A7.Y.b).c : ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(n0Var.a).A7.X.b).c)) {
+            if (i7 + 1 > (org.telegram.messenger.k10.i(n0Var.a).q() ? ((org.telegram.messenger.j0) org.telegram.messenger.np.u1(n0Var.a).A7.Y.b).c : ((org.telegram.messenger.j0) org.telegram.messenger.np.u1(n0Var.a).A7.X.b).c)) {
                 z1(new lc(n0Var.E2, n0Var.J0), n0Var.a);
                 return;
             }
@@ -459,9 +459,9 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         if (lcVar.X() == null) {
             return;
         }
-        org.telegram.messenger.p0 p0Var = org.telegram.messenger.mp.u1(i7).A7;
-        boolean q10 = org.telegram.messenger.j10.i(i7).q();
-        lcVar.I(!q10 ? R.raw.star_premium_2 : R.raw.error, org.telegram.messenger.gd.N0(2131754976, null), org.telegram.messenger.g0.T2(!q10 ? org.telegram.messenger.gd.a0(null, null, 2131754977, Integer.valueOf(((org.telegram.messenger.j0) p0Var.X.b).c), Integer.valueOf(((org.telegram.messenger.j0) p0Var.Y.b).c)) : org.telegram.messenger.gd.a0(null, null, 2131754978, Integer.valueOf(((org.telegram.messenger.j0) p0Var.Y.b).c)), new og(lcVar, 1))).j();
+        org.telegram.messenger.p0 p0Var = org.telegram.messenger.np.u1(i7).A7;
+        boolean q10 = org.telegram.messenger.k10.i(i7).q();
+        lcVar.I(!q10 ? R.raw.star_premium_2 : R.raw.error, org.telegram.messenger.hd.N0(2131754976, null), org.telegram.messenger.g0.T2(!q10 ? org.telegram.messenger.hd.a0(null, null, 2131754977, Integer.valueOf(((org.telegram.messenger.j0) p0Var.X.b).c), Integer.valueOf(((org.telegram.messenger.j0) p0Var.Y.b).c)) : org.telegram.messenger.hd.a0(null, null, 2131754978, Integer.valueOf(((org.telegram.messenger.j0) p0Var.Y.b).c)), new og(lcVar, 1))).j();
     }
 
     public final void A1() {
@@ -534,18 +534,18 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         int i10 = 1;
         hi.e eVar = this.C2;
         if (z11) {
-            eVar.setText(org.telegram.messenger.gd.N0(2131747637, null));
+            eVar.setText(org.telegram.messenger.hd.N0(2131747637, null));
             eVar.setOnClickListener(new c(this, r4));
         } else {
             m0 m0Var = this.u2;
             if ((m0Var != null ? m0Var.getSelectedTab() : 0) == 1 && (this.v2.getSelectedTone() instanceof j0) && !TextUtils.equals(this.y2.getText().toString(), this.G2)) {
-                eVar.setText(org.telegram.messenger.gd.N0(2131754056, null));
+                eVar.setText(org.telegram.messenger.hd.N0(2131754056, null));
                 eVar.setOnClickListener(new c(this, i10));
             } else if (this.g2 == null && this.f2 == null) {
-                eVar.setText(org.telegram.messenger.gd.N0(2131747637, null));
+                eVar.setText(org.telegram.messenger.hd.N0(2131747637, null));
                 eVar.setOnClickListener(new c(this, 3));
             } else {
-                eVar.setText(org.telegram.messenger.gd.N0(2131755002, null));
+                eVar.setText(org.telegram.messenger.hd.N0(2131755002, null));
                 eVar.setOnClickListener(new c(this, i7));
             }
         }
@@ -597,7 +597,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         }
         ViewPropertyAnimator animate = l3Var.d.animate();
         this.F2 = z10;
-        org.telegram.messenger.n10.n(animate, !equals ? 1.0f : 0.5f, 320L);
+        org.telegram.messenger.o10.n(animate, !equals ? 1.0f : 0.5f, 320L);
         this.P2.O(true);
     }
 
@@ -663,7 +663,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
         if (this.N2 == null) {
-            this.N2 = org.telegram.messenger.gd.N0(2131755006, null);
+            this.N2 = org.telegram.messenger.hd.N0(2131755006, null);
             oh0 oh0Var = new oh0(R.raw.emoji_stars, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
             this.O2 = oh0Var;
             oh0Var.J(true);
@@ -681,16 +681,16 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         imageView.setScaleY(org.telegram.messenger.g0.T1(0.6f, 1.0f, f11));
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.b4) {
+        if (i7 == org.telegram.messenger.ls.b4) {
             E1();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.b4);
+        org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.b4);
         org.telegram.messenger.e eVar = this.s2;
         if (eVar != null) {
             eVar.d = false;
@@ -726,7 +726,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
     public final TLRPC.TL_messages_composeMessageWithAI i1(int i7) {
         TLRPC.TL_messages_composeMessageWithAI tL_messages_composeMessageWithAI = new TLRPC.TL_messages_composeMessageWithAI();
         if (i7 == 0) {
-            tL_messages_composeMessageWithAI.translate_to_lang = org.telegram.messenger.z00.D(this.o2);
+            tL_messages_composeMessageWithAI.translate_to_lang = org.telegram.messenger.a10.D(this.o2);
             TL_aicompose.AiComposeTone aiComposeTone = this.q2;
             tL_messages_composeMessageWithAI.tone = aiComposeTone != null ? TL_aicompose.InputAiComposeTone.from(aiComposeTone) : TL_aicompose.InputAiComposeTone.fromDefault(null);
             tL_messages_composeMessageWithAI.emojify = this.r2;
@@ -799,9 +799,9 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
             r0Var.e = L0;
         } else if (selectedTab == 1) {
             TL_aicompose.AiComposeTone selectedTone = this.v2.getSelectedTone();
-            r0Var.e = ((selectedTone instanceof j0) || selectedTone == null || TextUtils.isEmpty(selectedTone.title)) ? org.telegram.messenger.gd.N0(2131754963, null) : selectedTone.title;
+            r0Var.e = ((selectedTone instanceof j0) || selectedTone == null || TextUtils.isEmpty(selectedTone.title)) ? org.telegram.messenger.hd.N0(2131754963, null) : selectedTone.title;
         } else {
-            r0Var.e = org.telegram.messenger.gd.N0(2131754964, null);
+            r0Var.e = org.telegram.messenger.hd.N0(2131754964, null);
         }
         if (r0Var.b) {
             r0Var.e = a8.p0.s(new StringBuilder(), r0Var.e, " + Emoji");
@@ -898,8 +898,8 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         if (richMessage == null) {
             richMessage = this.U1;
         }
-        int i10 = org.telegram.messenger.tt.b;
-        o41 K = o41.K(org.telegram.messenger.tt.class);
+        int i10 = org.telegram.messenger.ut.b;
+        o41 K = o41.K(org.telegram.messenger.ut.class);
         K.H = richMessage;
         K.d = i7;
         K.e = z10;
@@ -919,7 +919,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         hi.e eVar = this.D2;
         eVar.setVisibility(i7);
         String str2 = null;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.gd.N0(2131745444, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.hd.N0(2131745444, null));
         nq nqVar = new nq(this.i2 ? R.drawable.filled_profile_edit_24 : R.drawable.send_plane_24, 0);
         nqVar.s = org.telegram.messenger.g0.L(1.0f);
         spannableStringBuilder.setSpan(nqVar, 0, spannableStringBuilder.length(), 33);
@@ -970,7 +970,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         if (!r12) {
             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
             CharSequence[] charSequenceArr = {this.T1};
-            tL_textWithEntities.entities = org.telegram.messenger.ri.d0(this.a).Y(charSequenceArr, true, true);
+            tL_textWithEntities.entities = org.telegram.messenger.si.d0(this.a).Y(charSequenceArr, true, true);
             CharSequence charSequence4 = charSequenceArr[0];
             tL_textWithEntities.text = charSequence4 != null ? charSequence4.toString() : "";
             int selectedTab = m0Var.getSelectedTab();
@@ -1008,7 +1008,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
                     }
                     int L2 = org.telegram.messenger.g0.L((int) (Math.random() * 50.0d));
                     int length = spannableStringBuilder.length();
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131748586, null));
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131748586, null));
                     r80 r80Var = new r80(null, L2, 0, null);
                     r80Var.f = org.telegram.messenger.g0.L(6.0f);
                     r80Var.h = 0.5f;
@@ -1042,7 +1042,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
             tL_inputRichMessage.rtl = richMessage.rtl;
             tL_inputRichMessage.blocks = new ArrayList<>(richMessage.blocks.size());
             for (int i13 = 0; i13 < richMessage.blocks.size(); i13++) {
-                tL_inputRichMessage.blocks.add(org.telegram.messenger.zy.y0(richMessage.blocks.get(i13)));
+                tL_inputRichMessage.blocks.add(org.telegram.messenger.az.y0(richMessage.blocks.get(i13)));
             }
             ArrayList<TLRPC.Photo> arrayList = richMessage.photos;
             if (arrayList != null && !arrayList.isEmpty()) {
@@ -1090,7 +1090,7 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         }
         tL_messages_composeRichMessageWithAI.text = tL_inputRichMessage;
         if (selectedTab3 == 0) {
-            tL_messages_composeRichMessageWithAI.translate_to_lang = org.telegram.messenger.z00.D(this.o2);
+            tL_messages_composeRichMessageWithAI.translate_to_lang = org.telegram.messenger.a10.D(this.o2);
             TL_aicompose.AiComposeTone aiComposeTone = this.q2;
             tL_messages_composeRichMessageWithAI.tone = aiComposeTone != null ? TL_aicompose.InputAiComposeTone.from(aiComposeTone) : TL_aicompose.InputAiComposeTone.fromDefault(str);
             tL_messages_composeRichMessageWithAI.emojify = this.r2;
@@ -1153,10 +1153,10 @@ public final class n0 extends sa implements org.telegram.messenger.fs {
         this.j2.a(p1(), Integer.valueOf(i7), Integer.valueOf(i10), Boolean.valueOf(z10));
     }
 
-    public final void v1(long j3, boolean z10, org.telegram.messenger.u10 u10Var) {
+    public final void v1(long j3, boolean z10, org.telegram.messenger.v10 v10Var) {
         this.h2 = j3;
         this.i2 = z10;
-        this.j2 = u10Var;
+        this.j2 = v10Var;
         if (this.R2 != null) {
             return;
         }

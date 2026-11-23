@@ -6,9 +6,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e3 implements x10 {
+public final /* synthetic */ class e3 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -21,7 +21,7 @@ public final /* synthetic */ class e3 implements x10 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         TLRPC.Document document;
         int i7;
@@ -29,22 +29,22 @@ public final /* synthetic */ class e3 implements x10 {
             case 0:
                 g3 g3Var = (g3) this.b;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) this.c;
-                x10 x10Var = (x10) this.d;
+                y10 y10Var = (y10) this.d;
                 TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) obj;
                 g3Var.m = tL_premium_boostsStatus.next_level_boosts <= 0;
                 g3Var.a(tL_premium_myBoosts);
-                x10Var.a(g3Var);
+                y10Var.a(g3Var);
                 break;
             case 1:
                 x6 x6Var = (x6) this.b;
                 w6 w6Var = (w6) this.c;
-                fj fjVar = (fj) this.d;
+                gj gjVar = (gj) this.d;
                 TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) obj;
                 x6Var.b.put(w6Var.b, tL_factCheck);
-                fjVar.k.factcheck = tL_factCheck;
+                gjVar.k.factcheck = tL_factCheck;
                 break;
             case 2:
-                Utilities.d.c(new tl((r8) this.b, (String) this.c, (String) this.d, (fi.z5) obj, 8));
+                Utilities.d.c(new ul((r8) this.b, (String) this.c, (String) this.d, (fi.z5) obj, 8));
                 break;
             case 3:
                 String str = (String) this.b;
@@ -76,7 +76,7 @@ public final /* synthetic */ class e3 implements x10 {
                         i11++;
                     }
                     if (document != null) {
-                        q9Var.p(fc.b(document), str2, u5.f(document, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), document);
+                        q9Var.p(gc.b(document), str2, u5.f(document, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), document);
                         q9Var.invalidate();
                         break;
                     }
@@ -85,11 +85,11 @@ public final /* synthetic */ class e3 implements x10 {
             case 4:
                 boolean[] zArr = (boolean[]) this.b;
                 ArrayList[] arrayListArr = (ArrayList[]) this.c;
-                kh khVar = (kh) this.d;
+                lh lhVar = (lh) this.d;
                 ArrayList arrayList = (ArrayList) obj;
                 if (!zArr[0]) {
                     arrayListArr[0] = arrayList;
-                    khVar.run();
+                    lhVar.run();
                     zArr[0] = true;
                     break;
                 }
@@ -97,13 +97,13 @@ public final /* synthetic */ class e3 implements x10 {
             default:
                 boolean[] zArr2 = (boolean[]) this.b;
                 TL_bots.BotInfo[] botInfoArr = (TL_bots.BotInfo[]) this.c;
-                ql qlVar = (ql) this.d;
+                rl rlVar = (rl) this.d;
                 TLRPC.UserFull userFull = (TLRPC.UserFull) obj;
                 if (!zArr2[0]) {
                     if (userFull != null) {
                         botInfoArr[0] = userFull.bot_info;
                     }
-                    g0.g3(qlVar);
+                    g0.g3(rlVar);
                     break;
                 }
                 break;

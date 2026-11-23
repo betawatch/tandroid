@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class xs implements org.telegram.messenger.fs {
+public abstract class xs implements org.telegram.messenger.gs {
     public static cn M;
     public final org.telegram.messenger.r5 E;
     public boolean F;
@@ -117,13 +117,13 @@ public abstract class xs implements org.telegram.messenger.fs {
 
     public abstract void d(Canvas canvas, float f10);
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int i11;
-        if (i7 == org.telegram.messenger.ks.j1) {
+        if (i7 == org.telegram.messenger.ls.j1) {
             Integer num = (Integer) objArr[0];
             if (this.h < num.intValue()) {
-                if (num.intValue() != 512 || org.telegram.messenger.bz.o() < 2) {
+                if (num.intValue() != 512 || org.telegram.messenger.cz.o() < 2) {
                     int intValue = num.intValue() | this.n;
                     this.n = intValue;
                     if (intValue == 0 || this.r) {
@@ -136,7 +136,7 @@ public abstract class xs implements org.telegram.messenger.fs {
             }
             return;
         }
-        if (i7 == org.telegram.messenger.ks.k1) {
+        if (i7 == org.telegram.messenger.ls.k1) {
             Integer num2 = (Integer) objArr[0];
             if (this.h >= num2.intValue() || (i11 = this.n) == 0) {
                 return;
@@ -155,13 +155,13 @@ public abstract class xs implements org.telegram.messenger.fs {
         }
         this.a = true;
         this.F = false;
-        int i7 = org.telegram.messenger.ks.e().p & (~this.h);
+        int i7 = org.telegram.messenger.ls.e().p & (~this.h);
         this.n = i7;
         if (i7 == 0 && this.r) {
             this.r = false;
         }
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.j1);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.k1);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.j1);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.k1);
     }
 
     public final void f() {
@@ -170,8 +170,8 @@ public abstract class xs implements org.telegram.messenger.fs {
                 j();
             }
             this.a = false;
-            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.j1);
-            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k1);
+            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.j1);
+            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.k1);
         }
     }
 
@@ -210,7 +210,7 @@ public abstract class xs implements org.telegram.messenger.fs {
     public final void l(int i7) {
         this.h = 7;
         if (this.a) {
-            this.n = org.telegram.messenger.ks.e().p & (~this.h);
+            this.n = org.telegram.messenger.ls.e().p & (~this.h);
         }
     }
 

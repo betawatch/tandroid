@@ -15,16 +15,16 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class k8 extends View {
     public int a;
@@ -126,13 +126,13 @@ public final class k8 extends View {
 
     public final void c(float f10, int i7) {
         if (i7 == R.drawable.msg_stories_closefriends) {
-            setContentDescription(gd.N0(2131744291, null));
+            setContentDescription(hd.N0(2131744289, null));
         } else if (i7 == R.drawable.msg_folders_private) {
-            setContentDescription(gd.N0(2131744289, null));
+            setContentDescription(hd.N0(2131744287, null));
         } else if (i7 == R.drawable.msg_folders_groups) {
-            setContentDescription(gd.N0(2131744279, null));
+            setContentDescription(hd.N0(2131744277, null));
         } else if (i7 == R.drawable.msg_folders_channels) {
-            setContentDescription(gd.N0(2131744287, null));
+            setContentDescription(hd.N0(2131744285, null));
         }
         Drawable[] drawableArr = this.n;
         Drawable drawable = drawableArr[0];
@@ -188,7 +188,7 @@ public final class k8 extends View {
             float e10 = this.e.e(false, 0.0f);
             Paint[] paintArr = this.d;
             if (e10 > 0.0f) {
-                paintArr[1].setAlpha(ks.e4);
+                paintArr[1].setAlpha(ls.e4);
                 canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), paintArr[1]);
             }
             if (e10 < 1.0f) {
@@ -206,7 +206,7 @@ public final class k8 extends View {
             } else {
                 float N4 = this.s ? org.telegram.messenger.g0.N(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable2 = drawableArr[1];
-                int w10 = (int) n10.w(fArr[1], 2.0f, abs, N4);
+                int w10 = (int) o10.w(fArr[1], 2.0f, abs, N4);
                 float centerY = rectF.centerY();
                 float f12 = (fArr[1] / 2.0f) * abs;
                 f10 = 0.5f;
@@ -218,7 +218,7 @@ public final class k8 extends View {
             if (drawableArr[c10] != null && e10 <= f10) {
                 float N5 = this.s ? org.telegram.messenger.g0.N(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable3 = drawableArr[c10];
-                int w11 = (int) n10.w(fArr[c10], 2.0f, abs, N5);
+                int w11 = (int) o10.w(fArr[c10], 2.0f, abs, N5);
                 float centerY2 = rectF.centerY();
                 float f13 = (fArr[c10] / 2.0f) * abs;
                 drawable3.setBounds(w11, (int) (centerY2 - f13), (int) (f13 + N5), (int) com.google.android.gms.internal.vision.e2.c(fArr[c10], 2.0f, abs, rectF.centerY()));

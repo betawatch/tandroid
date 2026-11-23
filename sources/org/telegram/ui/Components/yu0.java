@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.os.Build;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yu0 {
     public static final int[] T = {-10504961, -13056257, -9445121, -5841665, -11544336, -7362817, -8468225, -3870977};
@@ -219,8 +219,8 @@ public final class yu0 {
                             f14 = pow;
                             i13 = i15;
                             fArr7 = fArr4;
-                            fArr5[i13] = org.telegram.messenger.n10.b(fArr11[i13], this.R, f27, (fArr12[i15] * f26) + (this.y[i15] * f25) + (fArr13[i15] * f23));
-                            fArr7[i13] = org.telegram.messenger.n10.b(fArr9[i13], this.S, f27, (f26 * fArr16[i13]) + (f25 * this.z[i13]) + (f23 * fArr10[i13]));
+                            fArr5[i13] = org.telegram.messenger.o10.b(fArr11[i13], this.R, f27, (fArr12[i15] * f26) + (this.y[i15] * f25) + (fArr13[i15] * f23));
+                            fArr7[i13] = org.telegram.messenger.o10.b(fArr9[i13], this.S, f27, (f26 * fArr16[i13]) + (f25 * this.z[i13]) + (f23 * fArr10[i13]));
                             if (fArr15[i13] != 0.0f || fArr14[i13] != 0.0f) {
                                 float A = org.telegram.messenger.f3.A(1.0f, (float) Math.exp((-fArr8[i13]) / 0.045f), f22, f22);
                                 fArr5[i13] = (fArr15[i13] * A) + fArr5[i13];
@@ -243,8 +243,8 @@ public final class yu0 {
                                 float f29 = f28 * f28;
                                 float f30 = f28 * 2.0f * pow2;
                                 float f31 = pow2 * pow2;
-                                fArr5[i13] = org.telegram.messenger.n10.b(fArr11[i13], this.R, f31, (fArr12[i13] * f30) + (fArr13[i13] * f29));
-                                fArr7[i13] = org.telegram.messenger.n10.b(fArr9[i13], this.S, f31, (f30 * fArr16[i13]) + (f29 * fArr10[i13]));
+                                fArr5[i13] = org.telegram.messenger.o10.b(fArr11[i13], this.R, f31, (fArr12[i13] * f30) + (fArr13[i13] * f29));
+                                fArr7[i13] = org.telegram.messenger.o10.b(fArr9[i13], this.S, f31, (f30 * fArr16[i13]) + (f29 * fArr10[i13]));
                                 if (fArr15[i13] != 0.0f || fArr14[i13] != 0.0f) {
                                     float A2 = org.telegram.messenger.f3.A(1.0f, (float) Math.exp((-fArr8[i13]) / 0.045f), f28, f28);
                                     fArr5[i13] = (fArr15[i13] * A2) + fArr5[i13];
@@ -428,7 +428,7 @@ public final class yu0 {
             paint2.setStrokeWidth(f36 * (this.M ? 2.4f : 2.0f));
             canvas.drawPoints(fArr2, 0, this.J, paint2);
             paint.setColor(-1);
-            paint.setAlpha(org.telegram.messenger.ks.e4);
+            paint.setAlpha(org.telegram.messenger.ls.e4);
             paint.setStrokeWidth(Math.max(1.0f, f36 * 0.9f));
             canvas.drawPoints(fArr2, 0, this.J, paint);
         }
@@ -440,7 +440,7 @@ public final class yu0 {
         paint2.setStrokeWidth(f36 * 1.9f);
         canvas.drawPoints(fArr3, 0, this.B, paint2);
         paint.setColor(-1);
-        paint.setAlpha(this.M ? org.telegram.messenger.ks.L3 : org.telegram.messenger.ks.e4);
+        paint.setAlpha(this.M ? org.telegram.messenger.ls.L3 : org.telegram.messenger.ls.e4);
         paint.setStrokeWidth(Math.max(1.0f, f36 * 0.75f));
         canvas.drawPoints(fArr3, 0, this.B, paint);
         return true;

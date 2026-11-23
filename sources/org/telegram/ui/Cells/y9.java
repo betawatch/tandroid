@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.h50;
 import org.telegram.ui.bc;
 import org.telegram.ui.bc1;
@@ -35,7 +35,7 @@ import org.telegram.ui.yw;
 import org.telegram.ui.zs;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class y9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -195,7 +195,7 @@ public final class y9 extends AnimatorListenerAdapter {
                 org.telegram.ui.Components.voip.l1 l1Var = (org.telegram.ui.Components.voip.l1) this.b;
                 l1Var.i = false;
                 l1Var.l.setAlpha(35);
-                l1Var.k.setAlpha(ks.n1);
+                l1Var.k.setAlpha(ls.n1);
                 l1Var.j.setAlpha(35);
                 l1Var.c();
                 break;

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class dt0 extends kj0 {
     public final Context c;
@@ -228,14 +228,14 @@ public class dt0 extends kj0 {
                     p7Var.i(false, false);
                     return;
                 }
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) c10.get(d);
-                boolean z10 = fjVar.e1() == messageId;
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) c10.get(d);
+                boolean z10 = gjVar.e1() == messageId;
                 if (jt0Var.F1) {
-                    p7Var.i(jt0Var.c1[(org.telegram.messenger.fj.B0(fjVar.k) > jt0Var.m1 ? 1 : (org.telegram.messenger.fj.B0(fjVar.k) == jt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(fjVar.e1()) >= 0, z10);
+                    p7Var.i(jt0Var.c1[(org.telegram.messenger.gj.B0(gjVar.k) > jt0Var.m1 ? 1 : (org.telegram.messenger.gj.B0(gjVar.k) == jt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(gjVar.e1()) >= 0, z10);
                 } else {
                     p7Var.i(false, z10);
                 }
-                p7Var.k(fjVar, i10, false);
+                p7Var.k(gjVar, i10, false);
             }
         }
     }

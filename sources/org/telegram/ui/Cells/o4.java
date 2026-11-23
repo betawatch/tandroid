@@ -12,10 +12,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class o4 extends FrameLayout {
     public int a;
@@ -47,13 +47,13 @@ public class o4 extends FrameLayout {
 
     public final void c(CharSequence charSequence, boolean z10) {
         if (this.n) {
-            int i7 = (gd.a0 ? 5 : 3) | 16;
+            int i7 = (hd.a0 ? 5 : 3) | 16;
             org.telegram.ui.Components.o6 o6Var = this.e;
             o6Var.setGravity(i7);
             o6Var.c(charSequence, z10, true);
             return;
         }
-        int i10 = gd.a0 ? 5 : 3;
+        int i10 = hd.a0 ? 5 : 3;
         TextView textView = this.d;
         textView.setGravity(i10 | 16);
         textView.setText(charSequence);
@@ -173,31 +173,31 @@ public class o4 extends FrameLayout {
             this.e = o6Var;
             o6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
             o6Var.setTypeface(org.telegram.messenger.g0.o());
-            o6Var.setGravity((gd.a0 ? 5 : 3) | 16);
+            o6Var.setGravity((hd.a0 ? 5 : 3) | 16);
             org.telegram.ui.ActionBar.t6.Y(o6Var, i7, h6Var);
             o6Var.setTag(Integer.valueOf(i7));
             o6Var.getDrawable().r(true, false);
             float f10 = i10;
-            addView(o6Var, c8.ma.d(-1, this.h - i11, (gd.a0 ? 5 : 3) | 48, f10, i11, f10, z10 ? 0.0f : i12));
+            addView(o6Var, c8.ma.d(-1, this.h - i11, (hd.a0 ? 5 : 3) | 48, f10, i11, f10, z10 ? 0.0f : i12));
         } else {
             TextView textView = new TextView(getContext());
             this.d = textView;
             i5.c.x(textView, 1, 14.0f);
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            textView.setGravity((gd.a0 ? 5 : 3) | 16);
+            textView.setGravity((hd.a0 ? 5 : 3) | 16);
             textView.setMinHeight(org.telegram.messenger.g0.L(this.h - i11));
             org.telegram.ui.ActionBar.t6.U(textView, i7, h6Var);
             textView.setTag(Integer.valueOf(i7));
             float f11 = i10;
-            addView(textView, c8.ma.d(-1, -1.0f, (gd.a0 ? 5 : 3) | 48, f11, i11, f11, z10 ? 0.0f : i12));
+            addView(textView, c8.ma.d(-1, -1.0f, (hd.a0 ? 5 : 3) | 48, f11, i11, f11, z10 ? 0.0f : i12));
         }
         if (z10) {
             org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(getContext());
             this.f = m5Var;
             m5Var.setTextSize(13);
-            m5Var.setGravity((gd.a0 ? 3 : 5) | 48);
+            m5Var.setGravity((hd.a0 ? 3 : 5) | 48);
             float f12 = i10;
-            addView(m5Var, c8.ma.d(-1, -1.0f, (gd.a0 ? 3 : 5) | 48, f12, 21.0f, f12, i12));
+            addView(m5Var, c8.ma.d(-1, -1.0f, (hd.a0 ? 3 : 5) | 48, f12, 21.0f, f12, i12));
         }
         WeakHashMap weakHashMap = r0.i0.a;
         new r0.v(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);

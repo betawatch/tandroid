@@ -2,15 +2,15 @@ package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.n60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements q10 {
+public final /* synthetic */ class w1 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ l2 b;
     public final /* synthetic */ long c;
@@ -25,7 +25,7 @@ public final /* synthetic */ class w1 implements q10 {
         this.d = i7;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         final long j3;
         final int i7;
@@ -59,8 +59,8 @@ public final /* synthetic */ class w1 implements q10 {
                     if (tonconnectrequest != null && (tonconnectsession = tonconnectpending.session) != null && tonconnectsession.id == j3 && tonconnectrequest.expires > l2Var.f.getCurrentTime()) {
                         final String y10 = u0Var.y();
                         final byte[] bArr = u0Var.E() != null ? (byte[]) u0Var.E().clone() : null;
-                        u0Var.F(true, false, false, new q10() { // from class: org.telegram.ui.Wallet.b2
-                            @Override // org.telegram.messenger.q10
+                        u0Var.F(true, false, false, new r10() { // from class: org.telegram.ui.Wallet.b2
+                            @Override // org.telegram.messenger.r10
                             public final void a(Object obj3, Object obj4) {
                                 l2 l2Var2 = l2.this;
                                 n60 n60Var2 = n60Var;
@@ -98,16 +98,16 @@ public final /* synthetic */ class w1 implements q10 {
                 }
                 break;
             default:
-                x10 x10Var = (x10) this.e;
+                y10 y10Var = (y10) this.e;
                 TLRPC.Bool bool = (TLRPC.Bool) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 l2 l2Var2 = this.b;
                 l2Var2.getClass();
                 if (tL_error2 != null || !(bool instanceof TLRPC.TL_boolTrue)) {
-                    x10Var.a(l2.z(tL_error2, "closeSession"));
+                    y10Var.a(l2.z(tL_error2, "closeSession"));
                     break;
                 } else {
-                    l2Var2.e(this.d, this.c, x10Var);
+                    l2Var2.e(this.d, this.c, y10Var);
                     break;
                 }
                 break;

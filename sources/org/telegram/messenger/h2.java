@@ -18,7 +18,7 @@ import android.view.View;
 import android.webkit.WebView;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class h2 extends View {
     public final RectF E;
@@ -98,8 +98,8 @@ public final class h2 extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.R = new xy0(gd.N0(2131753060, null), 13.0f, g0.o());
-        this.S = new xy0(gd.N0(2131753059, null), 13.0f, g0.o());
+        this.R = new xy0(hd.N0(2131753060, null), 13.0f, g0.o());
+        this.S = new xy0(hd.N0(2131753059, null), 13.0f, g0.o());
         paint2.setPathEffect(new CornerPathEffect(g0.L(1.0f)));
         path.rewind();
         path.moveTo(-g0.N(1.33f), g0.N(0.16f));
@@ -237,7 +237,7 @@ public final class h2 extends View {
         }
         canvas.restore();
         Canvas canvas2 = canvas;
-        canvas2.saveLayerAlpha((rectF5.left + g0.L(30.0f)) - g0.L(10.0f), rectF5.top, rectF5.right, rectF5.bottom, ks.e4, 31);
+        canvas2.saveLayerAlpha((rectF5.left + g0.L(30.0f)) - g0.L(10.0f), rectF5.top, rectF5.right, rectF5.bottom, ls.e4, 31);
         if (d2 <= 0.0f || this.U == null) {
             f11 = d2;
             f12 = 1.0f;

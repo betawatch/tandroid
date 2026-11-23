@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class w1 implements View.OnClickListener {
                 tb0 tb0Var4 = (tb0) this.e;
                 tb0 tb0Var5 = (tb0) this.f;
                 Calendar calendar3 = (Calendar) this.c;
-                org.telegram.messenger.nr nrVar = (org.telegram.messenger.nr) this.h;
+                org.telegram.messenger.or orVar = (org.telegram.messenger.or) this.h;
                 hi.w4 w4Var3 = (hi.w4) this.d;
                 c5.b(tb0Var3, tb0Var4, tb0Var5);
                 calendar3.set(1, tb0Var5.getValue());
@@ -89,7 +89,7 @@ public final /* synthetic */ class w1 implements View.OnClickListener {
                 calendar3.set(12, 0);
                 calendar3.set(11, 0);
                 calendar3.set(13, 0);
-                nrVar.a((int) (calendar3.getTimeInMillis() / 1000));
+                orVar.a((int) (calendar3.getTimeInMillis() / 1000));
                 ((org.telegram.ui.ActionBar.w2) w4Var3.b).y0.run();
                 break;
             case 3:
@@ -112,7 +112,7 @@ public final /* synthetic */ class w1 implements View.OnClickListener {
                                 }
                             }
                             org.telegram.messenger.g0.v1(editTextBoldCursor);
-                            org.telegram.messenger.zy C = org.telegram.messenger.zy.C(kw0Var.a);
+                            org.telegram.messenger.az C = org.telegram.messenger.az.C(kw0Var.a);
                             String str = kw0Var.m2;
                             String str2 = kw0Var.j2;
                             String str3 = kw0Var.V1;
@@ -121,7 +121,7 @@ public final /* synthetic */ class w1 implements View.OnClickListener {
                             if (C.G.get(str2) != null) {
                                 uv0Var.a(null);
                             } else {
-                                new Thread(new org.telegram.messenger.tj((Object) C, str, str2, (Object) str3, (Object) arrayList, (Object) uv0Var, 9)).start();
+                                new Thread(new org.telegram.messenger.uj((Object) C, str, str2, (Object) str3, (Object) arrayList, (Object) uv0Var, 9)).start();
                             }
                             alertDialog$Builder.a.M0.run();
                             kw0Var.dismiss();
@@ -151,7 +151,7 @@ public final /* synthetic */ class w1 implements View.OnClickListener {
                 while (i10 < size) {
                     int i11 = i10 + 1;
                     int intValue = ((Integer) arrayList2.get(i10)).intValue();
-                    TLRPC.User f10 = org.telegram.messenger.j10.i(intValue).f();
+                    TLRPC.User f10 = org.telegram.messenger.k10.i(intValue).f();
                     if (f10 != null) {
                         G.e(intValue, iArr2[0] == intValue, new ai.i1(iArr2, intValue, b9Var, f10, q9Var, 25));
                     }

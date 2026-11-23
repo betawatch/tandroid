@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oo implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class oo implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.messenger.e20 e20Var;
+        org.telegram.messenger.f20 f20Var;
         float f10;
         int i7;
         r1.g gVar;
@@ -154,7 +154,7 @@ public final /* synthetic */ class oo implements Runnable {
             case 18:
                 rz rzVar = (rz) ((qz) obj).f;
                 ArrayList arrayList3 = rzVar.h;
-                if (!org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q()) {
+                if (!org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q()) {
                     int i13 = 0;
                     while (i13 < arrayList3.size()) {
                         if (((oz) arrayList3.get(i13)).e && i13 != 0) {
@@ -164,21 +164,21 @@ public final /* synthetic */ class oo implements Runnable {
                             SparseIntArray sparseIntArray2 = rzVar2.l0;
                             int size = arrayList4.size();
                             if (i13 >= 0 && i13 < size) {
-                                ArrayList V0 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).V0();
+                                ArrayList V0 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).V0();
                                 int i14 = sparseIntArray2.get(i13);
                                 int i15 = ((oz) arrayList4.get(i13)).a;
                                 for (int i16 = i13 - 1; i16 >= 0; i16--) {
                                     sparseIntArray2.put(i16 + 1, sparseIntArray2.get(i16));
                                 }
-                                org.telegram.messenger.ro roVar = (org.telegram.messenger.ro) V0.remove(i13);
-                                roVar.f = 0;
-                                V0.add(0, roVar);
+                                org.telegram.messenger.so soVar = (org.telegram.messenger.so) V0.remove(i13);
+                                soVar.f = 0;
+                                V0.add(0, soVar);
                                 sparseIntArray2.put(0, i14);
                                 arrayList4.add(0, (oz) arrayList4.remove(i13));
                                 ((oz) arrayList4.get(0)).a = i15;
                                 for (int i17 = 0; i17 <= i13; i17++) {
                                     ((oz) arrayList4.get(i17)).a = i17;
-                                    ((org.telegram.messenger.ro) V0.get(i17)).f = i17;
+                                    ((org.telegram.messenger.so) V0.get(i17)).f = i17;
                                 }
                                 int i18 = 0;
                                 while (i18 <= i13) {
@@ -225,7 +225,7 @@ public final /* synthetic */ class oo implements Runnable {
                                     rwVar.performHapticFeedback(3, 1);
                                 } catch (Exception unused2) {
                                 }
-                                gc J = lc.b0(cxVar).J(R.raw.filter_reorder, org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0(null, null, 2131748751, org.telegram.messenger.gd.N0(2131750795, null))), org.telegram.messenger.gd.N0(2131746839, null), 5000, false, new org.telegram.ui.bh(rwVar, 24));
+                                gc J = lc.b0(cxVar).J(R.raw.filter_reorder, org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0(null, null, 2131748751, org.telegram.messenger.hd.N0(2131750795, null))), org.telegram.messenger.hd.N0(2131746839, null), 5000, false, new org.telegram.ui.bh(rwVar, 24));
                                 J.k(true);
                                 cxVar.q3 = J;
                                 break;
@@ -271,13 +271,13 @@ public final /* synthetic */ class oo implements Runnable {
                 c50 c50Var = (c50) ((h6.r) obj).b;
                 try {
                     i61 i61Var = c50Var.T;
-                    if (i61Var != null && (e20Var = c50Var.S) != null) {
-                        if (e20Var.b > 0) {
+                    if (i61Var != null && (f20Var = c50Var.S) != null) {
+                        if (f20Var.b > 0) {
                             long S = i61Var.S();
-                            org.telegram.messenger.e20 e20Var2 = c50Var.S;
-                            if (S >= e20Var2.b) {
+                            org.telegram.messenger.f20 f20Var2 = c50Var.S;
+                            if (S >= f20Var2.b) {
                                 i61 i61Var2 = c50Var.T;
-                                long j3 = e20Var2.a;
+                                long j3 = f20Var2.a;
                                 i61Var2.q0(j3 > 0 ? j3 : 0L, false);
                                 break;
                             }

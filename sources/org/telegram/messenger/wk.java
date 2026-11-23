@@ -1,22 +1,21 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wk implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mp b;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ np b;
     public final /* synthetic */ int c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ long f;
     public final /* synthetic */ int g;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ long i;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int i;
     public final /* synthetic */ int j;
     public final /* synthetic */ int k;
     public final /* synthetic */ int l;
@@ -28,18 +27,16 @@ public final /* synthetic */ class wk implements RequestDelegate {
     public final /* synthetic */ int r;
     public final /* synthetic */ boolean s;
     public final /* synthetic */ boolean t;
-    public final /* synthetic */ TLObject u;
 
-    public /* synthetic */ wk(mp mpVar, int i7, int i10, int i11, int i12, int i13, long j3, long j10, int i14, int i15, int i16, int i17, int i18, long j11, int i19, boolean z10, int i20, boolean z11, boolean z12, TLRPC.TL_messages_getReplies tL_messages_getReplies) {
-        this.a = 1;
-        this.b = mpVar;
+    public /* synthetic */ wk(np npVar, int i7, int i10, long j3, long j10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, long j11, int i19, boolean z10, int i20, boolean z11, boolean z12) {
+        this.b = npVar;
         this.c = i7;
         this.d = i10;
-        this.e = i11;
-        this.f = i12;
-        this.g = i13;
-        this.h = j3;
-        this.i = j10;
+        this.e = j3;
+        this.f = j10;
+        this.g = i11;
+        this.h = i12;
+        this.i = i13;
         this.j = i14;
         this.k = i15;
         this.l = i16;
@@ -51,156 +48,86 @@ public final /* synthetic */ class wk implements RequestDelegate {
         this.r = i20;
         this.s = z11;
         this.t = z12;
-        this.u = tL_messages_getReplies;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         int i7;
-        int i10;
-        int i11;
-        int i12;
         switch (this.a) {
             case 0:
-                TLRPC.TL_messages_getSavedHistory tL_messages_getSavedHistory = (TLRPC.TL_messages_getSavedHistory) this.u;
-                mp mpVar = this.b;
-                int i13 = this.f;
-                if (tLObject != null) {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    ArrayList<TLRPC.Message> arrayList = messages_messages.messages;
-                    long j3 = this.h;
-                    mpVar.m4(arrayList, j3);
-                    int size = messages_messages.messages.size();
-                    int i14 = this.c;
-                    if (size > i14) {
-                        messages_messages.messages.remove(0);
-                    }
-                    int i15 = this.e;
-                    if (i15 == 0 || messages_messages.messages.isEmpty()) {
-                        i7 = this.d;
-                    } else {
-                        i7 = ((TLRPC.Message) i5.c.h(1, messages_messages.messages)).id;
-                        int size2 = messages_messages.messages.size() - 1;
-                        while (true) {
-                            if (size2 >= 0) {
-                                TLRPC.Message message = messages_messages.messages.get(size2);
-                                if (message.date > i15) {
-                                    i7 = message.id;
-                                } else {
-                                    size2--;
-                                }
-                            }
-                        }
-                    }
-                    mpVar.R3(messages_messages, messages_messages.messages.size(), j3, this.i, i14, i7, i15, false, i13, this.g, this.j, this.k, this.l, this.m, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
-                    break;
-                } else {
-                    g0.g3(new dg(mpVar, i13, (TLObject) tL_messages_getSavedHistory, tL_error, 9));
-                    break;
-                }
-            case 1:
-                TLRPC.TL_messages_getReplies tL_messages_getReplies = (TLRPC.TL_messages_getReplies) this.u;
-                mp mpVar2 = this.b;
-                int i16 = this.j;
+                np npVar = this.b;
+                npVar.getClass();
+                long j3 = this.e;
+                long j10 = this.f;
+                int i10 = this.c;
+                int i11 = this.d;
+                int i12 = this.g;
+                int i13 = this.h;
+                int i14 = this.i;
+                int i15 = this.j;
+                int i16 = this.k;
+                int i17 = this.l;
+                int i18 = this.m;
+                int i19 = this.n;
+                long j11 = this.o;
+                int i20 = this.p;
+                boolean z10 = this.q;
+                int i21 = this.r;
+                boolean z11 = this.s;
+                boolean z12 = this.t;
                 if (tLObject == null) {
-                    g0.g3(new dg(mpVar2, i16, (TLObject) tL_messages_getReplies, tL_error, 12));
-                    break;
+                    if (tL_error != null && "SHORTCUT_INVALID".equals(tL_error.text)) {
+                        npVar.R3(new TLRPC.TL_messages_messages(), 0, j3, j10, i10, i11, i12, false, i13, i14, i15, i16, i17, i18, false, i19, j11, i20, z10, i21, z11, z12, null);
+                        break;
+                    }
                 } else {
-                    TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
-                    int size3 = messages_messages2.messages.size();
-                    int i17 = this.c;
-                    if (size3 > i17) {
-                        messages_messages2.messages.remove(0);
+                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                    if (!(messages_messages instanceof TLRPC.TL_messages_messagesNotModified)) {
+                        npVar.R3(messages_messages, messages_messages.messages.size(), j3, j10, i10, i11, i12, false, i13, i14, i15, i16, i17, i18, false, i19, j11, i20, z10, i21, z11, z12, null);
+                        break;
                     }
-                    boolean isEmpty = messages_messages2.messages.isEmpty();
-                    int i18 = this.d;
-                    int i19 = this.e;
-                    int i20 = this.g;
-                    if (!isEmpty) {
-                        if (i19 == 0) {
-                            int i21 = this.f;
-                            if (i21 != 0 && i20 == 2 && i18 > 0) {
-                                for (int size4 = messages_messages2.messages.size() - 1; size4 >= 0; size4--) {
-                                    TLRPC.Message message2 = messages_messages2.messages.get(size4);
-                                    int i22 = message2.id;
-                                    if (i22 > i21 && !message2.out) {
-                                        i11 = i18;
-                                        i10 = i22;
-                                        mpVar2.R3(messages_messages2, messages_messages2.messages.size(), this.h, this.i, i17, i11, i19, false, i16, i10, this.k, this.l, this.m, i20, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
-                                        break;
-                                    }
-                                }
-                            }
-                        } else {
-                            i18 = ((TLRPC.Message) i5.c.h(1, messages_messages2.messages)).id;
-                            int size5 = messages_messages2.messages.size() - 1;
-                            while (true) {
-                                if (size5 >= 0) {
-                                    TLRPC.Message message3 = messages_messages2.messages.get(size5);
-                                    if (message3.date > i19) {
-                                        i18 = message3.id;
-                                    } else {
-                                        size5--;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    i10 = 0;
-                    i11 = i18;
-                    mpVar2.R3(messages_messages2, messages_messages2.messages.size(), this.h, this.i, i17, i11, i19, false, i16, i10, this.k, this.l, this.m, i20, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
                 }
                 break;
             default:
-                TLRPC.TL_messages_getHistory tL_messages_getHistory = (TLRPC.TL_messages_getHistory) this.u;
-                mp mpVar3 = this.b;
-                int i23 = this.f;
+                np npVar2 = this.b;
+                npVar2.getClass();
                 if (tLObject != null) {
-                    TLRPC.messages_Messages messages_messages3 = (TLRPC.messages_Messages) tLObject;
-                    ArrayList<TLRPC.Message> arrayList2 = messages_messages3.messages;
-                    long j10 = this.h;
-                    mpVar3.m4(arrayList2, j10);
-                    int size6 = messages_messages3.messages.size();
-                    int i24 = this.c;
-                    if (size6 > i24) {
-                        messages_messages3.messages.remove(0);
-                    }
-                    int i25 = this.e;
-                    if (i25 == 0 || messages_messages3.messages.isEmpty()) {
-                        i12 = this.d;
-                    } else {
-                        i12 = ((TLRPC.Message) i5.c.h(1, messages_messages3.messages)).id;
-                        int size7 = messages_messages3.messages.size() - 1;
-                        while (true) {
-                            if (size7 >= 0) {
-                                TLRPC.Message message4 = messages_messages3.messages.get(size7);
-                                if (message4.date > i25) {
-                                    i12 = message4.id;
-                                } else {
-                                    size7--;
+                    TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
+                    if (!(messages_messages2 instanceof TLRPC.TL_messages_messagesNotModified)) {
+                        int i22 = this.d;
+                        if (i22 == 0 || messages_messages2.messages.isEmpty()) {
+                            i7 = this.c;
+                        } else {
+                            i7 = ((TLRPC.Message) i5.c.h(1, messages_messages2.messages)).id;
+                            int size = messages_messages2.messages.size() - 1;
+                            while (true) {
+                                if (size >= 0) {
+                                    TLRPC.Message message = messages_messages2.messages.get(size);
+                                    if (message.date > i22) {
+                                        i7 = message.id;
+                                    } else {
+                                        size--;
+                                    }
                                 }
                             }
                         }
+                        npVar2.R3(messages_messages2, messages_messages2.messages.size(), this.e, this.f, this.g, i7, i22, false, this.h, this.i, this.j, this.k, this.l, this.m, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
+                        break;
                     }
-                    mpVar3.R3(messages_messages3, messages_messages3.messages.size(), j10, this.i, i24, i12, i25, false, i23, this.g, this.j, this.k, this.l, this.m, false, this.n, this.o, this.p, this.q, this.r, this.s, this.t, null);
-                    break;
-                } else {
-                    g0.g3(new dg(mpVar3, i23, (TLObject) tL_messages_getHistory, tL_error, 8));
-                    break;
                 }
+                break;
         }
     }
 
-    public /* synthetic */ wk(mp mpVar, long j3, int i7, int i10, int i11, long j10, int i12, int i13, int i14, int i15, int i16, int i17, int i18, long j11, int i19, boolean z10, int i20, boolean z11, boolean z12, TLObject tLObject, int i21) {
-        this.a = i21;
-        this.b = mpVar;
-        this.h = j3;
+    public /* synthetic */ wk(np npVar, long j3, long j10, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, long j11, int i19, boolean z10, int i20, boolean z11, boolean z12) {
+        this.b = npVar;
+        this.e = j3;
+        this.f = j10;
         this.c = i7;
         this.d = i10;
-        this.e = i11;
-        this.i = j10;
-        this.f = i12;
-        this.g = i13;
+        this.g = i11;
+        this.h = i12;
+        this.i = i13;
         this.j = i14;
         this.k = i15;
         this.l = i16;
@@ -212,6 +139,5 @@ public final /* synthetic */ class wk implements RequestDelegate {
         this.r = i20;
         this.s = z11;
         this.t = z12;
-        this.u = tLObject;
     }
 }

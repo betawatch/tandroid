@@ -8,11 +8,11 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.messenger.voip.ConferenceCall;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
@@ -26,9 +26,9 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.p51;
 import org.telegram.ui.wt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s implements q10 {
+public final /* synthetic */ class s implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class s implements q10 {
     /* JADX WARN: Removed duplicated region for block: B:281:0x0503  */
     /* JADX WARN: Removed duplicated region for block: B:283:0x0508  */
     /* JADX WARN: Removed duplicated region for block: B:285:0x050d  */
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -98,7 +98,7 @@ public final /* synthetic */ class s implements q10 {
                 runnable.run();
                 return;
             case 1:
-                ((u0) this.b).d0((r0) this.c, true, new s((x10) this.d, (x10) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
+                ((u0) this.b).d0((r0) this.c, true, new s((y10) this.d, (y10) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
                 return;
             case 2:
                 u0 u0Var2 = (u0) this.b;
@@ -143,7 +143,7 @@ public final /* synthetic */ class s implements q10 {
                             try {
                                 try {
                                     if (org.telegram.messenger.s2.a) {
-                                        byte[] bArr7 = new byte[ks.s3];
+                                        byte[] bArr7 = new byte[ls.s3];
                                         c11 = 1;
                                         try {
                                             int length = bArr3.length;
@@ -451,15 +451,15 @@ public final /* synthetic */ class s implements q10 {
                 }
                 break;
             case 3:
-                x10 x10Var = (x10) this.b;
-                x10 x10Var2 = (x10) this.c;
+                y10 y10Var = (y10) this.b;
+                y10 y10Var2 = (y10) this.c;
                 byte[] bArr13 = (byte[]) this.d;
                 TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) this.e;
                 WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
                 String str7 = (String) obj2;
                 if (importedWalletProof == null) {
-                    x10Var.a(str7 != null ? str7 : "NULL_ERROR");
-                    x10Var2.a(null);
+                    y10Var.a(str7 != null ? str7 : "NULL_ERROR");
+                    y10Var2.a(null);
                     return;
                 }
                 TL_wallet.replaceWallet replacewallet = new TL_wallet.replaceWallet();
@@ -472,13 +472,13 @@ public final /* synthetic */ class s implements q10 {
                 walletownershipproof.timestamp = importedWalletProof.timestamp;
                 replacewallet.wallet = inputwalletimported;
                 replacewallet.password = inputCheckPasswordSRP;
-                x10Var2.a(replacewallet);
+                y10Var2.a(replacewallet);
                 return;
             case 4:
                 i0 i0Var = (i0) this.b;
                 TL_wallet.nftItem nftitem = (TL_wallet.nftItem) this.c;
                 String str8 = (String) this.d;
-                q10 q10Var = (q10) this.e;
+                r10 r10Var = (r10) this.e;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str9 = (String) obj2;
                 if (wallettransaction != null) {
@@ -489,7 +489,7 @@ public final /* synthetic */ class s implements q10 {
                 if (i0Var.a) {
                     return;
                 }
-                q10Var.a(wallettransaction, str9);
+                r10Var.a(wallettransaction, str9);
                 return;
             case 5:
                 t0 t0Var = (t0) this.b;
@@ -498,7 +498,7 @@ public final /* synthetic */ class s implements q10 {
                 String str12 = (String) this.e;
                 TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
                 t0Var.getClass();
-                if (walletuseraddress == null || walletuseraddress.user_id == 0 || mp.u1(t0Var.m.a).c2(Long.valueOf(walletuseraddress.user_id)) == null) {
+                if (walletuseraddress == null || walletuseraddress.user_id == 0 || np.u1(t0Var.m.a).c2(Long.valueOf(walletuseraddress.user_id)) == null) {
                     return;
                 }
                 ArrayList arrayList = t0Var.b;
@@ -541,17 +541,17 @@ public final /* synthetic */ class s implements q10 {
                 l2 l2Var = (l2) this.b;
                 h2 h2Var2 = (h2) this.c;
                 r0 r0Var3 = (r0) this.d;
-                x10 x10Var3 = (x10) this.e;
+                y10 y10Var3 = (y10) this.e;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
                 String str13 = (String) obj2;
                 if (sendtransfer != null && str13 == null && l2Var.A(h2Var2) && !l2Var.j(h2Var2)) {
-                    Utilities.e.c(new wt0(l2Var, sendtransfer, h2Var2, x10Var3, r0Var3, 10));
+                    Utilities.e.c(new wt0(l2Var, sendtransfer, h2Var2, y10Var3, r0Var3, 10));
                     return;
                 }
                 if (str13 == null) {
                     str13 = "Transfer unavailable or request expired";
                 }
-                l2Var.y(h2Var2, r0Var3, null, 0, str13, x10Var3);
+                l2Var.y(h2Var2, r0Var3, null, 0, str13, y10Var3);
                 return;
             case 8:
                 l2 l2Var2 = (l2) this.b;

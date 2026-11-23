@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h11 extends org.telegram.ui.Components.lv0 {
     public final /* synthetic */ k01 H3;
@@ -15,7 +15,7 @@ public final class h11 extends org.telegram.ui.Components.lv0 {
 
     @Override // org.telegram.ui.Components.lv0
     public final boolean D1() {
-        return org.telegram.messenger.pc.e(16388) || this.H3.G.a0 == 4;
+        return org.telegram.messenger.qc.e(16388) || this.H3.G.a0 == 4;
     }
 
     @Override // org.telegram.ui.Components.lv0

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class b {
     public static volatile b j;
@@ -74,10 +74,10 @@ public final class b {
                 a8.g(e13, true);
             }
             this.d = Locale.getDefault().getCountry().toLowerCase();
-            this.f = new HashMap(ks.e4);
-            this.g = new HashMap(ks.e4);
+            this.f = new HashMap(ls.e4);
+            this.g = new HashMap(ls.e4);
             this.h = new HashMap(10);
-            this.i = new HashMap(ks.e4);
+            this.i = new HashMap(ls.e4);
             int f10 = f(0);
             int i7 = 4;
             int i10 = (f10 * 12) + 4;

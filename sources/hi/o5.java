@@ -5,12 +5,12 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class o5 extends FrameLayout {
     public View a;
@@ -18,7 +18,7 @@ public final class o5 extends FrameLayout {
     public n5 c;
     public String d;
     public boolean e;
-    public x10 f;
+    public y10 f;
     public boolean h;
     public float n;
     public boolean r;
@@ -115,10 +115,10 @@ public final class o5 extends FrameLayout {
                 i15++;
             }
         }
-        int min = Math.min(org.telegram.messenger.g0.L(c() ? 20.0f : 30.0f), i15 < 2 ? 0 : n10.B(40.0f, i15, L) / (i15 - 1));
-        int z11 = n10.z(40.0f, i14, 2);
+        int min = Math.min(org.telegram.messenger.g0.L(c() ? 20.0f : 30.0f), i15 < 2 ? 0 : o10.B(40.0f, i15, L) / (i15 - 1));
+        int z11 = o10.z(40.0f, i14, 2);
         int L2 = (org.telegram.messenger.g0.L(40.0f) + i14) / 2;
-        int L3 = org.telegram.messenger.g0.L(12.33f) + (!c() ? (n10.B(40.0f, i15, L) - ((i15 - 1) * min)) / 2 : 0);
+        int L3 = org.telegram.messenger.g0.L(12.33f) + (!c() ? (o10.B(40.0f, i15, L) - ((i15 - 1) * min)) / 2 : 0);
         for (int i17 = 0; i17 < arrayList.size(); i17++) {
             if (((m5) arrayList.get(i17)).getVisibility() == 0) {
                 ((m5) arrayList.get(i17)).layout(L3, z11, org.telegram.messenger.g0.L(40.0f) + L3, L2);
@@ -132,8 +132,8 @@ public final class o5 extends FrameLayout {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(52.0f), TLObject.FLAG_30));
     }
 
-    public void setOnClickListener(x10 x10Var) {
-        this.f = x10Var;
+    public void setOnClickListener(y10 y10Var) {
+        this.f = y10Var;
     }
 
     public void setShareEnabled(boolean z10) {

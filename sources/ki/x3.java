@@ -2,12 +2,11 @@ package ki;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import bi.x4;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x3 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
@@ -18,11 +17,11 @@ public final /* synthetic */ class x3 implements DialogInterface.OnDismissListen
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ x3(boolean[] zArr, x4 x4Var, boolean[] zArr2, x10 x10Var, int[] iArr, int i7) {
+    public /* synthetic */ x3(boolean[] zArr, ai.b1 b1Var, boolean[] zArr2, y10 y10Var, int[] iArr, int i7) {
         this.b = zArr;
-        this.e = x4Var;
+        this.e = b1Var;
         this.c = zArr2;
-        this.f = x10Var;
+        this.f = y10Var;
         this.h = iArr;
         this.d = i7;
     }
@@ -45,15 +44,15 @@ public final /* synthetic */ class x3 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                x4 x4Var = (x4) this.e;
-                x10 x10Var = (x10) this.f;
+                ai.b1 b1Var = (ai.b1) this.e;
+                y10 y10Var = (y10) this.f;
                 int[] iArr = (int[]) this.h;
                 this.b[0] = true;
-                x4Var.run();
+                b1Var.run();
                 boolean[] zArr2 = this.c;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
-                    x10Var.a(null);
+                    y10Var.a(null);
                 }
                 if (iArr[0] >= 0) {
                     ConnectionsManager.getInstance(this.d).cancelRequest(iArr[0], true);

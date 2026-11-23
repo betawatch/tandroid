@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mr extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ qr a;
@@ -52,9 +52,9 @@ public final class mr extends org.telegram.ui.ActionBar.j {
         }
         contactsController.getConnectionsManager().sendRequest(tL_contacts_addContact, new org.telegram.messenger.t4(1, contactsController, c22), 6);
         i10 = ((org.telegram.ui.ActionBar.g2) qrVar).currentAccount;
-        org.telegram.messenger.mp.u1(i10).g7.edit().putInt("dialog_bar_vis3" + qrVar.I, 3).commit();
-        qrVar.getNotificationCenter().k(org.telegram.messenger.ks.r, 1);
-        qrVar.getNotificationCenter().k(org.telegram.messenger.ks.Q0, Long.valueOf(qrVar.I));
+        org.telegram.messenger.np.u1(i10).g7.edit().putInt("dialog_bar_vis3" + qrVar.I, 3).commit();
+        qrVar.getNotificationCenter().k(org.telegram.messenger.ls.r, 1);
+        qrVar.getNotificationCenter().k(org.telegram.messenger.ls.Q0, Long.valueOf(qrVar.I));
         if (d2 != null) {
             if (textWithEntities == null || textWithEntities.text.length() <= 0) {
                 d2.flags2 &= -4194305;
@@ -64,8 +64,8 @@ public final class mr extends org.telegram.ui.ActionBar.j {
                 d2.note = textWithEntities;
             }
             i11 = ((org.telegram.ui.ActionBar.g2) qrVar).currentAccount;
-            org.telegram.messenger.tr.a0(i11).j2(d2, true);
-            qrVar.getNotificationCenter().k(org.telegram.messenger.ks.E0, Long.valueOf(d2.id), d2);
+            org.telegram.messenger.ur.a0(i11).j2(d2, true);
+            qrVar.getNotificationCenter().k(org.telegram.messenger.ls.E0, Long.valueOf(d2.id), d2);
         }
         qrVar.finishFragment();
         pr prVar = qrVar.P;

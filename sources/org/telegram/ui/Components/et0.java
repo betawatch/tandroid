@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class et0 extends fi.o9 {
     public final /* synthetic */ gt0 h;
@@ -18,7 +18,7 @@ public final class et0 extends fi.o9 {
     @Override // fi.o9
     public final void a(ArrayList arrayList) {
         nq0 nq0Var;
-        org.telegram.messenger.fj messageObject;
+        org.telegram.messenger.gj messageObject;
         gt0 gt0Var = this.h;
         jt0 jt0Var = gt0Var.G;
         int i7 = 0;
@@ -60,8 +60,8 @@ public final class et0 extends fi.o9 {
                     break;
                 }
                 TL_stories.StoryViews storyViews = arrayList2.get(i7);
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) h6Var.j.get(num);
-                if (fjVar != null && (storyItem = fjVar.l) != null) {
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) h6Var.j.get(num);
+                if (gjVar != null && (storyItem = gjVar.l) != null) {
                     storyItem.views = storyViews;
                     z10 = true;
                 }

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dy0 extends FrameLayout {
     public final org.telegram.ui.Components.n5 a;
@@ -21,7 +21,7 @@ public final class dy0 extends FrameLayout {
         TextView textView = new TextView(context);
         textView.setTextSize(1, 16.0f);
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, ey0Var.getResourceProvider());
-        textView.setText(org.telegram.messenger.gd.N0(2131751338, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131751338, null));
         addView(textView, c8.ma.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
         this.a = new org.telegram.ui.Components.n5(org.telegram.messenger.g0.L(24.0f), this);
     }
@@ -31,7 +31,7 @@ public final class dy0 extends FrameLayout {
         int i10;
         ey0 ey0Var = this.b;
         i7 = ((org.telegram.ui.ActionBar.g2) ey0Var).currentAccount;
-        String S = org.telegram.messenger.ri.d0(i7).S();
+        String S = org.telegram.messenger.si.d0(i7).S();
         org.telegram.ui.Components.n5 n5Var = this.a;
         if (S != null && S.startsWith("animated_")) {
             try {
@@ -41,7 +41,7 @@ public final class dy0 extends FrameLayout {
             }
         }
         i10 = ((org.telegram.ui.ActionBar.g2) ey0Var).currentAccount;
-        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ri.d0(i10).r.get(S);
+        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.si.d0(i10).r.get(S);
         if (tL_availableReaction != null) {
             n5Var.i(tL_availableReaction.static_icon, z10);
         }

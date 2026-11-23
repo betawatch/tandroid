@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i6 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -41,7 +41,7 @@ public final class i6 extends FrameLayout implements org.telegram.ui.ActionBar.b
             textView.setTypeface(org.telegram.messenger.g0.o());
             textView.setTextSize(1, 14.0f);
             textView.setText(charSequenceArr[i7]);
-            textView.setOnClickListener(new bi.i5(this, kVar, i7, 22));
+            textView.setOnClickListener(new bi.h5(this, kVar, i7, 22));
             c8.ra.a(textView);
             this.b.addView(textView, c8.ma.q(-2, -2, 0.0f, 19, i7 == 0 ? 0 : 3, 0, 0, 0));
             this.c[i7] = textView;

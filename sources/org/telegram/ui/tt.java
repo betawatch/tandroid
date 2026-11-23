@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tt implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -19,19 +19,19 @@ public final /* synthetic */ class tt implements DialogInterface.OnClickListener
             case 0:
                 int i10 = 2 - i7;
                 if (i10 != this.b) {
-                    org.telegram.messenger.bz.w(i10);
+                    org.telegram.messenger.cz.w(i10);
                     break;
                 } else {
-                    org.telegram.messenger.bz.w(-1);
+                    org.telegram.messenger.cz.w(-1);
                     break;
                 }
             default:
                 int i11 = 2 - i7;
                 if (i11 != this.b) {
-                    org.telegram.messenger.bz.w(i11);
+                    org.telegram.messenger.cz.w(i11);
                     break;
                 } else {
-                    org.telegram.messenger.bz.w(-1);
+                    org.telegram.messenger.cz.w(-1);
                     break;
                 }
         }

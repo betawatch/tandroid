@@ -8,7 +8,7 @@ import android.view.View;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m00 extends URLSpan {
     public static final /* synthetic */ int e = 0;
@@ -49,7 +49,7 @@ public final class m00 extends URLSpan {
                     }
                     int spanStart = r42.getSpanStart(m00Var);
                     int spanEnd = r42.getSpanEnd(m00Var);
-                    String A = z10 ? org.telegram.messenger.gd.A(m00Var.b, System.currentTimeMillis(), Locale.getDefault(), false) : m00Var.a;
+                    String A = z10 ? org.telegram.messenger.hd.A(m00Var.b, System.currentTimeMillis(), Locale.getDefault(), false) : m00Var.a;
                     r42.removeSpan(m00Var);
                     r42.replace(spanStart, spanEnd, A);
                     r42.setSpan(new m00(m00Var, z10), spanStart, A.length() + spanStart, 33);

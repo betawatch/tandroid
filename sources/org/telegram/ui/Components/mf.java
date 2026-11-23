@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mf implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class mf implements Runnable {
                     org.telegram.messenger.g0.g3(ogVar);
                     break;
                 } else {
-                    B.N1.c(new org.telegram.messenger.j9(B, new org.telegram.messenger.ne(i7, org.telegram.messenger.w7.z(1), System.currentTimeMillis() + "_" + org.telegram.messenger.w7.r(null, B.g1)), audioLeftMs, audioRightMs, ogVar, 3));
+                    B.N1.c(new org.telegram.messenger.k9(B, new org.telegram.messenger.oe(i7, org.telegram.messenger.w7.z(1), System.currentTimeMillis() + "_" + org.telegram.messenger.w7.r(null, B.g1)), audioLeftMs, audioRightMs, ogVar, 3));
                     break;
                 }
             case 3:
@@ -127,17 +127,17 @@ public final /* synthetic */ class mf implements Runnable {
                 tL_attachMenuBot.side_menu_disclaimer_needed = false;
                 tL_attachMenuBot.inactive = false;
                 uiVar3.D1(tL_attachMenuBot.bot_id, null, false, true);
-                org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(uiVar3.H3);
+                org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(uiVar3.H3);
                 TLRPC.TL_attachMenuBots tL_attachMenuBots = d02.b;
                 if (tL_attachMenuBots != null) {
-                    d02.getMessagesStorage().a.c(new org.telegram.messenger.ek(d02.e, 2, d02.a, d02, tL_attachMenuBots));
+                    d02.getMessagesStorage().a.c(new org.telegram.messenger.fk(d02.e, 2, d02.a, d02, tL_attachMenuBots));
                     break;
                 }
                 break;
             case 7:
                 ui uiVar4 = (ui) this.b;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = (TLRPC.TL_attachMenuBot) this.c;
-                org.telegram.messenger.ri.d0(uiVar4.H3).H0(false, true, null);
+                org.telegram.messenger.si.d0(uiVar4.H3).H0(false, true, null);
                 if (uiVar4.w2 == uiVar4.v2.get(tL_attachMenuBot2.bot_id)) {
                     uiVar4.G1(uiVar4.e2);
                     break;
@@ -190,7 +190,7 @@ public final /* synthetic */ class mf implements Runnable {
                 uiVar5.a2.presentFragment(org.telegram.ui.bn.ua(user.id));
                 break;
             case 14:
-                org.telegram.messenger.f3.n(null, 2131742957, new lc((zk) this.b, (org.telegram.ui.ActionBar.h6) this.c), R.raw.copy, 36);
+                org.telegram.messenger.f3.n(null, 2131742955, new lc((zk) this.b, (org.telegram.ui.ActionBar.h6) this.c), R.raw.copy, 36);
                 break;
             case 15:
                 ml mlVar = (ml) this.b;
@@ -292,8 +292,8 @@ public final /* synthetic */ class mf implements Runnable {
                 int i10 = jsVar.a;
                 if (tLObject2 instanceof TL_bots.popularAppBots) {
                     TL_bots.popularAppBots popularappbots = (TL_bots.popularAppBots) tLObject2;
-                    org.telegram.messenger.mp.u1(i10).f4(popularappbots.users, false);
-                    org.telegram.messenger.tr.a0(i10).m1(popularappbots.users, null, false, true);
+                    org.telegram.messenger.np.u1(i10).f4(popularappbots.users, false);
+                    org.telegram.messenger.ur.a0(i10).m1(popularappbots.users, null, false, true);
                     arrayList4.addAll(popularappbots.users);
                     String str3 = popularappbots.next_offset;
                     jsVar.g = str3;
@@ -307,7 +307,7 @@ public final /* synthetic */ class mf implements Runnable {
                         ArrayList arrayList5 = new ArrayList();
                         for (int i11 = 0; i11 < arrayList4.size(); i11 = com.google.android.gms.internal.vision.e2.g(i11, 1, ((TLRPC.User) arrayList4.get(i11)).id, arrayList5)) {
                         }
-                        org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(i10);
+                        org.telegram.messenger.ur a02 = org.telegram.messenger.ur.a0(i10);
                         a02.a.c(new bi.o2(jsVar, a02, arrayList5, currentTimeMillis, str5, 11));
                     }
                     jsVar.c = false;

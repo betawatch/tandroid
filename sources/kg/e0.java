@@ -4,12 +4,12 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e0 extends zj0 {
     public final ArrayList r;
@@ -21,7 +21,7 @@ public final class e0 extends zj0 {
         this.x = h0Var;
         ArrayList arrayList = new ArrayList();
         this.r = arrayList;
-        int i7 = j10.t0;
+        int i7 = k10.t0;
         this.s = i7;
         this.w = context;
         arrayList.addAll(v1.f(i7).e());

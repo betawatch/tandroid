@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n7 extends f7 {
     public m.o3 n;
@@ -32,7 +32,7 @@ public final class n7 extends f7 {
             if (i7 >= arrayList2.size()) {
                 return;
             }
-            arrayList.add(new org.telegram.messenger.ef(0, ((l7) arrayList2.get(i7)).d.a.getPath(), 0, ((l7) arrayList2.get(i7)).d.d == 1, 0, 0));
+            arrayList.add(new org.telegram.messenger.ff(0, ((l7) arrayList2.get(i7)).d.a.getPath(), 0, ((l7) arrayList2.get(i7)).d.d == 1, 0, 0));
             i7++;
         }
     }
@@ -54,10 +54,10 @@ public final class n7 extends f7 {
         int i10 = bVar.d;
         File file = bVar.a;
         if (i10 == 1) {
-            imageReceiver.q0(org.telegram.messenger.fc.g("vthumb://0:" + file.getAbsolutePath()), com.google.android.gms.internal.vision.e2.j(max, "_", max), this.s, null, null, 0);
+            imageReceiver.q0(org.telegram.messenger.gc.g("vthumb://0:" + file.getAbsolutePath()), com.google.android.gms.internal.vision.e2.j(max, "_", max), this.s, null, null, 0);
             p7Var.m(org.telegram.messenger.g0.i0(bVar.c, false, false), true);
         } else {
-            imageReceiver.q0(org.telegram.messenger.fc.g("thumb://0:" + file.getAbsolutePath()), com.google.android.gms.internal.vision.e2.j(max, "_", max), this.s, null, null, 0);
+            imageReceiver.q0(org.telegram.messenger.gc.g("thumb://0:" + file.getAbsolutePath()), com.google.android.gms.internal.vision.e2.j(max, "_", max), this.s, null, null, 0);
             p7Var.m(org.telegram.messenger.g0.i0(bVar.c, false, false), false);
         }
         p7Var.i(this.w.h.j.contains(bVar), z10);

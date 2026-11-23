@@ -5,15 +5,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.z10;
 import org.telegram.ui.Components.nx0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class TLJsonParser {
     private final JSONObject jsonObject;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public interface Deserializable {
         void deserializeFromJson(TLJsonParser tLJsonParser);
     }
@@ -22,9 +22,9 @@ public class TLJsonParser {
         this.jsonObject = jSONObject;
     }
 
-    private static <T extends Deserializable> T parse(TLJsonParser tLJsonParser, y10 y10Var) {
+    private static <T extends Deserializable> T parse(TLJsonParser tLJsonParser, z10 z10Var) {
         try {
-            return (T) y10Var.a(tLJsonParser);
+            return (T) z10Var.a(tLJsonParser);
         } catch (Exception e10) {
             a8.g(e10, true);
             return null;
@@ -74,10 +74,10 @@ public class TLJsonParser {
         return parseInt64(this.jsonObject.opt(str), i7);
     }
 
-    public <T extends Deserializable> T readObject(String str, y10 y10Var) {
+    public <T extends Deserializable> T readObject(String str, z10 z10Var) {
         JSONObject optJSONObject = this.jsonObject.optJSONObject(str);
         if (optJSONObject != null) {
-            return (T) parse(new TLJsonParser(optJSONObject), y10Var);
+            return (T) parse(new TLJsonParser(optJSONObject), z10Var);
         }
         return null;
     }
@@ -86,14 +86,14 @@ public class TLJsonParser {
         return readString(str, null);
     }
 
-    public <T extends Deserializable> ArrayList<T> readVector(String str, y10 y10Var) {
+    public <T extends Deserializable> ArrayList<T> readVector(String str, z10 z10Var) {
         nx0 nx0Var = (ArrayList<T>) new ArrayList();
         JSONArray optJSONArray = this.jsonObject.optJSONArray(str);
         if (optJSONArray != null) {
             int length = optJSONArray.length();
             for (int i7 = 0; i7 < length; i7++) {
                 try {
-                    Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i7)), y10Var);
+                    Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i7)), z10Var);
                     if (parse != null) {
                         nx0Var.add(parse);
                     }

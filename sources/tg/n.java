@@ -3,10 +3,10 @@ package tg;
 import c8.ma;
 import hi.n4;
 import java.util.List;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 import org.telegram.ui.Components.oz0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -58,12 +58,12 @@ public final /* synthetic */ class n implements Runnable {
                         sg.g gVar = (sg.g) list.get(i7);
                         int m10 = z10 ? gVar.m() : gVar.e();
                         String n10 = gVar.n();
-                        j01 j01Var = new j01(h0Var3, gVar, m10, 27);
+                        f21 f21Var = new f21(h0Var3, gVar, m10, 26);
                         g0 g0Var = new g0(h0Var3, h0Var3.getContext());
                         g0Var.setIcon(m10);
                         g0Var.setText(n10);
                         g0Var.setSelected(false);
-                        g0Var.setOnClickListener(new u(j01Var, 0));
+                        g0Var.setOnClickListener(new u(f21Var, 0));
                         g0Var.setOnLongClickListener(new n4(h0Var3, 6));
                         h0Var3.C1.a(g0Var, ma.o(-1, 48));
                         i7++;

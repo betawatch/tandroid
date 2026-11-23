@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class kv extends ViewGroup implements org.telegram.ui.ActionBar.b6 {
     public boolean E;
@@ -123,7 +123,7 @@ public class kv extends ViewGroup implements org.telegram.ui.ActionBar.b6 {
     public final void c() {
         TLRPC.PhotoSize w10;
         TLRPC.InputStickerSet tL_inputStickerSetShortName;
-        org.telegram.messenger.fc h;
+        org.telegram.messenger.gc h;
         q9 q9Var = this.d;
         if (q9Var == null) {
             return;
@@ -152,11 +152,11 @@ public class kv extends ViewGroup implements org.telegram.ui.ActionBar.b6 {
                         }
                         TLRPC.InputStickerSet inputStickerSet = tL_inputStickerSetShortName;
                         TLRPC.FileLocation fileLocation = w10.location;
-                        h = org.telegram.messenger.fc.h(fileLocation, w10.size, null, null, null, 1, fileLocation.dc_id, inputStickerSet, w10.type);
+                        h = org.telegram.messenger.gc.h(fileLocation, w10.size, null, null, null, 1, fileLocation.dc_id, inputStickerSet, w10.type);
                     }
                     this.d.k(h, "24_24", null, null, this.w);
                     if (this.w.d != null) {
-                        org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).o0(this.w.d, false);
+                        org.telegram.messenger.si.d0(org.telegram.messenger.k10.t0).o0(this.w.d, false);
                         this.w.d = null;
                     }
                 }
@@ -165,9 +165,9 @@ public class kv extends ViewGroup implements org.telegram.ui.ActionBar.b6 {
                 TLRPC.Document document = this.s;
                 ov ovVar = this.O;
                 if (document != null) {
-                    this.x = p5.l(org.telegram.messenger.j10.t0, ovVar.T, document);
+                    this.x = p5.l(org.telegram.messenger.k10.t0, ovVar.T, document);
                 } else {
-                    this.x = p5.m(org.telegram.messenger.j10.t0, this.r.longValue(), null, ovVar.T);
+                    this.x = p5.m(org.telegram.messenger.k10.t0, this.r.longValue(), null, ovVar.T);
                 }
                 this.x.a(q9Var);
                 q9Var.setImageDrawable(this.x);
@@ -325,11 +325,11 @@ public class kv extends ViewGroup implements org.telegram.ui.ActionBar.b6 {
             if (hxVar == null || (stickerSet = hxVar.b) == null || (str = stickerSet.title) == null) {
                 TLRPC.Document document = this.s;
                 if (document != null) {
-                    contentDescription = org.telegram.messenger.fj.V(document, null, null);
+                    contentDescription = org.telegram.messenger.gj.V(document, null, null);
                 } else {
                     Long l10 = this.r;
-                    if (l10 != null && (e10 = p5.e(org.telegram.messenger.j10.t0, l10.longValue())) != null) {
-                        contentDescription = org.telegram.messenger.fj.V(e10, null, null);
+                    if (l10 != null && (e10 = p5.e(org.telegram.messenger.k10.t0, l10.longValue())) != null) {
+                        contentDescription = org.telegram.messenger.gj.V(e10, null, null);
                     }
                 }
             } else {
@@ -338,7 +338,7 @@ public class kv extends ViewGroup implements org.telegram.ui.ActionBar.b6 {
         }
         Boolean bool = this.F;
         if (bool != null && !bool.booleanValue()) {
-            String N0 = org.telegram.messenger.gd.N0(2131750819, null);
+            String N0 = org.telegram.messenger.hd.N0(2131750819, null);
             if (contentDescription == null) {
                 contentDescription = N0;
             } else {

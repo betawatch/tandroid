@@ -18,9 +18,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class i20 extends FrameLayout implements org.telegram.messenger.fs, VoIPService.StateListener {
+public final class i20 extends FrameLayout implements org.telegram.messenger.gs, VoIPService.StateListener {
     public float E;
     public final int F;
     public final rh0 G;
@@ -111,11 +111,11 @@ public final class i20 extends FrameLayout implements org.telegram.messenger.fs,
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.Q4) {
+        if (i7 == org.telegram.messenger.ls.Q4) {
             setAmplitude(((Float) objArr[0]).floatValue() * 4000.0f);
-        } else if (i7 == org.telegram.messenger.ks.w2) {
+        } else if (i7 == org.telegram.messenger.ls.w2) {
             a();
         }
     }
@@ -124,8 +124,8 @@ public final class i20 extends FrameLayout implements org.telegram.messenger.fs,
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         setAmplitude(0.0d);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.Q4);
-        org.telegram.messenger.ks.f(this.F).c(this, org.telegram.messenger.ks.w2);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.Q4);
+        org.telegram.messenger.ls.f(this.F).c(this, org.telegram.messenger.ls.w2);
         boolean z10 = VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute();
         if (VoIPService.getSharedInstance() != null) {
             VoIPService.getSharedInstance().registerStateListener(this);
@@ -166,8 +166,8 @@ public final class i20 extends FrameLayout implements org.telegram.messenger.fs,
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.Q4);
-        org.telegram.messenger.ks.f(this.F).n(this, org.telegram.messenger.ks.w2);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.Q4);
+        org.telegram.messenger.ls.f(this.F).n(this, org.telegram.messenger.ls.w2);
         if (VoIPService.getSharedInstance() != null) {
             VoIPService.getSharedInstance().unregisterStateListener(this);
         }
@@ -373,7 +373,7 @@ public final class i20 extends FrameLayout implements org.telegram.messenger.fs,
                                             if (i10 == 1) {
                                                 paint.setAlpha((int) (f12 * 255.0f));
                                             } else {
-                                                paint.setAlpha(org.telegram.messenger.ks.e4);
+                                                paint.setAlpha(org.telegram.messenger.ls.e4);
                                             }
                                         }
                                         canvas.save();
@@ -527,7 +527,7 @@ public final class i20 extends FrameLayout implements org.telegram.messenger.fs,
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         c20 c20Var = c20.f0;
         if (c20Var != null) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.gd.N0(c20Var.y ? 2131754901 : 2131754815, null)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.hd.N0(c20Var.y ? 2131754901 : 2131754815, null)));
         }
     }
 
@@ -586,13 +586,13 @@ public final class i20 extends FrameLayout implements org.telegram.messenger.fs,
                 this.E = f10;
             }
             VoIPService sharedInstance = VoIPService.getSharedInstance();
-            String N0 = (sharedInstance == null || !org.telegram.messenger.v3.W(sharedInstance.getChat())) ? org.telegram.messenger.gd.N0(2131743063, null) : org.telegram.messenger.gd.N0(2131743204, null);
+            String N0 = (sharedInstance == null || !org.telegram.messenger.v3.W(sharedInstance.getChat())) ? org.telegram.messenger.hd.N0(2131743061, null) : org.telegram.messenger.hd.N0(2131743202, null);
             if (i7 == 0) {
-                N0 = i5.c.k(2131742990, null, p5.c.n(N0, ", "));
+                N0 = i5.c.k(2131742988, null, p5.c.n(N0, ", "));
             } else if (i7 == 2) {
                 N0 = i5.c.k(2131751797, null, p5.c.n(N0, ", "));
             } else if (i7 == 3) {
-                N0 = i5.c.k(2131743049, null, p5.c.n(N0, ", "));
+                N0 = i5.c.k(2131743047, null, p5.c.n(N0, ", "));
             }
             setContentDescription(N0);
             invalidate();

@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zx0 implements org.telegram.ui.Components.qj0 {
     public final /* synthetic */ int a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.qj0
                         p81Var.b.setPadding(0, 0, 0, i20);
                     }
                     if (!hashSet.isEmpty()) {
-                        p81Var.c.setText(org.telegram.messenger.gd.a0("LeaveChats", null, 2131748806, org.telegram.messenger.gd.G(hashSet.size(), "Chats", new Object[0])));
+                        p81Var.c.setText(org.telegram.messenger.hd.a0("LeaveChats", null, 2131748806, org.telegram.messenger.hd.G(hashSet.size(), "Chats", new Object[0])));
                     }
                     if (!hashSet.isEmpty()) {
                         org.telegram.ui.Components.ek0 ek0Var2 = p81Var.s.getVisibility() == 0 ? p81Var.b : p81Var.a;
@@ -208,7 +208,7 @@ public final /* synthetic */ class zx0 implements org.telegram.ui.Components.qj0
                 break;
             default:
                 uc1 uc1Var = (uc1) obj;
-                String N02 = org.telegram.messenger.gd.N0(2131753735, null);
+                String N02 = org.telegram.messenger.hd.N0(2131753735, null);
                 StringBuilder n10 = p5.c.n(N02, " ");
                 String[] strArr = WallpapersListActivity.k0;
                 SpannableString spannableString = new SpannableString(i5.c.k(WallpapersListActivity.l0[i7], strArr[i7], n10));

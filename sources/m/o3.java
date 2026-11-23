@@ -21,11 +21,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicMarkableReference;
-import org.telegram.messenger.fa;
+import org.telegram.messenger.ga;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class o3 {
     public Object a;
@@ -110,7 +110,7 @@ public final class o3 {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                ((h6.m) this.b).y((fa) obj);
+                ((h6.m) this.b).y((ga) obj);
             }
             arrayList.clear();
         } catch (RemoteException e10) {

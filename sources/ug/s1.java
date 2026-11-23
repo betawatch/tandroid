@@ -13,13 +13,13 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mz;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.nz;
+import org.telegram.messenger.z10;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class s1 {
     public boolean B;
@@ -34,7 +34,7 @@ public class s1 {
     public long S;
     public boolean g;
     public boolean h;
-    public y10 l;
+    public z10 l;
     public boolean m;
     public final int p;
     public boolean q;
@@ -114,7 +114,7 @@ public class s1 {
             }
             int i13 = this.O;
             if (i13 == 9) {
-                this.d[i12] = mz.d(i12 == 0 ? R.raw.premium_object_folder : i12 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                this.d[i12] = nz.d(i12 == 0 ? R.raw.premium_object_folder : i12 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                 this.e[i12] = true;
             } else {
                 int i14 = R.raw.premium_object_star2;
@@ -124,7 +124,7 @@ public class s1 {
                     } else if (i12 == 1) {
                         i14 = R.raw.filled_crown_on;
                     }
-                    this.d[i12] = mz.d(i14, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                    this.d[i12] = nz.d(i14, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                     this.e[i12] = true;
                 } else {
                     int i15 = R.raw.premium_object_like;
@@ -134,7 +134,7 @@ public class s1 {
                         } else if (i12 == 1) {
                             i15 = R.raw.premium_object_smile2;
                         }
-                        this.d[i12] = mz.d(i15, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                        this.d[i12] = nz.d(i15, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                         this.e[i12] = true;
                     } else {
                         int i16 = R.raw.premium_object_user;
@@ -142,7 +142,7 @@ public class s1 {
                             if (i12 != 0) {
                                 i16 = i12 == 1 ? R.raw.cache_photos : R.raw.cache_profile_photos;
                             }
-                            this.d[i12] = mz.d(i16, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                            this.d[i12] = nz.d(i16, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == i11) {
                             if (i12 == 0) {
@@ -150,7 +150,7 @@ public class s1 {
                             } else if (i12 != 1) {
                                 i15 = R.raw.premium_object_noads;
                             }
-                            this.d[i12] = mz.d(i15, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                            this.d[i12] = nz.d(i15, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 7) {
                             if (i12 == 0) {
@@ -158,23 +158,23 @@ public class s1 {
                             } else if (i12 == 1) {
                                 i16 = R.raw.premium_object_video;
                             }
-                            this.d[i12] = mz.d(i16, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                            this.d[i12] = nz.d(i16, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 43) {
-                            this.d[i12] = mz.d(i12 == 0 ? R.raw.premium_object_list : i12 == 1 ? R.raw.premium_object_math : i12 == 2 ? R.raw.premium_object_table : i12 == i11 ? R.raw.premium_object_superscript : i12 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                            this.d[i12] = nz.d(i12 == 0 ? R.raw.premium_object_list : i12 == 1 ? R.raw.premium_object_math : i12 == 2 ? R.raw.premium_object_table : i12 == i11 ? R.raw.premium_object_superscript : i12 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 1001) {
-                            this.d[i12] = mz.d(R.raw.premium_object_fire, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                            this.d[i12] = nz.d(R.raw.premium_object_fire, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 1002) {
-                            this.d[i12] = mz.d(R.raw.premium_object_star2, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                            this.d[i12] = nz.d(R.raw.premium_object_star2, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 24) {
-                            this.d[i12] = mz.d(i12 == 0 ? R.raw.premium_object_tag : i12 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
+                            this.d[i12] = nz.d(i12 == 0 ? R.raw.premium_object_tag : i12 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, L, L, i0.a.o(m6.w0(this.Q, this.P), 30));
                             this.e[i12] = true;
                         } else if (i13 == 28) {
                             if (i12 == 0) {
-                                this.d[i12] = mz.d(R.raw.filled_premium_dollar, L, L, i0.a.o(m6.w0(this.Q, this.P), ks.e4));
+                                this.d[i12] = nz.d(R.raw.filled_premium_dollar, L, L, i0.a.o(m6.w0(this.Q, this.P), ls.e4));
                                 this.f[i12] = true;
                             }
                             Bitmap createBitmap = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
@@ -215,7 +215,7 @@ public class s1 {
                                         e10.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.N(this.r / 5.0f)));
                                     }
                                     if (this.L) {
-                                        e10.setAlpha(ks.e4);
+                                        e10.setAlpha(ls.e4);
                                     } else if (this.K) {
                                         e10.setAlpha(60);
                                     } else {
@@ -223,7 +223,7 @@ public class s1 {
                                     }
                                     canvas.drawPath(path, e10);
                                     e10.setPathEffect(null);
-                                    e10.setAlpha(ks.e4);
+                                    e10.setAlpha(ls.e4);
                                 }
                                 if (!this.K) {
                                     Utilities.stackBlurBitmap(createBitmap, 2);
@@ -236,7 +236,7 @@ public class s1 {
                             }
                         } else {
                             if (i13 == 105 && i12 == 0) {
-                                this.d[i12] = mz.d(R.raw.premium_object_star2, L, L, b());
+                                this.d[i12] = nz.d(R.raw.premium_object_star2, L, L, b());
                             }
                             Bitmap createBitmap2 = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
                             this.d[i12] = createBitmap2;
@@ -275,7 +275,7 @@ public class s1 {
     }
 
     public int b() {
-        return this.O == 100 ? i0.a.o(m6.w0(this.Q, this.P), ks.e3) : m6.w0(this.Q, this.P);
+        return this.O == 100 ? i0.a.o(m6.w0(this.Q, this.P), ls.e3) : m6.w0(this.Q, this.P);
     }
 
     public final void c() {

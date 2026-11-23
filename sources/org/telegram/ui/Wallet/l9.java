@@ -10,11 +10,11 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.si;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l9 extends org.telegram.ui.ActionBar.g2 {
     public final ArrayList a;
@@ -115,7 +115,7 @@ public final class l9 extends org.telegram.ui.ActionBar.g2 {
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         q9Var.setAspectFit(true);
         q9Var.getImageReceiver().d = org.telegram.messenger.g0.t0();
-        ri.d0(org.telegram.messenger.g0.t0()).h2(q9Var, "RestrictedEmoji", "📝", "100_100");
+        si.d0(org.telegram.messenger.g0.t0()).h2(q9Var, "RestrictedEmoji", "📝", "100_100");
         q9Var.getImageReceiver().X(1);
         linearLayout.addView(q9Var, c8.ma.t(100, 100, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
@@ -123,12 +123,12 @@ public final class l9 extends org.telegram.ui.ActionBar.g2 {
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(1);
         org.telegram.ui.ActionBar.t6.U(textView, i11, this.resourceProvider);
-        textView.setText(gd.N0(this.h ? 2131742902 : 2131742825, null));
-        TextView f10 = n10.f(linearLayout, textView, c8.ma.t(-1, -2, 1, 32, 0, 32, 10), context);
+        textView.setText(hd.N0(this.h ? 2131742900 : 2131742823, null));
+        TextView f10 = o10.f(linearLayout, textView, c8.ma.t(-1, -2, 1, 32, 0, 32, 10), context);
         f10.setTextSize(1, 14.0f);
         f10.setGravity(1);
         org.telegram.ui.ActionBar.t6.U(f10, org.telegram.ui.ActionBar.m6.z6, this.resourceProvider);
-        f10.setText(gd.N0(this.h ? 2131742901 : 2131742824, null));
+        f10.setText(hd.N0(this.h ? 2131742899 : 2131742822, null));
         linearLayout.addView(f10, c8.ma.t(-1, -2, 1, 32, 0, 32, 8));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.d = linearLayout2;
@@ -139,7 +139,7 @@ public final class l9 extends org.telegram.ui.ActionBar.g2 {
         hi.e eVar = new hi.e(context, this.resourceProvider, true);
         this.e = eVar;
         eVar.f();
-        this.e.setText(gd.N0(2131742910, null));
+        this.e.setText(hd.N0(2131742908, null));
         this.e.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.k9
             public final /* synthetic */ l9 b;
 

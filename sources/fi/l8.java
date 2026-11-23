@@ -8,10 +8,10 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l8 extends Drawable {
     public int a;
@@ -21,7 +21,7 @@ public final class l8 extends Drawable {
     public final org.telegram.ui.Components.d6 g;
     public boolean h;
     public Paint i;
-    public int e = ks.e4;
+    public int e = ls.e4;
     public final float[] f = new float[15];
     public final Path j = new Path();
 
@@ -96,7 +96,7 @@ public final class l8 extends Drawable {
                 this.i.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                 this.i.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
             }
-            paint.setColor(i0.a.o(-16777216, ks.L1));
+            paint.setColor(i0.a.o(-16777216, ls.L1));
         }
         if (this.e != 255 || this.a == 1) {
             canvas.saveLayerAlpha(getBounds().left - (getBounds().width() * 0.2f), getBounds().top, (getBounds().width() * 0.2f) + getBounds().right, (getBounds().height() * 0.2f) + getBounds().bottom, this.e, 31);

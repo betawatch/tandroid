@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q0 extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ int b;
@@ -24,7 +24,7 @@ public final class q0 extends org.telegram.ui.Components.q6 {
                 ((org.telegram.ui.Cells.r1) obj).setTimeAlpha(f10);
                 break;
             case 3:
-                ((org.telegram.messenger.bj) obj).d = f10;
+                ((org.telegram.messenger.cj) obj).d = f10;
                 break;
             case 4:
                 ((wv0) obj).setCrossfadeProgress(f10);
@@ -76,7 +76,7 @@ public final class q0 extends org.telegram.ui.Components.q6 {
             case 2:
                 return Float.valueOf(((org.telegram.ui.Cells.r1) obj).getTimeAlpha());
             case 3:
-                return Float.valueOf(((org.telegram.messenger.bj) obj).d);
+                return Float.valueOf(((org.telegram.messenger.cj) obj).d);
             case 4:
                 return Float.valueOf(((wv0) obj).T);
             case 5:

@@ -3,10 +3,10 @@ package bi;
 import android.util.LongSparseArray;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -23,7 +23,7 @@ import org.telegram.ui.vo;
 import org.telegram.ui.wn;
 import org.telegram.ui.yj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class k2 implements RequestDelegate {
         Object obj4 = this.b;
         switch (i7) {
             case 0:
-                org.telegram.messenger.g0.g3(new l2((n3) obj4, (org.telegram.ui.ActionBar.t1) obj3, tLObject, (ai.i1) obj2, (x10) obj, tL_error, 0));
+                org.telegram.messenger.g0.g3(new l2((n3) obj4, (org.telegram.ui.ActionBar.t1) obj3, tLObject, (ai.i1) obj2, (y10) obj, tL_error, 0));
                 break;
             case 1:
                 org.telegram.messenger.g0.g3(new l2((di.f6) obj4, tLObject, (e2[]) obj3, (Long) obj2, (aa.r) obj, tL_error, 2, false));
@@ -59,15 +59,15 @@ public final /* synthetic */ class k2 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new l2((di.f6) obj4, tLObject, (CharSequence) obj3, (TL_stars.TL_starGiftUnique) obj2, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) obj, tL_error, 1, false));
                 break;
             case 3:
-                org.telegram.messenger.g0.g3(new l2((di.y8) obj4, tLObject, (fj) obj3, (TLRPC.TL_inputInvoiceMessage) obj2, (bh) obj, tL_error, 5, false));
+                org.telegram.messenger.g0.g3(new l2((di.y8) obj4, tLObject, (gj) obj3, (TLRPC.TL_inputInvoiceMessage) obj2, (bh) obj, tL_error, 5, false));
                 break;
             case 4:
-                org.telegram.messenger.g0.g3(new ai.b((di.y8) obj4, (org.telegram.ui.ActionBar.t1) obj3, tLObject, (TL_stars.InputSavedStarGift) obj2, (x10) obj, 9));
+                org.telegram.messenger.g0.g3(new ai.b((di.y8) obj4, (org.telegram.ui.ActionBar.t1) obj3, tLObject, (TL_stars.InputSavedStarGift) obj2, (y10) obj, 9));
                 break;
             case 5:
                 di.n8 n8Var = (di.n8) obj4;
                 n8Var.getClass();
-                org.telegram.messenger.g0.g3(new l2(n8Var, tLObject, (TL_stars.TL_starGiftCollection) obj3, (di.p8) obj2, (x10) obj, tL_error, 7, false));
+                org.telegram.messenger.g0.g3(new l2(n8Var, tLObject, (TL_stars.TL_starGiftCollection) obj3, (di.p8) obj2, (y10) obj, tL_error, 7, false));
                 break;
             case 6:
                 org.telegram.messenger.g0.g3(new ai.b((fi.z3) obj4, (Runnable) obj3, tL_error, (TL_stories.StoryItem) obj2, (hi.n8) obj, 12));
@@ -85,7 +85,7 @@ public final /* synthetic */ class k2 implements RequestDelegate {
                     break;
                 }
             case 8:
-                org.telegram.messenger.g0.g3(new l2((jg.z0) obj4, (String) obj3, tL_error, tLObject, (mp) obj2, (tr) obj));
+                org.telegram.messenger.g0.g3(new l2((jg.z0) obj4, (String) obj3, tL_error, tLObject, (np) obj2, (ur) obj));
                 break;
             case 9:
                 org.telegram.messenger.g0.g3(new ai.b((jg.a2) obj4, (TLRPC.TL_messages_getStickers) obj3, tLObject, (ArrayList) obj2, (LongSparseArray) obj, 17));

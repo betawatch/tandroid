@@ -9,13 +9,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g9 extends FrameLayout {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -93,7 +93,7 @@ public final class g9 extends FrameLayout {
             org.telegram.ui.Components.b9 b9Var = this.c;
             b9Var.r(user4);
             q9Var.f(this.r, b9Var);
-            textView.setText(o10.q(this.r));
+            textView.setText(p10.q(this.r));
             if (TextUtils.isEmpty(str)) {
                 f9Var.c(null, z10);
                 imageView.setVisibility(8);
@@ -118,7 +118,7 @@ public final class g9 extends FrameLayout {
             org.telegram.ui.ActionBar.t6.x(q9Var, L, org.telegram.ui.ActionBar.m6.Fi, this.a, PorterDuff.Mode.SRC_IN);
         }
         q9Var.setImageDrawable(new oq(this.e, getContext().getResources().getDrawable(R.drawable.menu_gram_24).mutate()));
-        textView.setText(gd.N0(2131742854, null));
+        textView.setText(hd.N0(2131742852, null));
         f9Var.c(str, z10);
         imageView.setVisibility(8);
     }

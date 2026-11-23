@@ -6,9 +6,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class g4 implements Runnable {
                     textView.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
                     textView.setTextSize(1, 14.0f);
                     textView.setTag(0);
-                    textView.setText(gd.N0(2131747478, "PaintDelete"));
+                    textView.setText(hd.N0(2131747478, "PaintDelete"));
                     textView.setOnClickListener(new View.OnClickListener() { // from class: hi.l4
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class g4 implements Runnable {
                                     k5 k5Var5 = k5Var;
                                     k5Var5.A0(null, true);
                                     tg.j jVar4 = jVar;
-                                    k5Var5.I0((tg.o0) jVar4, new bi.p6(9, k5Var5, jVar4));
+                                    k5Var5.I0((tg.o0) jVar4, new bi.o6(9, k5Var5, jVar4));
                                     org.telegram.ui.ActionBar.g1 g1Var4 = k5Var5.r1;
                                     if (g1Var4 != null && g1Var4.isShowing()) {
                                         k5Var5.r1.d(true);
@@ -197,7 +197,7 @@ public final /* synthetic */ class g4 implements Runnable {
                     textView2.setTextSize(1, 14.0f);
                     if ((!t4Var.c() || t4Var.d) && k5Var.d2 <= 0) {
                         textView2.setTag(1);
-                        textView2.setText(gd.N0(2131747476, null));
+                        textView2.setText(hd.N0(2131747476, null));
                         final int i13 = 2;
                         textView2.setOnClickListener(new View.OnClickListener() { // from class: hi.l4
                             @Override // android.view.View.OnClickListener
@@ -249,7 +249,7 @@ public final /* synthetic */ class g4 implements Runnable {
                                         k5 k5Var5 = k5Var;
                                         k5Var5.A0(null, true);
                                         tg.j jVar4 = jVar;
-                                        k5Var5.I0((tg.o0) jVar4, new bi.p6(9, k5Var5, jVar4));
+                                        k5Var5.I0((tg.o0) jVar4, new bi.o6(9, k5Var5, jVar4));
                                         org.telegram.ui.ActionBar.g1 g1Var4 = k5Var5.r1;
                                         if (g1Var4 != null && g1Var4.isShowing()) {
                                             k5Var5.r1.d(true);
@@ -331,7 +331,7 @@ public final /* synthetic */ class g4 implements Runnable {
                         });
                     } else {
                         textView2.setTag(3);
-                        textView2.setText(gd.N0(2131747241, null));
+                        textView2.setText(hd.N0(2131747241, null));
                         textView2.setOnClickListener(new View.OnClickListener() { // from class: hi.l4
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
@@ -382,7 +382,7 @@ public final /* synthetic */ class g4 implements Runnable {
                                         k5 k5Var5 = k5Var;
                                         k5Var5.A0(null, true);
                                         tg.j jVar4 = jVar;
-                                        k5Var5.I0((tg.o0) jVar4, new bi.p6(9, k5Var5, jVar4));
+                                        k5Var5.I0((tg.o0) jVar4, new bi.o6(9, k5Var5, jVar4));
                                         org.telegram.ui.ActionBar.g1 g1Var4 = k5Var5.r1;
                                         if (g1Var4 != null && g1Var4.isShowing()) {
                                             k5Var5.r1.d(true);
@@ -466,7 +466,7 @@ public final /* synthetic */ class g4 implements Runnable {
                     linearLayout.addView(textView2, c8.ma.o(-2, 44));
                     f10 = 14.0f;
                 } else if (jVar instanceof tg.o0) {
-                    TextView e02 = k5Var.e0(1, gd.N0(2131747476, null));
+                    TextView e02 = k5Var.e0(1, hd.N0(2131747476, null));
                     f10 = 14.0f;
                     e02.setOnClickListener(new View.OnClickListener() { // from class: hi.l4
                         @Override // android.view.View.OnClickListener
@@ -518,7 +518,7 @@ public final /* synthetic */ class g4 implements Runnable {
                                     k5 k5Var5 = k5Var;
                                     k5Var5.A0(null, true);
                                     tg.j jVar4 = jVar;
-                                    k5Var5.I0((tg.o0) jVar4, new bi.p6(9, k5Var5, jVar4));
+                                    k5Var5.I0((tg.o0) jVar4, new bi.o6(9, k5Var5, jVar4));
                                     org.telegram.ui.ActionBar.g1 g1Var4 = k5Var5.r1;
                                     if (g1Var4 != null && g1Var4.isShowing()) {
                                         k5Var5.r1.d(true);
@@ -602,7 +602,7 @@ public final /* synthetic */ class g4 implements Runnable {
                 } else {
                     f10 = 14.0f;
                     if (jVar instanceof tg.l0) {
-                        TextView e03 = k5Var.e0(1, gd.N0(2131747476, null));
+                        TextView e03 = k5Var.e0(1, hd.N0(2131747476, null));
                         final int i14 = 4;
                         e03.setOnClickListener(new View.OnClickListener() { // from class: hi.l4
                             @Override // android.view.View.OnClickListener
@@ -654,7 +654,7 @@ public final /* synthetic */ class g4 implements Runnable {
                                         k5 k5Var5 = k5Var;
                                         k5Var5.A0(null, true);
                                         tg.j jVar4 = jVar;
-                                        k5Var5.I0((tg.o0) jVar4, new bi.p6(9, k5Var5, jVar4));
+                                        k5Var5.I0((tg.o0) jVar4, new bi.o6(9, k5Var5, jVar4));
                                         org.telegram.ui.ActionBar.g1 g1Var4 = k5Var5.r1;
                                         if (g1Var4 != null && g1Var4.isShowing()) {
                                             k5Var5.r1.d(true);
@@ -738,7 +738,7 @@ public final /* synthetic */ class g4 implements Runnable {
                     }
                 }
                 if ((jVar instanceof tg.g2) || (jVar instanceof tg.t1) || (jVar instanceof tg.p1) || (jVar instanceof tg.s1)) {
-                    TextView e04 = k5Var.e0(4, gd.N0(2131750673, null));
+                    TextView e04 = k5Var.e0(4, hd.N0(2131750673, null));
                     final int i15 = 5;
                     e04.setOnClickListener(new View.OnClickListener() { // from class: hi.l4
                         @Override // android.view.View.OnClickListener
@@ -790,7 +790,7 @@ public final /* synthetic */ class g4 implements Runnable {
                                     k5 k5Var5 = k5Var;
                                     k5Var5.A0(null, true);
                                     tg.j jVar4 = jVar;
-                                    k5Var5.I0((tg.o0) jVar4, new bi.p6(9, k5Var5, jVar4));
+                                    k5Var5.I0((tg.o0) jVar4, new bi.o6(9, k5Var5, jVar4));
                                     org.telegram.ui.ActionBar.g1 g1Var4 = k5Var5.r1;
                                     if (g1Var4 != null && g1Var4.isShowing()) {
                                         k5Var5.r1.d(true);
@@ -884,7 +884,7 @@ public final /* synthetic */ class g4 implements Runnable {
                     textView3.setPadding(org.telegram.messenger.g0.L(f10), 0, org.telegram.messenger.g0.L(f10), 0);
                     textView3.setTextSize(1, f10);
                     textView3.setTag(2);
-                    textView3.setText(gd.N0(2131747481, null));
+                    textView3.setText(hd.N0(2131747481, null));
                     final int i16 = 6;
                     textView3.setOnClickListener(new View.OnClickListener() { // from class: hi.l4
                         @Override // android.view.View.OnClickListener
@@ -936,7 +936,7 @@ public final /* synthetic */ class g4 implements Runnable {
                                     k5 k5Var5 = k5Var;
                                     k5Var5.A0(null, true);
                                     tg.j jVar4 = jVar;
-                                    k5Var5.I0((tg.o0) jVar4, new bi.p6(9, k5Var5, jVar4));
+                                    k5Var5.I0((tg.o0) jVar4, new bi.o6(9, k5Var5, jVar4));
                                     org.telegram.ui.ActionBar.g1 g1Var4 = k5Var5.r1;
                                     if (g1Var4 != null && g1Var4.isShowing()) {
                                         k5Var5.r1.d(true);
@@ -1028,7 +1028,7 @@ public final /* synthetic */ class g4 implements Runnable {
                     textView4.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
                     textView4.setTextSize(1, 14.0f);
                     textView4.setTag(2);
-                    textView4.setText(gd.N0(2131747477, "PaintDuplicate"));
+                    textView4.setText(hd.N0(2131747477, "PaintDuplicate"));
                     final int i17 = 7;
                     textView4.setOnClickListener(new View.OnClickListener() { // from class: hi.l4
                         @Override // android.view.View.OnClickListener
@@ -1080,7 +1080,7 @@ public final /* synthetic */ class g4 implements Runnable {
                                     k5 k5Var5 = k5Var;
                                     k5Var5.A0(null, true);
                                     tg.j jVar4 = jVar;
-                                    k5Var5.I0((tg.o0) jVar4, new bi.p6(9, k5Var5, jVar4));
+                                    k5Var5.I0((tg.o0) jVar4, new bi.o6(9, k5Var5, jVar4));
                                     org.telegram.ui.ActionBar.g1 g1Var4 = k5Var5.r1;
                                     if (g1Var4 != null && g1Var4.isShowing()) {
                                         k5Var5.r1.d(true);

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r10 implements View.OnClickListener {
     public final m4 a = new m4(this, 6);
@@ -94,7 +94,7 @@ public final class r10 implements View.OnClickListener {
                                 r10Var.getClass();
                                 break;
                             } else {
-                                org.telegram.messenger.mp.u1(r10Var.b.o1.a).V3((TLRPC.Updates) tLObject, false);
+                                org.telegram.messenger.np.u1(r10Var.b.o1.a).V3((TLRPC.Updates) tLObject, false);
                                 break;
                             }
                         default:
@@ -103,7 +103,7 @@ public final class r10 implements View.OnClickListener {
                                 r10Var2.getClass();
                                 break;
                             } else {
-                                org.telegram.messenger.mp.u1(r10Var2.b.o1.a).V3((TLRPC.Updates) tLObject, false);
+                                org.telegram.messenger.np.u1(r10Var2.b.o1.a).V3((TLRPC.Updates) tLObject, false);
                                 break;
                             }
                     }
@@ -138,7 +138,7 @@ public final class r10 implements View.OnClickListener {
                                 r10Var.getClass();
                                 break;
                             } else {
-                                org.telegram.messenger.mp.u1(r10Var.b.o1.a).V3((TLRPC.Updates) tLObject, false);
+                                org.telegram.messenger.np.u1(r10Var.b.o1.a).V3((TLRPC.Updates) tLObject, false);
                                 break;
                             }
                         default:
@@ -147,7 +147,7 @@ public final class r10 implements View.OnClickListener {
                                 r10Var2.getClass();
                                 break;
                             } else {
-                                org.telegram.messenger.mp.u1(r10Var2.b.o1.a).V3((TLRPC.Updates) tLObject, false);
+                                org.telegram.messenger.np.u1(r10Var2.b.o1.a).V3((TLRPC.Updates) tLObject, false);
                                 break;
                             }
                     }
@@ -170,7 +170,7 @@ public final class r10 implements View.OnClickListener {
                 }
                 LaunchActivity launchActivity = f40Var.d2;
                 if (launchActivity != null && launchActivity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                    c8.na.c(R.raw.permission_request_microphone, 2131743040, new String[]{"android.permission.RECORD_AUDIO"}, new String[]{"android.permission.RECORD_AUDIO"}, new fi.e(18));
+                    c8.na.c(R.raw.permission_request_microphone, 2131743038, new String[]{"android.permission.RECORD_AUDIO"}, new String[]{"android.permission.RECORD_AUDIO"}, new fi.e(18));
                     return;
                 }
                 f40Var.S1(1, true);
@@ -193,7 +193,7 @@ public final class r10 implements View.OnClickListener {
         int nextInt = Utilities.b.nextInt(100);
         int i14 = 120;
         if (nextInt >= 32) {
-            i10 = org.telegram.messenger.ks.P3;
+            i10 = org.telegram.messenger.ls.P3;
             if (nextInt >= 64) {
                 i14 = 420;
                 if (nextInt >= 97) {
@@ -213,8 +213,8 @@ public final class r10 implements View.OnClickListener {
         oh0Var.M(i10);
         p10Var.d();
         if (f40Var.E3 == 2) {
-            long B1 = org.telegram.messenger.fj.B1(((TLRPC.GroupCallParticipant) f40Var.V2.d.f(org.telegram.messenger.fj.B1(f40Var.v2))).peer);
-            VoIPService.getSharedInstance().editCallMember(org.telegram.messenger.n5.E(B1) ? org.telegram.messenger.mp.u1(cVar.a).c2(Long.valueOf(B1)) : org.telegram.messenger.mp.u1(cVar.a).O0(Long.valueOf(-B1)), null, null, null, Boolean.TRUE, null);
+            long B1 = org.telegram.messenger.gj.B1(((TLRPC.GroupCallParticipant) f40Var.V2.d.f(org.telegram.messenger.gj.B1(f40Var.v2))).peer);
+            VoIPService.getSharedInstance().editCallMember(org.telegram.messenger.n5.E(B1) ? org.telegram.messenger.np.u1(cVar.a).c2(Long.valueOf(B1)) : org.telegram.messenger.np.u1(cVar.a).O0(Long.valueOf(-B1)), null, null, null, Boolean.TRUE, null);
             f40Var.S1(4, true);
         }
     }

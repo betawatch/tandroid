@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class og0 extends View {
     public final mc E;
@@ -159,7 +159,7 @@ public class og0 extends View {
     public final void e(String str, String str2) {
         this.c = new xy0(str, 11.0f, org.telegram.messenger.g0.o());
         this.d = new xy0(str2, 11.0f, null);
-        setContentDescription(org.telegram.messenger.gd.N0(2131754798, null) + " " + ((Object) str) + " — " + ((Object) str2));
+        setContentDescription(org.telegram.messenger.hd.N0(2131754798, null) + " " + ((Object) str) + " — " + ((Object) str2));
     }
 
     public final void f(float f10, float f11) {
@@ -282,11 +282,11 @@ public class og0 extends View {
         }
     }
 
-    public void setColor(org.telegram.messenger.bp bpVar) {
-        this.G = bpVar != null;
+    public void setColor(org.telegram.messenger.cp cpVar) {
+        this.G = cpVar != null;
         og0 og0Var = this.e;
         if (og0Var != null) {
-            og0Var.setColor(bpVar);
+            og0Var.setColor(cpVar);
         }
         invalidate();
     }
@@ -343,7 +343,7 @@ public class og0 extends View {
             if (TextUtils.isEmpty(str)) {
                 B = TextUtils.isEmpty(B) ? "" : " - " + ((Object) B);
             } else if (TextUtils.isEmpty(B)) {
-                str = org.telegram.messenger.gd.N0(2131753897, null);
+                str = org.telegram.messenger.hd.N0(2131753897, null);
                 B = i5.c.k(2131753896, null, new StringBuilder(" - "));
             } else {
                 str = "";

@@ -30,8 +30,8 @@ import oi.g4;
 import oi.m5;
 import oi.n5;
 import oi.t3;
-import org.telegram.messenger.sr;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -46,9 +46,9 @@ import org.telegram.ui.cx;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x1 implements v10, org.telegram.ui.ActionBar.q1, h2.o, i2.u, mt, oi.l0, ww, n5, Vector.TLDeserializer {
+public final /* synthetic */ class x1 implements w10, org.telegram.ui.ActionBar.q1, h2.o, i2.u, mt, oi.l0, ww, n5, Vector.TLDeserializer {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -286,7 +286,7 @@ public final /* synthetic */ class x1 implements v10, org.telegram.ui.ActionBar.
         return a70.I((b2) ((t5) this.b).b, f1Var);
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         switch (this.a) {
             case 0:
@@ -313,10 +313,10 @@ public final /* synthetic */ class x1 implements v10, org.telegram.ui.ActionBar.
     @Override // org.telegram.ui.ww
     public boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
         g4 g4Var = (g4) this.b;
-        if (arrayList.isEmpty() || ((sr) arrayList.get(0)).a <= 0) {
+        if (arrayList.isEmpty() || ((tr) arrayList.get(0)).a <= 0) {
             return false;
         }
-        g4Var.run(((sr) arrayList.get(0)).a);
+        g4Var.run(((tr) arrayList.get(0)).a);
         cxVar.finishFragment();
         return true;
     }

@@ -4,9 +4,9 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class sy0 implements zi.r0, org.telegram.messenger.fs {
+public final class sy0 implements zi.r0, org.telegram.messenger.gs {
     public final int a;
     public final boolean b;
     public final HashMap c = new HashMap();
@@ -15,7 +15,7 @@ public final class sy0 implements zi.r0, org.telegram.messenger.fs {
     public sy0(int i7, boolean z10) {
         this.a = i7;
         this.b = z10;
-        org.telegram.messenger.ks.f(i7).b(this, org.telegram.messenger.ks.U1);
+        org.telegram.messenger.ls.f(i7).b(this, org.telegram.messenger.ls.U1);
     }
 
     public final synchronized void a(long j3, File file, long j10, long j11) {
@@ -54,7 +54,7 @@ public final class sy0 implements zi.r0, org.telegram.messenger.fs {
                 return;
             }
             this.d = true;
-            org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.U1);
+            org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.U1);
             if (z10) {
                 Iterator it = this.c.values().iterator();
                 while (it.hasNext()) {
@@ -78,12 +78,12 @@ public final class sy0 implements zi.r0, org.telegram.messenger.fs {
         r0.i = (byte[]) r6[4];
         r0.c = java.lang.Math.max(r0.c, ((java.lang.Long) r6[5]).longValue());
      */
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final synchronized void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (!this.d && i7 == org.telegram.messenger.ks.U1 && objArr.length >= 6) {
+        if (!this.d && i7 == org.telegram.messenger.ls.U1 && objArr.length >= 6) {
             String str = (String) objArr[0];
             Iterator it = this.c.values().iterator();
             while (true) {

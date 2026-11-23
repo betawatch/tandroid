@@ -5,9 +5,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x1 extends Drawable {
     public final Paint a;
@@ -108,10 +108,10 @@ public final class x1 extends Drawable {
         float f15 = this.e;
         canvas.translate(-org.telegram.messenger.g0.L(0.66f), 0.0f);
         if (this.g) {
-            canvas.rotate((this.e * (this.b ? -180 : ks.K2)) + 135.0f);
+            canvas.rotate((this.e * (this.b ? -180 : ls.K2)) + 135.0f);
             f15 = 1.0f;
         } else {
-            canvas.rotate(this.e * (this.b ? -225 : ks.R1));
+            canvas.rotate(this.e * (this.b ? -225 : ls.R1));
         }
         float f16 = 1.0f - f15;
         canvas.drawLine(org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-6.75f, -8.0f, f15)), 0.0f, org.telegram.messenger.g0.L(8.0f) - ((paint.getStrokeWidth() / 2.0f) * f16), 0.0f, paint);

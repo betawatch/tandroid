@@ -22,11 +22,11 @@ import di.pb;
 import hi.sa;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.qd;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.rd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
@@ -59,7 +59,7 @@ import org.telegram.ui.Components.yw0;
 import org.telegram.ui.Components.z71;
 import org.telegram.ui.Components.zw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e3 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final class e3 extends FrameLayout {
         soVarArr[0].setTranslationY(org.telegram.messenger.g0.L(20.0f));
         ViewPropertyAnimator translationY = soVarArr[0].animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).translationY(0.0f);
         nr nrVar = nr.h;
-        n10.o(translationY, nrVar, 320L);
+        o10.o(translationY, nrVar, 320L);
         so soVar3 = soVarArr[1];
         soVar3.n = false;
         soVar3.setVisibility(0);
@@ -409,8 +409,8 @@ public final class e3 extends FrameLayout {
                 }
                 Rect rect = org.telegram.ui.Cells.s5.c0;
                 s5Var.O.c(canvas, s5Var.b, o5Var.getMeasuredWidth(), o5Var.getMeasuredHeight(), 1.0f, false);
-                ef efVar = s5Var.I;
-                if (efVar == null || efVar.N <= 0 || o5Var.E == null) {
+                ff ffVar = s5Var.I;
+                if (ffVar == null || ffVar.N <= 0 || o5Var.E == null) {
                     return drawChild;
                 }
                 Path path = o5Var.F;
@@ -626,7 +626,7 @@ public final class e3 extends FrameLayout {
                     int paddingLeft = getPaddingLeft();
                     int paddingRight = i17 - getPaddingRight();
                     int max = Math.max(0, ((paddingRight - paddingLeft) - org.telegram.messenger.g0.L(8.0f)) / 2);
-                    boolean z12 = gd.a0;
+                    boolean z12 = hd.a0;
                     int i19 = z12 ? paddingRight - max : paddingLeft;
                     if (!z12) {
                         paddingLeft = paddingRight - max;
@@ -664,14 +664,14 @@ public final class e3 extends FrameLayout {
                             }
                             childAt.layout(i14, i13, measuredWidth3 + i14, measuredHeight3 + i13);
                         } else if (num.intValue() == i18) {
-                            if (gd.a0) {
+                            if (hd.a0) {
                                 childAt.layout(getPaddingLeft(), getPaddingTop(), childAt.getMeasuredWidth() + getPaddingLeft(), childAt.getMeasuredHeight() + getPaddingTop());
                             } else {
                                 childAt.layout((i17 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i17 - getPaddingRight(), childAt.getMeasuredHeight() + getPaddingTop());
                             }
                             view = childAt;
                         } else if (num.intValue() == -2) {
-                            if (gd.a0) {
+                            if (hd.a0) {
                                 int paddingLeft2 = getPaddingLeft();
                                 if (view != null) {
                                     paddingLeft2 = org.telegram.messenger.f3.C(8.0f, view.getMeasuredWidth(), paddingLeft2);
@@ -680,13 +680,13 @@ public final class e3 extends FrameLayout {
                             } else {
                                 int paddingRight2 = (i17 - getPaddingRight()) - childAt.getMeasuredWidth();
                                 if (view != null) {
-                                    paddingRight2 = n10.x(8.0f, view.getMeasuredWidth(), paddingRight2);
+                                    paddingRight2 = o10.x(8.0f, view.getMeasuredWidth(), paddingRight2);
                                 }
                                 childAt.layout(paddingRight2, getPaddingTop(), childAt.getMeasuredWidth() + paddingRight2, childAt.getMeasuredHeight() + getPaddingTop());
                             }
                         } else if (num.intValue() == -4) {
                             View findViewWithTag5 = findViewWithTag(-3);
-                            if (gd.a0) {
+                            if (hd.a0) {
                                 if (findViewWithTag5 == null) {
                                     left = i17 - getPaddingRight();
                                     measuredWidth = childAt.getMeasuredWidth();
@@ -701,7 +701,7 @@ public final class e3 extends FrameLayout {
                                 childAt.layout(paddingLeft3, getPaddingTop(), childAt.getMeasuredWidth() + paddingLeft3, childAt.getMeasuredHeight() + getPaddingTop());
                             }
                         } else if (num.intValue() == -3) {
-                            if (gd.a0) {
+                            if (hd.a0) {
                                 childAt.layout((i17 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i17 - getPaddingRight(), childAt.getMeasuredHeight() + getPaddingTop());
                             } else {
                                 childAt.layout(getPaddingLeft(), getPaddingTop(), childAt.getMeasuredWidth() + getPaddingLeft(), childAt.getMeasuredHeight() + getPaddingTop());
@@ -903,14 +903,14 @@ public final class e3 extends FrameLayout {
                 break;
             case 20:
                 ty tyVar = ((oy) this.b).R;
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) (n10.z(8.0f, tyVar.E0.getMeasuredHeight() - tyVar.c1, 3) * 1.7f), TLObject.FLAG_30));
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) (o10.z(8.0f, tyVar.E0.getMeasuredHeight() - tyVar.c1, 3) * 1.7f), TLObject.FLAG_30));
                 break;
             case 26:
                 mt0 mt0Var = (mt0) this.b;
                 di.b1 b1Var = mt0Var.m1;
                 int size2 = View.MeasureSpec.getSize(i10) - org.telegram.messenger.g0.m;
                 getMeasuredWidth();
-                int D = org.telegram.messenger.f3.D(54.0f, qd.g(), org.telegram.messenger.f3.C(56.0f, org.telegram.messenger.g0.L(56.0f), 1));
+                int D = org.telegram.messenger.f3.D(54.0f, rd.g(), org.telegram.messenger.f3.C(56.0f, org.telegram.messenger.g0.L(56.0f), 1));
                 int i14 = size2 / 5;
                 if (D < i14 * 3) {
                     i11 = org.telegram.messenger.g0.L(8.0f);
@@ -1112,7 +1112,7 @@ public final class e3 extends FrameLayout {
             so[] soVarArr = (so[]) this.b;
             if (i7 < soVarArr.length) {
                 soVarArr[i7] = new so(context, h6Var);
-                addView(((so[]) this.b)[i7], ma.e(-1, -1, ks.E1));
+                addView(((so[]) this.b)[i7], ma.e(-1, -1, ls.E1));
                 i7++;
             } else {
                 soVarArr[0].setVisibility(0);

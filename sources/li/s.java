@@ -13,8 +13,8 @@ import h9.g1;
 import hi.d7;
 import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.nv0;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class s extends g2 implements te.b {
     public final te.a a;
@@ -54,8 +54,8 @@ public final class s extends g2 implements te.b {
         if (obj instanceof mi.f) {
             mi.f fVar = (mi.f) obj;
             long j3 = fVar.a;
-            TLRPC.Chat O0 = mp.u1(sVar.currentAccount).O0(Long.valueOf(-j3));
-            TLRPC.User c22 = mp.u1(sVar.currentAccount).c2(Long.valueOf(j3));
+            TLRPC.Chat O0 = np.u1(sVar.currentAccount).O0(Long.valueOf(-j3));
+            TLRPC.User c22 = np.u1(sVar.currentAccount).c2(Long.valueOf(j3));
             if (c22 != null) {
                 sVar.presentFragment(bn.ua(c22.id));
             } else if (v3.t0(O0) || v3.j0(O0)) {
@@ -96,7 +96,7 @@ public final class s extends g2 implements te.b {
         this.actionBar.setBackButtonDrawable(new x1(false));
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new v1(this, 19));
-        this.actionBar.setTitle(gd.N0(2131751883, null));
+        this.actionBar.setTitle(hd.N0(2131751883, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         int i10 = m6.a7;
@@ -128,7 +128,7 @@ public final class s extends g2 implements te.b {
         int f10 = i0.a.f(0.125f, getThemedColor(m6.d6), getThemedColor(m6.G6));
         this.x = f10;
         eVar2.setColor(f10);
-        this.n.setText(gd.N0(2131751888, null));
+        this.n.setText(hd.N0(2131751888, null));
         this.n.f();
         this.n.setOnClickListener(new View.OnClickListener(this) { // from class: li.r
             public final /* synthetic */ s b;
@@ -152,7 +152,7 @@ public final class s extends g2 implements te.b {
         this.f.addView(this.n, ma.q(0, 48, 1.0f, 0, 4, 0, 4, 0));
         hi.e eVar3 = new hi.e(context, this.resourceProvider, true);
         this.h = eVar3;
-        eVar3.setText(gd.N0(2131751890, null));
+        eVar3.setText(hd.N0(2131751890, null));
         this.h.f();
         hi.e eVar4 = this.h;
         final int i11 = z10 ? 1 : 0;
@@ -179,8 +179,8 @@ public final class s extends g2 implements te.b {
         this.c.addView(this.f, ma.e(-1, -2, 80));
         nv0 nv0Var = new nv0(getParentActivity(), null, 16, this.resourceProvider);
         this.r = nv0Var;
-        nv0Var.d.setText(gd.N0(2131748032, null));
-        this.r.e.setText(gd.N0(2131748031, null));
+        nv0Var.d.setText(hd.N0(2131748032, null));
+        this.r.e.setText(hd.N0(2131748031, null));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
         this.c.addView(this.r, ma.e(-2, -2, 17));

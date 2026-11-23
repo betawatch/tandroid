@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ue0 extends org.telegram.ui.j4 {
     public final /* synthetic */ int h;
@@ -41,14 +41,14 @@ public final class ue0 extends org.telegram.ui.j4 {
 
     @Override // android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         switch (this.h) {
             case 0:
                 boolean drawChild = super.drawChild(canvas, view, j3);
                 PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (fjVar = MediaController.B().v0) != null) {
+                if (view == pipRoundVideoView.c && (gjVar = MediaController.B().v0) != null) {
                     pipRoundVideoView.F.set(org.telegram.messenger.g0.N(1.5f), org.telegram.messenger.g0.N(1.5f), getMeasuredWidth() - org.telegram.messenger.g0.N(1.5f), getMeasuredHeight() - org.telegram.messenger.g0.N(1.5f));
-                    canvas.drawArc(pipRoundVideoView.F, -90.0f, fjVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.m6.k2);
+                    canvas.drawArc(pipRoundVideoView.F, -90.0f, gjVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.m6.k2);
                 }
                 return drawChild;
             case 1:

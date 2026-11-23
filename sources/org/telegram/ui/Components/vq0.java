@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vq0 implements tj0 {
     public final /* synthetic */ kq0 a;
@@ -77,10 +77,10 @@ public final class vq0 implements tj0 {
                             return jt0Var.T0(((org.telegram.ui.Cells.h7) view2).getMessage(), view2, 0, true);
                         }
                         if (i12 == 5 && (view2 instanceof org.telegram.ui.Cells.i2)) {
-                            return jt0Var.T0((org.telegram.messenger.fj) ((org.telegram.ui.Cells.i2) view2).getParentObject(), view2, 0, true);
+                            return jt0Var.T0((org.telegram.messenger.gj) ((org.telegram.ui.Cells.i2) view2).getParentObject(), view2, 0, true);
                         }
                         if ((i12 == 0 || (jt0.z0(i12) && jt0Var.H())) && (view2 instanceof org.telegram.ui.Cells.p7)) {
-                            org.telegram.messenger.fj messageObject = ((org.telegram.ui.Cells.p7) view2).getMessageObject();
+                            org.telegram.messenger.gj messageObject = ((org.telegram.ui.Cells.p7) view2).getMessageObject();
                             if (messageObject != null) {
                                 return jt0Var.T0(messageObject, view2, kq0Var.F, true);
                             }
@@ -118,7 +118,7 @@ public final class vq0 implements tj0 {
                                         Canvas canvas = new Canvas(createBitmap);
                                         canvas.scale(0.16666667f, 0.16666667f);
                                         profileActivity.fragmentView.draw(canvas);
-                                        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / org.telegram.messenger.ks.K2));
+                                        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / org.telegram.messenger.ls.K2));
                                         profileActivity.U.setBackground(new BitmapDrawable(createBitmap));
                                         profileActivity.U.setAlpha(0.0f);
                                         profileActivity.U.setVisibility(0);
@@ -132,15 +132,15 @@ public final class vq0 implements tj0 {
                                             return z10;
                                         }
                                         org.telegram.ui.ActionBar.y0 y0Var = new org.telegram.ui.ActionBar.y0(jt0Var2.getContext(), false, false);
-                                        y0Var.j(org.telegram.messenger.gd.N0(2131747617, null), R.drawable.msg_channel, null);
-                                        y0Var.setMinimumWidth(org.telegram.messenger.ks.q2);
+                                        y0Var.j(org.telegram.messenger.hd.N0(2131747617, null), R.drawable.msg_channel, null);
+                                        y0Var.setMinimumWidth(org.telegram.messenger.ls.q2);
                                         int i14 = 15;
                                         y0Var.setOnClickListener(new j70(ur0Var, i14));
                                         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(y0Var);
                                         org.telegram.ui.ActionBar.y0 y0Var2 = new org.telegram.ui.ActionBar.y0(jt0Var2.getContext(), false, false);
-                                        y0Var2.j(org.telegram.messenger.gd.N0(2131746466, null), R.drawable.msg_addbot, null);
-                                        y0Var2.setMinimumWidth(org.telegram.messenger.ks.q2);
-                                        y0Var2.setOnClickListener(new bi.i5(ur0Var, (TLRPC.Chat) tLObject, i7, i14));
+                                        y0Var2.j(org.telegram.messenger.hd.N0(2131746466, null), R.drawable.msg_addbot, null);
+                                        y0Var2.setMinimumWidth(org.telegram.messenger.ls.q2);
+                                        y0Var2.setOnClickListener(new bi.h5(ur0Var, (TLRPC.Chat) tLObject, i7, i14));
                                         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(y0Var2);
                                         g2Var.presentFragmentAsPreviewWithMenu(bnVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
                                         return z10;

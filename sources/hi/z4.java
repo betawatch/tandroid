@@ -2,23 +2,23 @@ package hi;
 
 import android.app.Activity;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class z4 extends bn {
-    public final /* synthetic */ q10 vd;
+    public final /* synthetic */ r10 vd;
     public final /* synthetic */ k5 wd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(k5 k5Var, q10 q10Var) {
+    public z4(k5 k5Var, r10 r10Var) {
         super(null);
         this.wd = k5Var;
-        this.vd = q10Var;
+        this.vd = r10Var;
     }
 
     @Override // org.telegram.ui.bn
@@ -83,6 +83,6 @@ public final class z4 extends bn {
 
     @Override // org.telegram.ui.bn, org.telegram.ui.Components.bh
     public final TLRPC.User j() {
-        return j10.i(this.currentAccount).f();
+        return k10.i(this.currentAccount).f();
     }
 }

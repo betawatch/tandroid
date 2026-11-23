@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i9 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -131,18 +131,18 @@ public final class i9 implements TextWatcher {
                 String obj = editable.toString();
                 org.telegram.ui.g4 g4Var = l0Var.C0;
                 String lowerCase2 = obj.toLowerCase();
-                org.telegram.ui.b0 b0Var = g4Var.X0;
-                if (b0Var != null) {
-                    org.telegram.messenger.g0.r(b0Var);
+                ai.j1 j1Var = g4Var.X0;
+                if (j1Var != null) {
+                    org.telegram.messenger.g0.r(j1Var);
                     g4Var.X0 = null;
                 }
                 if (!TextUtils.isEmpty(lowerCase2)) {
                     int i12 = g4Var.Y0 + 1;
                     g4Var.Y0 = i12;
                     if (!g4Var.v0[0].f()) {
-                        org.telegram.ui.b0 b0Var2 = new org.telegram.ui.b0(g4Var, lowerCase2, i12, 0);
-                        g4Var.X0 = b0Var2;
-                        org.telegram.messenger.g0.h3(b0Var2, 400L);
+                        ai.j1 j1Var2 = new ai.j1(g4Var, lowerCase2, i12, 29);
+                        g4Var.X0 = j1Var2;
+                        org.telegram.messenger.g0.h3(j1Var2, 400L);
                         break;
                     } else {
                         g4Var.b0(true);

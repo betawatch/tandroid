@@ -12,10 +12,10 @@ import c8.ma;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.au;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.bu;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
     public final ArrayList E;
@@ -60,7 +60,7 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
         this.x = x1Var;
         final int i11 = 1;
         x1Var.setSelected(true);
-        x1Var.setContentDescription(gd.N0(2131754483, null));
+        x1Var.setContentDescription(hd.N0(2131754483, null));
         x1Var.setOnClickListener(new View.OnClickListener(this) { // from class: oi.a0
             public final /* synthetic */ e0 b;
 
@@ -99,7 +99,7 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
         addView(x1Var, ma.e(38, 38, 21));
         TextView textView = new TextView(context);
         this.y = textView;
-        textView.setText(gd.N0(2131745816, null));
+        textView.setText(hd.N0(2131745816, null));
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
@@ -326,12 +326,12 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
                 for (int i32 = 0; i32 < size3; i32++) {
                     b0 b0Var5 = (b0) arrayList.get(i32);
                     int i33 = iArr[i32];
-                    au auVar = b0Var5.a;
-                    auVar.e = Math.max(org.telegram.messenger.g0.L(34.0f), i33);
+                    bu buVar = b0Var5.a;
+                    buVar.e = Math.max(org.telegram.messenger.g0.L(34.0f), i33);
                     LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) b0Var5.getLayoutParams();
                     if (layoutParams2 != null) {
                         int i34 = layoutParams2.width;
-                        int i35 = auVar.e;
+                        int i35 = buVar.e;
                         if (i34 != i35) {
                             layoutParams2.width = i35;
                             b0Var5.setLayoutParams(layoutParams2);
@@ -344,7 +344,7 @@ public final class e0 extends y implements org.telegram.ui.ActionBar.b6 {
             L = ((b0) arrayList.get(0)).a.c();
             L2 = org.telegram.messenger.g0.L(8.0f);
         } else {
-            L = org.telegram.messenger.g0.L(bz.W0 + 18);
+            L = org.telegram.messenger.g0.L(cz.W0 + 18);
             L2 = org.telegram.messenger.g0.L(8.0f);
         }
         int paddingBottom = getPaddingBottom() + getPaddingTop() + L2 + L;

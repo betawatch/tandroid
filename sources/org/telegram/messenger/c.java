@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile c[] b = new c[4];
@@ -31,19 +31,19 @@ public final class c {
         return cVar;
     }
 
-    public final mp b() {
-        return mp.u1(this.a);
+    public final np b() {
+        return np.u1(this.a);
     }
 
-    public final ks c() {
-        return ks.f(this.a);
+    public final ls c() {
+        return ls.f(this.a);
     }
 
     public final SharedPreferences d() {
-        return mp.u1(this.a).g7;
+        return np.u1(this.a).g7;
     }
 
-    public final j10 e() {
-        return j10.i(this.a);
+    public final k10 e() {
+        return k10.i(this.a);
     }
 }

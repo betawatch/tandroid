@@ -2,10 +2,10 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class nm extends c8.oa {
-    public org.telegram.messenger.fj a;
+    public org.telegram.messenger.gj a;
     public int b = 0;
     public boolean c = true;
     public int d = 0;
@@ -20,9 +20,9 @@ public final class nm extends c8.oa {
 
     @Override // c8.oa
     public final void a() {
-        org.telegram.messenger.fj fjVar = this.a;
+        org.telegram.messenger.gj gjVar = this.a;
         bn bnVar = this.h;
-        if (fjVar != null) {
+        if (gjVar != null) {
             bnVar.D0.T();
             int indexOf = bnVar.M6.indexOf(this.a) + bnVar.D0.K;
             if (indexOf >= 0) {

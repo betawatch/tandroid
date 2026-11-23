@@ -7,8 +7,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.SystemClock;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h extends View {
     public final ImageReceiver a;
@@ -56,23 +56,23 @@ public final class h extends View {
     }
 
     public final void a(TLObject tLObject) {
-        fc fcVar;
-        fc a10;
+        gc gcVar;
+        gc a10;
         b9 b9Var = this.c;
         b9Var.p(tLObject);
         this.a.i0(tLObject, b9Var, null);
         if (tLObject instanceof TLRPC.User) {
-            a10 = fc.l(j10.t0, 1, (TLRPC.User) tLObject);
+            a10 = gc.l(k10.t0, 1, (TLRPC.User) tLObject);
         } else {
             if (!(tLObject instanceof TLRPC.Chat)) {
-                fcVar = null;
-                this.b.q0(fcVar, "50_50_b", new ColorDrawable(m6.x0(null, m6.kh, false)), null, tLObject, 0);
+                gcVar = null;
+                this.b.q0(gcVar, "50_50_b", new ColorDrawable(m6.x0(null, m6.kh, false)), null, tLObject, 0);
                 invalidate();
             }
-            a10 = fc.a(1, (TLRPC.Chat) tLObject);
+            a10 = gc.a(1, (TLRPC.Chat) tLObject);
         }
-        fcVar = a10;
-        this.b.q0(fcVar, "50_50_b", new ColorDrawable(m6.x0(null, m6.kh, false)), null, tLObject, 0);
+        gcVar = a10;
+        this.b.q0(gcVar, "50_50_b", new ColorDrawable(m6.x0(null, m6.kh, false)), null, tLObject, 0);
         invalidate();
     }
 

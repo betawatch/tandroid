@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class f0 {
     public int c;
@@ -120,7 +120,7 @@ public final class f0 {
                         calendar.set(1, Utilities.z(split4[0]).intValue());
                         calendar.set(2, Utilities.z(split4[1]).intValue() - 1);
                         calendar.set(5, Utilities.z(split4[2]).intValue());
-                        return gd.E0().D0().format(calendar.getTime());
+                        return hd.E0().D0().format(calendar.getTime());
                     }
                 }
             }

@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class y5 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -150,7 +150,7 @@ public class y5 extends ReplacementSpan {
         longSparseArray.clear();
     }
 
-    public static u5 update(int i7, View view, u5 u5Var, ArrayList<org.telegram.messenger.cj> arrayList) {
+    public static u5 update(int i7, View view, u5 u5Var, ArrayList<org.telegram.messenger.dj> arrayList) {
         return update(i7, view, u5Var, arrayList, false);
     }
 
@@ -524,7 +524,7 @@ public class y5 extends ReplacementSpan {
         }
     }
 
-    public static u5 update(int i7, View view, u5 u5Var, ArrayList<org.telegram.messenger.cj> arrayList, boolean z10) {
+    public static u5 update(int i7, View view, u5 u5Var, ArrayList<org.telegram.messenger.dj> arrayList, boolean z10) {
         return update(i7, view, false, u5Var, arrayList, z10);
     }
 
@@ -537,7 +537,7 @@ public class y5 extends ReplacementSpan {
         return cloneSpans(charSequence, i7, fontMetricsInt, 1.0f);
     }
 
-    public static u5 update(int i7, View view, boolean z10, u5 u5Var, ArrayList<org.telegram.messenger.cj> arrayList) {
+    public static u5 update(int i7, View view, boolean z10, u5 u5Var, ArrayList<org.telegram.messenger.dj> arrayList) {
         return update(i7, view, z10, u5Var, arrayList, false);
     }
 
@@ -577,7 +577,7 @@ public class y5 extends ReplacementSpan {
         return charSequence;
     }
 
-    public static u5 update(int i7, View view, boolean z10, u5 u5Var, ArrayList<org.telegram.messenger.cj> arrayList, boolean z11) {
+    public static u5 update(int i7, View view, boolean z10, u5 u5Var, ArrayList<org.telegram.messenger.dj> arrayList, boolean z11) {
         Layout[] layoutArr = new Layout[arrayList == null ? 0 : arrayList.size()];
         if (arrayList != null) {
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -711,16 +711,16 @@ public class y5 extends ReplacementSpan {
                             }
                             if (y5Var.documentAbsolutePath != null) {
                                 i11 = i14;
-                                t5Var2.f = p5.m(org.telegram.messenger.j10.t0, y5Var.getDocumentId(), y5Var.documentAbsolutePath, i12);
+                                t5Var2.f = p5.m(org.telegram.messenger.k10.t0, y5Var.getDocumentId(), y5Var.documentAbsolutePath, i12);
                             } else {
                                 i11 = i14;
                                 TLRPC.Document document = y5Var.document;
                                 if (document != null) {
-                                    t5Var2.f = p5.l(org.telegram.messenger.j10.t0, i12, document);
+                                    t5Var2.f = p5.l(org.telegram.messenger.k10.t0, i12, document);
                                 } else {
                                     long j3 = y5Var.documentId;
                                     if (j3 != 0) {
-                                        t5Var2.f = p5.m(org.telegram.messenger.j10.t0, j3, null, i12);
+                                        t5Var2.f = p5.m(org.telegram.messenger.k10.t0, j3, null, i12);
                                     }
                                 }
                             }
@@ -849,9 +849,9 @@ public class y5 extends ReplacementSpan {
                 }
                 TLRPC.Document document = y5Var2.document;
                 if (document != null) {
-                    m10 = p5.l(org.telegram.messenger.j10.t0, i10, document);
+                    m10 = p5.l(org.telegram.messenger.k10.t0, i10, document);
                 } else {
-                    m10 = p5.m(org.telegram.messenger.j10.t0, y5Var2.documentId, null, i10);
+                    m10 = p5.m(org.telegram.messenger.k10.t0, y5Var2.documentId, null, i10);
                 }
                 m10.a(view);
                 longSparseArray.put(y5Var2.getDocumentId(), m10);
@@ -900,7 +900,7 @@ public class y5 extends ReplacementSpan {
                         i10 = i7;
                     }
                 }
-                p5 m10 = p5.m(org.telegram.messenger.j10.t0, y5Var.documentId, null, i10);
+                p5 m10 = p5.m(org.telegram.messenger.k10.t0, y5Var.documentId, null, i10);
                 m10.a(view);
                 longSparseArray.put(y5Var.getDocumentId(), m10);
             }

@@ -1,21 +1,20 @@
 package kg;
 
 import android.text.TextUtils;
-import bi.x4;
 import di.j2;
 import fi.l5;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v1 {
     public static volatile v1[] g = new v1[4];
@@ -82,7 +81,7 @@ public final class v1 {
         }
         if (u1Var != null) {
             arrayList.remove(u1Var);
-            ks.f(this.a).k(ks.F1, new Object[0]);
+            ls.f(this.a).k(ls.F1, new Object[0]);
         }
     }
 
@@ -165,8 +164,8 @@ public final class v1 {
         this.e = true;
         int i11 = this.a;
         if (z10) {
-            tr a02 = tr.a0(i11);
-            a02.a.c(new j2(this, a02, j10.i(i11).e(), runnable, 12));
+            ur a02 = ur.a0(i11);
+            a02.a.c(new j2(this, a02, k10.i(i11).e(), runnable, 12));
             return;
         }
         TLRPC.TL_messages_getQuickReplies tL_messages_getQuickReplies = new TLRPC.TL_messages_getQuickReplies();
@@ -181,7 +180,7 @@ public final class v1 {
                 return;
             }
             u1 u1Var = (u1) arrayList.get(i13);
-            long r10 = ri.r(tL_messages_getQuickReplies.hash, u1Var.a);
+            long r10 = si.r(tL_messages_getQuickReplies.hash, u1Var.a);
             tL_messages_getQuickReplies.hash = r10;
             String str = u1Var.b;
             if (str == null) {
@@ -244,16 +243,16 @@ public final class v1 {
             }
             int i16 = i10;
             int i17 = i13;
-            long r11 = ri.r(r10, j14);
+            long r11 = si.r(r10, j14);
             tL_messages_getQuickReplies.hash = r11;
-            long r12 = ri.r(r11, u1Var.e == null ? j3 : r6.e1());
+            long r12 = si.r(r11, u1Var.e == null ? j3 : r6.e1());
             tL_messages_getQuickReplies.hash = r12;
-            fj fjVar = u1Var.e;
-            if (fjVar == null || (message = fjVar.k) == null || (message.flags & 32768) == 0) {
+            gj gjVar = u1Var.e;
+            if (gjVar == null || (message = gjVar.k) == null || (message.flags & 32768) == 0) {
                 j13 = j3;
-                tL_messages_getQuickReplies.hash = ri.r(r12, j13);
+                tL_messages_getQuickReplies.hash = si.r(r12, j13);
             } else {
-                tL_messages_getQuickReplies.hash = ri.r(r12, message.edit_date);
+                tL_messages_getQuickReplies.hash = si.r(r12, message.edit_date);
                 j13 = j3;
             }
             i13 = i17 + 1;
@@ -266,7 +265,7 @@ public final class v1 {
 
     public final boolean j(final TLRPC.Update update, String str, int i7) {
         if (update instanceof TL_update.TL_updateQuickReplyMessage) {
-            b(new x4(this, ((TL_update.TL_updateQuickReplyMessage) update).message, str, i7, 8));
+            b(new ai.b1(this, ((TL_update.TL_updateQuickReplyMessage) update).message, str, i7, 9));
             return true;
         }
         if (update instanceof TL_update.TL_updateQuickReplies) {
@@ -292,11 +291,11 @@ public final class v1 {
                                 c10.b = tL_quickReply.shortcut;
                                 c10.f = tL_quickReply.count;
                                 c10.d = tL_quickReply.top_message;
-                                fj fjVar = c10.e;
-                                if (fjVar != null && fjVar.e1() != tL_quickReply.top_message) {
+                                gj gjVar = c10.e;
+                                if (gjVar != null && gjVar.e1() != tL_quickReply.top_message) {
                                     c10.e = null;
-                                    long e10 = j10.i(i11).e();
-                                    tr a02 = tr.a0(i11);
+                                    long e10 = k10.i(i11).e();
+                                    ur a02 = ur.a0(i11);
                                     a02.a.c(new j2(v1Var, a02, c10, e10, 13));
                                     break;
                                 }
@@ -313,7 +312,7 @@ public final class v1 {
                                 v1Var.a(u1Var2.b);
                             }
                             v1Var.l();
-                            ks.f(i11).k(ks.F1, new Object[0]);
+                            ls.f(i11).k(ls.F1, new Object[0]);
                             break;
                         case 1:
                             v1 v1Var2 = this.b;
@@ -323,10 +322,10 @@ public final class v1 {
                                 v1Var2.b.remove(c11);
                                 v1Var2.a(c11.b);
                                 int i14 = c11.a;
-                                tr a03 = tr.a0(i13);
-                                a03.a.c(new ai.y0(a03, i14, 16));
+                                ur a03 = ur.a0(i13);
+                                a03.a.c(new ai.c1(a03, i14, 16));
                                 v1Var2.l();
-                                ks.f(i13).k(ks.F1, new Object[0]);
+                                ls.f(i13).k(ls.F1, new Object[0]);
                                 break;
                             }
                             break;
@@ -342,15 +341,15 @@ public final class v1 {
                                     v1Var3.b.remove(c12);
                                 }
                                 ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
-                                fj fjVar2 = c12.e;
-                                if (!arrayList2.contains(Integer.valueOf(fjVar2 != null ? fjVar2.e1() : c12.d)) && c12.e != null) {
+                                gj gjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(gjVar2 != null ? gjVar2.e1() : c12.d)) && c12.e != null) {
                                     v1Var3.l();
-                                    ks.f(i15).k(ks.F1, new Object[0]);
+                                    ls.f(i15).k(ls.F1, new Object[0]);
                                     break;
                                 } else {
                                     c12.e = null;
-                                    long e11 = j10.i(i15).e();
-                                    tr a04 = tr.a0(i15);
+                                    long e11 = k10.i(i15).e();
+                                    ur a04 = ur.a0(i15);
                                     a04.a.c(new j2(v1Var3, a04, c12, e11, 13));
                                     break;
                                 }
@@ -382,15 +381,15 @@ public final class v1 {
                                 u1Var.f = tL_quickReply2.count;
                                 u1Var.c = i16;
                                 u1Var.d = tL_quickReply2.top_message;
-                                fj fjVar3 = u1Var.e;
-                                if (fjVar3 != null && fjVar3.e1() != tL_quickReply2.top_message) {
+                                gj gjVar3 = u1Var.e;
+                                if (gjVar3 != null && gjVar3.e1() != tL_quickReply2.top_message) {
                                     u1Var.e = null;
                                 }
                                 arrayList4.add(u1Var);
                                 v1Var4.a(u1Var.b);
                             }
                             v1Var4.l();
-                            ks.f(v1Var4.a).k(ks.F1, new Object[0]);
+                            ls.f(v1Var4.a).k(ls.F1, new Object[0]);
                             break;
                     }
                 }
@@ -420,11 +419,11 @@ public final class v1 {
                                 c10.b = tL_quickReply.shortcut;
                                 c10.f = tL_quickReply.count;
                                 c10.d = tL_quickReply.top_message;
-                                fj fjVar = c10.e;
-                                if (fjVar != null && fjVar.e1() != tL_quickReply.top_message) {
+                                gj gjVar = c10.e;
+                                if (gjVar != null && gjVar.e1() != tL_quickReply.top_message) {
                                     c10.e = null;
-                                    long e10 = j10.i(i112).e();
-                                    tr a02 = tr.a0(i112);
+                                    long e10 = k10.i(i112).e();
+                                    ur a02 = ur.a0(i112);
                                     a02.a.c(new j2(v1Var, a02, c10, e10, 13));
                                     break;
                                 }
@@ -441,7 +440,7 @@ public final class v1 {
                                 v1Var.a(u1Var2.b);
                             }
                             v1Var.l();
-                            ks.f(i112).k(ks.F1, new Object[0]);
+                            ls.f(i112).k(ls.F1, new Object[0]);
                             break;
                         case 1:
                             v1 v1Var2 = this.b;
@@ -451,10 +450,10 @@ public final class v1 {
                                 v1Var2.b.remove(c11);
                                 v1Var2.a(c11.b);
                                 int i14 = c11.a;
-                                tr a03 = tr.a0(i13);
-                                a03.a.c(new ai.y0(a03, i14, 16));
+                                ur a03 = ur.a0(i13);
+                                a03.a.c(new ai.c1(a03, i14, 16));
                                 v1Var2.l();
-                                ks.f(i13).k(ks.F1, new Object[0]);
+                                ls.f(i13).k(ls.F1, new Object[0]);
                                 break;
                             }
                             break;
@@ -470,15 +469,15 @@ public final class v1 {
                                     v1Var3.b.remove(c12);
                                 }
                                 ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
-                                fj fjVar2 = c12.e;
-                                if (!arrayList2.contains(Integer.valueOf(fjVar2 != null ? fjVar2.e1() : c12.d)) && c12.e != null) {
+                                gj gjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(gjVar2 != null ? gjVar2.e1() : c12.d)) && c12.e != null) {
                                     v1Var3.l();
-                                    ks.f(i15).k(ks.F1, new Object[0]);
+                                    ls.f(i15).k(ls.F1, new Object[0]);
                                     break;
                                 } else {
                                     c12.e = null;
-                                    long e11 = j10.i(i15).e();
-                                    tr a04 = tr.a0(i15);
+                                    long e11 = k10.i(i15).e();
+                                    ur a04 = ur.a0(i15);
                                     a04.a.c(new j2(v1Var3, a04, c12, e11, 13));
                                     break;
                                 }
@@ -510,15 +509,15 @@ public final class v1 {
                                 u1Var.f = tL_quickReply2.count;
                                 u1Var.c = i16;
                                 u1Var.d = tL_quickReply2.top_message;
-                                fj fjVar3 = u1Var.e;
-                                if (fjVar3 != null && fjVar3.e1() != tL_quickReply2.top_message) {
+                                gj gjVar3 = u1Var.e;
+                                if (gjVar3 != null && gjVar3.e1() != tL_quickReply2.top_message) {
                                     u1Var.e = null;
                                 }
                                 arrayList4.add(u1Var);
                                 v1Var4.a(u1Var.b);
                             }
                             v1Var4.l();
-                            ks.f(v1Var4.a).k(ks.F1, new Object[0]);
+                            ls.f(v1Var4.a).k(ls.F1, new Object[0]);
                             break;
                     }
                 }
@@ -548,11 +547,11 @@ public final class v1 {
                                 c10.b = tL_quickReply.shortcut;
                                 c10.f = tL_quickReply.count;
                                 c10.d = tL_quickReply.top_message;
-                                fj fjVar = c10.e;
-                                if (fjVar != null && fjVar.e1() != tL_quickReply.top_message) {
+                                gj gjVar = c10.e;
+                                if (gjVar != null && gjVar.e1() != tL_quickReply.top_message) {
                                     c10.e = null;
-                                    long e10 = j10.i(i112).e();
-                                    tr a02 = tr.a0(i112);
+                                    long e10 = k10.i(i112).e();
+                                    ur a02 = ur.a0(i112);
                                     a02.a.c(new j2(v1Var, a02, c10, e10, 13));
                                     break;
                                 }
@@ -569,7 +568,7 @@ public final class v1 {
                                 v1Var.a(u1Var2.b);
                             }
                             v1Var.l();
-                            ks.f(i112).k(ks.F1, new Object[0]);
+                            ls.f(i112).k(ls.F1, new Object[0]);
                             break;
                         case 1:
                             v1 v1Var2 = this.b;
@@ -579,10 +578,10 @@ public final class v1 {
                                 v1Var2.b.remove(c11);
                                 v1Var2.a(c11.b);
                                 int i14 = c11.a;
-                                tr a03 = tr.a0(i13);
-                                a03.a.c(new ai.y0(a03, i14, 16));
+                                ur a03 = ur.a0(i13);
+                                a03.a.c(new ai.c1(a03, i14, 16));
                                 v1Var2.l();
-                                ks.f(i13).k(ks.F1, new Object[0]);
+                                ls.f(i13).k(ls.F1, new Object[0]);
                                 break;
                             }
                             break;
@@ -598,15 +597,15 @@ public final class v1 {
                                     v1Var3.b.remove(c12);
                                 }
                                 ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
-                                fj fjVar2 = c12.e;
-                                if (!arrayList2.contains(Integer.valueOf(fjVar2 != null ? fjVar2.e1() : c12.d)) && c12.e != null) {
+                                gj gjVar2 = c12.e;
+                                if (!arrayList2.contains(Integer.valueOf(gjVar2 != null ? gjVar2.e1() : c12.d)) && c12.e != null) {
                                     v1Var3.l();
-                                    ks.f(i15).k(ks.F1, new Object[0]);
+                                    ls.f(i15).k(ls.F1, new Object[0]);
                                     break;
                                 } else {
                                     c12.e = null;
-                                    long e11 = j10.i(i15).e();
-                                    tr a04 = tr.a0(i15);
+                                    long e11 = k10.i(i15).e();
+                                    ur a04 = ur.a0(i15);
                                     a04.a.c(new j2(v1Var3, a04, c12, e11, 13));
                                     break;
                                 }
@@ -638,15 +637,15 @@ public final class v1 {
                                 u1Var.f = tL_quickReply2.count;
                                 u1Var.c = i16;
                                 u1Var.d = tL_quickReply2.top_message;
-                                fj fjVar3 = u1Var.e;
-                                if (fjVar3 != null && fjVar3.e1() != tL_quickReply2.top_message) {
+                                gj gjVar3 = u1Var.e;
+                                if (gjVar3 != null && gjVar3.e1() != tL_quickReply2.top_message) {
                                     u1Var.e = null;
                                 }
                                 arrayList4.add(u1Var);
                                 v1Var4.a(u1Var.b);
                             }
                             v1Var4.l();
-                            ks.f(v1Var4.a).k(ks.F1, new Object[0]);
+                            ls.f(v1Var4.a).k(ls.F1, new Object[0]);
                             break;
                     }
                 }
@@ -678,11 +677,11 @@ public final class v1 {
                             c10.b = tL_quickReply.shortcut;
                             c10.f = tL_quickReply.count;
                             c10.d = tL_quickReply.top_message;
-                            fj fjVar = c10.e;
-                            if (fjVar != null && fjVar.e1() != tL_quickReply.top_message) {
+                            gj gjVar = c10.e;
+                            if (gjVar != null && gjVar.e1() != tL_quickReply.top_message) {
                                 c10.e = null;
-                                long e10 = j10.i(i112).e();
-                                tr a02 = tr.a0(i112);
+                                long e10 = k10.i(i112).e();
+                                ur a02 = ur.a0(i112);
                                 a02.a.c(new j2(v1Var, a02, c10, e10, 13));
                                 break;
                             }
@@ -699,7 +698,7 @@ public final class v1 {
                             v1Var.a(u1Var2.b);
                         }
                         v1Var.l();
-                        ks.f(i112).k(ks.F1, new Object[0]);
+                        ls.f(i112).k(ls.F1, new Object[0]);
                         break;
                     case 1:
                         v1 v1Var2 = this.b;
@@ -709,10 +708,10 @@ public final class v1 {
                             v1Var2.b.remove(c11);
                             v1Var2.a(c11.b);
                             int i14 = c11.a;
-                            tr a03 = tr.a0(i132);
-                            a03.a.c(new ai.y0(a03, i14, 16));
+                            ur a03 = ur.a0(i132);
+                            a03.a.c(new ai.c1(a03, i14, 16));
                             v1Var2.l();
-                            ks.f(i132).k(ks.F1, new Object[0]);
+                            ls.f(i132).k(ls.F1, new Object[0]);
                             break;
                         }
                         break;
@@ -728,15 +727,15 @@ public final class v1 {
                                 v1Var3.b.remove(c12);
                             }
                             ArrayList<Integer> arrayList2 = tL_updateDeleteQuickReplyMessages.messages;
-                            fj fjVar2 = c12.e;
-                            if (!arrayList2.contains(Integer.valueOf(fjVar2 != null ? fjVar2.e1() : c12.d)) && c12.e != null) {
+                            gj gjVar2 = c12.e;
+                            if (!arrayList2.contains(Integer.valueOf(gjVar2 != null ? gjVar2.e1() : c12.d)) && c12.e != null) {
                                 v1Var3.l();
-                                ks.f(i15).k(ks.F1, new Object[0]);
+                                ls.f(i15).k(ls.F1, new Object[0]);
                                 break;
                             } else {
                                 c12.e = null;
-                                long e11 = j10.i(i15).e();
-                                tr a04 = tr.a0(i15);
+                                long e11 = k10.i(i15).e();
+                                ur a04 = ur.a0(i15);
                                 a04.a.c(new j2(v1Var3, a04, c12, e11, 13));
                                 break;
                             }
@@ -768,15 +767,15 @@ public final class v1 {
                             u1Var.f = tL_quickReply2.count;
                             u1Var.c = i16;
                             u1Var.d = tL_quickReply2.top_message;
-                            fj fjVar3 = u1Var.e;
-                            if (fjVar3 != null && fjVar3.e1() != tL_quickReply2.top_message) {
+                            gj gjVar3 = u1Var.e;
+                            if (gjVar3 != null && gjVar3.e1() != tL_quickReply2.top_message) {
                                 u1Var.e = null;
                             }
                             arrayList4.add(u1Var);
                             v1Var4.a(u1Var.b);
                         }
                         v1Var4.l();
-                        ks.f(v1Var4.a).k(ks.F1, new Object[0]);
+                        ls.f(v1Var4.a).k(ls.F1, new Object[0]);
                         break;
                 }
             }
@@ -796,11 +795,11 @@ public final class v1 {
         int i10 = this.a;
         ConnectionsManager.getInstance(i10).sendRequest(tL_messages_editQuickReplyShortcut, new l5(7));
         l();
-        ks.f(i10).k(ks.F1, new Object[0]);
+        ls.f(i10).k(ls.F1, new Object[0]);
     }
 
     public final void l() {
-        tr a02 = tr.a0(this.a);
+        ur a02 = ur.a0(this.a);
         a02.a.c(new ji.i(7, this, a02));
     }
 }

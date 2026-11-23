@@ -3,9 +3,9 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g8 extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -56,12 +56,12 @@ public final class g8 extends n41 {
             return;
         }
         int i10 = 1;
-        boolean E0 = ri.d0(i7).E0(tL_messages_stickerSet.set.id, true);
-        boolean q10 = j10.i(i7).q();
+        boolean E0 = si.d0(i7).E0(tL_messages_stickerSet.set.id, true);
+        boolean q10 = k10.i(i7).q();
         boolean z12 = !q10;
         if (!q10) {
             for (int i11 = 0; i11 < tL_messages_stickerSet.documents.size(); i11++) {
-                if (fj.m3(tL_messages_stickerSet.documents.get(i11))) {
+                if (gj.m3(tL_messages_stickerSet.documents.get(i11))) {
                 }
             }
             if (z11) {

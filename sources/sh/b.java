@@ -14,9 +14,9 @@ import fi.u2;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b6;
@@ -37,7 +37,7 @@ import org.telegram.ui.bn;
 import org.telegram.ui.ih0;
 import org.telegram.ui.jg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawListener, b6 {
     public final int[] E;
@@ -79,7 +79,7 @@ public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         t6.U(uVar2, m6.G6, h6Var);
         t6.G(uVar2, m6.Xc, h6Var);
         t6.D(uVar2, m6.H6, h6Var);
-        uVar2.setHint(gd.N0(2131746989, null));
+        uVar2.setHint(hd.N0(2131746989, null));
         uVar2.setTextSize(1, 15.0f);
         uVar2.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
         uVar2.setBackground(null);
@@ -117,7 +117,7 @@ public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         ih0Var2.addView(m5Var, ma.e(54, 24, 53));
         ih0Var2.addView(u2Var, ma.e(44, 44, 51));
         ih0Var2.addView(tiVar, ma.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        ih0Var2.addView(uVar2, ma.d(-1, -2.0f, ks.E1, 39.0f, 0.0f, 47.0f, 0.0f));
+        ih0Var2.addView(uVar2, ma.d(-1, -2.0f, ls.E1, 39.0f, 0.0f, 47.0f, 0.0f));
         uVar2.setPadding(g0.L(5.0f), g0.L(11.0f), g0.L(5.0f), g0.L(11.0f));
     }
 

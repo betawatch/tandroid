@@ -1,9 +1,9 @@
 package di;
 
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,16 +29,16 @@ public final /* synthetic */ class u8 implements Runnable {
                 org.telegram.ui.Components.gc gcVar = w8Var.d;
                 y8 y8Var = w8Var.q;
                 u8 u8Var = w8Var.p;
-                fj fjVar = w8Var.b;
+                gj gjVar = w8Var.b;
                 if (!w8Var.l) {
                     w8Var.l = true;
-                    fjVar.f((int) w8Var.k, w8Var.c(), true);
+                    gjVar.f((int) w8Var.k, w8Var.c(), true);
                     long j3 = y8Var.g;
                     int i10 = y8Var.a;
                     y8Var.g = j3 + w8Var.k;
-                    ks.f(i10).k(ks.A3, new Object[0]);
+                    ls.f(i10).k(ls.A3, new Object[0]);
                     w8Var.k = 0L;
-                    ks.f(i10).k(ks.o1, Long.valueOf(fj.B0(fjVar.k)), Integer.valueOf(fjVar.e1()), fjVar.k.reactions);
+                    ls.f(i10).k(ls.o1, Long.valueOf(gj.B0(gjVar.k)), Integer.valueOf(gjVar.e1()), gjVar.k.reactions);
                 }
                 if (!w8Var.m) {
                     w8Var.m = true;

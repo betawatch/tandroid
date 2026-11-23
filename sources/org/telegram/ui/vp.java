@@ -4,7 +4,7 @@ import java.util.Comparator;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vp implements Comparator {
     public final /* synthetic */ int a;
@@ -30,18 +30,18 @@ public final /* synthetic */ class vp implements Comparator {
                 rqVar.getClass();
                 TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) ((TLObject) obj);
                 TLRPC.ChannelParticipant channelParticipant2 = (TLRPC.ChannelParticipant) ((TLObject) obj2);
-                long B1 = org.telegram.messenger.fj.B1(channelParticipant.peer);
-                long B12 = org.telegram.messenger.fj.B1(channelParticipant2.peer);
+                long B1 = org.telegram.messenger.gj.B1(channelParticipant.peer);
+                long B12 = org.telegram.messenger.gj.B1(channelParticipant2.peer);
                 int i10 = this.b;
                 int i11 = -100;
                 if (B1 > 0) {
-                    TLRPC.User c22 = rqVar.getMessagesController().c2(Long.valueOf(org.telegram.messenger.fj.B1(channelParticipant.peer)));
+                    TLRPC.User c22 = rqVar.getMessagesController().c2(Long.valueOf(org.telegram.messenger.gj.B1(channelParticipant.peer)));
                     i7 = (c22 == null || (userStatus2 = c22.status) == null) ? 0 : c22.self ? i10 + 50000 : userStatus2.expires;
                 } else {
                     i7 = -100;
                 }
                 if (B12 > 0) {
-                    TLRPC.User c23 = rqVar.getMessagesController().c2(Long.valueOf(org.telegram.messenger.fj.B1(channelParticipant2.peer)));
+                    TLRPC.User c23 = rqVar.getMessagesController().c2(Long.valueOf(org.telegram.messenger.gj.B1(channelParticipant2.peer)));
                     i11 = (c23 == null || (userStatus = c23.status) == null) ? 0 : c23.self ? i10 + 50000 : userStatus.expires;
                 }
                 if (i7 <= 0 || i11 <= 0) {
@@ -62,8 +62,8 @@ public final /* synthetic */ class vp implements Comparator {
             default:
                 org.telegram.ui.Components.v20 v20Var = (org.telegram.ui.Components.v20) this.c;
                 v20Var.getClass();
-                TLRPC.User c24 = org.telegram.messenger.mp.u1(v20Var.a).c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) ((TLObject) obj)).peer)));
-                TLRPC.User c25 = org.telegram.messenger.mp.u1(v20Var.a).c2(Long.valueOf(org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) ((TLObject) obj2)).peer)));
+                TLRPC.User c24 = org.telegram.messenger.np.u1(v20Var.a).c2(Long.valueOf(org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) ((TLObject) obj)).peer)));
+                TLRPC.User c25 = org.telegram.messenger.np.u1(v20Var.a).c2(Long.valueOf(org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) ((TLObject) obj2)).peer)));
                 int i12 = this.b;
                 int i13 = (c24 == null || (userStatus4 = c24.status) == null) ? 0 : c24.self ? i12 + 50000 : userStatus4.expires;
                 int i14 = (c25 == null || (userStatus3 = c25.status) == null) ? 0 : c25.self ? i12 + 50000 : userStatus3.expires;

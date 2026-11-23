@@ -18,9 +18,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class yo implements org.telegram.messenger.fs {
+public final class yo implements org.telegram.messenger.gs {
     public int E;
     public int F;
     public final ImageReceiver G;
@@ -93,7 +93,7 @@ public final class yo implements org.telegram.messenger.fs {
         this.g0 = i10;
         this.h0 = i11;
         this.i0 = j10;
-        this.Y = org.telegram.messenger.mp.u1(i7).y2(j3);
+        this.Y = org.telegram.messenger.np.u1(i7).y2(j3);
         this.k0 = h6Var;
         this.G = new ImageReceiver(view);
         paint.setStrokeWidth(org.telegram.messenger.g0.N(2.8f));
@@ -114,7 +114,7 @@ public final class yo implements org.telegram.messenger.fs {
         ArrayList Y0;
         TLRPC.Dialog c10;
         TLRPC.Dialog c11;
-        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(org.telegram.messenger.c.a(org.telegram.messenger.j10.t0).a);
+        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(org.telegram.messenger.c.a(org.telegram.messenger.k10.t0).a);
         SparseArray sparseArray = u12.w;
         if (iArr != null) {
             iArr[0] = 0;
@@ -122,11 +122,11 @@ public final class yo implements org.telegram.messenger.fs {
             iArr[2] = i10;
         }
         if (i10 != 0) {
-            org.telegram.messenger.ro roVar = (org.telegram.messenger.ro) u12.T0.get(i10);
-            if (roVar == null) {
+            org.telegram.messenger.so soVar = (org.telegram.messenger.so) u12.T0.get(i10);
+            if (soVar == null) {
                 return null;
             }
-            Y0 = roVar.k;
+            Y0 = soVar.k;
         } else {
             Y0 = u12.Y0(i7);
         }
@@ -145,7 +145,7 @@ public final class yo implements org.telegram.messenger.fs {
         }
         if (i10 != 0) {
             for (int i12 = 0; i12 < u12.Q0.size(); i12++) {
-                int i13 = ((org.telegram.messenger.ro) u12.Q0.get(i12)).a;
+                int i13 = ((org.telegram.messenger.so) u12.Q0.get(i12)).a;
                 if (i10 != i13 && (c11 = c(j3, i7, i13, false, iArr)) != null) {
                     if (iArr != null) {
                         iArr[0] = 1;
@@ -613,7 +613,7 @@ public final class yo implements org.telegram.messenger.fs {
             } else {
                 float f53 = imageReceiver.L0;
                 float f54 = imageReceiver.M0;
-                canvas2.saveLayerAlpha(f53, f54, imageReceiver.N0 + f53, imageReceiver.O0 + f54, org.telegram.messenger.ks.e4, 31);
+                canvas2.saveLayerAlpha(f53, f54, imageReceiver.N0 + f53, imageReceiver.O0 + f54, org.telegram.messenger.ls.e4, 31);
                 imageReceiver.h(canvas2, null);
                 float f55 = this.L;
                 org.telegram.ui.Components.sq sqVar3 = sqVar;
@@ -720,10 +720,10 @@ public final class yo implements org.telegram.messenger.fs {
         return g10 != null ? g10 : org.telegram.ui.ActionBar.m6.V0(str);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         TLRPC.Dialog dialog;
-        if (this.a0 == 0 || (dialog = (TLRPC.Dialog) org.telegram.messenger.mp.u1(this.f0).R.f(this.a0)) == null) {
+        if (this.a0 == 0 || (dialog = (TLRPC.Dialog) org.telegram.messenger.np.u1(this.f0).R.f(this.a0)) == null) {
             return;
         }
         int i11 = dialog.unread_count;
@@ -1021,15 +1021,15 @@ public final class yo implements org.telegram.messenger.fs {
         this.b = iArr[2];
         this.S = false;
         int i7 = this.f0;
-        TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(-c10.id));
+        TLRPC.Chat O0 = org.telegram.messenger.np.u1(i7).O0(Long.valueOf(-c10.id));
         this.H = O0;
         if (O0 == null) {
-            this.H = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(c10.id));
+            this.H = org.telegram.messenger.np.u1(i7).O0(Long.valueOf(c10.id));
         }
         org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         b9Var.q(this.H);
-        this.G.q0(org.telegram.messenger.fc.a(1, this.H), "50_50", b9Var, null, org.telegram.messenger.j10.i(0).f(), 0);
-        org.telegram.messenger.mp.u1(i7).t0(c10.id, 0, null);
+        this.G.q0(org.telegram.messenger.gc.a(1, this.H), "50_50", b9Var, null, org.telegram.messenger.k10.i(0).f(), 0);
+        org.telegram.messenger.np.u1(i7).t0(c10.id, 0, null);
         int i10 = c10.unread_count;
         this.d0.c(i10, false);
         this.c0 = i10 > 0;
@@ -1049,10 +1049,10 @@ public final class yo implements org.telegram.messenger.fs {
         this.H = chat;
         org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         b9Var.q(this.H);
-        this.G.q0(org.telegram.messenger.fc.a(1, this.H), "50_50", b9Var, null, org.telegram.messenger.j10.i(0).f(), 0);
+        this.G.q0(org.telegram.messenger.gc.a(1, this.H), "50_50", b9Var, null, org.telegram.messenger.k10.i(0).f(), 0);
         int i7 = this.f0;
-        org.telegram.messenger.mp.u1(i7).t0(-chat.id, 0, null);
-        TLRPC.Dialog U0 = org.telegram.messenger.mp.u1(i7).U0(-chat.id);
+        org.telegram.messenger.np.u1(i7).t0(-chat.id, 0, null);
+        TLRPC.Dialog U0 = org.telegram.messenger.np.u1(i7).U0(-chat.id);
         int i10 = U0 == null ? 0 : U0.unread_count;
         this.d0.c(i10, false);
         this.c0 = i10 > 0;
@@ -1076,7 +1076,7 @@ public final class yo implements org.telegram.messenger.fs {
         imageReceiver.f();
         long j3 = -this.j0;
         int i7 = this.f0;
-        ArrayList l10 = org.telegram.messenger.mp.u1(i7).t7.l(j3);
+        ArrayList l10 = org.telegram.messenger.np.u1(i7).t7.l(j3);
         if (l10 == null || l10.size() <= 1) {
             tL_forumTopic = null;
         } else {

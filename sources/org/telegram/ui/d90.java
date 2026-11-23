@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d90 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class d90 implements Runnable {
         k90 k90Var = this.b;
         switch (i7) {
             case 0:
-                vf.c.t(k90Var.getParentActivity(), org.telegram.messenger.gd.N0(2131745960, null));
+                vf.c.t(k90Var.getParentActivity(), org.telegram.messenger.hd.N0(2131745960, null));
                 break;
             case 1:
                 k90Var.r.d.requestFocus();

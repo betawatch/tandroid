@@ -5,10 +5,10 @@ import android.util.LongSparseArray;
 import android.widget.LinearLayout;
 import c8.ma;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q9;
-import org.telegram.messenger.s9;
-import org.telegram.messenger.u9;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r9;
+import org.telegram.messenger.t9;
+import org.telegram.messenger.v9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.c51;
@@ -17,9 +17,9 @@ import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.sa;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class g extends sa implements s9 {
+public final class g extends sa implements t9 {
     public final o41 T1;
     public final LongSparseArray U1;
     public ArrayList V1;
@@ -36,7 +36,7 @@ public final class g extends sa implements s9 {
         int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, false);
         this.Y1 = x02;
         v0(x02);
-        u9.c(this.a).f.add(this);
+        v9.c(this.a).f.add(this);
         this.G1 = false;
         this.F1 = org.telegram.messenger.g0.L(12.0f);
         O();
@@ -49,16 +49,16 @@ public final class g extends sa implements s9 {
         this.o1.setPadding(this.u0, org.telegram.messenger.g0.L(9.0f), this.u0, org.telegram.messenger.g0.L(9.0f));
         this.o1.setOverScrollMode(2);
         this.X1.O(false);
-        ArrayList arrayList = u9.c(this.a).c;
+        ArrayList arrayList = v9.c(this.a).c;
         int size = arrayList.size();
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            q9 q9Var = (q9) obj;
-            f fVar = new f(context, q9Var);
-            fVar.a.setOnClickListener(new ah.h(this, context, q9Var, 1));
+            r9 r9Var = (r9) obj;
+            f fVar = new f(context, r9Var);
+            fVar.a.setOnClickListener(new ah.h(this, context, r9Var, 1));
             linearLayout.addView(fVar, ma.o(-1, -2));
-            this.U1.put(q9Var.b, fVar);
+            this.U1.put(r9Var.b, fVar);
         }
         g(arrayList);
     }
@@ -77,16 +77,16 @@ public final class g extends sa implements s9 {
         if (arrayList == null) {
             return null;
         }
-        return gd.a0(null, null, 2131750401, Integer.valueOf(arrayList.size()));
+        return hd.a0(null, null, 2131750401, Integer.valueOf(arrayList.size()));
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
-        u9.c(this.a).f.remove(this);
+        v9.c(this.a).f.remove(this);
         super.dismiss();
     }
 
-    @Override // org.telegram.messenger.s9
+    @Override // org.telegram.messenger.t9
     public final void g(ArrayList arrayList) {
         this.V1 = new ArrayList(arrayList);
         this.p1.setTitle(P0());
@@ -95,10 +95,10 @@ public final class g extends sa implements s9 {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            q9 q9Var = (q9) obj;
-            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = q9Var.f;
+            r9 r9Var = (r9) obj;
+            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = r9Var.f;
             int i10 = tL_starGiftAuctionState != null ? tL_starGiftAuctionState.next_round_at : 0;
-            f fVar = (f) this.U1.get(q9Var.b);
+            f fVar = (f) this.U1.get(r9Var.b);
             if (fVar != null) {
                 fVar.b(this.W1);
                 long max = Math.max(0, i10 - ConnectionsManager.getInstance(this.a).getCurrentTime());

@@ -14,12 +14,12 @@ import fi.s2;
 import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class b1 extends ImageView {
     public static final /* synthetic */ int M = 0;
@@ -104,7 +104,7 @@ public class b1 extends ImageView {
         if (this.J) {
             Paint paint = this.y;
             this.E = paint;
-            paint.setAlpha(ks.e4);
+            paint.setAlpha(ls.e4);
             this.H = 0.0f;
         }
         this.y = new Paint(1);
@@ -241,7 +241,7 @@ public class b1 extends ImageView {
                         this.E = null;
                     }
                     invalidate();
-                    this.y.setAlpha(ks.e4);
+                    this.y.setAlpha(ls.e4);
                 } else {
                     canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.y);
                 }

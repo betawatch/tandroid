@@ -5,8 +5,8 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import c8.ma;
 import di.pb;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q9;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r9;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -28,24 +28,24 @@ public final class c extends n41 {
     @Override // org.telegram.ui.Components.n41
     public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
         d dVar = (d) view;
-        q9 q9Var = (q9) o41Var.I;
+        r9 r9Var = (r9) o41Var.I;
         TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift = (TL_stars.TL_StarGiftAuctionAcquiredGift) o41Var.H;
         View.OnClickListener onClickListener = o41Var.E;
         int i7 = d.c;
         dVar.removeAllViews();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
-        spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(q9Var.c, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new org.telegram.ui.Components.y5(r9Var.c, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append(' ');
-        spannableStringBuilder.append((CharSequence) gd.a0(null, null, 2131750292, q9Var.d.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
+        spannableStringBuilder.append((CharSequence) hd.a0(null, null, 2131750292, r9Var.d.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
         spannableStringBuilder.setSpan(new l41(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         spannableStringBuilder2.append((CharSequence) pb.b1(false, i5.c.l(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
-        String a02 = gd.a0(null, null, 2131750291, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
+        String a02 = hd.a0(null, null, 2131750291, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
         ey0 ey0Var = new ey0(dVar.getContext(), dVar.a);
         ey0Var.a(spannableStringBuilder).setFilled(true);
-        ey0Var.n(gd.N0(2131750294, null), dVar.b, org.telegram.messenger.n5.o(tL_StarGiftAuctionAcquiredGift.peer), new a1.e(24, dVar, onClickListener));
-        ey0Var.g(tL_StarGiftAuctionAcquiredGift.date, gd.N0(2131750298, null));
-        ey0Var.d(gd.N0(2131750299, null), spannableStringBuilder2, a02, null, null);
+        ey0Var.n(hd.N0(2131750294, null), dVar.b, org.telegram.messenger.n5.o(tL_StarGiftAuctionAcquiredGift.peer), new a1.e(24, dVar, onClickListener));
+        ey0Var.g(tL_StarGiftAuctionAcquiredGift.date, hd.N0(2131750298, null));
+        ey0Var.d(hd.N0(2131750299, null), spannableStringBuilder2, a02, null, null);
         dVar.addView(ey0Var, ma.c(-2.0f, -1));
     }
 

@@ -9,15 +9,15 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.de;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i2 extends ChatActivityEnterView {
     public ValueAnimator t7;
@@ -176,9 +176,9 @@ public final class i2 extends ChatActivityEnterView {
         messageMinPrice = z3Var.getMessageMinPrice();
         long max = Math.max(j3, messageMinPrice);
         TLRPC.TL_textWithEntities textWithEntities = getTextWithEntities();
-        CharSequence j02 = fj.j0(textWithEntities, false, false, new TextPaint());
+        CharSequence j02 = gj.j0(textWithEntities, false, false, new TextPaint());
         int length = j02.length();
-        int[] iArr = mp.u1(z3Var.m2).a7;
+        int[] iArr = np.u1(z3Var.m2).a7;
         if (length > ((iArr == null || iArr.length <= 2) ? 400 : iArr[2])) {
             NumberTextView numberTextView = this.c0;
             if (numberTextView != null) {
@@ -215,7 +215,7 @@ public final class i2 extends ChatActivityEnterView {
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final boolean w1(boolean z10, int i7, int i10, long j3, boolean z11) {
         z3 z3Var = this.x7;
-        if (!mp.u1(z3Var.m2).A2()) {
+        if (!np.u1(z3Var.m2).A2()) {
             return super.w1(z10, i7, i10, j3, z11);
         }
         org.telegram.ui.b.b(z3Var.m2);

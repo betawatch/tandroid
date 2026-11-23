@@ -20,7 +20,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int p0 = 0;
@@ -141,7 +141,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
             textView.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
             textView.setOnClickListener(new ci.q(this, i7, 19));
             textView.setOnLongClickListener(new lh.g(this, i7, 1));
-            org.telegram.messenger.ks.i(textView);
+            org.telegram.messenger.ls.i(textView);
         }
         textView.setText(org.telegram.messenger.j6.m(charSequence, textView.getPaint().getFontMetricsInt(), false, null, 0));
         int L = org.telegram.messenger.g0.L(32.0f) + ((int) Math.ceil(hi.l3.h(r7, textView.getPaint())));
@@ -176,7 +176,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
         path.addRoundRect(rectF, height, height, Path.Direction.CW);
         fh.g gVar = this.f0;
         if (gVar != null) {
-            gVar.setAlpha(org.telegram.messenger.ks.e4);
+            gVar.setAlpha(org.telegram.messenger.ls.e4);
             this.f0.setBounds(((int) rectF.left) - org.telegram.messenger.g0.L(7.0f), 0, org.telegram.messenger.g0.L(7.0f) + ((int) rectF.right), getMeasuredHeight());
             this.f0.r(height);
         }

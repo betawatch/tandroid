@@ -4,10 +4,10 @@ import android.content.Context;
 import android.graphics.Point;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class j2 extends r3 {
     public final /* synthetic */ int d0;
@@ -60,7 +60,7 @@ public final class j2 extends r3 {
                         if (o2Var != null && o2Var.getTotalHeight() > 0) {
                             size -= o2Var.getTotalHeight();
                         }
-                        super.onMeasure(i7, n10.C(24.0f, size, TLObject.FLAG_30));
+                        super.onMeasure(i7, o10.C(24.0f, size, TLObject.FLAG_30));
                         break;
                     }
                 }
@@ -84,7 +84,7 @@ public final class j2 extends r3 {
                 if (o2Var != null) {
                     size -= o2Var.getTotalHeight();
                 }
-                super.onMeasure(i7, n10.C(24.0f, size, TLObject.FLAG_30));
+                super.onMeasure(i7, o10.C(24.0f, size, TLObject.FLAG_30));
             default:
                 super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i10) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(84.0f)) + ((s3) this.e0).O, TLObject.FLAG_30));
                 break;

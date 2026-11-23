@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s4 extends FrameLayout {
     public final RadioButton a;
     public final TextView b;
     public final TextView c;
     public boolean d;
-    public cd e;
+    public dd e;
     public final int f;
 
     public s4(Context context) {
@@ -32,7 +32,7 @@ public final class s4 extends FrameLayout {
         this.a = radioButton;
         radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
         org.telegram.ui.ActionBar.t6.O(radioButton, org.telegram.ui.ActionBar.m6.D5, org.telegram.ui.ActionBar.m6.E5, null);
-        boolean z10 = gd.a0;
+        boolean z10 = hd.a0;
         addView(radioButton, c8.ma.d(22, 22.0f, (z10 ? 5 : 3) | 16, z10 ? 0 : 20, 0.0f, z10 ? 20 : 0, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
@@ -41,8 +41,8 @@ public final class s4 extends FrameLayout {
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setGravity((gd.a0 ? 5 : 3) | 16);
-        boolean z11 = gd.a0;
+        textView.setGravity((hd.a0 ? 5 : 3) | 16);
+        boolean z11 = hd.a0;
         addView(textView, c8.ma.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 23 : 62, 0.0f, z11 ? 62 : 23, 17.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
@@ -50,21 +50,21 @@ public final class s4 extends FrameLayout {
         textView2.setTextSize(1, 13.0f);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        textView2.setGravity((gd.a0 ? 5 : 3) | 16);
-        boolean z12 = gd.a0;
+        textView2.setGravity((hd.a0 ? 5 : 3) | 16);
+        boolean z12 = hd.a0;
         addView(textView2, c8.ma.d(-1, -1.0f, (z12 ? 5 : 3) | 48, z12 ? 23 : 62, 20.0f, z12 ? 62 : 23, 0.0f));
     }
 
-    public cd getCurrentLocale() {
+    public dd getCurrentLocale() {
         return this.e;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.d) {
-            boolean z10 = gd.a0;
+            boolean z10 = hd.a0;
             int i7 = this.f;
-            canvas.drawLine(z10 ? 0.0f : org.telegram.messenger.g0.L(i7 - 3), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(i7 - 3) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawLine(z10 ? 0.0f : org.telegram.messenger.g0.L(i7 - 3), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(i7 - 3) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

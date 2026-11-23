@@ -18,9 +18,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final x a = new x(4);
@@ -58,7 +58,7 @@ public final class b implements o {
         if (xVar.D() == 4607062) {
             lVar.g(xVar.a, 0, 2, false);
             xVar.N(0);
-            if ((xVar.H() & ks.Z3) == 0) {
+            if ((xVar.H() & ls.Z3) == 0) {
                 lVar.g(xVar.a, 0, 4, false);
                 xVar.N(0);
                 int m10 = xVar.m();

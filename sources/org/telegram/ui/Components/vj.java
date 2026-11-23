@@ -19,9 +19,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.fs, te.b {
+public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.gs, te.b {
     public boolean E;
     public final pj F;
     public final rj G;
@@ -52,7 +52,7 @@ public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.te
         qi qiVar = new qi(context, h6Var, this.b);
         this.J = qiVar;
         qiVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-        String N0 = org.telegram.messenger.gd.N0(2131745571, null);
+        String N0 = org.telegram.messenger.hd.N0(2131745571, null);
         ah.i iVar = qiVar.r;
         iVar.setHint(N0);
         iVar.addTextChangedListener(new ah.j(this, 19));
@@ -63,7 +63,7 @@ public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.te
         vy vyVar = new vy(context, h6Var);
         this.H = vyVar;
         vyVar.c();
-        vyVar.setText(org.telegram.messenger.gd.N0(2131748030, null));
+        vyVar.setText(org.telegram.messenger.hd.N0(2131748030, null));
         addView(vyVar, c8.ma.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         di.b1 b1Var = new di.b1(this, context, h6Var, 15);
         this.s = b1Var;
@@ -92,7 +92,7 @@ public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.te
         FrameLayout.LayoutParams e10 = c8.ma.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e10).height += org.telegram.messenger.g0.m;
         addView(frameLayout, e10);
-        org.telegram.messenger.ks.f(this.b.H3).c(this, org.telegram.messenger.ks.O);
+        org.telegram.messenger.ls.f(this.b.H3).c(this, org.telegram.messenger.ls.O);
         S();
     }
 
@@ -172,8 +172,8 @@ public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.te
             arrayList.add(R(hashMap.get((lj) obj)));
         }
         ui uiVar = this.b;
-        return c5.Y(uiVar.H3, uiVar.c1(), uiVar.Y0() + arrayList.size(), new org.telegram.messenger.x10() { // from class: org.telegram.ui.Components.jj
-            @Override // org.telegram.messenger.x10
+        return c5.Y(uiVar.H3, uiVar.c1(), uiVar.Y0() + arrayList.size(), new org.telegram.messenger.y10() { // from class: org.telegram.ui.Components.jj
+            @Override // org.telegram.messenger.y10
             public final void a(Object obj2) {
                 vj vjVar = vj.this;
                 mj mjVar = vjVar.K;
@@ -190,9 +190,9 @@ public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.te
         boolean z10;
         HashMap hashMap = this.x;
         if (hashMap.isEmpty() && !this.L) {
-            String a02 = org.telegram.messenger.gd.a0("AttachContactsSlowMode", null, 2131753975, new Object[0]);
+            String a02 = org.telegram.messenger.hd.a0("AttachContactsSlowMode", null, 2131753975, new Object[0]);
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.a);
-            String N0 = org.telegram.messenger.gd.N0(R.string.AppName, null);
+            String N0 = org.telegram.messenger.hd.N0(R.string.AppName, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
             t1Var.U = a02;
@@ -393,10 +393,10 @@ public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.te
         hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.i6));
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         pj pjVar;
-        if (i7 != org.telegram.messenger.ks.O || (pjVar = this.F) == null) {
+        if (i7 != org.telegram.messenger.ls.O || (pjVar = this.F) == null) {
             return;
         }
         pjVar.f();
@@ -470,7 +470,7 @@ public final class vj extends mi implements org.telegram.ui.ActionBar.b6, org.te
 
     @Override // org.telegram.ui.Components.mi
     public final void p() {
-        org.telegram.messenger.ks.f(this.b.H3).n(this, org.telegram.messenger.ks.O);
+        org.telegram.messenger.ls.f(this.b.H3).n(this, org.telegram.messenger.ls.O);
     }
 
     public void setDelegate(mj mjVar) {

@@ -18,9 +18,9 @@ import e2.r1;
 import h9.t1;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import org.telegram.messenger.fs;
+import org.telegram.messenger.gs;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.w10;
+import org.telegram.messenger.x10;
 import org.telegram.ui.ActionBar.q1;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.r6;
@@ -28,9 +28,9 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements w10, q1, q6, r6, rt0, g9.k, u9.d, NativeInstance.AudioLevelsCallback {
+public final /* synthetic */ class v implements x10, q1, q6, r6, rt0, g9.k, u9.d, NativeInstance.AudioLevelsCallback {
     public final /* synthetic */ int a;
 
     public /* synthetic */ v(int i7) {
@@ -41,7 +41,7 @@ public final /* synthetic */ class v implements w10, q1, q6, r6, rt0, g9.k, u9.d
         return (OnBackInvokedDispatcher) obj;
     }
 
-    @Override // org.telegram.messenger.w10
+    @Override // org.telegram.messenger.x10
     public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
@@ -318,7 +318,7 @@ public final /* synthetic */ class v implements w10, q1, q6, r6, rt0, g9.k, u9.d
         org.telegram.ui.Cells.c0.b(recyclerView);
     }
 
-    public /* synthetic */ v(fs fsVar, int i7) {
+    public /* synthetic */ v(gs gsVar, int i7) {
         this.a = i7;
     }
 

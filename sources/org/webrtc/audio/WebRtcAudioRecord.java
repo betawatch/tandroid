@@ -27,7 +27,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class WebRtcAudioRecord {
     private static final int AUDIO_RECORD_START = 0;
@@ -62,7 +62,7 @@ public class WebRtcAudioRecord {
     private AudioDeviceInfo preferredDevice;
     private final JavaAudioDeviceModule.AudioRecordStateCallback stateCallback;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 

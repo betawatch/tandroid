@@ -14,11 +14,11 @@ import java.util.Collections;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -34,7 +34,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class q implements Runnable {
                 int i7 = this.b;
                 f0 f0Var = (f0) this.d;
                 try {
-                    SQLiteCursor queryFinalized = tr.a0(i7).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
+                    SQLiteCursor queryFinalized = ur.a0(i7).b.queryFinalized("SELECT did, date FROM search_recent WHERE 1", new Object[0]);
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = new ArrayList();
                     ArrayList arrayList3 = new ArrayList();
@@ -103,7 +103,7 @@ public final /* synthetic */ class q implements Runnable {
                     ArrayList arrayList5 = new ArrayList();
                     if (!arrayList3.isEmpty()) {
                         ArrayList arrayList6 = new ArrayList();
-                        tr.a0(i7).V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
+                        ur.a0(i7).V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
                         for (int i12 = 0; i12 < arrayList6.size(); i12++) {
                             g0 g0Var3 = (g0) hVar.f(n5.F(((TLRPC.EncryptedChat) arrayList6.get(i12)).id));
                             if (g0Var3 != null) {
@@ -113,7 +113,7 @@ public final /* synthetic */ class q implements Runnable {
                     }
                     if (!arrayList2.isEmpty()) {
                         ArrayList arrayList7 = new ArrayList();
-                        tr.a0(i7).Q(TextUtils.join(",", arrayList2), arrayList7);
+                        ur.a0(i7).Q(TextUtils.join(",", arrayList2), arrayList7);
                         for (int i13 = 0; i13 < arrayList7.size(); i13++) {
                             TLRPC.Chat chat = (TLRPC.Chat) arrayList7.get(i13);
                             long j10 = -chat.id;
@@ -132,7 +132,7 @@ public final /* synthetic */ class q implements Runnable {
                         }
                     }
                     if (!arrayList.isEmpty()) {
-                        tr.a0(i7).n0(arrayList, arrayList5, false);
+                        ur.a0(i7).n0(arrayList, arrayList5, false);
                         for (int i14 = 0; i14 < arrayList5.size(); i14++) {
                             TLRPC.User user = (TLRPC.User) arrayList5.get(i14);
                             g0 g0Var6 = (g0) hVar.f(user.id);
@@ -174,7 +174,7 @@ public final /* synthetic */ class q implements Runnable {
                 }
                 break;
             case 4:
-                ((ri) this.d).Z[this.b] = this.c;
+                ((si) this.d).Z[this.b] = this.c;
                 break;
             case 5:
                 PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
@@ -197,7 +197,7 @@ public final /* synthetic */ class q implements Runnable {
             case 10:
                 g2 g2Var = (g2) this.d;
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", j10.i(this.b).e());
+                bundle.putLong("user_id", k10.i(this.b).e());
                 bundle.putInt("message_id", this.c);
                 g2Var.presentFragment(new bn(bundle));
                 break;
@@ -208,7 +208,7 @@ public final /* synthetic */ class q implements Runnable {
                 qo qoVar = (qo) this.d;
                 int i18 = this.b;
                 if (i18 != 0) {
-                    SharedPreferences sharedPreferences = mp.u1(this.c).g7;
+                    SharedPreferences sharedPreferences = np.u1(this.c).g7;
                     sharedPreferences.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", sharedPreferences.getInt("last_selected_mute_until_time", 0)).apply();
                 }
                 qoVar.B(i18);
@@ -217,7 +217,7 @@ public final /* synthetic */ class q implements Runnable {
                 l4 l4Var = (l4) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
-                    SharedPreferences sharedPreferences2 = mp.u1(this.c).g7;
+                    SharedPreferences sharedPreferences2 = np.u1(this.c).g7;
                     sharedPreferences2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", sharedPreferences2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
                 l4Var.a(Integer.valueOf(i19));

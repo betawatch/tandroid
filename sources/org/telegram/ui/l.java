@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class l implements RequestDelegate {
             case 9:
                 k30 k30Var = (k30) obj;
                 if (tLObject2 instanceof TLRPC.TL_updates) {
-                    org.telegram.messenger.mp.u1(k30Var.b.o1.a).V3((TLRPC.TL_updates) tLObject2, false);
+                    org.telegram.messenger.np.u1(k30Var.b.o1.a).V3((TLRPC.TL_updates) tLObject2, false);
                     break;
                 } else {
                     k30Var.getClass();
@@ -135,8 +135,8 @@ public final /* synthetic */ class l implements RequestDelegate {
                 int i14 = ww0Var.f;
                 if (tLObject2 instanceof TLRPC.TL_messages_webPage) {
                     TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject2;
-                    org.telegram.messenger.mp.u1(i14).f4(tL_messages_webPage.users, false);
-                    org.telegram.messenger.mp.u1(i14).Z3(tL_messages_webPage.chats, false);
+                    org.telegram.messenger.np.u1(i14).f4(tL_messages_webPage.users, false);
+                    org.telegram.messenger.np.u1(i14).Z3(tL_messages_webPage.chats, false);
                     tLObject2 = tL_messages_webPage.webpage;
                 }
                 if (tLObject2 instanceof TLRPC.WebPage) {
@@ -167,15 +167,15 @@ public final /* synthetic */ class l implements RequestDelegate {
                                                         if (str != null) {
                                                             int i16 = i12;
                                                             String[] strArr2 = new String[i13];
-                                                            strArr2[z13 ? 1 : 0] = org.telegram.messenger.gd.N0(2131745272, null);
+                                                            strArr2[z13 ? 1 : 0] = org.telegram.messenger.hd.N0(2131745272, null);
                                                             strArr2[i16] = str;
                                                             strArr = strArr2;
                                                             i12 = i16;
                                                         } else {
                                                             strArr = new String[i12];
-                                                            strArr[z13 ? 1 : 0] = org.telegram.messenger.gd.N0(2131745272, null);
+                                                            strArr[z13 ? 1 : 0] = org.telegram.messenger.hd.N0(2131745272, null);
                                                         }
-                                                        arrayList.add(new org.telegram.messenger.yo(charSequence, strArr, D));
+                                                        arrayList.add(new org.telegram.messenger.zo(charSequence, strArr, D));
                                                     }
                                                 }
                                                 z12 = z13 ? 1 : 0;
@@ -224,13 +224,13 @@ public final /* synthetic */ class l implements RequestDelegate {
                     for (int i17 = 0; i17 < tL_messages_inactiveChats.chats.size(); i17++) {
                         TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i17);
                         int currentTime = (p81Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i17).intValue()) / 86400;
-                        String G = currentTime < 30 ? org.telegram.messenger.gd.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? org.telegram.messenger.gd.G(currentTime / 30, "Months", new Object[0]) : org.telegram.messenger.gd.G(currentTime / 365, "Years", new Object[0]);
+                        String G = currentTime < 30 ? org.telegram.messenger.hd.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? org.telegram.messenger.hd.G(currentTime / 30, "Months", new Object[0]) : org.telegram.messenger.hd.G(currentTime / 365, "Years", new Object[0]);
                         if (org.telegram.messenger.v3.n0(chat)) {
-                            arrayList2.add(org.telegram.messenger.gd.a0("InactiveChatSignature", null, 2131749018, org.telegram.messenger.gd.G(chat.participants_count, "Members", new Object[0]), G));
+                            arrayList2.add(org.telegram.messenger.hd.a0("InactiveChatSignature", null, 2131749018, org.telegram.messenger.hd.G(chat.participants_count, "Members", new Object[0]), G));
                         } else if (org.telegram.messenger.v3.T(chat)) {
-                            arrayList2.add(org.telegram.messenger.gd.a0("InactiveChannelSignature", null, 2131749019, G));
+                            arrayList2.add(org.telegram.messenger.hd.a0("InactiveChannelSignature", null, 2131749019, G));
                         } else {
-                            arrayList2.add(org.telegram.messenger.gd.a0("InactiveChatSignature", null, 2131749018, org.telegram.messenger.gd.G(chat.participants_count, "Members", new Object[0]), G));
+                            arrayList2.add(org.telegram.messenger.hd.a0("InactiveChatSignature", null, 2131749018, org.telegram.messenger.hd.G(chat.participants_count, "Members", new Object[0]), G));
                         }
                     }
                     org.telegram.messenger.g0.g3(new v21(p81Var, arrayList2, tL_messages_inactiveChats, i11));

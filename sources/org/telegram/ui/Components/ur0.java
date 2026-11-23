@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ur0 extends dk0 {
     public final Context c;
@@ -34,14 +34,14 @@ public final class ur0 extends dk0 {
             return;
         }
         if (org.telegram.messenger.n5.z(j3)) {
-            TLRPC.Chat O0 = org.telegram.messenger.mp.u1(g2Var.getCurrentAccount()).O0(Long.valueOf(-j3));
+            TLRPC.Chat O0 = org.telegram.messenger.np.u1(g2Var.getCurrentAccount()).O0(Long.valueOf(-j3));
             if (O0 == null || !org.telegram.messenger.v3.V(O0)) {
                 return;
             }
-        } else if (org.telegram.messenger.mp.u1(g2Var.getCurrentAccount()).c2(Long.valueOf(j3)) == null) {
+        } else if (org.telegram.messenger.np.u1(g2Var.getCurrentAccount()).c2(Long.valueOf(j3)) == null) {
             return;
         }
-        org.telegram.messenger.no N0 = org.telegram.messenger.mp.u1(g2Var.getCurrentAccount()).N0(j3);
+        org.telegram.messenger.oo N0 = org.telegram.messenger.np.u1(g2Var.getCurrentAccount()).N0(j3);
         ArrayList arrayList = this.d;
         arrayList.clear();
         int i7 = 0;
@@ -56,7 +56,7 @@ public final class ur0 extends dk0 {
                 }
             }
         }
-        if (!arrayList.isEmpty() && !org.telegram.messenger.j10.i(g2Var.getCurrentAccount()).q()) {
+        if (!arrayList.isEmpty() && !org.telegram.messenger.k10.i(g2Var.getCurrentAccount()).q()) {
             i7 = N0.c;
         }
         this.e = i7;
@@ -107,7 +107,7 @@ public final class ur0 extends dk0 {
         jt0 jt0Var = this.f;
         if (i7 == 18) {
             org.telegram.ui.ActionBar.g2 g2Var = jt0Var.y1;
-            h6Var = new hs0(g2Var == null ? org.telegram.messenger.j10.t0 : g2Var.getCurrentAccount(), this.c, jt0Var.m1 > 0, jt0Var.I1, new cp0(this, 3));
+            h6Var = new hs0(g2Var == null ? org.telegram.messenger.k10.t0 : g2Var.getCurrentAccount(), this.c, jt0Var.m1 > 0, jt0Var.I1, new cp0(this, 3));
         } else {
             h6Var = new org.telegram.ui.Cells.h6(this.c, jt0Var.I1);
         }

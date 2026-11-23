@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.b31;
 import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.fq0;
@@ -40,7 +40,7 @@ import org.telegram.ui.u91;
 import org.telegram.ui.xv;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i4 extends b71 {
     public final /* synthetic */ int a;
@@ -170,7 +170,7 @@ public final class i4 extends b71 {
                         n4Var = z2Var.U1;
                         org.telegram.messenger.g0.E2(n4Var);
                         FrameLayout frameLayout = new FrameLayout((Context) this.b);
-                        frameLayout.addView(n4Var, c8.ma.e(-1, -1, ks.E1));
+                        frameLayout.addView(n4Var, c8.ma.e(-1, -1, ls.E1));
                         return frameLayout;
                     }
                     return null;
@@ -188,7 +188,7 @@ public final class i4 extends b71 {
                 n4Var = f6Var.U1;
                 org.telegram.messenger.g0.E2(n4Var);
                 FrameLayout frameLayout2 = new FrameLayout((Context) this.b);
-                frameLayout2.addView(n4Var, c8.ma.e(-1, -1, ks.E1));
+                frameLayout2.addView(n4Var, c8.ma.e(-1, -1, ls.E1));
                 return frameLayout2;
             case 1:
                 return new gi.m((fq0) this.c, (Context) this.b);
@@ -295,24 +295,24 @@ public final class i4 extends b71 {
                 org.telegram.ui.Wallet.o4 o4Var = new org.telegram.ui.Wallet.o4(n6Var);
                 org.telegram.ui.Wallet.o4 o4Var2 = new org.telegram.ui.Wallet.o4(n6Var);
                 h6Var = ((org.telegram.ui.ActionBar.g2) n6Var).resourceProvider;
-                bi.j7 j7Var = new bi.j7(context2, i11, i12, false, uVar, o4Var, o4Var2, h6Var, i7 == 1 ? 3 : -1, 1);
-                h51VarArr[i7] = j7Var;
+                bi.i7 i7Var = new bi.i7(context2, i11, i12, false, uVar, o4Var, o4Var2, h6Var, i7 == 1 ? 3 : -1, 1);
+                h51VarArr[i7] = i7Var;
                 n6Var.e1(i7);
                 qVar = ((org.telegram.ui.ActionBar.g2) n6Var).glassEngine;
-                qVar.b(j7Var);
-                j7Var.setFocusableInTouchMode(false);
-                j7Var.setClipChildren(false);
-                j7Var.setClipToPadding(false);
+                qVar.b(i7Var);
+                i7Var.setFocusableInTouchMode(false);
+                i7Var.setClipChildren(false);
+                i7Var.setClipToPadding(false);
                 if (i7 == 0) {
-                    j7Var.r1();
+                    i7Var.r1();
                 } else {
-                    j7Var.setSelectorType(9);
-                    j7Var.setSelectorDrawableColor(0);
+                    i7Var.setSelectorType(9);
+                    i7Var.setSelectorDrawableColor(0);
                 }
-                j7Var.g3.r = false;
-                j7Var.j(new t31(this, i7));
-                h51VarArr[i7] = j7Var;
-                return j7Var;
+                i7Var.g3.r = false;
+                i7Var.j(new t31(this, i7));
+                h51VarArr[i7] = i7Var;
+                return i7Var;
             default:
                 return i7 == 0 ? ((wg.a0) this.b).b : ((wg.w0) this.c).b;
         }
@@ -367,32 +367,32 @@ public final class i4 extends b71 {
         Object obj = this.b;
         switch (i10) {
             case 1:
-                return i7 == 0 ? gd.N0(2131746514, null) : b31.Q0(((fi.a6) ((fq0) this.c).f.get(i7 - 1)).E);
+                return i7 == 0 ? hd.N0(2131746514, null) : b31.Q0(((fi.a6) ((fq0) this.c).f.get(i7 - 1)).E);
             case 2:
-                return i7 != 1 ? i7 != 2 ? gd.N0(2131745513, null) : gd.N0(2131745516, null) : gd.N0(2131745542, null);
+                return i7 != 1 ? i7 != 2 ? hd.N0(2131745513, null) : hd.N0(2131745516, null) : hd.N0(2131745542, null);
             case 3:
                 ArrayList arrayList = (ArrayList) obj;
                 if (((tm0) arrayList.get(i7)).a == 0) {
-                    return gd.N0(2131745627, null);
+                    return hd.N0(2131745627, null);
                 }
                 if (((tm0) arrayList.get(i7)).a == 1) {
-                    return gd.N0(2131752246, null);
+                    return hd.N0(2131752246, null);
                 }
                 if (((tm0) arrayList.get(i7)).a == 4) {
-                    return gd.N0(2131754175, null);
+                    return hd.N0(2131754175, null);
                 }
                 if (((tm0) arrayList.get(i7)).a == 6) {
-                    return gd.N0(2131745537, null);
+                    return hd.N0(2131745537, null);
                 }
                 if (((tm0) arrayList.get(i7)).a == 2) {
-                    return gd.N0(2131751331, null);
+                    return hd.N0(2131751331, null);
                 }
                 if (((tm0) arrayList.get(i7)).a == 5) {
-                    return gd.N0(2131746388, null);
+                    return hd.N0(2131746388, null);
                 }
                 jg.o0 o0Var = jg.q0.k3[((tm0) arrayList.get(i7)).b];
                 String str = o0Var.c;
-                return str != null ? str : gd.N0(o0Var.b, null);
+                return str != null ? str : hd.N0(o0Var.b, null);
             case 4:
             case 5:
             case 6:
@@ -402,16 +402,16 @@ public final class i4 extends b71 {
             case 7:
                 ArrayList arrayList2 = (ArrayList) obj;
                 if (((r91) arrayList2.get(i7)).a == 0) {
-                    return gd.N0(2131745560, null);
+                    return hd.N0(2131745560, null);
                 }
                 if (((r91) arrayList2.get(i7)).a == 1) {
-                    return gd.N0(2131751331, null);
+                    return hd.N0(2131751331, null);
                 }
                 jg.o0 o0Var2 = jg.q0.k3[((r91) arrayList2.get(i7)).b];
                 String str2 = o0Var2.c;
-                return str2 != null ? str2 : gd.N0(o0Var2.b, null);
+                return str2 != null ? str2 : hd.N0(o0Var2.b, null);
             case 9:
-                return gd.N0(i7 == 0 ? 2131742718 : 2131742926, null);
+                return hd.N0(i7 == 0 ? 2131742716 : 2131742924, null);
         }
     }
 

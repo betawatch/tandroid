@@ -18,13 +18,13 @@ import android.widget.OverScroller;
 import androidx.core.widget.NestedScrollView;
 import java.lang.reflect.Field;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class x7 extends NestedScrollView implements z60 {
     public final t9 a0;
@@ -61,7 +61,7 @@ public class x7 extends NestedScrollView implements z60 {
         this.s0 = frameLayout;
         setClipChildren(false);
         setOverScrollMode(2);
-        ks.i(this);
+        ls.i(this);
         w7 w7Var = new w7(this, getContext());
         this.c0 = w7Var;
         t9 t9Var = new t9(w7Var, h6Var);

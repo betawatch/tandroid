@@ -24,14 +24,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.kf0;
 import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout {
     public final HashMap E;
@@ -178,7 +178,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                     rect = rect2;
                     i13 = -1000000;
                     i11 = 1;
-                    i12 = ks.e4;
+                    i12 = ls.e4;
                     i10 = i19;
                     canvas2 = canvas;
                     canvas2.saveLayerAlpha(0.0f, f15, measuredWidth, measuredHeight, i20, 31);
@@ -448,7 +448,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                         View childAt = d61Var.getChildAt(i7);
                         if (childAt != null && childAt.getVisibility() == 0 && !(childAt instanceof d1)) {
                             if (((Integer) hashMap.get(childAt)) != null) {
-                                if (n10.x(32.0f, org.telegram.messenger.g0.L(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f10) {
+                                if (o10.x(32.0f, org.telegram.messenger.g0.L(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f10) {
                                     break;
                                 }
                             }
@@ -559,7 +559,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
         this.f = 1.0f;
         this.h = 1.0f;
         this.n = false;
-        this.r = ks.e4;
+        this.r = ls.e4;
         this.s = 0;
         this.x = true;
         this.E = new HashMap();

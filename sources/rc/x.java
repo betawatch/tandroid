@@ -3,9 +3,9 @@ package rc;
 import com.google.android.gms.internal.vision.e2;
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class x {
     public boolean a;
@@ -20,7 +20,7 @@ public final class x {
         x xVar = new x();
         xVar.a = true;
         xVar.e = 8;
-        byte[] bArr = {(byte) ((i7 >> 8) & ks.e4), (byte) (i7 & ks.e4)};
+        byte[] bArr = {(byte) ((i7 >> 8) & ls.e4), (byte) (i7 & ls.e4)};
         if (str == null || str.length() == 0) {
             xVar.c(bArr);
             return xVar;

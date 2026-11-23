@@ -10,11 +10,11 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class d0 {
     public static c0 E;
@@ -286,7 +286,7 @@ public final class d0 {
     }
 
     public static FloatBuffer i(float[] fArr) {
-        FloatBuffer i7 = n10.i(ByteBuffer.allocateDirect(fArr.length * 4));
+        FloatBuffer i7 = o10.i(ByteBuffer.allocateDirect(fArr.length * 4));
         i7.put(fArr).position(0);
         return i7;
     }

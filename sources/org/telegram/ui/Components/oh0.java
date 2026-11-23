@@ -32,13 +32,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class oh0 extends BitmapDrawable implements Animatable, bg.g {
     public static final AtomicInteger Q0 = new AtomicInteger();
     public static final AtomicInteger R0 = new AtomicInteger();
-    public static final ExecutorService S0 = Executors.newFixedThreadPool(4, new ai.a1(2));
-    public static final ExecutorService T0 = Executors.newFixedThreadPool(2, new ai.a1(3));
+    public static final ExecutorService S0 = Executors.newFixedThreadPool(4, new ai.z0(2));
+    public static final ExecutorService T0 = Executors.newFixedThreadPool(2, new ai.z0(3));
     public static org.telegram.messenger.r5 U0;
     public final Runnable A0;
     public Runnable B0;
@@ -1241,7 +1241,7 @@ public class oh0 extends BitmapDrawable implements Animatable, bg.g {
         ab.v vVar = new ab.v();
         this.v0 = vVar;
         vVar.c = iArr == null ? null : (int[]) iArr.clone();
-        long[] jArr = org.telegram.messenger.ot.a;
+        long[] jArr = org.telegram.messenger.pt.a;
         int length = jArr.length - 1;
         int i12 = 0;
         while (true) {

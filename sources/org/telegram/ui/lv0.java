@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lv0 extends oq0 {
     public final /* synthetic */ ProfileActivity a;
@@ -24,7 +24,7 @@ public final class lv0 extends oq0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public final wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         TLRPC.Chat O0;
         TLRPC.ChatPhoto chatPhoto;
         TLRPC.FileLocation fileLocation2;
@@ -51,7 +51,7 @@ public final class lv0 extends oq0 {
                     int realCount = av0Var3.getRealCount();
                     i10 = 0;
                     while (i10 < realCount) {
-                        org.telegram.messenger.fc G = profileActivity.o0.G(i10);
+                        org.telegram.messenger.gc G = profileActivity.o0.G(i10);
                         if (G != null && (tL_fileLocationToBeDeprecated = G.f) != null && tL_fileLocationToBeDeprecated.local_id == fileLocation.local_id) {
                             wq0Var = null;
                             if (tL_fileLocationToBeDeprecated.volume_id == fileLocation.volume_id && G.a == fileLocation.dc_id) {

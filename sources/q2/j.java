@@ -4,10 +4,10 @@ import h2.l0;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.ui.Components.es0;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 import x2.g0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class j {
     public final int a;
@@ -41,7 +41,7 @@ public final class j {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             i iVar = (i) it.next();
-            l0.W(iVar.a, new j01(this, iVar.b, i7, 25));
+            l0.W(iVar.a, new f21(this, iVar.b, i7, 24));
         }
     }
 

@@ -2,17 +2,17 @@ package sh;
 
 import bi.q;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements q10 {
+public final /* synthetic */ class h implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ m b;
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class h implements q10 {
         this.b = mVar;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
         int i10 = 0;
@@ -37,7 +37,7 @@ public final /* synthetic */ class h implements q10 {
                     i10++;
                     TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) obj3;
                     long o4 = n5.o(messagePeerVote.peer);
-                    TLObject g22 = mp.u1(mVar.a).g2(o4);
+                    TLObject g22 = np.u1(mVar.a).g2(o4);
                     int i11 = messagePeerVote.date;
                     q qVar = new q(mVar, o4, 5);
                     int i12 = j.b;
@@ -73,8 +73,8 @@ public final /* synthetic */ class h implements q10 {
                     mVar.h = true;
                     break;
                 } else {
-                    mp.u1(i15).f4(tL_messages_votesList.users, false);
-                    mp.u1(i15).Z3(tL_messages_votesList.chats, false);
+                    np.u1(i15).f4(tL_messages_votesList.users, false);
+                    np.u1(i15).Z3(tL_messages_votesList.chats, false);
                     String str = tL_messages_votesList.next_offset;
                     mVar.g = str;
                     mVar.h = str == null;

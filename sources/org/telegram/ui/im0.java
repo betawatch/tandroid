@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -27,7 +27,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
     public final Paint n;
     public boolean r;
     public int s;
-    public org.telegram.messenger.x10 w;
+    public org.telegram.messenger.y10 w;
     public hm0 x;
 
     public im0(int i7, int i10, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
@@ -122,7 +122,7 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
                             hm0Var.k = drawable;
                             drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         }
-                        hm0Var.k.setBounds((int) org.telegram.messenger.n10.w(hm0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) org.telegram.messenger.n10.w(hm0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()), (int) com.google.android.gms.internal.vision.e2.c(hm0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) com.google.android.gms.internal.vision.e2.c(hm0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()));
+                        hm0Var.k.setBounds((int) org.telegram.messenger.o10.w(hm0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) org.telegram.messenger.o10.w(hm0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()), (int) com.google.android.gms.internal.vision.e2.c(hm0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) com.google.android.gms.internal.vision.e2.c(hm0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()));
                         hm0Var.k.draw(canvas);
                     } else {
                         if (hm0Var.i == null) {
@@ -166,8 +166,8 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         hm0 hm0Var;
         hm0 hm0Var2;
-        org.telegram.messenger.x10 x10Var;
-        org.telegram.messenger.x10 x10Var2;
+        org.telegram.messenger.y10 y10Var;
+        org.telegram.messenger.y10 y10Var2;
         if (this.f != null) {
             int i7 = 0;
             while (true) {
@@ -199,15 +199,15 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
                     if (hm0Var != null) {
                         hm0Var.l.c(true);
                     }
-                    if (this.x != null && hm0Var != null && (x10Var2 = this.w) != null) {
-                        x10Var2.a(Integer.valueOf(hm0Var.o));
+                    if (this.x != null && hm0Var != null && (y10Var2 = this.w) != null) {
+                        y10Var2.a(Integer.valueOf(hm0Var.o));
                     }
                     this.x = hm0Var;
                     return true;
                 }
             } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (motionEvent.getAction() == 1 && (hm0Var2 = this.x) != null && (x10Var = this.w) != null) {
-                    x10Var.a(Integer.valueOf(hm0Var2.o));
+                if (motionEvent.getAction() == 1 && (hm0Var2 = this.x) != null && (y10Var = this.w) != null) {
+                    y10Var.a(Integer.valueOf(hm0Var2.o));
                 }
                 if (this.f != null) {
                     int i10 = 0;
@@ -239,10 +239,10 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
     public final void onMeasure(int i7, int i10) {
         int i11;
         int size = View.MeasureSpec.getSize(i7);
-        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(this.d);
+        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(this.d);
         int i12 = this.c;
-        org.telegram.messenger.cp cpVar = i12 == 1 ? u12.t4 : u12.u4;
-        int size2 = cpVar == null ? 0 : cpVar.c.size();
+        org.telegram.messenger.dp dpVar = i12 == 1 ? u12.t4 : u12.u4;
+        int size2 = dpVar == null ? 0 : dpVar.c.size();
         int i13 = 8;
         int i14 = 2;
         if (i12 == 2) {
@@ -280,11 +280,11 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
                     hm0Var.g = false;
                     hm0Var.f = false;
                     hm0Var.a.setColor(w02);
-                } else if (cpVar != null) {
-                    ArrayList arrayList = cpVar.c;
+                } else if (dpVar != null) {
+                    ArrayList arrayList = dpVar.c;
                     if (i15 >= 0 && i15 < arrayList.size()) {
-                        this.f[i15].o = ((org.telegram.messenger.bp) arrayList.get(i15)).c;
-                        this.f[i15].a((org.telegram.messenger.bp) arrayList.get(i15));
+                        this.f[i15].o = ((org.telegram.messenger.cp) arrayList.get(i15)).c;
+                        this.f[i15].a((org.telegram.messenger.cp) arrayList.get(i15));
                     }
                 }
                 i15++;
@@ -329,8 +329,8 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
         invalidate();
     }
 
-    public void setOnColorClick(org.telegram.messenger.x10 x10Var) {
-        this.w = x10Var;
+    public void setOnColorClick(org.telegram.messenger.y10 y10Var) {
+        this.w = y10Var;
     }
 
     @Override // org.telegram.ui.ActionBar.b6
@@ -339,9 +339,9 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
         if (this.f == null) {
             return;
         }
-        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(this.d);
+        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(this.d);
         int i10 = this.c;
-        org.telegram.messenger.cp cpVar = i10 == 1 ? u12.t4 : u12.u4;
+        org.telegram.messenger.dp dpVar = i10 == 1 ? u12.t4 : u12.u4;
         int i11 = 0;
         while (true) {
             hm0[] hm0VarArr = this.f;
@@ -374,11 +374,11 @@ public final class im0 extends View implements org.telegram.ui.ActionBar.b6 {
                 hm0Var2.g = false;
                 hm0Var2.f = false;
                 hm0Var2.a.setColor(w03);
-            } else if (cpVar != null) {
-                ArrayList arrayList = cpVar.c;
+            } else if (dpVar != null) {
+                ArrayList arrayList = dpVar.c;
                 if (i11 >= 0 && i11 < arrayList.size()) {
-                    this.f[i11].o = ((org.telegram.messenger.bp) arrayList.get(i11)).c;
-                    this.f[i11].a((org.telegram.messenger.bp) arrayList.get(i11));
+                    this.f[i11].o = ((org.telegram.messenger.cp) arrayList.get(i11)).c;
+                    this.f[i11].a((org.telegram.messenger.cp) arrayList.get(i11));
                 }
             }
             i11++;

@@ -14,9 +14,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class ex extends View implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.b6 {
+public final class ex extends View implements org.telegram.messenger.gs, org.telegram.ui.ActionBar.b6 {
     public boolean E;
     public int F;
     public final Paint a;
@@ -73,7 +73,7 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
         }
         arrayList.clear();
         for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            String S0 = ((org.telegram.messenger.fj) arrayList2.get(i11)).S0();
+            String S0 = ((org.telegram.messenger.gj) arrayList2.get(i11)).S0();
             if (org.telegram.messenger.w7.G(i7).S(S0)) {
                 dx dxVar = (dx) hashMap.get(S0);
                 if (dxVar == null) {
@@ -98,7 +98,7 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
     }
 
     public final void b() {
-        org.telegram.messenger.tr.a0(this.c);
+        org.telegram.messenger.ur.a0(this.c);
         int i7 = 0;
         long j3 = 0;
         long j10 = 0;
@@ -126,9 +126,9 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
         invalidate();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.e5) {
+        if (i7 == org.telegram.messenger.ls.e5) {
             a();
             b();
         }
@@ -138,7 +138,7 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         a();
-        org.telegram.messenger.ks.f(this.c).c(this, org.telegram.messenger.ks.e5);
+        org.telegram.messenger.ls.f(this.c).c(this, org.telegram.messenger.ls.e5);
         this.n.P();
         this.r.P();
     }
@@ -153,7 +153,7 @@ public final class ex extends View implements org.telegram.messenger.fs, org.tel
             int i10 = this.c;
             if (i7 >= size) {
                 arrayList.clear();
-                org.telegram.messenger.ks.f(i10).n(this, org.telegram.messenger.ks.e5);
+                org.telegram.messenger.ls.f(i10).n(this, org.telegram.messenger.ls.e5);
                 this.n.R();
                 this.r.R();
                 return;

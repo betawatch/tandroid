@@ -35,15 +35,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bp;
 import org.telegram.messenger.cp;
+import org.telegram.messenger.dp;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fs;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -59,9 +59,9 @@ import org.telegram.ui.Components.sh0;
 import org.telegram.ui.cv0;
 import org.telegram.ui.wv0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public class ProfileStoriesView extends View implements fs {
+public class ProfileStoriesView extends View implements gs {
     public static final /* synthetic */ int t0 = 0;
     public sh0 E;
     public boolean F;
@@ -154,7 +154,7 @@ public class ProfileStoriesView extends View implements fs {
         this.f = view;
         this.h = wv0Var;
         wv0Var.getImageReceiver().F1 = new a4(cv0Var, 1);
-        this.N = mp.u1(i7).R1();
+        this.N = np.u1(i7).R1();
         paint.setColor(1526726655);
         paint.getAlpha();
         paint.setStrokeWidth(g0.N(1.5f));
@@ -233,7 +233,7 @@ public class ProfileStoriesView extends View implements fs {
     }
 
     public final void b(float f10, float f11, Canvas canvas, Paint paint, RectF rectF) {
-        if (!v3.b0(j10.t0, this.d)) {
+        if (!v3.b0(k10.t0, this.d)) {
             canvas.drawArc(rectF, f10, f11, false, paint);
             return;
         }
@@ -322,9 +322,9 @@ public class ProfileStoriesView extends View implements fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.y5) {
+        if (i7 == ls.y5) {
             f(true, true);
         }
     }
@@ -457,7 +457,7 @@ public class ProfileStoriesView extends View implements fs {
                 f11 = e10;
                 arrayList2 = arrayList;
                 sh0Var.d(null, true, false);
-                profileStoriesView5.E.u = v3.b0(j10.t0, j10);
+                profileStoriesView5.E.u = v3.b0(k10.t0, j10);
             } else {
                 g7Var = g7Var5;
                 f11 = e10;
@@ -553,7 +553,7 @@ public class ProfileStoriesView extends View implements fs {
                 Paint paint9 = i7.d.c;
                 paint9.setStrokeWidth(g0.L(2.0f));
                 paint9.setAlpha((int) (f15 * 255.0f));
-                if (v3.b0(j10.t0, j3)) {
+                if (v3.b0(k10.t0, j3)) {
                     float height = rectF8.height() * 0.32f;
                     canvas4.drawRoundRect(rectF8, height, height, paint9);
                 } else {
@@ -600,7 +600,7 @@ public class ProfileStoriesView extends View implements fs {
                     RectF rectF11 = g0.P;
                     rectF11.set(rectF10);
                     rectF11.inset(-g0.L(12.0f), -g0.L(12.0f));
-                    canvas4.saveLayerAlpha(rectF11, ks.e4, 31);
+                    canvas4.saveLayerAlpha(rectF11, ls.e4, 31);
                     float A = e2.A(profileStoriesView5.a0, 1.0f, 2.5f, 1.0f);
                     if (A != 1.0f) {
                         canvas4.save();
@@ -941,13 +941,13 @@ public class ProfileStoriesView extends View implements fs {
             return;
         }
         int i17 = this.c;
-        long e10 = j10.i(i17).e();
+        long e10 = k10.i(i17).e();
         long j3 = this.d;
         int i18 = 0;
         boolean z13 = j3 == e10;
         int currentTime = ConnectionsManager.getInstance(i17).getCurrentTime();
-        TL_stories.PeerStories z14 = mp.u1(i17).R1().z(j3);
-        TL_stories.PeerStories y10 = mp.u1(i17).R1().y(j3);
+        TL_stories.PeerStories z14 = np.u1(i17).R1().z(j3);
+        TL_stories.PeerStories y10 = np.u1(i17).R1().y(j3);
         TL_stories.PeerStories peerStories = j3 == 0 ? null : z14;
         int max = z14 != null ? Math.max(0, z14.max_read_id) : 0;
         if (y10 != null) {
@@ -1185,22 +1185,22 @@ public class ProfileStoriesView extends View implements fs {
         this.s = i36;
         if (i36 > 0) {
             z12 = false;
-            str = gd.G(i36, "Stories", new Object[0]);
+            str = hd.G(i36, "Stories", new Object[0]);
         } else {
             z12 = false;
             str = "";
         }
-        if (z10 && !gd.a0) {
+        if (z10 && !hd.a0) {
             z12 = true;
         }
         this.n.t(str, z12, true);
         g7 g7Var = this.M;
         if (j3 >= 0) {
-            TLRPC.User c22 = mp.u1(i17).c2(Long.valueOf(j3));
+            TLRPC.User c22 = np.u1(i17).c2(Long.valueOf(j3));
             if (c22 != null) {
                 TLRPC.EmojiStatus emojiStatus = c22.emoji_status;
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
-                    g7Var.c(bp.a(emojiStatus), z10);
+                    g7Var.c(cp.a(emojiStatus), z10);
                 }
             }
             if (c22 != null) {
@@ -1208,19 +1208,19 @@ public class ProfileStoriesView extends View implements fs {
                 TLRPC.PeerColor peerColor = c22.profile_color;
                 if (peerColor != null) {
                     i13 = peerColor.color;
-                    cp cpVar = mp.u1(g7Var.a).u4;
-                    g7Var.c(cpVar != null ? null : cpVar.d(i13), z10);
+                    dp dpVar = np.u1(g7Var.a).u4;
+                    g7Var.c(dpVar != null ? null : dpVar.d(i13), z10);
                 }
             }
             i13 = -1;
-            cp cpVar2 = mp.u1(g7Var.a).u4;
-            g7Var.c(cpVar2 != null ? null : cpVar2.d(i13), z10);
+            dp dpVar2 = np.u1(g7Var.a).u4;
+            g7Var.c(dpVar2 != null ? null : dpVar2.d(i13), z10);
         } else {
-            TLRPC.Chat O0 = mp.u1(i17).O0(Long.valueOf(-j3));
+            TLRPC.Chat O0 = np.u1(i17).O0(Long.valueOf(-j3));
             if (O0 != null) {
                 TLRPC.EmojiStatus emojiStatus2 = O0.emoji_status;
                 if (emojiStatus2 instanceof TLRPC.TL_emojiStatusCollectible) {
-                    g7Var.c(bp.a(emojiStatus2), z10);
+                    g7Var.c(cp.a(emojiStatus2), z10);
                 }
             }
             if (O0 != null) {
@@ -1228,13 +1228,13 @@ public class ProfileStoriesView extends View implements fs {
                 TLRPC.PeerColor peerColor2 = O0.profile_color;
                 if (peerColor2 != null) {
                     i12 = peerColor2.color;
-                    cp cpVar3 = mp.u1(g7Var.a).u4;
-                    g7Var.c(cpVar3 != null ? null : cpVar3.d(i12), z10);
+                    dp dpVar3 = np.u1(g7Var.a).u4;
+                    g7Var.c(dpVar3 != null ? null : dpVar3.d(i12), z10);
                 }
             }
             i12 = -1;
-            cp cpVar32 = mp.u1(g7Var.a).u4;
-            g7Var.c(cpVar32 != null ? null : cpVar32.d(i12), z10);
+            dp dpVar32 = np.u1(g7Var.a).u4;
+            g7Var.c(dpVar32 != null ? null : dpVar32.d(i12), z10);
         }
         invalidate();
     }
@@ -1251,7 +1251,7 @@ public class ProfileStoriesView extends View implements fs {
         while (true) {
             ArrayList arrayList = this.x;
             if (i7 >= arrayList.size()) {
-                ks.f(this.c).c(this, ks.y5);
+                ls.f(this.c).c(this, ls.y5);
                 return;
             } else {
                 ((b4) arrayList.get(i7)).b.P();
@@ -1268,7 +1268,7 @@ public class ProfileStoriesView extends View implements fs {
         while (true) {
             ArrayList arrayList = this.x;
             if (i7 >= arrayList.size()) {
-                ks.f(this.c).n(this, ks.y5);
+                ls.f(this.c).n(this, ls.y5);
                 return;
             } else {
                 ((b4) arrayList.get(i7)).b.R();

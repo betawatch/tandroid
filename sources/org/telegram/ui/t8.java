@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                 boolean z10 = tLObject instanceof TLRPC.Updates;
                 int i10 = this.b;
                 if (z10) {
-                    org.telegram.messenger.mp.u1(i10).V3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.np.u1(i10).V3((TLRPC.Updates) tLObject, false);
                 }
                 TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
                 exportgroupcallinvite.call = inputGroupCall;
@@ -79,7 +79,7 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                 }
             case 2:
                 ArrayList arrayList2 = ExternalActionActivity.y;
-                org.telegram.messenger.g0.g3(new org.telegram.messenger.ce((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.t1) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.de((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.t1) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
                 break;
             default:
                 org.telegram.messenger.g0.g3(new di.k8((ld0) obj6, tLObject, tL_error, (f5.i) obj5, this.b, (f5.m) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));

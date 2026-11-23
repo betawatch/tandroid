@@ -16,13 +16,13 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q5 extends a5.h {
     public org.telegram.ui.Components.n6 E;
@@ -78,7 +78,7 @@ public final class q5 extends a5.h {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             xy0Var.a();
             xy0Var.m(1);
-            xy0 xy0Var2 = new xy0(starGift.sold_out ? gd.N0(2131749950, null) : gd.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
+            xy0 xy0Var2 = new xy0(starGift.sold_out ? hd.N0(2131749950, null) : hd.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
             this.y = xy0Var2;
             xy0Var2.p(org.telegram.messenger.g0.L(f14));
             xy0Var2.a();
@@ -249,7 +249,7 @@ public final class q5 extends a5.h {
         this.r.a();
         this.n.P();
         if (this.G != null) {
-            int currentTime = ConnectionsManager.getInstance(j10.t0).getCurrentTime();
+            int currentTime = ConnectionsManager.getInstance(k10.t0).getCurrentTime();
             int i7 = this.I;
             if (currentTime >= i7) {
                 i7 = this.H;
@@ -281,7 +281,7 @@ public final class q5 extends a5.h {
         if (this.G == null) {
             this.G = new bg.r(new a1.c(this, 26));
         }
-        this.G.a(ConnectionsManager.getInstance(j10.t0).getCurrentTime() < i7 ? i7 - r0 : i10 - r0);
+        this.G.a(ConnectionsManager.getInstance(k10.t0).getCurrentTime() < i7 ? i7 - r0 : i10 - r0);
         if (this.E == null) {
             org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, false, false);
             this.E = n6Var;
@@ -373,14 +373,14 @@ public final class q5 extends a5.h {
 
     public final void h() {
         xy0 xy0Var;
-        int currentTime = ConnectionsManager.getInstance(j10.t0).getCurrentTime();
+        int currentTime = ConnectionsManager.getInstance(k10.t0).getCurrentTime();
         int i7 = this.H;
         if (currentTime > i7) {
-            this.E.t(gd.N0(2131750349, null), true, true);
+            this.E.t(hd.N0(2131750349, null), true, true);
         } else {
             int i10 = this.I;
             if (currentTime < i10) {
-                this.E.t(gd.a0(null, null, 2131750348, org.telegram.messenger.g0.g0(i10 - currentTime, true, false)), true, true);
+                this.E.t(hd.a0(null, null, 2131750348, org.telegram.messenger.g0.g0(i10 - currentTime, true, false)), true, true);
             } else {
                 this.E.t(org.telegram.messenger.g0.g0(i7 - currentTime, true, false), true, true);
             }
@@ -388,6 +388,6 @@ public final class q5 extends a5.h {
         if (currentTime <= this.H || (xy0Var = this.y) == null) {
             return;
         }
-        xy0Var.q(gd.N0(2131749950, null));
+        xy0Var.q(hd.N0(2131749950, null));
     }
 }

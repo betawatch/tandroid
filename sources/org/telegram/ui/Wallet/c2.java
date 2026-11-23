@@ -3,14 +3,14 @@ package org.telegram.ui.Wallet;
 import java.util.Arrays;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c2 implements q10 {
+public final /* synthetic */ class c2 implements r10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ byte[] c;
@@ -28,7 +28,7 @@ public final /* synthetic */ class c2 implements q10 {
         this.g = r0Var;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         String str;
         switch (this.a) {
@@ -80,7 +80,7 @@ public final /* synthetic */ class c2 implements q10 {
                             break;
                         }
                     } else {
-                        l2Var.y(h2Var, r0Var, null, z10 ? ks.X4 : h2Var.l, z10 ? "User declined the request" : h2Var.j, p51Var);
+                        l2Var.y(h2Var, r0Var, null, z10 ? ls.X4 : h2Var.l, z10 ? "User declined the request" : h2Var.j, p51Var);
                         break;
                     }
                 }

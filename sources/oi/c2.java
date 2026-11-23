@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.m6;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.es0;
 import org.telegram.ui.Components.g8;
 import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements Runnable {
     public final /* synthetic */ int a;
@@ -54,9 +54,9 @@ public final /* synthetic */ class c2 implements Runnable {
                 TLParseException.lambda$doThrowOrLog$0((TLParseException) this.b);
                 break;
             case 2:
-                bi.x4 x4Var = (bi.x4) this.b;
+                ai.b1 b1Var = (ai.b1) this.b;
                 Drawable drawable = ActionBarLayout.w1;
-                org.telegram.messenger.g0.g3(x4Var);
+                org.telegram.messenger.g0.g3(b1Var);
                 break;
             case 3:
                 ((org.telegram.ui.ActionBar.p0) this.b).setSelectedForDelete(false);
@@ -170,10 +170,10 @@ public final /* synthetic */ class c2 implements Runnable {
                     m6.j(drawable2);
                     m6.h(drawable2);
                 }
-                ks.e().k(ks.C4, new Object[0]);
+                ls.e().k(ls.C4, new Object[0]);
                 break;
             case 16:
-                g8 g8Var = (g8) m6.e5.remove((fj) this.b);
+                g8 g8Var = (g8) m6.e5.remove((gj) this.b);
                 if (g8Var != null) {
                     g8Var.i = null;
                     break;

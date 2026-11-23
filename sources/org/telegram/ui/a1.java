@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a1 extends FrameLayout implements org.telegram.ui.Cells.i9, org.telegram.ui.ActionBar.b6 {
     public AnimatorSet E;
@@ -57,7 +57,7 @@ public final class a1 extends FrameLayout implements org.telegram.ui.Cells.i9, o
         this.e = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(org.telegram.messenger.gd.N0(2131752385, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131752385, null));
         textView.setGravity(19);
         addView(textView, c8.ma.e(-2, 39, 53));
         textView.setOnClickListener(new oi.i1(4, this, p50Var));
@@ -253,7 +253,7 @@ public final class a1 extends FrameLayout implements org.telegram.ui.Cells.i9, o
             paint.setColor(2130706432);
             imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         }
-        TLRPC.Chat O0 = org.telegram.messenger.mp.u1(((g4) p50Var).Y).O0(Long.valueOf(pageblockchannel.channel.id));
+        TLRPC.Chat O0 = org.telegram.messenger.np.u1(((g4) p50Var).Y).O0(Long.valueOf(pageblockchannel.channel.id));
         if (O0 == null || O0.min) {
             TLRPC.Chat chat = pageblockchannel.channel;
             if (!p50Var.r && org.telegram.messenger.v3.t0(chat)) {

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xm0 implements org.telegram.ui.ActionBar.n0, org.telegram.ui.Components.hk0 {
     public final /* synthetic */ cn0 a;
@@ -32,7 +32,7 @@ public final class xm0 implements org.telegram.ui.ActionBar.n0, org.telegram.ui.
     @Override // org.telegram.ui.ActionBar.n0
     public void k() {
         cn0 cn0Var = this.a;
-        cn0Var.R.setText(org.telegram.messenger.gd.N0(cn0Var.Z ? 2131745150 : 2131745149, null));
+        cn0Var.R.setText(org.telegram.messenger.hd.N0(cn0Var.Z ? 2131745150 : 2131745149, null));
         cn0Var.R.setIcon(cn0Var.Z ? R.drawable.msg_media : R.drawable.msg_list);
     }
 
@@ -47,8 +47,8 @@ public final class xm0 implements org.telegram.ui.ActionBar.n0, org.telegram.ui.
     @Override // org.telegram.ui.Components.hk0
     public boolean m(int i7) {
         cn0 cn0Var = this.a;
-        org.telegram.messenger.ue ueVar = cn0Var.K;
-        return cn0Var.b.containsKey(ueVar != null ? Integer.valueOf(((org.telegram.messenger.ef) ueVar.e.get(i7)).C) : ((org.telegram.messenger.hf) cn0Var.f.get(i7)).B);
+        org.telegram.messenger.ve veVar = cn0Var.K;
+        return cn0Var.b.containsKey(veVar != null ? Integer.valueOf(((org.telegram.messenger.ff) veVar.e.get(i7)).C) : ((org.telegram.messenger.jf) cn0Var.f.get(i7)).B);
     }
 
     @Override // org.telegram.ui.ActionBar.n0

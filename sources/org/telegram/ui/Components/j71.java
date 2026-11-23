@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class j71 extends FrameLayout {
     public static final dq0 V = new dq0(1);
@@ -333,7 +333,7 @@ public class j71 extends FrameLayout {
             this.x.setInterpolator(V);
             float measuredWidth = getMeasuredWidth() / 2;
             float sin = (((float) Math.sin((Math.min(1.0f, (f10 * 1.0f) / r0) - 0.5f) * 0.47123894f)) * measuredWidth) + measuredWidth;
-            this.x.setDuration(Math.max(org.telegram.messenger.ks.g2, Math.min(Math.abs(0.0f) > 0.0f ? Math.round(Math.abs(sin / r6) * 1000.0f) * 4 : (int) (((f10 / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
+            this.x.setDuration(Math.max(org.telegram.messenger.ls.g2, Math.min(Math.abs(0.0f) > 0.0f ? Math.round(Math.abs(sin / r6) * 1000.0f) * 4 : (int) (((f10 / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
             this.x.addListener(new y61(this, i7));
             this.x.start();
             this.y = true;
@@ -791,7 +791,7 @@ public class j71 extends FrameLayout {
                         this.x.setInterpolator(V);
                         float measuredWidth = getMeasuredWidth() / 2;
                         float sin = (((float) Math.sin((Math.min(1.0f, (f12 * 1.0f) / r2) - 0.5f) * 0.47123894f)) * measuredWidth) + measuredWidth;
-                        this.x.setDuration(Math.max(org.telegram.messenger.ks.g2, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(sin / r4) * 1000.0f) * 4 : (int) (((f12 / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
+                        this.x.setDuration(Math.max(org.telegram.messenger.ls.g2, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(sin / r4) * 1000.0f) * 4 : (int) (((f12 / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
                         this.x.addListener(new y61(this, i7));
                         this.x.start();
                         this.y = true;

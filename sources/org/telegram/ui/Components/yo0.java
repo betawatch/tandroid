@@ -7,7 +7,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yo0 extends dk0 {
     public final Context c;
@@ -70,7 +70,7 @@ public final class yo0 extends dk0 {
                 if (dialog == null) {
                     return;
                 }
-                TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i10).O0(Long.valueOf(-dialog.id));
+                TLRPC.Chat O0 = org.telegram.messenger.np.u1(i10).O0(Long.valueOf(-dialog.id));
                 if (dialog.id > 0) {
                     textView.setText(E.title);
                     j3 = 0;
@@ -79,7 +79,7 @@ public final class yo0 extends dk0 {
                     textView.setText("");
                 } else if (O0.monoforum) {
                     j3 = 0;
-                    textView.setText(org.telegram.messenger.mp.u1(i10).D1(org.telegram.messenger.n5.o(E.from_id), false));
+                    textView.setText(org.telegram.messenger.np.u1(i10).D1(org.telegram.messenger.n5.o(E.from_id), false));
                 } else {
                     j3 = 0;
                     textView.setText(E.title);
@@ -89,7 +89,7 @@ public final class yo0 extends dk0 {
                     q9Var.setImageDrawable(null);
                     long o4 = org.telegram.messenger.n5.o(E.from_id);
                     if (org.telegram.messenger.n5.E(o4)) {
-                        TLRPC.User c22 = org.telegram.messenger.mp.u1(i10).c2(Long.valueOf(o4));
+                        TLRPC.User c22 = org.telegram.messenger.np.u1(i10).c2(Long.valueOf(o4));
                         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, f7Var.h);
                         c7Var.r(c22);
                         if (c22 != null) {
@@ -100,7 +100,7 @@ public final class yo0 extends dk0 {
                         q9Var.f(c22, c7Var);
                         q9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
                     } else {
-                        TLRPC.Chat O02 = org.telegram.messenger.mp.u1(i10).O0(Long.valueOf(o4));
+                        TLRPC.Chat O02 = org.telegram.messenger.np.u1(i10).O0(Long.valueOf(o4));
                         if (O02 != null) {
                             textView.setText(O02.title);
                         } else {
@@ -111,7 +111,7 @@ public final class yo0 extends dk0 {
                     }
                 } else if (E.icon_emoji_id != j3) {
                     q9Var.setImageDrawable(null);
-                    q9Var.setAnimatedEmojiDrawable(new p5(13, org.telegram.messenger.j10.t0, E.icon_emoji_id));
+                    q9Var.setAnimatedEmojiDrawable(new p5(13, org.telegram.messenger.k10.t0, E.icon_emoji_id));
                 } else {
                     q9Var.setAnimatedEmojiDrawable(null);
                     qg.a aVar = new qg.a(E.icon_color);

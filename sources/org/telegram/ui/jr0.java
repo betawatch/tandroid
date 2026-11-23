@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jr0 implements org.telegram.ui.Components.tx {
     public final /* synthetic */ pr0 a;
@@ -98,12 +98,12 @@ public final class jr0 implements org.telegram.ui.Components.tx {
         Activity parentActivity = pr0Var.getParentActivity();
         h6Var = ((org.telegram.ui.ActionBar.g2) pr0Var).resourceProvider;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, h6Var);
-        String N0 = org.telegram.messenger.gd.N0(2131752056, null);
+        String N0 = org.telegram.messenger.hd.N0(2131752056, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.gd.N0(2131752057, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752087, null), new qi0(this, 4));
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        t1Var.U = org.telegram.messenger.hd.N0(2131752057, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752087, null), new qi0(this, 4));
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
         alertDialog$Builder.p();
     }
 
@@ -186,7 +186,7 @@ public final class jr0 implements org.telegram.ui.Components.tx {
     }
 
     @Override // org.telegram.ui.Components.tx
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10, int i7) {
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10, int i7) {
     }
 
     @Override // org.telegram.ui.Components.tx

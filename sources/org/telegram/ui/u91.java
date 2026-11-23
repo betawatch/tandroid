@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u91 extends org.telegram.ui.Components.j71 implements b00 {
     public final FrameLayout W;
@@ -64,7 +64,7 @@ public final class u91 extends org.telegram.ui.Components.j71 implements b00 {
         yzVar.setUseHeaderOffset(true);
         org.telegram.ui.Components.nv0 nv0Var = new org.telegram.ui.Components.nv0(context, yzVar, 1, null);
         this.q0 = nv0Var;
-        nv0Var.d.setText(org.telegram.messenger.gd.N0(2131747974, null));
+        nv0Var.d.setText(org.telegram.messenger.hd.N0(2131747974, null));
         nv0Var.e.setVisibility(8);
         nv0Var.setVisibility(8);
         nv0Var.addView(yzVar, 0);
@@ -96,7 +96,7 @@ public final class u91 extends org.telegram.ui.Components.j71 implements b00 {
         tL_messages_search.q = str;
         ArrayList arrayList = this.g0;
         if (!arrayList.isEmpty()) {
-            tL_messages_search.offset_id = ((org.telegram.messenger.fj) i5.c.h(1, arrayList)).e1();
+            tL_messages_search.offset_id = ((org.telegram.messenger.gj) i5.c.h(1, arrayList)).e1();
         }
         this.s0 = true;
         i7 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
@@ -201,11 +201,11 @@ public final class u91 extends org.telegram.ui.Components.j71 implements b00 {
     }
 
     @Override // org.telegram.ui.b00
-    public final void Z0(org.telegram.messenger.fj fjVar, View view, int i7) {
+    public final void Z0(org.telegram.messenger.gj gjVar, View view, int i7) {
         org.telegram.ui.ActionBar.k kVar;
         ArrayList arrayList = this.v0;
-        if (!arrayList.remove(fjVar)) {
-            arrayList.add(fjVar);
+        if (!arrayList.remove(gjVar)) {
+            arrayList.add(gjVar);
         }
         if (arrayList.isEmpty()) {
             kVar = ((org.telegram.ui.ActionBar.g2) this.w0).actionBar;
@@ -231,8 +231,8 @@ public final class u91 extends org.telegram.ui.Components.j71 implements b00 {
             if (i7 >= arrayList.size()) {
                 return false;
             }
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList.get(i7);
-            if (fjVar != null && fjVar.e1() == vzVar.b && org.telegram.messenger.fj.B0(fjVar.k) == vzVar.a) {
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList.get(i7);
+            if (gjVar != null && gjVar.e1() == vzVar.b && org.telegram.messenger.gj.B0(gjVar.k) == vzVar.a) {
                 return true;
             }
             i7++;
@@ -240,10 +240,10 @@ public final class u91 extends org.telegram.ui.Components.j71 implements b00 {
     }
 
     @Override // org.telegram.ui.b00
-    public final void t0(org.telegram.messenger.fj fjVar) {
+    public final void t0(org.telegram.messenger.gj gjVar) {
         int i7;
         Bundle bundle = new Bundle();
-        long B0 = org.telegram.messenger.fj.B0(fjVar.k);
+        long B0 = org.telegram.messenger.gj.B0(gjVar.k);
         boolean C = org.telegram.messenger.n5.C(B0);
         y91 y91Var = this.w0;
         if (C) {
@@ -252,14 +252,14 @@ public final class u91 extends org.telegram.ui.Components.j71 implements b00 {
             bundle.putLong("user_id", B0);
         } else {
             i7 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
-            TLRPC.Chat O0 = org.telegram.messenger.mp.u1(org.telegram.messenger.c.a(i7).a).O0(Long.valueOf(-B0));
+            TLRPC.Chat O0 = org.telegram.messenger.np.u1(org.telegram.messenger.c.a(i7).a).O0(Long.valueOf(-B0));
             if (O0 != null && O0.migrated_to != null) {
                 bundle.putLong("migrated_to", B0);
                 B0 = -O0.migrated_to.channel_id;
             }
             bundle.putLong("chat_id", -B0);
         }
-        bundle.putInt("message_id", fjVar.e1());
+        bundle.putInt("message_id", gjVar.e1());
         y91Var.presentFragment(new bn(bundle));
     }
 }

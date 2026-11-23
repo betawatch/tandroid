@@ -9,11 +9,11 @@ import android.graphics.drawable.Drawable;
 import bg.t;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c extends Drawable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final class c extends Drawable {
 
     public c() {
         this.a = 1;
-        this.d = ks.e4;
+        this.d = ls.e4;
         this.b = i5.c.g(t0.b, R.drawable.settings_arrow);
     }
 

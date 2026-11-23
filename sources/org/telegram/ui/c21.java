@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c21 extends org.telegram.ui.Components.sa {
     public TLRPC.Chat T1;
@@ -38,7 +38,7 @@ public final class c21 extends org.telegram.ui.Components.sa {
         this.U1 = user;
         this.W1 = user;
         this.V1 = iiVar;
-        org.telegram.messenger.j10.i(this.a).f();
+        org.telegram.messenger.k10.i(this.a).f();
         FrameLayout frameLayout = new FrameLayout(context);
         this.X1 = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -62,7 +62,7 @@ public final class c21 extends org.telegram.ui.Components.sa {
         u11Var.setSingleLine(true);
         u11Var.setBackground(null);
         u11Var.setCursorWidth(1.5f);
-        u11Var.setGravity(org.telegram.messenger.ks.x1);
+        u11Var.setGravity(org.telegram.messenger.ls.x1);
         u11Var.setClipToPadding(true);
         u11Var.setPadding(org.telegram.messenger.g0.L(46.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
         u11Var.setTranslationY(-org.telegram.messenger.g0.L(0.66f));
@@ -71,8 +71,8 @@ public final class c21 extends org.telegram.ui.Components.sa {
         u11Var.setTextIsSelectable(false);
         u11Var.setOnEditorActionListener(new fa(this, 11));
         u11Var.addTextChangedListener(new v11(this));
-        u11Var.setHint(org.telegram.messenger.gd.N0(2131745561, null));
-        frameLayout2.addView(u11Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        u11Var.setHint(org.telegram.messenger.hd.N0(2131745561, null));
+        frameLayout2.addView(u11Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         frameLayout.addView(frameLayout2, c8.ma.d(-1, 40.0f, 23, 11.0f, 0.0f, 11.0f, 0.0f));
         ViewGroup viewGroup = this.b;
         int max = Math.max(0, viewGroup.indexOfChild(this.p1));
@@ -83,7 +83,7 @@ public final class c21 extends org.telegram.ui.Components.sa {
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         q9Var.setImageDrawable(new org.telegram.ui.Components.oh0(R.raw.utyan_empty, org.telegram.messenger.g0.L(130.0f), org.telegram.messenger.g0.L(130.0f)));
         int i11 = 17;
-        w11Var.addView(q9Var, c8.ma.e(org.telegram.messenger.ks.O1, org.telegram.messenger.ks.O1, 17));
+        w11Var.addView(q9Var, c8.ma.e(org.telegram.messenger.ls.O1, org.telegram.messenger.ls.O1, 17));
         b21 b21Var = new b21(this.a, chat.id, new TLRPC.TL_channelParticipantsAdmins());
         b21Var.e.add(new ru0(this, i11));
         this.a2 = b21Var;
@@ -151,7 +151,7 @@ public final class c21 extends org.telegram.ui.Components.sa {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return org.telegram.messenger.gd.N0(2131754207, null);
+        return org.telegram.messenger.hd.N0(2131754207, null);
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
@@ -174,7 +174,7 @@ public final class c21 extends org.telegram.ui.Components.sa {
             if (T == null) {
                 return;
             }
-            org.telegram.messenger.mp.u1(this.a).T(this.f2, this.T1.id, T, new a1.d(this, user, inputCheckPasswordSRP, twoStepVerificationActivity, 20), null);
+            org.telegram.messenger.np.u1(this.a).T(this.f2, this.T1.id, T, new a1.d(this, user, inputCheckPasswordSRP, twoStepVerificationActivity, 20), null);
             return;
         }
         TLRPC.TL_channels_editCreator tL_channels_editCreator = new TLRPC.TL_channels_editCreator();
@@ -188,7 +188,7 @@ public final class c21 extends org.telegram.ui.Components.sa {
             tL_channels_editCreator.channel = new TLRPC.TL_inputChannelEmpty();
         }
         tL_channels_editCreator.password = inputCheckPasswordSRP != null ? inputCheckPasswordSRP : new TLRPC.TL_inputCheckPasswordEmpty();
-        tL_channels_editCreator.user_id = org.telegram.messenger.mp.u1(this.a).s1(user);
+        tL_channels_editCreator.user_id = org.telegram.messenger.np.u1(this.a).s1(user);
         ConnectionsManager.getInstance(this.a).sendRequest(tL_channels_editCreator, new di.m7(this, inputCheckPasswordSRP, user, twoStepVerificationActivity, tL_channels_editCreator, 12));
     }
 
@@ -196,9 +196,9 @@ public final class c21 extends org.telegram.ui.Components.sa {
         int i7 = org.telegram.messenger.v3.V(this.T1) ? 2131748810 : 2131748801;
         float L = org.telegram.messenger.g0.L(32.0f);
         hi.e eVar = this.d2;
-        float max = Math.max(L, ((eVar.getWidth() > 0 ? eVar.getWidth() : org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(20.0f)) - org.telegram.messenger.g0.L(16.0f)) - eVar.getTextPaint().measureText(org.telegram.messenger.gd.N0(i7, null)));
+        float max = Math.max(L, ((eVar.getWidth() > 0 ? eVar.getWidth() : org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(20.0f)) - org.telegram.messenger.g0.L(16.0f)) - eVar.getTextPaint().measureText(org.telegram.messenger.hd.N0(i7, null)));
         TLObject tLObject = this.W1;
-        eVar.i(org.telegram.messenger.gd.a0(null, null, i7, TextUtils.ellipsize(tLObject instanceof TLRPC.User ? org.telegram.messenger.o10.l((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "", eVar.getTextPaint(), max, TextUtils.TruncateAt.MIDDLE)), z10, true);
+        eVar.i(org.telegram.messenger.hd.a0(null, null, i7, TextUtils.ellipsize(tLObject instanceof TLRPC.User ? org.telegram.messenger.p10.l((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "", eVar.getTextPaint(), max, TextUtils.TruncateAt.MIDDLE)), z10, true);
     }
 
     @Override // org.telegram.ui.ActionBar.w2

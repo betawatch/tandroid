@@ -30,7 +30,7 @@ import android.view.WindowManager;
 import android.view.animation.Interpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
-import bi.f7;
+import bi.e7;
 import c8.ma;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -38,9 +38,9 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.gc;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class w2 extends Dialog implements c2 {
     public static final /* synthetic */ int l1 = 0;
@@ -282,9 +282,9 @@ public class w2 extends Dialog implements c2 {
         this.g0 = z10;
         if (this.N0 > 0) {
             if (z10) {
-                ks.e().k(ks.j1, Integer.valueOf(this.N0));
+                ls.e().k(ls.j1, Integer.valueOf(this.N0));
             } else {
-                ks.e().k(ks.k1, Integer.valueOf(this.N0));
+                ls.e().k(ls.k1, Integer.valueOf(this.N0));
             }
         }
     }
@@ -345,7 +345,7 @@ public class w2 extends Dialog implements c2 {
                 if (!z11) {
                     k5Var.d = z10;
                 }
-                a70Var.p = new f7(j5Var2, 1);
+                a70Var.p = new e7(j5Var2, 1);
                 j5Var2.d(k5Var, null, (ActionBarPopupWindow$ActionBarPopupWindowLayout) a70Var.A);
                 return;
             }
@@ -396,7 +396,7 @@ public class w2 extends Dialog implements c2 {
         this.A0.setDuration(this.X == 4 ? 330L : 180L);
         this.A0.setInterpolator(nr.g);
         this.A0.addListener(new ki.e2(this, i7, 5));
-        ks.e().k(ks.j1, 512);
+        ls.e().k(ls.j1, 512);
         this.A0.start();
         if (this.X != 4 || (num = this.Y) == null) {
             return;
@@ -580,12 +580,12 @@ public class w2 extends Dialog implements c2 {
                     this.A0.setInterpolator(nr.g);
                 }
                 this.A0.addListener(new o2(this, i7));
-                ks.e().k(ks.j1, 512);
+                ls.e().k(ls.j1, 512);
                 this.A0.start();
                 gcVar = gc.w;
                 if (gcVar != null && gcVar.l && gcVar.r) {
                     if (j3 <= 0) {
-                        gcVar.c((long) (j3 * 0.6f), mp.g1().getBoolean("view_animations", true));
+                        gcVar.c((long) (j3 * 0.6f), np.g1().getBoolean("view_animations", true));
                     } else {
                         gcVar.b();
                     }
@@ -975,7 +975,7 @@ public class w2 extends Dialog implements c2 {
 
     public w2(int i7, Context context, h6 h6Var, boolean z10) {
         super(context, R.style.TransparentDialog);
-        this.a = j10.t0;
+        this.a = k10.t0;
         int i10 = 1;
         this.K = true;
         v2 v2Var = new v2();

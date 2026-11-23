@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h30 extends FrameLayout {
     public final int a;
@@ -17,7 +17,7 @@ public final class h30 extends FrameLayout {
     public final FrameLayout d;
     public final h51 e;
     public final c51 f;
-    public org.telegram.messenger.x10 h;
+    public org.telegram.messenger.y10 h;
 
     public h30(int i7, Activity activity, org.telegram.ui.ActionBar.h6 h6Var) {
         super(activity);
@@ -40,15 +40,15 @@ public final class h30 extends FrameLayout {
         frameLayout.addView(imageView, c8.ma.e(56, 56, 49));
         TextView textView = new TextView(activity);
         org.telegram.ui.ActionBar.t6.U(textView, i10, h6Var);
-        textView.setText(org.telegram.messenger.gd.N0(2131749160, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131749160, null));
         textView.setGravity(17);
         frameLayout.addView(textView, c8.ma.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
         addView(frameLayout, c8.ma.e(210, -2, 17));
         h51Var.setEmptyView(frameLayout);
     }
 
-    public void setOnHashtagClickListener(org.telegram.messenger.x10 x10Var) {
-        this.h = x10Var;
+    public void setOnHashtagClickListener(org.telegram.messenger.y10 y10Var) {
+        this.h = y10Var;
     }
 
     public void setOnScrollListener(v4.u0 u0Var) {

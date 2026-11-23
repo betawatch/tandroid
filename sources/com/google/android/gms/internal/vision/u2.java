@@ -11,7 +11,7 @@ import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class u2 extends h3 {
     public final /* synthetic */ int r = 0;

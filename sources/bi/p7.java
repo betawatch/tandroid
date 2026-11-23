@@ -1,105 +1,259 @@
 package bi;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.RectF;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
-import c8.ra;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nq;
+import android.widget.FrameLayout;
+import c8.bc;
+import java.util.ArrayList;
+import org.telegram.messenger.o10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class p7 extends TextView {
-    public final nq a;
-    public final int b;
-    public final boolean c;
+public final class p7 implements org.telegram.ui.ActionBar.t4, yb.a {
+    public boolean a;
+    public Object b;
+    public Object c;
+    public Object d;
+    public Object e;
 
-    public p7(Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
-        super(context);
-        this.c = z10;
-        if (z10) {
-            org.telegram.ui.ActionBar.t6.U(this, org.telegram.ui.ActionBar.m6.G6, h6Var);
-            setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
-            setTextSize(1, 15.0f);
-            this.b = org.telegram.messenger.g0.L(40.0f);
-        } else {
-            int i7 = org.telegram.ui.ActionBar.m6.y8;
-            int w02 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
-            org.telegram.ui.ActionBar.t6.U(this, i7, h6Var);
-            org.telegram.ui.Cells.y b02 = org.telegram.ui.ActionBar.m6.b0(org.telegram.ui.ActionBar.m6.r1(0.08f, w02), org.telegram.ui.ActionBar.m6.r1(0.15f, w02), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f));
-            org.telegram.ui.ActionBar.p6 K = org.telegram.ui.ActionBar.t6.K(0.08f, i7);
-            org.telegram.ui.ActionBar.p6 K2 = org.telegram.ui.ActionBar.t6.K(0.15f, i7);
-            setBackground(b02);
-            org.telegram.ui.ActionBar.t6.j(this, b02, K, K2, h6Var);
-            setPadding(org.telegram.messenger.g0.L(11.0f), 0, org.telegram.messenger.g0.L(11.0f), 0);
-            this.b = org.telegram.messenger.g0.L(26.0f);
+    @Override // org.telegram.ui.ActionBar.t4
+    public boolean a() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public boolean b(org.telegram.ui.ActionBar.q0 q0Var, RectF rectF) {
+        float L = org.telegram.messenger.g0.L(6.0f);
+        rectF.set(L, L, ((FrameLayout) this.b).getWidth() - r4, ((FrameLayout) this.b).getHeight() - r4);
+        return true;
+    }
+
+    @Override // yb.a
+    public ArrayList c(ub.a aVar) {
+        Bitmap createBitmap;
+        if (((a8.z0) this.e) == null) {
+            zzb();
         }
-        setGravity(17);
-        setTypeface(org.telegram.messenger.g0.o());
-        if (!z10) {
-            ra.a(this);
+        if (((a8.z0) this.e) == null) {
+            throw new lb.a("Waiting for the image labeling module to be downloaded. Please wait.", 14);
         }
-        nq nqVar = new nq(R.drawable.arrows_select, 0);
-        this.a = nqVar;
-        nqVar.H = 0.8f;
-        float L = org.telegram.messenger.g0.L(1.0f);
-        nqVar.r = 0.0f;
-        nqVar.s = L;
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30));
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.c && super.onTouchEvent(motionEvent);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:6:0x005d  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void setSorting(x7 x7Var) {
-        nq nqVar;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("v ");
-        nq nqVar2 = null;
-        if (x7Var == x7.b) {
-            nqVar = new nq(R.drawable.mini_gift_sorting_date, 0);
-            spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) gd.N0(2131745946, null));
-        } else {
-            if (x7Var != x7.a) {
-                if (x7Var == x7.c) {
-                    nqVar = new nq(R.drawable.mini_gift_sorting_num, 0);
-                    spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
-                    spannableStringBuilder.append((CharSequence) gd.N0(2131745944, null));
-                }
-                if (nqVar2 != null) {
-                    float L = org.telegram.messenger.g0.L(1.0f);
-                    nqVar2.r = 0.0f;
-                    nqVar2.s = L;
-                }
-                setText(spannableStringBuilder);
+        int i7 = aVar.e;
+        if (i7 != -1) {
+            if (i7 == 17) {
+                q6.m.h(null);
+                throw null;
             }
-            nqVar = new nq(R.drawable.mini_gift_sorting_price, 0);
-            spannableStringBuilder.setSpan(nqVar, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) gd.N0(2131745942, null));
+            if (i7 == 35) {
+                q6.m.h(null);
+                throw null;
+            }
+            if (i7 != 842094169) {
+                throw new lb.a("Unsupported image format", 13);
+            }
+            q6.m.h(null);
+            throw null;
         }
-        nqVar2 = nqVar;
-        if (nqVar2 != null) {
+        Bitmap bitmap = aVar.a;
+        q6.m.h(bitmap);
+        int i10 = aVar.d;
+        int i11 = aVar.b;
+        int i12 = aVar.c;
+        if (i10 == 0) {
+            createBitmap = Bitmap.createBitmap(bitmap, 0, 0, i11, i12);
+        } else {
+            Matrix matrix = new Matrix();
+            matrix.postRotate(i10);
+            createBitmap = Bitmap.createBitmap(bitmap, 0, 0, i11, i12, matrix, true);
         }
-        setText(spannableStringBuilder);
+        try {
+            a8.z0 z0Var = (a8.z0) this.e;
+            q6.m.h(z0Var);
+            a7.b bVar = new a7.b(createBitmap);
+            Parcel p12 = z0Var.p1();
+            int i13 = a8.g0.a;
+            p12.writeStrongBinder(bVar);
+            p12.writeInt(1);
+            int r10 = bc.r(p12, 20293);
+            bc.q(p12, 2, 4);
+            p12.writeInt(-1);
+            bc.s(p12, r10);
+            Parcel r12 = z0Var.r1(p12, 1);
+            a8.y4[] y4VarArr = (a8.y4[]) r12.createTypedArray(a8.y4.CREATOR);
+            r12.recycle();
+            ArrayList arrayList = new ArrayList();
+            for (a8.y4 y4Var : y4VarArr) {
+                arrayList.add(new wb.a(y4Var.c, y4Var.d, y4Var.b, y4Var.a));
+            }
+            return arrayList;
+        } catch (RemoteException e10) {
+            throw new lb.a("Failed to run legacy image labeler.", e10);
+        }
     }
 
-    public void setValue(CharSequence charSequence) {
-        SpannableStringBuilder append = new SpannableStringBuilder(charSequence).append((CharSequence) " v");
-        append.setSpan(this.a, append.length() - 1, append.length(), 33);
-        setText(append);
+    @Override // org.telegram.ui.ActionBar.t4
+    public /* synthetic */ boolean d() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public /* synthetic */ boolean f() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public fh.g g(org.telegram.ui.ActionBar.j5 j5Var) {
+        j8 j8Var = (j8) this.e;
+        fh.g c10 = j8Var.getBaseSimpleGlass().d.c(j5Var, null, false);
+        c10.p(j8Var.N);
+        o10.s(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
+        return c10;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public int getButtonsGlassBackgroundColor() {
+        gh.e eVar = ((j8) this.e).N;
+        return eVar.a(eVar.e);
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public gh.a getButtonsGlassColorProvider() {
+        return ((j8) this.e).N;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public /* synthetic */ int getMenuAnchorTint() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public /* synthetic */ int getMenuDimAlpha() {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public /* synthetic */ int getMenuExtraBelow() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public gh.a getMenuGlassColorProvider() {
+        return ((j8) this.e).N;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public View getMenuHostView() {
+        return (FrameLayout) this.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public /* synthetic */ int getMenuMaxHeight() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public org.telegram.ui.ActionBar.h6 getMenuResourcesProvider() {
+        org.telegram.ui.ActionBar.h6 h6Var;
+        h6Var = ((org.telegram.ui.ActionBar.g2) ((j8) this.e)).resourceProvider;
+        return h6Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public int getMenuRise() {
+        return org.telegram.messenger.g0.L(8.0f);
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public View getMenuView() {
+        return (o7) this.c;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public org.telegram.ui.ActionBar.j5 getOpenMenuOverlay() {
+        if (this.a) {
+            return (org.telegram.ui.ActionBar.j5) this.d;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public void h(org.telegram.ui.ActionBar.j5 j5Var, org.telegram.ui.ActionBar.q0 q0Var) {
+        boolean z10 = j5Var != null;
+        this.a = z10;
+        ((FrameLayout) this.b).setVisibility(z10 ? 4 : 0);
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public void setMenuGlassFrostedProgress(float f10) {
+        ui.d dVar = ((j8) this.e).getBaseSimpleGlass().e;
+        if (dVar != null) {
+            dVar.j(f10);
+        }
+    }
+
+    @Override // yb.a
+    public void zzb() {
+        a8.x3 v1Var;
+        String str = (String) this.d;
+        Context context = (Context) this.b;
+        Log.d("LegacyLabelDelegate", "Try to load legacy label module.");
+        if (((a8.z0) this.e) != null) {
+            return;
+        }
+        try {
+            IBinder b10 = b7.f.c(context, b7.f.b, str).b("com.google.android.gms.vision.label.ChimeraNativeImageLabelerCreator");
+            int i7 = a8.w2.b;
+            if (b10 == null) {
+                v1Var = null;
+            } else {
+                IInterface queryLocalInterface = b10.queryLocalInterface("com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator");
+                v1Var = queryLocalInterface instanceof a8.x3 ? (a8.x3) queryLocalInterface : new a8.v1(b10, "com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator", 0);
+            }
+            a8.z0 x12 = ((a8.v1) v1Var).x1(new a7.b(context), (a8.y6) this.c);
+            this.e = x12;
+            if (x12 != null || this.a) {
+                return;
+            }
+            Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
+            pb.j.b(context);
+            this.a = true;
+        } catch (RemoteException e10) {
+            throw new lb.a("Failed to create legacy image labeler.", e10);
+        } catch (b7.b e11) {
+            if (str.equals("com.google.android.gms.vision.dynamite")) {
+                throw new lb.a("Failed to load deprecated vision dynamite module.", e11);
+            }
+            if (this.a) {
+                return;
+            }
+            Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
+            pb.j.b(context);
+            this.a = true;
+        }
+    }
+
+    @Override // yb.a
+    public void zzc() {
+        a8.z0 z0Var = (a8.z0) this.e;
+        if (z0Var != null) {
+            try {
+                z0Var.t1(z0Var.p1(), 2);
+            } catch (RemoteException e10) {
+                Log.e("LegacyLabelDelegate", "Failed to release legacy image labeler.", e10);
+            }
+            this.e = null;
+        }
     }
 }

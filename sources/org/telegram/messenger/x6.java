@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.du0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class x6 {
     public static volatile x6[] g = new x6[4];
@@ -62,12 +62,12 @@ public final class x6 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void a(fj fjVar, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
+    public final void a(gj gjVar, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
         TLRPC.TL_editFactCheck tL_editFactCheck;
         if (!TextUtils.isEmpty(tL_textWithEntities.text)) {
             TLRPC.TL_editFactCheck tL_editFactCheck2 = new TLRPC.TL_editFactCheck();
-            tL_editFactCheck2.peer = mp.u1(this.a).l1(fj.B0(fjVar.k));
-            tL_editFactCheck2.msg_id = fjVar.e1();
+            tL_editFactCheck2.peer = np.u1(this.a).l1(gj.B0(gjVar.k));
+            tL_editFactCheck2.msg_id = gjVar.e1();
             tL_editFactCheck2.text = tL_textWithEntities;
             tL_editFactCheck = tL_editFactCheck2;
         } else {
@@ -75,8 +75,8 @@ public final class x6 {
                 return;
             }
             TLRPC.TL_deleteFactCheck tL_deleteFactCheck = new TLRPC.TL_deleteFactCheck();
-            tL_deleteFactCheck.peer = mp.u1(this.a).l1(fj.B0(fjVar.k));
-            tL_deleteFactCheck.msg_id = fjVar.e1();
+            tL_deleteFactCheck.peer = np.u1(this.a).l1(gj.B0(gjVar.k));
+            tL_deleteFactCheck.msg_id = gjVar.e1();
             tL_editFactCheck = tL_deleteFactCheck;
         }
         Context context = LaunchActivity.H1;
@@ -88,7 +88,7 @@ public final class x6 {
         ConnectionsManager.getInstance(this.a).sendRequest(tL_editFactCheck, new di.j3(this, tL_textWithEntities, z10, t1Var, 2));
     }
 
-    public final void c(Activity activity, org.telegram.ui.ActionBar.h6 h6Var, fj fjVar) {
+    public final void c(Activity activity, org.telegram.ui.ActionBar.h6 h6Var, gj gjVar) {
         TLRPC.TL_textWithEntities tL_textWithEntities;
         TLRPC.Message message;
         org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
@@ -100,31 +100,31 @@ public final class x6 {
         org.telegram.ui.ActionBar.t1[] t1VarArr = new org.telegram.ui.ActionBar.t1[1];
         AlertDialog$Builder v1Var = z10 ? new org.telegram.ui.ActionBar.v1(0, activity, h6Var) : new AlertDialog$Builder(0, activity, h6Var);
         TextView[] textViewArr = new TextView[1];
-        boolean z11 = fjVar == null || (message = fjVar.k) == null || message.factcheck == null;
-        String N0 = gd.N0(2131750840, null);
+        boolean z11 = gjVar == null || (message = gjVar.k) == null || message.factcheck == null;
+        String N0 = hd.N0(2131750840, null);
         org.telegram.ui.ActionBar.t1 t1Var = v1Var.a;
         t1Var.S = N0;
         int i11 = this.a;
-        int i12 = mp.u1(i11).T5;
+        int i12 = np.u1(i11).T5;
         final t6 t6Var = new t6(activity, h6Var, i12, h6Var);
         t6Var.s0 = true;
         boolean z12 = z11;
-        t6Var.setOnEditorActionListener(new u6(this, t6Var, i12, fjVar, z12, t1VarArr, currentFocus));
-        ri.d0(i11).O(g0.G0(), true);
+        t6Var.setOnEditorActionListener(new u6(this, t6Var, i12, gjVar, z12, t1VarArr, currentFocus));
+        si.d0(i11).O(g0.G0(), true);
         t6Var.setTextSize(1, 18.0f);
         org.telegram.ui.ActionBar.t6.U(t6Var, org.telegram.ui.ActionBar.m6.j5, h6Var);
         org.telegram.ui.ActionBar.t6.l(t6Var, 34, org.telegram.ui.ActionBar.m6.Oi, h6Var);
-        t6Var.setHintText(gd.N0(2131750837, null));
+        t6Var.setHintText(hd.N0(2131750837, null));
         t6Var.setFocusable(true);
         t6Var.setInputType(147457);
         org.telegram.ui.ActionBar.t6.F(t6Var, org.telegram.ui.ActionBar.m6.k6, org.telegram.ui.ActionBar.m6.l6, org.telegram.ui.ActionBar.m6.p7, h6Var);
         t6Var.setImeOptions(6);
         t6Var.setBackgroundDrawable(null);
         t6Var.setPadding(0, g0.L(6.0f), 0, g0.L(6.0f));
-        TLRPC.TL_factCheck R0 = fjVar.R0();
+        TLRPC.TL_factCheck R0 = gjVar.R0();
         if (R0 != null && (tL_textWithEntities = R0.text) != null) {
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(tL_textWithEntities.text);
-            fj.b(valueOf, R0.text.entities, false, true, false, false, 0);
+            gj.b(valueOf, R0.text.entities, false, true, false, false, 0);
             t6Var.setText(valueOf);
         }
         t6Var.addTextChangedListener(new v6(i12, t6Var, textViewArr, R0));
@@ -134,8 +134,8 @@ public final class x6 {
         v1Var.c();
         v1Var.o(linearLayout);
         t1Var.a = g0.L(292.0f);
-        v1Var.k(gd.N0(2131751342, null), new r6(this, t6Var, i12, fjVar, z12));
-        v1Var.h(gd.N0(2131752577, "Cancel"), new n2.a0(20));
+        v1Var.k(hd.N0(2131751342, null), new r6(this, t6Var, i12, gjVar, z12));
+        v1Var.h(hd.N0(2131752577, "Cancel"), new n2.a0(20));
         if (z10) {
             i = t1Var;
             t1VarArr[0] = t1Var;

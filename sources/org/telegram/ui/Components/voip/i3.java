@@ -6,15 +6,15 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.LinearInterpolator;
 import java.security.SecureRandom;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.n5;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i3 {
     public final n5 a;
@@ -39,8 +39,8 @@ public final class i3 {
     public i3(TLRPC.User user, u2 u2Var, int i7) {
         this.k = u2Var;
         this.l = i7;
-        boolean e10 = pc.e(512);
-        long n10 = o10.n(user);
+        boolean e10 = qc.e(512);
+        long n10 = p10.n(user);
         if (!e10 || n10 == 0) {
             return;
         }
@@ -101,12 +101,12 @@ public final class i3 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.setInterpolator(new nr(0.34d, 1.36d, 0.64d, 1.0d));
             ofFloat.addUpdateListener(new g3(this, i11));
-            long j3 = ks.V5;
+            long j3 = ls.V5;
             ofFloat.setDuration(j3);
-            long j10 = ks.K2;
+            long j10 = ls.K2;
             ofFloat.setStartDelay(j10);
             ofFloat.start();
-            ValueAnimator ofInt = ValueAnimator.ofInt(0, ks.e4, ks.e4);
+            ValueAnimator ofInt = ValueAnimator.ofInt(0, ls.e4, ls.e4);
             ofInt.setInterpolator(nr.f);
             ofInt.addUpdateListener(new g3(this, i12));
             ofInt.setStartDelay(j10);

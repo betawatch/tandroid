@@ -4,8 +4,8 @@ import android.app.Activity;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.h6;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h extends sa {
     public c51 T1;
@@ -32,7 +32,7 @@ public final class h extends sa {
         this.n = false;
         this.G1 = false;
         this.F1 = g0.L(12.0f);
-        this.U1 = org.telegram.ui.c51.i0(tL_statsPollStats.votes_graph, gd.N0(2131746925, null), 2, false);
+        this.U1 = org.telegram.ui.c51.i0(tL_statsPollStats.votes_graph, hd.N0(2131746925, null), 2, false);
         ek0 ek0Var = this.o1;
         int i7 = this.u0;
         ek0Var.setPadding(i7, 0, i7, g0.n);
@@ -46,7 +46,7 @@ public final class h extends sa {
 
     public static int e1(int i7, long j3, int i10, li.d dVar) {
         TL_stats.TL_statsGetPollStats tL_statsGetPollStats = new TL_stats.TL_statsGetPollStats();
-        tL_statsGetPollStats.peer = mp.u1(i7).l1(j3);
+        tL_statsGetPollStats.peer = np.u1(i7).l1(j3);
         tL_statsGetPollStats.msg_id = i10;
         return ConnectionsManager.getInstance(i7).sendRequestTyped(tL_statsGetPollStats, new d3.b(1), new org.telegram.ui.web.b(dVar, 4));
     }
@@ -61,7 +61,7 @@ public final class h extends sa {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.N0(2131746926, null);
+        return hd.N0(2131746926, null);
     }
 
     @Override // org.telegram.ui.ActionBar.w2

@@ -49,13 +49,13 @@ import ji.o;
 import kotlin.jvm.internal.j;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
 import org.telegram.messenger.g0;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.gs;
+import org.telegram.messenger.hs;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.r0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -79,9 +79,9 @@ import org.telegram.ui.web.c1;
 import q4.q;
 import ug.y0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class e implements m, gs, ly0, q5.b {
+public final class e implements m, hs, ly0, q5.b {
     public static volatile e e;
     public Object a;
     public Object b;
@@ -620,13 +620,13 @@ public final class e implements m, gs, ly0, q5.b {
 
     @Override // org.telegram.ui.ly0
     public void a() {
-        g0.h3(new fy0((bn) this.a, (Activity) this.b, (h6) this.c, (fj) this.d, 2), 200L);
+        g0.h3(new fy0((bn) this.a, (Activity) this.b, (h6) this.c, (gj) this.d, 2), 200L);
     }
 
-    @Override // org.telegram.messenger.gs
+    @Override // org.telegram.messenger.hs
     public void b() {
         k kVar = (k) this.c;
-        if (((fs) this.b) == null) {
+        if (((gs) this.b) == null) {
             return;
         }
         e eVar = (e) this.d;
@@ -636,12 +636,12 @@ public final class e implements m, gs, ly0, q5.b {
         }
         int i7 = kVar.b;
         for (int i10 = 0; i10 < i7; i10++) {
-            ks ksVar = (ks) this.a;
-            fs fsVar = (fs) this.b;
+            ls lsVar = (ls) this.a;
+            gs gsVar = (gs) this.b;
             if (i10 < 0) {
                 kVar.getClass();
             } else if (i10 < kVar.b) {
-                ksVar.n(fsVar, kVar.a[i10]);
+                lsVar.n(gsVar, kVar.a[i10]);
             }
             StringBuilder m10 = i5.c.m(i10, "Index ", " must be in 0..");
             m10.append(kVar.b - 1);
@@ -653,7 +653,7 @@ public final class e implements m, gs, ly0, q5.b {
     }
 
     public e c(int i7) {
-        if (((fs) this.b) == null) {
+        if (((gs) this.b) == null) {
             return this;
         }
         k kVar = (k) this.c;
@@ -668,13 +668,13 @@ public final class e implements m, gs, ly0, q5.b {
         int i11 = kVar.b;
         iArr2[i11] = i7;
         kVar.b = i11 + 1;
-        ((ks) this.a).b((fs) this.b, i7);
+        ((ls) this.a).b((gs) this.b, i7);
         return this;
     }
 
     @Override // org.telegram.ui.ly0
     public void d() {
-        g0.h3(new he((bn) this.a, (fj) this.d, 8), 200L);
+        g0.h3(new he((bn) this.a, (gj) this.d, 8), 200L);
     }
 
     public void e(s sVar) {
@@ -688,11 +688,11 @@ public final class e implements m, gs, ly0, q5.b {
     }
 
     public e f(int i7) {
-        if (((fs) this.b) == null) {
+        if (((gs) this.b) == null) {
             return this;
         }
         if (((e) this.d) == null) {
-            this.d = new e(ks.e(), (fs) this.b);
+            this.d = new e(ls.e(), (gs) this.b);
         }
         ((e) this.d).c(i7);
         return this;
@@ -871,7 +871,7 @@ public final class e implements m, gs, ly0, q5.b {
         }
         if (chatActivityEnterView.y6 != j3) {
             chatActivityEnterView.y6 = j3;
-            TLRPC.TL_availableEffect b12 = mp.u1(chatActivityEnterView.R).b1(chatActivityEnterView.P6);
+            TLRPC.TL_availableEffect b12 = np.u1(chatActivityEnterView.R).b1(chatActivityEnterView.P6);
             chatActivityEnterView.z6 = b12 != null ? j6.g(b12.emoticon) : null;
         }
         return chatActivityEnterView.z6;
@@ -974,7 +974,7 @@ public final class e implements m, gs, ly0, q5.b {
                                     double A3 = xVar2.A();
                                     double A4 = xVar2.A() - 128;
                                     double A5 = xVar2.A() - 128;
-                                    iArr[A2] = l0.i((int) ((A5 * 1.772d) + A3), 0, ks.e4) | (xVar2.A() << 24) | (l0.i((int) ((1.402d * A4) + A3), 0, ks.e4) << 16) | (l0.i((int) ((A3 - (0.34414d * A5)) - (A4 * 0.71414d)), 0, ks.e4) << 8);
+                                    iArr[A2] = l0.i((int) ((A5 * 1.772d) + A3), 0, ls.e4) | (xVar2.A() << 24) | (l0.i((int) ((1.402d * A4) + A3), 0, ls.e4) << 16) | (l0.i((int) ((A3 - (0.34414d * A5)) - (A4 * 0.71414d)), 0, ls.e4) << 8);
                                     i18++;
                                     c10 = c11;
                                     aVar = aVar;
@@ -1184,12 +1184,12 @@ public final class e implements m, gs, ly0, q5.b {
         this.d = iVar2;
     }
 
-    public e(ks ksVar, fs fsVar) {
+    public e(ls lsVar, gs gsVar) {
         k kVar = new k();
         kVar.a = new int[16];
         this.c = kVar;
-        this.a = ksVar;
-        this.b = fsVar;
+        this.a = lsVar;
+        this.b = gsVar;
     }
 
     @Override // c4.m

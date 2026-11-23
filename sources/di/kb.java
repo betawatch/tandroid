@@ -11,14 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.m80;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kb extends LinearLayout {
     public static HashMap F;
@@ -43,7 +43,7 @@ public final class kb extends LinearLayout {
         this.a = i7;
         setOrientation(0);
         d1 d1Var = new d1(this, context, h6Var);
-        addView(d1Var, c8.ma.p(72, -1, 0.0f, ks.A1));
+        addView(d1Var, c8.ma.p(72, -1, 0.0f, ls.A1));
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.d = q9Var;
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(46.0f));
@@ -56,7 +56,7 @@ public final class kb extends LinearLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(19);
-        addView(linearLayout, c8.ma.p(-2, -1, 1.0f, ks.E1));
+        addView(linearLayout, c8.ma.p(-2, -1, 1.0f, ls.E1));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTypeface(org.telegram.messenger.g0.o());
@@ -124,7 +124,7 @@ public final class kb extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.E) {
-            canvas.drawRect(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawRect(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Timer;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.f5;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.n10;
 import org.telegram.messenger.o10;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.ln;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class s1 extends dk0 {
     public boolean E;
@@ -156,13 +156,13 @@ public abstract class s1 extends dk0 {
             if (i10 == 1) {
                 y3 y3Var = (y3) view;
                 if (i7 == this.K) {
-                    y3Var.setText(gd.N0(2131748914, null));
+                    y3Var.setText(hd.N0(2131748914, null));
                     return;
                 } else if (E(i7) == null) {
-                    y3Var.setText(gd.N0(2131749359, null));
+                    y3Var.setText(hd.N0(2131749359, null));
                     return;
                 } else {
-                    y3Var.setText(gd.N0(2131747089, null));
+                    y3Var.setText(hd.N0(2131747089, null));
                     return;
                 }
             }
@@ -171,20 +171,20 @@ public abstract class s1 extends dk0 {
                     return;
                 }
                 f5 f5Var = (f5) E(i7);
-                ((h6) view).x(f5Var, null, i5.m(0, f5Var.i, f5Var.j), n10.h(new StringBuilder("+"), (String) f5Var.g.get(0), pf.b.c()), false, false);
+                ((h6) view).x(f5Var, null, i5.m(0, f5Var.i, f5Var.j), o10.h(new StringBuilder("+"), (String) f5Var.g.get(0), pf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i7);
             n8 n8Var = (n8) view;
             n8Var.g(-1, m6.o6);
-            n8Var.k(gd.a0(null, null, 2131754449, pf.b.c().b("+" + str2)), false);
+            n8Var.k(hd.a0(null, null, 2131754449, pf.b.c().b("+" + str2)), false);
             return;
         }
         TLObject tLObject = (TLObject) E(i7);
         if (tLObject != null) {
             if (tLObject instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) tLObject;
-                str = o10.o(user);
+                str = p10.o(user);
                 if (str != null && this.J != null && !str.toLowerCase().contains(this.J.toLowerCase()) && user.usernames != null) {
                     for (int i11 = 0; i11 < user.usernames.size(); i11++) {
                         TLRPC.TL_username tL_username = user.usernames.get(i11);
@@ -212,7 +212,7 @@ public abstract class s1 extends dk0 {
                     charSequence = null;
                     h6 h6Var = (h6) view;
                     if (z10) {
-                        charSequence = gd.N0(2131745705, null);
+                        charSequence = hd.N0(2131745705, null);
                     }
                     h6Var.x(tLObject, null, charSequence, charSequence2, false, z10);
                     h6Var.w(this.h.h(j3) >= 0, false);

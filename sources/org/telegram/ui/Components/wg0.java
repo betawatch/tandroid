@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wg0 extends FrameLayout {
     public static final /* synthetic */ int S = 0;
@@ -70,7 +70,7 @@ public final class wg0 extends FrameLayout {
         }
         this.s.setInterpolator(nr.f);
         this.s.addListener(new vg0(this, 2));
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.j1, 512);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.j1, 512);
         this.s.start();
     }
 
@@ -115,7 +115,7 @@ public final class wg0 extends FrameLayout {
                             this.h.setDuration((int) ((Math.max(0.0f, r6) / org.telegram.messenger.g0.a1(false, 0.8f)) * 150.0f));
                             this.h.setInterpolator(nr.g);
                             this.h.addListener(new vg0(this, i7));
-                            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.j1, 512);
+                            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.j1, 512);
                             this.h.start();
                         }
                         this.f = false;
@@ -171,7 +171,7 @@ public final class wg0 extends FrameLayout {
         TLRPC.User user = this.N;
         ug0 ug0Var = this.K;
         float value = getValue();
-        String y10 = org.telegram.messenger.gd.y(value, 2, Boolean.valueOf(this.P));
+        String y10 = org.telegram.messenger.hd.y(value, 2, Boolean.valueOf(this.P));
         int i7 = (int) value;
         org.telegram.ui.qa0 qa0Var = this.J.b;
         ArrayList arrayList = qa0Var.o0;
@@ -180,16 +180,16 @@ public final class wg0 extends FrameLayout {
             aVar.e1(i7);
             if (z10) {
                 hi.t5 t5Var = (hi.t5) ((pb.b) org.telegram.messenger.t0.k()).onCreateLatLngBoundsBuilder();
-                t5Var.q(new org.telegram.messenger.ab(qa0Var.z0.getLatitude(), qa0Var.z0.getLongitude()));
+                t5Var.q(new org.telegram.messenger.bb(qa0Var.z0.getLatitude(), qa0Var.z0.getLongitude()));
                 try {
-                    int max = Math.max(i7, org.telegram.messenger.ks.Z3);
-                    org.telegram.messenger.ab a10 = t5Var.j().a();
+                    int max = Math.max(i7, org.telegram.messenger.ls.Z3);
+                    org.telegram.messenger.bb a10 = t5Var.j().a();
                     double d = max;
-                    org.telegram.messenger.ab z02 = org.telegram.ui.qa0.z0(a10, d, d);
+                    org.telegram.messenger.bb z02 = org.telegram.ui.qa0.z0(a10, d, d);
                     double d2 = -max;
                     t5Var.q(org.telegram.ui.qa0.z0(a10, d2, d2));
                     t5Var.q(z02);
-                    org.telegram.messenger.ba j3 = t5Var.j();
+                    org.telegram.messenger.ca j3 = t5Var.j();
                     try {
                         qa0Var.F.n(org.telegram.messenger.g0.L(70.0f), 0, org.telegram.messenger.g0.L(70.0f), ((int) ((qa0Var.O.getCustomView().getMeasuredHeight() - org.telegram.messenger.g0.L(40.0f)) + qa0Var.P.getTranslationY())) + qa0Var.h0 + qa0Var.c0);
                         qa0Var.F.c(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngBounds(j3, 0));
@@ -204,7 +204,7 @@ public final class wg0 extends FrameLayout {
             int size = arrayList.size();
             for (int i10 = 0; i10 < size; i10++) {
                 org.telegram.ui.ma0 ma0Var = (org.telegram.ui.ma0) arrayList.get(i10);
-                if (ma0Var.b != null && !org.telegram.messenger.o10.C(ma0Var.c)) {
+                if (ma0Var.b != null && !org.telegram.messenger.p10.C(ma0Var.c)) {
                     TLRPC.GeoPoint geoPoint = ma0Var.b.media.geo;
                     Location location = new Location("network");
                     location.setLatitude(geoPoint.lat);
@@ -215,7 +215,7 @@ public final class wg0 extends FrameLayout {
             }
             z11 = false;
             if (z11 && user != null) {
-                textView.setText(org.telegram.messenger.gd.a0("LocationNotifiationCloser", null, 2131748560, y10));
+                textView.setText(org.telegram.messenger.hd.a0("LocationNotifiationCloser", null, 2131748560, y10));
                 if (ug0Var.getTag() == null) {
                     ug0Var.setTag(1);
                     ug0Var.animate().setDuration(180L).alpha(0.0f).scaleX(0.5f).scaleY(0.5f).start();
@@ -225,9 +225,9 @@ public final class wg0 extends FrameLayout {
                 return;
             }
             if (user != null) {
-                ug0Var.setText(org.telegram.messenger.gd.a0("LocationNotifiationButtonGroup", null, 2131748562, y10));
+                ug0Var.setText(org.telegram.messenger.hd.a0("LocationNotifiationButtonGroup", null, 2131748562, y10));
             } else {
-                ug0Var.setText(org.telegram.messenger.gd.a0("LocationNotifiationButtonUser", null, 2131748561, TextUtils.ellipsize(org.telegram.messenger.o10.k(user, true), ug0Var.getPaint(), Math.max(org.telegram.messenger.g0.L(10.0f), (int) (((this.O - org.telegram.messenger.g0.L(94.0f)) * 1.5f) - ((int) Math.ceil(ug0Var.getPaint().measureText(org.telegram.messenger.gd.N0(2131748561, null)))))), TextUtils.TruncateAt.END), y10));
+                ug0Var.setText(org.telegram.messenger.hd.a0("LocationNotifiationButtonUser", null, 2131748561, TextUtils.ellipsize(org.telegram.messenger.p10.k(user, true), ug0Var.getPaint(), Math.max(org.telegram.messenger.g0.L(10.0f), (int) (((this.O - org.telegram.messenger.g0.L(94.0f)) * 1.5f) - ((int) Math.ceil(ug0Var.getPaint().measureText(org.telegram.messenger.hd.N0(2131748561, null)))))), TextUtils.TruncateAt.END), y10));
             }
             if (ug0Var.getTag() == null) {
                 ug0Var.setTag(null);
@@ -337,7 +337,7 @@ public final class wg0 extends FrameLayout {
                 if (i22 == -1) {
                     i22 = 51;
                 }
-                int i23 = i22 & org.telegram.messenger.ks.x1;
+                int i23 = i22 & org.telegram.messenger.ls.x1;
                 int i24 = i22 & 7;
                 if (i24 == 1) {
                     i13 = ((i20 - measuredWidth2) / 2) + layoutParams.leftMargin;

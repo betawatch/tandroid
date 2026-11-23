@@ -1,6 +1,6 @@
 package vg;
 
-import ai.b1;
+import ai.a1;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.opengl.GLSurfaceView;
@@ -21,7 +21,7 @@ import p4.z;
 import tg.z1;
 import ug.t1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class e extends GLSurfaceView implements Choreographer.FrameCallback {
     public static final /* synthetic */ int L = 0;
@@ -287,7 +287,7 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
     public final void surfaceRedrawNeededAsync(SurfaceHolder surfaceHolder, Runnable runnable) {
         ArrayList arrayList;
         synchronized (this.I) {
-            this.I.add(new b1(5, runnable));
+            this.I.add(new a1(5, runnable));
             arrayList = new ArrayList(this.I);
         }
         super.surfaceRedrawNeededAsync(surfaceHolder, new z(27, this, arrayList));

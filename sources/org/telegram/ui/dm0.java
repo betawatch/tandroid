@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dm0 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.m80 a;
@@ -31,7 +31,7 @@ public final class dm0 extends LinearLayout implements org.telegram.ui.ActionBar
         org.telegram.ui.Components.m80 a10 = c8.va.a(context2, 14.0f, i10, false, h6Var);
         this.a = a10;
         a10.setGravity(17);
-        a10.setText(org.telegram.messenger.gd.N0(fm0Var.n0 == 0 ? 2131750066 : 2131750065, null));
+        a10.setText(org.telegram.messenger.hd.N0(fm0Var.n0 == 0 ? 2131750066 : 2131750065, null));
         addView(a10, c8.ma.t(-1, -2, 1, 64, 8, 64, 8));
         Context context3 = getContext();
         int i11 = org.telegram.ui.ActionBar.m6.Xc;
@@ -39,7 +39,7 @@ public final class dm0 extends LinearLayout implements org.telegram.ui.ActionBar
         org.telegram.ui.Components.m80 a11 = c8.va.a(context3, 14.0f, i11, false, h6Var2);
         this.b = a11;
         a11.setGravity(17);
-        a11.setText(org.telegram.messenger.g0.J2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.N0(2131750067, null), new hf0(this, 14)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.33f), 1.0f, R.drawable.msg_mini_forumarrow));
+        a11.setText(org.telegram.messenger.g0.J2(org.telegram.messenger.g0.T2(org.telegram.messenger.hd.N0(2131750067, null), new hf0(this, 14)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.33f), 1.0f, R.drawable.msg_mini_forumarrow));
         addView(a11, c8.ma.t(-1, -2, 1, 32, 4, 32, 24));
     }
 

@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class es0 implements org.telegram.ui.Components.ng {
     public final /* synthetic */ PopupNotificationActivity a;
@@ -21,9 +21,9 @@ public final class es0 implements org.telegram.ui.Components.ng {
     @Override // org.telegram.ui.Components.ng
     public final void G1() {
         PopupNotificationActivity popupNotificationActivity = this.a;
-        org.telegram.messenger.fj fjVar = popupNotificationActivity.R;
-        if (fjVar != null) {
-            org.telegram.messenger.mp.u1(fjVar.K1).N4(0, popupNotificationActivity.L, org.telegram.messenger.fj.B0(popupNotificationActivity.R.k), 0L, null);
+        org.telegram.messenger.gj gjVar = popupNotificationActivity.R;
+        if (gjVar != null) {
+            org.telegram.messenger.np.u1(gjVar.K1).N4(0, popupNotificationActivity.L, org.telegram.messenger.gj.B0(popupNotificationActivity.R.k), 0L, null);
         }
     }
 
@@ -37,7 +37,7 @@ public final class es0 implements org.telegram.ui.Components.ng {
         if (i11 >= 0 && i11 < popupNotificationActivity.b0.size()) {
             popupNotificationActivity.b0.remove(popupNotificationActivity.T);
         }
-        org.telegram.messenger.mp.u1(popupNotificationActivity.R.K1).q3(org.telegram.messenger.fj.B0(popupNotificationActivity.R.k), popupNotificationActivity.R.e1(), Math.max(0, popupNotificationActivity.R.e1()), popupNotificationActivity.R.k.date, true, 0L, 0, true, 0);
+        org.telegram.messenger.np.u1(popupNotificationActivity.R.K1).q3(org.telegram.messenger.gj.B0(popupNotificationActivity.R.k), popupNotificationActivity.R.e1(), Math.max(0, popupNotificationActivity.R.e1()), popupNotificationActivity.R.k.date, true, 0L, 0, true, 0);
         popupNotificationActivity.R = null;
         popupNotificationActivity.f();
     }

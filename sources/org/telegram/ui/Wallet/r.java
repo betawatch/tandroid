@@ -1,24 +1,24 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r implements x10 {
+public final /* synthetic */ class r implements y10 {
     public final /* synthetic */ int a = 3;
     public final /* synthetic */ Object b;
     public final /* synthetic */ u0 c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ r(x10 x10Var, u0 u0Var, z0 z0Var, d9 d9Var) {
+    public /* synthetic */ r(y10 y10Var, u0 u0Var, z0 z0Var, d9 d9Var) {
         this.d = d9Var;
-        this.b = x10Var;
+        this.b = y10Var;
         this.e = z0Var;
         this.c = u0Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
@@ -42,11 +42,11 @@ public final /* synthetic */ class r implements x10 {
                 String str2 = (String) this.b;
                 z0 z0Var = (z0) this.e;
                 u0 u0Var2 = this.c;
-                u0Var2.z(str2, new r((x10) obj, u0Var2, z0Var, d9Var));
+                u0Var2.z(str2, new r((y10) obj, u0Var2, z0Var, d9Var));
                 break;
             default:
                 d9 d9Var2 = (d9) this.d;
-                x10 x10Var = (x10) this.b;
+                y10 y10Var = (y10) this.b;
                 z0 z0Var2 = (z0) this.e;
                 j0 j0Var2 = (j0) obj;
                 if (j0Var2 != null) {
@@ -55,22 +55,22 @@ public final /* synthetic */ class r implements x10 {
                     if (bArr == null) {
                         byte[][] n10 = z0Var2.n();
                         if (n10.length <= 0) {
-                            x10Var.a("STORAGE_NO_PUBLIC_KEY");
+                            y10Var.a("STORAGE_NO_PUBLIC_KEY");
                             break;
                         } else {
                             bArr = n10[0];
                         }
                     }
                     if (!z0Var2.f(bArr)) {
-                        x10Var.a("STORAGE_OLD_PUBLIC_KEY");
+                        y10Var.a("STORAGE_OLD_PUBLIC_KEY");
                         break;
                     } else {
-                        o oVar = new o(x10Var, this.c, z0Var2, d9Var2);
+                        o oVar = new o(y10Var, this.c, z0Var2, d9Var2);
                         z0.i.execute(new org.telegram.ui.Components.s2(z0Var2, z0Var2.l(), bArr == null ? "" : z0.p(bArr), z10, oVar));
                         break;
                     }
                 } else {
-                    x10Var.a("ADDRESS_NO_INFO");
+                    y10Var.a("ADDRESS_NO_INFO");
                     break;
                 }
         }

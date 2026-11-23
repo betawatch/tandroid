@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kv extends jg.m {
     public final /* synthetic */ bx c0;
@@ -57,7 +57,7 @@ public final class kv extends jg.m {
     public final void M(TLRPC.User user) {
         int i7;
         i7 = ((org.telegram.ui.ActionBar.g2) this.d0).currentAccount;
-        org.telegram.messenger.mp.u1(i7).E3(null, user, null, 0, null, false, false);
+        org.telegram.messenger.np.u1(i7).E3(null, user, null, 0, null, false, false);
     }
 
     @Override // jg.m
@@ -92,10 +92,10 @@ public final class kv extends jg.m {
         int i7;
         if (u2Var.getMessage() != null) {
             cx cxVar = this.d0;
-            org.telegram.messenger.e00 e00Var = cxVar.getMessagesController().t7;
+            org.telegram.messenger.f00 f00Var = cxVar.getMessagesController().t7;
             long j3 = -u2Var.getDialogId();
             i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-            TLRPC.TL_forumTopic f10 = e00Var.f(j3, org.telegram.messenger.fj.b2(i7, u2Var.getMessage().k, true, false));
+            TLRPC.TL_forumTopic f10 = f00Var.f(j3, org.telegram.messenger.gj.b2(i7, u2Var.getMessage().k, true, false));
             if (f10 != null) {
                 if (cxVar.n2) {
                     cxVar.a4(u2Var.getDialogId(), f10.id, false, null);

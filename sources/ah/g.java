@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.k8;
+import bi.j8;
 import ch.s;
 import ci.b0;
 import ci.j0;
@@ -36,7 +36,7 @@ import org.telegram.messenger.g0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.wv0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -58,10 +58,10 @@ public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateList
                 oVar.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                k8 k8Var = (k8) this.b;
-                k8Var.getClass();
-                k8Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k8Var.k0();
+                j8 j8Var = (j8) this.b;
+                j8Var.getClass();
+                j8Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j8Var.k0();
                 break;
             case 2:
                 s sVar = (s) this.b;

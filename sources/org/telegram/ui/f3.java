@@ -15,7 +15,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f3 implements q0.a {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class f3 implements q0.a {
     public final void accept(Object obj) {
         a0.h hVar;
         ImageView imageView;
-        org.telegram.messenger.pd h;
+        org.telegram.messenger.qd h;
         int i7;
         int i10 = 3;
         Location location = null;
@@ -95,7 +95,7 @@ public final /* synthetic */ class f3 implements q0.a {
                 return;
             case 3:
                 qa0 qa0Var = (qa0) this.b;
-                qa0Var.F = (org.telegram.messenger.da) obj;
+                qa0Var.F = (org.telegram.messenger.ea) obj;
                 int i11 = org.telegram.messenger.g0.B(qa0Var.getThemedColor(org.telegram.ui.ActionBar.m6.d6)) < 0.721f ? R.raw.mapstyle_night : 0;
                 if (i11 != 0) {
                     qa0Var.i0 = true;
@@ -128,7 +128,7 @@ public final /* synthetic */ class f3 implements q0.a {
                                 gVar.e = 0.5f;
                                 gVar.f = 0.8010882f;
                                 ma0Var.e = qa0Var.F.a(g1Var);
-                                if (!org.telegram.messenger.o10.C(ma0Var.c)) {
+                                if (!org.telegram.messenger.p10.C(ma0Var.c)) {
                                     h9.g1 g1Var2 = (h9.g1) ((pb.b) org.telegram.messenger.t0.k()).onCreateMarkerOptions();
                                     ((m8.g) g1Var2.b).a = new LatLng(d, d2);
                                     m8.g gVar2 = (m8.g) g1Var2.b;
@@ -147,14 +147,14 @@ public final /* synthetic */ class f3 implements q0.a {
                         }
                         qa0Var.F.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(ma0Var.e.a(), f11));
                     } else {
-                        org.telegram.messenger.fj fjVar = qa0Var.J0;
-                        if (fjVar == null) {
+                        org.telegram.messenger.gj gjVar = qa0Var.J0;
+                        if (gjVar == null) {
                             Location location2 = new Location("network");
                             qa0Var.A0 = location2;
                             TLRPC.TL_channelLocation tL_channelLocation2 = qa0Var.I0;
                             if (tL_channelLocation2 != null) {
                                 TLRPC.GeoPoint geoPoint2 = tL_channelLocation2.geo_point;
-                                qa0Var.F.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(new org.telegram.messenger.ab(geoPoint2.lat, geoPoint2._long), f11));
+                                qa0Var.F.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(new org.telegram.messenger.bb(geoPoint2.lat, geoPoint2._long), f11));
                                 qa0Var.A0.setLatitude(qa0Var.I0.geo_point.lat);
                                 qa0Var.A0.setLongitude(qa0Var.I0.geo_point._long);
                                 qa0Var.A0.setAccuracy(qa0Var.I0.geo_point.accuracy_radius);
@@ -163,7 +163,7 @@ public final /* synthetic */ class f3 implements q0.a {
                                 location2.setLatitude(20.659322d);
                                 qa0Var.A0.setLongitude(-11.40625d);
                             }
-                        } else if (fjVar.C3()) {
+                        } else if (gjVar.C3()) {
                             ma0 i02 = qa0Var.i0(qa0Var.J0.k);
                             if (!qa0Var.v0()) {
                                 qa0Var.F.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(i02.e.a(), f11));
@@ -171,17 +171,17 @@ public final /* synthetic */ class f3 implements q0.a {
                         } else {
                             double latitude = qa0Var.A0.getLatitude();
                             double longitude = qa0Var.A0.getLongitude();
-                            org.telegram.messenger.ab abVar = new org.telegram.messenger.ab(latitude, longitude);
+                            org.telegram.messenger.bb bbVar = new org.telegram.messenger.bb(latitude, longitude);
                             try {
-                                org.telegram.messenger.da daVar = qa0Var.F;
+                                org.telegram.messenger.ea eaVar = qa0Var.F;
                                 h9.g1 g1Var3 = (h9.g1) ((pb.b) org.telegram.messenger.t0.k()).onCreateMarkerOptions();
                                 ((m8.g) g1Var3.b).a = new LatLng(latitude, longitude);
                                 ((m8.g) g1Var3.b).d = c8.r9.b(R.drawable.map_pin2);
-                                daVar.a(g1Var3);
+                                eaVar.a(g1Var3);
                             } catch (Exception e11) {
                                 org.telegram.messenger.a8.g(e11, true);
                             }
-                            qa0Var.F.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(abVar, f11));
+                            qa0Var.F.h(((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(bbVar, f11));
                             qa0Var.n0 = false;
                             qa0Var.v0();
                         }
@@ -191,9 +191,9 @@ public final /* synthetic */ class f3 implements q0.a {
                     qa0Var.F.g().r2();
                     qa0Var.F.l(new da0(qa0Var, 7));
                     qa0Var.F.m(new m60(i10));
-                    org.telegram.messenger.da daVar2 = qa0Var.F;
+                    org.telegram.messenger.ea eaVar2 = qa0Var.F;
                     aa0 aa0Var = new aa0(qa0Var, 6);
-                    k8.a aVar = daVar2.a;
+                    k8.a aVar = eaVar2.a;
                     org.telegram.messenger.j1 j1Var = new org.telegram.messenger.j1(aa0Var, 7);
                     l8.e eVar = (l8.e) aVar.b;
                     try {
@@ -269,7 +269,7 @@ public final /* synthetic */ class f3 implements q0.a {
                 View view = ((ProxyListActivity) this.b).b.T((View) obj).a;
                 if (view instanceof rx0) {
                     rx0 rx0Var = (rx0) view;
-                    rx0Var.setChecked(rx0Var.d == org.telegram.messenger.bz.B1);
+                    rx0Var.setChecked(rx0Var.d == org.telegram.messenger.cz.B1);
                     rx0Var.b();
                     return;
                 }

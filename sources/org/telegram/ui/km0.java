@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class km0 extends FrameLayout {
     public int E;
@@ -62,7 +62,7 @@ public final class km0 extends FrameLayout {
         this.c = y7Var;
         etVar.setAdapter(y7Var);
         etVar.setOnItemClickListener(new h(this, 20));
-        addView(etVar, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(etVar, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         setHorizontalScrollBarEnabled(false);
         setClipToPadding(false);
         setClipChildren(false);

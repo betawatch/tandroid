@@ -10,9 +10,9 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class x {
     public static final char[] d = {'\r', '\n'};
@@ -339,7 +339,7 @@ public final class x {
                 la.d(j10, "Out of range: %s", ((long) c10) == j10);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = k1.b(h & ks.e4) + this.b;
+                        this.b = k1.b(h & ls.e4) + this.b;
                         return c10;
                     }
                 }

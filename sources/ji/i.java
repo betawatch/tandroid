@@ -40,13 +40,13 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -59,7 +59,7 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.bn;
 import org.telegram.ui.jw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
@@ -134,7 +134,7 @@ public final /* synthetic */ class i implements Runnable {
                 TL_account.connectedBots connectedbots = tLObject instanceof TL_account.connectedBots ? (TL_account.connectedBots) tLObject : null;
                 fVar.c = connectedbots;
                 if (connectedbots != null) {
-                    mp.u1(fVar.a).f4(fVar.c.users, false);
+                    np.u1(fVar.a).f4(fVar.c.users, false);
                 }
                 fVar.b = System.currentTimeMillis();
                 fVar.f = true;
@@ -148,7 +148,7 @@ public final /* synthetic */ class i implements Runnable {
                 k0Var.dismiss();
                 return;
             case 3:
-                mp.u1(((s0) this.b).currentAccount).V3((TLRPC.Updates) ((TLObject) this.c), false);
+                np.u1(((s0) this.b).currentAccount).V3((TLRPC.Updates) ((TLObject) this.c), false);
                 return;
             case 4:
                 e1 e1Var = (e1) this.b;
@@ -157,11 +157,11 @@ public final /* synthetic */ class i implements Runnable {
                 e1Var.c0(o41Var.d);
                 return;
             case 5:
-                tr trVar = (tr) this.b;
+                ur urVar = (ur) this.b;
                 u1 u1Var = (u1) this.c;
                 try {
                     try {
-                        sQLitePreparedStatement2 = trVar.b.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?);");
+                        sQLitePreparedStatement2 = urVar.b.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?);");
                         sQLitePreparedStatement2.requery();
                         sQLitePreparedStatement2.bindInteger(1, u1Var.a);
                         sQLitePreparedStatement2.bindString(2, u1Var.b);
@@ -189,9 +189,9 @@ public final /* synthetic */ class i implements Runnable {
                 int i11 = v1Var.a;
                 if (tLObject2 instanceof TLRPC.TL_messages_quickReplies) {
                     TLRPC.TL_messages_quickReplies tL_messages_quickReplies = (TLRPC.TL_messages_quickReplies) tLObject2;
-                    mp.u1(i11).f4(tL_messages_quickReplies.users, false);
-                    mp.u1(i11).Z3(tL_messages_quickReplies.chats, false);
-                    tr.a0(i11).m1(tL_messages_quickReplies.users, tL_messages_quickReplies.chats, true, true);
+                    np.u1(i11).f4(tL_messages_quickReplies.users, false);
+                    np.u1(i11).Z3(tL_messages_quickReplies.chats, false);
+                    ur.a0(i11).m1(tL_messages_quickReplies.users, tL_messages_quickReplies.chats, true, true);
                     ArrayList arrayList3 = new ArrayList();
                     for (int i12 = 0; i12 < tL_messages_quickReplies.quick_replies.size(); i12++) {
                         TLRPC.TL_quickReply tL_quickReply = tL_messages_quickReplies.quick_replies.get(i12);
@@ -213,9 +213,9 @@ public final /* synthetic */ class i implements Runnable {
                             }
                         }
                         if (message != null) {
-                            fj fjVar = new fj(i11, message, false, true);
-                            u1Var2.e = fjVar;
-                            fjVar.r0(false);
+                            gj gjVar = new gj(i11, message, false, true);
+                            u1Var2.e = gjVar;
+                            gjVar.r0(false);
                             u1Var2.e.l(tL_quickReply.shortcut_id, tL_quickReply.shortcut);
                         }
                         arrayList3.add(u1Var2);
@@ -229,15 +229,15 @@ public final /* synthetic */ class i implements Runnable {
                 }
                 v1Var.f = true;
                 v1Var.l();
-                ks.f(i11).k(ks.F1, new Object[0]);
+                ls.f(i11).k(ls.F1, new Object[0]);
                 return;
             case 7:
                 v1 v1Var2 = (v1) this.b;
-                tr trVar2 = (tr) this.c;
+                ur urVar2 = (ur) this.c;
                 ArrayList arrayList4 = v1Var2.b;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase = trVar2.b;
+                        SQLiteDatabase sQLiteDatabase = urVar2.b;
                         sQLiteDatabase.executeFast("DELETE FROM business_replies").stepThis().dispose();
                         sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?)");
                         for (int i14 = 0; i14 < arrayList4.size(); i14++) {
@@ -471,13 +471,13 @@ public final /* synthetic */ class i implements Runnable {
                 return;
             default:
                 String[] strArr = (String[]) this.b;
-                q10 q10Var = (q10) this.c;
+                r10 r10Var = (r10) this.c;
                 oi.p a11 = oi.p.a(strArr[0], g0.L(26.0f), false);
                 if (a11 == null) {
-                    a11 = oi.p.a(gd.N0(2131754004, null), g0.L(26.0f), false);
+                    a11 = oi.p.a(hd.N0(2131754004, null), g0.L(26.0f), false);
                     z11 = true;
                 }
-                g0.g3(new p6(q10Var, a11 != null ? a11.a : null, z11, 7));
+                g0.g3(new p6(r10Var, a11 != null ? a11.a : null, z11, 7));
                 return;
         }
     }

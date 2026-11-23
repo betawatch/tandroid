@@ -1,66 +1,15 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class k6 extends ScrollView {
-    public final /* synthetic */ int a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k6(Context context, int i7) {
-        super(context);
-        this.a = i7;
+public final class k6 extends org.telegram.ui.Components.p5 {
+    @Override // org.telegram.ui.Components.p5, android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(260.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
-                break;
-            case 1:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(260.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)));
-                break;
-            case 2:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i10), Math.min(org.telegram.messenger.g0.q.y * 0.35f, org.telegram.messenger.g0.L(400.0f))), View.MeasureSpec.getMode(i10)));
-                break;
-            case 3:
-            default:
-                super.onMeasure(i7, i10);
-                break;
-            case 4:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(320.0f)), TLObject.FLAG_31));
-                break;
-            case 5:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(360.0f)), TLObject.FLAG_31));
-                break;
-        }
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup
-    public boolean onRequestFocusInDescendants(int i7, Rect rect) {
-        switch (this.a) {
-            case 3:
-                return false;
-            default:
-                return super.onRequestFocusInDescendants(i7, rect);
-        }
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        switch (this.a) {
-            case 3:
-                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                rect.top = org.telegram.messenger.g0.L(20.0f) + rect.top;
-                rect.bottom = org.telegram.messenger.g0.L(50.0f) + rect.bottom;
-                break;
-        }
-        return super.requestChildRectangleOnScreen(view, rect, z10);
+    @Override // org.telegram.ui.Components.p5, android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
     }
 }

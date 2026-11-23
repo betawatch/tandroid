@@ -3,16 +3,16 @@ package di;
 import android.os.Bundle;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.c51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v2 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -24,12 +24,12 @@ public final /* synthetic */ class v2 implements Runnable {
     public final /* synthetic */ long h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ v2(f6 f6Var, TLObject tLObject, long j3, long j10, x10 x10Var, TLRPC.TL_error tL_error, long j11) {
+    public /* synthetic */ v2(f6 f6Var, TLObject tLObject, long j3, long j10, y10 y10Var, TLRPC.TL_error tL_error, long j11) {
         this.b = f6Var;
         this.c = tLObject;
         this.d = j3;
         this.e = j10;
-        this.n = x10Var;
+        this.n = y10Var;
         this.f = tL_error;
         this.h = j11;
     }
@@ -51,7 +51,7 @@ public final /* synthetic */ class v2 implements Runnable {
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
                         if (tL_error == null) {
-                            f6Var.k().t(gd.N0(2131743636, null), null).k(false);
+                            f6Var.k().t(hd.N0(2131743634, null), null).k(false);
                             break;
                         } else {
                             f6Var.k().t(org.telegram.ui.Components.lc.W(tL_error.text), null).k(false);
@@ -71,7 +71,7 @@ public final /* synthetic */ class v2 implements Runnable {
                             T.presentFragment(c51Var);
                             break;
                         } else {
-                            TLRPC.UserFull d2 = mp.u1(f6Var.a).d2(j10);
+                            TLRPC.UserFull d2 = np.u1(f6Var.a).d2(j10);
                             if (d2 != null) {
                                 int max = Math.max(0, d2.stargifts_count - 1);
                                 d2.stargifts_count = max;
@@ -87,7 +87,7 @@ public final /* synthetic */ class v2 implements Runnable {
                                 T.presentFragment(pbVar);
                                 break;
                             } else {
-                                org.telegram.ui.Components.lc.b0(T).I(R.raw.stars_topup, gd.N0(2131750204, null), gd.H(',', "Gift2Converted", (int) j11)).k(true);
+                                org.telegram.ui.Components.lc.b0(T).I(R.raw.stars_topup, hd.N0(2131750204, null), hd.H(',', "Gift2Converted", (int) j11)).k(true);
                                 break;
                             }
                         }
@@ -99,14 +99,14 @@ public final /* synthetic */ class v2 implements Runnable {
                 TLObject tLObject2 = this.c;
                 long j12 = this.d;
                 long j13 = this.e;
-                x10 x10Var = (x10) this.n;
+                y10 y10Var = (y10) this.n;
                 TLRPC.TL_error tL_error2 = this.f;
                 long j14 = this.h;
                 if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error2 != null && "BALANCE_TOO_LOW".equals(tL_error2.text)) {
-                        if (!mp.u1(f6Var2.a).m7) {
+                        if (!np.u1(f6Var2.a).m7) {
                             y8 y10 = y8.y(f6Var2.a, false);
-                            d3.e0 e0Var = new d3.e0(f6Var2, j14, j12, x10Var, 1);
+                            d3.e0 e0Var = new d3.e0(f6Var2, j14, j12, y10Var, 1);
                             y10.e = false;
                             y10.q(e0Var, false, true);
                             y10.e = true;
@@ -117,23 +117,23 @@ public final /* synthetic */ class v2 implements Runnable {
                             break;
                         }
                     } else {
-                        x10Var.a(tL_error2);
+                        y10Var.a(tL_error2);
                         f6Var2.k().g0(tL_error2, false);
                         break;
                     }
                 } else {
                     TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) tLObject2;
-                    mp.u1(f6Var2.a).f4(tL_payments_paymentResult.updates.users, false);
-                    mp.u1(f6Var2.a).Z3(tL_payments_paymentResult.updates.chats, false);
+                    np.u1(f6Var2.a).f4(tL_payments_paymentResult.updates.users, false);
+                    np.u1(f6Var2.a).Z3(tL_payments_paymentResult.updates.chats, false);
                     y8.y(f6Var2.a, false).R(false);
                     y8.y(f6Var2.a, false).O(j12);
                     y8.y(f6Var2.a, false).O(j13);
                     y8.y(f6Var2.a, false).N();
-                    x10Var.a(null);
+                    y10Var.a(null);
                     org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
                     if (T2 != null) {
                         if (j12 < 0 || j13 < 0) {
-                            org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0(T2).I(R.raw.forward, gd.N0(2131749880, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749881, f6Var2.E1(), org.telegram.messenger.n5.t(j12))));
+                            org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0(T2).I(R.raw.forward, hd.N0(2131749880, null), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749881, f6Var2.E1(), org.telegram.messenger.n5.t(j12))));
                             I.t = true;
                             I.j();
                         } else {

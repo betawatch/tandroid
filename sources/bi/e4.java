@@ -2,11 +2,11 @@ package bi;
 
 import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e4 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class e4 implements Runnable {
         SpannableStringBuilder spannableStringBuilder = this.b;
         switch (i7) {
             case 0:
-                gc I = i4.h().I(R.raw.contact_check, gd.N0(2131749565, null), spannableStringBuilder);
+                gc I = i4.h().I(R.raw.contact_check, hd.N0(2131749565, null), spannableStringBuilder);
                 I.t = true;
                 I.j();
                 break;

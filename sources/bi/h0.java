@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import c8.ma;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -23,9 +23,9 @@ import org.telegram.ui.Components.oc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h0 implements q10 {
+public final /* synthetic */ class h0 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -39,7 +39,7 @@ public final /* synthetic */ class h0 implements q10 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:35:0x00fd  */
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -112,15 +112,15 @@ public final /* synthetic */ class h0 implements q10 {
                 }
                 break;
             case 2:
-                j8 j8Var = (j8) obj5;
+                i8 i8Var = (i8) obj5;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
                 ((vf.b) obj4).b();
                 if (((Boolean) obj).booleanValue()) {
-                    di.c2 c2Var = j8Var.b2;
+                    di.c2 c2Var = i8Var.b2;
                     if (c2Var != null) {
                         c2Var.a(tL_starGiftUnique);
                     }
-                    j8Var.dismiss();
+                    i8Var.dismiss();
                     break;
                 }
                 break;
@@ -131,7 +131,7 @@ public final /* synthetic */ class h0 implements q10 {
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (updates != null && tL_error == null) {
-                    mp.u1(o0Var.a).V3(updates, false);
+                    np.u1(o0Var.a).V3(updates, false);
                 }
                 org.telegram.messenger.g0.g3(new ai.b(o0Var, bVar, t1Var, updates, tL_error, 3));
                 break;
@@ -176,12 +176,12 @@ public final /* synthetic */ class h0 implements q10 {
                 l3Var4.x();
                 break;
             case 5:
-                ((ConnectionsManager) obj5).lambda$sendRequestTypedAndProcessUpdates$5((Executor) obj4, (q10) obj3, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                ((ConnectionsManager) obj5).lambda$sendRequestTypedAndProcessUpdates$5((Executor) obj4, (r10) obj3, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 6:
                 org.telegram.ui.Components.n0 n0Var = (org.telegram.ui.Components.n0) obj5;
                 ((vf.b) obj4).c(false);
-                org.telegram.messenger.e T1 = mp.u1(n0Var.a).T1();
+                org.telegram.messenger.e T1 = np.u1(n0Var.a).T1();
                 T1.b.remove((TL_aicompose.TL_aiComposeTone) obj3);
                 T1.d();
                 T1.c();
@@ -203,7 +203,7 @@ public final /* synthetic */ class h0 implements q10 {
                         break;
                     }
                 } else {
-                    org.telegram.messenger.e T12 = mp.u1(wVar.a).T1();
+                    org.telegram.messenger.e T12 = np.u1(wVar.a).T1();
                     ArrayList arrayList = T12.b;
                     if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
                         long j11 = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).id;
@@ -212,7 +212,7 @@ public final /* synthetic */ class h0 implements q10 {
                                 wVar.dismiss();
                                 T = LaunchActivity.T();
                                 if (T == null) {
-                                    lc.b0(T).p(aiComposeTone.emoji_id, gd.N0(2131754958, null), gd.a0(null, null, 2131754959, aiComposeTone.title)).j();
+                                    lc.b0(T).p(aiComposeTone.emoji_id, hd.N0(2131754958, null), hd.a0(null, null, 2131754959, aiComposeTone.title)).j();
                                     break;
                                 }
                             }
@@ -232,7 +232,7 @@ public final /* synthetic */ class h0 implements q10 {
                 ((vf.b) obj4).c(false);
                 ((org.telegram.ui.ActionBar.t1) obj3).dismiss();
                 i0Var.dismiss();
-                org.telegram.messenger.e T13 = mp.u1(i0Var.a).T1();
+                org.telegram.messenger.e T13 = np.u1(i0Var.a).T1();
                 T13.b.remove(i0Var.f2);
                 T13.d();
                 T13.c();

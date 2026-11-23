@@ -10,10 +10,10 @@ import h2.l0;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.sr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.tr;
 import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ro;
@@ -25,7 +25,7 @@ import org.telegram.ui.y91;
 import zi.q0;
 import zi.u0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 return;
             case 1:
                 f6 f6Var = (f6) this.d;
-                fb fbVar = new fb(f6Var.getContext(), f6Var.J0, this.b, 11, null, new j2(f6Var, new boolean[]{false}, this.c, (x10) this.e, 2), 0L);
+                fb fbVar = new fb(f6Var.getContext(), f6Var.J0, this.b, 11, null, new j2(f6Var, new boolean[]{false}, this.c, (y10) this.e, 2), 0L);
                 fbVar.setOnDismissListener(new n3(f6Var, 1));
                 fbVar.show();
                 return;
@@ -92,7 +92,7 @@ public final /* synthetic */ class e0 implements Runnable {
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(sr.a(j13, j14));
+                arrayList.add(tr.a(j13, j14));
                 cxVar.E2.y(cxVar, arrayList, null, false, cxVar.L2, cxVar.M2, cxVar.N2, y91Var);
                 if (cxVar.k2) {
                     cxVar.E2 = null;
@@ -105,14 +105,14 @@ public final /* synthetic */ class e0 implements Runnable {
                 long j16 = this.c;
                 bn bnVar = (bn) this.e;
                 String str5 = LaunchActivity.C1;
-                TLRPC.TL_forumTopic f10 = mp.u1(launchActivity.P).t7.f(j15, j16);
+                TLRPC.TL_forumTopic f10 = np.u1(launchActivity.P).t7.f(j15, j16);
                 StringBuilder t6 = p0.t(j15, "LaunchActivity openForum after load ", " ");
                 t6.append(j16);
                 t6.append(" TL_forumTopic ");
                 t6.append(f10);
                 a8.b(t6.toString());
                 if (launchActivity.p0 != null) {
-                    qg.c.a(bnVar, sr.a(-j15, j16));
+                    qg.c.a(bnVar, tr.a(-j15, j16));
                     ((ActionBarLayout) launchActivity.M()).S(bnVar);
                     return;
                 }

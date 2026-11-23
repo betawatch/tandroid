@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bs {
     public int a;
@@ -15,11 +15,11 @@ public final class bs {
     public int f;
     public int g;
 
-    public static bs b(org.telegram.ui.Cells.u2 u2Var, org.telegram.messenger.ro roVar) {
+    public static bs b(org.telegram.ui.Cells.u2 u2Var, org.telegram.messenger.so soVar) {
         bs bsVar = new bs();
-        bsVar.a = roVar.a;
-        bsVar.b = roVar.m;
-        String str = roVar.b;
+        bsVar.a = soVar.a;
+        bsVar.b = soVar.m;
+        String str = soVar.b;
         if (str == null) {
             str = "";
         }
@@ -27,14 +27,14 @@ public final class bs {
         xy0 xy0Var = new xy0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o());
         xy0Var.r(u2Var);
         bsVar.c = xy0Var;
-        bsVar.c.q(org.telegram.messenger.fj.B5(org.telegram.messenger.j6.m(spannableStringBuilder, xy0Var.a.getFontMetricsInt(), false, null, 0), roVar.c, bsVar.c.a.getFontMetricsInt(), false));
+        bsVar.c.q(org.telegram.messenger.gj.B5(org.telegram.messenger.j6.m(spannableStringBuilder, xy0Var.a.getFontMetricsInt(), false, null, 0), soVar.c, bsVar.c.a.getFontMetricsInt(), false));
         bsVar.c.o(26);
         int L = org.telegram.messenger.g0.L(9.32f);
         xy0 xy0Var2 = bsVar.c;
         bsVar.g = L + ((int) xy0Var2.c);
         xy0Var2.i();
         int[] iArr = org.telegram.ui.ActionBar.m6.r8;
-        int i7 = iArr[roVar.m % iArr.length];
+        int i7 = iArr[soVar.m % iArr.length];
         bsVar.f = i7;
         bsVar.e = true;
         bsVar.d = org.telegram.ui.ActionBar.m6.x0(null, i7, false);

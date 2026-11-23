@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vv0 extends org.telegram.ui.Components.jt0 {
     public boolean x2;
@@ -151,7 +151,7 @@ public final class vv0 extends org.telegram.ui.Components.jt0 {
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0032, code lost:
     
-        if (org.telegram.messenger.mp.u1(r6).i5() == false) goto L18;
+        if (org.telegram.messenger.np.u1(r6).i5() == false) goto L18;
      */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0040  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x004c  */

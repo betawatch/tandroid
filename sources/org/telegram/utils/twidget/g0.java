@@ -10,9 +10,9 @@ import org.json.JSONObject;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g2;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.d81;
 import org.telegram.ui.Components.rk0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -68,13 +68,13 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((ai.e) this.b).a(null, (TLRPC.TL_error) this.c);
                 return;
             case 2:
-                tr trVar = (tr) this.c;
+                ur urVar = (ur) this.c;
                 k0 k0Var2 = (k0) this.b;
                 long j3 = k0Var2.c;
                 int i10 = k0Var2.d;
                 ArrayList arrayList2 = new ArrayList();
                 try {
-                    SQLiteDatabase sQLiteDatabase = trVar.b;
+                    SQLiteDatabase sQLiteDatabase = urVar.b;
                     Locale locale = Locale.US;
                     SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT local FROM widget_state WHERE uid = " + j3 + " AND mid = " + i10, new Object[0]);
                     try {
@@ -82,7 +82,7 @@ public final /* synthetic */ class g0 implements Runnable {
                             str2 = (!queryFinalized.next() || queryFinalized.isNull(0)) ? null : queryFinalized.stringValue(0);
                             try {
                                 queryFinalized.dispose();
-                                queryFinalized = trVar.b.queryFinalized("SELECT width, height, anchor FROM widget_heights WHERE uid = " + j3 + " AND mid = " + i10 + " ORDER BY date DESC", new Object[0]);
+                                queryFinalized = urVar.b.queryFinalized("SELECT width, height, anchor FROM widget_heights WHERE uid = " + j3 + " AND mid = " + i10 + " ORDER BY date DESC", new Object[0]);
                                 while (queryFinalized.next()) {
                                     arrayList2.add(new int[]{queryFinalized.intValue(0), queryFinalized.intValue(1), queryFinalized.intValue(2)});
                                 }
@@ -92,7 +92,7 @@ public final /* synthetic */ class g0 implements Runnable {
                                 str = str2;
                                 sQLiteCursor = queryFinalized;
                                 try {
-                                    trVar.o(e, true);
+                                    urVar.o(e, true);
                                     if (sQLiteCursor != null) {
                                         sQLiteCursor.dispose();
                                     }
@@ -114,7 +114,7 @@ public final /* synthetic */ class g0 implements Runnable {
                             e = e11;
                             sQLiteCursor = queryFinalized;
                             str = null;
-                            trVar.o(e, true);
+                            urVar.o(e, true);
                             if (sQLiteCursor != null) {
                             }
                             str2 = str;
@@ -173,7 +173,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 if (d1Var4 != null) {
                     JSONObject jSONObject2 = (JSONObject) hashMap.get(a10);
                     try {
-                        str3 = gd.E0().y.toLanguageTag();
+                        str3 = hd.E0().y.toLanguageTag();
                     } catch (Exception unused) {
                         str3 = null;
                     }
@@ -208,7 +208,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 return;
             case 6:
-                ((x10) this.b).a((String) this.c);
+                ((y10) this.b).a((String) this.c);
                 return;
             case 7:
                 p1 p1Var2 = (p1) this.b;
@@ -244,10 +244,10 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 n0.i = true;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, T.getResourceProvider());
-                alertDialog$Builder.a.S = gd.N0(2131742608, null);
-                alertDialog$Builder.a.U = gd.a0(null, null, 2131742609, optString3);
-                alertDialog$Builder.k(gd.N0(2131747623, null), new v(i7, optString3, parentActivity));
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                alertDialog$Builder.a.S = hd.N0(2131742606, null);
+                alertDialog$Builder.a.U = hd.a0(null, null, 2131742607, optString3);
+                alertDialog$Builder.k(hd.N0(2131747623, null), new v(i7, optString3, parentActivity));
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.setOnDismissListener(new hi.f1(7));
                 if (T.showDialog(t1Var) == null) {
@@ -266,9 +266,9 @@ public final /* synthetic */ class g0 implements Runnable {
         }
     }
 
-    public /* synthetic */ g0(tr trVar, k0 k0Var) {
+    public /* synthetic */ g0(ur urVar, k0 k0Var) {
         this.a = 2;
-        this.c = trVar;
+        this.c = urVar;
         this.b = k0Var;
     }
 }

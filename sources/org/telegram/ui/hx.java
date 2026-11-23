@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hx extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -57,12 +57,12 @@ public final class hx extends org.telegram.ui.Components.dk0 {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 int i11 = kxVar.x;
                 if (i11 == 0) {
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131751200, null));
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131751200, null));
                 } else if (i11 == 1) {
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131751199, null));
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131751199, null));
                 }
-                if (org.telegram.messenger.bz.s.length() > 0) {
-                    spannableStringBuilder.append((CharSequence) "\n\n").append((CharSequence) org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131742607, null)));
+                if (org.telegram.messenger.cz.s.length() > 0) {
+                    spannableStringBuilder.append((CharSequence) "\n\n").append((CharSequence) org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131742605, null)));
                 }
                 a9Var.setText(spannableStringBuilder);
                 return;
@@ -97,7 +97,7 @@ public final class hx extends org.telegram.ui.Components.dk0 {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.t6.x(n8Var, drawable, i12, null, mode);
         org.telegram.ui.ActionBar.t6.x(n8Var, drawable2, org.telegram.ui.ActionBar.m6.k7, null, mode);
-        n8Var.p(org.telegram.messenger.gd.N0(2131745472, null), new org.telegram.ui.Components.oq(drawable, drawable2), kxVar.n != -1);
+        n8Var.p(org.telegram.messenger.hd.N0(2131745472, null), new org.telegram.ui.Components.oq(drawable, drawable2), kxVar.n != -1);
         n8Var.getImageView().setPadding(0, org.telegram.messenger.g0.L(7.0f), 0, 0);
     }
 
@@ -115,10 +115,10 @@ public final class hx extends org.telegram.ui.Components.dk0 {
             frameLayout = n8Var;
         } else if (i7 != 2) {
             FrameLayout i4Var = new org.telegram.ui.Cells.i4(context, 0, 0, false);
-            ImageView e10 = org.telegram.messenger.n10.e(context, R.drawable.list_reorder);
+            ImageView e10 = org.telegram.messenger.o10.e(context, R.drawable.list_reorder);
             e10.setScaleType(ImageView.ScaleType.CENTER);
             i4Var.setTag(R.id.object_tag, e10);
-            i4Var.addView(e10, c8.ma.d(40, -1.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 16, 10.0f, 0.0f, 10.0f, 0.0f));
+            i4Var.addView(e10, c8.ma.d(40, -1.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 10.0f, 0.0f, 10.0f, 0.0f));
             e10.setOnTouchListener(new hi.p1(4, this, i4Var));
             org.telegram.ui.ActionBar.t6.s(e10, org.telegram.ui.ActionBar.m6.b9, null, PorterDuff.Mode.MULTIPLY);
             frameLayout = i4Var;

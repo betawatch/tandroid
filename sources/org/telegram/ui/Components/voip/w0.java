@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
@@ -31,7 +31,7 @@ import org.telegram.ui.w20;
 import org.telegram.ui.x7;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout implements VoIPService.StateListener {
     public final boolean E;
@@ -92,7 +92,7 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
         t6.U(jVar, i11, null);
         jVar.setGravity(17);
         jVar.setTypeface(org.telegram.messenger.g0.o());
-        jVar.setText(gd.N0(2131742997, null));
+        jVar.setText(hd.N0(2131742995, null));
         int L = org.telegram.messenger.g0.L(6.0f);
         int o4 = i0.a.o(m6.x0(null, i11, false), 76);
         jVar.setForeground(m6.k0(L, L, L, L, 0, o4, o4));
@@ -117,11 +117,11 @@ public abstract class w0 extends FrameLayout implements VoIPService.StateListene
             this.f[i12].setSingleLine(true);
             this.d.addView(this.f[i12], ma.o(-2, -1));
             if (i12 == 0 && this.E) {
-                this.f[i12].setText(gd.N0(2131743016, null));
+                this.f[i12].setText(hd.N0(2131743014, null));
             } else if (i12 == 0 || (i12 == 1 && this.E)) {
-                this.f[i12].setText(gd.N0(2131743162, null));
+                this.f[i12].setText(hd.N0(2131743160, null));
             } else {
-                this.f[i12].setText(gd.N0(2131743250, null));
+                this.f[i12].setText(hd.N0(2131743248, null));
             }
             this.f[i12].setOnClickListener(new ci.q(this, i12, i10));
             i12++;

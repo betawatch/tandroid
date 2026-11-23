@@ -10,23 +10,23 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ep0 implements ls {
     public final /* synthetic */ String a;
-    public final /* synthetic */ org.telegram.messenger.e20 b;
-    public final /* synthetic */ org.telegram.messenger.ef c;
+    public final /* synthetic */ org.telegram.messenger.f20 b;
+    public final /* synthetic */ org.telegram.messenger.ff c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ int e;
     public final /* synthetic */ int f;
     public final /* synthetic */ boolean g;
     public final /* synthetic */ PhotoViewer h;
 
-    public ep0(PhotoViewer photoViewer, String str, org.telegram.messenger.e20 e20Var, org.telegram.messenger.ef efVar, boolean z10, int i7, int i10, boolean z11) {
+    public ep0(PhotoViewer photoViewer, String str, org.telegram.messenger.f20 f20Var, org.telegram.messenger.ff ffVar, boolean z10, int i7, int i10, boolean z11) {
         this.h = photoViewer;
         this.a = str;
-        this.b = e20Var;
-        this.c = efVar;
+        this.b = f20Var;
+        this.c = ffVar;
         this.d = z10;
         this.e = i7;
         this.f = i10;
@@ -94,14 +94,14 @@ public final class ep0 implements ls {
     public final void R() {
         ns p10 = ns.p();
         ImageReceiver imageReceiver = p10.A;
-        org.telegram.messenger.ef efVar = this.c;
-        if (efVar.c != null) {
+        org.telegram.messenger.ff ffVar = this.c;
+        if (ffVar.c != null) {
             try {
-                new File(efVar.c).delete();
+                new File(ffVar.c).delete();
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
             }
-            efVar.c = null;
+            ffVar.c = null;
         }
         Bitmap createBitmap = Bitmap.createBitmap(512, 512, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
@@ -125,9 +125,9 @@ public final class ep0 implements ls {
         }
         Drawable[] drawableArr = PhotoViewer.Z8;
         PhotoViewer photoViewer = this.h;
-        TLRPC.PhotoSize a02 = org.telegram.messenger.ec.a0(createBitmap, photoViewer.c1(), 512.0f, 512.0f, 83);
+        TLRPC.PhotoSize a02 = org.telegram.messenger.fc.a0(createBitmap, photoViewer.c1(), 512.0f, 512.0f, 83);
         org.telegram.messenger.w7.G(photoViewer.U);
-        efVar.c = org.telegram.messenger.w7.J(a02, null, true, true).toString();
+        ffVar.c = org.telegram.messenger.w7.J(a02, null, true, true).toString();
     }
 
     @Override // org.telegram.ui.ls
@@ -221,21 +221,21 @@ public final class ep0 implements ls {
             return;
         }
         boolean Q = uq0Var.Q();
-        org.telegram.messenger.ef efVar = this.c;
+        org.telegram.messenger.ff ffVar = this.c;
         if (Q) {
             if (photoViewer.l4 == null) {
                 return;
             }
             photoViewer.w7 = true;
             R();
-            photoViewer.p5.p(this.a, this.b, str, null, false, photoViewer.l4.a(), null, null, photoViewer.r1(), efVar.c, null, null);
+            photoViewer.p5.p(this.a, this.b, str, null, false, photoViewer.l4.a(), null, null, photoViewer.r1(), ffVar.c, null, null);
             return;
         }
         photoViewer.w7 = true;
         R();
-        efVar.h = this.a;
+        ffVar.h = this.a;
         photoViewer.d.o(photoViewer.P4, this.b, this.d, this.e, this.f, this.g);
-        org.telegram.messenger.ks.f(org.telegram.messenger.j10.t0).m(org.telegram.messenger.ks.u3, Boolean.TRUE);
+        org.telegram.messenger.ls.f(org.telegram.messenger.k10.t0).m(org.telegram.messenger.ls.u3, Boolean.TRUE);
     }
 
     @Override // org.telegram.ui.ls
@@ -247,7 +247,7 @@ public final class ep0 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ org.telegram.messenger.fj z() {
+    public final /* synthetic */ org.telegram.messenger.gj z() {
         return null;
     }
 
@@ -264,7 +264,7 @@ public final class ep0 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ void i(org.telegram.messenger.sy syVar) {
+    public final /* synthetic */ void i(org.telegram.messenger.ty tyVar) {
     }
 
     @Override // org.telegram.ui.ls

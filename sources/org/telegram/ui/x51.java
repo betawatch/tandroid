@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x51 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.bn0 a;
@@ -53,7 +53,7 @@ public final class x51 extends FrameLayout implements org.telegram.ui.ActionBar.
         int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.I6, false);
         TextPaint textPaint = this.c;
         textPaint.setColor(x02);
-        canvas.drawText("" + org.telegram.messenger.bz.Y0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);
+        canvas.drawText("" + org.telegram.messenger.cz.Y0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);
     }
 
     @Override // android.view.View
@@ -65,7 +65,7 @@ public final class x51 extends FrameLayout implements org.telegram.ui.ActionBar.
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
-        this.a.setProgress(org.telegram.messenger.bz.Y0 / this.b);
+        this.a.setProgress(org.telegram.messenger.cz.Y0 / this.b);
     }
 
     @Override // android.view.View

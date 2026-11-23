@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class iu extends org.telegram.ui.ActionBar.w2 {
     public static iu S1;
@@ -176,7 +176,7 @@ public final class iu extends org.telegram.ui.ActionBar.w2 {
         textView3.setBackground(h02);
         org.telegram.ui.ActionBar.t6.j(textView3, h02, null, M, null);
         textView3.setPadding(org.telegram.messenger.g0.L(f10), 0, org.telegram.messenger.g0.L(f10), 0);
-        textView3.setText(org.telegram.messenger.gd.N0(2131752029, null).toUpperCase());
+        textView3.setText(org.telegram.messenger.hd.N0(2131752029, null).toUpperCase());
         textView3.setTypeface(org.telegram.messenger.g0.o());
         frameLayout2.addView(textView3, c8.ma.r(-2, -1, 51));
         final int i19 = 0;
@@ -244,7 +244,7 @@ public final class iu extends org.telegram.ui.ActionBar.w2 {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.ic_goinline);
-        imageView.setContentDescription(org.telegram.messenger.gd.N0(2131754807, null));
+        imageView.setContentDescription(org.telegram.messenger.hd.N0(2131754807, null));
         imageView.setEnabled(false);
         imageView.setAlpha(0.5f);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
@@ -368,7 +368,7 @@ public final class iu extends org.telegram.ui.ActionBar.w2 {
         ImageView imageView2 = new ImageView(activity);
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.msg_copy);
-        imageView2.setContentDescription(org.telegram.messenger.gd.N0(2131751750, null));
+        imageView2.setContentDescription(org.telegram.messenger.hd.N0(2131751750, null));
         org.telegram.ui.ActionBar.t6.s(imageView2, i17, null, mode);
         org.telegram.ui.Cells.y h04 = org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.x0(null, i18, false), 0, -1);
         org.telegram.ui.ActionBar.p6 M3 = org.telegram.ui.ActionBar.t6.M(i18);
@@ -388,7 +388,7 @@ public final class iu extends org.telegram.ui.ActionBar.w2 {
         textView4.setBackground(h05);
         org.telegram.ui.ActionBar.t6.j(textView4, h05, null, M4, null);
         textView4.setPadding(org.telegram.messenger.g0.L(f10), 0, org.telegram.messenger.g0.L(f10), 0);
-        textView4.setText(org.telegram.messenger.gd.N0(2131751755, null).toUpperCase());
+        textView4.setText(org.telegram.messenger.hd.N0(2131751755, null).toUpperCase());
         textView4.setTypeface(org.telegram.messenger.g0.o());
         linearLayout.addView(textView4, c8.ma.e(-2, -1, 51));
         textView4.setOnClickListener(onClickListener);
@@ -403,7 +403,7 @@ public final class iu extends org.telegram.ui.ActionBar.w2 {
         textView5.setBackground(h06);
         org.telegram.ui.ActionBar.t6.j(textView5, h06, null, M5, null);
         textView5.setPadding(org.telegram.messenger.g0.L(f10), 0, org.telegram.messenger.g0.L(f10), 0);
-        textView5.setText(org.telegram.messenger.gd.N0(2131747604, null).toUpperCase());
+        textView5.setText(org.telegram.messenger.hd.N0(2131747604, null).toUpperCase());
         textView5.setTypeface(org.telegram.messenger.g0.o());
         linearLayout.addView(textView5, c8.ma.e(-2, -1, 51));
         final int i21 = 3;
@@ -491,7 +491,7 @@ public final class iu extends org.telegram.ui.ActionBar.w2 {
             if (z71Var.getTextureImageView() != null) {
                 z71Var.getTextureImageView().setVisibility(4);
             }
-            if (e10 != null && "disabled".equals(org.telegram.messenger.mp.u1(this.a).D3)) {
+            if (e10 != null && "disabled".equals(org.telegram.messenger.np.u1(this.a).D3)) {
                 imageView.setVisibility(8);
             }
         }
@@ -521,15 +521,15 @@ public final class iu extends org.telegram.ui.ActionBar.w2 {
         return aj0Var;
     }
 
-    public static void O0(org.telegram.ui.ActionBar.g2 g2Var, org.telegram.messenger.fj fjVar, org.telegram.ui.oq0 oq0Var, String str, String str2, String str3, String str4, int i7, int i10, int i11, boolean z10) {
+    public static void O0(org.telegram.ui.ActionBar.g2 g2Var, org.telegram.messenger.gj gjVar, org.telegram.ui.oq0 oq0Var, String str, String str2, String str3, String str4, int i7, int i10, int i11, boolean z10) {
         TLRPC.MessageMedia messageMedia;
         iu iuVar = S1;
         if (iuVar != null) {
             iuVar.L0();
         }
-        if (((fjVar == null || (messageMedia = fjVar.k.media) == null || messageMedia.webpage == null) ? null : z71.e(str4)) != null) {
+        if (((gjVar == null || (messageMedia = gjVar.k.media) == null || messageMedia.webpage == null) ? null : z71.e(str4)) != null) {
             PhotoViewer.p1().I2(null, g2Var, null);
-            PhotoViewer.p1().d2(fjVar, null, null, null, null, null, null, 0, oq0Var, null, 0L, 0L, 0L, true, null, Integer.valueOf(i11));
+            PhotoViewer.p1().d2(gjVar, null, null, null, null, null, null, 0, oq0Var, null, 0L, 0L, 0L, true, null, Integer.valueOf(i11));
         } else {
             iu iuVar2 = new iu(g2Var.getParentActivity(), str, str2, str3, str4, i7, i10, i11);
             iuVar2.i0 = z10;
@@ -705,7 +705,7 @@ public final class iu extends org.telegram.ui.ActionBar.w2 {
                     int width = textureView.getWidth();
                     int height = textureView.getHeight();
                     Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                    Bitmap c10 = org.telegram.messenger.vr.c(width, height);
+                    Bitmap c10 = org.telegram.messenger.wr.c(width, height);
                     z71Var.h = c10;
                     z71Var.n.getBitmap(c10);
                 } catch (Throwable th2) {

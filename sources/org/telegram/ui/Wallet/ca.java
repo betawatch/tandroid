@@ -13,8 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.yh;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class ca extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static final nr T = nr.h;
@@ -138,7 +138,7 @@ public final class ca extends FrameLayout implements org.telegram.ui.ActionBar.b
         x3Var.setTypeface(org.telegram.messenger.g0.o1("fonts/gram.ttf"));
         x3Var.setGravity(3);
         x3Var.getDrawable().T = false;
-        x3Var.c(gd.N0(2131749340, null), false, true);
+        x3Var.c(hd.N0(2131749340, null), false, true);
         linearLayout.addView(x3Var, c8.ma.t(-2, 60, 16, 4, 0, 0, 0));
         setOnClickListener(new o3(this, 7));
         y9Var.addTextChangedListener(new yh(this, 1));
@@ -324,7 +324,7 @@ public final class ca extends FrameLayout implements org.telegram.ui.ActionBar.b
         }
         this.w = true;
         if (!z10) {
-            g10 = gd.N0(2131749340, null);
+            g10 = hd.N0(2131749340, null);
         } else if (!z13) {
             g10 = str2;
         }
@@ -360,7 +360,7 @@ public final class ca extends FrameLayout implements org.telegram.ui.ActionBar.b
         FrameLayout frameLayout = this.e;
         m7 m7Var = this.d;
         frameLayout.setTranslationX((((width - frameLayout.getLeft()) - m7Var.getLeft()) - (m7Var.getWidth() / 2.0f)) * f12);
-        frameLayout.setTranslationY(n10.y(m7Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - m7Var.getTop(), f12) - (org.telegram.messenger.g0.L(36.0f) * ((float) Math.sin(f10 * 3.141592653589793d))));
+        frameLayout.setTranslationY(o10.y(m7Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - m7Var.getTop(), f12) - (org.telegram.messenger.g0.L(36.0f) * ((float) Math.sin(f10 * 3.141592653589793d))));
         org.telegram.ui.Cells.x3 x3Var = this.h;
         int visibility = x3Var.getVisibility();
         y9 y9Var = this.c;

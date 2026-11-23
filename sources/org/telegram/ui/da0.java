@@ -11,9 +11,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class da0 implements org.telegram.messenger.za, org.telegram.messenger.pa, org.telegram.ui.ActionBar.q1, org.telegram.messenger.bb, jg.b {
+public final /* synthetic */ class da0 implements org.telegram.messenger.ab, org.telegram.messenger.qa, org.telegram.ui.ActionBar.q1, org.telegram.messenger.cb, jg.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ qa0 b;
 
@@ -29,8 +29,8 @@ public final /* synthetic */ class da0 implements org.telegram.messenger.za, org
         qa0Var.O0();
     }
 
-    @Override // org.telegram.messenger.za
-    public boolean b(MotionEvent motionEvent, org.telegram.messenger.ga gaVar) {
+    @Override // org.telegram.messenger.ab
+    public boolean b(MotionEvent motionEvent, org.telegram.messenger.ha haVar) {
         MotionEvent motionEvent2;
         Location location;
         int i7 = this.a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class da0 implements org.telegram.messenger.za, org
                 } else {
                     motionEvent2 = null;
                 }
-                boolean booleanValue = gaVar.a(motionEvent).booleanValue();
+                boolean booleanValue = haVar.a(motionEvent).booleanValue();
                 if (motionEvent2 != null) {
                     motionEvent2.recycle();
                 }
@@ -83,19 +83,19 @@ public final /* synthetic */ class da0 implements org.telegram.messenger.za, org
                             qa0Var.a.setTag(Integer.valueOf(i10));
                             qa0Var.K0 = true;
                         }
-                        org.telegram.messenger.da daVar = qa0Var.F;
-                        if (daVar != null && (location = qa0Var.A0) != null) {
-                            location.setLatitude(((org.telegram.messenger.ab) daVar.d().b).a);
-                            qa0Var.A0.setLongitude(((org.telegram.messenger.ab) qa0Var.F.d().b).b);
+                        org.telegram.messenger.ea eaVar = qa0Var.F;
+                        if (eaVar != null && (location = qa0Var.A0) != null) {
+                            location.setLatitude(((org.telegram.messenger.bb) eaVar.d().b).a);
+                            qa0Var.A0.setLongitude(((org.telegram.messenger.bb) qa0Var.F.d().b).b);
                         }
                         qa0Var.Q.L(qa0Var.A0);
                     }
                 }
-                return gaVar.a(motionEvent).booleanValue();
+                return haVar.a(motionEvent).booleanValue();
         }
     }
 
-    @Override // org.telegram.messenger.bb
+    @Override // org.telegram.messenger.cb
     public void c(int i7) {
         View childAt;
         qa0 qa0Var = this.b;
@@ -120,7 +120,7 @@ public final /* synthetic */ class da0 implements org.telegram.messenger.za, org
                 int top = childAt.getTop();
                 if (top < (-L)) {
                     hi.u4 d = qa0Var.F.d();
-                    qa0Var.I = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.ab) d.b, d.c);
+                    qa0Var.I = ((pb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.bb) d.b, d.c);
                     qa0Var.R.w0(0, top + L, null);
                 }
             }
@@ -158,7 +158,7 @@ public final /* synthetic */ class da0 implements org.telegram.messenger.za, org
         }
     }
 
-    @Override // org.telegram.messenger.pa
+    @Override // org.telegram.messenger.qa
     public void onLocationChanged(Location location) {
         if (location == null) {
             return;

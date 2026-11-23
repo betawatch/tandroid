@@ -8,11 +8,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.s2;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class SerializedData extends AbstractSerializedData {
     private DataInputStream in;
@@ -372,7 +372,7 @@ public class SerializedData extends AbstractSerializedData {
             } else if (this.justCalc) {
                 this.len += 4;
             } else {
-                this.out.write(ks.d4);
+                this.out.write(ls.d4);
                 this.out.write(bArr.length);
                 this.out.write(bArr.length >> 8);
                 this.out.write(bArr.length >> 16);
@@ -567,7 +567,7 @@ public class SerializedData extends AbstractSerializedData {
             } else if (this.justCalc) {
                 this.len += 4;
             } else {
-                this.out.write(ks.d4);
+                this.out.write(ls.d4);
                 this.out.write(i10);
                 this.out.write(i10 >> 8);
                 this.out.write(i10 >> 16);

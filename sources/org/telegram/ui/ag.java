@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ag implements or0, ww {
     public final /* synthetic */ boolean a;
@@ -13,10 +13,10 @@ public final /* synthetic */ class ag implements or0, ww {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ ag(bn bnVar, boolean z10, org.telegram.messenger.fj fjVar, int i7) {
+    public /* synthetic */ ag(bn bnVar, boolean z10, org.telegram.messenger.gj gjVar, int i7) {
         this.c = bnVar;
         this.a = z10;
-        this.d = fjVar;
+        this.d = gjVar;
         this.b = i7;
     }
 
@@ -34,21 +34,21 @@ public final /* synthetic */ class ag implements or0, ww {
     public void a(TLRPC.MessageMedia messageMedia) {
         int i7;
         bn bnVar = (bn) this.c;
-        org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) this.d;
+        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) this.d;
         if (!this.a) {
             if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-                TLRPC.MessageMedia messageMedia2 = fjVar.k.media;
+                TLRPC.MessageMedia messageMedia2 = gjVar.k.media;
                 if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
                     ((TLRPC.TL_messageMediaToDo) messageMedia).completions = ((TLRPC.TL_messageMediaToDo) messageMedia2).completions;
                 }
             }
-            fjVar.k.media = messageMedia;
-            bnVar.getSendMessagesHelper().t(fjVar, null, null, null, null, null, null, null, false, false, null);
+            gjVar.k.media = messageMedia;
+            bnVar.getSendMessagesHelper().t(gjVar, null, null, null, null, null, null, null, false, false, null);
             return;
         }
         TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
-        tL_messages_appendTodoList.peer = bnVar.getMessagesController().l1(org.telegram.messenger.fj.B0(fjVar.k));
-        tL_messages_appendTodoList.msg_id = fjVar.e1();
+        tL_messages_appendTodoList.peer = bnVar.getMessagesController().l1(org.telegram.messenger.gj.B0(gjVar.k));
+        tL_messages_appendTodoList.msg_id = gjVar.e1();
         if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
             TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
             int i10 = 0;
@@ -70,12 +70,12 @@ public final /* synthetic */ class ag implements or0, ww {
                 i11 = Math.max(i11, todoItem.id);
                 i7++;
             }
-            TLRPC.MessageMedia messageMedia3 = fjVar.k.media;
+            TLRPC.MessageMedia messageMedia3 = gjVar.k.media;
             if (messageMedia3 instanceof TLRPC.TL_messageMediaToDo) {
                 tL_messageMediaToDo.completions = ((TLRPC.TL_messageMediaToDo) messageMedia3).completions;
             }
         }
-        fjVar.k.media = messageMedia;
+        gjVar.k.media = messageMedia;
         bnVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
     }
 
@@ -84,7 +84,7 @@ public final /* synthetic */ class ag implements or0, ww {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         String str = (String) this.d;
         String str2 = LaunchActivity.C1;
-        long j3 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
+        long j3 = ((org.telegram.messenger.tr) arrayList.get(0)).a;
         Bundle bundle = new Bundle();
         bundle.putBoolean("scrollToTopOnResume", true);
         bundle.putBoolean("hasUrl", this.a);
@@ -96,11 +96,11 @@ public final /* synthetic */ class ag implements or0, ww {
             bundle.putLong("chat_id", -j3);
         }
         int i11 = this.b;
-        if (!org.telegram.messenger.mp.u1(i11).E(bundle, cxVar, null, null)) {
+        if (!org.telegram.messenger.np.u1(i11).E(bundle, cxVar, null, null)) {
             return true;
         }
-        org.telegram.messenger.ks.f(i11).k(org.telegram.messenger.ks.t, new Object[0]);
-        org.telegram.messenger.ri.d0(i11).V1(j3, 0, str, null, null, null, null, 0L, false, false, null);
+        org.telegram.messenger.ls.f(i11).k(org.telegram.messenger.ls.t, new Object[0]);
+        org.telegram.messenger.si.d0(i11).V1(j3, 0, str, null, null, null, null, 0L, false, false, null);
         ((ActionBarLayout) launchActivity.M()).V(new bn(bundle), true, false);
         return true;
     }

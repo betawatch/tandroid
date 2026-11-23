@@ -7,11 +7,11 @@ import c8.l9;
 import java.io.File;
 import java.util.Locale;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j6 {
     public int a;
@@ -62,7 +62,7 @@ public final class j6 {
         if (i7 == 0) {
             return 0;
         }
-        return Color.argb(ks.e4, i10 / i7, i11 / i7, i12 / i7);
+        return Color.argb(ls.e4, i10 / i7, i11 / i7, i12 / i7);
     }
 
     public static int c(SparseIntArray sparseIntArray, int i7) {
@@ -98,7 +98,7 @@ public final class j6 {
         if (f11 <= 0.0f) {
             fArr[0] = f10;
         }
-        fArr[1] = n10.A(f11, 0.6f, 1.0f, 0.0f);
+        fArr[1] = o10.A(f11, 0.6f, 1.0f, 0.0f);
         fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.05f));
         return Color.HSVToColor(30, fArr);
     }
@@ -206,7 +206,7 @@ public final class j6 {
             i10 = i25;
             c10 = c11;
             if (f11 >= 0.3f) {
-                i22 = Color.HSVToColor(ks.e4, P03);
+                i22 = Color.HSVToColor(ls.e4, P03);
                 i10 = i25;
                 c10 = c11;
             }
@@ -458,16 +458,16 @@ public final class j6 {
                 float f14 = fArr[i11];
                 if (f14 > 45.0f) {
                 }
-                fArr[i10] = n10.A(f13, 0.6f, 1.0f, 0.0f);
+                fArr[i10] = o10.A(f13, 0.6f, 1.0f, 0.0f);
                 float f15 = fArr[c10];
                 fArr[c10] = Math.max(0.0f, Math.min(1.0f, f15 - (f15 <= 0.7f ? 0.25f : 0.125f)));
-                sparseIntArray2.put(i50, m6.w(i47, Color.HSVToColor(ks.e4, fArr)));
+                sparseIntArray2.put(i50, m6.w(i47, Color.HSVToColor(ls.e4, fArr)));
             }
             fArr[i11] = f12;
-            fArr[i10] = n10.A(f13, 0.6f, 1.0f, 0.0f);
+            fArr[i10] = o10.A(f13, 0.6f, 1.0f, 0.0f);
             float f152 = fArr[c10];
             fArr[c10] = Math.max(0.0f, Math.min(1.0f, f152 - (f152 <= 0.7f ? 0.25f : 0.125f)));
-            sparseIntArray2.put(i50, m6.w(i47, Color.HSVToColor(ks.e4, fArr)));
+            sparseIntArray2.put(i50, m6.w(i47, Color.HSVToColor(ls.e4, fArr)));
         }
         Color.colorToHSV(m6.y0(sparseIntArray2, m6.n6, null), fArr);
         float f16 = fArr[i11];
@@ -515,12 +515,12 @@ public final class j6 {
             if (f17 > 0.0f) {
                 float f18 = fArr[c10];
                 if (f18 < 1.0f && f18 > 0.0f) {
-                    fArr[i10] = n10.A(f17, 0.28f, 1.0f, 0.0f);
-                    fArr[c10] = n10.A(fArr[c10], -0.1f, 1.0f, 0.0f);
+                    fArr[i10] = o10.A(f17, 0.28f, 1.0f, 0.0f);
+                    fArr[c10] = o10.A(fArr[c10], -0.1f, 1.0f, 0.0f);
                     i58 = 32;
                 }
             }
-            fArr[c10] = n10.A(fArr[c10], -0.2f, 1.0f, 0.0f);
+            fArr[c10] = o10.A(fArr[c10], -0.2f, 1.0f, 0.0f);
             i58 = 32;
         }
         sparseIntArray2.put(i60, Color.HSVToColor(i58, fArr));
@@ -551,7 +551,7 @@ public final class j6 {
         float[] fArr = this.A;
         Color.colorToHSV(f10, fArr);
         fArr[1] = Math.max(0.0f, Math.min(1.0f, fArr[1] - 0.1f));
-        fArr[2] = n10.A(fArr[2], z10 ? 0.1f : 0.0f, 1.0f, 0.0f);
+        fArr[2] = o10.A(fArr[2], z10 ? 0.1f : 0.0f, 1.0f, 0.0f);
         return Color.HSVToColor(51, fArr);
     }
 
@@ -595,12 +595,12 @@ public final class j6 {
             float f12 = fArr[0];
             if (f12 > 45.0f) {
             }
-            fArr[1] = n10.A(f11, fArr[2] <= 0.85f ? 0.25f : 0.45f, 1.0f, 0.0f);
+            fArr[1] = o10.A(f11, fArr[2] <= 0.85f ? 0.25f : 0.45f, 1.0f, 0.0f);
             fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.15f));
             return Color.HSVToColor(80, fArr);
         }
         fArr[0] = f10;
-        fArr[1] = n10.A(f11, fArr[2] <= 0.85f ? 0.25f : 0.45f, 1.0f, 0.0f);
+        fArr[1] = o10.A(f11, fArr[2] <= 0.85f ? 0.25f : 0.45f, 1.0f, 0.0f);
         fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.15f));
         return Color.HSVToColor(80, fArr);
     }

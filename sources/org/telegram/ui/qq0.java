@@ -16,7 +16,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qq0 extends org.telegram.ui.Components.eu0 {
     public final Paint k0;
@@ -55,8 +55,8 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
             if (photoViewer.u4 == 1 || photoViewer.o6 == 1) {
                 int measuredHeight = getMeasuredHeight();
                 int measuredWidth = getMeasuredWidth();
-                this.n0.add(new Rect(0, org.telegram.messenger.n10.z(200.0f, measuredHeight, 2), org.telegram.messenger.g0.L(100.0f), (org.telegram.messenger.g0.L(200.0f) + measuredHeight) / 2));
-                this.n0.add(new Rect(measuredWidth - org.telegram.messenger.g0.L(100.0f), org.telegram.messenger.n10.z(200.0f, measuredHeight, 2), measuredWidth, (org.telegram.messenger.g0.L(200.0f) + measuredHeight) / 2));
+                this.n0.add(new Rect(0, org.telegram.messenger.o10.z(200.0f, measuredHeight, 2), org.telegram.messenger.g0.L(100.0f), (org.telegram.messenger.g0.L(200.0f) + measuredHeight) / 2));
+                this.n0.add(new Rect(measuredWidth - org.telegram.messenger.g0.L(100.0f), org.telegram.messenger.o10.z(200.0f, measuredHeight, 2), measuredWidth, (org.telegram.messenger.g0.L(200.0f) + measuredHeight) / 2));
             }
             setSystemGestureExclusionRects(this.n0);
             invalidate();
@@ -238,7 +238,7 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
                     i20 = 51;
                 }
                 int i21 = i20 & 7;
-                int i22 = i20 & org.telegram.messenger.ks.x1;
+                int i22 = i20 & org.telegram.messenger.ls.x1;
                 if (i21 == 1) {
                     i13 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + layoutParams.leftMargin;
                     i14 = layoutParams.rightMargin;
@@ -305,7 +305,7 @@ public final class qq0 extends org.telegram.ui.Components.eu0 {
                                             L = ((paddingBottom - i10) - measuredHeight2) - layoutParams.bottomMargin;
                                             measuredHeight = photoViewer.Q0.getHeight();
                                         } else if (childAt == photoViewer.T7) {
-                                            i18 = org.telegram.messenger.n10.x(31.0f, photoViewer.Q0.getHeight(), i18);
+                                            i18 = org.telegram.messenger.o10.x(31.0f, photoViewer.Q0.getHeight(), i18);
                                         }
                                     } else {
                                         FrameLayout frameLayout3 = photoViewer.R7;

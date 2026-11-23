@@ -5,7 +5,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lq0 extends wy {
     public final yt0 X;
@@ -35,7 +35,7 @@ public final class lq0 extends wy {
         v4.i0 adapter = this.Y.h.getAdapter();
         jt0 jt0Var = this.Z;
         ys0[] ys0VarArr = jt0Var.w1;
-        TLRPC.Document F0 = (adapter != jt0Var.R || ys0VarArr[5].a.isEmpty()) ? null : ((org.telegram.messenger.fj) ys0VarArr[5].a.get(i7)).F0();
+        TLRPC.Document F0 = (adapter != jt0Var.R || ys0VarArr[5].a.isEmpty()) ? null : ((org.telegram.messenger.gj) ys0VarArr[5].a.get(i7)).F0();
         yt0 yt0Var = this.X;
         yt0Var.b = 100.0f;
         yt0Var.a = 100.0f;

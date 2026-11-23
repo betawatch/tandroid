@@ -5,10 +5,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
@@ -22,9 +22,9 @@ import org.telegram.ui.p51;
 import org.telegram.ui.u60;
 import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e0 implements q10 {
+public final /* synthetic */ class e0 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -35,7 +35,7 @@ public final /* synthetic */ class e0 implements q10 {
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         int i7 = 0;
         switch (this.a) {
@@ -60,17 +60,17 @@ public final /* synthetic */ class e0 implements q10 {
                 }
             case 1:
                 g0 g0Var = (g0) this.b;
-                q10 q10Var = (q10) this.c;
+                r10 r10Var = (r10) this.c;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str2 = (String) obj2;
                 if (!g0Var.a) {
-                    q10Var.a(wallettransaction, str2);
+                    r10Var.a(wallettransaction, str2);
                     break;
                 }
                 break;
             case 2:
                 String str3 = (String) this.b;
-                ai.a2 a2Var = (ai.a2) this.c;
+                ai.b2 b2Var = (ai.b2) this.c;
                 TL_toncenter.apiResponse apiresponse = (TL_toncenter.apiResponse) obj;
                 if (((TLRPC.TL_error) obj2) == null && apiresponse != null && apiresponse.response != null) {
                     try {
@@ -88,7 +88,7 @@ public final /* synthetic */ class e0 implements q10 {
                         org.telegram.messenger.a8.g(e10, true);
                     }
                 }
-                a2Var.a(r3);
+                b2Var.a(r3);
                 break;
             case 3:
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.b;
@@ -109,7 +109,7 @@ public final /* synthetic */ class e0 implements q10 {
                 org.telegram.messenger.g0.g3(new p(this.c, obj, (String) obj2, 3));
                 break;
             case 6:
-                d9.g0((d9) this.b, (x10) this.c, (r0) obj, (String) obj2);
+                d9.g0((d9) this.b, (y10) this.c, (r0) obj, (String) obj2);
                 break;
             case 7:
                 na naVar = (na) this.b;
@@ -129,8 +129,8 @@ public final /* synthetic */ class e0 implements q10 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 int i10 = oVar2.a;
                 if (webpagepreview != null) {
-                    mp.u1(i10).f4(webpagepreview.users, false);
-                    mp.u1(i10).Z3(webpagepreview.chats, false);
+                    np.u1(i10).f4(webpagepreview.users, false);
+                    np.u1(i10).Z3(webpagepreview.chats, false);
                     TLRPC.MessageMedia messageMedia = webpagepreview.media;
                     if (messageMedia != null) {
                         r3 = messageMedia.webpage;
@@ -143,7 +143,7 @@ public final /* synthetic */ class e0 implements q10 {
                     while (i7 < size) {
                         Object obj3 = arrayList.get(i7);
                         i7++;
-                        ((q10) obj3).a(r3, tL_error2);
+                        ((r10) obj3).a(r3, tL_error2);
                     }
                     break;
                 }
@@ -161,7 +161,7 @@ public final /* synthetic */ class e0 implements q10 {
                         if (!bool.booleanValue()) {
                             if (str6 != null) {
                                 a0Var.dismiss();
-                                lc.b0(T).Q(R.raw.error, 36, gd.a0(null, null, 2131743635, str6)).j();
+                                lc.b0(T).Q(R.raw.error, 36, hd.a0(null, null, 2131743633, str6)).j();
                                 break;
                             }
                         } else {

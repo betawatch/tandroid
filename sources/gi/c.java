@@ -12,9 +12,9 @@ import java.util.regex.Pattern;
 import oi.y1;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ov;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.pv;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
@@ -45,7 +45,7 @@ import org.telegram.ui.pr0;
 import v4.f1;
 import v4.w;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class c extends w {
     public final /* synthetic */ int d;
@@ -124,7 +124,7 @@ public final class c extends w {
 
     @Override // v4.w
     public final int e(RecyclerView recyclerView, f1 f1Var) {
-        ov s5;
+        pv s5;
         switch (this.d) {
             case 0:
                 m mVar = (m) this.e;
@@ -271,7 +271,7 @@ public final class c extends w {
                         if (hVar.e instanceof a6) {
                             arrayList = new ArrayList();
                             for (int i14 = 0; i14 < hVar.e.i.size(); i14++) {
-                                arrayList.add(Integer.valueOf(((fj) hVar.e.i.get(i14)).e1()));
+                                arrayList.add(Integer.valueOf(((gj) hVar.e.i.get(i14)).e1()));
                             }
                         } else {
                             arrayList = new ArrayList(hVar.e.g);
@@ -281,9 +281,9 @@ public final class c extends w {
                             arrayList2.addAll(arrayList);
                             hVar.r = true;
                         }
-                        fj fjVar = (fj) hVar.e.i.get(b10);
-                        arrayList.remove(Integer.valueOf(fjVar.e1()));
-                        arrayList.add(Utilities.j(b11, arrayList.size(), 0), Integer.valueOf(fjVar.e1()));
+                        gj gjVar = (gj) hVar.e.i.get(b10);
+                        arrayList.remove(Integer.valueOf(gjVar.e1()));
+                        arrayList.add(Utilities.j(b11, arrayList.size(), 0), Integer.valueOf(gjVar.e1()));
                         hVar.e.C(arrayList, false);
                         hVar.j(b10, b11);
                         break;
@@ -408,17 +408,17 @@ public final class c extends w {
                     int i25 = b23 - i23;
                     arrayList5.indexOf(Integer.valueOf(i24));
                     arrayList5.get(b22 - sl0Var.w);
-                    fj fjVar2 = (fj) arrayList5.get(i24);
-                    fj fjVar3 = (fj) arrayList5.get(i25);
-                    arrayList5.set(i24, fjVar3);
-                    arrayList5.set(i25, fjVar2);
+                    gj gjVar2 = (gj) arrayList5.get(i24);
+                    gj gjVar3 = (gj) arrayList5.get(i25);
+                    arrayList5.set(i24, gjVar3);
+                    arrayList5.set(i25, gjVar2);
                     org.telegram.messenger.a6 q10 = org.telegram.messenger.a6.q(sl0Var.d);
                     ArrayList arrayList6 = q10.H;
-                    int indexOf = arrayList6.indexOf(fjVar2);
-                    int indexOf2 = arrayList6.indexOf(fjVar3);
+                    int indexOf = arrayList6.indexOf(gjVar2);
+                    int indexOf2 = arrayList6.indexOf(gjVar3);
                     if (indexOf >= 0 && indexOf2 >= 0) {
-                        arrayList6.set(indexOf, fjVar3);
-                        arrayList6.set(indexOf2, fjVar2);
+                        arrayList6.set(indexOf, gjVar3);
+                        arrayList6.set(indexOf2, gjVar2);
                     }
                     q10.y();
                     sl0Var.c.j(b22, b23);
@@ -430,8 +430,8 @@ public final class c extends w {
                 ArrayList arrayList7 = us0Var.f;
                 jt0 jt0Var = us0Var.y;
                 if (jt0Var.F1 && recyclerView.getAdapter() != jt0Var.V) {
-                    ov s5 = s(f1Var);
-                    ov s9 = s(f1Var2);
+                    pv s5 = s(f1Var);
+                    pv s9 = s(f1Var2);
                     if (s5 != null && s9 != null && s5.b && s9.b) {
                         int b24 = f1Var.b();
                         int b25 = f1Var2.b();
@@ -569,7 +569,7 @@ public final class c extends w {
                         if (h6Var instanceof a6) {
                             arrayList = new ArrayList();
                             for (int i11 = 0; i11 < hVar.e.i.size(); i11++) {
-                                arrayList.add(Integer.valueOf(((fj) hVar.e.i.get(i11)).e1()));
+                                arrayList.add(Integer.valueOf(((gj) hVar.e.i.get(i11)).e1()));
                             }
                         } else {
                             arrayList = h6Var.g;
@@ -760,11 +760,11 @@ public final class c extends w {
         return !pr0Var.J || i7 - pr0Var.o0 >= pr0Var.y;
     }
 
-    public ov s(f1 f1Var) {
+    public pv s(f1 f1Var) {
         int b10;
         us0 us0Var = (us0) this.e;
         if (f1Var != null && (b10 = f1Var.b()) >= 0 && b10 < us0Var.f.size()) {
-            return (ov) us0Var.f.get(b10);
+            return (pv) us0Var.f.get(b10);
         }
         return null;
     }

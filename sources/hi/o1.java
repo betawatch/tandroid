@@ -9,10 +9,10 @@ import android.util.SparseArray;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class o1 extends ek0 {
     public org.telegram.ui.ActionBar.k5 f3;
@@ -45,7 +45,7 @@ public final class o1 extends ek0 {
         v4.t tVar = (v4.t) o1Var.getLayoutManager();
         View m10 = tVar.m(i7);
         int L0 = tVar.L0();
-        if ((m10 == null && Math.abs(i7 - L0) > tVar.J * 9.0f) || !bz.c()) {
+        if ((m10 == null && Math.abs(i7 - L0) > tVar.J * 9.0f) || !cz.c()) {
             o1Var.f3.b = tVar.L0() < i7 ? 0 : 1;
             o1Var.f3.k(i7, i10, false, false);
         } else {

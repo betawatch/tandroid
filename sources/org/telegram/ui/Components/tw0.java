@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class tw0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public org.telegram.ui.Cells.x9 E;
@@ -53,7 +53,7 @@ public final class tw0 extends FrameLayout implements org.telegram.ui.ActionBar.
             textView3.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
             textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(10.0f), i0.a.o(this.y, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
             textView2.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
-            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(10.0f), i0.a.o(this.y, org.telegram.messenger.ks.L1)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(10.0f), i0.a.o(this.y, org.telegram.messenger.ls.L1)), (Drawable) null, (Drawable) null, (Drawable) null);
             textView.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
         }
         org.telegram.ui.ActionBar.t6.U(this.E.getTextView(), org.telegram.ui.ActionBar.m6.G6, null);

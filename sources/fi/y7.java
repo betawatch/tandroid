@@ -2,8 +2,8 @@ package fi;
 
 import android.content.SharedPreferences;
 import android.net.Uri;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -11,12 +11,12 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.as;
 import org.telegram.ui.Components.fs;
 import org.telegram.ui.Components.jt0;
-import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.lp0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.p50;
 import org.telegram.ui.wf0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class y7 implements RequestDelegate {
                     break;
                 }
             case 1:
-                org.telegram.messenger.g0.g3(new ai.i1(tLObject, (boolean[]) obj3, (x10) obj2, this.b, (TL_account.updateEmojiStatus) obj, 7));
+                org.telegram.messenger.g0.g3(new ai.i1(tLObject, (boolean[]) obj3, (y10) obj2, this.b, (TL_account.updateEmojiStatus) obj, 7));
                 break;
             case 2:
                 org.telegram.messenger.g0.g3(new bg.m0((p50) obj3, (org.telegram.ui.e4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.a1) obj));
@@ -79,10 +79,10 @@ public final /* synthetic */ class y7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new fs((org.telegram.ui.ActionBar.t1[]) obj2, i10));
                 int i13 = this.b;
                 if (tL_error != null) {
-                    org.telegram.messenger.g0.g3(new mp0(jt0Var, i13, tL_error, tL_messages_editMessage, 1));
+                    org.telegram.messenger.g0.g3(new lp0(jt0Var, i13, tL_error, tL_messages_editMessage, 2));
                     break;
                 } else {
-                    mp.u1(i13).V3((TLRPC.Updates) tLObject, false);
+                    np.u1(i13).V3((TLRPC.Updates) tLObject, false);
                     break;
                 }
             case 6:
@@ -95,11 +95,11 @@ public final /* synthetic */ class y7 implements RequestDelegate {
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
                 if (!(tLObject instanceof TLRPC.Updates)) {
                     if (tL_error != null) {
-                        org.telegram.messenger.g0.g3(new mp0(i11, tL_error, g2Var2, tL_payments_assignPlayMarketTransaction));
+                        org.telegram.messenger.g0.g3(new lp0(i11, tL_error, g2Var2, tL_payments_assignPlayMarketTransaction));
                         break;
                     }
                 } else {
-                    mp.u1(i11).V3((TLRPC.Updates) tLObject, false);
+                    np.u1(i11).V3((TLRPC.Updates) tLObject, false);
                     org.telegram.messenger.g0.g3(wf0Var);
                     break;
                 }

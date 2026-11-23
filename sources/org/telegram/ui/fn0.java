@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fn0 extends org.telegram.ui.ActionBar.g2 {
     public static final org.telegram.ui.Components.dq0 E = new org.telegram.ui.Components.dq0(4);
@@ -107,7 +107,7 @@ public final class fn0 extends org.telegram.ui.ActionBar.g2 {
         a10.O();
         a10.I = new bi.w1(this, 19);
         this.c = a10;
-        a10.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745565, null));
+        a10.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745565, null));
         EditTextBoldCursor searchField = this.c.getSearchField();
         org.telegram.ui.ActionBar.t6.U(searchField, i7, null);
         org.telegram.ui.ActionBar.t6.v(searchField, i7, null);
@@ -182,7 +182,7 @@ public final class fn0 extends org.telegram.ui.ActionBar.g2 {
             org.telegram.ui.ActionBar.y4 y4Var7 = y4VarArr[i14];
             y4Var7.addView((org.telegram.ui.ActionBar.k) y4Var7.e, c8.ma.c(-2.0f, -1));
             ((org.telegram.ui.ActionBar.k) y4VarArr[i14].e).setVisibility(8);
-            ((org.telegram.ui.Components.ek0) y4VarArr[i14].f).setOnScrollListener(new bi.h6(9, this, ((org.telegram.ui.Components.ek0) y4VarArr[i14].f).getOnScrollListener()));
+            ((org.telegram.ui.Components.ek0) y4VarArr[i14].f).setOnScrollListener(new bi.g6(9, this, ((org.telegram.ui.Components.ek0) y4VarArr[i14].f).getOnScrollListener()));
             i14++;
             f10 = f11;
         }
@@ -193,8 +193,8 @@ public final class fn0 extends org.telegram.ui.ActionBar.g2 {
         en0Var.addView(cn0Var.c0, c8.ma.d(42, 24.0f, 85, 0.0f, 0.0f, -2.0f, 9.0f));
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip3 = this.h;
         if (scrollSlidingTextTabStrip3 != null) {
-            scrollSlidingTextTabStrip3.a(0, org.telegram.messenger.gd.N0(2131749077, null), null);
-            this.h.a(1, org.telegram.messenger.gd.N0(2131750451, null), null);
+            scrollSlidingTextTabStrip3.a(0, org.telegram.messenger.hd.N0(2131749077, null), null);
+            this.h.a(1, org.telegram.messenger.hd.N0(2131750451, null), null);
             this.h.setVisibility(0);
             this.actionBar.setExtraHeight(org.telegram.messenger.g0.L(f12));
             int currentTabId = this.h.getCurrentTabId();

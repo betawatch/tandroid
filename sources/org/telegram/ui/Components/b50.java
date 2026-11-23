@@ -30,7 +30,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b50 extends h50 {
     public static final /* synthetic */ int M0 = 0;
@@ -62,7 +62,7 @@ public final class b50 extends h50 {
     public zi.t0 R;
     public zi.m0 S;
     public sy0 T;
-    public org.telegram.messenger.e20 U;
+    public org.telegram.messenger.f20 U;
     public a50 V;
     public boolean W;
     public boolean a0;
@@ -103,7 +103,7 @@ public final class b50 extends h50 {
 
     public b50(Activity activity, p40 p40Var, org.telegram.ui.ActionBar.h6 h6Var) {
         super(activity);
-        this.f = org.telegram.messenger.j10.t0;
+        this.f = org.telegram.messenger.k10.t0;
         int i7 = 2;
         this.K = new int[2];
         this.L = new Matrix();
@@ -125,7 +125,7 @@ public final class b50 extends h50 {
         n2Var.o = 0.5f;
         n2Var.n = hi.n2.f(0.5f);
         n2Var.g();
-        addView(n2Var.b, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(n2Var.b, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         z40 z40Var = new z40(this, activity);
         this.s = z40Var;
         uk0 uk0Var = new uk0(activity);
@@ -140,19 +140,19 @@ public final class b50 extends h50 {
         y40Var.setOutlineProvider(new bg.q0(12));
         y40Var.setClipToOutline(true);
         this.y = y40Var;
-        frameLayout.addView(y40Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        frameLayout.addView(y40Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         Paint paint = new Paint(1);
         paint.setColor(Color.argb(40, 0, 0, 0));
         org.telegram.ui.qk qkVar = new org.telegram.ui.qk(this, activity, paint);
         this.E = qkVar;
         qkVar.setOutlineProvider(new bg.q0(11));
         qkVar.setClipToOutline(true);
-        frameLayout.addView(qkVar, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
-        uk0Var.addView(frameLayout, c8.ma.d(-1, -1.0f, org.telegram.messenger.ks.E1, 14.0f, 14.0f, 14.0f, 14.0f));
-        z40Var.addView(uk0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        frameLayout.addView(qkVar, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
+        uk0Var.addView(frameLayout, c8.ma.d(-1, -1.0f, org.telegram.messenger.ls.E1, 14.0f, 14.0f, 14.0f, 14.0f));
+        z40Var.addView(uk0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         int i12 = org.telegram.messenger.g0.v;
         addView(z40Var, new FrameLayout.LayoutParams(i12, i12, 17));
-        addView(n2Var.c, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(n2Var.c, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         LinearLayout linearLayout = new LinearLayout(activity);
         this.F = linearLayout;
         linearLayout.setOrientation(0);
@@ -162,7 +162,7 @@ public final class b50 extends h50 {
         this.G = l2Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         l2Var.setScaleType(scaleType);
-        l2Var.setContentDescription(org.telegram.messenger.gd.N0(2131754751, null));
+        l2Var.setContentDescription(org.telegram.messenger.hd.N0(2131754751, null));
         linearLayout.addView(l2Var, c8.ma.o(44, 44));
         l2Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.x40
             public final /* synthetic */ b50 b;
@@ -438,7 +438,7 @@ public final class b50 extends h50 {
     public final void A(boolean z10) {
         Bitmap bitmap;
         y40 y40Var = this.y;
-        if (y40Var.isAvailable() && (bitmap = y40Var.getBitmap(org.telegram.messenger.ks.K2, org.telegram.messenger.ks.K2)) != null) {
+        if (y40Var.isAvailable() && (bitmap = y40Var.getBitmap(org.telegram.messenger.ls.K2, org.telegram.messenger.ls.K2)) != null) {
             try {
                 if (bitmap.getWidth() != 0 && bitmap.getHeight() != 0 && bitmap.getPixel(bitmap.getWidth() / 2, bitmap.getHeight() / 2) != 0) {
                     bitmap = r(bitmap);
@@ -521,7 +521,7 @@ public final class b50 extends h50 {
     public final void C() {
         if (this.E0) {
             this.E0 = false;
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.k1, 512);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.k1, 512);
         }
     }
 
@@ -750,7 +750,7 @@ public final class b50 extends h50 {
         if ((i7 == 1 || i7 == 4) && this.V == null) {
             long currentDurationMs = getCurrentDurationMs();
             if (currentDurationMs < 800) {
-                org.telegram.messenger.ks.f(this.f).k(org.telegram.messenger.ks.t2, Integer.valueOf(this.h), Boolean.TRUE, Integer.valueOf((int) currentDurationMs));
+                org.telegram.messenger.ls.f(this.f).k(org.telegram.messenger.ls.t2, Integer.valueOf(this.h), Boolean.TRUE, Integer.valueOf((int) currentDurationMs));
                 a(false);
                 return;
             }
@@ -778,7 +778,7 @@ public final class b50 extends h50 {
             return;
         }
         setVisibility(0);
-        this.w.getPaint().setAlpha(org.telegram.messenger.ks.e4);
+        this.w.getPaint().setAlpha(org.telegram.messenger.ls.e4);
         this.l0 = false;
         this.k0 = false;
         this.V = null;
@@ -945,12 +945,12 @@ public final class b50 extends h50 {
 
     public final void q() {
         zi.t0 t0Var;
-        org.telegram.messenger.e20 e20Var;
-        if (this.P == null || (t0Var = this.R) == null || (e20Var = this.U) == null) {
+        org.telegram.messenger.f20 f20Var;
+        if (this.P == null || (t0Var = this.R) == null || (f20Var = this.U) == null) {
             return;
         }
         long j3 = t0Var.b;
-        long max = Math.max(0L, e20Var.a);
+        long max = Math.max(0L, f20Var.a);
         long j10 = this.U.b;
         if (j10 >= 0) {
             j3 = Math.min(j3, j10);
@@ -1059,30 +1059,30 @@ public final class b50 extends h50 {
         }
     }
 
-    public final org.telegram.messenger.e20 t(File file, long j3, ry0 ry0Var) {
+    public final org.telegram.messenger.f20 t(File file, long j3, ry0 ry0Var) {
         zi.p0 p0Var;
-        org.telegram.messenger.e20 e20Var = new org.telegram.messenger.e20();
-        e20Var.a = -1L;
-        e20Var.b = -1L;
-        e20Var.r = j3;
-        e20Var.q = Math.max(1L, ry0Var == null ? file.length() : ry0Var.a);
-        e20Var.s = true;
+        org.telegram.messenger.f20 f20Var = new org.telegram.messenger.f20();
+        f20Var.a = -1L;
+        f20Var.b = -1L;
+        f20Var.r = j3;
+        f20Var.q = Math.max(1L, ry0Var == null ? file.length() : ry0Var.a);
+        f20Var.s = true;
         zi.u0 u0Var = this.P;
-        e20Var.n = (u0Var == null || (p0Var = u0Var.u) == null) ? 30 : p0Var.a;
+        f20Var.n = (u0Var == null || (p0Var = u0Var.u) == null) ? 30 : p0Var.a;
         zi.s0 s0Var = this.Q;
         int i7 = s0Var == null ? 480 : s0Var.a;
-        e20Var.h = i7;
-        e20Var.k = i7;
-        e20Var.i = i7;
-        e20Var.l = i7;
-        e20Var.o = file.getAbsolutePath();
+        f20Var.h = i7;
+        f20Var.k = i7;
+        f20Var.i = i7;
+        f20Var.l = i7;
+        f20Var.o = file.getAbsolutePath();
         if (ry0Var != null) {
-            e20Var.w = ry0Var.b;
-            e20Var.x = ry0Var.c;
-            e20Var.y = ry0Var.d;
-            e20Var.z = ry0Var.e;
+            f20Var.w = ry0Var.b;
+            f20Var.x = ry0Var.c;
+            f20Var.y = ry0Var.d;
+            f20Var.z = ry0Var.e;
         }
-        return e20Var;
+        return f20Var;
     }
 
     public final void u() {
@@ -1183,6 +1183,6 @@ public final class b50 extends h50 {
             return;
         }
         this.j0 = true;
-        org.telegram.messenger.ks.f(this.f).k(org.telegram.messenger.ks.n2, Integer.valueOf(this.h), Integer.valueOf(i7));
+        org.telegram.messenger.ls.f(this.f).k(org.telegram.messenger.ls.n2, Integer.valueOf(this.h), Integer.valueOf(i7));
     }
 }

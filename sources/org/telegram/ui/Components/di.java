@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class di implements mj {
     public final /* synthetic */ ui a;
@@ -16,7 +16,7 @@ public final class di implements mj {
     public final void a(TLRPC.User user, boolean z10, int i7, long j3) {
         org.telegram.ui.bn bnVar = (org.telegram.ui.bn) this.a.a2;
         if (bnVar.u7()) {
-            org.telegram.messenger.xy g10 = org.telegram.messenger.xy.g(user, bnVar.l6, bnVar.F5, bnVar.m4, null, null, z10, i7, 0);
+            org.telegram.messenger.yy g10 = org.telegram.messenger.yy.g(user, bnVar.l6, bnVar.F5, bnVar.m4, null, null, z10, i7, 0);
             g10.K = bnVar.Y8();
             g10.O = 0L;
             g10.L = false;

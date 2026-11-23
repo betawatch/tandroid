@@ -6,9 +6,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bj;
+import org.telegram.messenger.cj;
 import org.telegram.messenger.g6;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.tx;
 import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b0 implements tx {
     public final /* synthetic */ h0 a;
@@ -103,12 +103,12 @@ public final class b0 implements tx {
     public final void n() {
         h0 h0Var = this.a;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, h0Var.getContext(), h0Var.A1);
-        String N0 = gd.N0(2131752056, null);
+        String N0 = hd.N0(2131752056, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = gd.N0(2131752057, null);
-        alertDialog$Builder.k(gd.N0(2131752087, null), new org.telegram.tgnet.u(this, 29));
-        alertDialog$Builder.h(gd.N0(2131752577, null), null);
+        t1Var.U = hd.N0(2131752057, null);
+        alertDialog$Builder.k(hd.N0(2131752087, null), new org.telegram.tgnet.u(this, 29));
+        alertDialog$Builder.h(hd.N0(2131752577, null), null);
         alertDialog$Builder.p();
     }
 
@@ -194,7 +194,7 @@ public final class b0 implements tx {
     }
 
     @Override // org.telegram.ui.Components.tx
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, bj bjVar, boolean z10, int i7) {
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, cj cjVar, boolean z10, int i7) {
     }
 
     @Override // org.telegram.ui.Components.tx

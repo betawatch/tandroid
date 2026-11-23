@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hf implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -47,7 +47,7 @@ public final class hf implements View.OnKeyListener {
             if (chatActivityEnterView.V2 != 1 || chatActivityEnterView.c3 == null) {
                 if (keyEvent.getAction() == 1) {
                     if (chatActivityEnterView.V2 == 1 && chatActivityEnterView.c3 != null) {
-                        org.telegram.messenger.mp.u1(chatActivityEnterView.R).h7.edit().putInt("hidekeyboard_" + chatActivityEnterView.G3, chatActivityEnterView.c3.e1()).commit();
+                        org.telegram.messenger.np.u1(chatActivityEnterView.R).h7.edit().putInt("hidekeyboard_" + chatActivityEnterView.G3, chatActivityEnterView.c3.e1()).commit();
                     }
                     if (chatActivityEnterView.H2 != 0) {
                         chatActivityEnterView.P1(0, true);

@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import l2.q1;
 import oi.z3;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.k5;
 import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.jn;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.qf;
 import org.telegram.ui.md0;
 import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -423,7 +423,7 @@ public final class e {
         }
         this.d = vVar;
         this.e = d;
-        Message obtainMessage = this.a.obtainMessage(ks.l4, new q0.b(null, vVar));
+        Message obtainMessage = this.a.obtainMessage(ls.l4, new q0.b(null, vVar));
         obtainMessage.arg1 = i7;
         obtainMessage.sendToTarget();
     }
@@ -712,7 +712,7 @@ public final class e {
                             arrayList2.add(vVar);
                             if (mVar2.c().isEmpty()) {
                                 vVar.i(mVar2);
-                                bVar.b(ks.g4, vVar);
+                                bVar.b(ls.g4, vVar);
                             } else {
                                 arrayList3.add(new q0.b(vVar, mVar2));
                             }
@@ -749,7 +749,7 @@ public final class e {
                     q0.b bVar2 = (q0.b) obj;
                     v vVar3 = (v) bVar2.a;
                     vVar3.i((m) bVar2.b);
-                    bVar.b(ks.g4, vVar3);
+                    bVar.b(ls.g4, vVar3);
                 }
                 int size6 = arrayList4.size();
                 boolean z14 = z13;
@@ -771,7 +771,7 @@ public final class e {
                 }
                 o(z10);
                 for (size2 = arrayList.size() - 1; size2 >= i7; size2--) {
-                    bVar.b(ks.h4, (v) arrayList.remove(size2));
+                    bVar.b(ls.h4, (v) arrayList.remove(size2));
                 }
                 bVar.b(515, uVar);
             }
@@ -793,13 +793,13 @@ public final class e {
             int i10 = i7 & 1;
             b bVar = this.a;
             if (i10 != 0) {
-                bVar.b(ks.i4, vVar);
+                bVar.b(ls.i4, vVar);
             }
             if ((i7 & 2) != 0) {
-                bVar.b(ks.j4, vVar);
+                bVar.b(ls.j4, vVar);
             }
             if ((i7 & 4) != 0) {
-                bVar.b(ks.k4, vVar);
+                bVar.b(ls.k4, vVar);
             }
         }
         return i7;

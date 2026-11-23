@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.e40;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x extends View implements b6 {
     public e40 E;
@@ -68,8 +68,8 @@ public final class x extends View implements b6 {
         w9Var2.b = org.telegram.messenger.g0.L(95.0f);
         w9Var2.b();
         paint.setColor(i0.a.f(0.0f, m6.x0(null, m6.gh, false), m6.x0(null, m6.hh, false)));
-        paint.setAlpha(ks.n1);
-        paint2.setColor(i0.a.o(-16777216, ks.L1));
+        paint.setAlpha(ls.n1);
+        paint2.setColor(i0.a.o(-16777216, ls.L1));
     }
 
     public static void a(x xVar, boolean z10) {

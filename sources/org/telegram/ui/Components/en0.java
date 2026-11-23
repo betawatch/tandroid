@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class en0 {
     public static Paint N;
@@ -42,7 +42,7 @@ public final class en0 {
     public int j;
     public org.telegram.ui.Cells.r1 k;
     public byte[] l;
-    public org.telegram.messenger.fj m;
+    public org.telegram.messenger.gj m;
     public org.telegram.ui.Cells.r1 n;
     public boolean o;
     public int p;
@@ -59,7 +59,7 @@ public final class en0 {
 
     public final void a(Path path, float f10, float f11) {
         float N2 = org.telegram.messenger.g0.N(2.0f);
-        int z10 = org.telegram.messenger.n10.z(14.0f, this.h, 2);
+        int z10 = org.telegram.messenger.o10.z(14.0f, this.h, 2);
         float f12 = f11 * this.w;
         RectF rectF = org.telegram.messenger.g0.P;
         float f13 = N2 / 2.0f;
@@ -140,7 +140,7 @@ public final class en0 {
         hb0 hb0Var;
         float[] fArr;
         float[] fArr2;
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         if (this.l == null || (i7 = this.g) == 0 || this.s <= 0.0f) {
             return;
         }
@@ -172,7 +172,7 @@ public final class en0 {
             path2.reset();
         }
         org.telegram.ui.Cells.r1 r1Var2 = this.k;
-        boolean z10 = (r1Var2 == null || (fjVar = r1Var2.Q5) == null || !fjVar.S4()) ? false : true;
+        boolean z10 = (r1Var2 == null || (gjVar = r1Var2.Q5) == null || !gjVar.S4()) ? false : true;
         float[] fArr3 = this.H;
         if (fArr3 == null || (fArr2 = this.I) == null) {
             f10 = N2;
@@ -265,7 +265,7 @@ public final class en0 {
                 rectF = org.telegram.messenger.g0.P;
                 float N6 = org.telegram.messenger.g0.N(f11) * (1.0f - this.K) * f10;
                 float N7 = org.telegram.messenger.g0.N(2.0f);
-                int z11 = org.telegram.messenger.n10.z(14.0f, this.h, 2);
+                int z11 = org.telegram.messenger.o10.z(14.0f, this.h, 2);
                 float f22 = N5 * this.w;
                 float f23 = N7 / 2.0f;
                 rectF.set((org.telegram.messenger.g0.N(1.0f) + N6) - f23, ((-f22) - f23) + org.telegram.messenger.g0.L(7.0f) + z11, org.telegram.messenger.g0.N(1.0f) + N6 + f23, f22 + f23 + org.telegram.messenger.g0.L(7.0f) + z11);
@@ -313,7 +313,7 @@ public final class en0 {
                         cn0Var2.a = (secureRandom.nextFloat() * width) + f32;
                         RectF rectF3 = (RectF) dn0Var.g;
                         cn0Var2.b = (secureRandom.nextFloat() * rectF3.height()) + rectF3.top;
-                        double nextInt = (secureRandom.nextInt(org.telegram.messenger.ks.e3) - 125) * 0.017453292519943295d;
+                        double nextInt = (secureRandom.nextInt(org.telegram.messenger.ls.e3) - 125) * 0.017453292519943295d;
                         cn0Var2.d = ((float) (Math.cos(nextInt) - Math.sin(nextInt))) * 0.8f;
                         cn0Var2.e = ((float) (Math.cos(nextInt) + Math.sin(nextInt))) - 0.2f;
                         cn0Var2.f = 1.0f;
@@ -366,8 +366,8 @@ public final class en0 {
     public final void d(Canvas canvas, float f10) {
         d6 d6Var = this.B;
         float N2 = org.telegram.messenger.g0.N(2.0f);
-        org.telegram.messenger.fj fjVar = this.m;
-        boolean z10 = fjVar != null && fjVar.k.media_unread && !fjVar.N3() && this.c <= 0.0f;
+        org.telegram.messenger.gj gjVar = this.m;
+        boolean z10 = gjVar != null && gjVar.k.media_unread && !gjVar.N3() && this.c <= 0.0f;
         this.u = z10;
         N.setColor(z10 ? this.q : this.o ? this.r : this.p);
         O.setColor(this.q);

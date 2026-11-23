@@ -6,13 +6,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f7 extends FrameLayout {
     public final org.telegram.ui.Components.q9 a;
@@ -25,7 +25,7 @@ public final class f7 extends FrameLayout {
 
     public f7(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
-        this.f = j10.t0;
+        this.f = k10.t0;
         this.h = h6Var;
         setWillNotDraw(false);
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
@@ -63,7 +63,7 @@ public final class f7 extends FrameLayout {
     }
 
     public void setAsNewBotForumTopic(boolean z10) {
-        this.c.setText(gd.N0(z10 ? 2131745239 : 2131745238, null));
+        this.c.setText(hd.N0(z10 ? 2131745239 : 2131745238, null));
         org.telegram.ui.Components.q9 q9Var = this.a;
         q9Var.setAnimatedEmojiDrawable(null);
         qg.a aVar = new qg.a(qg.a.k[0]);

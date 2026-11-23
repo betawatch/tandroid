@@ -22,10 +22,10 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.GCMParameterSpec;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.n5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class k1 {
     public final int a;
@@ -181,7 +181,7 @@ public final class k1 {
                 j1 j1Var = new j1();
                 j1Var.a = uuid;
                 j1Var.b = j3;
-                j1Var.c = n5.m(j10.i(this.a).f());
+                j1Var.c = n5.m(k10.i(this.a).f());
                 long currentTimeMillis = System.currentTimeMillis();
                 j1Var.e = currentTimeMillis;
                 j1Var.d = currentTimeMillis;
@@ -244,7 +244,7 @@ public final class k1 {
         if (this.d && optString == null && !e10.keys().hasNext()) {
             HashSet hashSet = new HashSet();
             for (int i7 = 0; i7 < 4; i7++) {
-                j10 i10 = j10.i(i7);
+                k10 i10 = k10.i(i7);
                 if (i10.p()) {
                     hashSet.add(Long.valueOf(i10.e()));
                 }
@@ -275,7 +275,7 @@ public final class k1 {
         ArrayList arrayList = new ArrayList();
         HashSet hashSet = new HashSet();
         for (int i7 = 0; i7 < 4; i7++) {
-            j10 i10 = j10.i(i7);
+            k10 i10 = k10.i(i7);
             if (i10.p()) {
                 hashSet.add(Long.valueOf(i10.e()));
             }
@@ -299,7 +299,7 @@ public final class k1 {
         }
         HashSet hashSet = new HashSet();
         for (int i7 = 0; i7 < 4; i7++) {
-            j10 i10 = j10.i(i7);
+            k10 i10 = k10.i(i7);
             if (i10.p()) {
                 hashSet.add(Long.valueOf(i10.e()));
             }
@@ -310,7 +310,7 @@ public final class k1 {
             throw new RuntimeException("STORAGE_NOT_FOUND");
         }
         j1Var.b = this.c;
-        j1Var.c = n5.m(j10.i(this.a).f());
+        j1Var.c = n5.m(k10.i(this.a).f());
         j1Var.e = System.currentTimeMillis();
         k(i11);
         this.e = j1Var.a;

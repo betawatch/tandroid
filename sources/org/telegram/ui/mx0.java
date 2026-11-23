@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mx0 extends org.telegram.ui.Components.b71 {
     public boolean a;
@@ -104,13 +104,13 @@ public final class mx0 extends org.telegram.ui.Components.b71 {
     @Override // org.telegram.ui.Components.b71
     public final CharSequence g(int i7) {
         if (i7 == 0) {
-            return org.telegram.messenger.gd.N0(2131744545, null);
+            return org.telegram.messenger.hd.N0(2131744543, null);
         }
         if (!this.a || i7 != e() - 1) {
             return ((fi.i6) this.b.c.h.get(i7 - 1)).b;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131744566, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131744564, null));
         org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.poll_add_plus, 0);
         nqVar.H = 0.8f;
         spannableStringBuilder.setSpan(nqVar, 0, 1, 33);

@@ -1,59 +1,63 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.nr;
+import android.view.KeyEvent;
+import android.view.View;
+import android.webkit.JsPromptResult;
+import android.widget.TextView;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class u5 extends ot {
-    public final org.telegram.ui.Components.g5 e2;
-    public int f2;
-    public final org.telegram.ui.Components.n6 g2;
-    public final /* synthetic */ t6 h2;
+public final class u5 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u5(t6 t6Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
-        super(context, h6Var);
-        this.h2 = t6Var;
-        this.e2 = new org.telegram.ui.Components.g5(this);
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, true, true);
-        this.g2 = n6Var;
-        n6Var.n(0.2f, 160L, nr.h);
-        n6Var.w(org.telegram.messenger.g0.L(15.33f));
-        n6Var.setCallback(this);
-        n6Var.b = 5;
+    public /* synthetic */ u5(Object obj, Object obj2, Object obj3, Object obj4, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a10 = this.e2.a(org.telegram.ui.ActionBar.m6.w0(this.f2 < 0 ? org.telegram.ui.ActionBar.m6.p7 : org.telegram.ui.ActionBar.m6.P5, this.h2.f), false);
-        org.telegram.ui.Components.n6 n6Var = this.g2;
-        n6Var.u(a10);
-        n6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        n6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.rt, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        super.onTextChanged(charSequence, i7, i10, i11);
-        org.telegram.ui.Components.n6 n6Var = this.g2;
-        if (n6Var != null) {
-            this.f2 = 12 - charSequence.length();
-            n6Var.a();
-            String str = "";
-            if (this.f2 <= 4) {
-                str = "" + this.f2;
-            }
-            n6Var.t(str, true, true);
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
+        switch (this.a) {
+            case 0:
+                t5 t5Var = (t5) this.b;
+                if (i7 != 6) {
+                    return false;
+                }
+                String obj = t5Var.getText().toString();
+                if (obj.length() <= 0 || obj.length() > 12) {
+                    org.telegram.messenger.g0.D3(t5Var);
+                } else {
+                    ((y10) this.c).a(obj);
+                    org.telegram.ui.ActionBar.t1 t1Var = ((org.telegram.ui.ActionBar.t1[]) this.d)[0];
+                    if (t1Var != null) {
+                        t1Var.dismiss();
+                    }
+                    View view = (View) this.e;
+                    if (view != null) {
+                        view.requestFocus();
+                    }
+                }
+                return true;
+            default:
+                if (i7 != 6) {
+                    return false;
+                }
+                boolean[] zArr = (boolean[]) this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    ((JsPromptResult) this.c).confirm(((ot) this.d).getText().toString());
+                    ((org.telegram.ui.ActionBar.t1) this.e).dismiss();
+                }
+                return true;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.g2 || super.verifyDrawable(drawable);
     }
 }

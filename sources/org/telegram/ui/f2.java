@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f2 extends View implements org.telegram.ui.Cells.i9, c3 {
     public final p50 a;
@@ -92,7 +92,7 @@ public final class f2 extends View implements org.telegram.ui.Cells.i9, c3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.n10.a(this);
+        return org.telegram.messenger.o10.a(this);
     }
 
     @Override // org.telegram.ui.Cells.i9
@@ -184,7 +184,7 @@ public final class f2 extends View implements org.telegram.ui.Cells.i9, c3 {
         if (spannableStringBuilder.length() == 0) {
             return;
         }
-        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) org.telegram.messenger.gd.N0(2131754858, null));
+        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) org.telegram.messenger.hd.N0(2131754858, null));
         accessibilityNodeInfo.setText(spannableStringBuilder);
     }
 

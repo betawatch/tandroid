@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i30 extends v4.o {
     public final /* synthetic */ f40 b;
@@ -89,7 +89,7 @@ public final class i30 extends v4.o {
             }
             if (i10 >= z30Var.d && i10 < z30Var.e && i7 >= (i14 = f40Var.h5) && i7 < f40Var.i5) {
                 TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) f40Var.y2.get(i7 - i14);
-                return org.telegram.messenger.fj.B1(groupCallParticipant.peer) == org.telegram.messenger.fj.B1(((TLRPC.GroupCallParticipant) f40Var.V2.g.get(i10 - f40Var.K1.d)).peer) && (i7 == i10 || groupCallParticipant.lastActiveDate == ((long) groupCallParticipant.active_date));
+                return org.telegram.messenger.gj.B1(groupCallParticipant.peer) == org.telegram.messenger.gj.B1(((TLRPC.GroupCallParticipant) f40Var.V2.g.get(i10 - f40Var.K1.d)).peer) && (i7 == i10 || groupCallParticipant.lastActiveDate == ((long) groupCallParticipant.active_date));
             }
             if (i10 >= z30Var.f && i10 < z30Var.h && i7 >= (i13 = f40Var.j5) && i7 < f40Var.k5) {
                 return ((Long) f40Var.A2.get(i7 - i13)).equals((Long) f40Var.V2.j.get(i10 - f40Var.K1.f));

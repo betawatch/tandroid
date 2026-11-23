@@ -7,10 +7,10 @@ import c8.bc;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import org.telegram.messenger.x9;
+import org.telegram.messenger.y9;
 import q6.h0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Continuation, com.google.android.gms.common.api.internal.q, com.google.android.gms.common.api.internal.n {
     public static final /* synthetic */ a a = new a();
@@ -142,7 +142,7 @@ public final /* synthetic */ class a implements Continuation, com.google.android
 
     @Override // com.google.android.gms.common.api.internal.n
     public /* synthetic */ void q(Object obj) {
-        ((x9) obj).getClass();
+        ((y9) obj).getClass();
     }
 
     @Override // com.google.android.gms.tasks.Continuation

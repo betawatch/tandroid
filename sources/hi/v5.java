@@ -35,15 +35,16 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.we;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.xe;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.bz;
 import org.telegram.ui.Components.cb0;
 import org.telegram.ui.Components.de0;
 import org.telegram.ui.Components.ee0;
@@ -54,7 +55,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.y51;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class v5 extends FrameLayout {
     public static final /* synthetic */ int C0 = 0;
@@ -215,12 +216,12 @@ public abstract class v5 extends FrameLayout {
             return null;
         }
         if (j3 >= 0) {
-            TLRPC.UserFull d2 = mp.u1(i7).d2(j3);
+            TLRPC.UserFull d2 = np.u1(i7).d2(j3);
             if (d2 != null) {
                 wallPaper = d2.wallpaper;
             }
         } else {
-            TLRPC.ChatFull P0 = mp.u1(i7).P0(-j3);
+            TLRPC.ChatFull P0 = np.u1(i7).P0(-j3);
             if (P0 != null) {
                 wallPaper = P0.wallpaper;
             }
@@ -475,20 +476,20 @@ public abstract class v5 extends FrameLayout {
                     int i7 = c7Var.k0;
                     int i10 = c7Var.l0;
                     int i11 = c7Var.Q;
-                    we weVar = c7Var.m0;
-                    if (((i11 + weVar.k) / 90) % 2 == 1) {
+                    xe xeVar = c7Var.m0;
+                    if (((i11 + xeVar.k) / 90) % 2 == 1) {
                         i10 = i7;
                         i7 = i10;
                     }
-                    float f10 = weVar.e;
-                    float f11 = weVar.f;
+                    float f10 = xeVar.e;
+                    float f11 = xeVar.f;
                     float f12 = i7;
                     float f13 = i10;
                     canvas2.clipRect(((-i7) * f10) / 2.0f, ((-i10) * f11) / 2.0f, (f10 * f12) / 2.0f, (f11 * f13) / 2.0f);
                     float f14 = this.d.m0.c;
                     canvas2.scale(f14, f14);
-                    we weVar2 = this.d.m0;
-                    canvas2.translate(weVar2.a * f12, weVar2.b * f13);
+                    xe xeVar2 = this.d.m0;
+                    canvas2.translate(xeVar2.a * f12, xeVar2.b * f13);
                     canvas2.rotate(this.d.m0.d + r0.k);
                     if (this.d.m0.l) {
                         canvas2.scale(-1.0f, 1.0f);
@@ -586,7 +587,7 @@ public abstract class v5 extends FrameLayout {
                             int round2 = Math.round(enhanceValue * 100.0f);
                             int round3 = Math.round(de0Var.I * 100.0f);
                             if (round == round2 || !(round == 100 || round == 0)) {
-                                if (Math.abs(round - round3) > (bz.o() == 2 ? 5 : 10)) {
+                                if (Math.abs(round - round3) > (cz.o() == 2 ? 5 : 10)) {
                                     org.telegram.messenger.g0.a4(de0Var);
                                     de0Var.I = i7;
                                 }
@@ -645,13 +646,13 @@ public abstract class v5 extends FrameLayout {
             int i7 = c7Var3.k0;
             int i10 = c7Var3.l0;
             int i11 = c7Var3.Q;
-            we weVar = c7Var3.m0;
-            if (((i11 + weVar.k) / 90) % 2 == 1) {
+            xe xeVar = c7Var3.m0;
+            if (((i11 + xeVar.k) / 90) % 2 == 1) {
                 i10 = i7;
                 i7 = i10;
             }
-            float f10 = weVar.e;
-            float f11 = weVar.f;
+            float f10 = xeVar.e;
+            float f11 = xeVar.f;
             canvas.clipRect(((-i7) * f10) / 2.0f, ((-i10) * f11) / 2.0f, (i7 * f10) / 2.0f, (i10 * f11) / 2.0f);
             canvas.rotate(this.d.Q);
             c7 c7Var4 = this.d;
@@ -733,7 +734,7 @@ public abstract class v5 extends FrameLayout {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v0, types: [android.graphics.Bitmap[], java.io.Serializable] */
-    public final void h(x10 x10Var, View... viewArr) {
+    public final void h(y10 y10Var, View... viewArr) {
         y51 y51Var;
         int L = (int) (org.telegram.messenger.g0.L(26.0f) * org.telegram.messenger.g0.p);
         int L2 = (int) (org.telegram.messenger.g0.L(30.33f) * org.telegram.messenger.g0.p);
@@ -758,7 +759,7 @@ public abstract class v5 extends FrameLayout {
                 }
             }
         }
-        Utilities.e.c(new r5(L, L2, L3, r52, x10Var, 0));
+        Utilities.e.c(new r5(L, L2, L3, r52, y10Var, 0));
     }
 
     public abstract void i();
@@ -996,15 +997,15 @@ public abstract class v5 extends FrameLayout {
         }
     }
 
-    public final void q(fj fjVar) {
+    public final void q(gj gjVar) {
         long duration;
         c7 c7Var = this.d;
         if (c7Var != null) {
             c7Var.j = true;
-            if (fjVar != null) {
-                int i7 = fjVar.K1;
-                if (fjVar.k != null) {
-                    TLRPC.Document F0 = fjVar.F0();
+            if (gjVar != null) {
+                int i7 = gjVar.K1;
+                if (gjVar.k != null) {
+                    TLRPC.Document F0 = gjVar.F0();
                     if (F0 != null && F0.id != 0) {
                         this.d.z = new TLRPC.TL_inputDocument();
                         TLRPC.InputDocument inputDocument = this.d.z;
@@ -1013,7 +1014,7 @@ public abstract class v5 extends FrameLayout {
                         inputDocument.access_hash = F0.access_hash;
                     }
                     int i10 = 0;
-                    if (TextUtils.isEmpty(fjVar.k.attachPath)) {
+                    if (TextUtils.isEmpty(gjVar.k.attachPath)) {
                         org.telegram.messenger.w7.G(i7);
                         File J = org.telegram.messenger.w7.J(F0, null, false, true);
                         if (J == null || !J.exists()) {
@@ -1035,7 +1036,7 @@ public abstract class v5 extends FrameLayout {
                         }
                         this.d.y = J.getAbsolutePath();
                     } else {
-                        this.d.y = fjVar.k.attachPath;
+                        this.d.y = gjVar.k.attachPath;
                     }
                     c7 c7Var3 = this.d;
                     c7Var3.A = null;
@@ -1113,7 +1114,7 @@ public abstract class v5 extends FrameLayout {
         if (i7 == 0 || c7Var.B0 == 0) {
             Bitmap bitmap = this.a;
             if (bitmap != null) {
-                new ai.a2(this, measuredHeight, i10).a(c8.j0.b(bitmap, true));
+                new ai.b2(this, measuredHeight, i10).a(c8.j0.b(bitmap, true));
             } else {
                 paint.setShader(null);
             }
@@ -1279,7 +1280,7 @@ public abstract class v5 extends FrameLayout {
             y51 y51Var3 = this.n;
             ez ezVar = y51Var3.b;
             if (ezVar != null) {
-                ezVar.postRunnable(new org.telegram.ui.Components.bz(ezVar, i7));
+                ezVar.postRunnable(new bz(ezVar, i7));
             }
             y51Var3.a = null;
             removeView(this.n);
@@ -1337,7 +1338,7 @@ public abstract class v5 extends FrameLayout {
         }
         c();
         w(true);
-        boolean z10 = c7Var.u && (arrayList = c7Var.v) != null && arrayList.size() == 1 && ((fj) c7Var.v.get(0)).D == 5;
+        boolean z10 = c7Var.u && (arrayList = c7Var.v) != null && arrayList.size() == 1 && ((gj) c7Var.v.get(0)).D == 5;
         cb cbVar2 = this.G;
         File file2 = c7Var.Z0;
         if (file2 == null) {
@@ -1592,7 +1593,7 @@ public abstract class v5 extends FrameLayout {
             this.E.u0(z11);
             this.E.p0(j12);
         } else if (z10) {
-            if (Math.abs(this.E.S() - j12) > (j() ? ks.X4 : 120)) {
+            if (Math.abs(this.E.S() - j12) > (j() ? ls.X4 : 120)) {
                 this.E.p0(j12);
             }
         }
@@ -1670,7 +1671,7 @@ public abstract class v5 extends FrameLayout {
             this.y.u0(z12);
             this.y.q0(j11, false);
         } else if (z10) {
-            if (Math.abs(this.y.S() - j11) > (j() ? ks.X4 : 120)) {
+            if (Math.abs(this.y.S() - j11) > (j() ? ls.X4 : 120)) {
                 this.y.q0(j11, false);
             }
         }

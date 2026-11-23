@@ -2,11 +2,11 @@ package org.telegram.ui.Cells;
 
 import android.R;
 import java.util.ArrayList;
-import org.telegram.messenger.cj;
 import org.telegram.messenger.dj;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.ej;
+import org.telegram.messenger.gj;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,13 +32,13 @@ public final /* synthetic */ class e1 implements Runnable {
                 g0Var.a(r1Var.Yb);
                 g0Var.a(r1Var.Zb);
                 r1Var.j3();
-                fj fjVar = r1Var.Q5;
-                if (fjVar != null) {
-                    fjVar.n0(null);
-                    fj fjVar2 = r1Var.Q5;
-                    if (fjVar2.z != null) {
-                        fjVar2.z = null;
-                        fjVar2.k0();
+                gj gjVar = r1Var.Q5;
+                if (gjVar != null) {
+                    gjVar.n0(null);
+                    gj gjVar2 = r1Var.Q5;
+                    if (gjVar2.z != null) {
+                        gjVar2.z = null;
+                        gjVar2.k0();
                     }
                     m1 m1Var = r1Var.Sa;
                     if (m1Var != null) {
@@ -70,25 +70,25 @@ public final /* synthetic */ class e1 implements Runnable {
                 int i7 = 0;
                 r1Var5.P5 = false;
                 r1Var5.getMessageObject().N0 = true;
-                dj djVar = r1Var5.q3;
-                if (djVar != null) {
-                    ArrayList arrayList = djVar.e;
+                ej ejVar = r1Var5.q3;
+                if (ejVar != null) {
+                    ArrayList arrayList = ejVar.e;
                     int size = arrayList.size();
                     int i10 = 0;
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        ((cj) obj).y.clear();
+                        ((dj) obj).y.clear();
                     }
                 }
-                dj djVar2 = r1Var5.m3;
-                if (djVar2 != null) {
-                    ArrayList arrayList2 = djVar2.e;
+                ej ejVar2 = r1Var5.m3;
+                if (ejVar2 != null) {
+                    ArrayList arrayList2 = ejVar2.e;
                     int size2 = arrayList2.size();
                     while (i7 < size2) {
                         Object obj2 = arrayList2.get(i7);
                         i7++;
-                        ((cj) obj2).y.clear();
+                        ((dj) obj2).y.clear();
                     }
                 } else {
                     ArrayList arrayList3 = r1Var5.Q5.B2;
@@ -97,7 +97,7 @@ public final /* synthetic */ class e1 implements Runnable {
                         while (i7 < size3) {
                             Object obj3 = arrayList3.get(i7);
                             i7++;
-                            ((cj) obj3).y.clear();
+                            ((dj) obj3).y.clear();
                         }
                     }
                 }

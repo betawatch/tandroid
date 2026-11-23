@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gv extends v4.c0 {
     public boolean I;
@@ -173,9 +173,9 @@ public final class gv extends v4.c0 {
                 int paddingTop = bxVar.a.getPaddingTop();
                 int L2 = (z10 || cxVar.H3.c() || cxVar.S) ? paddingTop : paddingTop - org.telegram.messenger.g0.L(81.0f);
                 if (!cxVar.S && bxVar.s == 0 && !cxVar.n2 && cxVar.Y2 == 0 && cxVar.a3 == 0) {
-                    org.telegram.messenger.mp messagesController = cxVar.getMessagesController();
+                    org.telegram.messenger.np messagesController = cxVar.getMessagesController();
                     messagesController.getClass();
-                    if (org.telegram.messenger.bz.q1) {
+                    if (org.telegram.messenger.cz.q1) {
                         i10 = paddingTop;
                         if (messagesController.R.f(1 | 2305843009213693952L) != null && bxVar.w == 2) {
                             i11 = 1;
@@ -239,9 +239,9 @@ public final class gv extends v4.c0 {
                                         kv kvVar = bxVar.d;
                                         if (((jg.k) kvVar.N.get(i11)).a == 0) {
                                             if (!((jg.k) kvVar.N.get(i11)).f || kvVar.K) {
-                                                L = org.telegram.messenger.g0.L(org.telegram.messenger.bz.p1 ? 76.0f : 70.0f);
+                                                L = org.telegram.messenger.g0.L(org.telegram.messenger.cz.p1 ? 76.0f : 70.0f);
                                             } else {
-                                                L = org.telegram.messenger.g0.L(org.telegram.messenger.bz.p1 ? 86.0f : 91.0f);
+                                                L = org.telegram.messenger.g0.L(org.telegram.messenger.cz.p1 ? 86.0f : 91.0f);
                                             }
                                             i14 = L + 1;
                                         } else {
@@ -303,7 +303,7 @@ public final class gv extends v4.c0 {
                                             boolean z16 = bxVar.w != 2;
                                             bxVar.w = 2;
                                             if (z16 && org.telegram.messenger.g0.C1()) {
-                                                org.telegram.messenger.g0.i2(org.telegram.messenger.gd.N0(2131754924, null));
+                                                org.telegram.messenger.g0.i2(org.telegram.messenger.hd.N0(2131754924, null));
                                             }
                                             jv jvVar3 = bxVar.n;
                                             z11 = z15;
@@ -417,9 +417,9 @@ public final class gv extends v4.c0 {
             if (z10) {
             }
             if (!cxVar.S) {
-                org.telegram.messenger.mp messagesController2 = cxVar.getMessagesController();
+                org.telegram.messenger.np messagesController2 = cxVar.getMessagesController();
                 messagesController2.getClass();
-                if (org.telegram.messenger.bz.q1) {
+                if (org.telegram.messenger.cz.q1) {
                 }
             }
             i10 = paddingTop2;

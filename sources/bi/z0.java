@@ -7,13 +7,13 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.aj;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.zi;
+import org.telegram.messenger.bj;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.ch;
 import org.telegram.ui.bh;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class z0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -123,15 +123,15 @@ public final class z0 extends AnimatorListenerAdapter {
                         r1Var.ob = false;
                         r1Var.setVisibility(0);
                     }
-                    aj currentMessagesGroup = r1Var.getCurrentMessagesGroup();
+                    bj currentMessagesGroup = r1Var.getCurrentMessagesGroup();
                     if (currentMessagesGroup != null) {
-                        zi ziVar = currentMessagesGroup.m;
-                        ziVar.n = 1.0f;
-                        ziVar.h = 0.0f;
-                        ziVar.f = 0.0f;
-                        ziVar.g = 0.0f;
-                        ziVar.e = 0.0f;
-                        ziVar.j = false;
+                        aj ajVar = currentMessagesGroup.m;
+                        ajVar.n = 1.0f;
+                        ajVar.h = 0.0f;
+                        ajVar.f = 0.0f;
+                        ajVar.g = 0.0f;
+                        ajVar.e = 0.0f;
+                        ajVar.j = false;
                     }
                 }
                 if (kVar.z.remove(f1Var)) {
@@ -186,7 +186,7 @@ public final class z0 extends AnimatorListenerAdapter {
             case 2:
                 super.onAnimationStart(animator);
                 i7 = ((org.telegram.ui.ActionBar.g2) ((bn) this.e)).currentAccount;
-                this.b = ks.f(i7).q(null, this.b, true);
+                this.b = ls.f(i7).q(null, this.b, true);
                 break;
             case 3:
                 ((pi.k) this.e).getClass();

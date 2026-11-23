@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public final int E;
     public org.telegram.ui.Components.ek0 a;
     public v4.c0 b;
@@ -41,10 +41,10 @@ public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(this, view);
         I.X(new ColorDrawable(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false)));
         int i7 = this.E;
-        I.l(0, org.telegram.messenger.gd.N0(2131743668, null), new tr0(7, this, l10), i7 == 1);
+        I.l(0, org.telegram.messenger.hd.N0(2131743666, null), new tr0(7, this, l10), i7 == 1);
         boolean z10 = i7 != 1;
-        I.m(i7 == 0 ? R.drawable.msg_user_remove : 0, new qt0(this, l10), org.telegram.messenger.gd.N0(2131746125, null), z10, true);
-        I.V = org.telegram.messenger.ks.U2;
+        I.m(i7 == 0 ? R.drawable.msg_user_remove : 0, new qt0(this, l10), org.telegram.messenger.hd.N0(2131746125, null), z10, true);
+        I.V = org.telegram.messenger.ls.U2;
         I.a0();
     }
 
@@ -129,11 +129,11 @@ public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         int i7 = this.E;
         if (i7 == 1) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131753678, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131753678, null));
         } else if (i7 == 2) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131750717, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131750717, null));
         } else {
-            this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131748097, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131748097, null));
         }
         this.simpleActionBar.setActionBarMenuOnItemClick(new hs0(this, 4));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -141,9 +141,9 @@ public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         org.telegram.ui.Components.vy vyVar = new org.telegram.ui.Components.vy(context, null);
         this.d = vyVar;
         if (i7 == 1) {
-            vyVar.setText(org.telegram.messenger.gd.N0(2131748046, null));
+            vyVar.setText(org.telegram.messenger.hd.N0(2131748046, null));
         } else {
-            vyVar.setText(org.telegram.messenger.gd.N0(2131748030, null));
+            vyVar.setText(org.telegram.messenger.hd.N0(2131748030, null));
         }
         org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
         this.a = ek0Var;
@@ -160,7 +160,7 @@ public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         rt0 rt0Var = new rt0(this, context);
         this.c = rt0Var;
         ek0Var3.setAdapter(rt0Var);
-        this.a.setVerticalScrollbarPosition(org.telegram.messenger.gd.a0 ? 1 : 2);
+        this.a.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
         frameLayout.addView(this.a, c8.ma.c(-1.0f, -1));
         frameLayout.addView(this.d, c8.ma.c(-1.0f, -1));
         int i10 = 27;
@@ -178,11 +178,11 @@ public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         org.telegram.ui.Components.ek0 ek0Var;
-        if (i7 != org.telegram.messenger.ks.r) {
-            if (i7 == org.telegram.messenger.ks.g0) {
+        if (i7 != org.telegram.messenger.ls.r) {
+            if (i7 == org.telegram.messenger.ls.g0) {
                 this.d.c();
                 a0();
                 return;
@@ -190,7 +190,7 @@ public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             return;
         }
         int intValue = ((Integer) objArr[0]).intValue();
-        int i11 = org.telegram.messenger.mp.I8;
+        int i11 = org.telegram.messenger.np.I8;
         if (((intValue & 2) == 0 && (intValue & 1) == 0) || (ek0Var = this.a) == null) {
             return;
         }
@@ -228,9 +228,9 @@ public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         super.onFragmentCreate();
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.r);
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.r);
         if (this.E == 1) {
-            org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.g0);
+            org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.g0);
         }
         return true;
     }
@@ -238,9 +238,9 @@ public final class st0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.r);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.r);
         if (this.E == 1) {
-            org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.g0);
+            org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.g0);
         }
     }
 

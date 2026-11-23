@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zr0 implements jg.y1, org.telegram.ui.Cells.a5 {
     public final /* synthetic */ bs0 a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class zr0 implements jg.y1, org.telegram.ui.Cells.a
         TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
         tL_chatChannelParticipant.channelParticipant = channelParticipant;
-        tL_chatChannelParticipant.user_id = org.telegram.messenger.fj.B1(channelParticipant.peer);
+        tL_chatChannelParticipant.user_id = org.telegram.messenger.gj.B1(channelParticipant.peer);
         tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
         tL_chatChannelParticipant.date = channelParticipant.date;
         return bs0Var.s.G1.h(tL_chatChannelParticipant, true, !z10, b5Var);

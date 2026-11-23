@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p90 extends z40 {
     public p90(s90 s90Var, Bundle bundle) {
@@ -28,8 +28,8 @@ public final class p90 extends z40 {
                 return;
             }
             TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-            org.telegram.messenger.mp.u1(p90Var.currentAccount).f4(groupcall.users, false);
-            org.telegram.messenger.mp.u1(p90Var.currentAccount).Z3(groupcall.chats, false);
+            org.telegram.messenger.np.u1(p90Var.currentAccount).f4(groupcall.users, false);
+            org.telegram.messenger.np.u1(p90Var.currentAccount).Z3(groupcall.chats, false);
             if (LaunchActivity.H1 == null) {
                 return;
             }
@@ -41,9 +41,9 @@ public final class p90 extends z40 {
             return;
         }
         TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-        org.telegram.messenger.mp.u1(p90Var.currentAccount).f4(updates.users, false);
-        org.telegram.messenger.mp.u1(p90Var.currentAccount).Z3(updates.chats, false);
-        ArrayList B0 = org.telegram.messenger.mp.B0(updates, TL_update.TL_updateGroupCall.class);
+        org.telegram.messenger.np.u1(p90Var.currentAccount).f4(updates.users, false);
+        org.telegram.messenger.np.u1(p90Var.currentAccount).Z3(updates.chats, false);
+        ArrayList B0 = org.telegram.messenger.np.B0(updates, TL_update.TL_updateGroupCall.class);
         int size = B0.size();
         TLRPC.GroupCall groupCall2 = null;
         while (i7 < size) {

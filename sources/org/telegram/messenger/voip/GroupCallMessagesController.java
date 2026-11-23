@@ -14,10 +14,10 @@ import java.util.concurrent.TimeUnit;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
+import org.telegram.messenger.az;
 import org.telegram.messenger.c1;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.json.TLJsonBuilder;
@@ -25,7 +25,7 @@ import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class GroupCallMessagesController extends c1 {
     private static volatile GroupCallMessagesController[] Instance = new GroupCallMessagesController[4];
@@ -33,14 +33,14 @@ public class GroupCallMessagesController extends c1 {
     private final LongSparseArray<List<CallMessageListener>> callMessagesListeners;
     private final Set<String> sentMessageIds;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public interface CallMessageListener {
         void onNewGroupCallMessage(long j3, GroupCallMessage groupCallMessage);
 
         void onPopGroupCallMessage();
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class MessagesList {
         private final List<GroupCallMessage> messages;
         private final Set<Long> randomIds;
@@ -144,7 +144,7 @@ public class GroupCallMessagesController extends c1 {
             TLRPC.TL_groupCallMessage tL_groupCallMessage2 = new TLRPC.TL_groupCallMessage();
             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
             tL_groupCallMessage2.message = tL_textWithEntities;
-            tL_textWithEntities.text = gd.N0(2131749298, null);
+            tL_textWithEntities.text = hd.N0(2131749298, null);
             org.telegram.messenger.g0.g3(new e(this, j3, new GroupCallMessage(this.currentAccount, j10, 0L, tL_groupCallMessage2.message), 2));
             return;
         }
@@ -285,7 +285,7 @@ public class GroupCallMessagesController extends c1 {
             return false;
         }
         getSendMessagesHelper().getClass();
-        long E = zy.E();
+        long E = az.E();
         if (sharedInstance.isConference()) {
             ConferenceCall conferenceCall = sharedInstance.conference;
             if (conferenceCall == null || (groupCall = conferenceCall.groupCall) == null || groupCall.id != j10) {

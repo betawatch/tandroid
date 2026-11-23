@@ -20,15 +20,15 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.cb0;
 import org.telegram.ui.Components.nr;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class n2 extends FrameLayout {
     public float E;
@@ -113,7 +113,7 @@ public class n2 extends FrameLayout {
     }
 
     public final void c() {
-        Bitmap bitmap = this.d.getBitmap(ks.g2, ks.g2);
+        Bitmap bitmap = this.d.getBitmap(ls.g2, ls.g2);
         if (bitmap == null || bitmap.getPixel(0, 0) == 0) {
             return;
         }
@@ -130,7 +130,7 @@ public class n2 extends FrameLayout {
         if (this.c) {
             float scaleX = ((View) getParent()).getScaleX();
             this.w.setAlpha(1.0f - f10);
-            float w10 = !z10 ? n10.w(0.4f, scaleX, f10, 1.0f / scaleX) : 1.0f - (0.4f * f10);
+            float w10 = !z10 ? o10.w(0.4f, scaleX, f10, 1.0f / scaleX) : 1.0f - (0.4f * f10);
             ImageView imageView = this.s;
             imageView.setScaleX(w10);
             imageView.setScaleY(w10);
@@ -503,7 +503,7 @@ public class n2 extends FrameLayout {
         frameLayout.addView(imageView2, ma.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
         TextView textView = new TextView(getContext());
         this.w = textView;
-        textView.setText(gd.N0(2131742979, null));
+        textView.setText(hd.N0(2131742977, null));
         textView.setGravity(17);
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView.setTextColor(-1);

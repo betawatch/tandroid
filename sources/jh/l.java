@@ -8,11 +8,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import h6.m;
 import hi.e9;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.cb0;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l {
     public static final Rect f = new Rect();
@@ -88,11 +88,11 @@ public final class l {
                 bVar.f.eraseColor(0);
             }
             Canvas canvas = new Canvas(bVar.f);
-            canvas.scale(f10 / round, ks.q2 / round2);
+            canvas.scale(f10 / round, ls.q2 / round2);
             Rect bounds = drawable.getBounds();
             Rect rect = f;
             rect.set(bounds);
-            drawable.setBounds(0, 0, 120, ks.q2);
+            drawable.setBounds(0, 0, 120, ls.q2);
             drawable.draw(canvas);
             drawable.setBounds(rect);
             bVar.a(bVar.f);

@@ -7,7 +7,7 @@ import org.telegram.ui.Components.g70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u1 implements g70, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ TLRPC.User a;

@@ -7,7 +7,7 @@ import c8.l9;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.h6;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n extends s11 {
     public boolean f2;
@@ -55,7 +55,7 @@ public final class n extends s11 {
             return;
         }
         if (linkedHashMap.size() - (linkedHashMap.containsKey(-1L) ? 1 : 0) >= i7) {
-            lc.b0(pVar).t(gd.G(i7, "ReactionMaxCountError", new Object[0]), null).j();
+            lc.b0(pVar).t(hd.G(i7, "ReactionMaxCountError", new Object[0]), null).j();
             return;
         }
         try {

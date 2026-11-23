@@ -4,14 +4,14 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p8 implements q8 {
     public final int a;
@@ -71,10 +71,10 @@ public final class p8 implements q8 {
             if (j10 == 0) {
                 getsavedstargifts2.peer = new TLRPC.TL_inputPeerSelf();
             } else {
-                getsavedstargifts2.peer = mp.u1(i7).l1(j10);
+                getsavedstargifts2.peer = np.u1(i7).l1(j10);
             }
             getsavedstargifts2.offset = z10 ? "" : this.k;
-            getsavedstargifts2.limit = z10 ? Math.max(mp.u1(i7).N6, 15) : 30;
+            getsavedstargifts2.limit = z10 ? Math.max(np.u1(i7).N6, 15) : 30;
             getsavedstargifts = getsavedstargifts2;
             if (this.c) {
                 getsavedstargifts2.flags |= 64;
@@ -117,7 +117,7 @@ public final class p8 implements q8 {
 
     @Override // di.q8
     public final void d() {
-        ks.f(this.a).k(ks.I3, Long.valueOf(this.b), this);
+        ls.f(this.a).k(ls.I3, Long.valueOf(this.b), this);
     }
 
     @Override // di.q8
@@ -167,7 +167,7 @@ public final class p8 implements q8 {
             return tL_inputSavedStarGiftUser;
         }
         TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat = new TL_stars.TL_inputSavedStarGiftChat();
-        tL_inputSavedStarGiftChat.peer = mp.u1(this.a).l1(this.b);
+        tL_inputSavedStarGiftChat.peer = np.u1(this.a).l1(this.b);
         tL_inputSavedStarGiftChat.saved_id = savedStarGift.saved_id;
         return tL_inputSavedStarGiftChat;
     }
@@ -253,7 +253,7 @@ public final class p8 implements q8 {
                 }
             }
             if (z10) {
-                ks.f(i7).k(ks.I3, Long.valueOf(this.b), this);
+                ls.f(i7).k(ls.I3, Long.valueOf(this.b), this);
             }
         }
         if (starGift != null) {
@@ -275,7 +275,7 @@ public final class p8 implements q8 {
             if (y8.k((TL_stars.SavedStarGift) arrayList.get(i7), savedStarGift)) {
                 arrayList.remove(i7);
                 this.n = Math.max(0, this.n - 1);
-                ks.f(this.a).k(ks.I3, Long.valueOf(this.b), this);
+                ls.f(this.a).k(ls.I3, Long.valueOf(this.b), this);
                 return true;
             }
             i7++;
@@ -323,7 +323,7 @@ public final class p8 implements q8 {
         int i10 = this.a;
         if (!z10) {
             TL_stars.toggleStarGiftsPinnedToTop togglestargiftspinnedtotop = new TL_stars.toggleStarGiftsPinnedToTop();
-            togglestargiftspinnedtotop.peer = mp.u1(i10).l1(j3);
+            togglestargiftspinnedtotop.peer = np.u1(i10).l1(j3);
             ArrayList i11 = i();
             int size = i11.size();
             while (i7 < size) {
@@ -335,7 +335,7 @@ public final class p8 implements q8 {
             return;
         }
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
-        updatestargiftcollection.peer = mp.u1(i10).l1(j3);
+        updatestargiftcollection.peer = np.u1(i10).l1(j3);
         updatestargiftcollection.collection_id = this.d;
         updatestargiftcollection.flags |= 8;
         ArrayList arrayList = this.l;
@@ -366,18 +366,18 @@ public final class p8 implements q8 {
                         Collections.sort(arrayList, new a3.c(15));
                     }
                     arrayList.addAll(0, i7);
-                    ks.f(i10).k(ks.I3, Long.valueOf(this.b), this);
+                    ls.f(i10).k(ls.I3, Long.valueOf(this.b), this);
                     p();
                     return z12;
                 }
             } else if (z10) {
-                if (i7.size() + 1 <= mp.u1(i10).N6) {
+                if (i7.size() + 1 <= np.u1(i10).N6) {
                     z12 = false;
                 } else {
                     if (!z11) {
                         return true;
                     }
-                    while (i7.size() > 0 && i7.size() + 1 > mp.u1(i10).N6) {
+                    while (i7.size() > 0 && i7.size() + 1 > np.u1(i10).N6) {
                         ((TL_stars.SavedStarGift) p5.c.g(1, i7)).pinned_to_top = false;
                     }
                     z12 = true;
@@ -390,7 +390,7 @@ public final class p8 implements q8 {
                     Collections.sort(arrayList, new a3.c(15));
                 }
                 arrayList.addAll(0, i7);
-                ks.f(i10).k(ks.I3, Long.valueOf(this.b), this);
+                ls.f(i10).k(ls.I3, Long.valueOf(this.b), this);
                 p();
                 return z12;
             }
@@ -431,7 +431,7 @@ public final class p8 implements q8 {
             }
         }
         if (z11) {
-            ks.f(this.a).k(ks.I3, Long.valueOf(this.b), this);
+            ls.f(this.a).k(ls.I3, Long.valueOf(this.b), this);
         }
     }
 }

@@ -1,123 +1,74 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
-import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class q01 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.ActionBar.h6 a;
-    public final q9 b;
-    public final m80 c;
-    public final m80 d;
-    public int e;
-    public int f;
+public abstract class q01 extends View {
+    public final r01 a;
+    public org.telegram.messenger.y10 b;
+    public final org.telegram.ui.ActionBar.h6 c;
+    public int d;
 
-    public q01(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public q01(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
-        this.e = 90;
-        this.a = h6Var;
-        setOrientation(1);
-        q9 q9Var = new q9(context);
-        this.b = q9Var;
-        q9Var.getImageReceiver().X(1);
-        q9Var.getImageReceiver().W(1);
-        q9Var.setOnClickListener(new j70(this, 20));
-        addView(q9Var, c8.ma.t(90, 90, 17, 0, 9, 0, 9));
-        m80 m80Var = new m80(context, null);
-        this.c = m80Var;
-        m80Var.setTextSize(1, 20.0f);
-        m80Var.setGravity(17);
-        m80Var.setTypeface(org.telegram.messenger.g0.o());
-        m80Var.setTextAlignment(4);
-        addView(m80Var, c8.ma.t(-1, -2, 17, 48, 0, 48, 10));
-        m80 m80Var2 = new m80(context, null);
-        this.d = m80Var2;
-        m80Var2.setTextSize(1, 14.0f);
-        m80Var2.setGravity(17);
-        m80Var2.setTextAlignment(4);
-        addView(m80Var2, c8.ma.t(-1, -2, 17, 48, 0, 48, 17));
-        updateColors();
+        this.c = h6Var;
+        r01 r01Var = new r01(i7, this, h6Var, false);
+        this.a = r01Var;
+        r01Var.s = new cp0(this, 19);
     }
 
-    public final void a(CharSequence charSequence, CharSequence charSequence2) {
-        m80 m80Var = this.c;
-        m80Var.setText(charSequence);
-        m80Var.setVisibility(0);
-        m80 m80Var2 = this.d;
-        m80Var2.setText(charSequence2);
-        m80Var2.setMaxWidth(hi.l3.a(charSequence2, m80Var2.getPaint()));
-        m80Var2.requestLayout();
-        updateColors();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        org.telegram.ui.ActionBar.h6 h6Var = this.c;
+        if (h6Var != null) {
+            h6Var.e(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        } else {
+            org.telegram.ui.ActionBar.m6.r(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        }
+        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Xc));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.B6));
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(33.0f), TLObject.FLAG_30));
     }
 
-    public void setEmoji(int i7) {
-        if (this.f != i7) {
-            this.f = i7;
-            oh0 oh0Var = new oh0(i7, org.telegram.messenger.g0.L(90.0f), org.telegram.messenger.g0.L(90.0f));
-            q9 q9Var = this.b;
-            q9Var.setImageDrawable(oh0Var);
-            q9Var.getImageReceiver().W(2);
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
+    }
+
+    public void set(org.telegram.messenger.gj gjVar) {
+        r01 r01Var = this.a;
+        r01Var.e(gjVar);
+        if (isAttachedToWindow()) {
+            r01Var.a();
         }
     }
 
-    public void setEmojiSize(int i7) {
-        if (this.e != i7) {
-            this.e = i7;
-            updateColors();
-        }
+    public void setBackgroundHeight(int i7) {
+        this.d = i7;
     }
 
-    public void setEmojiStatic(int i7) {
-        if (this.f != i7) {
-            q9 q9Var = this.b;
-            q9Var.b();
-            this.f = i7;
-            q9Var.setImageResource(i7);
-        }
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.c.setVisibility(8);
-        m80 m80Var = this.d;
-        m80Var.setText(charSequence);
-        m80Var.setMaxWidth(hi.l3.a(charSequence, m80Var.getPaint()));
-        m80Var.requestLayout();
-        updateColors();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        int i7 = org.telegram.ui.ActionBar.m6.G6;
-        org.telegram.ui.ActionBar.h6 h6Var = this.a;
-        int w02 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
-        m80 m80Var = this.c;
-        m80Var.setTextColor(w02);
-        int i10 = org.telegram.ui.ActionBar.m6.Xc;
-        m80Var.setLinkTextColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
-        if (m80Var.getVisibility() != 0) {
-            i7 = org.telegram.ui.ActionBar.m6.B6;
-        }
-        int w03 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
-        m80 m80Var2 = this.d;
-        m80Var2.setTextColor(w03);
-        m80Var2.setLinkTextColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
-        int i11 = this.e;
-        this.b.setLayoutParams(c8.ma.t(i11, i11, 17, 0, m80Var.getVisibility() == 0 ? 0 : 9, 0, 9));
+    public void setOnTopicClickListener(org.telegram.messenger.y10 y10Var) {
+        this.b = y10Var;
     }
 }

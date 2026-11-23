@@ -14,9 +14,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class rw0 extends View implements org.telegram.messenger.fs {
+public abstract class rw0 extends View implements org.telegram.messenger.gs {
     public int E;
     public ValueAnimator F;
     public ei.c G;
@@ -137,9 +137,9 @@ public abstract class rw0 extends View implements org.telegram.messenger.fs {
         return a10;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.l4) {
+        if (i7 == org.telegram.messenger.ls.l4) {
             invalidate();
         }
     }
@@ -151,7 +151,7 @@ public abstract class rw0 extends View implements org.telegram.messenger.fs {
         if (imageReceiver != null) {
             imageReceiver.P();
         }
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.l4);
     }
 
     @Override // android.view.View
@@ -161,7 +161,7 @@ public abstract class rw0 extends View implements org.telegram.messenger.fs {
         if (imageReceiver != null) {
             imageReceiver.R();
         }
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.l4);
     }
 
     @Override // android.view.View
@@ -221,7 +221,7 @@ public abstract class rw0 extends View implements org.telegram.messenger.fs {
         while (true) {
             qw0[] qw0VarArr = this.b;
             int length = qw0VarArr.length;
-            i7 = org.telegram.messenger.ks.e4;
+            i7 = org.telegram.messenger.ls.e4;
             f10 = 10.0f;
             f11 = f15;
             if (i12 >= length) {
@@ -237,7 +237,7 @@ public abstract class rw0 extends View implements org.telegram.messenger.fs {
                             z12 = f11;
                         }
                         ((Paint) qw0Var.e).setColor(org.telegram.ui.ActionBar.m6.x0(null, qw0Var.b, z11));
-                        ((Paint) this.b[i12].e).setAlpha(org.telegram.messenger.ks.e4);
+                        ((Paint) this.b[i12].e).setAlpha(org.telegram.messenger.ls.e4);
                         double width = rectF.width() / 2.0f;
                         i11 = i12;
                         if (Math.abs((float) (z12 * ((3.141592653589793d * width) / 180.0d))) <= 1.0f) {
@@ -291,13 +291,13 @@ public abstract class rw0 extends View implements org.telegram.messenger.fs {
                             canvas.drawPoint(rectF.centerX() + ((float) (Math.cos(Math.toRadians(d2)) * width2)), rectF2.centerY() + ((float) (Math.sin(Math.toRadians(d2)) * width2)), (Paint) this.b[i13].e);
                             rectF = rectF2;
                             f12 = 10.0f;
-                            i10 = org.telegram.messenger.ks.e4;
+                            i10 = org.telegram.messenger.ls.e4;
                         } else {
                             ((Paint) this.b[i13].e).setStyle(Paint.Style.STROKE);
                             Paint paint = (Paint) this.b[i13].e;
                             rectF = rectF;
                             f12 = 10.0f;
-                            i10 = org.telegram.messenger.ks.e4;
+                            i10 = org.telegram.messenger.ls.e4;
                             canvas.drawArc(rectF, (-90.0f) - (f23 * 360.0f), z13, false, paint);
                         }
                     }
@@ -335,7 +335,7 @@ public abstract class rw0 extends View implements org.telegram.messenger.fs {
         }
         if (this.y != null) {
             canvas.save();
-            org.telegram.messenger.n10.k(this.y.getHeight() - org.telegram.messenger.g0.L(13.0f), 2.0f, org.telegram.messenger.g0.L(148.0f), org.telegram.messenger.g0.L(30.0f), canvas);
+            org.telegram.messenger.o10.k(this.y.getHeight() - org.telegram.messenger.g0.L(13.0f), 2.0f, org.telegram.messenger.g0.L(148.0f), org.telegram.messenger.g0.L(30.0f), canvas);
             this.x.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.j5, false));
             this.y.draw(canvas);
             canvas.restore();
@@ -353,7 +353,7 @@ public abstract class rw0 extends View implements org.telegram.messenger.fs {
         Long l10 = this.n;
         if (l10 != null) {
             super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(166.0f), TLObject.FLAG_30));
-            i11 = org.telegram.messenger.n10.z(110.0f, View.MeasureSpec.getSize(i7), 2);
+            i11 = org.telegram.messenger.o10.z(110.0f, View.MeasureSpec.getSize(i7), 2);
             rectF.set(org.telegram.messenger.g0.L(3.0f) + i11, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(107.0f) + i11, org.telegram.messenger.g0.L(107.0f));
         } else {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(110.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(110.0f), TLObject.FLAG_30));

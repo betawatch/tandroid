@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c2 extends dk0 {
     public int E;
@@ -51,7 +51,7 @@ public final class c2 extends dk0 {
     public final TLRPC.StickerSetCovered[] f;
     public final LongSparseArray h;
     public final LongSparseArray n;
-    public final int c = j10.t0;
+    public final int c = k10.t0;
     public final SparseArray r = new SparseArray();
     public final SparseArray s = new SparseArray();
     public final SparseArray w = new SparseArray();
@@ -85,7 +85,7 @@ public final class c2 extends dk0 {
         v3 v3Var2;
         boolean z12;
         int i10 = this.c;
-        ri d02 = ri.d0(i10);
+        si d02 = si.d0(i10);
         ArrayList arrayList = d02.v0[0];
         TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) this.s.get(i7);
         boolean z13 = arrayList != null && arrayList.contains(Long.valueOf(stickerSetCovered.set.id));
@@ -97,7 +97,7 @@ public final class c2 extends dk0 {
                 break;
             }
             if (stickerSetCoveredArr[i11] != null) {
-                TLRPC.TL_messages_stickerSet q02 = ri.d0(i10).q0(stickerSetCoveredArr[i11].set.id);
+                TLRPC.TL_messages_stickerSet q02 = si.d0(i10).q0(stickerSetCoveredArr[i11].set.id);
                 if (q02 != null && !q02.set.archived) {
                     stickerSetCoveredArr[i11] = null;
                 } else if (stickerSetCoveredArr[i11].set.id == stickerSetCovered.set.id) {
@@ -244,7 +244,7 @@ public final class c2 extends dk0 {
                 break;
             }
             if (stickerSetCoveredArr[i7] != null) {
-                TLRPC.TL_messages_stickerSet q02 = ri.d0(this.c).q0(stickerSetCoveredArr[i7].set.id);
+                TLRPC.TL_messages_stickerSet q02 = si.d0(this.c).q0(stickerSetCoveredArr[i7].set.id);
                 if (q02 != null && !q02.set.archived) {
                     stickerSetCoveredArr[i7] = null;
                     break;
@@ -357,7 +357,7 @@ public final class c2 extends dk0 {
                             sparseArray3.put(i20, document);
                             ArrayList arrayList9 = arrayList7;
                             int i23 = i16;
-                            TLRPC.TL_messages_stickerSet q02 = ri.d0(this.c).q0(ri.s0(document));
+                            TLRPC.TL_messages_stickerSet q02 = si.d0(this.c).q0(si.s0(document));
                             if (q02 != null) {
                                 sparseArray6.put(i20, q02);
                             }
@@ -538,7 +538,7 @@ public final class c2 extends dk0 {
                 linearLayout.addView(new Space(context), ma.o(-1, 15));
                 TextView textView = new TextView(context);
                 this.N = textView;
-                textView.setText(gd.N0(2131747956, null));
+                textView.setText(hd.N0(2131747956, null));
                 this.N.setTextSize(1, 16.0f);
                 t6.U(this.N, i10, h6Var);
                 linearLayout.addView(this.N, ma.o(-2, -2));

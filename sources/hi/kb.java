@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.we;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.r10;
 import org.telegram.messenger.xe;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.ye;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.lv0;
@@ -36,9 +36,9 @@ import org.telegram.ui.hn0;
 import org.telegram.ui.mc0;
 import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class kb implements x10 {
+public final /* synthetic */ class kb implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -53,7 +53,7 @@ public final /* synthetic */ class kb implements x10 {
 
     /* JADX WARN: Removed duplicated region for block: B:144:0x0472  */
     /* JADX WARN: Removed duplicated region for block: B:147:0x0474  */
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -71,12 +71,12 @@ public final /* synthetic */ class kb implements x10 {
             case 0:
                 boolean z10 = this.b;
                 org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.c;
-                x10 x10Var = (x10) this.d;
+                y10 y10Var = (y10) this.d;
                 pb pbVar = (pb) obj;
                 if (z10) {
                     t1Var.c(350L);
                 }
-                x10Var.a(pbVar);
+                y10Var.a(pbVar);
                 break;
             case 1:
                 xl xlVar = (xl) this.c;
@@ -99,9 +99,9 @@ public final /* synthetic */ class kb implements x10 {
                             int i11 = i7;
                             int i12 = ChatAttachAlertPhotoLayout.v1;
                             ChatAttachAlertPhotoLayout.v1 = i12 - 1;
-                            ef efVar = new ef(i12, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i11, i10);
-                            efVar.L = true;
-                            chatAttachAlertPhotoLayout.m0(efVar, z11, false);
+                            ff ffVar = new ff(i12, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i11, i10);
+                            ffVar.L = true;
+                            chatAttachAlertPhotoLayout.m0(ffVar, z11, false);
                             return;
                         }
                     } catch (Exception unused2) {
@@ -110,9 +110,9 @@ public final /* synthetic */ class kb implements x10 {
                     int i112 = i7;
                     int i122 = ChatAttachAlertPhotoLayout.v1;
                     ChatAttachAlertPhotoLayout.v1 = i122 - 1;
-                    ef efVar2 = new ef(i122, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i112, i10);
-                    efVar2.L = true;
-                    chatAttachAlertPhotoLayout.m0(efVar2, z11, false);
+                    ff ffVar2 = new ff(i122, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i112, i10);
+                    ffVar2.L = true;
+                    chatAttachAlertPhotoLayout.m0(ffVar2, z11, false);
                 }
                 break;
             case 2:
@@ -145,7 +145,7 @@ public final /* synthetic */ class kb implements x10 {
             case 3:
                 PhotoViewer photoViewer = (PhotoViewer) this.c;
                 boolean z13 = this.b;
-                xe xeVar = (xe) this.d;
+                ye yeVar = (ye) this.d;
                 tg.c2 c2Var = (tg.c2) obj;
                 tg.f2 f2Var = photoViewer.p5;
                 if (!f2Var.E || (c2VarArr = f2Var.I) == null || c2VarArr.length <= 0) {
@@ -160,7 +160,7 @@ public final /* synthetic */ class kb implements x10 {
                     int i14 = photoViewer.C4.V;
                     tg.c2 c2Var2 = f2Var2.F;
                     Bitmap b10 = c2Var2 == null ? f2Var2.J : (!z13 || n10 == null) ? c2Var2.b() : f2Var2.e(n10);
-                    ef efVar3 = (ef) photoViewer.g7.get(photoViewer.P4);
+                    ff ffVar3 = (ff) photoViewer.g7.get(photoViewer.P4);
                     if (thanosEffect == null) {
                         Utilities.i.c(new un0(photoViewer, b10, 0));
                         photoViewer.p5.f();
@@ -170,9 +170,9 @@ public final /* synthetic */ class kb implements x10 {
                         tg.f2 f2Var3 = photoViewer.p5;
                         int i15 = photoViewer.C4.V;
                         f2Var3.getClass();
-                        String str = efVar3.i;
+                        String str = ffVar3.i;
                         Bitmap decodeFile = str != null ? BitmapFactory.decodeFile(str) : f2Var3.getSourceBitmap();
-                        Bitmap decodeFile2 = BitmapFactory.decodeFile(efVar3.j);
+                        Bitmap decodeFile2 = BitmapFactory.decodeFile(ffVar3.j);
                         int width = decodeFile.getWidth();
                         int height = decodeFile.getHeight();
                         Bitmap.Config config = Bitmap.Config.ARGB_8888;
@@ -197,7 +197,7 @@ public final /* synthetic */ class kb implements x10 {
                             bitmap2 = null;
                             f10 = 2.0f;
                         } else {
-                            if (c2Var3.c == 0 || !efVar3.u) {
+                            if (c2Var3.c == 0 || !ffVar3.u) {
                                 bitmap = createBitmap;
                                 f10 = 2.0f;
                                 canvas.drawBitmap(c2Var3.a(), (Rect) null, rect, paint);
@@ -215,7 +215,7 @@ public final /* synthetic */ class kb implements x10 {
                             }
                             if (decodeFile2 != null) {
                                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                if (c2Var3.c == 0 || efVar3.u) {
+                                if (c2Var3.c == 0 || ffVar3.u) {
                                     canvas.drawBitmap(decodeFile2, (Rect) null, rect, paint);
                                 } else {
                                     Matrix matrix2 = new Matrix();
@@ -236,10 +236,10 @@ public final /* synthetic */ class kb implements x10 {
                             photoViewer.f0.invalidate();
                             break;
                         } else {
-                            we weVar = xeVar.A;
-                            if (weVar != null) {
+                            xe xeVar = yeVar.A;
+                            if (xeVar != null) {
                                 ImageReceiver imageReceiver = photoViewer.C4;
-                                bitmap2 = PhotoViewer.C0(bitmap2, weVar, new int[]{imageReceiver.V, imageReceiver.W}, true);
+                                bitmap2 = PhotoViewer.C0(bitmap2, xeVar, new int[]{imageReceiver.V, imageReceiver.W}, true);
                             }
                             if (bitmap2 == null) {
                                 Utilities.i.c(new un0(photoViewer, b10, 2));
@@ -250,7 +250,7 @@ public final /* synthetic */ class kb implements x10 {
                                 Matrix matrix3 = new Matrix();
                                 int width2 = bitmap2.getWidth();
                                 int height4 = bitmap2.getHeight();
-                                if (!efVar3.w && (photoViewer.C4.V / 90) % 2 != 0) {
+                                if (!ffVar3.w && (photoViewer.C4.V / 90) % 2 != 0) {
                                     width2 = bitmap2.getHeight();
                                     height4 = bitmap2.getWidth();
                                 }
@@ -259,7 +259,7 @@ public final /* synthetic */ class kb implements x10 {
                                 float min = Math.min(photoViewer.g1(photoViewer.u4) / f15, photoViewer.e1() / f16);
                                 float f17 = f15 * min;
                                 float f18 = f16 * min;
-                                if ((photoViewer.C4.V == 0 || efVar3.w) && photoViewer.b6 == 0.0f) {
+                                if ((photoViewer.C4.V == 0 || ffVar3.w) && photoViewer.b6 == 0.0f) {
                                     f11 = f17;
                                     f12 = f18;
                                     f13 = 0.0f;
@@ -274,7 +274,7 @@ public final /* synthetic */ class kb implements x10 {
                                     Bitmap createBitmap2 = Bitmap.createBitmap(i16, i16, config);
                                     Canvas canvas2 = new Canvas(createBitmap2);
                                     canvas2.save();
-                                    canvas2.rotate((efVar3.w ? 0 : photoViewer.C4.V) + photoViewer.b6, sqrt, sqrt);
+                                    canvas2.rotate((ffVar3.w ? 0 : photoViewer.C4.V) + photoViewer.b6, sqrt, sqrt);
                                     canvas2.drawBitmap(bitmap2, (f21 - width3) / f10, (f21 - height5) / f10, (Paint) null);
                                     bitmap2.recycle();
                                     float f22 = f17 / f10;
@@ -318,12 +318,12 @@ public final /* synthetic */ class kb implements x10 {
                     runnable2.run();
                     break;
                 } else {
-                    lv0.G3.c(j10.t0, str2, new d01(linkedHashSet, runnable2, 1));
+                    lv0.G3.c(k10.t0, str2, new d01(linkedHashSet, runnable2, 1));
                     break;
                 }
             default:
                 org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) this.c;
-                q10 q10Var = (q10) this.d;
+                r10 r10Var = (r10) this.d;
                 boolean z15 = this.b;
                 org.telegram.ui.Wallet.r0 r0Var = (org.telegram.ui.Wallet.r0) obj;
                 if (r0Var == null) {
@@ -331,17 +331,17 @@ public final /* synthetic */ class kb implements x10 {
                     String message = exc != null ? exc.getMessage() : null;
                     if (!"AUTH_CANCELED".equals(message)) {
                         org.telegram.ui.Wallet.u0.n("getSecretPhrase: local phrase unavailable: " + message);
-                        q10Var.a(null, (message == null || !message.startsWith("AUTH_")) ? "LOCAL_STORAGE_ERROR" : "WALLET_UNLOCK_FAILED");
+                        r10Var.a(null, (message == null || !message.startsWith("AUTH_")) ? "LOCAL_STORAGE_ERROR" : "WALLET_UNLOCK_FAILED");
                         break;
                     } else {
                         org.telegram.ui.Wallet.u0.P("getSecretPhrase: unlock canceled");
                         if (z15) {
-                            q10Var.a(null, "WALLET_SEND_CANCELLED");
+                            r10Var.a(null, "WALLET_SEND_CANCELLED");
                             break;
                         }
                     }
                 } else {
-                    q10Var.a(r0Var, null);
+                    r10Var.a(r0Var, null);
                     break;
                 }
                 break;

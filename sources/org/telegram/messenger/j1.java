@@ -15,9 +15,9 @@ import org.telegram.tgnet.WriteToSocketDelegate;
 import org.telegram.ui.Components.xm0;
 import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, hi.a7, jc, RequestTimeDelegate, xm0, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, hi.a7, kc, RequestTimeDelegate, xm0, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -28,20 +28,20 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
 
     @Override // org.telegram.ui.Components.xm0
     public void a(float f10) {
-        fj fjVar = ((xt) this.b).X;
-        if (fjVar == null) {
+        gj gjVar = ((yt) this.b).X;
+        if (gjVar == null) {
             return;
         }
-        fjVar.b0 = f10;
-        MediaController.B().i0(fjVar, f10);
+        gjVar.b0 = f10;
+        MediaController.B().i0(gjVar, f10);
     }
 
     @Override // hi.a7
     public Bitmap c(BitmapFactory.Options options) {
-        ef efVar = (ef) this.b;
-        String str = efVar.i;
+        ff ffVar = (ff) this.b;
+        String str = ffVar.i;
         if (str == null) {
-            str = efVar.I;
+            str = ffVar.I;
         }
         return BitmapFactory.decodeFile(str, options);
     }
@@ -51,7 +51,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
         ((org.telegram.ui.bn) this.b).presentFragment(new bb1(6, null));
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         MusicPlayerService musicPlayerService = (MusicPlayerService) this.b;
         if (!z10) {
@@ -60,9 +60,9 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
             if (TextUtils.isEmpty(musicPlayerService.n)) {
                 return;
             }
-            fj fjVar = MediaController.B().v0;
-            if (fjVar != null) {
-                musicPlayerService.a(fjVar, true);
+            gj gjVar = MediaController.B().v0;
+            if (gjVar != null) {
+                musicPlayerService.a(gjVar, true);
             }
             musicPlayerService.n = null;
         }
@@ -110,17 +110,17 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
-        ((mc) this.b).q(exc);
+        ((nc) this.b).q(exc);
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
     public void onSuccess(Object obj) {
-        ((nc) this.b).a((String) obj);
+        ((oc) this.b).a((String) obj);
     }
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j3) {
-        g0.g3(new nd((az) this.b, j3, 2));
+        g0.g3(new od((bz) this.b, j3, 2));
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -134,7 +134,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
         Utilities.d.c(new u8((y8) this.b, 3));
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
@@ -142,7 +142,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
     public /* synthetic */ void g(float f10) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 }

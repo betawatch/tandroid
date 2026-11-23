@@ -2,7 +2,7 @@ package j$.time;
 
 import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -123,25 +123,25 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
             case 2:
                 return (z10 ? 1 : 0) + 91;
             case 3:
-                return (z10 ? 1 : 0) + ks.i2;
+                return (z10 ? 1 : 0) + ls.i2;
             case 4:
-                return (z10 ? 1 : 0) + ks.T3;
+                return (z10 ? 1 : 0) + ls.T3;
             case 5:
-                return (z10 ? 1 : 0) + ks.c5;
+                return (z10 ? 1 : 0) + ls.c5;
             case 6:
                 return 1;
             case 7:
                 return (z10 ? 1 : 0) + 60;
             case 8:
-                return (z10 ? 1 : 0) + ks.F1;
+                return (z10 ? 1 : 0) + ls.F1;
             case 9:
-                return (z10 ? 1 : 0) + ks.M2;
+                return (z10 ? 1 : 0) + ls.M2;
             case 10:
-                return (z10 ? 1 : 0) + ks.q3;
+                return (z10 ? 1 : 0) + ls.q3;
             case 11:
-                return (z10 ? 1 : 0) + ks.x4;
+                return (z10 ? 1 : 0) + ls.x4;
             default:
-                return (z10 ? 1 : 0) + ks.G5;
+                return (z10 ? 1 : 0) + ls.G5;
         }
     }
 

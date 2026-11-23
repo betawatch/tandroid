@@ -4,7 +4,7 @@ import android.R;
 import android.net.Uri;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class mp0 implements Runnable {
                             Uri uri = i61Var.G;
                             int i10 = pq0Var.a + 1;
                             pq0Var.a = i10;
-                            Utilities.e.c(new org.telegram.ui.Components.j01(pq0Var, uri, i10, 9));
+                            Utilities.e.c(new org.telegram.ui.Components.f21(pq0Var, uri, i10, 8));
                             pq0Var.b = true;
                         }
                     }

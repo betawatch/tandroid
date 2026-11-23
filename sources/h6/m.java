@@ -86,24 +86,24 @@ import m4.f0;
 import n2.w0;
 import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ap;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.fa;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.aa;
+import org.telegram.messenger.bp;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.na;
-import org.telegram.messenger.nt;
+import org.telegram.messenger.ga;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.oa;
+import org.telegram.messenger.ot;
 import org.telegram.messenger.pa;
 import org.telegram.messenger.qa;
 import org.telegram.messenger.ra;
+import org.telegram.messenger.sa;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.w9;
 import org.telegram.messenger.x9;
 import org.telegram.messenger.y9;
-import org.telegram.messenger.yy;
 import org.telegram.messenger.z9;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.u0;
@@ -128,9 +128,9 @@ import org.telegram.ui.bn;
 import org.telegram.ui.bn0;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, ap, wi0, bn0 {
+public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, bp, wi0, bn0 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -379,7 +379,7 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         ((u0) this.c).e(true, f10);
     }
 
-    @Override // org.telegram.messenger.ap
+    @Override // org.telegram.messenger.bp
     public void a() {
         ((vf.b) this.b).b();
         ((g2) this.c).presentFragment(new bn((Bundle) this.d));
@@ -431,21 +431,21 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public void checkLocationSettings(qa qaVar, q0.a aVar) {
+    public void checkLocationSettings(ra raVar, q0.a aVar) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(((z9) qaVar).a);
+        arrayList.add(((aa) raVar).a);
         u7.c cVar = (u7.c) this.c;
         j8.c cVar2 = new j8.c(arrayList, false, false);
         cVar.getClass();
         com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
         b10.c = new c5(cVar2);
         b10.a = 2426;
-        cVar.e(0, b10.a()).addOnCompleteListener(new w9(aVar, 1));
+        cVar.e(0, b10.a()).addOnCompleteListener(new x9(aVar, 1));
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
     public boolean checkServices() {
-        return nt.b.hasServices();
+        return ot.b.hasServices();
     }
 
     @Override // c4.d
@@ -463,7 +463,7 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         return true;
     }
 
-    @Override // org.telegram.messenger.ap
+    @Override // org.telegram.messenger.bp
     public void f(boolean z10) {
         ((vf.b) this.b).b();
         ((g2) this.c).presentFragment(new bn((Bundle) this.d));
@@ -482,7 +482,7 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         int i7;
         float f12;
         bn bnVar = (bn) this.d;
-        z J8 = bnVar.J8(((fj) this.b).e1(), true);
+        z J8 = bnVar.J8(((gj) this.b).e1(), true);
         float f13 = 0.0f;
         if (J8 instanceof r1) {
             q0 q0Var2 = ((r1) J8).O;
@@ -490,7 +490,7 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
             if (k11 == null) {
                 f12 = 0.0f;
                 f10 = f12;
-                bnVar.Eb(J8, (fj) this.b, (xi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                bnVar.Eb(J8, (gj) this.b, (xi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
             } else {
                 f13 = q0Var2.b + k11.w + (k11.z / 2.0f);
                 f11 = q0Var2.c + k11.x;
@@ -498,7 +498,7 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
             }
         } else if (!(J8 instanceof v0) || (k10 = (q0Var = ((v0) J8).F0).k(p0Var)) == null) {
             f10 = 0.0f;
-            bnVar.Eb(J8, (fj) this.b, (xi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+            bnVar.Eb(J8, (gj) this.b, (xi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
         } else {
             f13 = q0Var.b + k10.w + (k10.z / 2.0f);
             f11 = q0Var.c + k10.x;
@@ -506,7 +506,7 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         }
         f12 = f11 + (i7 / 2.0f);
         f10 = f12;
-        bnVar.Eb(J8, (fj) this.b, (xi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+        bnVar.Eb(J8, (gj) this.b, (xi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
     }
 
     @Override // fd.a
@@ -527,7 +527,7 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
         b10.c = u7.a.c;
         b10.a = 2414;
-        cVar.e(0, b10.a()).addOnCompleteListener(new w9(aVar, 0));
+        cVar.e(0, b10.a()).addOnCompleteListener(new x9(aVar, 0));
     }
 
     @Override // c4.d
@@ -651,15 +651,15 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public qa onCreateLocationRequest() {
-        LocationRequest locationRequest = new LocationRequest(ks.n1, 3600000L, 600000L, 0L, Long.MAX_VALUE, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0.0f, true, 3600000L, 0, 0, null, false, new WorkSource(), null);
-        z9 z9Var = new z9();
-        z9Var.a = locationRequest;
-        return z9Var;
+    public ra onCreateLocationRequest() {
+        LocationRequest locationRequest = new LocationRequest(ls.n1, 3600000L, 600000L, 0L, Long.MAX_VALUE, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0.0f, true, 3600000L, 0, 0, null, false, new WorkSource(), null);
+        aa aaVar = new aa();
+        aaVar.a = locationRequest;
+        return aaVar;
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public ra onCreateLocationServicesAPI(Context context, na naVar, final oa oaVar) {
+    public sa onCreateLocationServicesAPI(Context context, oa oaVar, final pa paVar) {
         List list;
         Context context2 = t0.b;
         HashSet hashSet = new HashSet();
@@ -689,18 +689,18 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         }
         hashSet2.addAll(list);
         hashSet.addAll(list);
-        arrayList.add(new y9(naVar));
-        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.v9
+        arrayList.add(new z9(oaVar));
+        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.w9
             @Override // com.google.android.gms.common.api.l
             public final void onConnectionFailed(n6.a aVar) {
-                qd qdVar = (qd) oa.this;
-                if (qdVar.M) {
+                rd rdVar = (rd) pa.this;
+                if (rdVar.M) {
                     return;
                 }
-                qdVar.L = Boolean.FALSE;
-                if (qdVar.E) {
-                    qdVar.E = false;
-                    qdVar.p();
+                rdVar.L = Boolean.FALSE;
+                if (rdVar.E) {
+                    rdVar.E = false;
+                    rdVar.p();
                 }
             }
         });
@@ -875,30 +875,30 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public synchronized void removeLocationUpdates(pa paVar) {
-        x9 x9Var = (x9) ((HashMap) this.d).remove(paVar);
-        if (x9Var != null) {
+    public synchronized void removeLocationUpdates(qa qaVar) {
+        y9 y9Var = (y9) ((HashMap) this.d).remove(qaVar);
+        if (y9Var != null) {
             u7.c cVar = (u7.c) this.b;
             cVar.getClass();
-            String simpleName = x9.class.getSimpleName();
+            String simpleName = y9.class.getSimpleName();
             q6.m.g(simpleName, "Listener type must not be empty");
-            cVar.c(new com.google.android.gms.common.api.internal.m(x9Var, simpleName), 2418).continueWith(u7.b.a, u7.a.b);
+            cVar.c(new com.google.android.gms.common.api.internal.m(y9Var, simpleName), 2418).continueWith(u7.b.a, u7.a.b);
         }
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public synchronized void requestLocationUpdates(qa qaVar, pa paVar) {
-        x9 x9Var = (x9) ((HashMap) this.d).remove(paVar);
-        if (x9Var != null) {
+    public synchronized void requestLocationUpdates(ra raVar, qa qaVar) {
+        y9 y9Var = (y9) ((HashMap) this.d).remove(qaVar);
+        if (y9Var != null) {
             u7.c cVar = (u7.c) this.b;
             cVar.getClass();
-            String simpleName = x9.class.getSimpleName();
+            String simpleName = y9.class.getSimpleName();
             q6.m.g(simpleName, "Listener type must not be empty");
-            cVar.c(new com.google.android.gms.common.api.internal.m(x9Var, simpleName), 2418).continueWith(u7.b.a, u7.a.b);
+            cVar.c(new com.google.android.gms.common.api.internal.m(y9Var, simpleName), 2418).continueWith(u7.b.a, u7.a.b);
         }
-        x9 x9Var2 = new x9(paVar);
-        ((HashMap) this.d).put(paVar, x9Var2);
-        ((u7.c) this.b).f(((z9) qaVar).a, x9Var2, Looper.getMainLooper());
+        y9 y9Var2 = new y9(qaVar);
+        ((HashMap) this.d).put(qaVar, y9Var2);
+        ((u7.c) this.b).f(((aa) raVar).a, y9Var2, Looper.getMainLooper());
     }
 
     public ColorStateList s(int i7) {
@@ -968,25 +968,25 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         ArrayList arrayList2 = new ArrayList();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             Object obj = hashMap.get(arrayList.get(i10));
-            yy yyVar = new yy();
-            arrayList2.add(yyVar);
-            if (obj instanceof ef) {
-                ef efVar = (ef) obj;
-                String str = efVar.h;
+            zy zyVar = new zy();
+            arrayList2.add(zyVar);
+            if (obj instanceof ff) {
+                ff ffVar = (ff) obj;
+                String str = ffVar.h;
                 if (str != null) {
-                    yyVar.c = str;
+                    zyVar.c = str;
                 } else {
-                    yyVar.c = efVar.I;
+                    zyVar.c = ffVar.I;
                 }
-                yyVar.e = efVar.c;
-                yyVar.f = efVar.g;
-                yyVar.k = efVar.s;
-                yyVar.o = efVar.b;
-                CharSequence charSequence = efVar.a;
-                yyVar.d = charSequence != null ? charSequence.toString() : null;
-                yyVar.i = efVar.n;
-                yyVar.j = efVar.r;
-                yyVar.h = efVar.x;
+                zyVar.e = ffVar.c;
+                zyVar.f = ffVar.g;
+                zyVar.k = ffVar.s;
+                zyVar.o = ffVar.b;
+                CharSequence charSequence = ffVar.a;
+                zyVar.d = charSequence != null ? charSequence.toString() : null;
+                zyVar.i = ffVar.n;
+                zyVar.j = ffVar.r;
+                zyVar.h = ffVar.x;
             }
         }
         org.telegram.ui.Components.c5.X(uiVar.H3, uiVar.Y0() + arrayList2.size(), uiVar.c1(), new l2(i7, 2, mkVar, arrayList2, z11));
@@ -1102,10 +1102,10 @@ public final class m implements g61, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         return null;
     }
 
-    public void y(fa faVar) {
+    public void y(ga gaVar) {
         try {
             l8.f fVar = (l8.f) this.c;
-            k8.c cVar = new k8.c(faVar);
+            k8.c cVar = new k8.c(gaVar);
             Parcel p12 = fVar.p1();
             v7.b.c(p12, cVar);
             fVar.t1(p12, 9);

@@ -22,25 +22,25 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.b20;
-import org.telegram.messenger.bz;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.fc;
 import org.telegram.messenger.ff;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.we;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gf;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.xe;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class c7 {
     public String A;
@@ -83,7 +83,7 @@ public final class c7 {
     public File Y0;
     public float Z;
     public File Z0;
-    public ff a1;
+    public gf a1;
     public long b;
     public boolean b0;
     public Bitmap b1;
@@ -106,7 +106,7 @@ public final class c7 {
     public boolean l;
     public int l0;
     public ArrayList m;
-    public we m0;
+    public xe m0;
     public boolean n;
     public boolean o;
     public File o0;
@@ -128,7 +128,7 @@ public final class c7 {
     public Drawable x0;
     public String y;
     public TLRPC.InputDocument z;
-    public final int a = j10.t0;
+    public final int a = k10.t0;
     public double i = -1.0d;
     public float F = 1.0f;
     public float G = 1.0f;
@@ -158,27 +158,27 @@ public final class c7 {
         long maxMemory = runtime.maxMemory() - (runtime.totalMemory() - runtime.freeMemory());
         int i10 = options.outWidth;
         int i11 = options.outHeight;
-        if (i10 * i11 * 8 > maxMemory || Math.max(i10, i11) > 4200 || bz.o() <= 0) {
+        if (i10 * i11 * 8 > maxMemory || Math.max(i10, i11) > 4200 || cz.o() <= 0) {
             options.inScaled = true;
             options.inDensity = options.outWidth;
             options.inTargetDensity = i7;
         }
     }
 
-    public static Boolean D(fj fjVar) {
+    public static Boolean D(gj gjVar) {
         TLRPC.Peer peer;
-        if (fjVar != null) {
-            int i7 = fjVar.K1;
-            TLRPC.Message message = fjVar.k;
+        if (gjVar != null) {
+            int i7 = gjVar.K1;
+            TLRPC.Message message = gjVar.k;
             if (message != null) {
-                TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-org.telegram.messenger.n5.o(message.peer_id)));
+                TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-org.telegram.messenger.n5.o(message.peer_id)));
                 if ((O0 == null || !O0.noforwards) && org.telegram.messenger.v3.V(O0)) {
                     return Boolean.FALSE;
                 }
-                TLRPC.MessageFwdHeader messageFwdHeader = fjVar.k.fwd_from;
+                TLRPC.MessageFwdHeader messageFwdHeader = gjVar.k.fwd_from;
                 if (messageFwdHeader != null && (peer = messageFwdHeader.from_id) != null && (messageFwdHeader.flags & 4) != 0) {
                     long o4 = org.telegram.messenger.n5.o(peer);
-                    TLRPC.Chat O02 = mp.u1(i7).O0(Long.valueOf(-o4));
+                    TLRPC.Chat O02 = np.u1(i7).O0(Long.valueOf(-o4));
                     if (o4 < 0 && ((O02 == null || !O02.noforwards) && org.telegram.messenger.v3.V(O02))) {
                         return Boolean.TRUE;
                     }
@@ -256,26 +256,26 @@ public final class c7 {
         return null;
     }
 
-    public static c7 l(ef efVar) {
+    public static c7 l(ff ffVar) {
         int i7;
         c7 c7Var = new c7();
-        c7Var.L = new File(efVar.I);
-        c7Var.Q = efVar.J;
-        c7Var.R = efVar.K;
-        c7Var.K = !efVar.d() && efVar.b;
-        c7Var.N = efVar.c;
-        long j3 = efVar.E * 1000;
+        c7Var.L = new File(ffVar.I);
+        c7Var.Q = ffVar.J;
+        c7Var.R = ffVar.K;
+        c7Var.K = !ffVar.d() && ffVar.b;
+        c7Var.N = ffVar.c;
+        long j3 = ffVar.E * 1000;
         c7Var.h0 = j3;
         c7Var.Z = 0.0f;
         c7Var.a0 = Math.min(1.0f, 59000.0f / j3);
         if (c7Var.K && c7Var.N == null) {
-            c7Var.N = "vthumb://" + efVar.C;
+            c7Var.N = "vthumb://" + ffVar.C;
         }
-        c7Var.A0 = efVar.T;
-        c7Var.B0 = efVar.U;
+        c7Var.A0 = ffVar.T;
+        c7Var.B0 = ffVar.U;
         c7Var.h(c7Var.L.getAbsolutePath());
-        int i10 = efVar.F;
-        if (i10 > 0 && (i7 = efVar.G) > 0) {
+        int i10 = ffVar.F;
+        if (i10 > 0 && (i7 = ffVar.G) > 0) {
             c7Var.k0 = i10;
             c7Var.l0 = i7;
         }
@@ -345,7 +345,7 @@ public final class c7 {
                         }
                         TLRPC.PhotoSize photoSize = storyItem.media.document.thumbs.get(i11);
                         if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                            c7Var.O = ec.F(null, photoSize.bytes);
+                            c7Var.O = fc.F(null, photoSize.bytes);
                             break;
                         }
                         org.telegram.messenger.w7.G(i7);
@@ -362,7 +362,7 @@ public final class c7 {
         ArrayList arrayList = c7Var.F0;
         arrayList.clear();
         ArrayList<TLRPC.PrivacyRule> arrayList2 = storyItem.privacy;
-        mp u12 = mp.u1(i7);
+        np u12 = np.u1(i7);
         ArrayList arrayList3 = new ArrayList();
         for (int i12 = 0; i12 < arrayList2.size(); i12++) {
             TLRPC.PrivacyRule privacyRule = arrayList2.get(i12);
@@ -404,14 +404,14 @@ public final class c7 {
         c7Var.I0 = storyItem.expire_date - storyItem.date;
         try {
             CharSequence m10 = org.telegram.messenger.j6.m(new SpannableString(storyItem.caption), org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), true, null, 0);
-            fj.b(m10, storyItem.entities, true, false, true, false, 0);
-            c7Var.C0 = fj.B5(m10, storyItem.entities, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
+            gj.b(m10, storyItem.entities, true, false, true, false, 0);
+            c7Var.C0 = gj.B5(m10, storyItem.entities, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
         } catch (Exception unused) {
         }
         c7Var.A();
         c7Var.e(storyItem);
         c7Var.m = storyItem.media_areas;
-        c7Var.v0 = mp.u1(i7).l1(storyItem.dialogId);
+        c7Var.v0 = np.u1(i7).l1(storyItem.dialogId);
         return c7Var;
     }
 
@@ -430,12 +430,12 @@ public final class c7 {
         return c7Var;
     }
 
-    public static long p(fj fjVar) {
-        Boolean D = D(fjVar);
+    public static long p(gj gjVar) {
+        Boolean D = D(gjVar);
         if (D == null) {
             return 0L;
         }
-        return D.booleanValue() ? org.telegram.messenger.n5.o(fjVar.k.fwd_from.from_id) : fj.B0(fjVar.k);
+        return D.booleanValue() ? org.telegram.messenger.n5.o(gjVar.k.fwd_from.from_id) : gj.B0(gjVar.k);
     }
 
     public static Bitmap q(a7 a7Var, int i7, int i10, int i11, boolean z10) {
@@ -461,7 +461,7 @@ public final class c7 {
         if (i14 <= i13 && i15 <= i12) {
             return a7Var.c(options);
         }
-        if (z10 && z11 && bz.o() >= 1) {
+        if (z10 && z11 && cz.o() >= 1) {
             Bitmap c10 = a7Var.c(options);
             float max = Math.max(i13 / c10.getWidth(), i12 / c10.getHeight());
             Bitmap createBitmap = Bitmap.createBitmap((int) (c10.getWidth() * max), (int) (c10.getHeight() * max), Bitmap.Config.ARGB_8888);
@@ -487,7 +487,7 @@ public final class c7 {
         long j3;
         if (document != null) {
             if (!"video/webm".equals(document.mime_type) && !"video/mp4".equals(document.mime_type)) {
-                if (fj.K2(document, true)) {
+                if (gj.K2(document, true)) {
                     RLottieNative a10 = RLottieNative.a(str, null, null, null, 0, null);
                     if (a10 != null) {
                         int i7 = a10.a[0];
@@ -512,7 +512,7 @@ public final class c7 {
         TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = new TLRPC.TL_fileLocationToBeDeprecated();
         tL_fileLocationToBeDeprecated.volume_id = -2147483648L;
         tL_fileLocationToBeDeprecated.dc_id = TLObject.FLAG_31;
-        tL_fileLocationToBeDeprecated.local_id = bz.p();
+        tL_fileLocationToBeDeprecated.local_id = cz.p();
         tL_fileLocationToBeDeprecated.file_reference = new byte[0];
         if ("mp4".equals(str) || "webm".equals(str)) {
             TLRPC.TL_videoSize_layer127 tL_videoSize_layer1272 = new TLRPC.TL_videoSize_layer127();
@@ -532,36 +532,36 @@ public final class c7 {
     }
 
     public static c7 y(ArrayList arrayList) {
-        fj fjVar;
+        gj gjVar;
         int i7;
         c7 c7Var = new c7();
         c7Var.u = true;
         c7Var.v = arrayList;
         c7Var.i0 = 1080;
         c7Var.j0 = 1920;
-        c7Var.z0 = p((fj) arrayList.get(0));
-        c20 c20Var = new c20();
-        c20Var.a = (byte) 6;
-        c20Var.c = 0.5f;
-        c20Var.d = 0.5f;
+        c7Var.z0 = p((gj) arrayList.get(0));
+        d20 d20Var = new d20();
+        d20Var.a = (byte) 6;
+        d20Var.c = 0.5f;
+        d20Var.d = 0.5f;
         ArrayList arrayList2 = new ArrayList();
         c7Var.T0 = arrayList2;
-        arrayList2.add(c20Var);
-        if (arrayList.size() == 1 && (fjVar = (fj) arrayList.get(0)) != null && ((i7 = fjVar.D) == 8 || i7 == 3 || i7 == 5)) {
-            TLRPC.Message message = fjVar.k;
+        arrayList2.add(d20Var);
+        if (arrayList.size() == 1 && (gjVar = (gj) arrayList.get(0)) != null && ((i7 = gjVar.D) == 8 || i7 == 3 || i7 == 5)) {
+            TLRPC.Message message = gjVar.k;
             if (message != null && message.attachPath != null) {
-                c7Var.L = new File(fjVar.k.attachPath);
+                c7Var.L = new File(gjVar.k.attachPath);
             }
             File file = c7Var.L;
             if (file == null || !file.exists()) {
                 org.telegram.messenger.w7.G(c7Var.a);
-                c7Var.L = org.telegram.messenger.w7.M(fjVar.k, false, true);
+                c7Var.L = org.telegram.messenger.w7.M(gjVar.k, false, true);
             }
             File file2 = c7Var.L;
             if (file2 != null && file2.exists()) {
                 c7Var.K = true;
                 c7Var.M = false;
-                long L0 = (long) (fjVar.L0() * 1000.0d);
+                long L0 = (long) (gjVar.L0() * 1000.0d);
                 c7Var.h0 = L0;
                 c7Var.Z = 0.0f;
                 c7Var.a0 = Math.min(1.0f, 59500.0f / L0);
@@ -604,7 +604,7 @@ public final class c7 {
     }
 
     public final void B() {
-        if (!this.K || v() || this.g || this.n || this.h0 <= 69000 || !j10.i(this.a).q()) {
+        if (!this.K || v() || this.g || this.n || this.h0 <= 69000 || !k10.i(this.a).q()) {
             return;
         }
         long j3 = this.h0 - 59000;
@@ -619,23 +619,23 @@ public final class c7 {
     public final boolean E() {
         ArrayList arrayList;
         ArrayList arrayList2;
-        fj fjVar;
+        gj gjVar;
         TLRPC.Message message;
         ArrayList arrayList3 = this.T0;
-        if (!this.K && this.y == null && this.o0 == null && ((arrayList = this.v) == null || arrayList.size() != 1 || (fjVar = (fj) this.v.get(0)) == null || (message = fjVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionStarGiftUnique))) {
+        if (!this.K && this.y == null && this.o0 == null && ((arrayList = this.v) == null || arrayList.size() != 1 || (gjVar = (gj) this.v.get(0)) == null || (message = gjVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionStarGiftUnique))) {
             if (arrayList3 != null && !arrayList3.isEmpty()) {
                 for (int i7 = 0; i7 < arrayList3.size(); i7++) {
-                    c20 c20Var = (c20) arrayList3.get(i7);
-                    byte b10 = c20Var.a;
+                    d20 d20Var = (d20) arrayList3.get(i7);
+                    byte b10 = d20Var.a;
                     if (b10 != 0) {
-                        if (b10 == 1 && (arrayList2 = c20Var.k) != null && !arrayList2.isEmpty()) {
-                            for (int i10 = 0; i10 < c20Var.k.size(); i10++) {
-                                b20 b20Var = (b20) c20Var.k.get(i10);
-                                if (!u(b20Var.document, b20Var.a)) {
+                        if (b10 == 1 && (arrayList2 = d20Var.k) != null && !arrayList2.isEmpty()) {
+                            for (int i10 = 0; i10 < d20Var.k.size(); i10++) {
+                                c20 c20Var = (c20) d20Var.k.get(i10);
+                                if (!u(c20Var.document, c20Var.a)) {
                                 }
                             }
                         }
-                    } else if (!u(c20Var.B, c20Var.j)) {
+                    } else if (!u(d20Var.B, d20Var.j)) {
                     }
                 }
             }
@@ -1009,7 +1009,7 @@ public final class c7 {
             TLRPC.Photo photo = messageMedia.photo;
             if (photo == null) {
                 TLRPC.Document document = messageMedia.document;
-                if (document != null && fj.V2(document)) {
+                if (document != null && gj.V2(document)) {
                     TLRPC.TL_inputStickeredMediaDocument tL_inputStickeredMediaDocument = new TLRPC.TL_inputStickeredMediaDocument();
                     TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
                     tL_inputStickeredMediaDocument.id = tL_inputDocument;
@@ -1184,7 +1184,7 @@ public final class c7 {
         c7Var.T0 = new ArrayList();
         if (this.T0 != null) {
             for (int i10 = 0; i10 < this.T0.size(); i10++) {
-                c7Var.T0.add(((c20) this.T0.get(i10)).a());
+                c7Var.T0.add(((d20) this.T0.get(i10)).a());
             }
         }
         c7Var.U0 = this.U0;
@@ -1281,14 +1281,14 @@ public final class c7 {
                 while (i7 < size) {
                     Object obj = arrayList.get(i7);
                     i7++;
-                    c20 c20Var = (c20) obj;
-                    if (c20Var.a == 2 && !TextUtils.isEmpty(c20Var.t)) {
+                    d20 d20Var = (d20) obj;
+                    if (d20Var.a == 2 && !TextUtils.isEmpty(d20Var.t)) {
                         try {
-                            new File(c20Var.t).delete();
+                            new File(d20Var.t).delete();
                         } catch (Exception e10) {
                             org.telegram.messenger.a8.g(e10, true);
                         }
-                        c20Var.t = "";
+                        d20Var.t = "";
                     }
                 }
             }
@@ -1330,10 +1330,10 @@ public final class c7 {
         return (int) Math.ceil(r0 / 59000.0f);
     }
 
-    public final void s(x10 x10Var) {
+    public final void s(y10 y10Var) {
         int i7;
         if (!E()) {
-            x10Var.a(null);
+            y10Var.a(null);
             return;
         }
         if (!this.K && ((i7 = this.i0) > 720 || this.j0 > 1280)) {
@@ -1346,7 +1346,7 @@ public final class c7 {
         String absolutePath = file == null ? null : file.getAbsolutePath();
         int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, Math.max(1, v() ? this.T.size() : 0), 11);
         iArr[0] = new int[11];
-        ai.r rVar = new ai.r((Object) this, absolutePath, (Object) iArr, (Object) x10Var, 20);
+        ai.r rVar = new ai.r((Object) this, absolutePath, (Object) iArr, (Object) y10Var, 20);
         if (!v()) {
             if (this.L == null) {
                 rVar.run();
@@ -1399,7 +1399,7 @@ public final class c7 {
                     long parseInt = Integer.parseInt(this.N.substring(9));
                     options.inJustDecodeBounds = true;
                     MediaStore.Video.Thumbnails.getThumbnail(org.telegram.messenger.t0.b.getContentResolver(), parseInt, 1, options);
-                    options.inSampleSize = d(options, ks.P3, ks.P3);
+                    options.inSampleSize = d(options, ls.P3, ls.P3);
                     options.inJustDecodeBounds = false;
                     options.inPreferredConfig = Bitmap.Config.RGB_565;
                     options.inDither = true;
@@ -1407,7 +1407,7 @@ public final class c7 {
                 } else {
                     options.inJustDecodeBounds = true;
                     BitmapFactory.decodeFile(this.N);
-                    options.inSampleSize = d(options, ks.P3, ks.P3);
+                    options.inSampleSize = d(options, ls.P3, ls.P3);
                     options.inJustDecodeBounds = false;
                     options.inPreferredConfig = Bitmap.Config.RGB_565;
                     options.inDither = true;

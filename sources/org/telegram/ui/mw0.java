@@ -11,7 +11,7 @@ import android.os.SystemClock;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mw0 extends View implements org.telegram.ui.Components.dg0 {
     public final float[] E;
@@ -277,7 +277,7 @@ public final class mw0 extends View implements org.telegram.ui.Components.dg0 {
                 paint3.setAlpha((int) (this.H * 255.0f));
             }
             f11 = 180.0f;
-            int z12 = org.telegram.messenger.n10.z((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.g0.L(10.0f), realCount);
+            int z12 = org.telegram.messenger.o10.z((realCount - 1) * 2, getMeasuredWidth() - org.telegram.messenger.g0.L(10.0f), realCount);
             int L = org.telegram.messenger.g0.L(1.0f);
             z11 = ((org.telegram.ui.ActionBar.g2) profileActivity).inBubbleMode;
             int i14 = L + (!z11 ? org.telegram.messenger.g0.m : 0);
@@ -328,7 +328,7 @@ public final class mw0 extends View implements org.telegram.ui.Components.dg0 {
                     if (i15 != this.N) {
                         this.I[i15] = 0.75f;
                     } else if (profileActivity.B0 == 3) {
-                        paint4.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.nr.j.getInterpolation(this.I[i15]), i10, org.telegram.messenger.ks.e4) * this.H));
+                        paint4.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.nr.j.getInterpolation(this.I[i15]), i10, org.telegram.messenger.ls.e4) * this.H));
                     }
                     canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), i15 != this.N ? paint : paint4);
                     i15++;

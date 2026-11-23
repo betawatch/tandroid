@@ -3,9 +3,9 @@ package oi;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v0 extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -26,21 +26,21 @@ public final class v0 extends n41 {
 
     @Override // org.telegram.ui.Components.n41
     public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
-        fj fjVar;
+        gj gjVar;
         r rVar;
         w0 w0Var = (w0) view;
         a aVar = (a) o41Var.H;
         o3 o3Var = (o3) o41Var.I;
         w0Var.a = aVar;
         w0Var.T = o3Var;
-        w0Var.N = gd.a0;
+        w0Var.N = hd.a0;
         w0Var.c(aVar);
         w0Var.G.b();
         TLRPC.Document h = w0Var.h();
         if (w0Var.V != h) {
             w0Var.V = h;
             if (h == null) {
-                fjVar = null;
+                gjVar = null;
             } else {
                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                 tL_message.out = true;
@@ -50,7 +50,7 @@ public final class v0 extends n41 {
                 tL_message.from_id = tL_peerUser;
                 TLRPC.Peer peer = tL_message.peer_id;
                 int i7 = w0Var.n;
-                long e10 = j10.i(i7).e();
+                long e10 = k10.i(i7).e();
                 peer.user_id = e10;
                 tL_peerUser.user_id = e10;
                 tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -64,9 +64,9 @@ public final class v0 extends n41 {
                 if (aVar2 != null && (rVar = aVar2.g) != null && !TextUtils.isEmpty(rVar.e)) {
                     tL_message.attachPath = w0Var.a.g.e;
                 }
-                fjVar = new fj(i7, tL_message, false, true);
+                gjVar = new gj(i7, tL_message, false, true);
             }
-            w0Var.U = fjVar;
+            w0Var.U = gjVar;
         }
         w0Var.g(h);
         w0Var.l();

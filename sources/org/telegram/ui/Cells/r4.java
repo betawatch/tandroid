@@ -4,12 +4,12 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.pg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.q9 a;
@@ -27,11 +27,11 @@ public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.b
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.a = q9Var;
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(23.0f));
-        addView(q9Var, c8.ma.d(46, 46.0f, (gd.a0 ? 5 : 3) | 48, 13.0f, 6.0f, 13.0f, 6.0f));
+        addView(q9Var, c8.ma.d(46, 46.0f, (hd.a0 ? 5 : 3) | 48, 13.0f, 6.0f, 13.0f, 6.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
-        boolean z11 = gd.a0;
-        addView(linearLayout, c8.ma.d(-1, -1.0f, ks.E1, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f));
+        boolean z11 = hd.a0;
+        addView(linearLayout, c8.ma.d(-1, -1.0f, ls.E1, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         linearLayout.addView(frameLayout, c8.ma.l(1.0f, 0, 58));
         org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(context);
@@ -39,26 +39,26 @@ public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.b
         org.telegram.ui.ActionBar.t6.X(m5Var, org.telegram.ui.ActionBar.m6.G6, null);
         m5Var.setTypeface(org.telegram.messenger.g0.o());
         m5Var.setTextSize(15);
-        m5Var.setGravity((gd.a0 ? 5 : 3) | 48);
-        frameLayout.addView(m5Var, c8.ma.d(-1, 20.0f, (gd.a0 ? 5 : 3) | 48, 0.0f, 9.0f, 0.0f, 0.0f));
+        m5Var.setGravity((hd.a0 ? 5 : 3) | 48);
+        frameLayout.addView(m5Var, c8.ma.d(-1, 20.0f, (hd.a0 ? 5 : 3) | 48, 0.0f, 9.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.m5 m5Var2 = new org.telegram.ui.ActionBar.m5(context);
         this.c = m5Var2;
         m5Var2.setTextSize(13);
-        m5Var2.setGravity((gd.a0 ? 5 : 3) | 48);
-        frameLayout.addView(m5Var2, c8.ma.d(-1, 20.0f, (gd.a0 ? 5 : 3) | 48, 0.0f, 33.0f, 0.0f, 0.0f));
+        m5Var2.setGravity((hd.a0 ? 5 : 3) | 48);
+        frameLayout.addView(m5Var2, c8.ma.d(-1, 20.0f, (hd.a0 ? 5 : 3) | 48, 0.0f, 33.0f, 0.0f, 0.0f));
         if (z10) {
             op opVar = new op(21, context, null);
             this.e = opVar;
             opVar.b(-1, org.telegram.ui.ActionBar.m6.d6, org.telegram.ui.ActionBar.m6.k7);
             opVar.setDrawUnchecked(false);
             opVar.setDrawBackgroundAsArc(3);
-            boolean z12 = gd.a0;
+            boolean z12 = hd.a0;
             addView(opVar, c8.ma.d(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 40.0f, 32.0f, z12 ? 39.0f : 0.0f, 0.0f));
             return;
         }
         this.e = null;
         pg0 pg0Var = new pg0(context);
-        pg0Var.setText(gd.N0(2131748981, null));
+        pg0Var.setText(hd.N0(2131748981, null));
         pg0Var.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.t6.U(pg0Var, org.telegram.ui.ActionBar.m6.Ji, null);
         pg0Var.setProgressColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ei, false));
@@ -100,7 +100,7 @@ public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.b
         org.telegram.messenger.f5 f5Var3 = this.f;
         int i10 = f5Var3.l;
         if (i10 > 0) {
-            m5Var2.l(gd.G(i10, "TelegramContacts", new Object[0]), false);
+            m5Var2.l(hd.G(i10, "TelegramContacts", new Object[0]), false);
         } else {
             m5Var2.l((CharSequence) f5Var3.e.get(0), false);
         }

@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a61 extends Drawable {
     public static final int[] r = {10, 7, 26, 16, 10, 25};
@@ -153,7 +153,7 @@ public final class a61 extends Drawable {
         float f15 = this.h;
         Path path = this.c;
         if (f15 <= 0.6f) {
-            int min = f15 < 0.4f ? Math.min(org.telegram.messenger.ks.e4, (int) ((f15 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f15 - 0.4f) / 0.2f)) * 255.0f);
+            int min = f15 < 0.4f ? Math.min(org.telegram.messenger.ls.e4, (int) ((f15 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f15 - 0.4f) / 0.2f)) * 255.0f);
             if (!this.k) {
                 min = (int) (min * this.i);
             }
@@ -164,7 +164,7 @@ public final class a61 extends Drawable {
         float f16 = this.h;
         if (f16 >= 0.2f && f16 <= 0.8f) {
             float f17 = f16 - 0.2f;
-            int min2 = f17 < 0.4f ? Math.min(org.telegram.messenger.ks.e4, (int) ((f17 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f17 - 0.4f) / 0.2f)) * 255.0f);
+            int min2 = f17 < 0.4f ? Math.min(org.telegram.messenger.ls.e4, (int) ((f17 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f17 - 0.4f) / 0.2f)) * 255.0f);
             if (!this.k) {
                 min2 = (int) (min2 * this.i);
             }
@@ -175,7 +175,7 @@ public final class a61 extends Drawable {
         float f18 = this.h;
         if (f18 >= 0.4f && f18 <= 1.0f) {
             float f19 = f18 - 0.4f;
-            int min3 = f19 < 0.4f ? Math.min(org.telegram.messenger.ks.e4, (int) ((f19 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f19 - 0.4f) / 0.2f)) * 255.0f);
+            int min3 = f19 < 0.4f ? Math.min(org.telegram.messenger.ls.e4, (int) ((f19 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f19 - 0.4f) / 0.2f)) * 255.0f);
             if (!this.k) {
                 min3 = (int) (min3 * this.i);
             }
@@ -263,7 +263,7 @@ public final class a61 extends Drawable {
     public final void g(long j3) {
         this.o = j3;
         if (j3 >= 1000) {
-            this.p = org.telegram.messenger.gd.G((int) (j3 / 1000), "Seconds", new Object[0]);
+            this.p = org.telegram.messenger.hd.G((int) (j3 / 1000), "Seconds", new Object[0]);
         } else {
             this.p = null;
         }

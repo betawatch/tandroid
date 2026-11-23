@@ -14,9 +14,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class l60 extends r51 implements org.telegram.messenger.fs {
+public class l60 extends r51 implements org.telegram.messenger.gs {
     public final a0.h O1;
     public final k60 P1;
     public final org.telegram.ui.ActionBar.l1 Q1;
@@ -62,7 +62,7 @@ public class l60 extends r51 implements org.telegram.messenger.fs {
         this.l2 = g2Var;
         this.q2 = j3;
         O();
-        this.w1.K.setHint(org.telegram.messenger.gd.N0(2131745574, null));
+        this.w1.K.setHint(org.telegram.messenger.hd.N0(2131745574, null));
         this.k2 = ViewConfiguration.get(context).getScaledTouchSlop();
         g60 g60Var = new g60(this);
         this.R1 = g60Var;
@@ -75,7 +75,7 @@ public class l60 extends r51 implements org.telegram.messenger.fs {
         this.u1.setVisibility(8);
         ArrayList arrayList = org.telegram.messenger.i5.r(i7).f0;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            TLRPC.User c22 = org.telegram.messenger.mp.u1(this.a).c2(Long.valueOf(((TLRPC.TL_contact) arrayList.get(i10)).user_id));
+            TLRPC.User c22 = org.telegram.messenger.np.u1(this.a).c2(Long.valueOf(((TLRPC.TL_contact) arrayList.get(i10)).user_id));
             if (c22 != null && !c22.self && !c22.deleted) {
                 this.Z1.add(c22);
             }
@@ -103,7 +103,7 @@ public class l60 extends r51 implements org.telegram.messenger.fs {
         c10Var.setImageResource(R.drawable.floating_check);
         c10Var.setOnClickListener(new di.d3(this, context, j3, 4));
         c10Var.e(false, false);
-        c10Var.setContentDescription(org.telegram.messenger.gd.N0(2131748057, null));
+        c10Var.setContentDescription(org.telegram.messenger.hd.N0(2131748057, null));
         this.b.addView(c10Var, c10.b());
         ((ViewGroup.MarginLayoutParams) this.u1.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(20.0f);
         ((ViewGroup.MarginLayoutParams) this.u1.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(4.0f);
@@ -241,10 +241,10 @@ public class l60 extends r51 implements org.telegram.messenger.fs {
         boolean z10 = true;
         this.X1 = 1;
         if (this.h2 == null) {
-            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(this.a);
+            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(this.a);
             long j3 = this.q2;
             TLRPC.Chat O0 = u12.O0(Long.valueOf(j3));
-            TLRPC.ChatFull P0 = org.telegram.messenger.mp.u1(this.a).P0(j3);
+            TLRPC.ChatFull P0 = org.telegram.messenger.np.u1(this.a).P0(j3);
             if ((O0 == null || TextUtils.isEmpty(org.telegram.messenger.v3.K(O0, false))) && (P0 == null || P0.exported_invite == null)) {
                 z10 = S0();
             }
@@ -281,10 +281,10 @@ public class l60 extends r51 implements org.telegram.messenger.fs {
         this.W1 = i14;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.s && this.h2 != null && this.i2.isEmpty()) {
-            this.i2 = new ArrayList(org.telegram.messenger.mp.u1(this.a).F);
+        if (i7 == org.telegram.messenger.ls.s && this.h2 != null && this.i2.isEmpty()) {
+            this.i2 = new ArrayList(org.telegram.messenger.np.u1(this.a).F);
             this.q1.f();
         }
     }
@@ -292,6 +292,6 @@ public class l60 extends r51 implements org.telegram.messenger.fs {
     @Override // org.telegram.ui.Components.r51, org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         super.dismiss();
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.s);
+        org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.s);
     }
 }

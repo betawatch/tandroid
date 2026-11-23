@@ -24,14 +24,14 @@ import javax.microedition.khronos.egl.EGLSurface;
 import javax.microedition.khronos.opengles.GL10;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.voip.h0;
 import ug.t1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class m extends TextureView implements TextureView.SurfaceTextureListener, b6 {
     public volatile int E;
@@ -390,7 +390,7 @@ public class m extends TextureView implements TextureView.SurfaceTextureListener
     }
 
     public int getMaxFrameRate() {
-        return this.T == 4 ? bz.o() == 2 ? 60 : 30 : this.L;
+        return this.T == 4 ? cz.o() == 2 ? 60 : 30 : this.L;
     }
 
     public int getMsaaSamples() {

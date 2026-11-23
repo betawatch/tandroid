@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a90 implements org.telegram.ui.Components.a5, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.gu0 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class a90 implements org.telegram.ui.Components.a5,
                     k90Var.x.setText("");
                     break;
                 } else {
-                    k90Var.x.setText(org.telegram.messenger.gd.s(k90Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i7)).intValue(), false));
+                    k90Var.x.setText(org.telegram.messenger.hd.s(k90Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i7)).intValue(), false));
                     break;
                 }
             default:

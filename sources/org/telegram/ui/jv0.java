@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jv0 implements kp {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class jv0 implements kp {
                     z10 = false;
                     break;
                 } else {
-                    if (org.telegram.messenger.fj.B1(((TLRPC.TL_chatChannelParticipant) profileActivity.v2.participants.participants.get(i12)).channelParticipant.peer) == chatParticipant.user_id) {
+                    if (org.telegram.messenger.gj.B1(((TLRPC.TL_chatChannelParticipant) profileActivity.v2.participants.participants.get(i12)).channelParticipant.peer) == chatParticipant.user_id) {
                         TLRPC.ChatFull chatFull2 = profileActivity.v2;
                         chatFull2.participants_count--;
                         chatFull2.participants.participants.remove(i12);

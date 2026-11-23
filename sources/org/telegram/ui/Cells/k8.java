@@ -11,13 +11,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.k00;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k8 extends FrameLayout {
     public final TextView a;
@@ -42,7 +42,7 @@ public final class k8 extends FrameLayout {
         linearLayout.setGravity(17);
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.ActionBar.t6.V(textView, z12 ? org.telegram.ui.ActionBar.t6.g(org.telegram.ui.ActionBar.m6.Nl, ks.j2) : org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.Lf), h6Var);
+        org.telegram.ui.ActionBar.t6.V(textView, z12 ? org.telegram.ui.ActionBar.t6.g(org.telegram.ui.ActionBar.m6.Nl, ls.j2) : org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.Lf), h6Var);
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -58,9 +58,9 @@ public final class k8 extends FrameLayout {
             d = c8.ma.d(-2, -2.0f, 51, z10 ? 5.0f : 15.0f, 5.0f, z10 ? 15.0f : 25.0f, 0.0f);
         }
         addView(linearLayout, d);
-        TextView f10 = n10.f(linearLayout, textView, c8.ma.p(-2, -2, 1.0f, 16), context);
+        TextView f10 = o10.f(linearLayout, textView, c8.ma.p(-2, -2, 1.0f, 16), context);
         this.c = f10;
-        org.telegram.ui.ActionBar.t6.V(f10, z12 ? org.telegram.ui.ActionBar.t6.g(org.telegram.ui.ActionBar.m6.Nl, ks.j2) : org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.Lf), h6Var);
+        org.telegram.ui.ActionBar.t6.V(f10, z12 ? org.telegram.ui.ActionBar.t6.g(org.telegram.ui.ActionBar.m6.Nl, ls.j2) : org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.Lf), h6Var);
         f10.setTextSize(1, 11.0f);
         f10.setTypeface(org.telegram.messenger.g0.o());
         f10.setEllipsize(truncateAt);
@@ -80,7 +80,7 @@ public final class k8 extends FrameLayout {
         f10.setVisibility(8);
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        org.telegram.ui.ActionBar.t6.V(textView2, z12 ? org.telegram.ui.ActionBar.t6.g(org.telegram.ui.ActionBar.m6.Nl, ks.j2) : org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.Lf), h6Var);
+        org.telegram.ui.ActionBar.t6.V(textView2, z12 ? org.telegram.ui.ActionBar.t6.g(org.telegram.ui.ActionBar.m6.Nl, ls.j2) : org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.Lf), h6Var);
         textView2.setTextSize(1, 12.0f);
         textView2.setEllipsize(truncateAt);
         textView2.setSingleLine(true);
@@ -89,7 +89,7 @@ public final class k8 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        org.telegram.ui.ActionBar.p6 g12 = z12 ? org.telegram.ui.ActionBar.t6.g(org.telegram.ui.ActionBar.m6.Nl, ks.j2) : org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.Nf);
+        org.telegram.ui.ActionBar.p6 g12 = z12 ? org.telegram.ui.ActionBar.t6.g(org.telegram.ui.ActionBar.m6.Nl, ls.j2) : org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.Nf);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         int i7 = g12.a;
         int i10 = g12.b;
@@ -210,7 +210,7 @@ public final class k8 extends FrameLayout {
     public void setEdit(View.OnClickListener onClickListener) {
         TextView textView = this.c;
         textView.setVisibility(0);
-        textView.setText(gd.N0(2131751245, null));
+        textView.setText(hd.N0(2131751245, null));
         textView.setOnClickListener(onClickListener);
     }
 

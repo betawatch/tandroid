@@ -1,14 +1,14 @@
 package hi;
 
-import org.telegram.messenger.fj;
-import org.telegram.messenger.sy;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ty;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.rh;
 import org.telegram.ui.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class q1 implements ls {
     @Override // org.telegram.ui.ls
@@ -122,7 +122,7 @@ public final class q1 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ fj z() {
+    public final /* synthetic */ gj z() {
         return null;
     }
 
@@ -159,7 +159,7 @@ public final class q1 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ void i(sy syVar) {
+    public final /* synthetic */ void i(ty tyVar) {
     }
 
     @Override // org.telegram.ui.ls

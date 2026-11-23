@@ -13,9 +13,9 @@ import java.util.Iterator;
 import java.util.Set;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g0 {
     public static final HashMap g = new HashMap();
@@ -104,7 +104,7 @@ public final class g0 {
     }
 
     public final void e() {
-        ks.f(this.b).k(ks.M3, new Object[0]);
+        ls.f(this.b).k(ls.M3, new Object[0]);
     }
 
     public final void f() {

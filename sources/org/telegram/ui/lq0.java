@@ -9,7 +9,7 @@ import android.text.Spanned;
 import android.text.style.ClickableSpan;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lq0 extends xh.l {
     public final org.telegram.ui.Cells.t9 V;
@@ -22,7 +22,7 @@ public final class lq0 extends xh.l {
     public Layout f0;
     public Path g0;
 
-    public lq0(Context context, jq0 jq0Var, org.telegram.ui.Cells.t9 t9Var, final org.telegram.messenger.q10 q10Var, final org.telegram.messenger.s10 s10Var) {
+    public lq0(Context context, jq0 jq0Var, org.telegram.ui.Cells.t9 t9Var, final org.telegram.messenger.r10 r10Var, final org.telegram.messenger.t10 t10Var) {
         super(context);
         setClearLinkOnLongPress(false);
         setDisablePaddingsOffsetY(false);
@@ -38,15 +38,15 @@ public final class lq0 extends xh.l {
             public final void a(ClickableSpan clickableSpan) {
                 switch (i7) {
                     case 0:
-                        org.telegram.messenger.q10 q10Var2 = (org.telegram.messenger.q10) q10Var;
+                        org.telegram.messenger.r10 r10Var2 = (org.telegram.messenger.r10) r10Var;
                         lq0 lq0Var = this.b;
                         lq0Var.getClass();
-                        q10Var2.a(clickableSpan, lq0Var);
+                        r10Var2.a(clickableSpan, lq0Var);
                         break;
                     default:
-                        org.telegram.messenger.s10 s10Var2 = (org.telegram.messenger.s10) q10Var;
+                        org.telegram.messenger.t10 t10Var2 = (org.telegram.messenger.t10) r10Var;
                         lq0 lq0Var2 = this.b;
-                        s10Var2.a(clickableSpan, lq0Var2, new hf0(lq0Var2, 25));
+                        t10Var2.a(clickableSpan, lq0Var2, new hf0(lq0Var2, 25));
                         break;
                 }
             }
@@ -63,15 +63,15 @@ public final class lq0 extends xh.l {
             public final void a(ClickableSpan clickableSpan) {
                 switch (i10) {
                     case 0:
-                        org.telegram.messenger.q10 q10Var2 = (org.telegram.messenger.q10) s10Var;
+                        org.telegram.messenger.r10 r10Var2 = (org.telegram.messenger.r10) t10Var;
                         lq0 lq0Var = this.b;
                         lq0Var.getClass();
-                        q10Var2.a(clickableSpan, lq0Var);
+                        r10Var2.a(clickableSpan, lq0Var);
                         break;
                     default:
-                        org.telegram.messenger.s10 s10Var2 = (org.telegram.messenger.s10) s10Var;
+                        org.telegram.messenger.t10 t10Var2 = (org.telegram.messenger.t10) t10Var;
                         lq0 lq0Var2 = this.b;
-                        s10Var2.a(clickableSpan, lq0Var2, new hf0(lq0Var2, 25));
+                        t10Var2.a(clickableSpan, lq0Var2, new hf0(lq0Var2, 25));
                         break;
                 }
             }
@@ -130,7 +130,7 @@ public final class lq0 extends xh.l {
             this.e0.draw(canvas);
         }
         if (this.d0) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.I2, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ls.I2, 31);
         }
         if (this.W != null && this.a0) {
             canvas.save();

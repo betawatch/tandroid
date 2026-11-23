@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t3 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.ActionBar.j3 {
     public ValueAnimator E;
@@ -84,9 +84,9 @@ public final class t3 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.A
         e3Var.J = g4Var;
         k3 k3Var = g4Var.v0[0];
         Bitmap bitmap = null;
-        e3Var.q = (k3Var == null || !org.telegram.messenger.bz.v0) ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false) : k3Var.getActionBarColor();
+        e3Var.q = (k3Var == null || !org.telegram.messenger.cz.v0) ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false) : k3Var.getActionBarColor();
         k3 k3Var2 = g4Var.v0[0];
-        e3Var.r = (k3Var2 == null || !org.telegram.messenger.bz.v0) ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false) : k3Var2.getBackgroundColor();
+        e3Var.r = (k3Var2 == null || !org.telegram.messenger.cz.v0) ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Gl, false) : k3Var2.getBackgroundColor();
         e3Var.n = true;
         e3Var.I = !this.G ? 0.0f : g4Var.v0[0].getProgress();
         k3 k3Var3 = g4Var.v0[0];
@@ -131,7 +131,7 @@ public final class t3 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.A
         int f10;
         float min = this.n ? 0.0f : (1.0f - this.J) * Math.min(this.x, 1.0f - this.y);
         if (this.G && min > 0.25f) {
-            if (org.telegram.messenger.bz.v0) {
+            if (org.telegram.messenger.cz.v0) {
                 g4 g4Var = this.L;
                 f10 = i0.a.f(1.0f - (g4Var.v0[0].getVisibility() == 0 ? 1.0f - (g4Var.v0[0].getTranslationX() / g4Var.v0[0].getWidth()) : 0.0f), g4Var.v0[0].getActionBarColor(), g4Var.v0[1].getActionBarColor());
             } else {
@@ -400,7 +400,7 @@ public final class t3 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.A
     }
 
     public final int v() {
-        if (!org.telegram.messenger.bz.v0) {
+        if (!org.telegram.messenger.cz.v0) {
             return org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Jl, false);
         }
         g4 g4Var = this.L;

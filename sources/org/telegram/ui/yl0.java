@@ -10,7 +10,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yl0 extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ Context c;
@@ -99,7 +99,7 @@ public final class yl0 extends org.telegram.ui.Components.dk0 {
                 if (i7 != fm0Var.S) {
                     if (i7 != fm0Var.a0) {
                         if (i7 == fm0Var.h0) {
-                            a9Var.setText(org.telegram.messenger.gd.N0(2131743497, null));
+                            a9Var.setText(org.telegram.messenger.hd.N0(2131743495, null));
                             break;
                         }
                     } else {
@@ -109,9 +109,9 @@ public final class yl0 extends org.telegram.ui.Components.dk0 {
                     }
                 } else {
                     if (i11 == 1) {
-                        N0 = org.telegram.messenger.gd.N0(lm0Var.a ? 2131752422 : 2131743509, null);
+                        N0 = org.telegram.messenger.hd.N0(lm0Var.a ? 2131752422 : 2131743507, null);
                     } else {
-                        N0 = org.telegram.messenger.gd.N0(lm0Var.a ? 2131752310 : 2131743491, null);
+                        N0 = org.telegram.messenger.hd.N0(lm0Var.a ? 2131752310 : 2131743489, null);
                     }
                     a9Var.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(N0, new ii(this, i11, 27)), true));
                     break;
@@ -126,14 +126,14 @@ public final class yl0 extends org.telegram.ui.Components.dk0 {
                 org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var, lm0Var.getResourceProvider());
                 n8Var.updateColors();
                 if (i7 == fm0Var.W) {
-                    n8Var.k(org.telegram.messenger.gd.N0(lm0Var.a ? 2131752312 : 2131743494, null), false);
+                    n8Var.k(org.telegram.messenger.hd.N0(lm0Var.a ? 2131752312 : 2131743492, null), false);
                     break;
                 }
                 break;
             case 7:
                 org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) view;
                 if (i7 == fm0Var.b0) {
-                    o4Var.c(org.telegram.messenger.gd.N0(2131743498, null), false);
+                    o4Var.c(org.telegram.messenger.hd.N0(2131743496, null), false);
                 }
                 org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, o4Var, lm0Var.getResourceProvider());
                 break;
@@ -156,7 +156,7 @@ public final class yl0 extends org.telegram.ui.Components.dk0 {
                 hashMap.clear();
                 i10 = ((org.telegram.ui.ActionBar.g2) lm0Var).currentAccount;
                 ArrayList arrayList3 = di.y8.y(i10, false).I;
-                arrayList2.add(org.telegram.messenger.gd.N0(2131749929, null));
+                arrayList2.add(org.telegram.messenger.hd.N0(2131749929, null));
                 int i15 = 0;
                 int i16 = 0;
                 while (i15 < arrayList3.size()) {

@@ -5,10 +5,10 @@ import android.graphics.RectF;
 import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Pattern;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.xs;
-import org.telegram.messenger.zb;
+import org.telegram.messenger.ac;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ys;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -24,7 +24,7 @@ import org.telegram.ui.la;
 import org.telegram.ui.ml0;
 import org.telegram.ui.n21;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -67,19 +67,19 @@ public final /* synthetic */ class l5 implements RequestDelegate {
             case 9:
                 break;
             case 10:
-                int i10 = zb.i;
+                int i10 = ac.i;
                 break;
             case 11:
-                Pattern pattern = ri.U1;
+                Pattern pattern = si.U1;
                 break;
             case 12:
                 org.telegram.messenger.g0.g3(new org.telegram.messenger.a(tL_error, 25));
                 break;
             case 13:
-                int i11 = mp.I8;
+                int i11 = np.I8;
                 break;
             case 14:
-                String str = xs.k0;
+                String str = ys.k0;
                 break;
             case 15:
                 Paint paint = la.I;

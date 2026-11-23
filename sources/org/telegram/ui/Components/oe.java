@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oe extends FrameLayout {
     public final Paint a;
@@ -70,10 +70,10 @@ public final class oe extends FrameLayout {
     
         if (r7 != 0) goto L369;
      */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x04aa  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x04b0  */
-    /* JADX WARN: Removed duplicated region for block: B:383:0x07df  */
-    /* JADX WARN: Removed duplicated region for block: B:386:0x07e2  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x04ac  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x04b2  */
+    /* JADX WARN: Removed duplicated region for block: B:383:0x07e1  */
+    /* JADX WARN: Removed duplicated region for block: B:386:0x07e4  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -197,14 +197,14 @@ public final class oe extends FrameLayout {
                                     slideTextView2.setEnabled(false);
                                 }
                             }
-                            c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.Components.le
+                            c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new org.telegram.messenger.y10(this) { // from class: org.telegram.ui.Components.le
                                 public final /* synthetic */ oe b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // org.telegram.messenger.x10
+                                @Override // org.telegram.messenger.y10
                                 public final void a(Object obj) {
                                     Long l10 = (Long) obj;
                                     switch (i10) {
@@ -234,14 +234,14 @@ public final class oe extends FrameLayout {
                                 slideTextView3.setEnabled(false);
                             }
                             chatActivityEnterView.P3.l1();
-                            c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.Components.le
+                            c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new org.telegram.messenger.y10(this) { // from class: org.telegram.ui.Components.le
                                 public final /* synthetic */ oe b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // org.telegram.messenger.x10
+                                @Override // org.telegram.messenger.y10
                                 public final void a(Object obj) {
                                     Long l10 = (Long) obj;
                                     switch (i7) {
@@ -399,14 +399,14 @@ public final class oe extends FrameLayout {
                                     slideTextView4.setEnabled(false);
                                 }
                                 final int i11 = 3;
-                                c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.Components.le
+                                c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new org.telegram.messenger.y10(this) { // from class: org.telegram.ui.Components.le
                                     public final /* synthetic */ oe b;
 
                                     {
                                         this.b = this;
                                     }
 
-                                    @Override // org.telegram.messenger.x10
+                                    @Override // org.telegram.messenger.y10
                                     public final void a(Object obj) {
                                         Long l10 = (Long) obj;
                                         switch (i11) {
@@ -476,14 +476,14 @@ public final class oe extends FrameLayout {
                             }
                             chatActivityEnterView.P3.l1();
                             final int i12 = 2;
-                            c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.Components.le
+                            c5.X(chatActivityEnterView.R, 1, chatActivityEnterView.G3, new org.telegram.messenger.y10(this) { // from class: org.telegram.ui.Components.le
                                 public final /* synthetic */ oe b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // org.telegram.messenger.x10
+                                @Override // org.telegram.messenger.y10
                                 public final void a(Object obj) {
                                     Long l10 = (Long) obj;
                                     switch (i12) {
@@ -687,19 +687,22 @@ public final class oe extends FrameLayout {
                             } else {
                                 chatActivityEnterView2.i5 = true;
                                 rg rgVar4 = chatActivityEnterView2.E2;
-                                if (rgVar4 != null && org.telegram.messenger.mp.g1().getInt("voicepausehint", 0) <= 3 && !c8.b1.a()) {
-                                    rgVar4.f();
-                                    hi.l3 l3Var = new hi.l3(rgVar4.getContext(), 2);
-                                    rgVar4.a = l3Var;
-                                    l3Var.o(1.0f, 0.0f);
-                                    rgVar4.a.r(true);
-                                    rgVar4.a.v(org.telegram.messenger.gd.N0(2131743269, null));
-                                    rgVar4.Q0.setHintGlass(rgVar4.a);
-                                    org.telegram.messenger.mp.g1().edit().putInt("voicepausehint", org.telegram.messenger.mp.g1().getInt("voicepausehint", 0) + 1).apply();
-                                    rgVar4.addView(rgVar4.a, c8.ma.d(-1, -1.0f, org.telegram.messenger.ks.E1, 0.0f, 0.0f, 54.0f, 58.0f));
-                                    hi.l3 l3Var2 = rgVar4.a;
-                                    l3Var2.r0 = new pg(rgVar4, l3Var2, 3);
-                                    l3Var2.x();
+                                if (rgVar4 != null) {
+                                    ChatActivityEnterView chatActivityEnterView4 = rgVar4.Q0;
+                                    if (org.telegram.messenger.np.g1().getInt("voicepausehint", 0) <= 3 && !c8.b1.a(chatActivityEnterView4.G3)) {
+                                        rgVar4.f();
+                                        hi.l3 l3Var = new hi.l3(rgVar4.getContext(), 2);
+                                        rgVar4.a = l3Var;
+                                        l3Var.o(1.0f, 0.0f);
+                                        rgVar4.a.r(true);
+                                        rgVar4.a.v(org.telegram.messenger.hd.N0(2131743267, null));
+                                        chatActivityEnterView4.setHintGlass(rgVar4.a);
+                                        org.telegram.messenger.np.g1().edit().putInt("voicepausehint", org.telegram.messenger.np.g1().getInt("voicepausehint", 0) + 1).apply();
+                                        rgVar4.addView(rgVar4.a, c8.ma.d(-1, -1.0f, org.telegram.messenger.ls.E1, 0.0f, 0.0f, 54.0f, 58.0f));
+                                        hi.l3 l3Var2 = rgVar4.a;
+                                        l3Var2.r0 = new pg(rgVar4, l3Var2, 3);
+                                        l3Var2.x();
+                                    }
                                 }
                             }
                         }

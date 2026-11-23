@@ -2,14 +2,14 @@ package di;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w7 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final /* synthetic */ class w7 implements Runnable {
                 TLObject tLObject = this.c;
                 if (tLObject instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
-                    mp.u1(i7).f4(starsStatus.users, false);
-                    mp.u1(i7).Z3(starsStatus.chats, false);
+                    np.u1(i7).f4(starsStatus.users, false);
+                    np.u1(i7).Z3(starsStatus.chats, false);
                     y8Var.z.addAll(starsStatus.subscriptions);
                     y8Var.i0(starsStatus.balance);
-                    ks.f(i7).k(ks.C3, new Object[0]);
+                    ls.f(i7).k(ls.C3, new Object[0]);
                     break;
                 }
                 break;
@@ -47,13 +47,13 @@ public final /* synthetic */ class w7 implements Runnable {
                 TLObject tLObject2 = this.c;
                 if (tLObject2 instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject2;
-                    mp.u1(i10).f4(starsStatus2.users, false);
-                    mp.u1(i10).Z3(starsStatus2.chats, false);
+                    np.u1(i10).f4(starsStatus2.users, false);
+                    np.u1(i10).Z3(starsStatus2.chats, false);
                     y8Var2.v.addAll(starsStatus2.subscriptions);
                     y8Var2.y = (starsStatus2.flags & 4) == 0;
                     y8Var2.w = starsStatus2.subscriptions_next_offset;
                     y8Var2.i0(starsStatus2.balance);
-                    ks.f(i10).k(ks.C3, new Object[0]);
+                    ls.f(i10).k(ls.C3, new Object[0]);
                     break;
                 }
                 break;
@@ -83,7 +83,7 @@ public final /* synthetic */ class w7 implements Runnable {
                 }
                 y8Var3.j = arrayList;
                 y8Var3.h = false;
-                ks.f(y8Var3.a).k(ks.x3, new Object[0]);
+                ls.f(y8Var3.a).k(ls.x3, new Object[0]);
                 if (!arrayList2.isEmpty()) {
                     final int i12 = 0;
                     Runnable runnable = new Runnable() { // from class: di.b8
@@ -154,7 +154,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var6.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var6.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -195,7 +195,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var7.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var7.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -236,7 +236,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -295,7 +295,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var62.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var62.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -336,7 +336,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var7.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var7.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -377,7 +377,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -436,7 +436,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var62.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var62.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -477,7 +477,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -518,7 +518,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -602,7 +602,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var62.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var62.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -643,7 +643,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -684,7 +684,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -743,7 +743,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var62.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var62.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -784,7 +784,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -825,7 +825,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -884,7 +884,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var62.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var62.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -925,7 +925,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -966,7 +966,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1050,7 +1050,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var62.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var62.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1091,7 +1091,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1132,7 +1132,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1191,7 +1191,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1232,7 +1232,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1273,7 +1273,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1332,7 +1332,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1373,7 +1373,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1414,7 +1414,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1472,7 +1472,7 @@ public final /* synthetic */ class w7 implements Runnable {
                 }
                 y8Var4.m = arrayList4;
                 y8Var4.k = false;
-                ks.f(y8Var4.a).k(ks.y3, new Object[0]);
+                ls.f(y8Var4.a).k(ls.y3, new Object[0]);
                 if (!arrayList5.isEmpty()) {
                     final int i14 = 1;
                     Runnable runnable2 = new Runnable() { // from class: di.b8
@@ -1543,7 +1543,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1584,7 +1584,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1625,7 +1625,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1684,7 +1684,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1725,7 +1725,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1766,7 +1766,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1825,7 +1825,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1866,7 +1866,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1907,7 +1907,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1991,7 +1991,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2032,7 +2032,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2073,7 +2073,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2132,7 +2132,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2173,7 +2173,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2214,7 +2214,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2273,7 +2273,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2314,7 +2314,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2355,7 +2355,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2439,7 +2439,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2480,7 +2480,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2521,7 +2521,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2580,7 +2580,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2621,7 +2621,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2662,7 +2662,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2721,7 +2721,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2762,7 +2762,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2803,7 +2803,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2861,7 +2861,7 @@ public final /* synthetic */ class w7 implements Runnable {
                 }
                 y8Var5.p = arrayList7;
                 y8Var5.n = false;
-                ks.f(y8Var5.a).k(ks.z3, new Object[0]);
+                ls.f(y8Var5.a).k(ls.z3, new Object[0]);
                 if (!arrayList8.isEmpty()) {
                     final int i16 = 2;
                     Runnable runnable3 = new Runnable() { // from class: di.b8
@@ -2932,7 +2932,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2973,7 +2973,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3014,7 +3014,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3073,7 +3073,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3114,7 +3114,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3155,7 +3155,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3214,7 +3214,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3255,7 +3255,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3296,7 +3296,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3380,7 +3380,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3421,7 +3421,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3462,7 +3462,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3521,7 +3521,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3562,7 +3562,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3603,7 +3603,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3662,7 +3662,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3703,7 +3703,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3744,7 +3744,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3828,7 +3828,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3869,7 +3869,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3910,7 +3910,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3969,7 +3969,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -4010,7 +4010,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -4051,7 +4051,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -4110,7 +4110,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var622.a).k(ks.y3, new Object[0]);
+                                                                                ls.f(y8Var622.a).k(ls.y3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -4151,7 +4151,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var72.a).k(ks.z3, new Object[0]);
+                                                                                ls.f(y8Var72.a).k(ls.z3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -4192,7 +4192,7 @@ public final /* synthetic */ class w7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ks.f(y8Var8.a).k(ks.x3, new Object[0]);
+                                                                                ls.f(y8Var8.a).k(ls.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -4225,7 +4225,7 @@ public final /* synthetic */ class w7 implements Runnable {
                 }
                 break;
             default:
-                mp.u1(this.b.a).V3((TLRPC.Updates) this.c, false);
+                np.u1(this.b.a).V3((TLRPC.Updates) this.c, false);
                 break;
         }
     }

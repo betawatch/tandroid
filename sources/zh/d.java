@@ -12,8 +12,8 @@ import fi.u;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.m6;
@@ -22,7 +22,7 @@ import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.d9;
 import org.telegram.ui.ee;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d {
     public final g2 a;
@@ -54,7 +54,7 @@ public final class d {
             g2 g2Var = this.a;
             TLRPC.Chat chat = this.b;
             if (i7 == -1 && chat != null) {
-                mp messagesController = g2Var.getMessagesController();
+                np messagesController = g2Var.getMessagesController();
                 long j3 = chat.id;
                 this.l = messagesController.h7.getInt("chatPendingRequests" + j3, 0);
             }
@@ -140,7 +140,7 @@ public final class d {
                 this.h.setBackground(h02);
             }
             t6.s(this.h, m6.Ue, g2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
-            this.h.setContentDescription(gd.N0(2131752029, null));
+            this.h.setContentDescription(hd.N0(2131752029, null));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);
             this.h.setOnClickListener(new View.OnClickListener(this) { // from class: zh.a
@@ -200,7 +200,7 @@ public final class d {
         }
         if (this.k != i7) {
             this.k = i7;
-            this.g.setText(gd.G(i7, "JoinUsersRequests", new Object[0]));
+            this.g.setText(hd.G(i7, "JoinUsersRequests", new Object[0]));
             a(true, z10);
             if (list == null || list.isEmpty()) {
                 return;

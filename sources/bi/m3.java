@@ -17,9 +17,9 @@ import hi.sa;
 import hi.u9;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.qc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.ap0;
@@ -43,7 +43,7 @@ import org.telegram.ui.Components.yy;
 import org.telegram.ui.dq0;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m3 extends View {
     public final /* synthetic */ int a;
@@ -133,7 +133,7 @@ public final class m3 extends View {
                     l3Var.a();
                     ai.h0 h0Var = new ai.h0(l3Var, 1);
                     l3Var.h = h0Var;
-                    pc.a(h0Var);
+                    qc.a(h0Var);
                     break;
                 }
                 break;
@@ -161,7 +161,7 @@ public final class m3 extends View {
                     l3Var.i = false;
                     l3Var.a();
                     ai.h0 h0Var = l3Var.h;
-                    HashSet hashSet = pc.n;
+                    HashSet hashSet = qc.n;
                     if (hashSet != null) {
                         hashSet.remove(h0Var);
                         break;
@@ -297,7 +297,7 @@ public final class m3 extends View {
                             f13 = f16;
                         } else {
                             if (i10 != 1 || du0Var.d == null || du0Var.H == null) {
-                                drawable3.setAlpha(ks.e4);
+                                drawable3.setAlpha(ls.e4);
                             } else {
                                 drawable3.setAlpha((int) (du0Var.U * 255.0f));
                             }
@@ -447,7 +447,7 @@ public final class m3 extends View {
                 paint3.setColor(x02);
                 Paint paint4 = tw0Var.c;
                 paint4.setColor(x02);
-                paint3.setAlpha(ks.e4);
+                paint3.setAlpha(ls.e4);
                 paint4.setAlpha(82);
                 paint2.setAlpha(46);
                 Paint paint5 = tw0Var.d;
@@ -487,14 +487,14 @@ public final class m3 extends View {
                     f14 = 1.0f;
                     paint = paint5;
                 } else {
-                    int L3 = org.telegram.messenger.g0.L(24.0f) + ((int) (n10.B(24.0f, 2, getMeasuredWidth()) * tw0Var.G));
+                    int L3 = org.telegram.messenger.g0.L(24.0f) + ((int) (o10.B(24.0f, 2, getMeasuredWidth()) * tw0Var.G));
                     f14 = 1.0f;
                     canvas.drawLine(L2, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(24.0f) + r2, org.telegram.messenger.g0.L(20.0f), paint4);
                     canvas.drawRect(L3, org.telegram.messenger.g0.L(20.0f) - org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f) + L3, org.telegram.messenger.g0.L(3.0f) + org.telegram.messenger.g0.L(20.0f), paint5);
                     paint = paint5;
                 }
                 if (!tw0Var.e) {
-                    int B = (int) (n10.B(24.0f, 2, getMeasuredWidth()) * tw0Var.F);
+                    int B = (int) (o10.B(24.0f, 2, getMeasuredWidth()) * tw0Var.F);
                     if (B < org.telegram.messenger.g0.L(f14)) {
                         B = org.telegram.messenger.g0.L(f14);
                     }
@@ -676,7 +676,7 @@ public final class m3 extends View {
                             l3Var.i = false;
                             l3Var.a();
                             ai.h0 h0Var = l3Var.h;
-                            HashSet hashSet = pc.n;
+                            HashSet hashSet = qc.n;
                             if (hashSet != null) {
                                 hashSet.remove(h0Var);
                             }
@@ -694,7 +694,7 @@ public final class m3 extends View {
                             l3Var2.a();
                             ai.h0 h0Var2 = new ai.h0(l3Var2, 1);
                             l3Var2.h = h0Var2;
-                            pc.a(h0Var2);
+                            qc.a(h0Var2);
                             break;
                         }
                     }

@@ -19,7 +19,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pz extends View {
     public float E;
@@ -433,9 +433,9 @@ public final class pz extends View {
                 f27 = (f27 * f29) + ((f15 - f29) * f28);
             }
             float L3 = (z15 && this.S == null) ? (f14 - this.b0) + f16 + f27 + org.telegram.messenger.g0.L(5.0f) : f14 + f27 + org.telegram.messenger.g0.L(5.0f);
-            int z16 = org.telegram.messenger.n10.z(17.333f, getMeasuredHeight(), 2);
+            int z16 = org.telegram.messenger.o10.z(17.333f, getMeasuredHeight(), 2);
             if (z10 || ((!rzVar.n && rzVar.x == f10) || str2 != null)) {
-                paint2.setAlpha(org.telegram.messenger.ks.e4);
+                paint2.setAlpha(org.telegram.messenger.ls.e4);
             } else {
                 paint2.setAlpha((int) (rzVar.x * 255.0f));
             }
@@ -500,7 +500,7 @@ public final class pz extends View {
                                 this.N.draw(canvas2);
                                 canvas2.restore();
                             }
-                            textPaint5.setAlpha(org.telegram.messenger.ks.e4);
+                            textPaint5.setAlpha(org.telegram.messenger.ls.e4);
                         }
                         f35 += (L2 - (lineBottom - lineTop)) / 2.0f;
                         float L52 = f35 - org.telegram.messenger.g0.L(0.5f);
@@ -512,7 +512,7 @@ public final class pz extends View {
                         }
                         if (this.N != null) {
                         }
-                        textPaint5.setAlpha(org.telegram.messenger.ks.e4);
+                        textPaint5.setAlpha(org.telegram.messenger.ls.e4);
                     } else if (str2 != null) {
                         if (!z10) {
                             textPaint5.setAlpha((int) ((f15 - rzVar.x) * 255.0f));
@@ -642,7 +642,7 @@ public final class pz extends View {
         oz ozVar = this.b;
         accessibilityNodeInfo.setSelected((ozVar == null || (i7 = this.n0.M) == -1 || ozVar.a != i7) ? false : true);
         accessibilityNodeInfo.addAction(16);
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, org.telegram.messenger.gd.N0(2131754815, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, org.telegram.messenger.hd.N0(2131754815, null)));
         if (this.b != null) {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(this.b.b);
@@ -650,7 +650,7 @@ public final class pz extends View {
             int i10 = ozVar2 != null ? ozVar2.d : 0;
             if (i10 > 0) {
                 sb2.append("\n");
-                sb2.append(org.telegram.messenger.gd.G(i10, "AccDescrUnreadCount", new Object[0]));
+                sb2.append(org.telegram.messenger.hd.G(i10, "AccDescrUnreadCount", new Object[0]));
             }
             accessibilityNodeInfo.setContentDescription(sb2);
         }

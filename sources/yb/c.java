@@ -3,13 +3,13 @@ package yb;
 import a8.bb;
 import a8.y6;
 import android.content.Context;
-import bi.q7;
+import bi.p7;
 import com.google.android.gms.common.api.q;
 import h2.o0;
 import java.util.Locale;
 import pb.g;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c extends q {
     public final g b;
@@ -28,13 +28,13 @@ public final class c extends q {
         if (n6.e.a(b10) >= 204700000) {
             aVar = new o0(b10, aVar2);
         } else {
-            q7 q7Var = new q7();
-            q7Var.b = b10;
+            p7 p7Var = new p7();
+            p7Var.b = b10;
             Locale.getDefault().getLanguage().equals(Locale.ENGLISH.getLanguage());
-            q7Var.c = new y6(1, -1, aVar2.a, 1);
+            p7Var.c = new y6(1, -1, aVar2.a, 1);
             n6.e.b.getClass();
-            q7Var.d = n6.e.a(b10) >= 200400000 ? "com.google.android.gms.vision.ica" : "com.google.android.gms.vision.dynamite";
-            aVar = q7Var;
+            p7Var.d = n6.e.a(b10) >= 200400000 ? "com.google.android.gms.vision.ica" : "com.google.android.gms.vision.dynamite";
+            aVar = p7Var;
         }
         return new d(aVar2, aVar, bb.c());
     }

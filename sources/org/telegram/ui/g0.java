@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -17,11 +17,11 @@ public final /* synthetic */ class g0 implements RequestDelegate {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ g0(g4 g4Var, int i7, TLRPC.WebPage webPage, org.telegram.messenger.fj fjVar, boolean z10, String str) {
+    public /* synthetic */ g0(g4 g4Var, int i7, TLRPC.WebPage webPage, org.telegram.messenger.gj gjVar, boolean z10, String str) {
         this.d = g4Var;
         this.b = i7;
         this.e = webPage;
-        this.f = fjVar;
+        this.f = gjVar;
         this.c = z10;
         this.g = str;
     }
@@ -30,7 +30,7 @@ public final /* synthetic */ class g0 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new ai.v((g4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (org.telegram.messenger.fj) this.f, this.c, (String) this.g));
+                org.telegram.messenger.g0.g3(new ai.v((g4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (org.telegram.messenger.gj) this.f, this.c, (String) this.g));
                 break;
             default:
                 org.telegram.messenger.g0.g3(new ai.v((vf.b) this.d, (org.telegram.ui.ActionBar.t1[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));

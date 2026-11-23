@@ -7,13 +7,12 @@ import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.fi;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.sz;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.gi;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.si;
 import org.telegram.messenger.tz;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.uz;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.RequestDelegate;
@@ -23,13 +22,13 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.lp0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cx;
 import org.telegram.ui.np;
 import org.telegram.ui.o80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,7 +44,7 @@ public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ Object w;
     public final /* synthetic */ Object x;
 
-    public /* synthetic */ w4(Context context, int i7, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10, org.telegram.ui.ActionBar.h6 h6Var, ai.x1 x1Var, lc lcVar, c1.a aVar, di.f2 f2Var) {
+    public /* synthetic */ w4(Context context, int i7, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10, org.telegram.ui.ActionBar.h6 h6Var, ai.y1 y1Var, lc lcVar, c1.a aVar, di.f2 f2Var) {
         this.e = context;
         this.b = i7;
         this.f = tL_starGiftUnique;
@@ -53,7 +52,7 @@ public final /* synthetic */ class w4 implements Runnable {
         this.h = tL_textWithEntities;
         this.c = z10;
         this.n = h6Var;
-        this.r = x1Var;
+        this.r = y1Var;
         this.s = lcVar;
         this.w = aVar;
         this.x = f2Var;
@@ -108,26 +107,26 @@ public final /* synthetic */ class w4 implements Runnable {
         int i15 = 1;
         switch (i14) {
             case 0:
-                y4.d((Context) obj8, this.b, (TL_stars.TL_starGiftUnique) obj7, this.d, (TLRPC.TL_textWithEntities) obj6, this.c, (org.telegram.ui.ActionBar.h6) obj5, (ai.x1) obj4, (lc) obj3, (c1.a) obj2, (di.f2) obj);
+                x4.d((Context) obj8, this.b, (TL_stars.TL_starGiftUnique) obj7, this.d, (TLRPC.TL_textWithEntities) obj6, this.c, (org.telegram.ui.ActionBar.h6) obj5, (ai.y1) obj4, (lc) obj3, (c1.a) obj2, (di.f2) obj);
                 break;
             case 1:
-                final ri riVar = (ri) obj8;
+                final si siVar = (si) obj8;
                 a0.h hVar3 = (a0.h) obj6;
                 AtomicInteger atomicInteger = (AtomicInteger) obj5;
                 Runnable runnable2 = (Runnable) obj4;
                 int i16 = w4Var.b;
-                tz tzVar = (tz) obj3;
+                uz uzVar = (uz) obj3;
                 a0.h hVar4 = (a0.h) obj2;
                 a0.h hVar5 = (a0.h) obj;
-                tz.a((sz) obj7);
+                uz.a((tz) obj7);
                 try {
-                    riVar.getMessagesController().R1().k.d(hVar3, new fi(i15, atomicInteger, runnable2), i16, true, tzVar);
+                    siVar.getMessagesController().R1().k.d(hVar3, new gi(i15, atomicInteger, runnable2), i16, true, uzVar);
                 } catch (Exception e10) {
                     e = e10;
                     runnable = runnable2;
                 }
                 if (!hVar4.i()) {
-                    sz d = tz.d(tzVar, "loadReplyMessagesForMessages: getting reply messages");
+                    tz d = uz.d(uzVar, "loadReplyMessagesForMessages: getting reply messages");
                     ArrayList arrayList9 = new ArrayList();
                     ArrayList arrayList10 = new ArrayList();
                     ArrayList arrayList11 = new ArrayList();
@@ -159,7 +158,7 @@ public final /* synthetic */ class w4 implements Runnable {
                                         if (i18 != 1 || z11) {
                                             z10 = z11;
                                             if (i18 == 1) {
-                                                SQLiteDatabase sQLiteDatabase = riVar.getMessagesStorage().b;
+                                                SQLiteDatabase sQLiteDatabase = siVar.getMessagesStorage().b;
                                                 Locale locale = Locale.US;
                                                 i12 = i18;
                                                 String join = TextUtils.join(",", arrayList14);
@@ -179,12 +178,12 @@ public final /* synthetic */ class w4 implements Runnable {
                                                         TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r42), r42);
                                                         arrayList7 = arrayList10;
                                                         arrayList8 = arrayList11;
-                                                        TLdeserialize.readAttachPath(byteBufferValue, riVar.getUserConfig().n);
+                                                        TLdeserialize.readAttachPath(byteBufferValue, siVar.getUserConfig().n);
                                                         byteBufferValue.reuse();
                                                         TLdeserialize.id = sQLiteCursor.intValue(1);
                                                         TLdeserialize.date = sQLiteCursor.intValue(2);
                                                         TLdeserialize.dialog_id = j10;
-                                                        tr.e(TLdeserialize, arrayList12, arrayList13, null);
+                                                        ur.e(TLdeserialize, arrayList12, arrayList13, null);
                                                         arrayList9.add(TLdeserialize);
                                                         TLRPC.Peer peer = TLdeserialize.peer_id;
                                                         long j12 = peer != null ? peer.channel_id : 0L;
@@ -216,7 +215,7 @@ public final /* synthetic */ class w4 implements Runnable {
                                                 i12 = i18;
                                                 hVar2 = hVar4;
                                                 i13 = m10;
-                                                SQLiteDatabase sQLiteDatabase2 = riVar.getMessagesStorage().b;
+                                                SQLiteDatabase sQLiteDatabase2 = siVar.getMessagesStorage().b;
                                                 Locale locale2 = Locale.US;
                                                 r42 = 0;
                                                 sQLiteCursor = sQLiteDatabase2.queryFinalized("SELECT data, mid, date, uid FROM messages_v2 WHERE mid IN(" + TextUtils.join(",", arrayList14) + ") AND uid = " + j10, new Object[0]);
@@ -250,19 +249,19 @@ public final /* synthetic */ class w4 implements Runnable {
                                         Object obj9 = arrayList14.get(i20);
                                         i20++;
                                         int intValue = ((Integer) obj9).intValue();
-                                        if (fj.f3(intValue)) {
-                                            arrayList16.add(Integer.valueOf(fj.S(intValue)));
+                                        if (gj.f3(intValue)) {
+                                            arrayList16.add(Integer.valueOf(gj.S(intValue)));
                                         }
                                     }
                                     if (!arrayList16.isEmpty()) {
-                                        ArrayList Y = riVar.getMessagesStorage().Y(arrayList16, j10);
+                                        ArrayList Y = siVar.getMessagesStorage().Y(arrayList16, j10);
                                         int size2 = Y.size();
                                         int i21 = 0;
                                         while (i21 < size2) {
                                             Object obj10 = Y.get(i21);
                                             i21++;
                                             TLRPC.TL_message b10 = bg.x.b((TL_ephemeral.EphemeralMessage) obj10);
-                                            tr.e(b10, arrayList12, arrayList13, null);
+                                            ur.e(b10, arrayList12, arrayList13, null);
                                             arrayList9.add(b10);
                                         }
                                     }
@@ -290,45 +289,45 @@ public final /* synthetic */ class w4 implements Runnable {
                             } else {
                                 arrayList = arrayList17;
                                 i7 = 0;
-                                riVar.getMessagesStorage().n0(arrayList12, arrayList, false);
+                                siVar.getMessagesStorage().n0(arrayList12, arrayList, false);
                             }
                             if (arrayList13.isEmpty()) {
                                 arrayList2 = arrayList18;
                             } else {
                                 arrayList2 = arrayList18;
-                                riVar.getMessagesStorage().Q(TextUtils.join(",", arrayList13), arrayList2);
+                                siVar.getMessagesStorage().Q(TextUtils.join(",", arrayList13), arrayList2);
                             }
                             long j13 = j10;
-                            tz tzVar2 = tzVar;
-                            riVar.n(arrayList9, hVar6, arrayList, arrayList2, j13, true);
+                            uz uzVar2 = uzVar;
+                            siVar.n(arrayList9, hVar6, arrayList, arrayList2, j13, true);
                             final a0.h hVar7 = hVar6;
                             if (hVar5.i()) {
-                                tz.a(d);
+                                uz.a(d);
                                 if (atomicInteger3.decrementAndGet() == 0 && runnable != null) {
                                     org.telegram.messenger.g0.g3(runnable);
                                 }
                             } else {
-                                tz.a(d);
+                                uz.a(d);
                                 int m11 = hVar5.m();
                                 runnable2 = runnable2;
                                 while (i7 < m11) {
                                     final a0.h hVar8 = hVar7;
                                     final long j14 = hVar5.j(i7);
                                     if (z12) {
-                                        final sz d2 = tz.d(tzVar2, "loadReplyMessagesForMessages: load scheduled");
+                                        final tz d2 = uz.d(uzVar2, "loadReplyMessagesForMessages: load scheduled");
                                         final TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
-                                        tL_messages_getScheduledMessages.peer = riVar.getMessagesController().l1(j13);
+                                        tL_messages_getScheduledMessages.peer = siVar.getMessagesController().l1(j13);
                                         tL_messages_getScheduledMessages.id = (ArrayList) hVar5.n(i7);
-                                        ConnectionsManager connectionsManager = riVar.getConnectionsManager();
-                                        final tz tzVar3 = tzVar2;
+                                        ConnectionsManager connectionsManager = siVar.getConnectionsManager();
+                                        final uz uzVar3 = uzVar2;
                                         final long j15 = j13;
-                                        b7Var = new RequestDelegate() { // from class: org.telegram.messenger.ji
+                                        b7Var = new RequestDelegate() { // from class: org.telegram.messenger.ki
                                             /* JADX WARN: Multi-variable type inference failed */
                                             @Override // org.telegram.tgnet.RequestDelegate
                                             public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
                                                 Runnable runnable3;
                                                 TLRPC.TL_messages_getMessages tL_messages_getMessages;
-                                                tz.a(d2);
+                                                uz.a(d2);
                                                 if (tL_error == null) {
                                                     final TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                                                     int i22 = 0;
@@ -342,7 +341,7 @@ public final /* synthetic */ class w4 implements Runnable {
                                                     int size3 = messages_messages.messages.size();
                                                     TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages2 = tL_messages_getScheduledMessages;
                                                     int size4 = tL_messages_getScheduledMessages2.id.size();
-                                                    final ri riVar2 = ri.this;
+                                                    final si siVar2 = si.this;
                                                     final long j16 = j14;
                                                     final long j17 = j15;
                                                     final a0.h hVar9 = hVar8;
@@ -350,7 +349,7 @@ public final /* synthetic */ class w4 implements Runnable {
                                                     if (size3 < size4) {
                                                         if (j16 != 0) {
                                                             TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
-                                                            tL_channels_getMessages.channel = riVar2.getMessagesController().j1(j16);
+                                                            tL_channels_getMessages.channel = siVar2.getMessagesController().j1(j16);
                                                             tL_channels_getMessages.id = tL_messages_getScheduledMessages2.id;
                                                             tL_messages_getMessages = tL_channels_getMessages;
                                                         } else {
@@ -358,11 +357,11 @@ public final /* synthetic */ class w4 implements Runnable {
                                                             tL_messages_getMessages2.id = tL_messages_getScheduledMessages2.id;
                                                             tL_messages_getMessages = tL_messages_getMessages2;
                                                         }
-                                                        riVar2.getConnectionsManager().sendRequest(tL_messages_getMessages, new RequestDelegate() { // from class: org.telegram.messenger.tg
+                                                        siVar2.getConnectionsManager().sendRequest(tL_messages_getMessages, new RequestDelegate() { // from class: org.telegram.messenger.ug
                                                             @Override // org.telegram.tgnet.RequestDelegate
                                                             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                                                                ri riVar3 = ri.this;
-                                                                riVar3.getClass();
+                                                                si siVar3 = si.this;
+                                                                siVar3.getClass();
                                                                 if (tL_error != null) {
                                                                     return;
                                                                 }
@@ -376,15 +375,15 @@ public final /* synthetic */ class w4 implements Runnable {
                                                                     int size5 = messages_messages3.messages.size();
                                                                     long j18 = j17;
                                                                     if (i23 >= size5) {
-                                                                        fj.b0(messages_messages3.messages, j16);
-                                                                        ec.X(messages_messages3.messages);
+                                                                        gj.b0(messages_messages3.messages, j16);
+                                                                        fc.X(messages_messages3.messages);
                                                                         ArrayList<TLRPC.Message> arrayList19 = messages_messages3.messages;
                                                                         ArrayList<TLRPC.User> arrayList20 = messages_messages3.users;
                                                                         ArrayList<TLRPC.Chat> arrayList21 = messages_messages3.chats;
                                                                         a0.h hVar10 = hVar9;
-                                                                        riVar3.n(arrayList19, hVar10, arrayList20, arrayList21, j18, false);
-                                                                        riVar3.getMessagesStorage().m1(messages_messages3.users, messages_messages3.chats, true, true);
-                                                                        riVar3.Y1(hVar10, messages_messages3.messages, z13);
+                                                                        siVar3.n(arrayList19, hVar10, arrayList20, arrayList21, j18, false);
+                                                                        siVar3.getMessagesStorage().m1(messages_messages3.users, messages_messages3.chats, true, true);
+                                                                        siVar3.Y1(hVar10, messages_messages3.messages, z13);
                                                                         return;
                                                                     }
                                                                     TLRPC.Message message = messages_messages3.messages.get(i23);
@@ -402,14 +401,14 @@ public final /* synthetic */ class w4 implements Runnable {
                                                                 message.dialog_id = j17;
                                                             }
                                                         }
-                                                        fj.b0(messages_messages.messages, j16);
-                                                        ec.X(messages_messages.messages);
-                                                        riVar2.n(messages_messages.messages, hVar9, messages_messages.users, messages_messages.chats, j17, false);
-                                                        riVar2.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                                                        riVar2.Y1(hVar9, messages_messages.messages, z13);
+                                                        gj.b0(messages_messages.messages, j16);
+                                                        fc.X(messages_messages.messages);
+                                                        siVar2.n(messages_messages.messages, hVar9, messages_messages.users, messages_messages.chats, j17, false);
+                                                        siVar2.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
+                                                        siVar2.Y1(hVar9, messages_messages.messages, z13);
                                                     }
                                                 } else {
-                                                    tz.c(tzVar3, "getScheduledMessages error: " + tL_error.code + " " + tL_error.text);
+                                                    uz.c(uzVar3, "getScheduledMessages error: " + tL_error.code + " " + tL_error.text);
                                                 }
                                                 if (atomicInteger3.decrementAndGet() != 0 || (runnable3 = runnable) == null) {
                                                     return;
@@ -419,33 +418,33 @@ public final /* synthetic */ class w4 implements Runnable {
                                         };
                                         j3 = j15;
                                         hVar7 = hVar8;
-                                        tzVar2 = tzVar3;
+                                        uzVar2 = uzVar3;
                                         int sendRequest = connectionsManager.sendRequest(tL_messages_getScheduledMessages, b7Var);
                                         if (i16 != 0) {
-                                            riVar.getConnectionsManager().bindRequestToGuid(sendRequest, i16);
+                                            siVar.getConnectionsManager().bindRequestToGuid(sendRequest, i16);
                                         }
                                     } else {
                                         hVar7 = hVar8;
                                         j3 = j13;
                                         if (j14 != 0) {
-                                            final sz d10 = tz.d(tzVar2, "loadReplyMessagesForMessages: load channel messages");
+                                            final tz d10 = uz.d(uzVar2, "loadReplyMessagesForMessages: load channel messages");
                                             TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
-                                            tL_channels_getMessages.channel = riVar.getMessagesController().j1(j14);
+                                            tL_channels_getMessages.channel = siVar.getMessagesController().j1(j14);
                                             tL_channels_getMessages.id = (ArrayList) hVar5.n(i7);
-                                            ConnectionsManager connectionsManager2 = riVar.getConnectionsManager();
+                                            ConnectionsManager connectionsManager2 = siVar.getConnectionsManager();
                                             final boolean z13 = z12;
                                             final AtomicInteger atomicInteger4 = atomicInteger3;
                                             final Runnable runnable3 = runnable;
-                                            final tz tzVar4 = tzVar2;
+                                            final uz uzVar4 = uzVar2;
                                             try {
-                                                b7Var = new RequestDelegate() { // from class: org.telegram.messenger.ki
+                                                b7Var = new RequestDelegate() { // from class: org.telegram.messenger.li
                                                     @Override // org.telegram.tgnet.RequestDelegate
                                                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                                         Runnable runnable4;
                                                         long j16;
-                                                        ri riVar2 = ri.this;
-                                                        riVar2.getClass();
-                                                        tz.a(d10);
+                                                        si siVar2 = si.this;
+                                                        siVar2.getClass();
+                                                        uz.a(d10);
                                                         if (tL_error == null) {
                                                             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                                                             int i22 = 0;
@@ -461,17 +460,17 @@ public final /* synthetic */ class w4 implements Runnable {
                                                                 }
                                                                 i22++;
                                                             }
-                                                            fj.b0(messages_messages.messages, j14);
-                                                            ec.X(messages_messages.messages);
+                                                            gj.b0(messages_messages.messages, j14);
+                                                            fc.X(messages_messages.messages);
                                                             ArrayList<TLRPC.Message> arrayList19 = messages_messages.messages;
                                                             ArrayList<TLRPC.User> arrayList20 = messages_messages.users;
                                                             ArrayList<TLRPC.Chat> arrayList21 = messages_messages.chats;
                                                             a0.h hVar9 = hVar7;
-                                                            riVar2.n(arrayList19, hVar9, arrayList20, arrayList21, j16, false);
-                                                            riVar2.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                                                            riVar2.Y1(hVar9, messages_messages.messages, z13);
+                                                            siVar2.n(arrayList19, hVar9, arrayList20, arrayList21, j16, false);
+                                                            siVar2.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
+                                                            siVar2.Y1(hVar9, messages_messages.messages, z13);
                                                         } else {
-                                                            tz.c(tzVar4, "channels.getMessages error: " + tL_error.code + " " + tL_error.text);
+                                                            uz.c(uzVar4, "channels.getMessages error: " + tL_error.code + " " + tL_error.text);
                                                         }
                                                         if (atomicInteger4.decrementAndGet() != 0 || (runnable4 = runnable3) == null) {
                                                             return;
@@ -480,36 +479,36 @@ public final /* synthetic */ class w4 implements Runnable {
                                                     }
                                                 };
                                                 hVar7 = hVar7;
-                                                tzVar2 = tzVar4;
+                                                uzVar2 = uzVar4;
                                                 runnable = runnable3;
                                                 z12 = z13;
                                                 atomicInteger3 = atomicInteger4;
                                                 int sendRequest2 = connectionsManager2.sendRequest(tL_channels_getMessages, b7Var);
                                                 if (i16 != 0) {
-                                                    riVar.getConnectionsManager().bindRequestToGuid(sendRequest2, i16);
+                                                    siVar.getConnectionsManager().bindRequestToGuid(sendRequest2, i16);
                                                 }
                                             } catch (Exception e12) {
                                                 e = e12;
                                                 runnable = runnable3;
                                             }
                                         } else {
-                                            sz d11 = tz.d(tzVar2, "loadReplyMessagesForMessages: load messages");
+                                            tz d11 = uz.d(uzVar2, "loadReplyMessagesForMessages: load messages");
                                             TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
                                             tL_messages_getMessages.id = (ArrayList) hVar5.n(i7);
-                                            ConnectionsManager connectionsManager3 = riVar.getConnectionsManager();
-                                            tz tzVar5 = tzVar2;
+                                            ConnectionsManager connectionsManager3 = siVar.getConnectionsManager();
+                                            uz uzVar5 = uzVar2;
                                             boolean z14 = z12;
                                             AtomicInteger atomicInteger5 = atomicInteger3;
                                             Runnable runnable4 = runnable;
                                             try {
-                                                b7Var = new fi.b7(riVar, d11, j3, hVar7, z14, tzVar5, atomicInteger5, runnable4);
-                                                tzVar2 = tzVar5;
+                                                b7Var = new fi.b7(siVar, d11, j3, hVar7, z14, uzVar5, atomicInteger5, runnable4);
+                                                uzVar2 = uzVar5;
                                                 atomicInteger3 = atomicInteger5;
                                                 runnable = runnable4;
                                                 z12 = z14;
                                                 int sendRequest3 = connectionsManager3.sendRequest(tL_messages_getMessages, b7Var);
                                                 if (i16 != 0) {
-                                                    riVar.getConnectionsManager().bindRequestToGuid(sendRequest3, i16);
+                                                    siVar.getConnectionsManager().bindRequestToGuid(sendRequest3, i16);
                                                 }
                                             } catch (Exception e13) {
                                                 e = e13;
@@ -530,7 +529,7 @@ public final /* synthetic */ class w4 implements Runnable {
                         break;
                     }
                 } else {
-                    tz.c(tzVar, "loadReplyMessagesForMessages: empty replyMessageOwners");
+                    uz.c(uzVar, "loadReplyMessagesForMessages: empty replyMessageOwners");
                     if (atomicInteger.decrementAndGet() == 0 && runnable2 != null) {
                         org.telegram.messenger.g0.g3(runnable2);
                     }
@@ -628,20 +627,20 @@ public final /* synthetic */ class w4 implements Runnable {
                     ((ActionBarLayout) launchActivity.M()).T(npVar, false);
                     break;
                 } else {
-                    mp.u1(launchActivity.P).m(chat.id, user, 0, str2, cxVar, true, new mp0(launchActivity, i22, chat, cxVar, 9), null, null);
+                    org.telegram.messenger.np.u1(launchActivity.P).m(chat.id, user, 0, str2, cxVar, true, new lp0(launchActivity, i22, chat, cxVar, 10), null, null);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ w4(ri riVar, sz szVar, a0.h hVar, AtomicInteger atomicInteger, Runnable runnable, int i7, tz tzVar, a0.h hVar2, a0.h hVar3, boolean z10, long j3) {
-        this.e = riVar;
-        this.f = szVar;
+    public /* synthetic */ w4(si siVar, tz tzVar, a0.h hVar, AtomicInteger atomicInteger, Runnable runnable, int i7, uz uzVar, a0.h hVar2, a0.h hVar3, boolean z10, long j3) {
+        this.e = siVar;
+        this.f = tzVar;
         this.h = hVar;
         this.n = atomicInteger;
         this.r = runnable;
         this.b = i7;
-        this.s = tzVar;
+        this.s = uzVar;
         this.w = hVar2;
         this.x = hVar3;
         this.c = z10;

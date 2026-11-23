@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ge implements View.OnClickListener {
     public final /* synthetic */ org.telegram.ui.bn a;
@@ -33,8 +33,8 @@ public final class ge implements View.OnClickListener {
         }
         chatActivityEnterView.f0.a(chatActivityEnterView.W2, true);
         chatActivityEnterView.y2.setImageDrawable(chatActivityEnterView.f0);
-        org.telegram.messenger.mp.u1(chatActivityEnterView.R).g7.edit().putBoolean("silent_" + chatActivityEnterView.G3, chatActivityEnterView.W2).commit();
-        org.telegram.messenger.xs.t(chatActivityEnterView.R).c0(chatActivityEnterView.G3, bnVar == null ? 0L : bnVar.d(), true);
+        org.telegram.messenger.np.u1(chatActivityEnterView.R).g7.edit().putBoolean("silent_" + chatActivityEnterView.G3, chatActivityEnterView.W2).commit();
+        org.telegram.messenger.ys.t(chatActivityEnterView.R).c0(chatActivityEnterView.G3, bnVar == null ? 0L : bnVar.d(), true);
         bnVar.h8();
         UndoView undoView = bnVar.N3;
         if (undoView != null) {
@@ -48,7 +48,7 @@ public final class ge implements View.OnClickListener {
             str = "AccDescrChanSilentOff";
             i7 = 2131754907;
         }
-        imageView.setContentDescription(org.telegram.messenger.gd.N0(i7, str));
+        imageView.setContentDescription(org.telegram.messenger.hd.N0(i7, str));
         chatActivityEnterView.n2(true);
     }
 }

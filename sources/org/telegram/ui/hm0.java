@@ -5,7 +5,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hm0 {
     public boolean f;
@@ -33,35 +33,35 @@ public final class hm0 {
         this.n = new org.telegram.ui.Components.d6(im0Var, 0L, 320L, org.telegram.ui.Components.nr.h);
     }
 
-    public final void a(org.telegram.messenger.bp bpVar) {
+    public final void a(org.telegram.messenger.cp cpVar) {
         im0 im0Var = this.r;
         org.telegram.ui.ActionBar.h6 h6Var = im0Var.a;
-        if (bpVar == null) {
+        if (cpVar == null) {
             return;
         }
-        int[] iArr = bpVar.g;
-        int[] iArr2 = bpVar.h;
+        int[] iArr = cpVar.g;
+        int[] iArr2 = cpVar.h;
         boolean q10 = h6Var == null ? org.telegram.ui.ActionBar.m6.I.q() : h6Var.d();
         int i7 = im0Var.c;
         Paint paint = this.b;
         Paint paint2 = this.a;
         if (i7 != 1) {
-            paint2.setColor(bpVar.e(0, h6Var));
-            paint.setColor(bpVar.o(q10) ? bpVar.e(1, h6Var) : bpVar.e(0, h6Var));
-            this.f = bpVar.o(q10);
+            paint2.setColor(cpVar.e(0, h6Var));
+            paint.setColor(cpVar.o(q10) ? cpVar.e(1, h6Var) : cpVar.e(0, h6Var));
+            this.f = cpVar.o(q10);
             this.g = false;
             return;
         }
-        if (q10 && bpVar.g() != bpVar.f() && bpVar.i() == bpVar.f()) {
-            paint2.setColor(bpVar.e(1, h6Var));
-            paint.setColor(bpVar.e(0, h6Var));
+        if (q10 && cpVar.g() != cpVar.f() && cpVar.i() == cpVar.f()) {
+            paint2.setColor(cpVar.e(1, h6Var));
+            paint.setColor(cpVar.e(0, h6Var));
         } else {
-            paint2.setColor(bpVar.e(0, h6Var));
-            paint.setColor(bpVar.e(1, h6Var));
+            paint2.setColor(cpVar.e(0, h6Var));
+            paint.setColor(cpVar.e(1, h6Var));
         }
-        this.c.setColor(bpVar.e(2, h6Var));
-        this.f = bpVar.h(q10) != (q10 ? iArr2 : iArr)[0];
-        int j3 = bpVar.j(q10);
+        this.c.setColor(cpVar.e(2, h6Var));
+        this.f = cpVar.h(q10) != (q10 ? iArr2 : iArr)[0];
+        int j3 = cpVar.j(q10);
         if (q10) {
             iArr = iArr2;
         }

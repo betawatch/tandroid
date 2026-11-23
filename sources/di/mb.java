@@ -3,14 +3,14 @@ package di;
 import android.content.Context;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class mb extends FrameLayout implements fs {
+public final class mb extends FrameLayout implements gs {
     public final h51 a;
     public final org.telegram.ui.ActionBar.h6 b;
     public final int c;
@@ -35,9 +35,9 @@ public final class mb extends FrameLayout implements fs {
         h51Var.setOnScrollListener(new bi.u1(this, 11));
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ks.B3;
+        int i11 = ls.B3;
         h51 h51Var = this.a;
         if (i7 == i11) {
             h51Var.g3.O(true);
@@ -51,12 +51,12 @@ public final class mb extends FrameLayout implements fs {
             this.h.run();
             return;
         }
-        if (i7 == ks.F3) {
+        if (i7 == ls.F3) {
             if (((Long) objArr[0]).longValue() == this.f) {
                 h51Var.g3.O(true);
             }
         } else {
-            if (i7 != ks.d4 || this.n == null || TextUtils.equals(this.r, org.telegram.ui.Wallet.u0.D(this.c).y())) {
+            if (i7 != ls.d4 || this.n == null || TextUtils.equals(this.r, org.telegram.ui.Wallet.u0.D(this.c).y())) {
                 return;
             }
             h51Var.g3.O(true);
@@ -69,11 +69,11 @@ public final class mb extends FrameLayout implements fs {
         long j3 = this.f;
         int i7 = this.c;
         if (j3 != 0) {
-            ks.f(i7).c(this, ks.F3);
+            ls.f(i7).c(this, ls.F3);
         } else {
-            ks.f(i7).c(this, ks.B3);
+            ls.f(i7).c(this, ls.B3);
             if (this.e) {
-                ks.f(i7).c(this, ks.d4);
+                ls.f(i7).c(this, ls.d4);
             }
         }
         this.a.g3.O(false);
@@ -85,12 +85,12 @@ public final class mb extends FrameLayout implements fs {
         long j3 = this.f;
         int i7 = this.c;
         if (j3 != 0) {
-            ks.f(i7).n(this, ks.F3);
+            ls.f(i7).n(this, ls.F3);
             return;
         }
-        ks.f(i7).n(this, ks.B3);
+        ls.f(i7).n(this, ls.B3);
         if (this.e) {
-            ks.f(i7).n(this, ks.d4);
+            ls.f(i7).n(this, ls.d4);
         }
     }
 }

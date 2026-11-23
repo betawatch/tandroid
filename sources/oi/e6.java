@@ -8,10 +8,10 @@ import java.util.IdentityHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.function.ToIntFunction;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e6 {
     public final TL_iv.pageBlockTable a;
@@ -37,7 +37,7 @@ public final class e6 {
         int i7 = pagetablecell.flags;
         int i10 = i7 | 128;
         pagetablecell.flags = i10;
-        pagetablecell.flags = pagetablecell.colspan > 1 ? i7 | ks.O1 : i10 & (-3);
+        pagetablecell.flags = pagetablecell.colspan > 1 ? i7 | ls.O1 : i10 & (-3);
         pagetablecell.flags = pagetablecell.rowspan > 1 ? pagetablecell.flags | 4 : pagetablecell.flags & (-5);
     }
 
@@ -46,7 +46,7 @@ public final class e6 {
         int i7 = pagetablecell.flags;
         int i10 = i7 | 128;
         pagetablecell.flags = i10;
-        pagetablecell.flags = pagetablecell.colspan > 1 ? i7 | ks.O1 : i10 & (-3);
+        pagetablecell.flags = pagetablecell.colspan > 1 ? i7 | ls.O1 : i10 & (-3);
         pagetablecell.flags = pagetablecell.rowspan > 1 ? pagetablecell.flags | 4 : pagetablecell.flags & (-5);
     }
 

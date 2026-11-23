@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m50 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -141,7 +141,7 @@ public final class m50 extends org.telegram.ui.Components.dk0 {
             int i10 = org.telegram.ui.ActionBar.m6.B6;
             n50 n50Var = this.r;
             org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(this.c, i10, 21, 0, 0, false, false, n50Var.getResourceProvider());
-            o4Var.setText(org.telegram.messenger.gd.N0(n50Var.O ? 2131752107 : 2131752106, null));
+            o4Var.setText(org.telegram.messenger.hd.N0(n50Var.O ? 2131752107 : 2131752106, null));
             h8Var = o4Var;
         } else {
             org.telegram.ui.Cells.h8 h8Var2 = new org.telegram.ui.Cells.h8(this.c, 3);

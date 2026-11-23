@@ -4,9 +4,9 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t8 {
     public final org.telegram.ui.ActionBar.g2 a;
@@ -17,7 +17,7 @@ public final class t8 {
     public final x8 f;
     public int g;
     public long h;
-    public ai.w2 i;
+    public ai.x2 i;
     public final ArrayList j = new ArrayList();
     public final HashSet k = new HashSet();
     public final long l = System.currentTimeMillis();
@@ -46,9 +46,9 @@ public final class t8 {
                         t8 t8Var = this.b;
                         if (!t8Var.n && !t8Var.o && t8Var.m) {
                             t8Var.n = true;
-                            ai.w2 w2Var = t8Var.i;
-                            if (w2Var != null) {
-                                w2Var.a(t8Var.k);
+                            ai.x2 x2Var = t8Var.i;
+                            if (x2Var != null) {
+                                x2Var.a(t8Var.k);
                             }
                             if (t8Var.e != null) {
                                 t8Var.c.b();
@@ -84,7 +84,7 @@ public final class t8 {
         final int i11 = 1;
         org.telegram.ui.Components.ec ecVar = new org.telegram.ui.Components.ec(t6, g2Var.getResourceProvider(), true, false);
         this.e = ecVar;
-        ecVar.e(gd.N0(2131744782, null));
+        ecVar.e(hd.N0(2131744780, null));
         ecVar.b = new Runnable(this) { // from class: di.s8
             public final /* synthetic */ t8 b;
 
@@ -102,9 +102,9 @@ public final class t8 {
                         t8 t8Var = this.b;
                         if (!t8Var.n && !t8Var.o && t8Var.m) {
                             t8Var.n = true;
-                            ai.w2 w2Var = t8Var.i;
-                            if (w2Var != null) {
-                                w2Var.a(t8Var.k);
+                            ai.x2 x2Var = t8Var.i;
+                            if (x2Var != null) {
+                                x2Var.a(t8Var.k);
                             }
                             if (t8Var.e != null) {
                                 t8Var.c.b();
@@ -139,9 +139,9 @@ public final class t8 {
                         t8 t8Var = this.b;
                         if (!t8Var.n && !t8Var.o && t8Var.m) {
                             t8Var.n = true;
-                            ai.w2 w2Var = t8Var.i;
-                            if (w2Var != null) {
-                                w2Var.a(t8Var.k);
+                            ai.x2 x2Var = t8Var.i;
+                            if (x2Var != null) {
+                                x2Var.a(t8Var.k);
                             }
                             if (t8Var.e != null) {
                                 t8Var.c.b();

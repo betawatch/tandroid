@@ -1,238 +1,152 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fi implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ a0.h d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ c1 f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ fi(int i7, Object obj, Object obj2) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ fi(si siVar, tz tzVar, uz uzVar, ArrayList arrayList, long j3, a0.h hVar, Runnable runnable) {
+        this.f = siVar;
+        this.h = tzVar;
+        this.n = uzVar;
+        this.c = arrayList;
+        this.b = j3;
+        this.d = hVar;
+        this.e = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                x10 x10Var = (x10) obj2;
-                ArrayList arrayList = (ArrayList) obj;
-                if (x10Var != null) {
-                    x10Var.a(arrayList);
-                    break;
-                }
-                break;
-            case 1:
-                Runnable runnable = (Runnable) obj;
-                if (((AtomicInteger) obj2).decrementAndGet() == 0 && runnable != null) {
-                    g0.g3(runnable);
-                    break;
-                }
-                break;
-            case 2:
-                ri riVar = (ri) ((m9.u) obj2).c;
-                riVar.B0.clear();
-                riVar.B0.addAll((ArrayList) obj);
-                break;
-            case 3:
-                ArrayList arrayList2 = ((ri) ((androidx.activity.g) obj2).c).B0;
-                arrayList2.clear();
-                arrayList2.addAll((ArrayList) obj);
-                ks.e().k(ks.X4, new Object[0]);
-                break;
-            case 4:
-                fj fjVar = (fj) obj2;
-                fjVar.n = (TLRPC.Document) obj;
-                ks.f(fjVar.K1).k(ks.B1, fjVar);
-                break;
-            case 5:
-                mp mpVar = (mp) obj2;
-                TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) obj;
-                long[] a22 = mpVar.getMessagesStorage().a2(tL_updateMessageID.random_id, 0L, null, tL_updateMessageID.id, 0, -1, 0);
-                if (a22 != null) {
-                    g0.g3(new kg(mpVar, a22, tL_updateMessageID, 7));
-                    break;
-                }
-                break;
-            case 6:
-                TL_update.TL_updateServiceNotification tL_updateServiceNotification = (TL_update.TL_updateServiceNotification) obj;
-                ((mp) obj2).getNotificationCenter().k(75, 2, tL_updateServiceNotification.message, tL_updateServiceNotification.type);
-                break;
-            case 7:
-                TL_update.TL_updateGroupCallMessage tL_updateGroupCallMessage = (TL_update.TL_updateGroupCallMessage) obj;
-                ((mp) obj2).getNotificationCenter().k(ks.H2, Long.valueOf(tL_updateGroupCallMessage.call.id), tL_updateGroupCallMessage, Boolean.FALSE);
-                break;
-            case 8:
-                TL_update.TL_updateDeleteGroupCallMessages tL_updateDeleteGroupCallMessages = (TL_update.TL_updateDeleteGroupCallMessages) obj;
-                ((mp) obj2).getNotificationCenter().k(ks.H2, Long.valueOf(tL_updateDeleteGroupCallMessages.call.id), tL_updateDeleteGroupCallMessages, Boolean.FALSE);
-                break;
-            case 9:
-                TL_update.TL_updateUserTyping tL_updateUserTyping = (TL_update.TL_updateUserTyping) obj;
-                ((mp) obj2).getNotificationCenter().k(ks.W4, Long.valueOf(tL_updateUserTyping.user_id), tL_updateUserTyping.action);
-                break;
-            case 10:
-                TL_update.TL_updateChatUserTyping tL_updateChatUserTyping = (TL_update.TL_updateChatUserTyping) obj;
-                ((mp) obj2).getNotificationCenter().k(ks.W4, Long.valueOf(-tL_updateChatUserTyping.chat_id), tL_updateChatUserTyping.action);
-                break;
-            case 11:
-                mp mpVar2 = (mp) obj2;
-                TLRPC.updates_Difference updates_difference = (TLRPC.updates_Difference) obj;
-                mpVar2.s1.clear();
-                mpVar2.z1.clear();
-                mpVar2.f4(updates_difference.users, false);
-                mpVar2.Z3(updates_difference.chats, false);
-                break;
-            case 12:
-                mp mpVar3 = (mp) obj2;
-                TLRPC.messages_SponsoredMessages messages_sponsoredmessages = (TLRPC.messages_SponsoredMessages) obj;
-                mpVar3.getClass();
-                mpVar3.f4(messages_sponsoredmessages.users, false);
-                mpVar3.Z3(messages_sponsoredmessages.chats, false);
-                break;
-            case 13:
-                mp mpVar4 = (mp) obj2;
-                TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers = (TLRPC.TL_channels_sendAsPeers) obj;
-                mpVar4.getClass();
-                mpVar4.f4(tL_channels_sendAsPeers.users, false);
-                mpVar4.Z3(tL_channels_sendAsPeers.chats, false);
-                break;
-            case 14:
-                mp mpVar5 = (mp) obj2;
-                mpVar5.getClass();
-                mpVar5.L0(((TL_update.TL_updateChannel) obj).channel_id, 1, 0L, null);
-                break;
-            case 15:
-                mp mpVar6 = (mp) obj2;
-                TLRPC.updates_ChannelDifference updates_channeldifference = (TLRPC.updates_ChannelDifference) obj;
-                mpVar6.getClass();
-                mpVar6.f4(updates_channeldifference.users, false);
-                mpVar6.Z3(updates_channeldifference.chats, false);
-                break;
-            case 16:
-                mp mpVar7 = (mp) obj2;
-                TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
-                mpVar7.getClass();
-                mpVar7.f4(tL_channels_channelParticipant.users, false);
-                mpVar7.Z3(tL_channels_channelParticipant.chats, false);
-                break;
-            case 17:
-                mp mpVar8 = (mp) obj2;
-                TLRPC.TL_help_appConfig tL_help_appConfig = (TLRPC.TL_help_appConfig) obj;
-                rj rjVar = mpVar8.O7;
-                if (tL_help_appConfig != null) {
-                    TLRPC.JSONValue jSONValue = tL_help_appConfig.config;
-                    if (jSONValue instanceof TLRPC.TL_jsonObject) {
-                        mpVar8.q((TLRPC.TL_jsonObject) jSONValue);
+                si siVar = (si) this.f;
+                tz tzVar = (tz) this.h;
+                uz uzVar = (uz) this.n;
+                ArrayList arrayList = this.c;
+                uz.a(tzVar);
+                tz d = uz.d(uzVar, "loadReplyMessagesForMessages: (encrypted) loading those messages from storage");
+                try {
+                    ArrayList arrayList2 = new ArrayList();
+                    SQLiteDatabase sQLiteDatabase = siVar.getMessagesStorage().b;
+                    Locale locale = Locale.US;
+                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid, m.date, r.random_id FROM randoms_v2 as r INNER JOIN messages_v2 as m ON r.mid = m.mid AND r.uid = m.uid WHERE r.random_id IN(" + TextUtils.join(",", arrayList) + ")", new Object[0]);
+                    while (true) {
+                        boolean next = queryFinalized.next();
+                        long j3 = this.b;
+                        a0.h hVar = this.d;
+                        if (!next) {
+                            queryFinalized.dispose();
+                            if (hVar.m() != 0) {
+                                for (int i7 = 0; i7 < hVar.m(); i7++) {
+                                    ArrayList arrayList3 = (ArrayList) hVar.n(i7);
+                                    for (int i10 = 0; i10 < arrayList3.size(); i10++) {
+                                        TLRPC.MessageReplyHeader messageReplyHeader = ((gj) arrayList3.get(i10)).k.reply_to;
+                                        if (messageReplyHeader != null) {
+                                            messageReplyHeader.reply_to_random_id = 0L;
+                                        }
+                                    }
+                                }
+                            }
+                            uz.a(d);
+                            g0.g3(new gm(siVar, uz.d(uzVar, "loadReplyMessagesForMessages (encrypted) runOnUIThread: posting notification"), j3, arrayList2, 3));
+                            Runnable runnable = this.e;
+                            if (runnable != null) {
+                                runnable.run();
+                                break;
+                            }
+                        } else {
+                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                            if (byteBufferValue != null) {
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                TLdeserialize.readAttachPath(byteBufferValue, siVar.getUserConfig().n);
+                                byteBufferValue.reuse();
+                                TLdeserialize.id = queryFinalized.intValue(1);
+                                TLdeserialize.date = queryFinalized.intValue(2);
+                                TLdeserialize.dialog_id = j3;
+                                long longValue = queryFinalized.longValue(3);
+                                ArrayList arrayList4 = (ArrayList) hVar.f(longValue);
+                                hVar.l(longValue);
+                                if (arrayList4 != null) {
+                                    gj gjVar = new gj(siVar.currentAccount, TLdeserialize, false, false);
+                                    arrayList2.add(gjVar);
+                                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
+                                        gj gjVar2 = (gj) arrayList4.get(i11);
+                                        gjVar2.C = gjVar;
+                                        gjVar2.m();
+                                        gjVar2.k.reply_to = new TLRPC.TL_messageReplyHeader();
+                                        TLRPC.MessageReplyHeader messageReplyHeader2 = gjVar2.k.reply_to;
+                                        messageReplyHeader2.flags |= 16;
+                                        messageReplyHeader2.reply_to_msg_id = gjVar.L1();
+                                    }
+                                }
+                            }
+                        }
                     }
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
                 }
-                g0.r(rjVar);
-                g0.h3(rjVar, 240010L);
-                break;
-            case 18:
-                mp mpVar9 = (mp) obj2;
-                Runnable runnable2 = (Runnable) obj;
-                if (runnable2 != null) {
-                    runnable2.run();
-                }
-                mpVar9.getNotificationCenter().k(2, 2);
-                mpVar9.getNotificationCenter().k(39, new Object[0]);
-                break;
-            case 19:
-                ((mp) obj2).getNotificationCenter().k(75, 4, ((TLRPC.TL_help_termsOfServiceUpdate) obj).terms_of_service);
-                break;
-            case 20:
-                x10 x10Var2 = (x10) obj2;
-                Runnable runnable3 = (Runnable) obj;
-                if (x10Var2 != null) {
-                    x10Var2.a(null);
-                }
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
-                }
-                break;
-            case 21:
-                mp mpVar10 = (mp) obj2;
-                TLRPC.Updates updates = (TLRPC.Updates) obj;
-                mpVar10.f4(updates.users, false);
-                mpVar10.Z3(updates.chats, false);
-                ArrayList<TLRPC.Chat> arrayList3 = updates.chats;
-                if (arrayList3 != null && !arrayList3.isEmpty()) {
-                    mpVar10.getNotificationCenter().k(28, Long.valueOf(updates.chats.get(0).id));
-                    break;
-                } else {
-                    mpVar10.getNotificationCenter().k(29, new Object[0]);
-                    break;
-                }
-                break;
-            case 22:
-                x10 x10Var3 = (x10) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (x10Var3 != null) {
-                    x10Var3.a(tL_error);
-                    break;
-                }
-                break;
-            case 23:
-                ((q10) obj2).a(0, (TLRPC.TL_error) obj);
-                break;
-            case 24:
-                mp mpVar11 = (mp) obj2;
-                ((ai.h0) obj).a(mpVar11.d8);
-                mpVar11.c8 = false;
-                break;
-            case 25:
-                q0.a aVar = (q0.a) obj2;
-                TLRPC.User user = (TLRPC.User) obj;
-                if (aVar != null) {
-                    aVar.accept(user);
-                    break;
-                }
-                break;
-            case 26:
-                mp mpVar12 = (mp) obj2;
-                fj fjVar2 = (fj) obj;
-                mpVar12.getClass();
-                long B0 = fj.B0(fjVar2.k);
-                int e12 = fjVar2.e1();
-                a0.h hVar = mpVar12.K0;
-                ArrayList arrayList4 = (ArrayList) hVar.f(B0);
-                if (arrayList4 == null) {
-                    arrayList4 = f3.h(hVar, B0);
-                }
-                if (!arrayList4.contains(Integer.valueOf(e12))) {
-                    arrayList4.add(Integer.valueOf(e12));
-                    break;
-                }
-                break;
-            case 27:
-                fp fpVar = (fp) obj2;
-                TLObject tLObject = (TLObject) obj;
-                fpVar.c = false;
-                fpVar.d = true;
-                if (tLObject instanceof TL_account.TL_savedMusicIds) {
-                    fpVar.b.addAll(((TL_account.TL_savedMusicIds) tLObject).ids);
-                }
-                ks.f(fpVar.a).k(ks.X3, new Object[0]);
-                break;
-            case 28:
-                ((a4) obj2).a((ArrayList) obj);
                 break;
             default:
-                ((ym) obj2).a(((int[]) obj)[0]);
+                f00 f00Var = (f00) this.f;
+                TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs = (TLRPC.TL_messages_savedDialogs) this.h;
+                HashSet hashSet = (HashSet) this.n;
+                int i12 = 0;
+                f00Var.getMessagesController().f4(tL_messages_savedDialogs.users, false);
+                f00Var.getMessagesController().Z3(tL_messages_savedDialogs.chats, false);
+                long j10 = this.b;
+                ArrayList arrayList5 = this.c;
+                f00Var.u(j10, arrayList5, this.d, false, 2, -1);
+                long j11 = -j10;
+                f00Var.getMessagesStorage().C1(f00Var.getConnectionsManager().getCurrentTime(), j11, (List) f00Var.a.f(j10), true);
+                f00Var.getMessagesStorage().j1(tL_messages_savedDialogs.messages, false, true, false, 0, false, 0, 0L);
+                int size = arrayList5.size();
+                while (i12 < size) {
+                    Object obj = arrayList5.get(i12);
+                    i12++;
+                    hashSet.remove(Long.valueOf(n5.o(((TLRPC.TL_forumTopic) obj).from_id)));
+                }
+                Iterator it = hashSet.iterator();
+                while (it.hasNext()) {
+                    long longValue2 = ((Long) it.next()).longValue();
+                    ur messagesStorage = f00Var.getMessagesStorage();
+                    messagesStorage.a.c(new op(1, j11, longValue2, messagesStorage));
+                    f00Var.s(j10, longValue2);
+                }
+                Runnable runnable2 = this.e;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ fi(f00 f00Var, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j3, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
+        this.f = f00Var;
+        this.h = tL_messages_savedDialogs;
+        this.b = j3;
+        this.c = arrayList;
+        this.d = hVar;
+        this.n = hashSet;
+        this.e = runnable;
     }
 }

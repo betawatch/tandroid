@@ -14,11 +14,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mz;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.nz;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class s {
     public float[] a;
@@ -37,7 +37,7 @@ public final class s {
             default:
                 this.b = -1;
                 this.c = 1;
-                this.f = new float[ks.K1];
+                this.f = new float[ls.K1];
                 this.g = new byte[TLObject.FLAG_12];
                 break;
         }
@@ -293,7 +293,7 @@ public final class s {
         } else {
             String y22 = g0.y2(null, R.raw.qr_logo);
             int i41 = this.e;
-            Bitmap e10 = mz.e(i41, i41, y22);
+            Bitmap e10 = nz.e(i41, i41, y22);
             float f29 = i29;
             canvas.drawBitmap(e10, f29, f29, (Paint) null);
             e10.recycle();

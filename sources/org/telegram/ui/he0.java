@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class he0 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class he0 implements Runnable {
                     me0Var.Q.setPadding(org.telegram.messenger.g0.L(7.33f), 0, org.telegram.messenger.g0.L(7.33f), 0);
                     me0Var.Q.r(false);
                     me0Var.Q.k(true);
-                    me0Var.Q.v(org.telegram.messenger.gd.N0(2131744060, null));
+                    me0Var.Q.v(org.telegram.messenger.hd.N0(2131744058, null));
                     me0Var.Q.o(1.0f, (-width) + 7.33f);
                     me0Var.b.addView(me0Var.Q, c8.ma.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 72.0f));
                     hi.l3 l3Var2 = me0Var.Q;

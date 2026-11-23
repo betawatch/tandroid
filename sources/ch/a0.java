@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
@@ -35,7 +35,7 @@ import org.telegram.ui.q01;
 import org.telegram.ui.q11;
 import ug.b1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a0 extends FrameLayout implements b6 {
     public final Drawable a;
@@ -169,7 +169,7 @@ public final class a0 extends FrameLayout implements b6 {
                 hashMap = hashMap3;
                 i7 = 4;
                 f11 = 255.0f;
-                delegate.x(canvas, rectF9, T1, x10, i19 == 1 ? a0Var.getY() - org.telegram.messenger.g0.m : a0Var.getY() + b0Var.c.getY(), ks.e4, true);
+                delegate.x(canvas, rectF9, T1, x10, i19 == 1 ? a0Var.getY() - org.telegram.messenger.g0.m : a0Var.getY() + b0Var.c.getY(), ls.e4, true);
                 canvas2 = canvas;
                 rectF = rectF9;
             } else {
@@ -241,7 +241,7 @@ public final class a0 extends FrameLayout implements b6 {
                 canvas2.translate(width, (rectF.height() - xi0Var5.x.height()) + (rectF.top - xi0Var5.x.top));
                 float max = (Math.max(0.25f, Math.min(xi0Var5.w, f10)) - 0.25f) / 0.75f;
                 Canvas canvas3 = canvas2;
-                xi0Var5.f(xi0Var5.F * max, max, xi0Var5.G * max, xi0Var5.N0 == i10 ? ks.e4 : (int) f3.A(1.0f, xi0Var5.x0, Utilities.i(xi0Var5.x0 / 0.2f, 1.0f, 0.0f), f11), canvas3);
+                xi0Var5.f(xi0Var5.F * max, max, xi0Var5.G * max, xi0Var5.N0 == i10 ? ls.e4 : (int) f3.A(1.0f, xi0Var5.x0, Utilities.i(xi0Var5.x0 / 0.2f, 1.0f, 0.0f), f11), canvas3);
                 xi0Var = xi0Var5;
                 canvas2 = canvas3;
                 canvas2.restore();

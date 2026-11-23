@@ -2,15 +2,15 @@ package oi;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.si;
 import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class q1 implements si {
     public final /* synthetic */ ui a;
@@ -28,7 +28,7 @@ public final class q1 implements si {
 
     @Override // org.telegram.ui.Components.si
     public final void f0(gh ghVar) {
-        ks.f(this.b.getCurrentAccount()).d(ghVar);
+        ls.f(this.b.getCurrentAccount()).d(ghVar);
     }
 
     @Override // org.telegram.ui.Components.si
@@ -53,12 +53,12 @@ public final class q1 implements si {
                     break;
                 }
                 Object obj = selectedPhotos.get(selectedPhotosOrder.get(i12));
-                if (!(obj instanceof ef)) {
+                if (!(obj instanceof ff)) {
                     i12++;
                 } else if (aVar != null) {
-                    b2Var.Q.X1(aVar, (ef) obj);
+                    b2Var.Q.X1(aVar, (ff) obj);
                 } else {
-                    b2Var.Q.i2((ef) obj);
+                    b2Var.Q.i2((ff) obj);
                 }
             }
         }

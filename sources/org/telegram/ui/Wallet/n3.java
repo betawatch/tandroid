@@ -6,12 +6,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.t10;
 import org.telegram.messenger.y10;
+import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
@@ -22,10 +22,10 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.b80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class n3 {
-    public static void a(final int i7, final y10 y10Var, final q10 q10Var, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity, final s10 s10Var, final boolean z10, final boolean z11, final m.b3 b3Var) {
+    public static void a(final int i7, final z10 z10Var, final r10 r10Var, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity, final t10 t10Var, final boolean z10, final boolean z11, final m.b3 b3Var) {
         if (b3Var.a) {
             return;
         }
@@ -35,7 +35,7 @@ public abstract class n3 {
             return;
         }
         final Activity parentActivity = T.getParentActivity();
-        TLRPC.User f10 = j10.i(i7).f();
+        TLRPC.User f10 = k10.i(i7).f();
         if (parentActivity == null || f10 == null) {
             b3Var.b();
             return;
@@ -44,8 +44,8 @@ public abstract class n3 {
         if (z11) {
             t1Var.r(250L);
         }
-        x10 x10Var = new x10() { // from class: org.telegram.ui.Wallet.i3
-            @Override // org.telegram.messenger.x10
+        y10 y10Var = new y10() { // from class: org.telegram.ui.Wallet.i3
+            @Override // org.telegram.messenger.y10
             public final void a(Object obj) {
                 TLMethod tLMethod = (TLMethod) obj;
                 final m.b3 b3Var2 = b3Var;
@@ -60,16 +60,16 @@ public abstract class n3 {
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
                 d3.b bVar = new d3.b(1);
                 final Activity activity = parentActivity;
-                final q10 q10Var2 = q10Var;
-                final s10 s10Var2 = s10Var;
-                final y10 y10Var2 = y10Var;
+                final r10 r10Var2 = r10Var;
+                final t10 t10Var2 = t10Var;
+                final z10 z10Var2 = z10Var;
                 final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP2 = inputCheckPasswordSRP;
                 final org.telegram.ui.ActionBar.g2 g2Var = T;
                 final TwoStepVerificationActivity twoStepVerificationActivity2 = twoStepVerificationActivity;
                 final boolean z13 = z10;
                 final boolean z14 = z11;
-                connectionsManager.sendRequestTyped(tLMethod, bVar, new q10() { // from class: org.telegram.ui.Wallet.j3
-                    @Override // org.telegram.messenger.q10
+                connectionsManager.sendRequestTyped(tLMethod, bVar, new r10() { // from class: org.telegram.ui.Wallet.j3
+                    @Override // org.telegram.messenger.r10
                     public final void a(Object obj2, Object obj3) {
                         TLObject tLObject = (TLObject) obj2;
                         final TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
@@ -79,7 +79,7 @@ public abstract class n3 {
                             return;
                         }
                         final TwoStepVerificationActivity twoStepVerificationActivity3 = twoStepVerificationActivity2;
-                        final s10 s10Var3 = s10Var2;
+                        final t10 t10Var3 = t10Var2;
                         TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP3 = inputCheckPasswordSRP2;
                         if (tL_error == null) {
                             b3Var3.b = true;
@@ -90,14 +90,14 @@ public abstract class n3 {
                                 } finally {
                                 }
                             }
-                            s10Var3.a(tLObject, tL_error, inputCheckPasswordSRP3);
+                            t10Var3.a(tLObject, tL_error, inputCheckPasswordSRP3);
                             b3Var3.b();
                             return;
                         }
                         boolean equals = "PASSWORD_MISSING".equals(tL_error.text);
                         final int i11 = i10;
-                        final y10 y10Var3 = y10Var2;
-                        final q10 q10Var3 = q10Var2;
+                        final z10 z10Var3 = z10Var2;
+                        final r10 r10Var3 = r10Var2;
                         final boolean z15 = z13;
                         final boolean z16 = z14;
                         if (equals || tL_error.text.startsWith("PASSWORD_TOO_FRESH_") || tL_error.text.startsWith("SESSION_TOO_FRESH_")) {
@@ -109,8 +109,8 @@ public abstract class n3 {
                             d3.b bVar2 = new d3.b(1);
                             final Activity activity2 = activity;
                             final org.telegram.ui.ActionBar.g2 g2Var2 = g2Var;
-                            connectionsManager2.sendRequestTyped(getpassword, bVar2, new q10() { // from class: org.telegram.ui.Wallet.k3
-                                @Override // org.telegram.messenger.q10
+                            connectionsManager2.sendRequestTyped(getpassword, bVar2, new r10() { // from class: org.telegram.ui.Wallet.k3
+                                @Override // org.telegram.messenger.r10
                                 public final void a(Object obj4, Object obj5) {
                                     int i12;
                                     TL_account.Password password = (TL_account.Password) obj4;
@@ -123,11 +123,11 @@ public abstract class n3 {
                                         m3 m3Var = new m3(b3Var4);
                                         int i13 = i11;
                                         m3Var.setCurrentAccount(i13);
-                                        y10 y10Var4 = y10Var3;
-                                        q10 q10Var4 = q10Var3;
-                                        s10 s10Var4 = s10Var3;
+                                        z10 z10Var4 = z10Var3;
+                                        r10 r10Var4 = r10Var3;
+                                        t10 t10Var4 = t10Var3;
                                         boolean z17 = z15;
-                                        g3 g3Var = new g3(i13, y10Var4, q10Var4, m3Var, s10Var4, z17, z16, b3Var4, 0);
+                                        g3 g3Var = new g3(i13, z10Var4, r10Var4, m3Var, t10Var4, z17, z16, b3Var4, 0);
                                         m3Var.a0 = 1;
                                         m3Var.c0 = g3Var;
                                         m3Var.J = password;
@@ -150,7 +150,7 @@ public abstract class n3 {
                                     b3Var4.b();
                                     Activity activity3 = activity2;
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity3);
-                                    String N0 = gd.N0(2131751285, null);
+                                    String N0 = hd.N0(2131751285, null);
                                     org.telegram.ui.ActionBar.t1 t1Var3 = alertDialog$Builder.a;
                                     t1Var3.S = N0;
                                     LinearLayout linearLayout = new LinearLayout(activity3);
@@ -161,23 +161,23 @@ public abstract class n3 {
                                     int i14 = org.telegram.ui.ActionBar.m6.j5;
                                     org.telegram.ui.ActionBar.t6.U(textView, i14, null);
                                     textView.setTextSize(1, 16.0f);
-                                    textView.setGravity((gd.a0 ? 5 : 3) | 48);
-                                    textView.setText(org.telegram.messenger.g0.W2(gd.N0(2131742600, null)));
+                                    textView.setGravity((hd.a0 ? 5 : 3) | 48);
+                                    textView.setText(org.telegram.messenger.g0.W2(hd.N0(2131742598, null)));
                                     linearLayout.addView(textView, c8.ma.o(-1, -2));
                                     LinearLayout linearLayout2 = new LinearLayout(activity3);
                                     linearLayout2.setOrientation(0);
                                     linearLayout.addView(linearLayout2, c8.ma.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                                     ImageView imageView = new ImageView(activity3);
                                     imageView.setImageResource(R.drawable.list_circle);
-                                    imageView.setPadding(gd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
+                                    imageView.setPadding(hd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
                                     PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                                     org.telegram.ui.ActionBar.t6.s(imageView, i14, null, mode);
                                     TextView textView2 = new TextView(activity3);
                                     org.telegram.ui.ActionBar.t6.U(textView2, i14, null);
                                     textView2.setTextSize(1, 16.0f);
-                                    textView2.setGravity((gd.a0 ? 5 : 3) | 48);
-                                    textView2.setText(org.telegram.messenger.g0.W2(gd.N0(2131751288, null)));
-                                    if (gd.a0) {
+                                    textView2.setGravity((hd.a0 ? 5 : 3) | 48);
+                                    textView2.setText(org.telegram.messenger.g0.W2(hd.N0(2131751288, null)));
+                                    if (hd.a0) {
                                         linearLayout2.addView(textView2, c8.ma.o(-1, -2));
                                         linearLayout2.addView(imageView, c8.ma.r(-2, -2, 5));
                                     } else {
@@ -188,14 +188,14 @@ public abstract class n3 {
                                     linearLayout.addView(f11, c8.ma.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                                     ImageView imageView2 = new ImageView(activity3);
                                     imageView2.setImageResource(R.drawable.list_circle);
-                                    imageView2.setPadding(gd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
+                                    imageView2.setPadding(hd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
                                     org.telegram.ui.ActionBar.t6.s(imageView2, i14, null, mode);
                                     TextView textView3 = new TextView(activity3);
                                     org.telegram.ui.ActionBar.t6.U(textView3, i14, null);
                                     textView3.setTextSize(1, 16.0f);
-                                    textView3.setGravity((gd.a0 ? 5 : 3) | 48);
-                                    textView3.setText(org.telegram.messenger.g0.W2(gd.N0(2131751287, null)));
-                                    if (gd.a0) {
+                                    textView3.setGravity((hd.a0 ? 5 : 3) | 48);
+                                    textView3.setText(org.telegram.messenger.g0.W2(hd.N0(2131751287, null)));
+                                    if (hd.a0) {
                                         f11.addView(textView3, c8.ma.o(-1, -2));
                                         i12 = 5;
                                         f11.addView(imageView2, c8.ma.r(-2, -2, 5));
@@ -207,18 +207,18 @@ public abstract class n3 {
                                     boolean equals2 = "PASSWORD_MISSING".equals(tL_error.text);
                                     org.telegram.ui.ActionBar.g2 g2Var3 = g2Var2;
                                     if (equals2) {
-                                        alertDialog$Builder.k(gd.N0(2131751279, null), new h3(g2Var3, 0));
-                                        alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                                        alertDialog$Builder.k(hd.N0(2131751279, null), new h3(g2Var3, 0));
+                                        alertDialog$Builder.h(hd.N0(2131752577, null), null);
                                     } else {
                                         TextView textView4 = new TextView(activity3);
                                         org.telegram.ui.ActionBar.t6.U(textView4, i14, null);
                                         textView4.setTextSize(1, 16.0f);
-                                        if (!gd.a0) {
+                                        if (!hd.a0) {
                                             i12 = 3;
                                         }
                                         org.telegram.messenger.f3.k(textView4, i12 | 48, null, 2131751286);
                                         linearLayout.addView(textView4, c8.ma.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                                        alertDialog$Builder.h(gd.N0(2131747637, null), null);
+                                        alertDialog$Builder.h(hd.N0(2131747637, null), null);
                                     }
                                     TwoStepVerificationActivity twoStepVerificationActivity4 = twoStepVerificationActivity3;
                                     if (twoStepVerificationActivity4 != null) {
@@ -231,11 +231,11 @@ public abstract class n3 {
                             return;
                         }
                         if ("SRP_ID_INVALID".equals(tL_error.text)) {
-                            ConnectionsManager.getInstance(i11).sendRequestTyped(new TL_account.getPassword(), new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.l3
-                                @Override // org.telegram.messenger.q10
+                            ConnectionsManager.getInstance(i11).sendRequestTyped(new TL_account.getPassword(), new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.l3
+                                @Override // org.telegram.messenger.r10
                                 public final void a(Object obj4, Object obj5) {
-                                    q10 q10Var4;
-                                    y10 y10Var4;
+                                    r10 r10Var4;
+                                    z10 z10Var4;
                                     int i12;
                                     TwoStepVerificationActivity twoStepVerificationActivity4;
                                     TL_account.Password password = (TL_account.Password) obj4;
@@ -250,31 +250,31 @@ public abstract class n3 {
                                     }
                                     TwoStepVerificationActivity twoStepVerificationActivity5 = twoStepVerificationActivity3;
                                     int i13 = i11;
-                                    y10 y10Var5 = y10Var3;
-                                    q10 q10Var5 = q10Var3;
-                                    s10 s10Var4 = s10Var3;
+                                    z10 z10Var5 = z10Var3;
+                                    r10 r10Var5 = r10Var3;
+                                    t10 t10Var4 = t10Var3;
                                     boolean z17 = z15;
                                     boolean z18 = z16;
                                     if (twoStepVerificationActivity5 == null) {
                                         m3 m3Var = new m3(b3Var4);
                                         m3Var.setCurrentAccount(i13);
-                                        q10Var4 = q10Var5;
-                                        y10Var4 = y10Var5;
+                                        r10Var4 = r10Var5;
+                                        z10Var4 = z10Var5;
                                         i12 = i13;
-                                        g3 g3Var = new g3(i12, y10Var4, q10Var4, m3Var, s10Var4, z17, z18, b3Var4, 1);
+                                        g3 g3Var = new g3(i12, z10Var4, r10Var4, m3Var, t10Var4, z17, z18, b3Var4, 1);
                                         m3Var.a0 = 1;
                                         m3Var.c0 = g3Var;
                                         m3Var.x0(new b80(b3Var4, z17, m3Var, 12));
                                         twoStepVerificationActivity4 = m3Var;
                                     } else {
-                                        q10Var4 = q10Var5;
-                                        y10Var4 = y10Var5;
+                                        r10Var4 = r10Var5;
+                                        z10Var4 = z10Var5;
                                         i12 = i13;
                                         twoStepVerificationActivity4 = twoStepVerificationActivity5;
                                     }
                                     twoStepVerificationActivity4.J = password;
                                     TwoStepVerificationActivity.r0(password);
-                                    n3.a(i12, y10Var4, q10Var4, twoStepVerificationActivity4.q0(), twoStepVerificationActivity4, s10Var4, z17, z18, b3Var4);
+                                    n3.a(i12, z10Var4, r10Var4, twoStepVerificationActivity4.q0(), twoStepVerificationActivity4, t10Var4, z17, z18, b3Var4);
                                 }
                             }, 8);
                             return;
@@ -287,16 +287,16 @@ public abstract class n3 {
                             } finally {
                             }
                         }
-                        s10Var3.a(tLObject, tL_error, inputCheckPasswordSRP3);
+                        t10Var3.a(tLObject, tL_error, inputCheckPasswordSRP3);
                         b3Var3.b();
                     }
                 });
             }
         };
-        if (y10Var != null) {
-            x10Var.a((TLMethod) y10Var.a(inputCheckPasswordSRP));
-        } else if (q10Var != null) {
-            q10Var.a(inputCheckPasswordSRP, x10Var);
+        if (z10Var != null) {
+            y10Var.a((TLMethod) z10Var.a(inputCheckPasswordSRP));
+        } else if (r10Var != null) {
+            r10Var.a(inputCheckPasswordSRP, y10Var);
         }
     }
 }

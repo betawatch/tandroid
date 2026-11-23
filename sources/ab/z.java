@@ -7,10 +7,10 @@ import fi.p6;
 import fi.x6;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.n5;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.xo;
+import org.telegram.messenger.yo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.q1;
 import org.telegram.ui.ActionBar.t1;
@@ -27,9 +27,9 @@ import org.telegram.ui.rj;
 import p4.c1;
 import p4.i1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, q1, bg.q, xo, c1, h2.j, xh.j {
+public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, q1, bg.q, yo, c1, h2.j, xh.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -137,7 +137,7 @@ public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, q1, 
         }
     }
 
-    @Override // org.telegram.messenger.xo
+    @Override // org.telegram.messenger.yo
     public boolean e(TLRPC.TL_error tL_error) {
         r70 r70Var = (r70) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
@@ -179,7 +179,7 @@ public final /* synthetic */ class z implements OnSuccessListener, x6, kb1, q1, 
     public void i(long j3) {
         n6 n6Var = ((x1) this.c).a.z3;
         if (n6Var != null) {
-            n6Var.t(gd.M((int) j3, this.b), true, true);
+            n6Var.t(hd.M((int) j3, this.b), true, true);
         }
     }
 

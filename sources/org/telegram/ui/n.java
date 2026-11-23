@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -52,7 +52,7 @@ public final class n extends org.telegram.ui.Components.dk0 {
                 if (i7 == oVar.x) {
                     a9Var.setTopPadding(17);
                     a9Var.setBottomPadding(10);
-                    a9Var.setText(org.telegram.messenger.gd.N0(oVar.I == 5 ? 2131754132 : 2131754121, null));
+                    a9Var.setText(org.telegram.messenger.hd.N0(oVar.I == 5 ? 2131754132 : 2131754121, null));
                     return;
                 } else {
                     a9Var.setTopPadding(10);
@@ -69,7 +69,7 @@ public final class n extends org.telegram.ui.Components.dk0 {
         vVar.b(stickerSetCovered, i11 != arrayList.size() - 1);
         org.telegram.ui.Components.pg0 pg0Var = vVar.f;
         i10 = ((org.telegram.ui.ActionBar.g2) oVar).currentAccount;
-        boolean E0 = org.telegram.messenger.ri.d0(i10).E0(stickerSetCovered.set.id, true);
+        boolean E0 = org.telegram.messenger.si.d0(i10).E0(stickerSetCovered.set.id, true);
         vVar.a(E0, false, false);
         if (E0) {
             hVar.l(stickerSetCovered.set.id);

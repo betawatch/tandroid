@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class eu extends org.telegram.ui.ActionBar.g2 {
     public static final org.telegram.ui.Components.dq0 y = new org.telegram.ui.Components.dq0(2);
@@ -35,11 +35,11 @@ public final class eu extends org.telegram.ui.ActionBar.g2 {
     public boolean x;
 
     public static void Z(eu euVar, TLRPC.User user) {
-        if (org.telegram.messenger.mp.L2(user)) {
-            org.telegram.ui.Components.c5.t0(org.telegram.messenger.gd.N0(2131751093, null), euVar);
+        if (org.telegram.messenger.np.L2(user)) {
+            org.telegram.ui.Components.c5.t0(org.telegram.messenger.hd.N0(2131751093, null), euVar);
         } else {
-            org.telegram.messenger.mp.u1(euVar.currentAccount).w(user.id);
-            org.telegram.ui.Components.c5.t0(org.telegram.messenger.gd.N0(2131743518, null), euVar);
+            org.telegram.messenger.np.u1(euVar.currentAccount).w(user.id);
+            org.telegram.ui.Components.c5.t0(org.telegram.messenger.hd.N0(2131743516, null), euVar);
         }
         euVar.finishFragment();
     }
@@ -83,7 +83,7 @@ public final class eu extends org.telegram.ui.ActionBar.g2 {
         cx cxVar = this.a;
         du[] duVarArr = this.f;
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setTitle(org.telegram.messenger.gd.N0(2131753684, null));
+        this.actionBar.setTitle(org.telegram.messenger.hd.N0(2131753684, null));
         org.telegram.ui.ActionBar.r4 r4Var = this.parentLayout;
         if (r4Var != null && ((ActionBarLayout) r4Var).T0) {
             this.actionBar.setOccupyStatusBar(false);
@@ -99,7 +99,7 @@ public final class eu extends org.telegram.ui.ActionBar.g2 {
         a10.O();
         a10.I = new bi.w1(this, 11);
         this.c = a10;
-        a10.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
+        a10.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(context, null);
         this.e = scrollSlidingTextTabStrip;
         scrollSlidingTextTabStrip.setUseSameWidth(true);
@@ -149,7 +149,7 @@ public final class eu extends org.telegram.ui.ActionBar.g2 {
                 org.telegram.ui.Components.ek0 ek0Var = i10 == 0 ? duVarArr[i7].d : duVarArr[i7].e;
                 if (ek0Var != null) {
                     ek0Var.setClipToPadding(false);
-                    ek0Var.setOnScrollListener(new bi.h6(7, this, ek0Var.getOnScrollListener()));
+                    ek0Var.setOnScrollListener(new bi.g6(7, this, ek0Var.getOnScrollListener()));
                 }
                 i10++;
             }
@@ -160,8 +160,8 @@ public final class eu extends org.telegram.ui.ActionBar.g2 {
         cuVar.addView(this.actionBar, c8.ma.c(-2.0f, -1));
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip2 = this.e;
         if (scrollSlidingTextTabStrip2 != null) {
-            scrollSlidingTextTabStrip2.a(0, org.telegram.messenger.gd.N0(2131753687, null), null);
-            this.e.a(1, org.telegram.messenger.gd.N0(2131753686, null), null);
+            scrollSlidingTextTabStrip2.a(0, org.telegram.messenger.hd.N0(2131753687, null), null);
+            this.e.a(1, org.telegram.messenger.hd.N0(2131753686, null), null);
             this.e.setVisibility(0);
             this.actionBar.setExtraHeight(org.telegram.messenger.g0.L(f12));
             int currentTabId = this.e.getCurrentTabId();
@@ -258,12 +258,12 @@ public final class eu extends org.telegram.ui.ActionBar.g2 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        String N0 = org.telegram.messenger.gd.N0(2131753689, null);
+        String N0 = org.telegram.messenger.hd.N0(2131753689, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("AreYouSureBlockContact2", null, 2131754116, org.telegram.messenger.i5.m(0, user.first_name, user.last_name)));
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131753690, null), new at(1, this, user));
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("AreYouSureBlockContact2", null, 2131754116, org.telegram.messenger.i5.m(0, user.first_name, user.last_name)));
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131753690, null), new at(1, this, user));
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
         showDialog(t1Var);
         TextView textView = (TextView) t1Var.d(-1);
         if (textView != null) {

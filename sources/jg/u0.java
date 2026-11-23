@@ -1,20 +1,20 @@
 package jg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.oi;
+import org.telegram.messenger.pi;
 import org.telegram.ui.Cells.h2;
 import org.telegram.ui.Components.q90;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements oi, h2 {
+public final /* synthetic */ class u0 implements pi, h2 {
     public final /* synthetic */ h1 a;
 
     public /* synthetic */ u0(h1 h1Var) {
         this.a = h1Var;
     }
 
-    @Override // org.telegram.messenger.oi
+    @Override // org.telegram.messenger.pi
     public void e(String str, ArrayList arrayList) {
         h1 h1Var = this.a;
         h1Var.O = arrayList;

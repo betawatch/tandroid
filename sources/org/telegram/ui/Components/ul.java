@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ul implements Comparator {
     public final /* synthetic */ int a;
@@ -24,12 +24,12 @@ public final /* synthetic */ class ul implements Comparator {
         switch (i7) {
             case 0:
                 ArrayList arrayList = (ArrayList) obj3;
-                org.telegram.messenger.ue ueVar = (org.telegram.messenger.ue) obj;
-                org.telegram.messenger.ue ueVar2 = (org.telegram.messenger.ue) obj2;
+                org.telegram.messenger.ve veVar = (org.telegram.messenger.ve) obj;
+                org.telegram.messenger.ve veVar2 = (org.telegram.messenger.ve) obj2;
                 boolean z10 = ChatAttachAlertPhotoLayout.r1;
-                int i10 = ueVar.a;
-                if (i10 != 0 || ueVar2.a == 0) {
-                    if ((i10 != 0 && ueVar2.a == 0) || (indexOf = arrayList.indexOf(ueVar)) > (indexOf2 = arrayList.indexOf(ueVar2))) {
+                int i10 = veVar.a;
+                if (i10 != 0 || veVar2.a == 0) {
+                    if ((i10 != 0 && veVar2.a == 0) || (indexOf = arrayList.indexOf(veVar)) > (indexOf2 = arrayList.indexOf(veVar2))) {
                         return 1;
                     }
                     if (indexOf >= indexOf2) {

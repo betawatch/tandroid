@@ -31,17 +31,17 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.qd;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.u9;
+import org.telegram.messenger.az;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.rd;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.v9;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.xs;
-import org.telegram.messenger.xv;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.ys;
+import org.telegram.messenger.yv;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.fb;
@@ -53,7 +53,7 @@ import org.telegram.ui.ox;
 import org.telegram.ui.qi0;
 import org.telegram.ui.yy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class g2 {
     protected k actionBar;
@@ -82,7 +82,7 @@ public abstract class g2 {
     private j5 simpleMenuOverlay;
     private g2 simpleMenuOverlayHost;
     public Dialog visibleDialog;
-    protected int currentAccount = j10.t0;
+    protected int currentAccount = k10.t0;
     protected boolean hasOwnBackground = false;
     protected boolean isPaused = true;
     protected boolean inTransitionAnimation = false;
@@ -473,8 +473,8 @@ public abstract class g2 {
         return this.fragmentView;
     }
 
-    public u9 getGiftAuctionsController() {
-        return u9.c(getAccountInstance().a);
+    public v9 getGiftAuctionsController() {
+        return v9.c(getAccountInstance().a);
     }
 
     public boolean getInPassivePreviewMode() {
@@ -528,24 +528,24 @@ public abstract class g2 {
         return null;
     }
 
-    public qd getLocationController() {
-        return qd.f(getAccountInstance().a);
+    public rd getLocationController() {
+        return rd.f(getAccountInstance().a);
     }
 
     public MediaController getMediaController() {
         return MediaController.B();
     }
 
-    public ri getMediaDataController() {
-        return ri.d0(getAccountInstance().a);
+    public si getMediaDataController() {
+        return si.d0(getAccountInstance().a);
     }
 
-    public mp getMessagesController() {
-        return mp.u1(getAccountInstance().a);
+    public np getMessagesController() {
+        return np.u1(getAccountInstance().a);
     }
 
-    public tr getMessagesStorage() {
-        return tr.a0(getAccountInstance().a);
+    public ur getMessagesStorage() {
+        return ur.a0(getAccountInstance().a);
     }
 
     public int getNavigationBarColor() {
@@ -561,12 +561,12 @@ public abstract class g2 {
         return w02;
     }
 
-    public ks getNotificationCenter() {
-        return ks.f(getAccountInstance().a);
+    public ls getNotificationCenter() {
+        return ls.f(getAccountInstance().a);
     }
 
-    public xs getNotificationsController() {
-        return xs.t(getAccountInstance().a);
+    public ys getNotificationsController() {
+        return ys.t(getAccountInstance().a);
     }
 
     public SharedPreferences getNotificationsSettings() {
@@ -614,12 +614,12 @@ public abstract class g2 {
         return null;
     }
 
-    public xv getSecretChatHelper() {
-        return xv.i(getAccountInstance().a);
+    public yv getSecretChatHelper() {
+        return yv.i(getAccountInstance().a);
     }
 
-    public zy getSendMessagesHelper() {
-        return zy.C(getAccountInstance().a);
+    public az getSendMessagesHelper() {
+        return az.C(getAccountInstance().a);
     }
 
     public z4 getSimpleActionBar() {
@@ -673,8 +673,8 @@ public abstract class g2 {
         return g10 != null ? g10 : m6.V0(str);
     }
 
-    public j10 getUserConfig() {
-        return j10.i(getAccountInstance().a);
+    public k10 getUserConfig() {
+        return k10.i(getAccountInstance().a);
     }
 
     public Dialog getVisibleDialog() {

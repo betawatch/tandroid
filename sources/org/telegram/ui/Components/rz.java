@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class rz extends FrameLayout {
     public static final /* synthetic */ int H0 = 0;
@@ -208,7 +208,7 @@ public abstract class rz extends FrameLayout {
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
         TextPaint textPaint = this.b;
-        oz ozVar = new oz(this, i7, org.telegram.messenger.fj.B5(org.telegram.messenger.j6.m(spannableStringBuilder, textPaint.getFontMetricsInt(), false, null, 0), arrayList, textPaint.getFontMetricsInt(), false), z10);
+        oz ozVar = new oz(this, i7, org.telegram.messenger.gj.B5(org.telegram.messenger.j6.m(spannableStringBuilder, textPaint.getFontMetricsInt(), false, null, 0), arrayList, textPaint.getFontMetricsInt(), false), z10);
         ozVar.e = z11;
         ozVar.f = z12;
         this.N = org.telegram.messenger.f3.C(24.0f, ozVar.a(true), this.N);
@@ -255,7 +255,7 @@ public abstract class rz extends FrameLayout {
                         this.N = 0;
                         oz e10 = e();
                         if (e10 != null) {
-                            e10.b(org.telegram.messenger.gd.N0(2131750795, null));
+                            e10.b(org.telegram.messenger.hd.N0(2131750795, null));
                         }
                         for (int i10 = 0; i10 < size; i10++) {
                             this.N = org.telegram.messenger.f3.C(24.0f, ((oz) arrayList.get(i10)).a(true), this.N);
@@ -678,9 +678,9 @@ public abstract class rz extends FrameLayout {
             int size = View.MeasureSpec.getSize(i7) - (this.H * 2);
             oz e10 = e();
             if (e10 != null) {
-                e10.b(org.telegram.messenger.gd.N0(2131750795, null));
+                e10.b(org.telegram.messenger.hd.N0(2131750795, null));
                 int a10 = e10.a(false);
-                e10.b(org.telegram.messenger.gd.N0(this.N > size ? 2131750794 : 2131750795, null));
+                e10.b(org.telegram.messenger.hd.N0(this.N > size ? 2131750794 : 2131750795, null));
                 int a11 = e10.a(false) + (this.N - a10);
                 int i11 = this.O;
                 int size2 = a11 < size ? (size - a11) / arrayList.size() : 0;
@@ -749,20 +749,20 @@ public abstract class rz extends FrameLayout {
         if (this.n || !this.E) {
             return;
         }
-        org.telegram.messenger.tr.a0(org.telegram.messenger.j10.t0).y1();
+        org.telegram.messenger.ur.a0(org.telegram.messenger.k10.t0).y1();
         TLRPC.TL_messages_updateDialogFiltersOrder tL_messages_updateDialogFiltersOrder = new TLRPC.TL_messages_updateDialogFiltersOrder();
-        ArrayList V0 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).V0();
+        ArrayList V0 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).V0();
         int size = V0.size();
         for (int i7 = 0; i7 < size; i7++) {
-            org.telegram.messenger.ro roVar = (org.telegram.messenger.ro) V0.get(i7);
-            if (roVar.d()) {
+            org.telegram.messenger.so soVar = (org.telegram.messenger.so) V0.get(i7);
+            if (soVar.d()) {
                 tL_messages_updateDialogFiltersOrder.order.add(0);
             } else {
-                tL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(roVar.a));
+                tL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(soVar.a));
             }
         }
-        org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).p3();
-        ConnectionsManager.getInstance(org.telegram.messenger.j10.t0).sendRequest(tL_messages_updateDialogFiltersOrder, new fi.l5(20));
+        org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).p3();
+        ConnectionsManager.getInstance(org.telegram.messenger.k10.t0).sendRequest(tL_messages_updateDialogFiltersOrder, new fi.l5(20));
         this.E = false;
     }
 }

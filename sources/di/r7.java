@@ -1,9 +1,9 @@
 package di;
 
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -24,7 +24,7 @@ public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ TLObject n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ r7(y8 y8Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, bi.p8 p8Var) {
+    public /* synthetic */ r7(y8 y8Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, bi.o8 o8Var) {
         this.e = y8Var;
         this.f = zArr;
         this.h = starGift;
@@ -32,7 +32,7 @@ public final /* synthetic */ class r7 implements Runnable {
         this.d = z11;
         this.c = j3;
         this.n = tL_textWithEntities;
-        this.r = p8Var;
+        this.r = o8Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x0082  */
@@ -56,7 +56,7 @@ public final /* synthetic */ class r7 implements Runnable {
         switch (i11) {
             case 0:
                 ((boolean[]) obj2)[0] = true;
-                ((y8) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (bi.p8) obj);
+                ((y8) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (bi.o8) obj);
                 break;
             default:
                 hi.sa saVar = (hi.sa) obj3;
@@ -77,22 +77,22 @@ public final /* synthetic */ class r7 implements Runnable {
                             }
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, saVar.b, bVar);
-                            String N0 = gd.N0(2131748633, null);
+                            String N0 = hd.N0(2131748633, null);
                             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                             t1Var.S = N0;
-                            t1Var.U = gd.N0(2131748634, null);
+                            t1Var.U = hd.N0(2131748634, null);
                             org.telegram.messenger.f3.m(null, 2131747637, alertDialog$Builder, null);
                             break;
                         }
                     }
                 } else {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject3;
-                    mp.u1(i13).V3(updates, false);
+                    np.u1(i13).V3(updates, false);
                     hi.v9 v9Var = saVar.C0;
                     if (v9Var != null) {
                         v9Var.destroy(true, null);
                     }
-                    ArrayList A0 = mp.A0(updates, TL_update.TL_updateStoryID.class);
+                    ArrayList A0 = np.A0(updates, TL_update.TL_updateStoryID.class);
                     int size = A0.size();
                     int i14 = 0;
                     while (true) {
@@ -111,7 +111,7 @@ public final /* synthetic */ class r7 implements Runnable {
                             i10 = -1;
                         }
                     }
-                    ArrayList A02 = mp.A0(updates, TL_stories.TL_updateStory.class);
+                    ArrayList A02 = np.A0(updates, TL_stories.TL_updateStory.class);
                     int size2 = A02.size();
                     int i15 = i7;
                     while (i15 < size2) {
@@ -130,10 +130,10 @@ public final /* synthetic */ class r7 implements Runnable {
                                             c1Var.e();
                                             if (fi.c1.X != null) {
                                                 fi.c1.X = null;
-                                                ks f10 = ks.f(i13);
+                                                ls f10 = ls.f(i13);
                                                 Object[] objArr = new Object[1];
                                                 objArr[i7] = Long.valueOf(fi.c1.X.g());
-                                                f10.k(ks.G2, objArr);
+                                                f10.k(ls.G2, objArr);
                                             }
                                         }
                                         org.telegram.messenger.g0.h3(new hi.f9(saVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);

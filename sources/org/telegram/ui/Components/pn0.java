@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pn0 extends LinearLayout {
     public final ut0 a;
@@ -36,7 +36,7 @@ public final class pn0 extends LinearLayout {
         linearLayout.addView(textView);
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        org.telegram.ui.ActionBar.t6.V(textView2, org.telegram.ui.ActionBar.t6.g(i10, org.telegram.messenger.ks.n1), h6Var);
+        org.telegram.ui.ActionBar.t6.V(textView2, org.telegram.ui.ActionBar.t6.g(i10, org.telegram.messenger.ls.n1), h6Var);
         textView2.setTextSize(1, 14.0f);
         textView2.setTag(textView2);
         textView2.setMaxLines(1);

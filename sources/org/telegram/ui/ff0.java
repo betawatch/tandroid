@@ -13,9 +13,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public int E;
     public int F;
     public int G;
@@ -86,16 +86,16 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.u0 = new h2.f((int[]) null);
         this.n = j3;
         this.g0 = i7;
-        TLRPC.Chat O0 = org.telegram.messenger.mp.u1(this.currentAccount).O0(Long.valueOf(j3));
+        TLRPC.Chat O0 = org.telegram.messenger.np.u1(this.currentAccount).O0(Long.valueOf(j3));
         this.c = O0;
         this.h = org.telegram.messenger.v3.T(O0) && !this.c.megagroup;
         if (j10 == 0) {
-            this.f = org.telegram.messenger.j10.i(getAccountInstance().a).n;
+            this.f = org.telegram.messenger.k10.i(getAccountInstance().a).n;
         } else {
             this.f = j10;
         }
         TLRPC.User c22 = getMessagesController().c2(Long.valueOf(this.f));
-        if (this.f == org.telegram.messenger.j10.i(getAccountInstance().a).n || (c22 != null && !c22.bot)) {
+        if (this.f == org.telegram.messenger.k10.i(getAccountInstance().a).n || (c22 != null && !c22.bot)) {
             z10 = true;
         }
         this.q0 = z10;
@@ -135,7 +135,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                     arrayList.add(tL_chatInviteExported2);
                 }
             } else {
-                if (j3 != org.telegram.messenger.j10.i(ff0Var.getAccountInstance().a).n && arrayList2.size() == 0 && tL_messages_exportedChatInvites.invites.size() > 0) {
+                if (j3 != org.telegram.messenger.k10.i(ff0Var.getAccountInstance().a).n && arrayList2.size() == 0 && tL_messages_exportedChatInvites.invites.size() > 0) {
                     ff0Var.e = (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.get(0);
                     tL_messages_exportedChatInvites.invites.remove(0);
                 }
@@ -174,7 +174,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             ff0Var.c0 = false;
             z11 = false;
         }
-        if (ff0Var.c0 || ff0Var.s0 || j3 != org.telegram.messenger.j10.i(ff0Var.getAccountInstance().a).n) {
+        if (ff0Var.c0 || ff0Var.s0 || j3 != org.telegram.messenger.k10.i(ff0Var.getAccountInstance().a).n) {
             if (ff0Var.c0 || ff0Var.s0) {
                 z12 = false;
                 if (ff0Var.c0) {
@@ -221,7 +221,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             TLRPC.TL_messages_chatAdminsWithInvites tL_messages_chatAdminsWithInvites = (TLRPC.TL_messages_chatAdminsWithInvites) tLObject;
             for (int i7 = 0; i7 < tL_messages_chatAdminsWithInvites.admins.size(); i7++) {
                 TLRPC.TL_chatAdminWithInvites tL_chatAdminWithInvites = tL_messages_chatAdminsWithInvites.admins.get(i7);
-                if (tL_chatAdminWithInvites.admin_id != org.telegram.messenger.j10.i(ff0Var.getAccountInstance().a).n) {
+                if (tL_chatAdminWithInvites.admin_id != org.telegram.messenger.k10.i(ff0Var.getAccountInstance().a).n) {
                     arrayList.add(tL_chatAdminWithInvites);
                 }
             }
@@ -248,7 +248,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     }
 
     public static void b0(ff0 ff0Var) {
-        if (ff0Var.f != org.telegram.messenger.j10.i(ff0Var.getAccountInstance().a).n) {
+        if (ff0Var.f != org.telegram.messenger.k10.i(ff0Var.getAccountInstance().a).n) {
             ff0Var.k0(ff0Var.e);
             return;
         }
@@ -298,7 +298,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131748947, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131748947, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new dv(this, 18));
         k0 k0Var = new k0(15, context, this);
         this.fragmentView = k0Var;
@@ -314,7 +314,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         ef0 ef0Var = new ef0(this, context);
         this.a = ef0Var;
         ek0Var2.setAdapter(ef0Var);
-        this.b.setOnScrollListener(new bi.h6(8, this, b0Var));
+        this.b.setOnScrollListener(new bi.g6(8, this, b0Var));
         this.i0 = new org.telegram.ui.Components.hj0(this.b, false);
         v4.k kVar = new v4.k();
         kVar.n(420L);
@@ -322,7 +322,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         kVar.C = false;
         kVar.m = false;
         this.b.setItemAnimator(kVar);
-        this.b.setVerticalScrollbarPosition(org.telegram.messenger.gd.a0 ? 1 : 2);
+        this.b.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
         frameLayout.addView(this.b, c8.ma.c(-1.0f, -1));
         this.b.setOnItemClickListener(new fi.g4(19, this, context));
         this.b.setOnItemLongClickListener(new se0(this));
@@ -335,9 +335,9 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.y1 && ((Long) objArr[0]).longValue() == (-this.n)) {
+        if (i7 == org.telegram.messenger.ls.y1 && ((Long) objArr[0]).longValue() == (-this.n)) {
             org.telegram.ui.ActionBar.r4 r4Var = this.parentLayout;
             if (r4Var == null || r4Var.getLastFragment() != this) {
                 removeSelfFromStack();
@@ -496,7 +496,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
 
     public final void o0(boolean z10) {
         ef0 ef0Var;
-        TLRPC.Chat O0 = org.telegram.messenger.mp.u1(this.currentAccount).O0(Long.valueOf(this.n));
+        TLRPC.Chat O0 = org.telegram.messenger.np.u1(this.currentAccount).O0(Long.valueOf(this.n));
         this.c = O0;
         if (O0 == null) {
             return;
@@ -524,7 +524,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.x = -1;
         this.H = -1;
         this.Y = 0;
-        boolean z11 = this.f != org.telegram.messenger.j10.i(getAccountInstance().a).n;
+        boolean z11 = this.f != org.telegram.messenger.k10.i(getAccountInstance().a).n;
         if (z11) {
             int i7 = this.Y;
             this.R = i7;
@@ -637,13 +637,13 @@ public final class ff0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, org.telegram.messenger.ks.y1);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.y1);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, org.telegram.messenger.ks.y1);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.y1);
         super.onFragmentDestroy();
     }
 

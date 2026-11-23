@@ -18,14 +18,14 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.InflaterInputStream;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ek;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.fk;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.s2;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -35,7 +35,7 @@ import org.telegram.ui.Wallet.c2;
 import org.telegram.ui.cd0;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class n0 {
     public static boolean i;
@@ -127,7 +127,7 @@ public abstract class n0 {
     }
 
     public static boolean F(k0 k0Var) {
-        return k0Var.i && !k0Var.k && ((org.telegram.messenger.h0) mp.u1(k0Var.b).A7.p0.b).c;
+        return k0Var.i && !k0Var.k && ((org.telegram.messenger.h0) np.u1(k0Var.b).A7.p0.b).c;
     }
 
     public static void a(k0 k0Var) {
@@ -208,7 +208,7 @@ public abstract class n0 {
             i11 = i10;
         }
         if (i11 <= 0) {
-            i11 = ks.q2;
+            i11 = ls.q2;
         }
         return org.telegram.messenger.g0.L(Math.max(50, Math.min(600, i11)));
     }
@@ -227,7 +227,7 @@ public abstract class n0 {
             if (obj != null) {
                 jSONObject.put("chatType", obj);
             }
-            TLRPC.User f10 = z11 ? j10.i(k0Var.b).f() : null;
+            TLRPC.User f10 = z11 ? k10.i(k0Var.b).f() : null;
             if (f10 != null) {
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("id", f10.id);
@@ -237,7 +237,7 @@ public abstract class n0 {
                 if (!TextUtils.isEmpty(f10.last_name)) {
                     jSONObject2.put("lastName", f10.last_name);
                 }
-                String o4 = o10.o(f10);
+                String o4 = p10.o(f10);
                 if (!TextUtils.isEmpty(o4)) {
                     jSONObject2.put("username", o4);
                 }
@@ -297,7 +297,7 @@ public abstract class n0 {
                     }
                     d1 d1Var = new d1(org.telegram.messenger.t0.b, k0Var.a, k0Var.s);
                     try {
-                        str2 = gd.E0().y.toLanguageTag();
+                        str2 = hd.E0().y.toLanguageTag();
                     } catch (Exception unused) {
                         str2 = null;
                     }
@@ -335,8 +335,8 @@ public abstract class n0 {
             JSONObject jSONObject = (JSONObject) c.get(k0Var.a());
             JSONObject optJSONObject = jSONObject != null ? jSONObject.optJSONObject("local") : null;
             String jSONObject2 = (optJSONObject == null || optJSONObject.length() == 0) ? "" : optJSONObject.toString();
-            tr a02 = tr.a0(k0Var.b);
-            a02.a.c(new ek(k0Var.d, 9, k0Var.c, a02, jSONObject2));
+            ur a02 = ur.a0(k0Var.b);
+            a02.a.c(new fk(k0Var.d, 9, k0Var.c, a02, jSONObject2));
         }
         hashMap.clear();
     }
@@ -630,7 +630,7 @@ public abstract class n0 {
             return;
         }
         TLRPC.TL_messages_getBotWidgetQueryAnswer tL_messages_getBotWidgetQueryAnswer_layer233 = z11 ? new TLRPC.TL_messages_getBotWidgetQueryAnswer_layer233() : new TLRPC.TL_messages_getBotWidgetQueryAnswer();
-        tL_messages_getBotWidgetQueryAnswer_layer233.peer = mp.u1(i7).l1(k0Var.c);
+        tL_messages_getBotWidgetQueryAnswer_layer233.peer = np.u1(i7).l1(k0Var.c);
         tL_messages_getBotWidgetQueryAnswer_layer233.msg_id = k0Var.d;
         tL_messages_getBotWidgetQueryAnswer_layer233.query_type = widgetQueryType;
         tL_messages_getBotWidgetQueryAnswer_layer233.data = bArr;

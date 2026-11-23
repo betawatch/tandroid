@@ -13,14 +13,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.u3;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.kr;
 import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u extends n2 {
     public float h0;
@@ -164,7 +164,7 @@ public final class u extends n2 {
             if (u3Var == t3Var.z) {
                 if (yVar.b || !k0Var.b) {
                     float L = org.telegram.messenger.g0.L(48.0f);
-                    textPaint.setAlpha(ks.e4);
+                    textPaint.setAlpha(ls.e4);
                     canvas.save();
                     canvas.translate((L / 2.0f) + (((getMeasuredWidth() - L) / 2.0f) - (org.telegram.messenger.g0.L(400.0f) / 2.0f)), ((getMeasuredHeight() / 2) - L) + L + org.telegram.messenger.g0.L(10.0f));
                     this.l0.draw(canvas);

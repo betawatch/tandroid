@@ -11,9 +11,9 @@ import java.util.Iterator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class t51 extends Drawable implements v5, w6, org.telegram.messenger.fs {
+public final class t51 extends Drawable implements v5, w6, org.telegram.messenger.gs {
     public final s10 a;
     public final int b;
     public float c;
@@ -32,12 +32,12 @@ public final class t51 extends Drawable implements v5, w6, org.telegram.messenge
         this.a = s10Var;
         this.f = new HashSet();
         this.r = new ImageReceiver(null);
-        this.s = org.telegram.messenger.j10.t0;
+        this.s = org.telegram.messenger.k10.t0;
         this.b = i7;
         this.d = z10;
-        s10Var.d(i0.a.o(videoSize.background_colors.get(0).intValue(), org.telegram.messenger.ks.e4), videoSize.background_colors.size() > 1 ? i0.a.o(videoSize.background_colors.get(1).intValue(), org.telegram.messenger.ks.e4) : 0, videoSize.background_colors.size() > 2 ? i0.a.o(videoSize.background_colors.get(2).intValue(), org.telegram.messenger.ks.e4) : 0, videoSize.background_colors.size() > 3 ? i0.a.o(videoSize.background_colors.get(3).intValue(), org.telegram.messenger.ks.e4) : 0);
+        s10Var.d(i0.a.o(videoSize.background_colors.get(0).intValue(), org.telegram.messenger.ls.e4), videoSize.background_colors.size() > 1 ? i0.a.o(videoSize.background_colors.get(1).intValue(), org.telegram.messenger.ls.e4) : 0, videoSize.background_colors.size() > 2 ? i0.a.o(videoSize.background_colors.get(2).intValue(), org.telegram.messenger.ls.e4) : 0, videoSize.background_colors.size() > 3 ? i0.a.o(videoSize.background_colors.get(3).intValue(), org.telegram.messenger.ls.e4) : 0);
         if (videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup) {
-            p5 p5Var = new p5((i7 == 1 && z10) ? 7 : i7 == 2 ? 15 : 8, org.telegram.messenger.j10.t0, ((TLRPC.TL_videoSizeEmojiMarkup) videoSize).emoji_id);
+            p5 p5Var = new p5((i7 == 1 && z10) ? 7 : i7 == 2 ? 15 : 8, org.telegram.messenger.k10.t0, ((TLRPC.TL_videoSizeEmojiMarkup) videoSize).emoji_id);
             this.h = p5Var;
             p5Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             return;
@@ -73,7 +73,7 @@ public final class t51 extends Drawable implements v5, w6, org.telegram.messenge
             }
         }
         if (this.x != null) {
-            org.telegram.messenger.ks.f(this.s).n(this, org.telegram.messenger.ks.B0);
+            org.telegram.messenger.ls.f(this.s).n(this, org.telegram.messenger.ls.B0);
         }
     }
 
@@ -100,7 +100,7 @@ public final class t51 extends Drawable implements v5, w6, org.telegram.messenge
         }
         hashSet.add(imageReceiver);
         if (this.x != null) {
-            org.telegram.messenger.ks.f(this.s).c(this, org.telegram.messenger.ks.B0);
+            org.telegram.messenger.ls.f(this.s).c(this, org.telegram.messenger.ls.B0);
         }
     }
 
@@ -114,7 +114,7 @@ public final class t51 extends Drawable implements v5, w6, org.telegram.messenge
         String str;
         String str2;
         String str3;
-        org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(this.s);
+        org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(this.s);
         TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup = this.x;
         TLRPC.TL_messages_stickerSet o02 = d02.o0(tL_videoSizeStickerMarkup.stickerset, false);
         if (o02 != null) {
@@ -131,9 +131,9 @@ public final class t51 extends Drawable implements v5, w6, org.telegram.messenge
                             document = null;
                             str = null;
                             str2 = "50_50_firstframe";
-                            this.n.u0(org.telegram.messenger.fc.b(document2), str2, org.telegram.messenger.fc.b(document), str, null, null, org.telegram.messenger.u5.f(document2, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), 0L, "tgs", document2, 0);
+                            this.n.u0(org.telegram.messenger.gc.b(document2), str2, org.telegram.messenger.gc.b(document), str, null, null, org.telegram.messenger.u5.f(document2, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), 0L, "tgs", document2, 0);
                             if (i10 != 3) {
-                                this.r.r0(org.telegram.messenger.fc.b(document2), "100_100", null, null, null, 0L, "tgs", document2, 0);
+                                this.r.r0(org.telegram.messenger.gc.b(document2), "100_100", null, null, null, 0L, "tgs", document2, 0);
                                 return;
                             }
                             return;
@@ -143,7 +143,7 @@ public final class t51 extends Drawable implements v5, w6, org.telegram.messenge
                     str2 = str3;
                     str = "50_50_firstframe";
                     document = document2;
-                    this.n.u0(org.telegram.messenger.fc.b(document2), str2, org.telegram.messenger.fc.b(document), str, null, null, org.telegram.messenger.u5.f(document2, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), 0L, "tgs", document2, 0);
+                    this.n.u0(org.telegram.messenger.gc.b(document2), str2, org.telegram.messenger.gc.b(document), str, null, null, org.telegram.messenger.u5.f(document2, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), 0L, "tgs", document2, 0);
                     if (i10 != 3) {
                     }
                 }
@@ -151,9 +151,9 @@ public final class t51 extends Drawable implements v5, w6, org.telegram.messenge
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != org.telegram.messenger.ks.B0 || this.w) {
+        if (i7 != org.telegram.messenger.ls.B0 || this.w) {
             return;
         }
         d();

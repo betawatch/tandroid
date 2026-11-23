@@ -13,7 +13,7 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ec0 extends FrameLayout {
     public Bitmap a;
@@ -57,8 +57,8 @@ public final class ec0 extends FrameLayout {
         }
         int size = arrayList.size();
         for (int i11 = 0; i11 < size; i11++) {
-            org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) arrayList.get(i11);
-            byte b10 = c20Var.a;
+            org.telegram.messenger.d20 d20Var = (org.telegram.messenger.d20) arrayList.get(i11);
+            byte b10 = d20Var.a;
             View view = null;
             if (b10 == 0) {
                 q9 q9Var2 = new q9(getContext());
@@ -72,30 +72,30 @@ public final class ec0 extends FrameLayout {
                         imageReceiver.h1 = new xb0(1);
                     }
                 }
-                imageReceiver.u0(org.telegram.messenger.fc.b(c20Var.B), null, null, null, org.telegram.messenger.fc.c(org.telegram.messenger.w7.w(c20Var.B.thumbs, 90, false, null, false), c20Var.B), null, null, 0L, "webp", c20Var.C, 1);
-                if ((c20Var.b & 2) != 0) {
+                imageReceiver.u0(org.telegram.messenger.gc.b(d20Var.B), null, null, null, org.telegram.messenger.gc.c(org.telegram.messenger.w7.w(d20Var.B.thumbs, 90, false, null, false), d20Var.B), null, null, 0L, "webp", d20Var.C, 1);
+                if ((d20Var.b & 2) != 0) {
                     q9Var2.setScaleX(-1.0f);
                 }
-                c20Var.I = q9Var2;
+                d20Var.I = q9Var2;
                 q9Var = q9Var2;
             } else {
                 if (b10 == 1) {
                     ?? dc0Var = new dc0(getContext());
                     dc0Var.setBackgroundColor(0);
                     dc0Var.setPadding(org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f));
-                    dc0Var.setTextSize(0, c20Var.m);
-                    dc0Var.setTypeface(c20Var.n.d());
-                    SpannableString spannableString = new SpannableString(org.telegram.messenger.j6.m(c20Var.j, dc0Var.getPaint().getFontMetricsInt(), false, null, 0));
-                    ArrayList arrayList2 = c20Var.k;
+                    dc0Var.setTextSize(0, d20Var.m);
+                    dc0Var.setTypeface(d20Var.n.d());
+                    SpannableString spannableString = new SpannableString(org.telegram.messenger.j6.m(d20Var.j, dc0Var.getPaint().getFontMetricsInt(), false, null, 0));
+                    ArrayList arrayList2 = d20Var.k;
                     int size2 = arrayList2.size();
                     int i12 = 0;
                     while (i12 < size2) {
                         Object obj = arrayList2.get(i12);
                         i12++;
-                        org.telegram.messenger.b20 b20Var = (org.telegram.messenger.b20) obj;
-                        y5 y5Var = new y5(b20Var.document_id, dc0Var.getPaint().getFontMetricsInt());
-                        int i13 = b20Var.offset;
-                        spannableString.setSpan(y5Var, i13, b20Var.length + i13, 33);
+                        org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) obj;
+                        y5 y5Var = new y5(c20Var.document_id, dc0Var.getPaint().getFontMetricsInt());
+                        int i13 = c20Var.offset;
+                        spannableString.setSpan(y5Var, i13, c20Var.length + i13, 33);
                     }
                     org.telegram.messenger.g6[] g6VarArr = (org.telegram.messenger.g6[]) spannableString.getSpans(0, spannableString.length(), org.telegram.messenger.g6.class);
                     if (g6VarArr != null) {
@@ -106,7 +106,7 @@ public final class ec0 extends FrameLayout {
                     dc0Var.setText(spannableString);
                     int i14 = 17;
                     dc0Var.setGravity(17);
-                    int i15 = c20Var.p;
+                    int i15 = d20Var.p;
                     if (i15 != 1) {
                         i7 = 2;
                         i14 = i15 != 2 ? 19 : 21;
@@ -114,10 +114,10 @@ public final class ec0 extends FrameLayout {
                         i7 = 2;
                     }
                     dc0Var.setGravity(i14);
-                    int i16 = c20Var.p;
+                    int i16 = d20Var.p;
                     if (i16 != 1) {
                         i10 = 3;
-                        if (i16 == i7 ? org.telegram.messenger.gd.a0 : !org.telegram.messenger.gd.a0) {
+                        if (i16 == i7 ? org.telegram.messenger.hd.a0 : !org.telegram.messenger.hd.a0) {
                             i10 = 2;
                         }
                     } else {
@@ -131,11 +131,11 @@ public final class ec0 extends FrameLayout {
                     dc0Var.setInputType(dc0Var.getInputType() | TLObject.FLAG_14);
                     dc0Var.setBreakStrategy(0);
                     dc0Var.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
-                    int i17 = c20Var.l;
-                    byte b11 = c20Var.b;
+                    int i17 = d20Var.l;
+                    byte b11 = d20Var.b;
                     if (b11 == 0) {
                         dc0Var.setFrameColor(i17);
-                        i17 = org.telegram.messenger.g0.B(c20Var.l) >= 0.721f ? -16777216 : -1;
+                        i17 = org.telegram.messenger.g0.B(d20Var.l) >= 0.721f ? -16777216 : -1;
                     } else if (b11 == 1) {
                         dc0Var.setFrameColor(org.telegram.messenger.g0.B(i17) >= 0.25f ? -1728053248 : -1711276033);
                     } else if (b11 == 2) {
@@ -147,13 +147,13 @@ public final class ec0 extends FrameLayout {
                     dc0Var.setCursorColor(i17);
                     dc0Var.setHandlesColor(i17);
                     dc0Var.setHighlightColor(org.telegram.ui.ActionBar.m6.r1(0.4f, i17));
-                    c20Var.I = dc0Var;
+                    d20Var.I = dc0Var;
                     q9Var = dc0Var;
                 }
                 if (view == null) {
                     addView(view);
-                    view.setRotation((float) (((-c20Var.e) / 3.141592653589793d) * 180.0d));
-                    this.b.put(view, c20Var);
+                    view.setRotation((float) (((-d20Var.e) / 3.141592653589793d) * 180.0d));
+                    this.b.put(view, d20Var);
                 }
             }
             view = q9Var;
@@ -216,24 +216,24 @@ public final class ec0 extends FrameLayout {
             int childCount = getChildCount();
             for (int i16 = 0; i16 < childCount; i16++) {
                 View childAt = getChildAt(i16);
-                org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) this.b.get(childAt);
-                if (c20Var != null) {
+                org.telegram.messenger.d20 d20Var = (org.telegram.messenger.d20) this.b.get(childAt);
+                if (d20Var != null) {
                     int measuredWidth2 = childAt.getMeasuredWidth();
                     int measuredHeight3 = childAt.getMeasuredHeight();
                     if (childAt instanceof tg.b) {
-                        if (c20Var.A) {
-                            i13 = ((int) (((c20Var.f / 2.0f) + c20Var.c) * measuredWidth)) - (childAt.getMeasuredWidth() / 2);
-                            i15 = (int) (((c20Var.g / 2.0f) + c20Var.d) * measuredHeight2);
+                        if (d20Var.A) {
+                            i13 = ((int) (((d20Var.f / 2.0f) + d20Var.c) * measuredWidth)) - (childAt.getMeasuredWidth() / 2);
+                            i15 = (int) (((d20Var.g / 2.0f) + d20Var.d) * measuredHeight2);
                             measuredHeight = childAt.getMeasuredHeight() / 2;
                         } else {
-                            i13 = ((int) (measuredWidth * c20Var.y)) - (childAt.getMeasuredWidth() / 2);
-                            i15 = (int) (measuredHeight2 * c20Var.z);
+                            i13 = ((int) (measuredWidth * d20Var.y)) - (childAt.getMeasuredWidth() / 2);
+                            i15 = (int) (measuredHeight2 * d20Var.z);
                             measuredHeight = childAt.getMeasuredHeight() / 2;
                         }
                         i14 = i15 - measuredHeight;
                     } else {
-                        i13 = (int) (measuredWidth * c20Var.c);
-                        i14 = (int) (measuredHeight2 * c20Var.d);
+                        i13 = (int) (measuredWidth * d20Var.c);
+                        i14 = (int) (measuredHeight2 * d20Var.d);
                     }
                     childAt.layout(i13, i14, measuredWidth2 + i13, measuredHeight3 + i14);
                 }
@@ -251,15 +251,15 @@ public final class ec0 extends FrameLayout {
             int childCount = getChildCount();
             for (int i11 = 0; i11 < childCount; i11++) {
                 View childAt = getChildAt(i11);
-                org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) this.b.get(childAt);
-                if (c20Var != null) {
+                org.telegram.messenger.d20 d20Var = (org.telegram.messenger.d20) this.b.get(childAt);
+                if (d20Var != null) {
                     if (childAt instanceof tg.b) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(c20Var.q, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-                        float measuredWidth2 = c20Var.A ? (c20Var.f * getMeasuredWidth()) / c20Var.q : c20Var.v * ((c20Var.w * measuredWidth) / c20Var.q);
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(d20Var.q, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                        float measuredWidth2 = d20Var.A ? (d20Var.f * getMeasuredWidth()) / d20Var.q : d20Var.v * ((d20Var.w * measuredWidth) / d20Var.q);
                         childAt.setScaleX(measuredWidth2);
                         childAt.setScaleY(measuredWidth2);
                     } else {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec((int) (measuredWidth * c20Var.f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (measuredHeight * c20Var.g), TLObject.FLAG_30));
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec((int) (measuredWidth * d20Var.f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (measuredHeight * d20Var.g), TLObject.FLAG_30));
                     }
                 }
             }

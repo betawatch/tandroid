@@ -1,10 +1,10 @@
 package ji;
 
-import ai.i2;
-import ai.n1;
+import ai.a3;
+import ai.j2;
+import ai.o1;
 import ai.p0;
 import ai.u0;
-import ai.z2;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -41,8 +41,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -58,7 +58,7 @@ import org.telegram.ui.Components.yu0;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e extends View {
     public static int A3;
@@ -278,7 +278,7 @@ public final class e extends View {
     public static final float w3 = g0.N(0.5f);
     public static final float x3 = g0.L(6.0f);
     public static final nr C3 = new nr(0.3d, 0.0d, 0.2d, 1.0d);
-    public static final nr D3 = n1.J;
+    public static final nr D3 = o1.J;
 
     public e(Context context, h6 h6Var, xi.e eVar) {
         super(context);
@@ -286,7 +286,7 @@ public final class e extends View {
         this.d = new TextPaint(1);
         this.e = new TextPaint(1);
         this.f = new TextPaint(1);
-        this.h = ks.e4;
+        this.h = ls.e4;
         TextPaint textPaint = new TextPaint(1);
         this.n = textPaint;
         this.r = new Paint(1);
@@ -299,7 +299,7 @@ public final class e extends View {
         this.E = new Matrix();
         this.K = -1.0f;
         this.L = -1.0f;
-        this.Q = ks.e4;
+        this.Q = ls.e4;
         this.f0 = -1;
         this.i0 = new RectF();
         this.j0 = new RectF();
@@ -327,7 +327,7 @@ public final class e extends View {
         this.h1 = new Paint(1);
         this.i1 = new Paint(1);
         this.l1 = Float.NaN;
-        this.n1 = gd.N0(2131745065, null);
+        this.n1 = hd.N0(2131745065, null);
         this.A1 = new RectF();
         this.B1 = new RectF();
         this.C1 = new RectF();
@@ -587,7 +587,7 @@ public final class e extends View {
             f20 = 0.0f;
         }
         float f54 = f18;
-        textPaint.setAlpha(ks.e4);
+        textPaint.setAlpha(ls.e4);
         float f55 = g0.p;
         while (true) {
             int i16 = this.q2;
@@ -778,7 +778,7 @@ public final class e extends View {
             gVar.draw(canvas);
             return;
         }
-        int i7 = (int) ((this.M ? ks.u3 : ks.L3) * f10);
+        int i7 = (int) ((this.M ? ls.u3 : ls.L3) * f10);
         Paint paint = this.r;
         paint.setAlpha(i7);
         canvas.drawRoundRect(rectF, height, height, paint);
@@ -807,7 +807,7 @@ public final class e extends View {
         if (str != null) {
             f12 = 18.0f;
             f13 = 6.0f;
-            if (textPaint.measureText(this.o1) + g0.L(6.0f) + g0.L(18.0f) + g0.L(12.0f) + g0.L(8.0f) + g0.L(8.0f) + g0.L(13.0f) > (rectF2.right - (((rectF2.left + g0.L(2.0f)) + i10) + g0.L(8.0f))) - ((this.T || !z10) ? 0.0f : (textPaint.measureText(gd.N0(2131745444, null)) + (g0.L(8.0f) + (g0.L(22.0f) + (g0.L(12.0f) + g0.L(8.0f))))) + g0.L(16.0f))) {
+            if (textPaint.measureText(this.o1) + g0.L(6.0f) + g0.L(18.0f) + g0.L(12.0f) + g0.L(8.0f) + g0.L(8.0f) + g0.L(13.0f) > (rectF2.right - (((rectF2.left + g0.L(2.0f)) + i10) + g0.L(8.0f))) - ((this.T || !z10) ? 0.0f : (textPaint.measureText(hd.N0(2131745444, null)) + (g0.L(8.0f) + (g0.L(22.0f) + (g0.L(12.0f) + g0.L(8.0f))))) + g0.L(16.0f))) {
                 this.r1 = this.q1;
             }
         } else {
@@ -1022,7 +1022,7 @@ public final class e extends View {
             rectF5.setEmpty();
             return;
         }
-        String N0 = gd.N0(2131745444, null);
+        String N0 = hd.N0(2131745444, null);
         float L13 = rectF.right + g0.L(8.0f);
         rectF5.set(L13, f15, textPaint.measureText(N0) + g0.L(12.0f) + L13 + g0.L(f14) + g0.L(8.0f) + g0.L(16.0f), f17);
         if (this.P1 == null) {
@@ -1058,7 +1058,7 @@ public final class e extends View {
         float f12;
         float f13 = this.a0;
         float L = g0.L(36.0f);
-        String N0 = gd.N0(this.b2 ? 2131745059 : 2131745060, null);
+        String N0 = hd.N0(this.b2 ? 2131745059 : 2131745060, null);
         float i7 = i();
         RectF rectF = this.j0;
         float L2 = rectF.left + g0.L(2.0f);
@@ -1123,7 +1123,7 @@ public final class e extends View {
             this.J.setAlpha((int) (min2 * 255.0f));
             this.J.draw(canvas);
         } else {
-            int i10 = this.M ? ks.u3 : ks.L3;
+            int i10 = this.M ? ls.u3 : ls.L3;
             Paint paint = this.r;
             paint.setAlpha((int) (i10 * min2));
             canvas.drawRoundRect(rectF3, height, height, paint);
@@ -1210,7 +1210,7 @@ public final class e extends View {
             this.j2.setAlpha((int) (255.0f * f12));
             this.j2.draw(canvas);
         } else {
-            int i7 = this.M ? ks.u3 : ks.L3;
+            int i7 = this.M ? ls.u3 : ls.L3;
             Paint paint = this.r;
             paint.setAlpha((int) (i7 * f12));
             float f13 = L / 2.0f;
@@ -1256,7 +1256,7 @@ public final class e extends View {
     }
 
     public final float i() {
-        return this.n.measureText(gd.N0(this.b2 ? 2131745059 : 2131745060, null)) + g0.L(6.0f) + g0.L(24.0f) + g0.L(12.0f) + g0.L(12.0f) + g0.L(1.0f) + g0.L(8.0f) + g0.L(14.0f) + g0.L(10.0f);
+        return this.n.measureText(hd.N0(this.b2 ? 2131745059 : 2131745060, null)) + g0.L(6.0f) + g0.L(24.0f) + g0.L(12.0f) + g0.L(12.0f) + g0.L(1.0f) + g0.L(8.0f) + g0.L(14.0f) + g0.L(10.0f);
     }
 
     public final boolean j() {
@@ -1519,7 +1519,7 @@ public final class e extends View {
                         if (oVar4.K != null && ((i7 = oVar4.c) == 2 || i7 == 4)) {
                             String[] E = DictationAsr.E();
                             ArrayList arrayList = new ArrayList();
-                            arrayList.add(gd.N0(2131745068, null));
+                            arrayList.add(hd.N0(2131745068, null));
                             boolean x10 = DictationAsr.x();
                             int i14 = x10 ? 0 : -1;
                             for (int i15 = 0; i15 < E.length; i15++) {
@@ -1553,7 +1553,7 @@ public final class e extends View {
                             oVar5.s();
                             bn bnVar = rfVar3.a.F3;
                             if (bnVar != null) {
-                                bnVar.presentFragment(new z2());
+                                bnVar.presentFragment(new a3());
                                 return true;
                             }
                         } else if (i16 == 2) {
@@ -1712,7 +1712,7 @@ public final class e extends View {
             Bitmap.Config config = Bitmap.Config.ARGB_8888;
             this.S2 = Bitmap.createBitmap(width, height, config);
             TextPaint textPaint = this.d;
-            textPaint.setAlpha(ks.e4);
+            textPaint.setAlpha(ls.e4);
             float f10 = this.K2;
             this.Z2 = f10 - ((float) Math.floor(f10));
             float f11 = this.L2;
@@ -2063,7 +2063,7 @@ public final class e extends View {
             c cVar = (c) obj;
             int i10 = cVar.b;
             if (i10 > cVar.a && i10 <= spannableString.length()) {
-                spannableString.setSpan(new i2(cVar, 1), cVar.a, cVar.b, 33);
+                spannableString.setSpan(new j2(cVar, 1), cVar.a, cVar.b, 33);
             }
         }
         int i11 = 0;
@@ -2430,7 +2430,7 @@ public final class e extends View {
                                     i38 = length2;
                                     i27 = 0;
                                 }
-                                textPaint.setAlpha(ks.e4);
+                                textPaint.setAlpha(ls.e4);
                                 StaticLayout b10 = b(spannableString, textPaint);
                                 try {
                                     Bitmap createBitmap = Bitmap.createBitmap(b10.getWidth() + g0.L(4.0f), Math.max(1, b10.getHeight()), Bitmap.Config.ARGB_8888);
@@ -2723,7 +2723,7 @@ public final class e extends View {
                                             yu0Var.e(this.M);
                                             yu0Var.a = u0.k(this.M);
                                             yu0Var.Q = 0.0f;
-                                            textPaint.setAlpha(ks.e4);
+                                            textPaint.setAlpha(ls.e4);
                                             StaticLayout b11 = b(spannableString2, textPaint);
                                             try {
                                                 Bitmap createBitmap2 = Bitmap.createBitmap(b11.getWidth() + g0.L(f11), Math.max(1, b11.getHeight()), Bitmap.Config.ARGB_8888);

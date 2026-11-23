@@ -1,69 +1,25 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class tz {
-    public final String b;
-    public int a = 0;
-    public final ArrayList d = new ArrayList();
-    public final long c = System.currentTimeMillis();
+public class tz {
+    public final String c;
+    public int d;
+    public final /* synthetic */ uz e;
+    public long b = -1;
+    public final long a = System.currentTimeMillis();
 
-    public tz(String str) {
-        this.b = str;
+    public tz(uz uzVar, String str) {
+        this.e = uzVar;
+        this.c = str;
+        uzVar.a++;
     }
 
-    public static void a(sz szVar) {
-        if (szVar != null) {
-            if (szVar.b < 0) {
-                tz tzVar = szVar.e;
-                int i7 = tzVar.a;
-                tzVar.a = i7 - 1;
-                szVar.d = i7;
-            }
-            szVar.b = System.currentTimeMillis();
-        }
-    }
-
-    public static void b(tz tzVar) {
-        if (tzVar != null) {
-            ArrayList arrayList = tzVar.d;
-            long currentTimeMillis = System.currentTimeMillis() - tzVar.c;
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(tzVar.b);
-            sb2.append(" total=");
-            sb2.append(currentTimeMillis);
-            sb2.append("ms\n");
-            for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                if (arrayList.get(i7) != null) {
-                    sb2.append("#");
-                    sb2.append(i7);
-                    int i10 = ((sz) arrayList.get(i7)).d;
-                    for (int i11 = 0; i11 < i10; i11++) {
-                        sb2.append(" ");
-                    }
-                    sb2.append(" ");
-                    sb2.append(arrayList.get(i7));
-                    sb2.append("\n");
-                }
-            }
-            a8.b(sb2.toString());
-        }
-    }
-
-    public static void c(tz tzVar, String str) {
-        if (tzVar != null) {
-            tzVar.d.add(new rz(tzVar, str));
-        }
-    }
-
-    public static sz d(tz tzVar, String str) {
-        if (tzVar == null) {
-            return null;
-        }
-        sz szVar = new sz(tzVar, str);
-        tzVar.d.add(szVar);
-        return szVar;
+    public String toString() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.c);
+        sb2.append(": ");
+        sb2.append(this.b < 0 ? "not done" : a8.p0.r(new StringBuilder(), this.b - this.a, "ms"));
+        return sb2.toString();
     }
 }

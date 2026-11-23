@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qv0 implements kp {
     public final /* synthetic */ cx a;
@@ -18,8 +18,8 @@ public final class qv0 implements kp {
         ProfileActivity profileActivity = this.b.b;
         profileActivity.N1 = true;
         this.a.removeSelfFromStack();
-        org.telegram.messenger.ks notificationCenter = profileActivity.getNotificationCenter();
-        int i10 = org.telegram.messenger.ks.t;
+        org.telegram.messenger.ls notificationCenter = profileActivity.getNotificationCenter();
+        int i10 = org.telegram.messenger.ls.t;
         notificationCenter.n(profileActivity, i10);
         profileActivity.getNotificationCenter().k(i10, new Object[0]);
     }

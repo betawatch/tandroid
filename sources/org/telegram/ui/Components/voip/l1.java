@@ -7,10 +7,10 @@ import android.graphics.Paint;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Cells.y9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l1 {
     public final b8 a;
@@ -46,10 +46,10 @@ public final class l1 {
         paint.setColor(-1);
         paint.setAlpha(35);
         paint2.setColor(-16777216);
-        paint2.setAlpha(ks.n1);
+        paint2.setAlpha(ls.n1);
         paint3.setColor(-16777216);
         paint3.setAlpha(35);
-        ((Paint) b8Var2.a).setAlpha(ks.K2);
+        ((Paint) b8Var2.a).setAlpha(ls.K2);
     }
 
     public final void a(View view) {

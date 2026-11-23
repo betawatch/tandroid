@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fm0 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class fm0 implements Runnable {
                 nm0 nm0Var = (nm0) this.b;
                 org.telegram.ui.cx cxVar = (org.telegram.ui.cx) this.c;
                 nm0Var.S();
-                lc.b0(cxVar).c(org.telegram.messenger.gd.N0(2131754485, null)).j();
+                lc.b0(cxVar).c(org.telegram.messenger.hd.N0(2131754485, null)).j();
                 break;
             case 1:
                 ((zm0) this.b).sendAccessibilityEvent((View) this.c, 4);
@@ -99,17 +99,17 @@ public final /* synthetic */ class fm0 implements Runnable {
                 p8Var.k(true);
                 break;
             case 8:
-                lc.b0(((ur0) this.b).f.y1).Q(R.raw.contact_check, 36, org.telegram.messenger.gd.a0(null, null, 2131742572, ((TLRPC.Chat) this.c).title)).k(true);
+                lc.b0(((ur0) this.b).f.y1).Q(R.raw.contact_check, 36, org.telegram.messenger.hd.a0(null, null, 2131742570, ((TLRPC.Chat) this.c).title)).k(true);
                 break;
             case 9:
                 gs0 gs0Var = (gs0) this.b;
                 String str = (String) this.c;
                 if (!gs0Var.w.w1[gs0Var.r].a.isEmpty() && ((i7 = gs0Var.r) == 1 || i7 == 4)) {
-                    org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) i5.c.h(1, gs0Var.w.w1[i7].a);
-                    int e12 = fjVar.e1();
-                    long B0 = org.telegram.messenger.fj.B0(fjVar.k);
+                    org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) i5.c.h(1, gs0Var.w.w1[i7].a);
+                    int e12 = gjVar.e1();
+                    long B0 = org.telegram.messenger.gj.B0(gjVar.k);
                     jt0 jt0Var2 = gs0Var.w;
-                    gs0Var.F(e12, B0, jt0Var2.m1 == jt0Var2.y1.getUserConfig().e() ? fjVar.P1() : 0L, str);
+                    gs0Var.F(e12, B0, jt0Var2.m1 == jt0Var2.y1.getUserConfig().e() ? gjVar.P1() : 0L, str);
                 } else if (gs0Var.r == 3) {
                     jt0 jt0Var3 = gs0Var.w;
                     gs0Var.F(0, jt0Var3.m1, jt0Var3.G, str);
@@ -140,7 +140,7 @@ public final /* synthetic */ class fm0 implements Runnable {
                         ds0 ds0Var2 = ds0VarArr[i16];
                         if (ds0Var2.F == gs0Var2.r) {
                             if (gs0Var2.s == 0 && b11 == 0) {
-                                ds0Var2.w.d.setText(org.telegram.messenger.gd.N0(2131747974, "NoResult"));
+                                ds0Var2.w.d.setText(org.telegram.messenger.hd.N0(2131747974, "NoResult"));
                                 ds0VarArr[i16].w.f.setVisibility(8);
                                 ds0VarArr[i16].w.e(false, true);
                             } else if (b10 == 0) {
@@ -155,31 +155,25 @@ public final /* synthetic */ class fm0 implements Runnable {
             case 11:
                 TLObject tLObject2 = (TLObject) this.b;
                 TLRPC.Document document = (TLRPC.Document) this.c;
-                org.telegram.messenger.ks f10 = org.telegram.messenger.ks.f(org.telegram.messenger.j10.t0);
+                org.telegram.messenger.ls f10 = org.telegram.messenger.ls.f(org.telegram.messenger.k10.t0);
                 Boolean bool = Boolean.FALSE;
-                f10.m(org.telegram.messenger.ks.u3, bool, tLObject2, document, null, bool);
+                f10.m(org.telegram.messenger.ls.u3, bool, tLObject2, document, null, bool);
                 break;
             case 12:
-                org.telegram.messenger.mp.u1(((ww0) this.b).a.a).t5((TLRPC.EmojiStatus) this.c, null);
+                org.telegram.messenger.np.u1(((ww0) this.b).a.a).t5((TLRPC.EmojiStatus) this.c, null);
                 break;
             case 13:
-                b21 b21Var = (b21) this.b;
-                org.telegram.messenger.mp.u1(b21Var.e).t7.d((ArrayList) this.c, -b21Var.f);
-                int i17 = b21.m0;
+                a21 a21Var = (a21) this.b;
+                org.telegram.messenger.np.u1(a21Var.e).t7.d((ArrayList) this.c, -a21Var.f);
+                int i17 = a21.m0;
                 break;
             case 14:
-                b21 b21Var2 = (b21) this.b;
+                a21 a21Var2 = (a21) this.b;
                 TLRPC.Updates updates = (TLRPC.Updates) this.c;
-                b21Var2.getClass();
-                org.telegram.messenger.mp.u1(b21Var2.e).b3(0, updates.chats.get(0).id, true);
+                a21Var2.getClass();
+                org.telegram.messenger.np.u1(a21Var2.e).b3(0, updates.chats.get(0).id, true);
                 break;
             case 15:
-                org.telegram.messenger.ks ksVar = (org.telegram.messenger.ks) this.b;
-                g21 g21Var = (g21) this.c;
-                ksVar.n(g21Var, org.telegram.messenger.ks.Y1);
-                ksVar.n(g21Var, org.telegram.messenger.ks.Z1);
-                break;
-            case 16:
                 org.telegram.ui.Cells.m1 m1Var = (org.telegram.ui.Cells.m1) this.b;
                 TLRPC.TL_messages_transcribedAudio tL_messages_transcribedAudio = (TLRPC.TL_messages_transcribedAudio) this.c;
                 if (m1Var != null) {
@@ -187,29 +181,35 @@ public final /* synthetic */ class fm0 implements Runnable {
                     break;
                 }
                 break;
+            case 16:
+                org.telegram.messenger.ls lsVar = (org.telegram.messenger.ls) this.b;
+                g21 g21Var = (g21) this.c;
+                lsVar.n(g21Var, org.telegram.messenger.ls.Y1);
+                lsVar.n(g21Var, org.telegram.messenger.ls.Z1);
+                break;
             case 17:
                 b31 b31Var = (b31) this.b;
                 TLObject tLObject3 = (TLObject) this.c;
-                org.telegram.messenger.ut utVar = b31Var.t1;
+                org.telegram.messenger.vt vtVar = b31Var.t1;
                 b31Var.m1 = null;
                 if (tLObject3 instanceof TLRPC.TL_messages_translatedRichMessage) {
                     TLRPC.TL_messages_translatedRichMessage tL_messages_translatedRichMessage = (TLRPC.TL_messages_translatedRichMessage) tLObject3;
                     if (!tL_messages_translatedRichMessage.result.isEmpty() && tL_messages_translatedRichMessage.result.get(0) != null) {
                         b31Var.P1 = false;
                         TL_iv.RichMessage richMessage = tL_messages_translatedRichMessage.result.get(0);
-                        if (utVar != null) {
-                            utVar.set(richMessage);
-                            b31Var.I1.D(utVar);
+                        if (vtVar != null) {
+                            vtVar.set(richMessage);
+                            b31Var.I1.D(vtVar);
                             break;
                         }
                     }
                 }
                 if (b31Var.P1) {
                     b31Var.dismiss();
-                    org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.S4, 1, org.telegram.messenger.gd.N0(2131743703, null));
+                    org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.S4, 1, org.telegram.messenger.hd.N0(2131743701, null));
                     break;
                 } else {
-                    org.telegram.messenger.f3.o(null, 2131743703, new lc((FrameLayout) b31Var.b, b31Var.J0), null);
+                    org.telegram.messenger.f3.o(null, 2131743701, new lc((FrameLayout) b31Var.b, b31Var.J0), null);
                     x21 x21Var = b31Var.x1.e;
                     String str2 = b31Var.w1;
                     b31Var.v1 = str2;
@@ -223,7 +223,7 @@ public final /* synthetic */ class fm0 implements Runnable {
                 s31.a(ckVar.getContext(), ckVar.d);
                 break;
             case 19:
-                ((org.telegram.messenger.z00) this.c).J(((org.telegram.ui.ck) this.b).b, false, false);
+                ((org.telegram.messenger.a10) this.c).J(((org.telegram.ui.ck) this.b).b, false, false);
                 break;
             case 20:
                 UndoView undoView = (UndoView) this.b;
@@ -288,7 +288,7 @@ public final /* synthetic */ class fm0 implements Runnable {
                 } else {
                     org.telegram.messenger.a8.g(v0Var, true);
                     org.telegram.messenger.a8.d("av1 codec failed, we think this codec is not supported");
-                    org.telegram.messenger.mp.g1().edit().putBoolean("unsupport_video/av01", true).commit();
+                    org.telegram.messenger.np.g1().edit().putBoolean("unsupport_video/av01", true).commit();
                     HashMap hashMap = i61.m0;
                     if (hashMap != null) {
                         hashMap.clear();

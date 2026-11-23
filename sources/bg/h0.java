@@ -6,7 +6,7 @@ import fi.e7;
 import fi.h7;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
@@ -24,12 +24,12 @@ public final /* synthetic */ class h0 implements RequestDelegate {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ h0(h7 h7Var, long j3, View view, e7 e7Var, mp mpVar) {
+    public /* synthetic */ h0(h7 h7Var, long j3, View view, e7 e7Var, np npVar) {
         this.c = h7Var;
         this.b = j3;
         this.d = view;
         this.e = e7Var;
-        this.f = mpVar;
+        this.f = npVar;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -39,7 +39,7 @@ public final /* synthetic */ class h0 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new i0(tL_error, (bn) this.c, tLObject, (TLRPC.FileLocation[]) this.d, (String) this.f, (TLRPC.FileLocation[]) this.e, this.b));
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new a3((h7) this.c, tLObject, this.b, (View) this.d, (e7) this.e, (mp) this.f, 2));
+                org.telegram.messenger.g0.g3(new a3((h7) this.c, tLObject, this.b, (View) this.d, (e7) this.e, (np) this.f, 2));
                 break;
             default:
                 ((ConferenceCall) this.c).lambda$poll$8((TL_phone.getGroupCallChainBlocks) this.d, this.b, (AtomicBoolean) this.e, (AtomicInteger) this.f, tLObject, tL_error);

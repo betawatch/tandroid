@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iz implements rj0, sj0 {
     public final /* synthetic */ rz a;
@@ -55,15 +55,15 @@ public final /* synthetic */ class iz implements rj0, sj0 {
     */
     public boolean c(int i7, View view) {
         org.telegram.ui.ActionBar.k kVar;
-        org.telegram.messenger.ro roVar;
+        org.telegram.messenger.so soVar;
         boolean z10;
         ArrayList arrayList;
         org.telegram.ui.cx cxVar;
         boolean z11;
         boolean z12;
         boolean z13;
-        org.telegram.messenger.ro roVar2;
-        org.telegram.messenger.ro roVar3;
+        org.telegram.messenger.so soVar2;
+        org.telegram.messenger.so soVar3;
         int i10;
         String str;
         int i11;
@@ -90,19 +90,19 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                         ArrayList V0 = cxVar2.getMessagesController().V0();
                         int id2 = pzVar.getId();
                         if (V0 != null && id2 >= 0 && id2 < V0.size()) {
-                            roVar = (org.telegram.messenger.ro) V0.get(pzVar.getId());
+                            soVar = (org.telegram.messenger.so) V0.get(pzVar.getId());
                             boolean z15 = true;
-                            z10 = roVar != null;
+                            z10 = soVar != null;
                             boolean[] zArr = {true};
-                            org.telegram.messenger.mp messagesController = cxVar2.getMessagesController();
+                            org.telegram.messenger.np messagesController = cxVar2.getMessagesController();
                             arrayList = new ArrayList(!z10 ? messagesController.Y0(cxVar2.Y2) : messagesController.y);
-                            if (roVar == null) {
-                                roVar2 = (org.telegram.messenger.ro) cxVar2.getMessagesController().V0().get(pzVar.getId());
-                                if (roVar2 != null) {
+                            if (soVar == null) {
+                                soVar2 = (org.telegram.messenger.so) cxVar2.getMessagesController().V0().get(pzVar.getId());
+                                if (soVar2 != null) {
                                     int i13 = 0;
                                     while (i13 < arrayList.size()) {
                                         boolean z16 = z15;
-                                        if (!roVar2.a(cxVar2.getAccountInstance(), ((TLRPC.Dialog) arrayList.get(i13)).id)) {
+                                        if (!soVar2.a(cxVar2.getAccountInstance(), ((TLRPC.Dialog) arrayList.get(i13)).id)) {
                                             arrayList.remove(i13);
                                             i13--;
                                         }
@@ -110,19 +110,19 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                                         z15 = z16;
                                     }
                                     z11 = z15;
-                                    if (!roVar2.c()) {
-                                        if (roVar2.i.isEmpty()) {
-                                            int i14 = roVar2.g;
-                                            int i15 = org.telegram.messenger.mp.I8;
+                                    if (!soVar2.c()) {
+                                        if (soVar2.i.isEmpty()) {
+                                            int i14 = soVar2.g;
+                                            int i15 = org.telegram.messenger.np.I8;
                                         }
                                         z13 = false;
                                         if (z13) {
                                             int i16 = 0;
                                             while (true) {
-                                                if (i16 >= roVar2.h.size()) {
+                                                if (i16 >= soVar2.h.size()) {
                                                     break;
                                                 }
-                                                long longValue = ((Long) roVar2.h.get(i16)).longValue();
+                                                long longValue = ((Long) soVar2.h.get(i16)).longValue();
                                                 if (longValue < 0 && (O0 = cxVar2.getMessagesController().O0(Long.valueOf(-longValue))) != null && org.telegram.ui.kz.m0(O0)) {
                                                     zArr[0] = false;
                                                     break;
@@ -164,25 +164,25 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                                 z11 = true;
                                 z12 = false;
                                 z13 = false;
-                                roVar2 = null;
+                                soVar2 = null;
                             }
                             if (z10) {
                                 cxVar.getMessagesController().getClass();
-                                if (roVar2 != null && (roVar2.g & 64) == 0) {
-                                    roVar3 = roVar2;
+                                if (soVar2 != null && (soVar2.g & 64) == 0) {
+                                    soVar3 = soVar2;
                                 }
-                                roVar3 = null;
+                                soVar3 = null;
                             } else {
                                 ArrayList V02 = cxVar.getMessagesController().V0();
                                 for (int i18 = 0; i18 < V02.size(); i18++) {
-                                    if (((org.telegram.messenger.ro) V02.get(i18)).d()) {
-                                        roVar3 = (org.telegram.messenger.ro) V02.get(i18);
+                                    if (((org.telegram.messenger.so) V02.get(i18)).d()) {
+                                        soVar3 = (org.telegram.messenger.so) V02.get(i18);
                                         break;
                                     }
                                 }
-                                roVar3 = null;
+                                soVar3 = null;
                             }
-                            boolean z17 = (roVar3 == null && cxVar.getMessagesController().x0(roVar3)) ? z11 : false;
+                            boolean z17 = (soVar3 == null && cxVar.getMessagesController().x0(soVar3)) ? z11 : false;
                             boolean z18 = false;
                             for (i10 = 0; i10 < arrayList.size(); i10++) {
                                 if (((TLRPC.Dialog) arrayList.get(i10)).unread_mark || ((TLRPC.Dialog) arrayList.get(i10)).unread_count > 0) {
@@ -197,7 +197,7 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                             nvVar.b = new RectF();
                             paint.setColor(twVar.b.getThemedColor(org.telegram.ui.ActionBar.m6.G8));
                             I.X(nvVar);
-                            I.l(R.drawable.tabs_reorder, org.telegram.messenger.gd.N0(2131750693, null), new org.telegram.ui.bh(twVar, 25), cxVar3.getMessagesController().V0().size() <= 1);
+                            I.l(R.drawable.tabs_reorder, org.telegram.messenger.hd.N0(2131750693, null), new org.telegram.ui.bh(twVar, 25), cxVar3.getMessagesController().V0().size() <= 1);
                             if (z10) {
                                 str = null;
                                 i11 = 2131750769;
@@ -205,8 +205,8 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                                 i11 = 2131750768;
                                 str = null;
                             }
-                            I.c(R.drawable.msg_edit, org.telegram.messenger.gd.N0(i11, str), new org.telegram.ui.sw(twVar, z10, roVar), false);
-                            boolean z19 = roVar == null && !arrayList.isEmpty();
+                            I.c(R.drawable.msg_edit, org.telegram.messenger.hd.N0(i11, str), new org.telegram.ui.sw(twVar, z10, soVar), false);
+                            boolean z19 = soVar == null && !arrayList.isEmpty();
                             int i19 = !z12 ? R.drawable.msg_mute : R.drawable.msg_unmute;
                             if (z12) {
                                 str2 = null;
@@ -216,11 +216,11 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                                 str2 = null;
                             }
                             boolean z20 = z10;
-                            I.l(i19, org.telegram.messenger.gd.N0(i12, str2), new di.p6(twVar, arrayList, z12, 27), z19);
-                            I.l(R.drawable.msg_markread, org.telegram.messenger.gd.N0(2131748489, null), new org.telegram.ui.ss(10, twVar, arrayList), z18);
-                            I.l(!z17 ? R.drawable.msg_discussion : R.drawable.msg_markunread, org.telegram.messenger.gd.N0(!z17 ? 2131750689 : 2131750685, null), new org.telegram.ui.sw(twVar, roVar3, z17), roVar3 == null);
-                            I.l(R.drawable.msg_share, org.telegram.ui.kz.E0((roVar2 == null && roVar2.e()) ? -1 : 0, org.telegram.messenger.gd.N0(2131748732, null), true), new org.telegram.ui.up(twVar, zArr, roVar2, 3), z13);
-                            I.m(R.drawable.msg_delete, new org.telegram.ui.ss(11, twVar, roVar), org.telegram.messenger.gd.N0(2131750775, null), !z20, true);
+                            I.l(i19, org.telegram.messenger.hd.N0(i12, str2), new di.p6(twVar, arrayList, z12, 27), z19);
+                            I.l(R.drawable.msg_markread, org.telegram.messenger.hd.N0(2131748489, null), new org.telegram.ui.ss(10, twVar, arrayList), z18);
+                            I.l(!z17 ? R.drawable.msg_discussion : R.drawable.msg_markunread, org.telegram.messenger.hd.N0(!z17 ? 2131750689 : 2131750685, null), new org.telegram.ui.sw(twVar, soVar3, z17), soVar3 == null);
+                            I.l(R.drawable.msg_share, org.telegram.ui.kz.E0((soVar2 == null && soVar2.e()) ? -1 : 0, org.telegram.messenger.hd.N0(2131748732, null), true), new org.telegram.ui.up(twVar, zArr, soVar2, 3), z13);
+                            I.m(R.drawable.msg_delete, new org.telegram.ui.ss(11, twVar, soVar), org.telegram.messenger.hd.N0(2131750775, null), !z20, true);
                             I.s = 96;
                             I.i = 3;
                             I.b0(org.telegram.messenger.g0.L(-12.0f), org.telegram.messenger.g0.L(-4.0f));
@@ -230,18 +230,18 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                             return true;
                         }
                     }
-                    roVar = null;
+                    soVar = null;
                     boolean z152 = true;
-                    if (roVar != null) {
+                    if (soVar != null) {
                     }
                     boolean[] zArr2 = {true};
-                    org.telegram.messenger.mp messagesController2 = cxVar2.getMessagesController();
+                    org.telegram.messenger.np messagesController2 = cxVar2.getMessagesController();
                     arrayList = new ArrayList(!z10 ? messagesController2.Y0(cxVar2.Y2) : messagesController2.y);
-                    if (roVar == null) {
+                    if (soVar == null) {
                     }
                     if (z10) {
                     }
-                    if (roVar3 == null) {
+                    if (soVar3 == null) {
                     }
                     boolean z182 = false;
                     while (i10 < arrayList.size()) {
@@ -254,24 +254,24 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                     nvVar2.b = new RectF();
                     paint2.setColor(twVar.b.getThemedColor(org.telegram.ui.ActionBar.m6.G8));
                     I2.X(nvVar2);
-                    I2.l(R.drawable.tabs_reorder, org.telegram.messenger.gd.N0(2131750693, null), new org.telegram.ui.bh(twVar, 25), cxVar32.getMessagesController().V0().size() <= 1);
+                    I2.l(R.drawable.tabs_reorder, org.telegram.messenger.hd.N0(2131750693, null), new org.telegram.ui.bh(twVar, 25), cxVar32.getMessagesController().V0().size() <= 1);
                     if (z10) {
                     }
-                    I2.c(R.drawable.msg_edit, org.telegram.messenger.gd.N0(i11, str), new org.telegram.ui.sw(twVar, z10, roVar), false);
-                    if (roVar == null) {
+                    I2.c(R.drawable.msg_edit, org.telegram.messenger.hd.N0(i11, str), new org.telegram.ui.sw(twVar, z10, soVar), false);
+                    if (soVar == null) {
                     }
                     if (!z12) {
                     }
                     if (z12) {
                     }
                     boolean z202 = z10;
-                    I2.l(i19, org.telegram.messenger.gd.N0(i12, str2), new di.p6(twVar, arrayList, z12, 27), z19);
-                    I2.l(R.drawable.msg_markread, org.telegram.messenger.gd.N0(2131748489, null), new org.telegram.ui.ss(10, twVar, arrayList), z182);
-                    if (roVar3 == null) {
+                    I2.l(i19, org.telegram.messenger.hd.N0(i12, str2), new di.p6(twVar, arrayList, z12, 27), z19);
+                    I2.l(R.drawable.msg_markread, org.telegram.messenger.hd.N0(2131748489, null), new org.telegram.ui.ss(10, twVar, arrayList), z182);
+                    if (soVar3 == null) {
                     }
-                    I2.l(!z17 ? R.drawable.msg_discussion : R.drawable.msg_markunread, org.telegram.messenger.gd.N0(!z17 ? 2131750689 : 2131750685, null), new org.telegram.ui.sw(twVar, roVar3, z17), roVar3 == null);
-                    I2.l(R.drawable.msg_share, org.telegram.ui.kz.E0((roVar2 == null && roVar2.e()) ? -1 : 0, org.telegram.messenger.gd.N0(2131748732, null), true), new org.telegram.ui.up(twVar, zArr2, roVar2, 3), z13);
-                    I2.m(R.drawable.msg_delete, new org.telegram.ui.ss(11, twVar, roVar), org.telegram.messenger.gd.N0(2131750775, null), !z202, true);
+                    I2.l(!z17 ? R.drawable.msg_discussion : R.drawable.msg_markunread, org.telegram.messenger.hd.N0(!z17 ? 2131750689 : 2131750685, null), new org.telegram.ui.sw(twVar, soVar3, z17), soVar3 == null);
+                    I2.l(R.drawable.msg_share, org.telegram.ui.kz.E0((soVar2 == null && soVar2.e()) ? -1 : 0, org.telegram.messenger.hd.N0(2131748732, null), true), new org.telegram.ui.up(twVar, zArr2, soVar2, 3), z13);
+                    I2.m(R.drawable.msg_delete, new org.telegram.ui.ss(11, twVar, soVar), org.telegram.messenger.hd.N0(2131750775, null), !z202, true);
                     I2.s = 96;
                     I2.i = 3;
                     I2.b0(org.telegram.messenger.g0.L(-12.0f), org.telegram.messenger.g0.L(-4.0f));
@@ -310,7 +310,7 @@ public final /* synthetic */ class iz implements rj0, sj0 {
                 return;
             }
             org.telegram.ui.tw twVar = (org.telegram.ui.tw) rzVar.K;
-            twVar.d((org.telegram.messenger.ro) twVar.b.getMessagesController().V0().get(pzVar.b.a));
+            twVar.d((org.telegram.messenger.so) twVar.b.getMessagesController().V0().get(pzVar.b.a));
         }
     }
 

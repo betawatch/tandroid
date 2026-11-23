@@ -12,7 +12,7 @@ import android.graphics.RenderNode;
 import android.graphics.Shader;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jg0 implements kg0 {
     public final float f;
@@ -116,7 +116,7 @@ public final class jg0 implements kg0 {
             float f20 = -f16;
             beginRecording.translate(f19, f20);
             int z12 = (int) ((1.0f - org.telegram.messenger.g0.z1(lg0Var.e, 0.5f, 1.0f)) * 255.0f);
-            int b10 = c8.l9.b(z12, 0, org.telegram.messenger.ks.e4);
+            int b10 = c8.l9.b(z12, 0, org.telegram.messenger.ls.e4);
             lg0.a((lg0) kyVar.b, beginRecording);
             this.b.endRecording();
             float f21 = this.f;
@@ -237,7 +237,7 @@ public final class jg0 implements kg0 {
             canvas.drawRenderNode(this.c);
             canvas.drawRenderNode(this.d);
             canvas.restore();
-            int b11 = c8.l9.b((z12 * 3) / 4, 0, org.telegram.messenger.ks.e4);
+            int b11 = c8.l9.b((z12 * 3) / 4, 0, org.telegram.messenger.ls.e4);
             if (b11 < 255) {
                 canvas.saveLayer(rectF2, null);
                 if (lg0Var.f != 0.0f) {

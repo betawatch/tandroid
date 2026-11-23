@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dm0 extends View {
     public cm0 a;
@@ -42,7 +42,7 @@ public final class dm0 extends View {
             if (eVar != null) {
                 eVar.g(false);
             }
-            org.telegram.messenger.n10.s(c10, org.telegram.messenger.g0.L(6.0f), 4.0f);
+            org.telegram.messenger.o10.s(c10, org.telegram.messenger.g0.L(6.0f), 4.0f);
             this.c = c10;
         }
     }

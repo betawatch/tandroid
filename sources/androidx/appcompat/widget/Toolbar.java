@@ -49,12 +49,12 @@ import m.u;
 import m.v;
 import m.z0;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.md0;
 import r0.i0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -226,7 +226,7 @@ public class Toolbar extends ViewGroup {
             uVar.setImageDrawable(this.f);
             this.n.setContentDescription(this.h);
             g3 h = h();
-            h.a = (this.E & ks.x1) | 8388611;
+            h.a = (this.E & ls.x1) | 8388611;
             h.b = 2;
             this.n.setLayoutParams(h);
             this.n.setOnClickListener(new w(this, 7));
@@ -278,7 +278,7 @@ public class Toolbar extends ViewGroup {
             actionMenuView2.getClass();
             actionMenuView2.L = g1Var;
             g3 h = h();
-            h.a = (this.E & ks.x1) | 8388613;
+            h.a = (this.E & ls.x1) | 8388613;
             this.a.setLayoutParams(h);
             b(this.a, false);
         }
@@ -288,7 +288,7 @@ public class Toolbar extends ViewGroup {
         if (this.d == null) {
             this.d = new u(getContext(), null, R.attr.toolbarNavigationButtonStyle);
             g3 h = h();
-            h.a = (this.E & ks.x1) | 8388611;
+            h.a = (this.E & ls.x1) | 8388611;
             this.d.setLayoutParams(h);
         }
     }
@@ -590,9 +590,9 @@ public class Toolbar extends ViewGroup {
         g3 g3Var = (g3) view.getLayoutParams();
         int measuredHeight = view.getMeasuredHeight();
         int i10 = i7 > 0 ? (measuredHeight - i7) / 2 : 0;
-        int i11 = g3Var.a & ks.x1;
+        int i11 = g3Var.a & ls.x1;
         if (i11 != 16 && i11 != 48 && i11 != 80) {
-            i11 = this.N & ks.x1;
+            i11 = this.N & ls.x1;
         }
         if (i11 == 48) {
             return getPaddingTop() - i10;
@@ -809,7 +809,7 @@ public class Toolbar extends ViewGroup {
                     g3 g3Var4 = (g3) z0Var2.getLayoutParams();
                     int i28 = i15;
                     boolean z13 = (!s5 && this.b.getMeasuredWidth() > 0) || (s9 && this.c.getMeasuredWidth() > 0);
-                    i16 = this.N & ks.x1;
+                    i16 = this.N & ls.x1;
                     int i29 = max;
                     if (i16 != 48) {
                         paddingTop = getPaddingTop() + ((ViewGroup.MarginLayoutParams) g3Var3).topMargin + this.I;
@@ -961,7 +961,7 @@ public class Toolbar extends ViewGroup {
         int i282 = i15;
         if (s5) {
         }
-        i16 = this.N & ks.x1;
+        i16 = this.N & ls.x1;
         int i292 = max;
         if (i16 != 48) {
         }

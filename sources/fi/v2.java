@@ -2,13 +2,13 @@ package fi;
 
 import android.app.Activity;
 import android.view.View;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.f20;
+import org.telegram.messenger.ff;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.p40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v2 implements p40 {
     public final /* synthetic */ z3 a;
@@ -43,7 +43,7 @@ public final class v2 implements p40 {
     }
 
     @Override // org.telegram.ui.Components.p40
-    public final void u(ef efVar, e20 e20Var, boolean z10, int i7, int i10, boolean z11, long j3) {
+    public final void u(ff ffVar, f20 f20Var, boolean z10, int i7, int i10, boolean z11, long j3) {
         org.telegram.messenger.c accountInstance;
         org.telegram.messenger.c accountInstance2;
         org.telegram.messenger.c accountInstance3;
@@ -54,22 +54,22 @@ public final class v2 implements p40 {
             return;
         }
         storyItem.dialogId = z3Var.l1;
-        if (efVar.b) {
-            if (e20Var != null) {
+        if (ffVar.b) {
+            if (f20Var != null) {
                 accountInstance4 = z3Var.getAccountInstance();
-                String str = efVar.I;
-                zy.b0(efVar.x, i7, i10, z3Var.l1, 0L, j3, 0L, efVar.a, str, null, efVar.n, accountInstance4, null, null, null, null, null, e20Var, null, storyItem, null, z10, false, efVar.M);
+                String str = ffVar.I;
+                az.b0(ffVar.x, i7, i10, z3Var.l1, 0L, j3, 0L, ffVar.a, str, null, ffVar.n, accountInstance4, null, null, null, null, null, f20Var, null, storyItem, null, z10, false, ffVar.M);
             } else {
                 accountInstance3 = z3Var.getAccountInstance();
-                String str2 = efVar.I;
-                zy.b0(efVar.x, i7, i10, z3Var.l1, 0L, j3, 0L, efVar.a, str2, null, efVar.n, accountInstance3, null, null, null, null, null, null, null, storyItem, null, z10, false, efVar.M);
+                String str2 = ffVar.I;
+                az.b0(ffVar.x, i7, i10, z3Var.l1, 0L, j3, 0L, ffVar.a, str2, null, ffVar.n, accountInstance3, null, null, null, null, null, null, null, storyItem, null, z10, false, ffVar.M);
             }
-        } else if (efVar.h != null) {
+        } else if (ffVar.h != null) {
             accountInstance2 = z3Var.getAccountInstance();
-            zy.Z(accountInstance2, efVar.h, efVar.c, null, z3Var.l1, null, null, null, efVar.n, efVar.r, null, efVar.x, null, e20Var, z10, i7, false, efVar.a, null, 0L, j3, 0L, null);
-        } else if (efVar.I != null) {
+            az.Z(accountInstance2, ffVar.h, ffVar.c, null, z3Var.l1, null, null, null, ffVar.n, ffVar.r, null, ffVar.x, null, f20Var, z10, i7, false, ffVar.a, null, 0L, j3, 0L, null);
+        } else if (ffVar.I != null) {
             accountInstance = z3Var.getAccountInstance();
-            zy.Z(accountInstance, efVar.I, efVar.c, null, z3Var.l1, null, null, null, efVar.n, efVar.r, null, efVar.x, null, e20Var, z10, i7, false, efVar.a, null, 0L, j3, 0L, null);
+            az.Z(accountInstance, ffVar.I, ffVar.c, null, z3Var.l1, null, null, null, ffVar.n, ffVar.r, null, ffVar.x, null, f20Var, z10, i7, false, ffVar.a, null, 0L, j3, 0L, null);
         }
         z3Var.i0(j3 <= 0);
     }

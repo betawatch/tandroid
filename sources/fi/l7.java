@@ -2,12 +2,12 @@ package fi;
 
 import android.view.KeyEvent;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.ui.Components.ia;
 import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l7 implements c5.h {
     public final /* synthetic */ int a;
@@ -50,16 +50,16 @@ public final class l7 implements c5.h {
                 ug.y0 y0Var = (ug.y0) callback;
                 ArrayList arrayList = y0Var.o1;
                 if (((ws0) arrayList.get(i7)).a == 0) {
-                    y0Var.I1.setTitle(gd.N0(2131751337, null));
+                    y0Var.I1.setTitle(hd.N0(2131751337, null));
                     y0Var.I1.requestLayout();
                 } else if (((ws0) arrayList.get(i7)).a == 14) {
-                    y0Var.I1.setTitle(gd.N0(2131743562, null));
+                    y0Var.I1.setTitle(hd.N0(2131743560, null));
                     y0Var.I1.requestLayout();
                 } else if (((ws0) arrayList.get(i7)).a == 40) {
-                    y0Var.I1.setTitle(gd.N0(2131750825, null));
+                    y0Var.I1.setTitle(hd.N0(2131750825, null));
                     y0Var.I1.requestLayout();
                 } else if (((ws0) arrayList.get(i7)).a == 28) {
-                    y0Var.I1.setTitle(gd.N0(2131744011, null));
+                    y0Var.I1.setTitle(hd.N0(2131744009, null));
                     y0Var.I1.requestLayout();
                 }
                 d();
@@ -75,7 +75,7 @@ public final class l7 implements c5.h {
                 wVar.J0 = i7;
                 wVar.K0 = i10 > 0 ? i7 + 1 : i7 - 1;
                 wVar.L0 = f10;
-                long j3 = j10.i(wVar.z0).n;
+                long j3 = k10.i(wVar.z0).n;
                 int i11 = wVar.J0;
                 if (i11 >= 0 && (wVar.y0 != null ? wVar.x0 == j3 : !(i11 >= wVar.B0.size() || ((Long) wVar.B0.get(wVar.J0)).longValue() != j3))) {
                     ((w8) wVar.C0).d(1.0f - wVar.L0);

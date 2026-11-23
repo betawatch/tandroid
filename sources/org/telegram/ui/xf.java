@@ -7,9 +7,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xf implements org.telegram.messenger.q10 {
+public final /* synthetic */ class xf implements org.telegram.messenger.r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -22,7 +22,7 @@ public final /* synthetic */ class xf implements org.telegram.messenger.q10 {
         this.d = tLObject;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         TLRPC.Updates updates;
         int i7 = this.a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class xf implements org.telegram.messenger.q10 {
                 String str = LaunchActivity.C1;
                 if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
                     TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    org.telegram.messenger.mp.u1(launchActivity.P).V3(updates2, false);
+                    org.telegram.messenger.np.u1(launchActivity.P).V3(updates2, false);
                     updates = updates2;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {

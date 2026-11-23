@@ -24,10 +24,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.n5;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -47,7 +47,7 @@ import org.telegram.ui.e31;
 import tg.o1;
 import ug.i1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w0 extends sa {
     public final hi.e T1;
@@ -93,7 +93,7 @@ public final class w0 extends sa {
         this.l2 = org.telegram.messenger.g0.L(134.0f);
         this.r2 = new s4.s0(this, 8);
         this.u0 = 0;
-        this.m2 = mp.u1(this.a).O0(Long.valueOf(-j3));
+        this.m2 = np.u1(this.a).O0(Long.valueOf(-j3));
         ((ViewGroup) this.p1.getParent()).removeView(this.p1);
         ViewGroup viewGroup = this.b;
         nr nrVar = nr.h;
@@ -193,7 +193,7 @@ public final class w0 extends sa {
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
         int i7 = this.n2;
-        return i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.N0(2131753285, null) : gd.N0(2131753600, null) : gd.N0(2131749507, null);
+        return i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.N0(2131753285, null) : hd.N0(2131753600, null) : hd.N0(2131749507, null);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -250,8 +250,8 @@ public final class w0 extends sa {
         if (i7 == 1) {
             long j3 = chat.id;
             u0 u0Var = new u0(this, z10, 0);
-            mp u12 = mp.u1(j10.t0);
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(j10.t0);
+            np u12 = np.u1(k10.t0);
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(k10.t0);
             TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
             tL_channels_getParticipants.channel = u12.j1(j3);
             TLRPC.ChannelParticipantsFilter tL_channelParticipantsRecent = str == null ? new TLRPC.TL_channelParticipantsRecent() : new TLRPC.TL_channelParticipantsSearch();
@@ -270,16 +270,16 @@ public final class w0 extends sa {
                 return;
             }
             u0 u0Var2 = new u0(this, z10, 1);
-            ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(j10.t0);
+            ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(k10.t0);
             TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
-            tL_help_getCountriesList.lang_code = gd.E0().B != null ? gd.E0().B.c() : Locale.getDefault().getCountry();
+            tL_help_getCountriesList.lang_code = hd.E0().B != null ? hd.E0().B.c() : Locale.getDefault().getCountry();
             connectionsManager2.sendRequest(tL_help_getCountriesList, new g1(u0Var2, 26));
             return;
         }
         long j10 = chat.id;
         t0 t0Var = new t0(this, 1);
-        mp u13 = mp.u1(j10.t0);
-        ConnectionsManager connectionsManager3 = ConnectionsManager.getInstance(j10.t0);
+        np u13 = np.u1(k10.t0);
+        ConnectionsManager connectionsManager3 = ConnectionsManager.getInstance(k10.t0);
         TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
         tL_contacts_search.q = str;
         tL_contacts_search.limit = 50;
@@ -437,7 +437,7 @@ public final class w0 extends sa {
 
     public final void l1() {
         int i7 = this.n2;
-        String G = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.G((int) mp.u1(j10.t0).q0, "BoostingSelectUpToWarningCountriesPlural", new Object[0]) : gd.G((int) s.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]) : gd.N0(2131753269, null);
+        String G = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.G((int) np.u1(k10.t0).q0, "BoostingSelectUpToWarningCountriesPlural", new Object[0]) : hd.G((int) s.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]) : hd.N0(2131753269, null);
         k kVar = this.q2;
         if (kVar != null) {
             new lc(kVar.c.c, kVar.b).Q(R.raw.chats_infotip, 36, G).k(true);
@@ -448,7 +448,7 @@ public final class w0 extends sa {
         hi.e eVar = this.T1;
         eVar.setShowZero(false);
         int i7 = this.n2;
-        eVar.i(i7 != 1 ? (i7 == 2 || i7 == 3) ? gd.N0(2131745750, null) : "" : gd.N0(2131753286, null), z10, true);
+        eVar.i(i7 != 1 ? (i7 == 2 || i7 == 3) ? hd.N0(2131745750, null) : "" : hd.N0(2131753286, null), z10, true);
         HashSet hashSet = this.a2;
         eVar.c(hashSet.size(), z10);
         eVar.setEnabled(hashSet.size() > 0);
@@ -463,7 +463,7 @@ public final class w0 extends sa {
         arrayList.addAll(arrayList2);
         arrayList2.clear();
         if (this.n2 == 1) {
-            String N0 = gd.N0(2131749376, null);
+            String N0 = hd.N0(2131749376, null);
             xg.g gVar = new xg.g(9, false);
             gVar.h = 1;
             gVar.i = R.drawable.menu_random;
@@ -537,7 +537,7 @@ public final class w0 extends sa {
         gVar6.k = max;
         arrayList2.add(gVar6);
         if (hashSet.size() > 0 && this.n2 != 3) {
-            y3Var.a(gd.N0(2131743387, null), new s0(this, i13));
+            y3Var.a(hd.N0(2131743385, null), new s0(this, i13));
         } else if (z10) {
             y3Var.setRightText(null);
         } else {
@@ -592,15 +592,15 @@ public final class w0 extends sa {
         y3 y3Var = this.V1;
         if (i7 == 1) {
             TLRPC.Chat chat = this.m2;
-            H = gd.H(',', v3.V(chat) ? "Subscribers" : "Members", Math.max(0, this.k2.F(chat) - 1));
+            H = hd.H(',', v3.V(chat) ? "Subscribers" : "Members", Math.max(0, this.k2.F(chat) - 1));
             y3Var.setLayerHeight(32);
         } else if (i7 == 2) {
-            H = gd.G((int) s.f(), "BoostingSelectUpToGroupChannelPlural", new Object[0]);
+            H = hd.G((int) s.f(), "BoostingSelectUpToGroupChannelPlural", new Object[0]);
             y3Var.setLayerHeight(32);
         } else if (i7 != 3) {
             H = "";
         } else {
-            H = gd.G((int) mp.u1(j10.t0).q0, "BoostingSelectUpToCountriesPlural", new Object[0]);
+            H = hd.G((int) np.u1(k10.t0).q0, "BoostingSelectUpToCountriesPlural", new Object[0]);
             y3Var.setLayerHeight(1);
         }
         y3Var.setText(H);

@@ -8,8 +8,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m5;
@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
     public final m5 a;
@@ -28,7 +28,7 @@ public final class b extends FrameLayout {
         m5 m5Var = new m5(context);
         this.a = m5Var;
         m5Var.setTextSize(16);
-        m5Var.setGravity(gd.a0 ? 5 : 3);
+        m5Var.setGravity(hd.a0 ? 5 : 3);
         int i7 = m6.L6;
         t6.X(m5Var, i7, h6Var);
         m5Var.setTag(Integer.valueOf(i7));
@@ -37,7 +37,7 @@ public final class b extends FrameLayout {
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         addView(imageView);
-        m5Var.k(gd.N0(2131753600, null));
+        m5Var.k(hd.N0(2131753600, null));
         Drawable drawable = getResources().getDrawable(R.drawable.poll_add_circle);
         Drawable drawable2 = getResources().getDrawable(R.drawable.poll_add_plus);
         int i10 = m6.N6;
@@ -54,7 +54,7 @@ public final class b extends FrameLayout {
         int i13 = i11 - i7;
         m5 m5Var = this.a;
         int textHeight = ((i12 - i10) - m5Var.getTextHeight()) / 2;
-        boolean z11 = gd.a0;
+        boolean z11 = hd.a0;
         ImageView imageView = this.b;
         if (z11) {
             L = (getMeasuredWidth() - m5Var.getMeasuredWidth()) - g0.L(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
@@ -62,14 +62,14 @@ public final class b extends FrameLayout {
             L = g0.L(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
         }
         m5Var.layout(L, textHeight, m5Var.getMeasuredWidth() + L, m5Var.getMeasuredHeight() + textHeight);
-        int L2 = !gd.a0 ? g0.L(24.0f) : (i13 - imageView.getMeasuredWidth()) - g0.L(24.0f);
+        int L2 = !hd.a0 ? g0.L(24.0f) : (i13 - imageView.getMeasuredWidth()) - g0.L(24.0f);
         imageView.layout(L2, 0, imageView.getMeasuredWidth() + L2, imageView.getMeasuredHeight());
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         int size = View.MeasureSpec.getSize(i7);
-        this.a.measure(n10.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(20.0f), TLObject.FLAG_30));
+        this.a.measure(o10.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(20.0f), TLObject.FLAG_30));
         this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(50.0f), TLObject.FLAG_30));
         setMeasuredDimension(size, g0.L(50.0f));
     }

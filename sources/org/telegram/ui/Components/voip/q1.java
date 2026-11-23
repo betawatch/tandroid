@@ -17,12 +17,12 @@ import android.widget.FrameLayout;
 import fi.d4;
 import hi.j3;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q1 extends FrameLayout {
     public float E;
@@ -87,7 +87,7 @@ public final class q1 extends FrameLayout {
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
         setOutlineProvider(new fh.a(this, 7));
         setClipToOutline(true);
-        paint.setColor(i0.a.o(-16777216, ks.n1));
+        paint.setColor(i0.a.o(-16777216, ls.n1));
         this.y = activity.getDrawable(R.drawable.calls_mute_mini);
     }
 

@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class c0 extends p0 {
     public int A;
@@ -260,7 +260,7 @@ public class c0 extends p0 {
 
     public final View P0(int i7, int i10, boolean z10, boolean z11) {
         G0();
-        int i11 = ks.r5;
+        int i11 = ls.r5;
         int i12 = z10 ? 24579 : 320;
         if (!z11) {
             i11 = 0;

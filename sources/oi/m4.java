@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 {
     public static final /* synthetic */ int N = 0;
@@ -153,10 +153,10 @@ public final class m4 extends y implements org.telegram.ui.ActionBar.b6, i9, j0 
             return;
         }
         this.J = str;
-        int i12 = mp.u1(this.n).p3;
+        int i12 = np.u1(this.n).p3;
         this.I = i12;
         if (i12 == 2) {
-            imageReceiver.q0(fc.p(h20.b(map.geo, i10, i11, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, null, 0);
+            imageReceiver.q0(gc.p(i20.b(map.geo, i10, i11, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, null, 0);
             return;
         }
         TLRPC.GeoPoint geoPoint = map.geo;

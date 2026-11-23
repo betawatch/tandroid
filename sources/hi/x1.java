@@ -14,18 +14,18 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hx;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.s11;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class x1 extends v4.i0 {
     public final TLRPC.TL_inputStickerSetShortName F;
@@ -93,7 +93,7 @@ public final class x1 extends v4.i0 {
         w1Var4.n(true);
         org.telegram.messenger.g0.r(lVar);
         int i12 = i2.C1;
-        ri d02 = ri.d0(i2Var2.a);
+        si d02 = si.d0(i2Var2.a);
         this.y = 0;
         ArrayList arrayList4 = this.s;
         arrayList4.clear();
@@ -124,7 +124,7 @@ public final class x1 extends v4.i0 {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = this.G;
                 tL_messages_stickerSet2.documents = k02;
                 tL_messages_stickerSet2.set = new TLRPC.TL_stickerSet();
-                this.G.set.title = gd.N0(2131750829, null);
+                this.G.set.title = hd.N0(2131750829, null);
                 arrayList5.add(this.G);
             }
             ArrayList<TLRPC.Document> k03 = d02.k0(0, false);
@@ -137,7 +137,7 @@ public final class x1 extends v4.i0 {
                     k03.add(0, i2Var2.p1);
                 }
                 this.H.set = new TLRPC.TL_stickerSet();
-                this.H.set.title = gd.N0(2131746168, null);
+                this.H.set.title = hd.N0(2131746168, null);
                 arrayList5.add(this.H);
             }
         }
@@ -185,7 +185,7 @@ public final class x1 extends v4.i0 {
                 while (i15 < arrayList8.size()) {
                     TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList8.get(i15);
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        tL_messages_stickerSet = ri.d0(i2Var2.a).o0(ri.b0(stickerSetCovered.set), false);
+                        tL_messages_stickerSet = si.d0(i2Var2.a).o0(si.b0(stickerSetCovered.set), false);
                         if (tL_messages_stickerSet != null) {
                             y1Var2 = y1Var3;
                             w1Var2 = w1Var4;
@@ -270,7 +270,7 @@ public final class x1 extends v4.i0 {
                                     } else {
                                         arrayList2 = arrayList9;
                                         i10 = i18;
-                                        ArrayList j3 = org.telegram.messenger.j6.j(fj.V(document, null, null), null);
+                                        ArrayList j3 = org.telegram.messenger.j6.j(gj.V(document, null, null), null);
                                         w1Var3 = w1Var4;
                                         int i19 = 0;
                                         while (i19 < j3.size()) {
@@ -450,7 +450,7 @@ public final class x1 extends v4.i0 {
                 int i12 = this.L;
                 if (v1Var.b != i12) {
                     v1Var.b = i12;
-                    s11.D(j10.t0, v1Var.a);
+                    s11.D(k10.t0, v1Var.a);
                     return;
                 }
                 return;
@@ -517,7 +517,7 @@ public final class x1 extends v4.i0 {
         }
         n1Var.b = true;
         n1Var.h = longValue;
-        org.telegram.ui.Components.p5 m10 = org.telegram.ui.Components.p5.m(n1Var.c, longValue, null, pc.e(z10 ? 1 : 16388) ? 3 : 13);
+        org.telegram.ui.Components.p5 m10 = org.telegram.ui.Components.p5.m(n1Var.c, longValue, null, qc.e(z10 ? 1 : 16388) ? 3 : 13);
         n1Var.d = m10;
         if (n1Var.w) {
             m10.a(n1Var);
@@ -546,7 +546,7 @@ public final class x1 extends v4.i0 {
             TextView textView = new TextView(context2);
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
-            textView.setText(gd.N0(z10 ? 2131748020 : 2131747956, null));
+            textView.setText(hd.N0(z10 ? 2131748020 : 2131747956, null));
             v1Var.addView(textView, c8.ma.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
             k8Var = v1Var;
         } else if (i7 == 4) {

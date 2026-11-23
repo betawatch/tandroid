@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ik extends org.telegram.ui.Components.xi0 {
     public final int[] n1;
@@ -33,7 +33,7 @@ public final class ik extends org.telegram.ui.Components.xi0 {
             j3.getLocationInWindow(iArr);
             float width2 = (j3.getWidth() / 2.0f) + iArr[0];
             int L = org.telegram.messenger.g0.L(20.0f);
-            boolean z11 = org.telegram.messenger.gd.a0;
+            boolean z11 = org.telegram.messenger.hd.a0;
             float f10 = width2 + (L * (z11 ? -1 : 1));
             if (z11) {
                 s(!this.p1, f10 - x10);

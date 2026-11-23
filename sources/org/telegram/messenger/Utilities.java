@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class Utilities {
     public static final Pattern a = Pattern.compile("[\\-0-9]+");
@@ -81,14 +81,14 @@ public class Utilities {
         return Long.valueOf(j3);
     }
 
-    public static void B(Runnable runnable, x10... x10VarArr) {
-        if (x10VarArr.length == 0) {
+    public static void B(Runnable runnable, y10... y10VarArr) {
+        if (y10VarArr.length == 0) {
             runnable.run();
             return;
         }
-        oz ozVar = new oz(new int[]{0}, x10VarArr, runnable, 2);
-        for (x10 x10Var : x10VarArr) {
-            x10Var.a(ozVar);
+        pz pzVar = new pz(new int[]{0}, y10VarArr, runnable, 2);
+        for (y10 y10Var : y10VarArr) {
+            y10Var.a(pzVar);
         }
     }
 
@@ -110,7 +110,7 @@ public class Utilities {
         }
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / ks.g2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / ls.g2));
         return createBitmap;
     }
 
@@ -123,7 +123,7 @@ public class Utilities {
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / ks.g2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / ls.g2));
         return createBitmap;
     }
 
@@ -372,9 +372,9 @@ public class Utilities {
         return (float) Math.sqrt((f15 * f15) + (f14 * f14));
     }
 
-    public static void u(int i7, x10... x10VarArr) {
-        if (x10VarArr.length > i7) {
-            x10VarArr[i7].a(new x0(i7, x10VarArr, 14));
+    public static void u(int i7, y10... y10VarArr) {
+        if (y10VarArr.length > i7) {
+            y10VarArr[i7].a(new x0(i7, y10VarArr, 14));
         }
     }
 

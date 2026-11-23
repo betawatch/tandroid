@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n30 {
     public static final n30 d;
@@ -59,17 +59,17 @@ public final class n30 {
     }
 
     public final void a() {
-        org.telegram.messenger.mp.g1().edit().putInt(this.a, this.b).apply();
+        org.telegram.messenger.np.g1().edit().putInt(this.a, this.b).apply();
     }
 
     public final void b() {
-        SharedPreferences g12 = org.telegram.messenger.mp.g1();
+        SharedPreferences g12 = org.telegram.messenger.np.g1();
         String str = this.a;
-        org.telegram.messenger.mp.g1().edit().putInt(str, g12.getInt(str, 0) + 1).apply();
+        org.telegram.messenger.np.g1().edit().putInt(str, g12.getInt(str, 0) + 1).apply();
     }
 
     public final boolean c() {
-        if (org.telegram.messenger.mp.g1().getInt(this.a, 0) < this.b) {
+        if (org.telegram.messenger.np.g1().getInt(this.a, 0) < this.b) {
             float f10 = this.c;
             if (f10 >= 1.0f) {
                 return true;

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wo0 extends jg.c0 {
     public final /* synthetic */ xo0 n;
@@ -27,22 +27,22 @@ public final class wo0 extends jg.c0 {
             p4Var.I = i11;
             p4Var.w.b(org.telegram.ui.ActionBar.m6.B5, i11, org.telegram.ui.ActionBar.m6.C5);
         }
-        TLRPC.TL_topPeer tL_topPeer = (TLRPC.TL_topPeer) org.telegram.messenger.ri.d0(ap0Var.a).j1.get(i7);
+        TLRPC.TL_topPeer tL_topPeer = (TLRPC.TL_topPeer) org.telegram.messenger.si.d0(ap0Var.a).j1.get(i7);
         TLRPC.Peer peer = tL_topPeer.peer;
         long j3 = peer.user_id;
         if (j3 != 0) {
-            user = org.telegram.messenger.mp.u1(ap0Var.a).c2(Long.valueOf(tL_topPeer.peer.user_id));
+            user = org.telegram.messenger.np.u1(ap0Var.a).c2(Long.valueOf(tL_topPeer.peer.user_id));
             chat = null;
         } else {
             long j10 = peer.channel_id;
             if (j10 != 0) {
                 j3 = -j10;
-                chat = org.telegram.messenger.mp.u1(ap0Var.a).O0(Long.valueOf(tL_topPeer.peer.channel_id));
+                chat = org.telegram.messenger.np.u1(ap0Var.a).O0(Long.valueOf(tL_topPeer.peer.channel_id));
             } else {
                 long j11 = peer.chat_id;
                 if (j11 != 0) {
                     j3 = -j11;
-                    chat = org.telegram.messenger.mp.u1(ap0Var.a).O0(Long.valueOf(tL_topPeer.peer.chat_id));
+                    chat = org.telegram.messenger.np.u1(ap0Var.a).O0(Long.valueOf(tL_topPeer.peer.chat_id));
                 } else {
                     chat = null;
                     j3 = 0;
@@ -51,7 +51,7 @@ public final class wo0 extends jg.c0 {
         }
         boolean z10 = j3 == p4Var.getDialogId();
         p4Var.setTag(Long.valueOf(j3));
-        p4Var.a(j3, true, user != null ? org.telegram.messenger.o10.k(user, true) : chat != null ? chat.title : "");
+        p4Var.a(j3, true, user != null ? org.telegram.messenger.p10.k(user, true) : chat != null ? chat.title : "");
         boolean z11 = ap0Var.Q1.h(j3) >= 0;
         if (p4Var.x) {
             p4Var.w.a(z11, z10);

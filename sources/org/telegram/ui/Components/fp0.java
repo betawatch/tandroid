@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.HashSet;
 import java.util.Random;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fp0 extends View implements org.telegram.ui.ActionBar.b6 {
     public Random a;
@@ -24,7 +24,7 @@ public final class fp0 extends View implements org.telegram.ui.ActionBar.b6 {
         Paint paint = this.c;
         Paint paint2 = this.b;
         super.onDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.ls.e4, 31);
         float f10 = 3.0f;
         int measuredWidth = (getMeasuredWidth() / 2) - org.telegram.messenger.g0.L(3.0f);
         int L = org.telegram.messenger.g0.L(1.0f) + ((org.telegram.messenger.g0.L(1.0f) + measuredWidth) * 7);

@@ -9,10 +9,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.StaticLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xk0 extends Drawable {
-    public int a = org.telegram.messenger.ks.e4;
+    public int a = org.telegram.messenger.ls.e4;
     public final /* synthetic */ h80 b;
     public final /* synthetic */ int[] c;
     public final /* synthetic */ org.telegram.ui.Cells.r1 d;

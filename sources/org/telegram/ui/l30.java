@@ -27,7 +27,7 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l30 extends org.telegram.ui.Components.du0 {
     public boolean g0;
@@ -630,7 +630,7 @@ public final class l30 extends org.telegram.ui.Components.du0 {
             org.telegram.ui.ActionBar.m6.t0.setColor(i0.a.o(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Xg, false), (int) (b20Var.c * 255.0f)));
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.m6.t0);
         }
-        if (f40Var.v1() && org.telegram.messenger.pc.e(512)) {
+        if (f40Var.v1() && org.telegram.messenger.qc.e(512)) {
             if (b20Var.c < 0.15d) {
                 if (!f40Var.y4) {
                     f40Var.y4 = true;

@@ -5,10 +5,10 @@ import android.content.Context;
 import android.graphics.Paint;
 import c8.l9;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cb;
@@ -17,7 +17,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,25 +40,25 @@ public final /* synthetic */ class s1 implements Runnable {
             case 1:
                 if (!s2Var.e0 && s2Var.L != 0) {
                     TLRPC.TL_messages_prolongWebView tL_messages_prolongWebView = new TLRPC.TL_messages_prolongWebView();
-                    tL_messages_prolongWebView.bot = mp.u1(s2Var.I).q1(s2Var.J);
-                    tL_messages_prolongWebView.peer = mp.u1(s2Var.I).l1(s2Var.K);
+                    tL_messages_prolongWebView.bot = np.u1(s2Var.I).q1(s2Var.J);
+                    tL_messages_prolongWebView.peer = np.u1(s2Var.I).l1(s2Var.K);
                     tL_messages_prolongWebView.query_id = s2Var.L;
                     tL_messages_prolongWebView.silent = false;
                     if (s2Var.M != 0) {
-                        zy.C(s2Var.I);
+                        az.C(s2Var.I);
                         int i11 = s2Var.M;
                         TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = new TLRPC.TL_inputReplyToMessage();
                         tL_inputReplyToMessage.reply_to_msg_id = i11;
                         tL_messages_prolongWebView.reply_to = tL_inputReplyToMessage;
                         if (s2Var.N != 0) {
-                            tL_inputReplyToMessage.monoforum_peer_id = mp.u1(s2Var.I).l1(s2Var.N);
+                            tL_inputReplyToMessage.monoforum_peer_id = np.u1(s2Var.I).l1(s2Var.N);
                             tL_messages_prolongWebView.reply_to.flags |= 32;
                         }
                         tL_messages_prolongWebView.flags |= 1;
                     } else if (s2Var.N != 0) {
                         TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
                         tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
-                        tL_inputReplyToMonoForum.monoforum_peer_id = mp.u1(s2Var.I).l1(s2Var.N);
+                        tL_inputReplyToMonoForum.monoforum_peer_id = np.u1(s2Var.I).l1(s2Var.N);
                         tL_messages_prolongWebView.flags |= 1;
                     }
                     ConnectionsManager.getInstance(s2Var.I).sendRequest(tL_messages_prolongWebView, new c2(s2Var, i10));
@@ -127,10 +127,10 @@ public final /* synthetic */ class s1 implements Runnable {
                 k2Var.y("settings_button_pressed", null);
                 break;
             case 11:
-                ri.d0(s2Var.I).A0(s2Var.J, ri.f2, null);
+                si.d0(s2Var.I).A0(s2Var.J, si.f2, null);
                 break;
             case 12:
-                vf.c.t(s2Var.getContext(), gd.N0(2131752881, null));
+                vf.c.t(s2Var.getContext(), hd.N0(2131752881, null));
                 break;
             case 13:
                 int i13 = s2Var.I;

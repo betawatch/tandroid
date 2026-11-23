@@ -33,7 +33,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.WeakHashMap;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.cd0;
@@ -53,7 +53,7 @@ import u0.f;
 import u0.g;
 import u0.h;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements l {
     public static final float U = (float) (Math.log(0.78d) / Math.log(0.9d));
@@ -426,7 +426,7 @@ public class NestedScrollView extends FrameLayout implements l {
     public final boolean g(KeyEvent keyEvent) {
         this.c.setEmpty();
         int childCount = getChildCount();
-        int i7 = ks.O1;
+        int i7 = ls.O1;
         if (childCount > 0) {
             View childAt = getChildAt(0);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
@@ -437,7 +437,7 @@ public class NestedScrollView extends FrameLayout implements l {
                         return keyEvent.isAltPressed() ? j(33) : b(33);
                     }
                     if (keyCode == 20) {
-                        return keyEvent.isAltPressed() ? j(ks.O1) : b(ks.O1);
+                        return keyEvent.isAltPressed() ? j(ls.O1) : b(ls.O1);
                     }
                     if (keyCode == 62) {
                         if (keyEvent.isShiftPressed()) {
@@ -450,14 +450,14 @@ public class NestedScrollView extends FrameLayout implements l {
                         return j(33);
                     }
                     if (keyCode == 93) {
-                        return j(ks.O1);
+                        return j(ls.O1);
                     }
                     if (keyCode == 122) {
                         v(33);
                         return false;
                     }
                     if (keyCode == 123) {
-                        v(ks.O1);
+                        v(ls.O1);
                         return false;
                     }
                 }
@@ -469,8 +469,8 @@ public class NestedScrollView extends FrameLayout implements l {
             if (findFocus == this) {
                 findFocus = null;
             }
-            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, ks.O1);
-            if (findNextFocus != null && findNextFocus != this && findNextFocus.requestFocus(ks.O1)) {
+            View findNextFocus = FocusFinder.getInstance().findNextFocus(this, findFocus, ls.O1);
+            if (findNextFocus != null && findNextFocus != this && findNextFocus.requestFocus(ls.O1)) {
                 return true;
             }
         }
@@ -891,7 +891,7 @@ public class NestedScrollView extends FrameLayout implements l {
         if (action == 2 && this.x) {
             return true;
         }
-        int i7 = action & ks.e4;
+        int i7 = action & ls.e4;
         if (i7 != 0) {
             if (i7 != 1) {
                 if (i7 == 2) {
@@ -1066,7 +1066,7 @@ public class NestedScrollView extends FrameLayout implements l {
     @Override // android.view.ViewGroup
     public final boolean onRequestFocusInDescendants(int i7, Rect rect) {
         if (i7 == 2) {
-            i7 = ks.O1;
+            i7 = ls.O1;
         } else if (i7 == 1) {
             i7 = 33;
         }
@@ -1694,7 +1694,7 @@ public class NestedScrollView extends FrameLayout implements l {
             int height = childAt.getHeight() + layoutParams.topMargin + layoutParams.bottomMargin;
             int height2 = (getHeight() - getPaddingTop()) - getPaddingBottom();
             int scrollY = getScrollY();
-            this.d.startScroll(getScrollX(), scrollY, 0, Math.max(0, Math.min(i10 + scrollY, Math.max(0, height - height2))) - scrollY, ks.Z3);
+            this.d.startScroll(getScrollX(), scrollY, 0, Math.max(0, Math.min(i10 + scrollY, Math.max(0, height - height2))) - scrollY, ls.Z3);
             if (z10) {
                 A(2, 1);
             } else {

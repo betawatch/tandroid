@@ -8,15 +8,15 @@ import android.view.View;
 import fi.s2;
 import j$.util.Objects;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.si;
 import org.telegram.messenger.u5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g0 {
     public final ImageReceiver a;
@@ -28,7 +28,7 @@ public final class g0 {
     public int j;
     public PorterDuffColorFilter k;
     public final Rect c = new Rect();
-    public final int d = j10.t0;
+    public final int d = k10.t0;
     public float h = 1.0f;
 
     public g0(View view) {
@@ -111,14 +111,14 @@ public final class g0 {
         boolean z10 = this.i;
         String str = z10 ? "60_60_firstframe" : "60_60";
         if (p0Var.f != null) {
-            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(this.d).r.get(p0Var.f);
+            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(this.d).r.get(p0Var.f);
             if (tL_availableReaction != null) {
-                imageReceiver.r0(fc.b(tL_availableReaction.select_animation), str, null, null, u5.f(tL_availableReaction.select_animation, m6.m6, 0.2f, null), 0L, "tgs", p0Var, 0);
+                imageReceiver.r0(gc.b(tL_availableReaction.select_animation), str, null, null, u5.f(tL_availableReaction.select_animation, m6.m6, 0.2f, null), 0L, "tgs", p0Var, 0);
                 return;
             }
             return;
         }
-        p5 p5Var2 = new p5(z10 ? 13 : 1, j10.t0, p0Var.g);
+        p5 p5Var2 = new p5(z10 ? 13 : 1, k10.t0, p0Var.g);
         this.b = p5Var2;
         if (this.g) {
             p5Var2.a(this.f);

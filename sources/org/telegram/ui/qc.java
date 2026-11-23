@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public TLRPC.EmojiStatus E;
     public TLRPC.WallPaper F;
     public TLRPC.WallPaper G;
@@ -108,7 +108,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
         if (O0 != null) {
             this.b = O0.level;
         }
-        org.telegram.messenger.mp.u1(this.currentAccount).I0().a(j3, new li.d(10, this, O0));
+        org.telegram.messenger.np.u1(this.currentAccount).I0().a(j3, new li.d(10, this, O0));
         this.resourceProvider = new pc(this);
         this.t0 = new org.telegram.ui.ActionBar.u4(0, false, false, this.resourceProvider);
         this.u0 = new org.telegram.ui.ActionBar.u4(0, false, true, this.resourceProvider);
@@ -149,13 +149,13 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
         int i10;
         long j3 = qcVar.a;
         if (qcVar.e != qcVar.f) {
-            org.telegram.messenger.cp cpVar = qcVar.getMessagesController().t4;
-            org.telegram.messenger.bp d = cpVar == null ? null : cpVar.d(qcVar.f);
+            org.telegram.messenger.dp dpVar = qcVar.getMessagesController().t4;
+            org.telegram.messenger.cp d = dpVar == null ? null : dpVar.d(qcVar.f);
             if (d != null && d.l(qcVar.d) > qcVar.b) {
                 i7 = d.l(qcVar.d);
                 if (qcVar.r != qcVar.s) {
-                    org.telegram.messenger.cp cpVar2 = qcVar.getMessagesController().u4;
-                    org.telegram.messenger.bp d2 = cpVar2 != null ? cpVar2.d(qcVar.s) : null;
+                    org.telegram.messenger.dp dpVar2 = qcVar.getMessagesController().u4;
+                    org.telegram.messenger.cp d2 = dpVar2 != null ? dpVar2.d(qcVar.s) : null;
                     if (d2 != null && d2.l(qcVar.d) > qcVar.b) {
                         i7 = d2.l(qcVar.d);
                         i10 = 24;
@@ -263,7 +263,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
                 int i12 = org.telegram.ui.Components.np.g2;
                 org.telegram.ui.Components.ui uiVar = new org.telegram.ui.Components.ui(parentActivity, qcVar, false, false, false, h6Var);
                 uiVar.n = true;
-                uiVar.B1(org.telegram.messenger.gd.N0(2131752127, null));
+                uiVar.B1(org.telegram.messenger.hd.N0(2131752127, null));
                 uiVar.X3 = new org.telegram.ui.Components.ep(uiVar, tL_premium_boostsStatus, h6Var, fVar, j11, vbVar, qcVar);
                 uiVar.z1(1, false);
                 uiVar.f1();
@@ -439,7 +439,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
         TLRPC.Chat O0 = getMessagesController().O0(Long.valueOf(j13));
         if (O0 == null) {
             org.telegram.messenger.a8.d("channel is null in ChannelColorAcitivity");
-            org.telegram.messenger.f3.n(null, 2131743636, org.telegram.ui.Components.lc.b0(this), R.raw.error, 36);
+            org.telegram.messenger.f3.n(null, 2131743634, org.telegram.ui.Components.lc.b0(this), R.raw.error, 36);
             return;
         }
         this.Q.setLoading(true);
@@ -604,9 +604,9 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
                             P0.wallpaper = wallPaper4;
                         }
                         getMessagesController().Y3(P0);
-                        org.telegram.messenger.ks notificationCenter = getNotificationCenter();
+                        org.telegram.messenger.ls notificationCenter = getNotificationCenter();
                         Boolean bool = Boolean.FALSE;
-                        notificationCenter.k(org.telegram.messenger.ks.T, P0, 0, bool, bool);
+                        notificationCenter.k(org.telegram.messenger.ls.T, P0, 0, bool, bool);
                     }
                 } else {
                     j11 = j3;
@@ -683,11 +683,11 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
                     return;
                 }
                 getMessagesController().X3(O0, r72);
-                org.telegram.messenger.ks notificationCenter2 = getNotificationCenter();
-                int i19 = org.telegram.messenger.mp.I8;
+                org.telegram.messenger.ls notificationCenter2 = getNotificationCenter();
+                int i19 = org.telegram.messenger.np.I8;
                 Object[] objArr = new Object[1];
                 objArr[r72] = Integer.valueOf(TLObject.FLAG_19);
-                notificationCenter2.k(org.telegram.messenger.ks.r, objArr);
+                notificationCenter2.k(org.telegram.messenger.ls.r, objArr);
                 return;
             }
         } else {
@@ -933,8 +933,8 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
     public final int Z0() {
         int i7 = 0;
         if (this.e != this.f) {
-            org.telegram.messenger.cp cpVar = getMessagesController().t4;
-            org.telegram.messenger.bp d = cpVar == null ? null : cpVar.d(this.f);
+            org.telegram.messenger.dp dpVar = getMessagesController().t4;
+            org.telegram.messenger.cp d = dpVar == null ? null : dpVar.d(this.f);
             if (d != null) {
                 i7 = Math.max(0, d.l(this.d));
             }
@@ -943,8 +943,8 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
             i7 = Math.max(i7, getMessagesController().t5);
         }
         if (this.r != this.s) {
-            org.telegram.messenger.cp cpVar2 = getMessagesController().u4;
-            org.telegram.messenger.bp d2 = cpVar2 != null ? cpVar2.d(this.s) : null;
+            org.telegram.messenger.dp dpVar2 = getMessagesController().u4;
+            org.telegram.messenger.cp d2 = dpVar2 != null ? dpVar2.d(this.s) : null;
             if (d2 != null) {
                 i7 = Math.max(i7, d2.l(this.d));
             }
@@ -988,11 +988,11 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
         }
         final int i7 = 0;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-        String N0 = org.telegram.messenger.gd.N0(2131752414, null);
+        String N0 = org.telegram.messenger.hd.N0(2131752414, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.gd.N0(2131752413, null);
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751357, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.xb
+        t1Var.U = org.telegram.messenger.hd.N0(2131752413, null);
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751357, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.xb
             public final /* synthetic */ qc b;
 
             {
@@ -1012,7 +1012,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
             }
         });
         final int i10 = 1;
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131754213, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.xb
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131754213, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.xb
             public final /* synthetic */ qc b;
 
             {
@@ -1038,7 +1038,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
     @Override // org.telegram.ui.ActionBar.g2
     public View createView(Context context) {
         org.telegram.ui.ActionBar.q0 d;
-        org.telegram.messenger.mp messagesController = getMessagesController();
+        org.telegram.messenger.np messagesController = getMessagesController();
         long j3 = -this.a;
         TLRPC.Chat O0 = messagesController.O0(Long.valueOf(j3));
         if (O0 != null) {
@@ -1072,11 +1072,11 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
         org.telegram.ui.ActionBar.z4 z4Var = this.simpleActionBar;
         if (z4Var != null) {
             z4Var.setBackButtonImage(R.drawable.ic_ab_back);
-            this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131752415, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131752415, null));
             this.simpleActionBar.setActionBarMenuOnItemClick(x7Var);
         } else {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-            this.actionBar.setTitle(org.telegram.messenger.gd.N0(2131752415, null));
+            this.actionBar.setTitle(org.telegram.messenger.hd.N0(2131752415, null));
             this.actionBar.setActionBarMenuOnItemClick(x7Var);
         }
         org.telegram.ui.Components.oh0 oh0Var = new org.telegram.ui.Components.oh0(R.raw.sun_outline, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
@@ -1120,7 +1120,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
         ek0Var.setAdapter(dcVar);
         new v4.t(3);
         this.N.setLayoutManager(new v4.c0());
-        frameLayout.addView(this.N, c8.ma.d(-1, -1.0f, org.telegram.messenger.ks.E1, 0.0f, 0.0f, 0.0f, this.d ? 68.0f : 0.0f));
+        frameLayout.addView(this.N, c8.ma.d(-1, -1.0f, org.telegram.messenger.ls.E1, 0.0f, 0.0f, 0.0f, this.d ? 68.0f : 0.0f));
         this.N.setOnItemClickListener(new fi.g4(4, this, P0));
         v4.k kVar = new v4.k();
         kVar.n(350L);
@@ -1131,7 +1131,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
         hi.e eVar = new hi.e(context, this.resourceProvider, true);
         eVar.setRoundRadius(24);
         this.Q = eVar;
-        eVar.i(org.telegram.messenger.gd.N0(2131754215, null), false, true);
+        eVar.i(org.telegram.messenger.hd.N0(2131754215, null), false, true);
         this.Q.setOnClickListener(new a(this, 11));
         e1(false);
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -1166,18 +1166,18 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
     }
 
     public void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = org.telegram.messenger.ks.r3;
+        int i11 = org.telegram.messenger.ls.r3;
         long j3 = this.a;
         if (i7 == i11) {
             if (j3 == ((Long) objArr[2]).longValue()) {
                 d1((TL_stories.TL_premium_boostsStatus) objArr[0]);
             }
-        } else if (i7 == org.telegram.messenger.ks.X2) {
+        } else if (i7 == org.telegram.messenger.ls.X2) {
             if (((Boolean) objArr[1]).booleanValue()) {
                 return;
             }
             getMessagesController().I0().a(j3, new vb(this, 2));
-        } else if (i7 == org.telegram.messenger.ks.y1 && j3 == ((Long) objArr[0]).longValue()) {
+        } else if (i7 == org.telegram.messenger.ls.y1 && j3 == ((Long) objArr[0]).longValue()) {
             org.telegram.ui.ActionBar.r4 r4Var = this.parentLayout;
             if (r4Var == null || r4Var.getLastFragment() != this) {
                 removeSelfFromStack();
@@ -1203,7 +1203,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
             this.J.setSpan(nqVar, 0, 1, 33);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) this.J).append((CharSequence) org.telegram.messenger.gd.G(Z0, "BoostLevelRequired", new Object[0]));
+        spannableStringBuilder.append((CharSequence) this.J).append((CharSequence) org.telegram.messenger.hd.G(Z0, "BoostLevelRequired", new Object[0]));
         this.Q.g(spannableStringBuilder, z10);
     }
 
@@ -1237,7 +1237,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
     }
 
     public final void h1(boolean z10) {
-        org.telegram.messenger.fj messageObject;
+        org.telegram.messenger.gj messageObject;
         View F0 = F0(this.T);
         View F02 = F0(this.U);
         View F03 = F0(this.V);
@@ -1293,7 +1293,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 jc jcVar = (jc) F0;
                 ic icVar = jcVar.b;
-                org.telegram.messenger.bp a10 = org.telegram.messenger.bp.a(emojiStatus);
+                org.telegram.messenger.cp a10 = org.telegram.messenger.cp.a(emojiStatus);
                 icVar.c(a10, true);
                 jcVar.a.c(a10, true);
                 icVar.d(((TLRPC.TL_emojiStatusCollectible) this.E).pattern_document_id, true, true);
@@ -1324,7 +1324,7 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
         if (F04 instanceof ec) {
             TLRPC.EmojiStatus emojiStatus2 = this.E;
             if (emojiStatus2 instanceof TLRPC.TL_emojiStatusCollectible) {
-                ((ec) F04).b(org.telegram.messenger.bp.a(emojiStatus2));
+                ((ec) F04).b(org.telegram.messenger.cp.a(emojiStatus2));
             } else {
                 ((ec) F04).a(this.currentAccount, this.s, false);
             }
@@ -1501,18 +1501,18 @@ public class qc extends org.telegram.ui.ActionBar.g2 implements org.telegram.mes
     @Override // org.telegram.ui.ActionBar.g2
     public boolean onFragmentCreate() {
         getMediaDataController().b1();
-        getNotificationCenter().c(this, org.telegram.messenger.ks.X2);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.r3);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.y1);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.X2);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.r3);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.y1);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, org.telegram.messenger.ks.X2);
-        getNotificationCenter().n(this, org.telegram.messenger.ks.r3);
-        getNotificationCenter().n(this, org.telegram.messenger.ks.y1);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.X2);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.r3);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.y1);
     }
 
     @Override // org.telegram.ui.ActionBar.g2

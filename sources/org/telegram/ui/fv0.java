@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fv0 extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ int b;
@@ -80,16 +80,16 @@ public final class fv0 extends org.telegram.ui.Components.q6 {
                 int w06 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.y8, profileActivity.A0);
                 kVar = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
                 kVar.G(org.telegram.messenger.g0.S0(f10, 1.0f, w05, w06), false);
-                org.telegram.messenger.bp bpVar = profileActivity.n6;
-                int w07 = bpVar != null ? 1090519039 : bpVar != null ? 553648127 : org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.f8, profileActivity.A0);
+                org.telegram.messenger.cp cpVar = profileActivity.n6;
+                int w07 = cpVar != null ? 1090519039 : cpVar != null ? 553648127 : org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.f8, profileActivity.A0);
                 int w08 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.z8, profileActivity.A0);
                 kVar2 = ((org.telegram.ui.ActionBar.g2) profileActivity).actionBar;
                 kVar2.F(org.telegram.messenger.g0.S0(f10, 1.0f, w07, w08), false);
                 profileActivity.d1.invalidate();
                 if (profileActivity.y != null) {
-                    org.telegram.messenger.bp bpVar2 = profileActivity.n6;
-                    if (bpVar2 != null) {
-                        w02 = org.telegram.ui.ActionBar.m6.b(0.1f, org.telegram.ui.ActionBar.m6.I.q() ? -0.1f : -0.08f, i0.a.f(0.4f, bpVar2.g(), profileActivity.n6.o(org.telegram.ui.ActionBar.m6.I.q()) ? profileActivity.n6.k() : profileActivity.n6.i()));
+                    org.telegram.messenger.cp cpVar2 = profileActivity.n6;
+                    if (cpVar2 != null) {
+                        w02 = org.telegram.ui.ActionBar.m6.b(0.1f, org.telegram.ui.ActionBar.m6.I.q() ? -0.1f : -0.08f, i0.a.f(0.4f, cpVar2.g(), profileActivity.n6.o(org.telegram.ui.ActionBar.m6.I.q()) ? profileActivity.n6.k() : profileActivity.n6.i()));
                     } else {
                         w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.qi, profileActivity.A0);
                     }

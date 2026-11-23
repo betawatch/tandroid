@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import java.util.HashMap;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bl0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class bl0 implements TextWatcher {
                     org.telegram.ui.Components.j30 j30Var = (org.telegram.ui.Components.j30) ml0Var.f[9];
                     if (d.length() == 0) {
                         j30Var.setHintText((String) null);
-                        j30Var.setHint(org.telegram.messenger.gd.N0(2131747178, null));
+                        j30Var.setHint(org.telegram.messenger.hd.N0(2131747178, null));
                     } else {
                         int i10 = 4;
                         if (d.length() > 4) {
@@ -73,7 +73,7 @@ public final class bl0 implements TextWatcher {
                         String str4 = (String) hashMap.get(d);
                         if (str4 == null || ml0Var.a.indexOf(str4) == -1 || (str2 = (String) ml0Var.d.get(d)) == null) {
                             j30Var.setHintText((String) null);
-                            j30Var.setHint(org.telegram.messenger.gd.N0(2131747178, null));
+                            j30Var.setHint(org.telegram.messenger.hd.N0(2131747178, null));
                         } else {
                             j30Var.setHintText(str2.replace('X', (char) 8211));
                             j30Var.setHint((CharSequence) null);

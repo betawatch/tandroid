@@ -10,12 +10,12 @@ import android.graphics.Shader;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.w60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class ka extends FrameLayout {
     public float a;
@@ -62,7 +62,7 @@ public final class ka extends FrameLayout {
                 this.d = linearGradient2;
                 paint.setShader(linearGradient2);
             }
-            paint.setAlpha(ks.e4);
+            paint.setAlpha(ls.e4);
             RectF rectF = org.telegram.messenger.g0.P;
             rectF.set(0.0f, 0.0f, getWidth(), org.telegram.messenger.g0.L(84.0f) + f10);
             canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), paint);

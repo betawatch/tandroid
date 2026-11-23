@@ -19,12 +19,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.ec;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.n80;
 import org.telegram.ui.Components.s41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class g0 extends View {
     public int E;
@@ -69,9 +69,9 @@ public abstract class g0 extends View {
         this.F = imageReceiver;
         imageReceiver.K0 = true;
         imageReceiver.B0 = true;
-        imageReceiver.t1 = ks.X4;
+        imageReceiver.t1 = ls.X4;
         int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.i6, h6Var);
-        int i10 = bz.Y0;
+        int i10 = cz.Y0;
         this.L = i10;
         y a02 = org.telegram.ui.ActionBar.m6.a0(w02, i10, i10);
         this.K = a02;
@@ -133,7 +133,7 @@ public abstract class g0 extends View {
             if (!Objects.equals(this.d, "setup")) {
                 this.d = "setup";
                 imageReceiver.w0(new eq(new f0(getContext())));
-                int L = org.telegram.messenger.g0.L(bz.Y0) - org.telegram.messenger.g0.L(2.0f);
+                int L = org.telegram.messenger.g0.L(cz.Y0) - org.telegram.messenger.g0.L(2.0f);
                 int L2 = org.telegram.messenger.g0.L(4.0f);
                 if (!this.H) {
                     L2 = L;
@@ -146,11 +146,11 @@ public abstract class g0 extends View {
                 this.d = o4;
                 if (tLObject instanceof TLRPC.TL_photo) {
                     TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-                    imageReceiver.q0(fc.i(org.telegram.messenger.w7.w(photo.sizes, 400, false, null, false), photo), "400_400", null, "jpg", botInfo, 0);
+                    imageReceiver.q0(gc.i(org.telegram.messenger.w7.w(photo.sizes, 400, false, null, false), photo), "400_400", null, "jpg", botInfo, 0);
                 } else if (tLObject instanceof TLRPC.Document) {
                     TLRPC.Document document = (TLRPC.Document) tLObject;
                     TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 400, false, null, false);
-                    if (bz.o() != 0) {
+                    if (cz.o() != 0) {
                         ArrayList<TLRPC.PhotoSize> arrayList = document.thumbs;
                         int size = arrayList.size();
                         f10 = 2.0f;
@@ -162,7 +162,7 @@ public abstract class g0 extends View {
                             float f13 = f12;
                             TLRPC.PhotoSize photoSize2 = photoSize;
                             if (photoSize2 instanceof TLRPC.TL_photoStrippedSize) {
-                                bitmapDrawable2 = new BitmapDrawable(getResources(), ec.F("b", photoSize2.bytes));
+                                bitmapDrawable2 = new BitmapDrawable(getResources(), fc.F("b", photoSize2.bytes));
                             }
                             f12 = f13;
                         }
@@ -173,8 +173,8 @@ public abstract class g0 extends View {
                     }
                     f11 = f12;
                     z11 = true;
-                    imageReceiver.u0(fc.b(document), "g", fc.d(fj.J0(document), document), null, fc.c(w10, document), "86_86_b", bitmapDrawable, document.size, "mp4", botInfo, 0);
-                    int L3 = org.telegram.messenger.g0.L(bz.Y0) - org.telegram.messenger.g0.L(f10);
+                    imageReceiver.u0(gc.b(document), "g", gc.d(gj.J0(document), document), null, gc.c(w10, document), "86_86_b", bitmapDrawable, document.size, "mp4", botInfo, 0);
+                    int L3 = org.telegram.messenger.g0.L(cz.Y0) - org.telegram.messenger.g0.L(f10);
                     int L4 = org.telegram.messenger.g0.L(f11);
                     if (!this.H) {
                         L4 = L3;
@@ -202,7 +202,7 @@ public abstract class g0 extends View {
                             org.telegram.messenger.f3.p(null, null, 2131748498, objArr, spannableStringBuilder);
                             z13 = false;
                         } else {
-                            String N0 = gd.N0(2131753057, null);
+                            String N0 = hd.N0(2131753057, null);
                             if (z10) {
                                 spannableStringBuilder.append((CharSequence) N0);
                                 spannableStringBuilder.append((CharSequence) "\n\n");
@@ -214,7 +214,7 @@ public abstract class g0 extends View {
                                 }
                             }
                             z13 = false;
-                            fj.d(spannableStringBuilder, false);
+                            gj.d(spannableStringBuilder, false);
                             if (z10) {
                                 spannableStringBuilder.setSpan(new l41(org.telegram.messenger.g0.o()), 0, N0.length(), 33);
                             }
@@ -252,7 +252,7 @@ public abstract class g0 extends View {
                 f10 = 2.0f;
                 f11 = 4.0f;
                 z11 = true;
-                int L32 = org.telegram.messenger.g0.L(bz.Y0) - org.telegram.messenger.g0.L(f10);
+                int L32 = org.telegram.messenger.g0.L(cz.Y0) - org.telegram.messenger.g0.L(f10);
                 int L42 = org.telegram.messenger.g0.L(f11);
                 if (!this.H) {
                 }
@@ -345,7 +345,7 @@ public abstract class g0 extends View {
         y yVar = this.K;
         if (yVar != null) {
             int i11 = this.L;
-            int i12 = bz.Y0;
+            int i12 = cz.Y0;
             if (i11 != i12) {
                 this.L = i12;
                 org.telegram.ui.ActionBar.m6.G1(yVar, i12, i12);

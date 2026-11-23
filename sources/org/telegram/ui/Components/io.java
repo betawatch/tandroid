@@ -21,7 +21,7 @@ import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class io extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int M = 0;
@@ -70,26 +70,26 @@ public abstract class io extends LinearLayout implements org.telegram.ui.ActionB
         q9 q9Var = new q9(context);
         this.h = q9Var;
         q9Var.getImageReceiver().S0 = true;
-        frameLayout.addView(this.h, c8.ma.c(112.0f, org.telegram.messenger.ks.x1));
+        frameLayout.addView(this.h, c8.ma.c(112.0f, org.telegram.messenger.ls.x1));
         c8.ra.a(this.h);
         q9 q9Var2 = new q9(context);
         this.n = q9Var2;
         q9Var2.getImageReceiver().S0 = true;
-        frameLayout.addView(this.n, c8.ma.c(112.0f, org.telegram.messenger.ks.x1));
+        frameLayout.addView(this.n, c8.ma.c(112.0f, org.telegram.messenger.ls.x1));
         this.n.setVisibility(8);
         this.n.setAlpha(0.0f);
         c8.ra.a(this.n);
         e();
         updateColors();
-        String N0 = org.telegram.messenger.gd.N0(2131748000, null);
-        String N02 = org.telegram.messenger.gd.N0(2131747998, null);
+        String N0 = org.telegram.messenger.hd.N0(2131748000, null);
+        String N02 = org.telegram.messenger.hd.N0(2131747998, null);
         textView.setText(N0);
         textView2.setText(N02);
         textView2.setMaxWidth(hi.l3.a(textView2.getText(), textView2.getPaint()));
         this.h.setContentDescription(textView2.getText());
         this.a = document;
         if (document == null) {
-            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i7);
+            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i7);
             TLRPC.Document document2 = d02.z0;
             d02.q1();
             this.a = document2;
@@ -147,7 +147,7 @@ public abstract class io extends LinearLayout implements org.telegram.ui.ActionB
             }
             i11++;
         }
-        if (org.telegram.messenger.fj.K2(document, true) && i10 == 0 && i7 == 0) {
+        if (org.telegram.messenger.gj.K2(document, true) && i10 == 0 && i7 == 0) {
             i10 = 512;
             i7 = 512;
         }
@@ -229,11 +229,11 @@ public abstract class io extends LinearLayout implements org.telegram.ui.ActionB
     public final void d(CharSequence charSequence, CharSequence charSequence2) {
         this.I = true;
         if (TextUtils.isEmpty(charSequence == null ? null : charSequence.toString().trim())) {
-            charSequence = org.telegram.messenger.gd.N0(2131748000, null);
+            charSequence = org.telegram.messenger.hd.N0(2131748000, null);
         }
         this.b.setText(charSequence);
         if (TextUtils.isEmpty(charSequence2 == null ? null : charSequence2.toString().trim())) {
-            charSequence2 = org.telegram.messenger.gd.N0(2131747998, null);
+            charSequence2 = org.telegram.messenger.hd.N0(2131747998, null);
         }
         TextView textView = this.c;
         textView.setText(charSequence2);
@@ -267,11 +267,11 @@ public abstract class io extends LinearLayout implements org.telegram.ui.ActionB
         if (!this.E) {
             addView(this.b, c8.ma.t(-2, -2, 1, 20, 6, 20, 6));
             addView(this.c, c8.ma.t(-2, -2, 1, 20, 6, 20, 6));
-            addView(this.f, c8.ma.t(org.telegram.messenger.ks.x1, org.telegram.messenger.ks.x1, 1, 16, 10, 16, 16));
+            addView(this.f, c8.ma.t(org.telegram.messenger.ls.x1, org.telegram.messenger.ls.x1, 1, 16, 10, 16, 16));
             return;
         }
         addView(this.w, c8.ma.t(78, 78, 49, 20, 9, 20, 9));
-        boolean K3 = org.telegram.messenger.mp.u1(this.e).K3();
+        boolean K3 = org.telegram.messenger.np.u1(this.e).K3();
         addView(this.x, c8.ma.t(-2, -2, 49, 20, 0, 20, K3 ? 13 : 9));
         if (K3) {
             return;
@@ -287,7 +287,7 @@ public abstract class io extends LinearLayout implements org.telegram.ui.ActionB
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.a == null) {
-            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(this.e);
+            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(this.e);
             TLRPC.Document document = d02.z0;
             d02.q1();
             this.a = document;
@@ -350,13 +350,13 @@ public abstract class io extends LinearLayout implements org.telegram.ui.ActionB
         }
         this.s = true;
         this.n.b();
-        org.telegram.messenger.lz f10 = org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.m6.cd, 1.0f, null);
+        org.telegram.messenger.mz f10 = org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.m6.cd, 1.0f, null);
         if (f10 != null) {
-            this.h.p(org.telegram.messenger.fc.b(document), b(document), f10, document);
+            this.h.p(org.telegram.messenger.gc.b(document), b(document), f10, document);
             document2 = document;
         } else {
             document2 = document;
-            this.h.l(org.telegram.messenger.fc.b(document), b(document), org.telegram.messenger.fc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document), null, 0, document2);
+            this.h.l(org.telegram.messenger.gc.b(document), b(document), org.telegram.messenger.gc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document), null, 0, document2);
         }
         this.h.setOnClickListener(new fo(this, document2, 0));
     }
@@ -380,7 +380,7 @@ public abstract class io extends LinearLayout implements org.telegram.ui.ActionB
         }
         this.s = true;
         this.n.b();
-        this.h.l(org.telegram.messenger.fc.g(str), "256_256", null, null, 0, null);
+        this.h.l(org.telegram.messenger.gc.g(str), "256_256", null, null, 0, null);
     }
 
     @Override // org.telegram.ui.ActionBar.b6

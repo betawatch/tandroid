@@ -5,13 +5,13 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o3 {
     public boolean a;
@@ -29,21 +29,21 @@ public final class o3 {
         TLRPC.Message message;
         String str;
         SpannableStringBuilder e10 = fi.i7.e(new Object[0], 2131750862, false);
-        fj messageObject = r1Var.getMessageObject();
+        gj messageObject = r1Var.getMessageObject();
         if (messageObject != null && (message = messageObject.k) != null) {
             TLRPC.MessageMedia messageMedia = message.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaStory) {
-                TLRPC.User c22 = mp.u1(r1Var.a6).c2(Long.valueOf(((TLRPC.TL_messageMediaStory) messageMedia).user_id));
+                TLRPC.User c22 = np.u1(r1Var.a6).c2(Long.valueOf(((TLRPC.TL_messageMediaStory) messageMedia).user_id));
                 String str2 = c22 == null ? "DELETED" : c22.first_name;
                 int Q0 = (int) ((org.telegram.messenger.g0.Q1() ? org.telegram.messenger.g0.Q0() : r1Var.getParentWidth()) * 0.4f);
-                String N0 = gd.N0(2131750491, null);
+                String N0 = hd.N0(2131750491, null);
                 TextPaint textPaint = org.telegram.ui.ActionBar.m6.X2;
                 int ceil = (int) Math.ceil(textPaint.measureText(N0 + " "));
                 if (str2 == null) {
                     str2 = "";
                 }
                 String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.m6.Y2, Q0 - ceil, TextUtils.TruncateAt.END);
-                String N02 = gd.N0(2131750487, null);
+                String N02 = hd.N0(2131750487, null);
                 int indexOf = N02.indexOf("%1$s");
                 String format = String.format(N02, str3);
                 if (indexOf >= 0) {

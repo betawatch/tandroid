@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mk0 extends Drawable implements Animator.AnimatorListener {
     public final Context a;
@@ -110,7 +110,7 @@ public final class mk0 extends Drawable implements Animator.AnimatorListener {
         if (this.h == 1.0f || this.d == null) {
             Drawable drawable = this.d;
             if (drawable != null) {
-                drawable.setAlpha(org.telegram.messenger.ks.e4);
+                drawable.setAlpha(org.telegram.messenger.ls.e4);
                 this.d.draw(canvas);
             }
         } else {
@@ -125,7 +125,7 @@ public final class mk0 extends Drawable implements Animator.AnimatorListener {
         if (f11 == 1.0f || this.e == null) {
             Drawable drawable2 = this.e;
             if (drawable2 != null) {
-                drawable2.setAlpha(org.telegram.messenger.ks.e4);
+                drawable2.setAlpha(org.telegram.messenger.ls.e4);
                 this.e.draw(canvas);
                 return;
             }

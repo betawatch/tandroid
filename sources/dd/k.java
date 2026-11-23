@@ -1,8 +1,8 @@
 package dd;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class k {
     public final /* synthetic */ int a;
@@ -14,7 +14,7 @@ public abstract class k {
     }
 
     public static String a(int i7) {
-        return "" + ((char) ((i7 >> 24) & ks.e4)) + ((char) ((i7 >> 16) & ks.e4)) + ((char) ((i7 >> 8) & ks.e4)) + ((char) (i7 & ks.e4));
+        return "" + ((char) ((i7 >> 24) & ls.e4)) + ((char) ((i7 >> 16) & ls.e4)) + ((char) ((i7 >> 8) & ls.e4)) + ((char) (i7 & ls.e4));
     }
 
     public static void c(StringBuilder sb2) {

@@ -8,10 +8,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class w3 {
     public final Paint a;
@@ -60,7 +60,7 @@ public final class w3 {
         Paint paint2 = new Paint(1);
         this.b = paint2;
         paint2.setColor(-1);
-        int o4 = i0.a.o(-16777216, ks.n1);
+        int o4 = i0.a.o(-16777216, ls.n1);
         this.d = context.getDrawable(R.drawable.shadow_story_top);
         this.e = context.getDrawable(R.drawable.shadow_story_bottom);
         Paint paint3 = new Paint();

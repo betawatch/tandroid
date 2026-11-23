@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class aq implements kp {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final class aq implements kp {
             }
             TLObject tLObject = (TLObject) arrayList.get(i11);
             if (tLObject instanceof TLRPC.ChannelParticipant) {
-                if (org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) tLObject).peer) == j3) {
+                if (org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) tLObject).peer) == j3) {
                     TLRPC.ChannelParticipant tL_channelParticipantAdmin = i7 == 1 ? new TLRPC.TL_channelParticipantAdmin() : new TLRPC.TL_channelParticipant();
                     tL_channelParticipantAdmin.admin_rights = tL_chatAdminRights;
                     tL_channelParticipantAdmin.banned_rights = tL_chatBannedRights;

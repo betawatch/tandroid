@@ -1,6 +1,6 @@
 package qi;
 
-import ai.a1;
+import ai.z0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,7 @@ import org.telegram.messenger.a8;
 import p4.r0;
 import p4.z;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p implements AutoCloseable {
     public final r0 b;
@@ -31,7 +31,7 @@ public final class p implements AutoCloseable {
     public final HashMap n = new HashMap();
     public final int e = 256;
     public final long f = 8388608;
-    public final ExecutorService d = Executors.newSingleThreadExecutor(new a1(8));
+    public final ExecutorService d = Executors.newSingleThreadExecutor(new z0(8));
 
     public p(r0 r0Var, r0 r0Var2) {
         this.b = r0Var;

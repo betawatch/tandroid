@@ -1,35 +1,101 @@
 package ai;
 
+import fi.y6;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.lc;
 import org.telegram.ui.Dictation.DictationLid;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x10 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ d1(x10 x10Var, int i7, int i10) {
-        this.a = i10;
-        this.b = x10Var;
-        this.c = i7;
+    public /* synthetic */ d1(e1 e1Var, boolean z10, float[] fArr, long j3, int i7) {
+        this.e = e1Var;
+        this.d = z10;
+        this.f = fArr;
+        this.c = j3;
+        this.b = i7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        TL_stories.StoryItem storyItem;
         int i7 = this.a;
-        int i10 = this.c;
-        x10 x10Var = this.b;
+        r2 = null;
+        y6 a10 = null;
+        boolean z10 = this.d;
+        long j3 = this.c;
+        int i10 = this.b;
+        Object obj = this.f;
+        Object obj2 = this.e;
         switch (i7) {
             case 0:
+                e1 e1Var = (e1) obj2;
+                float[] fArr = (float[]) obj;
                 ExecutorService executorService = DictationLid.a;
-                x10Var.a(Integer.valueOf(i10));
+                e1Var.a(z10 ? fArr : null, j3, i10);
                 break;
             default:
-                x10Var.a(Integer.valueOf(i10));
+                LaunchActivity launchActivity = (LaunchActivity) obj2;
+                TLObject tLObject = (TLObject) obj;
+                String str = LaunchActivity.C1;
+                if (tLObject instanceof TL_stories.TL_stories_stories) {
+                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 >= tL_stories_stories.stories.size()) {
+                            storyItem = null;
+                        } else if (tL_stories_stories.stories.get(i11).id == i10) {
+                            storyItem = tL_stories_stories.stories.get(i11);
+                        } else {
+                            i11++;
+                        }
+                    }
+                    if (storyItem != null) {
+                        storyItem.dialogId = j3;
+                        org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
+                        if (Q != null) {
+                            if (Q instanceof cx) {
+                                try {
+                                    a10 = y6.a(((cx) Q).F0.h);
+                                } catch (Exception unused) {
+                                }
+                            }
+                            y6 y6Var = a10;
+                            Q.getOrCreateStoryViewer().B();
+                            ArrayList arrayList = new ArrayList();
+                            arrayList.add(Long.valueOf(j3));
+                            if (z10) {
+                                Q.getOrCreateStoryViewer().w1 = true;
+                            }
+                            Q.getOrCreateStoryViewer().M(launchActivity, storyItem, arrayList, 0, null, null, y6Var, false);
+                            break;
+                        }
+                    }
+                }
+                lc.Y().Q(R.raw.error, 36, hd.N0(2131744363, null)).k(false);
                 break;
         }
+    }
+
+    public /* synthetic */ d1(LaunchActivity launchActivity, TLObject tLObject, int i7, long j3, boolean z10) {
+        this.e = launchActivity;
+        this.f = tLObject;
+        this.b = i7;
+        this.c = j3;
+        this.d = z10;
     }
 }

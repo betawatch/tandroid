@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wz extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ c00 c;
@@ -35,11 +35,11 @@ public final class wz extends org.telegram.ui.Components.dk0 {
         if (f1Var.f == 0) {
             org.telegram.ui.Cells.u2 u2Var = (org.telegram.ui.Cells.u2) f1Var.a;
             c00 c00Var = this.c;
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) c00Var.f.get(i7);
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) c00Var.f.get(i7);
             u2Var.P = c00Var.q0;
-            u2Var.d0(org.telegram.messenger.fj.B0(fjVar.k), fjVar, fjVar.k.date, false, false);
+            u2Var.d0(org.telegram.messenger.gj.B0(gjVar.k), gjVar, gjVar.k.date, false, false);
             u2Var.t2 = i7 != b() - 1;
-            u2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.kk(this, u2Var, fjVar, u2Var.getMessage() != null && u2Var.getMessage().e1() == fjVar.e1(), 1));
+            u2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.kk(this, u2Var, gjVar, u2Var.getMessage() != null && u2Var.getMessage().e1() == gjVar.e1(), 1));
         }
     }
 
@@ -51,7 +51,7 @@ public final class wz extends org.telegram.ui.Components.dk0 {
             a0Var = new jg.a0(2, viewGroup.getContext(), true);
         } else if (i7 != 3) {
             org.telegram.ui.Cells.y3 y3Var = new org.telegram.ui.Cells.y3(viewGroup.getContext(), null);
-            y3Var.setText(org.telegram.messenger.gd.N0(2131745560, null));
+            y3Var.setText(org.telegram.messenger.hd.N0(2131745560, null));
             a0Var = y3Var;
         } else {
             org.telegram.ui.Components.yz yzVar = new org.telegram.ui.Components.yz(viewGroup.getContext(), null);

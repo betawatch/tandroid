@@ -1,9 +1,9 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
@@ -15,9 +15,9 @@ import org.telegram.ui.cw;
 import org.telegram.ui.cx;
 import org.telegram.ui.ve;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b4 implements x10 {
+public final /* synthetic */ class b4 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -30,7 +30,7 @@ public final /* synthetic */ class b4 implements x10 {
         this.d = tL_messageActionStarGiftOnchainOffer;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7;
         int i10 = this.a;
@@ -50,16 +50,16 @@ public final /* synthetic */ class b4 implements x10 {
                 break;
             case 1:
                 String str = (String) obj2;
-                y4.s((TL_stars.TL_starGiftUnique) obj3, ((Boolean) obj).booleanValue() ? gd.a0(null, null, 2131749542, str, y4.k(j3)) : gd.a0(null, null, 2131749619, str));
+                x4.s((TL_stars.TL_starGiftUnique) obj3, ((Boolean) obj).booleanValue() ? hd.a0(null, null, 2131749542, str, x4.k(j3)) : hd.a0(null, null, 2131749619, str));
                 break;
             case 2:
                 di.f6 f6Var = (di.f6) obj3;
-                mp mpVar = (mp) obj2;
+                np npVar = (np) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < mpVar.v5) {
-                    org.telegram.messenger.h3 I0 = mpVar.I0();
+                if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < npVar.v5) {
+                    org.telegram.messenger.h3 I0 = npVar.I0();
                     long j10 = this.b;
-                    I0.b(j10, tL_premium_boostsStatus, new i2(f6Var, tL_premium_boostsStatus, j10, mpVar, 1));
+                    I0.b(j10, tL_premium_boostsStatus, new i2(f6Var, tL_premium_boostsStatus, j10, npVar, 1));
                     break;
                 } else {
                     f6Var.g2.setLoading(false);

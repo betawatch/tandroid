@@ -1,274 +1,183 @@
 package org.telegram.messenger;
 
-import android.app.PendingIntent;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.media.MediaDescription;
-import android.media.browse.MediaBrowser;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.service.media.MediaBrowserService;
-import android.support.v4.media.session.PlaybackStateCompat;
-import java.io.File;
+import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class qz {
-    public static volatile qz p;
-    public final Context a;
-    public final android.support.v4.media.session.a0 b;
-    public int c;
-    public long d;
-    public boolean e;
-    public boolean f;
-    public Paint m;
-    public RectF n;
-    public final ArrayList g = new ArrayList();
-    public final a0.h h = new a0.h();
-    public final a0.h i = new a0.h();
-    public final a0.h j = new a0.h();
-    public final a0.h k = new a0.h();
-    public final a0.h l = new a0.h();
-    public final ArrayList o = new ArrayList();
+public final class qz extends android.support.v4.media.session.s {
+    public final /* synthetic */ rz g;
 
-    public qz(Context context) {
-        this.a = context;
-        int i7 = j10.t0;
-        this.c = i7;
-        this.d = g0.b1(mp.u1(i7).g7, "auto_lastSelectedDialog", 0L);
-        android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(context, "TelegramMediaSession", (ComponentName) null, (PendingIntent) null);
-        this.b = a0Var;
-        android.support.v4.media.session.u uVar = (android.support.v4.media.session.u) a0Var.b;
-        uVar.a.setFlags(3);
-        a0Var.s(new pz(this), null);
-        uVar.a.setSessionActivity(PendingIntent.getActivity(context, 99, new Intent(context, (Class<?>) LaunchActivity.class), 167772160));
-        Bundle bundle = new Bundle();
-        bundle.putBoolean("com.google.android.gms.car.media.ALWAYS_RESERVE_SPACE_FOR.ACTION_QUEUE", true);
-        bundle.putBoolean("com.google.android.gms.car.media.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
-        bundle.putBoolean("com.google.android.gms.car.media.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
-        uVar.a.setExtras(bundle);
-        a0Var.r(true);
-        ArrayList arrayList = new ArrayList();
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        fj fjVar = MediaController.B().v0;
-        if (fjVar != null) {
-            r3 = MediaController.B().H() ? 2477828L : 2477830L;
-            if (fjVar.I3()) {
-                r3 |= 48;
-            }
-        }
-        a0Var.u(new PlaybackStateCompat(0, 0L, 0L, 1.0f, r3, 0, null, elapsedRealtime, arrayList, -1L, null));
-        f();
-        a0Var.x(bz.N0 ? 1 : 0);
-        ks.e().b(new j5(this, 1), ks.f4);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qz(rz rzVar) {
+        super(0);
+        this.g = rzVar;
     }
 
-    public static qz a(MusicBrowserService musicBrowserService) {
-        if (p == null) {
-            synchronized (qz.class) {
-                try {
-                    if (p == null) {
-                        p = new qz(musicBrowserService.getApplicationContext());
-                    }
-                } finally {
-                }
-            }
-        }
-        return p;
+    @Override // android.support.v4.media.session.s
+    public final void A(String str, Bundle bundle) {
+        t(str);
     }
 
-    public static boolean b() {
-        int i7;
-        int elapsedRealtime = (int) (SystemClock.elapsedRealtime() / 1000);
-        if (bz.s.length() <= 0) {
-            return false;
+    @Override // android.support.v4.media.session.s
+    public final void G(long j3) {
+        gj gjVar = MediaController.B().v0;
+        if (gjVar != null) {
+            MediaController.B().i0(gjVar, (float) ((j3 / 1000.0d) / gjVar.L0()));
         }
-        if (bz.x) {
-            return true;
-        }
-        return !(bz.y == 0 || (i7 = bz.B) == 0 || i7 + bz.y > elapsedRealtime) || elapsedRealtime + 5 < bz.B;
     }
 
-    public final void c(String str, j1 j1Var) {
-        long j3;
-        if (!this.e) {
-            this.o.add(new nz(str, j1Var));
-            if (this.f) {
-                return;
-            }
-            this.f = true;
-            int i7 = this.c;
-            tr a02 = tr.a0(i7);
-            a02.a.c(new l7(this, a02, i7, 22));
+    @Override // android.support.v4.media.session.s
+    public final void M(int i7) {
+        cz.E(i7 != 1 ? (i7 == 2 || i7 == 3) ? 1 : 0 : 2);
+        this.g.f();
+        g0.g3(new yr(this, 16));
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void P(int i7) {
+        boolean z10 = true;
+        if (i7 != 1 && i7 != 2) {
+            z10 = false;
+        }
+        if (z10 != cz.N0) {
+            MediaController.B().l0(z10 ? 2 : 0);
+        }
+        this.g.b.x(cz.N0 ? 1 : 0);
+        g0.g3(new yr(this, 16));
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void S() {
+        gj gjVar = MediaController.B().v0;
+        if (gjVar == null || !gjVar.I3()) {
             return;
         }
-        if (str != null && str.startsWith("__CHAT_")) {
-            try {
-                j3 = Long.parseLong(str.substring(7));
-            } catch (Exception e10) {
-                a8.g(e10, true);
-            }
-            if (j3 == 0 && this.j.f(j3) == null) {
-                e(new kg((Object) this, (Object) j1Var, str, 29), j3);
-                return;
-            } else {
-                ((MediaBrowserService.Result) j1Var.b).sendResult(d(str));
-            }
-        }
-        j3 = 0;
-        if (j3 == 0) {
-        }
-        ((MediaBrowserService.Result) j1Var.b).sendResult(d(str));
+        MediaController.B().U(false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0062, code lost:
-    
-        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0085, code lost:
-    
-        if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_fileLocationUnavailable) == false) goto L18;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0090  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final ArrayList d(String str) {
-        long j3;
-        TLRPC.FileLocation fileLocation;
-        TLRPC.FileLocation fileLocation2;
-        ArrayList arrayList = new ArrayList();
-        int i7 = 0;
-        if ("__ROOT__".equals(str)) {
-            int i10 = 0;
-            while (true) {
-                ArrayList arrayList2 = this.g;
-                if (i10 >= arrayList2.size()) {
-                    break;
-                }
-                long longValue = ((Long) arrayList2.get(i10)).longValue();
-                MediaDescription.Builder mediaId = new MediaDescription.Builder().setMediaId("__CHAT_" + longValue);
-                Bitmap bitmap = null;
-                if (n5.E(longValue)) {
-                    TLRPC.User user = (TLRPC.User) this.h.f(longValue);
-                    if (user != null) {
-                        mediaId.setTitle(i5.m(i7, user.first_name, user.last_name));
-                        TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-                        if (userProfilePhoto != null) {
-                            fileLocation2 = userProfilePhoto.photo_small;
-                        }
-                    } else {
-                        mediaId.setTitle("DELETED USER");
-                    }
-                    fileLocation2 = null;
+    @Override // android.support.v4.media.session.s
+    public final void V() {
+        gj gjVar = MediaController.B().v0;
+        if (gjVar == null || !gjVar.I3()) {
+            return;
+        }
+        MediaController.B().V();
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void Y(long j3) {
+        MediaController.B().T((int) j3);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void f(String str) {
+        boolean equals = "org.telegram.android.musicplayer.repeat".equals(str);
+        rz rzVar = this.g;
+        if (equals) {
+            cz.E((cz.S0 + 1) % 3);
+            rzVar.f();
+        } else if ("org.telegram.android.musicplayer.shuffle".equals(str)) {
+            MediaController.B().l0(cz.N0 ? 0 : 2);
+            rzVar.b.x(cz.N0 ? 1 : 0);
+        }
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void k() {
+        MediaController.B().R(MediaController.B().v0, true);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void n() {
+        gj gjVar = MediaController.B().v0;
+        if (gjVar != null) {
+            MediaController.B().S(gjVar);
+            return;
+        }
+        rz rzVar = this.g;
+        if (rzVar.d != 0) {
+            q(a8.p0.r(new StringBuilder(), rzVar.d, "_0"), null);
+        }
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void q(String str, Bundle bundle) {
+        rz rzVar = this.g;
+        android.support.v4.media.session.a0 a0Var = rzVar.b;
+        if (TextUtils.isEmpty(str)) {
+            return;
+        }
+        String[] split = str.split("_");
+        if (split.length != 2) {
+            return;
+        }
+        try {
+            long parseLong = Long.parseLong(split[0]);
+            int parseInt = Integer.parseInt(split[1]);
+            ArrayList arrayList = (ArrayList) rzVar.j.f(parseLong);
+            if (arrayList == null) {
+                rzVar.e(new pz(this, str, bundle, 0), parseLong);
+                return;
+            }
+            ArrayList arrayList2 = (ArrayList) rzVar.k.f(parseLong);
+            if (parseInt >= 0 && parseInt < arrayList.size()) {
+                rzVar.d = parseLong;
+                np.u1(rzVar.c).g7.edit().putLong("auto_lastSelectedDialog", parseLong).apply();
+                MediaController.B().o0(arrayList, (gj) arrayList.get(parseInt), 0L, false, null, 0L);
+                a0Var.v(arrayList2);
+                if (n5.E(parseLong)) {
+                    TLRPC.User user = (TLRPC.User) rzVar.h.f(parseLong);
+                    ((android.support.v4.media.session.u) a0Var.b).a.setQueueTitle(user != null ? i5.m(0, user.first_name, user.last_name) : "DELETED USER");
                 } else {
-                    TLRPC.Chat chat = (TLRPC.Chat) this.i.f(-longValue);
-                    if (chat != null) {
-                        mediaId.setTitle(chat.title);
-                        TLRPC.ChatPhoto chatPhoto = chat.photo;
-                        if (chatPhoto != null) {
-                            fileLocation2 = chatPhoto.photo_small;
-                        }
-                    } else {
-                        mediaId.setTitle("DELETED CHAT");
-                    }
-                    fileLocation = null;
-                    if (fileLocation != null) {
-                        w7.G(this.c);
-                        File J = w7.J(fileLocation, null, true, true);
-                        try {
-                            BitmapFactory.Options options = new BitmapFactory.Options();
-                            options.inSampleSize = 2;
-                            Bitmap decodeFile = BitmapFactory.decodeFile(J.toString(), options);
-                            if (decodeFile != null) {
-                                Bitmap createBitmap = Bitmap.createBitmap(decodeFile.getWidth(), decodeFile.getHeight(), Bitmap.Config.ARGB_8888);
-                                createBitmap.eraseColor(i7);
-                                Canvas canvas = new Canvas(createBitmap);
-                                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                                BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
-                                if (this.m == null) {
-                                    this.m = new Paint(1);
-                                    this.n = new RectF();
-                                }
-                                this.m.setShader(bitmapShader);
-                                this.n.set(0.0f, 0.0f, decodeFile.getWidth(), decodeFile.getHeight());
-                                canvas.drawRoundRect(this.n, decodeFile.getWidth(), decodeFile.getHeight(), this.m);
-                                bitmap = createBitmap;
-                            }
-                        } catch (Throwable th2) {
-                            a8.g(th2, true);
-                        }
-                        if (bitmap != null) {
-                            mediaId.setIconBitmap(bitmap);
-                        }
-                    }
-                    if (fileLocation != null || bitmap == null) {
-                        mediaId.setIconUri(Uri.parse("android.resource://" + this.a.getPackageName() + "/drawable/contact_blue"));
-                    }
-                    arrayList.add(new MediaBrowser.MediaItem(mediaId.build(), 1));
-                    i10++;
-                    i7 = 0;
-                }
-                fileLocation = fileLocation2;
-                if (fileLocation != null) {
-                }
-                if (fileLocation != null) {
-                }
-                mediaId.setIconUri(Uri.parse("android.resource://" + this.a.getPackageName() + "/drawable/contact_blue"));
-                arrayList.add(new MediaBrowser.MediaItem(mediaId.build(), 1));
-                i10++;
-                i7 = 0;
-            }
-        } else if (str != null && str.startsWith("__CHAT_")) {
-            try {
-                j3 = Long.parseLong(str.replace("__CHAT_", ""));
-            } catch (Exception e10) {
-                a8.g(e10, true);
-                j3 = 0;
-            }
-            ArrayList arrayList3 = (ArrayList) this.j.f(j3);
-            if (arrayList3 != null) {
-                for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-                    fj fjVar = (fj) arrayList3.get(i11);
-                    MediaDescription.Builder mediaId2 = new MediaDescription.Builder().setMediaId(j3 + "_" + i11);
-                    mediaId2.setTitle(fjVar.y1(true));
-                    mediaId2.setSubtitle(fjVar.w1(true));
-                    arrayList.add(new MediaBrowser.MediaItem(mediaId2.build(), 2));
+                    TLRPC.Chat chat = (TLRPC.Chat) rzVar.i.f(-parseLong);
+                    ((android.support.v4.media.session.u) a0Var.b).a.setQueueTitle(chat != null ? chat.title : "DELETED CHAT");
                 }
             }
+        } catch (Exception e10) {
+            a8.g(e10, true);
         }
-        return arrayList;
     }
 
-    public final void e(Runnable runnable, long j3) {
-        a0.h hVar = this.l;
-        ArrayList arrayList = (ArrayList) hVar.f(j3);
-        if (arrayList != null) {
-            arrayList.add(runnable);
+    @Override // android.support.v4.media.session.s
+    public final void t(String str) {
+        String str2;
+        rz rzVar = this.g;
+        ArrayList arrayList = rzVar.g;
+        if (str == null || str.length() == 0) {
             return;
         }
-        ArrayList arrayList2 = new ArrayList();
-        arrayList2.add(runnable);
-        hVar.k(arrayList2, j3);
-        int i7 = this.c;
-        tr a02 = tr.a0(i7);
-        a02.a.c(new ek(i7, 11, j3, this, a02));
+        String lowerCase = str.toLowerCase();
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            long longValue = ((Long) arrayList.get(i7)).longValue();
+            if (n5.E(longValue)) {
+                TLRPC.User user = (TLRPC.User) rzVar.h.f(longValue);
+                if (user != null) {
+                    String str3 = user.first_name;
+                    String lowerCase2 = str3 != null ? str3.toLowerCase() : null;
+                    String str4 = user.last_name;
+                    String lowerCase3 = str4 != null ? str4.toLowerCase() : null;
+                    if ((lowerCase2 != null && lowerCase2.contains(lowerCase)) || (lowerCase3 != null && lowerCase3.contains(lowerCase))) {
+                        q(longValue + "_0", null);
+                        return;
+                    }
+                } else {
+                    continue;
+                }
+            } else {
+                TLRPC.Chat chat = (TLRPC.Chat) rzVar.i.f(-longValue);
+                if (chat != null && (str2 = chat.title) != null && str2.toLowerCase().contains(lowerCase)) {
+                    q(longValue + "_0", null);
+                    return;
+                }
+            }
+        }
     }
 
-    public final void f() {
-        int i7 = bz.S0;
-        this.b.w(i7 != 1 ? i7 != 2 ? 0 : 1 : 2);
+    @Override // android.support.v4.media.session.s
+    public final void x(String str, Bundle bundle) {
+        q(str, bundle);
     }
 }

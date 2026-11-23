@@ -4,10 +4,10 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -24,7 +24,7 @@ import org.telegram.ui.bb1;
 import org.telegram.ui.bn;
 import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -73,7 +73,7 @@ public final /* synthetic */ class q0 implements Runnable {
                 g2 g2Var = (g2) obj4;
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
-                arrayList2.add(new ef(0, ((File) obj5).getAbsolutePath(), 0, false, 0, 0));
+                arrayList2.add(new ff(0, ((File) obj5).getAbsolutePath(), 0, false, 0, 0));
                 PhotoViewer.p1().I2(g2Var.getParentActivity(), null, g2Var.getResourceProvider());
                 PhotoViewer.p1().f2(arrayList2, 0, 11, false, new aw0(), (bn) obj3);
                 PhotoViewer.p1().S0(document, z11 ? document : null, false, null);
@@ -100,7 +100,7 @@ public final /* synthetic */ class q0 implements Runnable {
                         TLRPC.TL_updates tL_updates = (TLRPC.TL_updates) tLObject2;
                         boolean z12 = true;
                         if (!tL_updates.chats.isEmpty()) {
-                            mp.u1(i10).b3(0, tL_updates.chats.get(0).id, true);
+                            np.u1(i10).b3(0, tL_updates.chats.get(0).id, true);
                         }
                         int i11 = 0;
                         while (true) {
@@ -150,8 +150,8 @@ public final /* synthetic */ class q0 implements Runnable {
                             q9 q9Var = sbVar.a;
                             q9Var.setRoundRadius(L);
                             q9Var.f(user, new b9(0, user));
-                            String k10 = o10.k(user, true);
-                            String a02 = lVar4.a ? gd.a0("HasBeenAddedToChannel", null, 2131749171, k10) : gd.a0("HasBeenAddedToGroup", null, 2131749170, k10);
+                            String k10 = p10.k(user, true);
+                            String a02 = lVar4.a ? hd.a0("HasBeenAddedToChannel", null, 2131749171, k10) : hd.a0("HasBeenAddedToGroup", null, 2131749170, k10);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a02);
                             int indexOf = a02.indexOf(k10);
                             spannableStringBuilder.setSpan(new l41(org.telegram.messenger.g0.o()), indexOf, k10.length() + indexOf, 18);

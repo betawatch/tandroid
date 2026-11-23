@@ -1,123 +1,70 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
+import android.content.Intent;
 import java.util.ArrayList;
-import java.util.HashMap;
+import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class os implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xs b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ ys b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ os(xs xsVar, long j3, int i7, int i10) {
-        this.a = i10;
-        this.b = xsVar;
-        this.c = j3;
-        this.d = i7;
+    public /* synthetic */ os(ys ysVar, ArrayList arrayList, int i7) {
+        this.a = i7;
+        this.b = ysVar;
+        this.c = arrayList;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x011d  */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        boolean z10;
-        int i7;
-        boolean z11;
         switch (this.a) {
             case 0:
-                xs xsVar = this.b;
-                a0.h hVar = xsVar.c;
-                ArrayList arrayList = xsVar.a;
-                a0.h hVar2 = xsVar.F;
-                long j3 = this.c;
-                ws wsVar = (ws) hVar2.f(j3);
-                int i10 = this.d;
-                if (wsVar != null) {
-                    HashMap hashMap = wsVar.c;
-                    hashMap.remove(Integer.valueOf(i10));
-                    if (hashMap.isEmpty()) {
-                        hVar2.l(j3);
-                        xsVar.E.remove(wsVar);
-                        tr messagesStorage = xsVar.getMessagesStorage();
-                        messagesStorage.a.c(new pp(messagesStorage, j3, 4));
-                        z10 = true;
-                        i7 = 0;
-                        while (i7 < arrayList.size()) {
-                            fj fjVar = (fj) arrayList.get(i7);
-                            if (fjVar != null && fjVar.N && fjVar.e1() == i10) {
-                                arrayList.remove(i7);
-                                i7--;
-                                SparseArray sparseArray = (SparseArray) hVar.f(fj.B0(fjVar.k));
-                                if (sparseArray != null) {
-                                    sparseArray.remove(fjVar.e1());
-                                }
-                                if (sparseArray != null && sparseArray.size() <= 0) {
-                                    hVar.l(fj.B0(fjVar.k));
-                                }
-                                z10 = true;
-                            }
-                            i7++;
-                        }
-                        if (!z10) {
-                            xsVar.Z(false);
-                            break;
-                        }
-                    } else {
-                        tr messagesStorage2 = xsVar.getMessagesStorage();
-                        messagesStorage2.a.c(new rq(9, messagesStorage2, wsVar));
-                    }
+                ys ysVar = this.b;
+                ysVar.x = this.c;
+                Intent intent = new Intent(t0.b, (Class<?>) PopupNotificationActivity.class);
+                intent.putExtra("force", true);
+                intent.putExtra("currentAccount", ysVar.currentAccount);
+                intent.setFlags(268763140);
+                t0.b.startActivity(intent);
+                t0.b.sendBroadcast(new Intent("android.intent.action.CLOSE_SYSTEM_DIALOGS"));
+                break;
+            case 1:
+                ys ysVar2 = this.b;
+                ArrayList arrayList = this.c;
+                int size = arrayList.size();
+                for (int i7 = 0; i7 < size; i7++) {
+                    ysVar2.w.remove(arrayList.get(i7));
                 }
-                z10 = false;
-                i7 = 0;
-                while (i7 < arrayList.size()) {
+                ls.e().k(ls.g4, new Object[0]);
+                break;
+            case 2:
+                ys ysVar3 = this.b;
+                ArrayList arrayList2 = this.c;
+                int size2 = arrayList2.size();
+                for (int i10 = 0; i10 < size2; i10++) {
+                    ysVar3.w.remove(arrayList2.get(i10));
                 }
-                if (!z10) {
+                ls.e().k(ls.g4, new Object[0]);
+                break;
+            case 3:
+                ys ysVar4 = this.b;
+                ArrayList arrayList3 = this.c;
+                int size3 = arrayList3.size();
+                for (int i11 = 0; i11 < size3; i11++) {
+                    ysVar4.w.remove(arrayList3.get(i11));
                 }
+                ls.e().k(ls.g4, new Object[0]);
                 break;
             default:
-                xs xsVar2 = this.b;
-                a0.h hVar3 = xsVar2.c;
-                ArrayList arrayList2 = xsVar2.a;
-                a0.h hVar4 = xsVar2.F;
-                long j10 = this.c;
-                ws wsVar2 = (ws) hVar4.f(j10);
-                if (wsVar2 != null) {
-                    hVar4.l(j10);
-                    xsVar2.E.remove(wsVar2);
-                    tr messagesStorage3 = xsVar2.getMessagesStorage();
-                    messagesStorage3.a.c(new pp(messagesStorage3, j10, 4));
-                    z11 = true;
-                } else {
-                    z11 = false;
+                ys ysVar5 = this.b;
+                ArrayList arrayList4 = this.c;
+                int size4 = arrayList4.size();
+                for (int i12 = 0; i12 < size4; i12++) {
+                    ysVar5.w.remove(arrayList4.get(i12));
                 }
-                int i11 = 0;
-                while (i11 < arrayList2.size()) {
-                    fj fjVar2 = (fj) arrayList2.get(i11);
-                    if (fjVar2 != null && fjVar2.N && fjVar2.e1() <= this.d) {
-                        arrayList2.remove(i11);
-                        i11--;
-                        SparseArray sparseArray2 = (SparseArray) hVar3.f(fj.B0(fjVar2.k));
-                        if (sparseArray2 != null) {
-                            sparseArray2.remove(fjVar2.e1());
-                        }
-                        if (sparseArray2 != null && sparseArray2.size() <= 0) {
-                            hVar3.l(fj.B0(fjVar2.k));
-                        }
-                        z11 = true;
-                    }
-                    i11++;
-                }
-                if (z11) {
-                    xsVar2.Z(false);
-                    xsVar2.d0();
-                    break;
-                }
+                ls.e().k(ls.g4, new Object[0]);
                 break;
         }
     }

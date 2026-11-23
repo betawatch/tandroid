@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vw0 {
     public final int a;
@@ -82,13 +82,13 @@ public final class vw0 {
     }
 
     public final void b() {
-        c5.l(this.b.getContext(), org.telegram.messenger.gd.N0(2131751660, null), org.telegram.messenger.gd.N0(2131751659, null), this.e, new z2(this, 13), null, true, false, this.c).C2();
+        c5.l(this.b.getContext(), org.telegram.messenger.hd.N0(2131751660, null), org.telegram.messenger.hd.N0(2131751659, null), this.e, new z2(this, 13), null, true, false, this.c).C2();
     }
 
-    public final void c(org.telegram.messenger.fj fjVar) {
-        TLRPC.TL_messageActionSuggestBirthday tL_messageActionSuggestBirthday = (TLRPC.TL_messageActionSuggestBirthday) fjVar.k.action;
+    public final void c(org.telegram.messenger.gj gjVar) {
+        TLRPC.TL_messageActionSuggestBirthday tL_messageActionSuggestBirthday = (TLRPC.TL_messageActionSuggestBirthday) gjVar.k.action;
         this.e = tL_messageActionSuggestBirthday.birthday;
-        xy0 xy0Var = new xy0(TextUtils.concat(fjVar.v, ":"), 13.0f, null);
+        xy0 xy0Var = new xy0(TextUtils.concat(gjVar.v, ":"), 13.0f, null);
         xy0Var.m(6);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         xy0Var.a();
@@ -98,21 +98,21 @@ public final class vw0 {
         xy0[] xy0VarArr = new xy0[i7];
         this.g = xy0VarArr;
         this.h = new xy0[i7];
-        xy0VarArr[0] = new xy0(org.telegram.messenger.gd.N0(2131751662, null), 11.0f, null);
+        xy0VarArr[0] = new xy0(org.telegram.messenger.hd.N0(2131751662, null), 11.0f, null);
         this.h[0] = new xy0("" + tL_messageActionSuggestBirthday.birthday.day, 11.0f, org.telegram.messenger.g0.o());
-        this.g[1] = new xy0(org.telegram.messenger.gd.N0(2131751661, null), 11.0f, null);
+        this.g[1] = new xy0(org.telegram.messenger.hd.N0(2131751661, null), 11.0f, null);
         xy0[] xy0VarArr2 = this.h;
         StringBuilder sb2 = new StringBuilder("");
         int i10 = tL_messageActionSuggestBirthday.birthday.month - 1;
-        sb2.append((i10 < 0 || i10 >= 12) ? i5.c.i(i10, "") : org.telegram.messenger.gd.N0(new int[]{2131748893, 2131750817, 2131748490, 2131754170, 2131748469, 2131748871, 2131748873, 2131753892, 2131745369, 2131747636, 2131747641, 2131751593}[i10], null));
+        sb2.append((i10 < 0 || i10 >= 12) ? i5.c.i(i10, "") : org.telegram.messenger.hd.N0(new int[]{2131748893, 2131750817, 2131748490, 2131754170, 2131748469, 2131748871, 2131748873, 2131753892, 2131745369, 2131747636, 2131747641, 2131751593}[i10], null));
         xy0VarArr2[1] = new xy0(sb2.toString(), 11.0f, org.telegram.messenger.g0.o());
         if ((tL_messageActionSuggestBirthday.birthday.flags & 1) != 0) {
-            this.g[2] = new xy0(org.telegram.messenger.gd.N0(2131751657, null), 11.0f, null);
+            this.g[2] = new xy0(org.telegram.messenger.hd.N0(2131751657, null), 11.0f, null);
             this.h[2] = new xy0("" + tL_messageActionSuggestBirthday.birthday.year, 11.0f, org.telegram.messenger.g0.o());
         }
-        this.i = !fjVar.P3();
+        this.i = !gjVar.P3();
         org.telegram.ui.ActionBar.h6 h6Var = this.c;
         this.l.setColor(org.telegram.ui.ActionBar.m6.r1(0.12f, h6Var != null ? h6Var.d() : org.telegram.ui.ActionBar.m6.I.q() ? -1 : -16777216));
-        this.j = new xy0(org.telegram.messenger.gd.N0(2131744154, null), 14.0f, org.telegram.messenger.g0.o());
+        this.j = new xy0(org.telegram.messenger.hd.N0(2131744152, null), 14.0f, org.telegram.messenger.g0.o());
     }
 }

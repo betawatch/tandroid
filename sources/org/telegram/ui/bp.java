@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bp extends v4.i0 {
     public final /* synthetic */ Context c;
@@ -42,7 +42,7 @@ public final class bp extends v4.i0 {
         cp cpVar = this.d;
         if (d != 0) {
             if (d == 1) {
-                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.N0(2131747628, null));
+                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.hd.N0(2131747628, null));
                 return;
             } else {
                 if (d != 2) {
@@ -59,11 +59,11 @@ public final class bp extends v4.i0 {
         org.telegram.ui.ActionBar.t6.U(a9Var.getTextView(), org.telegram.ui.ActionBar.m6.B6, null);
         int i11 = cpVar.s;
         if (i11 == 1) {
-            a9Var.setText(org.telegram.messenger.gd.N0(2131751135, null));
+            a9Var.setText(org.telegram.messenger.hd.N0(2131751135, null));
         } else if (i11 == 0) {
-            a9Var.setText(org.telegram.messenger.gd.N0(2131751147, null));
+            a9Var.setText(org.telegram.messenger.hd.N0(2131751147, null));
         } else if (i11 == 2) {
-            a9Var.setText(org.telegram.messenger.gd.N0(2131751417, null));
+            a9Var.setText(org.telegram.messenger.hd.N0(2131751417, null));
         }
     }
 

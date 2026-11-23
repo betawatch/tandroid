@@ -14,22 +14,22 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
+public final class p8 extends org.telegram.ui.ActionBar.w2 implements gs {
     public static final /* synthetic */ int Y1 = 0;
     public boolean A1;
     public boolean B1;
@@ -46,9 +46,9 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
     public final Paint M1;
     public ArrayList N1;
     public v7 O1;
-    public x10 P1;
+    public y10 P1;
     public b8 Q1;
-    public x10 R1;
+    public y10 R1;
     public s8 S1;
     public final boolean T1;
     public boolean U1;
@@ -116,7 +116,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
         this.T1 = true;
         this.U1 = false;
         this.L1 = i7;
-        String string = mp.u1(this.a).h7.getString("story_prv_contacts", null);
+        String string = np.u1(this.a).h7.getString("story_prv_contacts", null);
         if (string != null) {
             String[] split = string.split(",");
             arrayList3.clear();
@@ -127,7 +127,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
                 }
             }
         }
-        String string2 = mp.u1(this.a).h7.getString("story_prv_grpcontacts", null);
+        String string2 = np.u1(this.a).h7.getString("story_prv_grpcontacts", null);
         if (string2 != null) {
             String[] split2 = string2.split(";");
             hashMap2.clear();
@@ -159,7 +159,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
         }
         boolean z12 = z11;
         ?? r23 = c11;
-        String string3 = mp.u1(this.a).h7.getString("story_prv_everyoneexcept", null);
+        String string3 = np.u1(this.a).h7.getString("story_prv_everyoneexcept", null);
         if (string3 != null) {
             String[] split4 = string3.split(",");
             arrayList.clear();
@@ -170,7 +170,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
                 }
             }
         }
-        String string4 = mp.u1(this.a).h7.getString("story_prv_grpeveryoneexcept", null);
+        String string4 = np.u1(this.a).h7.getString("story_prv_grpeveryoneexcept", null);
         if (string4 != null) {
             String[] split5 = string4.split(";");
             hashMap.clear();
@@ -189,7 +189,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
                 }
             }
         }
-        String string5 = mp.u1(this.a).h7.getString("story_prv_excluded", null);
+        String string5 = np.u1(this.a).h7.getString("story_prv_excluded", null);
         if (string5 != null) {
             String[] split7 = string5.split(",");
             arrayList2.clear();
@@ -202,14 +202,14 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
         }
         this.u1 = S0(arrayList3, hashMap2).size();
         this.q1 = S0(arrayList, hashMap).size();
-        this.x1 = !mp.u1(this.a).h7.getBoolean("story_noforwards", r23);
-        this.y1 = mp.u1(this.a).h7.getBoolean("story_keep", z12);
+        this.x1 = !np.u1(this.a).h7.getBoolean("story_noforwards", r23);
+        this.y1 = np.u1(this.a).h7.getBoolean("story_keep", z12);
         Q0(context);
         this.m1.setAdapter(new o7(this, context, 0));
-        tr a02 = tr.a0(this.a);
+        ur a02 = ur.a0(this.a);
         a02.a.c(new c(17, this, a02));
-        mp.u1(this.a).R1().S();
-        mp.u1(this.a).R1().U();
+        np.u1(this.a).R1().S();
+        np.u1(this.a).R1().U();
     }
 
     public static ArrayList K0(p8 p8Var) {
@@ -229,7 +229,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
     public static int L0(p8 p8Var, TLRPC.Chat chat) {
         Integer num;
         int i7;
-        TLRPC.ChatFull P0 = mp.u1(p8Var.a).P0(chat.id);
+        TLRPC.ChatFull P0 = np.u1(p8Var.a).P0(chat.id);
         if (P0 != null && (i7 = P0.participants_count) > 0) {
             return i7;
         }
@@ -262,9 +262,9 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.w2
     public final void L() {
-        ks.f(this.a).n(this, ks.O);
-        ks.f(this.a).n(this, ks.c3);
-        ks.f(this.a).n(this, ks.e3);
+        ls.f(this.a).n(this, ls.O);
+        ls.f(this.a).n(this, ls.c3);
+        ls.f(this.a).n(this, ls.e3);
         super.L();
     }
 
@@ -292,7 +292,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
     public final void O0(n8 n8Var, Runnable runnable, boolean z10) {
         ArrayList arrayList = new ArrayList();
         if (this.N1 != null) {
-            mp u12 = mp.u1(this.a);
+            np u12 = np.u1(this.a);
             for (int i7 = 0; i7 < this.N1.size(); i7++) {
                 String str = (String) this.N1.get(i7);
                 TLObject h22 = u12.h2(str);
@@ -333,11 +333,11 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.J0);
-        String N0 = gd.N0(2131744248, null);
+        String N0 = hd.N0(2131744246, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.g0.K2(gd.N0(2131744247, null), spannableStringBuilder, "%s");
-        alertDialog$Builder.k(gd.N0(2131746549, null), new a3.h(this, n8Var, runnable, 11));
+        t1Var.U = org.telegram.messenger.g0.K2(hd.N0(2131744245, null), spannableStringBuilder, "%s");
+        alertDialog$Builder.k(hd.N0(2131746549, null), new a3.h(this, n8Var, runnable, 11));
         i5.c.y(null, 2131752577, alertDialog$Builder, null);
     }
 
@@ -348,11 +348,11 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
         if (arrayList2 == null || arrayList2.isEmpty()) {
             org.telegram.messenger.i5.r(this.a).A(0L, false);
         }
-        mp u12 = mp.u1(this.a);
+        np u12 = np.u1(this.a);
         if (arrayList2 != null) {
             for (int i7 = 0; i7 < arrayList2.size(); i7++) {
                 TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList2.get(i7);
-                if (tL_contact != null && (c22 = u12.c2(Long.valueOf(tL_contact.user_id))) != null && !o10.C(c22) && !c22.bot && c22.id != 777000) {
+                if (tL_contact != null && (c22 = u12.c2(Long.valueOf(tL_contact.user_id))) != null && !p10.C(c22) && !c22.bot && c22.id != 777000) {
                     arrayList.add(c22);
                 }
             }
@@ -362,9 +362,9 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
 
     public final void Q0(Context context) {
         gc.a(this.c, new bi.t(1));
-        ks.f(this.a).c(this, ks.O);
-        ks.f(this.a).c(this, ks.c3);
-        ks.f(this.a).c(this, ks.e3);
+        ls.f(this.a).c(this, ls.O);
+        ls.f(this.a).c(this, ls.c3);
+        ls.f(this.a).c(this, ls.e3);
         int i7 = org.telegram.ui.ActionBar.m6.h5;
         this.M1.setColor(org.telegram.ui.ActionBar.m6.w0(i7, this.J0));
         Q(i7);
@@ -373,7 +373,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
         this.m1 = i1Var;
         int i10 = this.u0;
         i1Var.setPadding(i10, 0, i10, 0);
-        this.b.addView(this.m1, c8.ma.e(-1, -1, ks.E1));
+        this.b.addView(this.m1, c8.ma.e(-1, -1, ls.E1));
     }
 
     public final void R0(boolean z10) {
@@ -497,14 +497,14 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         i1 i1Var = this.m1;
         if (i1Var == null) {
             return;
         }
         int i11 = 0;
-        if (i7 == ks.O) {
+        if (i7 == ls.O) {
             View[] viewPages = i1Var.getViewPages();
             View view = viewPages[0];
             if (view instanceof k8) {
@@ -517,8 +517,8 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
             }
             return;
         }
-        if (i7 != ks.c3) {
-            if (i7 == ks.e3) {
+        if (i7 != ls.c3) {
+            if (i7 == ls.e3) {
                 View[] viewPages2 = i1Var.getViewPages();
                 while (i11 < viewPages2.length) {
                     View view3 = viewPages2[i11];
@@ -553,13 +553,13 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         n8 n8Var;
-        x10 x10Var = this.P1;
+        y10 y10Var = this.P1;
         ArrayList arrayList = this.r1;
         HashMap hashMap = this.p1;
         ArrayList arrayList2 = this.o1;
         HashMap hashMap2 = this.t1;
         ArrayList arrayList3 = this.s1;
-        if (x10Var != null) {
+        if (y10Var != null) {
             int i7 = this.I1;
             if (i7 == 3) {
                 n8Var = new n8(this.I1, this.a, new ArrayList(S0(arrayList3, hashMap2)));
@@ -602,7 +602,7 @@ public final class p8 extends org.telegram.ui.ActionBar.w2 implements fs {
             sb3.append(",");
             sb3.append(TextUtils.join(",", (Iterable) entry2.getValue()));
         }
-        mp.u1(this.a).h7.edit().putString("story_prv_everyoneexcept", TextUtils.join(",", arrayList2)).putString("story_prv_grpeveryoneexcept", sb3.toString()).putString("story_prv_contacts", TextUtils.join(",", arrayList3)).putString("story_prv_grpcontacts", sb2.toString()).putString("story_prv_excluded", TextUtils.join(",", arrayList)).putBoolean("story_noforwards", !this.x1).putBoolean("story_keep", this.y1).apply();
+        np.u1(this.a).h7.edit().putString("story_prv_everyoneexcept", TextUtils.join(",", arrayList2)).putString("story_prv_grpeveryoneexcept", sb3.toString()).putString("story_prv_contacts", TextUtils.join(",", arrayList3)).putString("story_prv_grpcontacts", sb2.toString()).putString("story_prv_excluded", TextUtils.join(",", arrayList)).putBoolean("story_noforwards", !this.x1).putBoolean("story_keep", this.y1).apply();
         super.dismiss();
     }
 

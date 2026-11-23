@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class in0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
         Bitmap bitmap;
         Bitmap bitmap2;
         fi.n2 n2Var;
-        org.telegram.messenger.fj fjVar;
-        org.telegram.messenger.kj b10;
+        org.telegram.messenger.gj gjVar;
+        org.telegram.messenger.lj b10;
         uq0 uq0Var;
         int i11 = 3;
         char c10 = 1;
@@ -58,10 +58,10 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                     Activity activity = photoViewer2.E;
                     if (activity != null) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, photoViewer2.w2);
-                        alertDialog$Builder.a.U = org.telegram.messenger.gd.N0(2131751393, "DiscardChanges");
-                        alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(R.string.AppName, "AppName");
-                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, "OK"), new qn0(photoViewer2));
-                        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, "Cancel"), null);
+                        alertDialog$Builder.a.U = org.telegram.messenger.hd.N0(2131751393, "DiscardChanges");
+                        alertDialog$Builder.a.S = org.telegram.messenger.hd.N0(R.string.AppName, "AppName");
+                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, "OK"), new qn0(photoViewer2));
+                        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, "Cancel"), null);
                         photoViewer2.Q2(alertDialog$Builder);
                         break;
                     }
@@ -77,8 +77,8 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
             case 3:
                 PhotoViewer photoViewer4 = this.b;
                 Object obj = photoViewer4.g7.get(photoViewer4.P4);
-                if (obj instanceof org.telegram.messenger.xe) {
-                    ((org.telegram.messenger.xe) obj).s = photoViewer4.j1();
+                if (obj instanceof org.telegram.messenger.ye) {
+                    ((org.telegram.messenger.ye) obj).s = photoViewer4.j1();
                 }
                 photoViewer4.W2(false);
                 photoViewer4.n2(2);
@@ -113,12 +113,12 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                 break;
             case 9:
                 PhotoViewer photoViewer10 = this.b;
-                if (!photoViewer10.q5.b.R && (i7 = photoViewer10.P4) >= 0 && i7 < photoViewer10.g7.size() && (photoViewer10.g7.get(photoViewer10.P4) instanceof org.telegram.messenger.ef)) {
-                    org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) photoViewer10.g7.get(photoViewer10.P4);
+                if (!photoViewer10.q5.b.R && (i7 = photoViewer10.P4) >= 0 && i7 < photoViewer10.g7.size() && (photoViewer10.g7.get(photoViewer10.P4) instanceof org.telegram.messenger.ff)) {
+                    org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) photoViewer10.g7.get(photoViewer10.P4);
                     long time = photoViewer10.q5.getTime();
                     String v12 = PhotoViewer.v1();
                     photoViewer10.q5.b.setLoading(true);
-                    Utilities.e.c(new di.j2(photoViewer10, v12, efVar, time, 22));
+                    Utilities.e.c(new di.j2(photoViewer10, v12, ffVar, time, 22));
                     break;
                 }
                 break;
@@ -140,7 +140,7 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                     if (photoViewer11.r) {
                         final hi.l3 l3Var = new hi.l3(photoViewer11.E, 3);
                         l3Var.r(true);
-                        l3Var.v(org.telegram.messenger.gd.N0(2131751197, null));
+                        l3Var.v(org.telegram.messenger.hd.N0(2131751197, null));
                         l3Var.h = hi.l3.a(l3Var.getText(), l3Var.getTextPaint());
                         l3Var.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
                         l3Var.o(0.0f, 22.0f);
@@ -174,7 +174,7 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                         if (photoViewer11.i1 == null) {
                             photoViewer11.i1 = new ArrayList();
                         }
-                        photoViewer11.f0.addView(l3Var, c8.ma.e(-1, org.telegram.messenger.ks.e3, 83));
+                        photoViewer11.f0.addView(l3Var, c8.ma.e(-1, org.telegram.messenger.ls.e3, 83));
                         photoViewer11.i1.add(l3Var);
                         l3Var.x();
                     }
@@ -188,8 +188,8 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                         }
                     }
                     Object obj3 = photoViewer11.g7.get(photoViewer11.P4);
-                    if (obj3 instanceof org.telegram.messenger.xe) {
-                        ((org.telegram.messenger.xe) obj3).s = photoViewer11.j1();
+                    if (obj3 instanceof org.telegram.messenger.ye) {
+                        ((org.telegram.messenger.ye) obj3).s = photoViewer11.j1();
                         break;
                     }
                 }
@@ -202,10 +202,10 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                 int i14 = photoViewer12.P4;
                 if (i14 >= 0 && i14 < photoViewer12.g7.size()) {
                     Object obj4 = photoViewer12.g7.get(photoViewer12.P4);
-                    if (obj4 instanceof org.telegram.messenger.ef) {
-                        ((org.telegram.messenger.ef) obj4).O = Boolean.valueOf(z10);
+                    if (obj4 instanceof org.telegram.messenger.ff) {
+                        ((org.telegram.messenger.ff) obj4).O = Boolean.valueOf(z10);
                         SharedPreferences.Editor edit = org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit();
-                        org.telegram.messenger.bz.i1 = O1;
+                        org.telegram.messenger.cz.i1 = O1;
                         edit.putBoolean("photoLiveDefault", O1).apply();
                         uq0 uq0Var2 = photoViewer12.d;
                         if (uq0Var2 != null) {
@@ -234,7 +234,7 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                     ((hi.l3) obj5).f(true);
                 }
                 final hi.l3 l3Var2 = new hi.l3(photoViewer12.E, 3);
-                l3Var2.v(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(photoViewer12.O1() ? 2131748643 : 2131748642, null)));
+                l3Var2.v(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(photoViewer12.O1() ? 2131748643 : 2131748642, null)));
                 l3Var2.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f));
                 l3Var2.o(0.0f, 28.0f);
                 final char c11 = c10 == true ? 1 : 0;
@@ -265,7 +265,7 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                         }
                     }
                 };
-                photoViewer12.f0.addView(l3Var2, c8.ma.e(-1, org.telegram.messenger.ks.e3, 83));
+                photoViewer12.f0.addView(l3Var2, c8.ma.e(-1, org.telegram.messenger.ls.e3, 83));
                 photoViewer12.i1.add(l3Var2);
                 photoViewer12.j1.add(l3Var2);
                 l3Var2.x();
@@ -292,8 +292,8 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                 if (!photoViewer15.v7) {
                     iq0 iq0Var = photoViewer15.t5;
                     if (!iq0Var.R && iq0Var.o0 != 1 && (i10 = photoViewer15.P4) >= 0 && i10 < arrayList3.size() && !photoViewer15.p5.W) {
-                        org.telegram.messenger.xe xeVar = (org.telegram.messenger.xe) arrayList3.get(photoViewer15.P4);
-                        boolean isEmpty = TextUtils.isEmpty(xeVar.i);
+                        org.telegram.messenger.ye yeVar = (org.telegram.messenger.ye) arrayList3.get(photoViewer15.P4);
+                        boolean isEmpty = TextUtils.isEmpty(yeVar.i);
                         boolean z11 = !isEmpty;
                         iq0 iq0Var2 = photoViewer15.t5;
                         int i16 = iq0Var2.o0;
@@ -323,11 +323,11 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                         } else {
                             iq0Var2.setCancelState(true);
                             tg.f2 f2Var2 = photoViewer15.p5;
-                            hi.kb kbVar = new hi.kb(photoViewer15, z11, xeVar, i11);
+                            hi.kb kbVar = new hi.kb(photoViewer15, z11, yeVar, i11);
                             f2Var2.getClass();
                             f2Var2.setOnClickListener(new jg0(27, f2Var2, kbVar));
                             TextView textView = f2Var2.N;
-                            textView.setText(org.telegram.messenger.gd.N0(2131745479, null));
+                            textView.setText(org.telegram.messenger.hd.N0(2131745479, null));
                             textView.animate().cancel();
                             textView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(240L).setInterpolator(org.telegram.ui.Components.nr.h).start();
                             ValueAnimator valueAnimator = f2Var2.O;
@@ -391,7 +391,7 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                 }
                 photoViewer18.c3(0);
                 photoViewer18.p5.l();
-                boolean isEmpty2 = TextUtils.isEmpty(((org.telegram.messenger.xe) photoViewer18.g7.get(photoViewer18.P4)).i);
+                boolean isEmpty2 = TextUtils.isEmpty(((org.telegram.messenger.ye) photoViewer18.g7.get(photoViewer18.P4)).i);
                 tg.f2 f2Var5 = photoViewer18.p5;
                 if (f2Var5 != null && !f2Var5.H) {
                     f2Var5.M = false;
@@ -419,9 +419,9 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
             case 19:
                 PhotoViewer photoViewer20 = this.b;
                 bn bnVar = photoViewer20.l4;
-                if (bnVar != null && (fjVar = bnVar.H5) != null && fjVar.p5() && !org.telegram.messenger.v3.z(photoViewer20.U, 24, org.telegram.messenger.fj.B0(photoViewer20.l4.H5.k))) {
+                if (bnVar != null && (gjVar = bnVar.H5) != null && gjVar.p5() && !org.telegram.messenger.v3.z(photoViewer20.U, 24, org.telegram.messenger.gj.B0(photoViewer20.l4.H5.k))) {
                     if (photoViewer20.m4 == null || (b10 = photoViewer20.l4.y5) == null) {
-                        b10 = org.telegram.messenger.kj.b(photoViewer20.l4.H5.k.suggested_post);
+                        b10 = org.telegram.messenger.lj.b(photoViewer20.l4.H5.k.suggested_post);
                     }
                     if (!di.y8.S(photoViewer20.U, b10.a)) {
                         bn bnVar2 = photoViewer20.l4;
@@ -446,7 +446,7 @@ public final /* synthetic */ class in0 implements View.OnClickListener {
                     photoViewer20.X1 = f10;
                     org.telegram.messenger.g0.E3(f10, o6Var, null);
                     org.telegram.messenger.q2.E.a();
-                    if (!org.telegram.messenger.mp.u1(photoViewer20.U).K3() && org.telegram.messenger.mp.u1(photoViewer20.U).X4 > photoViewer20.V1.getCodePointCount()) {
+                    if (!org.telegram.messenger.np.u1(photoViewer20.U).K3() && org.telegram.messenger.np.u1(photoViewer20.U).X4 > photoViewer20.V1.getCodePointCount()) {
                         photoViewer20.R2(photoViewer20.f0);
                         break;
                     }

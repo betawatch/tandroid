@@ -11,14 +11,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.rh0;
 import org.telegram.ui.jw0;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m7 extends FrameLayout {
     public int E;
@@ -205,7 +205,7 @@ public final class m7 extends FrameLayout {
         this.a = L;
         this.b = i7;
         PowerManager powerManager = (PowerManager) context.getSystemService("power");
-        if ((powerManager == null || !powerManager.isPowerSaveMode()) && bz.o() != 0) {
+        if ((powerManager == null || !powerManager.isPowerSaveMode()) && cz.o() != 0) {
             ActivityManager activityManager = (ActivityManager) context.getSystemService("activity");
             ConfigurationInfo deviceConfigurationInfo = activityManager == null ? null : activityManager.getDeviceConfigurationInfo();
             if (deviceConfigurationInfo != null && deviceConfigurationInfo.reqGlEsVersion >= 196608) {

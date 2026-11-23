@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w50 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class w50 implements Runnable {
                 String lowerCase = str.trim().toLowerCase();
                 if (!lowerCase.isEmpty()) {
                     boolean z10 = true;
-                    String T0 = org.telegram.messenger.gd.E0().T0(lowerCase, true, false);
+                    String T0 = org.telegram.messenger.hd.E0().T0(lowerCase, true, false);
                     if (lowerCase.equals(T0) || T0.isEmpty()) {
                         T0 = null;
                     }
@@ -45,7 +45,7 @@ public final /* synthetic */ class w50 implements Runnable {
                     while (i10 < x50Var.n.w.size()) {
                         org.telegram.messenger.f5 f5Var = (org.telegram.messenger.f5) x50Var.n.w.get(i10);
                         String lowerCase2 = org.telegram.messenger.i5.m(0, f5Var.i, f5Var.j).toLowerCase();
-                        String T02 = org.telegram.messenger.gd.E0().T0(lowerCase2, z10, false);
+                        String T02 = org.telegram.messenger.hd.E0().T0(lowerCase2, z10, false);
                         if (lowerCase2.equals(T02)) {
                             T02 = null;
                         }

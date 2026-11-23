@@ -9,16 +9,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.bn;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ma implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -46,7 +46,7 @@ public final /* synthetic */ class ma implements View.OnClickListener {
             case 0:
                 cx cxVar = (cx) g2Var;
                 ArrayList arrayList = (ArrayList) serializable;
-                String N0 = gd.N0(2131743664, null);
+                String N0 = hd.N0(2131743662, null);
                 int i12 = org.telegram.ui.ActionBar.m6.xj;
                 SpannableStringBuilder R2 = org.telegram.messenger.g0.R2(N0, i12, 0, new f(cxVar, 12), null);
                 SpannableString spannableString = new SpannableString(">");
@@ -57,17 +57,17 @@ public final /* synthetic */ class ma implements View.OnClickListener {
                 nqVar.F = org.telegram.messenger.g0.L(12.0f);
                 spannableString.setSpan(nqVar, 0, spannableString.length(), 33);
                 org.telegram.messenger.g0.K2(R2, spannableString, ">");
-                lc.b0(cxVar).I(R.raw.contact_check, gd.N0(z10 ? 2131743665 : 2131743666, null), R2).j();
-                mp.u1(i10).W1().f(true, arrayList, new fi.e(8));
-                mp.u1(i10).W1().a();
+                lc.b0(cxVar).I(R.raw.contact_check, hd.N0(z10 ? 2131743663 : 2131743664, null), R2).j();
+                np.u1(i10).W1().f(true, arrayList, new fi.e(8));
+                np.u1(i10).W1().a();
                 break;
             default:
                 bn bnVar = (bn) g2Var;
                 String str = (String) serializable;
                 Pattern pattern = org.telegram.ui.Components.c5.a;
                 if (bnVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.w2 j3 = n10.j(bnVar.getParentActivity(), false, 1, null);
-                    j3.P = gd.N0(z10 ? 2131752182 : 2131752181, null);
+                    org.telegram.ui.ActionBar.w2 j3 = o10.j(bnVar.getParentActivity(), false, 1, null);
+                    j3.P = hd.N0(z10 ? 2131752182 : 2131752181, null);
                     j3.Q = true;
                     LinearLayout linearLayout = new LinearLayout(bnVar.getParentActivity());
                     linearLayout.setOrientation(1);
@@ -75,13 +75,13 @@ public final /* synthetic */ class ma implements View.OnClickListener {
                     linearLayout.addView(textView, c8.ma.t(-1, -1, 0, 21, 0, 21, 8));
                     org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
                     textView.setTextSize(1, 16.0f);
-                    textView.setText(org.telegram.messenger.g0.W2(gd.a0("ChatWithAdminMessage", null, 2131752180, str, gd.s(i10, false))));
+                    textView.setText(org.telegram.messenger.g0.W2(hd.a0("ChatWithAdminMessage", null, 2131752180, str, hd.s(i10, false))));
                     TextView textView2 = new TextView(bnVar.getParentActivity());
                     textView2.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
                     textView2.setGravity(17);
                     textView2.setTextSize(1, 14.0f);
                     textView2.setTypeface(org.telegram.messenger.g0.o());
-                    textView2.setText(gd.N0(2131749081, null));
+                    textView2.setText(hd.N0(2131749081, null));
                     org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.Ji, null);
                     int L = org.telegram.messenger.g0.L(8.0f);
                     int i13 = org.telegram.ui.ActionBar.m6.Fi;

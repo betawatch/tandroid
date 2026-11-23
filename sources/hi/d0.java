@@ -3,9 +3,9 @@ package hi;
 import android.view.KeyEvent;
 import android.view.TextureView;
 import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ur;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,22 +60,22 @@ public final /* synthetic */ class d0 implements Runnable {
                 oi.t3.O1(j3Var.b, this.b, this.c, this.d);
                 return;
             default:
-                tr trVar = (tr) this.e;
+                ur urVar = (ur) this.e;
                 int i13 = this.b;
                 int i14 = this.c;
                 int i15 = this.d;
-                trVar.getClass();
+                urVar.getClass();
                 SQLitePreparedStatement sQLitePreparedStatement = null;
                 try {
                     try {
-                        sQLitePreparedStatement = trVar.b.executeFast("REPLACE INTO messages_seq VALUES(?, ?, ?)");
+                        sQLitePreparedStatement = urVar.b.executeFast("REPLACE INTO messages_seq VALUES(?, ?, ?)");
                         sQLitePreparedStatement.requery();
                         sQLitePreparedStatement.bindInteger(1, i13);
                         sQLitePreparedStatement.bindInteger(2, i14);
                         sQLitePreparedStatement.bindInteger(3, i15);
                         sQLitePreparedStatement.step();
                     } catch (Exception e10) {
-                        trVar.o(e10, true);
+                        urVar.o(e10, true);
                         if (sQLitePreparedStatement == null) {
                             return;
                         }

@@ -13,7 +13,7 @@ import di.nc;
 import di.oc;
 import java.util.ArrayList;
 import kg.x1;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.Cells.u0;
 import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
@@ -45,7 +45,7 @@ import org.telegram.ui.pq0;
 import org.telegram.ui.rn;
 import tg.s1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (!zArr[0] && floatValue3 > 0.2f) {
                     zArr[0] = true;
-                    if (bz.o() > 0) {
+                    if (cz.o() > 0) {
                         org.telegram.messenger.g0.a4(profileStoriesView);
                         org.telegram.messenger.g0.h3(new f2.a(profileStoriesView, 9), 180L);
                     }

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vp0 implements org.telegram.messenger.rr, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class vp0 implements org.telegram.messenger.sr, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ jt0 a;
     public final /* synthetic */ TL_stories.StoryItem b;
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class vp0 implements org.telegram.messenger.rr, org
         this.b = storyItem;
     }
 
-    @Override // org.telegram.messenger.rr
+    @Override // org.telegram.messenger.sr
     public void a(String str) {
         r0.getStoriesController().r(r0.m1, str, new rh(10, this.a, this.b));
     }
@@ -27,7 +27,7 @@ public final /* synthetic */ class vp0 implements org.telegram.messenger.rr, org
         jt0 jt0Var = this.a;
         org.telegram.ui.ActionBar.g2 g2Var = jt0Var.y1;
         g2Var.getMessagesController().R1().s(arrayList, jt0Var.m1);
-        lc.b0(g2Var).Q(R.raw.ic_delete, 36, org.telegram.messenger.gd.G(1, "StoriesDeleted", new Object[0])).j();
+        lc.b0(g2Var).Q(R.raw.ic_delete, 36, org.telegram.messenger.hd.G(1, "StoriesDeleted", new Object[0])).j();
         jt0Var.V(false);
     }
 }

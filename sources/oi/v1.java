@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.HorizontalScrollView;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v1 extends HorizontalScrollView {
     public final h6.m a;
@@ -33,7 +33,7 @@ public final class v1 extends HorizontalScrollView {
         float d2 = this.c.d(canScrollHorizontally(1));
         if (d > 0.0f || d2 > 0.0f) {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), ks.e4, 31);
+            canvas2.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), ls.e4, 31);
         } else {
             canvas2 = canvas;
         }

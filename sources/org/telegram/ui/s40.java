@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s40 implements View.OnKeyListener {
     public final /* synthetic */ int a;
@@ -55,28 +55,28 @@ public final class s40 implements View.OnKeyListener {
                                     usersSelectActivity.L &= -9;
                                 }
                             } else if (p20Var.getUid() == Long.MIN_VALUE) {
-                                int i11 = org.telegram.messenger.mp.I8;
+                                int i11 = org.telegram.messenger.np.I8;
                                 usersSelectActivity.L &= -2;
                             } else if (p20Var.getUid() == -9223372036854775807L) {
-                                int i12 = org.telegram.messenger.mp.I8;
+                                int i12 = org.telegram.messenger.np.I8;
                                 usersSelectActivity.L &= -3;
                             } else if (p20Var.getUid() == -9223372036854775806L) {
-                                int i13 = org.telegram.messenger.mp.I8;
+                                int i13 = org.telegram.messenger.np.I8;
                                 usersSelectActivity.L &= -5;
                             } else if (p20Var.getUid() == -9223372036854775805L) {
-                                int i14 = org.telegram.messenger.mp.I8;
+                                int i14 = org.telegram.messenger.np.I8;
                                 usersSelectActivity.L &= -9;
                             } else if (p20Var.getUid() == -9223372036854775804L) {
-                                int i15 = org.telegram.messenger.mp.I8;
+                                int i15 = org.telegram.messenger.np.I8;
                                 usersSelectActivity.L &= -17;
                             } else if (p20Var.getUid() == -9223372036854775803L) {
-                                int i16 = org.telegram.messenger.mp.I8;
+                                int i16 = org.telegram.messenger.np.I8;
                                 usersSelectActivity.L &= -33;
                             } else if (p20Var.getUid() == -9223372036854775802L) {
-                                int i17 = org.telegram.messenger.mp.I8;
+                                int i17 = org.telegram.messenger.np.I8;
                                 usersSelectActivity.L &= -65;
                             } else if (p20Var.getUid() == -9223372036854775801L) {
-                                int i18 = org.telegram.messenger.mp.I8;
+                                int i18 = org.telegram.messenger.np.I8;
                                 usersSelectActivity.L &= -129;
                             }
                             usersSelectActivity.d0();

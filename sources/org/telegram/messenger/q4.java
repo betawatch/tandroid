@@ -12,7 +12,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.h60;
 import org.telegram.ui.j70;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q4 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -105,7 +105,7 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                         i12++;
                         i5Var = i5Var;
                     }
-                    g0.g3(new dg(i5Var, tL_contacts_importedContacts.users, 2, arrayList2, 3));
+                    g0.g3(new eg(i5Var, tL_contacts_importedContacts.users, 2, arrayList2, 3));
                 } else {
                     boolean z15 = false;
                     int i13 = 0;
@@ -125,7 +125,7 @@ public final /* synthetic */ class q4 implements RequestDelegate {
                         boolean z16 = z10;
                         i5Var.getMessagesStorage().Z0(hashMap, z16, z16);
                     }
-                    Utilities.d.c(new ah(i5Var, hashMap3, hashMap2, z12, hashMap4, arrayList, hashMap5, zArr));
+                    Utilities.d.c(new bh(i5Var, hashMap3, hashMap2, z12, hashMap4, arrayList, hashMap5, zArr));
                     break;
                 }
                 break;

@@ -17,9 +17,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b, org.telegram.messenger.fs {
+public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b, org.telegram.messenger.gs {
     public boolean E;
     public boolean F;
     public int G;
@@ -158,9 +158,9 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
         if (d0()) {
             org.telegram.ui.ActionBar.g5 b10 = this.simpleActionBar.t().b(0, R.drawable.ic_ab_other);
             this.s = b10;
-            b10.setContentDescription(org.telegram.messenger.gd.N0(2131754838, null));
+            b10.setContentDescription(org.telegram.messenger.hd.N0(2131754838, null));
             this.s.Z(false, false);
-            org.telegram.ui.ActionBar.y0 e10 = this.s.e(8, R.drawable.msg_zoomin, org.telegram.messenger.gd.N0(2131748457, null));
+            org.telegram.ui.ActionBar.y0 e10 = this.s.e(8, R.drawable.msg_zoomin, org.telegram.messenger.hd.N0(2131748457, null));
             this.I = e10;
             e10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.h90
                 public final /* synthetic */ k90 b;
@@ -271,7 +271,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                             if (k90Var2.w != null) {
                                 int i16 = 0;
                                 for (int i17 = 0; i17 < k90Var2.w.size(); i17++) {
-                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.fj) k90Var2.w.valueAt(i17)).l;
+                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.gj) k90Var2.w.valueAt(i17)).l;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i16++;
@@ -297,14 +297,14 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                                 int i19 = 21;
                                 k90Var2.R = new di.p6(k90Var2, arrayList, z18, i19);
                                 q20 q20Var = new q20(k90Var2, zArr2, arrayList, zArr, 3);
-                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.gd.G(i12, "StorySavedTitle", new Object[0]), org.telegram.messenger.gd.N0(2131744243, null), org.telegram.messenger.gd.N0(2131743644, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.gd.G(i12, "StoryArchived", new Object[0]), org.telegram.messenger.gd.N0(2131743644, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
+                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.hd.G(i12, "StorySavedTitle", new Object[0]), org.telegram.messenger.hd.N0(2131744241, null), org.telegram.messenger.hd.N0(2131743642, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.hd.G(i12, "StoryArchived", new Object[0]), org.telegram.messenger.hd.N0(2131743642, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
                                 break;
                             }
                             break;
                     }
                 }
             });
-            org.telegram.ui.ActionBar.y0 e11 = this.s.e(9, R.drawable.msg_zoomout, org.telegram.messenger.gd.N0(2131748456, null));
+            org.telegram.ui.ActionBar.y0 e11 = this.s.e(9, R.drawable.msg_zoomout, org.telegram.messenger.hd.N0(2131748456, null));
             this.J = e11;
             e11.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.h90
                 public final /* synthetic */ k90 b;
@@ -415,7 +415,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                             if (k90Var2.w != null) {
                                 int i16 = 0;
                                 for (int i17 = 0; i17 < k90Var2.w.size(); i17++) {
-                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.fj) k90Var2.w.valueAt(i17)).l;
+                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.gj) k90Var2.w.valueAt(i17)).l;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i16++;
@@ -441,20 +441,20 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                                 int i19 = 21;
                                 k90Var2.R = new di.p6(k90Var2, arrayList, z18, i19);
                                 q20 q20Var = new q20(k90Var2, zArr2, arrayList, zArr, 3);
-                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.gd.G(i12, "StorySavedTitle", new Object[0]), org.telegram.messenger.gd.N0(2131744243, null), org.telegram.messenger.gd.N0(2131743644, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.gd.G(i12, "StoryArchived", new Object[0]), org.telegram.messenger.gd.N0(2131743644, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
+                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.hd.G(i12, "StorySavedTitle", new Object[0]), org.telegram.messenger.hd.N0(2131744241, null), org.telegram.messenger.hd.N0(2131743642, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.hd.G(i12, "StoryArchived", new Object[0]), org.telegram.messenger.hd.N0(2131743642, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
                                 break;
                             }
                             break;
                     }
                 }
             });
-            org.telegram.ui.ActionBar.y0 e12 = this.s.e(10, R.drawable.msg_calendar2, org.telegram.messenger.gd.N0(2131752630, null));
+            org.telegram.ui.ActionBar.y0 e12 = this.s.e(10, R.drawable.msg_calendar2, org.telegram.messenger.hd.N0(2131752630, null));
             this.H = e12;
             e12.setEnabled(false);
             this.H.setAlpha(0.5f);
             this.s.a(-1);
             org.telegram.ui.ActionBar.g5 g5Var = this.s;
-            org.telegram.ui.ActionBar.y0 d = g5Var.d(6, 0, null, org.telegram.messenger.gd.N0(2131748460, null), true, true, g5Var.n0);
+            org.telegram.ui.ActionBar.y0 d = g5Var.d(6, 0, null, org.telegram.messenger.hd.N0(2131748460, null), true, true, g5Var.n0);
             this.x = d;
             d.setChecked(this.E);
             final int i12 = 2;
@@ -567,7 +567,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                             if (k90Var2.w != null) {
                                 int i16 = 0;
                                 for (int i17 = 0; i17 < k90Var2.w.size(); i17++) {
-                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.fj) k90Var2.w.valueAt(i17)).l;
+                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.gj) k90Var2.w.valueAt(i17)).l;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i16++;
@@ -593,7 +593,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                                 int i19 = 21;
                                 k90Var2.R = new di.p6(k90Var2, arrayList, z18, i19);
                                 q20 q20Var = new q20(k90Var2, zArr2, arrayList, zArr, 3);
-                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.gd.G(i122, "StorySavedTitle", new Object[0]), org.telegram.messenger.gd.N0(2131744243, null), org.telegram.messenger.gd.N0(2131743644, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.gd.G(i122, "StoryArchived", new Object[0]), org.telegram.messenger.gd.N0(2131743644, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
+                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.hd.G(i122, "StorySavedTitle", new Object[0]), org.telegram.messenger.hd.N0(2131744241, null), org.telegram.messenger.hd.N0(2131743642, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.hd.G(i122, "StoryArchived", new Object[0]), org.telegram.messenger.hd.N0(2131743642, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
                                 break;
                             }
                             break;
@@ -601,7 +601,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                 }
             });
             org.telegram.ui.ActionBar.g5 g5Var2 = this.s;
-            org.telegram.ui.ActionBar.y0 d2 = g5Var2.d(7, 0, null, org.telegram.messenger.gd.N0(2131748459, null), true, true, g5Var2.n0);
+            org.telegram.ui.ActionBar.y0 d2 = g5Var2.d(7, 0, null, org.telegram.messenger.hd.N0(2131748459, null), true, true, g5Var2.n0);
             this.y = d2;
             d2.setChecked(this.F);
             this.y.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.h90
@@ -713,7 +713,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                             if (k90Var2.w != null) {
                                 int i16 = 0;
                                 for (int i17 = 0; i17 < k90Var2.w.size(); i17++) {
-                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.fj) k90Var2.w.valueAt(i17)).l;
+                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.gj) k90Var2.w.valueAt(i17)).l;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i16++;
@@ -739,7 +739,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                                 int i19 = 21;
                                 k90Var2.R = new di.p6(k90Var2, arrayList, z18, i19);
                                 q20 q20Var = new q20(k90Var2, zArr2, arrayList, zArr, 3);
-                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.gd.G(i122, "StorySavedTitle", new Object[0]), org.telegram.messenger.gd.N0(2131744243, null), org.telegram.messenger.gd.N0(2131743644, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.gd.G(i122, "StoryArchived", new Object[0]), org.telegram.messenger.gd.N0(2131743644, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
+                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.hd.G(i122, "StorySavedTitle", new Object[0]), org.telegram.messenger.hd.N0(2131744241, null), org.telegram.messenger.hd.N0(2131743642, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.hd.G(i122, "StoryArchived", new Object[0]), org.telegram.messenger.hd.N0(2131743642, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
                                 break;
                             }
                             break;
@@ -763,7 +763,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
             }
             aVar = baseSimpleGlass;
             fh.g c10 = aVar.c.c(this.K, c8.i0.g(getResourceProvider()), false);
-            org.telegram.messenger.n10.s(c10, org.telegram.messenger.g0.L(28.0f), 7.666f);
+            org.telegram.messenger.o10.s(c10, org.telegram.messenger.g0.L(28.0f), 7.666f);
             this.K.setBackground(c10);
             e3Var.addView(this.K, c8.ma.e(-2, 72, 81));
             FrameLayout frameLayout = new FrameLayout(context);
@@ -771,7 +771,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
             frameLayout.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
             hi.e eVar = new hi.e(context, getResourceProvider(), true);
             this.O = eVar;
-            eVar.i(org.telegram.messenger.gd.N0(2131745713, null), false, true);
+            eVar.i(org.telegram.messenger.hd.N0(2131745713, null), false, true);
             this.O.setShowZero(true);
             this.O.c(0, false);
             this.O.setEnabled(false);
@@ -885,7 +885,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                             if (k90Var2.w != null) {
                                 int i16 = 0;
                                 for (int i17 = 0; i17 < k90Var2.w.size(); i17++) {
-                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.fj) k90Var2.w.valueAt(i17)).l;
+                                    TL_stories.StoryItem storyItem = ((org.telegram.messenger.gj) k90Var2.w.valueAt(i17)).l;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i16++;
@@ -911,7 +911,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                                 int i19 = 21;
                                 k90Var2.R = new di.p6(k90Var2, arrayList, z18, i19);
                                 q20 q20Var = new q20(k90Var2, zArr2, arrayList, zArr, 3);
-                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.gd.G(i122, "StorySavedTitle", new Object[0]), org.telegram.messenger.gd.N0(2131744243, null), org.telegram.messenger.gd.N0(2131743644, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.gd.G(i122, "StoryArchived", new Object[0]), org.telegram.messenger.gd.N0(2131743644, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
+                                (z18 ? lc.b0(k90Var2).L(R.raw.contact_check, org.telegram.messenger.hd.G(i122, "StorySavedTitle", new Object[0]), org.telegram.messenger.hd.N0(2131744241, null), org.telegram.messenger.hd.N0(2131743642, null), q20Var).j() : lc.b0(k90Var2).J(R.raw.chats_archived, org.telegram.messenger.hd.G(i122, "StoryArchived", new Object[0]), org.telegram.messenger.hd.N0(2131743642, null), 5000, false, q20Var).j()).v = new ou(i19, k90Var2, zArr2);
                                 break;
                             }
                             break;
@@ -947,7 +947,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
         this.simpleActionBar.setBackground(null);
         h0(false);
         if (this.a == 3 && (i7 = this.r) != -1) {
-            this.simpleActionBar.setSubtitle(org.telegram.messenger.gd.H(' ', "FoundStories", i7));
+            this.simpleActionBar.setSubtitle(org.telegram.messenger.hd.H(' ', "FoundStories", i7));
         }
         b0();
         g0();
@@ -967,9 +967,9 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
         return i7 == 1 || i7 == 2;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.E0 && ((Long) objArr[0]).longValue() == this.e) {
+        if (i7 == org.telegram.messenger.ls.E0 && ((Long) objArr[0]).longValue() == this.e) {
             TLRPC.UserFull userFull = (TLRPC.UserFull) objArr[1];
             this.d = userFull;
             j90 j90Var = this.S;
@@ -996,7 +996,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
         int closestTab = j90Var.getClosestTab();
         if (this.a != 3 || closestTab == 8) {
             int[] iArr = this.b.c;
-            boolean z10 = org.telegram.messenger.gd.a0;
+            boolean z10 = org.telegram.messenger.hd.a0;
             if (closestTab == 8 || closestTab == 9) {
                 org.telegram.ui.ActionBar.y0 y0Var = this.J;
                 if (y0Var != null) {
@@ -1013,12 +1013,12 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                 int m0 = this.S.m0(closestTab);
                 if (this.a == 3) {
                     if (m0 > 0) {
-                        f0(org.telegram.messenger.gd.H(' ', "FoundStories", m0));
+                        f0(org.telegram.messenger.hd.H(' ', "FoundStories", m0));
                     }
                 } else if (closestTab == 8) {
-                    f0(m0 > 0 ? org.telegram.messenger.gd.G(m0, "ProfileMyStoriesCount", new Object[0]) : null);
+                    f0(m0 > 0 ? org.telegram.messenger.hd.G(m0, "ProfileMyStoriesCount", new Object[0]) : null);
                 } else {
-                    f0(m0 > 0 ? org.telegram.messenger.gd.G(m0, "ProfileStoriesArchiveCount", new Object[0]) : null);
+                    f0(m0 > 0 ? org.telegram.messenger.hd.G(m0, "ProfileStoriesArchiveCount", new Object[0]) : null);
                 }
                 h0(true);
                 org.telegram.ui.ActionBar.g5 g5Var = this.s;
@@ -1030,9 +1030,9 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                     boolean z11 = !z10 && this.V == closestTab;
                     if (closestTab == 8) {
                         SparseArray sparseArray = this.w;
-                        eVar.i(org.telegram.messenger.gd.G(sparseArray == null ? 0 : sparseArray.size(), "ArchiveStories", new Object[0]), z11, true);
+                        eVar.i(org.telegram.messenger.hd.G(sparseArray == null ? 0 : sparseArray.size(), "ArchiveStories", new Object[0]), z11, true);
                     } else {
-                        eVar.i(org.telegram.messenger.gd.N0(2131745713, null), z11, true);
+                        eVar.i(org.telegram.messenger.hd.N0(2131745713, null), z11, true);
                     }
                     this.V = closestTab;
                 }
@@ -1046,48 +1046,48 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                 return;
             }
             if (closestTab == 11) {
-                f0(org.telegram.messenger.gd.G(getMessagesController().I1().c(), "SavedDialogsTabCount", new Object[0]));
+                f0(org.telegram.messenger.hd.G(getMessagesController().I1().c(), "SavedDialogsTabCount", new Object[0]));
                 return;
             }
             if (closestTab >= 0) {
                 if (closestTab >= iArr.length || iArr[closestTab] >= 0) {
                     if (closestTab == 0) {
                         if (this.S.getPhotosVideosTypeFilter() == 1) {
-                            f0(org.telegram.messenger.gd.G(iArr[6], "Photos", new Object[0]));
+                            f0(org.telegram.messenger.hd.G(iArr[6], "Photos", new Object[0]));
                             return;
                         } else if (this.S.getPhotosVideosTypeFilter() == 2) {
-                            f0(org.telegram.messenger.gd.G(iArr[7], "Videos", new Object[0]));
+                            f0(org.telegram.messenger.hd.G(iArr[7], "Videos", new Object[0]));
                             return;
                         } else {
-                            f0(org.telegram.messenger.gd.G(iArr[0], "Media", new Object[0]));
+                            f0(org.telegram.messenger.hd.G(iArr[0], "Media", new Object[0]));
                             return;
                         }
                     }
                     if (closestTab == 1) {
-                        f0(org.telegram.messenger.gd.G(iArr[1], "Files", new Object[0]));
+                        f0(org.telegram.messenger.hd.G(iArr[1], "Files", new Object[0]));
                         return;
                     }
                     if (closestTab == 2) {
-                        f0(org.telegram.messenger.gd.G(iArr[2], "Voice", new Object[0]));
+                        f0(org.telegram.messenger.hd.G(iArr[2], "Voice", new Object[0]));
                         return;
                     }
                     if (closestTab == 3) {
-                        f0(org.telegram.messenger.gd.G(iArr[3], "Links", new Object[0]));
+                        f0(org.telegram.messenger.hd.G(iArr[3], "Links", new Object[0]));
                         return;
                     }
                     if (closestTab == 4) {
-                        f0(org.telegram.messenger.gd.G(iArr[4], "MusicFiles", new Object[0]));
+                        f0(org.telegram.messenger.hd.G(iArr[4], "MusicFiles", new Object[0]));
                         return;
                     }
                     if (closestTab == 5) {
-                        f0(org.telegram.messenger.gd.G(iArr[5], "GIFs", new Object[0]));
+                        f0(org.telegram.messenger.hd.G(iArr[5], "GIFs", new Object[0]));
                         return;
                     }
                     if (closestTab == 15 && (i7 = iArr[8]) >= 0) {
-                        f0(org.telegram.messenger.gd.G(i7, "ProfilePollsCount", new Object[0]));
+                        f0(org.telegram.messenger.hd.G(i7, "ProfilePollsCount", new Object[0]));
                     } else if (closestTab == 10) {
-                        org.telegram.messenger.no N0 = org.telegram.messenger.mp.u1(this.currentAccount).N0(this.e);
-                        f0(org.telegram.messenger.gd.G(N0 == null ? 0 : N0.b.size() + N0.c, "Channels", new Object[0]));
+                        org.telegram.messenger.oo N0 = org.telegram.messenger.np.u1(this.currentAccount).N0(this.e);
+                        f0(org.telegram.messenger.hd.G(N0 == null ? 0 : N0.b.size() + N0.c, "Channels", new Object[0]));
                     }
                 }
             }
@@ -1115,19 +1115,19 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
             str = this.h;
         } else {
             if (i7 == 2) {
-                str = org.telegram.messenger.gd.N0(2131746438, null);
+                str = org.telegram.messenger.hd.N0(2131746438, null);
             } else if (i7 == 1) {
                 j90 j90Var = this.S;
                 if (j90Var != null && j90Var.getClosestTab() != 9) {
                     z11 = false;
                 }
-                str = org.telegram.messenger.gd.N0(z11 ? 2131746438 : 2131746459, null);
+                str = org.telegram.messenger.hd.N0(z11 ? 2131746438 : 2131746459, null);
             } else {
                 long j3 = (this.f == 0 || this.e != getUserConfig().e()) ? this.e : this.f;
                 if (j3 == 2666000) {
-                    str = org.telegram.messenger.gd.N0(2131754249, null);
+                    str = org.telegram.messenger.hd.N0(2131754249, null);
                 } else if (this.f != 0 && j3 == getUserConfig().e()) {
-                    str = org.telegram.messenger.gd.N0(2131748110, null);
+                    str = org.telegram.messenger.hd.N0(2131748110, null);
                 } else if (org.telegram.messenger.n5.C(j3)) {
                     TLRPC.EncryptedChat c12 = getMessagesController().c1(Integer.valueOf((int) (j3 & 4294967295L)));
                     TLRPC.User c22 = c12 != null ? getMessagesController().c2(Long.valueOf(c12.user_id)) : null;
@@ -1138,7 +1138,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                 } else if (org.telegram.messenger.n5.E(j3)) {
                     TLRPC.User c23 = getMessagesController().c2(Long.valueOf(j3));
                     if (c23 != null) {
-                        str = c23.self ? org.telegram.messenger.gd.N0(2131745705, null) : org.telegram.messenger.i5.m(0, c23.first_name, c23.last_name);
+                        str = c23.self ? org.telegram.messenger.hd.N0(2131745705, null) : org.telegram.messenger.i5.m(0, c23.first_name, c23.last_name);
                     }
                     str = null;
                 } else {
@@ -1149,7 +1149,7 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
                     str = null;
                 }
                 if (TextUtils.isEmpty(str)) {
-                    str = org.telegram.messenger.gd.N0(2131745219, null);
+                    str = org.telegram.messenger.hd.N0(2131745219, null);
                 }
             }
         }
@@ -1216,12 +1216,12 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
         this.r = getArguments().getInt("storiesCount", -1);
         int i7 = this.a;
         this.T = getArguments().getInt("start_from", i7 == 2 ? 9 : i7 == 1 ? 8 : 0);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.E0);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.i5);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.b3);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.E0);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.i5);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.b3);
         if (org.telegram.messenger.n5.E(this.e) && this.f == 0) {
             TLRPC.User c22 = getMessagesController().c2(Long.valueOf(this.e));
-            if (org.telegram.messenger.o10.C(c22)) {
+            if (org.telegram.messenger.p10.C(c22)) {
                 getMessagesController().n3(c22, false, this.classGuid);
                 this.d = getMessagesController().d2(this.e);
             }
@@ -1236,9 +1236,9 @@ public final class k90 extends org.telegram.ui.ActionBar.g2 implements ct0, pg.b
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, org.telegram.messenger.ks.E0);
-        getNotificationCenter().n(this, org.telegram.messenger.ks.i5);
-        getNotificationCenter().n(this, org.telegram.messenger.ks.b3);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.E0);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.i5);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.b3);
         di.p6 p6Var = this.R;
         if (p6Var != null) {
             this.R = null;

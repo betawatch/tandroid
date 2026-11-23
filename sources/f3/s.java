@@ -1,7 +1,7 @@
 package f3;
 
 import android.animation.ObjectAnimator;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.kb;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.og;
@@ -11,14 +11,14 @@ import org.telegram.ui.Components.wa;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class s implements kb {
     public long a;
 
-    public s(fj fjVar) {
-        this.a = fj.B0(fjVar.k);
-        fjVar.e1();
+    public s(gj gjVar) {
+        this.a = gj.B0(gjVar.k);
+        gjVar.e1();
     }
 
     @Override // org.telegram.ui.Components.kb

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class h51 extends ek0 {
     public v4.c0 f3;
@@ -21,8 +21,8 @@ public class h51 extends ek0 {
     public v4.f1 l3;
     public boolean m3;
 
-    public h51(org.telegram.ui.ActionBar.g2 g2Var, org.telegram.messenger.q10 q10Var, org.telegram.messenger.v10 v10Var, org.telegram.messenger.w10 w10Var) {
-        this(g2Var.getContext(), g2Var.getCurrentAccount(), g2Var.getClassGuid(), false, q10Var, v10Var, w10Var, g2Var.getResourceProvider());
+    public h51(org.telegram.ui.ActionBar.g2 g2Var, org.telegram.messenger.r10 r10Var, org.telegram.messenger.w10 w10Var, org.telegram.messenger.x10 x10Var) {
+        this(g2Var.getContext(), g2Var.getCurrentAccount(), g2Var.getClassGuid(), false, r10Var, w10Var, x10Var, g2Var.getResourceProvider());
     }
 
     public final int A1(int i7) {
@@ -78,12 +78,12 @@ public class h51 extends ek0 {
         return false;
     }
 
-    public final void E1(org.telegram.messenger.q10 q10Var, boolean z10) {
+    public final void E1(org.telegram.messenger.r10 r10Var, boolean z10) {
         this.j3 = z10;
         v4.z zVar = new v4.z(new gi.c(this, 7));
         this.h3 = zVar;
         zVar.h(this);
-        this.g3.N = q10Var;
+        this.g3.N = r10Var;
     }
 
     @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
@@ -167,11 +167,11 @@ public class h51 extends ek0 {
         org.telegram.messenger.g0.d0(this, new z2(this, 14));
     }
 
-    public h51(Context context, int i7, int i10, boolean z10, org.telegram.messenger.q10 q10Var, org.telegram.messenger.v10 v10Var, org.telegram.messenger.w10 w10Var, org.telegram.ui.ActionBar.h6 h6Var) {
-        this(context, i7, i10, z10, q10Var, v10Var, w10Var, h6Var, -1, 1);
+    public h51(Context context, int i7, int i10, boolean z10, org.telegram.messenger.r10 r10Var, org.telegram.messenger.w10 w10Var, org.telegram.messenger.x10 x10Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        this(context, i7, i10, z10, r10Var, w10Var, x10Var, h6Var, -1, 1);
     }
 
-    public h51(Context context, int i7, int i10, boolean z10, org.telegram.messenger.q10 q10Var, org.telegram.messenger.v10 v10Var, org.telegram.messenger.w10 w10Var, org.telegram.ui.ActionBar.h6 h6Var, int i11, int i12) {
+    public h51(Context context, int i7, int i10, boolean z10, org.telegram.messenger.r10 r10Var, org.telegram.messenger.w10 w10Var, org.telegram.messenger.x10 x10Var, org.telegram.ui.ActionBar.h6 h6Var, int i11, int i12) {
         super(context, h6Var);
         this.m3 = true;
         if (i11 == -1) {
@@ -184,14 +184,14 @@ public class h51 extends ek0 {
             this.f3 = f51Var;
             setLayoutManager(f51Var);
         }
-        c51 c51Var = new c51(this, context, i7, i10, z10, q10Var, h6Var);
+        c51 c51Var = new c51(this, context, i7, i10, z10, r10Var, h6Var);
         this.g3 = c51Var;
         setAdapter(c51Var);
-        if (v10Var != null) {
-            setOnItemClickListener(new h2(23, this, v10Var));
-        }
         if (w10Var != null) {
-            setOnItemLongClickListener(new h2(24, this, w10Var));
+            setOnItemClickListener(new h2(23, this, w10Var));
+        }
+        if (x10Var != null) {
+            setOnItemLongClickListener(new h2(24, this, x10Var));
         }
         g51 g51Var = new g51(this);
         g51Var.m = false;

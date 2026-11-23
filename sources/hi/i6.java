@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.io.File;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class i6 extends FrameLayout {
     public ValueAnimator E;
@@ -46,7 +46,7 @@ public abstract class i6 extends FrameLayout {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.b = c7.x(j10.t0, true);
+        this.b = c7.x(k10.t0, true);
         h6 h6Var = new h6(this, context);
         this.a = h6Var;
         h6Var.setScaleX(0.0f);

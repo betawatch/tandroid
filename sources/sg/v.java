@@ -16,12 +16,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.q2;
 import org.telegram.messenger.s2;
-import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.lp0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.wd;
 import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v {
     public static final nr B = new nr(0.0d, 0.5d, 0.0d, 1.0d);
@@ -272,13 +272,13 @@ public final class v {
                                             sb2.append(x0Var != null ? " (template#" + i20 + " shape#" + i22 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        org.telegram.messenger.g0.g3(new mp0(b1Var3, x0Var, i20, f11, 23));
+                                        org.telegram.messenger.g0.g3(new lp0(b1Var3, x0Var, i20, f11, 24));
                                         b1Var3.j.set(false);
                                     }
                                     x0Var = null;
                                     if (s2.a) {
                                     }
-                                    org.telegram.messenger.g0.g3(new mp0(b1Var3, x0Var, i20, f11, 23));
+                                    org.telegram.messenger.g0.g3(new lp0(b1Var3, x0Var, i20, f11, 24));
                                     b1Var3.j.set(false);
                                 }
                             } finally {
@@ -556,13 +556,13 @@ public final class v {
                                             sb2.append(x0Var != null ? " (template#" + i20 + " shape#" + i22 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        org.telegram.messenger.g0.g3(new mp0(b1Var3, x0Var, i20, f11, 23));
+                                        org.telegram.messenger.g0.g3(new lp0(b1Var3, x0Var, i20, f11, 24));
                                         b1Var3.j.set(false);
                                     }
                                     x0Var = null;
                                     if (s2.a) {
                                     }
-                                    org.telegram.messenger.g0.g3(new mp0(b1Var3, x0Var, i20, f11, 23));
+                                    org.telegram.messenger.g0.g3(new lp0(b1Var3, x0Var, i20, f11, 24));
                                     b1Var3.j.set(false);
                                 }
                             } finally {

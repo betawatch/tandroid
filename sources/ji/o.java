@@ -1,11 +1,11 @@
 package ji;
 
-import ai.c2;
-import ai.e2;
+import ai.d2;
+import ai.f2;
 import ai.p0;
 import ai.t;
 import ai.w;
-import ai.w1;
+import ai.x1;
 import ai.y;
 import ai.z;
 import android.content.Context;
@@ -26,13 +26,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.vr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.wr;
+import org.telegram.messenger.y10;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.ChatActivityEnterView;
@@ -41,9 +41,9 @@ import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.rf;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class o implements c2 {
+public final class o implements d2 {
     public static boolean n0;
     public static final HashMap o0 = new HashMap();
     public volatile int E;
@@ -55,7 +55,7 @@ public final class o implements c2 {
     public long N;
     public long O;
     public boolean T;
-    public e2 U;
+    public f2 U;
     public EditTextBoldCursor X;
     public int Y;
     public int Z;
@@ -65,7 +65,7 @@ public final class o implements c2 {
     public z d;
     public s e;
     public String e0;
-    public e2 f;
+    public f2 f;
     public int f0;
     public String g0;
     public r h;
@@ -100,22 +100,22 @@ public final class o implements c2 {
         this.b = rfVar;
     }
 
-    public static void b(o oVar, e2 e2Var, String str, int i7) {
-        if (e2Var == oVar.f || e2Var == oVar.U) {
+    public static void b(o oVar, f2 f2Var, String str, int i7) {
+        if (f2Var == oVar.f || f2Var == oVar.U) {
             if (!oVar.J) {
                 oVar.l(i7, str);
                 return;
             }
             int i10 = oVar.c;
             if (i10 == 2 || i10 == 4) {
-                oVar.u(e2Var, str);
+                oVar.u(f2Var, str);
                 oVar.o();
             }
         }
     }
 
-    public static ArrayList v(String[] strArr, boolean z10, x10 x10Var) {
-        x10 x10Var2;
+    public static ArrayList v(String[] strArr, boolean z10, y10 y10Var) {
+        y10 y10Var2;
         ArrayList arrayList = new ArrayList();
         arrayList.add(null);
         int i7 = 0;
@@ -126,7 +126,7 @@ public final class o implements c2 {
             String[] d = J != null ? J.d(str) : new String[0];
             if (d.length < 2) {
                 arrayList.add(null);
-                x10Var2 = x10Var;
+                y10Var2 = y10Var;
             } else {
                 String d02 = DictationAsr.d0(J, str);
                 ArrayList arrayList2 = new ArrayList();
@@ -137,16 +137,16 @@ public final class o implements c2 {
                         i11 = i12;
                     }
                 }
-                x10Var2 = x10Var;
-                arrayList.add(new k(p0.O(d02), arrayList2, i11, new p9(str, d, x10Var2, i10, 2)));
+                y10Var2 = y10Var;
+                arrayList.add(new k(p0.O(d02), arrayList2, i11, new p9(str, d, y10Var2, i10, 2)));
             }
-            x10Var = x10Var2;
+            y10Var = y10Var2;
             i7 = i10;
         }
         return arrayList;
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void a(String str, String str2) {
         if (this.c != 2) {
             return;
@@ -159,8 +159,8 @@ public final class o implements c2 {
         u10.append(" (the voice recording goes on)");
         Log.d("VoiceLive", u10.toString());
         this.f = null;
-        if (vr.k == this) {
-            vr.k = null;
+        if (wr.k == this) {
+            wr.k = null;
         }
         this.d = null;
         this.e = null;
@@ -263,9 +263,9 @@ public final class o implements c2 {
         this.c = 0;
         this.H = null;
         g0.r(this.W);
-        e2 e2Var = this.U;
-        if (e2Var != null) {
-            e2Var.c();
+        f2 f2Var = this.U;
+        if (f2Var != null) {
+            f2Var.d();
             this.U = null;
         }
         j(true);
@@ -326,12 +326,12 @@ public final class o implements c2 {
         DictationAsr.R(this.m0);
         g0.r(this.k0);
         g0.r(this.j0);
-        if (vr.k == this) {
-            vr.k = null;
+        if (wr.k == this) {
+            wr.k = null;
         }
-        e2 e2Var2 = this.f;
-        if (e2Var2 != null) {
-            e2Var2.c();
+        f2 f2Var2 = this.f;
+        if (f2Var2 != null) {
+            f2Var2.d();
             this.f = null;
         }
         z zVar = this.d;
@@ -346,7 +346,7 @@ public final class o implements c2 {
         rVar.m();
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void h(float f10) {
         if (this.c != 2) {
             return;
@@ -365,7 +365,7 @@ public final class o implements c2 {
         }
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void i(String str) {
         l(-1, str);
     }
@@ -419,7 +419,7 @@ public final class o implements c2 {
         rfVar.f(obj, str, new c8(this, SystemClock.uptimeMillis(), 1));
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void l(int i7, String str) {
         if (this.c != 2) {
             return;
@@ -487,9 +487,9 @@ public final class o implements c2 {
                         double sqrt = Math.sqrt(zVar.h / Math.max(1, i15));
                         zVar.h = 0.0d;
                         zVar.i = 0;
-                        w1 w1Var = zVar.g;
-                        if (w1Var != null) {
-                            w1Var.a((float) Math.max(0.0d, Math.min(1.0d, ((Math.log10(Math.max(1.0d, sqrt)) * 20.0d) - 42.0d) / 30.0d)));
+                        x1 x1Var = zVar.g;
+                        if (x1Var != null) {
+                            x1Var.a((float) Math.max(0.0d, Math.min(1.0d, ((Math.log10(Math.max(1.0d, sqrt)) * 20.0d) - 42.0d) / 30.0d)));
                         }
                     }
                 } catch (Throwable th2) {
@@ -640,11 +640,11 @@ public final class o implements c2 {
     public final void r() {
         l lVar = new l(this);
         ChatActivityEnterView chatActivityEnterView = this.b.a;
-        e2 e2Var = new e2(this.a, chatActivityEnterView.R, chatActivityEnterView.G3, false, lVar);
-        lVar.b = e2Var;
-        this.f = e2Var;
-        e2Var.J = this.d;
-        e2Var.s();
+        f2 f2Var = new f2(this.a, chatActivityEnterView.R, chatActivityEnterView.G3, false, lVar);
+        lVar.b = f2Var;
+        this.f = f2Var;
+        f2Var.J = this.d;
+        f2Var.t();
     }
 
     public final void s() {
@@ -656,7 +656,7 @@ public final class o implements c2 {
         if (i10 == 3) {
             return;
         }
-        if (i10 == 0 && mp.g1().getBoolean("design_voice_live_field", true) && !this.b.d() && this.b.c() && (mVar = (m) o0.get(q())) != null) {
+        if (i10 == 0 && np.g1().getBoolean("design_voice_live_field", true) && !this.b.d() && this.b.c() && (mVar = (m) o0.get(q())) != null) {
             j jVar = this.k0;
             j jVar2 = this.W;
             float[] fArr = this.V;
@@ -759,10 +759,10 @@ public final class o implements c2 {
                 return;
             }
             g0.r(this.W);
-            e2 e2Var = this.U;
-            if (e2Var != null) {
+            f2 f2Var = this.U;
+            if (f2Var != null) {
                 this.U = null;
-                e2Var.c();
+                f2Var.d();
                 e();
             }
             e();
@@ -819,7 +819,7 @@ public final class o implements c2 {
             }
             this.d = new z();
             this.e = new s(0);
-            vr.k = this;
+            wr.k = this;
             this.c = 2;
             r();
             e eVar3 = this.K;
@@ -836,7 +836,7 @@ public final class o implements c2 {
             g0.h3(this.k0, 250L);
             return;
         }
-        if (!b1.a()) {
+        if (!b1.a(this.b.a.G3)) {
             if (this.c != 0) {
                 g("unavailable", true);
                 return;
@@ -852,18 +852,18 @@ public final class o implements c2 {
                     this.c = 4;
                     g0.r(this.j0);
                     this.O = this.N + (this.d != null ? r2.c() / 32 : 0L);
-                    if (vr.k == this) {
-                        vr.k = null;
+                    if (wr.k == this) {
+                        wr.k = null;
                     }
-                    e2 e2Var2 = this.f;
-                    if (e2Var2 != null) {
-                        this.U = e2Var2;
+                    f2 f2Var2 = this.f;
+                    if (f2Var2 != null) {
+                        this.U = f2Var2;
                         this.f = null;
                         z zVar = this.d;
                         if (zVar != null) {
                             zVar.d();
                         }
-                        this.U.u();
+                        this.U.v();
                     } else {
                         e();
                     }
@@ -917,7 +917,7 @@ public final class o implements c2 {
                     byte[] bArr = (byte[]) sVar.g;
                     double d = 0.0d;
                     int i19 = 0;
-                    for (int i20 = ks.e3; i20 < c10 / 2; i20++) {
+                    for (int i20 = ls.e3; i20 < c10 / 2; i20++) {
                         int i21 = i20 * 2;
                         double d2 = (short) ((bArr[i21] & 255) | (bArr[i21 + 1] << 8));
                         d += d2 * d2;
@@ -943,7 +943,7 @@ public final class o implements c2 {
             this.F = 0;
             this.G = false;
             this.n = "";
-            this.J = mp.g1().getBoolean("design_voice_live_field", true);
+            this.J = np.g1().getBoolean("design_voice_live_field", true);
             this.L.clear();
             this.M.clear();
             this.N = 0L;
@@ -953,7 +953,7 @@ public final class o implements c2 {
             this.r = SystemClock.elapsedRealtime();
             i14 = 1;
             this.c = 1;
-            vr.k = this;
+            wr.k = this;
             g0.r(this.k0);
             g0.h3(this.k0, 250L);
             Log.d("VoiceLive", "buffering: recorder tap on");
@@ -1015,7 +1015,7 @@ public final class o implements c2 {
                     r.X1 = rVar2.g0 ? i0.a.f(0.12f, rVar2.i0, -1) : i0.a.f(0.32f, rVar2.i0, i26);
                     r.Z1 = g0.L(7.0f);
                     rVar2.d.setColor(m6.r1(rVar2.g0 ? 0.42f : 0.36f, rVar2.h0));
-                    rVar2.j0 = Build.VERSION.SDK_INT >= 31 && bz.o() != 0;
+                    rVar2.j0 = Build.VERSION.SDK_INT >= 31 && cz.o() != 0;
                     rVar2.r = 0;
                     rVar2.s.setColor(rVar2.g0 ? 0 : 335544320);
                     rVar2.k0 = "";
@@ -1078,7 +1078,7 @@ public final class o implements c2 {
     }
 
     public final void t() {
-        String a02 = DictationAsr.H(new long[2]) ? gd.a0(null, null, 2131745061, Long.valueOf(Math.round(r1[0] / 1048576.0d)), Long.valueOf(Math.max(1L, Math.round(r1[1] / 1048576.0d)))) : null;
+        String a02 = DictationAsr.H(new long[2]) ? hd.a0(null, null, 2131745061, Long.valueOf(Math.round(r1[0] / 1048576.0d)), Long.valueOf(Math.max(1L, Math.round(r1[1] / 1048576.0d)))) : null;
         r rVar = this.h;
         if (rVar != null) {
             rVar.setPlaceholder(a02);
@@ -1099,7 +1099,7 @@ public final class o implements c2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(e2 e2Var, String str) {
+    public final void u(f2 f2Var, String str) {
         int i7;
         int i10;
         int length;
@@ -1117,11 +1117,11 @@ public final class o implements c2 {
                 i15++;
             }
         }
-        w wVar = e2Var.A;
+        w wVar = f2Var.A;
         if (wVar != null) {
             i7 = wVar.m;
         } else {
-            y yVar = e2Var.v;
+            y yVar = f2Var.v;
             i7 = yVar != null ? yVar.d : -1;
         }
         if (i7 < 0) {
@@ -1167,7 +1167,7 @@ public final class o implements c2 {
                     i16 = 1;
                 }
                 long j13 = j11;
-                w wVar2 = e2Var.A;
+                w wVar2 = f2Var.A;
                 iArr = wVar2 == null ? wVar2.g : null;
                 if (iArr != null || iArr.length < 4 || str == null) {
                     return;
@@ -1237,14 +1237,14 @@ public final class o implements c2 {
         while (i11 < length) {
         }
         long j132 = j112;
-        w wVar22 = e2Var.A;
+        w wVar22 = f2Var.A;
         if (wVar22 == null) {
         }
         if (iArr != null) {
         }
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public final void x(String str) {
         String H = str == null ? null : p0.H(str);
         r rVar = this.h;

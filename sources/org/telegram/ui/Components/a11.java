@@ -1,53 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.widget.EditText;
-import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class a11 extends v4.u0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ h11 c;
+public final class a11 extends v4.o {
+    public final /* synthetic */ int b = 1;
+    public ArrayList c;
+    public ArrayList d;
 
-    public a11(h11 h11Var, int i7, long j3) {
-        this.c = h11Var;
-        this.a = i7;
-        this.b = j3;
+    public /* synthetic */ a11() {
     }
 
-    @Override // v4.u0
-    public final void a(RecyclerView recyclerView, int i7) {
-        EditText editText = this.c.w;
-        if (i7 == 1 && editText.hasFocus()) {
-            org.telegram.messenger.g0.v1(editText);
-            editText.clearFocus();
+    @Override // v4.o
+    public final boolean a(int i7, int i10) {
+        switch (this.b) {
+            case 0:
+                return true;
+            default:
+                rg.a aVar = (rg.a) this.c.get(i7);
+                rg.a aVar2 = (rg.a) this.d.get(i10);
+                if (aVar.a != aVar2.a) {
+                    return false;
+                }
+                return aVar.a(aVar2);
         }
     }
 
-    @Override // v4.u0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        h11 h11Var = this.c;
-        h11Var.o();
-        v4.c0 c0Var = (v4.c0) recyclerView.getLayoutManager();
-        if (c0Var == null || c0Var.N0() < h11Var.s.c.size() - 3) {
-            return;
+    @Override // v4.o
+    public final boolean b(int i7, int i10) {
+        switch (this.b) {
+            case 0:
+                d11 d11Var = (d11) this.c.get(i7);
+                d11 d11Var2 = (d11) this.d.get(i10);
+                return d11Var.a == d11Var2.a && Objects.equals(d11Var.b, d11Var2.b);
+            default:
+                rg.a aVar = (rg.a) this.c.get(i7);
+                rg.a aVar2 = (rg.a) this.d.get(i10);
+                if (aVar.a != aVar2.a) {
+                    return false;
+                }
+                return aVar.equals(aVar2);
         }
-        if (h11Var.j()) {
-            h11Var.k();
-            return;
+    }
+
+    @Override // v4.o
+    public final int d() {
+        switch (this.b) {
         }
-        boolean z10 = h11Var.d;
-        int i11 = this.a;
-        if (z10) {
-            org.telegram.messenger.mp.u1(i11).I1().g(false);
-            return;
+        return this.d.size();
+    }
+
+    @Override // v4.o
+    public final int e() {
+        switch (this.b) {
         }
-        org.telegram.messenger.e00 e00Var = org.telegram.messenger.mp.u1(i11).t7;
-        long j3 = -this.b;
-        if (e00Var.e(j3)) {
-            return;
-        }
-        e00Var.o(j3);
+        return this.c.size();
+    }
+
+    public a11(ArrayList arrayList, ArrayList arrayList2) {
+        this.c = arrayList;
+        this.d = arrayList2;
     }
 }

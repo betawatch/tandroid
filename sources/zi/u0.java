@@ -1,6 +1,6 @@
 package zi;
 
-import ai.a1;
+import ai.z0;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.os.Build;
@@ -15,7 +15,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.b50;
 import org.telegram.ui.Components.ky;
 import org.telegram.ui.Components.qf;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.sy0;
 import org.telegram.ui.Components.w40;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class u0 {
     public boolean A;
@@ -72,8 +72,8 @@ public final class u0 {
     public final Object g = new Object();
     public final Matrix h = new Matrix();
     public final Handler i = new Handler(Looper.getMainLooper());
-    public final ExecutorService j = Executors.newSingleThreadExecutor(new a1(11));
-    public final ExecutorService k = Executors.newSingleThreadExecutor(new a1(12));
+    public final ExecutorService j = Executors.newSingleThreadExecutor(new z0(11));
+    public final ExecutorService k = Executors.newSingleThreadExecutor(new z0(12));
     public int a0 = 1;
     public int b0 = 1;
     public float v = 1.0f;
@@ -252,7 +252,7 @@ public final class u0 {
                 if (b50Var.h0) {
                     b50Var.z(6);
                 } else {
-                    ks.f(b50Var.f).k(ks.m2, Integer.valueOf(b50Var.h));
+                    ls.f(b50Var.f).k(ls.m2, Integer.valueOf(b50Var.h));
                 }
                 b50Var.B(false, false);
             }
@@ -370,17 +370,17 @@ public final class u0 {
         if (i7 == 3) {
             if (!b50Var.E0) {
                 b50Var.E0 = true;
-                ks.e().k(ks.j1, 512);
+                ls.e().k(ls.j1, 512);
             }
             b50.o(b50Var);
             b50Var.setRecordingUiFrameClockActive(true);
             b50Var.F();
             if (!b50Var.h0) {
                 b50Var.h0 = true;
-                ks.f(i10).k(ks.l2, Integer.valueOf(b50Var.h), Boolean.FALSE);
+                ls.f(i10).k(ls.l2, Integer.valueOf(b50Var.h), Boolean.FALSE);
             } else if (b50Var.i0) {
                 b50Var.i0 = false;
-                ks.f(i10).k(ks.p2, new Object[0]);
+                ls.f(i10).k(ls.p2, new Object[0]);
             }
         } else {
             b50Var.setRecordingUiFrameClockActive(false);

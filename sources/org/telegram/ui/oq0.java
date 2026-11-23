@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class oq0 implements uq0 {
     @Override // org.telegram.ui.uq0
@@ -18,7 +18,7 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         return null;
     }
 
@@ -83,7 +83,7 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public org.telegram.messenger.fj V() {
+    public org.telegram.messenger.gj V() {
         return null;
     }
 
@@ -128,12 +128,12 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public org.telegram.messenger.hc j(int i7) {
+    public org.telegram.messenger.ic j(int i7) {
         return null;
     }
 
     @Override // org.telegram.ui.uq0
-    public int k(int i7, org.telegram.messenger.e20 e20Var) {
+    public int k(int i7, org.telegram.messenger.f20 f20Var) {
         return -1;
     }
 
@@ -201,7 +201,7 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public void M(org.telegram.messenger.e20 e20Var) {
+    public void M(org.telegram.messenger.f20 f20Var) {
     }
 
     @Override // org.telegram.ui.uq0
@@ -261,6 +261,6 @@ public class oq0 implements uq0 {
     }
 
     @Override // org.telegram.ui.uq0
-    public void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+    public void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
     }
 }

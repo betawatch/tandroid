@@ -2,10 +2,10 @@ package org.telegram.messenger.voip;
 
 import c8.dd;
 import java.util.ArrayList;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class GroupCallMessage {
     private static final int FLAG_IS_OUT = 1;
@@ -45,7 +45,7 @@ public class GroupCallMessage {
                     c10.h = j11;
                 } else {
                     ArrayList<TLRPC.MessageEntity> arrayList2 = tL_textWithEntities.entities;
-                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(i7).r.get(tL_textWithEntities.text)) != null) ? ch.p0.c(tL_availableReaction) : null;
+                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(i7).r.get(tL_textWithEntities.text)) != null) ? ch.p0.c(tL_availableReaction) : null;
                 }
                 this.reactionAnimatedEmojiId = j11;
                 this.visibleReaction = c10;

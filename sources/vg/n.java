@@ -24,13 +24,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mz;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.nz;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n {
     public static final String[] e0 = {"models/star.binobj"};
@@ -267,7 +267,7 @@ public final class n {
                 GLES20.glBindTexture(3553, this.o);
                 int i31 = this.b0;
                 if (i31 == 0 || i31 == 2) {
-                    bitmap2 = mz.d(R.raw.start_texture, ks.P3, ks.P3, -1);
+                    bitmap2 = nz.d(R.raw.start_texture, ls.P3, ls.P3, -1);
                 } else {
                     try {
                         if (i31 == 1) {
@@ -328,11 +328,11 @@ public final class n {
                 fArr = null;
                 fArr2 = null;
                 e.printStackTrace();
-                this.i[i21] = n10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                this.i[i21] = o10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                 this.i[i21].put(fArr3).position(0);
-                this.j[i21] = n10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                this.j[i21] = o10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                 this.j[i21].put(fArr2).position(0);
-                this.k[i21] = n10.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                this.k[i21] = o10.i(ByteBuffer.allocateDirect(fArr.length * 4));
                 this.k[i21].put(fArr).position(0);
                 this.y[i21] = fArr3.length;
                 i21++;
@@ -429,11 +429,11 @@ public final class n {
                         } catch (IOException e12) {
                             e = e12;
                             e.printStackTrace();
-                            this.i[i21] = n10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                            this.i[i21] = o10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                             this.i[i21].put(fArr3).position(0);
-                            this.j[i21] = n10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                            this.j[i21] = o10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                             this.j[i21].put(fArr2).position(0);
-                            this.k[i21] = n10.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                            this.k[i21] = o10.i(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.k[i21].put(fArr).position(0);
                             this.y[i21] = fArr3.length;
                             i21++;
@@ -443,11 +443,11 @@ public final class n {
                             i18 = 3;
                             i20 = 0;
                         }
-                        this.i[i21] = n10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
+                        this.i[i21] = o10.i(ByteBuffer.allocateDirect(fArr3.length * 4));
                         this.i[i21].put(fArr3).position(0);
-                        this.j[i21] = n10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
+                        this.j[i21] = o10.i(ByteBuffer.allocateDirect(fArr2.length * 4));
                         this.j[i21].put(fArr2).position(0);
-                        this.k[i21] = n10.i(ByteBuffer.allocateDirect(fArr.length * 4));
+                        this.k[i21] = o10.i(ByteBuffer.allocateDirect(fArr.length * 4));
                         this.k[i21].put(fArr).position(0);
                         this.y[i21] = fArr3.length;
                         i21++;

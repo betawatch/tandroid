@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.m80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o6 extends FrameLayout {
     public final n2.o0 a;
@@ -24,7 +24,7 @@ public final class o6 extends FrameLayout {
         checkBoxSquare.setFocusable(false);
         checkBoxSquare.setFocusableInTouchMode(false);
         checkBoxSquare.setClickable(false);
-        addView(checkBoxSquare, c8.ma.d(18, 18.0f, (gd.a0 ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(checkBoxSquare, c8.ma.d(18, 18.0f, (hd.a0 ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
         n2.o0 o0Var = new n2.o0(this);
         this.a = o0Var;
         m80 m80Var = new m80(context, o0Var, h6Var);
@@ -33,9 +33,9 @@ public final class o6 extends FrameLayout {
         org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.J6, h6Var);
         m80Var.setTextSize(1, 15.0f);
         m80Var.setMaxLines(2);
-        m80Var.setGravity((gd.a0 ? 5 : 3) | 16);
+        m80Var.setGravity((hd.a0 ? 5 : 3) | 16);
         m80Var.setEllipsize(TextUtils.TruncateAt.END);
-        boolean z10 = gd.a0;
+        boolean z10 = hd.a0;
         addView(m80Var, c8.ma.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
         setWillNotDraw(false);
     }

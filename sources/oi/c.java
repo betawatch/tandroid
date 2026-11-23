@@ -8,17 +8,17 @@ import android.view.KeyEvent;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements q10 {
+public final /* synthetic */ class c implements r10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ hi.e c;
@@ -42,7 +42,7 @@ public final /* synthetic */ class c implements q10 {
         this.b = zArr;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
         h6 h6Var = this.e;
@@ -97,10 +97,10 @@ public final /* synthetic */ class c implements q10 {
                     if (z12 && !z10) {
                         SpannableStringBuilder s5 = org.telegram.ui.Wallet.u0.s(wallettransaction.fee, true);
                         CharSequence r10 = u0Var.r(wallettransaction.fee, true);
-                        textView.setText(TextUtils.isEmpty(r10) ? gd.V(null, null, 2131742875, s5) : gd.V(null, null, 2131742874, s5, r10));
+                        textView.setText(TextUtils.isEmpty(r10) ? hd.V(null, null, 2131742873, s5) : hd.V(null, null, 2131742872, s5, r10));
                         break;
                     } else if (!z12) {
-                        String N0 = str != null ? str : gd.N0(2131742722, null);
+                        String N0 = str != null ? str : hd.N0(2131742720, null);
                         if (str == null) {
                             org.telegram.ui.Wallet.l2.m("preview", N0);
                         }

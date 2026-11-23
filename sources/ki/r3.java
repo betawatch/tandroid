@@ -14,12 +14,12 @@ import android.widget.FrameLayout;
 import c8.l9;
 import hi.c9;
 import hi.e9;
-import org.telegram.messenger.i9;
+import org.telegram.messenger.j9;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.xt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class r3 extends FrameLayout {
     public static final xt0 c0 = new xt0(new e9(20), new e9(21));
@@ -28,7 +28,7 @@ public abstract class r3 extends FrameLayout {
     public q3 G;
     public r1.g H;
     public int I;
-    public i9 J;
+    public j9 J;
     public boolean K;
     public boolean L;
     public boolean M;
@@ -300,8 +300,8 @@ public abstract class r3 extends FrameLayout {
         }
     }
 
-    public void setIsKeyboardVisible(i9 i9Var) {
-        this.J = i9Var;
+    public void setIsKeyboardVisible(j9 j9Var) {
+        this.J = j9Var;
     }
 
     public void setOffsetY(final float f10) {

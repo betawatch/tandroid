@@ -16,15 +16,15 @@ import f5.x;
 import j$.util.Objects;
 import java.lang.ref.WeakReference;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import tg.y;
 import wf.b;
 import zf.c;
 import zf.d;
 import zf.e;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class a implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final class a implements ServiceConnection {
                 y yVar2 = new y(10, eVar, componentName);
                 if (((vf.a) ((WeakReference) this.b).get()) != null) {
                     vf.c.b = yVar2;
-                    if (mp.u1(j10.t0).U2() && (yVar = vf.c.b) != null) {
+                    if (np.u1(k10.t0).U2() && (yVar = vf.c.b) != null) {
                         try {
                             ((c) ((e) yVar.b)).i1();
                             break;

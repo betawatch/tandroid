@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import c8.ma;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
+import org.telegram.messenger.gc;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -15,10 +15,10 @@ import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oh0;
-import org.telegram.ui.Components.y01;
+import org.telegram.ui.Components.x01;
 import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class g2 extends j {
     public final TLRPC.Document r0;
@@ -27,7 +27,7 @@ public class g2 extends j {
     public boolean u0;
     public final d6 v0;
     public final yt0 w0;
-    public final y01 x0;
+    public final x01 x0;
     public final ImageReceiver y0;
 
     public g2(Context context, PointF pointF, float f10, float f11, yt0 yt0Var, TLRPC.Document document, Object obj) {
@@ -55,15 +55,15 @@ public class g2 extends j {
                 i7++;
             }
         }
-        y01 y01Var = new y01(this, context);
-        this.x0 = y01Var;
-        addView(y01Var, ma.c(-1.0f, -1));
-        this.v0 = new d6(y01Var, 0L, 500L, nr.h);
+        x01 x01Var = new x01(this, context);
+        this.x0 = x01Var;
+        addView(x01Var, ma.c(-1.0f, -1));
+        this.v0 = new d6(x01Var, 0L, 500L, nr.h);
         ImageReceiver imageReceiver = this.y0;
         imageReceiver.S0 = true;
         imageReceiver.K0 = true;
-        imageReceiver.H0(y01Var);
-        this.y0.t0(fc.b(document), null, fc.c(w7.w(document.thumbs, 90, false, null, false), document), null, "webp", obj, 1);
+        imageReceiver.H0(x01Var);
+        this.y0.t0(gc.b(document), null, gc.c(w7.w(document.thumbs, 90, false, null, false), document), null, "webp", obj, 1);
         this.y0.h1 = new o1(this, 3);
         k();
     }

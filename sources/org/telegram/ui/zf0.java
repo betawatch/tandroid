@@ -9,7 +9,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zf0 extends org.telegram.ui.Components.du0 {
     public final int[] g0;
@@ -83,7 +83,7 @@ public final class zf0 extends org.telegram.ui.Components.du0 {
             float y10 = eg0Var.Q.getY() + ag0Var.getY() + textY;
             float f16 = textY;
             if (eg0Var.Q.getMessageObject() != null) {
-                org.telegram.messenger.fj messageObject = eg0Var.Q.getMessageObject();
+                org.telegram.messenger.gj messageObject = eg0Var.Q.getMessageObject();
                 c11 = 3;
                 if (messageObject.P1 >= 1 && messageObject.k != null && !messageObject.u2()) {
                     int i10 = messageObject.P1;
@@ -220,7 +220,7 @@ public final class zf0 extends org.telegram.ui.Components.du0 {
             float T19 = org.telegram.messenger.g0.T1(0.0f, ag0Var.canScrollVertically(1) ? 1.0f : 0.0f, eg0Var.E);
             iArr = iArr2;
             float f20 = f10;
-            canvas.saveLayerAlpha(0.0f, T16 + 1.0f, getWidth(), T18 - 1.0f, org.telegram.messenger.ks.e4, 31);
+            canvas.saveLayerAlpha(0.0f, T16 + 1.0f, getWidth(), T18 - 1.0f, org.telegram.messenger.ls.e4, 31);
             if (eg0Var.S != null) {
                 canvas2 = canvas;
                 canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f19) * 255.0f), 31);
@@ -234,20 +234,20 @@ public final class zf0 extends org.telegram.ui.Components.du0 {
                     canvas2.save();
                     canvas2.translate(0.0f, eg0Var.S.getY());
                     f15 = alpha;
-                    canvas2.saveLayerAlpha(eg0Var.S.getX() + eg0Var.S.getPaddingLeft(), 0.0f, ((eg0Var.S.getX() + eg0Var.S.getPaddingLeft()) + eg0Var.S.getWidth()) - eg0Var.S.getPaddingRight(), eg0Var.S.getHeight(), (int) org.telegram.messenger.n10.y(eg0Var.E, 0.1f, 1.0f, 255.0f), 31);
+                    canvas2.saveLayerAlpha(eg0Var.S.getX() + eg0Var.S.getPaddingLeft(), 0.0f, ((eg0Var.S.getX() + eg0Var.S.getPaddingLeft()) + eg0Var.S.getWidth()) - eg0Var.S.getPaddingRight(), eg0Var.S.getHeight(), (int) org.telegram.messenger.o10.y(eg0Var.E, 0.1f, 1.0f, 255.0f), 31);
                     eg0Var.V.a(canvas2);
                     canvas2.restore();
                     canvas2.restore();
                 } else {
                     f15 = alpha;
                     paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Je, this.m0));
-                    paint.setAlpha((int) org.telegram.messenger.n10.y(eg0Var.E, 0.1f, 1.0f, paint.getAlpha()));
+                    paint.setAlpha((int) org.telegram.messenger.o10.y(eg0Var.E, 0.1f, 1.0f, paint.getAlpha()));
                     canvas2.drawRect(eg0Var.S.getPaddingLeft(), eg0Var.S.getY(), ((eg0Var.S.getX() + eg0Var.S.getPaddingLeft()) + eg0Var.S.getWidth()) - eg0Var.S.getPaddingRight(), eg0Var.S.getY() + eg0Var.S.getHeight(), paint);
                 }
                 org.telegram.ui.Components.d dVar = eg0Var.U;
                 if (dVar != null) {
-                    dVar.a(canvas2, new org.telegram.messenger.p10() { // from class: org.telegram.ui.yf0
-                        @Override // org.telegram.messenger.p10
+                    dVar.a(canvas2, new org.telegram.messenger.q10() { // from class: org.telegram.ui.yf0
+                        @Override // org.telegram.messenger.q10
                         public final Object run() {
                             Canvas canvas3 = canvas2;
                             canvas3.save();
@@ -277,7 +277,7 @@ public final class zf0 extends org.telegram.ui.Components.du0 {
                         TextPaint textPaint2 = eVar2.d;
                         if (staticLayout != null) {
                             int alpha2 = textPaint2.getAlpha();
-                            textPaint2.setAlpha(org.telegram.messenger.ks.e4);
+                            textPaint2.setAlpha(org.telegram.messenger.ls.e4);
                             eVar2.P0.draw(canvas2);
                             textPaint2.setAlpha(alpha2);
                         }

@@ -3,17 +3,17 @@ package org.telegram.ui.Cells;
 import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.bq;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.cq;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f6 {
     public final int a;
@@ -29,7 +29,7 @@ public final class f6 {
         this.a = i7;
     }
 
-    public static /* synthetic */ void a(f6 f6Var, TLObject tLObject, tr trVar, long j3, int i7, ArrayList arrayList) {
+    public static /* synthetic */ void a(f6 f6Var, TLObject tLObject, ur urVar, long j3, int i7, ArrayList arrayList) {
         ArrayList arrayList2 = f6Var.d;
         int i10 = f6Var.a;
         if (!(tLObject instanceof TLRPC.messages_Messages)) {
@@ -40,10 +40,10 @@ public final class f6 {
             return;
         }
         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-        mp.u1(i10).f4(messages_messages.users, false);
-        mp.u1(i10).Z3(messages_messages.chats, false);
-        trVar.m1(messages_messages.users, messages_messages.chats, true, true);
-        trVar.h1(3, 0, 0, -j3, 0L, messages_messages, false);
+        np.u1(i10).f4(messages_messages.users, false);
+        np.u1(i10).Z3(messages_messages.chats, false);
+        urVar.m1(messages_messages.users, messages_messages.chats, true, true);
+        urVar.h1(3, 0, 0, -j3, 0L, messages_messages, false);
         if (i7 == f6Var.e && !messages_messages.messages.isEmpty()) {
             arrayList2.clear();
             Collections.sort(arrayList, Comparator$-CC.comparingInt(new bg.d(16)));
@@ -58,11 +58,11 @@ public final class f6 {
                     i11++;
                     TLRPC.Message message3 = message2;
                     if (message3.grouped_id == j10) {
-                        arrayList2.add(new fj(i10, message3, false, true));
+                        arrayList2.add(new gj(i10, message3, false, true));
                     }
                 }
             } else {
-                arrayList2.add(new fj(i10, message, false, true));
+                arrayList2.add(new gj(i10, message, false, true));
             }
             if (arrayList2.isEmpty()) {
                 return;
@@ -71,7 +71,7 @@ public final class f6 {
         }
     }
 
-    public static /* synthetic */ void b(final f6 f6Var, final int i7, final ArrayList arrayList, final long j3, int i10, final tr trVar) {
+    public static /* synthetic */ void b(final f6 f6Var, final int i7, final ArrayList arrayList, final long j3, int i10, final ur urVar) {
         int i11 = f6Var.a;
         ArrayList arrayList2 = f6Var.d;
         if (i7 != f6Var.e) {
@@ -90,11 +90,11 @@ public final class f6 {
                     i12++;
                     TLRPC.Message message2 = (TLRPC.Message) obj;
                     if (message2.grouped_id == j10) {
-                        arrayList2.add(new fj(i11, message2, false, true));
+                        arrayList2.add(new gj(i11, message2, false, true));
                     }
                 }
             } else {
-                arrayList2.add(new fj(i11, message, false, true));
+                arrayList2.add(new gj(i11, message, false, true));
             }
             if (!arrayList2.isEmpty()) {
                 f6Var.c();
@@ -102,7 +102,7 @@ public final class f6 {
             }
         }
         TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
-        tL_channels_getMessages.channel = mp.u1(i11).j1(j3);
+        tL_channels_getMessages.channel = np.u1(i11).j1(j3);
         for (int i13 = 10; i13 >= 0; i13--) {
             int i14 = i10 - i13;
             if (i14 >= 0) {
@@ -112,7 +112,7 @@ public final class f6 {
         ConnectionsManager.getInstance(i11).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Cells.e6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                org.telegram.messenger.g0.g3(new bi.p4(f6.this, tLObject, trVar, j3, i7, arrayList, 4));
+                org.telegram.messenger.g0.g3(new bi.p4(f6.this, tLObject, urVar, j3, i7, arrayList, 4));
             }
         });
     }
@@ -155,8 +155,8 @@ public final class f6 {
         this.f = j3;
         this.g = i7;
         int i11 = this.a;
-        long e10 = j10.i(i11).e();
-        tr a02 = tr.a0(i11);
-        a02.a.c(new bq(this, i7, a02, j3, e10, i10));
+        long e10 = k10.i(i11).e();
+        ur a02 = ur.a0(i11);
+        a02.a.c(new cq(this, i7, a02, j3, e10, i10));
     }
 }

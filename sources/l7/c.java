@@ -8,15 +8,15 @@ import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
 import m.o3;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c extends q6.h {
     public final Bundle F;
 
     public c(Context context, Looper looper, k kVar, l lVar, o3 o3Var) {
-        super(context, looper, ks.p3, o3Var, kVar, lVar, 0);
+        super(context, looper, ls.p3, o3Var, kVar, lVar, 0);
         this.F = new Bundle();
     }
 

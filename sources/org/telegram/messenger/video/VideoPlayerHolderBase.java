@@ -1,6 +1,6 @@
 package org.telegram.messenger.video;
 
-import ai.n2;
+import ai.o2;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.graphics.SurfaceTexture;
@@ -15,7 +15,7 @@ import kg.y;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.r5;
 import org.telegram.messenger.s8;
 import org.telegram.messenger.w7;
@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class VideoPlayerHolderBase {
     private boolean allowMultipleInstances;
@@ -65,7 +65,7 @@ public class VideoPlayerHolderBase {
     public Uri uri;
     i61 videoPlayer;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class 2 implements g61 {
         public 2() {
         }
@@ -249,7 +249,7 @@ public class VideoPlayerHolderBase {
         if (this.lastSeek <= -1) {
             this.lastSeek = j3;
         }
-        if (Math.abs(j3 - this.lastSeek) >= (this.firstSeek ? ks.V5 : 40)) {
+        if (Math.abs(j3 - this.lastSeek) >= (this.firstSeek ? ls.V5 : 40)) {
             this.firstSeek = false;
             this.lastBetterSeek = j3;
             this.dispatchQueue.cancelRunnable(this.betterSeek);
@@ -726,7 +726,7 @@ public class VideoPlayerHolderBase {
     }
 
     public void seekTo(long j3, boolean z10, Runnable runnable) {
-        this.dispatchQueue.postRunnable(new n2(this, j3, z10, runnable, 1));
+        this.dispatchQueue.postRunnable(new o2(this, j3, z10, runnable, 1));
     }
 
     public VideoPlayerHolderBase with(TextureView textureView) {

@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class e1 {
     public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7};
@@ -100,7 +100,7 @@ public abstract class e1 {
     }
 
     public static int d(int i7, byte[] bArr, int i10, com.google.android.gms.internal.clearcut.l lVar) {
-        int i11 = i7 & ks.L1;
+        int i11 = i7 & ls.L1;
         int i12 = i10 + 1;
         byte b10 = bArr[i10];
         if (b10 >= 0) {

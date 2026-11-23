@@ -1,19 +1,19 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ x10 c;
+    public final /* synthetic */ y10 c;
     public final /* synthetic */ String d;
 
-    public /* synthetic */ u7(WalletEngine2 walletEngine2, String str, x10 x10Var) {
+    public /* synthetic */ u7(WalletEngine2 walletEngine2, String str, y10 y10Var) {
         this.b = walletEngine2;
         this.d = str;
-        this.c = x10Var;
+        this.c = y10Var;
     }
 
     @Override // java.lang.Runnable
@@ -28,9 +28,9 @@ public final /* synthetic */ class u7 implements Runnable {
         }
     }
 
-    public /* synthetic */ u7(WalletEngine2 walletEngine2, x10 x10Var, String str) {
+    public /* synthetic */ u7(WalletEngine2 walletEngine2, y10 y10Var, String str) {
         this.b = walletEngine2;
-        this.c = x10Var;
+        this.c = y10Var;
         this.d = str;
     }
 }

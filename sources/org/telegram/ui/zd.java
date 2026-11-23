@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zd implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class zd implements Runnable {
     public final void run() {
         rj rjVar;
         org.telegram.ui.Cells.r1 r1Var;
-        org.telegram.messenger.fj messageObject;
+        org.telegram.messenger.gj messageObject;
         int i7 = this.a;
         int i10 = 5;
         bn bnVar = this.b;
@@ -33,14 +33,14 @@ public final /* synthetic */ class zd implements Runnable {
                     boolean T = org.telegram.messenger.v3.T(bnVar.e);
                     org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                     if (!T || bnVar.e.megagroup) {
-                        t1Var.U = org.telegram.messenger.gd.N0(2131748890, null);
-                        t1Var.S = org.telegram.messenger.gd.N0(2131748889, null);
+                        t1Var.U = org.telegram.messenger.hd.N0(2131748890, null);
+                        t1Var.S = org.telegram.messenger.hd.N0(2131748889, null);
                     } else {
-                        t1Var.U = org.telegram.messenger.gd.N0(2131748892, null);
-                        t1Var.S = org.telegram.messenger.gd.N0(2131748891, null);
+                        t1Var.U = org.telegram.messenger.hd.N0(2131748892, null);
+                        t1Var.S = org.telegram.messenger.hd.N0(2131748891, null);
                     }
-                    alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131748888, null), new ee(bnVar, 2));
-                    alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), new ee(bnVar, 3));
+                    alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131748888, null), new ee(bnVar, 2));
+                    alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), new ee(bnVar, 3));
                     bnVar.showDialog(t1Var);
                     break;
                 }
@@ -203,7 +203,7 @@ public final /* synthetic */ class zd implements Runnable {
                                 bnVar.K2 = rpVar2;
                                 rpVar2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
                                 bnVar.K2.l(bnVar.L);
-                                plVar.addView(bnVar.K2, indexOfChild + 1, c8.ma.e(-1, org.telegram.messenger.ks.g2, 55));
+                                plVar.addView(bnVar.K2, indexOfChild + 1, c8.ma.e(-1, org.telegram.messenger.ls.g2, 55));
                             }
                         }
                         int childCount2 = bnVar.A0.getChildCount();

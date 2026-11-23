@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qj0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ hk0 a;
@@ -59,14 +59,14 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             org.telegram.ui.Components.m80 m80Var = new org.telegram.ui.Components.m80(hk0Var.getParentActivity(), null);
-            String N0 = org.telegram.messenger.gd.N0(2131747365, null);
+            String N0 = org.telegram.messenger.hd.N0(2131747365, null);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(N0);
             int indexOf = N0.indexOf(42);
             int lastIndexOf = N0.lastIndexOf(42);
             if (indexOf != -1 && lastIndexOf != -1) {
                 spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
                 spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.p4(org.telegram.messenger.gd.N0(2131747363, null), i15, this), indexOf, lastIndexOf - 1, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.p4(org.telegram.messenger.hd.N0(2131747363, null), i15, this), indexOf, lastIndexOf - 1, 33);
             }
             m80Var.setText(spannableStringBuilder);
             m80Var.setTextSize(1, 16.0f);
@@ -77,10 +77,10 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
             org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.j5, null);
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hk0Var.getParentActivity());
             alertDialog$Builder.o(m80Var);
-            String N02 = org.telegram.messenger.gd.N0(2131747364, null);
+            String N02 = org.telegram.messenger.hd.N0(2131747364, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N02;
-            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752029, null), null);
+            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752029, null), null);
             hk0Var.showDialog(t1Var);
             return;
         }
@@ -107,7 +107,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
             } else if (i14 == 3) {
                 if (hk0Var.f) {
                     i13 = ((org.telegram.ui.ActionBar.g2) hk0Var).currentAccount;
-                    str = org.telegram.messenger.j10.i(i13).f().phone;
+                    str = org.telegram.messenger.k10.i(i13).f().phone;
                 } else {
                     if (hk0.H0(hk0Var)) {
                         return;
@@ -213,7 +213,7 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
         }
         int i13 = 3;
         char c14 = 2;
-        org.telegram.messenger.yv yvVar = null;
+        org.telegram.messenger.zv zvVar = null;
         ?? r15 = 1;
         if (hk0Var.v0) {
             hk0Var.v0 = false;
@@ -221,11 +221,11 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
             boolean z11 = false;
             while (i14 < zArr.length) {
                 if (zArr[i14]) {
-                    hk0Var.Z[i14].setErrorText(org.telegram.messenger.gd.N0(2131747255, null));
+                    hk0Var.Z[i14].setErrorText(org.telegram.messenger.hd.N0(2131747255, null));
                     if (!z11) {
-                        String T0 = zArr[c13] ? org.telegram.messenger.gd.E0().T0(hk0Var.b0[c13].getText().toString(), r15, r15) : hk0Var.Z[c13].getText().toString();
-                        String T02 = zArr[r15] ? org.telegram.messenger.gd.E0().T0(hk0Var.b0[r15].getText().toString(), r15, r15) : hk0Var.Z[r15].getText().toString();
-                        String T03 = zArr[c14] ? org.telegram.messenger.gd.E0().T0(hk0Var.b0[c14].getText().toString(), r15, r15) : hk0Var.Z[c14].getText().toString();
+                        String T0 = zArr[c13] ? org.telegram.messenger.hd.E0().T0(hk0Var.b0[c13].getText().toString(), r15, r15) : hk0Var.Z[c13].getText().toString();
+                        String T02 = zArr[r15] ? org.telegram.messenger.hd.E0().T0(hk0Var.b0[r15].getText().toString(), r15, r15) : hk0Var.Z[r15].getText().toString();
+                        String T03 = zArr[c14] ? org.telegram.messenger.hd.E0().T0(hk0Var.b0[c14].getText().toString(), r15, r15) : hk0Var.Z[c14].getText().toString();
                         if (TextUtils.isEmpty(T0) || TextUtils.isEmpty(T02) || TextUtils.isEmpty(T03)) {
                             c11 = c13;
                             i11 = i13;
@@ -240,16 +240,16 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
                             objArr[r15] = T02;
                             objArr[c14] = T03;
                             c12 = c14;
-                            String a02 = org.telegram.messenger.gd.a0("PassportNameCheckAlert", null, 2131747309, objArr);
+                            String a02 = org.telegram.messenger.hd.a0("PassportNameCheckAlert", null, 2131747309, objArr);
                             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                             t1Var.U = a02;
-                            t1Var.S = org.telegram.messenger.gd.N0(R.string.AppName, null);
+                            t1Var.S = org.telegram.messenger.hd.N0(R.string.AppName, null);
                             c11 = c13;
                             z10 = r15;
                             i12 = i14;
                             i11 = i13;
-                            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751342, null), new org.telegram.ui.Components.c1(this, T0, T02, T03, hf0Var, aVar, 1));
-                            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751323, null), new ai.u1(this, i12, 18));
+                            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751342, null), new org.telegram.ui.Components.c1(this, T0, T02, T03, hf0Var, aVar, 1));
+                            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751323, null), new ai.v1(this, i12, 18));
                             hk0Var.showDialog(t1Var);
                         }
                         z11 = z10;
@@ -436,14 +436,14 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
             String jSONObject3 = jSONObject == null ? jSONObject.toString() : null;
             TLRPC.TL_secureRequiredType tL_secureRequiredType2 = hk0Var.G;
             String jSONObject4 = jSONObject2 == null ? jSONObject2.toString() : null;
-            org.telegram.messenger.yv yvVar2 = hk0Var.k1;
+            org.telegram.messenger.zv zvVar2 = hk0Var.k1;
             ArrayList arrayList3 = hk0Var.l1;
-            org.telegram.messenger.yv yvVar3 = hk0Var.m1;
+            org.telegram.messenger.zv zvVar3 = hk0Var.m1;
             linearLayout = hk0Var.g0;
             if (linearLayout != null && linearLayout.getVisibility() == 0) {
-                yvVar = hk0Var.n1;
+                zvVar = hk0Var.n1;
             }
-            ((mj0) yj0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, yvVar2, arrayList3, yvVar3, yvVar, hf0Var, aVar);
+            ((mj0) yj0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, zvVar2, arrayList3, zvVar3, zvVar, hf0Var, aVar);
             return true;
         }
         jSONObject2 = null;
@@ -460,14 +460,14 @@ public final class qj0 extends org.telegram.ui.ActionBar.j {
         TLRPC.TL_secureRequiredType tL_secureRequiredType22 = hk0Var.G;
         if (jSONObject2 == null) {
         }
-        org.telegram.messenger.yv yvVar22 = hk0Var.k1;
+        org.telegram.messenger.zv zvVar22 = hk0Var.k1;
         ArrayList arrayList32 = hk0Var.l1;
-        org.telegram.messenger.yv yvVar32 = hk0Var.m1;
+        org.telegram.messenger.zv zvVar32 = hk0Var.m1;
         linearLayout = hk0Var.g0;
         if (linearLayout != null) {
-            yvVar = hk0Var.n1;
+            zvVar = hk0Var.n1;
         }
-        ((mj0) yj0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, yvVar22, arrayList32, yvVar32, yvVar, hf0Var, aVar);
+        ((mj0) yj0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, zvVar22, arrayList32, zvVar32, zvVar, hf0Var, aVar);
         return true;
     }
 }

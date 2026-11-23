@@ -12,18 +12,18 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.rh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class f1 extends FrameLayout implements fs {
+public final class f1 extends FrameLayout implements gs {
     public static final List x = Arrays.asList(new c1(0, 1, 20, 0), new c1(0, 2, 20, 40), new c1(1, 0, 0, 20), new c1(1, 2, 60, 40), new c1(2, 0, 40, 20), new c1(2, 1, 40, 60));
     public int a;
     public final rh0 b;
@@ -296,10 +296,10 @@ public final class f1 extends FrameLayout implements fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         String str;
-        if (i7 != ks.F5 || (str = this.w) == null) {
+        if (i7 != ls.F5 || (str = this.w) == null) {
             return;
         }
         setTypeface(str);
@@ -335,13 +335,13 @@ public final class f1 extends FrameLayout implements fs {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.e().c(this, ks.F5);
+        ls.e().c(this, ls.F5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.e().n(this, ks.F5);
+        ls.e().n(this, ls.F5);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -398,7 +398,7 @@ public final class f1 extends FrameLayout implements fs {
                 e1Var.setTypeface(a0Var.d());
                 String str2 = a0Var.c;
                 if (str2 == null) {
-                    str2 = gd.O0(a0Var.b);
+                    str2 = hd.O0(a0Var.b);
                 }
                 e1Var.setText(str2);
                 return;

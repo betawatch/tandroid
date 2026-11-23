@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fn0 extends Drawable {
     public final boolean a;
@@ -44,7 +44,7 @@ public final class fn0 extends Drawable {
         this.d = paint;
         Path path = new Path();
         this.f = path;
-        this.g = new xy0(org.telegram.messenger.gd.N0(2131745485, null), 14.0f, null);
+        this.g = new xy0(org.telegram.messenger.hd.N0(2131745485, null), 14.0f, null);
         Path path2 = new Path();
         this.h = path2;
         Path path3 = new Path();
@@ -82,7 +82,7 @@ public final class fn0 extends Drawable {
         path3.lineTo(org.telegram.messenger.g0.L(8.66f), 0.0f);
         path3.lineTo(0.0f, org.telegram.messenger.g0.L(6.33f));
         path3.close();
-        this.q = (z10 || org.telegram.messenger.mp.g1().getBoolean("seekSpeedHintShowed", false)) ? false : true;
+        this.q = (z10 || org.telegram.messenger.np.g1().getBoolean("seekSpeedHintShowed", false)) ? false : true;
         path.moveTo(-org.telegram.messenger.g0.L(6.5f), 0.0f);
         path.lineTo(0.0f, -org.telegram.messenger.g0.L(6.33f));
         path.lineTo(org.telegram.messenger.g0.L(6.5f), 0.0f);
@@ -125,7 +125,7 @@ public final class fn0 extends Drawable {
         }
         this.w = true;
         org.telegram.messenger.g0.h3(this.x, 2500L);
-        org.telegram.messenger.mp.g1().edit().putBoolean("seekSpeedHintShowed", true).apply();
+        org.telegram.messenger.np.g1().edit().putBoolean("seekSpeedHintShowed", true).apply();
     }
 
     @Override // android.graphics.drawable.Drawable

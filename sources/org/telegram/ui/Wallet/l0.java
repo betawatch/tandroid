@@ -3,13 +3,13 @@ package org.telegram.ui.Wallet;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public String e;
@@ -142,8 +142,8 @@ public final class l0 {
         this.m = null;
         h();
         final long elapsedRealtime = SystemClock.elapsedRealtime();
-        this.n = ConnectionsManager.getInstance(this.o.a).sendRequestTyped(getnfts, new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.k0
-            @Override // org.telegram.messenger.q10
+        this.n = ConnectionsManager.getInstance(this.o.a).sendRequestTyped(getnfts, new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.k0
+            @Override // org.telegram.messenger.r10
             public final void a(Object obj, Object obj2) {
                 TL_wallet.nftItems nftitems = (TL_wallet.nftItems) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;

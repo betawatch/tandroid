@@ -6,8 +6,8 @@ import bi.m2;
 import di.n6;
 import fi.f7;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -19,9 +19,9 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s implements q10 {
+public final /* synthetic */ class s implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ v0 b;
     public final /* synthetic */ f7 c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class s implements q10 {
         this.d = str;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         int i7;
         vg0 vg0Var;
@@ -134,7 +134,7 @@ public final /* synthetic */ class s implements q10 {
                         break;
                     }
                 } else {
-                    mp.u1(v0Var.N).V3(updates, false);
+                    np.u1(v0Var.N).V3(updates, false);
                     v0Var.x(f7Var, "requested_chat_sent", v0.A(str, "req_id"));
                     break;
                 }
@@ -153,7 +153,7 @@ public final /* synthetic */ class s implements q10 {
                         break;
                     }
                 } else {
-                    mp.u1(v0Var.N).V3(updates2, false);
+                    np.u1(v0Var.N).V3(updates2, false);
                     v0Var.x(f7Var, "requested_chat_sent", v0.A(str, "req_id"));
                     break;
                 }

@@ -40,19 +40,19 @@ import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import org.json.JSONObject;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qw0;
 import org.telegram.ui.b80;
 import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class z0 {
     public static final Object g = new Object();
     public static final HashMap h = new HashMap();
-    public static final ExecutorService i = Executors.newSingleThreadExecutor(new ai.a1(4));
+    public static final ExecutorService i = Executors.newSingleThreadExecutor(new ai.z0(4));
     public static final CopyOnWriteArrayList j = new CopyOnWriteArrayList();
     public final Context a;
     public final int b;
@@ -112,7 +112,7 @@ public final class z0 {
 
     public static boolean i(Context context) {
         String str;
-        if (context != null && (str = bz.s) != null && str.length() != 0) {
+        if (context != null && (str = cz.s) != null && str.length() != 0) {
             try {
                 KeyguardManager keyguardManager = (KeyguardManager) context.getSystemService("keyguard");
                 if (keyguardManager != null) {
@@ -528,8 +528,8 @@ public final class z0 {
         return bArr;
     }
 
-    public final void q(long j3, byte[] bArr, r0 r0Var, x10 x10Var) {
-        i.execute(new di.l2(this, bArr == null ? "" : p(bArr), r0Var == null ? null : r0Var.b(), l(), j3, x10Var));
+    public final void q(long j3, byte[] bArr, r0 r0Var, y10 y10Var) {
+        i.execute(new di.l2(this, bArr == null ? "" : p(bArr), r0Var == null ? null : r0Var.b(), l(), j3, y10Var));
     }
 
     public final SharedPreferences r() {

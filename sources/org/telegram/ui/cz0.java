@@ -2,10 +2,10 @@ package org.telegram.ui;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cz0 extends rg.a {
-    public final org.telegram.messenger.kv c;
+    public final org.telegram.messenger.lv c;
     public final String d;
 
     public cz0(int i7) {
@@ -14,7 +14,7 @@ public final class cz0 extends rg.a {
     }
 
     public final boolean equals(Object obj) {
-        org.telegram.messenger.kv kvVar;
+        org.telegram.messenger.lv lvVar;
         if (this == obj) {
             return true;
         }
@@ -29,13 +29,13 @@ public final class cz0 extends rg.a {
         if (str != null) {
             return Objects.equals(str, cz0Var.d);
         }
-        org.telegram.messenger.kv kvVar2 = this.c;
-        return kvVar2 == null || (kvVar = cz0Var.c) == null || kvVar2.d == kvVar.d;
+        org.telegram.messenger.lv lvVar2 = this.c;
+        return lvVar2 == null || (lvVar = cz0Var.c) == null || lvVar2.d == lvVar.d;
     }
 
-    public cz0(org.telegram.messenger.kv kvVar) {
+    public cz0(org.telegram.messenger.lv lvVar) {
         super(2, false);
-        this.c = kvVar;
+        this.c = lvVar;
     }
 
     public cz0(int i7, String str) {

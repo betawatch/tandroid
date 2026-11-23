@@ -8,9 +8,9 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^rgb\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
@@ -126,7 +126,7 @@ public abstract class h {
                 return (-16777216) | parseLong;
             }
             if (replace.length() == 9) {
-                return ((parseLong & ks.e4) << 24) | (parseLong >>> 8);
+                return ((parseLong & ls.e4) << 24) | (parseLong >>> 8);
             }
             throw new IllegalArgumentException();
         }

@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s81 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ w81 a;
@@ -109,10 +109,10 @@ public final class s81 extends org.telegram.ui.ActionBar.j {
             if (w81Var.d != null) {
                 tL_forumTopic3.hidden = !r0.d.h;
             }
-            org.telegram.messenger.e00 e00Var = w81Var.getMessagesController().t7;
+            org.telegram.messenger.f00 f00Var = w81Var.getMessagesController().t7;
             long j13 = w81Var.a;
-            e00Var.getMessagesStorage().f2(j13, w81Var.x, 35);
-            e00Var.y(-j13, true);
+            f00Var.getMessagesStorage().f2(j13, w81Var.x, 35);
+            f00Var.y(-j13, true);
             w81Var.finishFragment();
         }
     }

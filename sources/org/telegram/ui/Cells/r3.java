@@ -18,22 +18,22 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.lz;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.mz;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.pg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionBar.b6 {
+public final class r3 extends FrameLayout implements gs, org.telegram.ui.ActionBar.b6 {
     public boolean E;
     public Long F;
     public boolean G;
@@ -55,47 +55,47 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
     public r3(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.a = org.telegram.ui.ActionBar.m6.I.q();
-        this.b = j10.t0;
+        this.b = k10.t0;
         TextView textView = new TextView(context);
         this.c = textView;
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
-        n10.q(textView, 1, 16.0f, 1, 1);
+        o10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setGravity(gd.a0 ? 5 : 3);
-        boolean z10 = gd.a0;
+        textView.setGravity(hd.a0 ? 5 : 3);
+        boolean z10 = hd.a0;
         addView(textView, c8.ma.d(-2, -2.0f, z10 ? 5 : 3, z10 ? 22.0f : 71.0f, 10.0f, z10 ? 71.0f : 22.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, null);
-        n10.q(textView2, 1, 13.0f, 1, 1);
+        o10.q(textView2, 1, 13.0f, 1, 1);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        textView2.setGravity(gd.a0 ? 5 : 3);
-        boolean z11 = gd.a0;
+        textView2.setGravity(hd.a0 ? 5 : 3);
+        boolean z11 = hd.a0;
         addView(textView2, c8.ma.d(-2, -2.0f, z11 ? 5 : 3, z11 ? 100.0f : 71.0f, 35.0f, z11 ? 71.0f : 100.0f, 0.0f));
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.e = q9Var;
         q9Var.setAspectFit(true);
         q9Var.setLayerNum(1);
-        boolean z12 = gd.a0;
+        boolean z12 = hd.a0;
         addView(q9Var, c8.ma.d(48, 48.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 12.0f, 8.0f, z12 ? 12.0f : 0.0f, 0.0f));
         pg0 pg0Var = new pg0(context);
         this.f = pg0Var;
-        pg0Var.setText(gd.N0(2131754483, null));
+        pg0Var.setText(hd.N0(2131754483, null));
         org.telegram.ui.ActionBar.t6.U(pg0Var, org.telegram.ui.ActionBar.m6.Ji, null);
         addView(pg0Var, c8.ma.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.h = textView3;
         textView3.setGravity(17);
         org.telegram.messenger.f3.l(textView3, org.telegram.ui.ActionBar.m6.Ii, null, 1, 14.0f);
-        textView3.setText(gd.N0(2131744614, null));
+        textView3.setText(hd.N0(2131744612, null));
         addView(textView3, c8.ma.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
         ug.r0 r0Var = new ug.r0(org.telegram.messenger.g0.L(4.0f), context, h6Var, false);
         this.n = r0Var;
         r0Var.setIcon(R.raw.unlock_icon);
-        r0Var.b(gd.N0(2131743633, null), new a(this, 4), false);
+        r0Var.b(hd.N0(2131743631, null), new a(this, 4), false);
         r0Var.setVisibility(8);
         try {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) r0Var.getIconView().getLayoutParams();
@@ -131,7 +131,7 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
         textView.setText(str);
         textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
         TLRPC.StickerSet stickerSet2 = stickerSetCovered.set;
-        this.d.setText(gd.G(stickerSet2.count, stickerSet2.emojis ? "EmojiCount" : "Stickers", new Object[0]));
+        this.d.setText(hd.G(stickerSet2.count, stickerSet2.emojis ? "EmojiCount" : "Stickers", new Object[0]));
         boolean z13 = stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered;
         int i7 = this.b;
         if (!z13 || (stickerSet = stickerSetCovered.set) == null) {
@@ -169,10 +169,10 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
         } else {
             this.F = Long.valueOf(stickerSet.id);
             if (!this.E) {
-                ks.f(i7).c(this, ks.B0);
+                ls.f(i7).c(this, ls.B0);
                 this.E = true;
             }
-            TLRPC.TL_messages_stickerSet n02 = ri.d0(i7).n0(ri.b0(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), false, false, null);
+            TLRPC.TL_messages_stickerSet n02 = si.d0(i7).n0(si.b0(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), false, false, null);
             if (n02 != null && (arrayList = n02.documents) != null && !arrayList.isEmpty()) {
                 document = n02.documents.get(0);
                 int i12 = 0;
@@ -191,19 +191,19 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
         }
         org.telegram.ui.Components.q9 q9Var = this.e;
         if (document != null) {
-            if (fj.p(document)) {
+            if (gj.p(document)) {
                 TLObject w10 = org.telegram.messenger.w7.w(stickerSetCovered.set.thumbs, 90, false, null, false);
                 if (w10 == null) {
                     w10 = document;
                 }
-                lz d = org.telegram.messenger.u5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.m6.a7, 1.0f, false);
+                mz d = org.telegram.messenger.u5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.m6.a7, 1.0f, false);
                 boolean z14 = w10 instanceof TLRPC.Document;
-                fc c10 = z14 ? fc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document) : fc.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
-                if (z14 && (fj.K2(document, true) || fj.N4(document))) {
+                gc c10 = z14 ? gc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document) : gc.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
+                if (z14 && (gj.K2(document, true) || gj.N4(document))) {
                     if (d != null) {
-                        q9Var.p(fc.b(document), "50_50", d, stickerSetCovered);
+                        q9Var.p(gc.b(document), "50_50", d, stickerSetCovered);
                     } else {
-                        q9Var.l(fc.b(document), "50_50", c10, null, 0, stickerSetCovered);
+                        q9Var.l(gc.b(document), "50_50", c10, null, 0, stickerSetCovered);
                     }
                 } else if (c10 == null || c10.p != 1) {
                     q9Var.k(c10, "50_50", "webp", d, stickerSetCovered);
@@ -213,9 +213,9 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
             } else {
                 TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
                 if (w11 != null) {
-                    q9Var.k(fc.c(w11, document), "50_50", "webp", null, stickerSetCovered);
+                    q9Var.k(gc.c(w11, document), "50_50", "webp", null, stickerSetCovered);
                 } else {
-                    q9Var.k(fc.b(document), "50_50", "webp", null, stickerSetCovered);
+                    q9Var.k(gc.b(document), "50_50", "webp", null, stickerSetCovered);
                 }
             }
             stickerSetCovered2 = stickerSetCovered;
@@ -226,8 +226,8 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
         pg0 pg0Var = this.f;
         pg0Var.setVisibility(0);
         this.G = z11;
-        this.w = z11 || ri.d0(i7).E0(stickerSetCovered2.set.id, true);
-        boolean z15 = !j10.i(i7).q() && fj.U3(stickerSetCovered2);
+        this.w = z11 || si.d0(i7).E0(stickerSetCovered2.set.id, true);
+        boolean z15 = !k10.i(i7).q() && gj.U3(stickerSetCovered2);
         this.x = z15;
         ug.r0 r0Var = this.n;
         TextView textView2 = this.h;
@@ -309,9 +309,9 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
         hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d7));
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.B0) {
+        if (i7 == ls.B0) {
             long longValue = ((Long) objArr[0]).longValue();
             Long l10 = this.F;
             if (l10 == null || l10.longValue() != longValue) {
@@ -340,7 +340,7 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (this.E) {
-            ks.f(this.b).n(this, ks.B0);
+            ls.f(this.b).n(this, ls.B0);
             this.E = false;
         }
     }
@@ -348,7 +348,7 @@ public final class r3 extends FrameLayout implements fs, org.telegram.ui.ActionB
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.y) {
-            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(71.0f), getHeight() - 1, getWidth() - (gd.a0 ? org.telegram.messenger.g0.L(71.0f) : 0), getHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(71.0f), getHeight() - 1, getWidth() - (hd.a0 ? org.telegram.messenger.g0.L(71.0f) : 0), getHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

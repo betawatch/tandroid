@@ -40,11 +40,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qf;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -124,7 +124,7 @@ public final class f implements o {
         o0 = new UUID(72057594037932032L, -9223371306706625679L);
         HashMap hashMap = new HashMap();
         e2.p(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
-        e2.p(ks.K2, hashMap, "htc_video_rotA-180", ks.t4, "htc_video_rotA-270");
+        e2.p(ls.K2, hashMap, "htc_video_rotA-180", ls.t4, "htc_video_rotA-270");
         p0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 
@@ -499,20 +499,20 @@ public final class f implements o {
                     int i21 = bVar.f;
                     Object obj2 = qfVar.b;
                     switch (i21) {
-                        case ks.P1 /* 131 */:
-                        case ks.S1 /* 136 */:
-                        case ks.l2 /* 155 */:
-                        case ks.p2 /* 159 */:
-                        case ks.G2 /* 176 */:
-                        case ks.J2 /* 179 */:
-                        case ks.Q2 /* 186 */:
-                        case ks.s3 /* 215 */:
-                        case ks.H3 /* 231 */:
-                        case ks.N3 /* 238 */:
-                        case ks.P3 /* 240 */:
-                        case ks.Q3 /* 241 */:
-                        case ks.W3 /* 247 */:
-                        case ks.a4 /* 251 */:
+                        case ls.P1 /* 131 */:
+                        case ls.S1 /* 136 */:
+                        case ls.l2 /* 155 */:
+                        case ls.p2 /* 159 */:
+                        case ls.G2 /* 176 */:
+                        case ls.J2 /* 179 */:
+                        case ls.Q2 /* 186 */:
+                        case ls.s3 /* 215 */:
+                        case ls.H3 /* 231 */:
+                        case ls.N3 /* 238 */:
+                        case ls.P3 /* 240 */:
+                        case ls.Q3 /* 241 */:
+                        case ls.W3 /* 247 */:
+                        case ls.a4 /* 251 */:
                         case 16871:
                         case 16980:
                         case 17029:
@@ -549,13 +549,13 @@ public final class f implements o {
                         case 2274716:
                             i7 = 3;
                             break;
-                        case ks.q2 /* 160 */:
-                        case ks.w2 /* 166 */:
-                        case ks.E2 /* 174 */:
-                        case ks.N2 /* 183 */:
-                        case ks.R2 /* 187 */:
-                        case ks.B3 /* 224 */:
-                        case ks.C3 /* 225 */:
+                        case ls.q2 /* 160 */:
+                        case ls.w2 /* 166 */:
+                        case ls.E2 /* 174 */:
+                        case ls.N2 /* 183 */:
+                        case ls.R2 /* 187 */:
+                        case ls.B3 /* 224 */:
+                        case ls.C3 /* 225 */:
                         case 16868:
                         case 18407:
                         case 19899:
@@ -576,9 +576,9 @@ public final class f implements o {
                         case 524531317:
                             i7 = 1;
                             break;
-                        case ks.r2 /* 161 */:
-                        case ks.t2 /* 163 */:
-                        case ks.v2 /* 165 */:
+                        case ls.r2 /* 161 */:
+                        case ls.t2 /* 163 */:
+                        case ls.v2 /* 165 */:
                         case 16877:
                         case 16981:
                         case 18402:
@@ -587,7 +587,7 @@ public final class f implements o {
                         case 30322:
                             i7 = 4;
                             break;
-                        case ks.L2 /* 181 */:
+                        case ls.L2 /* 181 */:
                         case 17545:
                         case 21969:
                         case 21970:
@@ -1109,9 +1109,9 @@ public final class f implements o {
                                                     } else if (Float.compare(eVar.w, 90.0f) == 0) {
                                                         intValue = 90;
                                                     } else if (Float.compare(eVar.w, -180.0f) == 0 || Float.compare(eVar.w, 180.0f) == 0) {
-                                                        intValue = ks.K2;
+                                                        intValue = ls.K2;
                                                     } else if (Float.compare(eVar.w, -90.0f) == 0) {
-                                                        intValue = ks.t4;
+                                                        intValue = ls.t4;
                                                     }
                                                 }
                                                 tVar.y = eVar.n;
@@ -1296,18 +1296,18 @@ public final class f implements o {
                                                     int i34 = 0;
                                                     int i35 = 1;
                                                     while (true) {
-                                                        int i36 = a13[i35] & ks.e4;
+                                                        int i36 = a13[i35] & ls.e4;
                                                         if (i36 == 255) {
-                                                            i34 += ks.e4;
+                                                            i34 += ls.e4;
                                                             i35++;
                                                         } else {
                                                             int i37 = i35 + 1;
                                                             int i38 = i34 + i36;
                                                             int i39 = 0;
                                                             while (true) {
-                                                                int i40 = a13[i37] & ks.e4;
+                                                                int i40 = a13[i37] & ls.e4;
                                                                 if (i40 == 255) {
-                                                                    i39 += ks.e4;
+                                                                    i39 += ls.e4;
                                                                     i37++;
                                                                 } else {
                                                                     int i41 = i37 + 1;
@@ -2237,7 +2237,7 @@ public final class f implements o {
                                             eVar.a0 = fVar3.j0.d2(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
-                                        case ks.T /* 30 */:
+                                        case ls.T /* 30 */:
                                             str6 = "video/mpeg2";
                                             D = -1;
                                             i11 = -1;
@@ -2267,7 +2267,7 @@ public final class f implements o {
                                             eVar.a0 = fVar3.j0.d2(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
-                                        case ks.U /* 31 */:
+                                        case ls.U /* 31 */:
                                             str6 = "audio/eac3";
                                             D = -1;
                                             i11 = -1;
@@ -2931,10 +2931,10 @@ public final class f implements o {
                 int i19 = (xVar2.c + i7) - this.a0;
                 xVar3.K(4);
                 byte[] bArr3 = xVar3.a;
-                bArr3[0] = (byte) ((i19 >> 24) & ks.e4);
-                bArr3[1] = (byte) ((i19 >> 16) & ks.e4);
-                bArr3[2] = (byte) ((i19 >> 8) & ks.e4);
-                bArr3[3] = (byte) (i19 & ks.e4);
+                bArr3[0] = (byte) ((i19 >> 24) & ls.e4);
+                bArr3[1] = (byte) ((i19 >> 16) & ls.e4);
+                bArr3[2] = (byte) ((i19 >> 8) & ls.e4);
+                bArr3[3] = (byte) (i19 & ls.e4);
                 i0Var.a(xVar3, 4, 2);
                 this.b0 += 4;
             }

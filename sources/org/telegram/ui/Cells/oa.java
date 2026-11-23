@@ -8,12 +8,12 @@ import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 import java.util.HashSet;
-import org.telegram.messenger.f10;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.g10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int n = 0;
@@ -36,7 +36,7 @@ public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.b
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(gd.N0(2131743648, null));
+        textView.setText(hd.N0(2131743646, null));
         linearLayout.addView(textView, c8.ma.q(-1, -2, 0.0f, 55, 28, 8, 28, 0));
         TextView textView2 = new TextView(activity);
         this.c = textView2;
@@ -53,7 +53,7 @@ public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.b
         naVar.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(7.0f));
         naVar.setTypeface(org.telegram.messenger.g0.o());
         naVar.setTextSize(1, 14.22f);
-        naVar.setText(gd.N0(2131743667, null));
+        naVar.setText(hd.N0(2131743665, null));
         linearLayout2.addView(naVar, c8.ma.o(-2, 30));
         linearLayout2.addView(new Space(activity), c8.ma.p(-2, 1, 17.0f, 1));
         na naVar2 = new na(activity);
@@ -61,20 +61,20 @@ public final class oa extends FrameLayout implements org.telegram.ui.ActionBar.b
         naVar2.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(7.0f));
         naVar2.setTypeface(org.telegram.messenger.g0.o());
         naVar2.setTextSize(1, 14.22f);
-        naVar2.setText(gd.N0(2131743657, null));
+        naVar2.setText(hd.N0(2131743655, null));
         linearLayout2.addView(naVar2, c8.ma.o(-2, 30));
         linearLayout2.addView(new Space(activity), c8.ma.p(-2, 1, 17.0f, 1));
         linearLayout.addView(linearLayout2, c8.ma.k(28.0f, 4.0f, 28.0f, 8.0f, -1, -2));
-        addView(linearLayout, c8.ma.e(-1, -1, ks.E1));
+        addView(linearLayout, c8.ma.e(-1, -1, ls.E1));
         updateColors();
     }
 
-    public static String a(f10 f10Var) {
-        if (f10Var == null) {
+    public static String a(g10 g10Var) {
+        if (g10Var == null) {
             return "";
         }
-        String str = f10Var.f;
-        String str2 = "" + f10Var.e;
+        String str = g10Var.f;
+        String str2 = "" + g10Var.e;
         if (!TextUtils.isEmpty(str) && !str2.isEmpty()) {
             str2 = str2.concat(", ");
         }

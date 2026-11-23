@@ -28,7 +28,7 @@ import java.util.TreeMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jn implements g61, og.n, org.telegram.ui.pm0, o2.i, an0, com.google.android.gms.common.api.internal.q, tg.m1, u2.m, com.google.android.gms.common.api.internal.n, q5.b, androidx.lifecycle.s0 {
     public static jn c;
@@ -368,11 +368,11 @@ public final class jn implements g61, og.n, org.telegram.ui.pm0, o2.i, an0, com.
             if (arrayList.isEmpty()) {
                 return;
             }
-            org.telegram.messenger.yy yyVar = (org.telegram.messenger.yy) arrayList.get(0);
-            if (yyVar.c != null) {
+            org.telegram.messenger.zy zyVar = (org.telegram.messenger.zy) arrayList.get(0);
+            if (zyVar.c != null) {
                 r7Var.f = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
                 Point c12 = org.telegram.messenger.g0.c1();
-                Bitmap K = org.telegram.messenger.ec.K(yyVar.c, null, (float) c12.x, (float) c12.y, true);
+                Bitmap K = org.telegram.messenger.fc.K(zyVar.c, null, (float) c12.x, (float) c12.y, true);
                 K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream((File) r7Var.f));
                 ((o71) r7Var.e).b((File) r7Var.f, K, true);
             }
@@ -491,14 +491,14 @@ public final class jn implements g61, og.n, org.telegram.ui.pm0, o2.i, an0, com.
     @Override // org.telegram.ui.Components.g61
     public void onStateChanged(boolean z10, int i7) {
         c50 c50Var;
-        org.telegram.messenger.e20 e20Var;
+        org.telegram.messenger.f20 f20Var;
         switch (this.a) {
             case 2:
                 u40 u40Var = (u40) this.b;
                 i61 i61Var = u40Var.I0.T;
-                if (i61Var != null && i61Var.d0() && i7 == 4 && (e20Var = (c50Var = u40Var.I0).S) != null) {
+                if (i61Var != null && i61Var.d0() && i7 == 4 && (f20Var = (c50Var = u40Var.I0).S) != null) {
                     i61 i61Var2 = c50Var.T;
-                    long j3 = e20Var.a;
+                    long j3 = f20Var.a;
                     if (j3 <= 0) {
                         j3 = 0;
                     }
@@ -554,10 +554,10 @@ public final class jn implements g61, og.n, org.telegram.ui.pm0, o2.i, an0, com.
     @Override // com.google.android.gms.common.api.internal.n
     public void q(Object obj) {
         LocationResult locationResult = (LocationResult) this.b;
-        org.telegram.messenger.pa paVar = ((org.telegram.messenger.x9) obj).a;
+        org.telegram.messenger.qa qaVar = ((org.telegram.messenger.y9) obj).a;
         List list = locationResult.a;
         int size = list.size();
-        paVar.onLocationChanged(size == 0 ? null : (Location) list.get(size - 1));
+        qaVar.onLocationChanged(size == 0 ? null : (Location) list.get(size - 1));
     }
 
     @Override // og.n

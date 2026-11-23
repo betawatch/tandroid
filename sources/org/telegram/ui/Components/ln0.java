@@ -8,19 +8,19 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ln0 extends dk0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.h6 c;
     public final /* synthetic */ List d;
-    public final /* synthetic */ org.telegram.messenger.mp e;
+    public final /* synthetic */ org.telegram.messenger.np e;
     public final /* synthetic */ int f;
     public final /* synthetic */ TLRPC.Peer h;
 
-    public ln0(org.telegram.ui.ActionBar.h6 h6Var, List list, org.telegram.messenger.mp mpVar, int i7, TLRPC.Peer peer) {
+    public ln0(org.telegram.ui.ActionBar.h6 h6Var, List list, org.telegram.messenger.np npVar, int i7, TLRPC.Peer peer) {
         this.c = h6Var;
         this.d = list;
-        this.e = mpVar;
+        this.e = npVar;
         this.f = i7;
         this.h = peer;
     }
@@ -49,13 +49,13 @@ public final class ln0 extends dk0 {
             }
         }
         TLRPC.Peer peer2 = this.h;
-        org.telegram.messenger.mp mpVar = this.e;
+        org.telegram.messenger.np npVar = this.e;
         boolean z10 = true;
         if (j10 >= 0) {
-            TLRPC.User c22 = mpVar.c2(Long.valueOf(j10));
+            TLRPC.User c22 = npVar.c2(Long.valueOf(j10));
             if (c22 != null) {
-                pn0Var.b.setText(org.telegram.messenger.o10.q(c22));
-                pn0Var.c.setText(org.telegram.messenger.gd.N0(2131743106, null));
+                pn0Var.b.setText(org.telegram.messenger.p10.q(c22));
+                pn0Var.c.setText(org.telegram.messenger.hd.N0(2131743104, null));
                 pn0Var.a.setAvatar(c22);
             }
             ut0 ut0Var = pn0Var.a;
@@ -65,7 +65,7 @@ public final class ln0 extends dk0 {
             ut0Var.a(z10, false);
             return;
         }
-        TLRPC.Chat O0 = mpVar.O0(Long.valueOf(-j10));
+        TLRPC.Chat O0 = npVar.O0(Long.valueOf(-j10));
         if (O0 != null) {
             if (tL_sendAsPeer.premium_required) {
                 StringBuilder sb2 = new StringBuilder();
@@ -85,7 +85,7 @@ public final class ln0 extends dk0 {
                 pn0Var.b.setEllipsize(TextUtils.TruncateAt.END);
                 pn0Var.b.setText(O0.title);
             }
-            pn0Var.c.setText(org.telegram.messenger.gd.G(O0.participants_count, (!org.telegram.messenger.v3.T(O0) || O0.megagroup) ? "Members" : "Subscribers", new Object[0]));
+            pn0Var.c.setText(org.telegram.messenger.hd.G(O0.participants_count, (!org.telegram.messenger.v3.T(O0) || O0.megagroup) ? "Members" : "Subscribers", new Object[0]));
             pn0Var.a.setAvatar(O0);
         }
         ut0 ut0Var2 = pn0Var.a;

@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.util.Property;
 import android.view.View;
 import bi.e3;
-import bi.h7;
+import bi.g7;
 import bi.v1;
 import c8.ma;
 import c8.ra;
@@ -22,13 +22,13 @@ import java.util.WeakHashMap;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -56,9 +56,9 @@ import org.telegram.ui.bn;
 import org.telegram.ui.rq;
 import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class p extends g2 implements w30, fs, te.b {
+public final class p extends g2 implements w30, gs, te.b {
     public RadialProgressView E;
     public b9 F;
     public x30 G;
@@ -100,7 +100,7 @@ public final class p extends g2 implements w30, fs, te.b {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
                 j3 = user.id;
-                u10 = o10.u(user);
+                u10 = p10.u(user);
                 TLRPC.Chat chat = pVar.J;
                 z10 = chat != null && ((user.bot && user.bot_can_edit) || v3.y(27, chat));
                 z11 = false;
@@ -119,8 +119,8 @@ public final class p extends g2 implements w30, fs, te.b {
         boolean z13 = b10 == 1 || b10 == 2;
         if (z12 || z13) {
             a70 G = a70.G(pVar.d, null, view);
-            G.l(R.drawable.msg_viewintopic, gd.N0(u10 ? 2131751898 : z11 ? 2131751897 : 2131751896, null), new h(pVar, j3, i7), z13);
-            G.m(R.drawable.msg_cancel, new m(pVar, u10, z11, j3, 0), gd.N0(2131751903, null), z12, true);
+            G.l(R.drawable.msg_viewintopic, hd.N0(u10 ? 2131751898 : z11 ? 2131751897 : 2131751896, null), new h(pVar, j3, i7), z13);
+            G.m(R.drawable.msg_cancel, new m(pVar, u10, z11, j3, 0), hd.N0(2131751903, null), z12, true);
             G.X(pVar.e.U0(view, true));
             G.a0();
             return true;
@@ -136,7 +136,7 @@ public final class p extends g2 implements w30, fs, te.b {
             if (pVar.G.g() || (chatPhoto = (O0 = pVar.getMessagesController().O0(Long.valueOf(pVar.c))).photo) == null || chatPhoto.photo_big == null) {
                 return;
             }
-            fc fcVar = null;
+            gc gcVar = null;
             PhotoViewer.p1().I2(null, pVar, null);
             TLRPC.ChatPhoto chatPhoto2 = O0.photo;
             int i10 = chatPhoto2.dc_id;
@@ -147,10 +147,10 @@ public final class p extends g2 implements w30, fs, te.b {
             if (chatFull != null) {
                 TLRPC.Photo photo = chatFull.chat_photo;
                 if ((photo instanceof TLRPC.TL_photo) && !photo.video_sizes.isEmpty()) {
-                    fcVar = fc.j(pVar.K.chat_photo.video_sizes.get(0), pVar.K.chat_photo);
+                    gcVar = gc.j(pVar.K.chat_photo.video_sizes.get(0), pVar.K.chat_photo);
                 }
             }
-            PhotoViewer.p1().d2(null, O0.photo.photo_big, null, fcVar, null, null, null, 0, pVar.M, null, 0L, 0L, 0L, true, null, null);
+            PhotoViewer.p1().d2(null, O0.photo.photo_big, null, gcVar, null, null, null, 0, pVar.M, null, 0L, 0L, 0L, true, null, null);
             return;
         }
         if (i7 == 141) {
@@ -207,13 +207,13 @@ public final class p extends g2 implements w30, fs, te.b {
 
     public static /* synthetic */ void b0(p pVar) {
         pVar.H = null;
-        mp.u1(pVar.currentAccount).B(pVar.c, null, null, null, null, 0.0d, null, null, null, null);
+        np.u1(pVar.currentAccount).B(pVar.c, null, null, null, null, 0.0d, null, null, null, null);
         pVar.f0(false, true);
         pVar.x.j(null, null, pVar.F, pVar.J);
     }
 
     public static void c0(p pVar, long j3) {
-        mp.u1(pVar.currentAccount).W2(j3, pVar.c, true, false, new j(pVar, 0));
+        np.u1(pVar.currentAccount).W2(j3, pVar.c, true, false, new j(pVar, 0));
     }
 
     @Override // te.b
@@ -285,7 +285,7 @@ public final class p extends g2 implements w30, fs, te.b {
         qVar.setInputType(qVar.getInputType() | TLObject.FLAG_14);
         qVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(11.0f));
         qVar.setMinHeight(org.telegram.messenger.g0.L(50.0f));
-        e3Var.addView(qVar, ma.d(-1, -2.0f, (gd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
+        e3Var.addView(qVar, ma.d(-1, -2.0f, (hd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
         this.r = e3Var;
         qVar.setText(m10);
         ((di.q) this.r.b).setSelection(m10.length());
@@ -294,7 +294,7 @@ public final class p extends g2 implements w30, fs, te.b {
         gi.j jVar = new gi.j(this, context);
         this.I = jVar;
         t6.U(jVar, m6.Ji, getResourceProvider());
-        this.I.setText(gd.N0(2131745750, null));
+        this.I.setText(hd.N0(2131745750, null));
         this.I.setTypeface(org.telegram.messenger.g0.o());
         this.I.setTextSize(1, 14.0f);
         this.I.setGravity(17);
@@ -337,9 +337,9 @@ public final class p extends g2 implements w30, fs, te.b {
         this.b.a((this.h == this.n && TextUtils.equals(((di.q) this.r.b).getText().toString(), this.f)) ? false : true, true);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.T) {
+        if (i7 == ls.T) {
             TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
             if (chatFull.id == this.c) {
                 this.K = chatFull;
@@ -375,11 +375,11 @@ public final class p extends g2 implements w30, fs, te.b {
         if (this.n == z10) {
             return;
         }
-        i6 i6Var = (i6) this.e.B1(ks.h2);
+        i6 i6Var = (i6) this.e.B1(ls.h2);
         if (i6Var != null) {
             i6Var.a(!z10);
         }
-        i6 i6Var2 = (i6) this.e.B1(ks.g2);
+        i6 i6Var2 = (i6) this.e.B1(ls.g2);
         if (i6Var2 != null) {
             i6Var2.a(z10);
         }
@@ -425,7 +425,7 @@ public final class p extends g2 implements w30, fs, te.b {
             animatorSet2.playTogether(ObjectAnimator.ofFloat(radialProgressView2, (Property<RadialProgressView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.w, (Property<l5, Float>) property2, 0.0f));
         }
         this.y.setDuration(180L);
-        this.y.addListener(new h7(17, this, z10));
+        this.y.addListener(new g7(17, this, z10));
         this.y.start();
     }
 
@@ -463,14 +463,14 @@ public final class p extends g2 implements w30, fs, te.b {
         this.G = x30Var;
         x30Var.a = this;
         x30Var.b = this;
-        getNotificationCenter().c(this, ks.T);
+        getNotificationCenter().c(this, ls.T);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getNotificationCenter().n(this, ks.T);
+        getNotificationCenter().n(this, ls.T);
         x30 x30Var = this.G;
         if (x30Var != null) {
             x30Var.d();

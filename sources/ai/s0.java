@@ -24,8 +24,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewParent;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.d6;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.oe;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.sf;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s0 extends View {
     public boolean A0;
@@ -361,7 +361,7 @@ public final class s0 extends View {
                     paint.setShadowLayer(N, 0.0f, N2, i0.a.o(-16777216, (int) (f23 * f17)));
                 } else {
                     f11 = 1.0f;
-                    paint.setShadowLayer(org.telegram.messenger.g0.N(1.0f), 0.0f, org.telegram.messenger.g0.N(0.33333334f), i0.a.o(-16777216, (int) ((this.p0 ? ks.n1 : 51) * min)));
+                    paint.setShadowLayer(org.telegram.messenger.g0.N(1.0f), 0.0f, org.telegram.messenger.g0.N(0.33333334f), i0.a.o(-16777216, (int) ((this.p0 ? ls.n1 : 51) * min)));
                 }
                 paint.setColor(16777216);
                 Path path = this.X0;
@@ -393,7 +393,7 @@ public final class s0 extends View {
                     f14 = 0.6f;
                     int saveLayerAlpha = canvas2.saveLayerAlpha(f27, f29, f31, f33, (int) (((this.l0 || this.p0) ? min : min * min) * 255.0f));
                     this.W0.setBounds(((int) f26) - L2, ((int) f28) - L2, ((int) f30) + L2, ((int) f32) + L2);
-                    this.W0.setAlpha(ks.e4);
+                    this.W0.setAlpha(ls.e4);
                     this.W0.draw(canvas2);
                     if (this.Y0 == null) {
                         Paint paint2 = new Paint(1);
@@ -446,7 +446,7 @@ public final class s0 extends View {
                     paint3.setAlpha(alpha);
                     float f34 = T14;
                     float f35 = f10;
-                    l2.a(canvas2, f10 - T14, f22 - T14, f10 + T14, f22 + T14, f34, this.p0, this.a1 * min, this.Z0);
+                    m2.a(canvas2, f10 - T14, f22 - T14, f10 + T14, f22 + T14, f34, this.p0, this.a1 * min, this.Z0);
                     float max2 = Math.max(0.0f, Math.min(1.0f, this.a1));
                     if (max2 <= 0.01f || this.V0 == null) {
                         iArr2 = iArr;
@@ -1106,7 +1106,7 @@ public final class s0 extends View {
                                         i12 = i21;
                                         int saveLayerAlpha = canvas2.saveLayerAlpha(f29 - f57, f30 - f57, f29 + f57, f30 + f57, (int) (d16 * f12 * f33));
                                         canvas2.scale(T15, T15, f29, f30);
-                                        n10.k(view.getHeight(), f11, f30, f29 - (view.getWidth() / f11), canvas2);
+                                        o10.k(view.getHeight(), f11, f30, f29 - (view.getWidth() / f11), canvas2);
                                         view.draw(canvas2);
                                         canvas2.restoreToCount(saveLayerAlpha);
                                     }

@@ -13,7 +13,7 @@ import android.view.RoundedCorner;
 import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.ot;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.ut;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yt;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class h extends yt {
     public org.telegram.ui.Components.ga W;
@@ -144,7 +144,7 @@ public final class h extends yt {
             oVar.u0.setAlpha((int) (oVar.o0 * 255.0f * 0.95f));
             canvas.drawRoundRect(rectF, 0.0f, 0.0f, oVar.u0);
         }
-        paint.setAlpha((int) (oVar.u0 == null ? 128.0f : org.telegram.messenger.g0.W1(oVar.o0, 128, ks.j2) * 0.95f));
+        paint.setAlpha((int) (oVar.u0 == null ? 128.0f : org.telegram.messenger.g0.W1(oVar.o0, 128, ls.j2) * 0.95f));
         canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
     }
 

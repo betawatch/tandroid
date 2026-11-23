@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f81 extends View {
     public int E;
@@ -62,7 +62,7 @@ public final class f81 extends View {
         this.L = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this, this.O, f10));
         this.L.setDuration(180L);
-        this.L.addListener(new u11(this, 8));
+        this.L.addListener(new t11(this, 8));
         this.L.start();
         return true;
     }

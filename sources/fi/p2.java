@@ -2,11 +2,11 @@ package fi;
 
 import android.content.Intent;
 import java.util.ArrayList;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ck;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p2 implements ck {
     public final /* synthetic */ z3 a;
@@ -40,7 +40,7 @@ public final class p2 implements ck {
             return;
         }
         accountInstance = z3Var.getAccountInstance();
-        zy.V(i7, z3Var.l1, 0L, j10, 0L, str, null, arrayList, arrayList, null, null, null, null, accountInstance, null, null, null, null, null, storyItem, null, null, null, z10, false);
+        az.V(i7, z3Var.l1, 0L, j10, 0L, str, null, arrayList, arrayList, null, null, null, null, accountInstance, null, null, null, null, null, storyItem, null, null, null, z10, false);
         z3Var.i0(j10 <= 0);
     }
 

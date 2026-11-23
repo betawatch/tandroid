@@ -13,13 +13,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -43,7 +43,7 @@ public class VideoFramesRewinder {
     private float lastSpeed = 1.0f;
     private Runnable prepareRunnable = new a(this, 2);
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class Frame {
         Bitmap bitmap;
         long position;
@@ -53,9 +53,9 @@ public class VideoFramesRewinder {
     }
 
     public VideoFramesRewinder() {
-        int o4 = bz.o();
+        int o4 = cz.o();
         if (o4 == 1) {
-            this.maxFramesCount = ks.e3;
+            this.maxFramesCount = ls.e3;
             this.maxFrameSide = 580;
         } else if (o4 != 2) {
             this.maxFramesCount = 100;
@@ -303,7 +303,7 @@ public class VideoFramesRewinder {
             release();
         } else {
             this.stop.set(false);
-            this.mDecoder = AnimatedFileNative.a(file.getAbsolutePath(), this.meta, j10.t0, 0L, null, true);
+            this.mDecoder = AnimatedFileNative.a(file.getAbsolutePath(), this.meta, k10.t0, 0L, null, true);
         }
     }
 }

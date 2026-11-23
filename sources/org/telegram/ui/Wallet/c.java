@@ -13,15 +13,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -45,7 +45,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.b6
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
-        addView(linearLayout, c8.ma.d(-1, -1.0f, ks.E1, 71.0f, 0.0f, 20.0f, 0.0f));
+        addView(linearLayout, c8.ma.d(-1, -1.0f, ls.E1, 71.0f, 0.0f, 20.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine(true);
@@ -82,7 +82,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.b6
         return null;
     }
 
-    public static fc c(TL_wallet.nftItem nftitem, boolean z10) {
+    public static gc c(TL_wallet.nftItem nftitem, boolean z10) {
         TLRPC.WebDocument webDocument;
         if ((!z10 || (webDocument = nftitem.image_small) == null) && (webDocument = nftitem.image) == null) {
             webDocument = nftitem.image_small;
@@ -90,7 +90,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.b6
         if (webDocument == null) {
             return null;
         }
-        return fc.p(h20.c(webDocument));
+        return gc.p(i20.c(webDocument));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -99,7 +99,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.b6
             return;
         }
         this.f = z10;
-        FrameLayout.LayoutParams d = z10 ? c8.ma.d(-1, -1.0f, ks.E1, 3.33f, 4.0f, 3.33f, 4.0f) : c8.ma.d(46, 46.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f);
+        FrameLayout.LayoutParams d = z10 ? c8.ma.d(-1, -1.0f, ls.E1, 3.33f, 4.0f, 3.33f, 4.0f) : c8.ma.d(46, 46.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f);
         org.telegram.ui.Components.q9 q9Var = this.b;
         q9Var.setLayoutParams(d);
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(z10 ? 11.0f : 8.0f));
@@ -126,7 +126,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.b6
             }
         }
         if (this.e) {
-            canvas.drawRect(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(71.0f), getHeight() - 1, getWidth() - (gd.a0 ? org.telegram.messenger.g0.L(71.0f) : 0), getHeight(), org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawRect(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(71.0f), getHeight() - 1, getWidth() - (hd.a0 ? org.telegram.messenger.g0.L(71.0f) : 0), getHeight(), org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

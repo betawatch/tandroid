@@ -8,14 +8,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.i61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.j4;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class w implements g61 {
     public static w f;
@@ -99,7 +99,7 @@ public final class w implements g61 {
         if (i10 != mediaController.n0) {
             return;
         }
-        MediaController.f(mediaController, (fj) this.c, (int[]) this.d, this.a, z10, i7);
+        MediaController.f(mediaController, (gj) this.c, (int[]) this.d, this.a, z10, i7);
     }
 
     @Override // org.telegram.ui.Components.g61
@@ -189,10 +189,10 @@ public final class w implements g61 {
         e10.execute(new l4(24, this, context));
     }
 
-    public w(MediaController mediaController, int i7, fj fjVar, int[] iArr, boolean z10) {
+    public w(MediaController mediaController, int i7, gj gjVar, int[] iArr, boolean z10) {
         this.e = mediaController;
         this.b = i7;
-        this.c = fjVar;
+        this.c = gjVar;
         this.d = iArr;
         this.a = z10;
     }

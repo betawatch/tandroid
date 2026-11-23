@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k21 extends View implements org.telegram.ui.ActionBar.b6 {
     public int a;
@@ -81,7 +81,7 @@ public final class k21 extends View implements org.telegram.ui.ActionBar.b6 {
         if (i7 == 0) {
             float max = (Math.max(0.4f, this.b) - 0.4f) / 0.6f;
             if (max != 0.0f) {
-                float B = (org.telegram.messenger.n10.B(21.0f, 2, getWidth()) * max) + org.telegram.messenger.g0.L(21.0f);
+                float B = (org.telegram.messenger.o10.B(21.0f, 2, getWidth()) * max) + org.telegram.messenger.g0.L(21.0f);
                 float height2 = getHeight() / 2.0f;
                 canvas.drawLine(org.telegram.messenger.g0.L(21.0f), height2, B, height2, paint);
                 double L2 = org.telegram.messenger.g0.L(9.0f) * max;

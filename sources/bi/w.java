@@ -6,17 +6,17 @@ import android.view.View;
 import android.widget.LinearLayout;
 import c8.ma;
 import di.pb;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class w extends LinearLayout implements fs {
+public final class w extends LinearLayout implements gs {
     public final q9 a;
     public final org.telegram.ui.Components.o6 b;
     public final org.telegram.ui.Components.o6 c;
@@ -86,10 +86,10 @@ public final class w extends LinearLayout implements fs {
         q9 q9Var = this.a;
         q9Var.f(user, b9Var);
         q9Var.setRoundRadius(org.telegram.messenger.g0.L(16.0f));
-        this.c.setText(o10.q(user));
+        this.c.setText(p10.q(user));
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         this.b.invalidate();
     }
@@ -105,13 +105,13 @@ public final class w extends LinearLayout implements fs {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.e().c(this, ks.l4);
+        ls.e().c(this, ls.l4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.e().n(this, ks.l4);
+        ls.e().n(this, ls.l4);
     }
 
     @Override // android.widget.LinearLayout, android.view.View

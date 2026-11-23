@@ -1,78 +1,37 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mp b;
-    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ sl(mp mpVar, SparseArray sparseArray, int i7) {
+    public /* synthetic */ sl(np npVar, TLRPC.TL_error tL_error, long j3, int i7) {
         this.a = i7;
-        this.b = mpVar;
-        this.c = sparseArray;
+        this.b = npVar;
+        this.c = tL_error;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        SparseArray sparseArray = this.c;
-        mp mpVar = this.b;
-        char c10 = 2;
+        long j3 = this.d;
+        TLRPC.TL_error tL_error = this.c;
+        np npVar = this.b;
         switch (i7) {
             case 0:
-                int i10 = 0;
-                while (i10 < sparseArray.size()) {
-                    int keyAt = sparseArray.keyAt(i10);
-                    long[] jArr = (long[]) sparseArray.valueAt(i10);
-                    mpVar.getSendMessagesHelper().d0((int) jArr[1]);
-                    ks notificationCenter = mpVar.getNotificationCenter();
-                    Integer valueOf = Integer.valueOf((int) jArr[1]);
-                    Integer valueOf2 = Integer.valueOf(keyAt);
-                    Long valueOf3 = Long.valueOf(jArr[0]);
-                    Boolean bool = Boolean.FALSE;
-                    char c11 = c10;
-                    Object[] objArr = new Object[7];
-                    objArr[0] = valueOf;
-                    objArr[1] = valueOf2;
-                    objArr[c11] = null;
-                    objArr[3] = valueOf3;
-                    objArr[4] = 0L;
-                    objArr[5] = -1;
-                    objArr[6] = bool;
-                    notificationCenter.k(21, objArr);
-                    ks notificationCenter2 = mpVar.getNotificationCenter();
-                    Integer valueOf4 = Integer.valueOf((int) jArr[1]);
-                    Integer valueOf5 = Integer.valueOf(keyAt);
-                    Long valueOf6 = Long.valueOf(jArr[0]);
-                    Object[] objArr2 = new Object[7];
-                    objArr2[0] = valueOf4;
-                    objArr2[1] = valueOf5;
-                    objArr2[c11] = null;
-                    objArr2[3] = valueOf6;
-                    objArr2[4] = 0L;
-                    objArr2[5] = -1;
-                    objArr2[6] = bool;
-                    notificationCenter2.k(22, objArr2);
-                    i10++;
-                    c10 = c11;
-                }
+                npVar.F(j3, tL_error.text);
+                ls.f(npVar.currentAccount).k(ls.H5, Long.valueOf(j3));
                 break;
             default:
-                for (int i11 = 0; i11 < sparseArray.size(); i11++) {
-                    int keyAt2 = sparseArray.keyAt(i11);
-                    long[] jArr2 = (long[]) sparseArray.valueAt(i11);
-                    mpVar.getSendMessagesHelper().d0((int) jArr2[1]);
-                    ks notificationCenter3 = mpVar.getNotificationCenter();
-                    Integer valueOf7 = Integer.valueOf((int) jArr2[1]);
-                    Integer valueOf8 = Integer.valueOf(keyAt2);
-                    Long valueOf9 = Long.valueOf(jArr2[0]);
-                    Boolean bool2 = Boolean.FALSE;
-                    notificationCenter3.k(21, valueOf7, valueOf8, null, valueOf9, 0L, -1, bool2);
-                    mpVar.getNotificationCenter().k(22, Integer.valueOf((int) jArr2[1]), Integer.valueOf(keyAt2), null, Long.valueOf(jArr2[0]), 0L, -1, bool2);
-                }
+                npVar.getClass();
+                npVar.F(j3, tL_error.text);
+                npVar.v1.remove(Long.valueOf(j3));
                 break;
         }
     }

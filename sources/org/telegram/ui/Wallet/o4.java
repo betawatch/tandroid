@@ -4,20 +4,20 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 import java.io.Serializable;
-import org.telegram.messenger.v10;
 import org.telegram.messenger.w10;
+import org.telegram.messenger.x10;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.q1, v10, w10 {
+public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.q1, w10, x10 {
     public final /* synthetic */ n6 a;
 
     public /* synthetic */ o4(n6 n6Var) {
         this.a = n6Var;
     }
 
-    @Override // org.telegram.messenger.w10
+    @Override // org.telegram.messenger.x10
     public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.valueOf(this.a.c0(o41Var, view));
     }
@@ -34,7 +34,7 @@ public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.q1, v
         }
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         this.a.b0((o41) obj, (View) obj2);
     }

@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class y1 implements DialogInterface.OnDismissListen
                 break;
             default:
                 boolean[] zArr = (boolean[]) this.b;
-                x10 x10Var = (x10) this.c;
+                y10 y10Var = (y10) this.c;
                 if (!zArr[0]) {
-                    x10Var.a(Boolean.FALSE);
+                    y10Var.a(Boolean.FALSE);
                     zArr[0] = true;
                     break;
                 }

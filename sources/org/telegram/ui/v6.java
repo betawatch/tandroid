@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v6 extends rg.b {
     public final /* synthetic */ int d;
@@ -85,7 +85,7 @@ public final class v6 extends rg.b {
                 if (i12 == 0) {
                     org.telegram.ui.Cells.x9 x9Var = (org.telegram.ui.Cells.x9) view;
                     if (i7 == x6Var.K) {
-                        x9Var.c(org.telegram.messenger.gd.N0(2131748241, null), null, false, false);
+                        x9Var.c(org.telegram.messenger.hd.N0(2131748241, null), null, false, false);
                         break;
                     }
                 } else if (i12 == 1) {
@@ -106,10 +106,10 @@ public final class v6 extends rg.b {
                     org.telegram.ui.Cells.x9 x9Var2 = tw0Var.E;
                     tw0Var.e = z10;
                     TextView textView4 = tw0Var.r;
-                    textView4.setText(org.telegram.messenger.gd.a0("TotalDeviceFreeSize", null, 2131743730, org.telegram.messenger.g0.i0(j11, false, false)));
+                    textView4.setText(org.telegram.messenger.hd.a0("TotalDeviceFreeSize", null, 2131743728, org.telegram.messenger.g0.i0(j11, false, false)));
                     TextView textView5 = tw0Var.s;
                     long j13 = j12 - j11;
-                    textView5.setText(org.telegram.messenger.gd.a0("TotalDeviceSize", null, 2131743729, org.telegram.messenger.g0.i0(j13, false, false)));
+                    textView5.setText(org.telegram.messenger.hd.a0("TotalDeviceSize", null, 2131743727, org.telegram.messenger.g0.i0(j13, false, false)));
                     if (z10) {
                         textView3.setVisibility(0);
                         textView2.setVisibility(8);
@@ -134,13 +134,13 @@ public final class v6 extends rg.b {
                             x9Var2.setVisibility(0);
                             textView2.setVisibility(0);
                             textView.setVisibility(8);
-                            x9Var2.c(org.telegram.messenger.gd.N0(2131752035, null), org.telegram.messenger.g0.i0(j10, false, false), false, true);
-                            textView2.setText(org.telegram.messenger.gd.a0("TelegramCacheSize", null, 2131744005, org.telegram.messenger.g0.i0(j10 + j3, false, false)));
+                            x9Var2.c(org.telegram.messenger.hd.N0(2131752035, null), org.telegram.messenger.g0.i0(j10, false, false), false, true);
+                            textView2.setText(org.telegram.messenger.hd.a0("TelegramCacheSize", null, 2131744003, org.telegram.messenger.g0.i0(j10 + j3, false, false)));
                         } else {
                             i10 = 0;
                             textView2.setVisibility(8);
                             textView.setVisibility(0);
-                            textView.setText(org.telegram.messenger.gd.a0("LocalDatabaseSize", null, 2131748576, org.telegram.messenger.g0.i0(j3, false, false)));
+                            textView.setText(org.telegram.messenger.hd.a0("LocalDatabaseSize", null, 2131748576, org.telegram.messenger.g0.i0(j3, false, false)));
                             view2.setVisibility(8);
                             x9Var2.setVisibility(8);
                         }
@@ -225,19 +225,19 @@ public final class v6 extends rg.b {
                     org.telegram.messenger.v2 v2Var = x6Var.getMessagesController().u7;
                     int i15 = t6Var.c;
                     int size = v2Var.d(((t6) arrayList.get(i7)).c).size();
-                    String G = size > 0 ? org.telegram.messenger.gd.G(size, "ExceptionShort", Integer.valueOf(size)) : null;
+                    String G = size > 0 ? org.telegram.messenger.hd.G(size, "ExceptionShort", Integer.valueOf(size)) : null;
                     String f14 = org.telegram.messenger.v2.f(v2Var.c(i15));
                     if (((t6) arrayList.get(i7)).c == 0) {
                         n8Var = n8Var2;
-                        n8Var.r(org.telegram.messenger.gd.N0(2131746559, null), f14, true, R.drawable.msg_filled_menu_users, -11565578, -13276952, true);
+                        n8Var.r(org.telegram.messenger.hd.N0(2131746559, null), f14, true, R.drawable.msg_filled_menu_users, -11565578, -13276952, true);
                     } else {
                         n8Var = n8Var2;
                         if (((t6) arrayList.get(i7)).c == 1) {
-                            n8Var.r(org.telegram.messenger.gd.N0(2131749264, null), f14, true, R.drawable.msg_filled_menu_groups, -11154873, -14175180, true);
+                            n8Var.r(org.telegram.messenger.hd.N0(2131749264, null), f14, true, R.drawable.msg_filled_menu_groups, -11154873, -14175180, true);
                         } else if (((t6) arrayList.get(i7)).c == 2) {
-                            n8Var.r(org.telegram.messenger.gd.N0(2131752638, null), f14, true, R.drawable.msg_filled_menu_channels, -1007845, -1996271, true);
+                            n8Var.r(org.telegram.messenger.hd.N0(2131752638, null), f14, true, R.drawable.msg_filled_menu_channels, -1007845, -1996271, true);
                         } else if (((t6) arrayList.get(i7)).c == 3) {
-                            n8Var.r(org.telegram.messenger.gd.N0(2131752634, null), f14, false, R.drawable.msg_filled_stories, -765355, -2148011, false);
+                            n8Var.r(org.telegram.messenger.hd.N0(2131752634, null), f14, false, R.drawable.msg_filled_stories, -765355, -2148011, false);
                         }
                     }
                     n8Var.setSubtitle(G);
@@ -349,7 +349,7 @@ public final class v6 extends rg.b {
                             ph0 ph0Var = (ph0) view3;
                             ph0Var.g(org.telegram.ui.ActionBar.m6.v6, org.telegram.ui.ActionBar.m6.u6);
                             CharSequence charSequence2 = qh0Var.e;
-                            org.telegram.messenger.n10.o(ph0Var.a0.animate().rotation(qh0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.nr.h, 340L);
+                            org.telegram.messenger.o10.o(ph0Var.a0.animate().rotation(qh0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.nr.h, 340L);
                             ph0Var.k(charSequence2, z12);
                             break;
                     }
@@ -383,7 +383,7 @@ public final class v6 extends rg.b {
                             Paint paint4 = new Paint(1);
                             tw0Var.c = paint4;
                             tw0Var.d = new Paint();
-                            org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n(org.telegram.messenger.ks.x3, org.telegram.messenger.ks.e4);
+                            org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n(org.telegram.messenger.ls.x3, org.telegram.messenger.ls.e4);
                             tw0Var.M = nVar;
                             tw0Var.setWillNotDraw(false);
                             nVar.k = false;
@@ -408,7 +408,7 @@ public final class v6 extends rg.b {
                             tw0Var.w = textView;
                             int i11 = org.telegram.ui.ActionBar.m6.y6;
                             org.telegram.ui.ActionBar.t6.U(textView, i11, null);
-                            String N0 = org.telegram.messenger.gd.N0(2131752631, "CalculatingSize");
+                            String N0 = org.telegram.messenger.hd.N0(2131752631, "CalculatingSize");
                             int indexOf = N0.indexOf("...");
                             if (indexOf >= 0) {
                                 SpannableString spannableString = new SpannableString(N0);
@@ -440,7 +440,7 @@ public final class v6 extends rg.b {
                             textView2.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
                             textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(10.0f), i0.a.o(tw0Var.y, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
                             textView4.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
-                            textView5.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(10.0f), i0.a.o(tw0Var.y, org.telegram.messenger.ks.L1)), (Drawable) null, (Drawable) null, (Drawable) null);
+                            textView5.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(10.0f), i0.a.o(tw0Var.y, org.telegram.messenger.ls.L1)), (Drawable) null, (Drawable) null, (Drawable) null);
                             textView5.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
                             textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.m6.L(org.telegram.messenger.g0.L(10.0f), tw0Var.y), (Drawable) null, (Drawable) null, (Drawable) null);
                             textView3.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
@@ -464,9 +464,9 @@ public final class v6 extends rg.b {
                             break;
                         case 4:
                             org.telegram.ui.Components.hu0 hu0Var = new org.telegram.ui.Components.hu0(context, null);
-                            hu0Var.setCallback(new org.telegram.messenger.ed(20));
-                            int i12 = org.telegram.messenger.bz.G;
-                            hu0Var.b(i12 == 3 ? 0 : i12 + 1, null, org.telegram.messenger.gd.G(3, "Days", new Object[0]), org.telegram.messenger.gd.G(1, "Weeks", new Object[0]), org.telegram.messenger.gd.G(1, "Months", new Object[0]), org.telegram.messenger.gd.N0(2131748866, null));
+                            hu0Var.setCallback(new org.telegram.messenger.fd(20));
+                            int i12 = org.telegram.messenger.cz.G;
+                            hu0Var.b(i12 == 3 ? 0 : i12 + 1, null, org.telegram.messenger.hd.G(3, "Days", new Object[0]), org.telegram.messenger.hd.G(1, "Weeks", new Object[0]), org.telegram.messenger.hd.G(1, "Months", new Object[0]), org.telegram.messenger.hd.N0(2131748866, null));
                             view = hu0Var;
                             break;
                         case 5:
@@ -543,13 +543,13 @@ public final class v6 extends rg.b {
                                 if (((Integer) arrayList.get(i13)).intValue() == 1) {
                                     strArr[i13] = "300 MB";
                                 } else if (((Integer) arrayList.get(i13)).intValue() == Integer.MAX_VALUE) {
-                                    strArr[i13] = org.telegram.messenger.gd.N0(2131748009, null);
+                                    strArr[i13] = org.telegram.messenger.hd.N0(2131748009, null);
                                 } else {
                                     strArr[i13] = String.format("%d GB", arrayList.get(i13));
                                 }
                             }
                             hu0Var2.setCallback(new w0(arrayList, 10));
-                            int indexOf2 = arrayList.indexOf(Integer.valueOf(org.telegram.messenger.bz.q().getInt("cache_limit", ConnectionsManager.DEFAULT_DATACENTER_ID)));
+                            int indexOf2 = arrayList.indexOf(Integer.valueOf(org.telegram.messenger.cz.q().getInt("cache_limit", ConnectionsManager.DEFAULT_DATACENTER_ID)));
                             if (indexOf2 < 0) {
                                 indexOf2 = arrayList.size() - 1;
                             }
@@ -600,7 +600,7 @@ public final class v6 extends rg.b {
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
                         org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.v6, notificationsCustomSettingsActivity.getResourceProvider(), PorterDuff.Mode.SRC_IN);
                         imageView.setImageResource(R.drawable.msg_expand);
-                        ph0Var.addView(imageView, c8.ma.d(24, 24.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
+                        ph0Var.addView(imageView, c8.ma.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
                         j5Var = ph0Var;
                         break;
                 }

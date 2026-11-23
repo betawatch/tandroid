@@ -8,7 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pd0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class pd0 extends AnimatorListenerAdapter {
                 canvas.scale(0.1f, 0.1f);
                 canvas.drawColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false));
                 qd0Var.b.draw(canvas);
-                Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / org.telegram.messenger.ks.g2));
+                Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / org.telegram.messenger.ls.g2));
                 qd0Var.d.setBackground(new BitmapDrawable(qd0Var.getContext().getResources(), createBitmap));
                 qd0Var.d.setAlpha(0.0f);
                 qd0Var.d.setVisibility(0);

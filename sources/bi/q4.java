@@ -3,16 +3,16 @@ package bi;
 import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.gf;
 import org.telegram.ui.Components.ng;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q4 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -23,8 +23,8 @@ public final /* synthetic */ class q4 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ q4(tr trVar, long j3, ArrayList arrayList, boolean z10, int i7, int i10) {
-        this.f = trVar;
+    public /* synthetic */ q4(ur urVar, long j3, ArrayList arrayList, boolean z10, int i7, int i10) {
+        this.f = urVar;
         this.b = j3;
         this.h = arrayList;
         this.c = z10;
@@ -46,20 +46,20 @@ public final /* synthetic */ class q4 implements Runnable {
                 int i10 = this.d;
                 if (z11) {
                     TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
-                    mp.u1(i10).f4(tL_payments_uniqueStarGift.users, false);
-                    mp.u1(i10).Z3(tL_payments_uniqueStarGift.chats, false);
+                    np.u1(i10).f4(tL_payments_uniqueStarGift.users, false);
+                    np.u1(i10).Z3(tL_payments_uniqueStarGift.chats, false);
                     TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
                     if (starGift instanceof TL_stars.TL_starGiftUnique) {
                         tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift;
                         z10 = this.c;
                         j3 = this.b;
-                        if ((tL_starGiftUnique == null && y4.m(tL_starGiftUnique) == z10 && (!z10 || j3 == 0 || tL_starGiftUnique.getResellAmount(cg.b.b).b == j3)) || (i7 = this.e + 1) >= 8) {
+                        if ((tL_starGiftUnique == null && x4.m(tL_starGiftUnique) == z10 && (!z10 || j3 == 0 || tL_starGiftUnique.getResellAmount(cg.b.b).b == j3)) || (i7 = this.e + 1) >= 8) {
                             if (tL_starGiftUnique != null) {
                                 org.telegram.ui.Wallet.u0.D(i10).B().i(tL_starGiftUnique);
                                 di.y8.y(i10, false).a0(tL_starGiftUnique);
-                                ArrayList arrayList = k8.U;
+                                ArrayList arrayList = j8.U;
                                 if (!TextUtils.isEmpty(tL_starGiftUnique.slug)) {
-                                    boolean m10 = y4.m(tL_starGiftUnique);
+                                    boolean m10 = x4.m(tL_starGiftUnique);
                                     ArrayList arrayList2 = new ArrayList(arrayList);
                                     int size = arrayList2.size();
                                     int i11 = 0;
@@ -67,27 +67,27 @@ public final /* synthetic */ class q4 implements Runnable {
                                         Object obj = arrayList2.get(i11);
                                         i11++;
                                         WeakReference weakReference = (WeakReference) obj;
-                                        y7 y7Var = (y7) weakReference.get();
-                                        if (y7Var == null) {
+                                        x7 x7Var = (x7) weakReference.get();
+                                        if (x7Var == null) {
                                             arrayList.remove(weakReference);
                                         } else {
-                                            ArrayList arrayList3 = y7Var.d;
-                                            if (y7Var.a == i10 && y7Var.b == tL_starGiftUnique.gift_id) {
+                                            ArrayList arrayList3 = x7Var.d;
+                                            if (x7Var.a == i10 && x7Var.b == tL_starGiftUnique.gift_id) {
                                                 int i12 = 0;
                                                 while (true) {
                                                     if (i12 < arrayList3.size()) {
                                                         TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) arrayList3.get(i12);
                                                         if (!tL_starGiftUnique.slug.equals(tL_starGiftUnique2.slug)) {
                                                             i12++;
-                                                        } else if (y4.m(tL_starGiftUnique2)) {
+                                                        } else if (x4.m(tL_starGiftUnique2)) {
                                                             if (m10) {
                                                                 arrayList3.set(i12, tL_starGiftUnique);
-                                                                x10 x10Var = y7Var.c;
-                                                                if (x10Var != null) {
-                                                                    x10Var.a(Boolean.FALSE);
+                                                                y10 y10Var = x7Var.c;
+                                                                if (y10Var != null) {
+                                                                    y10Var.a(Boolean.FALSE);
                                                                 }
                                                             } else {
-                                                                y7Var.n(tL_starGiftUnique2);
+                                                                x7Var.n(tL_starGiftUnique2);
                                                             }
                                                         }
                                                     }
@@ -99,7 +99,7 @@ public final /* synthetic */ class q4 implements Runnable {
                                 }
                             }
                         } else {
-                            org.telegram.messenger.g0.h3(new o4(i10, i7, j3, str, z10), y4.a[i7]);
+                            org.telegram.messenger.g0.h3(new o4(i10, i7, j3, str, z10), x4.a[i7]);
                             break;
                         }
                     }
@@ -109,10 +109,10 @@ public final /* synthetic */ class q4 implements Runnable {
                 j3 = this.b;
                 if (tL_starGiftUnique == null) {
                 }
-                org.telegram.messenger.g0.h3(new o4(i10, i7, j3, str, z10), y4.a[i7]);
+                org.telegram.messenger.g0.h3(new o4(i10, i7, j3, str, z10), x4.a[i7]);
                 break;
             case 1:
-                ((tr) this.f).Q0(this.d, this.e, this.b, (ArrayList) this.h, this.c);
+                ((ur) this.f).Q0(this.d, this.e, this.b, (ArrayList) this.h, this.c);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;

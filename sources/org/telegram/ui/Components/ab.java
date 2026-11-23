@@ -6,7 +6,7 @@ import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ab implements View.OnLayoutChangeListener {
     public final /* synthetic */ boolean a;
@@ -57,7 +57,7 @@ public final class ab implements View.OnLayoutChangeListener {
             if (g2Var != null) {
                 g2Var.setupBulletinGlass(gcVar);
             }
-            if (org.telegram.messenger.mp.g1().getBoolean("view_animations", true) && !gcVar.s) {
+            if (org.telegram.messenger.np.g1().getBoolean("view_animations", true) && !gcVar.s) {
                 if (lbVar != null && gcVar.q == null) {
                     gcVar.q = lbVar.createTransition();
                 }

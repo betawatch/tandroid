@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fp0 extends org.telegram.ui.Components.ap0 {
     public final /* synthetic */ FrameLayout V2;
@@ -28,7 +28,7 @@ public final class fp0 extends org.telegram.ui.Components.ap0 {
             org.telegram.messenger.g0.h3(new hf0(this, 20), 50L);
         }
         PhotoViewer photoViewer = this.X2;
-        photoViewer.e0.softInputMode = org.telegram.messenger.ks.v4;
+        photoViewer.e0.softInputMode = org.telegram.messenger.ls.v4;
         try {
             ((WindowManager) photoViewer.E.getSystemService("window")).updateViewLayout(photoViewer.h0, photoViewer.e0);
         } catch (Exception e10) {
@@ -39,7 +39,7 @@ public final class fp0 extends org.telegram.ui.Components.ap0 {
     @Override // org.telegram.ui.Components.ap0
     public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         if (z10) {
-            org.telegram.messenger.g0.h3(new org.telegram.ui.Components.mp0(this, this.V2, hVar, i7, 15), 250L);
+            org.telegram.messenger.g0.h3(new org.telegram.ui.Components.lp0(this, this.V2, hVar, i7, 16), 250L);
         }
     }
 }

@@ -1,11 +1,11 @@
 package wg;
 
 import android.content.DialogInterface;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import ug.h1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class t implements Runnable {
                 org.telegram.messenger.g0.v1(a0Var.o1);
                 break;
             case 1:
-                ks.f(j10.t0).k(ks.X2, a0Var.X1, Boolean.TRUE);
+                ls.f(k10.t0).k(ls.X2, a0Var.X1, Boolean.TRUE);
                 break;
             case 2:
-                ks.f(j10.t0).k(ks.X2, a0Var.X1, Boolean.FALSE);
+                ls.f(k10.t0).k(ls.X2, a0Var.X1, Boolean.FALSE);
                 break;
             case 3:
                 h1 h1Var = new h1(a0Var.s1, a0Var.a, null, a0Var.J0);

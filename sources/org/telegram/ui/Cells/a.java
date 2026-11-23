@@ -2,7 +2,7 @@ package org.telegram.ui.Cells;
 
 import android.text.SpannableStringBuilder;
 import android.view.View;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.rh0;
 import org.telegram.ui.a00;
@@ -10,7 +10,7 @@ import org.telegram.ui.c00;
 import org.telegram.ui.qi0;
 import org.telegram.ui.qm0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                     new bi.g(mVar.getContext()).show();
                     break;
                 } else {
-                    new bi.y(mVar.getContext(), null, null, (org.telegram.messenger.q9) mVar.e.get(0)).show();
+                    new bi.y(mVar.getContext(), null, null, (org.telegram.messenger.r9) mVar.e.get(0)).show();
                     break;
                 }
             case 2:
@@ -83,10 +83,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                     int intValue = ((Integer) view.getTag()).intValue();
                     o7 o7Var = q7Var.d;
                     int i10 = q7Var.c[intValue];
-                    fj fjVar = q7Var.b[intValue];
+                    gj gjVar = q7Var.b[intValue];
                     c00 c00Var = ((a00) ((org.telegram.ui.f) o7Var).b).d;
                     SpannableStringBuilder[] spannableStringBuilderArr = c00.t0;
-                    c00Var.f(i10, q7Var, fjVar, intValue);
+                    c00Var.f(i10, q7Var, gjVar, intValue);
                     break;
                 }
                 break;

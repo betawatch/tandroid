@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pc0 extends org.telegram.ui.Components.iu0 implements org.telegram.ui.Components.w30 {
     public final TextView E;
@@ -135,7 +135,7 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
         o(false);
         TextView textView = new TextView(context);
         this.E = textView;
-        textView.setText(org.telegram.messenger.gd.N0(2131746142, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131746142, null));
         textView.setTextSize(1, 18.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
@@ -143,7 +143,7 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
         addView(textView, c8.ma.t(-2, -2, 1, 8, 12, 8, 0));
         TextView textView2 = new TextView(context);
         this.w = textView2;
-        textView2.setText(org.telegram.messenger.gd.N0(2131746143, "RegisterText2"));
+        textView2.setText(org.telegram.messenger.hd.N0(2131746143, "RegisterText2"));
         textView2.setGravity(1);
         textView2.setTextSize(1, 14.0f);
         textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
@@ -152,7 +152,7 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
         addView(frameLayout2, c8.ma.k(8.0f, 21.0f, 8.0f, 0.0f, -1, -2));
         org.telegram.ui.Components.yb0 yb0Var = new org.telegram.ui.Components.yb0(context, null);
         this.a = yb0Var;
-        yb0Var.setText(org.telegram.messenger.gd.N0(2131750677, null));
+        yb0Var.setText(org.telegram.messenger.hd.N0(2131750677, null));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.c = editTextBoldCursor;
         editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(20.0f));
@@ -219,7 +219,7 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
         });
         org.telegram.ui.Components.yb0 yb0Var2 = new org.telegram.ui.Components.yb0(context, null);
         this.b = yb0Var2;
-        yb0Var2.setText(org.telegram.messenger.gd.N0(2131748839, null));
+        yb0Var2.setText(org.telegram.messenger.hd.N0(2131748839, null));
         EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
         this.d = editTextBoldCursor2;
         editTextBoldCursor2.setCursorSize(org.telegram.messenger.g0.L(20.0f));
@@ -291,8 +291,8 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
         if (O1) {
             LinearLayout linearLayout = new LinearLayout(de0Var.getParentActivity());
             linearLayout.setOrientation(0);
-            yb0Var.setText(org.telegram.messenger.gd.N0(2131750676, null));
-            yb0Var2.setText(org.telegram.messenger.gd.N0(2131748838, null));
+            yb0Var.setText(org.telegram.messenger.hd.N0(2131750676, null));
+            yb0Var2.setText(org.telegram.messenger.hd.N0(2131748838, null));
             linearLayout.addView(yb0Var, c8.ma.m(1.0f, 0, -2, 0, 8, 0));
             linearLayout.addView(yb0Var2, c8.ma.m(1.0f, 0, -2, 8, 0, 0));
             frameLayout2.addView(linearLayout);
@@ -304,21 +304,21 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
                 org.telegram.messenger.g0.I3(editTextBoldCursor2);
             }
         } else {
-            yb0Var.setText(org.telegram.messenger.gd.N0(2131750677, null));
-            yb0Var2.setText(org.telegram.messenger.gd.N0(2131748839, null));
+            yb0Var.setText(org.telegram.messenger.hd.N0(2131750677, null));
+            yb0Var2.setText(org.telegram.messenger.hd.N0(2131748839, null));
             frameLayout2.addView(yb0Var, c8.ma.d(-1, -2.0f, 48, 8.0f, 0.0f, 8.0f, 0.0f));
             frameLayout2.addView(yb0Var2, c8.ma.d(-1, -2.0f, 48, 8.0f, 82.0f, 8.0f, 0.0f));
         }
         TextView textView3 = new TextView(context);
         this.x = textView3;
-        textView3.setText(org.telegram.messenger.gd.N0(2131752560, "CancelRegistration"));
-        textView3.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 1);
+        textView3.setText(org.telegram.messenger.hd.N0(2131752560, "CancelRegistration"));
+        textView3.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 1);
         textView3.setTextSize(1, 14.0f);
         textView3.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView3.setPadding(0, org.telegram.messenger.g0.L(24.0f), 0, 0);
         int i11 = 8;
         textView3.setVisibility(8);
-        addView(textView3, c8.ma.t(-2, -2, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 0, 20, 0, 0));
+        addView(textView3, c8.ma.t(-2, -2, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 0, 20, 0, 0));
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.jc0
             public final /* synthetic */ pc0 b;
 
@@ -360,7 +360,7 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
         textView4.setGravity(16);
         frameLayout3.addView(textView4, c8.ma.d(-2, 56.0f, 83, 14.0f, 0.0f, 70.0f, 32.0f));
         h6.m.i(textView4);
-        String N0 = org.telegram.messenger.gd.N0(2131743956, "TermsOfServiceLogin");
+        String N0 = org.telegram.messenger.hd.N0(2131743954, "TermsOfServiceLogin");
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(N0);
         int indexOf = N0.indexOf(42);
         int lastIndexOf = N0.lastIndexOf(42);
@@ -393,12 +393,12 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
             return true;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(de0Var.getParentActivity());
-        String N0 = org.telegram.messenger.gd.N0(2131742684, null);
+        String N0 = org.telegram.messenger.hd.N0(2131742682, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.gd.N0(2131754077, "AreYouSureRegistration");
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131744600, "Stop"), new ic0(this, i7));
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751759, "Continue"), null);
+        t1Var.U = org.telegram.messenger.hd.N0(2131754077, "AreYouSureRegistration");
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131744598, "Stop"), new ic0(this, i7));
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751759, "Continue"), null);
         de0Var.showDialog(t1Var);
         return false;
     }
@@ -420,7 +420,7 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
 
     @Override // org.telegram.ui.Components.iu0
     public String getHeaderName() {
-        return org.telegram.messenger.gd.N0(2131742546, "YourName");
+        return org.telegram.messenger.hd.N0(2131742544, "YourName");
     }
 
     @Override // org.telegram.ui.Components.w30
@@ -591,17 +591,17 @@ public final class pc0 extends org.telegram.ui.Components.iu0 implements org.tel
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(de0Var.getParentActivity());
-        String N0 = org.telegram.messenger.gd.N0(2131743957, "TermsOfService");
+        String N0 = org.telegram.messenger.hd.N0(2131743955, "TermsOfService");
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
         if (z10) {
-            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131754716, "Accept"), new ic0(this, 1));
-            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751592, "Decline"), new ic0(this, 2));
+            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131754716, "Accept"), new ic0(this, 1));
+            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751592, "Decline"), new ic0(this, 2));
         } else {
-            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131747637, "OK"), null);
+            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131747637, "OK"), null);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(de0Var.s0.text);
-        org.telegram.messenger.fj.b(spannableStringBuilder, de0Var.s0.entities, false, false, false, false, 0);
+        org.telegram.messenger.gj.b(spannableStringBuilder, de0Var.s0.entities, false, false, false, false, 0);
         t1Var.U = spannableStringBuilder;
         de0Var.showDialog(t1Var);
     }

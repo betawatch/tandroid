@@ -2,13 +2,13 @@ package di;
 
 import android.text.TextUtils;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h3 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class h3 implements Runnable {
         f6 f6Var = this.b;
         switch (i7) {
             case 0:
-                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                vf.c.v(f6Var.getContext(), np.u1(f6Var.a).K6 + str, false);
                 break;
             case 1:
                 long j3 = f6Var.T1;
@@ -40,15 +40,15 @@ public final /* synthetic */ class h3 implements Runnable {
                         if (Q instanceof bn) {
                             bn bnVar = (bn) Q;
                             if (bnVar.a() == j3) {
-                                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.gift, gd.N0(2131744855, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744853, org.telegram.messenger.n5.t(j3)))).k(true);
+                                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.gift, hd.N0(2131744853, null), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131744851, org.telegram.messenger.n5.t(j3)))).k(true);
                                 break;
                             }
                         }
-                        ks f10 = ks.f(f6Var.a);
+                        ls f10 = ls.f(f6Var.a);
                         Long valueOf = Long.valueOf(j3);
                         Boolean bool = Boolean.FALSE;
                         f10.k(6, valueOf, bool);
-                        ks.f(f6Var.a).k(5, Long.valueOf(j3), bool);
+                        ls.f(f6Var.a).k(5, Long.valueOf(j3), bool);
                         bn ua2 = bn.ua(j3);
                         ua2.whenFullyVisible(new f2(5, f6Var, ua2));
                         Q.presentFragment(ua2);
@@ -60,19 +60,19 @@ public final /* synthetic */ class h3 implements Runnable {
                 }
                 break;
             case 2:
-                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                vf.c.v(f6Var.getContext(), np.u1(f6Var.a).K6 + str, false);
                 break;
             case 3:
-                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                vf.c.v(f6Var.getContext(), np.u1(f6Var.a).K6 + str, false);
                 break;
             case 4:
-                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                vf.c.v(f6Var.getContext(), np.u1(f6Var.a).K6 + str, false);
                 break;
             case 5:
-                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                vf.c.v(f6Var.getContext(), np.u1(f6Var.a).K6 + str, false);
                 break;
             case 6:
-                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                vf.c.v(f6Var.getContext(), np.u1(f6Var.a).K6 + str, false);
                 break;
             case 7:
                 org.telegram.messenger.g0.g(str);
@@ -82,7 +82,7 @@ public final /* synthetic */ class h3 implements Runnable {
                 break;
             default:
                 f6Var.dismiss();
-                vf.c.t(f6Var.getContext(), "https://" + mp.u1(f6Var.a).X2 + "/" + str);
+                vf.c.t(f6Var.getContext(), "https://" + np.u1(f6Var.a).X2 + "/" + str);
                 break;
         }
     }

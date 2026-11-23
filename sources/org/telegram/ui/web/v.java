@@ -3,11 +3,11 @@ package org.telegram.ui.web;
 import bi.l2;
 import fi.f7;
 import java.io.File;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v implements x10 {
+public final /* synthetic */ class v implements y10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ v0 b;
     public final /* synthetic */ String c;
@@ -23,7 +23,7 @@ public final /* synthetic */ class v implements x10 {
         this.d = str2;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:

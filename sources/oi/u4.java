@@ -4,46 +4,46 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.f20;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class u4 implements fs {
+public final class u4 implements gs {
     public final int a;
     public final h6.m b;
-    public fj c;
-    public e20 d;
+    public gj c;
+    public f20 d;
     public String e;
     public boolean f;
     public boolean h;
     public boolean n;
 
-    public u4(int i7, ef efVar, h6.m mVar) {
+    public u4(int i7, ff ffVar, h6.m mVar) {
         this.a = i7;
         this.b = mVar;
     }
 
-    public static boolean c(ef efVar) {
-        if (!efVar.b) {
-            ArrayList arrayList = efVar.q;
-            ArrayList arrayList2 = (arrayList == null || arrayList.isEmpty()) ? efVar.p : efVar.q;
+    public static boolean c(ff ffVar) {
+        if (!ffVar.b) {
+            ArrayList arrayList = ffVar.q;
+            ArrayList arrayList2 = (arrayList == null || arrayList.isEmpty()) ? ffVar.p : ffVar.q;
             if (arrayList2 != null) {
                 int size = arrayList2.size();
                 for (int i7 = 0; i7 < size; i7++) {
-                    c20 c20Var = (c20) arrayList2.get(i7);
-                    if (c20Var != null) {
-                        if (c20Var.a == 0) {
-                            byte b10 = c20Var.b;
+                    d20 d20Var = (d20) arrayList2.get(i7);
+                    if (d20Var != null) {
+                        if (d20Var.a == 0) {
+                            byte b10 = d20Var.b;
                             if ((b10 & 1) != 0 || (b10 & 4) != 0) {
                                 return true;
                             }
                         }
-                        ArrayList arrayList3 = c20Var.k;
+                        ArrayList arrayList3 = d20Var.k;
                         if (arrayList3 != null && !arrayList3.isEmpty()) {
                             return true;
                         }
@@ -85,13 +85,13 @@ public final class u4 implements fs {
     }
 
     public final void d() {
-        ks f10 = ks.f(this.a);
-        f10.n(this, ks.a2);
-        f10.n(this, ks.b2);
-        f10.n(this, ks.c2);
+        ls f10 = ls.f(this.a);
+        f10.n(this, ls.a2);
+        f10.n(this, ls.b2);
+        f10.n(this, ls.c2);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         h6.m mVar = this.b;
         a aVar = (a) mVar.c;
@@ -100,8 +100,8 @@ public final class u4 implements fs {
         if (this.h || this.n || i10 != this.a || objArr.length == 0 || objArr[0] != this.c) {
             return;
         }
-        if (i7 != ks.b2) {
-            if (i7 == ks.c2) {
+        if (i7 != ls.b2) {
+            if (i7 == ls.c2) {
                 b();
                 return;
             }
@@ -118,10 +118,10 @@ public final class u4 implements fs {
             this.n = true;
             d();
             String str = this.e;
-            e20 e20Var = this.d;
-            int i11 = e20Var.k;
-            int i12 = e20Var.l;
-            int ceil = (int) Math.ceil(e20Var.r / 1000.0d);
+            f20 f20Var = this.d;
+            int i11 = f20Var.k;
+            int i12 = f20Var.l;
+            int ceil = (int) Math.ceil(f20Var.r / 1000.0d);
             t3Var.i4.remove(rVar);
             rVar.b = true;
             rVar.e = str;

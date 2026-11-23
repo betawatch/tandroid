@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cu extends FrameLayout {
     public int a;
@@ -258,7 +258,7 @@ public final class cu extends FrameLayout {
                 int measuredWidth2 = getMeasuredWidth();
                 float f12 = measuredWidth2 / 2;
                 float I = (org.telegram.messenger.g0.I(Math.min(1.0f, (measuredWidth * 1.0f) / measuredWidth2)) * f12) + f12;
-                euVar.h.setDuration(Math.max(org.telegram.messenger.ks.g2, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(I / r4) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
+                euVar.h.setDuration(Math.max(org.telegram.messenger.ls.g2, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(I / r4) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
                 euVar.h.addListener(new org.telegram.ui.Cells.y9(this, 24));
                 euVar.h.start();
                 euVar.n = true;

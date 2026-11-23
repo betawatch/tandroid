@@ -5,10 +5,10 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x {
     public boolean a;
@@ -28,16 +28,16 @@ public final class x {
         this.g = h2.g0.a;
     }
 
-    public static x c(android.support.v4.media.session.a0 a0Var, q2 q2Var) {
+    public static x c(android.support.v4.media.session.a0 a0Var, r2 r2Var) {
         long nativeSessionNew;
         t tVar = (t) a0Var.b;
         long k10 = DictationAsr.k(tVar);
         if (k10 == 0) {
             return null;
         }
-        x xVar = new x(a0Var, q2Var);
+        x xVar = new x(a0Var, r2Var);
         String a10 = tVar.a((String) a0Var.c);
-        nativeSessionNew = DictationAsr.nativeSessionNew(k10, a10, a10.split(",")[0], bz.o() == 0 ? 2 : 4);
+        nativeSessionNew = DictationAsr.nativeSessionNew(k10, a10, a10.split(",")[0], cz.o() == 0 ? 2 : 4);
         xVar.c = nativeSessionNew;
         if (nativeSessionNew != 0) {
             return xVar;
@@ -72,7 +72,7 @@ public final class x {
         boolean z11;
         boolean z12;
         int i7;
-        q2 q2Var = (q2) this.f;
+        r2 r2Var = (r2) this.f;
         StringBuilder sb2 = (StringBuilder) this.g;
         if (str == null || str.length() <= 2) {
             return;
@@ -136,35 +136,35 @@ public final class x {
             String sb4 = sb2.toString();
             String str2 = (String) this.h;
             boolean z14 = this.a;
-            q2Var.s++;
-            if (q2Var.g > sb4.length()) {
-                q2Var.g = 0;
+            r2Var.w++;
+            if (r2Var.g > sb4.length()) {
+                r2Var.g = 0;
             }
-            q2Var.h = sb4.length();
-            q2Var.i = str2.isEmpty();
-            String trim = sb4.substring(q2Var.g).trim();
+            r2Var.h = sb4.length();
+            r2Var.i = str2.isEmpty();
+            String trim = sb4.substring(r2Var.g).trim();
             if (trim.length() > 180 && str2.isEmpty()) {
-                org.telegram.messenger.g0.g3(new n2(q2Var, q2Var.f, trim, z10, 0));
-                r2 r2Var = q2Var.t;
-                long j3 = r2Var.f;
-                r2Var.f = 1 + j3;
-                q2Var.f = j3;
-                q2Var.g = sb4.length();
-                q2Var.m.reset();
+                org.telegram.messenger.g0.g3(new o2(r2Var, r2Var.f, trim, z10, 0));
+                s2 s2Var = r2Var.x;
+                long j3 = s2Var.f;
+                s2Var.f = 1 + j3;
+                r2Var.f = j3;
+                r2Var.g = sb4.length();
+                r2Var.q.reset();
                 trim = "";
             }
             String q10 = DictationAsr.q(trim, str2, z14);
-            if (!q10.equals(q2Var.j)) {
-                q2Var.j = q10;
+            if (!q10.equals(r2Var.j)) {
+                r2Var.j = q10;
                 boolean z15 = 0;
-                org.telegram.messenger.g0.g3(new n2(q2Var, q2Var.f, q10, z15, 0));
+                org.telegram.messenger.g0.g3(new o2(r2Var, r2Var.f, q10, z15, 0));
                 i7 = z15;
                 this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
                 if (z12 && ((String) this.h).isEmpty() && sb2.length() > 0) {
                     sb2.setLength(i7);
-                    q2Var.b();
-                    q2Var.h = i7;
-                    q2Var.g = i7;
+                    r2Var.b();
+                    r2Var.h = i7;
+                    r2Var.g = i7;
                     return;
                 }
                 return;
@@ -176,11 +176,11 @@ public final class x {
         }
     }
 
-    public x(android.support.v4.media.session.a0 a0Var, q2 q2Var) {
+    public x(android.support.v4.media.session.a0 a0Var, r2 r2Var) {
         this.g = new StringBuilder();
         this.h = "";
         this.d = a0Var;
         this.e = (t) a0Var.b;
-        this.f = q2Var;
+        this.f = r2Var;
     }
 }

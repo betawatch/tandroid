@@ -9,16 +9,16 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.hz0;
 import org.telegram.ui.Components.rh0;
 import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a3 extends LinearLayout {
     public static final /* synthetic */ int x = 0;
@@ -37,7 +37,7 @@ public final class a3 extends LinearLayout {
     public a3(final Context context) {
         super(context);
         this.r = -1;
-        this.w = j10.t0;
+        this.w = k10.t0;
         setGravity(17);
         setOrientation(1);
         setOnTouchListener(new gi.a(5));
@@ -76,7 +76,7 @@ public final class a3 extends LinearLayout {
         }
         this.d = true;
         if (z10) {
-            String N0 = gd.N0(2131748036, null);
+            String N0 = hd.N0(2131748036, null);
             if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.P1()) {
                 N0 = N0.replace('\n', ' ');
             }
@@ -156,9 +156,9 @@ public final class a3 extends LinearLayout {
         if (getParent() instanceof org.telegram.ui.Components.ba) {
             size2 -= ((org.telegram.ui.Components.ba) getParent()).f3;
         }
-        ArrayList arrayList = mp.u1(this.w).s;
+        ArrayList arrayList = np.u1(this.w).s;
         if (!arrayList.isEmpty()) {
-            size2 = n10.x(50.0f, (arrayList.size() + (arrayList.size() * org.telegram.messenger.g0.L(72.0f))) - 1, size2);
+            size2 = o10.x(50.0f, (arrayList.size() + (arrayList.size() * org.telegram.messenger.g0.L(72.0f))) - 1, size2);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
     }

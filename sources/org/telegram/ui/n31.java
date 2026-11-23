@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n31 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -28,12 +28,12 @@ public final class n31 extends LinearLayout implements org.telegram.ui.ActionBar
         addView(a11, c8.ma.s(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
-        hi.e g10 = org.telegram.messenger.n10.g(24, context, h6Var, true);
+        hi.e g10 = org.telegram.messenger.o10.g(24, context, h6Var, true);
         this.d = g10;
-        hi.e g11 = org.telegram.messenger.n10.g(24, context, h6Var, true);
+        hi.e g11 = org.telegram.messenger.o10.g(24, context, h6Var, true);
         this.e = g11;
-        linearLayout.addView(g10, c8.ma.q(0, 42, 1.0f, org.telegram.messenger.ks.x1, 0, 0, 12, 0));
-        linearLayout.addView(g11, c8.ma.q(0, 42, 1.0f, org.telegram.messenger.ks.x1, 0, 0, 0, 0));
+        linearLayout.addView(g10, c8.ma.q(0, 42, 1.0f, org.telegram.messenger.ls.x1, 0, 0, 12, 0));
+        linearLayout.addView(g11, c8.ma.q(0, 42, 1.0f, org.telegram.messenger.ls.x1, 0, 0, 0, 0));
         addView(linearLayout, c8.ma.t(-1, -2, 55, 24, 18, 24, 16));
     }
 

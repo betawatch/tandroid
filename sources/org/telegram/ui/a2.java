@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout implements org.telegram.messenger.y5, org.telegram.ui.Cells.i9 {
     public int E;
@@ -37,7 +37,7 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.y5, 
     public TLObject P;
     public TL_iv.PageBlock Q;
     public boolean R;
-    public org.telegram.messenger.xi S;
+    public org.telegram.messenger.yi S;
     public Drawable T;
     public boolean U;
     public final p50 a;
@@ -138,7 +138,7 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.y5, 
             float f10 = 0.0f;
             if (this.U || org.telegram.messenger.w7.G(i7).S(r10)) {
                 this.G = 1;
-                Float w10 = org.telegram.messenger.ec.D().w(r10);
+                Float w10 = org.telegram.messenger.fc.D().w(r10);
                 if (w10 != null) {
                     f10 = w10.floatValue();
                 }
@@ -270,7 +270,7 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.y5, 
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131753945, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.N0(2131753945, null));
         if (this.c != null) {
             sb2.append(", ");
             sb2.append(this.c.d.getText());
@@ -328,7 +328,7 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.y5, 
                     } else {
                         i13 = org.telegram.messenger.g0.L(18.0f) + org.telegram.messenger.g0.L(i21 * 14);
                         this.s = i13;
-                        i14 = org.telegram.messenger.n10.x(18.0f, i13, i11);
+                        i14 = org.telegram.messenger.o10.x(18.0f, i13, i11);
                         L = i14;
                     }
                     TLRPC.Photo photo = this.M;
@@ -407,10 +407,10 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.y5, 
                                         File J = org.telegram.messenger.w7.J(this.I, null, true, true);
                                         if (this.U || J.exists()) {
                                             imageReceiver.O = null;
-                                            imageReceiver.r0(org.telegram.messenger.fc.i(this.I, this.M), this.J, org.telegram.messenger.fc.i(this.K, this.M), this.L, null, this.I.size, null, e4Var2 != null ? e4Var2.F : null, 1);
+                                            imageReceiver.r0(org.telegram.messenger.gc.i(this.I, this.M), this.J, org.telegram.messenger.gc.i(this.K, this.M), this.L, null, this.I.size, null, e4Var2 != null ? e4Var2.F : null, 1);
                                         } else {
-                                            imageReceiver.O = org.telegram.messenger.fc.i(this.I, this.M);
-                                            imageReceiver.r0(null, this.J, org.telegram.messenger.fc.i(this.K, this.M), this.L, null, this.I.size, null, e4Var2 != null ? e4Var2.F : null, 1);
+                                            imageReceiver.O = org.telegram.messenger.gc.i(this.I, this.M);
+                                            imageReceiver.r0(null, this.J, org.telegram.messenger.gc.i(this.K, this.M), this.L, null, this.I.size, null, e4Var2 != null ? e4Var2.F : null, 1);
                                         }
                                     }
                                 }
@@ -540,7 +540,7 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.y5, 
                         RadialProgress2 radialProgress2 = this.f;
                         if (i7 == 0) {
                             radialProgress2.p(true, 0.0f);
-                            imageReceiver.r0(org.telegram.messenger.fc.i(this.I, this.M), this.J, org.telegram.messenger.fc.i(this.K, this.M), this.L, null, this.I.size, null, this.P, 1);
+                            imageReceiver.r0(org.telegram.messenger.gc.i(this.I, this.M), this.J, org.telegram.messenger.gc.i(this.K, this.M), this.L, null, this.I.size, null, this.P, 1);
                             this.G = 1;
                             radialProgress2.setIcon(getIconForCurrentState(), true, true);
                             invalidate();

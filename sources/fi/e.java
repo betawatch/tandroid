@@ -8,13 +8,13 @@ import android.text.TextUtils;
 import android.view.View;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Cells.oa;
-import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -23,19 +23,19 @@ import org.telegram.ui.cd0;
 import org.telegram.ui.qc;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements x10 {
+public final /* synthetic */ class e implements y10 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
-        fj messageObject;
-        fj messageObject2;
+        gj messageObject;
+        gj messageObject2;
         int i7 = 2;
         switch (this.a) {
             case 0:
@@ -65,7 +65,7 @@ public final /* synthetic */ class e implements x10 {
                 }
                 break;
             case 5:
-                org.telegram.messenger.q5 q5Var = zy.J;
+                org.telegram.messenger.q5 q5Var = az.J;
                 break;
             case 6:
                 HashMap hashMap = org.telegram.ui.ActionBar.f3.L;
@@ -136,8 +136,8 @@ public final /* synthetic */ class e implements x10 {
                 break;
             case 17:
                 View view10 = (View) obj;
-                if (view10 instanceof f11) {
-                    ((f11) view10).a(true);
+                if (view10 instanceof e11) {
+                    ((e11) view10).a(true);
                     break;
                 }
                 break;
@@ -175,9 +175,9 @@ public final /* synthetic */ class e implements x10 {
                 break;
             case 24:
                 HashSet hashSet = (HashSet) obj;
-                String str = gd.E0().B.f;
+                String str = hd.E0().B.f;
                 hashSet.addAll(sy0.d0());
-                SharedPreferences.Editor edit = mp.g1().edit();
+                SharedPreferences.Editor edit = np.g1().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
                 } else {
@@ -187,7 +187,7 @@ public final /* synthetic */ class e implements x10 {
                 sy0.s = false;
                 for (int i12 = 0; i12 < 4; i12++) {
                     try {
-                        mp.u1(i12).v7.g();
+                        np.u1(i12).v7.g();
                     } catch (Exception unused) {
                     }
                 }

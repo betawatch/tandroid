@@ -1,11 +1,11 @@
 package wg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.si;
 import org.telegram.ui.sg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,11 +33,11 @@ public final /* synthetic */ class x0 implements Runnable {
                 break;
             case 3:
                 sg0 sg0Var = e1Var.V1;
-                sg0Var.b.r(gd.N0(2131745640, null), true);
+                sg0Var.b.r(hd.N0(2131745640, null), true);
                 break;
             case 4:
                 sg0 sg0Var2 = e1Var.V1;
-                sg0Var2.b.r(gd.N0(2131749477, null), true);
+                sg0Var2.b.r(hd.N0(2131749477, null), true);
                 break;
             case 5:
                 e1Var.e1();
@@ -46,7 +46,7 @@ public final /* synthetic */ class x0 implements Runnable {
             case 6:
                 ArrayList arrayList = e1Var.e2;
                 if (arrayList.isEmpty()) {
-                    arrayList.addAll(ri.d0(e1Var.a).j1);
+                    arrayList.addAll(si.d0(e1Var.a).j1);
                     e1Var.l1(true, true);
                     break;
                 }

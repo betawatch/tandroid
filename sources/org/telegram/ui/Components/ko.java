@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ko implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -62,8 +62,8 @@ public final /* synthetic */ class ko implements Runnable {
                 String str = a0Var.r2;
                 wg.y yVar = new wg.y(this.b, this.c, prepaidGiveaway, tL_prepaidStarsGiveaway, a0Var);
                 wg.v vVar = new wg.v(a0Var, 6);
-                org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0);
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(org.telegram.messenger.j10.t0);
+                org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0);
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(org.telegram.messenger.k10.t0);
                 if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
                     tL_inputStorePaymentStarsGiveaway = new TLRPC.TL_inputStorePaymentPremiumGiveaway();
                     tL_inputStorePaymentStarsGiveaway.only_new_subscribers = z10;

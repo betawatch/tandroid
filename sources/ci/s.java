@@ -8,30 +8,30 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.l8;
+import bi.k8;
 import bi.u1;
 import bi.w2;
 import c8.ma;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k5;
 import org.telegram.ui.Components.m5;
 import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class s extends FrameLayout implements fs {
+public abstract class s extends FrameLayout implements gs {
     public static final long[] L = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
     public static final PorterDuffColorFilter M = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
     public TLRPC.TL_messages_stickerSet E;
@@ -67,7 +67,7 @@ public abstract class s extends FrameLayout implements fs {
         this.I = new HashSet();
         this.a = i7;
         this.b = g0Var;
-        this.x = j10.i(i7).q();
+        this.x = k10.i(i7).q();
         m mVar = new m(context, null);
         this.c = mVar;
         v4.t tVar = new v4.t(this.r);
@@ -79,7 +79,7 @@ public abstract class s extends FrameLayout implements fs {
         k5Var.r = new h(h0Var, 0);
         mVar.setAdapter(kVar);
         mVar.setSelectorDrawableColor(0);
-        mVar.setOnItemClickListener(new l8(g0Var, 1));
+        mVar.setOnItemClickListener(new k8(g0Var, 1));
         mVar.setItemAnimator(null);
         mVar.setOverScrollMode(2);
         mVar.setVerticalScrollBarEnabled(false);
@@ -104,13 +104,13 @@ public abstract class s extends FrameLayout implements fs {
     }
 
     public static boolean d(Drawable drawable) {
-        return (drawable instanceof p5) && fj.C4(((p5) drawable).e);
+        return (drawable instanceof p5) && gj.C4(((p5) drawable).e);
     }
 
     public final ArrayList a() {
         if (this.J == null) {
             this.J = new ArrayList();
-            for (String str : mp.u1(this.a).h7.getString("qrAppliedEmoji", "").split(",")) {
+            for (String str : np.u1(this.a).h7.getString("qrAppliedEmoji", "").split(",")) {
                 try {
                     if (!str.isEmpty()) {
                         this.J.add(Long.valueOf(Long.parseLong(str)));
@@ -143,9 +143,9 @@ public abstract class s extends FrameLayout implements fs {
         return 0;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.x0 && objArr.length > 0) {
+        if (i7 == ls.x0 && objArr.length > 0) {
             Object obj = objArr[0];
             if ((obj instanceof Integer) && ((Integer) obj).intValue() != 5) {
                 return;
@@ -169,7 +169,7 @@ public abstract class s extends FrameLayout implements fs {
         TLRPC.Document document;
         ArrayList<TLRPC.Document> arrayList5;
         int i11 = this.a;
-        ri d02 = ri.d0(i11);
+        si d02 = si.d0(i11);
         ArrayList<o> arrayList6 = this.n;
         arrayList6.clear();
         ArrayList arrayList7 = new ArrayList();
@@ -207,7 +207,7 @@ public abstract class s extends FrameLayout implements fs {
             this.F = true;
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-            TLRPC.TL_messages_stickerSet n02 = ri.d0(i11).n0(tL_inputStickerSetShortName, null, false, true, new ai.h0(this, 6));
+            TLRPC.TL_messages_stickerSet n02 = si.d0(i11).n0(tL_inputStickerSetShortName, null, false, true, new ai.h0(this, 6));
             if (n02 != null && (arrayList5 = n02.documents) != null && !arrayList5.isEmpty()) {
                 this.E = n02;
             }
@@ -277,7 +277,7 @@ public abstract class s extends FrameLayout implements fs {
             str2 = "application/x-tgsticker";
         }
         if (!arrayList10.isEmpty()) {
-            arrayList6.add(new o(0, gd.N0(2131746301, null), arrayList10));
+            arrayList6.add(new o(0, hd.N0(2131746301, null), arrayList10));
         }
         ArrayList arrayList11 = new ArrayList();
         HashSet hashSet2 = new HashSet();
@@ -337,7 +337,7 @@ public abstract class s extends FrameLayout implements fs {
             i7 = 1;
         } else {
             i7 = 1;
-            arrayList6.add(new o(1, gd.N0(2131746165, null), arrayList11));
+            arrayList6.add(new o(1, hd.N0(2131746165, null), arrayList11));
         }
         arrayList6.addAll(arrayList7);
         int size6 = arrayList6.size();
@@ -379,8 +379,8 @@ public abstract class s extends FrameLayout implements fs {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i7 = this.a;
-        ks.f(i7).c(this, ks.x0);
-        ks.f(i7).c(this, ks.B0);
+        ls.f(i7).c(this, ls.x0);
+        ls.f(i7).c(this, ls.B0);
         e();
     }
 
@@ -388,8 +388,8 @@ public abstract class s extends FrameLayout implements fs {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         int i7 = this.a;
-        ks.f(i7).n(this, ks.x0);
-        ks.f(i7).n(this, ks.B0);
+        ls.f(i7).n(this, ls.x0);
+        ls.f(i7).n(this, ls.B0);
     }
 
     @Override // android.view.View

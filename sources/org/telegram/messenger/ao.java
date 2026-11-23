@@ -1,39 +1,186 @@
 package org.telegram.messenger;
 
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ao implements x10 {
+public final /* synthetic */ class ao implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mp b;
+    public final /* synthetic */ c1 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ao(mp mpVar, int i7) {
-        this.a = i7;
-        this.b = mpVar;
+    public /* synthetic */ ao(c1 c1Var, int i7, int i10) {
+        this.a = i10;
+        this.b = c1Var;
+        this.c = i7;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x016d  */
+    @Override // org.telegram.tgnet.RequestDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7;
+        int i10;
+        int size;
+        int i11;
+        TLRPC.Chat chat;
+        np npVar;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        TLRPC.Message message;
+        int i12;
+        TLRPC.Chat chat2;
+        TLRPC.Chat chat3;
+        ArrayList arrayList3;
         switch (this.a) {
             case 0:
-                TLRPC.messages_AvailableEffects messages_availableeffects = (TLRPC.messages_AvailableEffects) obj;
-                mp mpVar = this.b;
-                if (mpVar.n8 != messages_availableeffects) {
-                    mpVar.n8 = messages_availableeffects;
-                    if (messages_availableeffects != null) {
-                        org.telegram.ui.Components.p5.g(mpVar.currentAccount).f(mpVar.n8.documents);
+                np npVar2 = (np) this.b;
+                ConcurrentHashMap concurrentHashMap = npVar2.Q;
+                ConcurrentHashMap concurrentHashMap2 = npVar2.P;
+                Integer num = 0;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
+                    ArrayList arrayList4 = new ArrayList(tL_messages_peerDialogs.dialogs);
+                    npVar2.w0(tL_messages_peerDialogs);
+                    TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
+                    tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
+                    tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
+                    tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
+                    tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
+                    a0.h hVar = new a0.h();
+                    a0.h hVar2 = new a0.h();
+                    a0.h hVar3 = new a0.h();
+                    int i13 = 0;
+                    while (i13 < tL_messages_peerDialogs.users.size()) {
+                        TLRPC.User user = tL_messages_peerDialogs.users.get(i13);
+                        hVar2.k(user, user.id);
+                        i13++;
+                        num = num;
                     }
-                    mpVar.getNotificationCenter().k(ks.w3, new Object[0]);
+                    Integer num2 = num;
+                    for (int i14 = 0; i14 < tL_messages_peerDialogs.chats.size(); i14++) {
+                        TLRPC.Chat chat4 = tL_messages_peerDialogs.chats.get(i14);
+                        hVar3.k(chat4, chat4.id);
+                    }
+                    ArrayList arrayList5 = new ArrayList();
+                    int i15 = 0;
+                    while (i15 < tL_messages_peerDialogs.messages.size()) {
+                        TLRPC.Message message2 = tL_messages_peerDialogs.messages.get(i15);
+                        TLRPC.Peer peer = message2.peer_id;
+                        int i16 = i15;
+                        TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs2 = tL_messages_peerDialogs;
+                        long j3 = peer.channel_id;
+                        if (j3 != 0) {
+                            TLRPC.Chat chat5 = (TLRPC.Chat) hVar3.f(j3);
+                            if (chat5 != null && chat5.left) {
+                            }
+                            gj gjVar = new gj(npVar2.currentAccount, message2, hVar2, hVar3, false, false);
+                            arrayList5.add(gjVar);
+                            long B0 = gj.B0(gjVar.k);
+                            arrayList3 = (ArrayList) hVar.f(B0);
+                            if (arrayList3 == null) {
+                                arrayList3 = new ArrayList();
+                            }
+                            arrayList3.add(gjVar);
+                            hVar.k(arrayList3, B0);
+                        } else {
+                            long j10 = peer.chat_id;
+                            if (j10 != 0 && (chat3 = (TLRPC.Chat) hVar3.f(j10)) != null && chat3.migrated_to != null) {
+                            }
+                            gj gjVar2 = new gj(npVar2.currentAccount, message2, hVar2, hVar3, false, false);
+                            arrayList5.add(gjVar2);
+                            long B02 = gj.B0(gjVar2.k);
+                            arrayList3 = (ArrayList) hVar.f(B02);
+                            if (arrayList3 == null) {
+                            }
+                            arrayList3.add(gjVar2);
+                            hVar.k(arrayList3, B02);
+                        }
+                        i15 = i16 + 1;
+                        tL_messages_peerDialogs = tL_messages_peerDialogs2;
+                    }
+                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs3 = tL_messages_peerDialogs;
+                    boolean z10 = true;
+                    if (!arrayList4.isEmpty()) {
+                        i7 = 0;
+                        if (arrayList4.get(0) instanceof TLRPC.TL_dialogFolder) {
+                            i10 = 1;
+                            size = arrayList4.size();
+                            i11 = i7;
+                            while (i11 < size) {
+                                TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList4.get(i11);
+                                dialog.pinned = z10;
+                                n5.x(dialog);
+                                if (!n5.y(dialog) ? !n5.z(dialog.id) || (chat = (TLRPC.Chat) hVar3.f(-dialog.id)) == null || chat.migrated_to == null : (chat2 = (TLRPC.Chat) hVar3.f(-dialog.id)) == null || !chat2.left) {
+                                    if (dialog.last_message_date == 0 && (arrayList2 = (ArrayList) hVar.f(dialog.id)) != null) {
+                                        int i17 = TLObject.FLAG_31;
+                                        for (int i18 = 0; i18 < arrayList2.size(); i18++) {
+                                            gj gjVar3 = (gj) arrayList2.get(i18);
+                                            if (gjVar3 != null && (message = gjVar3.k) != null && (i12 = message.date) > i17) {
+                                                i17 = i12;
+                                            }
+                                        }
+                                        if (i17 > Integer.MIN_VALUE) {
+                                            dialog.last_message_date = i17;
+                                        }
+                                    }
+                                    Integer num3 = (Integer) concurrentHashMap2.get(Long.valueOf(dialog.id));
+                                    if (num3 == null) {
+                                        num3 = num2;
+                                    }
+                                    npVar = npVar2;
+                                    arrayList = arrayList4;
+                                    concurrentHashMap2.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num3.intValue(), dialog.read_inbox_max_id)));
+                                    Integer num4 = (Integer) concurrentHashMap.get(Long.valueOf(dialog.id));
+                                    if (num4 == null) {
+                                        num4 = num2;
+                                    }
+                                    concurrentHashMap.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num4.intValue(), dialog.read_outbox_max_id)));
+                                } else {
+                                    npVar = npVar2;
+                                    arrayList = arrayList4;
+                                }
+                                i11++;
+                                npVar2 = npVar;
+                                arrayList4 = arrayList;
+                                z10 = true;
+                            }
+                            npVar2.getMessagesStorage().a.c(new oj(npVar2, this.c, arrayList4, i10, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
+                            break;
+                        }
+                    } else {
+                        i7 = 0;
+                    }
+                    i10 = i7;
+                    size = arrayList4.size();
+                    i11 = i7;
+                    while (i11 < size) {
+                    }
+                    npVar2.getMessagesStorage().a.c(new oj(npVar2, this.c, arrayList4, i10, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
                 }
-                mpVar.m8 = false;
                 break;
             case 1:
-                g0.g3(new fi(17, this.b, (TLRPC.TL_help_appConfig) obj));
+                g0.g3(new l7((np) this.b, tLObject, this.c, 12));
                 break;
+            case 2:
+                np npVar3 = (np) this.b;
+                if (tL_error == null) {
+                    npVar3.getMessagesStorage().a.c(new l7(npVar3, (TLRPC.messages_Dialogs) tLObject, this.c, 14));
+                    break;
+                } else {
+                    g0.g3(new sj(npVar3, 25));
+                    break;
+                }
             default:
-                g0.g3(new jl(this.b, (TL_account.TL_webBrowserSettings) obj, 1));
+                g0.g3(new eg((i5) this.b, tL_error, tLObject, this.c, 4));
                 break;
         }
     }

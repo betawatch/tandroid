@@ -12,7 +12,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j00 extends Drawable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final class j00 extends Drawable {
                     drawable.draw(canvas);
                     break;
                 } else {
-                    canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, org.telegram.messenger.ks.e4);
+                    canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, org.telegram.messenger.ls.e4);
                     drawable.setBounds(getBounds());
                     drawable.draw(canvas);
                     boolean z10 = this.e;
@@ -88,7 +88,7 @@ public final class j00 extends Drawable {
                 }
             default:
                 Rect bounds = getBounds();
-                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.ks.e4, 31);
+                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.ls.e4, 31);
                 Drawable drawable2 = this.b;
                 drawable2.setBounds(bounds);
                 drawable2.draw(canvas);

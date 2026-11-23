@@ -6,7 +6,7 @@ import org.telegram.messenger.a8;
 import org.telegram.ui.ActionBar.q1;
 import org.telegram.ui.ActionBar.t1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements q1 {
     public final /* synthetic */ j0 a;

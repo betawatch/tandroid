@@ -12,9 +12,9 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class r6 extends View {
     public boolean a;
@@ -107,7 +107,7 @@ public final class r6 extends View {
             }
             i11 = 3;
             i12 = 2;
-            paint.setAlpha(ks.e4);
+            paint.setAlpha(ls.e4);
         } else {
             f10 = 168.0f;
             f11 = 102.5f;
@@ -138,7 +138,7 @@ public final class r6 extends View {
                 paint3.setAlpha(95);
                 canvas.drawRect(rectF2, paint3);
                 paint3.setShader(null);
-                paint3.setAlpha(ks.e4);
+                paint3.setAlpha(ls.e4);
             }
             if (p6Var2.Q != null) {
                 float l10 = (p6.l(0.05f, 0.42f, -((float) Math.sin(Math.toRadians(p6Var2.S)))) * 0.65f) + 0.35f;

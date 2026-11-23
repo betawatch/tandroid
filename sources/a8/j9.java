@@ -1,8 +1,8 @@
 package a8;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class j9 {
     public static int a(byte[] bArr, int i7, com.google.android.gms.internal.play_billing.h1 h1Var) {
@@ -155,7 +155,7 @@ public abstract class j9 {
     public static int g(int i7, byte[] bArr, int i10, com.google.android.gms.internal.play_billing.h1 h1Var) {
         byte b10 = bArr[i10];
         int i11 = i10 + 1;
-        int i12 = i7 & ks.L1;
+        int i12 = i7 & ls.L1;
         if (b10 >= 0) {
             h1Var.a = i12 | (b10 << 7);
             return i11;

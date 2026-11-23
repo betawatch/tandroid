@@ -15,7 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w61 extends View {
     public static final Object U = new Object();
@@ -367,9 +367,9 @@ public final class w61 extends View {
                     if (v61Var5 != null) {
                         float f16 = this.b;
                         ChatActivityEnterView chatActivityEnterView = ((ve) v61Var5).a;
-                        org.telegram.messenger.e20 e20Var = chatActivityEnterView.U3;
-                        if (e20Var != null) {
-                            e20Var.a = (long) (e20Var.r * f16);
+                        org.telegram.messenger.f20 f20Var = chatActivityEnterView.U3;
+                        if (f20Var != null) {
+                            f20Var.a = (long) (f20Var.r * f16);
                             chatActivityEnterView.P3.Q(f16, 2);
                         }
                     }
@@ -405,9 +405,9 @@ public final class w61 extends View {
                     if (v61Var6 != null) {
                         float f22 = this.c;
                         ChatActivityEnterView chatActivityEnterView2 = ((ve) v61Var6).a;
-                        org.telegram.messenger.e20 e20Var2 = chatActivityEnterView2.U3;
-                        if (e20Var2 != null) {
-                            e20Var2.b = (long) (e20Var2.r * f22);
+                        org.telegram.messenger.f20 f20Var2 = chatActivityEnterView2.U3;
+                        if (f20Var2 != null) {
+                            f20Var2.b = (long) (f20Var2.r * f22);
                             chatActivityEnterView2.P3.Q(f22, 2);
                         }
                     }

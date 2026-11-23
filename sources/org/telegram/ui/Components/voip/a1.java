@@ -10,12 +10,12 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.cb0;
 import org.telegram.ui.bc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a1 extends TextView {
     public final /* synthetic */ int a = 1;
@@ -49,7 +49,7 @@ public final class a1 extends TextView {
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 Paint[] paintArr = (Paint[]) obj;
-                paintArr[bc1Var.w].setAlpha(ks.e4);
+                paintArr[bc1Var.w].setAlpha(ls.e4);
                 float L = org.telegram.messenger.g0.L(8.0f) + ((int) ((1.0f - bc1Var.E) * (org.telegram.messenger.g0.L(26.0f) - org.telegram.messenger.g0.L(8.0f))));
                 canvas.drawRoundRect(rectF, L, L, paintArr[bc1Var.w]);
                 float f10 = bc1Var.s;
@@ -64,7 +64,7 @@ public final class a1 extends TextView {
                 }
                 super.onDraw(canvas);
                 if (bc1Var.P) {
-                    canvas.drawText(gd.N0(2131742997, null), getWidth() / 2, (int) ((getHeight() / 2) - ((a1Var.getPaint().ascent() + a1Var.getPaint().descent()) / 2.0f)), a1Var.getPaint());
+                    canvas.drawText(hd.N0(2131742995, null), getWidth() / 2, (int) ((getHeight() / 2) - ((a1Var.getPaint().ascent() + a1Var.getPaint().descent()) / 2.0f)), a1Var.getPaint());
                     break;
                 }
                 break;
@@ -124,8 +124,8 @@ public final class a1 extends TextView {
         b8Var.k(0.0f, 0.0f, 80.0f, 80.0f);
         b8 b8Var2 = bc1Var.R;
         b8Var2.k(0.0f, 0.0f, 80.0f, 80.0f);
-        cb0Var.setAlpha(ks.e4);
-        cb0Var2.setAlpha(ks.e4);
+        cb0Var.setAlpha(ls.e4);
+        cb0Var2.setAlpha(ls.e4);
         Canvas canvas = (Canvas) b8Var.b;
         PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
         canvas.drawColor(0, mode);

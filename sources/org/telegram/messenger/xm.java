@@ -1,541 +1,333 @@
 package org.telegram.messenger;
 
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Typeface;
-import android.util.SparseArray;
-import j$.util.concurrent.ConcurrentHashMap;
+import java.nio.ByteBuffer;
+import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.b31;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xm implements Runnable {
-    public final /* synthetic */ mp a;
-    public final /* synthetic */ TLRPC.TL_messages_dialogs b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ TLRPC.messages_Dialogs d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ArrayList f;
-    public final /* synthetic */ ArrayList h;
-    public final /* synthetic */ ArrayList n;
-    public final /* synthetic */ Runnable r;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c1 b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ xm(mp mpVar, TLRPC.TL_messages_dialogs tL_messages_dialogs, ArrayList arrayList, TLRPC.messages_Dialogs messages_dialogs, int i7, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, Runnable runnable) {
-        this.a = mpVar;
-        this.b = tL_messages_dialogs;
-        this.c = arrayList;
-        this.d = messages_dialogs;
-        this.e = i7;
-        this.f = arrayList2;
-        this.h = arrayList3;
-        this.n = arrayList4;
-        this.r = runnable;
+    public /* synthetic */ xm(c1 c1Var, Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i7) {
+        this.a = i7;
+        this.b = c1Var;
+        this.h = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
+        this.f = obj5;
+        this.n = obj6;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00b2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x00f3, code lost:
     
-        if (r12 == (-r11.id)) goto L37;
+        if (r10.key_create_date < (r14.getConnectionsManager().getCurrentTime() - 604800)) goto L36;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00c9, code lost:
-    
-        if (r11.migrated_to != null) goto L29;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00f7  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x014c A[Catch: Exception -> 0x0105, TryCatch #3 {Exception -> 0x0105, blocks: (B:8:0x005c, B:11:0x00b4, B:13:0x00b9, B:15:0x00bd, B:18:0x00c4, B:21:0x00db, B:27:0x0109, B:28:0x0148, B:30:0x014c, B:31:0x016f, B:33:0x018a, B:34:0x0190, B:36:0x01a6, B:37:0x01ae, B:40:0x01c1, B:43:0x01ca, B:45:0x0226, B:47:0x022a, B:48:0x0284, B:51:0x0245, B:52:0x0264, B:61:0x00f5, B:63:0x00fb, B:65:0x0101, B:66:0x00c2, B:67:0x0142), top: B:7:0x005c }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x018a A[Catch: Exception -> 0x0105, TryCatch #3 {Exception -> 0x0105, blocks: (B:8:0x005c, B:11:0x00b4, B:13:0x00b9, B:15:0x00bd, B:18:0x00c4, B:21:0x00db, B:27:0x0109, B:28:0x0148, B:30:0x014c, B:31:0x016f, B:33:0x018a, B:34:0x0190, B:36:0x01a6, B:37:0x01ae, B:40:0x01c1, B:43:0x01ca, B:45:0x0226, B:47:0x022a, B:48:0x0284, B:51:0x0245, B:52:0x0264, B:61:0x00f5, B:63:0x00fb, B:65:0x0101, B:66:0x00c2, B:67:0x0142), top: B:7:0x005c }] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x01a6 A[Catch: Exception -> 0x0105, TryCatch #3 {Exception -> 0x0105, blocks: (B:8:0x005c, B:11:0x00b4, B:13:0x00b9, B:15:0x00bd, B:18:0x00c4, B:21:0x00db, B:27:0x0109, B:28:0x0148, B:30:0x014c, B:31:0x016f, B:33:0x018a, B:34:0x0190, B:36:0x01a6, B:37:0x01ae, B:40:0x01c1, B:43:0x01ca, B:45:0x0226, B:47:0x022a, B:48:0x0284, B:51:0x0245, B:52:0x0264, B:61:0x00f5, B:63:0x00fb, B:65:0x0101, B:66:0x00c2, B:67:0x0142), top: B:7:0x005c }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0226 A[Catch: Exception -> 0x0105, TryCatch #3 {Exception -> 0x0105, blocks: (B:8:0x005c, B:11:0x00b4, B:13:0x00b9, B:15:0x00bd, B:18:0x00c4, B:21:0x00db, B:27:0x0109, B:28:0x0148, B:30:0x014c, B:31:0x016f, B:33:0x018a, B:34:0x0190, B:36:0x01a6, B:37:0x01ae, B:40:0x01c1, B:43:0x01ca, B:45:0x0226, B:47:0x022a, B:48:0x0284, B:51:0x0245, B:52:0x0264, B:61:0x00f5, B:63:0x00fb, B:65:0x0101, B:66:0x00c2, B:67:0x0142), top: B:7:0x005c }] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0264 A[Catch: Exception -> 0x0105, TryCatch #3 {Exception -> 0x0105, blocks: (B:8:0x005c, B:11:0x00b4, B:13:0x00b9, B:15:0x00bd, B:18:0x00c4, B:21:0x00db, B:27:0x0109, B:28:0x0148, B:30:0x014c, B:31:0x016f, B:33:0x018a, B:34:0x0190, B:36:0x01a6, B:37:0x01ae, B:40:0x01c1, B:43:0x01ca, B:45:0x0226, B:47:0x022a, B:48:0x0284, B:51:0x0245, B:52:0x0264, B:61:0x00f5, B:63:0x00fb, B:65:0x0101, B:66:0x00c2, B:67:0x0142), top: B:7:0x005c }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x01c9  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x01c0  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x018f  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        TLRPC.TL_messages_dialogs tL_messages_dialogs;
-        SparseArray sparseArray;
-        mp mpVar;
-        ConcurrentHashMap concurrentHashMap;
-        mp mpVar2;
-        TLRPC.User user;
-        SparseArray sparseArray2;
-        TLRPC.Chat chat;
-        Integer num;
-        Integer num2;
-        ArrayList arrayList;
-        TLRPC.Message message;
         int i7;
-        Integer num3;
-        long B0;
-        ArrayList arrayList2;
-        mp mpVar3 = this.a;
-        ConcurrentHashMap concurrentHashMap2 = mpVar3.Q;
-        ConcurrentHashMap concurrentHashMap3 = mpVar3.P;
-        final a0.h hVar = new a0.h();
-        final a0.h hVar2 = new a0.h();
-        a0.h hVar3 = new a0.h();
-        a0.h hVar4 = new a0.h();
-        Integer num4 = 0;
-        int i10 = 0;
-        while (true) {
-            tL_messages_dialogs = this.b;
-            if (i10 >= tL_messages_dialogs.users.size()) {
+        int i10;
+        boolean z10;
+        long j3;
+        int i11;
+        int nextInt;
+        TLRPC.TL_messages_sendEncryptedFile tL_messages_sendEncryptedFile;
+        int i12 = this.a;
+        boolean z11 = false;
+        Object obj = this.n;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        Object obj4 = this.d;
+        Object obj5 = this.c;
+        Object obj6 = this.h;
+        c1 c1Var = this.b;
+        switch (i12) {
+            case 0:
+                np npVar = (np) c1Var;
+                Context context = (Context) obj5;
+                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj4;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj2;
+                TLRPC.TL_messages_migrateChat tL_messages_migrateChat = (TLRPC.TL_messages_migrateChat) obj;
+                ((pr) obj6).run(0L);
+                if (context != null && !((Activity) context).isFinishing()) {
+                    try {
+                        t1Var.dismiss();
+                        i7 = 1;
+                    } catch (Exception e10) {
+                        i7 = 1;
+                        a8.g(e10, true);
+                    }
+                    int i13 = npVar.currentAccount;
+                    Object[] objArr = new Object[i7];
+                    objArr[0] = Boolean.FALSE;
+                    org.telegram.ui.Components.c5.c0(i13, tL_error, g2Var, tL_messages_migrateChat, objArr);
+                    break;
+                }
                 break;
-            }
-            TLRPC.User user2 = tL_messages_dialogs.users.get(i10);
-            hVar3.k(user2, user2.id);
-            i10++;
-        }
-        for (int i11 = 0; i11 < tL_messages_dialogs.chats.size(); i11++) {
-            TLRPC.Chat chat2 = tL_messages_dialogs.chats.get(i11);
-            hVar4.k(chat2, chat2.id);
-        }
-        final ArrayList arrayList3 = this.c;
-        if (arrayList3 != null) {
-            sparseArray = new SparseArray();
-            int size = arrayList3.size();
-            for (int i12 = 0; i12 < size; i12++) {
-                TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) arrayList3.get(i12);
-                sparseArray.put(encryptedChat.id, encryptedChat);
-            }
-        } else {
-            sparseArray = null;
-        }
-        ArrayList arrayList4 = new ArrayList();
-        int i13 = 0;
-        while (i13 < tL_messages_dialogs.messages.size()) {
-            TLRPC.Message message2 = tL_messages_dialogs.messages.get(i13);
-            TLRPC.Peer peer = message2.peer_id;
-            int i14 = i13;
-            long j3 = peer.channel_id;
-            if (j3 != 0) {
-                TLRPC.Chat chat3 = (TLRPC.Chat) hVar4.f(j3);
-                if (chat3 != null && chat3.left) {
-                    long j10 = mpVar3.C2;
-                    if (j10 != 0) {
+            case 1:
+                np npVar2 = (np) c1Var;
+                Context context2 = (Context) obj5;
+                org.telegram.ui.ActionBar.t1 t1Var2 = (org.telegram.ui.ActionBar.t1) obj4;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj3;
+                org.telegram.ui.ActionBar.g2 g2Var2 = (org.telegram.ui.ActionBar.g2) obj2;
+                TLRPC.TL_channels_convertToGigagroup tL_channels_convertToGigagroup = (TLRPC.TL_channels_convertToGigagroup) obj;
+                npVar2.getClass();
+                ((mr) obj6).d(false);
+                if (context2 != null && !((Activity) context2).isFinishing()) {
+                    try {
+                        t1Var2.dismiss();
+                        i10 = 1;
+                    } catch (Exception e11) {
+                        i10 = 1;
+                        a8.g(e11, true);
                     }
-                    arrayList2 = arrayList4;
-                    num3 = num4;
+                    int i14 = npVar2.currentAccount;
+                    Object[] objArr2 = new Object[i10];
+                    objArr2[0] = Boolean.FALSE;
+                    org.telegram.ui.Components.c5.c0(i14, tL_error2, g2Var2, tL_channels_convertToGigagroup, objArr2);
+                    break;
                 }
-                num3 = num4;
-                fj fjVar = new fj(mpVar3.currentAccount, message2, hVar3, hVar4, false, false);
-                arrayList4.add(fjVar);
-                B0 = fj.B0(fjVar.k);
-                if (hVar2.d(B0)) {
-                    arrayList2 = arrayList4;
-                    ArrayList arrayList5 = new ArrayList(1);
-                    arrayList5.add(fjVar);
-                    hVar2.k(arrayList5, B0);
+                break;
+            case 2:
+                si siVar = (si) c1Var;
+                siVar.getMessagesController().f4((ArrayList) obj6, true);
+                siVar.getMessagesController().Z3((ArrayList) obj5, true);
+                siVar.o1 = false;
+                siVar.n1 = true;
+                siVar.j1 = (ArrayList) obj4;
+                siVar.k1 = (ArrayList) obj3;
+                siVar.l1 = (ArrayList) obj2;
+                siVar.m1 = (ArrayList) obj;
+                siVar.o();
+                siVar.getNotificationCenter().k(81, new Object[0]);
+                siVar.getNotificationCenter().k(82, new Object[0]);
+                siVar.getNotificationCenter().k(83, new Object[0]);
+                siVar.getNotificationCenter().k(84, new Object[0]);
+                if (Math.abs(siVar.getUserConfig().s - ((int) (System.currentTimeMillis() / 1000))) >= 86400) {
+                    siVar.P0(false);
+                    break;
                 } else {
-                    ((ArrayList) hVar2.f(B0)).add(fjVar);
-                    arrayList2 = arrayList4;
+                    boolean z12 = s2.a;
+                    break;
                 }
-            } else {
-                long j11 = peer.chat_id;
-                if (j11 != 0) {
-                    TLRPC.Chat chat4 = (TLRPC.Chat) hVar4.f(j11);
-                    if (chat4 != null) {
-                    }
-                }
-                num3 = num4;
-                fj fjVar2 = new fj(mpVar3.currentAccount, message2, hVar3, hVar4, false, false);
-                arrayList4.add(fjVar2);
-                B0 = fj.B0(fjVar2.k);
-                if (hVar2.d(B0)) {
-                }
-            }
-            i13 = i14 + 1;
-            arrayList4 = arrayList2;
-            num4 = num3;
-        }
-        Integer num5 = num4;
-        int i15 = 0;
-        while (i15 < tL_messages_dialogs.dialogs.size()) {
-            TLRPC.Dialog dialog = tL_messages_dialogs.dialogs.get(i15);
-            n5.x(dialog);
-            long j12 = dialog.id;
-            if (j12 == 0 || (n5.C(j12) && sparseArray != null && sparseArray.get((int) (dialog.id & 4294967295L)) == null)) {
-                sparseArray2 = sparseArray;
-            } else {
-                long j13 = mpVar3.C2;
-                if (j13 != 0) {
-                    sparseArray2 = sparseArray;
-                    if (j13 == dialog.id) {
-                        mpVar3.A2 = dialog;
-                    }
-                } else {
-                    sparseArray2 = sparseArray;
-                }
-                if (dialog.last_message_date == 0 && (arrayList = (ArrayList) hVar2.f(dialog.id)) != null) {
-                    int i16 = TLObject.FLAG_31;
-                    for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                        fj fjVar3 = (fj) arrayList.get(i17);
-                        if (fjVar3 != null && (message = fjVar3.k) != null && i16 < (i7 = message.date)) {
-                            i16 = i7;
-                        }
-                    }
-                    if (i16 > Integer.MIN_VALUE) {
-                        dialog.last_message_date = i16;
-                    }
-                }
-                if (n5.y(dialog)) {
-                    TLRPC.Chat chat5 = (TLRPC.Chat) hVar4.f(-dialog.id);
-                    if (chat5 != null && chat5.left) {
-                        long j14 = mpVar3.C2;
-                        if (j14 != 0) {
-                            if (j14 != dialog.id) {
-                            }
-                        }
-                    }
-                    mpVar3.Z0.put(-dialog.id, dialog.pts);
-                    hVar.k(dialog, dialog.id);
-                    num = (Integer) concurrentHashMap3.get(Long.valueOf(dialog.id));
-                    if (num == null) {
-                        num = num5;
-                    }
-                    concurrentHashMap3.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num.intValue(), dialog.read_inbox_max_id)));
-                    num2 = (Integer) concurrentHashMap2.get(Long.valueOf(dialog.id));
-                    if (num2 == null) {
-                        num2 = num5;
-                    }
-                    concurrentHashMap2.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num2.intValue(), dialog.read_outbox_max_id)));
-                } else {
-                    long j15 = dialog.id;
-                    if (j15 < 0 && (chat = (TLRPC.Chat) hVar4.f(-j15)) != null && chat.migrated_to != null) {
-                    }
-                    hVar.k(dialog, dialog.id);
-                    num = (Integer) concurrentHashMap3.get(Long.valueOf(dialog.id));
-                    if (num == null) {
-                    }
-                    concurrentHashMap3.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num.intValue(), dialog.read_inbox_max_id)));
-                    num2 = (Integer) concurrentHashMap2.get(Long.valueOf(dialog.id));
-                    if (num2 == null) {
-                    }
-                    concurrentHashMap2.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(num2.intValue(), dialog.read_outbox_max_id)));
-                }
-            }
-            i15++;
-            sparseArray = sparseArray2;
-        }
-        final TLRPC.messages_Dialogs messages_dialogs = this.d;
-        if (messages_dialogs == null || messages_dialogs.dialogs.isEmpty()) {
-            mpVar = mpVar3;
-        } else {
-            ec.X(messages_dialogs.messages);
-            int i18 = 0;
-            while (i18 < messages_dialogs.messages.size()) {
-                TLRPC.Message message3 = messages_dialogs.messages.get(i18);
-                TLRPC.MessageAction messageAction = message3.action;
-                if ((messageAction instanceof TLRPC.TL_messageActionChatDeleteUser) && (user = (TLRPC.User) hVar3.f(messageAction.user_id)) != null && user.bot) {
-                    message3.reply_markup = new TLRPC.TL_replyKeyboardHide();
-                    message3.flags |= 64;
-                }
-                TLRPC.MessageAction messageAction2 = message3.action;
-                if ((messageAction2 instanceof TLRPC.TL_messageActionChatMigrateTo) || (messageAction2 instanceof TLRPC.TL_messageActionChannelCreate)) {
-                    concurrentHashMap = concurrentHashMap2;
-                    mpVar2 = mpVar3;
-                    message3.unread = false;
-                    message3.media_unread = false;
-                } else {
-                    ConcurrentHashMap concurrentHashMap4 = message3.out ? concurrentHashMap2 : concurrentHashMap3;
-                    Integer num6 = (Integer) concurrentHashMap4.get(Long.valueOf(message3.dialog_id));
-                    if (num6 == null) {
-                        concurrentHashMap = concurrentHashMap2;
-                        mpVar2 = mpVar3;
-                        num6 = Integer.valueOf(mpVar3.getMessagesStorage().U(message3.dialog_id, message3.out));
-                        concurrentHashMap4.put(Long.valueOf(message3.dialog_id), num6);
-                    } else {
-                        concurrentHashMap = concurrentHashMap2;
-                        mpVar2 = mpVar3;
-                    }
-                    message3.unread = num6.intValue() < message3.id;
-                }
-                i18++;
-                mpVar3 = mpVar2;
-                concurrentHashMap2 = concurrentHashMap;
-            }
-            mpVar = mpVar3;
-            mpVar.getMessagesStorage().d1(messages_dialogs, 0);
-        }
-        final int i19 = this.e;
-        final ArrayList arrayList6 = this.f;
-        final ArrayList arrayList7 = this.h;
-        final ArrayList arrayList8 = this.n;
-        final Runnable runnable = this.r;
-        final mp mpVar4 = mpVar;
-        g0.g3(new Runnable() { // from class: org.telegram.messenger.kn
-            /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r2v1 */
-            /* JADX WARN: Type inference failed for: r2v4 */
-            @Override // java.lang.Runnable
-            public final void run() {
-                mp mpVar5;
-                int i20;
-                int i21;
-                TLRPC.messages_Dialogs messages_dialogs2;
-                int i22;
-                int i23;
-                mp mpVar6;
-                mp mpVar7;
-                kn knVar = this;
-                mp mpVar8 = mp.this;
-                ArrayList arrayList9 = mpVar8.y;
-                z00 z00Var = mpVar8.v7;
-                SparseArray sparseArray3 = mpVar8.T0;
-                a0.h hVar5 = mpVar8.S;
-                a0.h hVar6 = mpVar8.T;
-                SparseArray sparseArray4 = mpVar8.V;
-                a0.h hVar7 = mpVar8.R;
-                int i24 = i19;
-                boolean z10 = true;
-                if (i24 != 2) {
-                    mpVar8.Q0 = arrayList6;
-                    sparseArray3.clear();
-                    int size2 = mpVar8.Q0.size();
-                    for (int i25 = 0; i25 < size2; i25++) {
-                        ro roVar = (ro) mpVar8.Q0.get(i25);
-                        sparseArray3.put(roVar.a, roVar);
-                    }
-                    Iterator it = mpVar8.F7.iterator();
-                    boolean z11 = false;
-                    while (it.hasNext()) {
-                        int intValue = ((Integer) it.next()).intValue();
-                        if (intValue != 0 && sparseArray3.get(intValue) == null) {
-                            it.remove();
-                            z11 = true;
-                        }
-                    }
-                    if (z11) {
-                        mpVar8.I4();
-                    }
-                    Collections.sort(mpVar8.Q0, new dl(4));
-                    mpVar8.f4(arrayList7, true);
-                    mpVar8.Z3(arrayList8, true);
-                    mpVar8.V0 = true;
-                    mpVar8.getNotificationCenter().k(ks.O2, new Object[0]);
-                    if (i24 == 0) {
-                        mpVar8.i3(false, null);
-                    }
-                    TLRPC.messages_Dialogs messages_dialogs3 = messages_dialogs;
-                    if (messages_dialogs3 != null && !messages_dialogs3.dialogs.isEmpty()) {
-                        mpVar8.r(messages_dialogs3.dialogs);
-                    }
-                    ArrayList arrayList10 = arrayList3;
-                    if (arrayList10 != null) {
-                        int i26 = 0;
-                        while (i26 < arrayList10.size()) {
-                            TLRPC.EncryptedChat encryptedChat2 = (TLRPC.EncryptedChat) arrayList10.get(i26);
-                            if (encryptedChat2 instanceof TLRPC.TL_encryptedChat) {
-                                int i27 = encryptedChat2.layer;
-                                Typeface typeface = g0.a;
-                                if ((i27 & 65535) < 151) {
-                                    mpVar8.getSecretChatHelper().w(encryptedChat2, null);
+            case 3:
+                yv yvVar = (yv) c1Var;
+                TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) obj6;
+                TLRPC.DecryptedMessage decryptedMessage = (TLRPC.DecryptedMessage) obj5;
+                TLRPC.Message message = (TLRPC.Message) obj4;
+                TLRPC.InputEncryptedFile inputEncryptedFile = (TLRPC.InputEncryptedFile) obj3;
+                gj gjVar = (gj) obj2;
+                String str = (String) obj;
+                try {
+                    TLRPC.TL_decryptedMessageLayer tL_decryptedMessageLayer = new TLRPC.TL_decryptedMessageLayer();
+                    int i15 = encryptedChat.layer;
+                    Typeface typeface = g0.a;
+                    tL_decryptedMessageLayer.layer = Math.min(Math.max(46, i15 & 65535), Math.max(46, g0.X0(encryptedChat.layer)));
+                    tL_decryptedMessageLayer.message = decryptedMessage;
+                    byte[] bArr = new byte[15];
+                    tL_decryptedMessageLayer.random_bytes = bArr;
+                    SecureRandom secureRandom = Utilities.b;
+                    secureRandom.nextBytes(bArr);
+                    if (encryptedChat.seq_in == 0) {
+                        try {
+                            if (encryptedChat.seq_out == 0) {
+                                j3 = 0;
+                                if (encryptedChat.admin_id == yvVar.getUserConfig().e()) {
+                                    encryptedChat.seq_out = 1;
+                                    encryptedChat.seq_in = -2;
+                                } else {
+                                    encryptedChat.seq_in = -1;
                                 }
-                                z10 = true;
+                                i11 = message.seq_in;
+                                if (i11 == 0 || message.seq_out != 0) {
+                                    tL_decryptedMessageLayer.in_seq_no = i11;
+                                    tL_decryptedMessageLayer.out_seq_no = message.seq_out;
+                                } else {
+                                    int i16 = encryptedChat.seq_in;
+                                    if (i16 <= 0) {
+                                        i16 += 2;
+                                    }
+                                    tL_decryptedMessageLayer.in_seq_no = i16;
+                                    int i17 = encryptedChat.seq_out;
+                                    tL_decryptedMessageLayer.out_seq_no = i17;
+                                    encryptedChat.seq_out = i17 + 2;
+                                    if (encryptedChat.key_create_date == 0) {
+                                        encryptedChat.key_create_date = yvVar.getConnectionsManager().getCurrentTime();
+                                    }
+                                    short s5 = (short) (encryptedChat.key_use_count_out + 1);
+                                    encryptedChat.key_use_count_out = s5;
+                                    if (s5 < 100) {
+                                        break;
+                                    }
+                                    if (encryptedChat.exchange_id == j3 && encryptedChat.future_key_fingerprint == j3) {
+                                        yvVar.o(encryptedChat);
+                                    }
+                                    ur messagesStorage = yvVar.getMessagesStorage();
+                                    messagesStorage.a.c(new yf(messagesStorage, encryptedChat, z11, 10));
+                                    message.seq_in = tL_decryptedMessageLayer.in_seq_no;
+                                    message.seq_out = tL_decryptedMessageLayer.out_seq_no;
+                                    ur messagesStorage2 = yvVar.getMessagesStorage();
+                                    messagesStorage2.a.c(new hi.d0(messagesStorage2, message.id, message.seq_in, message.seq_out, 3));
+                                }
+                                if (s2.a) {
+                                    a8.b(decryptedMessage + " send message with in_seq = " + tL_decryptedMessageLayer.in_seq_no + " out_seq = " + tL_decryptedMessageLayer.out_seq_no);
+                                }
+                                int objectSize = tL_decryptedMessageLayer.getObjectSize();
+                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(objectSize + 4);
+                                nativeByteBuffer.writeInt32(objectSize);
+                                tL_decryptedMessageLayer.serializeToStream(nativeByteBuffer);
+                                int length = nativeByteBuffer.length();
+                                nextInt = ((secureRandom.nextInt(3) + 2) * 16) + (length % 16 == 0 ? 16 - (length % 16) : 0);
+                                NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(length + nextInt);
+                                nativeByteBuffer.position(0);
+                                nativeByteBuffer2.writeBytes(nativeByteBuffer);
+                                if (nextInt != 0) {
+                                    byte[] bArr2 = new byte[nextInt];
+                                    secureRandom.nextBytes(bArr2);
+                                    nativeByteBuffer2.writeBytes(bArr2);
+                                }
+                                byte[] bArr3 = new byte[16];
+                                boolean z13 = encryptedChat.admin_id == yvVar.getUserConfig().e();
+                                byte[] bArr4 = encryptedChat.auth_key;
+                                int i18 = !z13 ? 8 : 0;
+                                ByteBuffer byteBuffer = nativeByteBuffer2.buffer;
+                                System.arraycopy(Utilities.p(bArr4, 88 + i18, byteBuffer, 0, byteBuffer.limit()), 8, bArr3, 0, 16);
+                                nativeByteBuffer.reuse();
+                                ji.l K = ji.l.K(2, z13, encryptedChat.auth_key, bArr3);
+                                Utilities.c(nativeByteBuffer2.buffer, (byte[]) K.b, (byte[]) K.c, true, false, 0, nativeByteBuffer2.limit());
+                                NativeByteBuffer nativeByteBuffer3 = new NativeByteBuffer(24 + nativeByteBuffer2.length());
+                                nativeByteBuffer2.position(0);
+                                nativeByteBuffer3.writeInt64(encryptedChat.key_fingerprint);
+                                nativeByteBuffer3.writeBytes(bArr3);
+                                nativeByteBuffer3.writeBytes(nativeByteBuffer2);
+                                nativeByteBuffer2.reuse();
+                                nativeByteBuffer3.position(0);
+                                if (inputEncryptedFile == null) {
+                                    TLRPC.TL_messages_sendEncryptedFile tL_messages_sendEncryptedFile2 = new TLRPC.TL_messages_sendEncryptedFile();
+                                    tL_messages_sendEncryptedFile2.silent = message.silent;
+                                    tL_messages_sendEncryptedFile2.data = nativeByteBuffer3;
+                                    tL_messages_sendEncryptedFile2.random_id = decryptedMessage.random_id;
+                                    TLRPC.TL_inputEncryptedChat tL_inputEncryptedChat = new TLRPC.TL_inputEncryptedChat();
+                                    tL_messages_sendEncryptedFile2.peer = tL_inputEncryptedChat;
+                                    tL_inputEncryptedChat.chat_id = encryptedChat.id;
+                                    tL_inputEncryptedChat.access_hash = encryptedChat.access_hash;
+                                    tL_messages_sendEncryptedFile2.file = inputEncryptedFile;
+                                    tL_messages_sendEncryptedFile = tL_messages_sendEncryptedFile2;
+                                } else if (decryptedMessage instanceof TLRPC.TL_decryptedMessageService) {
+                                    TLRPC.TL_messages_sendEncryptedService tL_messages_sendEncryptedService = new TLRPC.TL_messages_sendEncryptedService();
+                                    tL_messages_sendEncryptedService.data = nativeByteBuffer3;
+                                    tL_messages_sendEncryptedService.random_id = decryptedMessage.random_id;
+                                    TLRPC.TL_inputEncryptedChat tL_inputEncryptedChat2 = new TLRPC.TL_inputEncryptedChat();
+                                    tL_messages_sendEncryptedService.peer = tL_inputEncryptedChat2;
+                                    tL_inputEncryptedChat2.chat_id = encryptedChat.id;
+                                    tL_inputEncryptedChat2.access_hash = encryptedChat.access_hash;
+                                    tL_messages_sendEncryptedFile = tL_messages_sendEncryptedService;
+                                } else {
+                                    TLRPC.TL_messages_sendEncrypted tL_messages_sendEncrypted = new TLRPC.TL_messages_sendEncrypted();
+                                    tL_messages_sendEncrypted.silent = message.silent;
+                                    tL_messages_sendEncrypted.data = nativeByteBuffer3;
+                                    tL_messages_sendEncrypted.random_id = decryptedMessage.random_id;
+                                    TLRPC.TL_inputEncryptedChat tL_inputEncryptedChat3 = new TLRPC.TL_inputEncryptedChat();
+                                    tL_messages_sendEncrypted.peer = tL_inputEncryptedChat3;
+                                    tL_inputEncryptedChat3.chat_id = encryptedChat.id;
+                                    tL_inputEncryptedChat3.access_hash = encryptedChat.access_hash;
+                                    tL_messages_sendEncryptedFile = tL_messages_sendEncrypted;
+                                }
+                                yvVar.getConnectionsManager().sendRequest(tL_messages_sendEncryptedFile, new zn(yvVar, decryptedMessage, encryptedChat, message, gjVar, str), 64);
+                                break;
                             }
-                            mpVar8.b4(encryptedChat2, z10);
-                            i26++;
+                        } catch (Exception e12) {
+                            e = e12;
                             z10 = true;
+                            a8.g(e, z10);
+                            return;
                         }
                     }
-                    int i28 = 0;
-                    while (true) {
-                        a0.h hVar8 = hVar;
-                        if (i28 >= hVar8.m()) {
-                            break;
-                        }
-                        long j16 = hVar8.j(i28);
-                        TLRPC.Dialog dialog2 = (TLRPC.Dialog) hVar8.n(i28);
-                        TLRPC.Dialog dialog3 = (TLRPC.Dialog) hVar7.f(j16);
-                        if (messages_dialogs3 == null || !messages_dialogs3.dialogs.contains(dialog2)) {
-                            messages_dialogs2 = messages_dialogs3;
-                            i22 = i24;
-                        } else {
-                            messages_dialogs2 = messages_dialogs3;
-                            i22 = i24;
-                            mpVar8.getMediaDataController().D1(dialog2.id, 0L, dialog2.draft);
-                            if (dialog2.draft instanceof TLRPC.TL_draftMessage) {
-                                mpVar8.getMediaDataController().W1(dialog2.id, 0L, dialog2.draft, null, false);
-                            }
-                            if (dialog3 != null) {
-                                dialog3.notify_settings = dialog2.notify_settings;
-                            }
-                        }
-                        ArrayList arrayList11 = (ArrayList) hVar2.f(dialog2.id);
-                        if (dialog3 == null) {
-                            hVar7.k(dialog2, j16);
-                            hVar5.k(arrayList11, j16);
-                            if (arrayList11 != null) {
-                                for (int i29 = 0; i29 < arrayList11.size(); i29++) {
-                                    fj fjVar4 = (fj) arrayList11.get(i29);
-                                    if (fjVar4 != null && fjVar4.k.peer_id.channel_id == 0) {
-                                        sparseArray4.put(fjVar4.e1(), fjVar4);
-                                        long j17 = fjVar4.k.random_id;
-                                        if (j17 != 0) {
-                                            hVar6.k(fjVar4, j17);
-                                        }
-                                    }
-                                }
-                            }
-                            z00Var.d(j16);
-                            mpVar6 = mpVar8;
-                            i23 = i28;
-                        } else {
-                            dialog3.pinned = dialog2.pinned;
-                            dialog3.pinnedNum = dialog2.pinnedNum;
-                            ArrayList arrayList12 = (ArrayList) hVar5.f(j16);
-                            int i30 = 0;
-                            while (true) {
-                                i23 = i28;
-                                if (arrayList12 == null || i30 >= arrayList12.size()) {
-                                    break;
-                                }
-                                if (arrayList12.get(i30) != null && ((fj) arrayList12.get(i30)).Z) {
-                                    break;
-                                }
-                                i30++;
-                                i28 = i23;
-                            }
-                            if (arrayList12 != null && dialog3.top_message <= 0) {
-                                hVar7.k(dialog2, j16);
-                                hVar5.k(arrayList11, j16);
-                                int i31 = 0;
-                                while (i31 < arrayList12.size()) {
-                                    fj fjVar5 = (fj) arrayList12.get(i31);
-                                    if (fjVar5 == null) {
-                                        mpVar7 = mpVar8;
-                                    } else {
-                                        mpVar7 = mpVar8;
-                                        if (fjVar5.k.peer_id.channel_id == 0) {
-                                            sparseArray4.remove(fjVar5.e1());
-                                        }
-                                        long j18 = fjVar5.k.random_id;
-                                        if (j18 != 0) {
-                                            hVar6.l(j18);
-                                        }
-                                    }
-                                    i31++;
-                                    mpVar8 = mpVar7;
-                                }
-                                mpVar6 = mpVar8;
-                                if (arrayList11 != null) {
-                                    for (int i32 = 0; i32 < arrayList11.size(); i32++) {
-                                        fj fjVar6 = (fj) arrayList11.get(i32);
-                                        if (fjVar6 != null && fjVar6.k.peer_id.channel_id == 0) {
-                                            int i33 = 0;
-                                            while (true) {
-                                                if (i33 >= arrayList12.size()) {
-                                                    break;
-                                                }
-                                                fj fjVar7 = (fj) arrayList12.get(i33);
-                                                if (fjVar7 != null && fjVar7.e1() == fjVar6.e1()) {
-                                                    fjVar6.Z = fjVar7.Z;
-                                                    break;
-                                                }
-                                                i33++;
-                                            }
-                                            sparseArray4.put(fjVar6.e1(), fjVar6);
-                                            long j19 = fjVar6.k.random_id;
-                                            if (j19 != 0) {
-                                                hVar6.k(fjVar6, j19);
-                                            }
-                                        }
-                                    }
-                                }
-                                z00Var.d(j16);
-                            }
-                            mpVar6 = mpVar8;
-                            if (dialog2.top_message < dialog3.top_message) {
-                                if ((arrayList12 == null) == (arrayList11 == null)) {
-                                    if (arrayList12 != null) {
-                                        if (arrayList11 != null) {
-                                            if (arrayList12.size() == arrayList11.size()) {
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            hVar7.k(dialog2, j16);
-                            hVar5.k(arrayList11, j16);
-                            if (arrayList12 != null) {
-                                for (int i34 = 0; i34 < arrayList12.size(); i34++) {
-                                    fj fjVar8 = (fj) arrayList12.get(i34);
-                                    if (fjVar8 != null) {
-                                        if (fjVar8.k.peer_id.channel_id == 0) {
-                                            sparseArray4.remove(fjVar8.e1());
-                                        }
-                                        long j20 = fjVar8.k.random_id;
-                                        if (j20 != 0) {
-                                            hVar6.l(j20);
-                                        }
-                                    }
-                                }
-                            }
-                            if (arrayList11 != null) {
-                                for (int i35 = 0; i35 < arrayList11.size(); i35++) {
-                                    fj fjVar9 = (fj) arrayList11.get(i35);
-                                    if (fjVar9 != null && fjVar9.k.peer_id.channel_id == 0) {
-                                        int i36 = 0;
-                                        while (true) {
-                                            if (arrayList12 == null || i36 >= arrayList12.size()) {
-                                                break;
-                                            }
-                                            fj fjVar10 = (fj) arrayList12.get(i36);
-                                            if (fjVar10 != null && fjVar10.e1() == fjVar9.e1()) {
-                                                fjVar9.Z = fjVar10.Z;
-                                                break;
-                                            }
-                                            i36++;
-                                        }
-                                        sparseArray4.put(fjVar9.e1(), fjVar9);
-                                        long j21 = fjVar9.k.random_id;
-                                        if (j21 != 0) {
-                                            hVar6.k(fjVar9, j21);
-                                        }
-                                    }
-                                }
-                            }
-                            z00Var.d(j16);
-                        }
-                        i28 = i23 + 1;
-                        knVar = this;
-                        mpVar8 = mpVar6;
-                        messages_dialogs3 = messages_dialogs2;
-                        i24 = i22;
+                    j3 = 0;
+                    i11 = message.seq_in;
+                    if (i11 == 0) {
                     }
-                    mp mpVar9 = mpVar8;
-                    i20 = i24;
-                    arrayList9.clear();
-                    int m10 = hVar7.m();
-                    int i37 = 0;
-                    while (i37 < m10) {
-                        TLRPC.Dialog dialog4 = (TLRPC.Dialog) hVar7.n(i37);
-                        mp mpVar10 = mpVar9;
-                        if (mpVar10.E0.h(dialog4.id) < 0) {
-                            arrayList9.add(dialog4);
-                        }
-                        i37++;
-                        mpVar9 = mpVar10;
+                    tL_decryptedMessageLayer.in_seq_no = i11;
+                    tL_decryptedMessageLayer.out_seq_no = message.seq_out;
+                    if (s2.a) {
                     }
-                    mpVar5 = mpVar9;
-                    mpVar5.f5(null);
-                    i21 = 0;
-                    mpVar5.getNotificationCenter().k(ks.s, new Object[0]);
-                } else {
-                    mpVar5 = mpVar8;
-                    i20 = i24;
-                    i21 = 0;
+                    int objectSize2 = tL_decryptedMessageLayer.getObjectSize();
+                    NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(objectSize2 + 4);
+                    nativeByteBuffer4.writeInt32(objectSize2);
+                    tL_decryptedMessageLayer.serializeToStream(nativeByteBuffer4);
+                    int length2 = nativeByteBuffer4.length();
+                    nextInt = ((secureRandom.nextInt(3) + 2) * 16) + (length2 % 16 == 0 ? 16 - (length2 % 16) : 0);
+                    NativeByteBuffer nativeByteBuffer22 = new NativeByteBuffer(length2 + nextInt);
+                    nativeByteBuffer4.position(0);
+                    nativeByteBuffer22.writeBytes(nativeByteBuffer4);
+                    if (nextInt != 0) {
+                    }
+                    byte[] bArr32 = new byte[16];
+                    if (encryptedChat.admin_id == yvVar.getUserConfig().e()) {
+                    }
+                    byte[] bArr42 = encryptedChat.auth_key;
+                    if (!z13) {
+                    }
+                    ByteBuffer byteBuffer2 = nativeByteBuffer22.buffer;
+                    System.arraycopy(Utilities.p(bArr42, 88 + i18, byteBuffer2, 0, byteBuffer2.limit()), 8, bArr32, 0, 16);
+                    nativeByteBuffer4.reuse();
+                    ji.l K2 = ji.l.K(2, z13, encryptedChat.auth_key, bArr32);
+                    Utilities.c(nativeByteBuffer22.buffer, (byte[]) K2.b, (byte[]) K2.c, true, false, 0, nativeByteBuffer22.limit());
+                    NativeByteBuffer nativeByteBuffer32 = new NativeByteBuffer(24 + nativeByteBuffer22.length());
+                    nativeByteBuffer22.position(0);
+                    nativeByteBuffer32.writeInt64(encryptedChat.key_fingerprint);
+                    nativeByteBuffer32.writeBytes(bArr32);
+                    nativeByteBuffer32.writeBytes(nativeByteBuffer22);
+                    nativeByteBuffer22.reuse();
+                    nativeByteBuffer32.position(0);
+                    if (inputEncryptedFile == null) {
+                    }
+                    yvVar.getConnectionsManager().sendRequest(tL_messages_sendEncryptedFile, new zn(yvVar, decryptedMessage, encryptedChat, message, gjVar, str), 64);
+                } catch (Exception e13) {
+                    e = e13;
+                    z10 = true;
                 }
-                if (i20 != 0) {
-                    mpVar5.getUserConfig().Q = true;
-                    mpVar5.getUserConfig().v(i21);
-                    mpVar5.getNotificationCenter().k(ks.R2, new Object[i21]);
-                }
-                mpVar5.p3();
-                Runnable runnable2 = runnable;
-                if (runnable2 != null) {
-                    runnable2.run();
-                }
-            }
-        });
+                break;
+            default:
+                a10 a10Var = (a10) c1Var;
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj6;
+                a10Var.getClass();
+                storyItem.translatedLng = (String) obj5;
+                storyItem.translatedText = b31.R0((TLRPC.TL_textWithEntities) obj4, (TLRPC.TL_textWithEntities) obj3);
+                a10Var.getMessagesController().R1().k.h(storyItem.dialogId, storyItem);
+                a10Var.K.remove((y00) obj2);
+                ((bi.c4) obj).run();
+                break;
+        }
     }
 }

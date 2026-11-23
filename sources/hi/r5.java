@@ -7,11 +7,11 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import java.io.Serializable;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r5 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class r5 implements Runnable {
         switch (this.a) {
             case 0:
                 Bitmap[] bitmapArr = (Bitmap[]) this.e;
-                x10 x10Var = (x10) this.f;
+                y10 y10Var = (y10) this.f;
                 Bitmap createBitmap = Bitmap.createBitmap(this.b, this.c, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
                 Path path = new Path();
@@ -57,10 +57,10 @@ public final /* synthetic */ class r5 implements Runnable {
                     }
                 }
                 Utilities.stackBlurBitmap(createBitmap, 1);
-                org.telegram.messenger.g0.g3(new c(6, x10Var, createBitmap));
+                org.telegram.messenger.g0.g3(new c(6, y10Var, createBitmap));
                 break;
             case 1:
-                ((tr) this.e).B0(this.b, this.c, this.d, (long[]) this.f);
+                ((ur) this.e).B0(this.b, this.c, this.d, (long[]) this.f);
                 break;
             default:
                 ConnectionsManager.lambda$onCaptchaCheck$28(this.b, this.c, this.d, (String) this.e, (String) this.f);
@@ -68,9 +68,9 @@ public final /* synthetic */ class r5 implements Runnable {
         }
     }
 
-    public /* synthetic */ r5(tr trVar, int i7, int i10, int i11, long[] jArr) {
+    public /* synthetic */ r5(ur urVar, int i7, int i10, int i11, long[] jArr) {
         this.a = 1;
-        this.e = trVar;
+        this.e = urVar;
         this.b = i7;
         this.c = i10;
         this.d = i11;

@@ -1,7 +1,7 @@
 package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.j21;
@@ -9,7 +9,7 @@ import org.telegram.ui.Components.q80;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 1:
-                fj fjVar = (fj) this.b;
-                if (j21.j(fjVar)) {
-                    j21.y(fjVar, false, null);
+                gj gjVar = (gj) this.b;
+                if (j21.k(gjVar)) {
+                    j21.z(gjVar, false, null);
                     break;
                 }
                 break;
@@ -49,7 +49,7 @@ public final /* synthetic */ class f implements Runnable {
                 ((e2) this.b).a();
                 break;
             case 4:
-                org.telegram.messenger.g0.v1(((bi.x8) this.b).b.getEditText());
+                org.telegram.messenger.g0.v1(((bi.w8) this.b).b.getEditText());
                 break;
             case 5:
                 org.telegram.messenger.g0.v1(((l3) this.b).d);

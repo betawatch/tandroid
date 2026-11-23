@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.d6 E;
@@ -98,9 +98,9 @@ public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBa
         boolean z12 = this.a;
         org.telegram.ui.Components.o6 o6Var = this.f;
         if (z12) {
-            o6Var.c(org.telegram.messenger.gd.N0(this.I ? 2131743403 : this.H ? 2131743404 : 2131743402, null), z11, !this.H);
+            o6Var.c(org.telegram.messenger.hd.N0(this.I ? 2131743401 : this.H ? 2131743402 : 2131743400, null), z11, !this.H);
         } else {
-            o6Var.c(org.telegram.messenger.gd.N0(this.I ? 2131743407 : this.H ? 2131743408 : 2131743406, null), z11, !this.H);
+            o6Var.c(org.telegram.messenger.hd.N0(this.I ? 2131743405 : this.H ? 2131743406 : 2131743404, null), z11, !this.H);
         }
         boolean z13 = this.H || this.I;
         ValueAnimator valueAnimator = this.G;
@@ -143,7 +143,7 @@ public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBa
             m5Var.l("@" + str, false);
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("@");
-            SpannableString spannableString = new SpannableString(org.telegram.messenger.gd.N0(2131743405, null));
+            SpannableString spannableString = new SpannableString(org.telegram.messenger.hd.N0(2131743403, null));
             spannableString.setSpan(new org.telegram.ui.Components.k00(org.telegram.ui.ActionBar.m6.H6, this.b), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
             m5Var.l(spannableStringBuilder, false);
@@ -215,7 +215,7 @@ public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBa
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, z10 ? 1.0f : 0.0f);
             this.s = ofFloat;
             ofFloat.addUpdateListener(new ha(this, i7));
-            this.s.addListener(new bi.h7(27, this, z10));
+            this.s.addListener(new bi.g7(27, this, z10));
             this.s.setInterpolator(org.telegram.ui.Components.nr.g);
             this.s.setDuration(200L);
             this.s.start();

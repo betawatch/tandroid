@@ -1,8 +1,8 @@
 package di;
 
 import java.util.ArrayList;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.wh0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
             case 2:
                 w8 w8Var = (w8) obj2;
                 w8Var.getClass();
-                org.telegram.messenger.g0.g3(new bi.o2(w8Var, tLObject, (mp) obj, tL_error, this.b, 6));
+                org.telegram.messenger.g0.g3(new bi.o2(w8Var, tLObject, (np) obj, tL_error, this.b, 6));
                 break;
             case 3:
                 fi.c1 c1Var = (fi.c1) obj2;
@@ -55,10 +55,10 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                 int i10 = c1Var.e;
                 if (tLObject instanceof TL_phone.groupParticipants) {
                     TL_phone.groupParticipants groupparticipants = (TL_phone.groupParticipants) tLObject;
-                    mp.u1(i10).f4(groupparticipants.users, false);
-                    mp.u1(i10).Z3(groupparticipants.chats, false);
+                    np.u1(i10).f4(groupparticipants.users, false);
+                    np.u1(i10).Z3(groupparticipants.chats, false);
                     if (c1Var.F != null) {
-                        j10.i(i10).e();
+                        k10.i(i10).e();
                         ArrayList arrayList = new ArrayList();
                         for (int i11 : iArr) {
                             ArrayList<TLRPC.GroupCallParticipant> arrayList2 = groupparticipants.participants;
@@ -118,10 +118,10 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                     final ou ouVar = new ou(28, wh0Var, arrayList6);
                     if (org.telegram.messenger.v3.T(chat)) {
                         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-                        tL_channels_getParticipants.limit = mp.u1(i13).s3;
+                        tL_channels_getParticipants.limit = np.u1(i13).s3;
                         tL_channels_getParticipants.offset = 0;
                         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
-                        tL_channels_getParticipants.channel = mp.u1(i13).j1(chat.id);
+                        tL_channels_getParticipants.channel = np.u1(i13).j1(chat.id);
                         final int i16 = 0;
                         ConnectionsManager.getInstance(i13).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.Components.th0
                             @Override // org.telegram.tgnet.RequestDelegate
@@ -144,7 +144,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                                                             TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject3;
                                                             for (int i18 = 0; i18 < tL_channels_channelParticipants.users.size(); i18++) {
                                                                 TLRPC.User user = tL_channels_channelParticipants.users.get(i18);
-                                                                org.telegram.messenger.mp.u1(wh0Var2.f).e4(user, false, false);
+                                                                org.telegram.messenger.np.u1(wh0Var2.f).e4(user, false, false);
                                                                 int indexOf = arrayList7.indexOf(Long.valueOf(user.id));
                                                                 if (!user.self && indexOf >= 0) {
                                                                     arrayList8.add(new vh0(((Integer) arrayList9.get(indexOf)).intValue(), user));
@@ -159,7 +159,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                                                             TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject4;
                                                             for (int i19 = 0; i19 < tL_messages_chatFull.users.size(); i19++) {
                                                                 TLRPC.User user2 = tL_messages_chatFull.users.get(i19);
-                                                                org.telegram.messenger.mp.u1(wh0Var2.f).e4(user2, false, false);
+                                                                org.telegram.messenger.np.u1(wh0Var2.f).e4(user2, false, false);
                                                                 int indexOf2 = arrayList7.indexOf(Long.valueOf(user2.id));
                                                                 if (!user2.self && indexOf2 >= 0) {
                                                                     arrayList8.add(new vh0(((Integer) arrayList9.get(indexOf2)).intValue(), user2));
@@ -189,7 +189,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                                                             TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject3;
                                                             for (int i182 = 0; i182 < tL_channels_channelParticipants.users.size(); i182++) {
                                                                 TLRPC.User user = tL_channels_channelParticipants.users.get(i182);
-                                                                org.telegram.messenger.mp.u1(wh0Var3.f).e4(user, false, false);
+                                                                org.telegram.messenger.np.u1(wh0Var3.f).e4(user, false, false);
                                                                 int indexOf = arrayList10.indexOf(Long.valueOf(user.id));
                                                                 if (!user.self && indexOf >= 0) {
                                                                     arrayList11.add(new vh0(((Integer) arrayList12.get(indexOf)).intValue(), user));
@@ -204,7 +204,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                                                             TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject4;
                                                             for (int i19 = 0; i19 < tL_messages_chatFull.users.size(); i19++) {
                                                                 TLRPC.User user2 = tL_messages_chatFull.users.get(i19);
-                                                                org.telegram.messenger.mp.u1(wh0Var3.f).e4(user2, false, false);
+                                                                org.telegram.messenger.np.u1(wh0Var3.f).e4(user2, false, false);
                                                                 int indexOf2 = arrayList10.indexOf(Long.valueOf(user2.id));
                                                                 if (!user2.self && indexOf2 >= 0) {
                                                                     arrayList11.add(new vh0(((Integer) arrayList12.get(indexOf2)).intValue(), user2));
@@ -246,7 +246,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                                                             TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject3;
                                                             for (int i182 = 0; i182 < tL_channels_channelParticipants.users.size(); i182++) {
                                                                 TLRPC.User user = tL_channels_channelParticipants.users.get(i182);
-                                                                org.telegram.messenger.mp.u1(wh0Var2.f).e4(user, false, false);
+                                                                org.telegram.messenger.np.u1(wh0Var2.f).e4(user, false, false);
                                                                 int indexOf = arrayList7.indexOf(Long.valueOf(user.id));
                                                                 if (!user.self && indexOf >= 0) {
                                                                     arrayList8.add(new vh0(((Integer) arrayList9.get(indexOf)).intValue(), user));
@@ -261,7 +261,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                                                             TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject4;
                                                             for (int i19 = 0; i19 < tL_messages_chatFull.users.size(); i19++) {
                                                                 TLRPC.User user2 = tL_messages_chatFull.users.get(i19);
-                                                                org.telegram.messenger.mp.u1(wh0Var2.f).e4(user2, false, false);
+                                                                org.telegram.messenger.np.u1(wh0Var2.f).e4(user2, false, false);
                                                                 int indexOf2 = arrayList7.indexOf(Long.valueOf(user2.id));
                                                                 if (!user2.self && indexOf2 >= 0) {
                                                                     arrayList8.add(new vh0(((Integer) arrayList9.get(indexOf2)).intValue(), user2));
@@ -291,7 +291,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                                                             TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject3;
                                                             for (int i182 = 0; i182 < tL_channels_channelParticipants.users.size(); i182++) {
                                                                 TLRPC.User user = tL_channels_channelParticipants.users.get(i182);
-                                                                org.telegram.messenger.mp.u1(wh0Var3.f).e4(user, false, false);
+                                                                org.telegram.messenger.np.u1(wh0Var3.f).e4(user, false, false);
                                                                 int indexOf = arrayList10.indexOf(Long.valueOf(user.id));
                                                                 if (!user.self && indexOf >= 0) {
                                                                     arrayList11.add(new vh0(((Integer) arrayList12.get(indexOf)).intValue(), user));
@@ -306,7 +306,7 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                                                             TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject4;
                                                             for (int i19 = 0; i19 < tL_messages_chatFull.users.size(); i19++) {
                                                                 TLRPC.User user2 = tL_messages_chatFull.users.get(i19);
-                                                                org.telegram.messenger.mp.u1(wh0Var3.f).e4(user2, false, false);
+                                                                org.telegram.messenger.np.u1(wh0Var3.f).e4(user2, false, false);
                                                                 int indexOf2 = arrayList10.indexOf(Long.valueOf(user2.id));
                                                                 if (!user2.self && indexOf2 >= 0) {
                                                                     arrayList11.add(new vh0(((Integer) arrayList12.get(indexOf2)).intValue(), user2));
@@ -328,18 +328,18 @@ public final /* synthetic */ class q2 implements RequestDelegate {
                 break;
             case 6:
                 String str = LaunchActivity.C1;
-                org.telegram.messenger.g0.g3(new j2(tLObject, (mp) obj2, this.b, (up) obj, 20));
+                org.telegram.messenger.g0.g3(new j2(tLObject, (np) obj2, this.b, (up) obj, 20));
                 break;
             default:
-                mp mpVar = (mp) obj2;
+                np npVar = (np) obj2;
                 wg.t0 t0Var = (wg.t0) obj;
                 if (tLObject instanceof TLRPC.TL_contacts_found) {
                     TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
-                    mpVar.Z3(tL_contacts_found.chats, false);
+                    npVar.Z3(tL_contacts_found.chats, false);
                     ArrayList arrayList7 = new ArrayList();
                     for (int i18 = 0; i18 < tL_contacts_found.chats.size(); i18++) {
                         TLRPC.Chat chat2 = tL_contacts_found.chats.get(i18);
-                        TLRPC.InputPeer n1 = mp.n1(chat2);
+                        TLRPC.InputPeer n1 = np.n1(chat2);
                         if (chat2.id != j3 && org.telegram.messenger.v3.R(chat2)) {
                             arrayList7.add(n1);
                         }

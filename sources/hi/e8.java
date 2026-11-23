@@ -3,15 +3,15 @@ package hi;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.zl;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e8 extends v4.u0 {
     public final /* synthetic */ int a;
@@ -96,8 +96,8 @@ public final class e8 extends v4.u0 {
                 k8Var.e.invalidate();
                 int i12 = p8.Y1;
                 p8Var.b.invalidate();
-                if (k8Var.a == 6 && ek0Var.getChildCount() > 0 && RecyclerView.R(ek0Var.getChildAt(0)) >= mp.u1(p8Var.a).R1().L.size()) {
-                    mp.u1(p8Var.a).R1().S();
+                if (k8Var.a == 6 && ek0Var.getChildCount() > 0 && RecyclerView.R(ek0Var.getChildAt(0)) >= np.u1(p8Var.a).R1().L.size()) {
+                    np.u1(p8Var.a).R1().S();
                     break;
                 }
                 break;
@@ -112,7 +112,7 @@ public final class e8 extends v4.u0 {
                         boolean z11 = uiVar.M1;
                         if (z10 != z11) {
                             this.b = z11;
-                            n10.n(zlVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
+                            o10.n(zlVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
                         }
                     } else {
                         zlVar.getFastScroll().setAlpha(0.0f);

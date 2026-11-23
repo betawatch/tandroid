@@ -4,23 +4,23 @@ import android.view.View;
 import c8.ya;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.z80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class t extends ek0 implements fs {
+public final class t extends ek0 implements gs {
     public ArrayList f3;
     public v4.c0 g3;
     public int h3;
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.k5) {
+        if (i7 == ls.k5) {
             z1();
         }
     }
@@ -28,13 +28,13 @@ public final class t extends ek0 implements fs {
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.e().c(this, ks.k5);
+        ls.e().c(this, ls.k5);
     }
 
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.e().n(this, ks.k5);
+        ls.e().n(this, ls.k5);
     }
 
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -52,7 +52,7 @@ public final class t extends ek0 implements fs {
         ArrayList arrayList = this.f3;
         arrayList.clear();
         arrayList.addAll(Arrays.asList(z80.values()));
-        if (mp.u1(this.h3).K3()) {
+        if (np.u1(this.h3).K3()) {
             int i7 = 0;
             while (i7 < arrayList.size()) {
                 if (((z80) arrayList.get(i7)).e) {

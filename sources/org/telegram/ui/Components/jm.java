@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jm extends kj0 {
     public final Context c;
@@ -41,31 +41,31 @@ public final class jm extends kj0 {
 
     @Override // org.telegram.ui.Components.kj0
     public final boolean E(ek0 ek0Var) {
-        org.telegram.messenger.ue ueVar;
+        org.telegram.messenger.ve veVar;
         boolean isEmpty = ChatAttachAlertPhotoLayout.s1.isEmpty();
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        return !(isEmpty && ((ueVar = chatAttachAlertPhotoLayout.U0) == null || ueVar.e.isEmpty())) && chatAttachAlertPhotoLayout.b.M1 && b() > 30;
+        return !(isEmpty && ((veVar = chatAttachAlertPhotoLayout.U0) == null || veVar.e.isEmpty())) && chatAttachAlertPhotoLayout.b.M1 && b() > 30;
     }
 
     @Override // org.telegram.ui.Components.kj0
     public final String F(int i7) {
         ArrayList arrayList;
-        org.telegram.messenger.ef M = M(i7);
+        org.telegram.messenger.ff M = M(i7);
         if (M == null) {
             int i10 = this.r;
             ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
             if (i7 <= i10) {
                 ArrayList arrayList2 = ChatAttachAlertPhotoLayout.s1;
                 if (arrayList2.isEmpty()) {
-                    org.telegram.messenger.ue ueVar = chatAttachAlertPhotoLayout.U0;
-                    if (ueVar != null && (arrayList = ueVar.e) != null) {
-                        M = (org.telegram.messenger.ef) arrayList.get(0);
+                    org.telegram.messenger.ve veVar = chatAttachAlertPhotoLayout.U0;
+                    if (veVar != null && (arrayList = veVar.e) != null) {
+                        M = (org.telegram.messenger.ff) arrayList.get(0);
                     }
                 } else {
-                    M = (org.telegram.messenger.ef) arrayList2.get(0);
+                    M = (org.telegram.messenger.ff) arrayList2.get(0);
                 }
             } else if (!chatAttachAlertPhotoLayout.U0.e.isEmpty()) {
-                M = (org.telegram.messenger.ef) i5.c.h(1, chatAttachAlertPhotoLayout.U0.e);
+                M = (org.telegram.messenger.ff) i5.c.h(1, chatAttachAlertPhotoLayout.U0.e);
             }
         }
         if (M == null) {
@@ -75,7 +75,7 @@ public final class jm extends kj0 {
         if (Build.VERSION.SDK_INT <= 28) {
             j3 /= 1000;
         }
-        return org.telegram.messenger.gd.e0(j3, true);
+        return org.telegram.messenger.hd.e0(j3, true);
     }
 
     @Override // org.telegram.ui.Components.kj0
@@ -134,7 +134,7 @@ public final class jm extends kj0 {
         return new mj0(s5Var);
     }
 
-    public final org.telegram.messenger.ef M(int i7) {
+    public final org.telegram.messenger.ff M(int i7) {
         boolean z10 = this.f;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
         if (z10 && i7 > chatAttachAlertPhotoLayout.N0) {
@@ -174,9 +174,9 @@ public final class jm extends kj0 {
         this.r = i7;
         if (!z10) {
             i7 += ChatAttachAlertPhotoLayout.s1.size();
-            org.telegram.messenger.ue ueVar = chatAttachAlertPhotoLayout.U0;
-            if (ueVar != null) {
-                i7 += ueVar.e.size();
+            org.telegram.messenger.ve veVar = chatAttachAlertPhotoLayout.U0;
+            if (veVar != null) {
+                i7 += veVar.e.size();
             }
         }
         if (this.e && i7 > chatAttachAlertPhotoLayout.N0 && !chatAttachAlertPhotoLayout.P0) {
@@ -276,7 +276,7 @@ public final class jm extends kj0 {
         } else {
             s5Var.getCheckBox().setVisibility(0);
         }
-        org.telegram.messenger.ef e02 = chatAttachAlertPhotoLayout.e0(i7);
+        org.telegram.messenger.ff e02 = chatAttachAlertPhotoLayout.e0(i7);
         if (e02 == null) {
             return;
         }
@@ -352,7 +352,7 @@ public final class jm extends kj0 {
             eVar.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
             spannableStringBuilder.setSpan(new nq(R.drawable.camera, 0), 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.gd.N0(2131750464, null));
+            spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.hd.N0(2131750464, null));
             eVar.i(spannableStringBuilder, false, true);
             frameLayout.addView(eVar, c8.ma.d(-2, 44.0f, 81, 10.0f, 0.0f, 10.0f, 12.0f));
             return new mj0(frameLayout);

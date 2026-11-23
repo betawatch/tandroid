@@ -2,10 +2,10 @@ package hi;
 
 import android.content.Context;
 import android.text.TextUtils;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.si;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y1 extends u1 {
     public final o1 b;
@@ -36,7 +36,7 @@ public final class y1 extends u1 {
         o1Var.setClipToPadding(true);
         o1Var.setVerticalScrollBarEnabled(false);
         tVar.O = new bi.w2(this, 6);
-        o1Var.setOnItemClickListener(new bi.l8(this, 10));
+        o1Var.setOnItemClickListener(new bi.k8(this, 10));
         o1Var.setOnScrollListener(new bi.u1(this, 15));
         v4.k kVar = new v4.k();
         kVar.c = 220L;
@@ -99,7 +99,7 @@ public final class y1 extends u1 {
             org.telegram.messenger.g0.g3(x1Var.N);
         }
         d2Var.a(i7, i2Var.u1);
-        ri.d0(i2Var.a).D(i7 == 0 ? 5 : 0);
+        si.d0(i2Var.a).D(i7 == 0 ? 5 : 0);
     }
 
     @Override // hi.u1

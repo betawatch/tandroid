@@ -6,7 +6,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p10 extends org.telegram.ui.Components.rh0 {
     public final /* synthetic */ f40 r;
@@ -25,7 +25,7 @@ public final class p10 extends org.telegram.ui.Components.rh0 {
         int i7 = f40Var.E3;
         accessibilityNodeInfo.setEnabled(i7 == 0 || i7 == 1);
         if (f40Var.E3 == 1) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.gd.N0(2131743050, null)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.hd.N0(2131743048, null)));
         }
     }
 

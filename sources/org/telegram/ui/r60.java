@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r60 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -45,19 +45,19 @@ public final /* synthetic */ class r60 implements Runnable {
                         if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
                             b02 = org.telegram.ui.Components.lc.b0(T);
                             i7 = R.raw.fire_on;
-                            i10 = 2131743637;
+                            i10 = 2131743635;
                         } else {
                             b02 = org.telegram.ui.Components.lc.b0(T);
                             i7 = R.raw.error;
-                            i10 = 2131743638;
+                            i10 = 2131743636;
                         }
                         org.telegram.messenger.f3.n(null, i10, b02, i7, 36);
                     }
                 } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
                     TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
                     LaunchActivity launchActivity = this.b;
-                    org.telegram.messenger.mp.u1(launchActivity.P).f4(tL_payments_uniqueStarGift.users, false);
-                    org.telegram.messenger.mp.u1(launchActivity.P).Z3(tL_payments_uniqueStarGift.chats, false);
+                    org.telegram.messenger.np.u1(launchActivity.P).f4(tL_payments_uniqueStarGift.users, false);
+                    org.telegram.messenger.np.u1(launchActivity.P).Z3(tL_payments_uniqueStarGift.chats, false);
                     org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
                     TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
                     if (starGift instanceof TL_stars.TL_starGiftUnique) {
@@ -86,7 +86,7 @@ public final /* synthetic */ class r60 implements Runnable {
                 LaunchActivity launchActivity2 = this.b;
                 if (z10) {
                     TLRPC.User user = (TLRPC.User) tLObject;
-                    org.telegram.messenger.mp.u1(this.d).e4(user, false, false);
+                    org.telegram.messenger.np.u1(this.d).e4(user, false, false);
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", user.id);
                     launchActivity2.t0(new bn(bundle));

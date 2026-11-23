@@ -1,10 +1,10 @@
 package bg;
 
 import a8.xa;
+import ai.b1;
 import android.text.StaticLayout;
 import android.text.TextUtils;
 import android.view.View;
-import bi.x4;
 import com.google.android.gms.internal.clearcut.y0;
 import fi.y7;
 import java.util.ArrayList;
@@ -12,14 +12,14 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.lr;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.mr;
+import org.telegram.messenger.np;
 import org.telegram.messenger.r1;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -62,9 +62,9 @@ import org.telegram.ui.pu;
 import org.telegram.ui.wq0;
 import org.telegram.ui.xs0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3, org.telegram.messenger.q1, h2.j {
+public final /* synthetic */ class g0 implements w30, q1, l6, sj0, mr, f5.n, c3, org.telegram.messenger.q1, h2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -117,7 +117,7 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
     public void a(f5.f fVar, List list) {
         ArrayList arrayList = (ArrayList) this.c;
         TLRPC.Chat chat = (TLRPC.Chat) this.d;
-        x10 x10Var = (x10) this.e;
+        y10 y10Var = (y10) this.e;
         Iterator it = list.iterator();
         while (it.hasNext()) {
             f5.m mVar = (f5.m) it.next();
@@ -138,7 +138,7 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
                 }
             }
         }
-        org.telegram.messenger.g0.g3(new wg.m(chat, this.b, arrayList, x10Var, 0));
+        org.telegram.messenger.g0.g3(new wg.m(chat, this.b, arrayList, y10Var, 0));
     }
 
     @Override // h2.j
@@ -160,8 +160,8 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
         ArrayList arrayList = em0Var.r;
         if (i7 >= 0 && i7 < arrayList.size()) {
             int i10 = this.b;
-            if (j10.i(i10).q()) {
-                if (!j10.i(i10).q()) {
+            if (k10.i(i10).q()) {
+                if (!k10.i(i10).q()) {
                     new ug.y0(g2Var, 24, true).show();
                     return true;
                 }
@@ -172,7 +172,7 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
                 bm0 bm0Var = (bm0) arrayList.get(i7);
                 a70 I = a70.I(g2Var, view);
                 I.i = 3;
-                I.c(R.drawable.menu_tag_rename, gd.N0(TextUtils.isEmpty(bm0Var.c) ? 2131745685 : 2131745673, null), new x4(em0Var, i10, bm0Var, h6Var, 27), false);
+                I.c(R.drawable.menu_tag_rename, hd.N0(TextUtils.isEmpty(bm0Var.c) ? 2131745685 : 2131745673, null), new b1(em0Var, i10, bm0Var, h6Var, 28), false);
                 I.a0();
                 return true;
             }
@@ -180,7 +180,7 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
         return false;
     }
 
-    @Override // org.telegram.messenger.lr
+    @Override // org.telegram.messenger.mr
     public void d(boolean z10) {
         cx cxVar = (cx) this.c;
         ArrayList arrayList = (ArrayList) this.d;
@@ -272,7 +272,7 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
                 } else {
                     TL_bots.toggleUsername toggleusername3 = new TL_bots.toggleUsername();
                     i10 = ((g2) laVar).currentAccount;
-                    toggleusername3.bot = mp.u1(i10).q1(j3);
+                    toggleusername3.bot = np.u1(i10).q1(j3);
                     toggleusername3.username = str;
                     toggleusername3.active = z11;
                     toggleusername = toggleusername3;
@@ -282,7 +282,7 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
                 connectionsManager.sendRequest(toggleusername, new RequestDelegate() { // from class: org.telegram.ui.ba
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        org.telegram.messenger.g0.g3(new org.telegram.messenger.ew(ca.this, str, tLObject, i14, z11, tL_error, tL_username, z10));
+                        org.telegram.messenger.g0.g3(new org.telegram.messenger.fw(ca.this, str, tLObject, i14, z11, tL_error, tL_username, z10));
                     }
                 });
                 laVar.x.add(tL_username.username);
@@ -306,10 +306,10 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
                 break;
             case 5:
                 jt0 jt0Var = (jt0) obj3;
-                fj fjVar = (fj) obj;
+                gj gjVar = (gj) obj;
                 t1[] t1VarArr = {new t1(3, jt0Var.getContext(), (h6) obj2)};
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-                TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) fjVar.k.media;
+                TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) gjVar.k.media;
                 TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
                 TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
                 tL_inputMediaPoll.poll = tL_poll;
@@ -320,8 +320,8 @@ public final /* synthetic */ class g0 implements w30, q1, l6, sj0, lr, f5.n, c3,
                 tL_poll.closed = true;
                 tL_messages_editMessage.media = tL_inputMediaPoll;
                 int i15 = this.b;
-                tL_messages_editMessage.peer = mp.u1(i15).l1(jt0Var.m1);
-                tL_messages_editMessage.id = fjVar.e1();
+                tL_messages_editMessage.peer = np.u1(i15).l1(jt0Var.m1);
+                tL_messages_editMessage.id = gjVar.e1();
                 tL_messages_editMessage.flags |= TLObject.FLAG_14;
                 org.telegram.messenger.g0.h3(new aq0(t1VarArr, i15, ConnectionsManager.getInstance(i15).sendRequest(tL_messages_editMessage, new y7(jt0Var, t1VarArr, i15, tL_messages_editMessage, 5)), i13), 500L);
                 break;

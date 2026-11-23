@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import c8.ma;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.fm0;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q extends FrameLayout {
     public final p a;
@@ -43,7 +43,7 @@ public final class q extends FrameLayout {
             TransitionManager.beginDelayedTransition(this, this.b);
         }
         p pVar = this.a;
-        pVar.w = ks.e4;
+        pVar.w = ls.e4;
         pVar.n = -1;
         pVar.s = 0;
         pVar.r = org.telegram.messenger.g0.L(8.0f);

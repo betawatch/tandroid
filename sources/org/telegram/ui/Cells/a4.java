@@ -10,11 +10,11 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class a4 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public org.telegram.ui.ActionBar.m5 a;
@@ -70,7 +70,7 @@ public abstract class a4 extends FrameLayout implements org.telegram.ui.ActionBa
         int i7;
         ImageView imageView = this.c;
         if (this.f) {
-            if (gd.a0) {
+            if (hd.a0) {
                 L = 0.0f;
             } else {
                 L = org.telegram.messenger.g0.L(imageView.getVisibility() == 0 ? 68.0f : 20.0f);
@@ -78,7 +78,7 @@ public abstract class a4 extends FrameLayout implements org.telegram.ui.ActionBa
             float f10 = L;
             float measuredHeight = getMeasuredHeight() - 1;
             int measuredWidth = getMeasuredWidth();
-            if (gd.a0) {
+            if (hd.a0) {
                 i7 = org.telegram.messenger.g0.L(imageView.getVisibility() == 0 ? 68.0f : 20.0f);
             } else {
                 i7 = 0;
@@ -114,10 +114,10 @@ public abstract class a4 extends FrameLayout implements org.telegram.ui.ActionBa
         int i16 = i11 - i7;
         org.telegram.ui.ActionBar.m5 m5Var2 = this.b;
         int textHeight = (i15 - m5Var2.getTextHeight()) / 2;
-        int L2 = gd.a0 ? org.telegram.messenger.g0.L(i14) : 0;
+        int L2 = hd.a0 ? org.telegram.messenger.g0.L(i14) : 0;
         m5Var2.layout(L2, textHeight, m5Var2.getMeasuredWidth() + L2, m5Var2.getMeasuredHeight() + textHeight);
         int textHeight2 = (i15 - m5Var.getTextHeight()) / 2;
-        if (gd.a0) {
+        if (hd.a0) {
             int measuredWidth = getMeasuredWidth() - m5Var.getMeasuredWidth();
             if (imageView2.getVisibility() == 0) {
                 i14 = this.h;
@@ -129,12 +129,12 @@ public abstract class a4 extends FrameLayout implements org.telegram.ui.ActionBa
         m5Var.layout(L, textHeight2, m5Var.getMeasuredWidth() + L, m5Var.getMeasuredHeight() + textHeight2);
         if (imageView2.getVisibility() == 0) {
             int L3 = org.telegram.messenger.g0.L(5.0f);
-            int L4 = !gd.a0 ? org.telegram.messenger.g0.L(i13) : (i16 - imageView2.getMeasuredWidth()) - org.telegram.messenger.g0.L(i13);
+            int L4 = !hd.a0 ? org.telegram.messenger.g0.L(i13) : (i16 - imageView2.getMeasuredWidth()) - org.telegram.messenger.g0.L(i13);
             imageView2.layout(L4, L3, imageView2.getMeasuredWidth() + L4, imageView2.getMeasuredHeight() + L3);
         }
         if (imageView.getVisibility() == 0) {
             int measuredHeight = (i15 - imageView.getMeasuredHeight()) / 2;
-            int L5 = gd.a0 ? org.telegram.messenger.g0.L(23.0f) : (i16 - imageView.getMeasuredWidth()) - org.telegram.messenger.g0.L(23.0f);
+            int L5 = hd.a0 ? org.telegram.messenger.g0.L(23.0f) : (i16 - imageView.getMeasuredWidth()) - org.telegram.messenger.g0.L(23.0f);
             imageView.layout(L5, measuredHeight, imageView.getMeasuredWidth() + L5, imageView.getMeasuredHeight() + measuredHeight);
         }
     }
@@ -145,7 +145,7 @@ public abstract class a4 extends FrameLayout implements org.telegram.ui.ActionBa
         int size = View.MeasureSpec.getSize(i7);
         int L = org.telegram.messenger.g0.L(48.0f);
         org.telegram.ui.ActionBar.m5 m5Var = this.b;
-        m5Var.measure(n10.c(this.e, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(20.0f), TLObject.FLAG_30));
+        m5Var.measure(o10.c(this.e, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(20.0f), TLObject.FLAG_30));
         this.a.measure(View.MeasureSpec.makeMeasureSpec((size - org.telegram.messenger.g0.L(r2 + 71)) - m5Var.getTextWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(20.0f), TLObject.FLAG_30));
         ImageView imageView2 = this.c;
         if (imageView2.getVisibility() == 0) {

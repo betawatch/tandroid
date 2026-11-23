@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class y90 extends FrameLayout {
     public final /* synthetic */ z90 E;
@@ -43,7 +43,7 @@ public final class y90 extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.t6.s(imageView, i7, null, mode);
         imageView.setVisibility(8);
-        addView(imageView, c8.ma.d(24, 24.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
+        addView(imageView, c8.ma.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
         di.xb xbVar = new di.xb(context, 29);
         this.c = xbVar;
         xbVar.setLines(1);
@@ -52,7 +52,7 @@ public final class y90 extends FrameLayout {
         xbVar.setTextSize(1, 16.0f);
         int i10 = org.telegram.ui.ActionBar.m6.G6;
         org.telegram.ui.ActionBar.t6.U(xbVar, i10, null);
-        xbVar.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        xbVar.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
         xbVar.setImportantForAccessibility(2);
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, true, true);
         this.d = o6Var;
@@ -69,8 +69,8 @@ public final class y90 extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.b = linearLayout;
         linearLayout.setOrientation(0);
-        linearLayout.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
-        if (org.telegram.messenger.gd.a0) {
+        linearLayout.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        if (org.telegram.messenger.hd.a0) {
             linearLayout.addView(imageView2, c8.ma.q(16, 16, 0.0f, 16, 0, 0, 6, 0));
             linearLayout.addView(o6Var, c8.ma.q(-2, -2, 0.0f, 16, 0, 0, 6, 0));
             linearLayout.addView(xbVar, c8.ma.p(-2, -2, 1.0f, 16));
@@ -79,7 +79,7 @@ public final class y90 extends FrameLayout {
             linearLayout.addView(o6Var, c8.ma.q(-2, -2, 0.0f, 16, 6, 0, 0, 0));
             linearLayout.addView(imageView2, c8.ma.q(16, 16, 0.0f, 16, 2, 0, 0, 0));
         }
-        addView(linearLayout, c8.ma.d(-1, -2.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 16, 64.0f, 0.0f, 8.0f, 0.0f));
+        addView(linearLayout, c8.ma.d(-1, -2.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 64.0f, 0.0f, 8.0f, 0.0f));
         Switch r32 = new Switch(context, null);
         this.f = r32;
         r32.setVisibility(8);
@@ -88,7 +88,7 @@ public final class y90 extends FrameLayout {
         int i13 = org.telegram.ui.ActionBar.m6.d6;
         r32.d(i11, i12, i13, i13);
         r32.setImportantForAccessibility(2);
-        addView(r32, c8.ma.d(37, 50.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
+        addView(r32, c8.ma.d(37, 50.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
         org.telegram.ui.Components.op opVar = new org.telegram.ui.Components.op(21, context, null);
         this.h = opVar;
         opVar.b(org.telegram.ui.ActionBar.m6.h7, org.telegram.ui.ActionBar.m6.j7, org.telegram.ui.ActionBar.m6.k7);
@@ -97,7 +97,7 @@ public final class y90 extends FrameLayout {
         opVar.setDrawBackgroundAsArc(10);
         opVar.setVisibility(8);
         opVar.setImportantForAccessibility(2);
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         addView(opVar, c8.ma.d(21, 21.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f));
         setFocusable(true);
     }
@@ -135,11 +135,11 @@ public final class y90 extends FrameLayout {
                 bitCount--;
             }
         }
-        if (org.telegram.messenger.bz.o() < 1 && (i7 & 256) > 0) {
+        if (org.telegram.messenger.cz.o() < 1 && (i7 & 256) > 0) {
             bitCount--;
         }
         if (Build.VERSION.SDK_INT >= 33) {
-            if (org.telegram.messenger.bz.o() < 1) {
+            if (org.telegram.messenger.cz.o() < 1) {
                 boolean z10 = org.telegram.messenger.s2.a;
             }
             return (org.telegram.ui.Components.oz0.c() || (i7 & 65536) <= 0) ? bitCount : bitCount - 1;
@@ -163,7 +163,7 @@ public final class y90 extends FrameLayout {
                 imageView.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
                 linearLayout.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
                 r12.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
-                org.telegram.messenger.n10.n(opVar.animate(), z10 ? 0.5f : 1.0f, 220L);
+                org.telegram.messenger.o10.n(opVar.animate(), z10 ? 0.5f : 1.0f, 220L);
             } else {
                 imageView.setAlpha(z10 ? 0.5f : 1.0f);
                 linearLayout.setAlpha(z10 ? 0.5f : 1.0f);
@@ -175,13 +175,13 @@ public final class y90 extends FrameLayout {
     }
 
     public final void c(u90 u90Var, boolean z10) {
-        int d = org.telegram.messenger.pc.d(true);
+        int d = org.telegram.messenger.qc.d(true);
         int i7 = u90Var.e;
         this.x = a(d & i7);
         this.y = a(i7);
         boolean z11 = false;
         String format = String.format("%d/%d", Integer.valueOf(this.x), Integer.valueOf(this.y));
-        if (z10 && !org.telegram.messenger.gd.a0) {
+        if (z10 && !org.telegram.messenger.hd.a0) {
             z11 = true;
         }
         this.d.c(format, z11, true);
@@ -190,7 +190,7 @@ public final class y90 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         di.xb xbVar = this.c;
         if (z10) {
             if (this.r) {
@@ -228,7 +228,7 @@ public final class y90 extends FrameLayout {
         sb2.append(this.c.getText());
         if (this.w) {
             sb2.append('\n');
-            sb2.append(org.telegram.messenger.gd.a0("Of", null, 2131747635, Integer.valueOf(this.x), Integer.valueOf(this.y)));
+            sb2.append(org.telegram.messenger.hd.a0("Of", null, 2131747635, Integer.valueOf(this.x), Integer.valueOf(this.y)));
         }
         accessibilityNodeInfo.setContentDescription(sb2);
     }

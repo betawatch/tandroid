@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -143,12 +143,12 @@ public final /* synthetic */ class a implements Runnable {
                     longSparseArray.removeAt(0);
                     ArrayList arrayList = new ArrayList(hashMap2.keySet());
                     x6Var.d.addAll(arrayList);
-                    q00 q00Var = new q00(x6Var, keyAt, arrayList, hashMap2, 1);
+                    r00 r00Var = new r00(x6Var, keyAt, arrayList, hashMap2, 1);
                     if (arrayList.isEmpty()) {
-                        q00Var.a(new ArrayList());
+                        r00Var.a(new ArrayList());
                     } else {
-                        tr a02 = tr.a0(x6Var.a);
-                        a02.a.c(new yf(a02, arrayList, q00Var, 19));
+                        ur a02 = ur.a0(x6Var.a);
+                        a02.a.c(new zf(a02, arrayList, r00Var, 19));
                     }
                 }
                 longSparseArray.clear();
@@ -193,16 +193,16 @@ public final /* synthetic */ class a implements Runnable {
                 ((CancellationSignal) this.b).cancel();
                 return;
             case 12:
-                ((ec) ((androidx.mediarouter.app.f) this.b).b).i(null);
+                ((fc) ((androidx.mediarouter.app.f) this.b).b).i(null);
                 return;
             case 13:
                 ((ImageReceiver) this.b).invalidate();
                 return;
             case 14:
-                if (((gd) ((androidx.mediarouter.app.f) this.b).b).q0().getTimeZone().equals(TimeZone.getDefault())) {
+                if (((hd) ((androidx.mediarouter.app.f) this.b).b).q0().getTimeZone().equals(TimeZone.getDefault())) {
                     return;
                 }
-                gd.E0().Z0();
+                hd.E0().Z0();
                 return;
             case 15:
                 org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.b;
@@ -215,7 +215,7 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 16:
-                ((je) this.b).d.q(true, true, false, false);
+                ((ke) this.b).d.q(true, true, false, false);
                 return;
             case 17:
                 ((MediaController) ((h2.w) this.b).e).q(true, true, false, false);
@@ -233,13 +233,13 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 19:
-                ((cf) this.b).d();
+                ((df) this.b).d();
                 return;
             case 20:
-                jf jfVar = (jf) this.b;
+                kf kfVar = (kf) this.b;
                 try {
                     j6.o oVar = new j6.o();
-                    oVar.b = jfVar;
+                    oVar.b = kfVar;
                     Thread thread = new Thread(oVar, "VideoConvertRunnable");
                     thread.start();
                     thread.join();
@@ -249,7 +249,7 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
             case 21:
-                ks.e().k(ks.S4, 0, (TLRPC.Document) this.b, 7);
+                ls.e().k(ls.S4, 0, (TLRPC.Document) this.b, 7);
                 return;
             case 22:
                 ((org.telegram.ui.Components.ec) this.b).f();
@@ -288,9 +288,9 @@ public final /* synthetic */ class a implements Runnable {
                 ((org.telegram.ui.vf) this.b).run();
                 return;
             case 27:
-                lr lrVar = (lr) this.b;
-                if (lrVar != null) {
-                    lrVar.d(true);
+                mr mrVar = (mr) this.b;
+                if (mrVar != null) {
+                    mrVar.d(true);
                     return;
                 }
                 return;

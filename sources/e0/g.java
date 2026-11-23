@@ -16,15 +16,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ke;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.le;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.gh0;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -48,10 +48,10 @@ public final class g {
         n6Var.setCallback(view);
         n6Var.N = (int) (org.telegram.messenger.g0.q.x * 0.3f);
         this.b = false;
-        n6Var.t(gd.N0(2131746243, null), false, true);
-        String N0 = gd.N0(2131746242, null);
+        n6Var.t(hd.N0(2131746243, null), false, true);
+        String N0 = hd.N0(2131746242, null);
         TextPaint textPaint = n6Var.a;
-        this.a = (int) Math.ceil(Math.max(textPaint.measureText(N0), textPaint.measureText(gd.N0(2131746243, null))));
+        this.a = (int) Math.ceil(Math.max(textPaint.measureText(N0), textPaint.measureText(hd.N0(2131746243, null))));
     }
 
     public void a(l0 l0Var) {
@@ -123,7 +123,7 @@ public final class g {
         n6 n6Var = (n6) this.e;
         if (z10 != this.b) {
             this.b = z10;
-            n6Var.t(gd.N0(z10 ? 2131746242 : 2131746243, null), true, true);
+            n6Var.t(hd.N0(z10 ? 2131746242 : 2131746243, null), true, true);
         }
         int c10 = (int) (n6Var.c() + org.telegram.messenger.g0.L(23.66f));
         float L = org.telegram.messenger.g0.L(17.66f);
@@ -190,7 +190,7 @@ public final class g {
         return true;
     }
 
-    public g(Context context, File file, ke keVar) {
+    public g(Context context, File file, le leVar) {
         this.d = new Handler(Looper.getMainLooper());
         this.f = new Object();
         this.g = new HashMap();
@@ -202,8 +202,8 @@ public final class g {
         if (gVar != null) {
             y3Var.d = gVar;
             y3Var.a = false;
-            y3Var.e = new ji.l(this, keVar, false, 9);
-            y3Var.f = new k8.a(8, this, keVar);
+            y3Var.e = new ji.l(this, leVar, false, 9);
+            y3Var.f = new k8.a(8, this, leVar);
             y3Var.g = new nb.a(17);
             this.e = new yi.j(y3Var);
             return;

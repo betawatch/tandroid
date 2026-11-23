@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -50,11 +50,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                 de0Var.C1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error2.text);
+                                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error2.text);
                                         break;
                                     } else {
                                         int intValue = Utilities.z(tL_error2.text).intValue();
-                                        de0Var.D1(org.telegram.messenger.gd.N0(2131742596, null), org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? org.telegram.messenger.gd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.gd.G(intValue / 60, "Minutes", new Object[0])));
+                                        de0Var.D1(org.telegram.messenger.hd.N0(2131742594, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
                                         break;
                                     }
                                 } else {
@@ -73,11 +73,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                             fz0Var.c = i13;
                                             valueOf.setSpan(new org.telegram.ui.Components.gz0(fz0Var, 0), indexOf, i13, 0);
                                         }
-                                        SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.gd.N0(2131745884, null), valueOf);
+                                        SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.hd.N0(2131745884, null), valueOf);
                                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                                         t1Var.U = m0;
-                                        t1Var.S = org.telegram.messenger.gd.N0(2131745882, "RestoreEmailSentTitle");
-                                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751759, null), new at(23, xb0Var2, tL_auth_passwordRecovery));
+                                        t1Var.S = org.telegram.messenger.hd.N0(2131745882, "RestoreEmailSentTitle");
+                                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751759, null), new at(23, xb0Var2, tL_auth_passwordRecovery));
                                         Dialog showDialog = de0Var.showDialog(t1Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
@@ -99,11 +99,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                     de0Var2.C1(false, true);
                                     if (!tL_error2.text.equals("PASSWORD_HASH_INVALID")) {
                                         if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                            de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error2.text);
+                                            de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error2.text);
                                             break;
                                         } else {
                                             int intValue2 = Utilities.z(tL_error2.text).intValue();
-                                            de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, intValue2 < 60 ? org.telegram.messenger.gd.G(intValue2, "Seconds", new Object[0]) : org.telegram.messenger.gd.G(intValue2 / 60, "Minutes", new Object[0])));
+                                            de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750669, intValue2 < 60 ? org.telegram.messenger.hd.G(intValue2, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue2 / 60, "Minutes", new Object[0])));
                                             break;
                                         }
                                     } else if (de0Var2.getParentActivity() != null) {
@@ -147,11 +147,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                 de0Var.C1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error2.text);
+                                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error2.text);
                                         break;
                                     } else {
                                         int intValue = Utilities.z(tL_error2.text).intValue();
-                                        de0Var.D1(org.telegram.messenger.gd.N0(2131742596, null), org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? org.telegram.messenger.gd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.gd.G(intValue / 60, "Minutes", new Object[0])));
+                                        de0Var.D1(org.telegram.messenger.hd.N0(2131742594, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
                                         break;
                                     }
                                 } else {
@@ -170,11 +170,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                             fz0Var.c = i13;
                                             valueOf.setSpan(new org.telegram.ui.Components.gz0(fz0Var, 0), indexOf, i13, 0);
                                         }
-                                        SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.gd.N0(2131745884, null), valueOf);
+                                        SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.hd.N0(2131745884, null), valueOf);
                                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                                         t1Var.U = m0;
-                                        t1Var.S = org.telegram.messenger.gd.N0(2131745882, "RestoreEmailSentTitle");
-                                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751759, null), new at(23, xb0Var22, tL_auth_passwordRecovery));
+                                        t1Var.S = org.telegram.messenger.hd.N0(2131745882, "RestoreEmailSentTitle");
+                                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751759, null), new at(23, xb0Var22, tL_auth_passwordRecovery));
                                         Dialog showDialog = de0Var.showDialog(t1Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
@@ -196,11 +196,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                     de0Var2.C1(false, true);
                                     if (!tL_error2.text.equals("PASSWORD_HASH_INVALID")) {
                                         if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                            de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error2.text);
+                                            de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error2.text);
                                             break;
                                         } else {
                                             int intValue2 = Utilities.z(tL_error2.text).intValue();
-                                            de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, intValue2 < 60 ? org.telegram.messenger.gd.G(intValue2, "Seconds", new Object[0]) : org.telegram.messenger.gd.G(intValue2 / 60, "Minutes", new Object[0])));
+                                            de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750669, intValue2 < 60 ? org.telegram.messenger.hd.G(intValue2, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue2 / 60, "Minutes", new Object[0])));
                                             break;
                                         }
                                     } else if (de0Var2.getParentActivity() != null) {
@@ -244,11 +244,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                 de0Var.C1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error2.text);
+                                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error2.text);
                                         break;
                                     } else {
                                         int intValue = Utilities.z(tL_error2.text).intValue();
-                                        de0Var.D1(org.telegram.messenger.gd.N0(2131742596, null), org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? org.telegram.messenger.gd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.gd.G(intValue / 60, "Minutes", new Object[0])));
+                                        de0Var.D1(org.telegram.messenger.hd.N0(2131742594, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
                                         break;
                                     }
                                 } else {
@@ -267,11 +267,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                             fz0Var.c = i13;
                                             valueOf.setSpan(new org.telegram.ui.Components.gz0(fz0Var, 0), indexOf, i13, 0);
                                         }
-                                        SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.gd.N0(2131745884, null), valueOf);
+                                        SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.hd.N0(2131745884, null), valueOf);
                                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                                         t1Var.U = m0;
-                                        t1Var.S = org.telegram.messenger.gd.N0(2131745882, "RestoreEmailSentTitle");
-                                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751759, null), new at(23, xb0Var22, tL_auth_passwordRecovery));
+                                        t1Var.S = org.telegram.messenger.hd.N0(2131745882, "RestoreEmailSentTitle");
+                                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751759, null), new at(23, xb0Var22, tL_auth_passwordRecovery));
                                         Dialog showDialog = de0Var.showDialog(t1Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
@@ -293,11 +293,11 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                     de0Var2.C1(false, true);
                                     if (!tL_error2.text.equals("PASSWORD_HASH_INVALID")) {
                                         if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                            de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error2.text);
+                                            de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error2.text);
                                             break;
                                         } else {
                                             int intValue2 = Utilities.z(tL_error2.text).intValue();
-                                            de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.a0("FloodWaitTime", null, 2131750669, intValue2 < 60 ? org.telegram.messenger.gd.G(intValue2, "Seconds", new Object[0]) : org.telegram.messenger.gd.G(intValue2 / 60, "Minutes", new Object[0])));
+                                            de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750669, intValue2 < 60 ? org.telegram.messenger.hd.G(intValue2, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue2 / 60, "Minutes", new Object[0])));
                                             break;
                                         }
                                     } else if (de0Var2.getParentActivity() != null) {

@@ -14,7 +14,7 @@ import android.graphics.SweepGradient;
 import android.os.Build;
 import android.text.StaticLayout;
 import com.google.android.gms.internal.vision.e2;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.cn;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.fb0;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.q80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b1 {
     public static float i;
@@ -217,9 +217,9 @@ public final class b1 {
         float L;
         RectF rectF = (RectF) this.g;
         int textSize = (((int) m6.X2.getTextSize()) * 2) + org.telegram.messenger.g0.L(4.0f);
-        float max = Math.max(0, Math.min(6, bz.Y0) - 1);
-        float min = Math.min(9, bz.Y0);
-        float min2 = Math.min(3, bz.Y0);
+        float max = Math.max(0, Math.min(6, cz.Y0) - 1);
+        float min = Math.min(9, cz.Y0);
+        float min2 = Math.min(3, cz.Y0);
         float f10 = -org.telegram.messenger.g0.L(e2.c(min, 9.0f, 2.66f, 4.0f));
         float f11 = -org.telegram.messenger.g0.L(3.0f);
         float L2 = org.telegram.messenger.g0.L(5.0f) + textSize;
@@ -228,7 +228,7 @@ public final class b1 {
         Path path = (Path) this.f;
         path.rewind();
         if (!z10) {
-            max = bz.Y0 / 2.0f;
+            max = cz.Y0 / 2.0f;
         }
         float L3 = org.telegram.messenger.g0.L(max) * 2;
         rectF.set(f10, f11, f10 + L3, L3 + f11);

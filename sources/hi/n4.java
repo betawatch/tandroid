@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ui;
 import org.telegram.ui.bn;
 import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n4 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -101,7 +101,7 @@ public final /* synthetic */ class n4 implements View.OnLongClickListener {
                 ui uiVar = oVar.b;
                 oi.t3 t3Var = oVar.r;
                 int i13 = oVar.n;
-                if (!j10.i(i13).q()) {
+                if (!k10.i(i13).q()) {
                     new ug.y0(uiVar.a2, oVar.getContext(), oVar.n, 43, true).show();
                 } else if (t3Var.n3() && !t3Var.p3()) {
                     if (t3Var.P3()) {
@@ -118,33 +118,33 @@ public final /* synthetic */ class n4 implements View.OnLongClickListener {
                             oVar.P = eg0Var2;
                             eg0Var2.setOnDismissListener(new di.u9(oVar, 7));
                             long c12 = uiVar.c1();
-                            fj fjVar = bnVar != null ? bnVar.F5 : null;
+                            gj gjVar = bnVar != null ? bnVar.F5 : null;
                             TLRPC.TL_message tL_message = new TLRPC.TL_message();
                             tL_message.id = 0;
                             tL_message.out = true;
-                            tL_message.peer_id = mp.u1(i13).B1(c12);
-                            tL_message.from_id = mp.u1(i13).B1(j10.i(i13).e());
+                            tL_message.peer_id = np.u1(i13).B1(c12);
+                            tL_message.from_id = np.u1(i13).B1(k10.i(i13).e());
                             tL_message.flags2 |= TLObject.FLAG_13;
                             TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
                             tL_message.rich_message = richMessage;
                             richMessage.blocks = c32;
                             richMessage.photos = t3Var.E2();
                             tL_message.rich_message.documents = t3Var.B2();
-                            if (fjVar != null && !fjVar.p) {
+                            if (gjVar != null && !gjVar.p) {
                                 TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                                 tL_messageReplyHeader.flags |= 16;
-                                tL_messageReplyHeader.reply_to_msg_id = fjVar.e1();
+                                tL_messageReplyHeader.reply_to_msg_id = gjVar.e1();
                                 tL_message.reply_to = tL_messageReplyHeader;
                             }
-                            fj fjVar2 = new fj(i13, tL_message, false, false);
-                            if (fjVar != null && !fjVar.p) {
-                                fjVar2.C = fjVar;
+                            gj gjVar2 = new gj(i13, tL_message, false, false);
+                            if (gjVar != null && !gjVar.p) {
+                                gjVar2.C = gjVar;
                             }
-                            fjVar2.B0 = true;
-                            fjVar2.W2 = Boolean.TRUE;
-                            fjVar2.n0(null);
-                            fjVar2.w1 = true;
-                            oVar.P.r(org.telegram.messenger.f3.i(fjVar2));
+                            gjVar2.B0 = true;
+                            gjVar2.W2 = Boolean.TRUE;
+                            gjVar2.n0(null);
+                            gjVar2.w1 = true;
+                            oVar.P.r(org.telegram.messenger.f3.i(gjVar2));
                             ug sendButton = y3Var.getSendButton();
                             sendButton.setScaleX(1.0f);
                             sendButton.setScaleY(1.0f);
@@ -160,16 +160,16 @@ public final /* synthetic */ class n4 implements View.OnLongClickListener {
                                 h6Var = h6Var2;
                             }
                             a70 G2 = a70.G(oVar, h6Var, sendButton);
-                            boolean z11 = bnVar != null && o10.C(bnVar.j());
+                            boolean z11 = bnVar != null && p10.C(bnVar.j());
                             if (bnVar != null && bnVar.S6()) {
                                 int i14 = 0;
-                                G2.c(R.drawable.msg_calendar2, gd.N0(z11 ? 2131745318 : 2131745663, null), new bi.c4(oVar, c12, 15), false);
+                                G2.c(R.drawable.msg_calendar2, hd.N0(z11 ? 2131745318 : 2131745663, null), new bi.c4(oVar, c12, 15), false);
                                 if (!z11 && c12 > 0) {
-                                    G2.c(R.drawable.msg_online, gd.N0(2131745390, null), new oi.d(oVar, i14), false);
+                                    G2.c(R.drawable.msg_online, hd.N0(2131745390, null), new oi.d(oVar, i14), false);
                                 }
                             }
                             if (!z11) {
-                                G2.c(R.drawable.input_notify_off, gd.N0(2131745387, null), new oi.d(oVar, i10), false);
+                                G2.c(R.drawable.input_notify_off, hd.N0(2131745387, null), new oi.d(oVar, i10), false);
                             }
                             G2.Z();
                             oVar.P.q(G2);

@@ -12,47 +12,47 @@ import c8.ma;
 import java.io.InputStream;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.sz;
 import org.telegram.messenger.tz;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o1 implements x10 {
+public final /* synthetic */ class o1 implements y10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sz b;
+    public final /* synthetic */ tz b;
     public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ tz d;
+    public final /* synthetic */ uz d;
     public final /* synthetic */ v1 e;
-    public final /* synthetic */ x10 f;
+    public final /* synthetic */ y10 f;
 
-    public /* synthetic */ o1(sz szVar, boolean[] zArr, tz tzVar, v1 v1Var, x10 x10Var, int i7) {
+    public /* synthetic */ o1(tz tzVar, boolean[] zArr, uz uzVar, v1 v1Var, y10 y10Var, int i7) {
         this.a = i7;
-        this.b = szVar;
+        this.b = tzVar;
         this.c = zArr;
-        this.d = tzVar;
+        this.d = uzVar;
         this.e = v1Var;
-        this.f = x10Var;
+        this.f = y10Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                sz szVar = this.b;
+                tz tzVar = this.b;
                 boolean[] zArr = this.c;
-                tz tzVar = this.d;
+                uz uzVar = this.d;
                 v1 v1Var = this.e;
-                x10 x10Var = this.f;
+                y10 y10Var = this.f;
                 InputStream inputStream = (InputStream) obj;
-                tz.a(szVar);
+                uz.a(tzVar);
                 if (!zArr[0]) {
-                    sz d = tz.d(tzVar, "readHTML");
+                    tz d = uz.d(uzVar, "readHTML");
                     String str = v1Var.a;
-                    final o1 o1Var = new o1(d, zArr, tzVar, v1Var, x10Var, 1);
+                    final o1 o1Var = new o1(d, zArr, uzVar, v1Var, y10Var, 1);
                     if (inputStream != null) {
                         Context context = LaunchActivity.H1;
                         if (context == null) {
@@ -102,28 +102,28 @@ public final /* synthetic */ class o1 implements x10 {
                 }
                 break;
             default:
-                sz szVar2 = this.b;
+                tz tzVar2 = this.b;
                 boolean[] zArr3 = this.c;
-                tz tzVar2 = this.d;
+                uz uzVar2 = this.d;
                 v1 v1Var2 = this.e;
-                x10 x10Var2 = this.f;
+                y10 y10Var2 = this.f;
                 JSONObject jSONObject = (JSONObject) obj;
-                tz.a(szVar2);
+                uz.a(tzVar2);
                 if (!zArr3[0]) {
-                    sz d2 = tz.d(tzVar2, "parseJSON");
+                    tz d2 = uz.d(uzVar2, "parseJSON");
                     try {
                         v1Var2.c = v1Var2.i(v1Var2.a, jSONObject);
                     } catch (Exception e10) {
-                        tz.c(tzVar2, "error: " + e10);
+                        uz.c(uzVar2, "error: " + e10);
                         a8.g(e10, true);
                     }
-                    tz.a(d2);
-                    x10Var2.a(v1Var2);
+                    uz.a(d2);
+                    y10Var2.a(v1Var2);
                     TLRPC.TL_webPage tL_webPage = v1Var2.c;
                     if (tL_webPage != null) {
                         v1.e.put(tL_webPage, v1Var2);
                     }
-                    tz.b(tzVar2);
+                    uz.b(uzVar2);
                     break;
                 }
                 break;

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qs0 extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ PremiumPreviewFragment c;
@@ -87,17 +87,17 @@ public final class qs0 extends org.telegram.ui.Components.dk0 {
         String str2 = null;
         if (i7 != premiumPreviewFragment.E && i7 != premiumPreviewFragment.F && i7 != premiumPreviewFragment.I) {
             if (i7 == premiumPreviewFragment.s) {
-                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.N0(2131746800, null));
+                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.hd.N0(2131746800, null));
                 return;
             }
             if (i7 == premiumPreviewFragment.H) {
-                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.gd.N0(2131745154, null));
+                ((org.telegram.ui.Cells.o4) view).setText(org.telegram.messenger.hd.N0(2131745154, null));
                 return;
             }
             if (i7 == premiumPreviewFragment.showAdsRow) {
                 TLRPC.UserFull d2 = premiumPreviewFragment.getMessagesController().d2(premiumPreviewFragment.getUserConfig().e());
                 org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
-                String N0 = org.telegram.messenger.gd.N0(2131745156, null);
+                String N0 = org.telegram.messenger.hd.N0(2131745156, null);
                 if (d2 != null && !d2.sponsored_enabled) {
                     r6 = false;
                 }
@@ -114,19 +114,19 @@ public final class qs0 extends org.telegram.ui.Components.dk0 {
         }
         a9Var2.setFixedSize(0);
         if (i7 == premiumPreviewFragment.I) {
-            a9Var2.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.N0(2131745155, null), new hf0(this, 27)), true));
+            a9Var2.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(org.telegram.messenger.hd.N0(2131745155, null), new hf0(this, 27)), true));
             return;
         }
         int i13 = premiumPreviewFragment.E;
         if (i7 == i13 && premiumPreviewFragment.h0 == 1) {
-            a9Var2.setText(org.telegram.messenger.gd.N0(2131746799, null));
+            a9Var2.setText(org.telegram.messenger.hd.N0(2131746799, null));
             return;
         }
         if (i7 != i13 || (tL_help_premiumPromo = premiumPreviewFragment.getMediaDataController().E) == null) {
             return;
         }
         SpannableString spannableString = new SpannableString(tL_help_premiumPromo.status_text);
-        org.telegram.messenger.ri.g(tL_help_premiumPromo.status_entities, tL_help_premiumPromo.status_text, spannableString, -1);
+        org.telegram.messenger.si.g(tL_help_premiumPromo.status_entities, tL_help_premiumPromo.status_text, spannableString, -1);
         org.telegram.ui.Components.gz0[] gz0VarArr = (org.telegram.ui.Components.gz0[]) spannableString.getSpans(0, spannableString.length(), org.telegram.ui.Components.gz0.class);
         int length = gz0VarArr.length;
         int i14 = 0;
@@ -234,7 +234,7 @@ public final class qs0 extends org.telegram.ui.Components.dk0 {
                 ps0Var.setTag(-33024);
                 break;
             case 4:
-                ps0Var = new ai.t2(context);
+                ps0Var = new ai.u2(context);
                 break;
             case 5:
                 ps0Var = new org.telegram.ui.Cells.a9(context);

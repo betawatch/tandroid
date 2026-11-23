@@ -2,15 +2,13 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class v00 {
-    public c4 a;
-    public String e;
-    public int g;
+    public cr a;
+    public String d;
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public int f = 80;
-    public int h = -1;
+    public int e = 80;
+    public int f = -1;
 }

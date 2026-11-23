@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h61 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Cells.ba a;
@@ -44,7 +44,7 @@ public final class h61 extends FrameLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.Cells.s8 s8Var = new org.telegram.ui.Cells.s8(context);
         this.c = s8Var;
         s8Var.setBackground(org.telegram.ui.ActionBar.m6.N0(false));
-        s8Var.f(org.telegram.messenger.gd.N0(2131751820, null), org.telegram.messenger.bz.H0, false);
+        s8Var.f(org.telegram.messenger.hd.N0(2131751820, null), org.telegram.messenger.cz.H0, false);
         s8Var.setOnClickListener(new oy0(this, 7));
         r4Var = ((org.telegram.ui.ActionBar.g2) themeActivity).parentLayout;
         org.telegram.ui.Cells.ba baVar = new org.telegram.ui.Cells.ba(context, r4Var, 0);
@@ -70,7 +70,7 @@ public final class h61 extends FrameLayout implements org.telegram.ui.ActionBar.
         int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.I6, false);
         TextPaint textPaint = this.f;
         textPaint.setColor(x02);
-        canvas.drawText("" + org.telegram.messenger.bz.W0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);
+        canvas.drawText("" + org.telegram.messenger.cz.W0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);
     }
 
     @Override // android.view.View
@@ -84,7 +84,7 @@ public final class h61 extends FrameLayout implements org.telegram.ui.ActionBar.
         super.onMeasure(i7, i10);
         int size = View.MeasureSpec.getSize(i7);
         if (this.h != size) {
-            int i11 = org.telegram.messenger.bz.W0;
+            int i11 = org.telegram.messenger.cz.W0;
             int i12 = this.d;
             this.b.setProgress((i11 - i12) / (this.e - i12));
             this.h = size;

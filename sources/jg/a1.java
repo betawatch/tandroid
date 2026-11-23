@@ -2,10 +2,10 @@ package jg;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a1 implements Comparator {
     public final /* synthetic */ ArrayList a;
@@ -45,8 +45,8 @@ public final class a1 implements Comparator {
     public final int compare(Object obj, Object obj2) {
         g1 g1Var = (g1) obj;
         g1 g1Var2 = (g1) obj2;
-        boolean K2 = fj.K2(g1Var.a, true);
-        if (K2 == fj.K2(g1Var2.a, true)) {
+        boolean K2 = gj.K2(g1Var.a, true);
+        if (K2 == gj.K2(g1Var2.a, true)) {
             int a10 = a(g1Var);
             int a11 = a(g1Var2);
             if (a10 > a11) {

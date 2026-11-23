@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n20 implements org.telegram.ui.ActionBar.q2 {
     public final /* synthetic */ f40 a;
@@ -22,7 +22,7 @@ public final class n20 implements org.telegram.ui.ActionBar.q2 {
         }
         f40 f40Var = this.a;
         if (f40Var.E3 == 6) {
-            SharedPreferences g12 = org.telegram.messenger.mp.g1();
+            SharedPreferences g12 = org.telegram.messenger.np.g1();
             if (g12.getBoolean("reminderhint", false)) {
                 return;
             }
@@ -34,7 +34,7 @@ public final class n20 implements org.telegram.ui.ActionBar.q2 {
                 f40Var.i2.setVisibility(4);
                 f40Var.i2.setShowingDuration(4000L);
                 f40Var.b.addView(f40Var.i2, c8.ma.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
-                f40Var.i2.setText(org.telegram.messenger.gd.N0(2131743195, null));
+                f40Var.i2.setText(org.telegram.messenger.hd.N0(2131743193, null));
                 f40Var.i2.b();
             }
             f40Var.i2.setExtraTranslationY(-org.telegram.messenger.g0.m);

@@ -19,12 +19,12 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.w60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class t2 extends FrameLayout implements b6 {
     public float E;
@@ -95,7 +95,7 @@ public abstract class t2 extends FrameLayout implements b6 {
         this.h.setDuration((int) ((Math.max(0.0f, r1) / org.telegram.messenger.g0.a1(false, 0.8f)) * 250.0f));
         this.h.setInterpolator(nr.f);
         this.h.addListener(new s2(this, i7));
-        ks.e().k(ks.j1, 512);
+        ls.e().k(ls.j1, 512);
         this.h.start();
     }
 
@@ -514,7 +514,7 @@ public abstract class t2 extends FrameLayout implements b6 {
                     if (i27 == -1) {
                         i27 = 51;
                     }
-                    int i28 = i27 & ks.x1;
+                    int i28 = i27 & ls.x1;
                     int i29 = i27 & 7;
                     if (i29 == i24) {
                         i15 = (((i14 - i13) - measuredWidth2) / 2) + layoutParams.leftMargin;

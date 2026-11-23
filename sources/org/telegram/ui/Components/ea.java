@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ea implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class ea implements View.OnAttachStateChangeListener {
                 int i10 = m4Var.v0;
                 if (-1 != i10) {
                     if (i10 >= 0) {
-                        org.telegram.messenger.ks.f(i10).n(m4Var.x0, 67);
+                        org.telegram.messenger.ls.f(i10).n(m4Var.x0, 67);
                     }
                     m4Var.v0 = -1;
                     break;
@@ -104,7 +104,7 @@ public final class ea implements View.OnAttachStateChangeListener {
                 int i7 = m4Var.v0;
                 if (-1 != i7) {
                     if (i7 >= 0) {
-                        org.telegram.messenger.ks.f(i7).n(m4Var.x0, 67);
+                        org.telegram.messenger.ls.f(i7).n(m4Var.x0, 67);
                     }
                     m4Var.v0 = -1;
                 }

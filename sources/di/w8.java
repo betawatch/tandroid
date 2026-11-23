@@ -3,12 +3,12 @@ package di;
 import android.content.Context;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -16,11 +16,11 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.zm;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w8 {
     public final r8 a;
-    public final fj b;
+    public final gj b;
     public final bn c;
     public final org.telegram.ui.Components.gc d;
     public final org.telegram.ui.Components.ac e;
@@ -37,14 +37,14 @@ public final class w8 {
     public boolean j = false;
     public Long n = null;
 
-    public w8(y8 y8Var, r8 r8Var, fj fjVar, bn bnVar, boolean z10) {
+    public w8(y8 y8Var, r8 r8Var, gj gjVar, bn bnVar, boolean z10) {
         this.q = y8Var;
         boolean z11 = false;
         z11 = false;
         u8 u8Var = new u8(this, z11 ? 1 : 0);
         this.p = u8Var;
         this.a = r8Var;
-        this.b = fjVar;
+        this.b = gjVar;
         this.c = bnVar;
         Context t6 = y8.t(bnVar);
         org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(t6, bnVar.Ba);
@@ -52,7 +52,7 @@ public final class w8 {
         acVar.c(R.raw.stars_topup, new String[0]);
         acVar.b.setText(d());
         org.telegram.ui.Components.ec ecVar = new org.telegram.ui.Components.ec(t6, bnVar.Ba, true, false);
-        ecVar.e(gd.N0(2131744782, null));
+        ecVar.e(hd.N0(2131744780, null));
         ecVar.b = new u8(this, 1);
         x8 x8Var = new x8(t6, bnVar.Ba);
         this.f = x8Var;
@@ -82,14 +82,14 @@ public final class w8 {
         b10.v = u8Var;
         this.h = 0L;
         System.currentTimeMillis();
-        if (fjVar.k.reactions != null) {
+        if (gjVar.k.reactions != null) {
             int i10 = 0;
             while (true) {
-                if (i10 >= fjVar.k.reactions.results.size()) {
+                if (i10 >= gjVar.k.reactions.results.size()) {
                     break;
                 }
-                if (fjVar.k.reactions.results.get(i10).reaction instanceof TLRPC.TL_reactionPaid) {
-                    z11 = fjVar.k.reactions.results.get(i10).chosen;
+                if (gjVar.k.reactions.results.get(i10).reaction instanceof TLRPC.TL_reactionPaid) {
+                    z11 = gjVar.k.reactions.results.get(i10).chosen;
                     break;
                 }
                 i10++;
@@ -111,20 +111,20 @@ public final class w8 {
         int i10 = (int) (-this.h);
         boolean z10 = this.g;
         long c10 = c();
-        fj fjVar = this.b;
-        fjVar.f(i10, c10, z10);
+        gj gjVar = this.b;
+        gjVar.f(i10, c10, z10);
         y8Var.g -= this.h;
-        ks.f(i7).k(ks.A3, new Object[0]);
-        ks.f(i7).k(ks.o1, Long.valueOf(fj.B0(fjVar.k)), Integer.valueOf(fjVar.e1()), fjVar.k.reactions);
+        ls.f(i7).k(ls.A3, new Object[0]);
+        ls.f(i7).k(ls.o1, Long.valueOf(gj.B0(gjVar.k)), Integer.valueOf(gjVar.e1()), gjVar.k.reactions);
         if (y8Var.B == this) {
             y8Var.B = null;
         }
     }
 
     public final void b() {
-        fj fjVar;
+        gj gjVar;
         String str;
-        int i7 = ks.A3;
+        int i7 = ls.A3;
         org.telegram.messenger.g0.r(this.p);
         int i10 = 0;
         if (!this.l) {
@@ -132,10 +132,10 @@ public final class w8 {
             this.b.f((int) (-this.h), c(), this.g);
             y8 y8Var = this.q;
             y8Var.g -= this.h;
-            ks.f(y8Var.a).k(i7, new Object[0]);
+            ls.f(y8Var.a).k(i7, new Object[0]);
         } else if (!this.i && !this.j) {
             y8 y10 = y8.y(this.q.a, false);
-            mp u12 = mp.u1(this.q.a);
+            np u12 = np.u1(this.q.a);
             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.q.a);
             long j3 = this.h;
             if (!y10.e || y10.q(null, false, false).amount >= j3) {
@@ -147,7 +147,7 @@ public final class w8 {
                 tL_messages_sendPaidReaction.count = (int) this.h;
                 tL_messages_sendPaidReaction.flags |= 1;
                 long c10 = c();
-                if (c10 == 0 || c10 == j10.i(this.q.a).e()) {
+                if (c10 == 0 || c10 == k10.i(this.q.a).e()) {
                     tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyDefault();
                 } else if (c10 == 2666000) {
                     tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyAnonymous();
@@ -163,10 +163,10 @@ public final class w8 {
                 this.b.f((int) (-this.h), c(), this.g);
                 y8 y8Var2 = this.q;
                 y8Var2.g = 0L;
-                ks.f(y8Var2.a).k(i7, new Object[0]);
-                ks.f(this.q.a).k(ks.o1, Long.valueOf(fj.B0(this.b.k)), Integer.valueOf(this.b.e1()), this.b.k.reactions);
+                ls.f(y8Var2.a).k(i7, new Object[0]);
+                ls.f(this.q.a).k(ls.o1, Long.valueOf(gj.B0(this.b.k)), Integer.valueOf(this.b.e1()), this.b.k.reactions);
                 if (this.a.a >= 0) {
-                    str = o10.l(this.c.getMessagesController().c2(Long.valueOf(this.a.a)));
+                    str = p10.l(this.c.getMessagesController().c2(Long.valueOf(this.a.a)));
                 } else {
                     TLRPC.Chat O0 = this.c.getMessagesController().O0(Long.valueOf(-this.a.a));
                     str = O0 == null ? "" : O0.title;
@@ -184,7 +184,7 @@ public final class w8 {
         }
         this.d.b();
         k6 k6Var = this.o;
-        if (k6Var != null && (fjVar = this.b) != null && fjVar.e1() == k6Var.c) {
+        if (k6Var != null && (gjVar = this.b) != null && gjVar.e1() == k6Var.c) {
             this.o.c();
         }
         y8 y8Var3 = this.q;
@@ -199,6 +199,6 @@ public final class w8 {
     }
 
     public final String d() {
-        return c() == 2666000 ? gd.N0(2131744788, null) : (c() == 0 || c() == j10.i(this.q.a).e()) ? gd.N0(2131744784, null) : gd.a0(null, null, 2131744783, org.telegram.messenger.n5.t(c()));
+        return c() == 2666000 ? hd.N0(2131744786, null) : (c() == 0 || c() == k10.i(this.q.a).e()) ? hd.N0(2131744782, null) : hd.a0(null, null, 2131744781, org.telegram.messenger.n5.t(c()));
     }
 }

@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import android.widget.TextView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t31 implements TextWatcher {
     public boolean a;
@@ -44,7 +44,7 @@ public final class t31 implements TextWatcher {
         try {
             d2 = TextUtils.isEmpty(editable) ? 0.0d : Double.parseDouble(editable.toString());
             try {
-                d10 = org.telegram.messenger.mp.u1(i7).d7 / 1.0E9d;
+                d10 = org.telegram.messenger.np.u1(i7).d7 / 1.0E9d;
                 iArr = this.e;
             } catch (Exception unused) {
                 d = 0.0d;
@@ -55,7 +55,7 @@ public final class t31 implements TextWatcher {
         }
         if (d2 > d10) {
             this.a = true;
-            d2 = org.telegram.messenger.mp.u1(i7).d7 / 1.0E9d;
+            d2 = org.telegram.messenger.np.u1(i7).d7 / 1.0E9d;
             editTextBoldCursor.setText(Double.toString(d2));
             editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
             int i10 = -iArr[0];
@@ -64,9 +64,9 @@ public final class t31 implements TextWatcher {
         } else if (d2 > 0.0d) {
             d = 0.0d;
             try {
-                if (d2 < org.telegram.messenger.mp.u1(i7).c7 / 1.0E9d) {
+                if (d2 < org.telegram.messenger.np.u1(i7).c7 / 1.0E9d) {
                     this.a = true;
-                    d2 = org.telegram.messenger.mp.u1(i7).c7 / 1.0E9d;
+                    d2 = org.telegram.messenger.np.u1(i7).c7 / 1.0E9d;
                     editTextBoldCursor.setText(Double.toString(d2));
                     editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                     int i11 = -iArr[0];
@@ -94,7 +94,7 @@ public final class t31 implements TextWatcher {
             textView2.animate().alpha(1.0f).start();
             StringBuilder sb2 = new StringBuilder("≈");
             org.telegram.messenger.r1 i12 = org.telegram.messenger.r1.i();
-            long j3 = (long) (d2 * ((org.telegram.messenger.i0) org.telegram.messenger.mp.u1(i7).A7.l.b).a * 100.0d);
+            long j3 = (long) (d2 * ((org.telegram.messenger.i0) org.telegram.messenger.np.u1(i7).A7.l.b).a * 100.0d);
             i12.getClass();
             sb2.append(org.telegram.messenger.r1.g("USD", 2, j3, false));
             textView2.setText(sb2.toString());

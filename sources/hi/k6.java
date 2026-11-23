@@ -2,13 +2,13 @@ package hi;
 
 import android.os.Bundle;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class k6 extends m6 {
     public final /* synthetic */ TLRPC.User b;
@@ -21,18 +21,18 @@ public final class k6 extends m6 {
 
     @Override // hi.m6
     public final String a() {
-        return gd.N0(2131743303, null);
+        return hd.N0(2131743301, null);
     }
 
     @Override // hi.m6
     public final String b() {
-        return o10.q(this.b);
+        return p10.q(this.b);
     }
 
     @Override // hi.m6
     public final void c(org.telegram.ui.ActionBar.g2 g2Var) {
         TLRPC.User user = this.b;
-        if (user.id != j10.i(j10.t0).e()) {
+        if (user.id != k10.i(k10.t0).e()) {
             g2Var.presentFragment(ProfileActivity.D4(user.id));
             return;
         }

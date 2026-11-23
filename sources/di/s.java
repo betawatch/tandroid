@@ -3,12 +3,12 @@ package di;
 import android.content.Context;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s extends FrameLayout {
     public final int a;
@@ -67,7 +67,7 @@ public final class s extends FrameLayout {
         tL_payments_getStarsTransactions.inbound = i12 == 1;
         tL_payments_getStarsTransactions.outbound = i12 == 2;
         i7 = ((org.telegram.ui.ActionBar.g2) tVar).currentAccount;
-        tL_payments_getStarsTransactions.peer = mp.u1(i7).l1(tVar.b);
+        tL_payments_getStarsTransactions.peer = np.u1(i7).l1(tVar.b);
         String str = this.d;
         tL_payments_getStarsTransactions.offset = str;
         tL_payments_getStarsTransactions.limit = 20;

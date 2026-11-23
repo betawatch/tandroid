@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rl implements q0.a {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class rl implements q0.a {
                 boolean z12 = ChatAttachAlertPhotoLayout.r1;
                 if (view instanceof org.telegram.ui.Cells.s5) {
                     org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-                    org.telegram.messenger.ef photoEntry = s5Var.getPhotoEntry();
+                    org.telegram.messenger.ff photoEntry = s5Var.getPhotoEntry();
                     if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z11) {
                         z10 = true;
                     }
@@ -43,7 +43,7 @@ public final /* synthetic */ class rl implements q0.a {
                 boolean z13 = ChatAttachAlertPhotoLayout.r1;
                 if (view2 instanceof org.telegram.ui.Cells.s5) {
                     org.telegram.ui.Cells.s5 s5Var2 = (org.telegram.ui.Cells.s5) view2;
-                    org.telegram.messenger.ef photoEntry2 = s5Var2.getPhotoEntry();
+                    org.telegram.messenger.ff photoEntry2 = s5Var2.getPhotoEntry();
                     if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z11) {
                         z10 = true;
                     }

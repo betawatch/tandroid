@@ -3,13 +3,13 @@ package bg;
 import ai.i1;
 import android.content.Context;
 import android.view.KeyEvent;
-import bi.g5;
+import bi.f5;
 import fi.a8;
 import fi.f7;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import jg.c1;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -25,7 +25,7 @@ import org.telegram.ui.p40;
 import org.telegram.ui.qr;
 import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -66,41 +66,41 @@ public final /* synthetic */ class l0 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new m0((a8) obj4, tLObject, this.d, (ArrayList) obj, (boolean[]) obj3, this.b));
                 break;
             case 4:
-                org.telegram.messenger.g0.g3(new g5((c1) obj4, this.b, (ArrayList) obj2, (a0.h) obj, tL_error, tLObject, (mp) obj3, 1));
+                org.telegram.messenger.g0.g3(new f5((c1) obj4, this.b, (ArrayList) obj2, (a0.h) obj, tL_error, tLObject, (np) obj3, 1));
                 break;
             case 5:
                 int i11 = this.b;
                 org.telegram.messenger.g0.g3(new m0(i11, 6, (t1) obj4, (Context) obj2, (h6) obj, (p40) obj3, tLObject));
                 break;
             case 6:
-                org.telegram.messenger.g0.g3(new g5(tL_error, tLObject, (ArrayList) obj4, this.b, (AtomicInteger) obj2, (ArrayList) obj, (up) obj3, 7));
+                org.telegram.messenger.g0.g3(new f5(tL_error, tLObject, (ArrayList) obj4, this.b, (AtomicInteger) obj2, (ArrayList) obj, (up) obj3, 7));
                 break;
             case 7:
                 org.telegram.messenger.g0.g3(new m0((ff0) obj4, (Integer[]) obj2, this.b, tLObject, (ArrayList) obj, (TLRPC.PollAnswerVoters) obj3));
                 break;
             case 8:
-                org.telegram.messenger.g0.g3(new g5((t1) obj4, tLObject, this.b, (TLRPC.Document) obj2, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj3));
+                org.telegram.messenger.g0.g3(new f5((t1) obj4, tLObject, this.b, (TLRPC.Document) obj2, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj3));
                 break;
             case 9:
                 org.telegram.messenger.g0.g3(new m0((qr) obj4, (TLRPC.FileLocation) obj2, (TLRPC.InputFile) obj, tLObject, (TLRPC.FileLocation) obj3, this.b));
                 break;
             case 10:
-                org.telegram.messenger.g0.g3(new g5((t1) obj4, (vf.b) obj2, tLObject, this.b, (Context) obj, (TLRPC.TL_inputGroupCallSlug) obj3, tL_error, 10));
+                org.telegram.messenger.g0.g3(new f5((t1) obj4, (vf.b) obj2, tLObject, this.b, (Context) obj, (TLRPC.TL_inputGroupCallSlug) obj3, tL_error, 10));
                 break;
             case 11:
                 String str = LaunchActivity.C1;
-                org.telegram.messenger.g0.g3(new g5((LaunchActivity) obj4, tLObject, (vf.b) obj2, tL_error, (mp) obj, this.b, (String) obj3, 12));
+                org.telegram.messenger.g0.g3(new f5((LaunchActivity) obj4, tLObject, (vf.b) obj2, tL_error, (np) obj, this.b, (String) obj3, 12));
                 break;
             case 12:
                 String str2 = LaunchActivity.C1;
-                org.telegram.messenger.g0.g3(new g5((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (h60) obj, this.b, (String) obj3, 14));
+                org.telegram.messenger.g0.g3(new f5((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (h60) obj, this.b, (String) obj3, 14));
                 break;
             case 13:
                 String str3 = LaunchActivity.C1;
-                org.telegram.messenger.g0.g3(new g5((LaunchActivity) obj4, tL_error, tLObject, this.b, (t1) obj2, (h60) obj, (String) obj3));
+                org.telegram.messenger.g0.g3(new f5((LaunchActivity) obj4, tL_error, tLObject, this.b, (t1) obj2, (h60) obj, (String) obj3));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new g5((org.telegram.ui.web.v0) obj4, (String) obj2, tLObject, tL_error, this.b, (org.telegram.ui.web.s0) obj, (f7) obj3));
+                org.telegram.messenger.g0.g3(new f5((org.telegram.ui.web.v0) obj4, (String) obj2, tLObject, tL_error, this.b, (org.telegram.ui.web.s0) obj, (f7) obj3));
                 break;
         }
     }

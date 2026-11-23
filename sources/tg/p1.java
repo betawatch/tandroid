@@ -14,29 +14,29 @@ import c8.ma;
 import c8.ne;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import hi.c7;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.we;
+import org.telegram.messenger.xe;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.y01;
+import org.telegram.ui.Components.x01;
 import org.telegram.ui.Components.yt0;
 import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p1 extends j {
-    public final y01 A0;
+    public final x01 A0;
     public final Bitmap B0;
     public boolean C0;
     public boolean D0;
     public final Rect E0;
     public final Rect F0;
     public final Paint G0;
-    public we H0;
+    public xe H0;
     public final TLObject r0;
     public final String s0;
     public final int t0;
@@ -62,12 +62,12 @@ public final class p1 extends j {
         setScale(1.0f);
         this.s0 = str;
         this.w0 = yt0Var;
-        y01 y01Var = new y01(this, context);
-        this.A0 = y01Var;
-        addView(y01Var, ma.c(-1.0f, -1));
+        x01 x01Var = new x01(this, context);
+        this.A0 = x01Var;
+        addView(x01Var, ma.c(-1.0f, -1));
         nr nrVar = nr.h;
-        this.v0 = new d6(y01Var, 0L, 500L, nrVar);
-        this.z0 = new d6(y01Var, 0L, 350L, nrVar);
+        this.v0 = new d6(x01Var, 0L, 500L, nrVar);
+        this.z0 = new d6(x01Var, 0L, 350L, nrVar);
         this.x0 = i7;
         Bitmap q10 = c7.q(new ab.t(str, 2), 1920, 1920, 0, false);
         this.B0 = q10;
@@ -133,8 +133,8 @@ public final class p1 extends j {
         getMeasuredHeight();
         getScale();
         org.telegram.messenger.g0.L(64.0f);
-        float y10 = n10.y(L, 2.0f, getPositionX(), scaleX);
-        return new aj0(y10, n10.y(L2, 2.0f, getPositionY(), scaleX), ((L3 * scaleX) + y10) - y10, L2 * scaleX);
+        float y10 = o10.y(L, 2.0f, getPositionX(), scaleX);
+        return new aj0(y10, o10.y(L2, 2.0f, getPositionY(), scaleX), ((L3 * scaleX) + y10) - y10, L2 * scaleX);
     }
 
     @Override // tg.j
@@ -142,10 +142,10 @@ public final class p1 extends j {
         yt0 yt0Var = this.w0;
         float f10 = yt0Var.a / 2.0f;
         float f11 = yt0Var.b / 2.0f;
-        we weVar = this.H0;
-        if (weVar != null) {
-            f10 *= weVar.e;
-            f11 *= weVar.f;
+        xe xeVar = this.H0;
+        if (xeVar != null) {
+            f10 *= xeVar.e;
+            f11 *= xeVar.f;
         }
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
@@ -167,10 +167,10 @@ public final class p1 extends j {
         yt0 yt0Var = this.w0;
         float f10 = yt0Var.a;
         float f11 = yt0Var.b;
-        we weVar = this.H0;
-        if (weVar != null) {
-            f10 *= weVar.e;
-            f11 *= weVar.f;
+        xe xeVar = this.H0;
+        if (xeVar != null) {
+            f10 *= xeVar.e;
+            f11 *= xeVar.f;
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) f11, TLObject.FLAG_30));
     }
@@ -194,9 +194,9 @@ public final class p1 extends j {
         if (!z10) {
             this.v0.f(z11, true);
         }
-        y01 y01Var = this.A0;
-        if (y01Var != null) {
-            y01Var.invalidate();
+        x01 x01Var = this.A0;
+        if (x01Var != null) {
+            x01Var.invalidate();
         }
     }
 
@@ -217,9 +217,9 @@ public final class p1 extends j {
         if (!z10) {
             this.z0.f(z11, true);
         }
-        y01 y01Var = this.A0;
-        if (y01Var != null) {
-            y01Var.invalidate();
+        x01 x01Var = this.A0;
+        if (x01Var != null) {
+            x01Var.invalidate();
         }
     }
 
@@ -238,12 +238,12 @@ public final class p1 extends j {
         setScale(1.0f);
         this.r0 = tLObject;
         this.w0 = yt0Var;
-        y01 y01Var = new y01(this, context);
-        this.A0 = y01Var;
-        addView(y01Var, ma.c(-1.0f, -1));
+        x01 x01Var = new x01(this, context);
+        this.A0 = x01Var;
+        addView(x01Var, ma.c(-1.0f, -1));
         nr nrVar = nr.h;
-        this.v0 = new d6(y01Var, 0L, 500L, nrVar);
-        this.z0 = new d6(y01Var, 0L, 350L, nrVar);
+        this.v0 = new d6(x01Var, 0L, 500L, nrVar);
+        this.z0 = new d6(x01Var, 0L, 350L, nrVar);
         k();
     }
 }

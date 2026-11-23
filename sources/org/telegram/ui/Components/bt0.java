@@ -6,9 +6,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class bt0 implements org.telegram.messenger.fs {
+public final class bt0 implements org.telegram.messenger.gs {
     public boolean E;
     public final xi.e F;
     public boolean f;
@@ -38,14 +38,14 @@ public final class bt0 implements org.telegram.messenger.fs {
             this.w = bhVar.M();
             this.s = bhVar.d();
             if (a10 != g2Var.getUserConfig().e()) {
-                g2Var.getMessagesController().I1().f(a10, new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.Components.at0
+                g2Var.getMessagesController().I1().f(a10, new org.telegram.messenger.y10(this) { // from class: org.telegram.ui.Components.at0
                     public final /* synthetic */ bt0 b;
 
                     {
                         this.b = this;
                     }
 
-                    @Override // org.telegram.messenger.x10
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj) {
                         Boolean bool = (Boolean) obj;
                         switch (i7) {
@@ -95,14 +95,14 @@ public final class bt0 implements org.telegram.messenger.fs {
                     c(chatFull);
                 }
                 if (a11 != g2Var.getUserConfig().e()) {
-                    g2Var.getMessagesController().I1().f(a11, new org.telegram.messenger.x10(this) { // from class: org.telegram.ui.Components.at0
+                    g2Var.getMessagesController().I1().f(a11, new org.telegram.messenger.y10(this) { // from class: org.telegram.ui.Components.at0
                         public final /* synthetic */ bt0 b;
 
                         {
                             this.b = this;
                         }
 
-                        @Override // org.telegram.messenger.x10
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj) {
                             Boolean bool = (Boolean) obj;
                             switch (i10) {
@@ -168,20 +168,20 @@ public final class bt0 implements org.telegram.messenger.fs {
             this.F = null;
             return;
         }
-        org.telegram.messenger.ks notificationCenter = g2Var2.getNotificationCenter();
+        org.telegram.messenger.ls notificationCenter = g2Var2.getNotificationCenter();
         notificationCenter.getClass();
         xi.e eVar = new xi.e(notificationCenter, this);
-        eVar.c(org.telegram.messenger.ks.X);
-        eVar.c(org.telegram.messenger.ks.W);
+        eVar.c(org.telegram.messenger.ls.X);
+        eVar.c(org.telegram.messenger.ls.W);
         eVar.c(1);
-        eVar.c(org.telegram.messenger.ks.K);
-        eVar.c(org.telegram.messenger.ks.V);
-        eVar.c(org.telegram.messenger.ks.w);
-        eVar.c(org.telegram.messenger.ks.m0);
-        eVar.c(org.telegram.messenger.ks.T);
-        eVar.c(org.telegram.messenger.ks.Y1);
-        eVar.c(org.telegram.messenger.ks.A5);
-        eVar.c(org.telegram.messenger.ks.i3);
+        eVar.c(org.telegram.messenger.ls.K);
+        eVar.c(org.telegram.messenger.ls.V);
+        eVar.c(org.telegram.messenger.ls.w);
+        eVar.c(org.telegram.messenger.ls.m0);
+        eVar.c(org.telegram.messenger.ls.T);
+        eVar.c(org.telegram.messenger.ls.Y1);
+        eVar.c(org.telegram.messenger.ls.A5);
+        eVar.c(org.telegram.messenger.ls.i3);
         this.F = eVar;
     }
 
@@ -190,7 +190,7 @@ public final class bt0 implements org.telegram.messenger.fs {
         if (g2Var == null) {
             return;
         }
-        org.telegram.messenger.ri mediaDataController = g2Var.getMediaDataController();
+        org.telegram.messenger.si mediaDataController = g2Var.getMediaDataController();
         long j3 = this.s;
         mediaDataController.g0(this.r, g2Var.getClassGuid(), j3);
         if (this.w != 0) {
@@ -228,7 +228,7 @@ public final class bt0 implements org.telegram.messenger.fs {
     /* JADX WARN: Type inference failed for: r7v16 */
     /* JADX WARN: Type inference failed for: r7v6 */
     /* JADX WARN: Type inference failed for: r7v7, types: [int] */
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -243,7 +243,7 @@ public final class bt0 implements org.telegram.messenger.fs {
         boolean z11 = true;
         boolean z12 = false;
         int i16 = 0;
-        if (i7 == org.telegram.messenger.ks.X) {
+        if (i7 == org.telegram.messenger.ls.X) {
             long longValue = ((Long) objArr[0]).longValue();
             long longValue2 = ((Long) objArr[1]).longValue();
             if (this.s == longValue2) {
@@ -305,7 +305,7 @@ public final class bt0 implements org.telegram.messenger.fs {
             }
             return;
         }
-        if (i7 == org.telegram.messenger.ks.W) {
+        if (i7 == org.telegram.messenger.ls.W) {
             long longValue3 = ((Long) objArr[0]).longValue();
             long longValue4 = ((Long) objArr[1]).longValue();
             if ((longValue3 == this.r || longValue3 == this.w) && this.s == longValue4) {
@@ -345,13 +345,13 @@ public final class bt0 implements org.telegram.messenger.fs {
                 org.telegram.ui.ActionBar.g2 g2Var = this.x;
                 int currentAccount = g2Var != null ? g2Var.getCurrentAccount() : -1;
                 for (int i25 = 0; i25 < arrayList.size(); i25++) {
-                    org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList.get(i25);
-                    if (!org.telegram.messenger.fj.c3(fjVar.k)) {
+                    org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList.get(i25);
+                    if (!org.telegram.messenger.gj.c3(gjVar.k)) {
                         long j11 = this.s;
-                        if ((j11 == 0 || j11 == org.telegram.messenger.fj.b2(currentAccount, fjVar.k, true, false)) && org.telegram.messenger.fj.n1(fjVar.k) != null && !fjVar.m5() && (h02 = org.telegram.messenger.ri.h0(fjVar.k)) != -1 && ((h02 != 0 || this.n[0].q != 2 || org.telegram.messenger.fj.L4(fjVar.k)) && (h02 != 0 || this.n[0].q != 1 || !org.telegram.messenger.fj.L4(fjVar.k)))) {
+                        if ((j11 == 0 || j11 == org.telegram.messenger.gj.b2(currentAccount, gjVar.k, true, false)) && org.telegram.messenger.gj.n1(gjVar.k) != null && !gjVar.m5() && (h02 = org.telegram.messenger.si.h0(gjVar.k)) != -1 && ((h02 != 0 || this.n[0].q != 2 || org.telegram.messenger.gj.L4(gjVar.k)) && (h02 != 0 || this.n[0].q != 1 || !org.telegram.messenger.gj.L4(gjVar.k)))) {
                             ys0 ys0Var = this.n[h02];
                             if (ys0Var.l) {
-                                ys0Var.a(fjVar, i24, true, C);
+                                ys0Var.a(gjVar, i24, true, C);
                             }
                             if (this.s == 0) {
                                 int[] iArr2 = this.n[h02].f;
@@ -370,8 +370,8 @@ public final class bt0 implements org.telegram.messenger.fs {
             }
             return;
         }
-        if (i7 != org.telegram.messenger.ks.K) {
-            if (i7 == org.telegram.messenger.ks.V) {
+        if (i7 != org.telegram.messenger.ls.K) {
+            if (i7 == org.telegram.messenger.ls.V) {
                 long longValue6 = ((Long) objArr[0]).longValue();
                 if (((Integer) objArr[3]).intValue() == this.x.getClassGuid()) {
                     int intValue3 = ((Integer) objArr[4]).intValue();
@@ -390,13 +390,13 @@ public final class bt0 implements org.telegram.messenger.fs {
                     }
                     this.n[intValue3].i[i27] = ((Boolean) objArr[5]).booleanValue();
                     for (int i28 = 0; i28 < arrayList2.size(); i28++) {
-                        this.n[intValue3].a((org.telegram.messenger.fj) arrayList2.get(i28), i27, false, C2);
+                        this.n[intValue3].a((org.telegram.messenger.gj) arrayList2.get(i28), i27, false, C2);
                     }
                     return;
                 }
                 return;
             }
-            if (i7 == org.telegram.messenger.ks.w) {
+            if (i7 == org.telegram.messenger.ls.w) {
                 if (((Boolean) objArr[2]).booleanValue()) {
                     return;
                 }
@@ -421,9 +421,9 @@ public final class bt0 implements org.telegram.messenger.fs {
                     while (true) {
                         ys0[] ys0VarArr = this.n;
                         if (i30 < ys0VarArr.length) {
-                            org.telegram.messenger.fj b10 = ys0VarArr[i30].b(((Integer) arrayList3.get(i29)).intValue(), 0);
+                            org.telegram.messenger.gj b10 = ys0VarArr[i30].b(((Integer) arrayList3.get(i29)).intValue(), 0);
                             if (b10 != null) {
-                                if (org.telegram.messenger.fj.B0(b10.k) == this.r && (this.s == 0 || org.telegram.messenger.fj.b2(currentAccount2, b10.k, true, false) == this.s)) {
+                                if (org.telegram.messenger.gj.B0(b10.k) == this.r && (this.s == 0 || org.telegram.messenger.gj.b2(currentAccount2, b10.k, true, false) == this.s)) {
                                     int[] iArr3 = this.a;
                                     int i31 = iArr3[i30];
                                     if (i31 > 0) {
@@ -470,8 +470,8 @@ public final class bt0 implements org.telegram.messenger.fs {
                 a();
                 return;
             }
-            if (i7 != org.telegram.messenger.ks.m0) {
-                if (i7 == org.telegram.messenger.ks.T) {
+            if (i7 != org.telegram.messenger.ls.m0) {
+                if (i7 == org.telegram.messenger.ls.T) {
                     TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
                     long j12 = this.r;
                     if (j12 >= 0 || chatFull.id != (-j12)) {
@@ -480,7 +480,7 @@ public final class bt0 implements org.telegram.messenger.fs {
                     c(chatFull);
                     return;
                 }
-                if (i7 == org.telegram.messenger.ks.Y1) {
+                if (i7 == org.telegram.messenger.ls.Y1) {
                     ArrayList arrayList4 = new ArrayList();
                     int i36 = 0;
                     while (true) {
@@ -498,14 +498,14 @@ public final class bt0 implements org.telegram.messenger.fs {
                     }
                     return;
                 }
-                if (i7 == org.telegram.messenger.ks.i3) {
+                if (i7 == org.telegram.messenger.ls.i3) {
                     org.telegram.ui.ActionBar.g2 g2Var3 = this.x;
                     if (g2Var3 != null) {
-                        org.telegram.messenger.pv I1 = g2Var3.getMessagesController().I1();
+                        org.telegram.messenger.qv I1 = g2Var3.getMessagesController().I1();
                         long j13 = this.r;
                         ArrayList arrayList5 = I1.j;
                         for (int i37 = 0; i37 < arrayList5.size(); i37++) {
-                            if (((org.telegram.messenger.ov) arrayList5.get(i37)).a == j13) {
+                            if (((org.telegram.messenger.pv) arrayList5.get(i37)).a == j13) {
                                 z10 = true;
                                 break;
                             }
@@ -534,10 +534,10 @@ public final class bt0 implements org.telegram.messenger.fs {
                 int size6 = arrayList6.size();
                 int i40 = 0;
                 while (i40 < size6) {
-                    org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) arrayList6.get(i40);
-                    int e12 = fjVar2.e1();
-                    long b22 = org.telegram.messenger.fj.b2(currentAccount3, fjVar2.k, z11, z12);
-                    int h03 = org.telegram.messenger.ri.h0(fjVar2.k);
+                    org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) arrayList6.get(i40);
+                    int e12 = gjVar2.e1();
+                    long b22 = org.telegram.messenger.gj.b2(currentAccount3, gjVar2.k, z11, z12);
+                    int h03 = org.telegram.messenger.si.h0(gjVar2.k);
                     boolean z15 = z12;
                     long j15 = this.s;
                     if (j15 == 0 || b22 == j15) {
@@ -547,9 +547,9 @@ public final class bt0 implements org.telegram.messenger.fs {
                             if (r72 >= ys0VarArr3.length) {
                                 break;
                             }
-                            org.telegram.messenger.fj fjVar3 = (org.telegram.messenger.fj) ys0VarArr3[r72].b[i39].get(e12);
-                            if (fjVar3 != null) {
-                                int h04 = org.telegram.messenger.ri.h0(fjVar2.k);
+                            org.telegram.messenger.gj gjVar3 = (org.telegram.messenger.gj) ys0VarArr3[r72].b[i39].get(e12);
+                            if (gjVar3 != null) {
+                                int h04 = org.telegram.messenger.si.h0(gjVar2.k);
                                 if (h03 == -1 || h04 != h03) {
                                     this.n[r72].b(e12, i39);
                                     if (i39 == 0) {
@@ -566,10 +566,10 @@ public final class bt0 implements org.telegram.messenger.fs {
                                         }
                                     }
                                 } else {
-                                    int indexOf = this.n[r72].a.indexOf(fjVar3);
+                                    int indexOf = this.n[r72].a.indexOf(gjVar3);
                                     if (indexOf >= 0) {
-                                        this.n[r72].b[i39].put(e12, fjVar2);
-                                        this.n[r72].a.set(indexOf, fjVar2);
+                                        this.n[r72].b[i39].put(e12, gjVar2);
+                                        this.n[r72].a.set(indexOf, gjVar2);
                                     }
                                 }
                             } else {

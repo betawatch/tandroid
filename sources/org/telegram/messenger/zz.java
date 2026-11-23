@@ -1,36 +1,49 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class zz implements RequestDelegate {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ e00 c;
+public final /* synthetic */ class zz implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f00 b;
 
-    public zz(e00 e00Var, long j3, int i7) {
-        this.c = e00Var;
-        this.a = j3;
-        this.b = i7;
+    public /* synthetic */ zz(f00 f00Var, int i7) {
+        this.a = i7;
+        this.b = f00Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        if (tL_error == null) {
-            TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
-            e00 e00Var = this.c;
-            mp messagesController = e00Var.getMessagesController();
-            int i7 = tL_messages_affectedHistory.pts;
-            int i10 = tL_messages_affectedHistory.pts_count;
-            long j3 = this.a;
-            messagesController.S3(i7, i10, j3);
-            int i11 = tL_messages_affectedHistory.offset;
-            if (i11 > 0) {
-                e00Var.c(this.b, i11, j3);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        f00 f00Var = this.b;
+        switch (i7) {
+            case 0:
+                ls f10 = ls.f(f00Var.currentAccount);
+                int i10 = np.I8;
+                f10.k(2, 512);
+                break;
+            default:
+                f00Var.a.b();
+                f00Var.b.b();
+                f00Var.d.clear();
+                SharedPreferences.Editor edit = f00Var.getUserConfig().k().edit();
+                for (String str : f00Var.getUserConfig().k().getAll().keySet()) {
+                    if (str.startsWith("topics_load_offset_message_id_")) {
+                        edit.remove(str);
+                    }
+                    if (str.startsWith("topics_load_offset_date_")) {
+                        edit.remove(str);
+                    }
+                    if (str.startsWith("topics_load_offset_topic_id_")) {
+                        edit.remove(str);
+                    }
+                    if (str.startsWith("topics_end_reached_")) {
+                        edit.remove(str);
+                    }
+                }
+                edit.apply();
+                break;
         }
     }
 }

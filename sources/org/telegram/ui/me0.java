@@ -20,9 +20,9 @@ import org.telegram.messenger.ApplicationLoaderImpl;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
+public final class me0 extends qb1 implements org.telegram.messenger.gs, te.b {
     public cb1 E;
     public FrameLayout F;
     public oe0 G;
@@ -88,13 +88,13 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
     }
 
     public static void e0(me0 me0Var) {
-        org.telegram.messenger.j10 userConfig = me0Var.getUserConfig();
+        org.telegram.messenger.k10 userConfig = me0Var.getUserConfig();
         if (!userConfig.X) {
             userConfig.X = true;
             userConfig.v(false);
         }
         me0Var.m0(true, true);
-        org.telegram.messenger.ks.f(me0Var.currentAccount).k(org.telegram.messenger.ks.R5, new Object[0]);
+        org.telegram.messenger.ls.f(me0Var.currentAccount).k(org.telegram.messenger.ls.R5, new Object[0]);
     }
 
     public static void f0(me0 me0Var) {
@@ -102,20 +102,20 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
         int i7 = 0;
         Integer num = null;
         for (int i10 = 3; i10 >= 0; i10--) {
-            if (!org.telegram.messenger.j10.i(i10).p()) {
+            if (!org.telegram.messenger.k10.i(i10).p()) {
                 i7++;
                 if (num == null) {
                     num = Integer.valueOf(i10);
                 }
             }
         }
-        if (!org.telegram.messenger.j10.o()) {
+        if (!org.telegram.messenger.k10.o()) {
             i7--;
         }
         if (i7 > 0 && num != null) {
             me0Var.presentFragment(new de0(num.intValue()));
         } else {
-            if (org.telegram.messenger.j10.o()) {
+            if (org.telegram.messenger.k10.o()) {
                 return;
             }
             me0Var.showDialog(new ug.k0(7, me0Var.currentAccount, me0Var.getParentActivity(), me0Var, null));
@@ -134,13 +134,13 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
     }
 
     public static void h0(me0 me0Var) {
-        org.telegram.messenger.j10 userConfig = me0Var.getUserConfig();
+        org.telegram.messenger.k10 userConfig = me0Var.getUserConfig();
         if (userConfig.X) {
             userConfig.X = false;
             userConfig.v(false);
         }
         me0Var.m0(false, true);
-        org.telegram.messenger.ks.f(me0Var.currentAccount).k(org.telegram.messenger.ks.R5, new Object[0]);
+        org.telegram.messenger.ls.f(me0Var.currentAccount).k(org.telegram.messenger.ls.R5, new Object[0]);
     }
 
     @Override // te.b
@@ -179,7 +179,7 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
             return null;
         }
         Bundle bundle3 = new Bundle();
-        bundle3.putLong("user_id", org.telegram.messenger.j10.i(this.currentAccount).e());
+        bundle3.putLong("user_id", org.telegram.messenger.k10.i(this.currentAccount).e());
         bundle3.putBoolean("my_profile", true);
         bundle3.putBoolean("hasMainTabs", true);
         return new ProfileActivity(bundle3, null);
@@ -220,9 +220,9 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
         org.telegram.ui.ActionBar.h6 h6Var = this.resourceProvider;
         int i13 = this.currentAccount;
         qh.b bVar = new qh.b(context);
-        bVar.a.setText(org.telegram.messenger.gd.N0(2131748512, null));
+        bVar.a.setText(org.telegram.messenger.hd.N0(2131748512, null));
         bVar.b.setVisibility(8);
-        TLRPC.User c22 = org.telegram.messenger.mp.u1(i13).c2(Long.valueOf(org.telegram.messenger.j10.i(i13).e()));
+        TLRPC.User c22 = org.telegram.messenger.np.u1(i13).c2(Long.valueOf(org.telegram.messenger.k10.i(i13).e()));
         org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9(0, c22);
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         q9Var.f(c22, b9Var);
@@ -252,8 +252,8 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                     case 1:
                         if (me0Var.getParentActivity() != null && me0Var.getParentActivity() != null) {
                             org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(me0Var, view);
-                            I.c(R.drawable.msg_contact_add, org.telegram.messenger.gd.N0(2131748090, null), new he0(me0Var, 5), false);
-                            I.c(R.drawable.msg_calls, org.telegram.messenger.gd.N0(2131743196, null), new he0(me0Var, 6), false);
+                            I.c(R.drawable.msg_contact_add, org.telegram.messenger.hd.N0(2131748090, null), new he0(me0Var, 5), false);
+                            I.c(R.drawable.msg_calls, org.telegram.messenger.hd.N0(2131743194, null), new he0(me0Var, 6), false);
                             I.u = true;
                             I.v = true;
                             I.b0(0.0f, -org.telegram.messenger.g0.L(4.0f));
@@ -268,11 +268,11 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                     case 2:
                         if (me0Var.getParentActivity() != null && me0Var.getParentActivity() != null) {
                             org.telegram.ui.Components.a70 I2 = org.telegram.ui.Components.a70.I(me0Var, view);
-                            I2.c(R.drawable.menu_call_create, org.telegram.messenger.gd.N0(2131749297, null), new he0(me0Var, 2), false);
+                            I2.c(R.drawable.menu_call_create, org.telegram.messenger.hd.N0(2131749297, null), new he0(me0Var, 2), false);
                             if (me0Var.getUserConfig().X) {
-                                I2.c(R.drawable.msg_archive_hide, org.telegram.messenger.gd.N0(2131749129, null), new he0(me0Var, i15), false);
+                                I2.c(R.drawable.msg_archive_hide, org.telegram.messenger.hd.N0(2131749129, null), new he0(me0Var, i15), false);
                             } else {
-                                I2.c(R.drawable.menu_add_tab_24, org.telegram.messenger.gd.N0(2131749268, null), new he0(me0Var, 4), false);
+                                I2.c(R.drawable.menu_add_tab_24, org.telegram.messenger.hd.N0(2131749268, null), new he0(me0Var, 4), false);
                             }
                             I2.u = true;
                             I2.v = true;
@@ -309,8 +309,8 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                     case 1:
                         if (me0Var.getParentActivity() != null && me0Var.getParentActivity() != null) {
                             org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(me0Var, view);
-                            I.c(R.drawable.msg_contact_add, org.telegram.messenger.gd.N0(2131748090, null), new he0(me0Var, 5), false);
-                            I.c(R.drawable.msg_calls, org.telegram.messenger.gd.N0(2131743196, null), new he0(me0Var, 6), false);
+                            I.c(R.drawable.msg_contact_add, org.telegram.messenger.hd.N0(2131748090, null), new he0(me0Var, 5), false);
+                            I.c(R.drawable.msg_calls, org.telegram.messenger.hd.N0(2131743194, null), new he0(me0Var, 6), false);
                             I.u = true;
                             I.v = true;
                             I.b0(0.0f, -org.telegram.messenger.g0.L(4.0f));
@@ -325,11 +325,11 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                     case 2:
                         if (me0Var.getParentActivity() != null && me0Var.getParentActivity() != null) {
                             org.telegram.ui.Components.a70 I2 = org.telegram.ui.Components.a70.I(me0Var, view);
-                            I2.c(R.drawable.menu_call_create, org.telegram.messenger.gd.N0(2131749297, null), new he0(me0Var, 2), false);
+                            I2.c(R.drawable.menu_call_create, org.telegram.messenger.hd.N0(2131749297, null), new he0(me0Var, 2), false);
                             if (me0Var.getUserConfig().X) {
-                                I2.c(R.drawable.msg_archive_hide, org.telegram.messenger.gd.N0(2131749129, null), new he0(me0Var, i15), false);
+                                I2.c(R.drawable.msg_archive_hide, org.telegram.messenger.hd.N0(2131749129, null), new he0(me0Var, i15), false);
                             } else {
-                                I2.c(R.drawable.menu_add_tab_24, org.telegram.messenger.gd.N0(2131749268, null), new he0(me0Var, 4), false);
+                                I2.c(R.drawable.menu_add_tab_24, org.telegram.messenger.hd.N0(2131749268, null), new he0(me0Var, 4), false);
                             }
                             I2.u = true;
                             I2.v = true;
@@ -366,8 +366,8 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                     case 1:
                         if (me0Var.getParentActivity() != null && me0Var.getParentActivity() != null) {
                             org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(me0Var, view);
-                            I.c(R.drawable.msg_contact_add, org.telegram.messenger.gd.N0(2131748090, null), new he0(me0Var, 5), false);
-                            I.c(R.drawable.msg_calls, org.telegram.messenger.gd.N0(2131743196, null), new he0(me0Var, 6), false);
+                            I.c(R.drawable.msg_contact_add, org.telegram.messenger.hd.N0(2131748090, null), new he0(me0Var, 5), false);
+                            I.c(R.drawable.msg_calls, org.telegram.messenger.hd.N0(2131743194, null), new he0(me0Var, 6), false);
                             I.u = true;
                             I.v = true;
                             I.b0(0.0f, -org.telegram.messenger.g0.L(4.0f));
@@ -382,11 +382,11 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                     case 2:
                         if (me0Var.getParentActivity() != null && me0Var.getParentActivity() != null) {
                             org.telegram.ui.Components.a70 I2 = org.telegram.ui.Components.a70.I(me0Var, view);
-                            I2.c(R.drawable.menu_call_create, org.telegram.messenger.gd.N0(2131749297, null), new he0(me0Var, 2), false);
+                            I2.c(R.drawable.menu_call_create, org.telegram.messenger.hd.N0(2131749297, null), new he0(me0Var, 2), false);
                             if (me0Var.getUserConfig().X) {
-                                I2.c(R.drawable.msg_archive_hide, org.telegram.messenger.gd.N0(2131749129, null), new he0(me0Var, i15), false);
+                                I2.c(R.drawable.msg_archive_hide, org.telegram.messenger.hd.N0(2131749129, null), new he0(me0Var, i15), false);
                             } else {
-                                I2.c(R.drawable.menu_add_tab_24, org.telegram.messenger.gd.N0(2131749268, null), new he0(me0Var, 4), false);
+                                I2.c(R.drawable.menu_add_tab_24, org.telegram.messenger.hd.N0(2131749268, null), new he0(me0Var, 4), false);
                             }
                             I2.u = true;
                             I2.v = true;
@@ -423,8 +423,8 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                     case 1:
                         if (me0Var.getParentActivity() != null && me0Var.getParentActivity() != null) {
                             org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(me0Var, view);
-                            I.c(R.drawable.msg_contact_add, org.telegram.messenger.gd.N0(2131748090, null), new he0(me0Var, 5), false);
-                            I.c(R.drawable.msg_calls, org.telegram.messenger.gd.N0(2131743196, null), new he0(me0Var, 6), false);
+                            I.c(R.drawable.msg_contact_add, org.telegram.messenger.hd.N0(2131748090, null), new he0(me0Var, 5), false);
+                            I.c(R.drawable.msg_calls, org.telegram.messenger.hd.N0(2131743194, null), new he0(me0Var, 6), false);
                             I.u = true;
                             I.v = true;
                             I.b0(0.0f, -org.telegram.messenger.g0.L(4.0f));
@@ -439,11 +439,11 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                     case 2:
                         if (me0Var.getParentActivity() != null && me0Var.getParentActivity() != null) {
                             org.telegram.ui.Components.a70 I2 = org.telegram.ui.Components.a70.I(me0Var, view);
-                            I2.c(R.drawable.menu_call_create, org.telegram.messenger.gd.N0(2131749297, null), new he0(me0Var, 2), false);
+                            I2.c(R.drawable.menu_call_create, org.telegram.messenger.hd.N0(2131749297, null), new he0(me0Var, 2), false);
                             if (me0Var.getUserConfig().X) {
-                                I2.c(R.drawable.msg_archive_hide, org.telegram.messenger.gd.N0(2131749129, null), new he0(me0Var, i15), false);
+                                I2.c(R.drawable.msg_archive_hide, org.telegram.messenger.hd.N0(2131749129, null), new he0(me0Var, i15), false);
                             } else {
-                                I2.c(R.drawable.menu_add_tab_24, org.telegram.messenger.gd.N0(2131749268, null), new he0(me0Var, 4), false);
+                                I2.c(R.drawable.menu_add_tab_24, org.telegram.messenger.hd.N0(2131749268, null), new he0(me0Var, 4), false);
                             }
                             I2.u = true;
                             I2.v = true;
@@ -529,13 +529,13 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
         return this.b;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         qh.b bVar;
         LaunchActivity launchActivity;
         boolean z10 = false;
         z10 = false;
-        if (i7 == org.telegram.messenger.ks.J4 || i7 == org.telegram.messenger.ks.r) {
+        if (i7 == org.telegram.messenger.ls.J4 || i7 == org.telegram.messenger.ls.r) {
             View view = this.fragmentView;
             if (view != null && view.isAttachedToWindow()) {
                 z10 = true;
@@ -543,7 +543,7 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
             p0(z10);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.U4) {
+        if (i7 == org.telegram.messenger.ls.U4) {
             org.telegram.ui.Components.o51 o51Var = this.x;
             if (o51Var != null) {
                 o51Var.updateFileProgress(null);
@@ -552,23 +552,23 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
             }
             return;
         }
-        if (i7 == org.telegram.messenger.ks.Y1) {
-            TLRPC.TL_help_appUpdate tL_help_appUpdate = org.telegram.messenger.bz.j1;
+        if (i7 == org.telegram.messenger.ls.Y1) {
+            TLRPC.TL_help_appUpdate tL_help_appUpdate = org.telegram.messenger.cz.j1;
             if (tL_help_appUpdate == null || tL_help_appUpdate.document == null) {
                 return;
             }
             org.telegram.messenger.t0.u();
             return;
         }
-        if (i7 == org.telegram.messenger.ks.Z1) {
-            TLRPC.TL_help_appUpdate tL_help_appUpdate2 = org.telegram.messenger.bz.j1;
+        if (i7 == org.telegram.messenger.ls.Z1) {
+            TLRPC.TL_help_appUpdate tL_help_appUpdate2 = org.telegram.messenger.cz.j1;
             if (tL_help_appUpdate2 == null || tL_help_appUpdate2.document == null) {
                 return;
             }
             org.telegram.messenger.t0.u();
             return;
         }
-        if (i7 == org.telegram.messenger.ks.X1) {
+        if (i7 == org.telegram.messenger.ls.X1) {
             org.telegram.ui.Components.o51 o51Var2 = this.x;
             if (o51Var2 != null) {
                 o51Var2.updateFileProgress(objArr);
@@ -576,7 +576,7 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
             }
             return;
         }
-        if (i7 == org.telegram.messenger.ks.T4) {
+        if (i7 == org.telegram.messenger.ls.T4) {
             org.telegram.ui.Components.o51 o51Var3 = this.x;
             if (o51Var3 == null || (launchActivity = LaunchActivity.H1) == null) {
                 return;
@@ -584,7 +584,7 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
             o51Var3.updateAppUpdateViews(this.currentAccount, launchActivity.e0.size() == 1);
             return;
         }
-        if (i7 == org.telegram.messenger.ks.w4) {
+        if (i7 == org.telegram.messenger.ls.w4) {
             int currentPosition = this.c.getCurrentPosition();
             SparseArray sparseArray = this.a;
             int size = sparseArray.size();
@@ -596,7 +596,7 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
             }
             return;
         }
-        if (i7 == org.telegram.messenger.ks.R5) {
+        if (i7 == org.telegram.messenger.ls.R5) {
             m0(getUserConfig().X, true);
             pb1 pb1Var = this.c;
             if (pb1Var == null || pb1Var.getCurrentPosition() != 2) {
@@ -608,8 +608,8 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
             this.y = true;
             return;
         }
-        if (i7 != org.telegram.messenger.ks.j0) {
-            if (i7 == org.telegram.messenger.ks.S5) {
+        if (i7 != org.telegram.messenger.ls.j0) {
+            if (i7 == org.telegram.messenger.ls.S5) {
                 l0();
                 return;
             }
@@ -620,7 +620,7 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
             return;
         }
         int i12 = this.currentAccount;
-        TLRPC.User c22 = org.telegram.messenger.mp.u1(i12).c2(Long.valueOf(org.telegram.messenger.j10.i(i12).e()));
+        TLRPC.User c22 = org.telegram.messenger.np.u1(i12).c2(Long.valueOf(org.telegram.messenger.k10.i(i12).e()));
         bVar.c.f(c22, new org.telegram.ui.Components.b9(0, c22));
     }
 
@@ -723,9 +723,9 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
         }
         boolean w10 = org.telegram.messenger.i5.w();
         if (w10) {
-            org.telegram.messenger.mp.h1().edit().putBoolean("askAboutContacts2", true).apply();
+            org.telegram.messenger.np.h1().edit().putBoolean("askAboutContacts2", true).apply();
         }
-        if (org.telegram.messenger.j10.i(this.currentAccount).V && !w10 && org.telegram.messenger.mp.h1().getBoolean("askAboutContacts2", true)) {
+        if (org.telegram.messenger.k10.i(this.currentAccount).V && !w10 && org.telegram.messenger.np.h1().getBoolean("askAboutContacts2", true)) {
             this.L[1].e("!", true, true);
         } else {
             this.L[1].e(null, true, true);
@@ -785,18 +785,18 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        xi.e eVar = new xi.e(org.telegram.messenger.ks.f(this.currentAccount), this);
-        eVar.c(org.telegram.messenger.ks.Y1);
-        eVar.c(org.telegram.messenger.ks.X1);
-        eVar.c(org.telegram.messenger.ks.Z1);
-        eVar.c(org.telegram.messenger.ks.J4);
-        eVar.c(org.telegram.messenger.ks.r);
-        eVar.c(org.telegram.messenger.ks.R5);
-        eVar.c(org.telegram.messenger.ks.j0);
-        eVar.c(org.telegram.messenger.ks.S5);
-        eVar.f(org.telegram.messenger.ks.T4);
-        eVar.f(org.telegram.messenger.ks.U4);
-        eVar.f(org.telegram.messenger.ks.w4);
+        xi.e eVar = new xi.e(org.telegram.messenger.ls.f(this.currentAccount), this);
+        eVar.c(org.telegram.messenger.ls.Y1);
+        eVar.c(org.telegram.messenger.ls.X1);
+        eVar.c(org.telegram.messenger.ls.Z1);
+        eVar.c(org.telegram.messenger.ls.J4);
+        eVar.c(org.telegram.messenger.ls.r);
+        eVar.c(org.telegram.messenger.ls.R5);
+        eVar.c(org.telegram.messenger.ls.j0);
+        eVar.c(org.telegram.messenger.ls.S5);
+        eVar.f(org.telegram.messenger.ls.T4);
+        eVar.f(org.telegram.messenger.ls.U4);
+        eVar.f(org.telegram.messenger.ls.w4);
         this.P = eVar;
         return super.onFragmentCreate();
     }
@@ -859,11 +859,11 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
         if (this.G == null) {
             return;
         }
-        int i7 = org.telegram.messenger.tr.a0(this.currentAccount).L;
+        int i7 = org.telegram.messenger.ur.a0(this.currentAccount).L;
         if (i7 <= 0) {
             this.L[0].e(null, false, z10);
         } else {
-            this.L[0].e(org.telegram.messenger.gd.E(i7, ','), false, z10);
+            this.L[0].e(org.telegram.messenger.hd.E(i7, ','), false, z10);
         }
     }
 
@@ -879,15 +879,15 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
         ArrayList arrayList = new ArrayList();
         arrayList.clear();
         for (int i7 = 0; i7 < 4; i7++) {
-            if (org.telegram.messenger.j10.i(i7).p()) {
+            if (org.telegram.messenger.k10.i(i7).p()) {
                 arrayList.add(Integer.valueOf(i7));
             }
         }
         Collections.sort(arrayList, new pe(25));
         org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(this, view);
         int i10 = 1;
-        if (org.telegram.messenger.j10.c() < 4) {
-            I.c(R.drawable.msg_addbot, org.telegram.messenger.gd.N0(2131754481, null), new he0(this, i10), false);
+        if (org.telegram.messenger.k10.c() < 4) {
+            I.c(R.drawable.msg_addbot, org.telegram.messenger.hd.N0(2131754481, null), new he0(this, i10), false);
         }
         if (arrayList.size() > 0) {
             if (I.y() > 0) {
@@ -908,7 +908,7 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                 org.telegram.ui.ActionBar.h6 resourceProvider = getResourceProvider();
                 linearLayout.setBackground(a02);
                 org.telegram.ui.ActionBar.t6.j(linearLayout, a02, null, M, resourceProvider);
-                TLRPC.User f10 = org.telegram.messenger.j10.i(intValue).f();
+                TLRPC.User f10 = org.telegram.messenger.k10.i(intValue).f();
                 org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
                 b9Var.r(f10);
                 hi.p3 p3Var = new hi.p3(this, getParentActivity(), z10);
@@ -925,12 +925,12 @@ public final class me0 extends qb1 implements org.telegram.messenger.fs, te.b {
                 TextView textView = new TextView(getParentActivity());
                 textView.setTextSize(1, 16.0f);
                 org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, getResourceProvider());
-                textView.setText(org.telegram.messenger.o10.q(f10));
+                textView.setText(org.telegram.messenger.p10.q(f10));
                 textView.setMaxLines(2);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
                 linearLayout.addView(textView, c8.ma.q(0, -2, 1.0f, 16, 13, 0, 14, 0));
-                linearLayout.setOnClickListener(new bi.i5(this, intValue, I, 18));
-                I.r(linearLayout, c8.ma.o(org.telegram.messenger.ks.G3, 48));
+                linearLayout.setOnClickListener(new bi.h5(this, intValue, I, 18));
+                I.r(linearLayout, c8.ma.o(org.telegram.messenger.ls.G3, 48));
             }
         }
         I.u = true;

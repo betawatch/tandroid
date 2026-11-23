@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yh implements TextWatcher {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final class yh implements TextWatcher {
                         i7 = -9999;
                     }
                     long j3 = i7;
-                    o6Var2.c(org.telegram.messenger.gd.E(j3, ','), o6Var2.getVisibility() == 0, true);
+                    o6Var2.c(org.telegram.messenger.hd.E(j3, ','), o6Var2.getVisibility() == 0, true);
                     if (o6Var2.getVisibility() != 0) {
                         o6Var2.setVisibility(0);
                         o6Var2.setAlpha(0.0f);
@@ -73,7 +73,7 @@ public final class yh implements TextWatcher {
                         org.telegram.ui.ActionBar.t6.Y(o6Var2, org.telegram.ui.ActionBar.m6.y6, uiVar.J0);
                         z10 = true;
                     }
-                    o6Var.c(org.telegram.messenger.gd.E(j3, ','), false, true);
+                    o6Var.c(org.telegram.messenger.hd.E(j3, ','), false, true);
                     o6Var.setAlpha(1.0f);
                 }
                 if (uiVar.S2 != z10) {
@@ -155,7 +155,7 @@ public final class yh implements TextWatcher {
                         if (m7Var.y && m7Var.r && m7Var.E == -1) {
                             rh0 rh0Var = m7Var.h;
                             if (rh0Var == null) {
-                                m7Var.e0 = org.telegram.messenger.n10.A(m7Var.e0, z10 ? -160.0f : 160.0f, 360.0f, -360.0f);
+                                m7Var.e0 = org.telegram.messenger.o10.A(m7Var.e0, z10 ? -160.0f : 160.0f, 360.0f, -360.0f);
                                 break;
                             } else if (!rh0Var.b()) {
                                 m7Var.h.setProgress(0.0f);

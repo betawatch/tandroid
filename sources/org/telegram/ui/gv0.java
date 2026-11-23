@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gv0 extends s11 {
     public final /* synthetic */ j11[] f2;
@@ -26,7 +26,7 @@ public final class gv0 extends s11 {
             return true;
         }
         i7 = ((org.telegram.ui.ActionBar.g2) this.g2).currentAccount;
-        return di.y8.y(i7, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.mp.g1().getInt("statusgiftpage", 0) >= 2;
+        return di.y8.y(i7, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.np.g1().getInt("statusgiftpage", 0) >= 2;
     }
 
     @Override // org.telegram.ui.s11
@@ -45,12 +45,12 @@ public final class gv0 extends s11 {
         if (tL_starGiftUnique != null) {
             i7 = ((org.telegram.ui.ActionBar.g2) profileActivity).currentAccount;
             TL_stars.SavedStarGift n10 = di.y8.y(i7, false).n(tL_starGiftUnique.id);
-            if (n10 != null && org.telegram.messenger.mp.g1().getInt("statusgiftpage", 0) < 2) {
-                org.telegram.messenger.mp.g1().edit().putInt("statusgiftpage", org.telegram.messenger.mp.g1().getInt("statusgiftpage", 0) + 1).apply();
+            if (n10 != null && org.telegram.messenger.np.g1().getInt("statusgiftpage", 0) < 2) {
+                org.telegram.messenger.np.g1().edit().putInt("statusgiftpage", org.telegram.messenger.np.g1().getInt("statusgiftpage", 0) + 1).apply();
                 Context context = getContext();
                 i10 = ((org.telegram.ui.ActionBar.g2) profileActivity).currentAccount;
                 i11 = ((org.telegram.ui.ActionBar.g2) profileActivity).currentAccount;
-                di.f6 f6Var = new di.f6(context, i10, org.telegram.messenger.j10.i(i11).e(), profileActivity.A0, null);
+                di.f6 f6Var = new di.f6(context, i10, org.telegram.messenger.k10.i(i11).e(), profileActivity.A0, null);
                 f6Var.w2(n10, null);
                 f6Var.A2();
                 f6Var.show();
@@ -83,7 +83,7 @@ public final class gv0 extends s11 {
             }
         }
         profileActivity.F = tL_starGiftUnique != null ? Long.valueOf(tL_starGiftUnique.id) : null;
-        org.telegram.messenger.mp messagesController = profileActivity.getMessagesController();
+        org.telegram.messenger.np messagesController = profileActivity.getMessagesController();
         TLRPC.Chat chat = profileActivity.F2;
         messagesController.s5(chat == null ? 0L : -chat.id, emojiStatus, tL_starGiftUnique);
         org.telegram.ui.Components.n5 n5Var = profileActivity.G;

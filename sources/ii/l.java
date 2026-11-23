@@ -1,10 +1,10 @@
 package ii;
 
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Wallet.n6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class l implements Runnable {
                 this.b.presentFragment(new n6());
                 break;
             default:
-                n10.m(1, this.b);
+                o10.m(1, this.b);
                 break;
         }
     }

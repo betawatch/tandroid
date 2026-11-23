@@ -2,61 +2,61 @@ package th;
 
 import android.graphics.Canvas;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.fc;
+import org.telegram.messenger.ff;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.yy;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.zy;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d extends sh.c {
-    public final ef b;
-    public final yy c;
+    public final ff b;
+    public final zy c;
 
     /* JADX WARN: Removed duplicated region for block: B:6:0x0081  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x008a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public d(yy yyVar) {
-        fc fcVar;
-        fc fcVar2;
-        this.c = yyVar;
-        ef efVar = yyVar.y;
-        this.b = efVar;
+    public d(zy zyVar) {
+        gc gcVar;
+        gc gcVar2;
+        this.c = zyVar;
+        ff ffVar = zyVar.y;
+        this.b = ffVar;
         this.a.J0(g0.L(7.0f));
         ImageReceiver imageReceiver = this.a;
         imageReceiver.G0(0, 0, true);
-        String str = efVar.g;
-        int i7 = efVar.C;
-        String str2 = efVar.I;
+        String str = ffVar.g;
+        int i7 = ffVar.C;
+        String str2 = ffVar.I;
         if (str != null) {
-            fcVar = fc.g(str);
+            gcVar = gc.g(str);
         } else {
-            String str3 = efVar.c;
+            String str3 = ffVar.c;
             if (str3 != null) {
-                fcVar = fc.g(str3);
+                gcVar = gc.g(str3);
             } else if (str2 == null) {
                 imageReceiver.f();
-                fcVar = null;
+                gcVar = null;
             } else {
-                if (!efVar.b || efVar.d()) {
-                    fc g10 = fc.g("thumb://" + i7 + ":" + str2);
-                    imageReceiver.G0(efVar.J, efVar.K, true);
-                    fcVar2 = g10;
-                    if (fcVar2 == null) {
-                        imageReceiver.q0(fcVar2, null, null, null, null, 0);
+                if (!ffVar.b || ffVar.d()) {
+                    gc g10 = gc.g("thumb://" + i7 + ":" + str2);
+                    imageReceiver.G0(ffVar.J, ffVar.K, true);
+                    gcVar2 = g10;
+                    if (gcVar2 == null) {
+                        imageReceiver.q0(gcVar2, null, null, null, null, 0);
                         return;
                     } else {
                         imageReceiver.f();
                         return;
                     }
                 }
-                fcVar = fc.g("vthumb://" + i7 + ":" + str2);
+                gcVar = gc.g("vthumb://" + i7 + ":" + str2);
             }
         }
-        fcVar2 = fcVar;
-        if (fcVar2 == null) {
+        gcVar2 = gcVar;
+        if (gcVar2 == null) {
         }
     }
 

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g80 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class g80 implements Runnable {
                 long j3 = this.b;
                 y70 y70Var = (y70) this.d;
                 String str = LaunchActivity.C1;
-                org.telegram.messenger.g0.g3(new up(launchActivity, org.telegram.messenger.tr.a0(launchActivity.P).j0(j3), y70Var, 19));
+                org.telegram.messenger.g0.g3(new up(launchActivity, org.telegram.messenger.ur.a0(launchActivity.P).j0(j3), y70Var, 19));
                 return;
             case 1:
                 qa0 qa0Var = (qa0) this.c;
@@ -50,7 +50,7 @@ public final /* synthetic */ class g80 implements Runnable {
                 qa0Var.getMessagesController().f4(messages_messages.users, false);
                 qa0Var.getMessagesController().Z3(messages_messages.chats, false);
                 qa0Var.getLocationController().c.k(messages_messages.messages, j10);
-                qa0Var.getNotificationCenter().k(org.telegram.messenger.ks.I4, Long.valueOf(j10));
+                qa0Var.getNotificationCenter().k(org.telegram.messenger.ls.I4, Long.valueOf(j10));
                 qa0Var.p0(messages_messages.messages);
                 qa0Var.getLocationController().j(qa0Var.m0);
                 if (qa0Var.Q0 == null) {

@@ -8,7 +8,7 @@ import android.util.SparseArray;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fq0 extends gi.q {
     public final /* synthetic */ jt0 H;
@@ -20,22 +20,22 @@ public final class fq0 extends gi.q {
     }
 
     @Override // gi.q
-    public final boolean c(org.telegram.messenger.fj fjVar) {
+    public final boolean c(org.telegram.messenger.gj gjVar) {
         jt0 jt0Var = this.H;
-        return jt0Var.c1[(org.telegram.messenger.fj.B0(fjVar.k) > jt0Var.m1 ? 1 : (org.telegram.messenger.fj.B0(fjVar.k) == jt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(fjVar.e1()) >= 0;
+        return jt0Var.c1[(org.telegram.messenger.gj.B0(gjVar.k) > jt0Var.m1 ? 1 : (org.telegram.messenger.gj.B0(gjVar.k) == jt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(gjVar.e1()) >= 0;
     }
 
     @Override // gi.q
-    public final boolean e(org.telegram.messenger.fj fjVar) {
+    public final boolean e(org.telegram.messenger.gj gjVar) {
         jt0 jt0Var = this.H;
         ArrayList arrayList = jt0Var.Q0;
         SparseArray[] sparseArrayArr = jt0Var.c1;
-        if (fjVar != null) {
-            char c10 = org.telegram.messenger.fj.B0(fjVar.k) == jt0Var.m1 ? (char) 0 : (char) 1;
-            if (sparseArrayArr[c10].indexOfKey(fjVar.e1()) < 0) {
+        if (gjVar != null) {
+            char c10 = org.telegram.messenger.gj.B0(gjVar.k) == jt0Var.m1 ? (char) 0 : (char) 1;
+            if (sparseArrayArr[c10].indexOfKey(gjVar.e1()) < 0) {
                 if (sparseArrayArr[1].size() + sparseArrayArr[0].size() < 100) {
-                    sparseArrayArr[c10].put(fjVar.e1(), fjVar);
-                    if (!fjVar.s(null, false)) {
+                    sparseArrayArr[c10].put(gjVar.e1(), gjVar);
+                    if (!gjVar.s(null, false)) {
                         jt0Var.d1++;
                     }
                     if (jt0Var.F1) {
@@ -86,16 +86,16 @@ public final class fq0 extends gi.q {
     }
 
     @Override // gi.q
-    public final boolean g(org.telegram.messenger.fj fjVar) {
+    public final boolean g(org.telegram.messenger.gj gjVar) {
         jt0 jt0Var = this.H;
         ArrayList arrayList = jt0Var.Q0;
         SparseArray[] sparseArrayArr = jt0Var.c1;
-        if (fjVar != null) {
+        if (gjVar != null) {
             int i7 = 1;
-            char c10 = org.telegram.messenger.fj.B0(fjVar.k) == jt0Var.m1 ? (char) 0 : (char) 1;
-            if (sparseArrayArr[c10].indexOfKey(fjVar.e1()) >= 0) {
-                sparseArrayArr[c10].remove(fjVar.e1());
-                if (!fjVar.s(null, false)) {
+            char c10 = org.telegram.messenger.gj.B0(gjVar.k) == jt0Var.m1 ? (char) 0 : (char) 1;
+            if (sparseArrayArr[c10].indexOfKey(gjVar.e1()) >= 0) {
+                sparseArrayArr[c10].remove(gjVar.e1());
+                if (!gjVar.s(null, false)) {
                     jt0Var.d1--;
                 }
                 if (sparseArrayArr[0].size() == 0 && sparseArrayArr[1].size() == 0) {

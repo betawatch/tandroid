@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f9 extends FrameLayout {
     public final int a;
@@ -25,8 +25,8 @@ public final class f9 extends FrameLayout {
         this.d = h6Var;
         h6Var.N0 = true;
         h6Var.F0 = true;
-        h6Var.setPadding(org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(32.0f) : 0, 0, org.telegram.messenger.gd.a0 ? 0 : org.telegram.messenger.g0.L(32.0f), 0);
-        int L = org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? 2.0f : -2.0f);
+        h6Var.setPadding(org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(32.0f) : 0, 0, org.telegram.messenger.hd.a0 ? 0 : org.telegram.messenger.g0.L(32.0f), 0);
+        int L = org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? 2.0f : -2.0f);
         int i10 = -org.telegram.messenger.g0.L(7.0f);
         h6Var.c0 = L;
         h6Var.d0 = i10;
@@ -38,7 +38,7 @@ public final class f9 extends FrameLayout {
         e9Var.setSize(org.telegram.messenger.g0.L(29.0f));
         e9Var.setCentered(true);
         e9Var.setVisibility(8);
-        addView(e9Var, c8.ma.d(72, -1.0f, org.telegram.messenger.gd.a0 ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
+        addView(e9Var, c8.ma.d(72, -1.0f, org.telegram.messenger.hd.a0 ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.Zl, null, PorterDuff.Mode.SRC_IN);
@@ -48,8 +48,8 @@ public final class f9 extends FrameLayout {
         imageView.setBackground(h02);
         org.telegram.ui.ActionBar.t6.j(imageView, h02, null, M, null);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setContentDescription(org.telegram.messenger.gd.N0(2131752622, null));
-        addView(imageView, c8.ma.d(48, 48.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
+        imageView.setContentDescription(org.telegram.messenger.hd.N0(2131752622, null));
+        addView(imageView, c8.ma.d(48, 48.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
         org.telegram.ui.Components.op opVar = new org.telegram.ui.Components.op(21, context, null);
         this.e = opVar;
         CheckBoxBase checkBoxBase = opVar.getCheckBoxBase();
@@ -61,6 +61,6 @@ public final class f9 extends FrameLayout {
         opVar.b(-1, org.telegram.ui.ActionBar.m6.d6, org.telegram.ui.ActionBar.m6.k7);
         opVar.setDrawUnchecked(false);
         opVar.setDrawBackgroundAsArc(3);
-        addView(opVar, c8.ma.d(24, 24.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
+        addView(opVar, c8.ma.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
     }
 }

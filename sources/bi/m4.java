@@ -18,10 +18,10 @@ import java.util.Locale;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.f9;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.g9;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -30,9 +30,9 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.h60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m4 implements q10 {
+public final /* synthetic */ class m4 implements r10 {
     public final /* synthetic */ int a = 2;
     public final /* synthetic */ Object b;
     public final /* synthetic */ int c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class m4 implements q10 {
 
     /* JADX WARN: Removed duplicated region for block: B:159:0x0329  */
     /* JADX WARN: Removed duplicated region for block: B:161:0x0334  */
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -69,16 +69,16 @@ public final /* synthetic */ class m4 implements q10 {
         ByteBuffer wrap;
         switch (this.a) {
             case 0:
-                x10 x10Var = (x10) this.d;
+                y10 y10Var = (y10) this.d;
                 Context context = (Context) this.b;
                 int i10 = this.c;
                 org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.e;
                 lc lcVar = (lc) this.f;
                 Boolean bool = (Boolean) this.g;
-                q10 q10Var = (q10) this.h;
+                r10 r10Var = (r10) this.h;
                 TL_stars.StarGiftOnchainSalePayload starGiftOnchainSalePayload = (TL_stars.StarGiftOnchainSalePayload) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                x10Var.a(Boolean.FALSE);
+                y10Var.a(Boolean.FALSE);
                 boolean z10 = starGiftOnchainSalePayload instanceof TL_stars.TL_payments_starGiftOnchainFixedSalePayload;
                 org.telegram.ui.Wallet.p0 p0Var = null;
                 try {
@@ -112,7 +112,7 @@ public final /* synthetic */ class m4 implements q10 {
                         }
                     }
                     if (p0Var == null) {
-                        y4.r(context, i10, h6Var, lcVar, tL_error, bool);
+                        x4.r(context, i10, h6Var, lcVar, tL_error, bool);
                         break;
                     } else {
                         List list2 = p0Var.g;
@@ -122,16 +122,16 @@ public final /* synthetic */ class m4 implements q10 {
                         Iterator it2 = list2.iterator();
                         while (it2.hasNext()) {
                             if (((org.telegram.ui.Wallet.p0) it2.next()).e != 3) {
-                                y4.q(context, i10, h6Var, lcVar, "WALLET_UNSUPPORTED_SEND_MODE", Boolean.valueOf(z10));
+                                x4.q(context, i10, h6Var, lcVar, "WALLET_UNSUPPORTED_SEND_MODE", Boolean.valueOf(z10));
                                 break;
                             }
                         }
-                        q10Var.a(p0Var, Boolean.valueOf(z10));
+                        r10Var.a(p0Var, Boolean.valueOf(z10));
                         break;
                     }
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
-                    y4.q(context, i10, h6Var, lcVar, "WALLET_UNSUPPORTED_SEND_MODE", Boolean.valueOf(z10));
+                    x4.q(context, i10, h6Var, lcVar, "WALLET_UNSUPPORTED_SEND_MODE", Boolean.valueOf(z10));
                     return;
                 }
                 break;
@@ -184,7 +184,7 @@ public final /* synthetic */ class m4 implements q10 {
                                 cancellationSignal.cancel();
                                 break;
                             } else {
-                                nVar.d(context2, mVar, cancellationSignal, new d3.b(1), new f9(cancellationToken, taskCompletionSource, h60Var, i11, runnableArr));
+                                nVar.d(context2, mVar, cancellationSignal, new d3.b(1), new g9(cancellationToken, taskCompletionSource, h60Var, i11, runnableArr));
                                 break;
                             }
                         }
@@ -350,8 +350,8 @@ public final /* synthetic */ class m4 implements q10 {
                                                     bb.c(i28, bArr7);
                                                 }
                                             }
-                                            bb.c(ks.z4, bArr7);
-                                            bb.c(ks.A4, bArr7);
+                                            bb.c(ls.z4, bArr7);
+                                            bb.c(ls.A4, bArr7);
                                             MessageDigest messageDigest2 = MessageDigest.getInstance("SHA-256");
                                             messageDigest2.update(b14);
                                             messageDigest2.update((byte) 69);
@@ -406,13 +406,13 @@ public final /* synthetic */ class m4 implements q10 {
         this.c = i7;
     }
 
-    public /* synthetic */ m4(x10 x10Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, lc lcVar, Boolean bool, q10 q10Var) {
-        this.d = x10Var;
+    public /* synthetic */ m4(y10 y10Var, Context context, int i7, org.telegram.ui.ActionBar.h6 h6Var, lc lcVar, Boolean bool, r10 r10Var) {
+        this.d = y10Var;
         this.b = context;
         this.c = i7;
         this.e = h6Var;
         this.f = lcVar;
         this.g = bool;
-        this.h = q10Var;
+        this.h = r10Var;
     }
 }

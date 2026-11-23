@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vw extends org.telegram.ui.Components.du0 {
     public final Paint g0;
@@ -45,11 +45,11 @@ public final class vw extends org.telegram.ui.Components.du0 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x003e, code lost:
     
-        r0 = org.telegram.messenger.ks.I2;
+        r0 = org.telegram.messenger.ls.I2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x003b, code lost:
     
-        r0 = org.telegram.messenger.ks.t3;
+        r0 = org.telegram.messenger.ls.t3;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0039, code lost:
     
@@ -65,7 +65,7 @@ public final class vw extends org.telegram.ui.Components.du0 {
         org.telegram.ui.ActionBar.h6 h6Var2;
         int i10;
         org.telegram.ui.ActionBar.h6 h6Var3;
-        if (Build.VERSION.SDK_INT >= 29 && org.telegram.messenger.bz.f()) {
+        if (Build.VERSION.SDK_INT >= 29 && org.telegram.messenger.cz.f()) {
             cx cxVar = this.o0;
             if (cxVar.p4 != null) {
                 i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
@@ -118,7 +118,7 @@ public final class vw extends org.telegram.ui.Components.du0 {
     @Override // org.telegram.ui.Components.du0
     public final void K() {
         ri.q qVar;
-        org.telegram.messenger.bz.f();
+        org.telegram.messenger.cz.f();
         qVar = ((org.telegram.ui.ActionBar.g2) this.o0).glassEngine;
         qVar.g();
     }
@@ -573,7 +573,7 @@ public final class vw extends org.telegram.ui.Components.du0 {
                 if (i21 == -1) {
                     i21 = 51;
                 }
-                int i22 = i21 & org.telegram.messenger.ks.x1;
+                int i22 = i21 & org.telegram.messenger.ls.x1;
                 int i23 = i21 & 7;
                 if (i23 == 1) {
                     i13 = ((measuredWidth - measuredWidth2) / 2) + layoutParams.leftMargin;
@@ -813,9 +813,9 @@ public final class vw extends org.telegram.ui.Components.du0 {
                     if (!((ActionBarLayout) r4Var4).n && (motionEvent == null || cxVar.o3 || (motionEvent.getY() > Y() + Z() && ((fVar = cxVar.A1) == null || fVar.getVisibility() != 0 || motionEvent.getY() < cxVar.A1.getY())))) {
                         if (cxVar.T0 != 3) {
                             i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                            if (org.telegram.messenger.bz.m(i7) != 5) {
+                            if (org.telegram.messenger.cz.m(i7) != 5) {
                                 i10 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                if (org.telegram.messenger.bz.m(i10) == 2) {
+                                if (org.telegram.messenger.cz.m(i10) == 2) {
                                     bx bxVar = cxVar.f0[0];
                                     if (bxVar != null) {
                                         int i11 = bxVar.d.h;
@@ -965,7 +965,7 @@ public final class vw extends org.telegram.ui.Components.du0 {
                                 int measuredWidth2 = getMeasuredWidth();
                                 float f12 = measuredWidth2 / 2;
                                 float I = (org.telegram.messenger.g0.I(Math.min(1.0f, (measuredWidth * 1.0f) / measuredWidth2)) * f12) + f12;
-                                cxVar.i3.setDuration(Math.max(org.telegram.messenger.ks.g2, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(I / r6) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
+                                cxVar.i3.setDuration(Math.max(org.telegram.messenger.ls.g2, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(I / r6) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
                                 cxVar.i3.addListener(new org.telegram.ui.Cells.y9(this, 27));
                                 cxVar.i3.start();
                                 cxVar.j3 = true;

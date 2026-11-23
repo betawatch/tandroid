@@ -1,22 +1,18 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class ny implements RequestDelegate {
-    public final /* synthetic */ TLRPC.TL_messages_initHistoryImport a;
-    public final /* synthetic */ qy b;
-
-    public ny(qy qyVar, TLRPC.TL_messages_initHistoryImport tL_messages_initHistoryImport) {
-        this.b = qyVar;
-        this.a = tL_messages_initHistoryImport;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        g0.g3(new tl(this, tLObject, this.a, tL_error, 25));
-    }
+public final class ny {
+    public TLObject a;
+    public gj b;
+    public ArrayList c;
+    public String d;
+    public ArrayList e;
+    public ArrayList f;
+    public my g;
+    public Object h;
+    public boolean i;
 }

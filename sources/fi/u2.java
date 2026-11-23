@@ -18,13 +18,13 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.q80;
-import org.telegram.ui.Components.w11;
+import org.telegram.ui.Components.v11;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.q30;
 import org.telegram.ui.uv;
 import org.telegram.ui.z40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class u2 extends View {
     public final /* synthetic */ int a;
@@ -57,8 +57,8 @@ public final class u2 extends View {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 1:
-                w11 w11Var = (w11) this.d;
-                org.telegram.ui.Components.n6 n6Var = w11Var.e;
+                v11 v11Var = (v11) this.d;
+                org.telegram.ui.Components.n6 n6Var = v11Var.e;
                 float i7 = n6Var.i();
                 if (i7 > 0.0f) {
                     float T1 = org.telegram.messenger.g0.T1(0.6f, 1.0f, i7);
@@ -70,9 +70,9 @@ public final class u2 extends View {
                     float L = org.telegram.messenger.g0.L(8.33f);
                     float L2 = org.telegram.messenger.g0.L(8.33f);
                     org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) this.b;
-                    h6Var.setColor(h6Var.b.a(org.telegram.ui.ActionBar.m6.w0(w11Var.J, h6Var.a), false));
-                    textColor = w11Var.getTextColor();
-                    h6Var.setColor(i0.a.f(w11Var.G, h6Var.getColor(), textColor));
+                    h6Var.setColor(h6Var.b.a(org.telegram.ui.ActionBar.m6.w0(v11Var.J, h6Var.a), false));
+                    textColor = v11Var.getTextColor();
+                    h6Var.setColor(i0.a.f(v11Var.G, h6Var.getColor(), textColor));
                     h6Var.setAlpha((int) (h6Var.getAlpha() * i7));
                     canvas.drawRoundRect(rectF, L, L2, h6Var);
                     n6Var.p(rectF);
@@ -291,7 +291,7 @@ public final class u2 extends View {
     public void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(org.telegram.messenger.g0.L(16.66f), ((w11) this.d).e.d + org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(16.66f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(org.telegram.messenger.g0.L(16.66f), ((v11) this.d).e.d + org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(16.66f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -332,7 +332,7 @@ public final class u2 extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 1:
-                return ((w11) this.d).e == drawable || super.verifyDrawable(drawable);
+                return ((v11) this.d).e == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -370,13 +370,13 @@ public final class u2 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u2(w11 w11Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+    public u2(v11 v11Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.a = 1;
-        this.d = w11Var;
+        this.d = v11Var;
         this.c = h6Var;
         this.b = new org.telegram.ui.Components.h6(this, h6Var);
-        w11Var.e.setCallback(this);
+        v11Var.e.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

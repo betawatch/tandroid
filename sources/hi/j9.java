@@ -4,40 +4,40 @@ import android.graphics.Bitmap;
 import android.graphics.RectF;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.yt0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j9 implements q10 {
+public final /* synthetic */ class j9 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ fs c;
+    public final /* synthetic */ gs c;
 
-    public /* synthetic */ j9(fs fsVar, boolean z10, int i7) {
+    public /* synthetic */ j9(gs gsVar, boolean z10, int i7) {
         this.a = i7;
-        this.c = fsVar;
+        this.c = gsVar;
         this.b = z10;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         yt0 yt0Var;
         TLRPC.PhotoSize w10;
         int i7 = this.a;
         int i10 = 0;
         boolean z10 = this.b;
-        fs fsVar = this.c;
+        gs gsVar = this.c;
         switch (i7) {
             case 0:
-                sa saVar = (sa) fsVar;
+                sa saVar = (sa) gsVar;
                 Bitmap bitmap = (Bitmap) obj2;
                 int i11 = saVar.c;
                 if (obj != null && saVar.q2 == null && !saVar.X && saVar.I()) {
@@ -50,13 +50,13 @@ public final /* synthetic */ class j9 implements q10 {
                         d6Var.p0 = z11;
                         d6Var.invalidate();
                         saVar.e(false);
-                        boolean z12 = obj instanceof ef;
+                        boolean z12 = obj instanceof ff;
                         if (!z12) {
                             if (obj instanceof c7) {
                                 c7 c7Var = (c7) obj;
                                 if (c7Var.L == null && !c7Var.v()) {
                                     saVar.f1.c("Failed to load draft");
-                                    mp.u1(i11).R1().w.b(c7Var);
+                                    np.u1(i11).R1().w.b(c7Var);
                                     break;
                                 } else {
                                     c7Var.J0 = saVar.w0;
@@ -73,12 +73,12 @@ public final /* synthetic */ class j9 implements q10 {
                                 }
                             }
                         } else {
-                            ef efVar = (ef) obj;
-                            if (efVar.b && !efVar.d()) {
+                            ff ffVar = (ff) obj;
+                            if (ffVar.b && !ffVar.d()) {
                                 i10 = 1;
                             }
                             saVar.P1 = i10;
-                            c7 l10 = c7.l(efVar);
+                            c7 l10 = c7.l(ffVar);
                             l10.M0 = bitmap;
                             l10.J0 = saVar.w0;
                             l10.K0 = saVar.x0;
@@ -103,9 +103,9 @@ public final /* synthetic */ class j9 implements q10 {
                     } else if (saVar.L1 != null) {
                         saVar.t();
                         saVar.L1.j = true;
-                        if (obj instanceof ef) {
+                        if (obj instanceof ff) {
                             u9 u9Var = saVar.w1;
-                            u9Var.b0(u9Var.h0(((ef) obj).I, false));
+                            u9Var.b0(u9Var.h0(((ff) obj).I, false));
                         } else if (obj instanceof TLObject) {
                             u9 u9Var2 = saVar.w1;
                             TLObject tLObject = (TLObject) obj;
@@ -136,7 +136,7 @@ public final /* synthetic */ class j9 implements q10 {
                 }
                 break;
             case 1:
-                li.d0 d0Var = (li.d0) fsVar;
+                li.d0 d0Var = (li.d0) gsVar;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error == null) {
                     li.l0.f(new lc((FrameLayout) d0Var.b, d0Var.J0), 1, z10);
@@ -151,7 +151,7 @@ public final /* synthetic */ class j9 implements q10 {
                     break;
                 }
             default:
-                ProfileActivity profileActivity = (ProfileActivity) fsVar;
+                ProfileActivity profileActivity = (ProfileActivity) gsVar;
                 Integer num = (Integer) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 RectF rectF = ProfileActivity.Z6;

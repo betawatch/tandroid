@@ -4,17 +4,17 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wp0 extends jq0 {
     public final /* synthetic */ int q0;
-    public final /* synthetic */ org.telegram.messenger.fs r0;
+    public final /* synthetic */ org.telegram.messenger.gs r0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wp0(org.telegram.messenger.fs fsVar, Context context, mq0 mq0Var, FrameLayout frameLayout, int i7) {
+    public /* synthetic */ wp0(org.telegram.messenger.gs gsVar, Context context, mq0 mq0Var, FrameLayout frameLayout, int i7) {
         super(context, mq0Var, frameLayout);
         this.q0 = i7;
-        this.r0 = fsVar;
+        this.r0 = gsVar;
     }
 
     @Override // org.telegram.ui.jq0

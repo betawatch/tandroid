@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class x8 extends FrameLayout {
     public float E;
@@ -71,7 +71,7 @@ public abstract class x8 extends FrameLayout {
         }
         this.h = u8Var;
         this.n = z10;
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.u4, new Object[0]);
         invalidate();
     }
 
@@ -119,7 +119,7 @@ public abstract class x8 extends FrameLayout {
             s10Var.b(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
             if (this.f == 1.0f) {
                 x8Var = this;
-                paint.setAlpha(org.telegram.messenger.ks.e4);
+                paint.setAlpha(org.telegram.messenger.ls.e4);
                 canvas2 = canvas;
                 x8Var.a(canvas2, x8Var.E, x8Var.F, measuredWidth, x8Var.y, paint);
                 float T12 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.W1(d6Var.c, !y8Var.V ? (int) ((measuredWidth * 2.0f) * 0.7f) : org.telegram.messenger.g0.L(70.0f), (int) (getMeasuredWidth() * 0.7f)), (int) (org.telegram.messenger.g0.L(42.0f) * 0.7f), y8Var.O) / 2.0f;
@@ -157,7 +157,7 @@ public abstract class x8 extends FrameLayout {
             s10 s10Var2 = this.e;
             s10Var2.b(f22, f24, f25, f26);
             Paint paint2 = s10Var2.c;
-            paint2.setAlpha(org.telegram.messenger.ks.e4);
+            paint2.setAlpha(org.telegram.messenger.ls.e4);
             x8Var = this;
             x8Var.a(canvas, this.E, this.F, measuredWidth, this.y, paint2);
             paint.setAlpha((int) (x8Var.f * 255.0f));
@@ -236,7 +236,7 @@ public abstract class x8 extends FrameLayout {
             }
             t3Var.a.P0(false);
         }
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.u4, new Object[0]);
         invalidate();
     }
 }

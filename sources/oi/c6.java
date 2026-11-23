@@ -7,7 +7,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.CharacterStyle;
 import java.util.ArrayList;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g6;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.u41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class c6 {
     public static final int[] a = {1, 2, 16, 8, 4, 256, TLObject.FLAG_14, 32768, 65536};
@@ -123,7 +123,7 @@ public abstract class c6 {
             TL_iv.textMath textmath = (TL_iv.textMath) richText;
             int length5 = spannableStringBuilder.length();
             spannableStringBuilder.append(" ");
-            Object a10 = q.a(textmath.source, m6.x0(null, m6.G6, false), org.telegram.messenger.g0.L(bz.W0 + 4));
+            Object a10 = q.a(textmath.source, m6.x0(null, m6.G6, false), org.telegram.messenger.g0.L(cz.W0 + 4));
             if (a10 != null) {
                 spannableStringBuilder.setSpan(a10, length5, spannableStringBuilder.length(), 33);
             } else {

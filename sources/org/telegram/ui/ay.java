@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ay extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -297,9 +297,9 @@ public final class ay extends AnimatorListenerAdapter {
                 }
                 k01Var.b();
                 s11Var2.e0.m(false);
-                org.telegram.messenger.ks.e().k(99, 512);
+                org.telegram.messenger.ls.e().k(99, 512);
                 s11Var2.Y1.e();
-                org.telegram.messenger.g0.g3(new ru0(org.telegram.messenger.ks.e(), 15));
+                org.telegram.messenger.g0.g3(new ru0(org.telegram.messenger.ls.e(), 15));
                 s11Var2.h();
                 s11Var2.E(1.0f);
                 for (int i10 = 0; i10 < q01Var2.getChildCount(); i10++) {

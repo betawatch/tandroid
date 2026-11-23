@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qd0 extends FrameLayout {
     public static final /* synthetic */ int G = 0;
@@ -79,27 +79,27 @@ public final class qd0 extends FrameLayout {
                 }
             }
         });
-        c10Var.setContentDescription(org.telegram.messenger.gd.N0(2131751342, null));
+        c10Var.setContentDescription(org.telegram.messenger.hd.N0(2131751342, null));
         addView(c10Var, c8.ma.e(56, 56, 51));
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
         addView(frameLayout, c8.ma.d(-1, 140.0f, 49, 24.0f, 0.0f, 24.0f, 0.0f));
         TextView textView = new TextView(context);
         this.n = textView;
-        textView.setText(org.telegram.messenger.gd.N0(2131751804, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131751804, null));
         textView.setTextSize(1, 14.0f);
         textView.setSingleLine();
-        TextView m10 = org.telegram.ui.Cells.c0.m(frameLayout, textView, c8.ma.d(-1, -2.0f, org.telegram.messenger.gd.a0 ? 5 : 3, 24.0f, 20.0f, 24.0f, 0.0f), context);
+        TextView m10 = org.telegram.ui.Cells.c0.m(frameLayout, textView, c8.ma.d(-1, -2.0f, org.telegram.messenger.hd.a0 ? 5 : 3, 24.0f, 20.0f, 24.0f, 0.0f), context);
         this.r = m10;
         m10.setText(str);
         m10.setTextSize(1, 18.0f);
         m10.setTypeface(org.telegram.messenger.g0.o());
         m10.setSingleLine();
-        frameLayout.addView(m10, c8.ma.d(-1, -2.0f, org.telegram.messenger.gd.a0 ? 5 : 3, 24.0f, 48.0f, 24.0f, 0.0f));
+        frameLayout.addView(m10, c8.ma.d(-1, -2.0f, org.telegram.messenger.hd.a0 ? 5 : 3, 24.0f, 48.0f, 24.0f, 0.0f));
         int L = org.telegram.messenger.g0.L(16.0f);
         TextView textView2 = new TextView(context);
         this.s = textView2;
-        textView2.setText(org.telegram.messenger.gd.N0(2131751323, null));
+        textView2.setText(org.telegram.messenger.hd.N0(2131751323, null));
         textView2.setSingleLine();
         textView2.setTextSize(1, 16.0f);
         int L2 = org.telegram.messenger.g0.L(6.0f);
@@ -133,9 +133,9 @@ public final class qd0 extends FrameLayout {
         int i12 = L / 2;
         textView2.setPadding(L, i12, L, i12);
         float f10 = 8;
-        TextView m11 = org.telegram.ui.Cells.c0.m(frameLayout, textView2, c8.ma.d(-2, -2.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 80, f10, f10, f10, f10), context);
+        TextView m11 = org.telegram.ui.Cells.c0.m(frameLayout, textView2, c8.ma.d(-2, -2.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 80, f10, f10, f10, f10), context);
         this.w = m11;
-        m11.setText(org.telegram.messenger.gd.N0(2131752140, null));
+        m11.setText(org.telegram.messenger.hd.N0(2131752140, null));
         m11.setSingleLine();
         m11.setTextSize(1, 16.0f);
         m11.setBackground(org.telegram.ui.ActionBar.m6.J0(org.telegram.messenger.g0.L(6.0f), org.telegram.ui.ActionBar.m6.x0(null, i11, false)));
@@ -165,7 +165,7 @@ public final class qd0 extends FrameLayout {
         });
         m11.setTypeface(typeface);
         m11.setPadding(L, i12, L, i12);
-        frameLayout.addView(m11, c8.ma.d(-2, -2.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 80, f10, f10, f10, f10));
+        frameLayout.addView(m11, c8.ma.d(-2, -2.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 80, f10, f10, f10, f10));
         jh.k.b(view, viewGroup, pointF);
         c10Var.setTranslationX(pointF.x);
         c10Var.setTranslationY(pointF.y);

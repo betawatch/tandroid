@@ -18,7 +18,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l31 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -41,7 +41,7 @@ public final class l31 extends FrameLayout implements org.telegram.ui.ActionBar.
         setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(16.0f));
         i31 i31Var = new i31(this, context);
         this.c = i31Var;
-        org.telegram.messenger.ks.i(i31Var);
+        org.telegram.messenger.ls.i(i31Var);
         i31Var.setTextSize(1, 16.0f);
         i31Var.setMaxLines(1);
         i31Var.setSingleLine();
@@ -49,7 +49,7 @@ public final class l31 extends FrameLayout implements org.telegram.ui.ActionBar.
         addView(i31Var, c8.ma.c(-2.0f, -1));
         TextView textView = new TextView(context);
         this.d = textView;
-        org.telegram.messenger.n10.l(14.0f, 2131751449, 1, textView, null);
+        org.telegram.messenger.o10.l(14.0f, 2131751449, 1, textView, null);
         textView.setIncludeFontPadding(false);
         textView.setGravity(17);
         Rect rect = new Rect();
@@ -64,7 +64,7 @@ public final class l31 extends FrameLayout implements org.telegram.ui.ActionBar.
         addView(textView, c8.ma.d(-2, 18.0f, 53, 0.0f, Math.max(0.0f, (((rect.top / 2.0f) + (-(i31Var.getIncludeFontPadding() ? fontMetrics2.top : fontMetrics2.ascent))) - org.telegram.messenger.g0.L(9.0f)) / org.telegram.messenger.g0.p), 0.0f, 0.0f));
         j31 j31Var = new j31(context);
         this.f = j31Var;
-        org.telegram.messenger.ks.i(j31Var);
+        org.telegram.messenger.ls.i(j31Var);
         j31Var.setTextSize(1, 16.0f);
         j31Var.setTextIsSelectable(true);
         FrameLayout.LayoutParams c10 = c8.ma.c(-2.0f, -1);
@@ -74,7 +74,7 @@ public final class l31 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.n = imageView;
         imageView.setImageResource(R.drawable.msg_copy);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setContentDescription(org.telegram.messenger.gd.N0(2131751755, null));
+        imageView.setContentDescription(org.telegram.messenger.hd.N0(2131751755, null));
         c8.ra.a(imageView);
         addView(imageView, c8.ma.d(38, 38.0f, 85, 0.0f, 0.0f, -16.0f, -12.0f));
         imageView.setVisibility(8);
@@ -108,7 +108,7 @@ public final class l31 extends FrameLayout implements org.telegram.ui.ActionBar.
                 W0 = org.telegram.ui.ActionBar.m6.k0;
             }
             Paint paint = W0;
-            if (org.telegram.messenger.gd.a0) {
+            if (org.telegram.messenger.hd.a0) {
                 canvas.drawRect(0.0f, getMeasuredHeight() - 1, view.getRight(), getMeasuredHeight(), paint);
             } else {
                 canvas.drawRect(view.getLeft(), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), paint);

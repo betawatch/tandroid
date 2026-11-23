@@ -1,53 +1,27 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n00 implements x10 {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ c1 c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class n00 implements oc, nc {
+    public final /* synthetic */ a10 a;
+    public final /* synthetic */ TL_stories.StoryItem b;
+    public final /* synthetic */ y00 c;
 
-    public /* synthetic */ n00(u9 u9Var, long j3, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState) {
-        this.c = u9Var;
-        this.b = j3;
-        this.d = tL_StarGiftAuctionState;
+    public /* synthetic */ n00(a10 a10Var, TL_stories.StoryItem storyItem, y00 y00Var) {
+        this.a = a10Var;
+        this.b = storyItem;
+        this.c = y00Var;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        Object obj2 = this.d;
-        long j3 = this.b;
-        c1 c1Var = this.c;
-        switch (i7) {
-            case 0:
-                z00 z00Var = (z00) c1Var;
-                fj fjVar = (fj) obj2;
-                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) obj;
-                TLRPC.Message message = fjVar.k;
-                message.summaryText = tL_textWithEntities;
-                if (tL_textWithEntities == null) {
-                    message.summarizedOpen = false;
-                }
-                z00Var.getMessagesStorage().X1(j3, fjVar.k);
-                ks.f(z00Var.currentAccount).k(128, fjVar, Boolean.TRUE);
-                break;
-            default:
-                u9 u9Var = (u9) c1Var;
-                u9Var.d(j3).c = (ArrayList) obj;
-                u9Var.f(j3, (TL_payments.TL_StarGiftAuctionState) obj2);
-                break;
-        }
+    @Override // org.telegram.messenger.oc
+    public void a(String str) {
+        g0.g3(new ul(this.a, this.b, str, this.c, 28));
     }
 
-    public /* synthetic */ n00(z00 z00Var, fj fjVar, long j3) {
-        this.c = z00Var;
-        this.d = fjVar;
-        this.b = j3;
+    @Override // org.telegram.messenger.nc
+    public void q(Exception exc) {
+        g0.g3(new pz(this.a, this.b, this.c, 1));
     }
 }

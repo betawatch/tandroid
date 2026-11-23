@@ -7,13 +7,13 @@ import android.view.Menu;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
-import org.telegram.messenger.mc;
 import org.telegram.messenger.nc;
+import org.telegram.messenger.oc;
 import org.telegram.ui.Components.sd0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f9 implements nc, mc, sd0 {
+public final /* synthetic */ class f9 implements oc, nc, sd0 {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
 
@@ -22,7 +22,7 @@ public final /* synthetic */ class f9 implements nc, mc, sd0 {
         this.b = obj2;
     }
 
-    @Override // org.telegram.messenger.nc
+    @Override // org.telegram.messenger.oc
     public void a(String str) {
         g9 g9Var = (g9) this.a;
         Menu menu = (Menu) this.b;
@@ -62,7 +62,7 @@ public final /* synthetic */ class f9 implements nc, mc, sd0 {
         u5Var.d.start();
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public void q(Exception exc) {
         g9 g9Var = (g9) this.a;
         Menu menu = (Menu) this.b;

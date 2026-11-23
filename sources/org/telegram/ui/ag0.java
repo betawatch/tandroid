@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ag0 extends org.telegram.ui.Components.ek0 {
     public final ArrayList f3;
@@ -44,20 +44,20 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
         int i7;
         ArrayList arrayList2;
         ArrayList arrayList3;
-        org.telegram.messenger.aj currentMessagesGroup;
+        org.telegram.messenger.bj currentMessagesGroup;
         int i10;
         float f10;
         org.telegram.ui.Cells.r1 r1Var;
-        org.telegram.messenger.aj currentMessagesGroup2;
+        org.telegram.messenger.bj currentMessagesGroup2;
         ArrayList arrayList4;
-        org.telegram.messenger.aj ajVar;
+        org.telegram.messenger.bj bjVar;
         ag0 ag0Var;
         ag0 ag0Var2;
         ArrayList arrayList5;
         eg0 eg0Var;
         int i11;
-        org.telegram.messenger.aj currentMessagesGroup3;
-        org.telegram.messenger.aj currentMessagesGroup4;
+        org.telegram.messenger.bj currentMessagesGroup3;
+        org.telegram.messenger.bj currentMessagesGroup4;
         eg0 eg0Var2 = this.j3;
         zf0 zf0Var = eg0Var2.G;
         int measuredHeight = zf0Var.getMeasuredHeight();
@@ -82,15 +82,15 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
             }
         }
         boolean z11 = true;
-        canvas.saveLayerAlpha(0.0f, getScrollY() + 1, getWidth(), (getHeight() + getScrollY()) - 1, org.telegram.messenger.ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, getScrollY() + 1, getWidth(), (getHeight() + getScrollY()) - 1, org.telegram.messenger.ls.e4, 31);
         Canvas canvas2 = canvas;
         canvas2.save();
         int childCount2 = getChildCount();
-        org.telegram.messenger.aj ajVar2 = null;
+        org.telegram.messenger.bj bjVar2 = null;
         for (int i15 = 0; i15 < childCount2; i15++) {
             View childAt2 = getChildAt(i15);
-            if ((childAt2 instanceof org.telegram.ui.Cells.r1) && ((currentMessagesGroup4 = ((org.telegram.ui.Cells.r1) childAt2).getCurrentMessagesGroup()) == null || currentMessagesGroup4 != ajVar2)) {
-                ajVar2 = currentMessagesGroup4;
+            if ((childAt2 instanceof org.telegram.ui.Cells.r1) && ((currentMessagesGroup4 = ((org.telegram.ui.Cells.r1) childAt2).getCurrentMessagesGroup()) == null || currentMessagesGroup4 != bjVar2)) {
+                bjVar2 = currentMessagesGroup4;
             }
         }
         int i16 = 0;
@@ -110,20 +110,20 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                     if (childAt3 instanceof org.telegram.ui.Cells.r1) {
                         org.telegram.ui.Cells.r1 r1Var3 = (org.telegram.ui.Cells.r1) childAt3;
                         if (childAt3.getY() <= ag0Var3.getHeight() && childAt3.getY() + childAt3.getHeight() >= 0.0f && (currentMessagesGroup3 = r1Var3.getCurrentMessagesGroup()) != null) {
-                            org.telegram.messenger.zi ziVar = currentMessagesGroup3.m;
-                            if ((i16 != 0 || currentMessagesGroup3.d.size() != z11) && ((i16 != z11 || ziVar.i) && ((i16 != 0 || !r1Var3.getMessageObject().Z) && ((i16 != z11 || r1Var3.getMessageObject().Z) && ((i16 != i17 || r1Var3.za) && (i16 == i17 || !r1Var3.za)))))) {
+                            org.telegram.messenger.aj ajVar = currentMessagesGroup3.m;
+                            if ((i16 != 0 || currentMessagesGroup3.d.size() != z11) && ((i16 != z11 || ajVar.i) && ((i16 != 0 || !r1Var3.getMessageObject().Z) && ((i16 != z11 || r1Var3.getMessageObject().Z) && ((i16 != i17 || r1Var3.za) && (i16 == i17 || !r1Var3.za)))))) {
                                 if (!arrayList.contains(currentMessagesGroup3)) {
-                                    ziVar.a = r92;
-                                    ziVar.b = r92;
-                                    ziVar.c = r92;
-                                    ziVar.d = r92;
-                                    ziVar.l = r92;
-                                    ziVar.k = r92;
-                                    ziVar.m = r1Var3;
+                                    ajVar.a = r92;
+                                    ajVar.b = r92;
+                                    ajVar.c = r92;
+                                    ajVar.d = r92;
+                                    ajVar.l = r92;
+                                    ajVar.k = r92;
+                                    ajVar.m = r1Var3;
                                     arrayList.add(currentMessagesGroup3);
                                 }
-                                ziVar.k = r1Var3.L2();
-                                ziVar.l = r1Var3.K2();
+                                ajVar.k = r1Var3.L2();
+                                ajVar.l = r1Var3.K2();
                                 int x10 = (int) (r1Var3.getX() + r1Var3.getBackgroundDrawableLeft());
                                 int x11 = (int) (r1Var3.getX() + r1Var3.getBackgroundDrawableRight());
                                 int y10 = (int) (r1Var3.getY() + r1Var3.getPaddingTop() + r1Var3.getBackgroundDrawableTop());
@@ -135,23 +135,23 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                                     y11 += org.telegram.messenger.g0.L(10.0f);
                                 }
                                 if (r1Var3.za) {
-                                    ziVar.m = r1Var3;
+                                    ajVar.m = r1Var3;
                                 }
-                                int i19 = ziVar.b;
+                                int i19 = ajVar.b;
                                 if (i19 == 0 || y10 < i19) {
-                                    ziVar.b = y10;
+                                    ajVar.b = y10;
                                 }
-                                int i20 = ziVar.d;
+                                int i20 = ajVar.d;
                                 if (i20 == 0 || y11 > i20) {
-                                    ziVar.d = y11;
+                                    ajVar.d = y11;
                                 }
-                                int i21 = ziVar.a;
+                                int i21 = ajVar.a;
                                 if (i21 == 0 || x10 < i21) {
-                                    ziVar.a = x10;
+                                    ajVar.a = x10;
                                 }
-                                int i22 = ziVar.c;
+                                int i22 = ajVar.c;
                                 if (i22 == 0 || x11 > i22) {
-                                    ziVar.c = x11;
+                                    ajVar.c = x11;
                                 }
                             }
                         }
@@ -163,35 +163,35 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                 int i23 = 0;
                 ArrayList arrayList6 = arrayList;
                 while (i23 < arrayList6.size()) {
-                    org.telegram.messenger.aj ajVar3 = (org.telegram.messenger.aj) arrayList6.get(i23);
-                    if (ajVar3 == null) {
+                    org.telegram.messenger.bj bjVar3 = (org.telegram.messenger.bj) arrayList6.get(i23);
+                    if (bjVar3 == null) {
                         arrayList5 = arrayList6;
                         ag0Var2 = ag0Var3;
                         eg0Var = eg0Var2;
                         i11 = i23;
                     } else {
-                        org.telegram.messenger.zi ziVar2 = ajVar3.m;
-                        float S1 = ziVar2.m.S1(z11);
-                        float f12 = ziVar2.a + S1 + ziVar2.e;
-                        float f13 = ziVar2.b + ziVar2.f;
-                        float f14 = ziVar2.g + ziVar2.c + S1;
-                        float f15 = ziVar2.d + ziVar2.h;
+                        org.telegram.messenger.aj ajVar2 = bjVar3.m;
+                        float S1 = ajVar2.m.S1(z11);
+                        float f12 = ajVar2.a + S1 + ajVar2.e;
+                        float f13 = ajVar2.b + ajVar2.f;
+                        float f14 = ajVar2.g + ajVar2.c + S1;
+                        float f15 = ajVar2.d + ajVar2.h;
                         if (f13 < (-org.telegram.messenger.g0.L(20.0f))) {
                             f13 = -org.telegram.messenger.g0.L(20.0f);
                         }
                         if (f15 > org.telegram.messenger.g0.L(20.0f) + ag0Var3.getMeasuredHeight()) {
                             f15 = org.telegram.messenger.g0.L(20.0f) + ag0Var3.getMeasuredHeight();
                         }
-                        boolean z12 = (ziVar2.m.getScaleX() == 1.0f && ziVar2.m.getScaleY() == 1.0f) ? false : z11;
+                        boolean z12 = (ajVar2.m.getScaleX() == 1.0f && ajVar2.m.getScaleY() == 1.0f) ? false : z11;
                         if (z12) {
                             canvas2.save();
                             arrayList4 = arrayList6;
-                            ajVar = ajVar3;
+                            bjVar = bjVar3;
                             ag0Var = ag0Var3;
-                            canvas2.scale(ziVar2.m.getScaleX(), ziVar2.m.getScaleY(), com.google.android.gms.internal.vision.e2.A(f14, f12, 2.0f, f12), com.google.android.gms.internal.vision.e2.A(f15, f13, 2.0f, f13));
+                            canvas2.scale(ajVar2.m.getScaleX(), ajVar2.m.getScaleY(), com.google.android.gms.internal.vision.e2.A(f14, f12, 2.0f, f12), com.google.android.gms.internal.vision.e2.A(f15, f13, 2.0f, f13));
                         } else {
                             arrayList4 = arrayList6;
-                            ajVar = ajVar3;
+                            bjVar = bjVar3;
                             ag0Var = ag0Var3;
                         }
                         float f16 = f13;
@@ -199,18 +199,18 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                         ag0Var2 = ag0Var;
                         arrayList5 = arrayList4;
                         eg0Var = eg0Var2;
-                        org.telegram.messenger.aj ajVar4 = ajVar;
+                        org.telegram.messenger.bj bjVar4 = bjVar;
                         i11 = i23;
-                        ziVar2.m.K0(canvas, (int) f12, (int) f13, (int) f14, (int) f15, ziVar2.k, ziVar2.l, false, 0);
-                        ziVar2.m = null;
-                        ziVar2.o = ajVar4.c;
+                        ajVar2.m.K0(canvas, (int) f12, (int) f13, (int) f14, (int) f15, ajVar2.k, ajVar2.l, false, 0);
+                        ajVar2.m = null;
+                        ajVar2.o = bjVar4.c;
                         if (z12) {
                             canvas.restore();
                             for (int i24 = 0; i24 < childCount2; i24++) {
                                 View childAt4 = ag0Var2.getChildAt(i24);
                                 if (childAt4 instanceof org.telegram.ui.Cells.r1) {
                                     org.telegram.ui.Cells.r1 r1Var4 = (org.telegram.ui.Cells.r1) childAt4;
-                                    if (r1Var4.getCurrentMessagesGroup() == ajVar4) {
+                                    if (r1Var4.getCurrentMessagesGroup() == bjVar4) {
                                         int left = r1Var4.getLeft();
                                         int top = r1Var4.getTop();
                                         childAt4.setPivotX(((f14 - f12) / 2.0f) + (f12 - left));
@@ -241,11 +241,11 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
         float f18 = 0.0f;
         super.dispatchDraw(canvas);
         int childCount3 = getChildCount();
-        org.telegram.messenger.aj ajVar5 = null;
+        org.telegram.messenger.bj bjVar5 = null;
         int i25 = 0;
         while (i25 < childCount3) {
             View childAt5 = getChildAt(i25);
-            if (!(childAt5 instanceof org.telegram.ui.Cells.r1) || ((currentMessagesGroup2 = (r1Var = (org.telegram.ui.Cells.r1) childAt5).getCurrentMessagesGroup()) != null && currentMessagesGroup2 == ajVar5)) {
+            if (!(childAt5 instanceof org.telegram.ui.Cells.r1) || ((currentMessagesGroup2 = (r1Var = (org.telegram.ui.Cells.r1) childAt5).getCurrentMessagesGroup()) != null && currentMessagesGroup2 == bjVar5)) {
                 i10 = i7;
                 f10 = f18;
             } else {
@@ -257,7 +257,7 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                     i10 = i7;
                     f10 = f18;
                 }
-                ajVar5 = currentMessagesGroup2;
+                bjVar5 = currentMessagesGroup2;
             }
             i25++;
             i7 = i10;
@@ -275,22 +275,22 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                     if (childAt6 instanceof org.telegram.ui.Cells.r1) {
                         org.telegram.ui.Cells.r1 r1Var5 = (org.telegram.ui.Cells.r1) childAt6;
                         if (childAt6.getY() <= ag0Var4.getHeight() && childAt6.getY() + childAt6.getHeight() >= f19 && (currentMessagesGroup = r1Var5.getCurrentMessagesGroup()) != null) {
-                            org.telegram.messenger.zi ziVar3 = currentMessagesGroup.m;
+                            org.telegram.messenger.aj ajVar3 = currentMessagesGroup.m;
                             int i29 = i27 == 0 ? 1 : 1;
-                            if ((i27 != i29 || ziVar3.i) && ((i27 != 0 || !r1Var5.getMessageObject().Z) && ((i27 != 1 || r1Var5.getMessageObject().Z) && ((i27 != 2 || r1Var5.za) && (i27 == 2 || !r1Var5.za))))) {
+                            if ((i27 != i29 || ajVar3.i) && ((i27 != 0 || !r1Var5.getMessageObject().Z) && ((i27 != 1 || r1Var5.getMessageObject().Z) && ((i27 != 2 || r1Var5.za) && (i27 == 2 || !r1Var5.za))))) {
                                 arrayList3 = arrayList7;
                                 if (!arrayList3.contains(currentMessagesGroup)) {
-                                    ziVar3.a = 0;
-                                    ziVar3.b = 0;
-                                    ziVar3.c = 0;
-                                    ziVar3.d = 0;
-                                    ziVar3.l = false;
-                                    ziVar3.k = false;
-                                    ziVar3.m = r1Var5;
+                                    ajVar3.a = 0;
+                                    ajVar3.b = 0;
+                                    ajVar3.c = 0;
+                                    ajVar3.d = 0;
+                                    ajVar3.l = false;
+                                    ajVar3.k = false;
+                                    ajVar3.m = r1Var5;
                                     arrayList3.add(currentMessagesGroup);
                                 }
-                                ziVar3.k = r1Var5.L2();
-                                ziVar3.l = r1Var5.K2();
+                                ajVar3.k = r1Var5.L2();
+                                ajVar3.l = r1Var5.K2();
                                 int x12 = (int) (r1Var5.getX() + r1Var5.getBackgroundDrawableLeft());
                                 int x13 = (int) (r1Var5.getX() + r1Var5.getBackgroundDrawableRight());
                                 int y12 = (int) (r1Var5.getY() + r1Var5.getPaddingTop() + r1Var5.getBackgroundDrawableTop());
@@ -302,23 +302,23 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                                     y13 += org.telegram.messenger.g0.L(10.0f);
                                 }
                                 if (r1Var5.za) {
-                                    ziVar3.m = r1Var5;
+                                    ajVar3.m = r1Var5;
                                 }
-                                int i30 = ziVar3.b;
+                                int i30 = ajVar3.b;
                                 if (i30 == 0 || y12 < i30) {
-                                    ziVar3.b = y12;
+                                    ajVar3.b = y12;
                                 }
-                                int i31 = ziVar3.d;
+                                int i31 = ajVar3.d;
                                 if (i31 == 0 || y13 > i31) {
-                                    ziVar3.d = y13;
+                                    ajVar3.d = y13;
                                 }
-                                int i32 = ziVar3.a;
+                                int i32 = ajVar3.a;
                                 if (i32 == 0 || x12 < i32) {
-                                    ziVar3.a = x12;
+                                    ajVar3.a = x12;
                                 }
-                                int i33 = ziVar3.c;
+                                int i33 = ajVar3.c;
                                 if (i33 == 0 || x13 > i33) {
-                                    ziVar3.c = x13;
+                                    ajVar3.c = x13;
                                 }
                                 i28++;
                                 arrayList7 = arrayList3;
@@ -331,12 +331,12 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                 }
                 arrayList2 = arrayList7;
                 for (int i34 = 0; i34 < arrayList2.size(); i34++) {
-                    org.telegram.messenger.zi ziVar4 = ((org.telegram.messenger.aj) arrayList2.get(i34)).m;
-                    float S12 = ziVar4.m.S1(true);
-                    float f20 = ziVar4.a + S12 + ziVar4.e;
-                    float f21 = ziVar4.b + ziVar4.f;
-                    float f22 = ziVar4.c + S12 + ziVar4.g;
-                    float f23 = ziVar4.d + ziVar4.h;
+                    org.telegram.messenger.aj ajVar4 = ((org.telegram.messenger.bj) arrayList2.get(i34)).m;
+                    float S12 = ajVar4.m.S1(true);
+                    float f20 = ajVar4.a + S12 + ajVar4.e;
+                    float f21 = ajVar4.b + ajVar4.f;
+                    float f22 = ajVar4.c + S12 + ajVar4.g;
+                    float f23 = ajVar4.d + ajVar4.h;
                     if (f21 < (-org.telegram.messenger.g0.L(20.0f))) {
                         f21 = -org.telegram.messenger.g0.L(20.0f);
                     }
@@ -347,7 +347,7 @@ public final class ag0 extends org.telegram.ui.Components.ek0 {
                     eg0 eg0Var4 = eg0Var3;
                     eg0Var4.j(f20, f21, f22, f24, canvas);
                     eg0Var3 = eg0Var4;
-                    ziVar4.m = null;
+                    ajVar4.m = null;
                 }
             } else {
                 arrayList2 = arrayList7;

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gs0 extends dk0 {
     public final Context c;
@@ -32,8 +32,8 @@ public final class gs0 extends dk0 {
         return this.f.size() + this.d.size() != 0;
     }
 
-    public final org.telegram.messenger.fj E(int i7) {
-        return i7 < this.d.size() ? (org.telegram.messenger.fj) this.d.get(i7) : (org.telegram.messenger.fj) this.f.get(i7 - this.d.size());
+    public final org.telegram.messenger.gj E(int i7) {
+        return i7 < this.d.size() ? (org.telegram.messenger.gj) this.d.get(i7) : (org.telegram.messenger.gj) this.f.get(i7 - this.d.size());
     }
 
     public final void F(int i7, long j3, long j10, String str) {
@@ -80,7 +80,7 @@ public final class gs0 extends dk0 {
         int i11 = this.n + 1;
         this.n = i11;
         this.s++;
-        this.h = g2Var.getConnectionsManager().sendRequest(tL_messages_search, new org.telegram.messenger.qf(this, i7, i11, str, 2), 2);
+        this.h = g2Var.getConnectionsManager().sendRequest(tL_messages_search, new org.telegram.messenger.rf(this, i7, i11, str, 2), 2);
         g2Var.getConnectionsManager().bindRequestToGuid(this.h, g2Var.getClassGuid());
     }
 
@@ -151,10 +151,10 @@ public final class gs0 extends dk0 {
         if (i10 == 1) {
             if (view instanceof org.telegram.ui.Cells.i7) {
                 org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view;
-                org.telegram.messenger.fj E = E(i7);
+                org.telegram.messenger.gj E = E(i7);
                 i7Var.c(E, i7 != b() - 1);
                 if (jt0Var.F1) {
-                    i7Var.b(sparseArrayArr[(org.telegram.messenger.fj.B0(E.k) > j3 ? 1 : (org.telegram.messenger.fj.B0(E.k) == j3 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E.e1()) >= 0, !jt0Var.e1);
+                    i7Var.b(sparseArrayArr[(org.telegram.messenger.gj.B0(E.k) > j3 ? 1 : (org.telegram.messenger.gj.B0(E.k) == j3 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E.e1()) >= 0, !jt0Var.e1);
                     return;
                 } else {
                     i7Var.b(false, !jt0Var.e1);
@@ -166,10 +166,10 @@ public final class gs0 extends dk0 {
         if (i10 != 3) {
             if (i10 == 4 && (view instanceof org.telegram.ui.Cells.h7)) {
                 org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) view;
-                org.telegram.messenger.fj E2 = E(i7);
+                org.telegram.messenger.gj E2 = E(i7);
                 h7Var.f(E2, i7 != b() - 1);
                 if (jt0Var.F1) {
-                    h7Var.e(sparseArrayArr[(org.telegram.messenger.fj.B0(E2.k) > j3 ? 1 : (org.telegram.messenger.fj.B0(E2.k) == j3 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E2.e1()) >= 0, !jt0Var.e1);
+                    h7Var.e(sparseArrayArr[(org.telegram.messenger.gj.B0(E2.k) > j3 ? 1 : (org.telegram.messenger.gj.B0(E2.k) == j3 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E2.e1()) >= 0, !jt0Var.e1);
                     return;
                 } else {
                     h7Var.e(false, !jt0Var.e1);
@@ -180,13 +180,13 @@ public final class gs0 extends dk0 {
         }
         if (view instanceof org.telegram.ui.Cells.l7) {
             org.telegram.ui.Cells.l7 l7Var = (org.telegram.ui.Cells.l7) view;
-            org.telegram.messenger.fj E3 = E(i7);
+            org.telegram.messenger.gj E3 = E(i7);
             l7Var.E = i7 != b() - 1;
             l7Var.e();
             l7Var.c0 = E3;
             l7Var.requestLayout();
             if (jt0Var.F1) {
-                l7Var.f(sparseArrayArr[(org.telegram.messenger.fj.B0(E3.k) > j3 ? 1 : (org.telegram.messenger.fj.B0(E3.k) == j3 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E3.e1()) >= 0, !jt0Var.e1);
+                l7Var.f(sparseArrayArr[(org.telegram.messenger.gj.B0(E3.k) > j3 ? 1 : (org.telegram.messenger.gj.B0(E3.k) == j3 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(E3.e1()) >= 0, !jt0Var.e1);
             } else {
                 l7Var.f(false, !jt0Var.e1);
             }

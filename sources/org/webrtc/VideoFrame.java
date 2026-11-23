@@ -2,16 +2,16 @@ package org.webrtc;
 
 import android.graphics.Matrix;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class VideoFrame implements RefCounted {
     private final Buffer buffer;
     private final int rotation;
     private final long timestampNs;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public interface Buffer extends RefCounted {
         Buffer cropAndScale(int i7, int i10, int i11, int i12, int i13, int i14);
 
@@ -30,7 +30,7 @@ public class VideoFrame implements RefCounted {
         I420Buffer toI420();
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public interface I420Buffer extends Buffer {
         @Override // org.webrtc.VideoFrame.Buffer
         int getBufferType();
@@ -48,10 +48,10 @@ public class VideoFrame implements RefCounted {
         int getStrideY();
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public interface TextureBuffer extends Buffer {
 
-        /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+        /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
         public enum Type {
             OES(36197),
             RGB(3553);
@@ -97,11 +97,11 @@ public class VideoFrame implements RefCounted {
     }
 
     public int getRotatedHeight() {
-        return this.rotation % ks.K2 == 0 ? this.buffer.getHeight() : this.buffer.getWidth();
+        return this.rotation % ls.K2 == 0 ? this.buffer.getHeight() : this.buffer.getWidth();
     }
 
     public int getRotatedWidth() {
-        return this.rotation % ks.K2 == 0 ? this.buffer.getWidth() : this.buffer.getHeight();
+        return this.rotation % ls.K2 == 0 ? this.buffer.getWidth() : this.buffer.getHeight();
     }
 
     public int getRotation() {

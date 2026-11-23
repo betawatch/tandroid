@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa0 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -60,7 +60,7 @@ public final /* synthetic */ class xa0 implements View.OnClickListener {
                     } else if (intValue == 4) {
                         nsVar.l.p(nsVar.W);
                     } else if (intValue == 5) {
-                        org.telegram.messenger.ri.d0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                        org.telegram.messenger.si.d0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
                     }
                     nsVar.o();
                     break;

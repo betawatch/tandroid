@@ -7,22 +7,22 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import c8.ma;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public static final /* synthetic */ int e = 0;
     public final e a;
     public boolean b;
     public boolean c;
-    public x10 d;
+    public y10 d;
 
     public f(Activity activity, h6 h6Var) {
         super(activity);
@@ -32,7 +32,7 @@ public final class f extends FrameLayout {
         eVar.setImageResource(R.drawable.smiles_tab_clear);
         t6.s(eVar, m6.Jf, h6Var, PorterDuff.Mode.MULTIPLY);
         eVar.setScaleType(ImageView.ScaleType.CENTER);
-        eVar.setContentDescription(gd.N0(2131754920, null));
+        eVar.setContentDescription(hd.N0(2131754920, null));
         eVar.setFocusable(true);
         eVar.setOnClickListener(new bi.o(5));
         addView(eVar, ma.e(36, 36, 17));
@@ -54,7 +54,7 @@ public final class f extends FrameLayout {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(42.0f), TLObject.FLAG_30));
     }
 
-    public void setOnBackspace(x10 x10Var) {
-        this.d = x10Var;
+    public void setOnBackspace(y10 y10Var) {
+        this.d = y10Var;
     }
 }

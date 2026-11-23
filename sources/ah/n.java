@@ -17,12 +17,12 @@ import hi.m8;
 import java.util.ArrayList;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.p20;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n extends ViewGroup {
     public final /* synthetic */ int a = 0;
@@ -321,7 +321,7 @@ public final class n extends ViewGroup {
                     z10 = g0.L(376.0f) / 3;
                 } else {
                     Point point = g0.q;
-                    z10 = n10.z(154.0f, Math.min(point.x, point.y), 3);
+                    z10 = o10.z(154.0f, Math.min(point.x, point.y), 3);
                 }
                 if (i26 - i27 < z10) {
                     L2 += g0.L(36.0f);
@@ -457,7 +457,7 @@ public final class n extends ViewGroup {
                     z11 = g0.L(394.0f) / 3;
                 } else {
                     Point point2 = g0.q;
-                    z11 = n10.z(136.0f, Math.min(point2.x, point2.y), 3);
+                    z11 = o10.z(136.0f, Math.min(point2.x, point2.y), 3);
                 }
                 if (i32 - i30 < z11) {
                     i28 += g0.L(36.0f);
@@ -518,7 +518,7 @@ public final class n extends ViewGroup {
                         iVar2.bringPointIntoView(iVar2.getSelectionStart());
                     }
                     if (m8Var.M) {
-                        m8Var.fullScroll(ks.O1);
+                        m8Var.fullScroll(ls.O1);
                         m8Var.M = false;
                     }
                 }

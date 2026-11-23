@@ -5,8 +5,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.py0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z2 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -33,10 +33,10 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
     public final /* synthetic */ Object s;
     public final /* synthetic */ Object w;
 
-    public /* synthetic */ z2(hi.e eVar, py0 py0Var, mp mpVar, long j3, TLRPC.User user, String[] strArr, int i7, org.telegram.ui.ActionBar.w2 w2Var, boolean z10, h6 h6Var) {
+    public /* synthetic */ z2(hi.e eVar, py0 py0Var, np npVar, long j3, TLRPC.User user, String[] strArr, int i7, org.telegram.ui.ActionBar.w2 w2Var, boolean z10, h6 h6Var) {
         this.b = eVar;
         this.r = py0Var;
-        this.s = mpVar;
+        this.s = npVar;
         this.c = j3;
         this.d = user;
         this.w = strArr;
@@ -59,8 +59,8 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                     final long j3 = jArr[0];
                     TL_payments.connectStarRefBot connectstarrefbot = new TL_payments.connectStarRefBot();
                     final int i7 = this.e;
-                    connectstarrefbot.bot = mp.u1(i7).q1(starrefprogram.bot_id);
-                    connectstarrefbot.peer = mp.u1(i7).l1(j3);
+                    connectstarrefbot.bot = np.u1(i7).q1(starrefprogram.bot_id);
+                    connectstarrefbot.peer = np.u1(i7).l1(j3);
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i7);
                     final org.telegram.ui.ActionBar.w2 w2Var = this.f;
                     final long j10 = this.c;
@@ -79,7 +79,7 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
             default:
                 py0 py0Var = (py0) this.r;
                 b6 b6Var = py0Var.h;
-                final mp mpVar = (mp) this.s;
+                final np npVar = (np) this.s;
                 String[] strArr = (String[]) this.w;
                 final hi.e eVar2 = this.b;
                 if (!eVar2.R) {
@@ -95,17 +95,17 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                         org.telegram.messenger.g0.v1(b6Var);
                         final TLRPC.TL_messages_editChatParticipantRank tL_messages_editChatParticipantRank = new TLRPC.TL_messages_editChatParticipantRank();
                         final long j11 = this.c;
-                        tL_messages_editChatParticipantRank.peer = mpVar.l1(j11);
+                        tL_messages_editChatParticipantRank.peer = npVar.l1(j11);
                         final TLRPC.User user2 = this.d;
-                        tL_messages_editChatParticipantRank.participant = mp.p1(user2);
+                        tL_messages_editChatParticipantRank.participant = np.p1(user2);
                         tL_messages_editChatParticipantRank.rank = strArr[0];
                         ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(this.e);
                         d3.b bVar = new d3.b(1);
                         final org.telegram.ui.ActionBar.w2 w2Var2 = this.f;
                         final boolean z11 = this.h;
                         final h6 h6Var2 = this.n;
-                        connectionsManager2.sendRequestTyped(tL_messages_editChatParticipantRank, bVar, new q10() { // from class: org.telegram.ui.Components.gy0
-                            @Override // org.telegram.messenger.q10
+                        connectionsManager2.sendRequestTyped(tL_messages_editChatParticipantRank, bVar, new r10() { // from class: org.telegram.ui.Components.gy0
+                            @Override // org.telegram.messenger.r10
                             public final void a(Object obj, Object obj2) {
                                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -122,15 +122,15 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                                 long j13 = user2.id;
                                 TLRPC.TL_messages_editChatParticipantRank tL_messages_editChatParticipantRank2 = tL_messages_editChatParticipantRank;
                                 String str = tL_messages_editChatParticipantRank2.rank;
-                                org.telegram.messenger.mp mpVar2 = org.telegram.messenger.mp.this;
-                                mpVar2.B5(j12, str, j13);
-                                mpVar2.V3(updates, false);
+                                org.telegram.messenger.np npVar2 = org.telegram.messenger.np.this;
+                                npVar2.B5(j12, str, j13);
+                                npVar2.V3(updates, false);
                                 w2Var3.dismiss();
                                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                                 if (TextUtils.isEmpty(tL_messages_editChatParticipantRank2.rank) || T == null) {
                                     return;
                                 }
-                                gc I = lc.b0(T).I(R.raw.contact_check, org.telegram.messenger.gd.N0(z11 ? 2131744047 : 2131744046, null), tL_messages_editChatParticipantRank2.rank);
+                                gc I = lc.b0(T).I(R.raw.contact_check, org.telegram.messenger.hd.N0(z11 ? 2131744045 : 2131744044, null), tL_messages_editChatParticipantRank2.rank);
                                 lb lbVar = I.e;
                                 if (lbVar.getLayoutParams() instanceof FrameLayout.LayoutParams) {
                                     ((FrameLayout.LayoutParams) lbVar.getLayoutParams()).width = -2;

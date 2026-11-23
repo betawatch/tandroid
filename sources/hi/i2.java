@@ -2,18 +2,18 @@ package hi;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
+import org.telegram.messenger.u10;
+import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public class i2 extends org.telegram.ui.ActionBar.w2 implements fs {
+public class i2 extends org.telegram.ui.ActionBar.w2 implements gs {
     public static int C1 = 1;
     public kg.g A1;
-    public y10 B1;
+    public z10 B1;
     public String m1;
     public int n1;
     public final g1 o1;
@@ -27,7 +27,7 @@ public class i2 extends org.telegram.ui.ActionBar.w2 implements fs {
     public int w1;
     public bi.b x1;
     public float y1;
-    public t10 z1;
+    public u10 z1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i2(Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, boolean z11) {
@@ -61,18 +61,18 @@ public class i2 extends org.telegram.ui.ActionBar.w2 implements fs {
             h2Var.invalidate();
             this.b.addView(h2Var, c8.ma.e(-1, -2, 87));
         }
-        ks.f(this.a).c(this, ks.x0);
-        ks.f(this.a).c(this, ks.B0);
+        ls.f(this.a).c(this, ls.x0);
+        ls.f(this.a).c(this, ls.B0);
         boolean z12 = org.telegram.messenger.a8.j;
         if (!z10) {
-            ri.d0(this.a).D(5);
-            ri.d0(this.a).y();
-            ri.d0(this.a).Y0(0, true, true, false);
+            si.d0(this.a).D(5);
+            si.d0(this.a).y();
+            si.d0(this.a).Y0(0, true, true, false);
         }
-        ri.d0(this.a).D(0);
-        ri.d0(this.a).Y0(0, false, true, false);
-        ri.d0(this.a).Y0(2, false, true, false);
-        ri.d0(this.a).Y0(7, false, true, false);
+        si.d0(this.a).D(0);
+        si.d0(this.a).Y0(0, false, true, false);
+        si.d0(this.a).Y0(2, false, true, false);
+        si.d0(this.a).Y0(7, false, true, false);
     }
 
     @Override // org.telegram.ui.ActionBar.w2
@@ -110,14 +110,14 @@ public class i2 extends org.telegram.ui.ActionBar.w2 implements fs {
 
     public final void N0(int i7) {
         if (J0(Integer.valueOf(i7))) {
-            if ((i7 != 1 || L0(new ai.y0(this, i7, 10))) && ((Boolean) this.B1.a(Integer.valueOf(i7))).booleanValue()) {
+            if ((i7 != 1 || L0(new ai.c1(this, i7, 10))) && ((Boolean) this.B1.a(Integer.valueOf(i7))).booleanValue()) {
                 dismiss();
             }
         }
     }
 
-    public final void O0(y10 y10Var) {
-        this.B1 = y10Var;
+    public final void O0(z10 z10Var) {
+        this.B1 = z10Var;
         for (View view : this.q1.getViewPages()) {
             if (view instanceof y1) {
                 x1 x1Var = ((y1) view).c;
@@ -133,10 +133,10 @@ public class i2 extends org.telegram.ui.ActionBar.w2 implements fs {
         return this.b.getMeasuredHeight() <= 0 ? org.telegram.messenger.g0.q.y : (int) (this.b.getMeasuredHeight() - this.q1.getY());
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ks.x0;
-        int i12 = ks.B0;
+        int i11 = ls.x0;
+        int i12 = ls.B0;
         if (i7 == i11 || i7 == i12) {
             for (View view : this.q1.getViewPages()) {
                 if (view instanceof y1) {
@@ -154,8 +154,8 @@ public class i2 extends org.telegram.ui.ActionBar.w2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
-        ks.f(this.a).n(this, ks.x0);
-        ks.f(this.a).n(this, ks.B0);
+        ls.f(this.a).n(this, ls.x0);
+        ls.f(this.a).n(this, ls.B0);
         M0();
         super.dismiss();
         boolean z10 = org.telegram.messenger.a8.j;

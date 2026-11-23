@@ -16,7 +16,7 @@ import c8.fa;
 import c8.ma;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.j9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class o4 extends y implements org.telegram.ui.ActionBar.b6, i9 {
     public z2 E;
@@ -86,7 +86,7 @@ public final class o4 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         this.x = null;
         this.s.scrollTo(0, 0);
         String source = getSource();
-        if (!TextUtils.isEmpty(source) && (a10 = p.a(source, org.telegram.messenger.g0.L(bz.W0 + 4), false)) != null) {
+        if (!TextUtils.isEmpty(source) && (a10 = p.a(source, org.telegram.messenger.g0.L(cz.W0 + 4), false)) != null) {
             this.x = a10.a;
         }
         this.w.setImageBitmap(this.x);

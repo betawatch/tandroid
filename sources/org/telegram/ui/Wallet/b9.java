@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.h51;
@@ -12,7 +12,7 @@ import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.r80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class b9 extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -33,13 +33,13 @@ public final class b9 extends n41 {
         textView2.setText(u8.c0(charSequence));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         if (j3 < 0) {
-            spannableStringBuilder.append((CharSequence) gd.N0(2131748586, null));
+            spannableStringBuilder.append((CharSequence) hd.N0(2131748586, null));
             spannableStringBuilder.setSpan(new r80(org.telegram.messenger.g0.L(35.0f), textView), 0, spannableStringBuilder.length(), 33);
         } else {
             spannableStringBuilder.append((CharSequence) u0.x(j3, false));
         }
         if (i7 > 0) {
-            spannableStringBuilder = new SpannableStringBuilder(gd.V(null, null, 2131742786, spannableStringBuilder, gd.Q(i7)));
+            spannableStringBuilder = new SpannableStringBuilder(hd.V(null, null, 2131742784, spannableStringBuilder, hd.Q(i7)));
         }
         textView.setText(spannableStringBuilder);
         textView2.setAlpha(z11 ? 0.5f : 1.0f);

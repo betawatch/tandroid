@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ks extends c51 {
     public final int Q;
@@ -45,9 +45,9 @@ public class ks extends c51 {
         this.R = i10;
         this.S = z10;
         this.T = new js(i7, new gs(this, 1));
-        this.Z = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(org.telegram.messenger.gd.N0(2131754174, null), new di.a(this, h6Var, context)), true);
+        this.Z = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(org.telegram.messenger.hd.N0(2131754174, null), new di.a(this, h6Var, context)), true);
         O(false);
-        org.telegram.messenger.ri.d0(i7).P0(true);
+        org.telegram.messenger.si.d0(i7).P0(true);
     }
 
     public final void W() {
@@ -106,13 +106,13 @@ public class ks extends c51 {
         if (z10) {
             ArrayList arrayList = this.W;
             if (!arrayList.isEmpty()) {
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) i5.c.h(1, arrayList);
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) i5.c.h(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.f0;
-                tL_messages_searchGlobal.offset_id = fjVar.e1();
-                if (fjVar.k.peer_id == null) {
+                tL_messages_searchGlobal.offset_id = gjVar.e1();
+                if (gjVar.k.peer_id == null) {
                     tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
                 } else {
-                    tL_messages_searchGlobal.offset_peer = org.telegram.messenger.mp.u1(i11).o1(fjVar.k.peer_id);
+                    tL_messages_searchGlobal.offset_peer = org.telegram.messenger.np.u1(i11).o1(gjVar.k.peer_id);
                 }
                 org.telegram.messenger.g0.h3(new org.telegram.messenger.voip.l0(this, i7, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
                 if (z10) {
@@ -121,7 +121,7 @@ public class ks extends c51 {
                     tL_contacts_search.limit = 30;
                     tL_contacts_search.bots = true;
                     tL_contacts_search.q = this.h0;
-                    ConnectionsManager.getInstance(i11).sendRequestTyped(tL_contacts_search, new d3.b(1), new bi.p6(19, this, tL_contacts_search));
+                    ConnectionsManager.getInstance(i11).sendRequestTyped(tL_contacts_search, new d3.b(1), new bi.o6(19, this, tL_contacts_search));
                     return;
                 }
                 return;

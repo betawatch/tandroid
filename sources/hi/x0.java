@@ -2,13 +2,13 @@ package hi;
 
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x0 implements x10 {
+public final /* synthetic */ class x0 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ b1 b;
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class x0 implements x10 {
         this.b = b1Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         File file;
         File file2;
@@ -41,7 +41,7 @@ public final /* synthetic */ class x0 implements x10 {
                 b1Var.c(arrayList3);
                 b1Var.f = false;
                 b1Var.e = true;
-                fi.p6 R1 = mp.u1(b1Var.a).R1();
+                fi.p6 R1 = np.u1(b1Var.a).R1();
                 int size = arrayList4.size();
                 int i10 = 0;
                 while (i10 < size) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class x0 implements x10 {
                     fi.o6 o6Var = new fi.o6(R1, (c7) obj2);
                     R1.d(o6Var.K, o6Var, R1.b, false);
                 }
-                ks.f(R1.a).k(ks.y5, new Object[0]);
+                ls.f(R1.a).k(ls.y5, new Object[0]);
                 break;
             default:
                 b1 b1Var2 = this.b;
@@ -70,7 +70,7 @@ public final /* synthetic */ class x0 implements x10 {
                 b1Var2.c(arrayList6);
                 b1Var2.d = false;
                 b1Var2.c = true;
-                ks.f(b1Var2.a).k(ks.B5, new Object[0]);
+                ls.f(b1Var2.a).k(ls.B5, new Object[0]);
                 break;
         }
     }

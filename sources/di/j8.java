@@ -6,14 +6,14 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -27,7 +27,7 @@ public final /* synthetic */ class j8 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ j8(y8 y8Var, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j3, int i7, fj fjVar, long j10) {
+    public /* synthetic */ j8(y8 y8Var, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j3, int i7, gj gjVar, long j10) {
         this.f = y8Var;
         this.h = tLObject;
         this.n = runnable;
@@ -35,7 +35,7 @@ public final /* synthetic */ class j8 implements Runnable {
         this.c = z10;
         this.b = j3;
         this.e = i7;
-        this.s = fjVar;
+        this.s = gjVar;
         this.d = j10;
     }
 
@@ -59,7 +59,7 @@ public final /* synthetic */ class j8 implements Runnable {
                 boolean z10 = this.c;
                 long j3 = this.b;
                 int i7 = this.e;
-                fj fjVar = (fj) this.s;
+                gj gjVar = (gj) this.s;
                 long j10 = this.d;
                 if (tLObject instanceof TLRPC.Updates) {
                     Utilities.d.c(new w7(y8Var, tLObject, 5));
@@ -71,13 +71,13 @@ public final /* synthetic */ class j8 implements Runnable {
                         return;
                     }
                     TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
-                    tL_messages_getScheduledMessages.peer = mp.u1(y8Var.a).l1(j3);
+                    tL_messages_getScheduledMessages.peer = np.u1(y8Var.a).l1(j3);
                     tL_messages_getScheduledMessages.id.add(Integer.valueOf(i7));
-                    ConnectionsManager.getInstance(y8Var.a).sendRequest(tL_messages_getScheduledMessages, new y(y8Var, fjVar, j10, runnable, 2));
+                    ConnectionsManager.getInstance(y8Var.a).sendRequest(tL_messages_getScheduledMessages, new y(y8Var, gjVar, j10, runnable, 2));
                     return;
                 }
             default:
-                tr trVar = (tr) this.f;
+                ur urVar = (ur) this.f;
                 long j11 = this.b;
                 boolean z11 = this.c;
                 String str = (String) this.h;
@@ -90,7 +90,7 @@ public final /* synthetic */ class j8 implements Runnable {
                 try {
                     if (j11 == 0) {
                         try {
-                            SQLiteDatabase sQLiteDatabase = trVar.b;
+                            SQLiteDatabase sQLiteDatabase = urVar.b;
                             Locale locale = Locale.ENGLISH;
                             executeFast = sQLiteDatabase.executeFast("UPDATE dialogs SET " + str3 + " = ? WHERE did = ?");
                         } catch (SQLiteException e10) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class j8 implements Runnable {
                             executeFast.step();
                             executeFast.dispose();
                             if (i10 == 0) {
-                                executeFast = trVar.b.executeFast("UPDATE " + str4 + " SET state = 0 WHERE dialog_id = ?");
+                                executeFast = urVar.b.executeFast("UPDATE " + str4 + " SET state = 0 WHERE dialog_id = ?");
                                 executeFast.bindLong(1, j12);
                                 executeFast.step();
                                 executeFast.dispose();
@@ -128,7 +128,7 @@ public final /* synthetic */ class j8 implements Runnable {
                     if (z11) {
                         try {
                             try {
-                                SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                                SQLiteDatabase sQLiteDatabase2 = urVar.b;
                                 Locale locale2 = Locale.ENGLISH;
                                 SQLiteCursor queryFinalized = sQLiteDatabase2.queryFinalized("SELECT " + str + " FROM topics WHERE did = " + j12 + " AND topic_id = " + j11, new Object[0]);
                                 intValue = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
@@ -152,7 +152,7 @@ public final /* synthetic */ class j8 implements Runnable {
                     } else {
                         intValue = 0;
                     }
-                    SQLiteDatabase sQLiteDatabase3 = trVar.b;
+                    SQLiteDatabase sQLiteDatabase3 = urVar.b;
                     Locale locale3 = Locale.ENGLISH;
                     SQLitePreparedStatement executeFast2 = sQLiteDatabase3.executeFast("UPDATE topics SET " + str + " = ? WHERE did = ? AND topic_id = ?");
                     try {
@@ -164,7 +164,7 @@ public final /* synthetic */ class j8 implements Runnable {
                         if (i10 != 0) {
                             return;
                         }
-                        SQLitePreparedStatement executeFast3 = trVar.b.executeFast("UPDATE " + str2 + " SET state = 0 WHERE dialog_id = ? AND topic_id = ? ");
+                        SQLitePreparedStatement executeFast3 = urVar.b.executeFast("UPDATE " + str2 + " SET state = 0 WHERE dialog_id = ? AND topic_id = ? ");
                         try {
                             executeFast3.bindLong(1, j12);
                             executeFast3.bindLong(2, j11);
@@ -197,8 +197,8 @@ public final /* synthetic */ class j8 implements Runnable {
         }
     }
 
-    public /* synthetic */ j8(tr trVar, long j3, boolean z10, String str, long j10, int i7, String str2, String str3, String str4) {
-        this.f = trVar;
+    public /* synthetic */ j8(ur urVar, long j3, boolean z10, String str, long j10, int i7, String str2, String str3, String str4) {
+        this.f = urVar;
         this.b = j3;
         this.c = z10;
         this.h = str;

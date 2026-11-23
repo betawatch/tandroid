@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class td extends LinearLayout {
     public static final /* synthetic */ int y = 0;
@@ -95,7 +95,7 @@ public final class td extends LinearLayout {
             zArr[i7] = true;
             TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions = new TL_stars.TL_payments_getStarsTransactions();
             tL_payments_getStarsTransactions.ton = true;
-            tL_payments_getStarsTransactions.peer = org.telegram.messenger.mp.u1(i10).l1(j3);
+            tL_payments_getStarsTransactions.peer = org.telegram.messenger.np.u1(i10).l1(j3);
             tL_payments_getStarsTransactions.offset = this.h;
             tL_payments_getStarsTransactions.limit = this.n.isEmpty() ? 5 : 20;
             final int i11 = 0;
@@ -129,8 +129,8 @@ public final class td extends LinearLayout {
                                             int i15 = i13;
                                             if (z12) {
                                                 TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
-                                                org.telegram.messenger.mp.u1(i14).f4(starsStatus.users, false);
-                                                org.telegram.messenger.mp.u1(i14).Z3(starsStatus.chats, false);
+                                                org.telegram.messenger.np.u1(i14).f4(starsStatus.users, false);
+                                                org.telegram.messenger.np.u1(i14).Z3(starsStatus.chats, false);
                                                 tdVar2.r.addAll(starsStatus.history);
                                                 tdVar2.s = starsStatus.next_offset;
                                                 tdVar2.w[i15] = false;
@@ -157,8 +157,8 @@ public final class td extends LinearLayout {
                                             int i17 = i13;
                                             if (z13) {
                                                 TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject3;
-                                                org.telegram.messenger.mp.u1(i16).f4(starsStatus2.users, false);
-                                                org.telegram.messenger.mp.u1(i16).Z3(starsStatus2.chats, false);
+                                                org.telegram.messenger.np.u1(i16).f4(starsStatus2.users, false);
+                                                org.telegram.messenger.np.u1(i16).Z3(starsStatus2.chats, false);
                                                 tdVar3.n.addAll(starsStatus2.history);
                                                 tdVar3.h = starsStatus2.next_offset;
                                                 tdVar3.w[i17] = false;
@@ -201,8 +201,8 @@ public final class td extends LinearLayout {
                                             int i152 = i15;
                                             if (z122) {
                                                 TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
-                                                org.telegram.messenger.mp.u1(i142).f4(starsStatus.users, false);
-                                                org.telegram.messenger.mp.u1(i142).Z3(starsStatus.chats, false);
+                                                org.telegram.messenger.np.u1(i142).f4(starsStatus.users, false);
+                                                org.telegram.messenger.np.u1(i142).Z3(starsStatus.chats, false);
                                                 tdVar22.r.addAll(starsStatus.history);
                                                 tdVar22.s = starsStatus.next_offset;
                                                 tdVar22.w[i152] = false;
@@ -229,8 +229,8 @@ public final class td extends LinearLayout {
                                             int i17 = i15;
                                             if (z132) {
                                                 TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject3;
-                                                org.telegram.messenger.mp.u1(i16).f4(starsStatus2.users, false);
-                                                org.telegram.messenger.mp.u1(i16).Z3(starsStatus2.chats, false);
+                                                org.telegram.messenger.np.u1(i16).f4(starsStatus2.users, false);
+                                                org.telegram.messenger.np.u1(i16).Z3(starsStatus2.chats, false);
                                                 tdVar3.n.addAll(starsStatus2.history);
                                                 tdVar3.h = starsStatus2.next_offset;
                                                 tdVar3.w[i17] = false;
@@ -262,7 +262,7 @@ public final class td extends LinearLayout {
             zArr[i7] = true;
             TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions2 = new TL_stars.TL_payments_getStarsTransactions();
             tL_payments_getStarsTransactions2.ton = false;
-            tL_payments_getStarsTransactions2.peer = org.telegram.messenger.mp.u1(i10).l1(j3);
+            tL_payments_getStarsTransactions2.peer = org.telegram.messenger.np.u1(i10).l1(j3);
             tL_payments_getStarsTransactions2.offset = this.s;
             tL_payments_getStarsTransactions2.limit = this.r.isEmpty() ? 5 : 20;
             final int i12 = 1;
@@ -296,8 +296,8 @@ public final class td extends LinearLayout {
                                             int i152 = i13;
                                             if (z122) {
                                                 TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
-                                                org.telegram.messenger.mp.u1(i142).f4(starsStatus.users, false);
-                                                org.telegram.messenger.mp.u1(i142).Z3(starsStatus.chats, false);
+                                                org.telegram.messenger.np.u1(i142).f4(starsStatus.users, false);
+                                                org.telegram.messenger.np.u1(i142).Z3(starsStatus.chats, false);
                                                 tdVar22.r.addAll(starsStatus.history);
                                                 tdVar22.s = starsStatus.next_offset;
                                                 tdVar22.w[i152] = false;
@@ -324,8 +324,8 @@ public final class td extends LinearLayout {
                                             int i17 = i13;
                                             if (z132) {
                                                 TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject3;
-                                                org.telegram.messenger.mp.u1(i16).f4(starsStatus2.users, false);
-                                                org.telegram.messenger.mp.u1(i16).Z3(starsStatus2.chats, false);
+                                                org.telegram.messenger.np.u1(i16).f4(starsStatus2.users, false);
+                                                org.telegram.messenger.np.u1(i16).Z3(starsStatus2.chats, false);
                                                 tdVar3.n.addAll(starsStatus2.history);
                                                 tdVar3.h = starsStatus2.next_offset;
                                                 tdVar3.w[i17] = false;
@@ -368,8 +368,8 @@ public final class td extends LinearLayout {
                                             int i152 = i15;
                                             if (z122) {
                                                 TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
-                                                org.telegram.messenger.mp.u1(i142).f4(starsStatus.users, false);
-                                                org.telegram.messenger.mp.u1(i142).Z3(starsStatus.chats, false);
+                                                org.telegram.messenger.np.u1(i142).f4(starsStatus.users, false);
+                                                org.telegram.messenger.np.u1(i142).Z3(starsStatus.chats, false);
                                                 tdVar22.r.addAll(starsStatus.history);
                                                 tdVar22.s = starsStatus.next_offset;
                                                 tdVar22.w[i152] = false;
@@ -396,8 +396,8 @@ public final class td extends LinearLayout {
                                             int i17 = i15;
                                             if (z132) {
                                                 TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject3;
-                                                org.telegram.messenger.mp.u1(i16).f4(starsStatus2.users, false);
-                                                org.telegram.messenger.mp.u1(i16).Z3(starsStatus2.chats, false);
+                                                org.telegram.messenger.np.u1(i16).f4(starsStatus2.users, false);
+                                                org.telegram.messenger.np.u1(i16).Z3(starsStatus2.chats, false);
                                                 tdVar3.n.addAll(starsStatus2.history);
                                                 tdVar3.h = starsStatus2.next_offset;
                                                 tdVar3.w[i17] = false;

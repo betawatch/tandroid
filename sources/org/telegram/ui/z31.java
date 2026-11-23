@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z31 implements org.telegram.ui.Components.sj0, te.b {
     public final /* synthetic */ c51 a;
@@ -43,45 +43,45 @@ public final /* synthetic */ class z31 implements org.telegram.ui.Components.sj0
                 return true;
             }
         } else {
-            final org.telegram.messenger.fj fjVar = ((z41) c51Var.z0.get(i7 - i10)).b;
-            if (!fjVar.x4()) {
+            final org.telegram.messenger.gj gjVar = ((z41) c51Var.z0.get(i7 - i10)).b;
+            if (!gjVar.x4()) {
                 org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(c51Var, view);
-                I.c(R.drawable.msg_stats, org.telegram.messenger.gd.N0(2131743306, null), new Runnable() { // from class: org.telegram.ui.y31
+                I.c(R.drawable.msg_stats, org.telegram.messenger.hd.N0(2131743304, null), new Runnable() { // from class: org.telegram.ui.y31
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
                             case 0:
                                 c51 c51Var2 = c51Var;
                                 c51Var2.getClass();
-                                c51Var2.presentFragment(new og0(fjVar));
+                                c51Var2.presentFragment(new og0(gjVar));
                                 break;
                             default:
                                 c51 c51Var3 = c51Var;
                                 c51Var3.getClass();
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", c51Var3.b);
-                                bundle.putInt("message_id", fjVar.e1());
+                                bundle.putInt("message_id", gjVar.e1());
                                 bundle.putBoolean("need_remove_previous_same_chat_activity", false);
                                 c51Var3.presentFragment(new bn(bundle), false);
                                 break;
                         }
                     }
                 }, false);
-                I.c(R.drawable.msg_msgbubble3, org.telegram.messenger.gd.N0(2131743307, null), new Runnable() { // from class: org.telegram.ui.y31
+                I.c(R.drawable.msg_msgbubble3, org.telegram.messenger.hd.N0(2131743305, null), new Runnable() { // from class: org.telegram.ui.y31
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
                             case 0:
                                 c51 c51Var2 = c51Var;
                                 c51Var2.getClass();
-                                c51Var2.presentFragment(new og0(fjVar));
+                                c51Var2.presentFragment(new og0(gjVar));
                                 break;
                             default:
                                 c51 c51Var3 = c51Var;
                                 c51Var3.getClass();
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", c51Var3.b);
-                                bundle.putInt("message_id", fjVar.e1());
+                                bundle.putInt("message_id", gjVar.e1());
                                 bundle.putBoolean("need_remove_previous_same_chat_activity", false);
                                 c51Var3.presentFragment(new bn(bundle), false);
                                 break;

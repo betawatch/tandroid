@@ -14,9 +14,9 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public class NotificationImageProvider extends ContentProvider implements fs {
+public class NotificationImageProvider extends ContentProvider implements gs {
     public static String d;
     public static UriMatcher e;
     public final HashSet a = new HashSet();
@@ -28,9 +28,9 @@ public class NotificationImageProvider extends ContentProvider implements fs {
         return 0;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.Y1) {
+        if (i7 == ls.Y1) {
             synchronized (this.b) {
                 try {
                     String str = (String) objArr[0];
@@ -65,8 +65,8 @@ public class NotificationImageProvider extends ContentProvider implements fs {
 
     @Override // android.content.ContentProvider
     public final boolean onCreate() {
-        for (int i7 = 0; i7 < j10.c(); i7++) {
-            ks.f(i7).b(this, ks.Y1);
+        for (int i7 = 0; i7 < k10.c(); i7++) {
+            ls.f(i7).b(this, ls.Y1);
         }
         return true;
     }
@@ -140,8 +140,8 @@ public class NotificationImageProvider extends ContentProvider implements fs {
 
     @Override // android.content.ContentProvider
     public final void shutdown() {
-        for (int i7 = 0; i7 < j10.c(); i7++) {
-            ks.f(i7).n(this, ks.Y1);
+        for (int i7 = 0; i7 < k10.c(); i7++) {
+            ls.f(i7).n(this, ls.Y1);
         }
     }
 

@@ -6,9 +6,9 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class t {
     public static final Rect a = new Rect();
@@ -46,7 +46,7 @@ public abstract class t {
     public static void c(Rect rect, float f10, float f11, int i7, int i10, int i11) {
         int i12 = i11 & 7;
         int round = i12 != 3 ? i12 != 5 ? Math.round(f10 - (i7 / 2.0f)) : Math.round(f10 - i7) : Math.round(f10);
-        int i13 = i11 & ks.x1;
+        int i13 = i11 & ls.x1;
         int round2 = i13 != 48 ? i13 != 80 ? Math.round(f11 - (i10 / 2.0f)) : Math.round(f11 - i10) : Math.round(f11);
         rect.set(round, round2, i7 + round, i10 + round2);
     }

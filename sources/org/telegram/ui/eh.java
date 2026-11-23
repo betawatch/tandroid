@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eh implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class eh implements Runnable {
                     bnVar.Z0.l(bnVar.L);
                     bnVar.Z0.s(16.0f);
                     bnVar.Z0.r(true);
-                    bnVar.Z0.v(org.telegram.messenger.gd.N0(2131753099, null));
+                    bnVar.Z0.v(org.telegram.messenger.hd.N0(2131753099, null));
                     bnVar.Z0.o(0.0f, 96.0f);
                     bnVar.Z0.setTranslationY(org.telegram.messenger.g0.L(10.0f) + ((view.getTop() - bnVar.Xa) - bnVar.m1.getHeight()));
                     bnVar.m1.addView(bnVar.Z0, c8.ma.e(-1, 100, 87));
@@ -57,15 +57,15 @@ public final /* synthetic */ class eh implements Runnable {
                 ((bn) obj2).m1.removeView((org.telegram.ui.Components.xi0) obj);
                 break;
             case 2:
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj;
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) obj;
                 bn bnVar2 = ((di) obj2).s;
-                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) bnVar2.G6[0].get(fjVar.e1());
-                if (fjVar2 != null && fjVar2 != fjVar) {
-                    org.telegram.messenger.fj fjVar3 = (org.telegram.messenger.fj) bnVar2.G6[0].get(fjVar.e1());
-                    fjVar3.k.reactions = fjVar.k.reactions;
-                    fjVar = fjVar3;
+                org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) bnVar2.G6[0].get(gjVar.e1());
+                if (gjVar2 != null && gjVar2 != gjVar) {
+                    org.telegram.messenger.gj gjVar3 = (org.telegram.messenger.gj) bnVar2.G6[0].get(gjVar.e1());
+                    gjVar3.k.reactions = gjVar.k.reactions;
+                    gjVar = gjVar3;
                 }
-                bnVar2.Yc(fjVar, true);
+                bnVar2.Yc(gjVar, true);
                 ch.l0.f();
                 break;
             case 3:
@@ -89,7 +89,7 @@ public final /* synthetic */ class eh implements Runnable {
                 Long l10 = (Long) obj;
                 bn bnVar5 = ((gm) obj2).W2.a;
                 String str = (l10.longValue() >= 0 || (O0 = bnVar5.getMessagesController().O0(Long.valueOf(-l10.longValue()))) == null) ? "" : O0.title;
-                org.telegram.messenger.n10.u(TextUtils.isEmpty(str) ? org.telegram.messenger.gd.N0(2131745986, null) : org.telegram.messenger.gd.a0(null, null, 2131745987, str), org.telegram.ui.Components.lc.b0(bnVar5), R.raw.contact_check, 36);
+                org.telegram.messenger.o10.u(TextUtils.isEmpty(str) ? org.telegram.messenger.hd.N0(2131745986, null) : org.telegram.messenger.hd.a0(null, null, 2131745987, str), org.telegram.ui.Components.lc.b0(bnVar5), R.raw.contact_check, 36);
                 break;
             case 6:
                 rn rnVar = (rn) obj2;

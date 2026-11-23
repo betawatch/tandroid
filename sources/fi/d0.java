@@ -17,15 +17,15 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a10;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cd;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.z00;
+import org.telegram.messenger.dd;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -47,13 +47,12 @@ import org.telegram.ui.hq0;
 import org.telegram.ui.ii;
 import org.telegram.ui.js;
 import org.telegram.ui.ld0;
-import org.telegram.ui.ls;
 import org.telegram.ui.ns;
 import org.telegram.ui.sy0;
 import org.telegram.ui.x71;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -112,27 +111,27 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 z3Var.c1 = null;
                 boolean[] zArr = {false};
                 if (z3Var.m1) {
-                    p6 R1 = mp.u1(z3Var.m2).R1();
+                    p6 R1 = np.u1(z3Var.m2).R1();
                     j3 = 0;
                     if (R1.Q == 0) {
                         R1.S();
                     }
-                    mp.u1(z3Var.m2).R1().U();
-                    hi.b1 b1Var = mp.u1(z3Var.m2).R1().w;
+                    np.u1(z3Var.m2).R1().U();
+                    hi.b1 b1Var = np.u1(z3Var.m2).R1().w;
                     if (!b1Var.c && !b1Var.d) {
                         b1Var.d = true;
                         hi.x0 x0Var = new hi.x0(b1Var, i10);
-                        tr a02 = tr.a0(b1Var.a);
+                        ur a02 = ur.a0(b1Var.a);
                         a02.a.c(new di.p6(a02, z12, x0Var, i7));
                     }
                 } else {
                     j3 = 0;
                 }
                 if (!z3Var.m1) {
-                    p6 R12 = mp.u1(z3Var.m2).R1();
+                    p6 R12 = np.u1(z3Var.m2).R1();
                     TL_stories.StoryItem storyItem = x3Var.a;
                     int i11 = R12.a;
-                    if (storyItem == null || storyItem.dialogId == j10.i(i11).e() || ((storyItem.dialogId <= j3 || (c22 = mp.u1(i11).c2(Long.valueOf(storyItem.dialogId))) == null || !c22.bot || !c22.bot_can_edit) && (storyItem.dialogId >= j3 || (O0 = mp.u1(i11).O0(Long.valueOf(-storyItem.dialogId))) == null || (!O0.creator && ((!(z11 = storyItem.out) || (tL_chatAdminRights2 = O0.admin_rights) == null || (!tL_chatAdminRights2.post_stories && !tL_chatAdminRights2.edit_stories)) && (z11 || (tL_chatAdminRights = O0.admin_rights) == null || !tL_chatAdminRights.edit_stories)))))) {
+                    if (storyItem == null || storyItem.dialogId == k10.i(i11).e() || ((storyItem.dialogId <= j3 || (c22 = np.u1(i11).c2(Long.valueOf(storyItem.dialogId))) == null || !c22.bot || !c22.bot_can_edit) && (storyItem.dialogId >= j3 || (O0 = np.u1(i11).O0(Long.valueOf(-storyItem.dialogId))) == null || (!O0.creator && ((!(z11 = storyItem.out) || (tL_chatAdminRights2 = O0.admin_rights) == null || (!tL_chatAdminRights2.post_stories && !tL_chatAdminRights2.edit_stories)) && (z11 || (tL_chatAdminRights = O0.admin_rights) == null || !tL_chatAdminRights.edit_stories)))))) {
                         z10 = false;
                         r3 r3Var = new r3(z3Var, z3Var.getContext(), h6Var, h6Var, f9Var, x3Var.e, !z3Var.m1 || ((z3Var.n1 || z3Var.G0()) && z10), z10, context, w3Var, zArr);
                         z3Var.d1 = r3Var;
@@ -162,7 +161,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                     int i12 = -z3Var2.b1;
                     z3Var2.b1 = i12;
                     org.telegram.messenger.g0.E3(i12, view, null);
-                    org.telegram.messenger.f3.o(null, 2131744432, new lc(z3Var2.M0, h6Var2), null);
+                    org.telegram.messenger.f3.o(null, 2131744430, new lc(z3Var2.M0, h6Var2), null);
                     break;
                 } else {
                     Activity W = org.telegram.messenger.g0.W(context2);
@@ -222,13 +221,13 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
             case 4:
                 hi.e eVar = (hi.e) this.b;
                 boolean[] zArr2 = (boolean[]) this.c;
-                x10 x10Var = (x10) this.d;
+                y10 y10Var = (y10) this.d;
                 String[] strArr = (String[]) this.e;
                 org.telegram.ui.ActionBar.w2 w2Var2 = (org.telegram.ui.ActionBar.w2) this.f;
                 if (eVar.e0) {
                     if (!zArr2[0]) {
                         zArr2[0] = true;
-                        x10Var.a(strArr[0]);
+                        y10Var.a(strArr[0]);
                     }
                     w2Var2.dismiss();
                     break;
@@ -260,13 +259,13 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.t6.x(actionBarPopupWindow$ActionBarPopupWindowLayout, mutate, org.telegram.ui.ActionBar.m6.G8, bnVar.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(mutate);
                 org.telegram.ui.ActionBar.y0 y0Var = new org.telegram.ui.ActionBar.y0(bnVar.getParentActivity(), true, true);
-                y0Var.j(gd.N0(2131743713, null), R.drawable.msg_translate, null);
+                y0Var.j(hd.N0(2131743711, null), R.drawable.msg_translate, null);
                 y0Var.setOnClickListener(new d0(bnVar, str, str2, charSequence, r12, 8));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.addView(y0Var);
                 org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                 Runnable[] runnableArr = {new hq0(g1Var2, 29)};
                 g1Var2.e = true;
-                g1Var2.c = ks.x3;
+                g1Var2.c = ls.x3;
                 g1Var2.setOutsideTouchable(true);
                 g1Var2.setClippingEnabled(true);
                 g1Var2.setAnimationStyle(R.style.PopupContextAnimation);
@@ -418,31 +417,31 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
             case 12:
                 ck ckVar = (ck) this.b;
                 String str5 = (String) this.c;
-                z00 z00Var = (z00) this.d;
+                a10 a10Var = (a10) this.d;
                 String str6 = (String) this.e;
                 org.telegram.ui.ActionBar.g1 g1Var4 = (org.telegram.ui.ActionBar.g1) this.f;
                 if (str5 != null) {
                     String lowerCase = str5.toLowerCase();
-                    cd cdVar = gd.E0().B;
+                    dd ddVar = hd.E0().B;
                     HashSet d02 = sy0.d0();
                     d02.add(lowerCase);
-                    if (d02.size() == 1 && d02.contains(cdVar.f)) {
+                    if (d02.size() == 1 && d02.contains(ddVar.f)) {
                         sy0.f0(null, Boolean.FALSE);
                     } else {
                         sy0.f0(d02, Boolean.FALSE);
                     }
-                    z00.P = null;
+                    a10.P = null;
                 }
-                z00Var.g();
-                z00Var.J(ckVar.b, true, false);
-                SpannableStringBuilder W22 = org.telegram.messenger.g0.W2(ckVar.r[0] ? gd.a0(null, null, 2131754353, str6) : gd.a0(null, null, 2131754352, str6));
+                a10Var.g();
+                a10Var.J(ckVar.b, true, false);
+                SpannableStringBuilder W22 = org.telegram.messenger.g0.W2(ckVar.r[0] ? hd.a0(null, null, 2131754353, str6) : hd.a0(null, null, 2131754352, str6));
                 String[] strArr2 = b31.S1;
                 if (W22.length() <= 0) {
                     W22 = null;
                 } else {
                     W22.replace(0, 1, (CharSequence) W22.toString().substring(0, 1).toUpperCase());
                 }
-                lc.b0(ckVar.c).K(R.raw.msg_translate, W22, gd.N0(2131745299, null), new cp0(ckVar, 25)).j();
+                lc.b0(ckVar.c).K(R.raw.msg_translate, W22, hd.N0(2131745299, null), new cp0(ckVar, 25)).j();
                 g1Var4.d(true);
                 break;
             case 13:
@@ -463,7 +462,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                             actionBarPopupWindow$ActionBarPopupWindowLayout2.getSwipeBack().e(1);
                             break;
                         } else {
-                            ls lsVar = nsVar.l;
+                            org.telegram.ui.ls lsVar = nsVar.l;
                             if (lsVar != null) {
                                 lsVar.u(tL_messages_stickerSet2.set, TextUtils.join("", nsVar.o));
                             }
@@ -515,7 +514,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                     Object obj = arrayList4.get(i14);
                     i14++;
                     int intValue3 = ((Integer) obj).intValue();
-                    if (j10.i(intValue3).f() != null) {
+                    if (k10.i(intValue3).f() != null) {
                         G.e(intValue3, iArr[0] == intValue3, new ii(di0Var, intValue3, 26));
                     }
                 }

@@ -5,10 +5,10 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ji;
@@ -23,7 +23,7 @@ import org.telegram.ui.eg0;
 import org.telegram.ui.fn0;
 import org.telegram.ui.k90;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -48,14 +48,14 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
             case 0:
                 z3 z3Var = (z3) obj;
                 boolean z11 = !z10;
-                mp u12 = mp.u1(z3Var.m2);
+                np u12 = np.u1(z3Var.m2);
                 if (u12.s6 != z11) {
                     SharedPreferences.Editor edit = u12.h7.edit();
                     u12.s6 = z11;
                     edit.putBoolean("storyQualityFull", z11).apply();
-                    u12.getNotificationCenter().k(ks.o3, new Object[0]);
+                    u12.getNotificationCenter().k(ls.o3, new Object[0]);
                 }
-                new lc(z3Var.M0, z3Var.l0).I(R.raw.chats_infotip, gd.N0(!z10 ? 2131744266 : 2131744269, null), gd.N0(!z10 ? 2131744267 : 2131744270, null)).j();
+                new lc(z3Var.M0, z3Var.l0).I(R.raw.chats_infotip, hd.N0(!z10 ? 2131744264 : 2131744267, null), hd.N0(!z10 ? 2131744265 : 2131744268, null)).j();
                 r3 r3Var = z3Var.d1;
                 if (r3Var != null) {
                     r3Var.a();
@@ -107,11 +107,11 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
                     org.telegram.ui.Cells.x0 x0Var = ((org.telegram.ui.Cells.x0[]) d61Var.b)[i12];
                     ((org.telegram.ui.Cells.w0) x0Var.d).a(x0Var == view, true);
                 }
-                bz.p1 = z10;
-                SharedPreferences.Editor edit2 = mp.g1().edit();
-                edit2.putBoolean("useThreeLinesLayout", bz.p1);
+                cz.p1 = z10;
+                SharedPreferences.Editor edit2 = np.g1().edit();
+                edit2.putBoolean("useThreeLinesLayout", cz.p1);
                 edit2.apply();
-                ks.e().k(3, Boolean.TRUE);
+                ls.e().k(3, Boolean.TRUE);
                 break;
             case 4:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;

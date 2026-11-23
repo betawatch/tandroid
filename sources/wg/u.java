@@ -1,13 +1,13 @@
 package wg;
 
 import android.view.View;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.v3;
 import org.telegram.ui.Components.a5;
 import org.telegram.ui.Components.gu0;
 import org.telegram.ui.Components.o6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements a5, gu0, yg.f, yg.k {
     public final /* synthetic */ a0 a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class u implements a5, gu0, yg.f, yg.k {
             View childAt = bVar.f.getChildAt(i12);
             if (childAt instanceof yg.x) {
                 o6 o6Var = ((yg.x) childAt).r;
-                String G = g12 <= 0 ? "" : gd.G(g12, "BoostingBoostsCountTitle", Integer.valueOf(g12));
+                String G = g12 <= 0 ? "" : hd.G(g12, "BoostingBoostsCountTitle", Integer.valueOf(g12));
                 o6Var.a();
                 o6Var.c(G, true, true);
             }
@@ -54,9 +54,9 @@ public final /* synthetic */ class u implements a5, gu0, yg.f, yg.k {
                 int F = bVar.F(gVar.getChat());
                 boolean V = v3.V(gVar.x);
                 if (gVar.y) {
-                    gVar.setSubtitle(F >= 1 ? gd.G(F, V ? "Subscribers" : "Members", new Object[0]) : gd.N0(V ? 2131751378 : 2131754876, null));
+                    gVar.setSubtitle(F >= 1 ? hd.G(F, V ? "Subscribers" : "Members", new Object[0]) : hd.N0(V ? 2131751378 : 2131754876, null));
                 } else {
-                    gVar.setSubtitle(gd.G(g12, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
+                    gVar.setSubtitle(hd.G(g12, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
                 }
             }
         }

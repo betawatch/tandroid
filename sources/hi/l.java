@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.tt0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class l implements Runnable {
             case 4:
                 y4 y4Var = (y4) this.b;
                 gc.e();
-                ug.y0 y0Var = new ug.y0((org.telegram.ui.ActionBar.g2) new bi.c9(y4Var), 14, false);
+                ug.y0 y0Var = new ug.y0((org.telegram.ui.ActionBar.g2) new bi.b9(y4Var), 14, false);
                 y0Var.setOnDismissListener(new f1(i14));
                 y0Var.show();
                 return;
@@ -90,7 +90,7 @@ public final /* synthetic */ class l implements Runnable {
                 y1 y1Var = x1Var.O;
                 i2 i2Var = y1Var.s;
                 int i15 = i2.C1;
-                ri d02 = ri.d0(i2Var.a);
+                si d02 = si.d0(i2Var.a);
                 String str = x1Var.I;
                 if (!"premium".equalsIgnoreCase(str)) {
                     if (y1Var.a == 1 && org.telegram.messenger.j6.d(x1Var.I)) {
@@ -103,7 +103,7 @@ public final /* synthetic */ class l implements Runnable {
                     String[] G0 = org.telegram.messenger.g0.G0();
                     String[] strArr = x1Var.K;
                     if (strArr == null || !Arrays.equals(G0, strArr)) {
-                        ri.d0(i2Var.a).O(G0, false);
+                        si.d0(i2Var.a).O(G0, false);
                     }
                     x1Var.K = G0;
                     d02.X(G0, x1Var.I, false, new a3.h(x1Var, str, d02, 10), false, false, false, true, 50);
@@ -191,7 +191,7 @@ public final /* synthetic */ class l implements Runnable {
                 }
                 return;
             case 16:
-                ((m8) ((ah.n) this.b).n).fullScroll(ks.O1);
+                ((m8) ((ah.n) this.b).n).fullScroll(ls.O1);
                 return;
             case 17:
                 ra raVar = (ra) this.b;
@@ -212,12 +212,12 @@ public final /* synthetic */ class l implements Runnable {
                 if (saVar2.R1 || saVar2.Q1 || saVar2.C0 == null || saVar2.g0 != 0 || saVar2.n1 == null) {
                     return;
                 }
-                String N0 = gd.N0(v9Var.isFrontface() ? 2131744469 : 2131744468, null);
+                String N0 = hd.N0(v9Var.isFrontface() ? 2131744467 : 2131744466, null);
                 l3 l3Var = saVar2.n1;
                 l3Var.h = l3.a(N0, l3Var.getTextPaint());
                 saVar2.n1.v(N0);
                 saVar2.n1.x();
-                mp.g1().edit().putInt("storysvddualhint", mp.g1().getInt("storysvddualhint", 0) + 1).apply();
+                np.g1().edit().putInt("storysvddualhint", np.g1().getInt("storysvddualhint", 0) + 1).apply();
                 return;
             case 21:
                 ((org.telegram.ui.Components.q9) this.b).setVisibility(8);
@@ -301,7 +301,7 @@ public final /* synthetic */ class l implements Runnable {
                                                 int i24 = i23 - i19;
                                                 if (i24 >= sArr.length || i23 >= vaVar.b) {
                                                     short[] sArr2 = new short[sArr.length];
-                                                    org.telegram.messenger.g0.g3(new ai.c1(vaVar, sArr, i24, 18));
+                                                    org.telegram.messenger.g0.g3(new ai.j1(vaVar, sArr, i24, 17));
                                                     sArr = sArr2;
                                                     i19 = i23;
                                                 }

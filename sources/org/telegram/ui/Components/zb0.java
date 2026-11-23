@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zb0 extends Dialog implements org.telegram.ui.ActionBar.o4 {
     public final ActionBarLayout a;
@@ -28,7 +28,7 @@ public final class zb0 extends Dialog implements org.telegram.ui.ActionBar.o4 {
         ActionBarLayout actionBarLayout = new ActionBarLayout(context, false);
         this.a = actionBarLayout;
         actionBarLayout.setFragmentStack(new ArrayList());
-        org.telegram.ui.ActionBar.p4 p4Var = new org.telegram.ui.ActionBar.p4(new bi.c9(this, 9));
+        org.telegram.ui.ActionBar.p4 p4Var = new org.telegram.ui.ActionBar.p4(new bi.b9(this, 9));
         p4Var.c = true;
         actionBarLayout.U(p4Var);
         actionBarLayout.setDelegate(this);

@@ -1,88 +1,127 @@
 package org.telegram.messenger;
 
+import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ri b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ si b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
 
-    public /* synthetic */ mg(ri riVar, int i7, int i10) {
-        this.a = i10;
-        this.b = riVar;
-        this.c = i7;
+    public /* synthetic */ mg(si siVar, long j3, long j10, int i7, int i10, int i11) {
+        this.a = i11;
+        this.b = siVar;
+        this.c = j3;
+        this.d = j10;
+        this.e = i7;
+        this.f = i10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0082  */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
+        SQLiteCursor queryFinalized;
         boolean z10;
-        NativeByteBuffer byteBufferValue;
+        int i7;
+        int i10;
+        long j3;
+        int i11;
+        int i12;
+        int i13;
         switch (this.a) {
             case 0:
-                ri riVar = this.b;
-                boolean[] zArr = riVar.W;
-                int i7 = this.c;
-                zArr[i7] = false;
-                riVar.X[i7] = true;
-                Runnable[] runnableArr = riVar.V;
-                Runnable runnable = runnableArr[i7];
-                if (runnable != null) {
-                    runnable.run();
-                    runnableArr[i7] = null;
-                    break;
+                int i14 = this.f;
+                long j10 = this.c;
+                si siVar = this.b;
+                long j11 = this.d;
+                int i15 = this.e;
+                if (j10 != 0) {
+                    try {
+                        SQLiteDatabase sQLiteDatabase = siVar.getMessagesStorage().b;
+                        Locale locale = Locale.US;
+                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT count, old FROM media_counts_topics WHERE uid = " + j11 + " AND topic_id = " + j10 + " AND type = " + i15 + " LIMIT 1", new Object[0]);
+                    } catch (Exception e10) {
+                        e = e10;
+                        z10 = true;
+                        a8.g(e, z10);
+                        return;
+                    }
+                } else {
+                    try {
+                        SQLiteDatabase sQLiteDatabase2 = siVar.getMessagesStorage().b;
+                        Locale locale2 = Locale.US;
+                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT count, old FROM media_counts_v2 WHERE uid = " + j11 + " AND type = " + i15 + " LIMIT 1", new Object[0]);
+                    } catch (Exception e11) {
+                        e = e11;
+                        z10 = true;
+                        a8.g(e, z10);
+                        return;
+                    }
                 }
+                if (queryFinalized.next()) {
+                    i7 = queryFinalized.intValue(0);
+                    i10 = queryFinalized.intValue(1);
+                } else {
+                    i7 = -1;
+                    i10 = 0;
+                }
+                queryFinalized.dispose();
+                if (i7 == -1 && n5.C(j11)) {
+                    SQLiteDatabase sQLiteDatabase3 = siVar.getMessagesStorage().b;
+                    Locale locale3 = Locale.US;
+                    SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT COUNT(mid) FROM media_v4 WHERE uid = " + j11 + " AND type = " + i15 + " LIMIT 1", new Object[0]);
+                    if (queryFinalized2.next()) {
+                        i7 = queryFinalized2.intValue(0);
+                    }
+                    int i16 = i7;
+                    queryFinalized2.dispose();
+                    if (i16 != -1) {
+                        siVar.M1(j11, j10, i15, i16);
+                        j3 = j10;
+                        i11 = i15;
+                    } else {
+                        j3 = j10;
+                        i11 = i15;
+                    }
+                    i12 = i16;
+                } else {
+                    j3 = j10;
+                    i11 = i15;
+                    i12 = i7;
+                }
+                g0.g3(new mf(siVar, j11, true, i12, i11, i10, j3, i14));
                 break;
             default:
-                ri riVar2 = this.b;
-                int i10 = this.c;
+                long j12 = this.d;
+                int i17 = this.e;
+                int i18 = this.f;
+                long j13 = this.c;
+                si siVar2 = this.b;
                 try {
-                    SQLiteCursor queryFinalized = riVar2.getMessagesStorage().b.queryFinalized("SELECT data FROM emoji_statuses WHERE type = " + i10 + " LIMIT 1", new Object[0]);
-                    if (!queryFinalized.next() || queryFinalized.getColumnCount() <= 0 || queryFinalized.isNull(0) || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
-                        z10 = false;
+                    SQLitePreparedStatement executeFast = j13 != 0 ? siVar2.getMessagesStorage().b.executeFast("REPLACE INTO media_counts_topics VALUES(?, ?, ?, ?, ?)") : siVar2.getMessagesStorage().b.executeFast("REPLACE INTO media_counts_v2 VALUES(?, ?, ?, ?)");
+                    executeFast.requery();
+                    executeFast.bindLong(1, j12);
+                    if (j13 != 0) {
+                        executeFast.bindLong(2, j13);
+                        i13 = 3;
                     } else {
-                        TL_account.EmojiStatuses TLdeserialize = TL_account.EmojiStatuses.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                        if (TLdeserialize instanceof TL_account.TL_emojiStatuses) {
-                            riVar2.E0[i10] = TLdeserialize.hash;
-                            riVar2.F0[i10] = TLdeserialize.statuses;
-                            z10 = true;
-                        } else {
-                            z10 = false;
-                        }
-                        try {
-                            byteBufferValue.reuse();
-                        } catch (Exception e10) {
-                            e = e10;
-                            a8.g(e, true);
-                            riVar2.H0[i10] = true;
-                            riVar2.I0[i10] = false;
-                            if (!z10) {
-                            }
-                        }
+                        i13 = 2;
                     }
-                    queryFinalized.dispose();
-                } catch (Exception e11) {
-                    e = e11;
-                    z10 = false;
-                }
-                riVar2.H0[i10] = true;
-                riVar2.I0[i10] = false;
-                if (!z10) {
-                    g0.g3(new eg(riVar2, 1));
+                    executeFast.bindInteger(i13, i17);
+                    executeFast.bindInteger(i13 + 1, i18);
+                    executeFast.bindInteger(i13 + 2, 0);
+                    executeFast.step();
+                    executeFast.dispose();
                     break;
-                } else {
-                    riVar2.N(i10, false);
-                    break;
+                } catch (Exception e12) {
+                    a8.g(e12, true);
                 }
-                break;
         }
     }
 }

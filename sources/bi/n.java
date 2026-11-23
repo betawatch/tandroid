@@ -4,17 +4,17 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements q10 {
+public final /* synthetic */ class n implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -25,7 +25,7 @@ public final /* synthetic */ class n implements q10 {
         this.b = j3;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
         long j3 = this.b;
@@ -42,14 +42,14 @@ public final /* synthetic */ class n implements q10 {
                     boolean z10 = j3 > 0;
                     cc ccVar = new cc(yVar.getContext(), yVar.J0);
                     ccVar.a.setImageResource(R.drawable.filled_gift_sell_24);
-                    String N0 = gd.N0(z10 ? 2131750290 : 2131750289, null);
+                    String N0 = hd.N0(z10 ? 2131750290 : 2131750289, null);
                     TextView textView = ccVar.b;
                     textView.setText(N0);
                     textView.setSingleLine(true);
                     textView.setTextSize(1, 15.0f);
                     textView.setMaxLines(1);
                     textView.setTypeface(org.telegram.messenger.g0.o());
-                    String a02 = gd.a0(null, null, 2131750325, Integer.valueOf(yVar.h2.d.gifts_per_round));
+                    String a02 = hd.a0(null, null, 2131750325, Integer.valueOf(yVar.h2.d.gifts_per_round));
                     TextView textView2 = ccVar.c;
                     textView2.setText(a02);
                     textView2.setSingleLine(false);
@@ -60,7 +60,7 @@ public final /* synthetic */ class n implements q10 {
                 }
                 if (str != null) {
                     yVar.i1();
-                    new lc(frameLayout, yVar.J0).Q(R.raw.error, 36, gd.a0(null, null, 2131743635, str)).j();
+                    new lc(frameLayout, yVar.J0).Q(R.raw.error, 36, hd.a0(null, null, 2131743633, str)).j();
                     break;
                 }
                 break;

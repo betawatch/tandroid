@@ -5,9 +5,9 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l61 implements org.telegram.messenger.jc, org.telegram.ui.Components.rj0, org.telegram.ui.Components.l71, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class l61 implements org.telegram.messenger.kc, org.telegram.ui.Components.rj0, org.telegram.ui.Components.l71, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ x71 b;
 
@@ -152,7 +152,7 @@ public final /* synthetic */ class l61 implements org.telegram.messenger.jc, org
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         x71 x71Var = this.b;
         if (x71Var.D1 instanceof rc1) {
@@ -173,11 +173,11 @@ public final /* synthetic */ class l61 implements org.telegram.messenger.jc, org
         x71Var.a1();
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 

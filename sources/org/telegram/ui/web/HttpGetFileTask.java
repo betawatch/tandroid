@@ -15,23 +15,23 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
-    private x10 doneCallback;
+    private y10 doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private x10 progressCallback;
+    private y10 progressCallback;
 
-    public HttpGetFileTask(x10 x10Var, x10 x10Var2) {
-        this.doneCallback = x10Var;
-        this.progressCallback = x10Var2;
+    public HttpGetFileTask(y10 y10Var, y10 y10Var2) {
+        this.doneCallback = y10Var;
+        this.progressCallback = y10Var2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -174,7 +174,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         if (str2 == null) {
                             str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                         }
-                        this.file = c7.w(j10.t0, str2);
+                        this.file = c7.w(k10.t0, str2);
                     }
                     try {
                         bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
@@ -315,12 +315,12 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
 
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        x10 x10Var = this.doneCallback;
-        if (x10Var != null) {
+        y10 y10Var = this.doneCallback;
+        if (y10Var != null) {
             if (this.exception == null) {
-                x10Var.a(file);
+                y10Var.a(file);
             } else {
-                x10Var.a(null);
+                y10Var.a(null);
             }
         }
     }

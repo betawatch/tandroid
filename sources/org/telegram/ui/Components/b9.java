@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class b9 extends Drawable {
     public static final int[][] L = {new int[]{-636796, -1090751, -612560, -35006}, new int[]{-693938, -690388, -11246, -22717}, new int[]{-8160001, -5217281, -36183, -1938945}, new int[]{-16133536, -10560448, -4070106, -8331477}, new int[]{-10569989, -14692629, -12191817, -14683687}, new int[]{-11694593, -13910017, -14622003, -15801871}, new int[]{-439392, -304000, -19910, -98718}};
@@ -324,7 +324,7 @@ public class b9 extends Drawable {
                                 if (i23 != 255) {
                                     drawable2.setAlpha(i23);
                                     drawable2.draw(canvas);
-                                    drawable2.setAlpha(org.telegram.messenger.ks.e4);
+                                    drawable2.setAlpha(org.telegram.messenger.ls.e4);
                                 } else {
                                     drawable2.draw(canvas);
                                 }
@@ -622,8 +622,8 @@ public class b9 extends Drawable {
 
     public final void r(TLRPC.User user) {
         if (user != null) {
-            k(user.id, user.first_name, user.last_name, user.color != null ? Integer.valueOf(org.telegram.messenger.o10.f(user)) : null);
-            this.m = org.telegram.messenger.o10.y(user);
+            k(user.id, user.first_name, user.last_name, user.color != null ? Integer.valueOf(org.telegram.messenger.p10.f(user)) : null);
+            this.m = org.telegram.messenger.p10.y(user);
         }
     }
 
@@ -650,9 +650,9 @@ public class b9 extends Drawable {
                 return;
             }
         }
-        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0);
-        org.telegram.messenger.cp cpVar = u12.t4;
-        if (cpVar == null || cpVar.d(i7) == null) {
+        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0);
+        org.telegram.messenger.dp dpVar = u12.t4;
+        if (dpVar == null || dpVar.d(i7) == null) {
             if (this.f != null) {
                 int[] iArr3 = iArr[e(i7)];
                 this.f.d(iArr3[0], iArr3[1], iArr3[2], iArr3[3]);
@@ -692,7 +692,7 @@ public class b9 extends Drawable {
         this.l = false;
         if (user != null) {
             k(user.id, user.first_name, user.last_name, null);
-            this.m = org.telegram.messenger.o10.y(user);
+            this.m = org.telegram.messenger.p10.y(user);
         }
     }
 
@@ -708,7 +708,7 @@ public class b9 extends Drawable {
         this.r = -1;
         this.w = true;
         this.x = false;
-        this.y = org.telegram.messenger.ks.e4;
+        this.y = org.telegram.messenger.ls.e4;
         this.z = h6Var;
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;

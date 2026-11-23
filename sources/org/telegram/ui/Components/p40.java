@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.app.Activity;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public interface p40 {
     long a();
@@ -16,7 +16,7 @@ public interface p40 {
 
     Activity getParentActivity();
 
-    void u(org.telegram.messenger.ef efVar, org.telegram.messenger.e20 e20Var, boolean z10, int i7, int i10, boolean z11, long j3);
+    void u(org.telegram.messenger.ff ffVar, org.telegram.messenger.f20 f20Var, boolean z10, int i7, int i10, boolean z11, long j3);
 
     boolean z();
 }

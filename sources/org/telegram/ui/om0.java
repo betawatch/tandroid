@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class om0 extends org.telegram.ui.Components.du0 {
     public int g0;
@@ -60,7 +60,7 @@ public final class om0 extends org.telegram.ui.Components.du0 {
                 if (i22 == -1) {
                     i22 = 51;
                 }
-                int i23 = i22 & org.telegram.messenger.ks.x1;
+                int i23 = i22 & org.telegram.messenger.ls.x1;
                 int i24 = i22 & 7;
                 if (i24 == 1) {
                     i13 = ((i20 - measuredWidth) / 2) + layoutParams.leftMargin;

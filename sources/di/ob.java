@@ -5,17 +5,17 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.gk0;
 import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.tt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class ob extends LinearLayout implements fs {
+public final class ob extends LinearLayout implements gs {
     public final int a;
     public final j71 b;
     public final nb c;
@@ -101,11 +101,11 @@ public final class ob extends LinearLayout implements fs {
         tt0Var.p();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ks.B3;
+        int i11 = ls.B3;
         long j3 = this.f;
-        if ((i7 == i11 && j3 == 0) || (i7 == ks.F3 && j3 != 0 && ((Long) objArr[0]).longValue() == j3)) {
+        if ((i7 == i11 && j3 == 0) || (i7 == ls.F3 && j3 != 0 && ((Long) objArr[0]).longValue() == j3)) {
             a(true);
         }
     }
@@ -129,13 +129,13 @@ public final class ob extends LinearLayout implements fs {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         a(false);
-        ks.f(this.a).c(this, this.f == 0 ? ks.B3 : ks.F3);
+        ls.f(this.a).c(this, this.f == 0 ? ls.B3 : ls.F3);
         super.onAttachedToWindow();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        ks.f(this.a).n(this, this.f == 0 ? ks.B3 : ks.F3);
+        ls.f(this.a).n(this, this.f == 0 ? ls.B3 : ls.F3);
         super.onDetachedFromWindow();
     }
 

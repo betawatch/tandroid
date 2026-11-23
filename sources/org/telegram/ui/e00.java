@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e00 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -140,8 +140,8 @@ public final /* synthetic */ class e00 implements RequestDelegate {
                         break;
                     }
                 } else {
-                    org.telegram.messenger.x10 x10Var = ml0Var2.d1;
-                    if (x10Var == null) {
+                    org.telegram.messenger.y10 y10Var = ml0Var2.d1;
+                    if (y10Var == null) {
                         TLRPC.Updates updates = ((TLRPC.TL_payments_paymentResult) tLObject).updates;
                         TLRPC.Message[] messageArr = new TLRPC.Message[1];
                         int size = updates.updates.size();
@@ -162,7 +162,7 @@ public final /* synthetic */ class e00 implements RequestDelegate {
                         org.telegram.messenger.g0.g3(new fe0(i12, ml0Var2, messageArr));
                         break;
                     } else {
-                        x10Var.a((TLRPC.TL_payments_paymentResult) tLObject);
+                        y10Var.a((TLRPC.TL_payments_paymentResult) tLObject);
                         break;
                     }
                 }
@@ -181,7 +181,7 @@ public final /* synthetic */ class e00 implements RequestDelegate {
                 break;
             case 23:
                 RectF rectF = ProfileActivity.Z6;
-                org.telegram.messenger.g0.g3(new kg0((org.telegram.messenger.fs) obj2, (Object) tL_error, (Object) tLObject, (String) obj, 13));
+                org.telegram.messenger.g0.g3(new kg0((org.telegram.messenger.gs) obj2, (Object) tL_error, (Object) tLObject, (String) obj, 13));
                 break;
             case 24:
                 RectF rectF2 = ProfileActivity.Z6;

@@ -8,15 +8,15 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ly;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.qd;
-import org.telegram.messenger.qp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.my;
+import org.telegram.messenger.np;
+import org.telegram.messenger.rd;
+import org.telegram.messenger.rp;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.jt0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class c9 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void a() {
-        mp mpVar;
+        np npVar;
         SQLiteCursor sQLiteCursor;
         SQLitePreparedStatement sQLitePreparedStatement;
         SQLitePreparedStatement sQLitePreparedStatement2;
@@ -74,10 +74,10 @@ public final /* synthetic */ class c9 implements Runnable {
         char c10;
         NativeByteBuffer byteBufferValue;
         int intValue2;
-        mp mpVar2 = (mp) this.d;
+        np npVar2 = (np) this.d;
         long j3 = this.b;
         int i12 = this.c;
-        tr messagesStorage = mpVar2.getMessagesStorage();
+        ur messagesStorage = npVar2.getMessagesStorage();
         messagesStorage.getClass();
         String str2 = " AND mid <= ";
         try {
@@ -128,13 +128,13 @@ public final /* synthetic */ class c9 implements Runnable {
                                                         arrayList3 = arrayList9;
                                                         z11 = i13;
                                                         arrayList4 = arrayList2;
-                                                        mpVar = mpVar2;
+                                                        npVar = npVar2;
                                                         try {
                                                             messagesStorage.o(e, z11);
                                                             z12 = z11;
                                                             sQLiteCursor2.dispose();
                                                             messagesStorage.D(arrayList3, z12);
-                                                            org.telegram.messenger.g0.g3(new qp(messagesStorage, arrayList8, 9));
+                                                            org.telegram.messenger.g0.g3(new rp(messagesStorage, arrayList8, 9));
                                                             messagesStorage.getFileLoader().getClass();
                                                             org.telegram.messenger.w7.p(0, arrayList6);
                                                             while (i7 < hVar.m()) {
@@ -180,7 +180,7 @@ public final /* synthetic */ class c9 implements Runnable {
                                                                 if (sQLitePreparedStatement != null) {
                                                                 }
                                                                 arrayList = null;
-                                                                mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                                                                npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                                                             } catch (Throwable th2) {
                                                                 th = th2;
                                                                 sQLitePreparedStatement2 = sQLitePreparedStatement;
@@ -194,7 +194,7 @@ public final /* synthetic */ class c9 implements Runnable {
                                                                 throw th;
                                                             }
                                                         }
-                                                        mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                                                        npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                                                     }
                                                 }
                                                 if (intValue2 < 2) {
@@ -215,20 +215,20 @@ public final /* synthetic */ class c9 implements Runnable {
                                                         arrayList4 = arrayList2;
                                                         hVar = hVar2;
                                                         arrayList3 = arrayList9;
-                                                        mpVar = mpVar2;
+                                                        npVar = npVar2;
                                                     } catch (Exception e14) {
                                                         e = e14;
                                                         arrayList6 = arrayList10;
                                                         arrayList4 = arrayList2;
                                                         hVar = hVar2;
                                                         arrayList3 = arrayList9;
-                                                        mpVar = mpVar2;
+                                                        npVar = npVar2;
                                                         z11 = 1;
                                                         messagesStorage.o(e, z11);
                                                         z12 = z11;
                                                         sQLiteCursor2.dispose();
                                                         messagesStorage.D(arrayList3, z12);
-                                                        org.telegram.messenger.g0.g3(new qp(messagesStorage, arrayList8, 9));
+                                                        org.telegram.messenger.g0.g3(new rp(messagesStorage, arrayList8, 9));
                                                         messagesStorage.getFileLoader().getClass();
                                                         org.telegram.messenger.w7.p(0, arrayList6);
                                                         while (i7 < hVar.m()) {
@@ -263,7 +263,7 @@ public final /* synthetic */ class c9 implements Runnable {
                                                         messagesStorage.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j10).stepThis().dispose();
                                                         messagesStorage.l2(arrayList4);
                                                         arrayList = arrayList4;
-                                                        mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                                                        npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                                                     }
                                                     try {
                                                         messagesStorage.b(TLdeserialize, arrayList6, arrayList3, arrayList8, false);
@@ -274,7 +274,7 @@ public final /* synthetic */ class c9 implements Runnable {
                                                         z12 = z11;
                                                         sQLiteCursor2.dispose();
                                                         messagesStorage.D(arrayList3, z12);
-                                                        org.telegram.messenger.g0.g3(new qp(messagesStorage, arrayList8, 9));
+                                                        org.telegram.messenger.g0.g3(new rp(messagesStorage, arrayList8, 9));
                                                         messagesStorage.getFileLoader().getClass();
                                                         org.telegram.messenger.w7.p(0, arrayList6);
                                                         while (i7 < hVar.m()) {
@@ -309,16 +309,16 @@ public final /* synthetic */ class c9 implements Runnable {
                                                         messagesStorage.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j10).stepThis().dispose();
                                                         messagesStorage.l2(arrayList4);
                                                         arrayList = arrayList4;
-                                                        mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                                                        npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                                                     }
                                                 } else {
                                                     hVar = hVar2;
                                                     arrayList3 = arrayList9;
                                                     arrayList4 = arrayList2;
-                                                    mpVar = mpVar2;
+                                                    npVar = npVar2;
                                                 }
                                                 arrayList7 = arrayList4;
-                                                mpVar2 = mpVar;
+                                                npVar2 = npVar;
                                                 i13 = 1;
                                                 arrayList9 = arrayList3;
                                                 hVar2 = hVar;
@@ -330,13 +330,13 @@ public final /* synthetic */ class c9 implements Runnable {
                                             hVar = hVar2;
                                             arrayList3 = arrayList9;
                                             arrayList4 = arrayList2;
-                                            mpVar = mpVar2;
+                                            npVar = npVar2;
                                             z11 = i13;
                                             messagesStorage.o(e, z11);
                                             z12 = z11;
                                             sQLiteCursor2.dispose();
                                             messagesStorage.D(arrayList3, z12);
-                                            org.telegram.messenger.g0.g3(new qp(messagesStorage, arrayList8, 9));
+                                            org.telegram.messenger.g0.g3(new rp(messagesStorage, arrayList8, 9));
                                             messagesStorage.getFileLoader().getClass();
                                             org.telegram.messenger.w7.p(0, arrayList6);
                                             while (i7 < hVar.m()) {
@@ -371,14 +371,14 @@ public final /* synthetic */ class c9 implements Runnable {
                                             messagesStorage.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j10).stepThis().dispose();
                                             messagesStorage.l2(arrayList4);
                                             arrayList = arrayList4;
-                                            mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                                            npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                                         }
                                     }
                                     byteBufferValue = sQLiteCursor2.byteBufferValue(i13);
                                     if (byteBufferValue == null) {
                                     }
                                     arrayList7 = arrayList4;
-                                    mpVar2 = mpVar;
+                                    npVar2 = npVar;
                                     i13 = 1;
                                     arrayList9 = arrayList3;
                                     hVar2 = hVar;
@@ -388,7 +388,7 @@ public final /* synthetic */ class c9 implements Runnable {
                                     hVar = hVar2;
                                     arrayList3 = arrayList9;
                                     arrayList4 = arrayList2;
-                                    mpVar = mpVar2;
+                                    npVar = npVar2;
                                 }
                                 c10 = 2;
                             } catch (Exception e18) {
@@ -396,13 +396,13 @@ public final /* synthetic */ class c9 implements Runnable {
                                 hVar = hVar2;
                                 arrayList3 = arrayList9;
                                 arrayList4 = arrayList2;
-                                mpVar = mpVar2;
+                                npVar = npVar2;
                                 z11 = 1;
                                 messagesStorage.o(e, z11);
                                 z12 = z11;
                                 sQLiteCursor2.dispose();
                                 messagesStorage.D(arrayList3, z12);
-                                org.telegram.messenger.g0.g3(new qp(messagesStorage, arrayList8, 9));
+                                org.telegram.messenger.g0.g3(new rp(messagesStorage, arrayList8, 9));
                                 messagesStorage.getFileLoader().getClass();
                                 org.telegram.messenger.w7.p(0, arrayList6);
                                 while (i7 < hVar.m()) {
@@ -437,7 +437,7 @@ public final /* synthetic */ class c9 implements Runnable {
                                 messagesStorage.b.executeFast("UPDATE media_counts_topics SET old = 1 WHERE uid = " + j10).stepThis().dispose();
                                 messagesStorage.l2(arrayList4);
                                 arrayList = arrayList4;
-                                mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                                npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                             }
                         } catch (Exception e19) {
                             e = e19;
@@ -458,12 +458,12 @@ public final /* synthetic */ class c9 implements Runnable {
                 arrayList4 = arrayList2;
                 hVar = hVar2;
                 arrayList3 = arrayList9;
-                mpVar = mpVar2;
+                npVar = npVar2;
                 z12 = true;
                 sQLiteCursor2.dispose();
                 try {
                     messagesStorage.D(arrayList3, z12);
-                    org.telegram.messenger.g0.g3(new qp(messagesStorage, arrayList8, 9));
+                    org.telegram.messenger.g0.g3(new rp(messagesStorage, arrayList8, 9));
                     messagesStorage.getFileLoader().getClass();
                     org.telegram.messenger.w7.p(0, arrayList6);
                     for (i7 = 0; i7 < hVar.m(); i7++) {
@@ -498,7 +498,7 @@ public final /* synthetic */ class c9 implements Runnable {
                                 if (sQLitePreparedStatement != null) {
                                 }
                                 arrayList = null;
-                                mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                                npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                             } catch (Throwable th4) {
                                 th = th4;
                                 sQLitePreparedStatement2 = sQLitePreparedStatement;
@@ -520,7 +520,7 @@ public final /* synthetic */ class c9 implements Runnable {
                             if (sQLitePreparedStatement != null) {
                             }
                             arrayList = null;
-                            mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                            npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                         } catch (Throwable th5) {
                             th = th5;
                             sQLiteCursor = queryFinalized3;
@@ -567,7 +567,7 @@ public final /* synthetic */ class c9 implements Runnable {
                                 if (sQLitePreparedStatement != null) {
                                 }
                                 arrayList = null;
-                                mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                                npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                             } catch (Throwable th6) {
                                 th = th6;
                                 sQLitePreparedStatement2 = executeFast;
@@ -607,7 +607,7 @@ public final /* synthetic */ class c9 implements Runnable {
                         sQLitePreparedStatement.dispose();
                     }
                     arrayList = null;
-                    mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+                    npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
                 }
             } catch (Throwable th7) {
                 th = th7;
@@ -615,9 +615,9 @@ public final /* synthetic */ class c9 implements Runnable {
             }
         } catch (Exception e24) {
             e = e24;
-            mpVar = mpVar2;
+            npVar = npVar2;
         }
-        mpVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
+        npVar.getMessagesStorage().R1(j3, -j3, new ArrayList(), arrayList);
     }
 
     @Override // java.lang.Runnable
@@ -633,7 +633,7 @@ public final /* synthetic */ class c9 implements Runnable {
                 if (T != null) {
                     bn ua2 = bn.ua(l10.longValue());
                     T.presentFragment(ua2);
-                    TLRPC.Chat O0 = mp.u1(i10).O0(Long.valueOf(-l10.longValue()));
+                    TLRPC.Chat O0 = np.u1(i10).O0(Long.valueOf(-l10.longValue()));
                     if (O0 != null) {
                         org.telegram.messenger.g0.h3(new d9(ua2, this.b, O0, 0), 250L);
                         break;
@@ -649,13 +649,13 @@ public final /* synthetic */ class c9 implements Runnable {
                 if (y10 != null && i10 > y10.max_read_id) {
                     y10.max_read_id = i10;
                     Collections.sort(p6Var.g, p6Var.J);
-                    ks.f(p6Var.a).k(ks.y5, new Object[0]);
+                    ls.f(p6Var.a).k(ls.y5, new Object[0]);
                     break;
                 }
                 break;
             case 2:
                 try {
-                    SQLitePreparedStatement executeFast = ((qd) obj).getMessagesStorage().b.executeFast("UPDATE sharing_locations SET proximity = ? WHERE uid = ?");
+                    SQLitePreparedStatement executeFast = ((rd) obj).getMessagesStorage().b.executeFast("UPDATE sharing_locations SET proximity = ? WHERE uid = ?");
                     executeFast.requery();
                     executeFast.bindInteger(1, i10);
                     executeFast.bindLong(2, j3);
@@ -669,12 +669,12 @@ public final /* synthetic */ class c9 implements Runnable {
             case 3:
                 MediaController mediaController = (MediaController) obj;
                 String[] strArr = MediaController.W1;
-                ri.d0(i10).F1(this.b, mediaController.o1, null);
+                si.d0(i10).F1(this.b, mediaController.o1, null);
                 mediaController.M1 = null;
                 break;
             case 4:
                 try {
-                    SQLiteDatabase sQLiteDatabase = ((ri) obj).getMessagesStorage().b;
+                    SQLiteDatabase sQLiteDatabase = ((si) obj).getMessagesStorage().b;
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("DELETE FROM chat_hints WHERE did = " + j3 + " AND type = " + i10).stepThis().dispose();
                     break;
@@ -687,19 +687,19 @@ public final /* synthetic */ class c9 implements Runnable {
                 break;
             case 6:
                 org.telegram.messenger.c cVar = (org.telegram.messenger.c) obj;
-                zy C = zy.C(cVar.a);
+                az C = az.C(cVar.a);
                 ArrayList arrayList = (ArrayList) C.a.get("group_" + j3);
                 if (arrayList != null && !arrayList.isEmpty()) {
-                    ly lyVar = (ly) arrayList.get(0);
-                    fj fjVar = (fj) i5.c.h(1, lyVar.x);
-                    lyVar.G = fjVar.e1();
-                    fjVar.k.params.put("final", "1");
+                    my myVar = (my) arrayList.get(0);
+                    gj gjVar = (gj) i5.c.h(1, myVar.x);
+                    myVar.G = gjVar.e1();
+                    gjVar.k.params.put("final", "1");
                     TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
-                    tL_messages_messages.messages.add(fjVar.k);
-                    if (!lyVar.I && !lyVar.J) {
-                        tr.a0(cVar.a).h1(-2, 0, i10 != 0 ? 1 : 0, lyVar.a, 0L, tL_messages_messages, false);
+                    tL_messages_messages.messages.add(gjVar.k);
+                    if (!myVar.I && !myVar.J) {
+                        ur.a0(cVar.a).h1(-2, 0, i10 != 0 ? 1 : 0, myVar.a, 0L, tL_messages_messages, false);
                     }
-                    C.t0(lyVar, true);
+                    C.t0(myVar, true);
                     break;
                 }
                 break;

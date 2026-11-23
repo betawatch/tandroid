@@ -1,13 +1,13 @@
 package di;
 
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class l8 implements RequestDelegate {
                                         n8Var2.j();
                                         n8Var2.d = true;
                                         n8Var2.c = false;
-                                        ks.f(i11).k(ks.J3, Long.valueOf(j3), n8Var2);
+                                        ls.f(i11).k(ls.J3, Long.valueOf(j3), n8Var2);
                                         break;
                                     }
                                 } else {
@@ -63,7 +63,7 @@ public final /* synthetic */ class l8 implements RequestDelegate {
                                     }
                                     n8Var2.d = true;
                                     n8Var2.c = false;
-                                    ks.f(i11).k(ks.J3, Long.valueOf(j3), n8Var2);
+                                    ls.f(i11).k(ls.J3, Long.valueOf(j3), n8Var2);
                                     break;
                                 }
                                 break;
@@ -112,7 +112,7 @@ public final /* synthetic */ class l8 implements RequestDelegate {
                                         n8Var22.j();
                                         n8Var22.d = true;
                                         n8Var22.c = false;
-                                        ks.f(i11).k(ks.J3, Long.valueOf(j3), n8Var22);
+                                        ls.f(i11).k(ls.J3, Long.valueOf(j3), n8Var22);
                                         break;
                                     }
                                 } else {
@@ -135,7 +135,7 @@ public final /* synthetic */ class l8 implements RequestDelegate {
                                     }
                                     n8Var22.d = true;
                                     n8Var22.c = false;
-                                    ks.f(i11).k(ks.J3, Long.valueOf(j3), n8Var22);
+                                    ls.f(i11).k(ls.J3, Long.valueOf(j3), n8Var22);
                                     break;
                                 }
                                 break;
@@ -185,7 +185,7 @@ public final /* synthetic */ class l8 implements RequestDelegate {
                                         n8Var22.j();
                                         n8Var22.d = true;
                                         n8Var22.c = false;
-                                        ks.f(i112).k(ks.J3, Long.valueOf(j3), n8Var22);
+                                        ls.f(i112).k(ls.J3, Long.valueOf(j3), n8Var22);
                                         break;
                                     }
                                 } else {
@@ -208,7 +208,7 @@ public final /* synthetic */ class l8 implements RequestDelegate {
                                     }
                                     n8Var22.d = true;
                                     n8Var22.c = false;
-                                    ks.f(i112).k(ks.J3, Long.valueOf(j3), n8Var22);
+                                    ls.f(i112).k(ls.J3, Long.valueOf(j3), n8Var22);
                                     break;
                                 }
                                 break;

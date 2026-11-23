@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class nb0 extends zm0 {
     public final /* synthetic */ tb0 d;
@@ -27,7 +27,7 @@ public final class nb0 extends zm0 {
     @Override // org.telegram.ui.Components.zm0
     public final CharSequence d() {
         tb0 tb0Var = this.d;
-        org.telegram.messenger.y10 y10Var = tb0Var.v0;
-        return y10Var != null ? (CharSequence) y10Var.a(Integer.valueOf(tb0Var.I)) : tb0Var.d(tb0Var.I);
+        org.telegram.messenger.z10 z10Var = tb0Var.v0;
+        return z10Var != null ? (CharSequence) z10Var.a(Integer.valueOf(tb0Var.I)) : tb0Var.d(tb0Var.I);
     }
 }

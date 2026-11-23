@@ -16,10 +16,10 @@ import hi.b3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.hf;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.jf;
+import org.telegram.messenger.np;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -54,7 +54,7 @@ import org.telegram.ui.ui0;
 import org.telegram.ui.xi0;
 import org.telegram.ui.yr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j implements Continuation, oa1, q1, rj0, yr, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class j implements Continuation, oa1, q1, rj0, yr, 
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         int[] iArr = (int[]) this.d;
         String str = LaunchActivity.C1;
-        TLRPC.UserFull d2 = mp.u1(launchActivity.P).d2(user.id);
+        TLRPC.UserFull d2 = np.u1(launchActivity.P).d2(user.id);
         b2.m(user, this.b, d2 != null && d2.video_calls_available, launchActivity, d2, org.telegram.messenger.c.a(iArr[0]));
     }
 
@@ -163,13 +163,13 @@ public final /* synthetic */ class j implements Continuation, oa1, q1, rj0, yr, 
                 if (i10 < 0 || i10 >= allPhotosArray.size()) {
                     return;
                 }
-                if (!(allPhotosArray.get(i10) instanceof ef) || ((ef) allPhotosArray.get(i10)).k(null)) {
+                if (!(allPhotosArray.get(i10) instanceof ff) || ((ff) allPhotosArray.get(i10)).k(null)) {
                     si siVar = uiVar.X3;
-                    if (siVar != null && siVar.V1() && (allPhotosArray.get(i10) instanceof ef)) {
-                        ef efVar = (ef) allPhotosArray.get(i10);
+                    if (siVar != null && siVar.V1() && (allPhotosArray.get(i10) instanceof ff)) {
+                        ff ffVar = (ff) allPhotosArray.get(i10);
                         hashMap.clear();
-                        if (efVar != null) {
-                            chatAttachAlertPhotoLayout.T(efVar, -1);
+                        if (ffVar != null) {
+                            chatAttachAlertPhotoLayout.T(ffVar, -1);
                         }
                         uiVar.N0();
                         uiVar.X3.y1(7, true, true, 0, 0, 0L, uiVar.g1(), false, 0L);
@@ -205,19 +205,19 @@ public final /* synthetic */ class j implements Continuation, oa1, q1, rj0, yr, 
                     }
                     if (hashMap.size() > 0 && arrayList.size() > 0) {
                         Object obj = hashMap.get(arrayList.get(0));
-                        if (obj instanceof ef) {
-                            ((ef) obj).a = uiVar.b1().getText();
+                        if (obj instanceof ff) {
+                            ((ff) obj).a = uiVar.b1().getText();
                         }
-                        if (obj instanceof hf) {
-                            ((hf) obj).I = uiVar.b1().getText();
+                        if (obj instanceof jf) {
+                            ((jf) obj).I = uiVar.b1().getText();
                         }
                     }
                     if (uiVar.L1 != null) {
-                        uiVar.L1.e = allPhotosArray.get(i10) instanceof ef ? ((ef) allPhotosArray.get(i10)).b : false;
+                        uiVar.L1.e = allPhotosArray.get(i10) instanceof ff ? ((ff) allPhotosArray.get(i10)).b : false;
                     }
-                    boolean z14 = (allPhotosArray.get(i10) instanceof ef) && ((ef) allPhotosArray.get(i10)).M;
+                    boolean z14 = (allPhotosArray.get(i10) instanceof ff) && ((ff) allPhotosArray.get(i10)).M;
                     Object obj2 = allPhotosArray.get(i10);
-                    if ((obj2 instanceof ef) && chatAttachAlertPhotoLayout.a0((ef) obj2)) {
+                    if ((obj2 instanceof ff) && chatAttachAlertPhotoLayout.a0((ff) obj2)) {
                         return;
                     }
                     if (z14) {
@@ -324,9 +324,9 @@ public final /* synthetic */ class j implements Continuation, oa1, q1, rj0, yr, 
                     break;
                 } catch (Exception unused) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g2Var2.getParentActivity());
-                    alertDialog$Builder.a.S = gd.N0(2131745875, null);
-                    alertDialog$Builder.a.U = gd.N0(2131748006, "NoMailInstalled");
-                    alertDialog$Builder.k(gd.N0(2131747637, "OK"), null);
+                    alertDialog$Builder.a.S = hd.N0(2131745875, null);
+                    alertDialog$Builder.a.U = hd.N0(2131748006, "NoMailInstalled");
+                    alertDialog$Builder.k(hd.N0(2131747637, "OK"), null);
                     g2Var2.showDialog(alertDialog$Builder.a);
                     return;
                 }

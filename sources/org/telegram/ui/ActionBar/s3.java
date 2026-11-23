@@ -13,16 +13,16 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ec;
 import org.telegram.messenger.fc;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s3 {
     public static final int[] h = {m6.ra, m6.rb, m6.Fi, m6.Ee, m6.Fe, m6.Ge, m6.He, m6.Ie};
@@ -120,10 +120,10 @@ public final class s3 {
         return m6.F0(i7);
     }
 
-    public static void o(int i7, long j3, TLRPC.WallPaper wallPaper, x10 x10Var) {
+    public static void o(int i7, long j3, TLRPC.WallPaper wallPaper, y10 y10Var) {
         boolean z10 = wallPaper.pattern;
         org.telegram.messenger.f4 f10 = org.telegram.messenger.f4.f(i7);
-        q3 q3Var = new q3(x10Var, wallPaper, z10 ? 1 : 0, i7, j3);
+        q3 q3Var = new q3(y10Var, wallPaper, z10 ? 1 : 0, i7, j3);
         if (z10) {
             if (z10) {
                 File i10 = org.telegram.messenger.t0.i();
@@ -171,7 +171,7 @@ public final class s3 {
             return cg.d.e(((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift);
         }
         if (chatTheme instanceof TLRPC.TL_chatTheme) {
-            return ri.d0(this.g).V(((TLRPC.TL_chatTheme) this.d).emoticon);
+            return si.d0(this.g).V(((TLRPC.TL_chatTheme) this.d).emoticon);
         }
         return null;
     }
@@ -360,12 +360,12 @@ public final class s3 {
                     }
                     return;
                 } else {
-                    fc c10 = fc.c(w7.w(document.thumbs, ks.W1, false, null, false), j3.document);
+                    gc c10 = gc.c(w7.w(document.thumbs, ls.W1, false, null, false), j3.document);
                     ImageReceiver imageReceiver = new ImageReceiver(null);
                     imageReceiver.A1 = false;
                     imageReceiver.q0(c10, "120_140", null, null, null, 1);
                     imageReceiver.h1 = new di.h(resultCallback, h7, file, 5);
-                    ec.D().M(imageReceiver, null);
+                    fc.D().M(imageReceiver, null);
                     return;
                 }
             }

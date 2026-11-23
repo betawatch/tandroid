@@ -14,10 +14,10 @@ import android.view.TextureView;
 import hi.a5;
 import hi.u5;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.ga;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s0 extends org.telegram.ui.Cells.r1 {
     public final float[] Ad;
@@ -118,7 +118,7 @@ public final class s0 extends org.telegram.ui.Cells.r1 {
         u5 u5Var = t0Var.e;
         if ((u5Var != null && u5Var.g && u5Var.d) || t0Var.h.v0) {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ls.e4, 31);
         } else {
             canvas2 = canvas;
             canvas2.save();

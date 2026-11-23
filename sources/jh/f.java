@@ -1,9 +1,9 @@
 package jh;
 
 import ai.a0;
-import ai.j2;
-import ai.m1;
+import ai.k2;
 import ai.n1;
+import ai.o1;
 import ai.p0;
 import ai.u0;
 import ai.v0;
@@ -31,7 +31,7 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.HashSet;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -43,7 +43,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.sf;
 import r0.l1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout implements b6 {
     public boolean E;
@@ -79,7 +79,7 @@ public final class f extends FrameLayout implements b6 {
         this.s = new Path();
         this.J = new Rect();
         this.K = new RectF();
-        this.O = ks.e4;
+        this.O = ls.e4;
         this.P = 1.0f;
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
@@ -237,15 +237,15 @@ public final class f extends FrameLayout implements b6 {
             f11 = 0.45f;
             sf sfVar = p0Var.f;
             f12 = 0.3f;
-            m1 m1Var = p0Var.w;
+            n1 n1Var = p0Var.w;
             f13 = 2.0f;
-            if (m1Var != null && (m1Var.T || m1Var.W.c > 0.0f || m1Var.y0 || m1Var.C0.c > 0.0f)) {
-                m1Var.invalidate();
+            if (n1Var != null && (n1Var.T || n1Var.W.c > 0.0f || n1Var.y0 || n1Var.C0.c > 0.0f)) {
+                n1Var.invalidate();
             }
             if (p0Var.Y != null) {
                 boolean z11 = p0Var.r == 4;
-                n1 n1Var = p0Var.a;
-                boolean z12 = n1Var != null && n1Var.d;
+                o1 o1Var = p0Var.a;
+                boolean z12 = o1Var != null && o1Var.d;
                 boolean z13 = SystemClock.uptimeMillis() < p0Var.W;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 boolean z14 = z12;
@@ -376,12 +376,12 @@ public final class f extends FrameLayout implements b6 {
                                 }
                                 p0Var.a0.postInvalidateOnAnimation();
                             } else {
-                                j2 j2Var = p0Var.F;
+                                k2 k2Var = p0Var.F;
                                 h6Var = h6Var2;
                                 f14 = 0.7f;
                                 float uptimeMillis3 = (SystemClock.uptimeMillis() - p0Var.V) / 1000.0f;
-                                Matrix matrix2 = j2Var.l;
-                                if (j2Var.k == null) {
+                                Matrix matrix2 = k2Var.l;
+                                if (k2Var.k == null) {
                                     rectF = rectF2;
                                     iArr = iArr2;
                                 } else {
@@ -391,7 +391,7 @@ public final class f extends FrameLayout implements b6 {
                                     matrix2.reset();
                                     matrix2.setRotate(sin);
                                     matrix2.postTranslate(g0.L(46.0f) * uptimeMillis3, g0.L(10.0f) * ((float) Math.sin(uptimeMillis3 * 0.7f)));
-                                    j2Var.k.setLocalMatrix(matrix2);
+                                    k2Var.k.setLocalMatrix(matrix2);
                                 }
                             }
                             f15 = -1.0f;
@@ -448,9 +448,9 @@ public final class f extends FrameLayout implements b6 {
             ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) h2Var.b;
             f fVar = (f) h2Var.c;
             RectF rectF5 = chatActivityEnterView.w6;
-            n1 n1Var2 = chatActivityEnterView.o6;
-            if (n1Var2 != null && n1Var2.d && chatActivityEnterView.v6 != null && u0.c(chatActivityEnterView.G0(m6.d6))) {
-                float g11 = n1Var2.g();
+            o1 o1Var2 = chatActivityEnterView.o6;
+            if (o1Var2 != null && o1Var2.d && chatActivityEnterView.v6 != null && u0.c(chatActivityEnterView.G0(m6.d6))) {
+                float g11 = o1Var2.g();
                 if (g11 >= 0.0f) {
                     float min3 = Math.min(1.0f, (1.0f - g11) / f12) * Math.min(1.0f, g11 / 0.15f);
                     u0 u0Var2 = chatActivityEnterView.v6;

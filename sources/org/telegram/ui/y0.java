@@ -13,7 +13,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class y0 extends View implements org.telegram.ui.Cells.i9, c3 {
     public final p50 a;
@@ -64,7 +64,7 @@ public final class y0 extends View implements org.telegram.ui.Cells.i9, c3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.n10.a(this);
+        return org.telegram.messenger.o10.a(this);
     }
 
     @Override // org.telegram.ui.Cells.i9
@@ -154,7 +154,7 @@ public final class y0 extends View implements org.telegram.ui.Cells.i9, c3 {
                 spannable = null;
                 metricAffectingSpanArr = null;
             }
-            CharSequence a02 = (this.f.published_date == 0 || TextUtils.isEmpty(A)) ? !TextUtils.isEmpty(A) ? org.telegram.messenger.gd.a0(null, null, 2131754053, A) : org.telegram.messenger.gd.E0().h0().format(this.f.published_date * 1000) : org.telegram.messenger.gd.a0(null, null, 2131754037, org.telegram.messenger.gd.E0().h0().format(this.f.published_date * 1000), A);
+            CharSequence a02 = (this.f.published_date == 0 || TextUtils.isEmpty(A)) ? !TextUtils.isEmpty(A) ? org.telegram.messenger.hd.a0(null, null, 2131754053, A) : org.telegram.messenger.hd.E0().h0().format(this.f.published_date * 1000) : org.telegram.messenger.hd.a0(null, null, 2131754037, org.telegram.messenger.hd.E0().h0().format(this.f.published_date * 1000), A);
             if (metricAffectingSpanArr != null) {
                 try {
                     if (metricAffectingSpanArr.length > 0 && (indexOf = TextUtils.indexOf((CharSequence) a02, A)) != -1) {

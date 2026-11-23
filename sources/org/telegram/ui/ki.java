@@ -4,14 +4,14 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ki extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ boolean b;
     public int c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ org.telegram.messenger.fs e;
+    public final /* synthetic */ org.telegram.messenger.gs e;
 
     public ki(org.telegram.ui.Components.jt0 jt0Var, boolean z10, int i7, org.telegram.ui.Components.ds0 ds0Var) {
         this.e = jt0Var;
@@ -52,9 +52,9 @@ public final class ki extends AnimatorListenerAdapter {
                     int i11 = jt0Var.t1;
                     iArr[i10] = i11;
                     if (i10 == 0) {
-                        org.telegram.messenger.bz.B(i11);
+                        org.telegram.messenger.cz.B(i11);
                     } else if (jt0Var.m0(((org.telegram.ui.Components.ds0) this.d).F) >= 5) {
-                        org.telegram.messenger.bz.F(jt0Var.t1);
+                        org.telegram.messenger.cz.F(jt0Var.t1);
                     }
                 }
                 for (int i12 = 0; i12 < ds0VarArr.length; i12++) {
@@ -102,7 +102,7 @@ public final class ki extends AnimatorListenerAdapter {
             case 0:
                 super.onAnimationStart(animator);
                 i7 = ((org.telegram.ui.ActionBar.g2) ((bn) this.e)).currentAccount;
-                this.c = org.telegram.messenger.ks.f(i7).q(null, this.c, true);
+                this.c = org.telegram.messenger.ls.f(i7).q(null, this.c, true);
                 break;
             default:
                 super.onAnimationStart(animator);

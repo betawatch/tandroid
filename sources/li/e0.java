@@ -1,11 +1,11 @@
 package li;
 
 import android.content.DialogInterface;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.t1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class e0 implements DialogInterface.OnCancelListene
                 t1VarArr[0] = null;
                 break;
             default:
-                q10 q10Var = (q10) this.d;
+                r10 r10Var = (r10) this.d;
                 ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
-                q10Var.a(null, "CANCELLED");
+                r10Var.a(null, "CANCELLED");
                 break;
         }
     }

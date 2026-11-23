@@ -21,10 +21,10 @@ import i5.c;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final x a = new x();
@@ -62,7 +62,7 @@ public final class a implements m {
 
     public static void a(SpannableStringBuilder spannableStringBuilder, int i7, int i10, int i11, int i12, int i13) {
         if (i7 != i10) {
-            spannableStringBuilder.setSpan(new ForegroundColorSpan((i7 >>> 8) | ((i7 & ks.e4) << 24)), i11, i12, i13 | 33);
+            spannableStringBuilder.setSpan(new ForegroundColorSpan((i7 >>> 8) | ((i7 & ls.e4) << 24)), i11, i12, i13 | 33);
         }
     }
 

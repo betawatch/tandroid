@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f61 {
     public final boolean a;
@@ -66,12 +66,12 @@ public final class f61 {
         if (Math.abs(min - 360) < 55) {
             return 360;
         }
-        return Math.abs(min + (-240)) < 55 ? org.telegram.messenger.ks.P3 : Math.abs(min + (-144)) < 55 ? org.telegram.messenger.ks.a2 : min;
+        return Math.abs(min + (-240)) < 55 ? org.telegram.messenger.ls.P3 : Math.abs(min + (-144)) < 55 ? org.telegram.messenger.ls.a2 : min;
     }
 
     public final String toString() {
         String str;
-        boolean z10 = org.telegram.messenger.bz.R0;
+        boolean z10 = org.telegram.messenger.cz.R0;
         boolean z11 = this.a;
         String str2 = "";
         if (!z10) {
@@ -79,7 +79,7 @@ public final class f61 {
             sb2.append(b());
             sb2.append("p");
             if (z11) {
-                str2 = " (" + org.telegram.messenger.gd.N0(2131746254, null) + ")";
+                str2 = " (" + org.telegram.messenger.hd.N0(2131746254, null) + ")";
             }
             sb2.append(str2);
             return sb2.toString();
@@ -89,7 +89,7 @@ public final class f61 {
         sb3.append("x");
         sb3.append(this.c);
         if (z11) {
-            str = " (" + org.telegram.messenger.gd.N0(2131746254, null) + ")";
+            str = " (" + org.telegram.messenger.hd.N0(2131746254, null) + ")";
         } else {
             str = "";
         }

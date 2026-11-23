@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mf0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final ArrayList a;
@@ -28,13 +28,13 @@ public final class mf0 extends FrameLayout implements org.telegram.ui.ActionBar.
     public f61 s;
     public int w;
 
-    public mf0(Context context, int i7, org.telegram.messenger.fj fjVar, TLRPC.Chat chat) {
+    public mf0(Context context, int i7, org.telegram.messenger.gj gjVar, TLRPC.Chat chat) {
         super(context);
         this.a = new ArrayList();
         this.b = new ArrayList();
         this.c = new ArrayList();
         this.f = i7;
-        boolean z10 = fjVar.h4() || org.telegram.messenger.fj.R4(fjVar.k);
+        boolean z10 = gjVar.h4() || org.telegram.messenger.gj.R4(gjVar.k);
         this.h = z10;
         org.telegram.ui.Components.yz yzVar = new org.telegram.ui.Components.yz(context, null);
         this.n = yzVar;
@@ -55,8 +55,8 @@ public final class mf0 extends FrameLayout implements org.telegram.ui.ActionBar.
         addView(e9Var, c8.ma.d(56, -1.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.t6.X(m5Var, org.telegram.ui.ActionBar.m6.E8, null);
         TLRPC.TL_messages_getMessageReadParticipants tL_messages_getMessageReadParticipants = new TLRPC.TL_messages_getMessageReadParticipants();
-        tL_messages_getMessageReadParticipants.msg_id = fjVar.e1();
-        tL_messages_getMessageReadParticipants.peer = org.telegram.messenger.mp.u1(i7).l1(org.telegram.messenger.fj.B0(fjVar.k));
+        tL_messages_getMessageReadParticipants.msg_id = gjVar.e1();
+        tL_messages_getMessageReadParticipants.peer = org.telegram.messenger.np.u1(i7).l1(org.telegram.messenger.gj.B0(gjVar.k));
         ImageView imageView = new ImageView(context);
         addView(imageView, c8.ma.d(24, 24.0f, 19, 11.0f, 0.0f, 0.0f, 0.0f));
         Drawable mutate = context.getDrawable(z10 ? R.drawable.msg_played : R.drawable.msg_seen).mutate();
@@ -64,7 +64,7 @@ public final class mf0 extends FrameLayout implements org.telegram.ui.ActionBar.
         imageView.setImageDrawable(mutate);
         e9Var.setAlpha(0.0f);
         m5Var.setAlpha(0.0f);
-        TLRPC.Peer peer = fjVar.k.from_id;
+        TLRPC.Peer peer = gjVar.k.from_id;
         ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getMessageReadParticipants, new di.v(this, peer != null ? peer.user_id : 0L, i7, chat));
         int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.I5, false);
         this.w = x02;
@@ -120,9 +120,9 @@ public final class mf0 extends FrameLayout implements org.telegram.ui.ActionBar.
         if (arrayList2.size() == 1 && arrayList.get(0) != null) {
             m5Var.l(org.telegram.messenger.i5.o((TLObject) arrayList.get(0)), false);
         } else if (arrayList2.size() == 0) {
-            m5Var.l(org.telegram.messenger.gd.N0(2131747931, null), false);
+            m5Var.l(org.telegram.messenger.hd.N0(2131747931, null), false);
         } else {
-            m5Var.l(org.telegram.messenger.gd.G(arrayList2.size(), this.h ? "MessagePlayed" : "MessageSeen", new Object[0]), false);
+            m5Var.l(org.telegram.messenger.hd.G(arrayList2.size(), this.h ? "MessagePlayed" : "MessageSeen", new Object[0]), false);
         }
         m5Var.animate().alpha(1.0f).setDuration(220L).start();
         e9Var.animate().alpha(1.0f).setDuration(220L).start();

@@ -20,7 +20,7 @@ import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.q2;
 import org.telegram.messenger.r5;
 import org.telegram.tgnet.TLObject;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.yt0;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class u0 extends TextureView {
     public boolean E;
@@ -850,7 +850,7 @@ public class u0 extends TextureView {
             x0Var.d = min;
             g1Var.h.f = u0Var.getCurrentWeight();
             g1Var.h.g = org.telegram.messenger.g0.L(32.0f);
-            g1Var.h.l = k0.e(j10.t0).k;
+            g1Var.h.l = k0.e(k10.t0).k;
             if (g1Var.h.a.o() == 4) {
                 x0 x0Var2 = g1Var.h;
                 float f12 = yt0Var.a / 2.0f;

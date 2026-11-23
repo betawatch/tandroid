@@ -5,11 +5,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n5 extends FrameLayout {
     public ImageView a;
@@ -19,7 +19,7 @@ public final class n5 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.d, TLObject.FLAG_30), n10.C(2.0f, this.d, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.d, TLObject.FLAG_30), o10.C(2.0f, this.d, TLObject.FLAG_30));
     }
 
     public void setItemSize(int i7) {
@@ -33,14 +33,14 @@ public final class n5 extends FrameLayout {
         if (i7 == 0) {
             imageView2.setImageResource(R.drawable.permissions_camera1);
             imageView.setImageResource(R.drawable.permissions_camera2);
-            textView.setText(gd.N0(2131752581, null));
+            textView.setText(hd.N0(2131752581, null));
             imageView2.setLayoutParams(c8.ma.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
             imageView.setLayoutParams(c8.ma.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
             return;
         }
         imageView2.setImageResource(R.drawable.permissions_gallery1);
         imageView.setImageResource(R.drawable.permissions_gallery2);
-        textView.setText(gd.N0(2131750459, null));
+        textView.setText(hd.N0(2131750459, null));
         imageView2.setLayoutParams(c8.ma.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
         imageView.setLayoutParams(c8.ma.d(44, 44.0f, 17, 0.0f, 0.0f, 2.0f, 27.0f));
     }

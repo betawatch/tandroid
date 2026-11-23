@@ -4,7 +4,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mw {
     public final /* synthetic */ cx a;
@@ -29,12 +29,12 @@ public final class mw {
         boolean z10 = nm0Var.O;
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         if (z10 && nm0Var.O()) {
-            t1Var.S = org.telegram.messenger.gd.N0(2131752047, null);
+            t1Var.S = org.telegram.messenger.hd.N0(2131752047, null);
             org.telegram.ui.Components.nm0 nm0Var2 = cxVar.D0.e0;
             ArrayList arrayList = nm0Var2.O ? nm0Var2.w0 : nm0Var2.v0;
             final int i7 = 0;
-            t1Var.U = org.telegram.messenger.gd.G(arrayList != null ? arrayList.size() : 0, "ClearSearchAlertPartial", new Object[0]);
-            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752089, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.lw
+            t1Var.U = org.telegram.messenger.hd.G(arrayList != null ? arrayList.size() : 0, "ClearSearchAlertPartial", new Object[0]);
+            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752089, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.lw
                 public final /* synthetic */ mw b;
 
                 {
@@ -63,10 +63,10 @@ public final class mw {
                 }
             });
         } else {
-            t1Var.S = org.telegram.messenger.gd.N0(2131752044, null);
-            t1Var.U = org.telegram.messenger.gd.N0(2131752049, null);
+            t1Var.S = org.telegram.messenger.hd.N0(2131752044, null);
+            t1Var.U = org.telegram.messenger.hd.N0(2131752049, null);
             final int i10 = 1;
-            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752087, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.lw
+            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752087, null), new org.telegram.ui.ActionBar.q1(this) { // from class: org.telegram.ui.lw
                 public final /* synthetic */ mw b;
 
                 {
@@ -95,7 +95,7 @@ public final class mw {
                 }
             });
         }
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
         cxVar.showDialog(t1Var);
         TextView textView = (TextView) t1Var.d(-1);
         if (textView != null) {

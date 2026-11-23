@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j01 implements org.telegram.ui.Components.tj0 {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class j01 implements org.telegram.ui.Components.tj0 {
                 } catch (Exception unused) {
                 }
                 c11 c11Var = (c11) view;
-                if (!c11Var.s && !org.telegram.messenger.j10.i(i10).q()) {
+                if (!c11Var.s && !org.telegram.messenger.k10.i(i10).q()) {
                     org.telegram.ui.Components.y5 y5Var = c11Var.e;
                     TLRPC.Document document = y5Var.document;
                     if (document == null) {
@@ -51,9 +51,9 @@ public final class j01 implements org.telegram.ui.Components.tj0 {
                 s11Var.U0 = false;
                 if (c11Var.s) {
                     s11Var.setBigReactionAnimatedEmoji(null);
-                    TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ri.d0(i10).r.get(s11Var.T0.y.f);
+                    TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.si.d0(i10).r.get(s11Var.T0.y.f);
                     if (tL_availableReaction != null) {
-                        s11Var.W0.r0(org.telegram.messenger.fc.b(tL_availableReaction.select_animation), "60_60_pcache", null, null, null, 0L, "tgs", s11Var.T0.y, 0);
+                        s11Var.W0.r0(org.telegram.messenger.gc.b(tL_availableReaction.select_animation), "60_60_pcache", null, null, null, 0L, "tgs", s11Var.T0.y, 0);
                     }
                 } else {
                     s11Var.setBigReactionAnimatedEmoji(new org.telegram.ui.Components.p5(4, i10, s11Var.T0.e.documentId));

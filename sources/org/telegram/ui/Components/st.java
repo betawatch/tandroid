@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class st implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -76,10 +76,10 @@ public final /* synthetic */ class st implements View.OnClickListener {
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.d;
                 r10Var.dismiss();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                alertDialog$Builder.a.S = org.telegram.messenger.gd.N0(2131749385, null);
-                alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131749386, null));
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131749387, null), new ky(r10Var, 3));
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                alertDialog$Builder.a.S = org.telegram.messenger.hd.N0(2131749385, null);
+                alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131749386, null));
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131749387, null), new ky(r10Var, 3));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
                 g2Var.showDialog(alertDialog$Builder.a);
                 break;
             case 2:
@@ -106,21 +106,21 @@ public final /* synthetic */ class st implements View.OnClickListener {
                 va0 va0Var = (va0) this.c;
                 va0 va0Var2 = (va0) this.d;
                 wa0 wa0Var = qa0Var.d0;
-                org.telegram.messenger.jj jjVar = wa0Var.d;
-                boolean z10 = jjVar.l;
+                org.telegram.messenger.kj kjVar = wa0Var.d;
+                boolean z10 = kjVar.l;
                 boolean z11 = !z10;
-                jjVar.l = z11;
+                kjVar.l = z11;
                 if (z10) {
                     if (wa0Var.y) {
-                        jjVar.k = false;
+                        kjVar.k = false;
                     }
                     wa0Var.y = false;
-                } else if (!jjVar.k) {
-                    jjVar.k = true;
+                } else if (!kjVar.k) {
+                    kjVar.k = true;
                     wa0Var.y = true;
                 }
                 va0Var.a(z11, true);
-                va0Var2.a(jjVar.k, true);
+                va0Var2.a(kjVar.k, true);
                 qa0Var.i();
                 qa0Var.l(true);
                 break;
@@ -132,7 +132,7 @@ public final /* synthetic */ class st implements View.OnClickListener {
                 Context context2 = (Context) this.c;
                 org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) this.d;
                 if (fe0Var.h == null) {
-                    hi.h3 h3Var = new hi.h3(context2, h6Var2, org.telegram.messenger.gd.N0(2131743364, null), fe0Var.f);
+                    hi.h3 h3Var = new hi.h3(context2, h6Var2, org.telegram.messenger.hd.N0(2131743362, null), fe0Var.f);
                     fe0Var.h = h3Var;
                     h3Var.n(new hb0(fe0Var, 7));
                     fe0Var.h.q1 = fe0Var.n;
@@ -142,7 +142,7 @@ public final /* synthetic */ class st implements View.OnClickListener {
             case 6:
                 z21 z21Var = (z21) this.b;
                 Runnable[] runnableArr = (Runnable[]) this.c;
-                org.telegram.messenger.cd cdVar = (org.telegram.messenger.cd) this.d;
+                org.telegram.messenger.dd ddVar = (org.telegram.messenger.dd) this.d;
                 b31 b31Var = z21Var.n;
                 Runnable runnable = runnableArr[0];
                 if (runnable != null) {
@@ -150,13 +150,13 @@ public final /* synthetic */ class st implements View.OnClickListener {
                 }
                 String str = b31Var.v1;
                 a31 a31Var = b31Var.I1;
-                if (!TextUtils.equals(str, cdVar.f)) {
+                if (!TextUtils.equals(str, ddVar.f)) {
                     View view2 = a31Var.d;
                     if (view2 == b31Var.z1 || view2 == b31Var.t1) {
                         b31Var.w1 = b31Var.v1;
                     }
                     x21 x21Var = z21Var.e;
-                    String str2 = cdVar.f;
+                    String str2 = ddVar.f;
                     b31Var.v1 = str2;
                     x21Var.setText(b31.L0(b31.P0(str2, null, null)));
                     a31Var.D(b31Var.r1 != null ? b31Var.s1 : b31Var.y1);
@@ -167,12 +167,12 @@ public final /* synthetic */ class st implements View.OnClickListener {
                 break;
             case 7:
                 org.telegram.ui.ck ckVar = (org.telegram.ui.ck) this.b;
-                org.telegram.messenger.z00 z00Var = (org.telegram.messenger.z00) this.c;
+                org.telegram.messenger.a10 a10Var = (org.telegram.messenger.a10) this.c;
                 org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) this.d;
                 long j3 = ckVar.b;
-                z00Var.J(j3, true, false);
-                TLRPC.Chat O0 = org.telegram.messenger.mp.u1(ckVar.a).O0(Long.valueOf(-j3));
-                lc.b0(ckVar.c).K(R.raw.msg_translate, org.telegram.messenger.g0.W2((O0 == null || !org.telegram.messenger.v3.V(O0)) ? O0 != null ? org.telegram.messenger.gd.N0(2131743705, null) : org.telegram.messenger.gd.N0(2131743706, null) : org.telegram.messenger.gd.N0(2131743707, null)), org.telegram.messenger.gd.N0(2131743642, null), new fm0(19, ckVar, z00Var)).j();
+                a10Var.J(j3, true, false);
+                TLRPC.Chat O0 = org.telegram.messenger.np.u1(ckVar.a).O0(Long.valueOf(-j3));
+                lc.b0(ckVar.c).K(R.raw.msg_translate, org.telegram.messenger.g0.W2((O0 == null || !org.telegram.messenger.v3.V(O0)) ? O0 != null ? org.telegram.messenger.hd.N0(2131743703, null) : org.telegram.messenger.hd.N0(2131743704, null) : org.telegram.messenger.hd.N0(2131743705, null)), org.telegram.messenger.hd.N0(2131743640, null), new fm0(19, ckVar, a10Var)).j();
                 g1Var.d(true);
                 break;
             default:

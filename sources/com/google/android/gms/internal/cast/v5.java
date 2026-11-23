@@ -5,11 +5,11 @@ import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class v5 implements d6 {
     public static final int[] h = new int[0];
@@ -351,7 +351,7 @@ public final class v5 implements d6 {
                 iArr[i71] = i72;
                 i71++;
             }
-            int i81 = charAt20 & ks.e4;
+            int i81 = charAt20 & ls.e4;
             int i82 = charAt19;
             int i83 = charAt20 & 2048;
             if (i81 >= 51) {
@@ -619,7 +619,7 @@ public final class v5 implements d6 {
     }
 
     public static int l(int i7) {
-        return (i7 >>> 20) & ks.e4;
+        return (i7 >>> 20) & ls.e4;
     }
 
     public static long n(Object obj, long j3) {
@@ -693,8 +693,8 @@ public final class v5 implements d6 {
                         case 27:
                         case 28:
                         case 29:
-                        case ks.T /* 30 */:
-                        case ks.U /* 31 */:
+                        case ls.T /* 30 */:
+                        case ls.U /* 31 */:
                         case 32:
                         case 33:
                         case 34:
@@ -891,8 +891,8 @@ public final class v5 implements d6 {
                 case 27:
                 case 28:
                 case 29:
-                case ks.T /* 30 */:
-                case ks.U /* 31 */:
+                case ls.T /* 30 */:
+                case ls.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -920,7 +920,7 @@ public final class v5 implements d6 {
                     floatToIntBits = o6.h(b5Var, j3).hashCode();
                     i14 = floatToIntBits + i10;
                     break;
-                case ks.o0 /* 51 */:
+                case ls.o0 /* 51 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -930,7 +930,7 @@ public final class v5 implements d6 {
                         i14 = i7 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
                         break;
                     }
-                case ks.p0 /* 52 */:
+                case ls.p0 /* 52 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -939,7 +939,7 @@ public final class v5 implements d6 {
                         i14 = floatToIntBits + i10;
                         break;
                     }
-                case ks.q0 /* 53 */:
+                case ls.q0 /* 53 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -949,7 +949,7 @@ public final class v5 implements d6 {
                         i14 = i7 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
                         break;
                     }
-                case ks.r0 /* 54 */:
+                case ls.r0 /* 54 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -959,7 +959,7 @@ public final class v5 implements d6 {
                         i14 = i7 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
                         break;
                     }
-                case ks.s0 /* 55 */:
+                case ls.s0 /* 55 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -968,7 +968,7 @@ public final class v5 implements d6 {
                         i14 = floatToIntBits + i10;
                         break;
                     }
-                case ks.t0 /* 56 */:
+                case ls.t0 /* 56 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -978,7 +978,7 @@ public final class v5 implements d6 {
                         i14 = i7 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
                         break;
                     }
-                case ks.u0 /* 57 */:
+                case ls.u0 /* 57 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -987,7 +987,7 @@ public final class v5 implements d6 {
                         i14 = floatToIntBits + i10;
                         break;
                     }
-                case ks.v0 /* 58 */:
+                case ls.v0 /* 58 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -996,7 +996,7 @@ public final class v5 implements d6 {
                         Charset charset12 = h5.a;
                         break;
                     }
-                case ks.w0 /* 59 */:
+                case ls.w0 /* 59 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -1005,7 +1005,7 @@ public final class v5 implements d6 {
                         i14 = floatToIntBits + i10;
                         break;
                     }
-                case ks.x0 /* 60 */:
+                case ls.x0 /* 60 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -1014,7 +1014,7 @@ public final class v5 implements d6 {
                         i14 = floatToIntBits + i10;
                         break;
                     }
-                case ks.y0 /* 61 */:
+                case ls.y0 /* 61 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -1023,7 +1023,7 @@ public final class v5 implements d6 {
                         i14 = floatToIntBits + i10;
                         break;
                     }
-                case ks.z0 /* 62 */:
+                case ls.z0 /* 62 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -1032,7 +1032,7 @@ public final class v5 implements d6 {
                         i14 = floatToIntBits + i10;
                         break;
                     }
-                case ks.A0 /* 63 */:
+                case ls.A0 /* 63 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -1060,7 +1060,7 @@ public final class v5 implements d6 {
                         i14 = i7 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
                         break;
                     }
-                case ks.D0 /* 66 */:
+                case ls.D0 /* 66 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -1069,7 +1069,7 @@ public final class v5 implements d6 {
                         i14 = floatToIntBits + i10;
                         break;
                     }
-                case ks.E0 /* 67 */:
+                case ls.E0 /* 67 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -1079,7 +1079,7 @@ public final class v5 implements d6 {
                         i14 = i7 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
                         break;
                     }
-                case ks.F0 /* 68 */:
+                case ls.F0 /* 68 */:
                     if (!i(i16, i13, b5Var)) {
                         break;
                     } else {
@@ -1241,8 +1241,8 @@ public final class v5 implements d6 {
                     case 27:
                     case 28:
                     case 29:
-                    case ks.T /* 30 */:
-                    case ks.U /* 31 */:
+                    case ls.T /* 30 */:
+                    case ls.U /* 31 */:
                     case 32:
                     case 33:
                     case 34:
@@ -1266,24 +1266,24 @@ public final class v5 implements d6 {
                     case 50:
                         e10 = e6.e(o6.h(b5Var, j3), o6.h(b5Var2, j3));
                         break;
-                    case ks.o0 /* 51 */:
-                    case ks.p0 /* 52 */:
-                    case ks.q0 /* 53 */:
-                    case ks.r0 /* 54 */:
-                    case ks.s0 /* 55 */:
-                    case ks.t0 /* 56 */:
-                    case ks.u0 /* 57 */:
-                    case ks.v0 /* 58 */:
-                    case ks.w0 /* 59 */:
-                    case ks.x0 /* 60 */:
-                    case ks.y0 /* 61 */:
-                    case ks.z0 /* 62 */:
-                    case ks.A0 /* 63 */:
+                    case ls.o0 /* 51 */:
+                    case ls.p0 /* 52 */:
+                    case ls.q0 /* 53 */:
+                    case ls.r0 /* 54 */:
+                    case ls.s0 /* 55 */:
+                    case ls.t0 /* 56 */:
+                    case ls.u0 /* 57 */:
+                    case ls.v0 /* 58 */:
+                    case ls.w0 /* 59 */:
+                    case ls.x0 /* 60 */:
+                    case ls.y0 /* 61 */:
+                    case ls.z0 /* 62 */:
+                    case ls.A0 /* 63 */:
                     case 64:
                     case 65:
-                    case ks.D0 /* 66 */:
-                    case ks.E0 /* 67 */:
-                    case ks.F0 /* 68 */:
+                    case ls.D0 /* 66 */:
+                    case ls.E0 /* 67 */:
+                    case ls.F0 /* 68 */:
                         long j10 = iArr[i7 + 2] & 1048575;
                         if (o6.e(b5Var, j10) == o6.e(b5Var2, j10) && e6.e(o6.h(b5Var, j3), o6.h(b5Var2, j3))) {
                             continue;
@@ -1483,8 +1483,8 @@ public final class v5 implements d6 {
                 case 27:
                 case 28:
                 case 29:
-                case ks.T /* 30 */:
-                case ks.U /* 31 */:
+                case ls.T /* 30 */:
+                case ls.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -1516,15 +1516,15 @@ public final class v5 implements d6 {
                     }
                     h10.getClass();
                     throw new ClassCastException();
-                case ks.o0 /* 51 */:
-                case ks.p0 /* 52 */:
-                case ks.q0 /* 53 */:
-                case ks.r0 /* 54 */:
-                case ks.s0 /* 55 */:
-                case ks.t0 /* 56 */:
-                case ks.u0 /* 57 */:
-                case ks.v0 /* 58 */:
-                case ks.w0 /* 59 */:
+                case ls.o0 /* 51 */:
+                case ls.p0 /* 52 */:
+                case ls.q0 /* 53 */:
+                case ls.r0 /* 54 */:
+                case ls.s0 /* 55 */:
+                case ls.t0 /* 56 */:
+                case ls.u0 /* 57 */:
+                case ls.v0 /* 58 */:
+                case ls.w0 /* 59 */:
                     if (i(i11, i7, obj2)) {
                         o6.l(obj, j3, o6.h(obj2, j3));
                         o6.j(obj, iArr[i7 + 2] & 1048575, i11);
@@ -1532,18 +1532,18 @@ public final class v5 implements d6 {
                     obj3 = obj;
                     i7 += 3;
                     obj = obj3;
-                case ks.x0 /* 60 */:
+                case ls.x0 /* 60 */:
                     r(i7, obj, obj2);
                     obj3 = obj;
                     i7 += 3;
                     obj = obj3;
-                case ks.y0 /* 61 */:
-                case ks.z0 /* 62 */:
-                case ks.A0 /* 63 */:
+                case ls.y0 /* 61 */:
+                case ls.z0 /* 62 */:
+                case ls.A0 /* 63 */:
                 case 64:
                 case 65:
-                case ks.D0 /* 66 */:
-                case ks.E0 /* 67 */:
+                case ls.D0 /* 66 */:
+                case ls.E0 /* 67 */:
                     if (i(i11, i7, obj2)) {
                         o6.l(obj, j3, o6.h(obj2, j3));
                         o6.j(obj, iArr[i7 + 2] & 1048575, i11);
@@ -1551,7 +1551,7 @@ public final class v5 implements d6 {
                     obj3 = obj;
                     i7 += 3;
                     obj = obj3;
-                case ks.F0 /* 68 */:
+                case ls.F0 /* 68 */:
                     r(i7, obj, obj2);
                     obj3 = obj;
                     i7 += 3;
@@ -1840,12 +1840,12 @@ public final class v5 implements d6 {
                     continue;
                     i11 += 3;
                     i10 = 1048575;
-                case ks.T /* 30 */:
+                case ls.T /* 30 */:
                     e6.r(iArr[i11], (List) unsafe.getObject(obj, j3), q5Var, false);
                     continue;
                     i11 += 3;
                     i10 = 1048575;
-                case ks.U /* 31 */:
+                case ls.U /* 31 */:
                     e6.x(iArr[i11], (List) unsafe.getObject(obj, j3), q5Var, false);
                     continue;
                     i11 += 3;
@@ -1958,7 +1958,7 @@ public final class v5 implements d6 {
                     continue;
                     i11 += 3;
                     i10 = 1048575;
-                case ks.o0 /* 51 */:
+                case ls.o0 /* 51 */:
                     if (v5Var.i(i14, i11, obj)) {
                         ((v4) q5Var.a).f(i14, Double.doubleToRawLongBits(((Double) o6.h(obj, j3)).doubleValue()));
                     } else {
@@ -1966,7 +1966,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.p0 /* 52 */:
+                case ls.p0 /* 52 */:
                     if (v5Var.i(i14, i11, obj)) {
                         ((v4) q5Var.a).d(i14, Float.floatToRawIntBits(((Float) o6.h(obj, j3)).floatValue()));
                     } else {
@@ -1974,7 +1974,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.q0 /* 53 */:
+                case ls.q0 /* 53 */:
                     if (v5Var.i(i14, i11, obj)) {
                         ((v4) q5Var.a).k(i14, n(obj, j3));
                     } else {
@@ -1982,7 +1982,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.r0 /* 54 */:
+                case ls.r0 /* 54 */:
                     if (v5Var.i(i14, i11, obj)) {
                         ((v4) q5Var.a).k(i14, n(obj, j3));
                     } else {
@@ -1990,7 +1990,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.s0 /* 55 */:
+                case ls.s0 /* 55 */:
                     if (v5Var.i(i14, i11, obj)) {
                         int k10 = k(obj, j3);
                         v4 v4Var7 = (v4) q5Var.a;
@@ -2005,7 +2005,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.t0 /* 56 */:
+                case ls.t0 /* 56 */:
                     if (v5Var.i(i14, i11, obj)) {
                         ((v4) q5Var.a).f(i14, n(obj, j3));
                     } else {
@@ -2013,7 +2013,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.u0 /* 57 */:
+                case ls.u0 /* 57 */:
                     if (v5Var.i(i14, i11, obj)) {
                         ((v4) q5Var.a).d(i14, k(obj, j3));
                     } else {
@@ -2021,7 +2021,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.v0 /* 58 */:
+                case ls.v0 /* 58 */:
                     if (v5Var.i(i14, i11, obj)) {
                         boolean booleanValue = ((Boolean) o6.h(obj, j3)).booleanValue();
                         v4 v4Var8 = (v4) q5Var.a;
@@ -2032,7 +2032,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.w0 /* 59 */:
+                case ls.w0 /* 59 */:
                     if (v5Var.i(i14, i11, obj)) {
                         Object object2 = unsafe.getObject(obj, j3);
                         if (object2 instanceof String) {
@@ -2045,7 +2045,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.x0 /* 60 */:
+                case ls.x0 /* 60 */:
                     if (v5Var.i(i14, i11, obj)) {
                         q5Var.d(i14, unsafe.getObject(obj, j3), v5Var.o(i11));
                     } else {
@@ -2053,7 +2053,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.y0 /* 61 */:
+                case ls.y0 /* 61 */:
                     if (v5Var.i(i14, i11, obj)) {
                         ((v4) q5Var.a).c(i14, (u4) unsafe.getObject(obj, j3));
                     } else {
@@ -2061,7 +2061,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.z0 /* 62 */:
+                case ls.z0 /* 62 */:
                     if (v5Var.i(i14, i11, obj)) {
                         int k11 = k(obj, j3);
                         v4 v4Var9 = (v4) q5Var.a;
@@ -2072,7 +2072,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.A0 /* 63 */:
+                case ls.A0 /* 63 */:
                     if (v5Var.i(i14, i11, obj)) {
                         int k12 = k(obj, j3);
                         v4 v4Var10 = (v4) q5Var.a;
@@ -2103,7 +2103,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.D0 /* 66 */:
+                case ls.D0 /* 66 */:
                     if (v5Var.i(i14, i11, obj)) {
                         int k13 = k(obj, j3);
                         v4 v4Var11 = (v4) q5Var.a;
@@ -2114,7 +2114,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.E0 /* 67 */:
+                case ls.E0 /* 67 */:
                     if (v5Var.i(i14, i11, obj)) {
                         long n10 = n(obj, j3);
                         ((v4) q5Var.a).k(i14, (n10 >> 63) ^ (n10 + n10));
@@ -2123,7 +2123,7 @@ public final class v5 implements d6 {
                     }
                     i11 += 3;
                     i10 = 1048575;
-                case ks.F0 /* 68 */:
+                case ls.F0 /* 68 */:
                     if (v5Var.i(i14, i11, obj)) {
                         q5Var.c(i14, unsafe.getObject(obj, j3), v5Var.o(i11));
                     } else {
@@ -2627,7 +2627,7 @@ public final class v5 implements d6 {
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.T /* 30 */:
+                case ls.T /* 30 */:
                     List list9 = (List) unsafe.getObject(q4Var2, j3);
                     Class cls10 = e6.a;
                     size = list9.size();
@@ -2645,7 +2645,7 @@ public final class v5 implements d6 {
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.U /* 31 */:
+                case ls.U /* 31 */:
                     h7 = e6.g(i19, (List) unsafe.getObject(q4Var2, j3));
                     i17 += h7;
                     i15 += 3;
@@ -2947,63 +2947,63 @@ public final class v5 implements d6 {
                     }
                     obj2.getClass();
                     throw new ClassCastException();
-                case ks.o0 /* 51 */:
+                case ls.o0 /* 51 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, 8, i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.p0 /* 52 */:
+                case ls.p0 /* 52 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, 4, i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.q0 /* 53 */:
+                case ls.q0 /* 53 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, v4.p(n(q4Var2, j3)), i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.r0 /* 54 */:
+                case ls.r0 /* 54 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, v4.p(n(q4Var2, j3)), i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.s0 /* 55 */:
+                case ls.s0 /* 55 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, v4.m(k(q4Var2, j3)), i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.t0 /* 56 */:
+                case ls.t0 /* 56 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, 8, i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.u0 /* 57 */:
+                case ls.u0 /* 57 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, 4, i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.v0 /* 58 */:
+                case ls.v0 /* 58 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, 1, i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.w0 /* 59 */:
+                case ls.w0 /* 59 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         int i31 = i19 << 3;
                         Object object4 = unsafe.getObject(q4Var2, j3);
@@ -3018,7 +3018,7 @@ public final class v5 implements d6 {
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.x0 /* 60 */:
+                case ls.x0 /* 60 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         Object object5 = unsafe.getObject(q4Var2, j3);
                         d6 o21 = v5Var.o(i15);
@@ -3030,7 +3030,7 @@ public final class v5 implements d6 {
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.y0 /* 61 */:
+                case ls.y0 /* 61 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         u4 u4Var2 = (u4) unsafe.getObject(q4Var2, j3);
                         Logger logger8 = v4.e;
@@ -3040,14 +3040,14 @@ public final class v5 implements d6 {
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.z0 /* 62 */:
+                case ls.z0 /* 62 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, v4.o(k(q4Var2, j3)), i17);
                     }
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.A0 /* 63 */:
+                case ls.A0 /* 63 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         i17 = a8.p0.g(i19 << 3, v4.m(k(q4Var2, j3)), i17);
                     }
@@ -3068,7 +3068,7 @@ public final class v5 implements d6 {
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.D0 /* 66 */:
+                case ls.D0 /* 66 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         int k10 = k(q4Var2, j3);
                         i17 = a8.p0.g((k10 >> 31) ^ (k10 + k10), v4.o(i19 << 3), i17);
@@ -3076,7 +3076,7 @@ public final class v5 implements d6 {
                     i15 += 3;
                     q4Var2 = q4Var;
                     i13 = 1048575;
-                case ks.E0 /* 67 */:
+                case ls.E0 /* 67 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         long n11 = n(q4Var2, j3);
                         a10 = v4.o(i19 << 3);
@@ -3090,7 +3090,7 @@ public final class v5 implements d6 {
                         q4Var2 = q4Var;
                         i13 = 1048575;
                     }
-                case ks.F0 /* 68 */:
+                case ls.F0 /* 68 */:
                     if (v5Var.i(i19, i15, q4Var2)) {
                         q4 q4Var5 = (q4) unsafe.getObject(q4Var2, j3);
                         d6 o22 = v5Var.o(i15);

@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zz0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -48,15 +48,15 @@ public final class zz0 implements TextWatcher {
         int b10 = a01Var.b();
         if (i12 == 2) {
             i7 = b10 & (-256);
-            i10 = intValue & org.telegram.messenger.ks.e4;
+            i10 = intValue & org.telegram.messenger.ls.e4;
         } else if (i12 == 1) {
             i7 = b10 & (-65281);
-            i10 = (intValue & org.telegram.messenger.ks.e4) << 8;
+            i10 = (intValue & org.telegram.messenger.ls.e4) << 8;
         } else {
             if (i12 != 0) {
                 if (i12 == 3) {
                     i7 = b10 & 16777215;
-                    i10 = (intValue & org.telegram.messenger.ks.e4) << 24;
+                    i10 = (intValue & org.telegram.messenger.ls.e4) << 24;
                 }
                 a01Var.c(b10);
                 for (i11 = 0; i11 < ThemeEditorView.this.e.size(); i11++) {
@@ -66,7 +66,7 @@ public final class zz0 implements TextWatcher {
                 editorAlert.F1 = false;
             }
             i7 = b10 & (-16711681);
-            i10 = (intValue & org.telegram.messenger.ks.e4) << 16;
+            i10 = (intValue & org.telegram.messenger.ls.e4) << 16;
         }
         b10 = i7 | i10;
         a01Var.c(b10);

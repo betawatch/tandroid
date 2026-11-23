@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pe0 implements org.telegram.ui.ActionBar.t4 {
     public int E;
@@ -89,7 +89,7 @@ public final class pe0 implements org.telegram.ui.ActionBar.t4 {
     public final fh.g g(org.telegram.ui.ActionBar.j5 j5Var) {
         fh.g c10 = this.e.c(j5Var, null, false);
         c10.p(this.h);
-        org.telegram.messenger.n10.s(c10, org.telegram.messenger.g0.L(22.0f), 6.0f);
+        org.telegram.messenger.o10.s(c10, org.telegram.messenger.g0.L(22.0f), 6.0f);
         return c10;
     }
 

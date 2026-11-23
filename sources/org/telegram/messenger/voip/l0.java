@@ -9,23 +9,24 @@ import java.util.ArrayList;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.a6;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.ci;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.aw;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.di;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
+import org.telegram.messenger.vr;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.yv;
-import org.telegram.messenger.yy;
 import org.telegram.messenger.zv;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 import org.telegram.ui.Components.ks;
 import org.telegram.ui.Components.lu0;
 import org.telegram.ui.Components.ms;
@@ -36,7 +37,7 @@ import org.telegram.ui.hk0;
 import org.telegram.ui.mj0;
 import org.telegram.ui.sk;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,13 +71,13 @@ public final /* synthetic */ class l0 implements Runnable {
         Bitmap K;
         TLRPC.PhotoSize Y;
         int i11;
-        ur urVar;
+        vr vrVar;
         RandomAccessFile randomAccessFile;
         int i12;
         boolean z11;
         boolean z12;
-        ur i13;
-        ur j3;
+        vr i13;
+        vr j3;
         switch (this.a) {
             case 0:
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$55((String) this.e, this.b, this.c);
@@ -96,14 +97,14 @@ public final /* synthetic */ class l0 implements Runnable {
                             bnVar.getMessagesController().J3(bnVar.e, bnVar.f, ((Integer) arrayList.get(i15)).intValue(), true, false, false);
                         }
                     } else {
-                        mp messagesController = bnVar.getMessagesController();
+                        np messagesController = bnVar.getMessagesController();
                         TLRPC.Chat chat = bnVar.e;
                         TLRPC.User user = bnVar.f;
                         messagesController.getClass();
                         if (chat != null || user != null) {
                             TLRPC.TL_messages_unpinAllMessages tL_messages_unpinAllMessages = new TLRPC.TL_messages_unpinAllMessages();
                             tL_messages_unpinAllMessages.peer = messagesController.l1(chat != null ? -chat.id : user.id);
-                            messagesController.getConnectionsManager().sendRequest(tL_messages_unpinAllMessages, new ci(messagesController, chat, user, 6));
+                            messagesController.getConnectionsManager().sendRequest(tL_messages_unpinAllMessages, new di(messagesController, chat, user, 6));
                         }
                     }
                 }
@@ -181,7 +182,7 @@ public final /* synthetic */ class l0 implements Runnable {
                     f40Var.A1(strArr[0], strArr[1], false, z17);
                     break;
                 } else {
-                    f40Var.A1(null, mp.u1(f40Var.o1.a).X2 + "/" + v3.K(f40Var.U2, false), true, z17);
+                    f40Var.A1(null, np.u1(f40Var.o1.a).X2 + "/" + v3.K(f40Var.U2, false), true, z17);
                     break;
                 }
                 break;
@@ -197,9 +198,9 @@ public final /* synthetic */ class l0 implements Runnable {
                 i10 = 0;
                 boolean z19 = false;
                 while (i10 < min) {
-                    yy yyVar = (yy) arrayList2.get(i10);
-                    K = ec.K(yyVar.c, yyVar.a, 2048.0f, 2048.0f, z10);
-                    if (K == null || (Y = ec.Y(K, 2048.0f, 2048.0f, 89, org.telegram.messenger.ks.r5, org.telegram.messenger.ks.r5)) == null) {
+                    zy zyVar = (zy) arrayList2.get(i10);
+                    K = fc.K(zyVar.c, zyVar.a, 2048.0f, 2048.0f, z10);
+                    if (K == null || (Y = fc.Y(K, 2048.0f, 2048.0f, 89, ls.r5, ls.r5)) == null) {
                         i12 = min;
                         i11 = i10;
                     } else {
@@ -218,7 +219,7 @@ public final /* synthetic */ class l0 implements Runnable {
                         String r10 = a8.p0.r(sb2, tL_secureFile.id, ".jpg");
                         hk0 hk0Var2 = mj0Var.d;
                         byte[] bArr = new byte[(int) new File(r10).length()];
-                        urVar = null;
+                        vrVar = null;
                         try {
                             randomAccessFile = new RandomAccessFile(r10, "rws");
                             try {
@@ -236,9 +237,9 @@ public final /* synthetic */ class l0 implements Runnable {
                             randomAccessFile.close();
                         } catch (Exception unused3) {
                         }
-                        yv yvVar = new yv((zv) o12.f, tL_secureFile, r10, (byte[]) o12.e, (byte[]) o12.b);
-                        yvVar.i = i21;
-                        org.telegram.messenger.g0.g3(new j01(hk0Var, yvVar, i21, 7));
+                        zv zvVar = new zv((aw) o12.f, tL_secureFile, r10, (byte[]) o12.e, (byte[]) o12.b);
+                        zvVar.i = i21;
+                        org.telegram.messenger.g0.g3(new f21(hk0Var, zvVar, i21, 6));
                         if (z18 && !z19) {
                             try {
                                 z12 = hk0Var.G.type instanceof TLRPC.TL_secureValueTypeDriverLicense;
@@ -250,10 +251,10 @@ public final /* synthetic */ class l0 implements Runnable {
                                         break;
                                     }
                                 }
-                                urVar = j3;
-                                if (urVar != null) {
+                                vrVar = j3;
+                                if (vrVar != null) {
                                     try {
-                                        org.telegram.messenger.g0.g3(new fe0(12, hk0Var, urVar));
+                                        org.telegram.messenger.g0.g3(new fe0(12, hk0Var, vrVar));
                                         z19 = true;
                                     } catch (Throwable th2) {
                                         th = th2;
@@ -277,14 +278,14 @@ public final /* synthetic */ class l0 implements Runnable {
                     i7 = 4;
                     z10 = false;
                 }
-                bz.y();
+                cz.y();
                 break;
         }
         return;
         if (!z12 && (i13 = MrzRecognizer.i(K)) != null) {
-            urVar = i13;
+            vrVar = i13;
         }
-        if (urVar != null) {
+        if (vrVar != null) {
         }
         i10 = i11 + 1;
         min = i12;

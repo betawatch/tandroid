@@ -3,9 +3,9 @@ package org.telegram.ui;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w60 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class w60 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
     public final /* synthetic */ h60 c;
@@ -18,7 +18,7 @@ public final /* synthetic */ class w60 implements org.telegram.messenger.x10 {
         this.d = l10;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7 = this.a;
         Long l10 = this.d;
@@ -46,14 +46,14 @@ public final /* synthetic */ class w60 implements org.telegram.messenger.x10 {
                     } else {
                         org.telegram.ui.Components.lc Y = org.telegram.ui.Components.lc.Y();
                         if (Y != null) {
-                            org.telegram.messenger.f3.n(null, 2131744365, Y, R.raw.story_bomb1, 36);
+                            org.telegram.messenger.f3.n(null, 2131744363, Y, R.raw.story_bomb1, 36);
                             break;
                         }
                     }
                 } else {
                     org.telegram.ui.Components.lc Y2 = org.telegram.ui.Components.lc.Y();
                     if (Y2 != null) {
-                        org.telegram.messenger.f3.n(null, 2131744365, Y2, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.f3.n(null, 2131744363, Y2, R.raw.story_bomb2, 36);
                         break;
                     }
                 }
@@ -78,14 +78,14 @@ public final /* synthetic */ class w60 implements org.telegram.messenger.x10 {
                     } else {
                         org.telegram.ui.Components.lc Y3 = org.telegram.ui.Components.lc.Y();
                         if (Y3 != null) {
-                            org.telegram.messenger.f3.n(null, 2131744365, Y3, R.raw.story_bomb1, 36);
+                            org.telegram.messenger.f3.n(null, 2131744363, Y3, R.raw.story_bomb1, 36);
                             break;
                         }
                     }
                 } else {
                     org.telegram.ui.Components.lc Y4 = org.telegram.ui.Components.lc.Y();
                     if (Y4 != null) {
-                        org.telegram.messenger.f3.n(null, 2131744365, Y4, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.f3.n(null, 2131744363, Y4, R.raw.story_bomb2, 36);
                         break;
                     }
                 }

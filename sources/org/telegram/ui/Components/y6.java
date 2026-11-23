@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y6 implements org.telegram.ui.ActionBar.l0, sj0 {
     public final /* synthetic */ int a;
@@ -48,27 +48,27 @@ public final /* synthetic */ class y6 implements org.telegram.ui.ActionBar.l0, s
             case 1:
                 f8 f8Var2 = this.b;
                 if (i7 == 1 || i7 == 2) {
-                    boolean z10 = org.telegram.messenger.bz.O0;
-                    if ((z10 && i7 == 1) || (org.telegram.messenger.bz.N0 && i7 == 2)) {
+                    boolean z10 = org.telegram.messenger.cz.O0;
+                    if ((z10 && i7 == 1) || (org.telegram.messenger.cz.N0 && i7 == 2)) {
                         MediaController.B().l0(0);
                     } else {
                         MediaController.B().l0(i7);
                     }
                     f8Var2.u1.f();
-                    if (z10 != org.telegram.messenger.bz.O0) {
+                    if (z10 != org.telegram.messenger.cz.O0) {
                         f8Var2.s1.C0();
                         f8Var2.T0(false);
                     }
                 } else if (i7 == 4) {
-                    if (org.telegram.messenger.bz.S0 == 1) {
-                        org.telegram.messenger.bz.E(0);
+                    if (org.telegram.messenger.cz.S0 == 1) {
+                        org.telegram.messenger.cz.E(0);
                     } else {
-                        org.telegram.messenger.bz.E(1);
+                        org.telegram.messenger.cz.E(1);
                     }
-                } else if (org.telegram.messenger.bz.S0 == 2) {
-                    org.telegram.messenger.bz.E(0);
+                } else if (org.telegram.messenger.cz.S0 == 2) {
+                    org.telegram.messenger.cz.E(0);
                 } else {
-                    org.telegram.messenger.bz.E(2);
+                    org.telegram.messenger.cz.E(2);
                 }
                 f8Var2.d1();
                 break;

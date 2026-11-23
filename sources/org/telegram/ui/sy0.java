@@ -20,9 +20,9 @@ import java.util.Set;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public static boolean s;
     public static HashSet w;
     public l60 a;
@@ -41,7 +41,7 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     }
 
     public static void Z(sy0 sy0Var, View view, int i7) {
-        org.telegram.messenger.s00 s00Var;
+        org.telegram.messenger.t00 t00Var;
         ArrayList arrayList;
         if (sy0Var.getParentActivity() == null || sy0Var.parentLayout == null || !(view instanceof org.telegram.ui.Cells.t8)) {
             return;
@@ -53,21 +53,21 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             if (i11 >= 0 && i7 > i11) {
                 i7--;
             }
-            s00Var = (i7 < 0 || i7 >= sy0Var.h.size()) ? null : (org.telegram.messenger.s00) sy0Var.h.get(i7);
+            t00Var = (i7 < 0 || i7 >= sy0Var.h.size()) ? null : (org.telegram.messenger.t00) sy0Var.h.get(i7);
         } else {
-            s00Var = (org.telegram.messenger.s00) arrayList.get(i7);
+            t00Var = (org.telegram.messenger.t00) arrayList.get(i7);
         }
-        if (s00Var == null || s00Var.a == null) {
+        if (t00Var == null || t00Var.a == null) {
             return;
         }
-        org.telegram.messenger.cd cdVar = org.telegram.messenger.gd.E0().B;
-        String str = s00Var.a;
+        org.telegram.messenger.dd ddVar = org.telegram.messenger.hd.E0().B;
+        String str = t00Var.a;
         if (sy0Var.r.contains(str)) {
             Collection.-EL.removeIf(sy0Var.r, new j60(str, 2));
         } else {
             sy0Var.r.add(str);
         }
-        if (sy0Var.r.size() == 1 && sy0Var.r.contains(cdVar.f)) {
+        if (sy0Var.r.size() == 1 && sy0Var.r.contains(ddVar.f)) {
             f0(null, null);
         } else {
             f0(sy0Var.r, Boolean.TRUE);
@@ -75,7 +75,7 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         if (z10) {
             int i12 = 0;
             while (i10 < sy0Var.f.size()) {
-                if (TextUtils.equals(str, ((org.telegram.messenger.s00) sy0Var.f.get(i10)).a)) {
+                if (TextUtils.equals(str, ((org.telegram.messenger.t00) sy0Var.f.get(i10)).a)) {
                     sy0Var.e0(i12);
                 }
                 i10++;
@@ -87,33 +87,33 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 if (i13 == sy0Var.e) {
                     i13++;
                 }
-                if (TextUtils.equals(str, ((org.telegram.messenger.s00) sy0Var.h.get(i10)).a)) {
+                if (TextUtils.equals(str, ((org.telegram.messenger.t00) sy0Var.h.get(i10)).a)) {
                     sy0Var.e0(i13);
                 }
                 i10++;
                 i13++;
             }
         }
-        org.telegram.messenger.mp.u1(sy0Var.currentAccount).v7.g();
+        org.telegram.messenger.np.u1(sy0Var.currentAccount).v7.g();
     }
 
     public static void a0(boolean z10) {
         final int i7 = 0;
-        boolean z11 = org.telegram.messenger.mp.g1().getBoolean("translate_button_restricted_languages_changed", false);
+        boolean z11 = org.telegram.messenger.np.g1().getBoolean("translate_button_restricted_languages_changed", false);
         final int i10 = 2;
-        if (org.telegram.messenger.mp.g1().getInt("translate_button_restricted_languages_version", 0) != 2 || (z10 && !z11)) {
+        if (org.telegram.messenger.np.g1().getInt("translate_button_restricted_languages_version", 0) != 2 || (z10 && !z11)) {
             fi.e eVar = new fi.e(24);
             final HashSet hashSet = new HashSet();
             final int i11 = 1;
-            Utilities.u(0, new org.telegram.messenger.x10() { // from class: org.telegram.ui.ry0
-                @Override // org.telegram.messenger.x10
+            Utilities.u(0, new org.telegram.messenger.y10() { // from class: org.telegram.ui.ry0
+                @Override // org.telegram.messenger.y10
                 public final void a(Object obj) {
                     switch (i7) {
                         case 0:
                             HashSet hashSet2 = hashSet;
                             Runnable runnable = (Runnable) obj;
                             try {
-                                String str = org.telegram.messenger.gd.E0().B.f;
+                                String str = org.telegram.messenger.hd.E0().B.f;
                                 if (org.telegram.ui.Components.b31.P0(str, null, null) != null) {
                                     hashSet2.add(str);
                                 }
@@ -161,15 +161,15 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                             break;
                     }
                 }
-            }, new org.telegram.messenger.x10() { // from class: org.telegram.ui.ry0
-                @Override // org.telegram.messenger.x10
+            }, new org.telegram.messenger.y10() { // from class: org.telegram.ui.ry0
+                @Override // org.telegram.messenger.y10
                 public final void a(Object obj) {
                     switch (i11) {
                         case 0:
                             HashSet hashSet2 = hashSet;
                             Runnable runnable = (Runnable) obj;
                             try {
-                                String str = org.telegram.messenger.gd.E0().B.f;
+                                String str = org.telegram.messenger.hd.E0().B.f;
                                 if (org.telegram.ui.Components.b31.P0(str, null, null) != null) {
                                     hashSet2.add(str);
                                 }
@@ -217,15 +217,15 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                             break;
                     }
                 }
-            }, new org.telegram.messenger.x10() { // from class: org.telegram.ui.ry0
-                @Override // org.telegram.messenger.x10
+            }, new org.telegram.messenger.y10() { // from class: org.telegram.ui.ry0
+                @Override // org.telegram.messenger.y10
                 public final void a(Object obj) {
                     switch (i10) {
                         case 0:
                             HashSet hashSet2 = hashSet;
                             Runnable runnable = (Runnable) obj;
                             try {
-                                String str = org.telegram.messenger.gd.E0().B.f;
+                                String str = org.telegram.messenger.hd.E0().B.f;
                                 if (org.telegram.ui.Components.b31.P0(str, null, null) != null) {
                                     hashSet2.add(str);
                                 }
@@ -279,18 +279,18 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
 
     public static void b0() {
         s = false;
-        org.telegram.messenger.mp.g1().edit().remove("translate_button_restricted_languages_changed").remove("translate_button_restricted_languages_version").remove("translate_button_restricted_languages").apply();
+        org.telegram.messenger.np.g1().edit().remove("translate_button_restricted_languages_changed").remove("translate_button_restricted_languages_version").remove("translate_button_restricted_languages").apply();
         a0(false);
     }
 
     public static HashSet d0() {
         if (!s) {
-            Set<String> stringSet = org.telegram.messenger.mp.g1().getStringSet("translate_button_restricted_languages", null);
+            Set<String> stringSet = org.telegram.messenger.np.g1().getStringSet("translate_button_restricted_languages", null);
             w = stringSet != null ? new HashSet(stringSet) : null;
             s = true;
         }
         if (w == null) {
-            String[] strArr = {org.telegram.messenger.gd.E0().B.f};
+            String[] strArr = {org.telegram.messenger.hd.E0().B.f};
             HashSet hashSet = new HashSet(h9.o.d(1));
             Collections.addAll(hashSet, strArr);
             w = hashSet;
@@ -301,7 +301,7 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public static void f0(HashSet hashSet, Boolean bool) {
         w = hashSet;
         s = true;
-        SharedPreferences.Editor edit = org.telegram.messenger.mp.g1().edit();
+        SharedPreferences.Editor edit = org.telegram.messenger.np.g1().edit();
         if (hashSet == null) {
             edit.remove("translate_button_restricted_languages");
         } else {
@@ -330,42 +330,42 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     }
 
     public final void c0() {
-        this.h = org.telegram.messenger.z00.n();
-        String str = org.telegram.messenger.gd.E0().B.f;
+        this.h = org.telegram.messenger.a10.n();
+        String str = org.telegram.messenger.hd.E0().B.f;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList(this.n);
-        org.telegram.messenger.s00 s00Var = null;
+        org.telegram.messenger.t00 t00Var = null;
         int i7 = 0;
         while (i7 < this.h.size()) {
-            org.telegram.messenger.s00 s00Var2 = (org.telegram.messenger.s00) this.h.get(i7);
-            if (TextUtils.equals(s00Var2.a, str)) {
-                arrayList2.remove(s00Var2.a);
+            org.telegram.messenger.t00 t00Var2 = (org.telegram.messenger.t00) this.h.get(i7);
+            if (TextUtils.equals(t00Var2.a, str)) {
+                arrayList2.remove(t00Var2.a);
                 this.h.remove(i7);
                 i7--;
-                s00Var = s00Var2;
-            } else if (this.n.contains(s00Var2.a)) {
-                arrayList.add(s00Var2);
-                arrayList2.remove(s00Var2.a);
+                t00Var = t00Var2;
+            } else if (this.n.contains(t00Var2.a)) {
+                arrayList.add(t00Var2);
+                arrayList2.remove(t00Var2.a);
                 this.h.remove(i7);
                 i7--;
             }
             i7++;
         }
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            org.telegram.messenger.s00 s00Var3 = new org.telegram.messenger.s00();
+            org.telegram.messenger.t00 t00Var3 = new org.telegram.messenger.t00();
             String str2 = (String) arrayList2.get(i10);
-            s00Var3.a = str2;
+            t00Var3.a = str2;
             String upperCase = str2.toUpperCase();
-            s00Var3.b = upperCase;
-            s00Var3.c = upperCase;
-            s00Var3.d = s00Var3.a.toLowerCase();
-            arrayList.add(s00Var3);
+            t00Var3.b = upperCase;
+            t00Var3.c = upperCase;
+            t00Var3.d = t00Var3.a.toLowerCase();
+            arrayList.add(t00Var3);
         }
         this.e = 0;
         this.h.addAll(0, arrayList);
         this.e = arrayList.size() + this.e;
-        if (s00Var != null) {
-            this.h.add(0, s00Var);
+        if (t00Var != null) {
+            this.h.add(0, t00Var);
             this.e++;
         }
         if (this.e <= 0) {
@@ -377,19 +377,19 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131751346, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131751346, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new hs0(this, 9));
         org.telegram.ui.ActionBar.g5 b10 = this.simpleActionBar.t().b(0, R.drawable.outline_header_search);
         b10.O();
         b10.C0 = new bi.w1(this, 21);
-        b10.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
+        b10.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
         this.a = new l60(this, context, false, 1);
         this.c = new l60(this, context, 1 == true ? 1 : 0, 1 == true ? 1 : 0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         org.telegram.ui.Components.vy vyVar = new org.telegram.ui.Components.vy(context, null);
         this.d = vyVar;
-        vyVar.setText(org.telegram.messenger.gd.N0(2131747974, null));
+        vyVar.setText(org.telegram.messenger.hd.N0(2131747974, null));
         this.d.c();
         this.d.setShowAtCenter(true);
         org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
@@ -407,9 +407,9 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != org.telegram.messenger.ks.B4 || this.a == null) {
+        if (i7 != org.telegram.messenger.ls.B4 || this.a == null) {
             return;
         }
         c0();
@@ -451,15 +451,15 @@ public final class sy0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.n = d0();
         this.r = d0();
         c0();
-        org.telegram.messenger.gd.E0().W0(this.currentAccount, true);
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.B4);
+        org.telegram.messenger.hd.E0().W0(this.currentAccount, true);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.B4);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.B4);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.B4);
     }
 
     @Override // org.telegram.ui.ActionBar.g2

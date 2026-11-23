@@ -24,7 +24,7 @@ import java.util.Map;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public int E;
@@ -129,7 +129,7 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                     } else {
                         animatorSet.playTogether(ObjectAnimator.ofFloat(g4Var.h0, (Property<k0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this, g4.f1, 0.0f));
                     }
-                    animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), org.telegram.messenger.ks.Z3));
+                    animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), org.telegram.messenger.ls.Z3));
                     animatorSet.setInterpolator(org.telegram.ui.Components.nr.h);
                     animatorSet.addListener(new f4(this, z11));
                     animatorSet.start();
@@ -558,10 +558,10 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
             l0 l0Var = g4Var.i0;
             if (l0Var != null) {
                 k3[] k3VarArr2 = g4Var.v0;
-                l0Var.setMenuColors((k3VarArr2 == null || (k3Var2 = k3VarArr2[0]) == null || !org.telegram.messenger.bz.v0) ? x02 : k3Var2.getBackgroundColor());
+                l0Var.setMenuColors((k3VarArr2 == null || (k3Var2 = k3VarArr2[0]) == null || !org.telegram.messenger.cz.v0) ? x02 : k3Var2.getBackgroundColor());
                 l0 l0Var2 = g4Var.i0;
                 k3[] k3VarArr3 = g4Var.v0;
-                l0Var2.d((k3VarArr3 == null || (k3Var = k3VarArr3[0]) == null || !org.telegram.messenger.bz.v0) ? x02 : k3Var.getActionBarColor(), false);
+                l0Var2.d((k3VarArr3 == null || (k3Var = k3VarArr3[0]) == null || !org.telegram.messenger.cz.v0) ? x02 : k3Var.getActionBarColor(), false);
             }
             Paint paint2 = g4Var.m0;
             if (paint2 != null) {

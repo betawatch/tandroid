@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mz0 extends org.telegram.messenger.r5 {
     public int E;
@@ -173,7 +173,7 @@ public final class mz0 extends org.telegram.messenger.r5 {
                     float f11 = f10 / i15;
                     int[] iArr = lz0Var.B;
                     int i17 = lz0Var.t;
-                    int o4 = org.telegram.messenger.bz.o();
+                    int o4 = org.telegram.messenger.cz.o();
                     int i18 = lz0Var.E.a ? 120000 : o4 != 1 ? o4 != 2 ? 30000 : 120000 : 60000;
                     if (lz0Var.D) {
                         i18 /= 2;

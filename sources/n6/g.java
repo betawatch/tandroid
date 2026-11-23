@@ -13,10 +13,10 @@ import com.google.android.gms.common.GooglePlayServicesMissingManifestValueExcep
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static boolean b = false;
@@ -95,7 +95,7 @@ public abstract class g {
             }
             if (i10 != 12451000) {
                 int i11 = e.a;
-                StringBuilder sb2 = new StringBuilder(String.valueOf(i11).length() + ks.p1 + String.valueOf(i10).length() + ks.Y2);
+                StringBuilder sb2 = new StringBuilder(String.valueOf(i11).length() + ls.p1 + String.valueOf(i10).length() + ls.Y2);
                 sb2.append("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected ");
                 sb2.append(i11);
                 sb2.append(" but found ");

@@ -17,12 +17,12 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.r10;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.messenger.voip.GroupCallMessagesController;
@@ -30,7 +30,7 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -42,7 +42,7 @@ import org.telegram.ui.f60;
 import org.telegram.ui.uy0;
 import org.telegram.ui.x6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -119,7 +119,7 @@ public final /* synthetic */ class t implements Runnable {
                 }
                 vVar.e2 = richMessage;
                 vVar.Y1.set(richMessage);
-                eVar.i(gd.N0(2131754058, null), true, true);
+                eVar.i(hd.N0(2131754058, null), true, true);
                 vVar.e1();
                 c51 c51Var = vVar.V1;
                 if (c51Var != null) {
@@ -179,7 +179,7 @@ public final /* synthetic */ class t implements Runnable {
                                 }
                             }
                             if (TextUtils.isEmpty(str2)) {
-                                str2 = "document_" + bz.p();
+                                str2 = "document_" + cz.p();
                             }
                             String replace22 = str2.replace('/', '_').replace('\\', '_');
                             openInputStream = t3Var.getContext().getContentResolver().openInputStream(uri);
@@ -334,7 +334,7 @@ public final /* synthetic */ class t implements Runnable {
                         }
                         y4Var.y = true;
                         y4Var.e();
-                        if (!TextUtils.isEmpty(y4Var.G) && fj.W2(document) && (w10 = w7.w(document.thumbs, ks.r5, false, null, false)) != null) {
+                        if (!TextUtils.isEmpty(y4Var.G) && gj.W2(document) && (w10 = w7.w(document.thumbs, ls.r5, false, null, false)) != null) {
                             w7.G(i16).e0(y4Var.G, w10);
                             File file2 = new File(y4Var.G);
                             w7.G(i16);
@@ -377,7 +377,7 @@ public final /* synthetic */ class t implements Runnable {
                 ((VideoAds) obj2).lambda$load$0((TLObject) obj);
                 return;
             case 10:
-                ((VideoAds) obj2).lambda$show$16((x10) obj);
+                ((VideoAds) obj2).lambda$show$16((y10) obj);
                 return;
             case 11:
                 uy0.e1((Context) obj2, null, false, (fi.h0) obj, null);
@@ -410,7 +410,7 @@ public final /* synthetic */ class t implements Runnable {
                 ((AudioManager) obj2).setCommunicationDevice((AudioDeviceInfo) obj);
                 return;
             case 21:
-                ((VoipAudioManager) obj2).lambda$isBluetoothAndSpeakerOnAsync$4((q10) obj);
+                ((VoipAudioManager) obj2).lambda$isBluetoothAndSpeakerOnAsync$4((r10) obj);
                 return;
             case 22:
                 ((org.telegram.ui.o) obj2).c0((TLRPC.TL_messages_archivedStickers) obj);
@@ -444,10 +444,10 @@ public final /* synthetic */ class t implements Runnable {
                     p4Var.getMessagesController().T4(p4Var.Z() * 60, ((Long) arrayList2.get(i17)).longValue());
                 }
                 if (p4Var.Z() > 0) {
-                    n10.u(gd.a0("AutodeleteTimerEnabledForChats", null, 2131753775, gd.c0(p4Var.Z() * 60), gd.G(arrayList2.size(), "Chats", Integer.valueOf(arrayList2.size()))), lc.b0(p4Var), R.raw.fire_on, 36);
+                    o10.u(hd.a0("AutodeleteTimerEnabledForChats", null, 2131753775, hd.c0(p4Var.Z() * 60), hd.G(arrayList2.size(), "Chats", Integer.valueOf(arrayList2.size()))), lc.b0(p4Var), R.raw.fire_on, 36);
                     return;
                 } else {
-                    lc.b0(p4Var).Q(R.raw.fire_off, 36, gd.a0("AutodeleteTimerDisabledForChats", null, 2131753776, gd.G(arrayList2.size(), "Chats", Integer.valueOf(arrayList2.size())))).j();
+                    lc.b0(p4Var).Q(R.raw.fire_off, 36, hd.a0("AutodeleteTimerDisabledForChats", null, 2131753776, hd.G(arrayList2.size(), "Chats", Integer.valueOf(arrayList2.size())))).j();
                     return;
                 }
             case 27:

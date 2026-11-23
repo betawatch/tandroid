@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.ra;
 import org.telegram.ui.Components.ba;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.yy;
 import org.telegram.ui.bw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y6 implements b9 {
     public final ek0 a;
@@ -91,11 +91,11 @@ public final class y6 implements b9 {
         int i10 = 0;
         if (ek0Var == null || !(ek0Var.getParent() instanceof b5)) {
             if (this.d) {
-                p6 R1 = mp.u1(j10.t0).R1();
+                p6 R1 = np.u1(k10.t0).R1();
                 ArrayList arrayList2 = R1.h;
                 R1.v(arrayList2);
                 Collections.sort(arrayList2, R1.J);
-                ks.f(R1.a).k(ks.y5, new Object[0]);
+                ls.f(R1.a).k(ls.y5, new Object[0]);
             }
             e3Var.run();
             return;
@@ -222,7 +222,7 @@ public final class y6 implements b9 {
                     }
                 } else if ((childAt instanceof org.telegram.ui.Cells.p7) && ek0Var != null) {
                     org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) childAt;
-                    fj messageObject = p7Var.getMessageObject();
+                    gj messageObject = p7Var.getMessageObject();
                     if ((p7Var.getStyle() == 1 && i10 == 0) || (messageObject != null && messageObject.x4() && messageObject.e1() == i10 && messageObject.l.dialogId == j3)) {
                         jj0 fastScroll = ek0Var.getFastScroll();
                         int[] iArr = new int[2];

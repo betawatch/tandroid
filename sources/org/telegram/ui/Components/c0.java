@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, rj0, qb0, rb0, te.d, org.telegram.messenger.jc, a5, r0.m, wh.a, t0.e, sj0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, fi.b9, org.telegram.ui.ActionBar.l0, org.telegram.ui.ActionBar.e1, org.telegram.messenger.v10 {
+public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, rj0, qb0, rb0, te.d, org.telegram.messenger.kc, a5, r0.m, wh.a, t0.e, sj0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, fi.b9, org.telegram.ui.ActionBar.l0, org.telegram.ui.ActionBar.e1, org.telegram.messenger.w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -41,7 +41,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
         return false;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
         int i10 = this.a;
     }
@@ -63,7 +63,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
         return r0.l1.b;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
         int i7 = this.a;
     }
@@ -104,7 +104,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
             }
         }
         t0.h hVar = (t0.h) qfVar.b;
-        if (!hVar.getDescription().hasMimeType("image/gif") && !org.telegram.messenger.zy.x0(hVar.c(), null)) {
+        if (!hVar.getDescription().hasMimeType("image/gif") && !org.telegram.messenger.az.x0(hVar.c(), null)) {
             mgVar.J(hVar.c(), hVar.getDescription().getMimeType(0));
             return true;
         }
@@ -156,7 +156,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
         int i10 = G.a;
         if (i10 == 41 || i10 == 35) {
             if (i10 == 41) {
-                if (org.telegram.messenger.gd.a0) {
+                if (org.telegram.messenger.hd.a0) {
                 }
                 org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) view;
                 if (!z10) {
@@ -271,7 +271,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
                                 Object obj = arrayList.get(i11);
                                 i11++;
                                 long o4 = org.telegram.messenger.n5.o(((TLRPC.ChannelParticipant) obj).peer);
-                                p0Var.W1.k(org.telegram.messenger.mp.u1(p0Var.a).c2(Long.valueOf(o4)), o4);
+                                p0Var.W1.k(org.telegram.messenger.np.u1(p0Var.a).c2(Long.valueOf(o4)), o4);
                             }
                             break;
                         }
@@ -295,7 +295,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
                 return;
             }
             long o10 = org.telegram.messenger.n5.o(((TLRPC.ChannelParticipant) p0Var.V1.get(i13)).peer);
-            TLRPC.User c22 = org.telegram.messenger.mp.u1(p0Var.a).c2(Long.valueOf(o10));
+            TLRPC.User c22 = org.telegram.messenger.np.u1(p0Var.a).c2(Long.valueOf(o10));
             if (p0Var.W1 == null) {
                 p0Var.W1 = new a0.h();
             }
@@ -335,9 +335,9 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) quVar.b.get(0);
                     TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
                     if (stickerSet == null || !stickerSet.emojis) {
-                        str = "https://" + org.telegram.messenger.mp.u1(evVar.a).X2 + "/addstickers/" + tL_messages_stickerSet.set.short_name;
+                        str = "https://" + org.telegram.messenger.np.u1(evVar.a).X2 + "/addstickers/" + tL_messages_stickerSet.set.short_name;
                     } else {
-                        str = "https://" + org.telegram.messenger.mp.u1(evVar.a).X2 + "/addemoji/" + tL_messages_stickerSet.set.short_name;
+                        str = "https://" + org.telegram.messenger.np.u1(evVar.a).X2 + "/addemoji/" + tL_messages_stickerSet.set.short_name;
                     }
                     String str2 = str;
                     if (i7 == 1) {
@@ -401,7 +401,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
                 break;
             case 18:
                 ((mf) this.b).run();
-                org.telegram.messenger.mp.g1().edit().putBoolean("trimvoicehint", false).apply();
+                org.telegram.messenger.np.g1().edit().putBoolean("trimvoicehint", false).apply();
                 break;
             case 22:
                 ((tn) this.b).b.dismiss();
@@ -449,7 +449,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
         return true;
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         TLRPC.StickerSet stickerSet;
         long j3;
@@ -499,7 +499,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
         if (sxVar.d == 0 || sxVar.f.size() >= sxVar.e.count) {
             j3 = 0;
         } else {
-            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(tyVar.d1);
+            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(tyVar.d1);
             TLRPC.StickerSet stickerSet3 = sxVar.e;
             TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
             j3 = 0;
@@ -534,7 +534,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
         ((lb) this.b).dispatchDrawImplBlur(canvas, i7);
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         int i7 = this.a;
         Object obj = this.b;
@@ -566,9 +566,9 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
         org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) this.b;
         try {
             if (i7 == 0) {
-                x3Var.setText(org.telegram.messenger.gd.N0(2131751422, null));
+                x3Var.setText(org.telegram.messenger.hd.N0(2131751422, null));
             } else {
-                x3Var.setText(org.telegram.messenger.gd.N0(2131745344, null));
+                x3Var.setText(org.telegram.messenger.hd.N0(2131745344, null));
             }
         } catch (Exception unused) {
         }
@@ -578,7 +578,7 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
     public void onFinishVideoRecording(String str, long j3) {
         int i7;
         int i10;
-        org.telegram.messenger.ef efVar;
+        org.telegram.messenger.ff ffVar;
         xl xlVar = (xl) this.b;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = xlVar.e;
         ui uiVar = chatAttachAlertPhotoLayout.b;
@@ -598,17 +598,17 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
                 int i11 = i7;
                 int i12 = ChatAttachAlertPhotoLayout.v1;
                 ChatAttachAlertPhotoLayout.v1 = i12 - 1;
-                efVar = new org.telegram.messenger.ef(i12, xlVar.a.getAbsolutePath(), 0, true, i11, i10);
-                efVar.E = (int) (j3 / 1000.0f);
-                efVar.c = str;
+                ffVar = new org.telegram.messenger.ff(i12, xlVar.a.getAbsolutePath(), 0, true, i11, i10);
+                ffVar.E = (int) (j3 / 1000.0f);
+                ffVar.c = str;
                 if (uiVar.O2 != 0) {
-                    org.telegram.messenger.we weVar = new org.telegram.messenger.we();
-                    efVar.A = weVar;
-                    weVar.l = true;
-                    weVar.u = false;
-                    weVar.v = 1.0f;
+                    org.telegram.messenger.xe xeVar = new org.telegram.messenger.xe();
+                    ffVar.A = xeVar;
+                    xeVar.l = true;
+                    xeVar.u = false;
+                    xeVar.v = 1.0f;
                 }
-                chatAttachAlertPhotoLayout.m0(efVar, false, false);
+                chatAttachAlertPhotoLayout.m0(ffVar, false, false);
             }
         } catch (Exception unused2) {
             i7 = 0;
@@ -616,17 +616,17 @@ public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.q1, r
         int i112 = i7;
         int i122 = ChatAttachAlertPhotoLayout.v1;
         ChatAttachAlertPhotoLayout.v1 = i122 - 1;
-        efVar = new org.telegram.messenger.ef(i122, xlVar.a.getAbsolutePath(), 0, true, i112, i10);
-        efVar.E = (int) (j3 / 1000.0f);
-        efVar.c = str;
+        ffVar = new org.telegram.messenger.ff(i122, xlVar.a.getAbsolutePath(), 0, true, i112, i10);
+        ffVar.E = (int) (j3 / 1000.0f);
+        ffVar.c = str;
         if (uiVar.O2 != 0 && chatAttachAlertPhotoLayout.Q.isFrontface()) {
-            org.telegram.messenger.we weVar2 = new org.telegram.messenger.we();
-            efVar.A = weVar2;
-            weVar2.l = true;
-            weVar2.u = false;
-            weVar2.v = 1.0f;
+            org.telegram.messenger.xe xeVar2 = new org.telegram.messenger.xe();
+            ffVar.A = xeVar2;
+            xeVar2.l = true;
+            xeVar2.u = false;
+            xeVar2.v = 1.0f;
         }
-        chatAttachAlertPhotoLayout.m0(efVar, false, false);
+        chatAttachAlertPhotoLayout.m0(ffVar, false, false);
     }
 
     private final /* synthetic */ void q(ImageReceiver imageReceiver) {

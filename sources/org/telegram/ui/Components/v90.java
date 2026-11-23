@@ -10,9 +10,9 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public abstract class v90 extends FrameLayout implements org.telegram.messenger.fs {
+public abstract class v90 extends FrameLayout implements org.telegram.messenger.gs {
     public static final /* synthetic */ int V = 0;
     public final Rect E;
     public Paint F;
@@ -161,9 +161,9 @@ public abstract class v90 extends FrameLayout implements org.telegram.messenger.
         return 0.0f;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.l4) {
+        if (i7 == org.telegram.messenger.ls.l4) {
             org.telegram.messenger.g0.d0(this.b, new fi.e(14));
         }
     }
@@ -317,13 +317,13 @@ public abstract class v90 extends FrameLayout implements org.telegram.messenger.
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.l4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.l4);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

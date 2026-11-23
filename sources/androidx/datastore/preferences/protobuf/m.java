@@ -3,9 +3,9 @@ package androidx.datastore.preferences.protobuf;
 import a8.q6;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class m extends q6 {
     public static final Logger f = Logger.getLogger(m.class.getName());
@@ -139,17 +139,17 @@ public final class m extends q6 {
         int i10 = this.d;
         int i11 = i10 + 1;
         this.d = i11;
-        byte b10 = (byte) (i7 & ks.e4);
+        byte b10 = (byte) (i7 & ls.e4);
         byte[] bArr = this.b;
         bArr[i10] = b10;
         int i12 = i10 + 2;
         this.d = i12;
-        bArr[i11] = (byte) ((i7 >> 8) & ks.e4);
+        bArr[i11] = (byte) ((i7 >> 8) & ls.e4);
         int i13 = i10 + 3;
         this.d = i13;
-        bArr[i12] = (byte) ((i7 >> 16) & ks.e4);
+        bArr[i12] = (byte) ((i7 >> 16) & ls.e4);
         this.d = i10 + 4;
-        bArr[i13] = (byte) ((i7 >> 24) & ks.e4);
+        bArr[i13] = (byte) ((i7 >> 24) & ls.e4);
     }
 
     public final void c(long j3) {
@@ -169,15 +169,15 @@ public final class m extends q6 {
         bArr[i12] = (byte) (255 & (j3 >> 24));
         int i14 = i7 + 5;
         this.d = i14;
-        bArr[i13] = (byte) (((int) (j3 >> 32)) & ks.e4);
+        bArr[i13] = (byte) (((int) (j3 >> 32)) & ls.e4);
         int i15 = i7 + 6;
         this.d = i15;
-        bArr[i14] = (byte) (((int) (j3 >> 40)) & ks.e4);
+        bArr[i14] = (byte) (((int) (j3 >> 40)) & ls.e4);
         int i16 = i7 + 7;
         this.d = i16;
-        bArr[i15] = (byte) (((int) (j3 >> 48)) & ks.e4);
+        bArr[i15] = (byte) (((int) (j3 >> 48)) & ls.e4);
         this.d = i7 + 8;
-        bArr[i16] = (byte) (((int) (j3 >> 56)) & ks.e4);
+        bArr[i16] = (byte) (((int) (j3 >> 56)) & ls.e4);
     }
 
     public final void d(int i7, int i10) {
@@ -191,7 +191,7 @@ public final class m extends q6 {
             while ((i7 & (-128)) != 0) {
                 int i10 = this.d;
                 this.d = i10 + 1;
-                n1.j(bArr, i10, (byte) ((i7 | 128) & ks.e4));
+                n1.j(bArr, i10, (byte) ((i7 | 128) & ls.e4));
                 i7 >>>= 7;
             }
             int i11 = this.d;
@@ -202,7 +202,7 @@ public final class m extends q6 {
         while ((i7 & (-128)) != 0) {
             int i12 = this.d;
             this.d = i12 + 1;
-            bArr[i12] = (byte) ((i7 | 128) & ks.e4);
+            bArr[i12] = (byte) ((i7 | 128) & ls.e4);
             i7 >>>= 7;
         }
         int i13 = this.d;
@@ -217,7 +217,7 @@ public final class m extends q6 {
             while ((j3 & (-128)) != 0) {
                 int i7 = this.d;
                 this.d = i7 + 1;
-                n1.j(bArr, i7, (byte) ((((int) j3) | 128) & ks.e4));
+                n1.j(bArr, i7, (byte) ((((int) j3) | 128) & ls.e4));
                 j3 >>>= 7;
             }
             int i10 = this.d;
@@ -228,7 +228,7 @@ public final class m extends q6 {
         while ((j3 & (-128)) != 0) {
             int i11 = this.d;
             this.d = i11 + 1;
-            bArr[i11] = (byte) ((((int) j3) | 128) & ks.e4);
+            bArr[i11] = (byte) ((((int) j3) | 128) & ls.e4);
             j3 >>>= 7;
         }
         int i12 = this.d;

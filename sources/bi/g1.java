@@ -1,15 +1,15 @@
 package bi;
 
 import android.view.View;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.rm;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g1 implements ng {
     public final /* synthetic */ TL_stars.TL_starGiftUnique a;
@@ -34,7 +34,7 @@ public final class g1 implements ng {
         int i7;
         k1 k1Var = this.b;
         org.telegram.ui.Components.o6 o6Var = k1Var.w1;
-        k1Var.m1.a(this.a, j10.i(k1Var.a).e(), k1Var.s1.getTextWithEntities(), gd.N0(2131749727, null), true);
+        k1Var.m1.a(this.a, k10.i(k1Var.a).e(), k1Var.s1.getTextWithEntities(), hd.N0(2131749727, null), true);
         int codePointCount = Character.codePointCount(charSequence, 0, charSequence.length());
         k1Var.A1 = codePointCount;
         int i10 = k1Var.z1;
@@ -46,7 +46,7 @@ public final class g1 implements ng {
         if (i7 < -9999) {
             i7 = -9999;
         }
-        o6Var.c(gd.E(i7, ','), o6Var.getVisibility() == 0, true);
+        o6Var.c(hd.E(i7, ','), o6Var.getVisibility() == 0, true);
         if (o6Var.getVisibility() != 0) {
             o6Var.setVisibility(0);
             o6Var.setAlpha(0.0f);

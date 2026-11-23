@@ -12,7 +12,7 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g00 extends View implements org.telegram.ui.ActionBar.b6 {
     public Matrix E;
@@ -32,7 +32,7 @@ public final class g00 extends View implements org.telegram.ui.ActionBar.b6 {
     public Matrix y;
 
     public static CharSequence a(CharSequence charSequence) {
-        return "ALL_CHATS".equals(charSequence.toString()) ? org.telegram.messenger.gd.N0(2131750795, null) : charSequence;
+        return "ALL_CHATS".equals(charSequence.toString()) ? org.telegram.messenger.hd.N0(2131750795, null) : charSequence;
     }
 
     @Override // android.view.View
@@ -52,7 +52,7 @@ public final class g00 extends View implements org.telegram.ui.ActionBar.b6 {
         n6 n6Var = this.F;
         xy0 xy0Var3 = this.n;
         super.onDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.ls.e4, 31);
         float measuredWidth = getMeasuredWidth() / 2.0f;
         float measuredHeight = getMeasuredHeight() / 2.0f;
         xy0 xy0Var4 = this.h;

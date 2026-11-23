@@ -18,14 +18,14 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.fc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -98,9 +98,9 @@ public final class e extends View {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
         textPaint.setColor(-1);
-        String N0 = gd.N0(2131754715, null);
-        String N02 = gd.N0(2131751591, null);
-        String N03 = gd.N0(2131745855, null);
+        String N0 = hd.N0(2131754715, null);
+        String N02 = hd.N0(2131751591, null);
+        String N03 = hd.N0(2131745855, null);
         int measureText = (int) textPaint.measureText(N0);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
         this.e = new StaticLayout(N0, textPaint, measureText, alignment, 1.0f, 0.0f, false);
@@ -320,7 +320,7 @@ public final class e extends View {
         super.onMeasure(i7, i10);
         int i11 = this.w;
         this.M = (getMeasuredWidth() / 2.0f) - ((i11 / 2.0f) + org.telegram.messenger.g0.L(46.0f));
-        int z10 = n10.z(28.0f, i11, 2);
+        int z10 = o10.z(28.0f, i11, 2);
         this.c.setBounds(z10, z10, org.telegram.messenger.g0.L(28.0f) + z10, org.telegram.messenger.g0.L(28.0f) + z10);
         this.d.setBounds(z10, z10, org.telegram.messenger.g0.L(28.0f) + z10, org.telegram.messenger.g0.L(28.0f) + z10);
         float L = org.telegram.messenger.g0.L(3.0f);

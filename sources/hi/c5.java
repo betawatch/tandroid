@@ -6,9 +6,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.util.SparseIntArray;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class c5 implements org.telegram.ui.ActionBar.h6 {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public class c5 implements org.telegram.ui.ActionBar.h6 {
     public final boolean h() {
         switch (this.a) {
         }
-        return bz.H0;
+        return cz.H0;
     }
 
     @Override // org.telegram.ui.ActionBar.h6

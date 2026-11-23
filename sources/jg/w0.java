@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraInfo;
 import org.telegram.messenger.camera.CameraSession;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.h20;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.q90;
 import org.telegram.ui.Wallet.g2;
 import org.telegram.ui.Wallet.l2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -33,14 +33,14 @@ public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ w0(h1 h1Var, String str, boolean z10, TLObject tLObject, TLRPC.User user, String str2, tr trVar, String str3) {
+    public /* synthetic */ w0(h1 h1Var, String str, boolean z10, TLObject tLObject, TLRPC.User user, String str2, ur urVar, String str3) {
         this.c = h1Var;
         this.d = str;
         this.b = z10;
         this.h = tLObject;
         this.n = user;
         this.e = str2;
-        this.r = trVar;
+        this.r = urVar;
         this.f = str3;
     }
 
@@ -73,7 +73,7 @@ public final /* synthetic */ class w0 implements Runnable {
                 TLObject tLObject = (TLObject) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 String str3 = (String) obj5;
-                tr trVar = (tr) obj;
+                ur urVar = (ur) obj;
                 String str4 = (String) obj4;
                 q90 q90Var = h1Var.W;
                 if (str2.equals(h1Var.s0)) {
@@ -86,7 +86,7 @@ public final /* synthetic */ class w0 implements Runnable {
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
                         if (!z11 && tL_messages_botResults.cache_time != 0) {
-                            trVar.v1(str4, tL_messages_botResults);
+                            urVar.v1(str4, tL_messages_botResults);
                         }
                         h1Var.t0 = tL_messages_botResults.next_offset;
                         if (h1Var.U == null) {
@@ -187,10 +187,10 @@ public final /* synthetic */ class w0 implements Runnable {
                         Object[] objArr = new Object[1];
                         objArr[r15] = tonconnectmanifest.name;
                         str = null;
-                        textView.setText(gd.V(null, null, 2131742916, objArr));
+                        textView.setText(hd.V(null, null, 2131742914, objArr));
                         TLRPC.WebDocument webDocument = tonconnectsession3.manifest.icon;
                         if (webDocument != null) {
-                            q9Var.p(fc.p(h20.c(webDocument)), "76_76", null, tonconnectsession3.manifest);
+                            q9Var.p(gc.p(i20.c(webDocument)), "76_76", null, tonconnectsession3.manifest);
                         }
                     } else {
                         str = null;
@@ -198,17 +198,17 @@ public final /* synthetic */ class w0 implements Runnable {
                     Integer num = tonconnectsession3.manifest_error;
                     if (num == null) {
                         if (!z12) {
-                            textView2.setText(gd.N0((tonconnectsession3.closed || tonconnectsession3.closing) ? 2131742728 : 2131748586, str));
+                            textView2.setText(hd.N0((tonconnectsession3.closed || tonconnectsession3.closing) ? 2131742726 : 2131748586, str));
                             break;
                         } else {
                             l2Var.getClass();
-                            textView2.setText(gd.N0(l2.w(g2Var) ? 2131742917 : 2131742919, str));
+                            textView2.setText(hd.N0(l2.w(g2Var) ? 2131742915 : 2131742917, str));
                             break;
                         }
                     } else {
                         Object[] objArr2 = new Object[1];
                         objArr2[r15] = num;
-                        textView2.setText(gd.a0(str, str, 2131742738, objArr2));
+                        textView2.setText(hd.a0(str, str, 2131742736, objArr2));
                         break;
                     }
                 } else {

@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b00 extends dk0 {
     public final /* synthetic */ i00 c;
@@ -72,7 +72,7 @@ public final class b00 extends dk0 {
             if (i10 == 3) {
                 f00 f00Var = (f00) view;
                 if (i7 == i00Var.q2) {
-                    f00Var.b(org.telegram.messenger.gd.N0(2131750645, null), false);
+                    f00Var.b(org.telegram.messenger.hd.N0(2131750645, null), false);
                     f00Var.a("", null);
                     return;
                 } else {
@@ -98,10 +98,10 @@ public final class b00 extends dk0 {
             }
             a9Var.setFixedSize(0);
             if (i00Var.X1) {
-                a9Var.setText(org.telegram.messenger.gd.N0(2131750637, null));
+                a9Var.setText(org.telegram.messenger.hd.N0(2131750637, null));
                 return;
             } else {
-                a9Var.setText(org.telegram.messenger.gd.N0(2131750638, null));
+                a9Var.setText(org.telegram.messenger.hd.N0(2131750638, null));
                 return;
             }
         }
@@ -145,18 +145,18 @@ public final class b00 extends dk0 {
             }
             j3 = peer.user_id;
             TLRPC.User c22 = g2Var.getMessagesController().c2(Long.valueOf(peer.user_id));
-            str = org.telegram.messenger.o10.q(c22);
+            str = org.telegram.messenger.p10.q(c22);
             if (c22 == null || !c22.bot) {
-                str2 = org.telegram.messenger.gd.N0(2131750727, null);
+                str2 = org.telegram.messenger.hd.N0(2131750727, null);
                 chat2 = c22;
             } else {
-                str2 = org.telegram.messenger.gd.N0(2131750759, null);
+                str2 = org.telegram.messenger.hd.N0(2131750759, null);
                 chat2 = c22;
             }
             if (chat2 instanceof TLRPC.Chat) {
                 TLRPC.Chat chat4 = chat2;
                 String str3 = chat4.title;
-                str2 = chat4.participants_count != 0 ? org.telegram.messenger.v3.V(chat4) ? org.telegram.messenger.gd.H(',', "Subscribers", chat4.participants_count) : org.telegram.messenger.gd.H(',', "Members", chat4.participants_count) : org.telegram.messenger.v3.V(chat4) ? org.telegram.messenger.gd.N0(2131752306, null) : org.telegram.messenger.gd.N0(2131748445, null);
+                str2 = chat4.participants_count != 0 ? org.telegram.messenger.v3.V(chat4) ? org.telegram.messenger.hd.H(',', "Subscribers", chat4.participants_count) : org.telegram.messenger.hd.H(',', "Members", chat4.participants_count) : org.telegram.messenger.v3.V(chat4) ? org.telegram.messenger.hd.N0(2131752306, null) : org.telegram.messenger.hd.N0(2131748445, null);
                 str = str3;
             }
             i4Var.setTag(Long.valueOf(j3));

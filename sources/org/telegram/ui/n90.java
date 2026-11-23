@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n90 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,8 +48,8 @@ public final /* synthetic */ class n90 implements Runnable {
             case 4:
                 TLRPC.UserFull userFull = profileActivity.w2;
                 if (userFull != null) {
-                    org.telegram.messenger.g0.g(org.telegram.messenger.fj.h0(userFull.note, false));
-                    org.telegram.messenger.n10.t(null, 2131743953, org.telegram.ui.Components.lc.b0(profileActivity));
+                    org.telegram.messenger.g0.g(org.telegram.messenger.gj.h0(userFull.note, false));
+                    org.telegram.messenger.o10.t(null, 2131743951, org.telegram.ui.Components.lc.b0(profileActivity));
                     break;
                 }
                 break;
@@ -63,7 +63,7 @@ public final /* synthetic */ class n90 implements Runnable {
                 break;
             case 6:
                 RectF rectF2 = ProfileActivity.Z6;
-                profileActivity.getSendMessagesHelper().r0(org.telegram.messenger.xy.b("/start", profileActivity.e1, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                profileActivity.getSendMessagesHelper().r0(org.telegram.messenger.yy.b("/start", profileActivity.e1, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 7:
                 RectF rectF3 = ProfileActivity.Z6;

@@ -25,10 +25,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.a70;
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class cb extends View {
     public final Paint A0;
@@ -238,7 +238,7 @@ public final class cb extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.r0 = new xy0(gd.N0(2131744215, null), 12.0f, org.telegram.messenger.g0.o());
+        this.r0 = new xy0(hd.N0(2131744213, null), 12.0f, org.telegram.messenger.g0.o());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.s0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -266,14 +266,14 @@ public final class cb extends View {
                 w6Var.b = 0.0f;
                 w6Var.c = 1.5f;
                 w6Var.d(cbVar.W);
-                w6Var.h = new x10(cbVar) { // from class: hi.ua
+                w6Var.h = new y10(cbVar) { // from class: hi.ua
                     public final /* synthetic */ cb b;
 
                     {
                         this.b = cbVar;
                     }
 
-                    @Override // org.telegram.messenger.x10
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj) {
                         Float f10 = (Float) obj;
                         switch (i11) {
@@ -317,7 +317,7 @@ public final class cb extends View {
                 a70 G = a70.G(viewGroup, h6Var, cbVar);
                 G.q(w6Var);
                 G.o(true);
-                G.c(R.drawable.msg_delete, gd.N0(2131744479, null), new ta(cbVar, 1), false);
+                G.c(R.drawable.msg_delete, hd.N0(2131744477, null), new ta(cbVar, 1), false);
                 G.W(5);
                 G.X = true;
                 G.b0((-(cbVar.w1 - min2)) + org.telegram.messenger.g0.L(18.0f), cbVar.G0.top);
@@ -329,14 +329,14 @@ public final class cb extends View {
                 w6Var2.b = 0.0f;
                 w6Var2.c = 1.5f;
                 w6Var2.d(cbVar.M);
-                w6Var2.h = new x10(cbVar) { // from class: hi.ua
+                w6Var2.h = new y10(cbVar) { // from class: hi.ua
                     public final /* synthetic */ cb b;
 
                     {
                         this.b = cbVar;
                     }
 
-                    @Override // org.telegram.messenger.x10
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj) {
                         Float f10 = (Float) obj;
                         switch (i12) {
@@ -380,7 +380,7 @@ public final class cb extends View {
                 a70 G2 = a70.G(viewGroup, h6Var, cbVar);
                 G2.q(w6Var2);
                 G2.o(true);
-                G2.c(R.drawable.msg_delete, gd.N0(2131744246, null), new ta(cbVar, 2), false);
+                G2.c(R.drawable.msg_delete, hd.N0(2131744244, null), new ta(cbVar, 2), false);
                 G2.W(5);
                 G2.X = true;
                 G2.b0((-(cbVar.w1 - min4)) + org.telegram.messenger.g0.L(18.0f), cbVar.y0.top);
@@ -392,14 +392,14 @@ public final class cb extends View {
                 w6Var3.b = 0.0f;
                 w6Var3.c = 1.5f;
                 w6Var3.d(cbVar.h.i);
-                w6Var3.h = new x10(cbVar) { // from class: hi.ua
+                w6Var3.h = new y10(cbVar) { // from class: hi.ua
                     public final /* synthetic */ cb b;
 
                     {
                         this.b = cbVar;
                     }
 
-                    @Override // org.telegram.messenger.x10
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj) {
                         Float f10 = (Float) obj;
                         switch (i13) {
@@ -452,7 +452,7 @@ public final class cb extends View {
                 w6Var4.b = 0.0f;
                 w6Var4.c = 1.5f;
                 w6Var4.d(xaVar.i);
-                w6Var4.h = new ai.x1(22, cbVar, xaVar);
+                w6Var4.h = new ai.y1(22, cbVar, xaVar);
                 a70 G4 = a70.G(viewGroup, h6Var, cbVar);
                 G4.q(w6Var4);
                 G4.W(5);
@@ -938,7 +938,7 @@ public final class cb extends View {
                     int centerX = (int) (rectF8.centerX() - g10);
                     int centerY = (int) rectF8.centerY();
                     drawable.setBounds(centerX, org.telegram.ui.Cells.c0.A(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.c0.j(2, centerY, drawable));
-                    drawable.setAlpha(ks.V2);
+                    drawable.setAlpha(ls.V2);
                     drawable.draw(canvas);
                     xy0 xy0Var = cbVar.r0;
                     float centerX2 = (rectF8.centerX() - g10) + drawable.getIntrinsicWidth() + org.telegram.messenger.g0.L(3.66f);
@@ -960,7 +960,7 @@ public final class cb extends View {
                 gaVar4 = gaVar5;
                 cbVar.t0.a((((cbVar.R - cbVar.f) / min) * cbVar.v1) + cbVar.z1 + cbVar.y1, rectF8.left, rectF8.right, org.telegram.messenger.g0.L(28.0f), e10, rectF8.bottom, arrayList18);
                 c12 = 31;
-                canvas.saveLayerAlpha(rectF8, ks.n1, 31);
+                canvas.saveLayerAlpha(rectF8, ls.n1, 31);
                 canvas.clipPath(cbVar.t0);
                 cbVar.o0.a(canvas);
                 canvas.restore();
@@ -970,7 +970,7 @@ public final class cb extends View {
             int centerX3 = (int) (rectF8.centerX() - g102);
             int centerY2 = (int) rectF8.centerY();
             drawable.setBounds(centerX3, org.telegram.ui.Cells.c0.A(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.c0.j(2, centerY2, drawable));
-            drawable.setAlpha(ks.V2);
+            drawable.setAlpha(ls.V2);
             drawable.draw(canvas);
             xy0 xy0Var2 = cbVar.r0;
             float centerX22 = (rectF8.centerX() - g102) + drawable.getIntrinsicWidth() + org.telegram.messenger.g0.L(3.66f);
@@ -1635,12 +1635,12 @@ public final class cb extends View {
                             d = 0.0d;
                             f28 = d14;
                             f31 = f14;
-                            canvas2.saveLayerAlpha(0.0f, 0.0f, cbVar.w1, cbVar.x1, ks.e4, 31);
+                            canvas2.saveLayerAlpha(0.0f, 0.0f, cbVar.w1, cbVar.x1, ls.e4, 31);
                             float min7 = Math.min(f165, cbVar.w1) - org.telegram.messenger.g0.L(12.0f);
                             canvas2.clipRect(N2, 0.0f, min7, cbVar.x1);
                             if (cbVar.N0 != null) {
                                 canvas2.save();
-                                n10.k(cbVar.N0.getHeight(), f16, centerY3, N2 - cbVar.P0, canvas2);
+                                o10.k(cbVar.N0.getHeight(), f16, centerY3, N2 - cbVar.P0, canvas2);
                                 cbVar.M0.setAlpha((int) (f167 * f28));
                                 cbVar.N0.draw(canvas2);
                                 canvas2.restore();
@@ -1658,7 +1658,7 @@ public final class cb extends View {
                             }
                             if (cbVar.R0 != null) {
                                 canvas2.save();
-                                n10.k(cbVar.R0.getHeight(), 2.0f, centerY3, f43 - cbVar.T0, canvas2);
+                                o10.k(cbVar.R0.getHeight(), 2.0f, centerY3, f43 - cbVar.T0, canvas2);
                                 cbVar.Q0.setAlpha((int) (f167 * f28));
                                 cbVar.R0.draw(canvas2);
                                 canvas2.restore();
@@ -1692,7 +1692,7 @@ public final class cb extends View {
                     cbVar.V = vaVar2.c > 0;
                     f41 = d15;
                     cbVar.J0.b((((cbVar.R - cbVar.f) / j12) * cbVar.v1) + cbVar.z1 + cbVar.y1, T1, f156, f41, j12, audioHeight, e12, rectF15.bottom, vaVar2);
-                    canvas2.saveLayerAlpha(rectF15, ks.n1, 31);
+                    canvas2.saveLayerAlpha(rectF15, ls.n1, 31);
                     canvas2.clipPath(cbVar.J0);
                     cbVar.o0.a(canvas2);
                     canvas2.restore();
@@ -1967,7 +1967,7 @@ public final class cb extends View {
         }
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(f12 - org.telegram.messenger.g0.L(10.0f), f10, org.telegram.messenger.g0.L(10.0f) + f13, f11);
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.w1, this.x1, ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, this.w1, this.x1, ls.e4, 31);
         int i7 = (int) (255.0f * f14);
         Paint paint2 = this.A0;
         paint2.setAlpha(i7);
@@ -1984,7 +1984,7 @@ public final class cb extends View {
         float L2 = org.telegram.messenger.g0.L(10.0f);
         Paint paint4 = this.C0;
         Paint paint5 = paint != null ? paint : paint4;
-        paint4.setAlpha(ks.e4);
+        paint4.setAlpha(ls.e4);
         paint5.setAlpha(i7);
         float f15 = f10 + f11;
         float f16 = (f15 - L2) / 2.0f;

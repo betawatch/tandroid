@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.nu0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d4 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,12 +39,12 @@ public final /* synthetic */ class d4 implements Runnable {
     }
 
     private final void a() {
-        ri riVar = (ri) this.c;
+        si siVar = (si) this.c;
         TL_bots.BotInfo botInfo = (TL_bots.BotInfo) this.d;
         long j3 = this.b;
-        riVar.getClass();
+        siVar.getClass();
         try {
-            SQLitePreparedStatement executeFast = riVar.getMessagesStorage().b.executeFast("REPLACE INTO bot_info_v2 VALUES(?, ?, ?)");
+            SQLitePreparedStatement executeFast = siVar.getMessagesStorage().b.executeFast("REPLACE INTO bot_info_v2 VALUES(?, ?, ?)");
             executeFast.requery();
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(botInfo.getObjectSize());
             botInfo.serializeToStream(nativeByteBuffer);
@@ -60,16 +60,16 @@ public final /* synthetic */ class d4 implements Runnable {
     }
 
     private final void b() {
-        ri riVar = (ri) this.c;
+        si siVar = (si) this.c;
         TL_update.TL_updateBotCommands tL_updateBotCommands = (TL_update.TL_updateBotCommands) this.d;
         long j3 = this.b;
-        riVar.getClass();
+        siVar.getClass();
         try {
-            TL_bots.BotInfo K0 = riVar.K0(tL_updateBotCommands.bot_id, j3);
+            TL_bots.BotInfo K0 = siVar.K0(tL_updateBotCommands.bot_id, j3);
             if (K0 != null) {
                 K0.commands = tL_updateBotCommands.commands;
             }
-            SQLitePreparedStatement executeFast = riVar.getMessagesStorage().b.executeFast("REPLACE INTO bot_info_v2 VALUES(?, ?, ?)");
+            SQLitePreparedStatement executeFast = siVar.getMessagesStorage().b.executeFast("REPLACE INTO bot_info_v2 VALUES(?, ?, ?)");
             executeFast.requery();
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(K0.getObjectSize());
             K0.serializeToStream(nativeByteBuffer);
@@ -85,16 +85,16 @@ public final /* synthetic */ class d4 implements Runnable {
     }
 
     private final void c() {
-        ri riVar = (ri) this.c;
+        si siVar = (si) this.c;
         ArrayList arrayList = (ArrayList) this.d;
         long j3 = this.b;
         try {
-            riVar.getMessagesStorage().b.beginTransaction();
-            SQLitePreparedStatement executeFast = riVar.getMessagesStorage().b.executeFast("REPLACE INTO chat_pinned_v2 VALUES(?, ?, ?)");
+            siVar.getMessagesStorage().b.beginTransaction();
+            SQLitePreparedStatement executeFast = siVar.getMessagesStorage().b.executeFast("REPLACE INTO chat_pinned_v2 VALUES(?, ?, ?)");
             int size = arrayList.size();
             for (int i7 = 0; i7 < size; i7++) {
                 TLRPC.Message message = (TLRPC.Message) arrayList.get(i7);
-                fj.q5(message);
+                gj.q5(message);
                 NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
                 message.serializeToStream(nativeByteBuffer);
                 executeFast.requery();
@@ -105,23 +105,23 @@ public final /* synthetic */ class d4 implements Runnable {
                 nativeByteBuffer.reuse();
             }
             executeFast.dispose();
-            riVar.getMessagesStorage().b.commitTransaction();
+            siVar.getMessagesStorage().b.commitTransaction();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
     private final void d() {
-        mp mpVar = (mp) this.c;
+        np npVar = (np) this.c;
         TLRPC.messages_SavedReactionTags messages_savedreactiontags = (TLRPC.messages_SavedReactionTags) this.d;
-        if (mpVar.g8 == null) {
-            mpVar.g8 = new a0.h();
+        if (npVar.g8 == null) {
+            npVar.g8 = new a0.h();
         }
         boolean z10 = messages_savedreactiontags instanceof TLRPC.TL_messages_savedReactionsTags;
         long j3 = this.b;
         if (z10) {
-            mpVar.g8.k((TLRPC.TL_messages_savedReactionsTags) messages_savedreactiontags, j3);
-            mpVar.getNotificationCenter().k(ks.j3, Long.valueOf(j3));
+            npVar.g8.k((TLRPC.TL_messages_savedReactionsTags) messages_savedreactiontags, j3);
+            npVar.getNotificationCenter().k(ls.j3, Long.valueOf(j3));
         }
         TLRPC.TL_messages_getSavedReactionTags tL_messages_getSavedReactionTags = new TLRPC.TL_messages_getSavedReactionTags();
         if (z10) {
@@ -129,16 +129,16 @@ public final /* synthetic */ class d4 implements Runnable {
         }
         if (j3 != 0) {
             tL_messages_getSavedReactionTags.flags |= 1;
-            tL_messages_getSavedReactionTags.peer = mpVar.l1(j3);
+            tL_messages_getSavedReactionTags.peer = npVar.l1(j3);
         }
-        mpVar.getConnectionsManager().sendRequest(tL_messages_getSavedReactionTags, new pm(mpVar, j3, messages_savedreactiontags, tL_messages_getSavedReactionTags, 0));
+        npVar.getConnectionsManager().sendRequest(tL_messages_getSavedReactionTags, new qm(npVar, j3, messages_savedreactiontags, tL_messages_getSavedReactionTags, 0));
     }
 
     private final void f() {
         TLRPC.Chat chat;
         TLRPC.Chat chat2;
         TLRPC.InputChannel inputChannel;
-        or orVar = (or) this.c;
+        pr prVar = (pr) this.c;
         TLRPC.Updates updates = (TLRPC.Updates) this.d;
         int i7 = 0;
         int i10 = 0;
@@ -171,15 +171,15 @@ public final /* synthetic */ class d4 implements Runnable {
             i7++;
         }
         if (chat != null) {
-            orVar.run(j3);
+            prVar.run(j3);
         }
     }
 
     private final void g() {
-        mp mpVar = (mp) this.c;
+        np npVar = (np) this.c;
         long j3 = this.b;
         TLRPC.TL_messages_savedReactionsTags tL_messages_savedReactionsTags = (TLRPC.TL_messages_savedReactionsTags) this.d;
-        SQLiteDatabase sQLiteDatabase = mpVar.getMessagesStorage().b;
+        SQLiteDatabase sQLiteDatabase = npVar.getMessagesStorage().b;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
@@ -211,14 +211,14 @@ public final /* synthetic */ class d4 implements Runnable {
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         TLRPC.UserFull userFull;
-        tr trVar = (tr) this.c;
+        ur urVar = (ur) this.c;
         long j3 = this.b;
         TL_account.RequirementToContact requirementToContact = (TL_account.RequirementToContact) this.d;
-        trVar.getClass();
+        urVar.getClass();
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
-                sQLiteCursor2 = trVar.b.queryFinalized("SELECT uid, info, pinned FROM user_settings WHERE uid = " + j3, new Object[0]);
+                sQLiteCursor2 = urVar.b.queryFinalized("SELECT uid, info, pinned FROM user_settings WHERE uid = " + j3, new Object[0]);
                 try {
                     boolean next = sQLiteCursor2.next();
                     if (next) {
@@ -232,8 +232,8 @@ public final /* synthetic */ class d4 implements Runnable {
                         userFull = null;
                     }
                     sQLiteCursor2.dispose();
-                    if (next && userFull != null && o10.a(userFull, requirementToContact)) {
-                        SQLitePreparedStatement executeFast = trVar.b.executeFast("REPLACE INTO user_settings VALUES(?, ?, ?)");
+                    if (next && userFull != null && p10.a(userFull, requirementToContact)) {
+                        SQLitePreparedStatement executeFast = urVar.b.executeFast("REPLACE INTO user_settings VALUES(?, ?, ?)");
                         try {
                             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(userFull.getObjectSize());
                             userFull.serializeToStream(nativeByteBuffer);
@@ -247,7 +247,7 @@ public final /* synthetic */ class d4 implements Runnable {
                             e = e10;
                             sQLiteCursor2 = null;
                             sQLitePreparedStatement = executeFast;
-                            trVar.o(e, true);
+                            urVar.o(e, true);
                             if (sQLitePreparedStatement != null) {
                                 sQLitePreparedStatement.dispose();
                             }
@@ -284,13 +284,13 @@ public final /* synthetic */ class d4 implements Runnable {
     }
 
     private final void i() {
-        tr trVar = (tr) this.c;
-        trVar.getMessagesController().k3((TLRPC.Chat) this.d, this.b);
+        ur urVar = (ur) this.c;
+        urVar.getMessagesController().k3((TLRPC.Chat) this.d, this.b);
     }
 
     private final void j() {
-        tr trVar = (tr) this.c;
-        trVar.getMessagesController().t7.q(this.b, (TLRPC.TL_forumTopic) this.d, false);
+        ur urVar = (ur) this.c;
+        urVar.getMessagesController().t7.q(this.b, (TLRPC.TL_forumTopic) this.d, false);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:32:0x005c, code lost:
@@ -301,14 +301,14 @@ public final /* synthetic */ class d4 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void k() {
-        tr trVar = (tr) this.c;
+        ur urVar = (ur) this.c;
         long j3 = this.b;
         fi.c6 c6Var = (fi.c6) this.d;
         ArrayList arrayList = new ArrayList();
         SQLiteCursor sQLiteCursor = null;
         try {
             try {
-                SQLiteDatabase sQLiteDatabase = trVar.b;
+                SQLiteDatabase sQLiteDatabase = urVar.b;
                 Locale locale = Locale.US;
                 sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM profile_stories_albums WHERE dialog_id = " + j3 + " ORDER BY order_index ASC", new Object[0]);
                 while (sQLiteCursor.next()) {
@@ -322,7 +322,7 @@ public final /* synthetic */ class d4 implements Runnable {
                     }
                 }
             } catch (Exception e10) {
-                trVar.o(e10, true);
+                urVar.o(e10, true);
             }
             sQLiteCursor.dispose();
             c6Var.x(arrayList);
@@ -337,16 +337,16 @@ public final /* synthetic */ class d4 implements Runnable {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v7, types: [org.telegram.SQLite.SQLiteDatabase] */
     private final void l() {
-        tr trVar = (tr) this.c;
+        ur urVar = (ur) this.c;
         long j3 = this.b;
         a0.h hVar = (a0.h) this.d;
-        trVar.getClass();
+        urVar.getClass();
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
-                trVar.b.executeFast("DELETE FROM channel_admins_v3 WHERE did = " + j3).stepThis().dispose();
-                trVar.b.beginTransaction();
-                SQLitePreparedStatement executeFast = trVar.b.executeFast("REPLACE INTO channel_admins_v3 VALUES(?, ?, ?)");
+                urVar.b.executeFast("DELETE FROM channel_admins_v3 WHERE did = " + j3).stepThis().dispose();
+                urVar.b.beginTransaction();
+                SQLitePreparedStatement executeFast = urVar.b.executeFast("REPLACE INTO channel_admins_v3 VALUES(?, ?, ?)");
                 for (int i7 = 0; i7 < hVar.m(); i7++) {
                     try {
                         executeFast.requery();
@@ -361,10 +361,10 @@ public final /* synthetic */ class d4 implements Runnable {
                     } catch (Exception e10) {
                         e = e10;
                         sQLitePreparedStatement = executeFast;
-                        trVar.o(e, true);
-                        trVar = trVar.b;
-                        if (trVar != 0) {
-                            trVar.commitTransaction();
+                        urVar.o(e, true);
+                        urVar = urVar.b;
+                        if (urVar != 0) {
+                            urVar.commitTransaction();
                         }
                         if (sQLitePreparedStatement != null) {
                             sQLitePreparedStatement.dispose();
@@ -372,7 +372,7 @@ public final /* synthetic */ class d4 implements Runnable {
                     } catch (Throwable th2) {
                         th = th2;
                         sQLitePreparedStatement = executeFast;
-                        SQLiteDatabase sQLiteDatabase = trVar.b;
+                        SQLiteDatabase sQLiteDatabase = urVar.b;
                         if (sQLiteDatabase != null) {
                             sQLiteDatabase.commitTransaction();
                         }
@@ -383,10 +383,10 @@ public final /* synthetic */ class d4 implements Runnable {
                     }
                 }
                 executeFast.dispose();
-                trVar.b.commitTransaction();
-                trVar = trVar.b;
-                if (trVar != 0) {
-                    trVar.commitTransaction();
+                urVar.b.commitTransaction();
+                urVar = urVar.b;
+                if (urVar != 0) {
+                    urVar.commitTransaction();
                 }
             } catch (Throwable th3) {
                 th = th3;
@@ -397,18 +397,18 @@ public final /* synthetic */ class d4 implements Runnable {
     }
 
     private final void m() {
-        tr trVar = (tr) this.c;
+        ur urVar = (ur) this.c;
         long j3 = this.b;
         NativeByteBuffer nativeByteBuffer = (NativeByteBuffer) this.d;
-        trVar.getClass();
+        urVar.getClass();
         try {
-            SQLitePreparedStatement executeFast = trVar.b.executeFast("REPLACE INTO pending_tasks VALUES(?, ?)");
+            SQLitePreparedStatement executeFast = urVar.b.executeFast("REPLACE INTO pending_tasks VALUES(?, ?)");
             executeFast.bindLong(1, j3);
             executeFast.bindByteBuffer(2, nativeByteBuffer);
             executeFast.step();
             executeFast.dispose();
         } catch (Exception e10) {
-            trVar.o(e10, true);
+            urVar.o(e10, true);
         } finally {
             nativeByteBuffer.reuse();
         }
@@ -426,15 +426,15 @@ public final /* synthetic */ class d4 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void n() {
-        tr trVar = (tr) this.c;
+        ur urVar = (ur) this.c;
         long j3 = this.b;
         List list = (List) this.d;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
-                trVar.b.beginTransaction();
-                trVar.b.executeFast("DELETE FROM profile_stories_albums WHERE dialog_id = " + j3).stepThis().dispose();
-                sQLitePreparedStatement = trVar.b.executeFast("REPLACE INTO profile_stories_albums VALUES(?, ?, ?, ?)");
+                urVar.b.beginTransaction();
+                urVar.b.executeFast("DELETE FROM profile_stories_albums WHERE dialog_id = " + j3).stepThis().dispose();
+                sQLitePreparedStatement = urVar.b.executeFast("REPLACE INTO profile_stories_albums VALUES(?, ?, ?, ?)");
                 for (int i7 = 0; i7 < list.size(); i7++) {
                     fi.i6 i6Var = (fi.i6) list.get(i7);
                     sQLitePreparedStatement.requery();
@@ -453,44 +453,44 @@ public final /* synthetic */ class d4 implements Runnable {
                     nativeByteBuffer.reuse();
                 }
             } catch (Exception e10) {
-                trVar.o(e10, true);
+                urVar.o(e10, true);
             }
         } finally {
             if (sQLitePreparedStatement != null) {
                 sQLitePreparedStatement.dispose();
             }
-            trVar.b.commitTransaction();
+            urVar.b.commitTransaction();
         }
     }
 
     private final void o() {
-        tr trVar = (tr) this.c;
+        ur urVar = (ur) this.c;
         SparseArray sparseArray = (SparseArray) this.d;
-        trVar.getClass();
+        urVar.getClass();
         if (sparseArray.size() != 0) {
             int min = Math.min(sparseArray.size(), 100);
             for (int i7 = 0; i7 < min; i7++) {
-                trVar.getNotificationCenter().k(ks.o1, Long.valueOf(this.b), Integer.valueOf(sparseArray.keyAt(i7)), (TLRPC.TL_messageReactions) sparseArray.valueAt(i7));
+                urVar.getNotificationCenter().k(ls.o1, Long.valueOf(this.b), Integer.valueOf(sparseArray.keyAt(i7)), (TLRPC.TL_messageReactions) sparseArray.valueAt(i7));
             }
         }
     }
 
     private final void p() {
-        tr trVar = (tr) this.c;
+        ur urVar = (ur) this.c;
         TLRPC.Message message = (TLRPC.Message) this.d;
         long j3 = this.b;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
-                trVar.b.beginTransaction();
-                TLRPC.TL_message e02 = trVar.e0(message.id, j3);
-                ui.a(message, e02);
+                urVar.b.beginTransaction();
+                TLRPC.TL_message e02 = urVar.e0(message.id, j3);
+                vi.a(message, e02);
                 int i7 = 0;
                 while (i7 < 2) {
-                    SQLitePreparedStatement executeFast = i7 == 0 ? trVar.b.executeFast("UPDATE messages_v2 SET custom_params = ? WHERE mid = ? AND uid = ?") : trVar.b.executeFast("UPDATE messages_topics SET custom_params = ? WHERE mid = ? AND uid = ?");
+                    SQLitePreparedStatement executeFast = i7 == 0 ? urVar.b.executeFast("UPDATE messages_v2 SET custom_params = ? WHERE mid = ? AND uid = ?") : urVar.b.executeFast("UPDATE messages_topics SET custom_params = ? WHERE mid = ? AND uid = ?");
                     try {
                         executeFast.requery();
-                        NativeByteBuffer c10 = ui.c(e02);
+                        NativeByteBuffer c10 = vi.c(e02);
                         if (c10 != null) {
                             executeFast.bindByteBuffer(1, c10);
                         } else {
@@ -507,8 +507,8 @@ public final /* synthetic */ class d4 implements Runnable {
                     } catch (Exception e10) {
                         e = e10;
                         sQLitePreparedStatement = executeFast;
-                        trVar.o(e, true);
-                        SQLiteDatabase sQLiteDatabase = trVar.b;
+                        urVar.o(e, true);
+                        SQLiteDatabase sQLiteDatabase = urVar.b;
                         if (sQLiteDatabase != null) {
                             sQLiteDatabase.commitTransaction();
                         }
@@ -520,7 +520,7 @@ public final /* synthetic */ class d4 implements Runnable {
                     } catch (Throwable th2) {
                         th = th2;
                         sQLitePreparedStatement = executeFast;
-                        SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                        SQLiteDatabase sQLiteDatabase2 = urVar.b;
                         if (sQLiteDatabase2 != null) {
                             sQLiteDatabase2.commitTransaction();
                         }
@@ -530,8 +530,8 @@ public final /* synthetic */ class d4 implements Runnable {
                         throw th;
                     }
                 }
-                trVar.b.commitTransaction();
-                SQLiteDatabase sQLiteDatabase3 = trVar.b;
+                urVar.b.commitTransaction();
+                SQLiteDatabase sQLiteDatabase3 = urVar.b;
                 if (sQLiteDatabase3 != null) {
                     sQLiteDatabase3.commitTransaction();
                 }
@@ -597,13 +597,13 @@ public final /* synthetic */ class d4 implements Runnable {
         ?? r72 = 0;
         switch (this.a) {
             case 0:
-                ks.f(((f4) this.c).currentAccount).k(67, Long.valueOf(this.b), (TLRPC.UserFull) this.d);
+                ls.f(((f4) this.c).currentAccount).k(67, Long.valueOf(this.b), (TLRPC.UserFull) this.d);
                 return;
             case 1:
-                qd qdVar = (qd) this.c;
+                rd rdVar = (rd) this.c;
                 long j3 = this.b;
                 TLObject tLObject = (TLObject) this.d;
-                qdVar.H.e(j3);
+                rdVar.H.e(j3);
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                 int i13 = 0;
                 while (i13 < messages_messages.messages.size()) {
@@ -613,17 +613,17 @@ public final /* synthetic */ class d4 implements Runnable {
                     }
                     i13++;
                 }
-                qdVar.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                qdVar.getMessagesController().f4(messages_messages.users, false);
-                qdVar.getMessagesController().Z3(messages_messages.chats, false);
-                qdVar.c.k(messages_messages.messages, j3);
-                ks.e().k(ks.I4, Long.valueOf(j3), Integer.valueOf(qdVar.currentAccount));
+                rdVar.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
+                rdVar.getMessagesController().f4(messages_messages.users, false);
+                rdVar.getMessagesController().Z3(messages_messages.chats, false);
+                rdVar.c.k(messages_messages.messages, j3);
+                ls.e().k(ls.I4, Long.valueOf(j3), Integer.valueOf(rdVar.currentAccount));
                 return;
             case 2:
-                mp mpVar = (mp) this.c;
+                np npVar = (np) this.c;
                 long j10 = this.b;
                 TL_update.TL_updateMessageWidgetData tL_updateMessageWidgetData = (TL_update.TL_updateMessageWidgetData) this.d;
-                int i14 = mpVar.currentAccount;
+                int i14 = npVar.currentAccount;
                 int i15 = tL_updateMessageWidgetData.msg_id;
                 String str3 = tL_updateMessageWidgetData.public_data;
                 long j11 = tL_updateMessageWidgetData.public_data_hash;
@@ -642,30 +642,30 @@ public final /* synthetic */ class d4 implements Runnable {
                 }
                 return;
             case 3:
-                mp mpVar2 = (mp) this.c;
+                np npVar2 = (np) this.c;
                 TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView = (TLRPC.TL_chatInviteJoinResultWebView) this.d;
                 long j12 = this.b;
-                mpVar2.getClass();
-                mpVar2.f4(tL_chatInviteJoinResultWebView.users, false);
-                l2.b(mpVar2.currentAccount).c(-j12, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
+                npVar2.getClass();
+                npVar2.f4(tL_chatInviteJoinResultWebView.users, false);
+                l2.b(npVar2.currentAccount).c(-j12, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
                 return;
             case 4:
-                mp mpVar3 = (mp) this.c;
+                np npVar3 = (np) this.c;
                 TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) this.d;
                 long j13 = this.b;
-                mpVar3.getClass();
-                mpVar3.f4(tL_messages_invitedUsers.updates.users, false);
-                mpVar3.Z3(tL_messages_invitedUsers.updates.chats, false);
-                org.telegram.ui.Components.c5.f(mpVar3.currentAccount, mpVar3.O0(Long.valueOf(j13)), tL_messages_invitedUsers);
+                npVar3.getClass();
+                npVar3.f4(tL_messages_invitedUsers.updates.users, false);
+                npVar3.Z3(tL_messages_invitedUsers.updates.chats, false);
+                org.telegram.ui.Components.c5.f(npVar3.currentAccount, npVar3.O0(Long.valueOf(j13)), tL_messages_invitedUsers);
                 return;
             case 5:
-                tr trVar = (tr) this.c;
+                ur urVar = (ur) this.c;
                 long j14 = this.b;
                 Consumer consumer2 = (Consumer) this.d;
                 String str5 = ")";
                 String str6 = " AND mid IN (";
                 try {
-                    sQLiteDatabase = trVar.b;
+                    sQLiteDatabase = urVar.b;
                     Locale locale = Locale.US;
                 } catch (Exception e10) {
                     e = e10;
@@ -701,7 +701,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                             consumer = consumer2;
                                             arrayList = arrayList5;
                                             sQLiteCursor2 = sQLiteCursor2;
-                                            trVar.o(e, z10);
+                                            urVar.o(e, z10);
                                             consumer.x(arrayList);
                                             return;
                                         }
@@ -763,7 +763,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                             consumer = consumer2;
                                             z10 = i10;
                                             sQLiteCursor2 = sQLiteCursor2;
-                                            trVar.o(e, z10);
+                                            urVar.o(e, z10);
                                             consumer.x(arrayList);
                                             return;
                                         }
@@ -799,7 +799,7 @@ public final /* synthetic */ class d4 implements Runnable {
                             sQLiteCursor = sQLiteCursor2;
                             arrayList3 = arrayList;
                         } else {
-                            SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                            SQLiteDatabase sQLiteDatabase2 = urVar.b;
                             StringBuilder sb2 = new StringBuilder();
                             sQLiteCursor = sQLiteCursor2;
                             try {
@@ -825,7 +825,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                                         if (TLdeserialize2 != null) {
                                                             str = str5;
                                                             str2 = str6;
-                                                            TLdeserialize2.readAttachPath(byteBufferValue4, j10.i(trVar.currentAccount).n);
+                                                            TLdeserialize2.readAttachPath(byteBufferValue4, k10.i(urVar.currentAccount).n);
                                                         } else {
                                                             str = str5;
                                                             str2 = str6;
@@ -839,10 +839,10 @@ public final /* synthetic */ class d4 implements Runnable {
                                                                 ((TLRPC.TL_forumTopic) arrayList11.get(i18)).topMessage = TLdeserialize2;
                                                             }
                                                         }
-                                                        tr.e(TLdeserialize2, arrayList9, arrayList10, null);
+                                                        ur.e(TLdeserialize2, arrayList9, arrayList10, null);
                                                         try {
                                                             TLRPC.MessageReplyHeader messageReplyHeader = TLdeserialize2.reply_to;
-                                                            if (messageReplyHeader == null || messageReplyHeader.reply_to_msg_id == 0 || !tr.v0(TLdeserialize2.action)) {
+                                                            if (messageReplyHeader == null || messageReplyHeader.reply_to_msg_id == 0 || !ur.v0(TLdeserialize2.action)) {
                                                                 hashSet = hashSet4;
                                                                 sparseArray3 = sparseArray4;
                                                             } else {
@@ -855,15 +855,15 @@ public final /* synthetic */ class d4 implements Runnable {
                                                                     hashSet = hashSet4;
                                                                     sparseArray3 = sparseArray4;
                                                                     try {
-                                                                        TLdeserialize3.readAttachPath(byteBufferValue, trVar.getUserConfig().n);
+                                                                        TLdeserialize3.readAttachPath(byteBufferValue, urVar.getUserConfig().n);
                                                                         byteBufferValue.reuse();
                                                                         TLRPC.Message message = TLdeserialize2.replyMessage;
                                                                         if (message != null) {
-                                                                            tr.e(message, arrayList9, arrayList10, null);
+                                                                            ur.e(message, arrayList9, arrayList10, null);
                                                                         }
                                                                     } catch (Exception e16) {
                                                                         e = e16;
-                                                                        trVar.o(e, true);
+                                                                        urVar.o(e, true);
                                                                         hashSet4 = hashSet;
                                                                         arrayList = arrayList4;
                                                                         str5 = str;
@@ -873,7 +873,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                                                     }
                                                                 }
                                                                 if (TLdeserialize2.replyMessage == null) {
-                                                                    tr.d(TLdeserialize2, hVar2, hVar3);
+                                                                    ur.d(TLdeserialize2, hVar2, hVar3);
                                                                 }
                                                             }
                                                         } catch (Exception e17) {
@@ -888,7 +888,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                                         arrayList = arrayList4;
                                                         z10 = 1;
                                                         sQLiteCursor2 = arrayList2;
-                                                        trVar.o(e, z10);
+                                                        urVar.o(e, z10);
                                                         consumer.x(arrayList);
                                                         return;
                                                     }
@@ -910,7 +910,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                                 arrayList2 = sQLiteCursor;
                                                 z10 = 1;
                                                 sQLiteCursor2 = arrayList2;
-                                                trVar.o(e, z10);
+                                                urVar.o(e, z10);
                                                 consumer.x(arrayList);
                                                 return;
                                             }
@@ -923,7 +923,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                             queryFinalized.dispose();
                                             if (!hashSet5.isEmpty()) {
                                                 ?? r73 = 0;
-                                                SQLiteCursor queryFinalized2 = trVar.b.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = " + j14 + str8 + TextUtils.join(",", hashSet5) + str7, new Object[0]);
+                                                SQLiteCursor queryFinalized2 = urVar.b.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = " + j14 + str8 + TextUtils.join(",", hashSet5) + str7, new Object[0]);
                                                 while (queryFinalized2.next()) {
                                                     try {
                                                         int intValue4 = queryFinalized2.intValue(r73);
@@ -933,25 +933,25 @@ public final /* synthetic */ class d4 implements Runnable {
                                                             if (TLdeserialize4 != null) {
                                                                 hVar = hVar3;
                                                                 try {
-                                                                    TLdeserialize4.readAttachPath(byteBufferValue5, j10.i(trVar.currentAccount).n);
+                                                                    TLdeserialize4.readAttachPath(byteBufferValue5, k10.i(urVar.currentAccount).n);
                                                                 } catch (Exception e20) {
                                                                     e = e20;
-                                                                    trVar.o(e, true);
+                                                                    urVar.o(e, true);
                                                                     size = arrayList4.size();
                                                                     i7 = 0;
                                                                     while (i7 < size) {
                                                                     }
                                                                     consumer = consumer;
                                                                     arrayList3 = arrayList4;
-                                                                    trVar.K0(hVar2, hVar, arrayList9, arrayList10, 0);
+                                                                    urVar.K0(hVar2, hVar, arrayList9, arrayList10, 0);
                                                                     ArrayList arrayList12 = new ArrayList();
                                                                     ArrayList arrayList13 = new ArrayList();
                                                                     if (!arrayList10.isEmpty()) {
                                                                     }
                                                                     if (!arrayList9.isEmpty()) {
                                                                     }
-                                                                    g0.g3(new sp(trVar, arrayList13, arrayList12, 1));
-                                                                    trVar.J0(arrayList3, j14);
+                                                                    g0.g3(new tp(urVar, arrayList13, arrayList12, 1));
+                                                                    urVar.J0(arrayList3, j14);
                                                                     sQLiteCursor.dispose();
                                                                     arrayList = arrayList3;
                                                                     consumer.x(arrayList);
@@ -962,7 +962,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                                             }
                                                             byteBufferValue5.reuse();
                                                             hashSet5.remove(Integer.valueOf(intValue4));
-                                                            tr.e(TLdeserialize4, arrayList9, arrayList10, null);
+                                                            ur.e(TLdeserialize4, arrayList9, arrayList10, null);
                                                             sparseArray = sparseArray3;
                                                             ArrayList arrayList14 = (ArrayList) sparseArray.get(intValue4);
                                                             if (arrayList14 != null) {
@@ -1008,7 +1008,7 @@ public final /* synthetic */ class d4 implements Runnable {
                                                     arrayList2 = sQLiteCursor;
                                                     z10 = 1;
                                                     sQLiteCursor2 = arrayList2;
-                                                    trVar.o(e, z10);
+                                                    urVar.o(e, z10);
                                                     consumer.x(arrayList);
                                                     return;
                                                 }
@@ -1021,24 +1021,24 @@ public final /* synthetic */ class d4 implements Runnable {
                                             arrayList3 = arrayList4;
                                         }
                                         try {
-                                            trVar.K0(hVar2, hVar, arrayList9, arrayList10, 0);
+                                            urVar.K0(hVar2, hVar, arrayList9, arrayList10, 0);
                                             ArrayList arrayList122 = new ArrayList();
                                             ArrayList arrayList132 = new ArrayList();
                                             if (!arrayList10.isEmpty()) {
-                                                trVar.Q(TextUtils.join(",", arrayList10), arrayList122);
+                                                urVar.Q(TextUtils.join(",", arrayList10), arrayList122);
                                             }
                                             if (!arrayList9.isEmpty()) {
-                                                trVar.n0(arrayList9, arrayList132, false);
+                                                urVar.n0(arrayList9, arrayList132, false);
                                             }
-                                            g0.g3(new sp(trVar, arrayList132, arrayList122, 1));
-                                            trVar.J0(arrayList3, j14);
+                                            g0.g3(new tp(urVar, arrayList132, arrayList122, 1));
+                                            urVar.J0(arrayList3, j14);
                                         } catch (Exception e24) {
                                             e = e24;
                                             arrayList = arrayList3;
                                             arrayList2 = sQLiteCursor;
                                             z10 = 1;
                                             sQLiteCursor2 = arrayList2;
-                                            trVar.o(e, z10);
+                                            urVar.o(e, z10);
                                             consumer.x(arrayList);
                                             return;
                                         }
@@ -1063,7 +1063,7 @@ public final /* synthetic */ class d4 implements Runnable {
                         arrayList2 = sQLiteCursor2;
                         z10 = 1;
                         sQLiteCursor2 = arrayList2;
-                        trVar.o(e, z10);
+                        urVar.o(e, z10);
                         consumer.x(arrayList);
                         return;
                     }
@@ -1075,7 +1075,7 @@ public final /* synthetic */ class d4 implements Runnable {
                     arrayList2 = arrayList7;
                     z10 = 1;
                     sQLiteCursor2 = arrayList2;
-                    trVar.o(e, z10);
+                    urVar.o(e, z10);
                     consumer.x(arrayList);
                     return;
                 } catch (Throwable th6) {
@@ -1085,54 +1085,54 @@ public final /* synthetic */ class d4 implements Runnable {
                 consumer.x(arrayList);
                 return;
             case 6:
-                xs xsVar = (xs) this.c;
+                ys ysVar = (ys) this.c;
                 long j15 = this.b;
                 nu0 nu0Var = (nu0) this.d;
                 HashSet hashSet6 = new HashSet();
-                Iterator<Map.Entry<String, ?>> it = mp.u1(xsVar.currentAccount).g7.getAll().entrySet().iterator();
+                Iterator<Map.Entry<String, ?>> it = np.u1(ysVar.currentAccount).g7.getAll().entrySet().iterator();
                 while (it.hasNext()) {
                     String key = it.next().getKey();
                     if (key.startsWith("notify2_" + j15)) {
                         Integer z11 = Utilities.z(key.replace("notify2_" + j15, ""));
                         int intValue5 = z11.intValue();
-                        if (intValue5 != 0 && xsVar.getMessagesController().u2(j15, intValue5, null) != xsVar.getMessagesController().u2(j15, 0L, null)) {
+                        if (intValue5 != 0 && ysVar.getMessagesController().u2(j15, intValue5, null) != ysVar.getMessagesController().u2(j15, 0L, null)) {
                             hashSet6.add(z11);
                         }
                     }
                 }
-                g0.g3(new rq(15, nu0Var, hashSet6));
+                g0.g3(new sq(15, nu0Var, hashSet6));
                 return;
             case 7:
-                xv xvVar = (xv) this.c;
+                yv yvVar = (yv) this.c;
                 TLRPC.TL_dialog tL_dialog = (TLRPC.TL_dialog) this.d;
                 long j16 = this.b;
-                xvVar.getClass();
+                yvVar.getClass();
                 if (tL_dialog.folder_id == 1) {
-                    SharedPreferences.Editor edit = mp.u1(xvVar.currentAccount).g7.edit();
+                    SharedPreferences.Editor edit = np.u1(yvVar.currentAccount).g7.edit();
                     edit.putBoolean("dialog_bar_archived" + j16, true);
                     edit.commit();
                 }
-                xvVar.getMessagesController().R.k(tL_dialog, tL_dialog.id);
-                xvVar.getMessagesController().y.add(tL_dialog);
-                xvVar.getMessagesController().f5(null);
-                xvVar.getNotificationCenter().k(3, new Object[0]);
+                yvVar.getMessagesController().R.k(tL_dialog, tL_dialog.id);
+                yvVar.getMessagesController().y.add(tL_dialog);
+                yvVar.getMessagesController().f5(null);
+                yvVar.getNotificationCenter().k(3, new Object[0]);
                 return;
             case 8:
-                z00 z00Var = (z00) this.c;
-                ks.f(z00Var.currentAccount).k(128, (fj) this.d, Boolean.FALSE, Boolean.valueOf(z00Var.B(this.b)));
+                a10 a10Var = (a10) this.c;
+                ls.f(a10Var.currentAccount).k(128, (gj) this.d, Boolean.FALSE, Boolean.valueOf(a10Var.B(this.b)));
                 return;
             case 9:
-                z00 z00Var2 = (z00) this.c;
+                a10 a10Var2 = (a10) this.c;
                 long j17 = this.b;
                 String str9 = (String) this.d;
-                synchronized (z00Var2) {
-                    z00Var2.d.put(Long.valueOf(j17), str9);
-                    LongSparseArray longSparseArray = z00Var2.a;
+                synchronized (a10Var2) {
+                    a10Var2.d.put(Long.valueOf(j17), str9);
+                    LongSparseArray longSparseArray = a10Var2.a;
                     bool = Boolean.TRUE;
                     longSparseArray.put(j17, bool);
-                    z00Var2.H();
+                    a10Var2.H();
                 }
-                ks.f(z00Var2.currentAccount).k(ks.P1, Long.valueOf(j17), bool);
+                ls.f(a10Var2.currentAccount).k(ls.P1, Long.valueOf(j17), bool);
                 return;
             case 10:
                 boolean[] zArr = (boolean[]) this.c;
@@ -1140,20 +1140,20 @@ public final /* synthetic */ class d4 implements Runnable {
                 org.telegram.ui.Components.nc[] ncVarArr = (org.telegram.ui.Components.nc[]) this.d;
                 zArr[0] = false;
                 if (j18 == -1) {
-                    ncVarArr[0].setText(gd.N0(2131743670, null));
+                    ncVarArr[0].setText(hd.N0(2131743668, null));
                     org.telegram.ui.ActionBar.t6.U(ncVarArr[0], org.telegram.ui.ActionBar.m6.p7, null);
                     return;
                 } else {
-                    ncVarArr[0].setText(gd.a0(null, null, 2131747041, Long.valueOf(j18)));
+                    ncVarArr[0].setText(hd.a0(null, null, 2131747041, Long.valueOf(j18)));
                     org.telegram.ui.ActionBar.t6.U(ncVarArr[0], org.telegram.ui.ActionBar.m6.w6, null);
                     return;
                 }
             case 11:
-                u9 u9Var = (u9) this.c;
-                r9 r9Var = (r9) this.d;
+                v9 v9Var = (v9) this.c;
+                s9 s9Var = (s9) this.d;
                 long j19 = this.b;
-                r9Var.d = null;
-                u9Var.m(j19);
+                s9Var.d = null;
+                v9Var.m(j19);
                 return;
             case 12:
                 a();
@@ -1165,7 +1165,7 @@ public final /* synthetic */ class d4 implements Runnable {
                 c();
                 return;
             case 15:
-                ((mp) this.c).getNotificationCenter().k(45, Long.valueOf(this.b), (SparseArray) this.d);
+                ((np) this.c).getNotificationCenter().k(45, Long.valueOf(this.b), (SparseArray) this.d);
                 return;
             case 16:
                 d();
@@ -1177,7 +1177,7 @@ public final /* synthetic */ class d4 implements Runnable {
                 g();
                 return;
             case 19:
-                ((mp) this.c).getNotificationCenter().k(95, Long.valueOf(this.b), Integer.valueOf(((TLRPC.TL_chatOnlines) this.d).onlines));
+                ((np) this.c).getNotificationCenter().k(95, Long.valueOf(this.b), Integer.valueOf(((TLRPC.TL_chatOnlines) this.d).onlines));
                 return;
             case 20:
                 h();
@@ -1207,13 +1207,13 @@ public final /* synthetic */ class d4 implements Runnable {
                 p();
                 return;
             default:
-                tr trVar2 = (tr) this.c;
+                ur urVar2 = (ur) this.c;
                 long j20 = this.b;
-                bn bnVar = (bn) this.d;
+                cn cnVar = (cn) this.d;
                 int[] iArr = new int[1];
                 try {
                     try {
-                        sQLiteCursor3 = trVar2.b.queryFinalized("SELECT MAX(mid) FROM messages_topics WHERE uid = ? AND topic_id = ?", Long.valueOf(trVar2.getUserConfig().e()), Long.valueOf(j20));
+                        sQLiteCursor3 = urVar2.b.queryFinalized("SELECT MAX(mid) FROM messages_topics WHERE uid = ? AND topic_id = ?", Long.valueOf(urVar2.getUserConfig().e()), Long.valueOf(j20));
                         if (sQLiteCursor3.next()) {
                             iArr[0] = sQLiteCursor3.intValue(0);
                         }
@@ -1223,11 +1223,11 @@ public final /* synthetic */ class d4 implements Runnable {
                         }
                     }
                 } catch (Exception e29) {
-                    trVar2.o(e29, true);
+                    urVar2.o(e29, true);
                     break;
                 }
                 sQLiteCursor3.dispose();
-                g0.g3(new rq(i11, bnVar, iArr));
+                g0.g3(new sq(i11, cnVar, iArr));
                 return;
         }
     }

@@ -4,11 +4,10 @@ import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import bi.x4;
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +65,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 z0.s(iArr, bArr, i7);
                 createBitmap2.setPixels(iArr, 0, i12, 0, 0, i12, i12);
                 createBitmap2.prepareToDraw();
-                org.telegram.messenger.g0.g3(new x4(z0Var, createBitmap2, iArr, i7, 2));
+                org.telegram.messenger.g0.g3(new ai.b1(z0Var, createBitmap2, iArr, i7, 3));
                 return;
             case 1:
                 this.b.F0(this.c);

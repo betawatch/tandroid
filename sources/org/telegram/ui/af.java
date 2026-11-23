@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class af implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class af implements Runnable {
                 if (bnVar.getUserConfig().q()) {
                     bnVar.qc = null;
                     bnVar.zd(true);
-                    org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.gd.N0(2131754485, null)).j();
+                    org.telegram.ui.Components.lc.b0(bnVar).c(org.telegram.messenger.hd.N0(2131754485, null)).j();
                     bnVar.getMessagesController().p0(true);
                     break;
                 } else {
@@ -90,7 +90,7 @@ public final /* synthetic */ class af implements Runnable {
             case 10:
                 ArrayList arrayList = bnVar.M6;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    TLRPC.Message message = ((org.telegram.messenger.fj) arrayList.get(i11)).k;
+                    TLRPC.Message message = ((org.telegram.messenger.gj) arrayList.get(i11)).k;
                     if (message.mentioned && !message.media_unread) {
                         message.media_unread = false;
                     }
@@ -108,7 +108,7 @@ public final /* synthetic */ class af implements Runnable {
             case 11:
                 ArrayList arrayList2 = bnVar.M6;
                 for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                    ((org.telegram.messenger.fj) arrayList2.get(i12)).h5();
+                    ((org.telegram.messenger.gj) arrayList2.get(i12)).h5();
                 }
                 bnVar.A1 = 0;
                 bnVar.jd(true);
@@ -122,7 +122,7 @@ public final /* synthetic */ class af implements Runnable {
             case 12:
                 ArrayList arrayList3 = bnVar.M6;
                 for (int i13 = 0; i13 < arrayList3.size(); i13++) {
-                    TLRPC.Message message2 = ((org.telegram.messenger.fj) arrayList3.get(i13)).k;
+                    TLRPC.Message message2 = ((org.telegram.messenger.gj) arrayList3.get(i13)).k;
                     if (message2 != null) {
                         TLRPC.MessageMedia messageMedia = message2.media;
                         if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
@@ -165,7 +165,7 @@ public final /* synthetic */ class af implements Runnable {
                 bnVar.O9();
                 break;
             case 20:
-                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.chats_infotip, org.telegram.messenger.gd.N0(2131753287, null), org.telegram.messenger.gd.N0(2131753288, null)).j();
+                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.chats_infotip, org.telegram.messenger.hd.N0(2131753287, null), org.telegram.messenger.hd.N0(2131753288, null)).j();
                 break;
             case 21:
                 bnVar.Pc(false);

@@ -16,7 +16,7 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r00 extends org.telegram.ui.Components.lb0 {
     public boolean m0;
@@ -153,7 +153,7 @@ public final class r00 extends org.telegram.ui.Components.lb0 {
             return;
         }
         r4Var = ((org.telegram.ui.ActionBar.g2) s00Var).parentLayout;
-        ((ActionBarLayout) r4Var).p(canvas, org.telegram.messenger.ks.e4, p02.getMeasuredHeight());
+        ((ActionBarLayout) r4Var).p(canvas, org.telegram.messenger.ls.e4, p02.getMeasuredHeight());
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.TextView;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class b extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -39,9 +39,9 @@ public final class b extends n41 {
         TextView textView = cVar.d;
         TextView textView2 = cVar.c;
         org.telegram.ui.Components.q9 q9Var = cVar.b;
-        fc fcVar = null;
+        gc gcVar = null;
         if (TextUtils.isEmpty(nftitem.name)) {
-            textView2.setText(gd.N0(2131742932, null));
+            textView2.setText(hd.N0(2131742930, null));
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(nftitem.name);
             int indexOf = nftitem.name.indexOf(35);
@@ -55,9 +55,9 @@ public final class b extends n41 {
         if (TextUtils.isEmpty(b10) || TextUtils.isEmpty(b11)) {
             textView.setText(nftitem.description);
         } else {
-            textView.setText(gd.V(null, null, 2131742930, b10, b11));
+            textView.setText(hd.V(null, null, 2131742928, b10, b11));
         }
-        fc c10 = c.c(nftitem, !cVar.f);
+        gc c10 = c.c(nftitem, !cVar.f);
         int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.y6, cVar.a);
         Drawable mutate = cVar.getContext().getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
@@ -68,9 +68,9 @@ public final class b extends n41 {
         cVar.r = w02;
         if (c10 != null && cVar.f) {
             if (nftitem.image_small != null && nftitem.image != null) {
-                fcVar = c.c(nftitem, true);
+                gcVar = c.c(nftitem, true);
             }
-            q9Var.a.r0(c10, "160_160", fcVar, "100_100", oqVar, 0L, null, nftitem, 0);
+            q9Var.a.r0(c10, "160_160", gcVar, "100_100", oqVar, 0L, null, nftitem, 0);
             q9Var.d();
         } else if (c10 != null) {
             q9Var.j(c10, "46_46", oqVar, nftitem);

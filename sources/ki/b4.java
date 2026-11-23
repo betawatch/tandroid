@@ -10,12 +10,12 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.si;
 import org.telegram.messenger.u5;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
@@ -29,9 +29,9 @@ import org.telegram.ui.Components.rh0;
 import org.telegram.ui.Components.w6;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class b4 extends Drawable implements w6, fs {
+public final class b4 extends Drawable implements w6, gs {
     public final Paint a;
     public final Paint b;
     public final ImageReceiver c;
@@ -68,7 +68,7 @@ public final class b4 extends Drawable implements w6, fs {
         imageReceiver.i0(user, b9Var, null);
         imageReceiver.J0(org.telegram.messenger.g0.L(16.0f));
         d();
-        this.h = new xy0(o10.q(user), 14.0f, null);
+        this.h = new xy0(p10.q(user), 14.0f, null);
     }
 
     @Override // org.telegram.ui.Components.w6
@@ -83,7 +83,7 @@ public final class b4 extends Drawable implements w6, fs {
         this.x = false;
         this.c.R();
         this.d.R();
-        ks.f(j10.t0).n(this, ks.C1);
+        ls.f(k10.t0).n(this, ls.C1);
         p5[] p5VarArr = this.f;
         p5 p5Var = p5VarArr[0];
         if (p5Var != null) {
@@ -100,7 +100,7 @@ public final class b4 extends Drawable implements w6, fs {
         this.x = true;
         this.c.P();
         this.d.P();
-        ks.f(j10.t0).c(this, ks.C1);
+        ls.f(k10.t0).c(this, ls.C1);
         p5[] p5VarArr = this.f;
         p5 p5Var = p5VarArr[0];
         if (p5Var != null) {
@@ -114,7 +114,7 @@ public final class b4 extends Drawable implements w6, fs {
 
     public final void d() {
         p5 p5Var;
-        TLRPC.TL_messages_stickerSet o02 = ri.d0(j10.t0).o0(new TLRPC.TL_inputStickerSetEmojiDefaultStatuses(), false);
+        TLRPC.TL_messages_stickerSet o02 = si.d0(k10.t0).o0(new TLRPC.TL_inputStickerSetEmojiDefaultStatuses(), false);
         if (o02 == null || o02.documents.isEmpty()) {
             this.w = true;
             return;
@@ -127,7 +127,7 @@ public final class b4 extends Drawable implements w6, fs {
         if (p5Var2 != null) {
             p5Var2.n(this.y);
         }
-        p5VarArr[this.e] = p5.l(j10.t0, 9, document);
+        p5VarArr[this.e] = p5.l(k10.t0, 9, document);
         p5VarArr[this.e].setColorFilter(new PorterDuffColorFilter(m6.x0(null, m6.Fi, false), PorterDuff.Mode.SRC_IN));
         if (this.x && (p5Var = p5VarArr[this.e]) != null) {
             p5Var.a(this.y);
@@ -135,9 +135,9 @@ public final class b4 extends Drawable implements w6, fs {
         org.telegram.messenger.g0.h3(new a4(this, 0), 2500L);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.B0 && this.w && this.x) {
+        if (i7 == ls.B0 && this.w && this.x) {
             this.w = false;
             d();
         }
@@ -251,8 +251,8 @@ public final class b4 extends Drawable implements w6, fs {
         b9Var.r(user);
         imageReceiver.i0(user, b9Var, null);
         imageReceiver.J0(org.telegram.messenger.g0.L(16.0f));
-        imageReceiver2.r0(fc.b(document), "120_120", fc.c(w7.w(document.thumbs, 120, false, null, false), document), "120_120", u5.d(document.thumbs, m6.a7, 0.35f, false), 0L, null, null, 0);
-        this.h = new xy0(o10.q(user), 14.0f, null);
+        imageReceiver2.r0(gc.b(document), "120_120", gc.c(w7.w(document.thumbs, 120, false, null, false), document), "120_120", u5.d(document.thumbs, m6.a7, 0.35f, false), 0L, null, null, 0);
+        this.h = new xy0(p10.q(user), 14.0f, null);
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -47,15 +47,14 @@ import org.json.JSONObject;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.au;
 import org.telegram.messenger.bu;
-import org.telegram.messenger.ev;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.r10;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.ya;
+import org.telegram.messenger.cu;
+import org.telegram.messenger.fv;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.za;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.a9;
@@ -77,9 +76,9 @@ import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.common.api.internal.q, si, c4.m, li.j0, l.i, n2.v, o0.a, b3.k, xm0, a5, oi.h0, ya, ue.a, an0 {
+public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.common.api.internal.q, si, c4.m, li.j0, l.i, n2.v, o0.a, b3.k, xm0, a5, oi.h0, za, ue.a, an0 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -115,9 +114,9 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
 
     @Override // ue.a
     public void E0() {
-        bu buVar = (bu) this.b;
-        bu.j0(buVar, null);
-        buVar.b0 = null;
+        cu cuVar = (cu) this.b;
+        cu.j0(cuVar, null);
+        cuVar.b0 = null;
     }
 
     @Override // li.j0
@@ -220,14 +219,14 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
 
     @Override // ue.a
     public void M(float f10, float f11) {
-        ev evVar;
+        fv fvVar;
         org.telegram.ui.Cells.m1 m1Var;
-        bu buVar = (bu) this.b;
-        au auVar = buVar.b0;
-        if (auVar == null || (m1Var = (evVar = buVar.a).F) == null) {
+        cu cuVar = (cu) this.b;
+        bu buVar = cuVar.b0;
+        if (buVar == null || (m1Var = (fvVar = cuVar.a).F) == null) {
             return;
         }
-        m1Var.k1(evVar.E, auVar.c);
+        m1Var.k1(fvVar.E, buVar.c);
     }
 
     @Override // n2.v
@@ -270,12 +269,12 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
 
     @Override // ue.a
     public boolean Q0(float f10, float f11) {
-        bu buVar = (bu) this.b;
-        au i02 = bu.i0(buVar, f10, f11);
+        cu cuVar = (cu) this.b;
+        bu i02 = cu.i0(cuVar, f10, f11);
         if (i02 == null || i02.b) {
             i02 = null;
         }
-        buVar.b0 = i02;
+        cuVar.b0 = i02;
         return i02 != null;
     }
 
@@ -317,32 +316,32 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
 
     @Override // ue.a
     public boolean Z0(View view, float f10, float f11) {
-        bu buVar = (bu) this.b;
-        if (buVar.b0 == null) {
+        cu cuVar = (cu) this.b;
+        if (cuVar.b0 == null) {
             return false;
         }
-        au i02 = bu.i0(buVar, f10, f11);
-        au auVar = buVar.b0;
-        if (i02 != auVar) {
+        bu i02 = cu.i0(cuVar, f10, f11);
+        bu buVar = cuVar.b0;
+        if (i02 != buVar) {
             return false;
         }
-        ev evVar = buVar.a;
-        org.telegram.ui.Cells.m1 m1Var = evVar.F;
+        fv fvVar = cuVar.a;
+        org.telegram.ui.Cells.m1 m1Var = fvVar.F;
         if (m1Var == null) {
             return true;
         }
-        m1Var.I1(evVar.E, auVar.c);
+        m1Var.I1(fvVar.E, buVar.c);
         return true;
     }
 
     @Override // org.telegram.ui.Components.xm0
     public void a(float f10) {
         oi.x xVar = (oi.x) this.b;
-        fj fjVar = xVar.Q;
-        if (fjVar == null) {
+        gj gjVar = xVar.Q;
+        if (gjVar == null) {
             return;
         }
-        fjVar.b0 = f10;
+        gjVar.b0 = f10;
         MediaController.B().i0(xVar.Q, f10);
     }
 
@@ -451,7 +450,7 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
         k8.a aVar = ((FfmpegAudioRenderer) this.b).J;
         Handler handler = (Handler) aVar.b;
         if (handler != null) {
-            handler.post(new ai.y0(aVar, i7, 18));
+            handler.post(new ai.c1(aVar, i7, 18));
         }
     }
 
@@ -478,16 +477,16 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
     public void f0(gh ghVar) {
         int i7;
         i7 = ((org.telegram.ui.ActionBar.g2) ((kg.n) this.b)).currentAccount;
-        ks.f(i7).d(ghVar);
+        ls.f(i7).d(ghVar);
     }
 
     @Override // org.telegram.ui.Components.xm0
     public void g(float f10) {
-        fj fjVar = ((oi.x) this.b).Q;
-        if (fjVar == null) {
+        gj gjVar = ((oi.x) this.b).Q;
+        if (gjVar == null) {
             return;
         }
-        fjVar.b0 = f10;
+        gjVar.b0 = f10;
     }
 
     @Override // org.telegram.ui.Components.si
@@ -508,7 +507,7 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
 
     @Override // org.telegram.ui.Components.an0
     public CharSequence getContentDescription() {
-        r10 r10Var;
+        s10 s10Var;
         switch (this.a) {
             case 26:
                 return " ";
@@ -520,8 +519,8 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
                         sb2.append(u7Var.s);
                     }
                     t7 t7Var = u7Var.r;
-                    if (t7Var != null && (r10Var = t7Var.e) != null) {
-                        CharSequence charSequence = (CharSequence) r10Var.g(0, Integer.valueOf(u7Var.f));
+                    if (t7Var != null && (s10Var = t7Var.e) != null) {
+                        CharSequence charSequence = (CharSequence) s10Var.g(0, Integer.valueOf(u7Var.f));
                         if (!TextUtils.isEmpty(charSequence)) {
                             if (sb2.length() > 0) {
                                 sb2.append(", ");
@@ -550,10 +549,10 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
             default:
                 StringBuilder sb3 = new StringBuilder();
                 f8 f8Var = (f8) this.b;
-                sb3.append(gd.G(f8Var.x2 / 60, "Minutes", new Object[0]));
+                sb3.append(org.telegram.messenger.hd.G(f8Var.x2 / 60, "Minutes", new Object[0]));
                 sb3.append(' ');
-                sb3.append(gd.G(f8Var.x2 % 60, "Seconds", new Object[0]));
-                return gd.a0("AccDescrPlayerDuration", null, 2131754805, sb3.toString(), gd.G(f8Var.y2 / 60, "Minutes", new Object[0]) + ' ' + gd.G(f8Var.y2 % 60, "Seconds", new Object[0]));
+                sb3.append(org.telegram.messenger.hd.G(f8Var.x2 % 60, "Seconds", new Object[0]));
+                return org.telegram.messenger.hd.a0("AccDescrPlayerDuration", null, 2131754805, sb3.toString(), org.telegram.messenger.hd.G(f8Var.y2 / 60, "Minutes", new Object[0]) + ' ' + org.telegram.messenger.hd.G(f8Var.y2 % 60, "Seconds", new Object[0]));
         }
     }
 
@@ -691,7 +690,7 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
                     ThemeActivity themeActivity = c61Var.f.e;
                     mj0 mj0Var = (mj0) themeActivity.b.K(themeActivity.g0);
                     if (mj0Var != null) {
-                        ((a9) mj0Var.a).setText(gd.a0("AutoNightBrightnessInfo", null, 2131753791, Integer.valueOf((int) (m6.q * 100.0f))));
+                        ((a9) mj0Var.a).setText(org.telegram.messenger.hd.a0("AutoNightBrightnessInfo", null, 2131753791, Integer.valueOf((int) (m6.q * 100.0f))));
                     }
                     m6.F(true);
                     break;
@@ -721,9 +720,9 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
                         }
                         u7Var.f = round;
                         u7Var.e(round, true);
-                        x10 x10Var = u7Var.n;
-                        if (x10Var != null) {
-                            x10Var.a(Integer.valueOf(u7Var.f));
+                        y10 y10Var = u7Var.n;
+                        if (y10Var != null) {
+                            y10Var.a(Integer.valueOf(u7Var.f));
                             break;
                         }
                     }
@@ -733,9 +732,9 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
                 if (z10) {
                     MediaController.B().i0(MediaController.B().v0, f10);
                 }
-                fj fjVar = MediaController.B().v0;
-                if (fjVar != null && fjVar.I3()) {
-                    ((f8) this.b).c1(fjVar, false);
+                gj gjVar = MediaController.B().v0;
+                if (gjVar != null && gjVar.I3()) {
+                    ((f8) this.b).c1(gjVar, false);
                     break;
                 }
                 break;
@@ -836,19 +835,19 @@ public final class g1 implements h1, og.n, tg.c, g61, com.google.android.gms.com
 
     @Override // ue.a
     public void t(float f10, float f11) {
-        bu buVar = (bu) this.b;
-        au i02 = bu.i0(buVar, f10, f11);
-        au auVar = buVar.b0;
-        if (i02 != auVar) {
-            auVar = null;
+        cu cuVar = (cu) this.b;
+        bu i02 = cu.i0(cuVar, f10, f11);
+        bu buVar = cuVar.b0;
+        if (i02 != buVar) {
+            buVar = null;
         }
-        bu.j0(buVar, auVar);
+        cu.j0(cuVar, buVar);
     }
 
     @Override // ue.a
     public void t0() {
-        bu buVar = (bu) this.b;
-        bu.j0(buVar, buVar.b0);
+        cu cuVar = (cu) this.b;
+        cu.j0(cuVar, cuVar.b0);
     }
 
     @Override // oi.h0

@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p91 extends rg.b {
     public final /* synthetic */ y91 d;
@@ -87,13 +87,13 @@ public final class p91 extends rg.b {
         boolean z12 = i14 == i15 && v91Var3.c5 == i7 && y91Var.H;
         if (message != null) {
             i11 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
-            org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(i11, message, false, false);
+            org.telegram.messenger.gj gjVar = new org.telegram.messenger.gj(i11, message, false, false);
             if (!y91Var.getMessagesController().E2(-j3)) {
                 TLRPC.TL_forumTopic tL_forumTopic4 = tL_forumTopic2;
                 v91Var = v91Var3;
                 i10 = i15;
                 boolean z13 = z12;
-                v91Var.f0(tL_forumTopic, -j3, fjVar, y91Var.isInPreviewMode(), z13);
+                v91Var.f0(tL_forumTopic, -j3, gjVar, y91Var.isInPreviewMode(), z13);
                 z10 = z13;
                 v91Var.b5 = i7 != arrayList.size() - 1 || y91Var.O.R0();
                 boolean z14 = tL_forumTopic.pinned;
@@ -117,7 +117,7 @@ public final class p91 extends rg.b {
             long o4 = org.telegram.messenger.n5.o(tL_forumTopic.from_id);
             int i16 = message.date;
             i10 = i15;
-            v91Var3.d0(o4, fjVar, i16, false, false);
+            v91Var3.d0(o4, gjVar, i16, false, false);
             v91Var3.t0 = true;
             v91Var3.t2 = i13 < b();
             v91Var = v91Var3;
@@ -153,10 +153,10 @@ public final class p91 extends rg.b {
         v91 v91Var = new v91(y91Var, viewGroup.getContext(), false);
         if (i7 == 3) {
             i10 = ((org.telegram.ui.ActionBar.g2) y91Var).currentAccount;
-            boolean w10 = org.telegram.messenger.o10.w(org.telegram.messenger.mp.u1(i10).c2(Long.valueOf(-y91Var.a)));
+            boolean w10 = org.telegram.messenger.p10.w(org.telegram.messenger.np.u1(i10).c2(Long.valueOf(-y91Var.a)));
             v91Var.setForumIcon(qg.c.e(qg.a.k[0], ""));
-            v91Var.setTitleOverride(org.telegram.messenger.gd.N0(!w10 ? 2131753063 : 2131753065, null));
-            v91Var.setCustomMessage(org.telegram.messenger.gd.N0(!w10 ? 2131753064 : 2131753066, null));
+            v91Var.setTitleOverride(org.telegram.messenger.hd.N0(!w10 ? 2131753063 : 2131753065, null));
+            v91Var.setCustomMessage(org.telegram.messenger.hd.N0(!w10 ? 2131753064 : 2131753066, null));
         }
         z10 = ((org.telegram.ui.ActionBar.g2) y91Var).inPreviewMode;
         v91Var.l0 = z10;

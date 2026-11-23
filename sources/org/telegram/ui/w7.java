@@ -4,18 +4,18 @@ import android.content.Context;
 import android.graphics.Point;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w7 extends FrameLayout {
     public final /* synthetic */ int a;
     public int b;
-    public final /* synthetic */ org.telegram.messenger.fs c;
+    public final /* synthetic */ org.telegram.messenger.gs c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w7(org.telegram.messenger.fs fsVar, Context context, int i7) {
+    public /* synthetic */ w7(org.telegram.messenger.gs gsVar, Context context, int i7) {
         super(context);
         this.a = i7;
-        this.c = fsVar;
+        this.c = gsVar;
         this.b = -1;
     }
 

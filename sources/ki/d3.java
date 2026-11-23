@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.h6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.iz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class d3 extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -42,11 +42,11 @@ public final class d3 extends n41 {
                 e3 e3Var = (e3) view;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj;
                 boolean z11 = o41Var.s;
-                TLRPC.User c22 = mp.u1(e3Var.a).c2(Long.valueOf(starrefprogram.bot_id));
+                TLRPC.User c22 = np.u1(e3Var.a).c2(Long.valueOf(starrefprogram.bot_id));
                 b9 b9Var = new b9((h6) null);
                 b9Var.r(c22);
                 e3Var.c.f(c22, b9Var);
-                e3Var.h.setText(o10.q(c22));
+                e3Var.h.setText(p10.q(c22));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 if (starrefprogram.commission_permille > 0) {
                     spannableStringBuilder.append((CharSequence) " d");
@@ -65,11 +65,11 @@ public final class d3 extends n41 {
                 }
                 int i10 = starrefprogram.duration_months;
                 if (i10 == 0) {
-                    spannableStringBuilder.append((CharSequence) gd.N0(2131748793, null));
+                    spannableStringBuilder.append((CharSequence) hd.N0(2131748793, null));
                 } else if (i10 < 12 || i10 % 12 != 0) {
-                    spannableStringBuilder.append((CharSequence) gd.G(i10, "Months", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) hd.G(i10, "Months", new Object[0]));
                 } else {
-                    spannableStringBuilder.append((CharSequence) gd.G(i10 / 12, "Years", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) hd.G(i10 / 12, "Years", new Object[0]));
                 }
                 e3Var.n.setText(spannableStringBuilder);
                 e3Var.r.setVisibility(z11 ? 0 : 8);
@@ -88,12 +88,12 @@ public final class d3 extends n41 {
         h6 h6Var = e3Var2.b;
         View view2 = e3Var2.e;
         ImageView imageView = e3Var2.f;
-        TLRPC.User c23 = mp.u1(e3Var2.a).c2(Long.valueOf(connectedbotstarref.bot_id));
+        TLRPC.User c23 = np.u1(e3Var2.a).c2(Long.valueOf(connectedbotstarref.bot_id));
         b9 b9Var2 = new b9((h6) null);
         b9Var2.r(c23);
         e3Var2.c.f(c23, b9Var2);
         TextView textView = e3Var2.h;
-        textView.setText(j6.m(o10.q(c23), textView.getPaint().getFontMetricsInt(), false, null, 0));
+        textView.setText(j6.m(p10.q(c23), textView.getPaint().getFontMetricsInt(), false, null, 0));
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         if (connectedbotstarref.commission_permille > 0) {
             spannableStringBuilder2.append((CharSequence) " d");
@@ -112,11 +112,11 @@ public final class d3 extends n41 {
         }
         int i12 = connectedbotstarref.duration_months;
         if (i12 == 0) {
-            spannableStringBuilder2.append((CharSequence) gd.N0(2131748793, null));
+            spannableStringBuilder2.append((CharSequence) hd.N0(2131748793, null));
         } else if (i12 < 12 || i12 % 12 != 0) {
-            spannableStringBuilder2.append((CharSequence) gd.G(i12, "Months", new Object[0]));
+            spannableStringBuilder2.append((CharSequence) hd.G(i12, "Months", new Object[0]));
         } else {
-            spannableStringBuilder2.append((CharSequence) gd.G(i12 / 12, "Years", new Object[0]));
+            spannableStringBuilder2.append((CharSequence) hd.G(i12 / 12, "Years", new Object[0]));
         }
         e3Var2.n.setText(spannableStringBuilder2);
         e3Var2.r.setVisibility(z12 ? 0 : 8);

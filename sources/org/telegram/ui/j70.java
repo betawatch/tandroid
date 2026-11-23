@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j70 implements Runnable {
     public final /* synthetic */ Object E;
@@ -59,7 +59,7 @@ public final /* synthetic */ class j70 implements Runnable {
                 if (z10) {
                     TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
                     if (!tL_messages_chats.chats.isEmpty()) {
-                        org.telegram.messenger.mp.u1(launchActivity.P).Z3(tL_messages_chats.chats, false);
+                        org.telegram.messenger.np.u1(launchActivity.P).Z3(tL_messages_chats.chats, false);
                         TLRPC.Chat chat = tL_messages_chats.chats.get(0);
                         Long l10 = this.d;
                         if (chat != null && this.f && org.telegram.messenger.v3.R(chat)) {
@@ -76,13 +76,13 @@ public final /* synthetic */ class j70 implements Runnable {
                         }
                         org.telegram.ui.ActionBar.g2 g2Var = this.x;
                         Bundle bundle = this.c;
-                        if (g2Var == null || org.telegram.messenger.mp.u1(this.y).E(bundle, g2Var, null, null)) {
+                        if (g2Var == null || org.telegram.messenger.np.u1(this.y).E(bundle, g2Var, null, null)) {
                             ((ActionBarLayout) launchActivity.M()).S(new bn(bundle));
                             break;
                         }
                     }
                 }
-                launchActivity.F0(org.telegram.ui.Components.c5.E(launchActivity, org.telegram.messenger.gd.N0(2131751442, null), org.telegram.messenger.gd.N0(2131748702, null)));
+                launchActivity.F0(org.telegram.ui.Components.c5.E(launchActivity, org.telegram.messenger.hd.N0(2131751442, null), org.telegram.messenger.hd.N0(2131748702, null)));
                 break;
             default:
                 int[] iArr = (int[]) obj;

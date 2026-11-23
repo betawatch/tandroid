@@ -1,66 +1,248 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class op implements Runnable {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ boolean F;
-    public final /* synthetic */ boolean G;
-    public final /* synthetic */ tr a;
-    public final /* synthetic */ sz b;
-    public final /* synthetic */ tz c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ur b;
+    public final /* synthetic */ long c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ int s;
-    public final /* synthetic */ int w;
-    public final /* synthetic */ int x;
-    public final /* synthetic */ long y;
 
-    public /* synthetic */ op(tr trVar, sz szVar, tz tzVar, long j3, long j10, int i7, int i10, int i11, int i12, int i13, int i14, int i15, long j11, int i16, boolean z10, boolean z11) {
-        this.a = trVar;
-        this.b = szVar;
-        this.c = tzVar;
-        this.d = j3;
-        this.e = j10;
-        this.f = i7;
-        this.h = i10;
-        this.n = i11;
-        this.r = i12;
-        this.s = i13;
-        this.w = i14;
-        this.x = i15;
-        this.y = j11;
-        this.E = i16;
-        this.F = z10;
-        this.G = z11;
+    public /* synthetic */ op(int i7, long j3, long j10, ur urVar) {
+        this.a = i7;
+        this.b = urVar;
+        this.c = j3;
+        this.d = j10;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x00d3, code lost:
+    
+        if (r8.id != 1) goto L33;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0136  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x011c  */
+    /* JADX WARN: Type inference failed for: r14v0 */
+    /* JADX WARN: Type inference failed for: r14v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r14v8 */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        tr trVar = this.a;
-        sz szVar = this.b;
-        tz tzVar = this.c;
-        long j3 = this.d;
-        long j10 = this.e;
-        int i7 = this.f;
-        int i10 = this.h;
-        int i11 = this.n;
-        int i12 = this.r;
-        int i13 = this.s;
-        int i14 = this.w;
-        int i15 = this.x;
-        long j11 = this.y;
-        int i16 = this.E;
-        boolean z10 = this.F;
-        boolean z11 = this.G;
-        tz.a(szVar);
-        sz d = tz.d(tzVar, "MessagesStorage.getMessages");
-        xq f02 = trVar.f0(j3, j10, i7, i10, i11, i12, i13, i14, i15, j11, i16, z10, z11, tzVar);
-        tz.a(d);
-        Utilities.d.c(new rq(1, tz.d(tzVar, "MessagesStorage.getMessages: stageQueue.postRunnable"), f02));
+        ArrayList arrayList;
+        ?? r14;
+        SQLiteCursor queryFinalized;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        ur urVar;
+        switch (this.a) {
+            case 0:
+                long j3 = this.c;
+                ur urVar2 = this.b;
+                urVar2.getClass();
+                try {
+                    SQLiteCursor queryFinalized2 = urVar2.b.queryFinalized("SELECT flags FROM dialog_settings WHERE did = " + j3, new Object[0]);
+                    int intValue = queryFinalized2.next() ? queryFinalized2.intValue(0) : 0;
+                    queryFinalized2.dispose();
+                    long j10 = intValue;
+                    long j11 = this.d;
+                    if (j11 == j10) {
+                        return;
+                    }
+                    SQLiteDatabase sQLiteDatabase = urVar2.b;
+                    Locale locale = Locale.US;
+                    sQLiteDatabase.executeFast("REPLACE INTO dialog_settings VALUES(" + j3 + ", " + j11 + ")").stepThis().dispose();
+                    urVar2.t1(true);
+                    return;
+                } catch (Exception e10) {
+                    urVar2.o(e10, true);
+                    return;
+                }
+            case 1:
+                long j12 = this.c;
+                long j13 = this.d;
+                ur urVar3 = this.b;
+                urVar3.getClass();
+                try {
+                    SQLiteDatabase sQLiteDatabase2 = urVar3.b;
+                    Locale locale2 = Locale.US;
+                    sQLiteDatabase2.executeFast("DELETE FROM topics WHERE did = " + j12 + " AND topic_id = " + j13).stepThis().dispose();
+                    urVar3.b.executeFast("DELETE FROM messages_v2 WHERE uid = " + j12 + " AND mid IN (SELECT mid FROM messages_topics WHERE uid = " + j12 + " AND topic_id = " + j13 + ")").stepThis().dispose();
+                    SQLiteDatabase sQLiteDatabase3 = urVar3.b;
+                    StringBuilder sb2 = new StringBuilder("DELETE FROM messages_topics WHERE uid = ");
+                    sb2.append(j12);
+                    sb2.append(" AND topic_id = ");
+                    sb2.append(j13);
+                    sQLiteDatabase3.executeFast(sb2.toString()).stepThis().dispose();
+                    return;
+                } catch (SQLiteException e11) {
+                    e11.printStackTrace();
+                    return;
+                }
+            case 2:
+                long j14 = this.c;
+                long j15 = this.d;
+                ur urVar4 = this.b;
+                urVar4.getClass();
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    try {
+                        sQLitePreparedStatement = urVar4.b.executeFast("UPDATE chat_settings_v2 SET inviter = ? WHERE uid = ?");
+                        sQLitePreparedStatement.requery();
+                        sQLitePreparedStatement.bindLong(1, j14);
+                        sQLitePreparedStatement.bindLong(2, j15);
+                        sQLitePreparedStatement.step();
+                        sQLitePreparedStatement.dispose();
+                    } catch (Throwable th2) {
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th2;
+                    }
+                } catch (Exception e12) {
+                    urVar4.o(e12, true);
+                    if (sQLitePreparedStatement == null) {
+                        return;
+                    }
+                }
+                sQLitePreparedStatement.dispose();
+                return;
+            case 3:
+                ur urVar5 = this.b;
+                long j16 = this.c;
+                SQLiteCursor sQLiteCursor = null;
+                try {
+                    try {
+                        arrayList = new ArrayList();
+                        r14 = 0;
+                        queryFinalized = urVar5.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = " + j16, new Object[0]);
+                    } catch (Throwable th3) {
+                        th = th3;
+                    }
+                } catch (Exception e13) {
+                    e = e13;
+                }
+                try {
+                    try {
+                        ArrayList arrayList4 = new ArrayList();
+                        ArrayList arrayList5 = new ArrayList();
+                        ArrayList arrayList6 = new ArrayList();
+                        while (queryFinalized.next()) {
+                            try {
+                                NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(r14);
+                                if (byteBufferValue != 0) {
+                                    TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r14), r14);
+                                    try {
+                                        if (TLdeserialize != null) {
+                                            TLdeserialize.readAttachPath(byteBufferValue, urVar5.getUserConfig().n);
+                                            boolean z10 = p10.z(j16);
+                                            long j17 = this.d;
+                                            if (z10) {
+                                                if (gj.B1(TLdeserialize.fwd_from.from_id) != j17) {
+                                                }
+                                                arrayList.add(Integer.valueOf(TLdeserialize.id));
+                                                urVar5.b(TLdeserialize, arrayList4, arrayList6, arrayList5, false);
+                                                arrayList2 = arrayList4;
+                                                arrayList3 = arrayList5;
+                                                byteBufferValue.reuse();
+                                            }
+                                            if (gj.B1(TLdeserialize.from_id) == j17) {
+                                                break;
+                                            }
+                                        }
+                                        byteBufferValue.reuse();
+                                    } catch (Exception e14) {
+                                        e = e14;
+                                        urVar5.o(e, true);
+                                        queryFinalized.dispose();
+                                        urVar5.D(arrayList6, true);
+                                        urVar = urVar5;
+                                        g0.g3(new gm(urVar, arrayList3, j16, arrayList, 10));
+                                        urVar.Q0(0, 0, j16, arrayList, false);
+                                        urVar.S1(j16, !n5.z(j16) ? -j16 : 0L, arrayList, null);
+                                        urVar.getFileLoader().getClass();
+                                        w7.p(0, arrayList2);
+                                        if (!arrayList.isEmpty()) {
+                                        }
+                                        return;
+                                    }
+                                    arrayList2 = arrayList4;
+                                    arrayList3 = arrayList5;
+                                } else {
+                                    arrayList2 = arrayList4;
+                                    arrayList3 = arrayList5;
+                                }
+                                arrayList5 = arrayList3;
+                                arrayList4 = arrayList2;
+                                r14 = 0;
+                            } catch (Exception e15) {
+                                e = e15;
+                                arrayList2 = arrayList4;
+                                arrayList3 = arrayList5;
+                            }
+                        }
+                        arrayList2 = arrayList4;
+                        arrayList3 = arrayList5;
+                        queryFinalized.dispose();
+                        urVar5.D(arrayList6, true);
+                        urVar = urVar5;
+                    } catch (Exception e16) {
+                        e = e16;
+                        sQLiteCursor = queryFinalized;
+                    }
+                    try {
+                        g0.g3(new gm(urVar, arrayList3, j16, arrayList, 10));
+                        urVar.Q0(0, 0, j16, arrayList, false);
+                        urVar.S1(j16, !n5.z(j16) ? -j16 : 0L, arrayList, null);
+                        urVar.getFileLoader().getClass();
+                        w7.p(0, arrayList2);
+                        if (!arrayList.isEmpty()) {
+                            urVar = urVar;
+                            urVar5 = urVar;
+                            g0.g3(new hr(urVar, arrayList, j16, 7));
+                        }
+                    } catch (Exception e17) {
+                        e = e17;
+                        urVar5 = urVar;
+                        urVar5.o(e, true);
+                        if (sQLiteCursor != null) {
+                            sQLiteCursor.dispose();
+                        }
+                        return;
+                    }
+                    return;
+                } catch (Throwable th4) {
+                    th = th4;
+                    sQLiteCursor = queryFinalized;
+                    if (sQLiteCursor != null) {
+                        sQLiteCursor.dispose();
+                    }
+                    throw th;
+                }
+            default:
+                long j18 = this.c;
+                long j19 = this.d;
+                ur urVar6 = this.b;
+                urVar6.getClass();
+                try {
+                    urVar6.b.executeFast("DELETE FROM dialog_photos WHERE uid = " + j18 + " AND id = " + j19).stepThis().dispose();
+                    urVar6.b.executeFast("UPDATE dialog_photos_count SET count = count - 1 WHERE uid = " + j18 + " AND count > 0").stepThis().dispose();
+                    return;
+                } catch (Exception e18) {
+                    urVar6.o(e18, true);
+                    return;
+                }
+        }
     }
 }

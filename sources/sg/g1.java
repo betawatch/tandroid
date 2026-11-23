@@ -4,10 +4,10 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g1 {
     public u0 a;
@@ -84,7 +84,7 @@ public final class g1 {
         if (x0Var2 == null) {
             painting.getClass();
         } else if (painting.r != null) {
-            painting.f.f(new j01(painting, x0Var2, currentColor, 26));
+            painting.f.f(new f21(painting, x0Var2, currentColor, 25));
         }
         this.m.clear();
         this.n.clear();

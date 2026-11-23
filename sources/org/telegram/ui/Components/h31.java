@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h31 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -74,7 +74,7 @@ public final class h31 extends FrameLayout implements org.telegram.ui.ActionBar.
         linearLayout2.addView(opVar, c8.ma.t(22, 22, 16, 0, 0, 0, 0));
         TextView textView4 = new TextView(context);
         org.telegram.messenger.f3.l(textView4, org.telegram.ui.ActionBar.m6.j5, h6Var, 1, 14.0f);
-        textView4.setText(org.telegram.messenger.gd.N0(2131754995, null));
+        textView4.setText(org.telegram.messenger.hd.N0(2131754995, null));
         linearLayout2.addView(textView4, c8.ma.t(-2, -2, 16, 3, -1, 2, 0));
         addView(linearLayout2, c8.ma.d(-2, -2.0f, 21, 0.0f, -3.0f, -6.0f, -3.0f));
         c8.ra.b(linearLayout2, 0.025f, 1.5f);
@@ -93,7 +93,7 @@ public final class h31 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.w = textView5;
         textView5.setTextSize(1, 14.0f);
         textView5.setTypeface(org.telegram.messenger.g0.o());
-        textView5.setText(org.telegram.messenger.gd.N0(2131755003, null));
+        textView5.setText(org.telegram.messenger.hd.N0(2131755003, null));
         linearLayout3.addView(textView5, c8.ma.r(-2, -2, 16));
         updateColors();
     }

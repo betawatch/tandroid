@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class b21 implements org.telegram.messenger.fs {
+public final class b21 implements org.telegram.messenger.gs {
     public final int a;
     public final TLRPC.Chat b;
     public TLRPC.ChannelParticipantsFilter c;
@@ -21,15 +21,15 @@ public final class b21 implements org.telegram.messenger.fs {
 
     public b21(int i7, long j3, TLRPC.ChannelParticipantsFilter channelParticipantsFilter) {
         this.a = i7;
-        this.b = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(j3));
-        TLRPC.ChatFull P0 = org.telegram.messenger.mp.u1(i7).P0(j3);
+        this.b = org.telegram.messenger.np.u1(i7).O0(Long.valueOf(j3));
+        TLRPC.ChatFull P0 = org.telegram.messenger.np.u1(i7).P0(j3);
         this.c = channelParticipantsFilter;
         if (P0 == null) {
             if (!this.s) {
                 this.s = true;
-                org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.T);
+                org.telegram.messenger.ls.f(i7).c(this, org.telegram.messenger.ls.T);
             }
-            org.telegram.messenger.mp.u1(i7).b3(0, j3, false);
+            org.telegram.messenger.np.u1(i7).b3(0, j3, false);
         }
     }
 
@@ -37,7 +37,7 @@ public final class b21 implements org.telegram.messenger.fs {
         if (this.s) {
             this.s = false;
             int i7 = this.a;
-            org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.T);
+            org.telegram.messenger.ls.f(i7).n(this, org.telegram.messenger.ls.T);
             if (this.n >= 0) {
                 ConnectionsManager.getInstance(i7).cancelRequest(this.n, true);
                 this.n = -1;
@@ -58,7 +58,7 @@ public final class b21 implements org.telegram.messenger.fs {
         TLRPC.Chat chat = this.b;
         if (org.telegram.messenger.v3.T(chat)) {
             TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-            tL_channels_getParticipants.channel = org.telegram.messenger.mp.k1(chat);
+            tL_channels_getParticipants.channel = org.telegram.messenger.np.k1(chat);
             tL_channels_getParticipants.filter = this.c;
             tL_channels_getParticipants.limit = 30;
             tL_channels_getParticipants.offset = this.r ? 0 : this.d.size();
@@ -66,9 +66,9 @@ public final class b21 implements org.telegram.messenger.fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.T) {
+        if (i7 == org.telegram.messenger.ls.T) {
             long j3 = ((TLRPC.ChatFull) objArr[0]).id;
             TLRPC.Chat chat = this.b;
             if (j3 == chat.id && !org.telegram.messenger.v3.T(chat) && this.f) {

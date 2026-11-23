@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xd0 implements ts, OnSuccessListener, OnFailureListener {
     public final /* synthetic */ ce0 a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class xd0 implements ts, OnSuccessListener, OnFailu
         ce0Var.G = psVar;
         ce0Var.F = 0;
         ce0Var.L = false;
-        org.telegram.messenger.mp.g1().edit().putString("phone_code_last_matched_" + psVar.c, psVar.d).apply();
+        org.telegram.messenger.np.g1().edit().putString("phone_code_last_matched_" + psVar.c, psVar.d).apply();
         org.telegram.messenger.g0.h3(new rd0(ce0Var, 4), 300L);
         ae0 ae0Var = ce0Var.b;
         ae0Var.requestFocus();

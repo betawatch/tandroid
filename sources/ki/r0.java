@@ -18,18 +18,18 @@ import java.util.List;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.tr0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class r0 {
     public static final HashMap g = new HashMap();
@@ -171,14 +171,14 @@ public final class r0 {
         final int i7 = 1;
         final boolean[] zArr = new boolean[1];
         int i10 = this.b;
-        TLRPC.User c22 = mp.u1(i10).c2(Long.valueOf(this.c));
+        TLRPC.User c22 = np.u1(i10).c2(Long.valueOf(this.c));
         final int i11 = 0;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f11, null);
         int i12 = 2;
-        SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753045, o10.q(c22), o10.q(c22)));
+        SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(hd.a0(null, null, 2131753045, p10.q(c22), p10.q(c22)));
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.U = W2;
-        q0 q0Var = new q0(this.a, j10.i(i10).f(), c22);
+        q0 q0Var = new q0(this.a, k10.i(i10).f(), c22);
         int i13 = m6.L5;
         int x02 = m6.x0(null, i13, false);
         t1Var.c0 = q0Var;
@@ -186,7 +186,7 @@ public final class r0 {
         t1Var.e0 = -1;
         alertDialog$Builder.n(i13, null);
         if (a() || (f10 = f()) == null || (f10.shouldShowRequestPermissionRationale("android.permission.ACCESS_COARSE_LOCATION") && f10.shouldShowRequestPermissionRationale("android.permission.ACCESS_FINE_LOCATION"))) {
-            alertDialog$Builder.k(gd.N0(2131753047, null), new org.telegram.ui.ActionBar.q1(this) { // from class: ki.o0
+            alertDialog$Builder.k(hd.N0(2131753047, null), new org.telegram.ui.ActionBar.q1(this) { // from class: ki.o0
                 public final /* synthetic */ r0 b;
 
                 {
@@ -203,7 +203,7 @@ public final class r0 {
                             boolean a10 = r0Var.a();
                             org.telegram.ui.web.o oVar2 = oVar;
                             if (!a10) {
-                                na.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.x1(26, r0Var, oVar2));
+                                na.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.y1(26, r0Var, oVar2));
                                 break;
                             } else {
                                 r0Var.d = true;
@@ -238,9 +238,9 @@ public final class r0 {
                 }
             });
         } else {
-            alertDialog$Builder.k(gd.N0(2131753041, null), new a3.h(f11, zArr, oVar, 13));
+            alertDialog$Builder.k(hd.N0(2131753041, null), new a3.h(f11, zArr, oVar, 13));
         }
-        alertDialog$Builder.h(gd.N0(2131753046, null), new org.telegram.ui.ActionBar.q1(this) { // from class: ki.o0
+        alertDialog$Builder.h(hd.N0(2131753046, null), new org.telegram.ui.ActionBar.q1(this) { // from class: ki.o0
             public final /* synthetic */ r0 b;
 
             {
@@ -257,7 +257,7 @@ public final class r0 {
                         boolean a10 = r0Var.a();
                         org.telegram.ui.web.o oVar2 = oVar;
                         if (!a10) {
-                            na.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.x1(26, r0Var, oVar2));
+                            na.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.y1(26, r0Var, oVar2));
                             break;
                         } else {
                             r0Var.d = true;
@@ -295,7 +295,7 @@ public final class r0 {
         alertDialog$Builder.p();
     }
 
-    public final void j(x10 x10Var) {
+    public final void j(y10 y10Var) {
         JSONObject jSONObject = new JSONObject();
         int i7 = 1;
         if (!this.e || !a() || !d()) {
@@ -304,7 +304,7 @@ public final class r0 {
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
-            x10Var.a(jSONObject);
+            y10Var.a(jSONObject);
             return;
         }
         LocationManager locationManager = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
@@ -318,16 +318,16 @@ public final class r0 {
         }
         if (location != null || locationManager.isProviderEnabled("gps")) {
             if (location != null) {
-                x10Var.a(h(location));
+                y10Var.a(h(location));
                 return;
             }
             try {
-                p0 p0Var = new p0(this, locationManager, new LocationListener[]{p0Var}, x10Var);
+                p0 p0Var = new p0(this, locationManager, new LocationListener[]{p0Var}, y10Var);
                 locationManager.requestLocationUpdates("gps", 1L, 0.0f, p0Var);
                 return;
             } catch (Exception e11) {
                 a8.g(e11, true);
-                x10Var.a(h(null));
+                y10Var.a(h(null));
                 return;
             }
         }
@@ -341,15 +341,15 @@ public final class r0 {
                 int i10 = m6.L5;
                 alertDialog$Builder.m(R.raw.permission_request_location, 72, m6.x0(null, i10, false), null);
                 alertDialog$Builder.n(i10, null);
-                alertDialog$Builder.a.U = gd.N0(2131749354, null);
-                alertDialog$Builder.k(gd.N0(2131751148, null), new nb(context, i7));
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                alertDialog$Builder.a.U = hd.N0(2131749354, null);
+                alertDialog$Builder.k(hd.N0(2131751148, null), new nb(context, i7));
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
                 alertDialog$Builder.p();
             } catch (Exception e12) {
                 a8.g(e12, true);
             }
         }
-        x10Var.a(h(null));
+        y10Var.a(h(null));
     }
 
     public final void k() {
@@ -379,13 +379,13 @@ public final class r0 {
                 return;
             }
             int i10 = this.b;
-            TLRPC.User c22 = mp.u1(i10).c2(Long.valueOf(this.c));
+            TLRPC.User c22 = np.u1(i10).c2(Long.valueOf(this.c));
             final int i11 = 0;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f(), null);
-            SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753045, o10.q(c22), o10.q(c22)));
+            SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(hd.a0(null, null, 2131753045, p10.q(c22), p10.q(c22)));
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.U = W2;
-            q0 q0Var = new q0(this.a, j10.i(i10).f(), c22);
+            q0 q0Var = new q0(this.a, k10.i(i10).f(), c22);
             int i12 = m6.L5;
             int x02 = m6.x0(null, i12, false);
             t1Var.c0 = q0Var;
@@ -394,7 +394,7 @@ public final class r0 {
             alertDialog$Builder.n(i12, null);
             Activity f11 = f();
             if (f11 == null || (f11.shouldShowRequestPermissionRationale("android.permission.ACCESS_COARSE_LOCATION") && f11.shouldShowRequestPermissionRationale("android.permission.ACCESS_FINE_LOCATION"))) {
-                alertDialog$Builder.k(gd.N0(2131753047, null), new org.telegram.ui.ActionBar.q1(this) { // from class: ki.n0
+                alertDialog$Builder.k(hd.N0(2131753047, null), new org.telegram.ui.ActionBar.q1(this) { // from class: ki.n0
                     public final /* synthetic */ r0 b;
 
                     {
@@ -407,7 +407,7 @@ public final class r0 {
                             case 0:
                                 r0 r0Var = this.b;
                                 if (!r0Var.a()) {
-                                    na.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.x1(27, r0Var, tr0Var));
+                                    na.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.y1(27, r0Var, tr0Var));
                                     break;
                                 } else {
                                     r0Var.d = true;
@@ -438,9 +438,9 @@ public final class r0 {
                     }
                 });
             } else {
-                alertDialog$Builder.k(gd.N0(2131753041, null), new m0(f10, i11));
+                alertDialog$Builder.k(hd.N0(2131753041, null), new m0(f10, i11));
             }
-            alertDialog$Builder.h(gd.N0(2131753046, null), new org.telegram.ui.ActionBar.q1(this) { // from class: ki.n0
+            alertDialog$Builder.h(hd.N0(2131753046, null), new org.telegram.ui.ActionBar.q1(this) { // from class: ki.n0
                 public final /* synthetic */ r0 b;
 
                 {
@@ -453,7 +453,7 @@ public final class r0 {
                         case 0:
                             r0 r0Var = this.b;
                             if (!r0Var.a()) {
-                                na.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.x1(27, r0Var, tr0Var));
+                                na.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.y1(27, r0Var, tr0Var));
                                 break;
                             } else {
                                 r0Var.d = true;

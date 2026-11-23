@@ -13,7 +13,7 @@ import android.graphics.Typeface;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ClippingImageView extends View {
     public static final float[] R = new float[8];
@@ -40,7 +40,7 @@ public class ClippingImageView extends View {
     public int n;
     public final RectF r;
     public final Paint s;
-    public org.telegram.messenger.hc w;
+    public org.telegram.messenger.ic w;
     public final Matrix x;
     public boolean y;
 
@@ -64,14 +64,14 @@ public class ClippingImageView extends View {
     }
 
     public Bitmap getBitmap() {
-        org.telegram.messenger.hc hcVar = this.w;
-        if (hcVar != null) {
-            return hcVar.c;
+        org.telegram.messenger.ic icVar = this.w;
+        if (icVar != null) {
+            return icVar.c;
         }
         return null;
     }
 
-    public org.telegram.messenger.hc getBitmapHolder() {
+    public org.telegram.messenger.ic getBitmapHolder() {
         return this.w;
     }
 
@@ -120,14 +120,14 @@ public class ClippingImageView extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.messenger.hc hcVar;
+        org.telegram.messenger.ic icVar;
         Bitmap bitmap;
         float height;
         float width;
         float height2;
         boolean z10;
         float[] fArr;
-        if (getVisibility() != 0 || (hcVar = this.w) == null || (bitmap = hcVar.c) == null || bitmap.isRecycled()) {
+        if (getVisibility() != 0 || (icVar = this.w) == null || (bitmap = icVar.c) == null || bitmap.isRecycled()) {
             return;
         }
         float scaleY = getScaleY();
@@ -355,20 +355,20 @@ public class ClippingImageView extends View {
         invalidate();
     }
 
-    public void setImageBitmap(org.telegram.messenger.hc hcVar) {
+    public void setImageBitmap(org.telegram.messenger.ic icVar) {
         Bitmap bitmap;
         Bitmap bitmap2;
-        org.telegram.messenger.hc hcVar2 = this.w;
-        if (hcVar2 != null) {
-            hcVar2.a();
+        org.telegram.messenger.ic icVar2 = this.w;
+        if (icVar2 != null) {
+            icVar2.a();
             this.F = null;
         }
-        if (hcVar != null && ((bitmap2 = hcVar.c) == null || bitmap2.isRecycled())) {
-            hcVar = null;
+        if (icVar != null && ((bitmap2 = icVar.c) == null || bitmap2.isRecycled())) {
+            icVar = null;
         }
-        this.w = hcVar;
-        if (hcVar != null && (bitmap = hcVar.c) != null) {
-            this.I.set(0.0f, 0.0f, bitmap != null ? bitmap.getWidth() : 0, hcVar.c != null ? r4.getHeight() : 0);
+        this.w = icVar;
+        if (icVar != null && (bitmap = icVar.c) != null) {
+            this.I.set(0.0f, 0.0f, bitmap != null ? bitmap.getWidth() : 0, icVar.c != null ? r4.getHeight() : 0);
             Bitmap bitmap3 = this.w.c;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
             BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode, tileMode);

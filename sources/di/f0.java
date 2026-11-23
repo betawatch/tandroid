@@ -1,18 +1,18 @@
 package di;
 
 import android.content.Context;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f0 extends c51 {
     public final /* synthetic */ int Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f0(ek0 ek0Var, Context context, int i7, int i10, boolean z10, q10 q10Var, org.telegram.ui.ActionBar.h6 h6Var, int i11) {
-        super(ek0Var, context, i7, i10, z10, q10Var, h6Var);
+    public /* synthetic */ f0(ek0 ek0Var, Context context, int i7, int i10, boolean z10, r10 r10Var, org.telegram.ui.ActionBar.h6 h6Var, int i11) {
+        super(ek0Var, context, i7, i10, z10, r10Var, h6Var);
         this.Q = i11;
     }
 

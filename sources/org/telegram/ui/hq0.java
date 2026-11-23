@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 vq0 vq0Var = (vq0) this.b;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) vq0Var.a.O0.getLayoutParams();
                 ((WindowManager) org.telegram.messenger.t0.b.getSystemService("window")).getDefaultDisplay().getRotation();
-                int z10 = org.telegram.messenger.n10.z(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int z10 = org.telegram.messenger.o10.z(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer = vq0Var.a;
                 int i14 = z10 + (!photoViewer.s ? org.telegram.messenger.g0.m : 0);
                 if (i14 != layoutParams.topMargin) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                     photoViewer.O0.setLayoutParams(layoutParams);
                 }
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) vq0Var.a.P0.getLayoutParams();
-                int z11 = org.telegram.messenger.n10.z(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int z11 = org.telegram.messenger.o10.z(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer2 = vq0Var.a;
                 int i15 = z11 + (!photoViewer2.s ? org.telegram.messenger.g0.m : 0);
                 if (layoutParams2.topMargin != i15) {
@@ -69,7 +69,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 }
                 break;
             case 2:
-                ((ai.c1) this.b).run();
+                ((ai.j1) this.b).run();
                 break;
             case 3:
                 k kVar = (k) this.b;
@@ -177,7 +177,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                         pageBlock = null;
                         i12 = 0;
                     }
-                    org.telegram.messenger.g0.g3(new b0(e4Var, i18, iArr, iArr2));
+                    org.telegram.messenger.g0.g3(new f0(e4Var, i18, iArr, iArr2));
                     break;
                 }
                 break;
@@ -201,11 +201,11 @@ public final /* synthetic */ class hq0 implements Runnable {
                 ArrayList d12 = org.telegram.messenger.g0.d1();
                 File file = (File) d12.get(0);
                 file.getAbsolutePath();
-                if (!TextUtils.isEmpty(org.telegram.messenger.bz.h0)) {
+                if (!TextUtils.isEmpty(org.telegram.messenger.cz.h0)) {
                     int size2 = d12.size();
                     while (i12 < size2) {
                         File file2 = (File) d12.get(i12);
-                        if (file2.getAbsolutePath().startsWith(org.telegram.messenger.bz.h0) && file2.canWrite()) {
+                        if (file2.getAbsolutePath().startsWith(org.telegram.messenger.cz.h0) && file2.canWrite()) {
                             file = file2;
                         } else {
                             i12++;
@@ -234,7 +234,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                     return;
                 }
             case 15:
-                org.telegram.messenger.x10 x10Var = (org.telegram.messenger.x10) this.b;
+                org.telegram.messenger.y10 y10Var = (org.telegram.messenger.y10) this.b;
                 x6.i0 = false;
                 long s02 = x6.s0(org.telegram.messenger.w7.j(4), 5);
                 long s03 = x6.s0(org.telegram.messenger.w7.j(4), 4);
@@ -251,7 +251,7 @@ public final /* synthetic */ class hq0 implements Runnable {
                 x6.k0 = Long.valueOf(j3);
                 x6.j0 = System.currentTimeMillis();
                 if (!x6.i0) {
-                    org.telegram.messenger.g0.g3(new a6(0, j3, x10Var));
+                    org.telegram.messenger.g0.g3(new a6(0, j3, y10Var));
                     break;
                 }
                 break;

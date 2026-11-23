@@ -19,14 +19,14 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class c implements Runnable {
                     break;
                 }
             case 1:
-                ((x10) this.b).a((ArrayList) this.c);
+                ((y10) this.b).a((ArrayList) this.c);
                 break;
             case 2:
                 r1 r1Var = (r1) this.b;
@@ -95,9 +95,9 @@ public final /* synthetic */ class c implements Runnable {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
                     i2 i2Var = t1Var.r;
                     int i10 = i2.C1;
-                    mp.u1(i2Var.a).f4(tL_contacts_resolvedPeer.users, false);
-                    mp.u1(i2Var.a).Z3(tL_contacts_resolvedPeer.chats, false);
-                    tr.a0(i2Var.a).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
+                    np.u1(i2Var.a).f4(tL_contacts_resolvedPeer.users, false);
+                    np.u1(i2Var.a).Z3(tL_contacts_resolvedPeer.chats, false);
+                    ur.a0(i2Var.a).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
                 }
                 r1Var.n = true;
                 r1Var.G();
@@ -120,7 +120,7 @@ public final /* synthetic */ class c implements Runnable {
                 TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) this.b;
                 TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint = (TL_stories.TL_mediaAreaGeoPoint) this.c;
                 try {
-                    List<Address> fromLocationName = new Geocoder(org.telegram.messenger.t0.b, gd.E0().y).getFromLocationName(messageMedia.title, 1);
+                    List<Address> fromLocationName = new Geocoder(org.telegram.messenger.t0.b, hd.E0().y).getFromLocationName(messageMedia.title, 1);
                     if (fromLocationName.size() <= 0) {
                         break;
                     } else {
@@ -132,7 +132,7 @@ public final /* synthetic */ class c implements Runnable {
                     return;
                 }
             case 6:
-                ((x10) this.b).a((Bitmap) this.c);
+                ((y10) this.b).a((Bitmap) this.c);
                 break;
             case 7:
                 v5.a((v5) this.b, (c7) this.c);
@@ -194,15 +194,15 @@ public final /* synthetic */ class c implements Runnable {
                 u6Var.q2 = false;
                 if (tLObject2 instanceof TLRPC.messages_Messages) {
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
-                    mp.u1(u6Var.a).f4(messages_messages.users, false);
-                    mp.u1(u6Var.a).Z3(messages_messages.chats, false);
+                    np.u1(u6Var.a).f4(messages_messages.users, false);
+                    np.u1(u6Var.a).Z3(messages_messages.chats, false);
                     ArrayList<TLRPC.Message> arrayList2 = messages_messages.messages;
                     int size = arrayList2.size();
                     int i11 = 0;
                     while (i11 < size) {
                         TLRPC.Message message = arrayList2.get(i11);
                         i11++;
-                        arrayList.add(new fj(u6Var.a, message, false, true));
+                        arrayList.add(new gj(u6Var.a, message, false, true));
                     }
                     if ((messages_messages instanceof TLRPC.TL_messages_messagesSlice) && arrayList.size() < messages_messages.count) {
                         z10 = true;
@@ -257,8 +257,8 @@ public final /* synthetic */ class c implements Runnable {
                 TLObject tLObject4 = (TLObject) this.c;
                 if (tLObject4 instanceof TL_account.webPagePreview) {
                     TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject4;
-                    mp.u1(k7Var.a).f4(webpagepreview.users, false);
-                    mp.u1(k7Var.a).Z3(webpagepreview.chats, false);
+                    np.u1(k7Var.a).f4(webpagepreview.users, false);
+                    np.u1(k7Var.a).Z3(webpagepreview.chats, false);
                     TLRPC.MessageMedia messageMedia2 = webpagepreview.media;
                     if (messageMedia2 instanceof TLRPC.TL_messageMediaWebPage) {
                         tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia2;
@@ -301,11 +301,11 @@ public final /* synthetic */ class c implements Runnable {
                 ClipboardManager clipboardManager = (ClipboardManager) k7Var2.getContext().getSystemService("clipboard");
                 org.telegram.ui.Cells.j3 j3Var = k7Var2.U1.d;
                 r10 = ((TextUtils.isEmpty(j3Var.getText()) || TextUtils.equals(j3Var.getText(), "https://") || TextUtils.isEmpty(j3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip()) ? 1 : 0;
-                n10.o(textView.animate().alpha(r10 != 0 ? 1.0f : 0.0f).scaleX(r10 != 0 ? 1.0f : 0.7f).scaleY(r10 == 0 ? 0.7f : 1.0f), nr.h, 300L);
+                o10.o(textView.animate().alpha(r10 != 0 ? 1.0f : 0.0f).scaleX(r10 != 0 ? 1.0f : 0.7f).scaleY(r10 == 0 ? 0.7f : 1.0f), nr.h, 300L);
                 break;
             case 17:
                 p8 p8Var = (p8) this.b;
-                HashMap h02 = ((tr) this.c).h0();
+                HashMap h02 = ((ur) this.c).h0();
                 if (!h02.isEmpty()) {
                     org.telegram.messenger.g0.g3(new c(18, p8Var, h02));
                     break;
@@ -358,8 +358,8 @@ public final /* synthetic */ class c implements Runnable {
                 if (mVarArr[i14] == mVar2) {
                     if (tLObject5 instanceof TL_stars.StarsStatus) {
                         TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject5;
-                        mp.u1(i14).f4(starsStatus.users, false);
-                        mp.u1(i14).Z3(starsStatus.chats, false);
+                        np.u1(i14).f4(starsStatus.users, false);
+                        np.u1(i14).Z3(starsStatus.chats, false);
                         ArrayList<TL_stars.StarsTransaction> arrayList4 = starsStatus.history;
                         int size2 = arrayList4.size();
                         int i15 = 0;
@@ -392,7 +392,7 @@ public final /* synthetic */ class c implements Runnable {
                                             }
                                         }
                                     }
-                                    mp.u1(i14).h7.edit().putStringSet("gram_earnings_wallet_withdraws", new HashSet(e10)).apply();
+                                    np.u1(i14).h7.edit().putStringSet("gram_earnings_wallet_withdraws", new HashSet(e10)).apply();
                                 }
                             }
                             di.y8 y10 = di.y8.y(i14, true);
@@ -410,21 +410,21 @@ public final /* synthetic */ class c implements Runnable {
                                     }
                                 }
                             }
-                            ks.f(i14).k(ks.B3, new Object[0]);
+                            ls.f(i14).k(ls.B3, new Object[0]);
                             if (!starsTransaction.pending) {
                                 mVar2.h = true;
                                 di.y8.y(i14, true).N();
-                                di.e0.g(i14).j(j10.i(i14).e(), true);
+                                di.e0.g(i14).j(k10.i(i14).e(), true);
                                 org.telegram.ui.Wallet.u0.D(i14).K();
                                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) mVar2.f.get();
                                 if (g2Var != null && g2Var.getParentActivity() != null && LaunchActivity.Q() == g2Var) {
                                     long j10 = mVar2.c;
                                     lc b02 = lc.b0(g2Var);
-                                    String a02 = gd.a0(null, null, 2131749324, org.telegram.ui.Wallet.u0.x(j10, false));
-                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gd.N0(2131749323, null));
+                                    String a02 = hd.a0(null, null, 2131749324, org.telegram.ui.Wallet.u0.x(j10, false));
+                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.N0(2131749323, null));
                                     ii.n.f(spannableStringBuilder, "⚙", R.drawable.msg_settings, -1);
                                     ii.n.f(spannableStringBuilder, "💎", R.drawable.mini_gram_16, org.telegram.ui.ActionBar.m6.v6);
-                                    gc L = b02.L(R.raw.contact_check, a02, spannableStringBuilder, gd.N0(2131747623, null), new ii.l(z10 ? 1 : 0, g2Var));
+                                    gc L = b02.L(R.raw.contact_check, a02, spannableStringBuilder, hd.N0(2131747623, null), new ii.l(z10 ? 1 : 0, g2Var));
                                     L.j = 5000;
                                     L.j();
                                     break;
@@ -460,8 +460,8 @@ public final /* synthetic */ class c implements Runnable {
                     }
                 } else if (tLObject6 instanceof TLRPC.TL_contacts_sponsoredPeers) {
                     TLRPC.TL_contacts_sponsoredPeers tL_contacts_sponsoredPeers = (TLRPC.TL_contacts_sponsoredPeers) tLObject6;
-                    mp.u1(i18).f4(tL_contacts_sponsoredPeers.users, true);
-                    mp.u1(i18).Z3(tL_contacts_sponsoredPeers.chats, true);
+                    np.u1(i18).f4(tL_contacts_sponsoredPeers.users, true);
+                    np.u1(i18).Z3(tL_contacts_sponsoredPeers.chats, true);
                     arrayList6.addAll(tL_contacts_sponsoredPeers.peers);
                     h0Var2.f();
                     break;
@@ -473,7 +473,7 @@ public final /* synthetic */ class c implements Runnable {
                 h0Var3.getClass();
                 try {
                     sb2.insert(0, "DELETE FROM search_recent WHERE ");
-                    tr.a0(h0Var3.t0).b.executeFast(sb2.toString()).stepThis().dispose();
+                    ur.a0(h0Var3.t0).b.executeFast(sb2.toString()).stepThis().dispose();
                     break;
                 } catch (Exception e11) {
                     org.telegram.messenger.a8.g(e11, true);
@@ -486,7 +486,7 @@ public final /* synthetic */ class c implements Runnable {
                 if (s1Var.r) {
                     s1Var.f.g(str3, true, false, s1Var.s, s1Var.w, s1Var.y, s1Var.x, -1, 1);
                 }
-                int i19 = j10.t0;
+                int i19 = k10.t0;
                 ArrayList arrayList7 = new ArrayList(org.telegram.messenger.i5.r(i19).f0);
                 s1Var.E = true;
                 int i20 = s1Var.G;
@@ -500,8 +500,8 @@ public final /* synthetic */ class c implements Runnable {
                 ArrayList arrayList8 = (ArrayList) this.c;
                 int i21 = z1Var.m;
                 try {
-                    tr.a0(i21).b.beginTransaction();
-                    SQLitePreparedStatement executeFast = tr.a0(i21).b.executeFast("REPLACE INTO hashtag_recent_v2 VALUES(?, ?)");
+                    ur.a0(i21).b.beginTransaction();
+                    SQLitePreparedStatement executeFast = ur.a0(i21).b.executeFast("REPLACE INTO hashtag_recent_v2 VALUES(?, ?)");
                     for (int i22 = 0; i22 < arrayList8.size() && i22 != 100; i22++) {
                         jg.x1 x1Var2 = (jg.x1) arrayList8.get(i22);
                         executeFast.requery();
@@ -511,7 +511,7 @@ public final /* synthetic */ class c implements Runnable {
                     }
                     executeFast.dispose();
                     if (arrayList8.size() > 100) {
-                        SQLitePreparedStatement executeFast2 = tr.a0(i21).b.executeFast("DELETE FROM hashtag_recent_v2 WHERE id = ?");
+                        SQLitePreparedStatement executeFast2 = ur.a0(i21).b.executeFast("DELETE FROM hashtag_recent_v2 WHERE id = ?");
                         for (int i23 = 100; i23 < arrayList8.size(); i23++) {
                             executeFast2.requery();
                             executeFast2.bindString(1, ((jg.x1) arrayList8.get(i23)).a);
@@ -519,7 +519,7 @@ public final /* synthetic */ class c implements Runnable {
                         }
                         executeFast2.dispose();
                     }
-                    tr.a0(i21).b.commitTransaction();
+                    ur.a0(i21).b.commitTransaction();
                     break;
                 } catch (Exception e12) {
                     org.telegram.messenger.a8.g(e12, true);

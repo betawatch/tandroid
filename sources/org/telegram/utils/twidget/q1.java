@@ -6,12 +6,12 @@ import android.text.TextPaint;
 import java.util.Locale;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class q1 {
     public static final int[] a = {m6.ra, m6.Vc, m6.ee, m6.Xc, m6.Nd};
@@ -106,14 +106,14 @@ public abstract class q1 {
                 i7 = (i7 * 31) + (h6Var != null ? h6Var.m(i11) : m6.lm.get(i11));
             }
         }
-        int w02 = (((m6.w0(m6.p7, h6Var) + ((m6.w0(m6.Ji, h6Var) + ((m6.w0(m6.Fi, h6Var) + (i7 * 31)) * 31)) * 31)) * 31) + bz.W0) * 31;
+        int w02 = (((m6.w0(m6.p7, h6Var) + ((m6.w0(m6.Ji, h6Var) + ((m6.w0(m6.Fi, h6Var) + (i7 * 31)) * 31)) * 31)) * 31) + cz.W0) * 31;
         TextPaint textPaint = m6.o2;
         return rk0.j0() + ((w02 + (textPaint != null ? Float.floatToIntBits(textPaint.getTextSize()) : 0)) * 31);
     }
 
     public static JSONObject f() {
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("fontSize", bz.W0);
+        jSONObject.put("fontSize", cz.W0);
         TextPaint textPaint = m6.o2;
         if (textPaint != null && textPaint.getTextSize() > 0.0f) {
             Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();

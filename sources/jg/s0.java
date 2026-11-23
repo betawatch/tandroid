@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.w4;
@@ -12,7 +12,7 @@ import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class s0 extends c {
     public final Context x;
@@ -58,7 +58,7 @@ public abstract class s0 extends c {
             TLRPC.TL_messageMediaVenue H = H(i7);
             ((w4) view).a(H, H != null ? 2 : i7, i7 != b() - 1, false);
         } else if (i10 == 1) {
-            ((y3) view).setText(gd.N0(2131748559, null));
+            ((y3) view).setText(hd.N0(2131748559, null));
         }
     }
 

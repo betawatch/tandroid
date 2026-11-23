@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
@@ -43,13 +43,13 @@ public final /* synthetic */ class u8 implements Runnable {
         int i7 = this.a;
         int i10 = -1;
         int i11 = 3;
-        org.telegram.messenger.fj fjVar = null;
+        org.telegram.messenger.gj gjVar = null;
         int i12 = 0;
         Object obj = this.c;
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.ah0 ah0Var = new org.telegram.ui.Components.ah0((Context) obj2, org.telegram.messenger.gd.N0(2131748977, null), ((String[]) obj)[0], org.telegram.messenger.gd.N0(2131746313, null), false);
+                org.telegram.ui.Components.ah0 ah0Var = new org.telegram.ui.Components.ah0((Context) obj2, org.telegram.messenger.hd.N0(2131748977, null), ((String[]) obj)[0], org.telegram.messenger.hd.N0(2131746313, null), false);
                 ah0Var.J0();
                 ah0Var.show();
                 break;
@@ -70,12 +70,12 @@ public final /* synthetic */ class u8 implements Runnable {
                 break;
             case 3:
                 t9 t9Var2 = (t9) obj2;
-                org.telegram.messenger.ur urVar = (org.telegram.messenger.ur) obj;
-                t9Var2.h.setText(urVar.p);
+                org.telegram.messenger.vr vrVar = (org.telegram.messenger.vr) obj;
+                t9Var2.h.setText(vrVar.p);
                 t9Var2.h.animate().setDuration(200L).alpha(1.0f).setInterpolator(org.telegram.ui.Components.nr.f).start();
                 s9 s9Var2 = t9Var2.N;
                 if (s9Var2 != null) {
-                    s9Var2.S0(urVar);
+                    s9Var2.S0(vrVar);
                 }
                 org.telegram.messenger.g0.h3(new k9(t9Var2, 3), 1200L);
                 break;
@@ -148,7 +148,7 @@ public final /* synthetic */ class u8 implements Runnable {
                 break;
             case 6:
                 lb lbVar = (lb) obj2;
-                org.telegram.ui.Components.lc.b0(lbVar).Q(R.raw.ic_ban, 36, org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0(null, null, 2131745861, org.telegram.messenger.o10.k((TLRPC.User) obj, true)))).k(false);
+                org.telegram.ui.Components.lc.b0(lbVar).Q(R.raw.ic_ban, 36, org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0(null, null, 2131745861, org.telegram.messenger.p10.k((TLRPC.User) obj, true)))).k(false);
                 lbVar.a1();
                 break;
             case 7:
@@ -158,7 +158,7 @@ public final /* synthetic */ class u8 implements Runnable {
                     org.telegram.messenger.f3.n(null, 2131752454, org.telegram.ui.Components.lc.b0(lbVar2), R.raw.msg_antispam, 36);
                     break;
                 } else {
-                    org.telegram.messenger.f3.n(null, 2131743636, tLObject instanceof TLRPC.TL_boolFalse ? org.telegram.ui.Components.lc.b0(lbVar2) : org.telegram.ui.Components.lc.b0(lbVar2), R.raw.error, 36);
+                    org.telegram.messenger.f3.n(null, 2131743634, tLObject instanceof TLRPC.TL_boolFalse ? org.telegram.ui.Components.lc.b0(lbVar2) : org.telegram.ui.Components.lc.b0(lbVar2), R.raw.error, 36);
                     break;
                 }
             case 8:
@@ -335,10 +335,10 @@ public final /* synthetic */ class u8 implements Runnable {
                 bn bnVar6 = (bn) obj2;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj;
                 if (tL_error2.text.startsWith("SLOWMODE_WAIT_")) {
-                    org.telegram.ui.Components.c5.t0(org.telegram.messenger.gd.N0(2131745106, null), bnVar6);
+                    org.telegram.ui.Components.c5.t0(org.telegram.messenger.hd.N0(2131745106, null), bnVar6);
                     break;
                 } else if (tL_error2.text.equals("CHAT_SEND_MEDIA_FORBIDDEN")) {
-                    org.telegram.ui.Components.c5.t0(org.telegram.messenger.gd.N0(2131753952, null), bnVar6);
+                    org.telegram.ui.Components.c5.t0(org.telegram.messenger.hd.N0(2131753952, null), bnVar6);
                     break;
                 } else {
                     org.telegram.ui.Components.c5.t0(tL_error2.text, bnVar6);
@@ -348,13 +348,13 @@ public final /* synthetic */ class u8 implements Runnable {
                 a0.h hVar = (a0.h) obj2;
                 m6 m6Var = (m6) obj;
                 if (hVar.m() == 1 && hVar.n(0) != null && ((ArrayList) hVar.n(0)).size() == 1) {
-                    fjVar = (org.telegram.messenger.fj) ((ArrayList) hVar.n(0)).get(0);
+                    gjVar = (org.telegram.messenger.gj) ((ArrayList) hVar.n(0)).get(0);
                 }
-                if (fjVar != null && (message = fjVar.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null && webPage.attributes != null) {
-                    for (int i22 = 0; i22 < fjVar.k.media.webpage.attributes.size(); i22++) {
-                        TLRPC.WebPageAttribute webPageAttribute = fjVar.k.media.webpage.attributes.get(i22);
+                if (gjVar != null && (message = gjVar.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null && webPage.attributes != null) {
+                    for (int i22 = 0; i22 < gjVar.k.media.webpage.attributes.size(); i22++) {
+                        TLRPC.WebPageAttribute webPageAttribute = gjVar.k.media.webpage.attributes.get(i22);
                         if ((webPageAttribute instanceof TLRPC.TL_webPageAttributeStory) && ((TLRPC.TL_webPageAttributeStory) webPageAttribute).storyItem != null) {
-                            org.telegram.messenger.g0.g3(new u8(29, m6Var, fjVar.k.media.webpage));
+                            org.telegram.messenger.g0.g3(new u8(29, m6Var, gjVar.k.media.webpage));
                             break;
                         }
                     }

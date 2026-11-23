@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d9 {
     public float A;
@@ -345,7 +345,7 @@ public final class d9 {
             i7 = 2;
             f10 = 0.0f;
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(f17, f17, f18, f19, org.telegram.messenger.ks.e4, 31);
+            canvas2.saveLayerAlpha(f17, f17, f18, f19, org.telegram.messenger.ls.e4, 31);
         } else {
             canvas2 = canvas;
             i7 = 2;
@@ -370,7 +370,7 @@ public final class d9 {
                                 if (i30 == 0) {
                                     if (this.l) {
                                         f14 = f20;
-                                        i17 = org.telegram.messenger.n10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), i7);
+                                        i17 = org.telegram.messenger.o10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), i7);
                                     } else {
                                         f14 = f20;
                                         i17 = L2;
@@ -400,7 +400,7 @@ public final class d9 {
                                         f16 = this.e;
                                     } else if (i32 == i7) {
                                         if (this.l) {
-                                            i16 = org.telegram.messenger.n10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), i7);
+                                            i16 = org.telegram.messenger.o10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), i7);
                                         } else {
                                             i16 = L2;
                                         }
@@ -409,7 +409,7 @@ public final class d9 {
                                         float f23 = this.e;
                                         imageReceiver2.L0 = (int) com.google.android.gms.internal.vision.e2.z(f14, f23, i34, i33 * f23);
                                     } else if (i32 == -1 && this.l) {
-                                        int z17 = org.telegram.messenger.n10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), i7) + (i22 * i29);
+                                        int z17 = org.telegram.messenger.o10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), i7) + (i22 * i29);
                                         float f24 = this.e;
                                         imageReceiver2.L0 = (int) com.google.android.gms.internal.vision.e2.z(1.0f, f24, c10 + r5, z17 * f24);
                                     }
@@ -505,7 +505,7 @@ public final class d9 {
                     if (imageReceiver3.K()) {
                         if (i38 == 0) {
                             if (this.l) {
-                                i14 = org.telegram.messenger.n10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), 2);
+                                i14 = org.telegram.messenger.o10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), 2);
                             } else {
                                 i14 = L2;
                             }
@@ -531,7 +531,7 @@ public final class d9 {
                                         f13 = this.e;
                                     } else if (i40 == 2) {
                                         if (this.l) {
-                                            i13 = org.telegram.messenger.n10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), 2);
+                                            i13 = org.telegram.messenger.o10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), 2);
                                         } else {
                                             i13 = L2;
                                         }
@@ -541,7 +541,7 @@ public final class d9 {
                                         imageReceiver3.L0 = (int) com.google.android.gms.internal.vision.e2.z(1.0f, f28, i42, i41 * f28);
                                     } else {
                                         if (i40 == -1 && this.l) {
-                                            int z18 = org.telegram.messenger.n10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), 2) + (i22 * i37);
+                                            int z18 = org.telegram.messenger.o10.z(z13 ? 8.0f : 4.0f, this.p - (i27 * i22), 2) + (i22 * i37);
                                             float f29 = this.e;
                                             imageReceiver3.L0 = (int) com.google.android.gms.internal.vision.e2.z(1.0f, f29, c10 + r10, z18 * f29);
                                             z10 = false;
@@ -644,7 +644,7 @@ public final class d9 {
                                                                 c9VarArr9[i11].b.c(r2.f.amplitude * 15.0f);
                                                             }
                                                         } else {
-                                                            long currentTime = ConnectionsManager.getInstance(org.telegram.messenger.j10.t0).getCurrentTime();
+                                                            long currentTime = ConnectionsManager.getInstance(org.telegram.messenger.k10.t0).getCurrentTime();
                                                             c9 c9Var5 = c9VarArr9[i11];
                                                             imageReceiver = imageReceiver3;
                                                             if (currentTime - c9Var5.d <= 5) {
@@ -972,20 +972,20 @@ public final class d9 {
         if (tLObject instanceof TLRPC.GroupCallParticipant) {
             TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) tLObject;
             c9Var.f = groupCallParticipant;
-            long B1 = org.telegram.messenger.fj.B1(groupCallParticipant.peer);
+            long B1 = org.telegram.messenger.gj.B1(groupCallParticipant.peer);
             if (org.telegram.messenger.n5.E(B1)) {
-                user = org.telegram.messenger.mp.u1(i10).c2(Long.valueOf(B1));
+                user = org.telegram.messenger.np.u1(i10).c2(Long.valueOf(B1));
                 c9VarArr[i7].a.r(user);
                 chat = null;
             } else {
-                TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i10).O0(Long.valueOf(-B1));
+                TLRPC.Chat O0 = org.telegram.messenger.np.u1(i10).O0(Long.valueOf(-B1));
                 c9VarArr[i7].a.q(O0);
                 chat = O0;
                 user = null;
             }
             if (this.k != 4) {
                 c9VarArr[i7].d = groupCallParticipant.active_date;
-            } else if (B1 == org.telegram.messenger.j10.i(org.telegram.messenger.c.a(i10).a).e()) {
+            } else if (B1 == org.telegram.messenger.k10.i(org.telegram.messenger.c.a(i10).a).e()) {
                 c9VarArr[i7].d = 0L;
             } else if (this.m) {
                 c9VarArr[i7].d = groupCallParticipant.lastActiveDate;
@@ -1027,12 +1027,12 @@ public final class d9 {
             TLRPC.Document document = messageMedia.document;
             if (document != null) {
                 TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 50, true, null, false);
-                c9VarArr[i7].e.r0(org.telegram.messenger.fc.c(org.telegram.messenger.w7.w(storyItem.media.document.thumbs, 50, true, w10, true), storyItem.media.document), com.google.android.gms.internal.vision.e2.j(b10, "_", b10), org.telegram.messenger.fc.c(w10, storyItem.media.document), com.google.android.gms.internal.vision.e2.j(b10, "_", b10), null, 0L, null, storyItem, 0);
+                c9VarArr[i7].e.r0(org.telegram.messenger.gc.c(org.telegram.messenger.w7.w(storyItem.media.document.thumbs, 50, true, w10, true), storyItem.media.document), com.google.android.gms.internal.vision.e2.j(b10, "_", b10), org.telegram.messenger.gc.c(w10, storyItem.media.document), com.google.android.gms.internal.vision.e2.j(b10, "_", b10), null, 0L, null, storyItem, 0);
             } else {
                 TLRPC.Photo photo = messageMedia.photo;
                 if (photo != null) {
                     TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(photo.sizes, 50, true, null, false);
-                    c9VarArr[i7].e.r0(org.telegram.messenger.fc.i(org.telegram.messenger.w7.w(storyItem.media.photo.sizes, 50, true, w11, true), storyItem.media.photo), com.google.android.gms.internal.vision.e2.j(b10, "_", b10), org.telegram.messenger.fc.i(w11, storyItem.media.photo), com.google.android.gms.internal.vision.e2.j(b10, "_", b10), null, 0L, null, storyItem, 0);
+                    c9VarArr[i7].e.r0(org.telegram.messenger.gc.i(org.telegram.messenger.w7.w(storyItem.media.photo.sizes, 50, true, w11, true), storyItem.media.photo), com.google.android.gms.internal.vision.e2.j(b10, "_", b10), org.telegram.messenger.gc.i(w11, storyItem.media.photo), com.google.android.gms.internal.vision.e2.j(b10, "_", b10), null, 0L, null, storyItem, 0);
                 }
             }
         } else if (user == null) {

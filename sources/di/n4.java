@@ -28,9 +28,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ek0;
@@ -46,7 +46,7 @@ import org.telegram.ui.oy0;
 import org.telegram.ui.w61;
 import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n4 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -68,7 +68,7 @@ public final class n4 extends FrameLayout {
     public void b(boolean z10) {
         ((ImageView) this.b).setVisibility(z10 ? 0 : 8);
         TextView textView = (TextView) this.c;
-        boolean z11 = gd.a0;
+        boolean z11 = hd.a0;
         textView.setLayoutParams(c8.ma.d(-1, -2.0f, 55, (z11 || !z10) ? 22.0f : 53.0f, 14.0f, (z11 && z10) ? 53.0f : 22.0f, 12.0f));
     }
 
@@ -111,7 +111,7 @@ public final class n4 extends FrameLayout {
                 if (getPaddingBottom() > 0 && frameLayout.getVisibility() == 0 && frameLayout.getAlpha() > 0.0f) {
                     paint.setAlpha((int) (frameLayout.getAlpha() * 255.0f));
                     canvas.drawRect(f6Var.u0, getHeight() - getPaddingBottom(), getWidth() - f6Var.u0, getHeight(), paint);
-                    paint.setAlpha(ks.e4);
+                    paint.setAlpha(ls.e4);
                 }
                 h();
                 canvas.restore();
@@ -867,8 +867,8 @@ public final class n4 extends FrameLayout {
             f1Var.f = i7;
             ((FrameLayout) this.c).addView(f1Var, c8.ma.d(-2, -2.0f, 51, i7 * 41, 0.0f, 0.0f, 0.0f));
         }
-        addView((ai.l0) this.b, c8.ma.d(ks.X4, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView((FrameLayout) this.c, c8.ma.d(ks.f3, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
+        addView((ai.l0) this.b, c8.ma.d(ls.X4, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView((FrameLayout) this.c, c8.ma.d(ls.f3, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -886,20 +886,20 @@ public final class n4 extends FrameLayout {
         this.d = yzVar;
         rh0 rh0Var = new rh0(context);
         this.e = rh0Var;
-        rh0Var.f(R.raw.utyan_call, ks.v1, ks.v1, null);
+        rh0Var.f(R.raw.utyan_call, ls.v1, ls.v1, null);
         rh0Var.setAutoRepeat(false);
-        addView(rh0Var, c8.ma.d(ks.v1, 110.0f, 17, 52.0f, 17.0f, 52.0f, 60.0f));
+        addView(rh0Var, c8.ma.d(ls.v1, 110.0f, 17, 52.0f, 17.0f, 52.0f, 60.0f));
         rh0Var.setOnClickListener(new org.telegram.ui.a(this, 9));
         TextView textView = new TextView(context);
         this.b = textView;
-        n10.r(textView, org.telegram.ui.ActionBar.m6.G6, null, null, 2131748506);
+        o10.r(textView, org.telegram.ui.ActionBar.m6.G6, null, null, 2131748506);
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
         addView(textView, c8.ma.d(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        String a02 = gd.a0(null, null, 2131748505, Integer.valueOf(j9Var.getMessagesController().S6));
+        String a02 = hd.a0(null, null, 2131748505, Integer.valueOf(j9Var.getMessagesController().S6));
         if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.P1()) {
             a02 = a02.replace('\n', ' ');
         }
@@ -949,8 +949,8 @@ public final class n4 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.c = textView;
-        n10.p(textView, 1, 20.0f);
-        textView.setGravity(gd.a0 ? 5 : 3);
+        o10.p(textView, 1, 20.0f);
+        textView.setGravity(hd.a0 ? 5 : 3);
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, h6Var);
         addView(textView);
         ImageView imageView = new ImageView(context);
@@ -959,7 +959,7 @@ public final class n4 extends FrameLayout {
         this.d = x1Var;
         imageView.setImageDrawable(x1Var);
         x1Var.a(-1);
-        addView(imageView, c8.ma.d(24, 24.0f, (gd.a0 ? 5 : 3) | 48, 16.0f, 16.0f, 16.0f, 0.0f));
+        addView(imageView, c8.ma.d(24, 24.0f, (hd.a0 ? 5 : 3) | 48, 16.0f, 16.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new oy0(this, 0));
         b(true);
         setMinimumHeight(org.telegram.messenger.g0.L(56.0f));
@@ -1006,19 +1006,19 @@ public final class n4 extends FrameLayout {
         textView.setSingleLine();
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setText(gd.N0(2131750689, null));
+        textView.setText(hd.N0(2131750689, null));
         linearLayout.addView(textView, c8.ma.r(-2, -2, 1));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setSingleLine();
         textView2.setEllipsize(truncateAt);
-        textView2.setText(gd.N0(2131750682, null));
+        textView2.setText(hd.N0(2131750682, null));
         linearLayout.addView(textView2, c8.ma.t(-2, -2, 1, 0, 1, 0, 0));
         addView(linearLayout, c8.ma.d(-1, -2.0f, 17, 56.0f, 0.0f, 56.0f, 0.0f));
         StringBuilder sb2 = new StringBuilder();
         org.telegram.ui.Cells.c0.u(null, 2131750689, sb2, ", ");
-        sb2.append(gd.N0(2131750682, null));
+        sb2.append(hd.N0(2131750682, null));
         setContentDescription(sb2.toString());
         setOnClickListener(new org.telegram.ui.Components.o0(this, 16));
         g();

@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l20 extends TextView {
     public final Paint[] a;
@@ -38,7 +38,7 @@ public final class l20 extends TextView {
         org.telegram.ui.g30 g30Var = this.b;
         int i10 = g30Var.r1;
         Paint[] paintArr = this.a;
-        paintArr[i10].setAlpha(org.telegram.messenger.ks.e4);
+        paintArr[i10].setAlpha(org.telegram.messenger.ls.e4);
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), paintArr[g30Var.r1]);
         float f10 = g30Var.q1;
         if (f10 > 0.0f && (i7 = g30Var.r1 + 1) < paintArr.length) {

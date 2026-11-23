@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class t2 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final class t2 extends FrameLayout {
                     float e10 = z3Var2.D0.e(false, z3Var2.F0 ? 1.0f : 0.0f);
                     canvas.scale(e10, e10, z3Var2.B0.c() / 2.0f, org.telegram.messenger.g0.L(20.0f));
                     org.telegram.ui.Components.n6 n6Var = z3Var2.B0;
-                    n6Var.C = ks.e4;
+                    n6Var.C = ls.e4;
                     n6Var.draw(canvas);
                     canvas.restore();
                     break;
@@ -56,7 +56,7 @@ public final class t2 extends FrameLayout {
                     float e11 = z3Var3.C0.e(false, z3Var3.E0 ? 1.0f : 0.0f);
                     canvas.scale(e11, e11, z3Var3.A0.c() / 2.0f, org.telegram.messenger.g0.L(20.0f));
                     org.telegram.ui.Components.n6 n6Var2 = z3Var3.A0;
-                    n6Var2.C = ks.e4;
+                    n6Var2.C = ls.e4;
                     n6Var2.draw(canvas);
                     canvas.restore();
                     break;

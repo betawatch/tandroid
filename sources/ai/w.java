@@ -8,30 +8,30 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w {
     public final z a;
     public final t b;
     public final String c;
-    public final t1 d;
+    public final u1 d;
     public volatile int[] g;
     public int i;
     public boolean j;
     public volatile boolean k;
     public volatile boolean l;
     public volatile String n;
-    public q1 o;
+    public r1 o;
     public final StringBuilder e = new StringBuilder();
     public final ArrayList f = new ArrayList();
     public String h = "";
     public volatile int m = -1;
 
-    public w(z zVar, android.support.v4.media.session.a0 a0Var, t1 t1Var) {
+    public w(z zVar, android.support.v4.media.session.a0 a0Var, u1 u1Var) {
         this.a = zVar;
         this.b = (t) a0Var.b;
         this.c = (String) a0Var.c;
-        this.d = t1Var;
+        this.d = u1Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x00df  */

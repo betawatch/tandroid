@@ -1,11 +1,11 @@
 package jg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ur;
 import org.telegram.ui.mw;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class n implements Runnable {
                     if (lowerCase.length() != 0) {
                         str = str3;
                         i7 = i13;
-                        tr.a0(h0Var.t0).a.c(new n(h0Var, lowerCase, i7, str, 2));
+                        ur.a0(h0Var.t0).a.c(new n(h0Var, lowerCase, i7, str, 2));
                         if (h0Var.i0 == 15) {
                             n nVar = new n(h0Var, i7, str, str2);
                             h0Var.h = nVar;
@@ -112,7 +112,7 @@ public final /* synthetic */ class n implements Runnable {
                 ArrayList arrayList5 = new ArrayList();
                 ArrayList arrayList6 = new ArrayList();
                 new ArrayList();
-                tr a02 = tr.a0(h0Var3.t0);
+                ur a02 = ur.a0(h0Var3.t0);
                 int i18 = h0Var3.i0;
                 ArrayList arrayList7 = h0Var3.r0;
                 String str4 = this.d;
@@ -120,7 +120,7 @@ public final /* synthetic */ class n implements Runnable {
                 org.telegram.messenger.g0.g3(new ai.i1(h0Var3, this.c, arrayList4, arrayList5, arrayList6, 4));
                 q0.B1(str4, h0Var3.z0);
                 h0Var3.A0 = false;
-                if (str4.length() >= 3 && (gd.N0(2131754147, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
+                if (str4.length() >= 3 && (hd.N0(2131754147, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
                     h0Var3.A0 = true;
                 }
                 org.telegram.messenger.g0.g3(new v(h0Var3, 0));

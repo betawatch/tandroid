@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gx0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ String a;
@@ -31,20 +31,20 @@ public final class gx0 extends org.telegram.ui.ActionBar.j {
         if (i7 == -1) {
             if (!jx0Var.n && jx0Var.r) {
                 i16 = ((org.telegram.ui.ActionBar.g2) jx0Var).currentAccount;
-                org.telegram.messenger.mp.u1(i16).g7.edit().putInt("notify2_" + str, 0).apply();
+                org.telegram.messenger.np.u1(i16).g7.edit().putInt("notify2_" + str, 0).apply();
             }
         } else if (i7 == 1) {
             i10 = ((org.telegram.ui.ActionBar.g2) jx0Var).currentAccount;
-            SharedPreferences sharedPreferences = org.telegram.messenger.mp.u1(i10).g7;
+            SharedPreferences sharedPreferences = org.telegram.messenger.np.u1(i10).g7;
             SharedPreferences.Editor edit = sharedPreferences.edit();
             edit.putBoolean("custom_" + str, true);
             i11 = ((org.telegram.ui.ActionBar.g2) jx0Var).currentAccount;
-            TLRPC.Dialog dialog = (TLRPC.Dialog) org.telegram.messenger.mp.u1(i11).R.f(j10);
+            TLRPC.Dialog dialog = (TLRPC.Dialog) org.telegram.messenger.np.u1(i11).R.f(j10);
             if (jx0Var.r) {
                 edit.putInt("notify2_" + str, 0);
                 if (j3 == 0) {
                     i15 = ((org.telegram.ui.ActionBar.g2) jx0Var).currentAccount;
-                    org.telegram.messenger.tr.a0(i15).E1(j10, 0L);
+                    org.telegram.messenger.ur.a0(i15).E1(j10, 0L);
                     if (dialog != null) {
                         dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
                     }
@@ -53,9 +53,9 @@ public final class gx0 extends org.telegram.ui.ActionBar.j {
                 edit.putInt("notify2_" + str, 2);
                 if (j3 == 0) {
                     i12 = ((org.telegram.ui.ActionBar.g2) jx0Var).currentAccount;
-                    org.telegram.messenger.xs.t(i12).N(j10);
+                    org.telegram.messenger.ys.t(i12).N(j10);
                     i13 = ((org.telegram.ui.ActionBar.g2) jx0Var).currentAccount;
-                    org.telegram.messenger.tr.a0(i13).E1(j10, 1L);
+                    org.telegram.messenger.ur.a0(i13).E1(j10, 1L);
                     if (dialog != null) {
                         TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
                         dialog.notify_settings = tL_peerNotifySettings;
@@ -65,7 +65,7 @@ public final class gx0 extends org.telegram.ui.ActionBar.j {
             }
             edit.apply();
             i14 = ((org.telegram.ui.ActionBar.g2) jx0Var).currentAccount;
-            org.telegram.messenger.xs.t(i14).c0(jx0Var.f, jx0Var.h, true);
+            org.telegram.messenger.ys.t(i14).c0(jx0Var.f, jx0Var.h, true);
             if (jx0Var.s != null) {
                 uh0 uh0Var = new uh0();
                 uh0Var.d = j10;

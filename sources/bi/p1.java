@@ -2,17 +2,17 @@ package bi;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p1 implements x10 {
+public final /* synthetic */ class p1 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ e2 b;
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class p1 implements x10 {
         this.b = e2Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
@@ -39,16 +39,16 @@ public final /* synthetic */ class p1 implements x10 {
                 updatebirthday.flags |= 1;
                 updatebirthday.birthday = tL_birthday;
                 e2 e2Var = this.b;
-                TLRPC.UserFull d2 = mp.u1(e2Var.a).d2(j10.i(e2Var.a).e());
+                TLRPC.UserFull d2 = np.u1(e2Var.a).d2(k10.i(e2Var.a).e());
                 TL_account.TL_birthday tL_birthday2 = d2 != null ? d2.birthday : null;
                 if (d2 != null) {
                     d2.flags2 |= 32;
                     d2.birthday = tL_birthday;
                 }
                 ConnectionsManager.getInstance(e2Var.a).sendRequest(updatebirthday, new q1(e2Var, d2, tL_birthday2, 0), 1024);
-                mp.u1(e2Var.a).o2();
-                mp.u1(e2Var.a).s4(0L, "BIRTHDAY_SETUP");
-                ks.f(e2Var.a).k(ks.s1, new Object[0]);
+                np.u1(e2Var.a).o2();
+                np.u1(e2Var.a).s4(0L, "BIRTHDAY_SETUP");
+                ls.f(e2Var.a).k(ls.s1, new Object[0]);
                 e2Var.j2.O(true);
                 break;
         }

@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y70 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class y70 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class y70 implements org.telegram.messenger.x10 {
         this.b = launchActivity;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         org.telegram.ui.ActionBar.g2 lastFragment;
         int i7 = this.a;
@@ -22,13 +22,13 @@ public final /* synthetic */ class y70 implements org.telegram.messenger.x10 {
         switch (i7) {
             case 0:
                 boolean booleanValue = ((Boolean) obj).booleanValue();
-                if (launchActivity.p0 != null && booleanValue && org.telegram.messenger.pc.c() < 100 && (lastFragment = launchActivity.p0.getLastFragment()) != null && !(lastFragment instanceof z90)) {
-                    int b10 = org.telegram.messenger.pc.b();
+                if (launchActivity.p0 != null && booleanValue && org.telegram.messenger.qc.c() < 100 && (lastFragment = launchActivity.p0.getLastFragment()) != null && !(lastFragment instanceof z90)) {
+                    int b10 = org.telegram.messenger.qc.b();
                     org.telegram.ui.Components.lc b02 = org.telegram.ui.Components.lc.b0(lastFragment);
                     org.telegram.ui.Components.s9 s9Var = new org.telegram.ui.Components.s9(b10 / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.m6.Y5));
-                    String N0 = org.telegram.messenger.gd.N0(2131748522, null);
-                    String a02 = org.telegram.messenger.gd.a0("LowPowerEnabledSubtitle", null, 2131748523, String.format("%d%%", Integer.valueOf(b10)));
-                    String N02 = org.telegram.messenger.gd.N0(2131751423, null);
+                    String N0 = org.telegram.messenger.hd.N0(2131748522, null);
+                    String a02 = org.telegram.messenger.hd.a0("LowPowerEnabledSubtitle", null, 2131748523, String.format("%d%%", Integer.valueOf(b10)));
+                    String N02 = org.telegram.messenger.hd.N0(2131751423, null);
                     t60 t60Var = new t60(launchActivity, 11);
                     b02.getClass();
                     Context X = b02.X();
@@ -50,7 +50,7 @@ public final /* synthetic */ class y70 implements org.telegram.messenger.x10 {
             default:
                 TLRPC.User user = (TLRPC.User) obj;
                 String str = LaunchActivity.C1;
-                org.telegram.messenger.mp.u1(launchActivity.P).E3(null, user, null, 0, null, false, false);
+                org.telegram.messenger.np.u1(launchActivity.P).E3(null, user, null, 0, null, false, false);
                 break;
         }
     }

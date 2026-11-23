@@ -20,9 +20,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.fs {
+public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b6, org.telegram.messenger.gs {
     public Paint E;
     public int F;
     public AnimatorSet G;
@@ -71,7 +71,7 @@ public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b
         textView.setBackground(d02);
         org.telegram.ui.ActionBar.t6.j(textView, d02, K, null, h6Var);
         textView.setPadding(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(1.5f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(1.5f));
-        textView.setText(org.telegram.messenger.gd.N0(2131749251, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131749251, null));
         m5Var.setEllipsizeByGradient(true);
         addView(m5Var, c8.ma.i(-2.0f, -1.0f, 8388611, 15.0f, 15.0f, 0.0f, 0.0f));
         addView(textView, c8.ma.i(-2.0f, -2.0f, 8388611, 15.0f, 10.0f, 0.0f, 0.0f));
@@ -85,7 +85,7 @@ public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.h = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setText(org.telegram.messenger.gd.N0(2131754483, null));
+        textView2.setText(org.telegram.messenger.hd.N0(2131754483, null));
         org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.Ji, h6Var);
         int i11 = org.telegram.ui.ActionBar.m6.Fi;
         textView2.setBackground(org.telegram.ui.ActionBar.a6.d(tyVar.z(i11), tyVar.z(org.telegram.ui.ActionBar.m6.Hi), 16.0f));
@@ -97,7 +97,7 @@ public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.n = textView3;
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setText(org.telegram.messenger.gd.N0(2131744614, null));
+        textView3.setText(org.telegram.messenger.hd.N0(2131744612, null));
         org.telegram.ui.ActionBar.t6.U(textView3, org.telegram.ui.ActionBar.m6.Ii, h6Var);
         textView3.setBackground(org.telegram.ui.ActionBar.a6.d(0, tyVar.z(i11) & 452984831, 16.0f));
         textView3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
@@ -108,7 +108,7 @@ public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b
         ug.r0 r0Var = new ug.r0(org.telegram.messenger.g0.L(16.0f), context, h6Var, false);
         this.r = r0Var;
         r0Var.setIcon(R.raw.unlock_icon);
-        r0Var.b(org.telegram.messenger.gd.N0(2131743633, null), new kx(this, 4), false);
+        r0Var.b(org.telegram.messenger.hd.N0(2131743631, null), new kx(this, 4), false);
         try {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) r0Var.getIconView().getLayoutParams();
             marginLayoutParams.leftMargin = org.telegram.messenger.g0.L(1.0f);
@@ -135,7 +135,7 @@ public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b
         }
         boolean z11 = hxVar.f;
         ty tyVar = this.H;
-        int i7 = (this.x.e || org.telegram.messenger.j10.i(tyVar.d1).q() || tyVar.V0) ? this.x.g ? z11 || tyVar.q1.contains(Long.valueOf(hxVar.b.id)) ? 3 : 2 : 0 : 1;
+        int i7 = (this.x.e || org.telegram.messenger.k10.i(tyVar.d1).q() || tyVar.V0) ? this.x.g ? z11 || tyVar.q1.contains(Long.valueOf(hxVar.b.id)) ? 3 : 2 : 0 : 1;
         if ((i7 == 0) != (this.F == 0)) {
             requestLayout();
         }
@@ -243,33 +243,33 @@ public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.G.start();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         TLRPC.TL_messages_stickerSet q02;
         TLRPC.TL_messages_stickerSet q03;
         ty tyVar = this.H;
         int i11 = tyVar.d1;
-        if (i7 == org.telegram.messenger.ks.B0) {
-            if (this.s != null && (q03 = org.telegram.messenger.ri.d0(i11).q0(this.s.id)) != null && q03.set != null) {
+        if (i7 == org.telegram.messenger.ls.B0) {
+            if (this.s != null && (q03 = org.telegram.messenger.si.d0(i11).q0(this.s.id)) != null && q03.set != null) {
                 org.telegram.ui.ActionBar.g2 g2Var = tyVar.Z1;
                 if (g2Var == null) {
-                    g2Var = new bi.c9(this, 8);
+                    g2Var = new bi.b9(this, 8);
                 }
                 ev.K0(g2Var, q03, true, null, new oo(this, 15));
                 this.s = null;
             }
-            if (this.w == null || (q02 = org.telegram.messenger.ri.d0(i11).q0(this.w.id)) == null || q02.set == null) {
+            if (this.w == null || (q02 = org.telegram.messenger.si.d0(i11).q0(this.w.id)) == null || q02.set == null) {
                 return;
             }
             org.telegram.ui.ActionBar.g2 g2Var2 = tyVar.Z1;
             if (g2Var2 == null) {
-                g2Var2 = new bi.c9(this, 8);
+                g2Var2 = new bi.b9(this, 8);
             }
             org.telegram.ui.ActionBar.g2 g2Var3 = g2Var2;
             ou ouVar = new ou(3, this, q02);
             Pattern pattern = ev.Q1;
             if (g2Var3.getFragmentView() != null) {
-                org.telegram.messenger.ri.d0(g2Var3.getCurrentAccount()).l2(g2Var3.getFragmentView().getContext(), q02, null, 0, g2Var3, null, true, true, ouVar, false);
+                org.telegram.messenger.si.d0(g2Var3.getCurrentAccount()).l2(g2Var3.getFragmentView().getContext(), q02, null, 0, g2Var3, null, true, true, ouVar, false);
             }
             this.w = null;
         }
@@ -278,7 +278,7 @@ public final class lx extends FrameLayout implements org.telegram.ui.ActionBar.b
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.f(this.H.d1).n(this, org.telegram.messenger.ks.B0);
+        org.telegram.messenger.ls.f(this.H.d1).n(this, org.telegram.messenger.ls.B0);
     }
 
     @Override // android.view.View

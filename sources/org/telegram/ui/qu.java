@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qu implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class qu implements View.OnLongClickListener {
                             if (i11 < size) {
                                 Object obj = arrayList2.get(i11);
                                 i11++;
-                                if (((org.telegram.messenger.ef) obj).b()) {
+                                if (((org.telegram.messenger.ff) obj).b()) {
                                     z12 = false;
                                 }
                             }
@@ -59,16 +59,16 @@ public final /* synthetic */ class qu implements View.OnLongClickListener {
                     ArrayList arrayList3 = cxVar.F2;
                     boolean z13 = arrayList3 != null && arrayList3.size() > 1;
                     org.telegram.ui.Components.a70 I = org.telegram.ui.Components.a70.I(cxVar, view);
-                    I.l(R.drawable.msg_sendfile, org.telegram.messenger.gd.N0(z13 ? 2131745439 : 2131745440, null), new gu(cxVar, 13), z12);
-                    I.c(R.drawable.input_notify_off, org.telegram.messenger.gd.N0(2131745387, null), new gu(cxVar, 14), false);
-                    I.l(R.drawable.msg_calendar2, org.telegram.messenger.gd.N0(z10 ? 2131745318 : 2131745663, null), new org.telegram.ui.Components.rp0(7, cxVar, z10), z11);
+                    I.l(R.drawable.msg_sendfile, org.telegram.messenger.hd.N0(z13 ? 2131745439 : 2131745440, null), new gu(cxVar, 13), z12);
+                    I.c(R.drawable.input_notify_off, org.telegram.messenger.hd.N0(2131745387, null), new gu(cxVar, 14), false);
+                    I.l(R.drawable.msg_calendar2, org.telegram.messenger.hd.N0(z10 ? 2131745318 : 2131745663, null), new org.telegram.ui.Components.rp0(7, cxVar, z10), z11);
                     I.a0();
                     break;
                 }
                 break;
             case 1:
                 cx cxVar2 = this.b;
-                cxVar2.K4(cxVar2.K2, org.telegram.messenger.ks.p1, true, true, null);
+                cxVar2.K4(cxVar2.K2, org.telegram.messenger.ls.p1, true, true, null);
                 break;
             case 2:
                 cxVar.G4(view);

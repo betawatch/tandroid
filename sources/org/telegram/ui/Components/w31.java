@@ -10,7 +10,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class w31 extends org.telegram.ui.ActionBar.w2 {
     public final int m1;
@@ -79,16 +79,16 @@ public class w31 extends org.telegram.ui.ActionBar.w2 {
     public void dismiss() {
         super.dismiss();
         k41 k41Var = this.o1;
-        org.telegram.messenger.ks f10 = org.telegram.messenger.ks.f(k41Var.a);
-        f10.n(k41Var, org.telegram.messenger.ks.x0);
-        f10.n(k41Var, org.telegram.messenger.ks.z0);
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.k1, 2);
+        org.telegram.messenger.ls f10 = org.telegram.messenger.ls.f(k41Var.a);
+        f10.n(k41Var, org.telegram.messenger.ls.x0);
+        f10.n(k41Var, org.telegram.messenger.ls.z0);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.k1, 2);
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
         super.show();
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.j1, 2);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.j1, 2);
     }
 
     @Override // org.telegram.ui.ActionBar.w2

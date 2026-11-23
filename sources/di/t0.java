@@ -13,16 +13,16 @@ import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class t0 extends View implements fs {
+public final class t0 extends View implements gs {
     public final org.telegram.ui.Components.d6 E;
     public float F;
     public p8 G;
@@ -85,10 +85,10 @@ public final class t0 extends View implements fs {
         s0 s0Var;
         s0 s0Var2;
         int i12 = this.a;
-        if (!mp.u1(i12).B7) {
+        if (!np.u1(i12).B7) {
             return;
         }
-        this.K = mp.u1(i12).N6;
+        this.K = np.u1(i12).N6;
         ArrayList arrayList2 = this.H;
         arrayList2.clear();
         ArrayList arrayList3 = this.I;
@@ -98,7 +98,7 @@ public final class t0 extends View implements fs {
         hashSet.clear();
         long j3 = this.b;
         if (j3 >= 0) {
-            TLRPC.User c22 = mp.u1(i12).c2(Long.valueOf(j3));
+            TLRPC.User c22 = np.u1(i12).c2(Long.valueOf(j3));
             if (c22 != null) {
                 emojiStatus = c22.emoji_status;
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
@@ -258,7 +258,7 @@ public final class t0 extends View implements fs {
             if (z10) {
             }
         } else {
-            TLRPC.User c23 = mp.u1(i12).c2(Long.valueOf(-j3));
+            TLRPC.User c23 = np.u1(i12).c2(Long.valueOf(-j3));
             if (c23 != null) {
                 emojiStatus = c23.emoji_status;
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
@@ -310,9 +310,9 @@ public final class t0 extends View implements fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.I3 && ((Long) objArr[0]).longValue() == this.b) {
+        if (i7 == ls.I3 && ((Long) objArr[0]).longValue() == this.b) {
             a();
         }
     }
@@ -516,7 +516,7 @@ public final class t0 extends View implements fs {
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.a).c(this, ks.I3);
+        ls.f(this.a).c(this, ls.I3);
         ArrayList arrayList = this.I;
         int size = arrayList.size();
         int i7 = 0;
@@ -531,7 +531,7 @@ public final class t0 extends View implements fs {
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.a).n(this, ks.I3);
+        ls.f(this.a).n(this, ls.I3);
         ArrayList arrayList = this.I;
         int size = arrayList.size();
         int i7 = 0;

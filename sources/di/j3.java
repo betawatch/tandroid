@@ -2,8 +2,8 @@ package di;
 
 import android.app.Activity;
 import java.util.HashSet;
-import org.telegram.messenger.in;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.jn;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -15,7 +15,7 @@ import org.telegram.ui.ne;
 import org.telegram.ui.ws;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,13 +36,13 @@ public final /* synthetic */ class j3 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new o3(0, (f6) this.c, tL_error, (x10) this.d, (TwoStepVerificationActivity) this.e, tLObject, this.b));
+                org.telegram.messenger.g0.g3(new o3(0, (f6) this.c, tL_error, (y10) this.d, (TwoStepVerificationActivity) this.e, tLObject, this.b));
                 break;
             case 1:
                 org.telegram.messenger.g0.g3(new ai.i(this.c, tLObject, this.b, (TLObject) this.d, (String) this.e, 1));
                 break;
             case 2:
-                org.telegram.messenger.g0.g3(new in((org.telegram.messenger.x6) this.c, tLObject, (TLRPC.TL_textWithEntities) this.d, (org.telegram.ui.ActionBar.t1) this.e, this.b, 2));
+                org.telegram.messenger.g0.g3(new jn((org.telegram.messenger.x6) this.c, tLObject, (TLRPC.TL_textWithEntities) this.d, (org.telegram.ui.ActionBar.t1) this.e, this.b, 2));
                 break;
             case 3:
                 org.telegram.messenger.g0.g3(new o3((xd) this.c, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.d, this.b, tLObject));

@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
     public final di.b1 a;
@@ -115,7 +115,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131754895, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.N0(2131754895, null));
         if (this.c != null) {
             sb2.append(", ");
             sb2.append(this.c.d.getText());
@@ -150,7 +150,7 @@ public final class h1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
                 int L2 = org.telegram.messenger.g0.L(18.0f) + org.telegram.messenger.g0.L(r15 * 14);
                 this.e = L2;
                 this.f = L2;
-                i11 = org.telegram.messenger.n10.x(18.0f, L2, size);
+                i11 = org.telegram.messenger.o10.x(18.0f, L2, size);
                 L = i11;
             } else {
                 this.e = 0;

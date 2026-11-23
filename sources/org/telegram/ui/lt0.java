@@ -12,14 +12,14 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lt0 extends FrameLayout {
     public org.telegram.ui.Components.o9 a;
     public final org.telegram.ui.Cells.r1 b;
     public Drawable c;
     public final Drawable d;
-    public final org.telegram.messenger.fj e;
+    public final org.telegram.messenger.gj e;
     public final /* synthetic */ PrivacyControlActivity f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -37,14 +37,14 @@ public final class lt0 extends FrameLayout {
         setPadding(0, org.telegram.messenger.g0.L(11.0f), 0, org.telegram.messenger.g0.L(11.0f));
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
         i7 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
+        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i7);
         i10 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        TLRPC.User c22 = u12.c2(Long.valueOf(org.telegram.messenger.j10.i(i10).e()));
+        TLRPC.User c22 = u12.c2(Long.valueOf(org.telegram.messenger.k10.i(i10).e()));
         TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.message = org.telegram.messenger.gd.N0(2131746638, null);
+        tL_message.message = org.telegram.messenger.hd.N0(2131746638, null);
         tL_message.date = currentTimeMillis - 3540;
         tL_message.dialog_id = 1L;
-        tL_message.flags = org.telegram.messenger.ks.k4;
+        tL_message.flags = org.telegram.messenger.ls.k4;
         tL_message.from_id = new TLRPC.TL_peerUser();
         tL_message.id = 1;
         TLRPC.TL_messageFwdHeader tL_messageFwdHeader = new TLRPC.TL_messageFwdHeader();
@@ -55,19 +55,19 @@ public final class lt0 extends FrameLayout {
         TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
         tL_message.peer_id = tL_peerUser;
         i11 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        tL_peerUser.user_id = org.telegram.messenger.j10.i(i11).e();
+        tL_peerUser.user_id = org.telegram.messenger.k10.i(i11).e();
         i12 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
-        org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(i12, tL_message, true, false);
-        this.e = fjVar;
-        fjVar.T = 1L;
-        fjVar.S1 = false;
+        org.telegram.messenger.gj gjVar = new org.telegram.messenger.gj(i12, tL_message, true, false);
+        this.e = gjVar;
+        gjVar.T = 1L;
+        gjVar.S1 = false;
         i13 = ((org.telegram.ui.ActionBar.g2) privacyControlActivity).currentAccount;
         org.telegram.ui.Cells.r1 r1Var = new org.telegram.ui.Cells.r1(context, i13);
         this.b = r1Var;
         r1Var.setDelegate(new sa.d(19));
         r1Var.f6 = false;
         r1Var.setFullyDraw(true);
-        r1Var.y3(fjVar, null, false, false, false, false);
+        r1Var.y3(gjVar, null, false, false, false, false);
         addView(r1Var, c8.ma.o(-1, -2));
     }
 

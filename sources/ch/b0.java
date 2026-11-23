@@ -8,17 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.OvershootInterpolator;
-import bi.h7;
+import bi.g7;
 import c8.ma;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qc;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.gc;
@@ -34,7 +34,7 @@ import org.telegram.ui.n01;
 import org.telegram.ui.q01;
 import org.telegram.ui.u01;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final int[] A;
@@ -145,7 +145,7 @@ public final class b0 {
         xi0Var.invalidate();
         org.telegram.messenger.g0.h3(new c1.a(i11, this, xi0Var), 50L);
         if (i7 != 5) {
-            ks.e().k(ks.j1, 7);
+            ls.e().k(ls.j1, 7);
         }
     }
 
@@ -328,7 +328,7 @@ public final class b0 {
         rectF.offset(x10, y10);
         xi0Var.setCustomEmojiEnterProgress(this.j);
         if (z10) {
-            this.w = (bz.o() < 2 || !pc.e(8200)) ? false : r18;
+            this.w = (cz.o() < 2 || !qc.e(8200)) ? false : r18;
             this.k = false;
         } else {
             this.w = false;
@@ -364,7 +364,7 @@ public final class b0 {
         if (!z10) {
             i();
         }
-        this.x.addListener(new h7(1, this, z10));
+        this.x.addListener(new g7(1, this, z10));
         if (i7 == 4) {
             this.x.setDuration(420L);
             this.x.setInterpolator(nr.h);
@@ -396,7 +396,7 @@ public final class b0 {
             this.x.start();
         }
         HashSet hashSet = f0.a;
-        com.google.android.gms.internal.cast.b0 b0Var = ec.D().p;
+        com.google.android.gms.internal.cast.b0 b0Var = fc.D().p;
         if (((CountDownLatch) b0Var.c) == null) {
             z12 = true;
             b0Var.c = new CountDownLatch(1);
@@ -457,7 +457,7 @@ public final class b0 {
     public final void f() {
         int i7 = 1;
         if (this.y != 5) {
-            ks.e().k(ks.k1, 7);
+            ls.e().k(ls.k1, 7);
         }
         org.telegram.messenger.g0.g3(new t(this, i7));
     }

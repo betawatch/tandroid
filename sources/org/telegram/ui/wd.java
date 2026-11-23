@@ -12,7 +12,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wd extends FrameLayout {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -26,7 +26,7 @@ public final class wd extends FrameLayout {
         super(context);
         this.a = h6Var;
         LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
-        addView(g10, c8.ma.d(-1, -2.0f, org.telegram.messenger.ks.E1, 17.0f, 9.0f, 130.0f, 9.0f));
+        addView(g10, c8.ma.d(-1, -2.0f, org.telegram.messenger.ls.E1, 17.0f, 9.0f, 130.0f, 9.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 16.0f);
@@ -58,7 +58,7 @@ public final class wd extends FrameLayout {
             org.telegram.ui.ActionBar.h6 h6Var = this.a;
             Paint g10 = h6Var != null ? h6Var.g("paintDivider") : org.telegram.ui.ActionBar.m6.k0;
             if (g10 != null) {
-                canvas.drawLine(org.telegram.messenger.gd.a0 ? 0.0f : org.telegram.messenger.g0.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(17.0f) : 0), getMeasuredHeight() - 1, g10);
+                canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(17.0f) : 0), getMeasuredHeight() - 1, g10);
             }
         }
     }

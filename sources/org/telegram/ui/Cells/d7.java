@@ -13,10 +13,10 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d7 extends Drawable {
     public final Paint a;
@@ -30,7 +30,7 @@ public final class d7 extends Drawable {
     public d7(Context context, View view, boolean z10, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         Paint paint = new Paint(1);
         this.a = paint;
-        this.g = ks.e4;
+        this.g = ls.e4;
         this.d = h6Var;
         this.e = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Yk, h6Var);
         this.f = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Zk, h6Var);

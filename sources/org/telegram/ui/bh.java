@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bh implements Runnable {
     public final /* synthetic */ int a;
@@ -39,12 +39,12 @@ public final /* synthetic */ class bh implements Runnable {
             case 1:
                 bi.z0 z0Var = (bi.z0) obj;
                 i7 = ((org.telegram.ui.ActionBar.g2) ((bn) z0Var.e)).currentAccount;
-                org.telegram.messenger.ks.f(i7).j(z0Var.b);
+                org.telegram.messenger.ls.f(i7).j(z0Var.b);
                 break;
             case 2:
                 ki kiVar = (ki) obj;
                 i10 = ((org.telegram.ui.ActionBar.g2) ((bn) kiVar.e)).currentAccount;
-                org.telegram.messenger.ks.f(i10).j(kiVar.c);
+                org.telegram.messenger.ls.f(i10).j(kiVar.c);
                 break;
             case 3:
                 bn.f2(((bj) obj).G3);
@@ -53,13 +53,13 @@ public final /* synthetic */ class bh implements Runnable {
                 ((ej) obj).T.D0.O(false);
                 break;
             case 5:
-                ((org.telegram.messenger.fj) obj).q = false;
+                ((org.telegram.messenger.gj) obj).q = false;
                 break;
             case 6:
                 Bundle bundle = new Bundle();
                 kl klVar = ((el) obj).c.a;
                 i11 = ((org.telegram.ui.ActionBar.g2) klVar.R).currentAccount;
-                bundle.putLong("user_id", org.telegram.messenger.j10.i(i11).n);
+                bundle.putLong("user_id", org.telegram.messenger.k10.i(i11).n);
                 klVar.R.presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 7:
@@ -86,7 +86,7 @@ public final /* synthetic */ class bh implements Runnable {
             case 11:
                 rn rnVar = ((pn) obj).a;
                 rnVar.e.setImageDrawable(rnVar.r);
-                rnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.gd.N0(2131752200, "ChatSetPhotoOrVideo"), true);
+                rnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.hd.N0(2131752200, "ChatSetPhotoOrVideo"), true);
                 TLRPC.User user = rnVar.D0;
                 if (user != null) {
                     user.photo = null;
@@ -151,7 +151,7 @@ public final /* synthetic */ class bh implements Runnable {
                 Bundle bundle2 = new Bundle();
                 cx cxVar = ((ow) obj).a;
                 i12 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                bundle2.putLong("user_id", org.telegram.messenger.j10.i(i12).e());
+                bundle2.putLong("user_id", org.telegram.messenger.k10.i(i12).e());
                 bundle2.putBoolean("my_profile", true);
                 cxVar.presentFragment(new ProfileActivity(bundle2, null));
                 break;
@@ -209,7 +209,7 @@ public final /* synthetic */ class bh implements Runnable {
                             tL_messages_setTyping.flags = 1 | tL_messages_setTyping.flags;
                         }
                         tL_messages_setTyping.action = tL_sendMessageEmojiInteraction;
-                        tL_messages_setTyping.peer = org.telegram.messenger.mp.u1(nxVar.b).l1(nxVar.J);
+                        tL_messages_setTyping.peer = org.telegram.messenger.np.u1(nxVar.b).l1(nxVar.J);
                         ConnectionsManager.getInstance(nxVar.b).sendRequest(tL_messages_setTyping, null);
                         nxVar.r = 0;
                         nxVar.w = null;

@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ei0 implements Runnable {
     public final /* synthetic */ org.telegram.ui.ActionBar.h6 E;
@@ -101,8 +101,8 @@ public final /* synthetic */ class ei0 implements Runnable {
         final boolean z11 = this.F;
         final String str3 = this.G;
         final org.telegram.ui.web.v0 v0Var = this.H;
-        connectionsManager.sendRequestTyped(tL_messages_acceptUrlAuth, bVar, new org.telegram.messenger.q10() { // from class: org.telegram.ui.ci0
-            @Override // org.telegram.messenger.q10
+        connectionsManager.sendRequestTyped(tL_messages_acceptUrlAuth, bVar, new org.telegram.messenger.r10() { // from class: org.telegram.ui.ci0
+            @Override // org.telegram.messenger.r10
             public final void a(Object obj, Object obj2) {
                 TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -123,9 +123,9 @@ public final /* synthetic */ class ei0 implements Runnable {
                     return;
                 }
                 org.telegram.ui.Components.lc a10 = gi0.a();
-                String N0 = org.telegram.messenger.gd.N0(2131753125, null);
+                String N0 = org.telegram.messenger.hd.N0(2131753125, null);
                 String str4 = str2;
-                a10.I(R.raw.error, N0, TextUtils.isEmpty(str4) ? org.telegram.messenger.gd.N0(2131753126, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), org.telegram.messenger.gd.a0(null, null, 2131753127, str4))).j();
+                a10.I(R.raw.error, N0, TextUtils.isEmpty(str4) ? org.telegram.messenger.hd.N0(2131753126, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), org.telegram.messenger.hd.a0(null, null, 2131753127, str4))).j();
             }
         });
     }

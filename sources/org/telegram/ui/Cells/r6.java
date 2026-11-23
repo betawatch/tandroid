@@ -12,17 +12,17 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.pd;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.qd;
+import org.telegram.messenger.rd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bp0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r6 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final j6.o E;
@@ -61,7 +61,7 @@ public final class r6 extends FrameLayout implements org.telegram.ui.ActionBar.b
         int i10;
         int i11;
         this.b = -1;
-        this.d = j10.t0;
+        this.d = k10.t0;
         j6.o oVar = new j6.o(this, 24);
         this.E = oVar;
         nr nrVar = nr.h;
@@ -80,21 +80,21 @@ public final class r6 extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.w = z11;
         ImageView imageView = new ImageView(context);
         this.h = imageView;
-        boolean z12 = gd.a0;
+        boolean z12 = hd.a0;
         addView(imageView, c8.ma.d(46, 46.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 13.0f, 0.0f, z12 ? 13.0f : 0.0f, 0.0f));
         org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(context);
         this.f = m5Var;
         m5Var.setTextSize(16);
-        m5Var.setGravity(gd.a0 ? 5 : 3);
+        m5Var.setGravity(hd.a0 ? 5 : 3);
         m5Var.setTypeface(org.telegram.messenger.g0.o());
-        boolean z13 = gd.a0;
+        boolean z13 = hd.a0;
         addView(m5Var, c8.ma.d(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 16.0f : 73.0f, 9.33f, z13 ? 73.0f : 16.0f, 0.0f));
         org.telegram.ui.ActionBar.m5 m5Var2 = new org.telegram.ui.ActionBar.m5(context);
         this.e = m5Var2;
         m5Var2.setTextSize(14);
         org.telegram.ui.ActionBar.t6.X(m5Var2, org.telegram.ui.ActionBar.m6.A6, h6Var);
-        m5Var2.setGravity(gd.a0 ? 5 : 3);
-        boolean z14 = gd.a0;
+        m5Var2.setGravity(hd.a0 ? 5 : 3);
+        boolean z14 = hd.a0;
         addView(m5Var2, c8.ma.d(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? 16.0f : 73.0f, 33.0f, z14 ? 73.0f : 16.0f, 0.0f));
         m5Var.setTag(Integer.valueOf(z10 ? z11 ? org.telegram.ui.ActionBar.m6.q7 : org.telegram.ui.ActionBar.m6.ij : org.telegram.ui.ActionBar.m6.fj));
         org.telegram.ui.ActionBar.t6.X(m5Var, z10 ? z11 ? org.telegram.ui.ActionBar.m6.q7 : org.telegram.ui.ActionBar.m6.ij : org.telegram.ui.ActionBar.m6.fj, h6Var);
@@ -158,18 +158,18 @@ public final class r6 extends FrameLayout implements org.telegram.ui.ActionBar.b
     }
 
     public final void a() {
-        pd h = qd.f(this.d).h(this.n);
+        qd h = rd.f(this.d).h(this.n);
         if (h == null) {
-            b(gd.N0(2131745422, null), gd.N0(2131745417, null));
+            b(hd.N0(2131745422, null), hd.N0(2131745417, null));
             return;
         }
         if (!this.w) {
-            b(gd.N0(2131745198, null), gd.N0(2131745197, null));
+            b(hd.N0(2131745198, null), hd.N0(2131745197, null));
             return;
         }
-        String N0 = gd.N0(2131744597, null);
+        String N0 = hd.N0(2131744595, null);
         int i7 = h.h.k.edit_date;
-        b(N0, gd.D(i7 != 0 ? i7 : r0.date));
+        b(N0, hd.D(i7 != 0 ? i7 : r0.date));
     }
 
     @Override // org.telegram.ui.ActionBar.b6
@@ -213,13 +213,13 @@ public final class r6 extends FrameLayout implements org.telegram.ui.ActionBar.b
             canvas2 = canvas;
         } else {
             canvas2 = canvas;
-            canvas2.drawRect(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(73.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(73.0f) : 0), getMeasuredHeight(), W0);
+            canvas2.drawRect(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(73.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(73.0f) : 0), getMeasuredHeight(), W0);
         }
         if (this.w) {
             return;
         }
         int i10 = this.d;
-        pd h = qd.f(i10).h(this.n);
+        qd h = rd.f(i10).h(this.n);
         org.telegram.ui.Components.d6 d6Var = this.F;
         float f10 = d6Var.c;
         int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
@@ -236,7 +236,7 @@ public final class r6 extends FrameLayout implements org.telegram.ui.ActionBar.b
         if (f11 <= 0.0f) {
             return;
         }
-        if (gd.a0) {
+        if (hd.a0) {
             this.r.set(org.telegram.messenger.g0.L(13.0f), (getMeasuredHeight() / 2.0f) - org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(43.0f), (getMeasuredHeight() / 2.0f) + org.telegram.messenger.g0.L(15.0f));
         } else {
             this.r.set(getMeasuredWidth() - org.telegram.messenger.g0.L(43.0f), (getMeasuredHeight() / 2.0f) - org.telegram.messenger.g0.L(15.0f), getMeasuredWidth() - org.telegram.messenger.g0.L(13.0f), (getMeasuredHeight() / 2.0f) + org.telegram.messenger.g0.L(15.0f));
@@ -255,7 +255,7 @@ public final class r6 extends FrameLayout implements org.telegram.ui.ActionBar.b
         org.telegram.ui.ActionBar.m6.l2.setAlpha(alpha);
         org.telegram.ui.Components.n6 n6Var = this.I;
         if (h != null) {
-            n6Var.t(gd.C(Math.abs(h.c - currentTime)), true, true);
+            n6Var.t(hd.C(Math.abs(h.c - currentTime)), true, true);
         }
         int length = n6Var.i.length();
         float e11 = this.H.e(false, length > 4 ? 0.75f : length > 3 ? 0.85f : 1.0f);
@@ -284,7 +284,7 @@ public final class r6 extends FrameLayout implements org.telegram.ui.ActionBar.b
     }
 
     public void setHasLocation(boolean z10) {
-        if (qd.f(this.d).h(this.n) == null) {
+        if (rd.f(this.d).h(this.n) == null) {
             this.f.setAlpha(z10 ? 1.0f : 0.5f);
             this.e.setAlpha(z10 ? 1.0f : 0.5f);
             this.h.setAlpha(z10 ? 1.0f : 0.5f);

@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class uc1 extends org.telegram.ui.Components.dk0 {
     public org.telegram.ui.Wallet.u4 E;
@@ -100,9 +100,9 @@ public final class uc1 extends org.telegram.ui.Components.dk0 {
         }
         this.y = str;
         i7 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
-        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
+        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i7);
         i10 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
-        TLObject h22 = u12.h2(org.telegram.messenger.mp.u1(i10).O3);
+        TLObject h22 = u12.h2(org.telegram.messenger.np.u1(i10).O3);
         if (!(h22 instanceof TLRPC.User)) {
             if (!z10 || this.x) {
                 return;
@@ -110,7 +110,7 @@ public final class uc1 extends org.telegram.ui.Components.dk0 {
             this.x = true;
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
             i15 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
-            tL_contacts_resolveUsername.username = org.telegram.messenger.mp.u1(i15).O3;
+            tL_contacts_resolveUsername.username = org.telegram.messenger.np.u1(i15).O3;
             i16 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
             ConnectionsManager.getInstance(i16).sendRequest(tL_contacts_resolveUsername, new l(this, 25));
             return;
@@ -118,7 +118,7 @@ public final class uc1 extends org.telegram.ui.Components.dk0 {
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
         tL_messages_getInlineBotResults.query = p5.c.k("#wallpaper ", str);
         i11 = ((org.telegram.ui.ActionBar.g2) wallpapersListActivity).currentAccount;
-        tL_messages_getInlineBotResults.bot = org.telegram.messenger.mp.u1(i11).s1((TLRPC.User) h22);
+        tL_messages_getInlineBotResults.bot = org.telegram.messenger.np.u1(i11).s1((TLRPC.User) h22);
         tL_messages_getInlineBotResults.offset = str2;
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         int i19 = this.w + 1;
@@ -156,7 +156,7 @@ public final class uc1 extends org.telegram.ui.Components.dk0 {
             if (i10 != 2) {
                 return;
             }
-            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.N0(2131745619, null));
+            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.N0(2131745619, null));
             return;
         }
         org.telegram.ui.Cells.va vaVar = (org.telegram.ui.Cells.va) view;

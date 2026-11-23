@@ -8,9 +8,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.po0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class z1 {
     public y1 a;
@@ -37,7 +37,7 @@ public class z1 {
     public final a0.h h = new a0.h();
     public final a0.h i = new a0.h();
     public final ArrayList j = new ArrayList();
-    public final int m = j10.t0;
+    public final int m = k10.t0;
     public boolean p = true;
     public boolean s = false;
 
@@ -75,7 +75,7 @@ public class z1 {
             z10 = true;
         }
         if (z10) {
-            tr.a0(this.m).a.c(new hi.c(27, this, this.q));
+            ur.a0(this.m).a.c(new hi.c(27, this, this.q));
         }
     }
 
@@ -88,7 +88,7 @@ public class z1 {
     public final void c() {
         this.q = new ArrayList();
         this.r = new HashMap();
-        tr.a0(this.m).a.c(new w1(this, 0));
+        ur.a0(this.m).a.c(new w1(this, 0));
     }
 
     public boolean d(TLObject tLObject) {
@@ -224,7 +224,7 @@ public class z1 {
                 tL_channels_getParticipants.filter.q = str;
                 tL_channels_getParticipants.limit = 50;
                 tL_channels_getParticipants.offset = 0;
-                tL_channels_getParticipants.channel = mp.u1(i11).j1(j3);
+                tL_channels_getParticipants.channel = np.u1(i11).j1(j3);
                 z17 = z13;
                 arrayList6.add(new Pair(tL_channels_getParticipants, new o8(this, str, z17, 2)));
             } else {
@@ -254,7 +254,7 @@ public class z1 {
                     size = arrayList7.size();
                     z20 = false;
                     for (i13 = 0; i13 < size; i13++) {
-                        TLRPC.User c22 = mp.u1(i11).c2(Long.valueOf(((TLRPC.TL_contact) arrayList7.get(i13)).user_id));
+                        TLRPC.User c22 = np.u1(i11).c2(Long.valueOf(((TLRPC.TL_contact) arrayList7.get(i13)).user_id));
                         if (c22 != null && (str2 = c22.phone) != null && str2.startsWith(d)) {
                             if (!z20) {
                                 z20 = c22.phone.length() == d.length() ? z16 : false;
@@ -417,9 +417,9 @@ public class z1 {
                         arrayList13.clear();
                         hVar7.b();
                         arrayList12.clear();
-                        mp.u1(i16).Z3(tL_contacts_found2.chats, false);
-                        mp.u1(i16).f4(tL_contacts_found2.users, false);
-                        tr.a0(i16).m1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
+                        np.u1(i16).Z3(tL_contacts_found2.chats, false);
+                        np.u1(i16).f4(tL_contacts_found2.users, false);
+                        ur.a0(i16).m1(tL_contacts_found2.users, tL_contacts_found2.chats, true, true);
                         a0.h hVar8 = new a0.h();
                         a0.h hVar9 = new a0.h();
                         for (int i17 = 0; i17 < tL_contacts_found2.chats.size(); i17++) {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,8 +56,8 @@ public final /* synthetic */ class kn0 implements Runnable {
                     while (i7 < size) {
                         Object obj = arrayList.get(i7);
                         i7++;
-                        if (obj instanceof org.telegram.messenger.ef) {
-                            ((org.telegram.messenger.ef) obj).h();
+                        if (obj instanceof org.telegram.messenger.ff) {
+                            ((org.telegram.messenger.ff) obj).h();
                         }
                     }
                     break;
@@ -80,8 +80,8 @@ public final /* synthetic */ class kn0 implements Runnable {
                         while (i10 < size2) {
                             Object obj2 = arrayList2.get(i10);
                             i10++;
-                            if (obj2 instanceof org.telegram.messenger.ef) {
-                                ((org.telegram.messenger.ef) obj2).h();
+                            if (obj2 instanceof org.telegram.messenger.ff) {
+                                ((org.telegram.messenger.ff) obj2).h();
                             }
                         }
                         break;

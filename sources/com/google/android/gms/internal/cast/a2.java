@@ -4,9 +4,9 @@ import android.content.SharedPreferences;
 import android.os.Looper;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class a2 {
     public static final j6.b i = new j6.b("FeatureUsageAnalytics", null);
@@ -107,9 +107,9 @@ public final class a2 {
                 return a1.U;
             case 29:
                 return a1.V;
-            case ks.T /* 30 */:
+            case ls.T /* 30 */:
                 return a1.W;
-            case ks.U /* 31 */:
+            case ls.U /* 31 */:
                 return a1.X;
             case 32:
                 return a1.Y;
@@ -149,15 +149,15 @@ public final class a2 {
                 return a1.p0;
             case 50:
                 return a1.q0;
-            case ks.o0 /* 51 */:
+            case ls.o0 /* 51 */:
                 return a1.r0;
-            case ks.p0 /* 52 */:
+            case ls.p0 /* 52 */:
                 return a1.s0;
-            case ks.q0 /* 53 */:
+            case ls.q0 /* 53 */:
                 return a1.t0;
-            case ks.r0 /* 54 */:
+            case ls.r0 /* 54 */:
                 return a1.u0;
-            case ks.s0 /* 55 */:
+            case ls.s0 /* 55 */:
                 return a1.v0;
             default:
                 return null;

@@ -3,9 +3,9 @@ package fi;
 import android.graphics.RectF;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ec;
 import org.telegram.messenger.fc;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.s10;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class b4 {
     public final int a;
@@ -56,19 +56,19 @@ public final class b4 {
         s10[] s10VarArr = i7.a;
         TLRPC.MessageMedia messageMedia = storyItem.media;
         if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
-            TLObject g22 = mp.u1(imageReceiver.d).g2(storyItem.dialogId);
+            TLObject g22 = np.u1(imageReceiver.d).g2(storyItem.dialogId);
             b9Var.l(g22);
             imageReceiver.i0(g22, b9Var, null);
         } else {
             if (messageMedia != null && (document = messageMedia.document) != null) {
-                imageReceiver.r0(fc.c(org.telegram.messenger.w7.w(document.thumbs, org.telegram.messenger.g0.L(Math.max(25, 25)), false, null, true), storyItem.media.document), "25_25", null, null, ec.m(storyItem.media.document.thumbs), 0L, null, storyItem, 0);
+                imageReceiver.r0(gc.c(org.telegram.messenger.w7.w(document.thumbs, org.telegram.messenger.g0.L(Math.max(25, 25)), false, null, true), storyItem.media.document), "25_25", null, null, fc.m(storyItem.media.document.thumbs), 0L, null, storyItem, 0);
                 return;
             }
             TLRPC.Photo photo = messageMedia != null ? messageMedia.photo : null;
             if (photo == null || (arrayList = photo.sizes) == null) {
                 imageReceiver.f();
             } else {
-                imageReceiver.u0(null, null, fc.i(org.telegram.messenger.w7.w(arrayList, org.telegram.messenger.g0.L(Math.max(25, 25)), false, null, true), photo), "25_25", null, null, ec.m(photo.sizes), 0L, null, storyItem, 0);
+                imageReceiver.u0(null, null, gc.i(org.telegram.messenger.w7.w(arrayList, org.telegram.messenger.g0.L(Math.max(25, 25)), false, null, true), photo), "25_25", null, null, fc.m(photo.sizes), 0L, null, storyItem, 0);
             }
         }
     }

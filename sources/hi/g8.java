@@ -6,16 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.ln;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.nv0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g8 extends rg.b {
     public final Context d;
@@ -201,8 +201,8 @@ public final class g8 extends rg.b {
         }
         if (i12 == 10) {
             int i17 = p8.Y1;
-            int i18 = (int) mp.u1(p8Var.a).L6;
-            int[] a10 = org.telegram.ui.Cells.u7.a(new int[]{0, 1, 10, 50, 100, ks.e3, ks.Z3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, i18);
+            int i18 = (int) np.u1(p8Var.a).L6;
+            int[] a10 = org.telegram.ui.Cells.u7.a(new int[]{0, 1, 10, 50, 100, ls.e3, ls.Z3, 400, 500, 1000, 2500, 5000, 7500, 9000, 10000}, i18);
             int j3 = Utilities.j(p8Var.C1, i18, 0);
             g0.e eVar = new g0.e(29);
             org.telegram.ui.Cells.t7 t7Var = new org.telegram.ui.Cells.t7();
@@ -241,8 +241,8 @@ public final class g8 extends rg.b {
                     org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.h5, u7Var, h6Var);
                 } else if (i7 == 5) {
                     nv0 nv0Var = new nv0(context, null, 1, h6Var);
-                    nv0Var.d.setText(gd.N0(2131747974, null));
-                    nv0Var.e.setText(gd.N0(2131745611, null));
+                    nv0Var.d.setText(hd.N0(2131747974, null));
+                    nv0Var.e.setText(hd.N0(2131745611, null));
                     nv0Var.a.setTranslationY(org.telegram.messenger.g0.L(24.0f));
                     view = nv0Var;
                 } else if (i7 == 6) {

@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zu implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class zu implements Runnable {
             case 6:
                 cx cxVar2 = this.b;
                 cxVar2.getClass();
-                SharedPreferences g12 = org.telegram.messenger.mp.g1();
+                SharedPreferences g12 = org.telegram.messenger.np.g1();
                 long j3 = g12.getLong("cache_hint_period", 604800000L);
                 if (j3 <= 604800000) {
                     j3 = 2592000000L;
@@ -72,7 +72,7 @@ public final /* synthetic */ class zu implements Runnable {
                 cx.i0(this.b);
                 break;
             case 11:
-                org.telegram.messenger.mp.u1(this.b.currentAccount).l0(null);
+                org.telegram.messenger.np.u1(this.b.currentAccount).l0(null);
                 break;
             case 12:
                 org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2();

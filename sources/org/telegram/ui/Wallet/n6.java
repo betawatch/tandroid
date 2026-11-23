@@ -39,16 +39,16 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ce;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.de;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.o10;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
@@ -61,12 +61,12 @@ import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.ey0;
+import org.telegram.ui.Components.f21;
 import org.telegram.ui.Components.fz0;
 import org.telegram.ui.Components.gz0;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.i71;
 import org.telegram.ui.Components.ik;
-import org.telegram.ui.Components.j01;
 import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.k00;
 import org.telegram.ui.Components.m80;
@@ -88,9 +88,9 @@ import org.telegram.ui.pa0;
 import org.telegram.ui.s90;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class n6 extends e51 implements fs {
+public final class n6 extends e51 implements gs {
     public static Typeface Y0;
     public float A0;
     public float B0;
@@ -157,12 +157,12 @@ public final class n6 extends e51 implements fs {
     public final p4 x = new bt() { // from class: org.telegram.ui.Wallet.p4
         @Override // org.telegram.ui.Components.bt
         public final void a(int i7, boolean z10) {
-            bi.g6 g6Var;
+            bi.f6 f6Var;
             n6 n6Var = n6.this;
             ik ikVar = n6Var.w;
-            if ((i7 == 1 || i7 == 3) && (g6Var = n6Var.a) != null) {
+            if ((i7 == 1 || i7 == 3) && (f6Var = n6Var.a) != null) {
                 n6Var.s = z10;
-                g6Var.removeCallbacks(ikVar);
+                f6Var.removeCallbacks(ikVar);
                 ikVar.run();
             }
         }
@@ -208,11 +208,11 @@ public final class n6 extends e51 implements fs {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r4v4, types: [org.telegram.ui.Components.j71, org.telegram.ui.Wallet.n5] */
-    public static void K0(Context context, int i7, TL_wallet.walletTransaction wallettransaction, s10 s10Var, q10 q10Var, byte[] bArr, org.telegram.ui.Cells.n0 n0Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public static void K0(Context context, int i7, TL_wallet.walletTransaction wallettransaction, t10 t10Var, r10 r10Var, byte[] bArr, org.telegram.ui.Cells.n0 n0Var, org.telegram.ui.ActionBar.h6 h6Var) {
         TL_wallet.nftItem nftitem;
         e3[] e3VarArr;
         View[] viewArr;
-        q10 q10Var2;
+        r10 r10Var2;
         LinearLayout u02;
         if (context == null) {
             return;
@@ -247,7 +247,7 @@ public final class n6 extends e51 implements fs {
                 i11++;
             }
         }
-        if (s10Var == null && n0Var == null && i11 >= 0) {
+        if (t10Var == null && n0Var == null && i11 >= 0) {
             Rect rect = new Rect();
             context.getResources().getDrawable(R.drawable.sheet_shadow_round).getPadding(rect);
             viewArr = viewArr2;
@@ -255,21 +255,21 @@ public final class n6 extends e51 implements fs {
             n5Var.setPosition(i11);
             e3VarArr = e3VarArr2;
             n5Var.setAdapter(new o5(arrayList, context, h6Var, rect, i7, e3VarArr2));
-            q10Var2 = q10Var;
+            r10Var2 = r10Var;
             u02 = n5Var;
         } else {
             e3VarArr = e3VarArr2;
             viewArr = viewArr2;
-            q10Var2 = q10Var;
-            u02 = u0(context, i7, wallettransaction, s10Var, q10Var, bArr, n0Var, h6Var, e3VarArr, false);
+            r10Var2 = r10Var;
+            u02 = u0(context, i7, wallettransaction, t10Var, r10Var, bArr, n0Var, h6Var, e3VarArr, false);
         }
         e3[] e3VarArr3 = e3VarArr;
         p5 p5Var = new p5(context, u02, h6Var, u02, viewArr, context);
         e3VarArr3[0] = p5Var;
-        if ((u02 instanceof j71) && q10Var2 != null) {
-            p5Var.n(new u4(i10, q10Var2, wallettransaction));
+        if ((u02 instanceof j71) && r10Var2 != null) {
+            p5Var.n(new u4(i10, r10Var2, wallettransaction));
         }
-        e3VarArr3[0].A0(s10Var != null);
+        e3VarArr3[0].A0(t10Var != null);
         e3 e3Var = e3VarArr3[0];
         e3Var.U0 = false;
         e3Var.show();
@@ -289,15 +289,15 @@ public final class n6 extends e51 implements fs {
         linearLayout.setOrientation(1);
         linearLayout.setGravity(1);
         frameLayout.addView(linearLayout, c8.ma.c(-2.0f, -1));
-        linearLayout.addView(new m7(ks.q2, context, false), c8.ma.t(ks.q2, ks.q2, 1, 0, -12, 0, -8));
+        linearLayout.addView(new m7(ls.q2, context, false), c8.ma.t(ls.q2, ls.q2, 1, 0, -12, 0, -8));
         TextView textView = new TextView(context);
-        textView.setText(gd.N0(2131742852, null));
+        textView.setText(hd.N0(2131742850, null));
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, h6Var);
         textView.setTextSize(1, 17.0f);
         textView.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
         textView.setGravity(17);
-        TextView f10 = n10.f(linearLayout, textView, c8.ma.t(-1, -2, 1, 0, 0, 0, 6), context);
-        f10.setText(gd.N0(2131742851, null));
+        TextView f10 = o10.f(linearLayout, textView, c8.ma.t(-1, -2, 1, 0, 0, 0, 6), context);
+        f10.setText(hd.N0(2131742849, null));
         int i10 = org.telegram.ui.ActionBar.m6.z6;
         org.telegram.ui.ActionBar.t6.U(f10, i10, h6Var);
         f10.setTextSize(1, 14.0f);
@@ -306,25 +306,25 @@ public final class n6 extends e51 implements fs {
         linearLayout.addView(f10, c8.ma.t(-1, -2, 1, 0, 0, 0, 24));
         g6 g6Var = new g6(context, h6Var);
         g6Var.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
-        g6Var.a(R.drawable.wallet_learn_instant, gd.N0(2131742755, null), gd.N0(2131742754, null));
+        g6Var.a(R.drawable.wallet_learn_instant, hd.N0(2131742753, null), hd.N0(2131742752, null));
         linearLayout.addView(g6Var, c8.ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
         g6 g6Var2 = new g6(context, h6Var);
         g6Var2.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
-        g6Var2.a(R.drawable.wallet_learn_fees, gd.N0(2131742823, null), gd.N0(2131742822, null));
+        g6Var2.a(R.drawable.wallet_learn_fees, hd.N0(2131742821, null), hd.N0(2131742820, null));
         linearLayout.addView(g6Var2, c8.ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
         g6 g6Var3 = new g6(context, h6Var);
         g6Var3.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(8.0f));
-        g6Var3.a(R.drawable.wallet_learn_verified, gd.N0(2131742938, null), gd.N0(2131742937, null));
+        g6Var3.a(R.drawable.wallet_learn_verified, hd.N0(2131742936, null), hd.N0(2131742935, null));
         linearLayout.addView(g6Var3, c8.ma.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
-        hi.e g10 = n10.g(24, context, h6Var, true);
-        g10.setText(gd.N0(2131742856, null));
+        hi.e g10 = o10.g(24, context, h6Var, true);
+        g10.setText(hd.N0(2131742854, null));
         linearLayout.addView(g10, c8.ma.t(-1, 48, 1, 0, 0, 0, 0));
         c8.ra.b(g10, 0.02f, 1.1f);
         m80 m80Var = new m80(context, null);
         org.telegram.ui.ActionBar.t6.U(m80Var, i10, h6Var);
         m80Var.setTextSize(1, 13.0f);
         m80Var.setGravity(17);
-        m80Var.setText(V0(gd.N0(2131742742, null), org.telegram.ui.ActionBar.m6.Xc, h6Var, new d5(context, 0)));
+        m80Var.setText(V0(hd.N0(2131742740, null), org.telegram.ui.ActionBar.m6.Xc, h6Var, new d5(context, 0)));
         linearLayout.addView(m80Var, c8.ma.k(0.0f, 12.0f, 0.0f, 6.0f, -1, -2));
         j3.O = frameLayout;
         org.telegram.ui.ActionBar.w2[] w2VarArr = {j3};
@@ -360,11 +360,11 @@ public final class n6 extends e51 implements fs {
         frameLayout.addView(linearLayout, c8.ma.f(-2.0f, -1, 55, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f) + org.telegram.messenger.g0.n));
         l6 l6Var = new l6(context, str);
         if (!z10) {
-            l6Var.b.setText(gd.N0(2131746304, null));
+            l6Var.b.setText(hd.N0(2131746304, null));
         }
-        linearLayout.addView(l6Var, c8.ma.r(ks.L4, ks.Z4, 1));
+        linearLayout.addView(l6Var, c8.ma.r(ls.L4, ls.Z4, 1));
         TextView textView = new TextView(context);
-        textView.setText(gd.N0(2131742777, null));
+        textView.setText(hd.N0(2131742775, null));
         textView.setTextColor(-1);
         textView.setTextSize(1, 14.0f);
         textView.setGravity(17);
@@ -379,14 +379,14 @@ public final class n6 extends e51 implements fs {
             f10 = 12.0f;
             spannableStringBuilder.append((CharSequence) "$");
             spannableStringBuilder.setSpan(new nq(R.drawable.wallet_buy, 0), 0, spannableStringBuilder.length(), 33);
-            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) gd.N0(2131742936, null));
+            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) hd.N0(2131742934, null));
         } else {
             f10 = 12.0f;
             nq nqVar = new nq(R.drawable.mini_gram_24, 0);
             nqVar.c(org.telegram.messenger.g0.L(20.0f));
             spannableStringBuilder.append((CharSequence) "G");
             spannableStringBuilder.setSpan(nqVar, 0, spannableStringBuilder.length(), 33);
-            spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) gd.N0(2131742753, null));
+            spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) hd.N0(2131742751, null));
         }
         eVar.setText(spannableStringBuilder);
         linearLayout.addView(eVar, c8.ma.t(-1, 48, 1, 0, 0, 0, 0));
@@ -394,9 +394,9 @@ public final class n6 extends e51 implements fs {
             textView.setVisibility(8);
             eVar.setVisibility(pVar != null ? 0 : 8);
         }
-        View e10 = n10.e(context, R.drawable.ic_close_white);
+        View e10 = o10.e(context, R.drawable.ic_close_white);
         e10.setPadding(org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(f10));
-        e10.setContentDescription(gd.N0(2131752029, null));
+        e10.setContentDescription(hd.N0(2131752029, null));
         c8.ra.a(e10);
         frameLayout.addView(e10, c8.ma.d(48, 48.0f, 51, 4.0f, 2.0f, 0.0f, 0.0f));
         w2Var.O = frameLayout;
@@ -431,7 +431,7 @@ public final class n6 extends e51 implements fs {
                 x4 x4Var = new x4(eVar2, w2Var2, h6Var, 0);
                 int i12 = i7;
                 u0 D = u0.D(i12);
-                D.x0(new j01(i12, x4Var, D));
+                D.x0(new f21(i12, x4Var, D));
             }
         });
     }
@@ -481,7 +481,7 @@ public final class n6 extends e51 implements fs {
         y0Var.b.setPadding(0, 0, org.telegram.messenger.g0.L(equals ? 42.0f : 0.0f), 0);
         y0Var.setChecked(equals);
         y0Var.setOnClickListener(new r1(u0Var, currencyrate, a70Var, 2));
-        linearLayout.addView(y0Var, c8.ma.o(ks.e3, -2));
+        linearLayout.addView(y0Var, c8.ma.o(ls.e3, -2));
     }
 
     public static void f0(n6 n6Var) {
@@ -529,7 +529,7 @@ public final class n6 extends e51 implements fs {
                 yz yzVar = new yz(n6Var.getParentActivity(), n6Var.getResourceProvider());
                 yzVar.setIsSingleCell(true);
                 yzVar.setViewType(31);
-                linearLayout2.addView(yzVar, c8.ma.o(ks.e3, -2));
+                linearLayout2.addView(yzVar, c8.ma.o(ls.e3, -2));
             }
             return;
         }
@@ -580,9 +580,9 @@ public final class n6 extends e51 implements fs {
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
             }
-            g.a(linkedHashSet, ((org.telegram.messenger.n0) mp.u1(gVar.a).A7.T.b).c);
-            g.c(linkedHashSet, gd.E0().y);
-            g.c(linkedHashSet, gd.E0().z);
+            g.a(linkedHashSet, ((org.telegram.messenger.n0) np.u1(gVar.a).A7.T.b).c);
+            g.c(linkedHashSet, hd.E0().y);
+            g.c(linkedHashSet, hd.E0().z);
             Iterator it3 = linkedHashSet.iterator();
             while (it3.hasNext()) {
                 String str = (String) it3.next();
@@ -667,7 +667,7 @@ public final class n6 extends e51 implements fs {
         String j12 = j1(i12);
         if (j12 != null) {
             int i7 = n6Var.currentAccount;
-            mp.u1(i7).f2().a(j12, null, new ai.a2(i7, new w4(n6Var, 4), 8));
+            np.u1(i7).f2().a(j12, null, new ai.b2(i7, new w4(n6Var, 4), 8));
         } else {
             if ((n6Var.getParentActivity() instanceof LaunchActivity) && new s90((LaunchActivity) n6Var.getParentActivity(), n6Var.currentAccount, null, false).g(i12)) {
                 return;
@@ -685,7 +685,7 @@ public final class n6 extends e51 implements fs {
         J.s = 0;
         J.W(5);
         a70 K = J.K();
-        K.c(R.drawable.ic_ab_back, gd.N0(2131742948, null), new hq0(J, 27), false);
+        K.c(R.drawable.ic_ab_back, hd.N0(2131742946, null), new hq0(J, 27), false);
         K.k();
         ScrollView scrollView = new ScrollView(context);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -693,8 +693,8 @@ public final class n6 extends e51 implements fs {
         linearLayout.setOrientation(1);
         scrollView.addView(linearLayout);
         v7 v7Var = new v7(n6Var, linearLayout, D, J, 10);
-        K.r(scrollView, c8.ma.o(-1, ks.V5));
-        J.c(R.drawable.wallet_globe, gd.N0(2131742904, null), new p(v7Var, J, K, 11), false);
+        K.r(scrollView, c8.ma.o(-1, ls.V5));
+        J.c(R.drawable.wallet_globe, hd.N0(2131742902, null), new p(v7Var, J, K, 11), false);
         org.telegram.ui.ActionBar.y0 z10 = J.z();
         g gVar = D.h;
         String i11 = gVar.i();
@@ -702,7 +702,7 @@ public final class n6 extends e51 implements fs {
         String str = i11;
         if (isEmpty) {
             z10.setSubtext("USD");
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gd.N0(2131748586, null));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.N0(2131748586, null));
             spannableStringBuilder.setSpan(new r80(org.telegram.messenger.g0.L(75.0f), z10.b), 0, spannableStringBuilder.length(), 33);
             str = spannableStringBuilder;
         }
@@ -710,7 +710,7 @@ public final class n6 extends e51 implements fs {
         final v7 v7Var2 = new v7(D, new boolean[]{gVar.f() != null}, z10, v7Var, 11);
         n6Var.T0.add(v7Var2);
         v7Var.run();
-        J.c(R.drawable.wallet_lock, gd.N0(2131747463, null), new Runnable(n6Var) { // from class: org.telegram.ui.Wallet.z4
+        J.c(R.drawable.wallet_lock, hd.N0(2131747463, null), new Runnable(n6Var) { // from class: org.telegram.ui.Wallet.z4
             public final /* synthetic */ n6 b;
 
             {
@@ -746,7 +746,7 @@ public final class n6 extends e51 implements fs {
                 }
             }
         }, false);
-        J.c(R.drawable.wallet_key, gd.N0(2131742835, null), new Runnable(n6Var) { // from class: org.telegram.ui.Wallet.z4
+        J.c(R.drawable.wallet_key, hd.N0(2131742833, null), new Runnable(n6Var) { // from class: org.telegram.ui.Wallet.z4
             public final /* synthetic */ n6 b;
 
             {
@@ -783,7 +783,7 @@ public final class n6 extends e51 implements fs {
             }
         }, false);
         final int i12 = 2;
-        J.l(R.drawable.wallet_apps, gd.N0(2131742912, null), new Runnable(n6Var) { // from class: org.telegram.ui.Wallet.z4
+        J.l(R.drawable.wallet_apps, hd.N0(2131742910, null), new Runnable(n6Var) { // from class: org.telegram.ui.Wallet.z4
             public final /* synthetic */ n6 b;
 
             {
@@ -821,7 +821,7 @@ public final class n6 extends e51 implements fs {
         }, !D.g.d.isEmpty());
         J.k();
         final int i13 = 3;
-        J.c(R.drawable.wallet_help, gd.N0(2131742696, null), new Runnable(n6Var) { // from class: org.telegram.ui.Wallet.z4
+        J.c(R.drawable.wallet_help, hd.N0(2131742694, null), new Runnable(n6Var) { // from class: org.telegram.ui.Wallet.z4
             public final /* synthetic */ n6 b;
 
             {
@@ -967,7 +967,7 @@ public final class n6 extends e51 implements fs {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static LinearLayout u0(final Context context, int i7, TL_wallet.walletTransaction wallettransaction, s10 s10Var, q10 q10Var, byte[] bArr, Runnable runnable, org.telegram.ui.ActionBar.h6 h6Var, e3[] e3VarArr, boolean z10) {
+    public static LinearLayout u0(final Context context, int i7, TL_wallet.walletTransaction wallettransaction, t10 t10Var, r10 r10Var, byte[] bArr, Runnable runnable, org.telegram.ui.ActionBar.h6 h6Var, e3[] e3VarArr, boolean z10) {
         String y10;
         String str;
         q5 q5Var;
@@ -993,7 +993,7 @@ public final class n6 extends e51 implements fs {
         int i12;
         final FrameLayout frameLayout;
         final org.telegram.ui.ActionBar.h6 h6Var2 = h6Var;
-        boolean z11 = s10Var != null;
+        boolean z11 = t10Var != null;
         final LinearLayout g10 = org.telegram.messenger.f3.g(context, 1);
         FrameLayout frameLayout2 = new FrameLayout(context);
         g10.addView(frameLayout2, c8.ma.o(-1, 56));
@@ -1011,7 +1011,7 @@ public final class n6 extends e51 implements fs {
         org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i14);
         imageView4.setBackground(h02);
         org.telegram.ui.ActionBar.t6.j(imageView4, h02, null, M, h6Var2);
-        imageView4.setContentDescription(gd.N0(2131752029, null));
+        imageView4.setContentDescription(hd.N0(2131752029, null));
         frameLayout2.addView(imageView4, c8.ma.d(48, 48.0f, 19, 4.0f, -2.0f, 0.0f, 0.0f));
         ImageView imageView5 = new ImageView(context);
         imageView5.setScaleType(scaleType);
@@ -1021,8 +1021,8 @@ public final class n6 extends e51 implements fs {
         org.telegram.ui.ActionBar.p6 M2 = org.telegram.ui.ActionBar.t6.M(i14);
         imageView5.setBackground(h03);
         org.telegram.ui.ActionBar.t6.j(imageView5, h03, null, M2, h6Var2);
-        imageView5.setContentDescription(gd.N0(2131754838, null));
-        imageView5.setVisibility(s10Var != null ? 8 : 0);
+        imageView5.setContentDescription(hd.N0(2131754838, null));
+        imageView5.setVisibility(t10Var != null ? 8 : 0);
         frameLayout2.addView(imageView5, c8.ma.d(44, 48.0f, 21, 0.0f, 2.0f, 4.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
@@ -1055,7 +1055,7 @@ public final class n6 extends e51 implements fs {
             frameLayout3.addView(imageView6, c8.ma.e(44, 44, 17));
             linearLayout2.addView(frameLayout3, c8.ma.r(76, 76, 1));
             TextView textView3 = new TextView(context);
-            textView3.setText(gd.N0(2131742836, null));
+            textView3.setText(hd.N0(2131742834, null));
             org.telegram.messenger.f3.l(textView3, i13, h6Var2, 1, 18.0f);
             textView3.setGravity(17);
             textView3.setIncludeFontPadding(false);
@@ -1068,7 +1068,7 @@ public final class n6 extends e51 implements fs {
             q9Var.setContentDescription(nftitem.name);
             Drawable mutate = context.getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
             org.telegram.ui.ActionBar.t6.x(q9Var, mutate, i15, h6Var2, mode);
-            fc c11 = c.c(nftitem, false);
+            gc c11 = c.c(nftitem, false);
             if (c11 != null) {
                 q9Var.j(c11, "120_120", mutate, nftitem);
             } else {
@@ -1076,7 +1076,7 @@ public final class n6 extends e51 implements fs {
             }
             linearLayout2.addView(q9Var, c8.ma.r(120, 120, 1));
             TextView textView4 = new TextView(context);
-            textView4.setText(TextUtils.isEmpty(nftitem.name) ? gd.N0(2131742932, null) : nftitem.name);
+            textView4.setText(TextUtils.isEmpty(nftitem.name) ? hd.N0(2131742930, null) : nftitem.name);
             org.telegram.messenger.f3.l(textView4, i13, h6Var2, 1, 17.0f);
             textView4.setGravity(17);
             linearLayout2.addView(textView4, c8.ma.k(12.0f, 16.0f, 12.0f, 0.0f, -1, -2));
@@ -1086,7 +1086,7 @@ public final class n6 extends e51 implements fs {
                 TL_wallet.WalletTransactionPeer walletTransactionPeer = wallettransaction.peer;
                 if (walletTransactionPeer == null) {
                     str = null;
-                    if (s10Var == null) {
+                    if (t10Var == null) {
                         if (wallettransaction.comment_encrypted || wallettransaction.comment_encrypted_preparing) {
                             f10 = 11.0f;
                             if (wallettransaction.comment_encrypted_preparing || !TextUtils.isEmpty(str)) {
@@ -1124,7 +1124,7 @@ public final class n6 extends e51 implements fs {
                                 g10.addView(ey0Var2, c8.ma.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
                                 String[] strArr2 = {wallettransaction.comment};
                                 final boolean[] zArr2 = {(wallettransaction.comment_encrypted || (z11 && bArr == null)) ? false : true};
-                                if (s10Var == null) {
+                                if (t10Var == null) {
                                     FrameLayout frameLayout4 = new FrameLayout(context);
                                     int L = org.telegram.messenger.g0.L(22.0f);
                                     int L2 = org.telegram.messenger.g0.L(22.0f);
@@ -1136,12 +1136,12 @@ public final class n6 extends e51 implements fs {
                                     final u4 u4Var2 = new u4(1, textViewArr2, spannableStringArr2);
                                     final Runnable[] runnableArr = new Runnable[1];
                                     ImageView imageView7 = imageView;
-                                    final ce ceVar = new ce(runnableArr, textViewArr2, i7, h6Var2, wallettransaction, strArr2, zArr2, bArr);
+                                    final de deVar = new de(runnableArr, textViewArr2, i7, h6Var2, wallettransaction, strArr2, zArr2, bArr);
                                     ey0Var = ey0Var2;
                                     textViewArr = textViewArr2;
                                     wallettransaction2 = wallettransaction;
                                     r5 r5Var2 = new r5(context, h6Var2);
-                                    r5Var2.setHint(gd.N0(2131742795, null));
+                                    r5Var2.setHint(hd.N0(2131742793, null));
                                     r5Var2.setText(strArr2[0]);
                                     r5Var2.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(64.0f), org.telegram.messenger.g0.L(12.0f));
                                     int i19 = org.telegram.ui.ActionBar.m6.G6;
@@ -1150,8 +1150,8 @@ public final class n6 extends e51 implements fs {
                                     spannableStringArr = spannableStringArr2;
                                     org.telegram.ui.ActionBar.t6.n(r5Var2, 1, K.a, -1, 2, K.d, h6Var);
                                     r5Var2.setMaxLines(4);
-                                    frameLayout4.addView(r5Var2, c8.ma.d(-1, -2.0f, ks.E1, 0.0f, 0.0f, (wallettransaction2.nft != null || bArr == null) ? 0.0f : 44.0f, 0.0f));
-                                    r5Var2.addTextChangedListener(new s5(strArr2, u4Var2, runnableArr, ceVar));
+                                    frameLayout4.addView(r5Var2, c8.ma.d(-1, -2.0f, ls.E1, 0.0f, 0.0f, (wallettransaction2.nft != null || bArr == null) ? 0.0f : 44.0f, 0.0f));
+                                    r5Var2.addTextChangedListener(new s5(strArr2, u4Var2, runnableArr, deVar));
                                     if (wallettransaction2.nft != null || bArr == null) {
                                         zArr = zArr2;
                                         strArr = strArr2;
@@ -1226,12 +1226,12 @@ public final class n6 extends e51 implements fs {
                                                     l3VarArr2[0] = l3Var2;
                                                     l3Var2.t();
                                                     l3Var2.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
-                                                    l3Var2.v(gd.N0(zArr3[0] ? 2131742783 : 2131742778, null));
+                                                    l3Var2.v(hd.N0(zArr3[0] ? 2131742781 : 2131742776, null));
                                                     l3Var2.setTranslationY(-(org.telegram.messenger.g0.L(44.0f) + (linearLayout3.getHeight() - frameLayout.getBottom())));
                                                     l3Var2.p(1.0f, -org.telegram.messenger.g0.L(26.0f));
                                                     l3Var2.s(20.0f);
                                                     l3Var2.u(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.m6.r1(0.25f, -16777216));
-                                                    frameLayout6.addView(l3Var2, c8.ma.e(-1, ks.e3, 87));
+                                                    frameLayout6.addView(l3Var2, c8.ma.e(-1, ls.e3, 87));
                                                     l3Var2.x();
                                                     l3Var2.r0 = new m(l3Var2, 7);
                                                 }
@@ -1245,9 +1245,9 @@ public final class n6 extends e51 implements fs {
                                                     runnable2.run();
                                                     runnableArr2[0] = null;
                                                 }
-                                                ce ceVar2 = ceVar;
-                                                org.telegram.messenger.g0.r(ceVar2);
-                                                org.telegram.messenger.g0.h3(ceVar2, 1000L);
+                                                de deVar2 = deVar;
+                                                org.telegram.messenger.g0.r(deVar2);
+                                                org.telegram.messenger.g0.h3(deVar2, 1000L);
                                             }
                                         });
                                         frameLayout.addView(frameLayout5, c8.ma.e(44, 44, 85));
@@ -1264,11 +1264,11 @@ public final class n6 extends e51 implements fs {
                                     wallettransaction2 = wallettransaction;
                                     r5Var = null;
                                 }
-                                hi.e g11 = n10.g(24, context, h6Var2, true);
-                                g11.setText(gd.N0(2131747637, null));
+                                hi.e g11 = o10.g(24, context, h6Var2, true);
+                                g11.setText(hd.N0(2131747637, null));
                                 linearLayout.addView(g11, c8.ma.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
                                 TL_wallet.walletTransaction[] wallettransactionArr = {wallettransaction2};
-                                fi.r rVar = new fi.r(linearLayout, q5Var, h6Var2, i7, textView, e3VarArr, ey0Var, s10Var, context, textViewArr, spannableStringArr);
+                                fi.r rVar = new fi.r(linearLayout, q5Var, h6Var2, i7, textView, e3VarArr, ey0Var, t10Var, context, textViewArr, spannableStringArr);
                                 LinearLayout linearLayout3 = linearLayout;
                                 linearLayout3.setTag(new u4(2, rVar, wallettransactionArr));
                                 rVar.a(wallettransaction2);
@@ -1309,11 +1309,11 @@ public final class n6 extends e51 implements fs {
                                     t5Var = null;
                                 }
                                 boolean[] zArr3 = zArr;
-                                linearLayout3.addOnAttachStateChangeListener(new u5(rVar, wallettransactionArr, t5Var, i11, q10Var, e3VarArr, strArr, zArr3));
-                                if (s10Var == null) {
+                                linearLayout3.addOnAttachStateChangeListener(new u5(rVar, wallettransactionArr, t5Var, i11, r10Var, e3VarArr, strArr, zArr3));
+                                if (t10Var == null) {
                                     TL_wallet.nftItem nftitem2 = wallettransaction2.nft;
                                     if (nftitem2 != null) {
-                                        x10 = TextUtils.isEmpty(nftitem2.name) ? gd.N0(2131742932, null) : wallettransaction2.nft.name;
+                                        x10 = TextUtils.isEmpty(nftitem2.name) ? hd.N0(2131742930, null) : wallettransaction2.nft.name;
                                         i12 = 1;
                                         c10 = 0;
                                     } else {
@@ -1324,14 +1324,14 @@ public final class n6 extends e51 implements fs {
                                     }
                                     Object[] objArr = new Object[i12];
                                     objArr[c10] = x10;
-                                    g11.setText(gd.V(null, null, 2131742757, objArr));
+                                    g11.setText(hd.V(null, null, 2131742755, objArr));
                                     e3VarArr2 = e3VarArr;
-                                    g11.setOnClickListener(new org.telegram.messenger.video.f(g11, r5Var, s10Var, strArr, zArr3, e3VarArr2, h6Var));
+                                    g11.setOnClickListener(new org.telegram.messenger.video.f(g11, r5Var, t10Var, strArr, zArr3, e3VarArr2, h6Var));
                                 } else {
                                     e3VarArr2 = e3VarArr;
                                     final int i22 = 0;
                                     if (runnable != null) {
-                                        g11.setText(gd.N0(2131742796, null));
+                                        g11.setText(hd.N0(2131742794, null));
                                         g11.setOnClickListener(new jg0(21, runnable, e3VarArr2));
                                     } else {
                                         g11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.b5
@@ -1401,21 +1401,21 @@ public final class n6 extends e51 implements fs {
                     g10.addView(ey0Var22, c8.ma.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
                     String[] strArr22 = {wallettransaction.comment};
                     final boolean[] zArr22 = {(wallettransaction.comment_encrypted || (z11 && bArr == null)) ? false : true};
-                    if (s10Var == null) {
+                    if (t10Var == null) {
                     }
-                    hi.e g112 = n10.g(24, context, h6Var2, true);
-                    g112.setText(gd.N0(2131747637, null));
+                    hi.e g112 = o10.g(24, context, h6Var2, true);
+                    g112.setText(hd.N0(2131747637, null));
                     linearLayout.addView(g112, c8.ma.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
                     TL_wallet.walletTransaction[] wallettransactionArr2 = {wallettransaction2};
-                    fi.r rVar2 = new fi.r(linearLayout, q5Var, h6Var2, i7, textView, e3VarArr, ey0Var, s10Var, context, textViewArr, spannableStringArr);
+                    fi.r rVar2 = new fi.r(linearLayout, q5Var, h6Var2, i7, textView, e3VarArr, ey0Var, t10Var, context, textViewArr, spannableStringArr);
                     LinearLayout linearLayout32 = linearLayout;
                     linearLayout32.setTag(new u4(2, rVar2, wallettransactionArr2));
                     rVar2.a(wallettransaction2);
                     if (z11) {
                     }
                     boolean[] zArr32 = zArr;
-                    linearLayout32.addOnAttachStateChangeListener(new u5(rVar2, wallettransactionArr2, t5Var, i11, q10Var, e3VarArr, strArr, zArr32));
-                    if (s10Var == null) {
+                    linearLayout32.addOnAttachStateChangeListener(new u5(rVar2, wallettransactionArr2, t5Var, i11, r10Var, e3VarArr, strArr, zArr32));
+                    if (t10Var == null) {
                     }
                     final int i232 = 1;
                     imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.b5
@@ -1438,7 +1438,7 @@ public final class n6 extends e51 implements fs {
                 y10 = walletTransactionPeer.address;
             }
             str = y10;
-            if (s10Var == null) {
+            if (t10Var == null) {
             }
             i10 = 1;
             SpannableString[] spannableStringArr222 = new SpannableString[i10];
@@ -1447,21 +1447,21 @@ public final class n6 extends e51 implements fs {
             g10.addView(ey0Var222, c8.ma.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
             String[] strArr222 = {wallettransaction.comment};
             final boolean[] zArr222 = {(wallettransaction.comment_encrypted || (z11 && bArr == null)) ? false : true};
-            if (s10Var == null) {
+            if (t10Var == null) {
             }
-            hi.e g1122 = n10.g(24, context, h6Var2, true);
-            g1122.setText(gd.N0(2131747637, null));
+            hi.e g1122 = o10.g(24, context, h6Var2, true);
+            g1122.setText(hd.N0(2131747637, null));
             linearLayout.addView(g1122, c8.ma.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
             TL_wallet.walletTransaction[] wallettransactionArr22 = {wallettransaction2};
-            fi.r rVar22 = new fi.r(linearLayout, q5Var, h6Var2, i7, textView, e3VarArr, ey0Var, s10Var, context, textViewArr, spannableStringArr);
+            fi.r rVar22 = new fi.r(linearLayout, q5Var, h6Var2, i7, textView, e3VarArr, ey0Var, t10Var, context, textViewArr, spannableStringArr);
             LinearLayout linearLayout322 = linearLayout;
             linearLayout322.setTag(new u4(2, rVar22, wallettransactionArr22));
             rVar22.a(wallettransaction2);
             if (z11) {
             }
             boolean[] zArr322 = zArr;
-            linearLayout322.addOnAttachStateChangeListener(new u5(rVar22, wallettransactionArr22, t5Var, i11, q10Var, e3VarArr, strArr, zArr322));
-            if (s10Var == null) {
+            linearLayout322.addOnAttachStateChangeListener(new u5(rVar22, wallettransactionArr22, t5Var, i11, r10Var, e3VarArr, strArr, zArr322));
+            if (t10Var == null) {
             }
             final int i2322 = 1;
             imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.b5
@@ -1484,7 +1484,7 @@ public final class n6 extends e51 implements fs {
         if (wallettransaction.incoming) {
         }
         str = y10;
-        if (s10Var == null) {
+        if (t10Var == null) {
         }
         i10 = 1;
         SpannableString[] spannableStringArr2222 = new SpannableString[i10];
@@ -1493,21 +1493,21 @@ public final class n6 extends e51 implements fs {
         g10.addView(ey0Var2222, c8.ma.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
         String[] strArr2222 = {wallettransaction.comment};
         final boolean[] zArr2222 = {(wallettransaction.comment_encrypted || (z11 && bArr == null)) ? false : true};
-        if (s10Var == null) {
+        if (t10Var == null) {
         }
-        hi.e g11222 = n10.g(24, context, h6Var2, true);
-        g11222.setText(gd.N0(2131747637, null));
+        hi.e g11222 = o10.g(24, context, h6Var2, true);
+        g11222.setText(hd.N0(2131747637, null));
         linearLayout.addView(g11222, c8.ma.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
         TL_wallet.walletTransaction[] wallettransactionArr222 = {wallettransaction2};
-        fi.r rVar222 = new fi.r(linearLayout, q5Var, h6Var2, i7, textView, e3VarArr, ey0Var, s10Var, context, textViewArr, spannableStringArr);
+        fi.r rVar222 = new fi.r(linearLayout, q5Var, h6Var2, i7, textView, e3VarArr, ey0Var, t10Var, context, textViewArr, spannableStringArr);
         LinearLayout linearLayout3222 = linearLayout;
         linearLayout3222.setTag(new u4(2, rVar222, wallettransactionArr222));
         rVar222.a(wallettransaction2);
         if (z11) {
         }
         boolean[] zArr3222 = zArr;
-        linearLayout3222.addOnAttachStateChangeListener(new u5(rVar222, wallettransactionArr222, t5Var, i11, q10Var, e3VarArr, strArr, zArr3222));
-        if (s10Var == null) {
+        linearLayout3222.addOnAttachStateChangeListener(new u5(rVar222, wallettransactionArr222, t5Var, i11, r10Var, e3VarArr, strArr, zArr3222));
+        if (t10Var == null) {
         }
         final int i23222 = 1;
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.b5
@@ -1541,7 +1541,7 @@ public final class n6 extends e51 implements fs {
 
     public static CharSequence y0(String str, Runnable runnable) {
         if (TextUtils.isEmpty(str)) {
-            return gd.N0(2131742709, null);
+            return hd.N0(2131742707, null);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         int i7 = 0;
@@ -1590,7 +1590,7 @@ public final class n6 extends e51 implements fs {
         int length2 = spannableStringBuilder.length();
         spannableStringBuilder.append((CharSequence) u0.t(j3, false));
         spannableStringBuilder.setSpan(new k00(org.telegram.ui.ActionBar.m6.Fi, getResourceProvider()), length2, spannableStringBuilder.length(), 33);
-        return gd.V(null, null, i7, spannableStringBuilder);
+        return hd.V(null, null, i7, spannableStringBuilder);
     }
 
     public final h51 B0() {
@@ -1610,14 +1610,14 @@ public final class n6 extends e51 implements fs {
             return false;
         }
         ViewParent parent = this.o0.getParent();
-        bi.g6 g6Var = this.a;
-        return parent == g6Var.f3.m(g6Var.g3.E.size() - 1);
+        bi.f6 f6Var = this.a;
+        return parent == f6Var.f3.m(f6Var.g3.E.size() - 1);
     }
 
     public final boolean D0() {
         View m10;
-        bi.g6 g6Var = this.a;
-        return g6Var != null && (m10 = g6Var.f3.m(this.h)) != null && this.B0 < 0.5f && m10.getBottom() > this.a.getPaddingTop();
+        bi.f6 f6Var = this.a;
+        return f6Var != null && (m10 = f6Var.f3.m(this.h)) != null && this.B0 < 0.5f && m10.getBottom() > this.a.getPaddingTop();
     }
 
     public final boolean E0() {
@@ -1696,7 +1696,7 @@ public final class n6 extends e51 implements fs {
             Drawable mutate = parentActivity.getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
             int i11 = org.telegram.ui.ActionBar.m6.z6;
             org.telegram.ui.ActionBar.t6.x(q9Var, mutate, i11, resourceProvider, PorterDuff.Mode.SRC_IN);
-            fc c10 = c.c(nftitem, false);
+            gc c10 = c.c(nftitem, false);
             if (c10 != null) {
                 q9Var.j(c10, "120_120", mutate, nftitem);
             } else {
@@ -1704,7 +1704,7 @@ public final class n6 extends e51 implements fs {
             }
             linearLayout.addView(q9Var, c8.ma.r(120, 120, 1));
             TextView textView = new TextView(parentActivity);
-            textView.setText(TextUtils.isEmpty(nftitem.name) ? gd.N0(2131742932, null) : nftitem.name);
+            textView.setText(TextUtils.isEmpty(nftitem.name) ? hd.N0(2131742930, null) : nftitem.name);
             org.telegram.messenger.f3.l(textView, i10, resourceProvider, 1, 17.0f);
             int i12 = 17;
             textView.setGravity(17);
@@ -1736,7 +1736,7 @@ public final class n6 extends e51 implements fs {
                 org.telegram.ui.ActionBar.t6.j(linearLayout3, k02, M, M2, resourceProvider);
                 linearLayout3.setClickable(true);
                 linearLayout3.setFocusable(true);
-                String N0 = gd.N0(i13 == 0 ? 2131742717 : 2131742759, str);
+                String N0 = hd.N0(i13 == 0 ? 2131742715 : 2131742757, str);
                 linearLayout3.setContentDescription(N0);
                 ImageView imageView = new ImageView(parentActivity);
                 imageView.setImageResource(i13 == 0 ? R.drawable.wallet_transfer : R.drawable.wallet_sell);
@@ -1778,7 +1778,7 @@ public final class n6 extends e51 implements fs {
             }
             hi.e eVar = new hi.e(parentActivity, resourceProvider, true);
             eVar.setRoundRadius(24);
-            eVar.setText(gd.N0(2131742818, null));
+            eVar.setText(hd.N0(2131742816, null));
             linearLayout.addView(eVar, c8.ma.o(-1, 48));
             l5Var.O = scrollView;
             l5Var.U0 = false;
@@ -1880,9 +1880,9 @@ public final class n6 extends e51 implements fs {
 
     public final void U0() {
         this.s = false;
-        bi.g6 g6Var = this.a;
-        if (g6Var != null) {
-            g6Var.E2.b.remove(this.x);
+        bi.f6 f6Var = this.a;
+        if (f6Var != null) {
+            f6Var.E2.b.remove(this.x);
             this.a.removeCallbacks(this.w);
         }
         b6 b6Var = this.e;
@@ -1916,7 +1916,7 @@ public final class n6 extends e51 implements fs {
         spannableStringBuilder.append((CharSequence) x6.e(A));
         spannableStringBuilder.append((CharSequence) " ");
         int length = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) gd.N0(2131749340, null));
+        spannableStringBuilder.append((CharSequence) hd.N0(2131749340, null));
         if (this.z0 == null) {
             e6 e6Var = new e6();
             e6Var.a = -9577217;
@@ -2177,23 +2177,23 @@ public final class n6 extends e51 implements fs {
         boolean S0 = S0();
         this.r0 = S0;
         if (S0) {
-            String N0 = gd.N0(2131742755, null);
-            String N02 = gd.N0(2131742754, null);
+            String N0 = hd.N0(2131742753, null);
+            String N02 = hd.N0(2131742752, null);
             int i7 = f6.b;
             o41 K = o41.K(f6.class);
             K.k = R.drawable.wallet_learn_instant;
             K.m = N0;
             K.n = N02;
             arrayList.add(K);
-            String N03 = gd.N0(2131742823, null);
-            String N04 = gd.N0(2131742822, null);
+            String N03 = hd.N0(2131742821, null);
+            String N04 = hd.N0(2131742820, null);
             o41 K2 = o41.K(f6.class);
             K2.k = R.drawable.wallet_learn_fees;
             K2.m = N03;
             K2.n = N04;
             arrayList.add(K2);
-            String N05 = gd.N0(2131742938, null);
-            String N06 = gd.N0(2131742937, null);
+            String N05 = hd.N0(2131742936, null);
+            String N06 = hd.N0(2131742935, null);
             o41 K3 = o41.K(f6.class);
             K3.k = R.drawable.wallet_learn_verified;
             K3.m = N05;
@@ -2248,7 +2248,7 @@ public final class n6 extends e51 implements fs {
 
     @Override // org.telegram.ui.Components.e51
     public final CharSequence a0() {
-        return gd.N0(2131742739, null);
+        return hd.N0(2131742737, null);
     }
 
     public final void a1(float[] fArr) {
@@ -2303,11 +2303,11 @@ public final class n6 extends e51 implements fs {
     }
 
     public final void b1() {
-        bi.g6 g6Var = this.a;
-        if (g6Var == null || this.e == null) {
+        bi.f6 f6Var = this.a;
+        if (f6Var == null || this.e == null) {
             return;
         }
-        float b10 = g6Var.E2.b(1);
+        float b10 = f6Var.E2.b(1);
         this.e.setAdditionalTilt(Math.max(0.0f, (this.A0 * 10.0f) + ((((float) Math.sqrt(Utilities.l(this.A0))) * 90.0f) - 10.0f)) + Math.min(10.0f, this.a.E2.b(3) * 40.0f) + (-Math.min(10.0f, b10 * 40.0f)));
         this.e.setUseGyroscope(1.0f - ((float) Math.pow(this.A0, 0.33000001311302185d)));
     }
@@ -2324,11 +2324,11 @@ public final class n6 extends e51 implements fs {
 
     public final void c1(boolean z10) {
         boolean S0 = S0();
-        bi.g6 g6Var = this.a;
+        bi.f6 f6Var = this.a;
         h51[] h51VarArr = this.u0;
-        if (g6Var != null && this.r0 != S0) {
+        if (f6Var != null && this.r0 != S0) {
             this.r0 = S0;
-            g6Var.C0();
+            f6Var.C0();
             for (h51 h51Var : h51VarArr) {
                 if (h51Var != null) {
                     h51Var.C0();
@@ -2448,7 +2448,7 @@ public final class n6 extends e51 implements fs {
         this.T.setOnAnimatedHeightChangedListener(new q4(this, 8));
         TextView textView = new TextView(context);
         this.V = textView;
-        textView.setText(gd.N0(2131742698, null));
+        textView.setText(hd.N0(2131742696, null));
         this.U = v0(this.V, new q4(this, 10));
         TextView textView2 = new TextView(context);
         this.X = textView2;
@@ -2466,7 +2466,7 @@ public final class n6 extends e51 implements fs {
         org.telegram.ui.ActionBar.t6.U(m80Var2, i12, this.resourceProvider);
         this.a0.setTextSize(1, 13.0f);
         this.a0.setGravity(17);
-        this.a0.setText(V0(gd.N0(2131742742, null), org.telegram.ui.ActionBar.m6.Xc, this.resourceProvider, new d5(context, i10)));
+        this.a0.setText(V0(hd.N0(2131742740, null), org.telegram.ui.ActionBar.m6.Xc, this.resourceProvider, new d5(context, i10)));
         final int i13 = 4;
         this.a0.setVisibility(4);
         FrameLayout frameLayout = (FrameLayout) createView;
@@ -2501,7 +2501,7 @@ public final class n6 extends e51 implements fs {
         this.e0.addView(imageView, c8.ma.d(28, 28.0f, 19, 14.0f, 11.0f, 16.0f, 11.0f));
         TextView textView4 = new TextView(context);
         org.telegram.ui.ActionBar.t6.U(textView4, org.telegram.ui.ActionBar.m6.q7, this.resourceProvider);
-        i5.c.r(16.0f, 1, 2131742780, textView4, null);
+        i5.c.r(16.0f, 1, 2131742778, textView4, null);
         this.e0.addView(textView4, c8.ma.d(-1, -2.0f, 19, 58.0f, 0.0f, 32.0f, 0.0f));
         this.e0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.n4
             public final /* synthetic */ n6 b;
@@ -2597,7 +2597,7 @@ public final class n6 extends e51 implements fs {
         this.v0 = this.e.getBalanceLayout();
         this.w0 = this.e.getBalanceView();
         this.x0 = this.e.getUsdBalanceView();
-        this.e.setCardHolder(o10.q(getUserConfig().f()).toUpperCase());
+        this.e.setCardHolder(p10.q(getUserConfig().f()).toUpperCase());
         this.D0 = 0.0f;
         int i17 = 24;
         d61 d61Var = new d61(i17, context, this);
@@ -2607,7 +2607,7 @@ public final class n6 extends e51 implements fs {
         hi.e eVar = new hi.e(context, this.resourceProvider, true);
         eVar.setRoundRadius(24);
         this.E0 = eVar;
-        eVar.setText(gd.N0(2131742960, null));
+        eVar.setText(hd.N0(2131742958, null));
         this.C0.addView(this.E0, c8.ma.m(1.0f, 0, 48, 0, 4, 0));
         final int i18 = 3;
         this.E0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.n4
@@ -2643,7 +2643,7 @@ public final class n6 extends e51 implements fs {
         hi.e eVar2 = new hi.e(context, this.resourceProvider, true);
         eVar2.setRoundRadius(24);
         this.F0 = eVar2;
-        eVar2.setText(gd.N0(2131742758, null));
+        eVar2.setText(hd.N0(2131742756, null));
         this.F0.setEnabled(u0.D(this.currentAccount).f());
         this.F0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.n4
             public final /* synthetic */ n6 b;
@@ -2741,14 +2741,14 @@ public final class n6 extends e51 implements fs {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        bi.g6 g6Var;
+        bi.f6 f6Var;
         c51 c51Var;
         if (i10 != this.currentAccount) {
             return;
         }
-        if (i7 == ks.d4 && this.w0 != null) {
+        if (i7 == ls.d4 && this.w0 != null) {
             W0();
             Iterator it = this.T0.iterator();
             while (it.hasNext()) {
@@ -2756,18 +2756,18 @@ public final class n6 extends e51 implements fs {
             }
             return;
         }
-        if (i7 == ks.A3) {
+        if (i7 == ls.A3) {
             h1();
             return;
         }
-        if (i7 == ks.q0) {
+        if (i7 == ls.q0) {
             if (objArr.length > 0) {
                 Object obj = objArr[0];
                 if (obj instanceof TL_account.Password) {
                     this.V0 = true;
                     this.W0 = ((TL_account.Password) obj).has_password;
-                    bi.g6 g6Var2 = this.a;
-                    if (g6Var2 == null || (c51Var = g6Var2.g3) == null) {
+                    bi.f6 f6Var2 = this.a;
+                    if (f6Var2 == null || (c51Var = f6Var2.g3) == null) {
                         return;
                     }
                     c51Var.O(true);
@@ -2777,12 +2777,12 @@ public final class n6 extends e51 implements fs {
             getConnectionsManager().sendRequestTyped(new TL_account.getPassword(), new d3.b(1), new e(this, 7));
             return;
         }
-        if (i7 != ks.e4 || objArr.length <= 0) {
+        if (i7 != ls.e4 || objArr.length <= 0) {
             return;
         }
         Object obj2 = objArr[0];
         t0 t0Var = this.G0;
-        if (obj2 != t0Var || (g6Var = this.a) == null || g6Var.g3 == null) {
+        if (obj2 != t0Var || (f6Var = this.a) == null || f6Var.g3 == null) {
             return;
         }
         if (t0Var.b.isEmpty()) {
@@ -2799,10 +2799,10 @@ public final class n6 extends e51 implements fs {
         if (h51Var == null) {
             return;
         }
-        bi.g6 g6Var = this.a;
-        int paddingTop = (g6Var != null ? g6Var.getPaddingTop() : 0) + this.p0 + (i7 == 1 ? org.telegram.messenger.g0.L(4.0f) : 0);
-        bi.g6 g6Var2 = this.a;
-        int paddingBottom = (g6Var2 != null ? g6Var2.getPaddingBottom() : 0) + (i7 == 1 ? org.telegram.messenger.g0.L(12.0f) : 0);
+        bi.f6 f6Var = this.a;
+        int paddingTop = (f6Var != null ? f6Var.getPaddingTop() : 0) + this.p0 + (i7 == 1 ? org.telegram.messenger.g0.L(4.0f) : 0);
+        bi.f6 f6Var2 = this.a;
+        int paddingBottom = (f6Var2 != null ? f6Var2.getPaddingBottom() : 0) + (i7 == 1 ? org.telegram.messenger.g0.L(12.0f) : 0);
         if (h51Var.getPaddingTop() == paddingTop && h51Var.getPaddingBottom() == paddingBottom) {
             return;
         }
@@ -2900,13 +2900,13 @@ public final class n6 extends e51 implements fs {
         }
         boolean z11 = j3 > 500000000;
         if (z11) {
-            this.X.setText(A0(2131742817, j3));
+            this.X.setText(A0(2131742815, j3));
         }
         this.T.j(this.W, z11, z10);
         long j12 = di.y8.y(this.currentAccount, true).p().amount;
         boolean z12 = j12 > 500000000;
         if (z12) {
-            this.Z.setText(A0(2131742855, j12));
+            this.Z.setText(A0(2131742853, j12));
         }
         this.T.j(this.Y, z12, z10);
     }
@@ -2941,9 +2941,9 @@ public final class n6 extends e51 implements fs {
         if (j6Var != null) {
             j6Var.c();
         }
-        bi.g6 g6Var = this.a;
-        if (g6Var != null) {
-            g6Var.C0();
+        bi.f6 f6Var = this.a;
+        if (f6Var != null) {
+            f6Var.C0();
         }
         h51 B0 = B0();
         if (B0 != null) {
@@ -2958,10 +2958,10 @@ public final class n6 extends e51 implements fs {
         if (p6.k0.compareAndSet(false, true)) {
             p6.l0.postRunnable(new d5(context, 2));
         }
-        getNotificationCenter().c(this, ks.d4);
-        getNotificationCenter().c(this, ks.A3);
-        getNotificationCenter().c(this, ks.e4);
-        getNotificationCenter().c(this, ks.q0);
+        getNotificationCenter().c(this, ls.d4);
+        getNotificationCenter().c(this, ls.A3);
+        getNotificationCenter().c(this, ls.e4);
+        getNotificationCenter().c(this, ls.q0);
         u0 D = u0.D(this.currentAccount);
         l0 B = D.B();
         this.H0 = B;
@@ -3022,10 +3022,10 @@ public final class n6 extends e51 implements fs {
         if (j6Var != null) {
             j6Var.b(null);
         }
-        getNotificationCenter().n(this, ks.d4);
-        getNotificationCenter().n(this, ks.A3);
-        getNotificationCenter().n(this, ks.e4);
-        getNotificationCenter().n(this, ks.q0);
+        getNotificationCenter().n(this, ls.d4);
+        getNotificationCenter().n(this, ls.A3);
+        getNotificationCenter().n(this, ls.e4);
+        getNotificationCenter().n(this, ls.q0);
         org.telegram.messenger.g0.E2(this.F);
         t0 t0Var = this.G0;
         if (t0Var != null) {
@@ -3075,9 +3075,9 @@ public final class n6 extends e51 implements fs {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(gd.N0(2131746307, null));
-        alertDialog$Builder.k(gd.N0(2131747106, null), new o4(this));
-        alertDialog$Builder.h(gd.N0(2131751760, null), null);
+        alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(hd.N0(2131746307, null));
+        alertDialog$Builder.k(hd.N0(2131747106, null), new o4(this));
+        alertDialog$Builder.h(hd.N0(2131751760, null), null);
         int i10 = org.telegram.ui.ActionBar.m6.L5;
         alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.m6.x0(null, i10, false), null);
         alertDialog$Builder.n(i10, null);
@@ -3167,8 +3167,8 @@ public final class n6 extends e51 implements fs {
             public final void d(Canvas canvas, RectF rectF) {
                 Canvas canvas2;
                 n6 n6Var = n6.this;
-                bi.g6 g6Var = n6Var.a;
-                ih.d.a(g6Var, canvas, rectF, g6Var, (ViewGroup) n6Var.fragmentView);
+                bi.f6 f6Var = n6Var.a;
+                ih.d.a(f6Var, canvas, rectF, f6Var, (ViewGroup) n6Var.fragmentView);
                 b6 b6Var = n6Var.e;
                 if (b6Var == null || n6Var.n == null || b6Var.getVisibility() != 0 || n6Var.e.getAlpha() <= 0.0f) {
                     return;

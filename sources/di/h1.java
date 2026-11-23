@@ -16,10 +16,10 @@ import j$.util.List;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qc;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.ek0;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.wy;
 import org.telegram.ui.q40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h1 extends org.telegram.ui.Components.sa {
     public static final /* synthetic */ int w2 = 0;
@@ -112,7 +112,7 @@ public final class h1 extends org.telegram.ui.Components.sa {
         v0(e12);
         O();
         ui.c d = this.Y0.d(new x0(this));
-        if (Build.VERSION.SDK_INT < 31 || !bz.f()) {
+        if (Build.VERSION.SDK_INT < 31 || !cz.f()) {
             this.n2 = null;
             this.o2 = new dh.c(d, d, d);
         } else {
@@ -126,7 +126,7 @@ public final class h1 extends org.telegram.ui.Components.sa {
             dh.c cVar = new dh.c(fVar, fVar, fVar);
             this.o2 = cVar;
             cVar.k = true;
-            int L = pc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
+            int L = qc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
             cVar.d = L;
             cVar.e = L;
         }
@@ -175,7 +175,7 @@ public final class h1 extends org.telegram.ui.Components.sa {
         imageView2.setBackground(org.telegram.ui.ActionBar.m6.b0(0, 285212671, 16, 16));
         imageView2.setImageResource(R.drawable.filled_gift_pause_24);
         imageView2.setScaleType(scaleType);
-        imageView2.setOnClickListener(new ai.x2(11, this, arrayList));
+        imageView2.setOnClickListener(new ai.y2(11, this, arrayList));
         c8.ra.a(imageView2);
         frameLayout.addView(imageView2, c8.ma.d(32, 32.0f, 53, 0.0f, 14.0f, 12.0f, 0.0f));
         TextView textView = new TextView(context);
@@ -205,11 +205,11 @@ public final class h1 extends org.telegram.ui.Components.sa {
             float f11 = f10;
             if (i15 >= d1VarArr.length) {
                 this.h2.addView(this.U1, c8.ma.d(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 18.0f));
-                this.b.addView(this.h2, c8.ma.e(-1, ks.m5, 55));
+                this.b.addView(this.h2, c8.ma.e(-1, ls.m5, 55));
                 int e13 = e1();
                 View view = new View(context);
                 this.m2 = view;
-                view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{i0.a.o(e13, ks.q2), e13 & 16777215}));
+                view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{i0.a.o(e13, ls.q2), e13 & 16777215}));
                 view.setAlpha(0.0f);
                 FrameLayout.LayoutParams e10 = c8.ma.e(-1, 0, 48);
                 e10.height = org.telegram.messenger.g0.m;
@@ -220,7 +220,7 @@ public final class h1 extends org.telegram.ui.Components.sa {
                 c12.r(org.telegram.messenger.g0.L(28.0f));
                 c12.p(new gh.b(org.telegram.ui.ActionBar.m6.d6, h6Var));
                 this.f2.setBackground(c12);
-                this.b.addView(this.f2, c8.ma.d(ks.r4, 64.0f, 81, 0.0f, 0.0f, 0.0f, 5.0f));
+                this.b.addView(this.f2, c8.ma.d(ls.r4, 64.0f, 81, 0.0f, 0.0f, 0.0f, 5.0f));
                 this.p2 = new c1((TL_stars.starGiftAttributeBackdrop) cg.d.d(arrayList, TL_stars.starGiftAttributeBackdrop.class), (TL_stars.starGiftAttributePattern) cg.d.d(arrayList, TL_stars.starGiftAttributePattern.class), (TL_stars.starGiftAttributeModel) cg.d.d(arrayList, TL_stars.starGiftAttributeModel.class));
                 this.g2.O(false);
                 i1(false);
@@ -261,11 +261,11 @@ public final class h1 extends org.telegram.ui.Components.sa {
             d1Var.addView(o6Var2, c8.ma.d(-1, 16.0f, 53, 0.0f, -9.0f, -4.0f, 0.0f));
             d1VarArr[i15] = d1Var;
             if (i15 == 0) {
-                ((TextView) this.V1[i15].b).setText(gd.N0(2131749453, null));
+                ((TextView) this.V1[i15].b).setText(hd.N0(2131749453, null));
             } else if (i15 == 1) {
-                ((TextView) this.V1[i15].b).setText(gd.N0(2131749470, null));
+                ((TextView) this.V1[i15].b).setText(hd.N0(2131749470, null));
             } else if (i15 == 2) {
-                ((TextView) this.V1[i15].b).setText(gd.N0(2131749451, null));
+                ((TextView) this.V1[i15].b).setText(hd.N0(2131749451, null));
             }
             c8.ra.a(this.V1[i15]);
             this.V1[i15].setOnClickListener(new ci.q(this, i15, 1));
@@ -355,7 +355,7 @@ public final class h1 extends org.telegram.ui.Components.sa {
         }
         this.v2 = i7;
         this.j2.setImageResource(i7 == 2 ? R.drawable.filled_gift_play_24 : R.drawable.filled_gift_pause_24);
-        this.l2.setText(gd.N0(i7 == 2 ? 2131750043 : 2131750044, null));
+        this.l2.setText(hd.N0(i7 == 2 ? 2131750043 : 2131750044, null));
         j1();
     }
 
@@ -411,7 +411,7 @@ public final class h1 extends org.telegram.ui.Components.sa {
                 v0(e12);
                 View view = this.m2;
                 if (view != null && (view.getBackground() instanceof GradientDrawable)) {
-                    ((GradientDrawable) view.getBackground()).setColors(new int[]{i0.a.o(e12, ks.q2), e12 & 16777215});
+                    ((GradientDrawable) view.getBackground()).setColors(new int[]{i0.a.o(e12, ls.q2), e12 & 16777215});
                 }
             }
             g1 g1Var = this.f2;

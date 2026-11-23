@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.si;
 import org.telegram.messenger.u5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.q9;
 import org.telegram.ui.Components.rh0;
 import org.telegram.ui.ne0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements ne0, te.b, b6 {
     public static final RectF W = new RectF();
@@ -108,7 +108,7 @@ public final class b extends FrameLayout implements ne0, te.b, b6 {
         b bVar = new b(context);
         bVar.d = h6Var;
         bVar.E = aVar;
-        bVar.a.setText(gd.N0(i7, null));
+        bVar.a.setText(hd.N0(i7, null));
         bVar.b(false);
         bVar.b.setLayoutParams(ma.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
         bVar.x = m6.w0(m6.Tl, h6Var);
@@ -156,7 +156,7 @@ public final class b extends FrameLayout implements ne0, te.b, b6 {
         TLRPC.TL_attachMenuBot tL_attachMenuBot = this.F;
         boolean z12 = true;
         if (tL_attachMenuBot != null) {
-            Pattern pattern = ri.U1;
+            Pattern pattern = si.U1;
             ArrayList<TLRPC.TL_attachMenuBotIcon> arrayList = tL_attachMenuBot.icons;
             int size = arrayList.size();
             int i7 = 0;
@@ -173,13 +173,13 @@ public final class b extends FrameLayout implements ne0, te.b, b6 {
                 }
             }
             if (tL_attachMenuBotIcon == null) {
-                tL_attachMenuBotIcon = ri.m0(this.F);
+                tL_attachMenuBotIcon = si.m0(this.F);
                 z12 = false;
             }
             if (tL_attachMenuBotIcon == null || (document = tL_attachMenuBotIcon.icon) == null) {
                 this.c.b();
             } else if (this.Q != document.id) {
-                this.c.m(fc.b(document), "24_24_lastframe", fc.b(document), "24_24_lastframe", z12 ? null : u5.f(document, m6.a7, 1.0f, null), this.F);
+                this.c.m(gc.b(document), "24_24_lastframe", gc.b(document), "24_24_lastframe", z12 ? null : u5.f(document, m6.a7, 1.0f, null), this.F);
                 this.Q = document.id;
             }
             a();

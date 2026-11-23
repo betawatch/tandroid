@@ -7,21 +7,21 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout {
     public final /* synthetic */ int a = 0;
     public int b;
     public final Object c;
     public final Object d;
-    public final /* synthetic */ fs e;
+    public final /* synthetic */ gs e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public j(n nVar, Context context) {
@@ -54,7 +54,7 @@ public final class j extends FrameLayout {
                 path.addRoundRect(rectF, L, L, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(path);
-                canvas.saveLayerAlpha(rectF, ks.e4, 31);
+                canvas.saveLayerAlpha(rectF, ls.e4, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), f10, getWidth() - getPaddingRight(), org.telegram.messenger.g0.L(6.0f) + L2);
                 mVar.n(canvas, rectF, 1, 1.0f);

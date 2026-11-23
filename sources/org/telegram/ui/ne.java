@@ -12,9 +12,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
+public final /* synthetic */ class ne implements org.telegram.messenger.r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -35,7 +35,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
     /* JADX WARN: Removed duplicated region for block: B:66:0x014a  */
     /* JADX WARN: Removed duplicated region for block: B:68:0x0156  */
     /* JADX WARN: Removed duplicated region for block: B:75:0x016a  */
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -103,28 +103,28 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                 int i13 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
                 if (i13 != 0) {
                     int i14 = z10 ? R.drawable.msg_channel : R.drawable.msg_discussion;
-                    int i15 = z10 ? 2131743318 : 2131745405;
+                    int i15 = z10 ? 2131743316 : 2131745405;
                     i7 = i13;
                     z11 = z10;
                     z12 = false;
-                    J.c(i14, org.telegram.messenger.gd.N0(i15, null), new bg.k0(bnVar2, j3, 5), false);
+                    J.c(i14, org.telegram.messenger.hd.N0(i15, null), new bg.k0(bnVar2, j3, 5), false);
                 } else {
                     i7 = i13;
                     z11 = z10;
                     z12 = false;
                 }
-                J.c(R.drawable.msg_copy, org.telegram.messenger.gd.N0(2131746482, null), new je(bnVar2, yk0Var, str4, 3), z12);
+                J.c(R.drawable.msg_copy, org.telegram.messenger.hd.N0(2131746482, null), new je(bnVar2, yk0Var, str4, 3), z12);
                 int i16 = 13;
                 if (bool.booleanValue()) {
-                    J.c(R.drawable.outline_gram_24, org.telegram.messenger.gd.N0(2131752641, null), new ge(bnVar2, str4, i16), z12);
+                    J.c(R.drawable.outline_gram_24, org.telegram.messenger.hd.N0(2131752641, null), new ge(bnVar2, str4, i16), z12);
                 }
                 J.k();
                 if (i7 != 0) {
                     charSequence = null;
-                    J.n(tLObject, org.telegram.messenger.gd.N0(i12 != 0 ? 2131743303 : z11 ? 2131743317 : 2131743310, null), new bg.k0(bnVar2, j3, 6));
+                    J.n(tLObject, org.telegram.messenger.hd.N0(i12 != 0 ? 2131743301 : z11 ? 2131743315 : 2131743308, null), new bg.k0(bnVar2, j3, 6));
                 } else {
                     charSequence = null;
-                    J.p(13, org.telegram.messenger.g0.L(200.0f), org.telegram.messenger.gd.N0(2131747940, null));
+                    J.p(13, org.telegram.messenger.g0.L(200.0f), org.telegram.messenger.hd.N0(2131747940, null));
                 }
                 yk0Var.e(J);
                 yk0Var.f(r1Var, characterStyle, charSequence, false);
@@ -135,7 +135,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                 hi hiVar = (hi) this.d;
                 int[] iArr = (int[]) this.c;
                 org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) this.e;
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) this.f;
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) this.f;
                 TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj;
                 if (bnVar3.ec == hiVar) {
                     iArr[0] = 0;
@@ -154,9 +154,9 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                                 richMessage = null;
                             }
                         }
-                        if (richMessage != null && (message = fjVar.k) != null) {
+                        if (richMessage != null && (message = gjVar.k) != null) {
                             message.rich_message = richMessage;
-                            fjVar.y2 = null;
+                            gjVar.y2 = null;
                             mm mmVar = bnVar3.Wc;
                             if (mmVar != null && r1Var2 != null) {
                                 mmVar.f(r1Var2, true, false, true);
@@ -204,8 +204,8 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
             case 4:
                 org.telegram.ui.Wallet.u0 u0Var2 = (org.telegram.ui.Wallet.u0) this.b;
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) this.d;
-                org.telegram.messenger.zy zyVar = (org.telegram.messenger.zy) this.c;
-                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) this.e;
+                org.telegram.messenger.az azVar = (org.telegram.messenger.az) this.c;
+                org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) this.e;
                 org.telegram.ui.Wallet.v7 v7Var2 = (org.telegram.ui.Wallet.v7) this.f;
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
@@ -218,7 +218,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                         if (objArr == false && objArr2 == false) {
                             z14 = false;
                         }
-                        zyVar.k(fjVar2, updates2, z14);
+                        azVar.k(gjVar2, updates2, z14);
                         if (updates2 != null) {
                             Utilities.d.c(new mz0(i11, u0Var2, updates2));
                         }
@@ -246,7 +246,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                 if (objArr == false) {
                     z14 = false;
                 }
-                zyVar.k(fjVar2, updates2, z14);
+                azVar.k(gjVar2, updates2, z14);
                 if (updates2 != null) {
                 }
                 if (objArr != true) {
@@ -277,7 +277,7 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                 }
             default:
                 org.telegram.ui.Wallet.l2 l2Var2 = (org.telegram.ui.Wallet.l2) this.b;
-                org.telegram.messenger.x10 x10Var = (org.telegram.messenger.x10) this.d;
+                org.telegram.messenger.y10 y10Var = (org.telegram.messenger.y10) this.d;
                 org.telegram.ui.Wallet.h2 h2Var = (org.telegram.ui.Wallet.h2) this.c;
                 org.telegram.ui.Wallet.r0 r0Var3 = (org.telegram.ui.Wallet.r0) this.e;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) this.f;
@@ -301,10 +301,10 @@ public final /* synthetic */ class ne implements org.telegram.messenger.q10 {
                     l2Var2.b.K();
                 }
                 if ((tL_error3 == null && !z13) || (tL_error3 != null && ((i10 = tL_error3.code) < 0 || i10 >= 500))) {
-                    x10Var.a(org.telegram.ui.Wallet.l2.z(tL_error3, "sendTransfer"));
+                    y10Var.a(org.telegram.ui.Wallet.l2.z(tL_error3, "sendTransfer"));
                     break;
                 } else {
-                    l2Var2.y(h2Var, r0Var3, tL_error3 == null ? Base64.encodeToString(sendtransfer.data_normal, 2) : null, tL_error3 == null ? -1 : 0, tL_error3 != null ? org.telegram.ui.Wallet.l2.z(tL_error3, "sendTransfer") : null, x10Var);
+                    l2Var2.y(h2Var, r0Var3, tL_error3 == null ? Base64.encodeToString(sendtransfer.data_normal, 2) : null, tL_error3 == null ? -1 : 0, tL_error3 != null ? org.telegram.ui.Wallet.l2.z(tL_error3, "sendTransfer") : null, y10Var);
                     break;
                 }
                 break;

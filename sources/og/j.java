@@ -22,14 +22,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.f0;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.xs;
+import org.telegram.messenger.ys;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -72,7 +72,7 @@ import zi.o0;
 import zi.p0;
 import zi.s0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 bn bnVar = (bn) this.b;
                 String str5 = (String) this.c;
                 g0.g(str5);
-                lc.b0(bnVar).i(gd.a0(null, null, 2131750872, str5)).j();
+                lc.b0(bnVar).i(hd.a0(null, null, 2131750872, str5)).j();
                 return;
             case 4:
                 ArrayList arrayList = (ArrayList) this.b;
@@ -183,7 +183,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 int i10 = i7 == 0 ? 0 : i7 == 1 ? 1 : i7 == 2 ? 2 : 3;
                 if (arrayList != null) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        xs.t(j10.t0).T(((Long) arrayList.get(i11)).longValue(), i10, 0);
+                        ys.t(k10.t0).T(((Long) arrayList.get(i11)).longValue(), i10, 0);
                     }
                 }
                 if (lc.a(cxVar)) {
@@ -198,7 +198,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     try {
                         ((ClipboardManager) t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", f0Var.c(false)));
                         if (g0.G3()) {
-                            Toast.makeText(md0Var.t1.getParentActivity(), gd.N0(2131743953, null), 0).show();
+                            Toast.makeText(md0Var.t1.getParentActivity(), hd.N0(2131743951, null), 0).show();
                             return;
                         }
                         return;
@@ -318,7 +318,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
             case 12:
                 n21 n21Var = (n21) this.b;
                 ((ClipboardManager) t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                n10.t(null, 2131743953, new lc(n21Var.c, null));
+                o10.t(null, 2131743951, new lc(n21Var.c, null));
                 return;
             case 13:
                 g61 g61Var = (g61) this.b;
@@ -330,7 +330,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 if (i7 == 0) {
                     if (l6Var.G == null) {
                         themeActivity.getMessagesController().H4(l6Var, null);
-                        ks.e().k(ks.v4, l6Var, null);
+                        ls.e().k(ls.v4, l6Var, null);
                         return;
                     }
                     String str8 = "https://" + themeActivity.getMessagesController().X2 + "/addtheme/" + l6Var.G.slug;
@@ -357,10 +357,10 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         return;
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
-                    alertDialog$Builder.a.S = gd.N0(2131751472, "DeleteThemeTitle");
-                    alertDialog$Builder.a.U = gd.N0(2131751473, "DeleteThemeAlert");
-                    alertDialog$Builder.k(gd.N0(2131751586, "Delete"), new aj0(21, g61Var, l6Var));
-                    alertDialog$Builder.h(gd.N0(2131752577, "Cancel"), null);
+                    alertDialog$Builder.a.S = hd.N0(2131751472, "DeleteThemeTitle");
+                    alertDialog$Builder.a.U = hd.N0(2131751473, "DeleteThemeAlert");
+                    alertDialog$Builder.k(hd.N0(2131751586, "Delete"), new aj0(21, g61Var, l6Var));
+                    alertDialog$Builder.h(hd.N0(2131752577, "Cancel"), null);
                     t1 t1Var = alertDialog$Builder.a;
                     themeActivity.showDialog(t1Var);
                     TextView textView = (TextView) t1Var.d(-1);
@@ -453,7 +453,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     } else {
                         intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
                     }
-                    themeActivity.startActivityForResult(Intent.createChooser(intent, gd.N0(2131745263, "ShareFile")), 500);
+                    themeActivity.startActivityForResult(Intent.createChooser(intent, hd.N0(2131745263, "ShareFile")), 500);
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);

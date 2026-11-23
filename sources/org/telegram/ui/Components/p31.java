@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.p31;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p31 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -54,7 +54,7 @@ public final /* synthetic */ class p31 implements Runnable {
                 LinearLayout linearLayout = (LinearLayout) this.n;
                 ArrayList arrayList = (ArrayList) this.b;
                 String str3 = (String) this.h;
-                final org.telegram.messenger.z00 z00Var = (org.telegram.messenger.z00) this.r;
+                final org.telegram.messenger.a10 a10Var = (org.telegram.messenger.a10) this.r;
                 final org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) this.s;
                 ArrayList arrayList2 = (ArrayList) this.c;
                 boolean z11 = false;
@@ -69,8 +69,8 @@ public final /* synthetic */ class p31 implements Runnable {
                     int i7 = 0;
                     while (i7 < size) {
                         int i10 = i7 + 1;
-                        org.telegram.messenger.s00 s00Var = (org.telegram.messenger.s00) arrayList.get(i7);
-                        final String str4 = s00Var.a;
+                        org.telegram.messenger.t00 t00Var = (org.telegram.messenger.t00) arrayList.get(i7);
+                        final String str4 = t00Var.a;
                         if (TextUtils.equals(str4, str3)) {
                             i7 = i10;
                         } else {
@@ -82,7 +82,7 @@ public final /* synthetic */ class p31 implements Runnable {
                                 z11 = true;
                             }
                             y0Var2.setChecked(z11);
-                            y0Var2.setText(s00Var.b);
+                            y0Var2.setText(t00Var.b);
                             if (z11) {
                                 view = y0Var2;
                             } else {
@@ -94,13 +94,13 @@ public final /* synthetic */ class p31 implements Runnable {
                                         switch (i11) {
                                             case 0:
                                                 org.telegram.ui.ck ckVar2 = ckVar;
-                                                z00Var.I(ckVar2.b, str4);
+                                                a10Var.I(ckVar2.b, str4);
                                                 g1Var.d(true);
                                                 ckVar2.b();
                                                 break;
                                             default:
                                                 org.telegram.ui.ck ckVar3 = ckVar;
-                                                z00Var.I(ckVar3.b, str4);
+                                                a10Var.I(ckVar3.b, str4);
                                                 g1Var.d(true);
                                                 ckVar3.b();
                                                 break;
@@ -119,13 +119,13 @@ public final /* synthetic */ class p31 implements Runnable {
                     int i13 = i12;
                     while (i13 < size2) {
                         int i14 = i13 + 1;
-                        org.telegram.messenger.s00 s00Var2 = (org.telegram.messenger.s00) arrayList2.get(i13);
-                        final String str5 = s00Var2.a;
+                        org.telegram.messenger.t00 t00Var2 = (org.telegram.messenger.t00) arrayList2.get(i13);
+                        final String str5 = t00Var2.a;
                         if (!TextUtils.equals(str5, str3)) {
                             boolean z12 = (str2 == null || !str2.equals(str5)) ? i12 : 1;
                             org.telegram.ui.ActionBar.y0 y0Var3 = new org.telegram.ui.ActionBar.y0(2, ckVar.getContext(), ckVar.d, false, false);
                             y0Var3.setChecked(z12);
-                            y0Var3.setText(s00Var2.b);
+                            y0Var3.setText(t00Var2.b);
                             if (z12 == 0) {
                                 final int i15 = 1;
                                 y0Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.n31
@@ -134,13 +134,13 @@ public final /* synthetic */ class p31 implements Runnable {
                                         switch (i15) {
                                             case 0:
                                                 org.telegram.ui.ck ckVar2 = ckVar;
-                                                z00Var.I(ckVar2.b, str5);
+                                                a10Var.I(ckVar2.b, str5);
                                                 g1Var.d(true);
                                                 ckVar2.b();
                                                 break;
                                             default:
                                                 org.telegram.ui.ck ckVar3 = ckVar;
-                                                z00Var.I(ckVar3.b, str5);
+                                                a10Var.I(ckVar3.b, str5);
                                                 g1Var.d(true);
                                                 ckVar3.b();
                                                 break;
@@ -238,8 +238,8 @@ public final /* synthetic */ class p31 implements Runnable {
                     TL_wallet.tonConnectRegisterKey tonconnectregisterkey = new TL_wallet.tonConnectRegisterKey();
                     tonconnectregisterkey.session_id = tonconnectsession2.id;
                     tonconnectregisterkey.client_id = str8;
-                    l2Var2.f.sendRequestTyped(tonconnectregisterkey, new d3.b(1), new org.telegram.messenger.q10() { // from class: org.telegram.ui.Wallet.j1
-                        @Override // org.telegram.messenger.q10
+                    l2Var2.f.sendRequestTyped(tonconnectregisterkey, new d3.b(1), new org.telegram.messenger.r10() { // from class: org.telegram.ui.Wallet.j1
+                        @Override // org.telegram.messenger.r10
                         public final void a(Object obj, Object obj2) {
                             l2 l2Var3 = l2.this;
                             e0 e0Var3 = e0Var2;
@@ -264,14 +264,14 @@ public final /* synthetic */ class p31 implements Runnable {
         }
     }
 
-    public /* synthetic */ p31(org.telegram.ui.ck ckVar, boolean[] zArr, String str, LinearLayout linearLayout, ArrayList arrayList, String str2, org.telegram.messenger.z00 z00Var, org.telegram.ui.ActionBar.g1 g1Var, ArrayList arrayList2) {
+    public /* synthetic */ p31(org.telegram.ui.ck ckVar, boolean[] zArr, String str, LinearLayout linearLayout, ArrayList arrayList, String str2, org.telegram.messenger.a10 a10Var, org.telegram.ui.ActionBar.g1 g1Var, ArrayList arrayList2) {
         this.d = ckVar;
         this.e = zArr;
         this.f = str;
         this.n = linearLayout;
         this.b = arrayList;
         this.h = str2;
-        this.r = z00Var;
+        this.r = a10Var;
         this.s = g1Var;
         this.c = arrayList2;
     }

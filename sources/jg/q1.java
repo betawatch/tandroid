@@ -5,14 +5,14 @@ import java.util.TimerTask;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.z4;
 import org.telegram.ui.Components.ek;
 import org.telegram.ui.ss;
 import org.telegram.ui.w50;
 import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q1 extends TimerTask {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final class q1 extends TimerTask {
                 return;
             case 1:
                 synchronized (((MediaController) this.c).x1) {
-                    org.telegram.messenger.g0.g3(new z4(25, this, (fj) this.b));
+                    org.telegram.messenger.g0.g3(new z4(25, this, (gj) this.b));
                 }
                 return;
             case 2:

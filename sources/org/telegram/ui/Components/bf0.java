@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bf0 extends zj0 {
     public final Context r;
@@ -90,7 +90,7 @@ public final class bf0 extends zj0 {
         TLRPC.Message message;
         ff0 ff0Var = this.s;
         TLRPC.Poll poll = ff0Var.t1;
-        org.telegram.messenger.fj fjVar = ff0Var.s1;
+        org.telegram.messenger.gj gjVar = ff0Var.s1;
         if (view == null) {
             view = new af0(this, this.r);
         }
@@ -107,12 +107,12 @@ public final class bf0 extends zj0 {
             TLRPC.PollAnswer pollAnswer = poll.answers.get(i11);
             if (Arrays.equals(pollAnswer.option, ef0Var.d) && ((cf0) ff0Var.w1.get(ef0Var)) != null) {
                 TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
-                if (fjVar != null && fjVar.L2 && (message = fjVar.k) != null && message.translatedPoll != null) {
+                if (gjVar != null && gjVar.L2 && (message = gjVar.k) != null && message.translatedPoll != null) {
                     while (true) {
-                        if (i10 >= fjVar.k.translatedPoll.b.size()) {
+                        if (i10 >= gjVar.k.translatedPoll.b.size()) {
                             break;
                         }
-                        TLRPC.PollAnswer pollAnswer2 = (TLRPC.PollAnswer) fjVar.k.translatedPoll.b.get(i10);
+                        TLRPC.PollAnswer pollAnswer2 = (TLRPC.PollAnswer) gjVar.k.translatedPoll.b.get(i10);
                         if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
                             tL_textWithEntities = pollAnswer2.text;
                             break;
@@ -143,7 +143,7 @@ public final class bf0 extends zj0 {
         ff0 ff0Var = this.s;
         TLRPC.Poll poll = ff0Var.t1;
         ArrayList arrayList = ff0Var.x1;
-        org.telegram.messenger.fj fjVar = ff0Var.s1;
+        org.telegram.messenger.gj gjVar = ff0Var.s1;
         int i11 = f1Var.f;
         View view = f1Var.a;
         int i12 = 0;
@@ -152,7 +152,7 @@ public final class bf0 extends zj0 {
                 return;
             }
             ef0 ef0Var = (ef0) arrayList.get(i7 - 1);
-            ((org.telegram.ui.Cells.n8) view).o(R.drawable.arrow_more, org.telegram.messenger.gd.G(ef0Var.a - ef0Var.b(), "ShowVotes", new Object[0]), false);
+            ((org.telegram.ui.Cells.n8) view).o(R.drawable.arrow_more, org.telegram.messenger.hd.G(ef0Var.a - ef0Var.b(), "ShowVotes", new Object[0]), false);
             return;
         }
         df0 df0Var = (df0) view;
@@ -164,12 +164,12 @@ public final class bf0 extends zj0 {
             TLRPC.PollAnswer pollAnswer = poll.answers.get(i13);
             if (Arrays.equals(pollAnswer.option, bArr) && ((cf0) ff0Var.w1.get(ef0Var2)) != null) {
                 TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
-                if (fjVar != null && fjVar.L2 && (message = fjVar.k) != null && message.translatedPoll != null) {
+                if (gjVar != null && gjVar.L2 && (message = gjVar.k) != null && message.translatedPoll != null) {
                     while (true) {
-                        if (i12 >= fjVar.k.translatedPoll.b.size()) {
+                        if (i12 >= gjVar.k.translatedPoll.b.size()) {
                             break;
                         }
-                        TLRPC.PollAnswer pollAnswer2 = (TLRPC.PollAnswer) fjVar.k.translatedPoll.b.get(i12);
+                        TLRPC.PollAnswer pollAnswer2 = (TLRPC.PollAnswer) gjVar.k.translatedPoll.b.get(i12);
                         if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
                             tL_textWithEntities = pollAnswer2.text;
                             break;
@@ -225,7 +225,7 @@ public final class bf0 extends zj0 {
             ff0 ff0Var = this.s;
             ef0 ef0Var = (ef0) ff0Var.x1.get(S - 1);
             TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) ef0Var.b.get(Q);
-            TLObject g22 = org.telegram.messenger.mp.u1(ff0Var.a).g2(org.telegram.messenger.n5.o(messagePeerVote.peer));
+            TLObject g22 = org.telegram.messenger.np.u1(ff0Var.a).g2(org.telegram.messenger.n5.o(messagePeerVote.peer));
             int i7 = messagePeerVote.date;
             boolean z11 = (Q == ef0Var.b() - 1 && TextUtils.isEmpty(ef0Var.c) && !ef0Var.e) ? false : true;
             q9 q9Var = pollVotesAlert$UserCell.a;
@@ -241,8 +241,8 @@ public final class bf0 extends zj0 {
                 pollVotesAlert$UserCell.n = null;
             }
             long j3 = i7;
-            pollVotesAlert$UserCell.d.setText(org.telegram.messenger.gd.E0().p0().format(j3 * 1000));
-            pollVotesAlert$UserCell.c.setText(org.telegram.messenger.gd.r(j3, true));
+            pollVotesAlert$UserCell.d.setText(org.telegram.messenger.hd.E0().p0().format(j3 * 1000));
+            pollVotesAlert$UserCell.c.setText(org.telegram.messenger.hd.r(j3, true));
             pollVotesAlert$UserCell.s = z11;
             pollVotesAlert$UserCell.x = g22 == null;
             pollVotesAlert$UserCell.w = Q;
@@ -266,7 +266,7 @@ public final class bf0 extends zj0 {
                 }
                 TLRPC.User user2 = pollVotesAlert$UserCell.h;
                 if (user2 != null) {
-                    String q10 = org.telegram.messenger.o10.q(user2);
+                    String q10 = org.telegram.messenger.p10.q(user2);
                     pollVotesAlert$UserCell.r = q10;
                     z10 = false;
                     pollVotesAlert$UserCell.r = org.telegram.messenger.j6.m(q10, m5Var.getPaint().getFontMetricsInt(), false, null, 0);

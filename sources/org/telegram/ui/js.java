@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class js implements Runnable {
     public final /* synthetic */ ns a;
@@ -23,11 +23,11 @@ public final class js implements Runnable {
 
     /* JADX WARN: Code restructure failed: missing block: B:152:0x06a6, code lost:
     
-        if (org.telegram.messenger.fj.v4(r4) != false) goto L130;
+        if (org.telegram.messenger.gj.v4(r4) != false) goto L130;
      */
     /* JADX WARN: Code restructure failed: missing block: B:258:0x09d8, code lost:
     
-        if (org.telegram.messenger.fj.v4(r7) != false) goto L229;
+        if (org.telegram.messenger.gj.v4(r7) != false) goto L229;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:111:0x0562  */
@@ -194,7 +194,7 @@ public final class js implements Runnable {
             es esVar = new es(this, viewGroup);
             nsVar.k = esVar;
             esVar.e = true;
-            esVar.c = org.telegram.messenger.ks.g2;
+            esVar.c = org.telegram.messenger.ls.g2;
             esVar.g = true;
             esVar.setOutsideTouchable(true);
             nsVar.k.setClippingEnabled(true);
@@ -267,9 +267,9 @@ public final class js implements Runnable {
                 TLRPC.TL_messageMediaPoll d = lsVar27.d();
                 TLRPC.PollAnswer g10 = nsVar.l.g();
                 if (d != null && d.poll != null && g10 != null) {
-                    TLRPC.PollAnswerVoters E1 = org.telegram.messenger.fj.E1(d, g10.option);
+                    TLRPC.PollAnswerVoters E1 = org.telegram.messenger.gj.E1(d, g10.option);
                     if (E1 != null && E1.voters > 0) {
-                        org.telegram.messenger.fj.A(d);
+                        org.telegram.messenger.gj.A(d);
                     }
                 }
             }
@@ -278,7 +278,7 @@ public final class js implements Runnable {
             org.telegram.ui.ActionBar.h6 h6Var4 = null;
             fh.g c10 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout4, null, true);
             c10.p(c8.i0.l(nsVar.c0));
-            org.telegram.messenger.n10.s(c10, org.telegram.messenger.g0.L(12.0f), 8.0f);
+            org.telegram.messenger.o10.s(c10, org.telegram.messenger.g0.L(12.0f), 8.0f);
             c10.R.e = true;
             actionBarPopupWindow$ActionBarPopupWindowLayout4.setBackground(c10);
             if (nsVar.V != 3) {
@@ -291,7 +291,7 @@ public final class js implements Runnable {
                     ls lsVar28 = nsVar.l;
                     if (lsVar28 == null || !lsVar28.A()) {
                         if (nsVar.l.w()) {
-                            arrayList.add(org.telegram.messenger.gd.N0(2131745392, null));
+                            arrayList.add(org.telegram.messenger.hd.N0(2131745392, null));
                             arrayList3.add(valueOf4);
                             arrayList2.add(0);
                         }
@@ -305,7 +305,7 @@ public final class js implements Runnable {
                 ls lsVar29 = nsVar.l;
                 if (lsVar29 == null || !lsVar29.A()) {
                     ls lsVar30 = nsVar.l;
-                    arrayList.add(org.telegram.messenger.gd.N0((lsVar30 == null || !lsVar30.J()) ? 2131754367 : 2131744608, null));
+                    arrayList.add(org.telegram.messenger.hd.N0((lsVar30 == null || !lsVar30.J()) ? 2131754367 : 2131744606, null));
                     ls lsVar31 = nsVar.l;
                     if (lsVar31 != null && lsVar31.J()) {
                         i30 = R.drawable.msg_replace;
@@ -316,8 +316,8 @@ public final class js implements Runnable {
                 int i31 = 7;
                 org.telegram.ui.ActionBar.y0 y0Var = new org.telegram.ui.ActionBar.y0(0, nsVar.w, nsVar.c0, true, false);
                 y0Var.setItemHeight(44);
-                y0Var.j(org.telegram.messenger.gd.N0(2131753753, null), R.drawable.msg_arrow_back, null);
-                y0Var.getTextView().setPadding(org.telegram.messenger.gd.a0 ? 0 : org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(40.0f) : 0, 0);
+                y0Var.j(org.telegram.messenger.hd.N0(2131753753, null), R.drawable.msg_arrow_back, null);
+                y0Var.getTextView().setPadding(org.telegram.messenger.hd.a0 ? 0 : org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(40.0f) : 0, 0);
                 FrameLayout frameLayout = new FrameLayout(nsVar.z.getContext());
                 LinearLayout linearLayout = new LinearLayout(nsVar.z.getContext());
                 org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.G8, linearLayout, nsVar.c0);
@@ -381,14 +381,14 @@ public final class js implements Runnable {
                 view8 = nsVar.L;
                 view8.animate().translationY(0.0f).alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.nr.h).start();
                 if (nsVar.P == null) {
-                    org.telegram.ui.Components.pb pbVar = new org.telegram.ui.Components.pb(nsVar, nsVar.z.getContext(), org.telegram.messenger.j10.t0, nsVar.c0);
+                    org.telegram.ui.Components.pb pbVar = new org.telegram.ui.Components.pb(nsVar, nsVar.z.getContext(), org.telegram.messenger.k10.t0, nsVar.c0);
                     nsVar.P = pbVar;
                     pbVar.O0 = true;
                     pbVar.setPadding(0, org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f));
                     nsVar.P.setClipChildren(false);
                     nsVar.P.setClipToPadding(false);
                     nsVar.P.setVisibility(0);
-                    nsVar.P.setHint(org.telegram.messenger.gd.N0(2131744607, null));
+                    nsVar.P.setHint(org.telegram.messenger.hd.N0(2131744605, null));
                     nsVar.P.setBubbleOffset(-org.telegram.messenger.g0.L(105.0f));
                     nsVar.P.setMiniBubblesOffset(-org.telegram.messenger.g0.L(14.0f));
                     FrameLayout frameLayout2 = new FrameLayout(nsVar.z.getContext());
@@ -411,7 +411,7 @@ public final class js implements Runnable {
                 i10 = nsVar.V;
                 if (i10 == 0) {
                     document12 = nsVar.W;
-                    if (org.telegram.messenger.fj.X3(document12)) {
+                    if (org.telegram.messenger.gj.X3(document12)) {
                         i26 = nsVar.r;
                         if (!org.telegram.messenger.c.a(i26).e().q()) {
                             if (nsVar.O == null) {
@@ -440,7 +440,7 @@ public final class js implements Runnable {
                         }
                     }
                     i19 = nsVar.r;
-                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i19);
+                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i19);
                     document13 = nsVar.W;
                     boolean D0 = d02.D0(document13);
                     ArrayList arrayList5 = new ArrayList();
@@ -480,14 +480,14 @@ public final class js implements Runnable {
                         actionBarPopupWindow$ActionBarPopupWindowLayout3 = actionBarPopupWindow$ActionBarPopupWindowLayout4;
                     }
                     document14 = nsVar.W;
-                    if (!org.telegram.messenger.fj.E3(document14)) {
+                    if (!org.telegram.messenger.gj.E3(document14)) {
                         if (!D0) {
                             i23 = nsVar.r;
-                            if (org.telegram.messenger.ri.d0(i23).u()) {
+                            if (org.telegram.messenger.si.d0(i23).u()) {
                                 document16 = nsVar.W;
                             }
                         }
-                        arrayList5.add(D0 ? org.telegram.messenger.gd.M0(2131751526) : org.telegram.messenger.gd.M0(2131754371));
+                        arrayList5.add(D0 ? org.telegram.messenger.hd.M0(2131751526) : org.telegram.messenger.hd.M0(2131754371));
                         arrayList7.add(Integer.valueOf(D0 ? R.drawable.msg_unfave : R.drawable.msg_fave));
                         arrayList6.add(2);
                     }
@@ -495,7 +495,7 @@ public final class js implements Runnable {
                     if (lsVar14 != null && (inputStickerSet = nsVar.a0) != null && !(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmpty)) {
                         lsVar19 = nsVar.l;
                         if (lsVar19.Q()) {
-                            arrayList5.add(org.telegram.messenger.gd.Z(2131743305, new Object[0]));
+                            arrayList5.add(org.telegram.messenger.hd.Z(2131743303, new Object[0]));
                             arrayList7.add(Integer.valueOf(R.drawable.msg_media));
                             arrayList6.add(1);
                         }
@@ -508,7 +508,7 @@ public final class js implements Runnable {
                         document15 = nsVar.W;
                         if (document15 != null) {
                             i22 = nsVar.r;
-                            TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.ri.d0(i22).o0(nsVar.a0, true);
+                            TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.si.d0(i22).o0(nsVar.a0, true);
                             if (o02 != null) {
                                 lsVar17 = nsVar.l;
                                 if (lsVar17 != null) {
@@ -647,7 +647,7 @@ public final class js implements Runnable {
                             lsVar11 = nsVar.l;
                             document6 = nsVar.W;
                             if (lsVar11.D(document6)) {
-                                arrayList8.add(org.telegram.messenger.gd.M0(2131751752));
+                                arrayList8.add(org.telegram.messenger.hd.M0(2131751752));
                                 arrayList10.add(Integer.valueOf(R.drawable.msg_copy));
                                 arrayList9.add(3);
                             }
@@ -658,20 +658,20 @@ public final class js implements Runnable {
                                 arrayList9.add(4);
                             }
                             i17 = nsVar.r;
-                            org.telegram.messenger.ri d03 = org.telegram.messenger.ri.d0(i17);
+                            org.telegram.messenger.si d03 = org.telegram.messenger.si.d0(i17);
                             document8 = nsVar.W;
                             boolean D02 = d03.D0(document8);
                             document9 = nsVar.W;
-                            if (!org.telegram.messenger.fj.H2(document9)) {
+                            if (!org.telegram.messenger.gj.H2(document9)) {
                                 document10 = nsVar.W;
-                                if (!org.telegram.messenger.fj.E3(document10)) {
+                                if (!org.telegram.messenger.gj.E3(document10)) {
                                     if (!D02) {
                                         i18 = nsVar.r;
-                                        if (org.telegram.messenger.ri.d0(i18).u()) {
+                                        if (org.telegram.messenger.si.d0(i18).u()) {
                                             document11 = nsVar.W;
                                         }
                                     }
-                                    arrayList8.add(D02 ? org.telegram.messenger.gd.M0(2131751526) : org.telegram.messenger.gd.M0(2131754371));
+                                    arrayList8.add(D02 ? org.telegram.messenger.hd.M0(2131751526) : org.telegram.messenger.hd.M0(2131754371));
                                     arrayList10.add(Integer.valueOf(D02 ? R.drawable.msg_unfave : R.drawable.msg_fave));
                                     arrayList9.add(5);
                                 }
@@ -709,7 +709,7 @@ public final class js implements Runnable {
                             hs hsVar = new hs(this, actionBarPopupWindow$ActionBarPopupWindowLayout);
                             nsVar.k = hsVar;
                             hsVar.e = true;
-                            hsVar.c = org.telegram.messenger.ks.g2;
+                            hsVar.c = org.telegram.messenger.ls.g2;
                             hsVar.g = true;
                             hsVar.setOutsideTouchable(true);
                             nsVar.k.setClippingEnabled(true);
@@ -838,7 +838,7 @@ public final class js implements Runnable {
                         document2 = nsVar.W;
                         if (document2 != null) {
                             i15 = nsVar.r;
-                            org.telegram.messenger.ri d04 = org.telegram.messenger.ri.d0(i15);
+                            org.telegram.messenger.si d04 = org.telegram.messenger.si.d0(i15);
                             document3 = nsVar.W;
                             int i52 = 0;
                             while (true) {
@@ -856,11 +856,11 @@ public final class js implements Runnable {
                                 i52++;
                             }
                             if (z10) {
-                                arrayList11.add(org.telegram.messenger.gd.Y(2131751586, "Delete", new Object[0]));
+                                arrayList11.add(org.telegram.messenger.hd.Y(2131751586, "Delete", new Object[0]));
                                 arrayList13.add(valueOf5);
                                 arrayList12.add(1);
                             } else {
-                                arrayList11.add(org.telegram.messenger.gd.Y(2131745734, "SaveToGIFs", new Object[0]));
+                                arrayList11.add(org.telegram.messenger.hd.Y(2131745734, "SaveToGIFs", new Object[0]));
                                 arrayList13.add(Integer.valueOf(R.drawable.msg_gif_add));
                                 arrayList12.add(2);
                             }
@@ -897,7 +897,7 @@ public final class js implements Runnable {
                         is isVar = new is(this, actionBarPopupWindow$ActionBarPopupWindowLayout2);
                         nsVar.k = isVar;
                         isVar.e = true;
-                        isVar.c = org.telegram.messenger.ks.g2;
+                        isVar.c = org.telegram.messenger.ls.g2;
                         isVar.g = true;
                         isVar.setOutsideTouchable(true);
                         nsVar.k.setClippingEnabled(true);
@@ -1004,7 +1004,7 @@ public final class js implements Runnable {
         org.telegram.ui.ActionBar.h6 h6Var42 = null;
         fh.g c102 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout42, null, true);
         c102.p(c8.i0.l(nsVar.c0));
-        org.telegram.messenger.n10.s(c102, org.telegram.messenger.g0.L(12.0f), 8.0f);
+        org.telegram.messenger.o10.s(c102, org.telegram.messenger.g0.L(12.0f), 8.0f);
         c102.R.e = true;
         actionBarPopupWindow$ActionBarPopupWindowLayout42.setBackground(c102);
         if (nsVar.V != 3) {

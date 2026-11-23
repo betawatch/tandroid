@@ -5,8 +5,8 @@ import a8.b8;
 import a8.r7;
 import ab.m0;
 import ab.o0;
-import ai.k1;
-import ai.z2;
+import ai.a3;
+import ai.l1;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -20,6 +20,7 @@ import bg.q;
 import bi.a1;
 import bi.e0;
 import bi.e2;
+import bi.k1;
 import com.google.android.gms.common.api.h;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -49,9 +50,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import k2.i;
 import org.telegram.messenger.d1;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.v10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.w10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.m6;
@@ -62,13 +63,12 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.ll0;
-import r0.l1;
 import r0.m;
 import ri.n;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, k1, a1, q, q1, m, n, j, i, com.google.android.gms.common.api.internal.q, v10, a5, te.b, ll0 {
+public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, l1, a1, q, q1, m, n, j, i, com.google.android.gms.common.api.internal.q, w10, a5, te.b, ll0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -101,17 +101,17 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     }
 
     @Override // r0.m
-    public l1 P0(View view, l1 l1Var) {
-        ((bi.k1) this.b).r1.j(l1Var);
-        return l1.b;
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        ((k1) this.b).r1.j(l1Var);
+        return r0.l1.b;
     }
 
     @Override // bi.a1
     public void a(Canvas canvas) {
-        z2 z2Var = (z2) this.b;
+        a3 a3Var = (a3) this.b;
         canvas.save();
-        canvas.translate(z2Var.a.getX(), z2Var.a.getY());
-        z2Var.a.draw(canvas);
+        canvas.translate(a3Var.a.getX(), a3Var.a.getY());
+        a3Var.a.draw(canvas);
         canvas.restore();
     }
 
@@ -151,7 +151,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         jVar2.b.add(iVar);
     }
 
-    @Override // ai.k1
+    @Override // ai.l1
     public void c(long j3, long j10) {
         long[] jArr = (long[]) this.b;
         ExecutorService executorService = DictationLid.a;
@@ -171,11 +171,11 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
 
     @Override // org.telegram.ui.ll0
     public void d(int i7) {
-        q10 q10Var = (q10) this.b;
+        r10 r10Var = (r10) this.b;
         if (i7 == 1) {
-            q10Var.a(Boolean.TRUE, null);
+            r10Var.a(Boolean.TRUE, null);
         } else if (i7 != 3) {
-            q10Var.a(Boolean.FALSE, null);
+            r10Var.a(Boolean.FALSE, null);
         }
     }
 
@@ -203,7 +203,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                 ((e0) this.b).run();
                 break;
             default:
-                ((x10) this.b).a(t1Var.h(i7, true, true));
+                ((y10) this.b).a(t1Var.h(i7, true, true));
                 break;
         }
     }
@@ -220,7 +220,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         }
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         int i7;
         org.telegram.ui.ActionBar.h6 h6Var;

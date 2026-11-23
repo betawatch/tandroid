@@ -4,7 +4,7 @@ import android.os.RemoteException;
 import androidx.car.app.media.ICarAudioCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class CarAudioCallbackDelegate {
     private final ICarAudioCallback mCallback;
@@ -27,7 +27,7 @@ public class CarAudioCallbackDelegate {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class CarAudioCallbackStub extends ICarAudioCallback.Stub {
         private final a mCarAudioCallback;
 

@@ -2,8 +2,8 @@ package zi;
 
 import java.io.File;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.ef;
+import org.telegram.messenger.f20;
+import org.telegram.messenger.ff;
 import org.telegram.ui.Components.a50;
 import org.telegram.ui.Components.b50;
 import org.telegram.ui.Components.qf;
@@ -11,7 +11,7 @@ import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.sy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -96,12 +96,12 @@ public final /* synthetic */ class g0 implements Runnable {
                             }
                         }
                     }
-                    e20 t6 = b50Var.t(file, j3, ry0Var2);
+                    f20 t6 = b50Var.t(file, j3, ry0Var2);
                     t6.t = !z10;
-                    ef efVar = new ef(0, file.getAbsolutePath(), 0, true, 0, 0);
-                    efVar.x = a50Var.c;
-                    efVar.y = a50Var.d;
-                    b50Var.e.u(efVar, t6, a50Var.a, a50Var.b, 0, false, a50Var.e);
+                    ff ffVar = new ff(0, file.getAbsolutePath(), 0, true, 0, 0);
+                    ffVar.x = a50Var.c;
+                    ffVar.y = a50Var.d;
+                    b50Var.e.u(ffVar, t6, a50Var.a, a50Var.b, 0, false, a50Var.e);
                     sy0 sy0Var2 = b50Var.T;
                     if (sy0Var2 != null) {
                         sy0Var2.d(false);

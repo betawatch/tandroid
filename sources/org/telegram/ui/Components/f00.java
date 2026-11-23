@@ -8,7 +8,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f00 extends FrameLayout {
     public final o6 a;
@@ -22,21 +22,21 @@ public final class f00 extends FrameLayout {
         o6Var.setTypeface(org.telegram.messenger.g0.o());
         int i7 = org.telegram.ui.ActionBar.m6.L6;
         org.telegram.ui.ActionBar.t6.Y(o6Var, i7, null);
-        o6Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
-        addView(o6Var, c8.ma.d(-1, 20.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        o6Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        addView(o6Var, c8.ma.d(-1, 20.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
         o6 o6Var2 = new o6(context, true, true, true);
         this.b = o6Var2;
         o6Var2.b(0.45f, 250L, nr.h);
         o6Var2.setTextSize(org.telegram.messenger.g0.L(15.0f));
         org.telegram.ui.ActionBar.t6.Y(o6Var2, i7, null);
-        o6Var2.setGravity(org.telegram.messenger.gd.a0 ? 3 : 5);
-        addView(o6Var2, c8.ma.d(-2, 20.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        o6Var2.setGravity(org.telegram.messenger.hd.a0 ? 3 : 5);
+        addView(o6Var2, c8.ma.d(-2, 20.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
         WeakHashMap weakHashMap = r0.i0.a;
         new r0.v(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
     }
 
     public final void a(String str, Runnable runnable) {
-        boolean z10 = !org.telegram.messenger.gd.a0;
+        boolean z10 = !org.telegram.messenger.hd.a0;
         o6 o6Var = this.b;
         o6Var.c(str, z10, true);
         o6Var.setOnClickListener(new t6(1, runnable));
@@ -47,7 +47,7 @@ public final class f00 extends FrameLayout {
         if (z10) {
             o6Var.a();
         }
-        o6Var.c(str, z10 && !org.telegram.messenger.gd.a0, true);
+        o6Var.c(str, z10 && !org.telegram.messenger.hd.a0, true);
     }
 
     @Override // android.view.View

@@ -13,13 +13,13 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.r1;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -50,7 +50,7 @@ import yg.w;
 import yg.x;
 import yg.y;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b extends rg.b {
     public final h6 d;
@@ -66,7 +66,7 @@ public final class b extends rg.b {
     public b(h6 h6Var) {
         this.d = h6Var;
         z zVar = new z(this, 6);
-        tr a02 = tr.a0(j10.t0);
+        ur a02 = ur.a0(k10.t0);
         a02.a.c(new q(2, a02, zVar));
     }
 
@@ -79,7 +79,7 @@ public final class b extends rg.b {
     public final int F(TLRPC.Chat chat) {
         Integer num;
         int i7;
-        TLRPC.ChatFull P0 = mp.u1(j10.t0).P0(chat.id);
+        TLRPC.ChatFull P0 = np.u1(k10.t0).P0(chat.id);
         if (P0 != null && (i7 = P0.participants_count) > 0) {
             return i7;
         }
@@ -131,21 +131,21 @@ public final class b extends rg.b {
             boolean z11 = dVar.s == i11;
             dVar.s = i11;
             if (i11 == 0) {
-                u3Var.k(gd.N0(2131753538, null));
-                dVar.setSubtitle(gd.N0(2131753164, null));
+                u3Var.k(hd.N0(2131753538, null));
+                dVar.setSubtitle(hd.N0(2131753164, null));
                 t6.X(m5Var, m6.r5, h6Var);
                 b9Var.g(16);
                 b9Var.i(-15292942, -15630089);
                 dVar.setDivider(true);
                 t6.Z(dVar, dVar.getContext(), R.drawable.greydivider_bottom, m6.b7);
             } else if (i11 == 1) {
-                u3Var.k(gd.N0(2131753590, null));
+                u3Var.k(hd.N0(2131753590, null));
                 if (i12 == 1 && user != null) {
-                    dVar.setSubtitle(dVar.e(j6.m(o10.q(user), m5Var.getPaint().getFontMetricsInt(), false, null, 0)));
+                    dVar.setSubtitle(dVar.e(j6.m(p10.q(user), m5Var.getPaint().getFontMetricsInt(), false, null, 0)));
                 } else if (i12 > 0) {
-                    dVar.setSubtitle(dVar.e(gd.G(i12, "Recipient", new Object[0])));
+                    dVar.setSubtitle(dVar.e(hd.G(i12, "Recipient", new Object[0])));
                 } else {
-                    dVar.setSubtitle(dVar.e(gd.N0(2131753282, null)));
+                    dVar.setSubtitle(dVar.e(hd.N0(2131753282, null)));
                 }
                 t6.X(m5Var, m6.n5, h6Var);
                 b9Var.g(6);
@@ -153,13 +153,13 @@ public final class b extends rg.b {
                 dVar.setDivider(false);
                 t6.Z(dVar, dVar.getContext(), R.drawable.greydivider_top, m6.b7);
             } else if (i11 == 2) {
-                u3Var.k(gd.N0(2131753329, null));
+                u3Var.k(hd.N0(2131753329, null));
                 if (i12 == 1 && user != null) {
-                    dVar.setSubtitle(dVar.e(j6.m(o10.q(user), m5Var.getPaint().getFontMetricsInt(), false, null, 0)));
+                    dVar.setSubtitle(dVar.e(j6.m(p10.q(user), m5Var.getPaint().getFontMetricsInt(), false, null, 0)));
                 } else if (i12 > 0) {
-                    dVar.setSubtitle(dVar.e(gd.G(i12, "Recipient", new Object[0])));
+                    dVar.setSubtitle(dVar.e(hd.G(i12, "Recipient", new Object[0])));
                 } else {
-                    dVar.setSubtitle(dVar.e(gd.N0(2131753164, null)));
+                    dVar.setSubtitle(dVar.e(hd.N0(2131753164, null)));
                 }
                 t6.X(m5Var, m6.n5, h6Var);
                 b9Var.g(25);
@@ -167,8 +167,8 @@ public final class b extends rg.b {
                 dVar.setDivider(true);
                 t6.Z(dVar, dVar.getContext(), R.drawable.greydivider_bottom, m6.b7);
             } else if (i11 == 3) {
-                u3Var.k(n8.b(gd.N0(2131753254, null)));
-                dVar.setSubtitle(gd.N0(2131753164, null));
+                u3Var.k(n8.b(hd.N0(2131753254, null)));
+                dVar.setSubtitle(hd.N0(2131753164, null));
                 t6.X(m5Var, m6.r5, h6Var);
                 b9Var.g(26);
                 b9Var.i(-146917, -625593);
@@ -211,10 +211,10 @@ public final class b extends rg.b {
                     TLRPC.Chat chat = aVar.e;
                     gVar.f(chat, aVar.i, aVar.g, F(chat));
                 } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
-                    TLRPC.Chat O0 = mp.u1(j10.t0).O0(Long.valueOf(inputPeer.chat_id));
+                    TLRPC.Chat O0 = np.u1(k10.t0).O0(Long.valueOf(inputPeer.chat_id));
                     gVar.f(O0, aVar.i, aVar.g, F(O0));
                 } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
-                    TLRPC.Chat O02 = mp.u1(j10.t0).O0(Long.valueOf(inputPeer.channel_id));
+                    TLRPC.Chat O02 = np.u1(k10.t0).O0(Long.valueOf(inputPeer.channel_id));
                     gVar.f(O02, aVar.i, aVar.g, F(O02));
                 }
                 gVar.setChatDeleteListener(this.n);
@@ -233,29 +233,29 @@ public final class b extends rg.b {
                 uVar.s = i15;
                 boolean V = v3.V(chat2);
                 if (i15 == 0) {
-                    u3Var2.k(gd.a0(null, null, V ? 2131753595 : 2131753596, new Object[0]));
+                    u3Var2.k(hd.a0(null, null, V ? 2131753595 : 2131753596, new Object[0]));
                 } else if (i15 == 1) {
-                    u3Var2.k(gd.a0(null, null, V ? 2131753333 : 2131753334, new Object[0]));
+                    u3Var2.k(hd.a0(null, null, V ? 2131753333 : 2131753334, new Object[0]));
                 }
                 uVar.f.a(z12, false);
                 uVar.setDivider(z13);
                 t6.X(uVar.e, m6.n5, uVar.a);
                 if (list2.size() == 0) {
-                    uVar.setSubtitle(uVar.e(gd.N0(2131753519, null)));
+                    uVar.setSubtitle(uVar.e(hd.N0(2131753519, null)));
                     break;
                 } else if (list2.size() <= 3) {
                     if (list2.size() == 1) {
-                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries1", null, 2131753518, ((TLRPC.TL_help_country) list2.get(0)).default_name)));
+                        uVar.setSubtitle(uVar.e(hd.a0("BoostingFromAllCountries1", null, 2131753518, ((TLRPC.TL_help_country) list2.get(0)).default_name)));
                         break;
                     } else if (list2.size() == 2) {
-                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries2", null, 2131753517, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name)));
+                        uVar.setSubtitle(uVar.e(hd.a0("BoostingFromAllCountries2", null, 2131753517, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name)));
                         break;
                     } else {
-                        uVar.setSubtitle(uVar.e(gd.a0("BoostingFromAllCountries3", null, 2131753516, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name, ((TLRPC.TL_help_country) list2.get(2)).default_name)));
+                        uVar.setSubtitle(uVar.e(hd.a0("BoostingFromAllCountries3", null, 2131753516, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name, ((TLRPC.TL_help_country) list2.get(2)).default_name)));
                         break;
                     }
                 } else {
-                    uVar.setSubtitle(uVar.e(gd.G(list2.size(), "BoostingFromCountriesCount", new Object[0])));
+                    uVar.setSubtitle(uVar.e(hd.G(list2.size(), "BoostingFromCountriesCount", new Object[0])));
                     break;
                 }
             case 12:
@@ -270,9 +270,9 @@ public final class b extends rg.b {
                 u3 u3Var3 = iVar.d;
                 iVar.w = tLObject;
                 if (i16 >= 12) {
-                    u3Var3.k(gd.G(1, "Years", new Object[0]));
+                    u3Var3.k(hd.G(1, "Years", new Object[0]));
                 } else {
-                    u3Var3.k(gd.G(i16, "Months", new Object[0]));
+                    u3Var3.k(hd.G(i16, "Months", new Object[0]));
                 }
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(r1.i().f(i17 > 0 ? j3 / i17 : j3, charSequence.toString()));
@@ -293,7 +293,7 @@ public final class b extends rg.b {
                 xVar.setText(aVar.c);
                 int i19 = aVar.i;
                 o6 o6Var = xVar.r;
-                String G = i19 > 0 ? gd.G(i19, "BoostingBoostsCountTitle", Integer.valueOf(i19)) : "";
+                String G = i19 > 0 ? hd.G(i19, "BoostingBoostsCountTitle", Integer.valueOf(i19)) : "";
                 o6Var.a();
                 o6Var.c(G, true, true);
                 break;
@@ -334,8 +334,8 @@ public final class b extends rg.b {
                     o6Var3.c(wVar.n, z19, true);
                     textView.setText("");
                 } else {
-                    o6Var2.c(gd.H(' ', "GiveawayStars", (int) tL_starsGiveawayOption.stars), false, true);
-                    o6Var3.c(gd.H(',', "BoostingStarOptionPerUser", (int) j10), z19, true);
+                    o6Var2.c(hd.H(' ', "GiveawayStars", (int) tL_starsGiveawayOption.stars), false, true);
+                    o6Var3.c(hd.H(',', "BoostingStarOptionPerUser", (int) j10), z19, true);
                     textView.setText(r1.i().f(tL_starsGiveawayOption.amount, tL_starsGiveawayOption.currency));
                 }
                 int i21 = i20 + 1;
@@ -415,7 +415,7 @@ public final class b extends rg.b {
                 break;
             case 18:
                 xa xaVar = new xa(context);
-                String N0 = gd.N0(2131747642, null);
+                String N0 = hd.N0(2131747642, null);
                 boolean z10 = xaVar.c == -1;
                 xaVar.c = -1;
                 o6 o6Var = xaVar.a;

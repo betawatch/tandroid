@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class s8 implements j2.h, j7 {
     public static final ConcurrentHashMap I = new ConcurrentHashMap();
@@ -260,9 +260,9 @@ public final class s8 implements j2.h, j7 {
                     StringBuilder sb2 = new StringBuilder("FileStreamLoadOperation ");
                     sb2.append(this.s.id);
                     sb2.append(" ");
-                    sb2.append(fj.h2(this.s));
+                    sb2.append(gj.h2(this.s));
                     sb2.append("x");
-                    sb2.append(fj.h2(this.s));
+                    sb2.append(gj.h2(this.s));
                     sb2.append(" mime_type=");
                     sb2.append(this.s.mime_type);
                     sb2.append(" codec=");
@@ -296,9 +296,9 @@ public final class s8 implements j2.h, j7 {
         StringBuilder sb22 = new StringBuilder("FileStreamLoadOperation ");
         sb22.append(this.s.id);
         sb22.append(" ");
-        sb22.append(fj.h2(this.s));
+        sb22.append(gj.h2(this.s));
         sb22.append("x");
-        sb22.append(fj.h2(this.s));
+        sb22.append(gj.h2(this.s));
         sb22.append(" mime_type=");
         sb22.append(this.s.mime_type);
         sb22.append(" codec=");
@@ -356,7 +356,7 @@ public final class s8 implements j2.h, j7 {
                     i7Var.getClass();
                     CountDownLatch countDownLatch = new CountDownLatch(1);
                     ?? r62 = new long[2];
-                    Utilities.d.c(new j9(i7Var, (Serializable) r62, this.h, i16, countDownLatch, 2));
+                    Utilities.d.c(new k9(i7Var, (Serializable) r62, this.h, i16, countDownLatch, 2));
                     countDownLatch.await();
                     i11 = (int) r62[i15];
                     if (i11 != 0) {
@@ -458,7 +458,7 @@ public final class s8 implements j2.h, j7 {
             i7Var7.getClass();
             CountDownLatch countDownLatch5 = new CountDownLatch(1);
             ?? r622 = new long[2];
-            Utilities.d.c(new j9(i7Var7, (Serializable) r622, this.h, i16, countDownLatch5, 2));
+            Utilities.d.c(new k9(i7Var7, (Serializable) r622, this.h, i16, countDownLatch5, 2));
             countDownLatch5.await();
             i11 = (int) r622[i15];
             if (i11 != 0) {

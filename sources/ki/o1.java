@@ -6,9 +6,9 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ShapeDrawable;
 import android.widget.FrameLayout;
 import c8.ma;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class o1 {
     /* JADX WARN: Multi-variable type inference failed */
@@ -29,11 +29,11 @@ public abstract class o1 {
         String str;
         TLRPC.Chat chat;
         if (j10 >= 0) {
-            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j10));
-            str = o10.l(c22);
+            TLRPC.User c22 = np.u1(i7).c2(Long.valueOf(j10));
+            str = p10.l(c22);
             chat = c22;
         } else {
-            TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j10));
+            TLRPC.Chat O0 = np.u1(i7).O0(Long.valueOf(-j10));
             if (O0 == null) {
                 str = "";
                 chat = O0;
@@ -71,13 +71,13 @@ public abstract class o1 {
         frameLayout.addView(frameLayout2, ma.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
         boolean[] zArr = new boolean[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
-        String N0 = gd.N0(2131752985, null);
+        String N0 = hd.N0(2131752985, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = gd.N0(j10 >= 0 ? 2131752986 : 2131752987, null);
+        t1Var.U = hd.N0(j10 >= 0 ? 2131752986 : 2131752987, null);
         alertDialog$Builder.o(frameLayout);
-        alertDialog$Builder.h(gd.N0(2131752577, null), null);
-        alertDialog$Builder.k(gd.N0(2131746125, null), new ii.h(zArr, i7, j3, j10, v3Var));
+        alertDialog$Builder.h(hd.N0(2131752577, null), null);
+        alertDialog$Builder.k(hd.N0(2131746125, null), new ii.h(zArr, i7, j3, j10, v3Var));
         alertDialog$Builder.d(-1);
         alertDialog$Builder.p();
     }

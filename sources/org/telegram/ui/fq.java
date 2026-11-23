@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fq implements kq {
     public final /* synthetic */ rq a;
@@ -40,7 +40,7 @@ public final class fq implements kq {
                 tL_peerChannel.channel_id = -j3;
             }
             tL_channelParticipantBanned.date = rqVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantBanned.kicked_by = org.telegram.messenger.j10.i(rqVar.getAccountInstance().a).n;
+            tL_channelParticipantBanned.kicked_by = org.telegram.messenger.k10.i(rqVar.getAccountInstance().a).n;
             rqVar.r.kicked_count++;
             rqVar.F.add(tL_channelParticipantBanned);
             rqVar.K.k(tL_channelParticipantBanned, j3);

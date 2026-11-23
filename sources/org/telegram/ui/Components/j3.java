@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -80,7 +80,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                 String[] strArr = (String[]) obj3;
                 int[] iArr2 = (int[]) obj2;
                 Runnable runnable = (Runnable) obj;
-                if (org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q()) {
+                if (org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q()) {
                     a70 G = a70.G(w2Var.c, h6Var, frameLayout2);
                     for (int i13 = 0; i13 < iArr.length; i13++) {
                         G.c(0, strArr[i13], new d3(iArr2, iArr[i13], runnable), false);
@@ -89,7 +89,7 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                     G.a0();
                     break;
                 } else {
-                    new lc(frameLayout, h6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.gd.N0(2131748304, null), new org.telegram.messenger.j2(23))).j();
+                    new lc(frameLayout, h6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.hd.N0(2131748304, null), new org.telegram.messenger.j2(23))).j();
                     break;
                 }
         }

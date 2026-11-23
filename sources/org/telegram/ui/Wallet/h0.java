@@ -1,20 +1,20 @@
 package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 import org.telegram.ui.fe0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class h0 implements Runnable, fs {
+public final class h0 implements Runnable, gs {
     public boolean a;
-    public final /* synthetic */ ks b;
+    public final /* synthetic */ ls b;
     public final /* synthetic */ fe0 c;
     public final /* synthetic */ u0 d;
 
-    public h0(ks ksVar, fe0 fe0Var, u0 u0Var) {
-        this.b = ksVar;
+    public h0(ls lsVar, fe0 fe0Var, u0 u0Var) {
+        this.b = lsVar;
         this.c = fe0Var;
         this.d = u0Var;
     }
@@ -40,9 +40,9 @@ public final class h0 implements Runnable, fs {
         run();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.d4) {
+        if (i7 == ls.d4) {
             a();
         }
     }
@@ -54,7 +54,7 @@ public final class h0 implements Runnable, fs {
         }
         this.a = true;
         org.telegram.messenger.g0.r(this);
-        this.b.n(this, ks.d4);
+        this.b.n(this, ls.d4);
         this.c.run();
     }
 }

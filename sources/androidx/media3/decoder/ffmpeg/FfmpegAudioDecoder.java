@@ -12,9 +12,9 @@ import k2.f;
 import k2.h;
 import k2.j;
 import k2.l;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -88,12 +88,12 @@ public final class FfmpegAudioDecoder extends l {
                 byte[] bArr5 = (byte[]) list.get(1);
                 byte[] bArr6 = new byte[bArr4.length + bArr5.length + 6];
                 bArr6[0] = (byte) (bArr4.length >> 8);
-                bArr6[1] = (byte) (bArr4.length & ks.e4);
+                bArr6[1] = (byte) (bArr4.length & ls.e4);
                 System.arraycopy(bArr4, 0, bArr6, 2, bArr4.length);
                 bArr6[bArr4.length + 2] = 0;
                 bArr6[bArr4.length + 3] = 0;
                 bArr6[bArr4.length + 4] = (byte) (bArr5.length >> 8);
-                bArr6[bArr4.length + 5] = (byte) (bArr5.length & ks.e4);
+                bArr6[bArr4.length + 5] = (byte) (bArr5.length & ls.e4);
                 System.arraycopy(bArr5, 0, bArr6, bArr4.length + 6, bArr5.length);
                 bArr = bArr6;
                 break;

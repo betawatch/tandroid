@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import java.util.HashSet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class w91 extends org.telegram.ui.Components.ba {
     public static final /* synthetic */ int o3 = 0;
@@ -194,7 +194,7 @@ public abstract class w91 extends org.telegram.ui.Components.ba {
                     if (y91Var.E == 2 && y91Var.y > 0 && (L0 = (c0Var = (v4.c0) getLayoutManager()).L0()) == 0) {
                         int paddingTop = getPaddingTop();
                         View m10 = c0Var.m(L0);
-                        int L = (int) (org.telegram.messenger.g0.L(org.telegram.messenger.bz.p1 ? 78.0f : 72.0f) * 0.85f);
+                        int L = (int) (org.telegram.messenger.g0.L(org.telegram.messenger.cz.p1 ? 78.0f : 72.0f) * 0.85f);
                         int measuredHeight = m10.getMeasuredHeight() + (m10.getTop() - paddingTop);
                         long currentTimeMillis = System.currentTimeMillis() - y91Var.Z;
                         if (measuredHeight < L || currentTimeMillis < 200) {
@@ -222,7 +222,7 @@ public abstract class w91 extends org.telegram.ui.Components.ba {
                         if (f10 != 0.0f) {
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
                             ofFloat.addUpdateListener(new iz0(this, 15));
-                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.n10.w(this.m3, org.telegram.messenger.g0.L(72.0f), 120.0f, 350.0f)));
+                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.o10.w(this.m3, org.telegram.messenger.g0.L(72.0f), 120.0f, 350.0f)));
                             ofFloat.setInterpolator(org.telegram.ui.Components.nr.h);
                             setScrollEnabled(false);
                             ofFloat.addListener(new k71(this, i7));

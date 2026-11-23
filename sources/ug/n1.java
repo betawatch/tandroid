@@ -13,9 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import c8.ma;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.i9;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.j9;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.s2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.pp;
 import org.telegram.ui.xs0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class n1 extends ViewGroup {
     public final Paint E;
@@ -72,14 +72,14 @@ public class n1 extends ViewGroup {
         t6.U(textView, m6.G6, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setSingleLine();
-        addView(textView, ma.d(-2, -2.0f, (gd.a0 ? 5 : 3) | 48, 0.0f, 8.0f, 0.0f, 0.0f));
+        addView(textView, ma.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 48, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.r = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(-1);
         textView2.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
         textView2.setTypeface(org.telegram.messenger.g0.o());
-        addView(textView2, ma.d(-2, -2.0f, (gd.a0 ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView2, ma.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView3 = new TextView(context);
         this.d = textView3;
         textView3.setTextSize(1, 14.0f);
@@ -87,13 +87,13 @@ public class n1 extends ViewGroup {
         t6.U(textView3, i10, null);
         textView3.getPaint().setStrikeThruText(true);
         textView3.setSingleLine();
-        addView(textView3, ma.d(-2, -2.0f, (gd.a0 ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView3, ma.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView4 = new TextView(context);
         this.e = textView4;
         textView4.setTextSize(1, 14.0f);
         t6.U(textView4, i10, null);
         textView4.setSingleLine();
-        addView(textView4, ma.d(-2, -2.0f, (gd.a0 ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView4, ma.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView5 = new TextView(context);
         this.c = textView5;
         textView5.setTextSize(1, 15.0f);
@@ -123,13 +123,13 @@ public class n1 extends ViewGroup {
         int i7 = tL_premiumSubscriptionOption.months;
         TextView textView = this.b;
         if (i7 == 1) {
-            textView.setText(gd.N0(2131746730, null));
+            textView.setText(hd.N0(2131746730, null));
         } else if (i7 == 6) {
-            textView.setText(gd.N0(2131746729, null));
+            textView.setText(hd.N0(2131746729, null));
         } else if (i7 != 12) {
-            textView.setText((i7 <= 12 || i7 % 12 != 0) ? gd.G(i7, "Months", new Object[0]) : gd.G(i7 / 12, "PremiumTierAnnualYears", new Object[0]));
+            textView.setText((i7 <= 12 || i7 % 12 != 0) ? hd.G(i7, "Months", new Object[0]) : hd.G(i7 / 12, "PremiumTierAnnualYears", new Object[0]));
         } else {
-            textView.setText(gd.N0(2131746734, null));
+            textView.setText(hd.N0(2131746734, null));
         }
         if (!s2.b()) {
             if (org.telegram.messenger.r1.i().k()) {
@@ -147,7 +147,7 @@ public class n1 extends ViewGroup {
                     textView3.setVisibility(8);
                     textView5.setVisibility(8);
                 } else {
-                    textView4.setText(gd.a0(null, null, 2131749491, Integer.valueOf(xs0Var.c())));
+                    textView4.setText(hd.a0(null, null, 2131749491, Integer.valueOf(xs0Var.c())));
                     textView4.setVisibility(0);
                     textView3.setVisibility(0);
                     textView5.setVisibility(0);
@@ -164,20 +164,20 @@ public class n1 extends ViewGroup {
                     f10 = org.telegram.messenger.r1.g(b10, 6, j3, false);
                 }
                 textView3.setText(f10);
-                textView5.setText(gd.a0(null, null, 2131746678, xs0Var.f()));
-                textView2.setText(gd.a0(null, null, 2131746679, xs0Var.e()));
+                textView5.setText(hd.a0(null, null, 2131746678, xs0Var.f()));
+                textView2.setText(hd.a0(null, null, 2131746679, xs0Var.e()));
                 if (tL_premiumSubscriptionOption.current) {
                     textView5.setVisibility(0);
-                    textView5.setText(gd.N0(2131742560, null));
+                    textView5.setText(hd.N0(2131742558, null));
                 }
             } else {
-                textView4.setText(gd.a0(null, null, 2131749491, 10));
+                textView4.setText(hd.a0(null, null, 2131749491, 10));
                 textView4.setVisibility(0);
                 textView3.setVisibility(0);
                 textView5.setVisibility(0);
                 textView3.setText("USD00.00");
-                textView5.setText(gd.a0(null, null, 2131746678, 1000));
-                textView2.setText(gd.a0(null, null, 2131746679, 100));
+                textView5.setText(hd.a0(null, null, 2131746678, 1000));
+                textView2.setText(hd.a0(null, null, 2131746679, 100));
             }
             requestLayout();
         }
@@ -196,7 +196,7 @@ public class n1 extends ViewGroup {
         Rect rect = org.telegram.messenger.g0.Q;
         rect.right = view.getMeasuredWidth() + rect.left;
         rect.bottom = view.getMeasuredHeight() + rect.top;
-        if (gd.a0) {
+        if (hd.a0) {
             int i7 = rect.right;
             rect.right = getWidth() - rect.left;
             rect.left = getWidth() - i7;
@@ -290,7 +290,7 @@ public class n1 extends ViewGroup {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.N) {
-            boolean z10 = gd.a0;
+            boolean z10 = hd.a0;
             TextView textView = this.b;
             if (z10) {
                 canvas.drawLine(0.0f, getHeight() - 1, textView.getRight(), getHeight() - 1, m6.k0);
@@ -363,7 +363,7 @@ public class n1 extends ViewGroup {
         int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31);
         TextView textView3 = this.d;
         textView3.measure(makeMeasureSpec4, makeMeasureSpec5);
-        int c10 = n10.c(6.0f, (size - opVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
+        int c10 = o10.c(6.0f, (size - opVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
         int makeMeasureSpec6 = View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31);
         TextView textView4 = this.e;
         textView4.measure(c10, makeMeasureSpec6);
@@ -373,8 +373,8 @@ public class n1 extends ViewGroup {
         setMeasuredDimension(size, L);
     }
 
-    public void setCirclePaintProvider(i9 i9Var) {
-        this.a.setCirclePaintProvider(i9Var);
+    public void setCirclePaintProvider(j9 j9Var) {
+        this.a.setCirclePaintProvider(j9Var);
     }
 
     @Override // android.view.View

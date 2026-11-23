@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dj extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -32,7 +32,7 @@ public final class dj extends FrameLayout implements org.telegram.ui.ActionBar.b
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
-        TextView f10 = org.telegram.messenger.n10.f(linearLayout, textView, c8.ma.t(-1, -2, 17, 32, 12, 32, 8), context);
+        TextView f10 = org.telegram.messenger.o10.f(linearLayout, textView, c8.ma.t(-1, -2, 17, 32, 12, 32, 8), context);
         this.c = f10;
         f10.setTextSize(1, 14.0f);
         f10.setGravity(17);

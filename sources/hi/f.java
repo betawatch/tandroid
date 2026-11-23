@@ -8,13 +8,13 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.widget.FrameLayout;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final /* synthetic */ class f implements Runnable {
                         valueAnimator.cancel();
                         oVar.q0 = null;
                     }
-                    x10 x10Var = oVar.k0;
-                    if (x10Var != null) {
-                        x10Var.a(Boolean.valueOf(z10));
+                    y10 y10Var = oVar.k0;
+                    if (y10Var != null) {
+                        y10Var.a(Boolean.valueOf(z10));
                     }
                     oVar.d(z10);
                     if (z10) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class f implements Runnable {
                     if (!z10) {
                         hVar.getEditText().setAllowDrawCursor(false);
                     }
-                    oVar.q0.addListener(new bi.h7(8, oVar, z10));
+                    oVar.q0.addListener(new bi.g7(8, oVar, z10));
                     if (z10) {
                         oVar.q0.setInterpolator(org.telegram.ui.ActionBar.i1.w);
                         oVar.q0.setDuration(250L);
@@ -93,7 +93,7 @@ public final /* synthetic */ class f implements Runnable {
                     if (!z10) {
                         hVar.getEditText().j(false, true);
                     }
-                    if (z10 && bz.o() >= 1 && !pc.f()) {
+                    if (z10 && cz.o() >= 1 && !qc.f()) {
                         if (oVar.r0 == null) {
                             oVar.r0 = Bitmap.createBitmap((int) (frameLayout.getWidth() / 12.0f), (int) (frameLayout.getHeight() / 12.0f), Bitmap.Config.ARGB_8888);
                         }

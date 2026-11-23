@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ym0 {
     public static Paint D;
@@ -121,7 +121,7 @@ public class ym0 {
                     this.r = L;
                 }
             } else {
-                float w10 = org.telegram.messenger.n10.w(elapsedRealtime, 60.0f, org.telegram.messenger.g0.L(1.0f), f13);
+                float w10 = org.telegram.messenger.o10.w(elapsedRealtime, 60.0f, org.telegram.messenger.g0.L(1.0f), f13);
                 this.r = w10;
                 if (w10 < L) {
                     this.r = L;
@@ -442,24 +442,24 @@ public class ym0 {
         h(this.a);
     }
 
-    public final void j(org.telegram.messenger.fj fjVar) {
+    public final void j(org.telegram.messenger.gj gjVar) {
         String str;
-        if (fjVar == null) {
+        if (gjVar == null) {
             a();
             return;
         }
-        Long valueOf = Long.valueOf(((long) fjVar.L0()) * 1000);
+        Long valueOf = Long.valueOf(((long) gjVar.L0()) * 1000);
         if (valueOf.longValue() < 0) {
             a();
             return;
         }
-        CharSequence charSequence = fjVar.z;
-        if (fjVar.e5()) {
-            if (fjVar.B == null && (str = fjVar.k.media.webpage.description) != null) {
-                fjVar.B = SpannableString.valueOf(str);
-                org.telegram.messenger.fj.h(fjVar.N3(), fjVar.B, false, 3, (int) valueOf.longValue(), false);
+        CharSequence charSequence = gjVar.z;
+        if (gjVar.e5()) {
+            if (gjVar.B == null && (str = gjVar.k.media.webpage.description) != null) {
+                gjVar.B = SpannableString.valueOf(str);
+                org.telegram.messenger.gj.h(gjVar.N3(), gjVar.B, false, 3, (int) valueOf.longValue(), false);
             }
-            charSequence = fjVar.B;
+            charSequence = gjVar.B;
         }
         if (charSequence == this.v && this.w == valueOf.longValue()) {
             return;

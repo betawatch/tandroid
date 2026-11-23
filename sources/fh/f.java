@@ -8,9 +8,9 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import c8.l9;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f {
     public int d;
@@ -99,7 +99,7 @@ public final class f {
             float min = Math.min(this.q, f19);
             float f20 = this.r;
             Math.sqrt(0.5d);
-            float b10 = n10.b(min, f20, ((float) Math.sqrt(2.0d)) - 1.0f, f19);
+            float b10 = o10.b(min, f20, ((float) Math.sqrt(2.0d)) - 1.0f, f19);
             this.u = b10;
             int i14 = this.n;
             if (i14 != 0) {

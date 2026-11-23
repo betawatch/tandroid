@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class PopupReplyReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -13,9 +13,9 @@ public class PopupReplyReceiver extends BroadcastReceiver {
             return;
         }
         t0.w();
-        int intExtra = intent.getIntExtra("currentAccount", j10.t0);
-        if (j10.r(intExtra)) {
-            xs.l0.c(new ls(xs.t(intExtra), 0));
+        int intExtra = intent.getIntExtra("currentAccount", k10.t0);
+        if (k10.r(intExtra)) {
+            ys.l0.c(new ms(ys.t(intExtra), 0));
         }
     }
 }

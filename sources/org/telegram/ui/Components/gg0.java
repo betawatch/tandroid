@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gg0 extends wp {
     public final ArrayList c = new ArrayList();
@@ -127,11 +127,11 @@ public final class gg0 extends wp {
             i10 = k10;
             sparseArray = sparseArray2;
             if (i11 >= 0 && i11 < arrayList6.size()) {
-                org.telegram.messenger.fc fcVar = (org.telegram.messenger.fc) arrayList6.get(i11);
-                eg0Var.c.M = fcVar != null;
+                org.telegram.messenger.gc gcVar = (org.telegram.messenger.gc) arrayList6.get(i11);
+                eg0Var.c.M = gcVar != null;
                 z10 = arrayList5.get(i11) == null;
-                org.telegram.messenger.fc fcVar2 = (org.telegram.messenger.fc) arrayList4.get(i11);
-                eg0Var.c.q((t51) arrayList5.get(i11), fcVar, null, (org.telegram.messenger.fc) arrayList3.get(i11), (org.telegram.messenger.fc) arrayList4.get(i11), (fcVar2 == null || !(fcVar2.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), "avatar_" + hg0Var.F0);
+                org.telegram.messenger.gc gcVar2 = (org.telegram.messenger.gc) arrayList4.get(i11);
+                eg0Var.c.q((t51) arrayList5.get(i11), gcVar, null, (org.telegram.messenger.gc) arrayList3.get(i11), (org.telegram.messenger.gc) arrayList4.get(i11), (gcVar2 == null || !(gcVar2.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), "avatar_" + hg0Var.F0);
                 if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
                 }
                 eg0Var.c.getImageReceiver().h1 = new org.telegram.ui.Cells.c5(this);
@@ -195,16 +195,16 @@ public final class gg0 extends wp {
             }
         }
         if (i11 >= 0 && i11 < arrayList6.size()) {
-            org.telegram.messenger.fc fcVar3 = (org.telegram.messenger.fc) arrayList6.get(i11);
-            eg0Var.c.M = fcVar3 != null;
+            org.telegram.messenger.gc gcVar3 = (org.telegram.messenger.gc) arrayList6.get(i11);
+            eg0Var.c.M = gcVar3 != null;
             boolean z13 = arrayList5.get(i11) == null;
-            if (!hg0Var.K0 || fcVar3 == null) {
+            if (!hg0Var.K0 || gcVar3 == null) {
                 z11 = z13;
             } else {
                 z11 = z13;
-                if (fcVar3.p == 2) {
+                if (gcVar3.p == 2) {
                     str = "avatar";
-                    org.telegram.messenger.fc fcVar4 = (org.telegram.messenger.fc) arrayList4.get(i11);
+                    org.telegram.messenger.gc gcVar4 = (org.telegram.messenger.gc) arrayList4.get(i11);
                     q9 q9Var2 = this.g;
                     i10 = k10;
                     n10 = (q9Var2 == null && hg0Var.f1) ? q9Var2.getImageReceiver().n() : null;
@@ -214,16 +214,16 @@ public final class gg0 extends wp {
                     String sb3 = sb2.toString();
                     if (n10 == null && arrayList5.get(i11) == null) {
                         cg0 cg0Var4 = eg0Var.c;
-                        org.telegram.messenger.fc fcVar5 = (org.telegram.messenger.fc) arrayList6.get(i11);
-                        org.telegram.messenger.fc fcVar6 = (org.telegram.messenger.fc) arrayList3.get(i11);
+                        org.telegram.messenger.gc gcVar5 = (org.telegram.messenger.gc) arrayList6.get(i11);
+                        org.telegram.messenger.gc gcVar6 = (org.telegram.messenger.gc) arrayList3.get(i11);
                         int intValue = ((Integer) arrayList2.get(i11)).intValue();
                         cg0Var4.getClass();
-                        cg0Var4.a.u0(fcVar5, str, fcVar6, null, null, null, new BitmapDrawable((Resources) null, n10), intValue, null, sb3, 1);
+                        cg0Var4.a.u0(gcVar5, str, gcVar6, null, null, null, new BitmapDrawable((Resources) null, n10), intValue, null, sb3, 1);
                         cg0Var4.d();
                     } else if (hg0Var.L0 == null) {
-                        eg0Var.c.q((t51) arrayList5.get(i11), (org.telegram.messenger.fc) arrayList6.get(i11), str, (org.telegram.messenger.fc) arrayList3.get(i11), hg0Var.L0, null, ((Integer) arrayList2.get(i11)).intValue(), sb3);
+                        eg0Var.c.q((t51) arrayList5.get(i11), (org.telegram.messenger.gc) arrayList6.get(i11), str, (org.telegram.messenger.gc) arrayList3.get(i11), hg0Var.L0, null, ((Integer) arrayList2.get(i11)).intValue(), sb3);
                     } else {
-                        eg0Var.c.q((t51) arrayList5.get(i11), fcVar3, null, (org.telegram.messenger.fc) arrayList3.get(i11), (org.telegram.messenger.fc) arrayList4.get(i11), (fcVar4 == null || !(fcVar4.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), sb3);
+                        eg0Var.c.q((t51) arrayList5.get(i11), gcVar3, null, (org.telegram.messenger.gc) arrayList3.get(i11), (org.telegram.messenger.gc) arrayList4.get(i11), (gcVar4 == null || !(gcVar4.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), sb3);
                     }
                     z10 = z11;
                     if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
@@ -239,7 +239,7 @@ public final class gg0 extends wp {
                 }
             }
             str = null;
-            org.telegram.messenger.fc fcVar42 = (org.telegram.messenger.fc) arrayList4.get(i11);
+            org.telegram.messenger.gc gcVar42 = (org.telegram.messenger.gc) arrayList4.get(i11);
             q9 q9Var22 = this.g;
             i10 = k10;
             if (q9Var22 == null) {
@@ -307,8 +307,8 @@ public final class gg0 extends wp {
         if (hg0Var.j1) {
             size++;
         }
-        org.telegram.messenger.uo uoVar = hg0Var.T0;
-        int j3 = (j() * 2) + Math.max(uoVar == null ? 0 : uoVar.b.size(), size);
+        org.telegram.messenger.vo voVar = hg0Var.T0;
+        int j3 = (j() * 2) + Math.max(voVar == null ? 0 : voVar.b.size(), size);
         for (int i10 = 0; i10 < j3; i10++) {
             arrayList2.add(new eg0());
             arrayList.add(null);

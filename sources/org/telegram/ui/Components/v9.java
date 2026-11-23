@@ -14,7 +14,7 @@ import android.graphics.Typeface;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v9 extends v4.o0 implements eh.a {
     public final Rect E;
@@ -41,11 +41,11 @@ public final class v9 extends v4.o0 implements eh.a {
     public int Z;
     public final ek0 a;
     public int a0;
-    public final org.telegram.messenger.y10 b;
+    public final org.telegram.messenger.z10 b;
     public boolean b0;
-    public final org.telegram.messenger.y10 c;
+    public final org.telegram.messenger.z10 c;
     public float[] c0;
-    public final org.telegram.messenger.v10 d;
+    public final org.telegram.messenger.w10 d;
     public int d0;
     public final int e;
     public float[] e0;
@@ -59,7 +59,7 @@ public final class v9 extends v4.o0 implements eh.a {
     public final Paint x;
     public final RectF y;
 
-    public v9(ek0 ek0Var, org.telegram.messenger.y10 y10Var, org.telegram.messenger.y10 y10Var2, int i7, float f10, ky kyVar, boolean z10, boolean z11, ck0 ck0Var) {
+    public v9(ek0 ek0Var, org.telegram.messenger.z10 z10Var, org.telegram.messenger.z10 z10Var2, int i7, float f10, ky kyVar, boolean z10, boolean z11, ck0 ck0Var) {
         Paint paint = new Paint();
         this.x = paint;
         this.y = new RectF();
@@ -76,8 +76,8 @@ public final class v9 extends v4.o0 implements eh.a {
         this.c0 = new float[48];
         this.e0 = new float[32];
         this.a = ek0Var;
-        this.b = y10Var;
-        this.c = y10Var2;
+        this.b = z10Var;
+        this.c = z10Var2;
         this.e = i7;
         this.f = f10;
         this.d = kyVar;

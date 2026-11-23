@@ -2,13 +2,13 @@ package fi;
 
 import android.app.Activity;
 import c8.ma;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,15 +35,15 @@ public final /* synthetic */ class r1 implements Runnable {
                         hi.l3 l3Var = new hi.l3(z3Var.getContext(), 3);
                         l3Var.o(1.0f, -22.0f);
                         z3Var.r0 = l3Var;
-                        l3Var.j(i0.a.o(i0.a.f(0.13f, -16777216, -1), ks.P3));
+                        l3Var.j(i0.a.o(i0.a.f(0.13f, -16777216, -1), ls.P3));
                         hi.l3 l3Var2 = z3Var.r0;
                         l3Var2.V = false;
-                        l3Var2.v(gd.N0(2131746203, null));
+                        l3Var2.v(hd.N0(2131746203, null));
                         z3Var.r0.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(1.0f));
                         z3Var.M0.addView(z3Var.r0, ma.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, z3Var.h2 ? 0.0f : 56.0f));
                     }
                     z3Var.r0.x();
-                    bz.H(true);
+                    cz.H(true);
                     break;
                 }
                 break;
@@ -102,7 +102,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 break;
             case 11:
                 z3Var.a1(false);
-                mp.g1().edit().putInt("taptostorysoundhint", mp.g1().getInt("taptostorysoundhint", 0) + 1).apply();
+                np.g1().edit().putInt("taptostorysoundhint", np.g1().getInt("taptostorysoundhint", 0) + 1).apply();
                 break;
             default:
                 z3Var.E3 = true;

@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.j71;
 import org.telegram.ui.as0;
@@ -19,7 +19,7 @@ import org.telegram.ui.oj;
 import org.telegram.ui.py0;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i1 extends j71 {
     public final /* synthetic */ int W;
@@ -71,7 +71,7 @@ public final class i1 extends j71 {
                 if (k8Var.a == 0 && motionEvent != null && (E = ek0Var.E(motionEvent.getX(), motionEvent.getY() - k8Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
                     y7 y7Var = (y7) arrayList.get(R);
                     if (y7Var.a == 3 && !y7Var.n) {
-                        boolean z10 = gd.a0;
+                        boolean z10 = hd.a0;
                         float x10 = motionEvent.getX();
                         if (!z10 ? x10 > org.telegram.messenger.g0.L(100.0f) : x10 < k8Var.getWidth() - org.telegram.messenger.g0.L(100.0f)) {
                             i7 = y7Var.i;

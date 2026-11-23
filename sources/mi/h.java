@@ -20,8 +20,8 @@ import li.k0;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout implements b6 {
     public static final /* synthetic */ int I = 0;
@@ -234,7 +234,7 @@ public final class h extends FrameLayout implements b6 {
                 }
             }
         });
-        TextView f10 = n10.f(linearLayout, textView3, ma.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
+        TextView f10 = o10.f(linearLayout, textView3, ma.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
         this.n = f10;
         f10.setTextSize(1, 13.0f);
         int L = g0.L(12.0f);
@@ -248,7 +248,7 @@ public final class h extends FrameLayout implements b6 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
         spannableStringBuilder.setSpan(new nq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) gd.N0(2131751887, null));
+        spannableStringBuilder.append((CharSequence) hd.N0(2131751887, null));
         f10.setText(spannableStringBuilder);
         f10.setVisibility(8);
         linearLayout.addView(f10, ma.k(0.0f, 7.0f, 0.0f, 1.33f, -2, -2));
@@ -270,7 +270,7 @@ public final class h extends FrameLayout implements b6 {
             eVar2.setBackground(background);
             t6.j(eVar2, background, K2, null, h6Var);
         }
-        eVar2.i(gd.N0(2131751592, null), false, true);
+        eVar2.i(hd.N0(2131751592, null), false, true);
         eVar2.setOnClickListener(new View.OnClickListener(this) { // from class: mi.d
             public final /* synthetic */ h b;
 
@@ -329,7 +329,7 @@ public final class h extends FrameLayout implements b6 {
         eVar3.setUseWrapContent(true);
         eVar3.setPadding(g0.L(15.0f), 0, g0.L(15.0f), 0);
         eVar3.f();
-        eVar3.i(gd.N0(2131754483, null), false, true);
+        eVar3.i(hd.N0(2131754483, null), false, true);
         final int i15 = 3;
         eVar3.setOnClickListener(new View.OnClickListener(this) { // from class: mi.d
             public final /* synthetic */ h b;

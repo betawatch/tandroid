@@ -11,12 +11,12 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -113,7 +113,7 @@ public final /* synthetic */ class c implements Runnable {
                 countDownLatchArr[i7].countDown();
                 return;
             default:
-                tr trVar = (tr) this.e;
+                ur urVar = (ur) this.e;
                 int i12 = this.b;
                 ArrayList arrayList3 = this.c;
                 int i13 = this.d;
@@ -125,7 +125,7 @@ public final /* synthetic */ class c implements Runnable {
                 try {
                     ArrayList arrayList6 = new ArrayList();
                     ArrayList arrayList7 = new ArrayList();
-                    SQLiteDatabase sQLiteDatabase = trVar.b;
+                    SQLiteDatabase sQLiteDatabase = urVar.b;
                     Locale locale = Locale.US;
                     ?? r11 = 0;
                     SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT did FROM shortcut_widget WHERE id = " + i12 + " ORDER BY ord ASC", new Object[0]);
@@ -153,7 +153,7 @@ public final /* synthetic */ class c implements Runnable {
                     queryFinalized2.dispose();
                     if (arrayList3.isEmpty() && i13 == 1) {
                         try {
-                            queryFinalized = trVar.getMessagesStorage().b.queryFinalized("SELECT did FROM chat_hints WHERE type = 0 ORDER BY rating DESC LIMIT 4", new Object[0]);
+                            queryFinalized = urVar.getMessagesStorage().b.queryFinalized("SELECT did FROM chat_hints WHERE type = 0 ORDER BY rating DESC LIMIT 4", new Object[0]);
                             while (queryFinalized.next()) {
                                 try {
                                     long longValue2 = queryFinalized.longValue(0);
@@ -169,7 +169,7 @@ public final /* synthetic */ class c implements Runnable {
                                     countDownLatch = countDownLatch2;
                                     z10 = true;
                                     try {
-                                        trVar.o(e, z10);
+                                        urVar.o(e, z10);
                                         if (sQLiteCursor2 != null) {
                                         }
                                         countDownLatch.countDown();
@@ -198,7 +198,7 @@ public final /* synthetic */ class c implements Runnable {
                             countDownLatch = countDownLatch2;
                             z10 = true;
                             sQLiteCursor2 = null;
-                            trVar.o(e, z10);
+                            urVar.o(e, z10);
                             if (sQLiteCursor2 != null) {
                             }
                             countDownLatch.countDown();
@@ -214,10 +214,10 @@ public final /* synthetic */ class c implements Runnable {
                         }
                     }
                     if (arrayList3.isEmpty()) {
-                        queryFinalized = trVar.b.queryFinalized("SELECT d.did, d.last_mid, d.unread_count, d.date, m.data, m.read_state, m.mid, m.send_state, m.date FROM dialogs as d LEFT JOIN messages_v2 as m ON d.last_mid = m.mid AND d.did = m.uid WHERE d.folder_id = 0 ORDER BY d.pinned DESC, d.date DESC LIMIT 0,10", new Object[0]);
+                        queryFinalized = urVar.b.queryFinalized("SELECT d.did, d.last_mid, d.unread_count, d.date, m.data, m.read_state, m.mid, m.send_state, m.date FROM dialogs as d LEFT JOIN messages_v2 as m ON d.last_mid = m.mid AND d.did = m.uid WHERE d.folder_id = 0 ORDER BY d.pinned DESC, d.date DESC LIMIT 0,10", new Object[0]);
                         z11 = true;
                     } else {
-                        SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                        SQLiteDatabase sQLiteDatabase2 = urVar.b;
                         Locale locale2 = Locale.US;
                         queryFinalized = sQLiteDatabase2.queryFinalized("SELECT d.did, d.last_mid, d.unread_count, d.date, m.data, m.read_state, m.mid, m.send_state, m.date FROM dialogs as d LEFT JOIN messages_v2 as m ON d.last_mid = m.mid AND d.did = m.uid WHERE d.did IN(" + TextUtils.join(",", arrayList3) + ")", new Object[0]);
                         z11 = false;
@@ -241,9 +241,9 @@ public final /* synthetic */ class c implements Runnable {
                                     arrayList = arrayList5;
                                     countDownLatch = countDownLatch2;
                                     try {
-                                        TLdeserialize.readAttachPath(byteBufferValue, trVar.getUserConfig().n);
+                                        TLdeserialize.readAttachPath(byteBufferValue, urVar.getUserConfig().n);
                                         byteBufferValue.reuse();
-                                        fj.M5(queryFinalized.intValue(5), TLdeserialize);
+                                        gj.M5(queryFinalized.intValue(5), TLdeserialize);
                                         TLdeserialize.id = queryFinalized.intValue(6);
                                         TLdeserialize.send_state = queryFinalized.intValue(7);
                                         int intValue = queryFinalized.intValue(8);
@@ -253,7 +253,7 @@ public final /* synthetic */ class c implements Runnable {
                                         long j3 = tL_dialog.id;
                                         TLdeserialize.dialog_id = j3;
                                         r62.k(TLdeserialize, j3);
-                                        tr.e(TLdeserialize, arrayList6, arrayList7, null);
+                                        ur.e(TLdeserialize, arrayList6, arrayList7, null);
                                         countDownLatch2 = countDownLatch;
                                         arrayList5 = arrayList;
                                         r11 = 0;
@@ -261,7 +261,7 @@ public final /* synthetic */ class c implements Runnable {
                                         e = e14;
                                         sQLiteCursor2 = queryFinalized;
                                         z10 = true;
-                                        trVar.o(e, z10);
+                                        urVar.o(e, z10);
                                         if (sQLiteCursor2 != null) {
                                         }
                                         countDownLatch.countDown();
@@ -319,7 +319,7 @@ public final /* synthetic */ class c implements Runnable {
                             e = e16;
                             sQLiteCursor2 = sQLiteCursor;
                             z10 = true;
-                            trVar.o(e, z10);
+                            urVar.o(e, z10);
                             if (sQLiteCursor2 != null) {
                                 sQLiteCursor2.dispose();
                             }
@@ -335,10 +335,10 @@ public final /* synthetic */ class c implements Runnable {
                         }
                     }
                     if (!arrayList7.isEmpty()) {
-                        trVar.Q(TextUtils.join(",", arrayList7), arrayList4);
+                        urVar.Q(TextUtils.join(",", arrayList7), arrayList4);
                     }
                     if (!arrayList6.isEmpty()) {
-                        trVar.n0(arrayList6, arrayList8, false);
+                        urVar.n0(arrayList6, arrayList8, false);
                     }
                 } catch (Exception e17) {
                     e = e17;
@@ -354,8 +354,8 @@ public final /* synthetic */ class c implements Runnable {
         }
     }
 
-    public /* synthetic */ c(tr trVar, int i7, ArrayList arrayList, int i10, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
-        this.e = trVar;
+    public /* synthetic */ c(ur urVar, int i7, ArrayList arrayList, int i10, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
+        this.e = urVar;
         this.b = i7;
         this.c = arrayList;
         this.d = i10;

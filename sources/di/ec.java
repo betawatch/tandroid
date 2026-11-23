@@ -11,9 +11,9 @@ import android.graphics.RectF;
 import android.os.Build;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.qc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ec {
     public final int a;
@@ -82,7 +82,7 @@ public final class ec {
     }
 
     public final void b(Canvas canvas, int i7, float f10) {
-        if (pc.e(131072)) {
+        if (qc.e(131072)) {
             int i10 = this.j;
             ArrayList arrayList = this.b;
             int min = Math.min(i10, arrayList.size());
@@ -157,7 +157,7 @@ public final class ec {
     }
 
     public final boolean d() {
-        if (pc.e(131072)) {
+        if (qc.e(131072)) {
             long currentTimeMillis = System.currentTimeMillis();
             float min = (Math.min(this.o - currentTimeMillis, 16L) / 1000.0f) * this.h;
             int i7 = 0;

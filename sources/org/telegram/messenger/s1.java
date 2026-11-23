@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -82,18 +82,18 @@ public final /* synthetic */ class s1 implements RequestDelegate {
                 g0.g3(new a((Runnable) this.b, 24));
                 break;
             case 4:
-                zo zoVar = (zo) this.b;
-                if (zoVar != null) {
+                ap apVar = (ap) this.b;
+                if (apVar != null) {
                     TLRPC.ChannelParticipant channelParticipant = tLObject instanceof TLRPC.TL_channels_channelParticipant ? ((TLRPC.TL_channels_channelParticipant) tLObject).participant : null;
-                    zoVar.a((tL_error != null || channelParticipant == null || channelParticipant.left) ? false : true, channelParticipant != null ? channelParticipant.admin_rights : null, channelParticipant != null ? channelParticipant.rank : null);
+                    apVar.a((tL_error != null || channelParticipant == null || channelParticipant.left) ? false : true, channelParticipant != null ? channelParticipant.admin_rights : null, channelParticipant != null ? channelParticipant.rank : null);
                     break;
                 }
                 break;
             case 5:
-                g0.g3(new fi(27, (fp) this.b, tLObject));
+                g0.g3(new gi(27, (gp) this.b, tLObject));
                 break;
             case 6:
-                gp gpVar = (gp) this.b;
+                hp hpVar = (hp) this.b;
                 ArrayList arrayList = new ArrayList();
                 if (tLObject instanceof TLRPC.TL_savedMusic) {
                     ArrayList<TLRPC.Document> arrayList2 = ((TLRPC.TL_savedMusic) tLObject).documents;
@@ -102,24 +102,24 @@ public final /* synthetic */ class s1 implements RequestDelegate {
                     while (i11 < size) {
                         TLRPC.Document document = arrayList2.get(i11);
                         i11++;
-                        arrayList.add(gpVar.d(document));
+                        arrayList.add(hpVar.d(document));
                     }
                 }
-                g0.g3(new kg(gpVar, tLObject, arrayList, 15));
+                g0.g3(new lg(hpVar, tLObject, arrayList, 15));
                 break;
             case 7:
-                e00 e00Var = (e00) this.b;
+                f00 f00Var = (f00) this.b;
                 if (tLObject != null) {
-                    e00Var.getMessagesController().V3((TLRPC.Updates) tLObject, false);
+                    f00Var.getMessagesController().V3((TLRPC.Updates) tLObject, false);
                     break;
                 } else {
-                    e00Var.getClass();
+                    f00Var.getClass();
                     break;
                 }
             default:
-                j10 j10Var = (j10) this.b;
-                j10Var.getClass();
-                g0.g3(new rq(25, j10Var, tLObject));
+                k10 k10Var = (k10) this.b;
+                k10Var.getClass();
+                g0.g3(new sq(25, k10Var, tLObject));
                 break;
         }
     }

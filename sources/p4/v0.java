@@ -1,9 +1,9 @@
 package p4;
 
-import ai.t1;
 import ai.u1;
+import ai.v1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v0 implements c1 {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final /* synthetic */ class v0 implements c1 {
                 if (e0Var != null) {
                     throw new ClassCastException();
                 }
-                e1.k1(null, vVar, i7, this.b, new u1(vVar, i7, 21));
+                e1.k1(null, vVar, i7, this.b, new v1(vVar, i7, 21));
                 throw null;
             default:
-                return e1.k1(e0Var, vVar, i7, this.b, new t1(e0Var, vVar, i7, 19));
+                return e1.k1(e0Var, vVar, i7, this.b, new u1(e0Var, vVar, i7, 19));
         }
     }
 }

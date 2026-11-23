@@ -19,11 +19,11 @@ import c8.l9;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fs;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.r4;
@@ -36,9 +36,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cd0;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class i extends FrameLayout implements fs {
+public final class i extends FrameLayout implements gs {
     public ek0 E;
     public ArrayList F;
     public int G;
@@ -69,10 +69,10 @@ public final class i extends FrameLayout implements fs {
         arrayList.add(new a("Theme"));
         arrayList.add(new a("Draw action bar shadow", new cd0(20)));
         arrayList.add(new a("Show blur settings", new d(this, 0)));
-        arrayList.add(new a(gd.N0(2131751635, null)));
-        arrayList.add(new a(gd.N0(bz.J0 ? 2131751626 : 2131751618, null), new d(this, 1)));
+        arrayList.add(new a(hd.N0(2131751635, null)));
+        arrayList.add(new a(hd.N0(cz.J0 ? 2131751626 : 2131751618, null), new d(this, 1)));
         arrayList.add(new a(m6.I.q() ? "Switch to day theme" : "Switch to dark theme", new cd0(21)));
-        arrayList.add(new a(gd.N0(2131751601, null), new d(this, 2)));
+        arrayList.add(new a(hd.N0(2131751601, null), new d(this, 2)));
         return arrayList;
     }
 
@@ -176,9 +176,9 @@ public final class i extends FrameLayout implements fs {
         invalidate();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.q4) {
+        if (i7 == ls.q4) {
             d();
             this.E.getAdapter().f();
         }
@@ -215,7 +215,7 @@ public final class i extends FrameLayout implements fs {
         hVar2.a(0.75f);
         gVar2.m = hVar2;
         this.d = gVar2;
-        ks.e().c(this, ks.q4);
+        ls.e().c(this, ls.q4);
     }
 
     @Override // android.view.View
@@ -236,7 +236,7 @@ public final class i extends FrameLayout implements fs {
         super.onDetachedFromWindow();
         this.c.d();
         this.d.d();
-        ks.e().n(this, ks.q4);
+        ls.e().n(this, ls.q4);
     }
 
     @Override // android.view.View

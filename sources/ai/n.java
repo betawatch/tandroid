@@ -17,11 +17,11 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.nt;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ot;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Dictation.DictationAsr;
@@ -32,7 +32,7 @@ import org.telegram.ui.Wallet.j9;
 import org.telegram.ui.Wallet.n6;
 import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -93,15 +93,15 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 5:
-                gc t6 = i4.h().t(gd.N0(2131749560, null), null);
+                gc t6 = i4.h().t(hd.N0(2131749560, null), null);
                 t6.t = true;
                 t6.j();
                 break;
             case 6:
-                ks.e().k(99, 512);
+                ls.e().k(99, 512);
                 break;
             case 7:
-                lc.Y().N(gd.N0(2131745665, null), gd.N0(2131751093, null)).j();
+                lc.Y().N(hd.N0(2131745665, null), hd.N0(2131751093, null)).j();
                 break;
             case 8:
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
@@ -130,7 +130,7 @@ public final /* synthetic */ class n implements Runnable {
                 if ((T2 instanceof qb1) && (c02 = ((qb1) T2).c0()) != null) {
                     T2 = c02;
                 }
-                gc Q2 = (T2 != null ? lc.b0(T2) : lc.Y()).Q(R.raw.ic_delete, 36, gd.N0(2131750199, null));
+                gc Q2 = (T2 != null ? lc.b0(T2) : lc.Y()).Q(R.raw.ic_delete, 36, hd.N0(2131750199, null));
                 Q2.t = true;
                 Q2.j();
                 break;
@@ -168,7 +168,7 @@ public final /* synthetic */ class n implements Runnable {
             case 18:
                 break;
             case 19:
-                mp.g1().edit().putInt("storydualhint", mp.g1().getInt("storydualhint", 0) + 1).apply();
+                np.g1().edit().putInt("storydualhint", np.g1().getInt("storydualhint", 0) + 1).apply();
                 break;
             case 20:
                 break;
@@ -183,10 +183,10 @@ public final /* synthetic */ class n implements Runnable {
                 break;
             case 24:
                 int i14 = AppStartReceiver.a;
-                bz.t();
-                if (bz.s.length() > 0) {
-                    bz.x = true;
-                    bz.y();
+                cz.t();
+                if (cz.s.length() > 0) {
+                    cz.x = true;
+                    cz.y();
                 }
                 org.telegram.messenger.t0.x();
                 break;
@@ -220,16 +220,16 @@ public final /* synthetic */ class n implements Runnable {
                 org.telegram.utils.twidget.p1.d(org.telegram.messenger.t0.b);
                 break;
             default:
-                if (((nt) org.telegram.messenger.t0.l()).hasServices()) {
-                    ((nt) org.telegram.messenger.t0.l()).onRequestPushToken();
+                if (((ot) org.telegram.messenger.t0.l()).hasServices()) {
+                    ((ot) org.telegram.messenger.t0.l()).onRequestPushToken();
                     break;
                 } else {
                     if (org.telegram.messenger.s2.a) {
-                        ((nt) org.telegram.messenger.t0.l()).getClass();
+                        ((ot) org.telegram.messenger.t0.l()).getClass();
                         a8.b("No valid Google Play Services APK found.");
                     }
-                    bz.h = "__NO_GOOGLE_PLAY_SERVICES__";
-                    ((nt) org.telegram.messenger.t0.l()).getClass();
+                    cz.h = "__NO_GOOGLE_PLAY_SERVICES__";
+                    ((ot) org.telegram.messenger.t0.l()).getClass();
                     PushListenerController.sendRegistrationToServer(2, null);
                     break;
                 }

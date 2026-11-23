@@ -1,13 +1,13 @@
 package di;
 
-import org.telegram.messenger.fj;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n1 implements x10 {
+public final /* synthetic */ class n1 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f6 b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class n1 implements x10 {
         this.b = f6Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         TLRPC.Message message;
         switch (this.a) {
@@ -51,8 +51,8 @@ public final /* synthetic */ class n1 implements x10 {
                 f6Var3.K2 = true;
                 if (savedStarGift != null) {
                     f6Var3.l3 = Boolean.valueOf(savedStarGift.unsaved);
-                    fj fjVar = f6Var3.D2;
-                    if (fjVar != null && (message = fjVar.k) != null) {
+                    gj gjVar = f6Var3.D2;
+                    if (gjVar != null && (message = gjVar.k) != null) {
                         TLRPC.MessageAction messageAction = message.action;
                         if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
                             TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
@@ -69,7 +69,7 @@ public final /* synthetic */ class n1 implements x10 {
                                 tL_messageActionStarGift.saved = z13;
                             }
                         }
-                        f6Var3.v2(fjVar, null);
+                        f6Var3.v2(gjVar, null);
                         break;
                     }
                 }

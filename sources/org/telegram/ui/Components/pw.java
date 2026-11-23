@@ -14,7 +14,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pw implements org.telegram.ui.ls {
     public final /* synthetic */ ty a;
@@ -54,7 +54,7 @@ public final class pw implements org.telegram.ui.ls {
     @Override // org.telegram.ui.ls
     public final void F(TLRPC.Document document) {
         TLRPC.TL_stickers_removeStickerFromSet tL_stickers_removeStickerFromSet = new TLRPC.TL_stickers_removeStickerFromSet();
-        tL_stickers_removeStickerFromSet.sticker = org.telegram.messenger.ri.c0(document, "").document;
+        tL_stickers_removeStickerFromSet.sticker = org.telegram.messenger.si.c0(document, "").document;
         ConnectionsManager.getInstance(this.a.d1).sendRequest(tL_stickers_removeStickerFromSet, new f2(this, 3));
     }
 
@@ -79,12 +79,12 @@ public final class pw implements org.telegram.ui.ls {
 
     @Override // org.telegram.ui.ls
     public final void H(TLRPC.Document document) {
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(org.telegram.messenger.fj.U(document));
+        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(org.telegram.messenger.gj.U(document));
         valueOf.setSpan(new y5(document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
         if (org.telegram.messenger.g0.g(valueOf)) {
             ty tyVar = this.a;
             org.telegram.ui.ActionBar.g2 g2Var = tyVar.Z1;
-            org.telegram.messenger.n10.t(null, 2131751172, g2Var != null ? lc.b0(g2Var) : new lc(tyVar.r, tyVar.a2));
+            org.telegram.messenger.o10.t(null, 2131751172, g2Var != null ? lc.b0(g2Var) : new lc(tyVar.r, tyVar.a2));
         }
     }
 
@@ -125,10 +125,10 @@ public final class pw implements org.telegram.ui.ls {
     @Override // org.telegram.ui.ls
     public final Boolean P(TLRPC.Document document) {
         TLRPC.User f10;
-        if (!org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q() || (f10 = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).f()) == null) {
+        if (!org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q() || (f10 = org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).f()) == null) {
             return null;
         }
-        Long i7 = org.telegram.messenger.o10.i(f10);
+        Long i7 = org.telegram.messenger.p10.i(f10);
         return Boolean.valueOf(document != null && (i7 == null || i7.longValue() != document.id));
     }
 
@@ -191,7 +191,7 @@ public final class pw implements org.telegram.ui.ls {
         ty tyVar = this.a;
         org.telegram.ui.ActionBar.g2 g2Var = tyVar.Z1;
         if ((g2Var instanceof org.telegram.ui.bn) && ((org.telegram.ui.bn) g2Var).T6()) {
-            return org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q() || (((org.telegram.ui.bn) tyVar.Z1).j() != null && org.telegram.messenger.o10.C(((org.telegram.ui.bn) tyVar.Z1).j()));
+            return org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q() || (((org.telegram.ui.bn) tyVar.Z1).j() != null && org.telegram.messenger.p10.C(((org.telegram.ui.bn) tyVar.Z1).j()));
         }
         return false;
     }
@@ -218,7 +218,7 @@ public final class pw implements org.telegram.ui.ls {
             }
         }
         ty tyVar = this.a;
-        kw0.N0(tyVar.Z1, org.telegram.messenger.ri.d0(tyVar.d1).o0(inputStickerSet, true), document);
+        kw0.N0(tyVar.Z1, org.telegram.messenger.si.d0(tyVar.d1).o0(inputStickerSet, true), document);
     }
 
     @Override // org.telegram.ui.ls
@@ -291,16 +291,16 @@ public final class pw implements org.telegram.ui.ls {
             tL_emojiStatus.document_id = document.id;
             emojiStatus = tL_emojiStatus;
         }
-        TLRPC.User f10 = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).f();
+        TLRPC.User f10 = org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).f();
         Object tL_emojiStatusEmpty = f10 == null ? new TLRPC.TL_emojiStatusEmpty() : f10.emoji_status;
-        org.telegram.messenger.mp.u1(tyVar.d1).t5(emojiStatus, null);
+        org.telegram.messenger.np.u1(tyVar.d1).t5(emojiStatus, null);
         ou ouVar = new ou(1, this, tL_emojiStatusEmpty);
         if (document != null) {
-            (g2Var != null ? lc.b0(g2Var) : new lc(frameLayout, h6Var)).r(document, org.telegram.messenger.gd.N0(2131745349, null), org.telegram.messenger.gd.N0(2131743642, null), ouVar).j();
+            (g2Var != null ? lc.b0(g2Var) : new lc(frameLayout, h6Var)).r(document, org.telegram.messenger.hd.N0(2131745349, null), org.telegram.messenger.hd.N0(2131743640, null), ouVar).j();
             return;
         }
         yb ybVar = new yb(tyVar.getContext(), h6Var);
-        ybVar.b.setText(org.telegram.messenger.gd.N0(2131746091, null));
+        ybVar.b.setText(org.telegram.messenger.hd.N0(2131746091, null));
         ImageView imageView = ybVar.a;
         imageView.setImageResource(R.drawable.msg_settings_premium);
         imageView.setScaleX(0.8f);
@@ -331,7 +331,7 @@ public final class pw implements org.telegram.ui.ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ org.telegram.messenger.fj z() {
+    public final /* synthetic */ org.telegram.messenger.gj z() {
         return null;
     }
 
@@ -340,7 +340,7 @@ public final class pw implements org.telegram.ui.ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ void i(org.telegram.messenger.sy syVar) {
+    public final /* synthetic */ void i(org.telegram.messenger.ty tyVar) {
     }
 
     @Override // org.telegram.ui.ls

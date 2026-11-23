@@ -14,12 +14,12 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.k3;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class s0 extends WebView {
     public static final /* synthetic */ int W = 0;
@@ -135,7 +135,7 @@ public final class s0 extends WebView {
                 v0Var3.I();
                 z10 = true;
             }
-            if (bz.v0) {
+            if (cz.v0) {
                 setBackgroundColor(i10);
             }
         }

@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bz0 extends rg.b {
     public final /* synthetic */ SaveToGallerySettingsActivity d;
@@ -46,15 +46,15 @@ public final class bz0 extends rg.b {
         }
         if (((cz0) arrayList.get(i7)).a == 6) {
             org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
-            org.telegram.messenger.lv c02 = saveToGallerySettingsActivity.c0();
+            org.telegram.messenger.mv c02 = saveToGallerySettingsActivity.c0();
             if (i7 == saveToGallerySettingsActivity.e) {
-                s8Var.f(org.telegram.messenger.gd.N0(2131745724, null), c02.a, true);
+                s8Var.f(org.telegram.messenger.hd.N0(2131745724, null), c02.a, true);
                 int i10 = org.telegram.ui.ActionBar.m6.ck;
                 s8Var.c(saveToGallerySettingsActivity.getThemedColor(i10), R.drawable.msg_filled_data_photos);
                 SaveToGallerySettingsActivity.b0(saveToGallerySettingsActivity, s8Var, i10);
                 return;
             }
-            s8Var.f(org.telegram.messenger.gd.N0(2131745717, null), c02.b, false);
+            s8Var.f(org.telegram.messenger.hd.N0(2131745717, null), c02.b, false);
             int i11 = org.telegram.ui.ActionBar.m6.Zj;
             s8Var.c(saveToGallerySettingsActivity.getThemedColor(i11), R.drawable.msg_filled_data_videos);
             SaveToGallerySettingsActivity.b0(saveToGallerySettingsActivity, s8Var, i11);
@@ -68,19 +68,19 @@ public final class bz0 extends rg.b {
             }
             long j3 = saveToGallerySettingsActivity.c0().c;
             if (saveToGallerySettingsActivity.c != null) {
-                a9Var.setText(org.telegram.messenger.gd.a0("SaveToGalleryVideoHintCurrent", null, 2131745720, new Object[0]));
+                a9Var.setText(org.telegram.messenger.hd.a0("SaveToGalleryVideoHintCurrent", null, 2131745720, new Object[0]));
                 return;
             }
             int i12 = saveToGallerySettingsActivity.a;
             if (i12 == 1) {
-                a9Var.setText(org.telegram.messenger.gd.a0("SaveToGalleryVideoHintUser", null, 2131745718, new Object[0]));
+                a9Var.setText(org.telegram.messenger.hd.a0("SaveToGalleryVideoHintUser", null, 2131745718, new Object[0]));
                 return;
             } else if (i12 == 4) {
-                a9Var.setText(org.telegram.messenger.gd.a0("SaveToGalleryVideoHintChannels", null, 2131745721, new Object[0]));
+                a9Var.setText(org.telegram.messenger.hd.a0("SaveToGalleryVideoHintChannels", null, 2131745721, new Object[0]));
                 return;
             } else {
                 if (i12 == 2) {
-                    a9Var.setText(org.telegram.messenger.gd.a0("SaveToGalleryVideoHintGroup", null, 2131745719, new Object[0]));
+                    a9Var.setText(org.telegram.messenger.hd.a0("SaveToGalleryVideoHintGroup", null, 2131745719, new Object[0]));
                     return;
                 }
                 return;
@@ -92,33 +92,33 @@ public final class bz0 extends rg.b {
         }
         if (((cz0) arrayList.get(i7)).a == 2) {
             org.telegram.ui.Cells.ra raVar = (org.telegram.ui.Cells.ra) view;
-            org.telegram.messenger.kv kvVar = ((cz0) arrayList.get(i7)).c;
-            TLObject g22 = saveToGallerySettingsActivity.getMessagesController().g2(kvVar.d);
+            org.telegram.messenger.lv lvVar = ((cz0) arrayList.get(i7)).c;
+            TLObject g22 = saveToGallerySettingsActivity.getMessagesController().g2(lvVar.d);
             if (g22 instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) g22;
-                str = user.self ? org.telegram.messenger.gd.N0(2131745705, null) : org.telegram.messenger.i5.m(0, user.first_name, user.last_name);
+                str = user.self ? org.telegram.messenger.hd.N0(2131745705, null) : org.telegram.messenger.i5.m(0, user.first_name, user.last_name);
             } else {
                 str = g22 instanceof TLRPC.Chat ? ((TLRPC.Chat) g22).title : null;
             }
             raVar.setSelfAsSavedMessages(true);
             StringBuilder sb2 = new StringBuilder();
-            if (kvVar.a()) {
-                if (kvVar.a) {
-                    sb2.append(org.telegram.messenger.gd.N0(2131745724, null));
+            if (lvVar.a()) {
+                if (lvVar.a) {
+                    sb2.append(org.telegram.messenger.hd.N0(2131745724, null));
                 }
-                if (kvVar.b) {
+                if (lvVar.b) {
                     if (sb2.length() != 0) {
                         sb2.append(", ");
                     }
-                    long j10 = kvVar.c;
+                    long j10 = lvVar.c;
                     if (j10 <= 0 || j10 >= 4194304000L) {
-                        sb2.append(org.telegram.messenger.gd.a0("SaveToGalleryVideos", null, 2131745717, new Object[0]));
+                        sb2.append(org.telegram.messenger.hd.a0("SaveToGalleryVideos", null, 2131745717, new Object[0]));
                     } else {
-                        sb2.append(org.telegram.messenger.gd.a0("SaveToGalleryVideosUpTo", null, 2131745716, org.telegram.messenger.g0.i0(j10, true, false)));
+                        sb2.append(org.telegram.messenger.hd.a0("SaveToGalleryVideosUpTo", null, 2131745716, org.telegram.messenger.g0.i0(j10, true, false)));
                     }
                 }
             } else {
-                sb2.append(org.telegram.messenger.gd.N0(2131745725, null));
+                sb2.append(org.telegram.messenger.hd.N0(2131745725, null));
             }
             raVar.d(g22, str, sb2, i7 == arrayList.size() - 1 || ((cz0) arrayList.get(i7 + 1)).a == 2);
         }
@@ -136,7 +136,7 @@ public final class bz0 extends rg.b {
         switch (i7) {
             case 1:
                 org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-                n8Var.o(R.drawable.msg_contact_add, org.telegram.messenger.gd.N0(2131747729, null), true);
+                n8Var.o(R.drawable.msg_contact_add, org.telegram.messenger.hd.N0(2131747729, null), true);
                 n8Var.g(org.telegram.ui.ActionBar.m6.v6, org.telegram.ui.ActionBar.m6.u6);
                 org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var, null);
                 view3 = n8Var;
@@ -153,7 +153,7 @@ public final class bz0 extends rg.b {
                 break;
             case 4:
                 org.telegram.ui.Cells.n8 n8Var2 = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-                n8Var2.k(org.telegram.messenger.gd.N0(2131747721, null), false);
+                n8Var2.k(org.telegram.messenger.hd.N0(2131747721, null), false);
                 n8Var2.g(-1, org.telegram.ui.ActionBar.m6.p7);
                 org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var2, null);
                 view2 = n8Var2;
@@ -208,10 +208,10 @@ public final class bz0 extends rg.b {
                 org.telegram.ui.Cells.qa qaVar = new org.telegram.ui.Cells.qa(saveToGallerySettingsActivity.getParentActivity(), saveToGallerySettingsActivity.getResourceProvider());
                 if (org.telegram.messenger.n5.E(saveToGallerySettingsActivity.b)) {
                     i11 = ((org.telegram.ui.ActionBar.g2) saveToGallerySettingsActivity).currentAccount;
-                    O0 = org.telegram.messenger.mp.u1(i11).c2(Long.valueOf(saveToGallerySettingsActivity.b));
+                    O0 = org.telegram.messenger.np.u1(i11).c2(Long.valueOf(saveToGallerySettingsActivity.b));
                 } else {
                     i10 = ((org.telegram.ui.ActionBar.g2) saveToGallerySettingsActivity).currentAccount;
-                    O0 = org.telegram.messenger.mp.u1(i10).O0(Long.valueOf(-saveToGallerySettingsActivity.b));
+                    O0 = org.telegram.messenger.np.u1(i10).O0(Long.valueOf(-saveToGallerySettingsActivity.b));
                 }
                 qaVar.a(null, O0);
                 org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, qaVar, saveToGallerySettingsActivity.getResourceProvider());

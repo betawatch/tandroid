@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sf0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -37,24 +37,24 @@ public final class sf0 extends FrameLayout {
                 if (!arrayList.isEmpty()) {
                     mx mxVar = (mx) i5.c.h(1, arrayList);
                     ImageReceiver imageReceiver = mxVar.r;
-                    org.telegram.messenger.fc fcVar = imageReceiver.g0;
-                    if (fcVar == null) {
-                        fcVar = imageReceiver.P;
+                    org.telegram.messenger.gc gcVar = imageReceiver.g0;
+                    if (gcVar == null) {
+                        gcVar = imageReceiver.P;
                     }
-                    if (fcVar == null) {
-                        fcVar = imageReceiver.X;
+                    if (gcVar == null) {
+                        gcVar = imageReceiver.X;
                     }
-                    if (fcVar != null) {
+                    if (gcVar != null) {
                         if (mxVar.s == null) {
-                            TLRPC.Document document = fcVar.i;
+                            TLRPC.Document document = gcVar.i;
                             if (document != null) {
                                 mxVar.s = org.telegram.messenger.w7.r("tgs", document);
                             } else {
-                                mxVar.s = org.telegram.messenger.w7.r("tgs", fcVar.f);
+                                mxVar.s = org.telegram.messenger.w7.r("tgs", gcVar.f);
                             }
                         }
                         if (mxVar.s != null) {
-                            Float w10 = org.telegram.messenger.ec.D().w(mxVar.s);
+                            Float w10 = org.telegram.messenger.fc.D().w(mxVar.s);
                             if (w10 == null) {
                                 w10 = Float.valueOf(1.0f);
                             }
@@ -141,7 +141,7 @@ public final class sf0 extends FrameLayout {
                         }
                         ag0Var.setX((org.telegram.messenger.g0.L(7.0f) + iArr[0]) - ag0Var.getMeasuredWidth());
                         if (eg0Var.g0) {
-                            org.telegram.messenger.n10.o(ag0Var.animate().translationY(((eg0Var.X.getHeight() + iArr[1]) - ag0Var.getMeasuredHeight()) - ag0Var.getTop()), pi.k.V, 250L);
+                            org.telegram.messenger.o10.o(ag0Var.animate().translationY(((eg0Var.X.getHeight() + iArr[1]) - ag0Var.getMeasuredHeight()) - ag0Var.getTop()), pi.k.V, 250L);
                         } else {
                             ag0Var.setY((eg0Var.X.getHeight() + iArr[1]) - ag0Var.getMeasuredHeight());
                         }

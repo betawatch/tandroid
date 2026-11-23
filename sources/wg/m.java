@@ -1,24 +1,24 @@
 package wg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ TLRPC.Chat b;
     public final /* synthetic */ int c;
     public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ x10 e;
+    public final /* synthetic */ y10 e;
 
-    public /* synthetic */ m(TLRPC.Chat chat, int i7, ArrayList arrayList, x10 x10Var, int i10) {
+    public /* synthetic */ m(TLRPC.Chat chat, int i7, ArrayList arrayList, y10 y10Var, int i10) {
         this.a = i10;
         this.b = chat;
         this.c = i7;
         this.d = arrayList;
-        this.e = x10Var;
+        this.e = y10Var;
     }
 
     @Override // java.lang.Runnable

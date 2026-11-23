@@ -1,16 +1,16 @@
 package ai;
 
 import android.text.TextUtils;
-import bi.p6;
+import bi.o6;
 import di.f6;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e implements q10 {
+public final /* synthetic */ class e implements r10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -24,7 +24,7 @@ public final /* synthetic */ class e implements q10 {
         this.e = fVar;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         TLRPC.TL_textWithEntities tL_textWithEntities;
         switch (this.a) {
@@ -54,7 +54,7 @@ public final /* synthetic */ class e implements q10 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (stargiftdepositpayload != null) {
                     di.p2 p2Var = new di.p2(f6Var, new boolean[1], t1Var, e2Var, this.b, stargiftdepositpayload);
-                    di.f2 f2Var = new di.f2(1, new Runnable[]{org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new p6(1, f2Var, p2Var))}, p2Var);
+                    di.f2 f2Var = new di.f2(1, new Runnable[]{org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new o6(1, f2Var, p2Var))}, p2Var);
                     org.telegram.messenger.g0.h3(f2Var, 5000L);
                     break;
                 } else {

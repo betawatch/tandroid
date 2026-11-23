@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.wm0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -169,7 +169,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 g6 g6Var2 = (g6) obj2;
                 f6 f6Var = (f6) obj;
                 TLRPC.TL_wallPaper tL_wallPaper = f6Var.a;
-                w7.G(j10.t0);
+                w7.G(k10.t0);
                 File J = w7.J(tL_wallPaper.document, null, true, true);
                 ArrayList arrayList4 = f6Var.b;
                 int size4 = arrayList4.size();

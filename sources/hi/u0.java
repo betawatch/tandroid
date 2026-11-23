@@ -10,13 +10,13 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class u0 extends View {
     public float E;
@@ -231,7 +231,7 @@ public final class u0 extends View {
             }
             if (this.x != null) {
                 canvas2.save();
-                n10.k(this.x.getHeight(), f12, rectF.centerY(), (rectF.left + org.telegram.messenger.g0.L(52.0f)) - this.E, canvas2);
+                o10.k(this.x.getHeight(), f12, rectF.centerY(), (rectF.left + org.telegram.messenger.g0.L(52.0f)) - this.E, canvas2);
                 this.c.setAlpha((int) (f16 * f13));
                 this.x.draw(canvas2);
                 canvas2.restore();
@@ -291,6 +291,6 @@ public final class u0 extends View {
     }
 
     public u0(Context context) {
-        this(context, gd.N0(2131746724, null));
+        this(context, hd.N0(2131746724, null));
     }
 }

@@ -11,9 +11,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e implements na.e {
     public static final Charset f = Charset.forName("UTF-8");
@@ -224,17 +224,17 @@ public final class e implements na.e {
 
     public final void k(int i7) {
         while ((i7 & (-128)) != 0) {
-            this.a.write((i7 & ks.L1) | 128);
+            this.a.write((i7 & ls.L1) | 128);
             i7 >>>= 7;
         }
-        this.a.write(i7 & ks.L1);
+        this.a.write(i7 & ls.L1);
     }
 
     public final void l(long j3) {
         while (((-128) & j3) != 0) {
-            this.a.write((((int) j3) & ks.L1) | 128);
+            this.a.write((((int) j3) & ls.L1) | 128);
             j3 >>>= 7;
         }
-        this.a.write(((int) j3) & ks.L1);
+        this.a.write(((int) j3) & ls.L1);
     }
 }

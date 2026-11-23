@@ -21,7 +21,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cd1 extends org.telegram.ui.ActionBar.g2 {
     public WebView a;
@@ -31,32 +31,32 @@ public final class cd1 extends org.telegram.ui.ActionBar.g2 {
     public final String e;
     public final String f;
     public final String h;
-    public final org.telegram.messenger.fj n;
+    public final org.telegram.messenger.gj n;
     public final String r;
     public m4 s;
 
-    public cd1(String str, String str2, String str3, String str4, org.telegram.messenger.fj fjVar) {
+    public cd1(String str, String str2, String str3, String str4, org.telegram.messenger.gj gjVar) {
         super(null);
         this.s = new m4(this, 17);
         this.d = str;
         this.e = str2;
         this.f = str3;
-        this.n = fjVar;
+        this.n = gjVar;
         this.r = str4;
         StringBuilder sb2 = new StringBuilder("https://");
-        sb2.append(org.telegram.messenger.mp.u1(this.currentAccount).X2);
+        sb2.append(org.telegram.messenger.np.u1(this.currentAccount).X2);
         sb2.append("/");
         sb2.append(str2);
         sb2.append(TextUtils.isEmpty(str4) ? "" : p5.c.k("?game=", str4));
         this.h = sb2.toString();
     }
 
-    public static void a0(String str, org.telegram.messenger.fj fjVar, Activity activity, String str2, String str3) {
+    public static void a0(String str, org.telegram.messenger.gj gjVar, Activity activity, String str2, String str3) {
         String str4;
         String str5 = "";
         try {
             SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("botshare", 0);
-            String string = sharedPreferences.getString("" + fjVar.e1(), null);
+            String string = sharedPreferences.getString("" + gjVar.e1(), null);
             StringBuilder sb2 = new StringBuilder(string != null ? string : "");
             StringBuilder sb3 = new StringBuilder("tgShareScoreUrl=" + URLEncoder.encode("tgb://share_game_score?hash=", "UTF-8"));
             if (string == null) {
@@ -78,13 +78,13 @@ public final class cd1 extends org.telegram.ui.ActionBar.g2 {
             }
             SharedPreferences.Editor edit = sharedPreferences.edit();
             edit.putInt(((Object) sb2) + "_date", (int) (System.currentTimeMillis() / 1000));
-            SerializedData serializedData = new SerializedData(fjVar.k.getObjectSize());
-            fjVar.k.serializeToStream(serializedData);
+            SerializedData serializedData = new SerializedData(gjVar.k.getObjectSize());
+            gjVar.k.serializeToStream(serializedData);
             edit.putString(((Object) sb2) + "_m", Utilities.f(serializedData.toByteArray()));
             String str6 = ((Object) sb2) + "_link";
             StringBuilder sb4 = new StringBuilder();
             sb4.append("https://");
-            sb4.append(org.telegram.messenger.mp.u1(fjVar.K1).X2);
+            sb4.append(org.telegram.messenger.np.u1(gjVar.K1).X2);
             sb4.append("/");
             sb4.append(str3);
             if (!TextUtils.isEmpty(str2)) {
@@ -121,7 +121,7 @@ public final class cd1 extends org.telegram.ui.ActionBar.g2 {
         this.actionBar.setActionBarMenuOnItemClick(new ad1(this));
         org.telegram.ui.ActionBar.y s5 = this.actionBar.s();
         this.b = s5.g(1, R.drawable.share, org.telegram.messenger.g0.L(54.0f));
-        s5.a(0, R.drawable.ic_ab_other).e(2, R.drawable.msg_openin, org.telegram.messenger.gd.N0(2131747602, null));
+        s5.a(0, R.drawable.ic_ab_other).e(2, R.drawable.msg_openin, org.telegram.messenger.hd.N0(2131747602, null));
         this.actionBar.setTitle(this.f);
         this.actionBar.setSubtitle("@" + this.e);
         org.telegram.ui.Components.qq qqVar = new org.telegram.ui.Components.qq(context, 1);

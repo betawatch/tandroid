@@ -26,14 +26,14 @@ import oi.z5;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.r10;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
@@ -57,7 +57,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.n6;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements Runnable {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final /* synthetic */ class y implements Runnable {
                 tL_connectedBot.recipients = tL_businessBotRecipients;
                 g2 T = LaunchActivity.T();
                 if (T != null) {
-                    lc.b0(T).Q(R.raw.contact_check, 36, gd.a0(null, null, 2131752772, o10.q(k0Var.U1))).j();
+                    lc.b0(T).Q(R.raw.contact_check, 36, hd.a0(null, null, 2131752772, p10.q(k0Var.U1))).j();
                     return;
                 }
                 return;
@@ -111,7 +111,7 @@ public final /* synthetic */ class y implements Runnable {
                     return;
                 } else {
                     u0Var.a.b(false);
-                    f3.o(null, 2131743636, lc.b0(u0Var), null);
+                    f3.o(null, 2131743634, lc.b0(u0Var), null);
                     return;
                 }
             case 3:
@@ -128,7 +128,7 @@ public final /* synthetic */ class y implements Runnable {
                     SerializedData serializedData = new SerializedData(tLObject2.getObjectSize());
                     tLObject2.serializeToStream(serializedData);
                     sharedPreferences.edit().putString("timezones", Utilities.f(serializedData.toByteArray())).apply();
-                    ks.f(z1Var.a).k(ks.t3, new Object[0]);
+                    ls.f(z1Var.a).k(ls.t3, new Object[0]);
                 }
                 z1Var.c = true;
                 z1Var.b = false;
@@ -136,7 +136,7 @@ public final /* synthetic */ class y implements Runnable {
             case 5:
                 ArrayList arrayList2 = (ArrayList) this.b;
                 HashMap hashMap = (HashMap) this.c;
-                x10 x10Var = (x10) this.d;
+                y10 y10Var = (y10) this.d;
                 ArrayList arrayList3 = new ArrayList();
                 for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                     TLRPC.User user = (TLRPC.User) arrayList2.get(i10);
@@ -147,7 +147,7 @@ public final /* synthetic */ class y implements Runnable {
                     oVar.b = z10;
                     arrayList3.add(oVar);
                 }
-                x10Var.a(arrayList3);
+                y10Var.a(arrayList3);
                 return;
             case 6:
                 boolean[] zArr = (boolean[]) this.b;
@@ -177,7 +177,7 @@ public final /* synthetic */ class y implements Runnable {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.c;
                 TLRPC.User user2 = (TLRPC.User) this.d;
                 org.telegram.messenger.g0.g(connectedbotstarref.url);
-                lc.b0(h3Var).I(R.raw.copy, gd.N0(2131754330, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131754331, ki.j.J0(connectedbotstarref.commission_permille), o10.q(user2)))).j();
+                lc.b0(h3Var).I(R.raw.copy, hd.N0(2131754330, null), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131754331, ki.j.J0(connectedbotstarref.commission_permille), p10.q(user2)))).j();
                 return;
             case 9:
                 h3.D0((h3) this.b, (TLObject) this.c, (org.telegram.ui.ActionBar.t1) this.d);
@@ -329,7 +329,7 @@ public final /* synthetic */ class y implements Runnable {
                 ((VideoPlayerHolderBase) this.b).lambda$release$3((TLRPC.Document) this.c, (Runnable) this.d);
                 return;
             case 22:
-                ((q10) this.b).a((TLRPC.Updates) this.c, (TLRPC.TL_error) this.d);
+                ((r10) this.b).a((TLRPC.Updates) this.c, (TLRPC.TL_error) this.d);
                 return;
             case 23:
                 ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
@@ -383,8 +383,8 @@ public final /* synthetic */ class y implements Runnable {
                 }
                 TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject5;
                 l6Var.h0 = w7.r(null, tL_wallPaper.document);
-                ks.f(l6Var.F).b(l6Var, ks.Y1);
-                ks.f(l6Var.F).b(l6Var, ks.Z1);
+                ls.f(l6Var.F).b(l6Var, ls.Y1);
+                ls.f(l6Var.F).b(l6Var, ls.Z1);
                 w7.G(l6Var2.F).W(tL_wallPaper.document, tL_wallPaper, 1, 1);
                 return;
             case 27:

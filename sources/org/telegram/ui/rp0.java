@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.util.Property;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rp0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -59,15 +59,15 @@ public final class rp0 extends AnimatorListenerAdapter {
             photoViewer.D1.a();
             int q10 = photoViewer.C4.q();
             int o4 = photoViewer.C4.o();
-            org.telegram.messenger.we weVar = nq0Var.c;
-            if (weVar != null) {
-                int i10 = weVar.k;
+            org.telegram.messenger.xe xeVar = nq0Var.c;
+            if (xeVar != null) {
+                int i10 = xeVar.k;
                 if (i10 == 90 || i10 == 270) {
                     o4 = q10;
                     q10 = o4;
                 }
-                q10 = (int) (q10 * weVar.e);
-                o4 = (int) (o4 * weVar.f);
+                q10 = (int) (q10 * xeVar.e);
+                o4 = (int) (o4 * xeVar.f);
             }
             float f10 = q10;
             float f11 = o4;

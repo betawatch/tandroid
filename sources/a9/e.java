@@ -14,13 +14,13 @@ import j6.w;
 import j6.x;
 import kotlin.jvm.internal.j;
 import m.o3;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import q6.m;
 import q6.q;
 import q7.l1;
 import y8.o;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class e {
             default:
                 switch (this.a) {
                     case 1:
-                        return new m7.e(context, looper, ks.K1, commonSettings, kVar, lVar, 0);
+                        return new m7.e(context, looper, ls.K1, commonSettings, kVar, lVar, 0);
                     case 2:
                         com.google.android.gms.common.api.a apiOptions = (com.google.android.gms.common.api.a) obj;
                         j.e(context, "context");
@@ -78,7 +78,7 @@ public final class e {
                         j.e(looper, "looper");
                         j.e(commonSettings, "commonSettings");
                         j.e(apiOptions3, "apiOptions");
-                        return new k7.e(context, looper, ks.X5, commonSettings, kVar, lVar, 0);
+                        return new k7.e(context, looper, ls.X5, commonSettings, kVar, lVar, 0);
                     case 9:
                         return new l7.c(context, looper, kVar, lVar, commonSettings);
                     case 10:
@@ -92,7 +92,7 @@ public final class e {
                     case 18:
                         return new u7.k(context, looper, kVar, lVar, commonSettings);
                     case 19:
-                        return new v6.f(context, looper, ks.f5, commonSettings, kVar, lVar, 0);
+                        return new v6.f(context, looper, ls.f5, commonSettings, kVar, lVar, 0);
                 }
             case 4:
                 f6.e eVar = (f6.e) obj;
@@ -103,13 +103,13 @@ public final class e {
                 m.i(eVar2, "Setting the API options is required.");
                 return new w(context, looper, commonSettings, eVar2.a, 0, eVar2.b, eVar2.c, kVar, lVar);
             case 6:
-                return new t(context, looper, ks.r2, commonSettings, kVar, lVar, 0);
+                return new t(context, looper, ls.r2, commonSettings, kVar, lVar, 0);
             case 8:
                 return new y1(context, looper, 40, commonSettings, kVar, lVar, 0);
             case 11:
                 return new e8.a(context, looper, kVar, lVar, commonSettings);
             case 12:
-                return new l1(context, looper, ks.e2, commonSettings, kVar, lVar, 0);
+                return new l1(context, looper, ls.e2, commonSettings, kVar, lVar, 0);
             case 13:
                 commonSettings.getClass();
                 Integer num = (Integer) commonSettings.g;

@@ -18,9 +18,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class g1 extends PopupWindow {
     public static Method k;
@@ -52,7 +52,7 @@ public class g1 extends PopupWindow {
     public g1(View view, int i7, int i10) {
         super(view, i7, i10);
         this.b = true;
-        this.c = ks.g2;
+        this.c = ls.g2;
         this.f = -1L;
         this.j = new h2.f((int[]) null);
         e();
@@ -93,8 +93,8 @@ public class g1 extends PopupWindow {
         ofFloat.addUpdateListener(new hi.j3(actionBarPopupWindow$ActionBarPopupWindowLayout, 12));
         actionBarPopupWindow$ActionBarPopupWindowLayout.a = false;
         actionBarPopupWindow$ActionBarPopupWindowLayout.b = true;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f10), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, ks.e4), ofFloat);
-        animatorSet.setDuration((i7 * 16) + ks.g2);
+        animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f10), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, ls.e4), ofFloat);
+        animatorSet.setDuration((i7 * 16) + ls.g2);
         animatorSet.addListener(new ki.m3(actionBarPopupWindow$ActionBarPopupWindowLayout, 9));
         animatorSet.start();
     }
@@ -300,8 +300,8 @@ public class g1 extends PopupWindow {
             }
             AnimatorSet animatorSet = new AnimatorSet();
             this.a = animatorSet;
-            animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f10), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, ks.e4));
-            this.a.setDuration((i11 * 16) + ks.g2);
+            animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f10), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, ls.e4));
+            this.a.setDuration((i11 * 16) + ls.g2);
             this.a.addListener(new b1(this, i7));
             this.a.start();
         }

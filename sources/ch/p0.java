@@ -2,12 +2,12 @@ package ch;
 
 import android.text.TextUtils;
 import j$.util.Objects;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p0 {
     public boolean a;
@@ -83,7 +83,7 @@ public final class p0 {
     public final p0 a() {
         String V;
         long j3 = this.g;
-        return (j3 == 0 || (V = fj.V(p5.e(j10.t0, j3), null, null)) == null) ? this : b(V);
+        return (j3 == 0 || (V = gj.V(p5.e(k10.t0, j3), null, null)) == null) ? this : b(V);
     }
 
     public final boolean equals(Object obj) {
@@ -127,8 +127,8 @@ public final class p0 {
             return this.f;
         }
         long j3 = this.g;
-        if (j3 != 0 && (e10 = p5.e(j10.t0, j3)) != null) {
-            return fj.V(e10, null, null);
+        if (j3 != 0 && (e10 = p5.e(k10.t0, j3)) != null) {
+            return gj.V(e10, null, null);
         }
         StringBuilder sb2 = new StringBuilder("VisibleReaction{");
         sb2.append(this.g);

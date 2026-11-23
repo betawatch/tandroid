@@ -12,17 +12,17 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xe extends qn0 {
     public final /* synthetic */ ChatActivityEnterView H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xe(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.bn bnVar, org.telegram.messenger.mp mpVar, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final a3.h hVar, org.telegram.ui.ActionBar.h6 h6Var) {
+    public xe(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.bn bnVar, org.telegram.messenger.np npVar, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final a3.h hVar, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.H = chatActivityEnterView;
         this.b = true;
-        this.c = org.telegram.messenger.ks.g2;
+        this.c = org.telegram.messenger.ls.g2;
         this.f = -1L;
         this.j = new h2.f((int[]) null);
         e();
@@ -51,7 +51,7 @@ public final class xe extends qn0 {
         this.p = textView;
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.m5, h6Var);
         textView.setTextSize(1, 16.0f);
-        textView.setText(org.telegram.messenger.gd.N0(2131745404, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131745404, null));
         textView.setTypeface(org.telegram.messenger.g0.o(), 1);
         int L = org.telegram.messenger.g0.L(18.0f);
         textView.setPadding(L, org.telegram.messenger.g0.L(12.0f), L, org.telegram.messenger.g0.L(12.0f));
@@ -63,7 +63,7 @@ public final class xe extends qn0 {
         v4.c0 c0Var = new v4.c0();
         this.w = c0Var;
         ek0Var.setLayoutManager(c0Var);
-        ek0Var.setAdapter(new ln0(h6Var, arrayList, mpVar, width, peer));
+        ek0Var.setAdapter(new ln0(h6Var, arrayList, npVar, width, peer));
         ek0Var.j(new mn0(this));
         ek0Var.setOnItemClickListener(new qj0(arrayList, context, bnVar, z10, hVar) { // from class: org.telegram.ui.Components.jn0
             public final /* synthetic */ List b;
@@ -85,7 +85,7 @@ public final class xe extends qn0 {
         View view = new View(context);
         this.u = view;
         Drawable drawable = context.getDrawable(R.drawable.header_shadow);
-        drawable.setAlpha(org.telegram.messenger.ks.j2);
+        drawable.setAlpha(org.telegram.messenger.ls.j2);
         view.setBackground(drawable);
         view.setAlpha(0.0f);
         frameLayout.addView(view, c8.ma.c(4.0f, -1));

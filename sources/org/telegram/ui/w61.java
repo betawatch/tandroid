@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w61 implements org.telegram.ui.ActionBar.h6 {
     public org.telegram.ui.ActionBar.h6 a;
@@ -41,8 +41,8 @@ public final class w61 implements org.telegram.ui.ActionBar.h6 {
         this.g = textPaint2;
         TextPaint textPaint3 = new TextPaint();
         this.h = textPaint3;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, org.telegram.messenger.bz.W0) - 2));
-        textPaint2.setTextSize(org.telegram.messenger.g0.L(Math.max(16, org.telegram.messenger.bz.W0) - 2));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, org.telegram.messenger.cz.W0) - 2));
+        textPaint2.setTextSize(org.telegram.messenger.g0.L(Math.max(16, org.telegram.messenger.cz.W0) - 2));
         textPaint3.setTextSize(org.telegram.messenger.g0.L(15.0f));
         textPaint3.setTypeface(org.telegram.messenger.g0.o());
         paint.setColor(352321536);
@@ -58,7 +58,7 @@ public final class w61 implements org.telegram.ui.ActionBar.h6 {
         boolean z10 = drawable instanceof org.telegram.ui.Components.cb0;
         TextPaint textPaint = this.g;
         TextPaint textPaint2 = this.f;
-        if ((z10 || (drawable instanceof BitmapDrawable)) && org.telegram.messenger.bz.o() != 0 && org.telegram.messenger.pc.e(32)) {
+        if ((z10 || (drawable instanceof BitmapDrawable)) && org.telegram.messenger.cz.o() != 0 && org.telegram.messenger.qc.e(32)) {
             Bitmap bitmap = z10 ? ((org.telegram.ui.Components.cb0) drawable).k : drawable instanceof BitmapDrawable ? ((BitmapDrawable) drawable).getBitmap() : null;
             if (this.i != bitmap) {
                 this.i = bitmap;
@@ -129,12 +129,12 @@ public final class w61 implements org.telegram.ui.ActionBar.h6 {
         }
         paint.setShader(this.j);
         paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        paint.setAlpha(org.telegram.messenger.ks.e4);
+        paint.setAlpha(org.telegram.messenger.ls.e4);
         paint2.setShader(this.j);
         ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
         org.telegram.messenger.g0.n2(colorMatrix2, 0.85f);
         paint2.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-        paint2.setAlpha(org.telegram.messenger.ks.e4);
+        paint2.setAlpha(org.telegram.messenger.ls.e4);
     }
 
     @Override // org.telegram.ui.ActionBar.h6
@@ -197,7 +197,7 @@ public final class w61 implements org.telegram.ui.ActionBar.h6 {
 
     @Override // org.telegram.ui.ActionBar.h6
     public final boolean h() {
-        return org.telegram.messenger.bz.H0;
+        return org.telegram.messenger.cz.H0;
     }
 
     @Override // org.telegram.ui.ActionBar.h6

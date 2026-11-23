@@ -10,11 +10,11 @@ import android.os.Parcel;
 import java.util.HashMap;
 import l8.e;
 import m8.f;
-import org.telegram.messenger.bb;
-import org.telegram.messenger.ca;
 import org.telegram.messenger.cb;
 import org.telegram.messenger.da;
-import org.telegram.messenger.fa;
+import org.telegram.messenger.db;
+import org.telegram.messenger.ea;
+import org.telegram.messenger.ga;
 import org.telegram.messenger.j1;
 import org.telegram.messenger.o;
 import org.telegram.ui.Components.al;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.fl;
 import org.telegram.ui.aa0;
 import v7.i;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c extends q {
     public final /* synthetic */ int b = 1;
@@ -51,13 +51,13 @@ public final class c extends q {
                     v7.b.a(parcel);
                     o oVar = (o) this.c;
                     f fVar = new f(iVar);
-                    da daVar = (da) oVar.b;
-                    cb cbVar = (cb) oVar.c;
-                    HashMap hashMap = daVar.b;
-                    if (((ca) hashMap.get(fVar)) == null) {
-                        hashMap.put(fVar, new ca(fVar));
+                    ea eaVar = (ea) oVar.b;
+                    db dbVar = (db) oVar.c;
+                    HashMap hashMap = eaVar.b;
+                    if (((da) hashMap.get(fVar)) == null) {
+                        hashMap.put(fVar, new da(fVar));
                     }
-                    cbVar.onClick();
+                    dbVar.onClick();
                     parcel2.writeNoException();
                     parcel2.writeInt(1);
                     break;
@@ -73,15 +73,15 @@ public final class c extends q {
                         eVar = queryLocalInterface2 instanceof e ? (e) queryLocalInterface2 : new e(readStrongBinder2, "com.google.android.gms.maps.internal.IGoogleMapDelegate", 11);
                     }
                     v7.b.a(parcel);
-                    fa faVar = (fa) this.c;
+                    ga gaVar = (ga) this.c;
                     a aVar = new a(eVar);
-                    r7 r7Var = faVar.a;
-                    q0.a aVar2 = faVar.b;
-                    da daVar2 = new da();
-                    daVar2.b = new HashMap();
-                    daVar2.c = new HashMap();
-                    daVar2.a = aVar;
-                    aVar2.accept(daVar2);
+                    r7 r7Var = gaVar.a;
+                    q0.a aVar2 = gaVar.b;
+                    ea eaVar2 = new ea();
+                    eaVar2.b = new HashMap();
+                    eaVar2.c = new HashMap();
+                    eaVar2.a = aVar;
+                    aVar2.accept(eaVar2);
                     r7Var.r((l0) r7Var.b);
                     parcel2.writeNoException();
                     break;
@@ -107,7 +107,7 @@ public final class c extends q {
                 if (i7 == 1) {
                     int readInt = parcel.readInt();
                     v7.b.a(parcel);
-                    bb bbVar = (bb) ((j1) this.c).b;
+                    cb cbVar = (cb) ((j1) this.c).b;
                     int i10 = 2;
                     if (readInt != 2) {
                         i10 = 3;
@@ -115,7 +115,7 @@ public final class c extends q {
                             i10 = 1;
                         }
                     }
-                    bbVar.c(i10);
+                    cbVar.c(i10);
                     parcel2.writeNoException();
                     break;
                 }
@@ -169,8 +169,8 @@ public final class c extends q {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(fa faVar) {
+    public c(ga gaVar) {
         super("com.google.android.gms.maps.internal.IOnMapReadyCallback", 12);
-        this.c = faVar;
+        this.c = gaVar;
     }
 }

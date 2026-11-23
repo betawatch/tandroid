@@ -1,17 +1,17 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q10 b;
+    public final /* synthetic */ r10 b;
     public final /* synthetic */ Exception c;
 
-    public /* synthetic */ w(q10 q10Var, Exception exc, int i7) {
+    public /* synthetic */ w(r10 r10Var, Exception exc, int i7) {
         this.a = i7;
-        this.b = q10Var;
+        this.b = r10Var;
         this.c = exc;
     }
 

@@ -8,9 +8,9 @@ import f3.i0;
 import h2.l0;
 import java.math.RoundingMode;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class g implements i {
     public final h2.x a;
@@ -106,10 +106,10 @@ public final class g implements i {
                             if (i24 != 0) {
                                 byte[] bArr = xVar2.a;
                                 int i25 = this.j;
-                                bArr[0] = (byte) ((i25 >> 24) & ks.e4);
-                                bArr[1] = (byte) ((i25 >> 16) & ks.e4);
-                                bArr[2] = (byte) ((i25 >> 8) & ks.e4);
-                                bArr[3] = (byte) (i25 & ks.e4);
+                                bArr[0] = (byte) ((i25 >> 24) & ls.e4);
+                                bArr[1] = (byte) ((i25 >> 16) & ls.e4);
+                                bArr[2] = (byte) ((i25 >> 8) & ls.e4);
+                                bArr[3] = (byte) (i25 & ls.e4);
                                 this.i = 4;
                                 this.j = 0;
                                 if (i24 != 3 && i24 != 4) {
@@ -327,10 +327,10 @@ public final class g implements i {
                             int i41 = 65535;
                             for (int i42 = 0; i42 < i39; i42++) {
                                 byte b13 = bArr3[i42];
-                                int i43 = (((b13 & 255) >> 4) ^ ((i41 >> 12) & ks.e4)) & ks.e4;
+                                int i43 = (((b13 & 255) >> 4) ^ ((i41 >> 12) & ls.e4)) & ls.e4;
                                 int[] iArr = l0.k;
                                 int i44 = (iArr[i43] ^ ((i41 << 4) & 65535)) & 65535;
-                                i41 = (iArr[((b13 & 15) ^ ((i44 >> 12) & ks.e4)) & ks.e4] ^ ((i44 << 4) & 65535)) & 65535;
+                                i41 = (iArr[((b13 & 15) ^ ((i44 >> 12) & ls.e4)) & ls.e4] ^ ((i44 << 4) & 65535)) & 65535;
                             }
                             if (i40 != i41) {
                                 throw t0.a(null, "CRC check failed");

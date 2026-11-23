@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import j$.util.Objects;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.z21;
@@ -23,7 +23,7 @@ import org.telegram.ui.b31;
 import org.telegram.ui.hc1;
 import org.telegram.ui.os;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n2 extends TextView {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final class n2 extends TextView {
         switch (this.a) {
             case 5:
                 super.onAttachedToWindow();
-                ks.e().c((os) this.b, ks.l4);
+                ls.e().c((os) this.b, ls.l4);
                 break;
             default:
                 super.onAttachedToWindow();
@@ -96,7 +96,7 @@ public final class n2 extends TextView {
         switch (this.a) {
             case 5:
                 super.onDetachedFromWindow();
-                ks.e().n((os) this.b, ks.l4);
+                ls.e().n((os) this.b, ls.l4);
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -188,7 +188,7 @@ public final class n2 extends TextView {
                 break;
             case 3:
                 super.onMeasure(i7, i10);
-                if (gd.a0) {
+                if (hd.a0) {
                     ((z21) this.b).b.setPivotX(getMeasuredWidth());
                     break;
                 }

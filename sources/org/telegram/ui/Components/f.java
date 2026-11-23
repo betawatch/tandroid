@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements org.telegram.messenger.x10 {
+public final /* synthetic */ class f implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ n0 b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class f implements org.telegram.messenger.x10 {
         this.b = n0Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         int i7 = this.a;
         int i10 = 0;
@@ -27,7 +27,7 @@ public final /* synthetic */ class f implements org.telegram.messenger.x10 {
                 TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj;
                 n0Var.s2.b.add(0, aiComposeTone);
                 n0Var.E1();
-                new lc(n0Var.E2, n0Var.J0).p(aiComposeTone.emoji_id, org.telegram.messenger.gd.a0(null, null, 2131754956, aiComposeTone.title), org.telegram.messenger.gd.N0(2131754957, null)).j();
+                new lc(n0Var.E2, n0Var.J0).p(aiComposeTone.emoji_id, org.telegram.messenger.hd.a0(null, null, 2131754956, aiComposeTone.title), org.telegram.messenger.hd.N0(2131754957, null)).j();
                 break;
             case 2:
                 TL_aicompose.AiComposeTone aiComposeTone2 = (TL_aicompose.AiComposeTone) obj;

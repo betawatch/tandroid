@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ru0 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class ru0 implements Runnable {
                         lcVar = org.telegram.ui.Components.lc.b0(LaunchActivity.T());
                     }
                     if (lcVar != null) {
-                        org.telegram.ui.Components.gc I = lcVar.I(R.raw.msg_antispam, org.telegram.messenger.gd.N0(2131746026, null), org.telegram.messenger.gd.N0(2131745989, null));
+                        org.telegram.ui.Components.gc I = lcVar.I(R.raw.msg_antispam, org.telegram.messenger.hd.N0(2131746026, null), org.telegram.messenger.hd.N0(2131745989, null));
                         I.j = 5000;
                         I.j();
                         break;
@@ -90,7 +90,7 @@ public final /* synthetic */ class ru0 implements Runnable {
             case 12:
                 org.telegram.ui.Components.a30 a30Var = (org.telegram.ui.Components.a30) obj;
                 a30Var.dismiss();
-                vf.c.t(a30Var.getContext(), org.telegram.messenger.gd.N0(2131746422, null));
+                vf.c.t(a30Var.getContext(), org.telegram.messenger.hd.N0(2131746422, null));
                 break;
             case 13:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.h10) obj).c;
@@ -107,7 +107,7 @@ public final /* synthetic */ class ru0 implements Runnable {
                 uz0Var.O.invalidate();
                 break;
             case 15:
-                ((org.telegram.messenger.ks) obj).o();
+                ((org.telegram.messenger.ls) obj).o();
                 break;
             case 16:
                 org.telegram.messenger.g0.T3(((k01) obj).c, true, true);

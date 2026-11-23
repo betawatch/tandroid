@@ -10,18 +10,18 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cb0;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ba extends LinearLayout {
     public final f E;
@@ -123,7 +123,7 @@ public class ba extends LinearLayout {
         if (org.telegram.ui.ActionBar.m6.d != null) {
             invalidate();
         }
-        boolean z10 = this.F == null && bz.H0;
+        boolean z10 = this.F == null && cz.H0;
         if (z10) {
             drawable = getCompactBackground();
         }
@@ -154,7 +154,7 @@ public class ba extends LinearLayout {
         while (i7 < 2) {
             Drawable drawable3 = i7 == 0 ? this.d : this.c;
             if (drawable3 != null) {
-                int i10 = (i7 != 1 || this.d == null || (r4Var == null && !this.G)) ? ks.e4 : (int) (255.0f * e10);
+                int i10 = (i7 != 1 || this.d == null || (r4Var == null && !this.G)) ? ls.e4 : (int) (255.0f * e10);
                 if (i10 > 0) {
                     drawable3.setAlpha(i10);
                     if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof cb0)) {
@@ -255,8 +255,8 @@ public class ba extends LinearLayout {
         super(context);
         int i10;
         String str;
-        fj fjVar;
-        fj fjVar2;
+        gj gjVar;
+        gj gjVar2;
         int i11;
         r1[] r1VarArr;
         Context context2 = context;
@@ -266,7 +266,7 @@ public class ba extends LinearLayout {
         this.E = new f(this, 11);
         this.H = new org.telegram.ui.Components.d6(this, 0L, 350L, nr.h);
         this.w = i12;
-        int i13 = j10.t0;
+        int i13 = k10.t0;
         this.s = r4Var;
         setWillNotDraw(false);
         setOrientation(1);
@@ -277,13 +277,13 @@ public class ba extends LinearLayout {
         if (i12 == 3) {
             boolean z10 = j3 < 0;
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
-            tL_message.message = gd.N0(z10 ? 2131752421 : 2131743508, null);
+            tL_message.message = hd.N0(z10 ? 2131752421 : 2131743506, null);
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
             tL_message.reply_to = tL_messageReplyHeader;
             tL_messageReplyHeader.flags |= 1;
             if (j3 == 0) {
                 tL_messageReplyHeader.reply_to_peer_id = new TLRPC.TL_peerUser();
-                tL_message.reply_to.reply_to_peer_id.user_id = j10.i(j10.t0).e();
+                tL_message.reply_to.reply_to_peer_id.user_id = k10.i(k10.t0).e();
             } else {
                 tL_messageReplyHeader.reply_to_peer_id = new TLRPC.TL_peerChannel();
                 tL_message.reply_to.reply_to_peer_id.channel_id = -j3;
@@ -293,9 +293,9 @@ public class ba extends LinearLayout {
             message.media = new TLRPC.TL_messageMediaEmpty();
             if (j3 == 0) {
                 tL_message.replyMessage.from_id = new TLRPC.TL_peerUser();
-                tL_message.replyMessage.from_id.user_id = j10.i(j10.t0).e();
+                tL_message.replyMessage.from_id.user_id = k10.i(k10.t0).e();
                 tL_message.replyMessage.peer_id = new TLRPC.TL_peerUser();
-                tL_message.replyMessage.peer_id.user_id = j10.i(j10.t0).e();
+                tL_message.replyMessage.peer_id.user_id = k10.i(k10.t0).e();
             } else {
                 tL_message.replyMessage.from_id = new TLRPC.TL_peerChannel();
                 TLRPC.Message message2 = tL_message.replyMessage;
@@ -304,27 +304,27 @@ public class ba extends LinearLayout {
                 message2.peer_id = new TLRPC.TL_peerChannel();
                 tL_message.replyMessage.peer_id.channel_id = j10;
             }
-            tL_message.replyMessage.message = gd.N0(z10 ? 2131752418 : 2131743505, null);
+            tL_message.replyMessage.message = hd.N0(z10 ? 2131752418 : 2131743503, null);
             TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
             tL_message.media = tL_messageMediaWebPage;
             tL_messageMediaWebPage.webpage = new TLRPC.TL_webPage();
             TLRPC.WebPage webPage = tL_message.media.webpage;
             webPage.embed_url = "https://telegram.org/";
             webPage.flags |= 2;
-            webPage.site_name = gd.N0(R.string.AppName, null);
+            webPage.site_name = hd.N0(R.string.AppName, null);
             TLRPC.WebPage webPage2 = tL_message.media.webpage;
             webPage2.flags |= 4;
-            webPage2.title = gd.N0(z10 ? 2131752419 : 2131743506, null);
+            webPage2.title = hd.N0(z10 ? 2131752419 : 2131743504, null);
             TLRPC.WebPage webPage3 = tL_message.media.webpage;
             webPage3.flags |= 8;
-            webPage3.description = gd.N0(z10 ? 2131752420 : 2131743507, null);
+            webPage3.description = hd.N0(z10 ? 2131752420 : 2131743505, null);
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
-            tL_message.flags = ks.i4;
+            tL_message.flags = ls.i4;
             if (j3 == 0) {
                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
                 tL_message.from_id = tL_peerUser;
-                tL_peerUser.user_id = j10.i(j10.t0).e();
+                tL_peerUser.user_id = k10.i(k10.t0).e();
             } else {
                 TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
                 tL_message.from_id = tL_peerChannel;
@@ -341,40 +341,40 @@ public class ba extends LinearLayout {
                 tL_message.peer_id = tL_peerChannel2;
                 tL_peerChannel2.channel_id = -j3;
             }
-            fj fjVar3 = new fj(j10.t0, tL_message, true, false);
-            fjVar3.w1 = true;
-            fjVar3.l2 = true;
-            fjVar3.S1 = false;
-            fjVar3.T = 1L;
-            fjVar2 = fjVar3;
+            gj gjVar3 = new gj(k10.t0, tL_message, true, false);
+            gjVar3.w1 = true;
+            gjVar3.l2 = true;
+            gjVar3.S1 = false;
+            gjVar3.T = 1L;
+            gjVar2 = gjVar3;
         } else if (i12 == 2) {
             TLRPC.TL_message tL_message2 = new TLRPC.TL_message();
-            tL_message2.message = gd.N0(2131751341, null);
+            tL_message2.message = hd.N0(2131751341, null);
             tL_message2.date = currentTimeMillis - 3540;
             tL_message2.dialog_id = 1L;
-            tL_message2.flags = ks.i4;
+            tL_message2.flags = ls.i4;
             TLRPC.TL_peerUser tL_peerUser3 = new TLRPC.TL_peerUser();
             tL_message2.from_id = tL_peerUser3;
-            tL_peerUser3.user_id = j10.i(j10.t0).e();
+            tL_peerUser3.user_id = k10.i(k10.t0).e();
             tL_message2.id = 1;
             tL_message2.media = new TLRPC.TL_messageMediaEmpty();
             tL_message2.out = false;
             TLRPC.TL_peerUser tL_peerUser4 = new TLRPC.TL_peerUser();
             tL_message2.peer_id = tL_peerUser4;
             tL_peerUser4.user_id = 0L;
-            fjVar2 = new fj(j10.t0, tL_message2, true, false);
-            fjVar2.S1 = false;
-            fjVar2.T = 1L;
-            fjVar2.G = gd.N0(2131751339, null);
-            fjVar2.m2 = context2.getDrawable(R.drawable.dino_pic);
-            fjVar2.e1 = 5;
-            fjVar2.f1 = 0L;
+            gjVar2 = new gj(k10.t0, tL_message2, true, false);
+            gjVar2.S1 = false;
+            gjVar2.T = 1L;
+            gjVar2.G = hd.N0(2131751339, null);
+            gjVar2.m2 = context2.getDrawable(R.drawable.dino_pic);
+            gjVar2.e1 = 5;
+            gjVar2.f1 = 0L;
         } else {
             TLRPC.TL_message tL_message3 = new TLRPC.TL_message();
             if (i12 == 0) {
-                tL_message3.message = gd.N0(2131750588, null);
+                tL_message3.message = hd.N0(2131750588, null);
             } else {
-                tL_message3.message = gd.N0(2131748061, null);
+                tL_message3.message = hd.N0(2131748061, null);
             }
             int indexOf = tL_message3.message.indexOf("👋");
             if (indexOf >= 0) {
@@ -387,22 +387,22 @@ public class ba extends LinearLayout {
             int i14 = currentTimeMillis - 3540;
             tL_message3.date = i14;
             tL_message3.dialog_id = 1L;
-            tL_message3.flags = ks.i4;
+            tL_message3.flags = ls.i4;
             TLRPC.TL_peerUser tL_peerUser5 = new TLRPC.TL_peerUser();
             tL_message3.from_id = tL_peerUser5;
-            tL_peerUser5.user_id = j10.i(j10.t0).e();
+            tL_peerUser5.user_id = k10.i(k10.t0).e();
             tL_message3.id = 1;
             tL_message3.media = new TLRPC.TL_messageMediaEmpty();
             tL_message3.out = true;
             TLRPC.TL_peerUser tL_peerUser6 = new TLRPC.TL_peerUser();
             tL_message3.peer_id = tL_peerUser6;
             tL_peerUser6.user_id = 0L;
-            fj fjVar4 = new fj(j10.t0, tL_message3, true, false);
+            gj gjVar4 = new gj(k10.t0, tL_message3, true, false);
             TLRPC.TL_message tL_message4 = new TLRPC.TL_message();
             if (i12 == 0) {
-                tL_message4.message = gd.N0(2131750590, null);
+                tL_message4.message = hd.N0(2131750590, null);
             } else {
-                String N0 = gd.N0(2131748063, null);
+                String N0 = hd.N0(2131748063, null);
                 StringBuilder sb2 = new StringBuilder(N0);
                 int indexOf2 = N0.indexOf(42);
                 int lastIndexOf = N0.lastIndexOf(42);
@@ -427,30 +427,30 @@ public class ba extends LinearLayout {
             }
             tL_message4.date = currentTimeMillis - 2640;
             tL_message4.dialog_id = 1L;
-            tL_message4.flags = ks.i4;
+            tL_message4.flags = ls.i4;
             TLRPC.TL_peerUser tL_peerUser7 = new TLRPC.TL_peerUser();
             tL_message4.from_id = tL_peerUser7;
-            tL_peerUser7.user_id = j10.i(j10.t0).e();
+            tL_peerUser7.user_id = k10.i(k10.t0).e();
             tL_message4.id = 1;
             tL_message4.media = new TLRPC.TL_messageMediaEmpty();
             tL_message4.out = true;
             TLRPC.TL_peerUser tL_peerUser8 = new TLRPC.TL_peerUser();
             tL_message4.peer_id = tL_peerUser8;
             tL_peerUser8.user_id = 0L;
-            fj fjVar5 = new fj(j10.t0, tL_message4, true, false);
-            fjVar5.S1 = false;
-            fjVar5.e1 = 5;
-            fjVar5.f1 = 0L;
-            fjVar5.T = 1L;
+            gj gjVar5 = new gj(k10.t0, tL_message4, true, false);
+            gjVar5.S1 = false;
+            gjVar5.e1 = 5;
+            gjVar5.f1 = 0L;
+            gjVar5.T = 1L;
             TLRPC.TL_message tL_message5 = new TLRPC.TL_message();
             if (i12 == 0) {
-                tL_message5.message = gd.N0(2131750591, null);
+                tL_message5.message = hd.N0(2131750591, null);
             } else {
-                tL_message5.message = gd.N0(2131748064, null);
+                tL_message5.message = hd.N0(2131748064, null);
             }
             tL_message5.date = i14;
             tL_message5.dialog_id = 1L;
-            tL_message5.flags = ks.o4;
+            tL_message5.flags = ls.o4;
             tL_message5.from_id = new TLRPC.TL_peerUser();
             tL_message5.id = 1;
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader2 = new TLRPC.TL_messageReplyHeader();
@@ -462,26 +462,26 @@ public class ba extends LinearLayout {
             tL_message5.out = false;
             TLRPC.TL_peerUser tL_peerUser9 = new TLRPC.TL_peerUser();
             tL_message5.peer_id = tL_peerUser9;
-            tL_peerUser9.user_id = j10.i(j10.t0).e();
-            fj fjVar6 = new fj(j10.t0, tL_message5, true, false);
+            tL_peerUser9.user_id = k10.i(k10.t0).e();
+            gj gjVar6 = new gj(k10.t0, tL_message5, true, false);
             if (i12 == 0) {
                 str = null;
             } else {
                 str = null;
-                fjVar6.D0 = gd.N0(2131748062, null);
+                gjVar6.D0 = hd.N0(2131748062, null);
             }
-            fjVar6.T = 1L;
-            fjVar6.S1 = false;
-            fjVar6.C = fjVar4;
+            gjVar6.T = 1L;
+            gjVar6.S1 = false;
+            gjVar6.C = gjVar4;
             if (i12 == 4) {
                 TLRPC.TL_user tL_user = new TLRPC.TL_user();
-                String N02 = gd.N0(2131749202, str);
+                String N02 = hd.N0(2131749202, str);
                 tL_user.first_name = N02;
-                fjVar6.G = N02;
-                fjVar6.m2 = new org.telegram.ui.Components.b9(0, tL_user);
+                gjVar6.G = N02;
+                gjVar6.m2 = new org.telegram.ui.Components.b9(0, tL_user);
             }
-            fjVar = fjVar6;
-            fjVar2 = fjVar5;
+            gjVar = gjVar6;
+            gjVar2 = gjVar5;
             i11 = i10;
             while (true) {
                 r1VarArr = this.n;
@@ -494,9 +494,9 @@ public class ba extends LinearLayout {
                 r1 r1Var = this.n[i11];
                 r1Var.f6 = (i15 == 2 || i15 == 4) ? 1 : i10;
                 r1Var.setFullyDraw(true);
-                fj fjVar7 = i11 == 0 ? fjVar : fjVar2;
-                if (fjVar7 != null) {
-                    this.n[i11].y3(fjVar7, null, false, false, false, false);
+                gj gjVar7 = i11 == 0 ? gjVar : gjVar2;
+                if (gjVar7 != null) {
+                    this.n[i11].y3(gjVar7, null, false, false, false, false);
                     addView(this.n[i11], c8.ma.o(-1, -2));
                 }
                 i11++;
@@ -505,7 +505,7 @@ public class ba extends LinearLayout {
                 i12 = i15;
             }
         }
-        fjVar = null;
+        gjVar = null;
         i10 = 0;
         i11 = i10;
         while (true) {

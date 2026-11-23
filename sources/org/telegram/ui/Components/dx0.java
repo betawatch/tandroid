@@ -6,14 +6,14 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dx0 extends Drawable {
     public boolean a;
     public final d6 b;
     public final Drawable c;
     public final Drawable d;
-    public int e = org.telegram.messenger.ks.e4;
+    public int e = org.telegram.messenger.ls.e4;
 
     public dx0(org.telegram.ui.Cells.r1 r1Var) {
         this.b = new d6(r1Var, 420L, nr.h);

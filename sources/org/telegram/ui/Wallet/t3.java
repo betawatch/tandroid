@@ -1,10 +1,10 @@
 package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class t3 implements Runnable {
                 break;
             default:
                 if (lc.a(g2Var)) {
-                    lc.b0(g2Var).I(R.raw.contact_check, gd.N0(2131742906, null), gd.N0(2131742905, null)).j();
+                    lc.b0(g2Var).I(R.raw.contact_check, hd.N0(2131742904, null), hd.N0(2131742903, null)).j();
                     break;
                 }
                 break;

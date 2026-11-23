@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qf implements oe0, s90, wi.l, r0.m, is0, ue.a, jg.y1, q5.b, x2.e1, com.google.android.gms.common.api.internal.q, tg.m1, sg.t0, u4.c, com.google.android.gms.common.api.internal.n, v4.e0, v4.k1 {
     public final /* synthetic */ int a;
@@ -486,7 +486,7 @@ public final class qf implements oe0, s90, wi.l, r0.m, is0, ue.a, jg.y1, q5.b, x
     @Override // wi.l
     public boolean p() {
         iu iuVar = (iu) this.b;
-        return (iuVar.O1 == iuVar.m1 && iuVar.y1 && "inapp".equals(org.telegram.messenger.mp.u1(iuVar.a).D3)) ? false : true;
+        return (iuVar.O1 == iuVar.m1 && iuVar.y1 && "inapp".equals(org.telegram.messenger.np.u1(iuVar.a).D3)) ? false : true;
     }
 
     @Override // com.google.android.gms.common.api.internal.n
@@ -627,7 +627,7 @@ public final class qf implements oe0, s90, wi.l, r0.m, is0, ue.a, jg.y1, q5.b, x
                 iArr[0] = (i10 - fVar.V) - 3;
             } else {
                 fVar.l(pVar, 4);
-                int i26 = (xVar2.a[3] & org.telegram.messenger.ks.e4) + 1;
+                int i26 = (xVar2.a[3] & org.telegram.messenger.ls.e4) + 1;
                 fVar.S = i26;
                 int[] iArr2 = fVar.T;
                 if (iArr2 == null) {
@@ -832,7 +832,7 @@ public final class qf implements oe0, s90, wi.l, r0.m, is0, ue.a, jg.y1, q5.b, x
             throw e2.t0.a(null, "ContentEncodingScope " + j3 + " not supported");
         }
         switch (i7) {
-            case org.telegram.messenger.ks.P1 /* 131 */:
+            case org.telegram.messenger.ls.P1 /* 131 */:
                 int i10 = (int) j3;
                 if (i10 == 1) {
                     fVar.h(i7);
@@ -856,50 +856,50 @@ public final class qf implements oe0, s90, wi.l, r0.m, is0, ue.a, jg.y1, q5.b, x
                     fVar.y.e = 5;
                     return;
                 }
-            case org.telegram.messenger.ks.S1 /* 136 */:
+            case org.telegram.messenger.ls.S1 /* 136 */:
                 fVar.h(i7);
                 fVar.y.Y = j3 == 1;
                 return;
-            case org.telegram.messenger.ks.l2 /* 155 */:
+            case org.telegram.messenger.ls.l2 /* 155 */:
                 fVar.Q = fVar.n(j3);
                 return;
-            case org.telegram.messenger.ks.p2 /* 159 */:
+            case org.telegram.messenger.ls.p2 /* 159 */:
                 fVar.h(i7);
                 fVar.y.Q = (int) j3;
                 return;
-            case org.telegram.messenger.ks.G2 /* 176 */:
+            case org.telegram.messenger.ls.G2 /* 176 */:
                 fVar.h(i7);
                 fVar.y.n = (int) j3;
                 return;
-            case org.telegram.messenger.ks.J2 /* 179 */:
+            case org.telegram.messenger.ls.J2 /* 179 */:
                 if (fVar.z) {
                     return;
                 }
                 fVar.g(i7);
                 fVar.E = fVar.n(j3);
                 return;
-            case org.telegram.messenger.ks.Q2 /* 186 */:
+            case org.telegram.messenger.ls.Q2 /* 186 */:
                 fVar.h(i7);
                 fVar.y.o = (int) j3;
                 return;
-            case org.telegram.messenger.ks.s3 /* 215 */:
+            case org.telegram.messenger.ls.s3 /* 215 */:
                 fVar.h(i7);
                 fVar.y.d = (int) j3;
                 return;
-            case org.telegram.messenger.ks.H3 /* 231 */:
+            case org.telegram.messenger.ls.H3 /* 231 */:
                 fVar.M = fVar.n(j3);
                 return;
-            case org.telegram.messenger.ks.N3 /* 238 */:
+            case org.telegram.messenger.ls.N3 /* 238 */:
                 fVar.X = (int) j3;
                 return;
-            case org.telegram.messenger.ks.W3 /* 247 */:
+            case org.telegram.messenger.ls.W3 /* 247 */:
                 if (fVar.z) {
                     return;
                 }
                 fVar.g(i7);
                 fVar.F = (int) j3;
                 return;
-            case org.telegram.messenger.ks.a4 /* 251 */:
+            case org.telegram.messenger.ls.a4 /* 251 */:
                 fVar.Y = true;
                 return;
             case 16871:
@@ -1128,7 +1128,7 @@ public final class qf implements oe0, s90, wi.l, r0.m, is0, ue.a, jg.y1, q5.b, x
             o10Var.v = VelocityTracker.obtain();
         }
         o10Var.v.addMovement(motionEvent);
-        int i10 = action & org.telegram.messenger.ks.e4;
+        int i10 = action & org.telegram.messenger.ls.e4;
         boolean z12 = i10 == 6;
         int actionIndex = z12 ? motionEvent.getActionIndex() : -1;
         int pointerCount = motionEvent.getPointerCount();
@@ -1372,7 +1372,7 @@ public final class qf implements oe0, s90, wi.l, r0.m, is0, ue.a, jg.y1, q5.b, x
             eVar.B = -1;
             eVar.C = -1;
             eVar.D = 1000;
-            eVar.E = org.telegram.messenger.ks.e3;
+            eVar.E = org.telegram.messenger.ls.e3;
             eVar.F = -1.0f;
             eVar.G = -1.0f;
             eVar.H = -1.0f;

@@ -6,17 +6,17 @@ import android.graphics.RectF;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oj0 extends v4.o0 implements eh.a {
-    public final org.telegram.messenger.y10 a;
+    public final org.telegram.messenger.z10 a;
     public final ek0 b;
     public final int c;
     public final boolean d;
 
-    public oj0(ek0 ek0Var, org.telegram.messenger.y10 y10Var, int i7, boolean z10) {
+    public oj0(ek0 ek0Var, org.telegram.messenger.z10 z10Var, int i7, boolean z10) {
         this.b = ek0Var;
-        this.a = y10Var;
+        this.a = z10Var;
         this.c = i7;
         this.d = z10;
     }

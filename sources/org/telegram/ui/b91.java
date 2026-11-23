@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b91 extends v4.c0 {
     public boolean I;
@@ -75,7 +75,7 @@ public final class b91 extends v4.c0 {
             if (!z11) {
                 View m11 = y91Var.G.m(L0);
                 if (m11 != null) {
-                    int v = com.google.android.gms.internal.vision.e2.v(L0, 1, org.telegram.messenger.g0.L(org.telegram.messenger.bz.p1 ? 78.0f : 72.0f) + 1, -(m11.getTop() - paddingTop));
+                    int v = com.google.android.gms.internal.vision.e2.v(L0, 1, org.telegram.messenger.g0.L(org.telegram.messenger.cz.p1 ? 78.0f : 72.0f) + 1, -(m11.getTop() - paddingTop));
                     if (v < Math.abs(i7)) {
                         i10 = -v;
                     }

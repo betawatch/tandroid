@@ -9,10 +9,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import c8.ma;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n1 extends FrameLayout {
     public final TextView a;
@@ -30,7 +30,7 @@ public final class n1 extends FrameLayout {
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         t6.s(imageView, m6.J5, h6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, ma.e(-2, 40, (gd.a0 ? 5 : 3) | 16));
+        addView(imageView, ma.e(-2, 40, (hd.a0 ? 5 : 3) | 16));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setLines(1);
@@ -39,7 +39,7 @@ public final class n1 extends FrameLayout {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         t6.U(textView, m6.j5, h6Var);
         textView.setTextSize(1, 16.0f);
-        addView(textView, ma.e(-2, -2, (gd.a0 ? 5 : 3) | 16));
+        addView(textView, ma.e(-2, -2, (hd.a0 ? 5 : 3) | 16));
     }
 
     public final void a(int i7, CharSequence charSequence) {
@@ -52,7 +52,7 @@ public final class n1 extends FrameLayout {
         } else {
             imageView.setImageResource(i7);
             imageView.setVisibility(0);
-            textView.setPadding(gd.a0 ? 0 : org.telegram.messenger.g0.L(56.0f), 0, gd.a0 ? org.telegram.messenger.g0.L(56.0f) : 0, 0);
+            textView.setPadding(hd.a0 ? 0 : org.telegram.messenger.g0.L(56.0f), 0, hd.a0 ? org.telegram.messenger.g0.L(56.0f) : 0, 0);
         }
     }
 

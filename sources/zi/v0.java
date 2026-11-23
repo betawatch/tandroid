@@ -2,9 +2,9 @@ package zi;
 
 import android.content.SharedPreferences;
 import java.lang.reflect.Array;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class v0 {
     public static final String[] a = {"round_video_switch_back_to_front_ms", "round_video_switch_front_to_back_ms"};
@@ -43,7 +43,7 @@ public abstract class v0 {
                 String[] split = string.split(",");
                 for (int max = Math.max(0, split.length - 8); max < split.length; max++) {
                     try {
-                        int max2 = Math.max(ks.e3, Math.min(2000, Integer.parseInt(split[max])));
+                        int max2 = Math.max(ls.e3, Math.min(2000, Integer.parseInt(split[max])));
                         int[] iArr2 = b[i7];
                         int i10 = iArr[i7];
                         iArr[i7] = i10 + 1;
@@ -79,7 +79,7 @@ public abstract class v0 {
                     throw new IllegalArgumentException("Camera switch direction must change");
                 }
                 int i10 = n0Var == n0.b ? 0 : 1;
-                int max = Math.max(ks.e3, Math.min(2000, i7));
+                int max = Math.max(ls.e3, Math.min(2000, i7));
                 int[] iArr = b[i10];
                 int[] iArr2 = d;
                 iArr[iArr2[i10]] = max;

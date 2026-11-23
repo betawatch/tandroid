@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oy0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,8 +35,8 @@ public final /* synthetic */ class oy0 implements View.OnClickListener {
                 SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
                 if (saveToGallerySettingsActivity.d) {
                     LongSparseArray m10 = saveToGallerySettingsActivity.getUserConfig().m(saveToGallerySettingsActivity.a);
-                    org.telegram.messenger.kv kvVar = saveToGallerySettingsActivity.c;
-                    m10.put(kvVar.d, kvVar);
+                    org.telegram.messenger.lv lvVar = saveToGallerySettingsActivity.c;
+                    m10.put(lvVar.d, lvVar);
                     saveToGallerySettingsActivity.getUserConfig().A(saveToGallerySettingsActivity.a, m10);
                 }
                 saveToGallerySettingsActivity.finishFragment();
@@ -46,9 +46,9 @@ public final /* synthetic */ class oy0 implements View.OnClickListener {
                 break;
             case 4:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-                org.telegram.messenger.fj fjVar = secretMediaViewer.g0;
-                if (fjVar != null) {
-                    TLRPC.Message message = fjVar.k;
+                org.telegram.messenger.gj gjVar = secretMediaViewer.g0;
+                if (gjVar != null) {
+                    TLRPC.Message message = gjVar.k;
                     if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
                         hi.l3 l3Var = secretMediaViewer.r;
                         if (l3Var.W) {
@@ -86,12 +86,12 @@ public final /* synthetic */ class oy0 implements View.OnClickListener {
                 break;
             case 7:
                 h61 h61Var = (h61) this.b;
-                org.telegram.messenger.bz.H0 = !org.telegram.messenger.bz.H0;
-                SharedPreferences.Editor edit = org.telegram.messenger.mp.g1().edit();
-                edit.putBoolean("compactMode", org.telegram.messenger.bz.H0);
+                org.telegram.messenger.cz.H0 = !org.telegram.messenger.cz.H0;
+                SharedPreferences.Editor edit = org.telegram.messenger.np.g1().edit();
+                edit.putBoolean("compactMode", org.telegram.messenger.cz.H0);
                 edit.apply();
                 org.telegram.ui.ActionBar.m6.k(false, false);
-                h61Var.c.setChecked(org.telegram.messenger.bz.H0);
+                h61Var.c.setChecked(org.telegram.messenger.cz.H0);
                 org.telegram.ui.Cells.ba baVar = h61Var.a;
                 for (org.telegram.ui.Cells.r1 r1Var : baVar.getCells()) {
                     r1Var.getMessageObject().S1 = false;
@@ -99,7 +99,7 @@ public final /* synthetic */ class oy0 implements View.OnClickListener {
                     r1Var.requestLayout();
                 }
                 baVar.invalidate();
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.C4, new Object[0]);
+                org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.C4, new Object[0]);
                 break;
             case 8:
                 ((i81) this.b).c(true);

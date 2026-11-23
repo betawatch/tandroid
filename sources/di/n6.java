@@ -2,12 +2,12 @@ package di;
 
 import android.content.DialogInterface;
 import java.util.Arrays;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.gi0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n6 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -16,9 +16,9 @@ public final /* synthetic */ class n6 implements DialogInterface.OnDismissListen
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ n6(y8 y8Var, x10 x10Var, boolean[] zArr, boolean[] zArr2, Object obj, int i7) {
+    public /* synthetic */ n6(y8 y8Var, y10 y10Var, boolean[] zArr, boolean[] zArr2, Object obj, int i7) {
         this.a = i7;
-        this.b = x10Var;
+        this.b = y10Var;
         this.c = zArr;
         this.d = zArr2;
         this.e = obj;
@@ -28,26 +28,26 @@ public final /* synthetic */ class n6 implements DialogInterface.OnDismissListen
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                x10 x10Var = (x10) this.b;
+                y10 y10Var = (y10) this.b;
                 boolean[] zArr = (boolean[]) this.d;
-                q10 q10Var = (q10) this.e;
-                if (x10Var != null && !this.c[0]) {
-                    x10Var.a(Boolean.FALSE);
+                r10 r10Var = (r10) this.e;
+                if (y10Var != null && !this.c[0]) {
+                    y10Var.a(Boolean.FALSE);
                     if (!zArr[0]) {
-                        q10Var.a("cancelled", 0L);
+                        r10Var.a("cancelled", 0L);
                         zArr[0] = true;
                         break;
                     }
                 }
                 break;
             case 1:
-                x10 x10Var2 = (x10) this.b;
+                y10 y10Var2 = (y10) this.b;
                 boolean[] zArr2 = (boolean[]) this.d;
-                x10 x10Var3 = (x10) this.e;
-                if (x10Var2 != null && !this.c[0]) {
-                    x10Var2.a(Boolean.FALSE);
-                    if (!zArr2[0] && x10Var3 != null) {
-                        x10Var3.a("cancelled");
+                y10 y10Var3 = (y10) this.e;
+                if (y10Var2 != null && !this.c[0]) {
+                    y10Var2.a(Boolean.FALSE);
+                    if (!zArr2[0] && y10Var3 != null) {
+                        y10Var3.a("cancelled");
                         zArr2[0] = true;
                         break;
                     }

@@ -2,21 +2,21 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ku0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ TLRPC.Document b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.messenger.fj d;
+    public final /* synthetic */ org.telegram.messenger.gj d;
     public final /* synthetic */ org.telegram.ui.Cells.r1 e;
     public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
 
-    public /* synthetic */ ku0(TLRPC.Document document, int i7, org.telegram.messenger.fj fjVar, org.telegram.ui.Cells.r1 r1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
+    public /* synthetic */ ku0(TLRPC.Document document, int i7, org.telegram.messenger.gj gjVar, org.telegram.ui.Cells.r1 r1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
         this.a = i10;
         this.b = document;
         this.c = i7;
-        this.d = fjVar;
+        this.d = gjVar;
         this.e = r1Var;
         this.f = tL_messages_stickerSet;
     }

@@ -16,7 +16,7 @@ import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ez extends org.telegram.messenger.r5 {
     public final float[] E;
@@ -196,7 +196,7 @@ public final class ez extends org.telegram.messenger.r5 {
         if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.d) || !org.telegram.messenger.s2.a) {
             return;
         }
-        org.telegram.messenger.n10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+        org.telegram.messenger.o10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
     }
 
     public final void c(boolean z10, boolean z11, boolean z12) {
@@ -317,7 +317,7 @@ public final class ez extends org.telegram.messenger.r5 {
         boolean z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (org.telegram.messenger.s2.a) {
-                org.telegram.messenger.n10.v(this.b, new StringBuilder("eglGetDisplay failed "));
+                org.telegram.messenger.o10.v(this.b, new StringBuilder("eglGetDisplay failed "));
             }
             finish();
         } else {
@@ -327,7 +327,7 @@ public final class ez extends org.telegram.messenger.r5 {
                 EGLConfig[] eGLConfigArr = new EGLConfig[1];
                 if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                     if (org.telegram.messenger.s2.a) {
-                        org.telegram.messenger.n10.v(this.b, new StringBuilder("eglChooseConfig failed "));
+                        org.telegram.messenger.o10.v(this.b, new StringBuilder("eglChooseConfig failed "));
                     }
                     finish();
                 } else if (iArr[0] > 0) {
@@ -351,7 +351,7 @@ public final class ez extends org.telegram.messenger.r5 {
                     this.d = eglCreateContext;
                     if (eglCreateContext == null) {
                         if (org.telegram.messenger.s2.a) {
-                            org.telegram.messenger.n10.v(this.b, new StringBuilder("eglCreateContext failed "));
+                            org.telegram.messenger.o10.v(this.b, new StringBuilder("eglCreateContext failed "));
                         }
                         finish();
                     } else {
@@ -365,7 +365,7 @@ public final class ez extends org.telegram.messenger.r5 {
                             this.e = eglCreateWindowSurface;
                             if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                                 if (org.telegram.messenger.s2.a) {
-                                    org.telegram.messenger.n10.v(this.b, new StringBuilder("createWindowSurface failed "));
+                                    org.telegram.messenger.o10.v(this.b, new StringBuilder("createWindowSurface failed "));
                                 }
                                 finish();
                             } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -434,7 +434,7 @@ public final class ez extends org.telegram.messenger.r5 {
                                 }
                             } else {
                                 if (org.telegram.messenger.s2.a) {
-                                    org.telegram.messenger.n10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                    org.telegram.messenger.o10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                                 }
                                 finish();
                             }
@@ -450,7 +450,7 @@ public final class ez extends org.telegram.messenger.r5 {
                 }
             } else {
                 if (org.telegram.messenger.s2.a) {
-                    org.telegram.messenger.n10.v(this.b, new StringBuilder("eglInitialize failed "));
+                    org.telegram.messenger.o10.v(this.b, new StringBuilder("eglInitialize failed "));
                 }
                 finish();
             }

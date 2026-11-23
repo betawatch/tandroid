@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mo0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class mo0 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.g3(new kg0((ro0) this.b, tLObject, (org.telegram.messenger.j10) this.c, (TLRPC.Photo) this.d, 7));
+                org.telegram.messenger.g0.g3(new kg0((ro0) this.b, tLObject, (org.telegram.messenger.k10) this.c, (TLRPC.Photo) this.d, 7));
                 break;
             case 1:
                 org.telegram.messenger.g0.g3(new wn(this.b, tLObject, this.c, this.d, tL_error, 29));
@@ -60,7 +60,7 @@ public final /* synthetic */ class mo0 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new wt0(profileActivity3, tLObject, str, user, tL_error, 2));
                 break;
             case 6:
-                org.telegram.messenger.g0.g3(new kg0((rv0) this.b, tLObject, (org.telegram.messenger.j10) this.c, (TLRPC.Photo) this.d, 16));
+                org.telegram.messenger.g0.g3(new kg0((rv0) this.b, tLObject, (org.telegram.messenger.k10) this.c, (TLRPC.Photo) this.d, 16));
                 break;
             case 7:
                 org.telegram.messenger.g0.g3(new wt0((c21) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.c, (TLRPC.User) this.d));

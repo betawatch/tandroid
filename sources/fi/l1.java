@@ -7,15 +7,15 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l1 {
     public final long a;
@@ -45,7 +45,7 @@ public final class l1 {
             oh0Var.K(0);
             oh0Var.start();
         }
-        TLObject g22 = mp.u1(i7).g2(j3);
+        TLObject g22 = np.u1(i7).g2(j3);
         org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.h6) null);
         b9Var.l(g22);
         ImageReceiver imageReceiver = new ImageReceiver(view);
@@ -63,7 +63,7 @@ public final class l1 {
         nqVar.H = 0.875f;
         spannableStringBuilder.setSpan(nqVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) gd.E(i10, ','));
+        spannableStringBuilder.append((CharSequence) hd.E(i10, ','));
         this.g = new xy0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
         org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(view, 2000L, new LinearInterpolator());
         this.i = d6Var;

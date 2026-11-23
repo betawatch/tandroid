@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rf {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -72,16 +72,16 @@ public final class rf {
         }
     }
 
-    public final void f(Object obj, String str, org.telegram.messenger.x10 x10Var) {
+    public final void f(Object obj, String str, org.telegram.messenger.y10 y10Var) {
         if (!(obj instanceof ai.g)) {
-            x10Var.a(null);
+            y10Var.a(null);
             return;
         }
         int i7 = ChatActivityEnterView.s7;
         ai.p0 A0 = this.a.A0();
         A0.j();
         long uptimeMillis = SystemClock.uptimeMillis();
-        A0.H.a((ai.g) obj, str, new ai.d0(A0, uptimeMillis, x10Var));
+        A0.H.a((ai.g) obj, str, new ai.d0(A0, uptimeMillis, y10Var));
     }
 
     public final void g(float f10, float f11) {

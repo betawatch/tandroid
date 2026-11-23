@@ -19,13 +19,13 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class jc extends View {
     public LinearGradient E;
@@ -81,7 +81,7 @@ public abstract class jc extends View {
         this.d = new Paint(1);
         this.e = new Paint(1);
         this.f = new Paint(1);
-        this.h = new ec(0, ks.X4);
+        this.h = new ec(0, ls.X4);
         this.n = new ec(2, 30);
         this.r = -1135603;
         this.s = -404714;
@@ -97,7 +97,7 @@ public abstract class jc extends View {
         this.K = new nq[1];
         Paint paint = new Paint(1);
         this.L = paint;
-        this.M = new xy0(gd.N0(2131744796, null), 14.0f, org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
+        this.M = new xy0(hd.N0(2131744794, null), 14.0f, org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
         nr nrVar = nr.h;
         this.N = new org.telegram.ui.Components.d6(this, 0L, 320L, nrVar);
         this.O = new org.telegram.ui.Components.d6(this, 0L, 320L, nrVar);
@@ -152,7 +152,7 @@ public abstract class jc extends View {
         }
         org.telegram.ui.Components.n6 n6Var = this.I;
         n6Var.a();
-        n6Var.t(pb.Z0(false, gd.E(c(f10), ','), this.K), true, true);
+        n6Var.t(pb.Z0(false, hd.E(c(f10), ','), this.K), true, true);
     }
 
     public final float b(int i7) {
@@ -443,7 +443,7 @@ public abstract class jc extends View {
                     e(getValue());
                     org.telegram.ui.Components.n6 n6Var = this.I;
                     n6Var.a();
-                    n6Var.t(pb.Z0(false, gd.E(getValue(), ','), this.K), true, true);
+                    n6Var.t(pb.Z0(false, hd.E(getValue(), ','), this.K), true, true);
                 }
                 this.h0 = motionEvent.getX();
                 return true;
@@ -542,7 +542,7 @@ public abstract class jc extends View {
         this.e0 = b10;
         org.telegram.ui.Components.n6 n6Var = this.I;
         n6Var.a();
-        n6Var.t(pb.Z0(false, gd.E(getValue(), ','), this.K), true, true);
+        n6Var.t(pb.Z0(false, hd.E(getValue(), ','), this.K), true, true);
     }
 
     public void setValueAnimated(int i7) {

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -13,20 +13,20 @@ import org.telegram.ui.Components.qw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l2 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ long b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ x10 d;
+    public final /* synthetic */ y10 d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ l2(f6 f6Var, x10 x10Var, TLRPC.TL_error tL_error, TLObject tLObject, long j3, long j10) {
+    public /* synthetic */ l2(f6 f6Var, y10 y10Var, TLRPC.TL_error tL_error, TLObject tLObject, long j3, long j10) {
         this.e = f6Var;
-        this.d = x10Var;
+        this.d = y10Var;
         this.f = tL_error;
         this.h = tLObject;
         this.b = j3;
@@ -65,18 +65,18 @@ public final /* synthetic */ class l2 implements Runnable {
         switch (this.a) {
             case 0:
                 f6 f6Var = (f6) this.e;
-                x10 x10Var = this.d;
+                y10 y10Var = this.d;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.f;
                 TLObject tLObject = (TLObject) this.h;
                 long j3 = this.b;
                 long j10 = this.c;
-                x10Var.a(tL_error);
+                y10Var.a(tL_error);
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.Updates)) {
                         org.telegram.ui.Components.lc.b0(T).g0(tL_error, false);
                     } else if (j3 < 0 || j10 < 0) {
-                        org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0(T).I(R.raw.forward, gd.N0(2131749880, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749881, f6Var.E1(), org.telegram.messenger.n5.t(j3))));
+                        org.telegram.ui.Components.gc I = org.telegram.ui.Components.lc.b0(T).I(R.raw.forward, hd.N0(2131749880, null), org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749881, f6Var.E1(), org.telegram.messenger.n5.t(j3))));
                         I.t = true;
                         I.j();
                     } else {
@@ -94,7 +94,7 @@ public final /* synthetic */ class l2 implements Runnable {
                 org.telegram.ui.Wallet.r0 r0Var = (org.telegram.ui.Wallet.r0) this.h;
                 long j11 = this.b;
                 ?? r62 = this.c;
-                x10 x10Var2 = this.d;
+                y10 y10Var2 = this.d;
                 ArrayList arrayList2 = new ArrayList();
                 LinkedHashMap linkedHashMap2 = new LinkedHashMap();
                 try {
@@ -155,7 +155,7 @@ public final /* synthetic */ class l2 implements Runnable {
                                     }
                                     z0Var2.e(arrayList);
                                     str = r0;
-                                    org.telegram.messenger.g0.g3(new j2(z0Var2, x10Var2, j11, str));
+                                    org.telegram.messenger.g0.g3(new j2(z0Var2, y10Var2, j11, str));
                                     return;
                                 } catch (Throwable th5) {
                                     th = th5;
@@ -215,7 +215,7 @@ public final /* synthetic */ class l2 implements Runnable {
                                 }
                                 z0Var2.e(arrayList);
                                 str = message;
-                                org.telegram.messenger.g0.g3(new j2(z0Var2, x10Var2, j11, str));
+                                org.telegram.messenger.g0.g3(new j2(z0Var2, y10Var2, j11, str));
                                 return;
                             } catch (Throwable th7) {
                                 th = th7;
@@ -241,7 +241,7 @@ public final /* synthetic */ class l2 implements Runnable {
                             linkedHashMap = linkedHashMap2;
                             arrayList = arrayList2;
                         }
-                        org.telegram.messenger.g0.g3(new j2(z0Var2, x10Var2, j11, str));
+                        org.telegram.messenger.g0.g3(new j2(z0Var2, y10Var2, j11, str));
                         return;
                     } catch (Throwable th9) {
                         th = th9;
@@ -257,12 +257,12 @@ public final /* synthetic */ class l2 implements Runnable {
         }
     }
 
-    public /* synthetic */ l2(org.telegram.ui.Wallet.z0 z0Var, String str, org.telegram.ui.Wallet.r0 r0Var, long j3, long j10, x10 x10Var) {
+    public /* synthetic */ l2(org.telegram.ui.Wallet.z0 z0Var, String str, org.telegram.ui.Wallet.r0 r0Var, long j3, long j10, y10 y10Var) {
         this.e = z0Var;
         this.f = str;
         this.h = r0Var;
         this.b = j3;
         this.c = j10;
-        this.d = x10Var;
+        this.d = y10Var;
     }
 }

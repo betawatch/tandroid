@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class yy0 extends FrameLayout {
     public static long R;
@@ -64,7 +64,7 @@ public abstract class yy0 extends FrameLayout {
     }
 
     public static int getRightPaddingSize() {
-        return org.telegram.messenger.bz.p1 ? 74 : 76;
+        return org.telegram.messenger.cz.p1 ? 74 : 76;
     }
 
     public final void a() {
@@ -77,7 +77,7 @@ public abstract class yy0 extends FrameLayout {
     public final void b() {
         int i7 = 0;
         this.f = false;
-        if (org.telegram.messenger.bz.c()) {
+        if (org.telegram.messenger.cz.c()) {
             this.n.d();
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e, 0.0f);
             this.h = ofFloat;
@@ -96,7 +96,7 @@ public abstract class yy0 extends FrameLayout {
             this.a.onFragmentDestroy();
             removeAllViews();
             this.a = null;
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.u4, new Object[0]);
         }
         d(false);
     }

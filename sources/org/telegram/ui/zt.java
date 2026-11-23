@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zt extends org.telegram.ui.Components.rw0 {
     public final /* synthetic */ k8.a J;
@@ -29,11 +29,11 @@ public final class zt extends org.telegram.ui.Components.rw0 {
         this.h = imageReceiver;
         imageReceiver.H0(this);
         if (j3 == Long.MAX_VALUE) {
-            this.w = org.telegram.messenger.gd.N0(2131752635, null);
+            this.w = org.telegram.messenger.hd.N0(2131752635, null);
             b9Var.g(14);
             imageReceiver.i0(null, b9Var, null);
         } else {
-            String H = org.telegram.messenger.n5.H(imageReceiver, b9Var, org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).g2(j3));
+            String H = org.telegram.messenger.n5.H(imageReceiver, b9Var, org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).g2(j3));
             this.w = H;
             this.w = org.telegram.messenger.j6.m(H, null, false, null, 0);
         }

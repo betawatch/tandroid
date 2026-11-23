@@ -1,87 +1,89 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gl implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ mp b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ long d;
+public final /* synthetic */ class gl implements r10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ r10 c;
 
-    public /* synthetic */ gl(mp mpVar, long j3, TLObject tLObject) {
-        this.b = mpVar;
-        this.d = j3;
-        this.c = tLObject;
+    public /* synthetic */ gl(np npVar, r10 r10Var, int i7) {
+        this.a = i7;
+        this.b = npVar;
+        this.c = r10Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        long j3 = this.d;
-        TLObject tLObject = this.c;
-        mp mpVar = this.b;
-        switch (i7) {
+    @Override // org.telegram.messenger.r10
+    public final void a(Object obj, Object obj2) {
+        int i7;
+        switch (this.a) {
             case 0:
-                mpVar.u0.l(j3);
-                if (tLObject != null) {
-                    TLRPC.TL_messages_peerSettings tL_messages_peerSettings = (TLRPC.TL_messages_peerSettings) tLObject;
-                    TLRPC.PeerSettings peerSettings = tL_messages_peerSettings.settings;
-                    mpVar.f4(tL_messages_peerSettings.users, false);
-                    mpVar.Z3(tL_messages_peerSettings.chats, false);
-                    mpVar.D4(j3, peerSettings);
+                TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                np npVar = this.b;
+                npVar.getClass();
+                r10 r10Var = this.c;
+                if (messages_chats == null) {
+                    r10Var.a(null, tL_error);
+                    break;
+                } else {
+                    ArrayList arrayList = new ArrayList(messages_chats.chats.size());
+                    npVar.Z3(messages_chats.chats, true);
+                    ArrayList<TLRPC.Chat> arrayList2 = messages_chats.chats;
+                    int size = arrayList2.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        TLRPC.Chat chat = arrayList2.get(i10);
+                        i10++;
+                        TLRPC.Chat chat2 = chat;
+                        if (chat2.creator && !v3.p0(chat2) && !v3.Y(chat2)) {
+                            arrayList.add(chat2);
+                        }
+                    }
+                    r10Var.a(arrayList, null);
                     break;
                 }
                 break;
             default:
-                TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject;
-                TLRPC.User c22 = mpVar.c2(Long.valueOf(mpVar.getUserConfig().e()));
-                if (c22 == null) {
-                    c22 = mpVar.getUserConfig().f();
-                    mpVar.e4(c22, false, false);
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                r10 r10Var2 = this.c;
+                if (updates == null) {
+                    if (r10Var2 != null) {
+                        g0.g3(new gi(23, r10Var2, tL_error2));
+                        break;
+                    }
                 } else {
-                    mpVar.getUserConfig().w(c22);
-                }
-                if (c22 != null) {
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(c22);
-                    mpVar.getMessagesStorage().m1(arrayList, null, false, true);
-                    if (tL_photos_photo.photo instanceof TLRPC.TL_photo) {
-                        TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
-                        c22.photo = tL_userProfilePhoto;
-                        tL_userProfilePhoto.has_video = !tL_photos_photo.photo.video_sizes.isEmpty();
-                        TLRPC.UserProfilePhoto userProfilePhoto = c22.photo;
-                        TLRPC.Photo photo = tL_photos_photo.photo;
-                        userProfilePhoto.photo_id = photo.id;
-                        userProfilePhoto.photo_small = w7.w(photo.sizes, ks.g2, false, null, false).location;
-                        c22.photo.photo_big = w7.w(tL_photos_photo.photo.sizes, 800, false, null, false).location;
-                        c22.photo.dc_id = tL_photos_photo.photo.dc_id;
-                    } else {
-                        c22.photo = new TLRPC.TL_userProfilePhotoEmpty();
+                    ArrayList<TLRPC.Update> arrayList3 = updates.updates;
+                    int size2 = arrayList3.size();
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 < size2) {
+                            TLRPC.Update update = arrayList3.get(i11);
+                            i11++;
+                            TLRPC.Update update2 = update;
+                            if (update2 instanceof TL_update.TL_updateNewMessage) {
+                                TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewMessage) update2).message.action;
+                                if (messageAction instanceof TLRPC.TL_messageActionNoForwardsRequest) {
+                                    i7 = 2;
+                                } else if (messageAction instanceof TLRPC.TL_messageActionNoForwardsToggle) {
+                                    i7 = 1;
+                                }
+                            }
+                        } else {
+                            i7 = 0;
+                        }
                     }
-                    TLRPC.UserFull d2 = mpVar.d2(j3);
-                    if (d2 != null) {
-                        d2.profile_photo = tL_photos_photo.photo;
-                        mpVar.getMessagesStorage().j2(d2, false);
-                    }
-                    mpVar.getUserConfig().f().photo = c22.photo;
-                    mpVar.e4(c22, false, false);
-                    mpVar.getNotificationCenter().k(46, new Object[0]);
-                    mpVar.getNotificationCenter().k(2, Integer.valueOf(mp.I8));
-                    mpVar.getNotificationCenter().k(2, 2);
-                    mpVar.getUserConfig().v(true);
+                    np npVar2 = this.b;
+                    npVar2.V3(updates, false);
+                    g0.g3(new l7(npVar2, r10Var2, i7, 13));
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ gl(mp mpVar, TLObject tLObject, long j3) {
-        this.b = mpVar;
-        this.c = tLObject;
-        this.d = j3;
     }
 }

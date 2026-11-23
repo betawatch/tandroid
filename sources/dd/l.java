@@ -2,13 +2,13 @@ package dd;
 
 import java.util.Arrays;
 import java.util.Map;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class l {
     public static final char[] r;
-    public static final int[] s = {8364, ks.N1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, ks.X5, 8249, ks.J5, ks.X1, 381, ks.Z1, ks.a2, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, ks.K5, ks.n2, 382, 376};
+    public static final int[] s = {8364, ls.N1, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, ls.X5, 8249, ls.J5, ls.X1, 381, ls.Z1, ls.a2, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, ls.K5, ls.n2, 382, 376};
     public final a a;
     public final b b;
     public k d;

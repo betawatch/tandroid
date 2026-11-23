@@ -7,7 +7,7 @@ import androidx.appcompat.widget.ActionBarContextView;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.security.MessageDigest;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ax;
 import org.telegram.ui.Components.du0;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.Components.sc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class w0 implements r0.m0, ax {
     public boolean a;
@@ -69,7 +69,7 @@ public final class w0 implements r0.m0, ax {
             chatActivityEnterView.u4 = true;
             this.a = chatActivityEnterView.p4;
             chatActivityEnterView.p4 = true;
-            ks.e().k(ks.j1, 1);
+            ls.e().k(ls.j1, 1);
             int height = ((((du0Var.getHeight() - org.telegram.messenger.g0.m) - org.telegram.messenger.g0.n) - org.telegram.messenger.g0.L(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
             chatActivityEnterView.t4 = height;
             if (chatActivityEnterView.H2 == 2) {

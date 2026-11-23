@@ -1,23 +1,23 @@
 package di;
 
-import org.telegram.messenger.fs;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.rm;
-import org.telegram.messenger.tl;
-import org.telegram.messenger.xo;
-import org.telegram.messenger.zm;
+import org.telegram.messenger.an;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.np;
+import org.telegram.messenger.sm;
+import org.telegram.messenger.ul;
+import org.telegram.messenger.yo;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k3 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ long b;
-    public final /* synthetic */ fs c;
+    public final /* synthetic */ gs c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ TLObject f;
@@ -39,19 +39,19 @@ public final /* synthetic */ class k3 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new m3((f6) this.c, (vf.b) this.d, (org.telegram.ui.ActionBar.t1) this.e, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.b, (CharSequence) this.g));
                 break;
             case 1:
-                mp mpVar = (mp) this.c;
+                np npVar = (np) this.c;
                 Runnable runnable = (Runnable) this.d;
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.e;
                 TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin = (TLRPC.TL_messages_editChatAdmin) this.f;
-                xo xoVar = (xo) this.g;
+                yo yoVar = (yo) this.g;
                 if (tL_error != null) {
-                    org.telegram.messenger.g0.g3(new tl(mpVar, tL_error, g2Var, tL_messages_editChatAdmin, 3));
-                    if (xoVar != null) {
-                        org.telegram.messenger.g0.g3(new zm(xoVar, tL_error, 0));
+                    org.telegram.messenger.g0.g3(new ul(npVar, tL_error, g2Var, tL_messages_editChatAdmin, 3));
+                    if (yoVar != null) {
+                        org.telegram.messenger.g0.g3(new an(yoVar, tL_error, 0));
                         break;
                     }
                 } else {
-                    org.telegram.messenger.g0.h3(new rm(mpVar, this.b, runnable, 1), 1000L);
+                    org.telegram.messenger.g0.h3(new sm(npVar, this.b, runnable, 1), 1000L);
                     break;
                 }
                 break;
@@ -61,13 +61,13 @@ public final /* synthetic */ class k3 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ k3(mp mpVar, long j3, Runnable runnable, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin, xo xoVar) {
-        this.c = mpVar;
+    public /* synthetic */ k3(np npVar, long j3, Runnable runnable, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin, yo yoVar) {
+        this.c = npVar;
         this.b = j3;
         this.d = runnable;
         this.e = g2Var;
         this.f = tL_messages_editChatAdmin;
-        this.g = xoVar;
+        this.g = yoVar;
     }
 
     public /* synthetic */ k3(cx cxVar, org.telegram.ui.ActionBar.t1 t1Var, TLRPC.User user, TLRPC.Chat chat, long j3, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {

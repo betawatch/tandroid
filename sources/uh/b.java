@@ -17,11 +17,11 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a6;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.i20;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.u5;
 import org.telegram.messenger.w7;
@@ -35,12 +35,12 @@ import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.nr;
 import te.g;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements y5 {
     public final te.a E;
     public final RadialProgress2 F;
-    public fj G;
+    public gj G;
     public final xa H;
     public String I;
     public final int J;
@@ -89,7 +89,7 @@ public final class b extends Drawable implements y5 {
     public final void a(TLRPC.Photo photo, Object obj) {
         TLRPC.PhotoSize w10 = w7.w(photo.sizes, 40, false, null, false);
         TLRPC.PhotoSize w11 = w7.w(photo.sizes, g0.L(36.0f), false, w10, true);
-        this.c.r0(fc.f(w11, photo), "36_36", fc.f(w10, photo), "36_36_b", null, w11 != null ? w11.size : 0L, null, obj, 1);
+        this.c.r0(gc.f(w11, photo), "36_36", gc.f(w10, photo), "36_36_b", null, w11 != null ? w11.size : 0L, null, obj, 1);
     }
 
     public final void b(boolean z10) {
@@ -217,12 +217,12 @@ public final class b extends Drawable implements y5 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void h(fj fjVar, TLRPC.MessageMedia messageMedia, fj fjVar2, String str, boolean z10) {
+    public final void h(gj gjVar, TLRPC.MessageMedia messageMedia, gj gjVar2, String str, boolean z10) {
         ImageReceiver imageReceiver;
         boolean z11;
         boolean z12;
         TLRPC.GeoPoint geoPoint;
-        this.G = fjVar;
+        this.G = gjVar;
         String str2 = this.I;
         this.K = false;
         this.I = null;
@@ -238,7 +238,7 @@ public final class b extends Drawable implements y5 {
                 TLRPC.Photo photo = webPage.photo;
                 if (photo != null) {
                     this.r = true;
-                    a(photo, fjVar2);
+                    a(photo, gjVar2);
                 } else {
                     imageReceiver2.f();
                 }
@@ -248,32 +248,32 @@ public final class b extends Drawable implements y5 {
                         TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) messageMedia;
                         TLRPC.Document document = tL_messageMediaDocument.document;
                         if (document != null) {
-                            this.I = !TextUtils.isEmpty(str) ? str : fj.U0(messageMedia);
-                            if (fj.K4(tL_messageMediaDocument.document)) {
+                            this.I = !TextUtils.isEmpty(str) ? str : gj.U0(messageMedia);
+                            if (gj.K4(tL_messageMediaDocument.document)) {
                                 TLRPC.PhotoSize w10 = w7.w(document.thumbs, 40, false, null, false);
                                 TLRPC.PhotoSize w11 = w7.w(document.thumbs, g0.L(36.0f), false, w10, true);
                                 this.w = true;
                                 this.K = true;
-                                fc f10 = fc.f(w11, document);
-                                fc f11 = fc.f(w10, document);
+                                gc f10 = gc.f(w11, document);
+                                gc f11 = gc.f(w10, document);
                                 imageReceiver = imageReceiver2;
-                                imageReceiver.r0(f10, "36_36", f11, "36_36_b", null, w11 != null ? w11.size : 0L, null, fjVar2, 1);
+                                imageReceiver.r0(f10, "36_36", f11, "36_36_b", null, w11 != null ? w11.size : 0L, null, gjVar2, 1);
                             } else {
                                 imageReceiver = imageReceiver2;
-                                boolean z13 = fj.u4(document) || fj.N4(document);
-                                boolean K2 = fj.K2(document, true);
+                                boolean z13 = gj.u4(document) || gj.N4(document);
+                                boolean K2 = gj.K2(document, true);
                                 if (z13 || K2) {
-                                    imageReceiver.p0(fc.b(document), "36_36", u5.f(document, m6.cd, 1.0f, null), document.size, z13 ? "webp" : null, fjVar2, 1);
+                                    imageReceiver.p0(gc.b(document), "36_36", u5.f(document, m6.cd, 1.0f, null), document.size, z13 ? "webp" : null, gjVar2, 1);
                                 }
                                 z11 = false;
                             }
                         }
                     } else if (((messageMedia instanceof TLRPC.TL_messageMediaGeo) || (messageMedia instanceof TLRPC.TL_messageMediaVenue)) && (geoPoint = messageMedia.geo) != null) {
                         int min = Math.min(2, (int) Math.ceil(g0.p));
-                        int i7 = h20.i;
-                        fc p10 = fc.p(h20.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 36, 36, 13, min));
+                        int i7 = i20.i;
+                        gc p10 = gc.p(i20.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 36, 36, 13, min));
                         imageReceiver = imageReceiver2;
-                        imageReceiver.s0(p10, null, null, null, null, fjVar2, 0);
+                        imageReceiver.s0(p10, null, null, null, null, gjVar2, 0);
                     } else {
                         imageReceiver = imageReceiver2;
                         z11 = false;
@@ -311,8 +311,8 @@ public final class b extends Drawable implements y5 {
                 }
                 TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = (TLRPC.TL_messageMediaPhoto) messageMedia;
                 this.K = true;
-                this.I = !TextUtils.isEmpty(str) ? str : fj.U0(messageMedia);
-                a(tL_messageMediaPhoto.photo, fjVar2);
+                this.I = !TextUtils.isEmpty(str) ? str : gj.U0(messageMedia);
+                a(tL_messageMediaPhoto.photo, gjVar2);
             }
             imageReceiver = imageReceiver2;
             this.h = z11;
@@ -354,7 +354,7 @@ public final class b extends Drawable implements y5 {
     }
 
     public final void k(int i7, boolean z10) {
-        this.a.t(i7 > 0 ? gd.S(null, i7) : null, z10, true);
+        this.a.t(i7 > 0 ? hd.S(null, i7) : null, z10, true);
     }
 
     public final void l(int i7) {

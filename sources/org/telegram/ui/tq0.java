@@ -12,9 +12,9 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class tq0 extends FrameLayout implements org.telegram.messenger.fs {
+public final class tq0 extends FrameLayout implements org.telegram.messenger.gs {
     public final FrameLayout a;
     public final ih0 b;
     public final org.telegram.ui.ActionBar.m5[] c;
@@ -31,13 +31,13 @@ public final class tq0 extends FrameLayout implements org.telegram.messenger.fs 
         FrameLayout frameLayout = new FrameLayout(activity);
         this.a = frameLayout;
         frameLayout.setPadding(org.telegram.messenger.g0.L(56.0f), 0, 0, 0);
-        addView(frameLayout, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(frameLayout, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         ih0 ih0Var = new ih0(activity, 2);
         this.b = ih0Var;
         ih0Var.setPivotX(org.telegram.messenger.g0.L(16.0f));
         ih0Var.setPadding(org.telegram.messenger.g0.L(16.0f), 0, 0, 0);
         ih0Var.setClipToPadding(false);
-        frameLayout.addView(ih0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        frameLayout.addView(ih0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         this.c = new org.telegram.ui.ActionBar.m5[2];
         for (int i7 = 0; i7 < 2; i7++) {
             this.c[i7] = new org.telegram.ui.ActionBar.m5(activity);
@@ -188,9 +188,9 @@ public final class tq0 extends FrameLayout implements org.telegram.messenger.fs 
         this.e.start();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.l4) {
+        if (i7 == org.telegram.messenger.ls.l4) {
             org.telegram.ui.ActionBar.m5[] m5VarArr = this.c;
             m5VarArr[0].invalidate();
             m5VarArr[1].invalidate();
@@ -201,13 +201,13 @@ public final class tq0 extends FrameLayout implements org.telegram.messenger.fs 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.l4);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.l4);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View

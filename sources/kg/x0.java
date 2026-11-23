@@ -3,17 +3,17 @@ package kg;
 import android.text.TextUtils;
 import java.io.Serializable;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.qa0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x0 implements v10, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class x0 implements w10, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ c1 b;
 
@@ -45,7 +45,7 @@ public final /* synthetic */ class x0 implements v10, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         c1 c1Var = this.b;
         o41 o41Var = (o41) obj;
@@ -54,10 +54,10 @@ public final /* synthetic */ class x0 implements v10, org.telegram.ui.ActionBar.
         if (i7 != 1 && o41Var.c != c1Var.f) {
             if (i7 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(c1Var.getParentActivity());
-                alertDialog$Builder.a.S = gd.N0(2131752682, null);
-                alertDialog$Builder.a.U = gd.N0(2131752683, null);
-                alertDialog$Builder.k(gd.N0(2131746125, null), new x0(c1Var, i10));
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                alertDialog$Builder.a.S = hd.N0(2131752682, null);
+                alertDialog$Builder.a.U = hd.N0(2131752683, null);
+                alertDialog$Builder.k(hd.N0(2131746125, null), new x0(c1Var, i10));
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
                 c1Var.showDialog(alertDialog$Builder.a);
                 return;
             }

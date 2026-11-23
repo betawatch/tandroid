@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class em0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final TextView a;
@@ -30,9 +30,9 @@ public final class em0 extends FrameLayout implements org.telegram.ui.ActionBar.
         boolean z10 = lm0Var.a;
         org.telegram.ui.ActionBar.t6.U(textView, i10, lm0Var.getResourceProvider());
         if (fm0Var.n0 == 1) {
-            textView.setText(org.telegram.messenger.gd.N0(z10 ? 2131752300 : 2131743487, null));
+            textView.setText(org.telegram.messenger.hd.N0(z10 ? 2131752300 : 2131743485, null));
         } else {
-            textView.setText(org.telegram.messenger.gd.N0(z10 ? 2131752309 : 2131743490, null));
+            textView.setText(org.telegram.messenger.hd.N0(z10 ? 2131752309 : 2131743488, null));
         }
         addView(textView, c8.ma.d(-1, -2.0f, 23, 20.0f, 0.0f, 20.0f, 0.0f));
         this.c = new org.telegram.ui.Components.n5(org.telegram.messenger.g0.L(24.0f), 13, this, false);
@@ -40,8 +40,8 @@ public final class em0 extends FrameLayout implements org.telegram.ui.ActionBar.
 
     public final int a() {
         int i7;
-        org.telegram.messenger.cp cpVar;
-        org.telegram.messenger.bp d;
+        org.telegram.messenger.dp dpVar;
+        org.telegram.messenger.cp d;
         int i10;
         org.telegram.ui.ActionBar.h6 h6Var;
         org.telegram.ui.ActionBar.h6 h6Var2;
@@ -56,12 +56,12 @@ public final class em0 extends FrameLayout implements org.telegram.ui.ActionBar.
             }
             if (fm0Var.n0 == 1) {
                 i10 = ((org.telegram.ui.ActionBar.g2) lm0Var).currentAccount;
-                cpVar = org.telegram.messenger.mp.u1(i10).t4;
+                dpVar = org.telegram.messenger.np.u1(i10).t4;
             } else {
                 i7 = ((org.telegram.ui.ActionBar.g2) lm0Var).currentAccount;
-                cpVar = org.telegram.messenger.mp.u1(i7).u4;
+                dpVar = org.telegram.messenger.np.u1(i7).u4;
             }
-            return (cpVar == null || (d = cpVar.d(fm0Var.h)) == null) ? lm0Var.getThemedColor(org.telegram.ui.ActionBar.m6.r8[0]) : d.f();
+            return (dpVar == null || (d = dpVar.d(fm0Var.h)) == null) ? lm0Var.getThemedColor(org.telegram.ui.ActionBar.m6.r8[0]) : d.f();
         }
         int i12 = org.telegram.ui.ActionBar.m6.s8;
         if (org.telegram.messenger.g0.B(lm0Var.getThemedColor(i12)) > 0.8f) {
@@ -91,15 +91,15 @@ public final class em0 extends FrameLayout implements org.telegram.ui.ActionBar.
         } else {
             n5Var.g(null, z10);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.xy0(org.telegram.messenger.gd.N0(fm0Var.q0.a ? 2131752299 : 2131743486, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.xy0(org.telegram.messenger.hd.N0(fm0Var.q0.a ? 2131752299 : 2131743484, null), 16.0f, null);
             }
         }
     }
 
     public final void c() {
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         org.telegram.ui.Components.n5 n5Var = this.c;
-        n5Var.setBounds(z10 ? org.telegram.messenger.g0.L(21.0f) : (getWidth() - n5Var.s) - org.telegram.messenger.g0.L(21.0f), (getHeight() - n5Var.s) / 2, org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(21.0f) + n5Var.s : getWidth() - org.telegram.messenger.g0.L(21.0f), (getHeight() + n5Var.s) / 2);
+        n5Var.setBounds(z10 ? org.telegram.messenger.g0.L(21.0f) : (getWidth() - n5Var.s) - org.telegram.messenger.g0.L(21.0f), (getHeight() - n5Var.s) / 2, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(21.0f) + n5Var.s : getWidth() - org.telegram.messenger.g0.L(21.0f), (getHeight() + n5Var.s) / 2);
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -7,12 +7,12 @@ import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.md0;
 import sg.h0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class l extends rf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -457,7 +457,7 @@ public final class l extends rf.a {
             if (read4 == -1) {
                 break;
             }
-            if (i18 == 255 && (read4 & ks.B3) == 224) {
+            if (i18 == 255 && (read4 & ls.B3) == 224) {
                 mVar.mark(2);
                 int read5 = sVar2.a(mVar) ? -1 : mVar.read();
                 if (read5 == -1) {
@@ -521,7 +521,7 @@ public final class l extends rf.a {
                 if (read7 == -1 || read8 == -1) {
                     break;
                 }
-                if (read7 == 255 && (read8 & ks.d4) == (read4 & ks.d4)) {
+                if (read7 == 255 && (read8 & ls.d4) == (read4 & ls.d4)) {
                     int read9 = sVar2.a(mVar) ? -1 : mVar.read();
                     int read10 = sVar2.a(mVar) ? -1 : mVar.read();
                     if (read9 == -1 || read10 == -1) {
@@ -596,7 +596,7 @@ public final class l extends rf.a {
             if (read == i17 || read2 == i17) {
                 j11 = length;
             } else {
-                if (read == 255 && (read2 & ks.B3) == 224) {
+                if (read == 255 && (read2 & ls.B3) == 224) {
                     int read11 = sVar2.a(mVar) ? -1 : mVar.read();
                     int read12 = sVar2.a(mVar) ? -1 : mVar.read();
                     j11 = length;

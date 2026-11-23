@@ -11,14 +11,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.qc0;
 import org.telegram.ui.Components.we;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class x7 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -203,7 +203,7 @@ public final class x7 extends FrameLayout {
     public void d(boolean z10) {
         ((ImageView) this.c).setVisibility(z10 ? 0 : 8);
         TextView textView = (TextView) this.d;
-        boolean z11 = gd.a0;
+        boolean z11 = hd.a0;
         textView.setLayoutParams(c8.ma.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
     }
 
@@ -287,10 +287,10 @@ public final class x7 extends FrameLayout {
         this.b = h6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        n10.p(textView, 1, 20.0f);
-        textView.setGravity(gd.a0 ? 5 : 3);
+        o10.p(textView, 1, 20.0f);
+        textView.setGravity(hd.a0 ? 5 : 3);
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, h6Var);
-        boolean z10 = gd.a0;
+        boolean z10 = hd.a0;
         addView(textView, c8.ma.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
@@ -300,7 +300,7 @@ public final class x7 extends FrameLayout {
         x1Var.a(-1);
         x1Var.b(-1);
         x1Var.k = 220.0f;
-        addView(imageView, c8.ma.d(24, 24.0f, (gd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, c8.ma.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new o4(this, 2));
     }
 }

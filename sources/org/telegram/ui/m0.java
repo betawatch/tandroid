@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final class m0 implements TextWatcher {
                 if (laVar.r.length() > 0) {
                     StringBuilder sb2 = new StringBuilder("https://");
                     i7 = ((org.telegram.ui.ActionBar.g2) laVar).currentAccount;
-                    sb2.append(org.telegram.messenger.mp.u1(i7).X2);
+                    sb2.append(org.telegram.messenger.np.u1(i7).X2);
                     sb2.append("/");
                     sb2.append(laVar.r);
                     String sb3 = sb2.toString();
-                    String a02 = org.telegram.messenger.gd.a0("UsernameHelpLink", null, 2131743416, sb3);
+                    String a02 = org.telegram.messenger.hd.a0("UsernameHelpLink", null, 2131743414, sb3);
                     int indexOf = a02.indexOf(sb3);
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a02);
                     if (indexOf >= 0) {
@@ -123,7 +123,7 @@ public final class m0 implements TextWatcher {
                     if (bzVar != null) {
                         org.telegram.ui.Cells.x3 x3Var = bzVar.r;
                         if (kz.q0(kzVar.x)) {
-                            str = org.telegram.messenger.gd.N0(kzVar.y ? 2131750723 : 2131750722, null);
+                            str = org.telegram.messenger.hd.N0(kzVar.y ? 2131750723 : 2131750722, null);
                         } else {
                             str = null;
                         }
@@ -131,7 +131,7 @@ public final class m0 implements TextWatcher {
                     }
                     if (kzVar.s && TextUtils.isEmpty(kzVar.x)) {
                         z4Var3 = ((org.telegram.ui.ActionBar.g2) kzVar).simpleActionBar;
-                        z4Var3.setTitle(org.telegram.messenger.gd.N0(2131750716, null));
+                        z4Var3.setTitle(org.telegram.messenger.hd.N0(2131750716, null));
                     } else {
                         z4Var = ((org.telegram.ui.ActionBar.g2) kzVar).simpleActionBar;
                         CharSequence charSequence = kzVar.x;
@@ -201,7 +201,7 @@ public final class m0 implements TextWatcher {
                                     if (list == null) {
                                         psVar2 = null;
                                     } else if (list.size() > i15) {
-                                        String string = org.telegram.messenger.mp.g1().getString("phone_code_last_matched_" + substring, null);
+                                        String string = org.telegram.messenger.np.g1().getString("phone_code_last_matched_" + substring, null);
                                         psVar2 = (ps) p5.c.h(i15, list);
                                         if (string != null) {
                                             int size = arrayList.size();
@@ -273,7 +273,7 @@ public final class m0 implements TextWatcher {
                         if (list2 == null) {
                             psVar = null;
                         } else if (list2.size() > 1) {
-                            String string2 = org.telegram.messenger.mp.g1().getString("phone_code_last_matched_" + d, null);
+                            String string2 = org.telegram.messenger.np.g1().getString("phone_code_last_matched_" + d, null);
                             psVar = (ps) p5.c.h(1, list2);
                             if (string2 != null) {
                                 int size3 = arrayList.size();
@@ -345,7 +345,7 @@ public final class m0 implements TextWatcher {
                                     if (list3 == null) {
                                         obj = str4;
                                     } else if (list3.size() > 1) {
-                                        String string3 = org.telegram.messenger.mp.g1().getString("phone_code_last_matched_" + substring2, str4);
+                                        String string3 = org.telegram.messenger.np.g1().getString("phone_code_last_matched_" + substring2, str4);
                                         obj = (ps) p5.c.h(1, list3);
                                         if (string3 != null) {
                                             int size4 = arrayList2.size();
@@ -414,7 +414,7 @@ public final class m0 implements TextWatcher {
                         if (list4 == null) {
                             psVar3 = null;
                         } else if (list4.size() > 1) {
-                            String string4 = org.telegram.messenger.mp.g1().getString("phone_code_last_matched_" + d2, null);
+                            String string4 = org.telegram.messenger.np.g1().getString("phone_code_last_matched_" + d2, null);
                             psVar3 = (ps) p5.c.h(1, list4);
                             if (string4 != null) {
                                 int size6 = arrayList2.size();
@@ -487,7 +487,7 @@ public final class m0 implements TextWatcher {
                         break;
                     } else {
                         String str6 = "https://" + a81Var.getMessagesController().X2 + "/addtheme/" + ((Object) a81Var.a.getText());
-                        String a03 = org.telegram.messenger.gd.a0("ThemeHelpLink", null, 2131743940, str6);
+                        String a03 = org.telegram.messenger.hd.a0("ThemeHelpLink", null, 2131743938, str6);
                         int indexOf2 = a03.indexOf(str6);
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(a03);
                         if (indexOf2 >= 0) {
@@ -539,7 +539,7 @@ public final class m0 implements TextWatcher {
                     usersSelectActivity.h.L(null);
                     usersSelectActivity.d.setFastScrollVisible(true);
                     usersSelectActivity.d.setVerticalScrollBarEnabled(false);
-                    usersSelectActivity.f.d.setText(org.telegram.messenger.gd.N0(2131748030, null));
+                    usersSelectActivity.f.d.setText(org.telegram.messenger.hd.N0(2131748030, null));
                     break;
                 } else {
                     mb1 mb1Var2 = usersSelectActivity.h;
@@ -553,7 +553,7 @@ public final class m0 implements TextWatcher {
                         }
                         usersSelectActivity.d.setFastScrollVisible(false);
                         usersSelectActivity.d.setVerticalScrollBarEnabled(true);
-                        usersSelectActivity.f.d.setText(org.telegram.messenger.gd.N0(2131747974, null));
+                        usersSelectActivity.f.d.setText(org.telegram.messenger.hd.N0(2131747974, null));
                     }
                     usersSelectActivity.f.e(true, true);
                     usersSelectActivity.h.L(usersSelectActivity.c.getText().toString());

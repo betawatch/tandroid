@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sh0 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -84,7 +84,7 @@ public final class sh0 extends org.telegram.ui.Components.dk0 {
             if (i10 != 1) {
                 return;
             }
-            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.gd.N0(2131754373, "AddToExceptions"));
+            ((org.telegram.ui.Cells.y3) view).setText(org.telegram.messenger.hd.N0(2131754373, "AddToExceptions"));
             return;
         }
         org.telegram.ui.Cells.ra raVar = (org.telegram.ui.Cells.ra) view;
@@ -94,7 +94,7 @@ public final class sh0 extends org.telegram.ui.Components.dk0 {
         } else {
             int f10 = i5.c.f(1, i7, this.d);
             ArrayList arrayList = this.h.e;
-            raVar.d((TLObject) arrayList.get(f10), null, org.telegram.messenger.gd.N0(2131747698, "NotificationsOn"), f10 != arrayList.size() - 1);
+            raVar.d((TLObject) arrayList.get(f10), null, org.telegram.messenger.hd.N0(2131747698, "NotificationsOn"), f10 != arrayList.size() - 1);
             raVar.setAddButtonVisible(true);
         }
     }

@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import c8.l9;
 import java.util.ArrayList;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
 import org.telegram.messenger.s2;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -25,7 +25,7 @@ import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.v0;
 import org.telegram.ui.bj;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF I = new RectF();
@@ -55,7 +55,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         this.x = new LongSparseArray();
         this.y = new LongSparseArray();
         this.E = new c(this, 1);
-        this.a = bz.g1;
+        this.a = cz.g1;
     }
 
     public final void a() {
@@ -69,7 +69,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             return;
         }
         TLRPC.TL_messages_reportReadMetrics tL_messages_reportReadMetrics = new TLRPC.TL_messages_reportReadMetrics();
-        tL_messages_reportReadMetrics.peer = mp.u1(this.e).l1(this.d);
+        tL_messages_reportReadMetrics.peer = np.u1(this.e).l1(this.d);
         tL_messages_reportReadMetrics.metrics = new ArrayList<>(arrayList);
         ConnectionsManager.getInstance(this.e).sendRequestTyped(tL_messages_reportReadMetrics, null, new b(0));
         arrayList.clear();
@@ -100,7 +100,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         LongSparseArray longSparseArray3;
         boolean z11;
         RectF rectF;
-        fj messageObject;
+        gj messageObject;
         int i7;
         RectF rectF2;
         long j10;
@@ -136,7 +136,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                     messageObject = ((v0) childAt).getMessageObject();
                 }
                 if (messageObject != null) {
-                    long B0 = fj.B0(messageObject.k);
+                    long B0 = gj.B0(messageObject.k);
                     i7 = i11;
                     if (B0 == this.d) {
                         int e12 = messageObject.e1();

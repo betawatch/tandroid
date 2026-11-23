@@ -12,8 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e3 extends FrameLayout {
     public final int a;
@@ -78,8 +78,8 @@ public final class e3 extends FrameLayout {
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 16.0f);
         t6.U(textView, m6.G6, h6Var);
-        ks.i(textView);
-        TextView f10 = n10.f(linearLayout, textView, ma.t(-1, -2, 55, 6, 0, 24, 0), context);
+        ls.i(textView);
+        TextView f10 = o10.f(linearLayout, textView, ma.t(-1, -2, 55, 6, 0, 24, 0), context);
         this.n = f10;
         f10.setMaxLines(1);
         f10.setSingleLine(true);

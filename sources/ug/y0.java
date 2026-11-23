@@ -18,13 +18,13 @@ import fi.k3;
 import fi.l7;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.lz;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.mz;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.nz;
+import org.telegram.messenger.si;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -35,16 +35,16 @@ import org.telegram.ui.Components.ia;
 import org.telegram.ui.Components.n20;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.v7;
-import org.telegram.ui.Components.y01;
+import org.telegram.ui.Components.x01;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.hs0;
 import org.telegram.ui.ws0;
 import org.telegram.ui.xs0;
 import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class y0 extends w2 implements fs {
+public final class y0 extends w2 implements gs {
     public static final /* synthetic */ int J1 = 0;
     public boolean A1;
     public int B1;
@@ -66,12 +66,12 @@ public final class y0 extends w2 implements fs {
     public int u1;
     public final FrameLayout v1;
     public boolean w1;
-    public final lz x1;
+    public final mz x1;
     public final int y1;
     public final boolean z1;
 
     public y0(int i7, Context context, h6 h6Var) {
-        this(null, context, j10.t0, false, i7, true, null, h6Var);
+        this(null, context, k10.t0, false, i7, true, null, h6Var);
     }
 
     @Override // org.telegram.ui.ActionBar.w2
@@ -153,7 +153,7 @@ public final class y0 extends w2 implements fs {
         boolean z10 = this.A1;
         r0 r0Var = this.n1;
         if (z10) {
-            r0Var.f.setText(gd.N0(2131754942, null));
+            r0Var.f.setText(hd.N0(2131754942, null));
             return;
         }
         if (!this.z1) {
@@ -162,12 +162,12 @@ public final class y0 extends w2 implements fs {
         }
         int i7 = this.y1;
         if (i7 == 4) {
-            r0Var.f.setText(gd.N0(2131743616, null));
+            r0Var.f.setText(hd.N0(2131743614, null));
             r0Var.setIcon(R.raw.unlock_icon);
         } else if (i7 != 10) {
-            r0Var.f.setText(gd.N0(2131754942, null));
+            r0Var.f.setText(hd.N0(2131754942, null));
         } else {
-            r0Var.f.setText(gd.N0(2131743617, null));
+            r0Var.f.setText(hd.N0(2131743615, null));
             r0Var.setIcon(R.raw.unlock_icon);
         }
     }
@@ -180,17 +180,17 @@ public final class y0 extends w2 implements fs {
         K0();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.m5 || i7 == ks.j5) {
+        if (i7 == ls.m5 || i7 == ls.j5) {
             K0();
             return;
         }
-        if (i7 == ks.i5) {
-            boolean q10 = j10.i(this.a).q();
+        if (i7 == ls.i5) {
+            boolean q10 = k10.i(this.a).q();
             r0 r0Var = this.n1;
             if (q10) {
-                r0Var.c(gd.N0(2131747637, null), false, true);
+                r0Var.c(hd.N0(2131747637, null), false, true);
             } else {
                 r0Var.r = false;
                 r0Var.d(true);
@@ -201,10 +201,10 @@ public final class y0 extends w2 implements fs {
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         super.dismiss();
-        ks.e().n(this, ks.m5);
-        ks.f(this.a).n(this, ks.j5);
-        ks.f(this.a).n(this, ks.i5);
-        ks.e().k(ks.k1, 16);
+        ls.e().n(this, ls.m5);
+        ls.f(this.a).n(this, ls.j5);
+        ls.f(this.a).n(this, ls.i5);
+        ls.e().k(ls.k1, 16);
     }
 
     @Override // org.telegram.ui.ActionBar.w2
@@ -231,9 +231,9 @@ public final class y0 extends w2 implements fs {
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        ks.e().c(this, ks.m5);
-        ks.f(this.a).c(this, ks.j5);
-        ks.f(this.a).c(this, ks.i5);
+        ls.e().c(this, ls.m5);
+        ls.f(this.a).c(this, ls.j5);
+        ls.f(this.a).c(this, ls.i5);
         v7 v7Var = new v7(7, getContext(), this);
         this.I1 = v7Var;
         t6.h(m6.h5, v7Var, this.J0);
@@ -253,16 +253,16 @@ public final class y0 extends w2 implements fs {
         int i10 = this.B1;
         ArrayList arrayList = this.o1;
         if (((ws0) arrayList.get(i10)).a == 14) {
-            this.I1.setTitle(gd.N0(2131743562, null));
+            this.I1.setTitle(hd.N0(2131743560, null));
             this.I1.requestLayout();
         } else if (((ws0) arrayList.get(this.B1)).a == 28) {
-            this.I1.setTitle(gd.N0(2131744011, null));
+            this.I1.setTitle(hd.N0(2131744009, null));
             this.I1.requestLayout();
         } else if (((ws0) arrayList.get(this.B1)).a == 40) {
-            this.I1.setTitle(gd.N0(2131750825, null));
+            this.I1.setTitle(hd.N0(2131750825, null));
             this.I1.requestLayout();
         } else {
-            this.I1.setTitle(gd.N0(2131751337, null));
+            this.I1.setTitle(hd.N0(2131751337, null));
             this.I1.requestLayout();
         }
     }
@@ -270,7 +270,7 @@ public final class y0 extends w2 implements fs {
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
         super.show();
-        ks.e().k(ks.j1, 16);
+        ls.e().k(ls.j1, 16);
     }
 
     public y0(g2 g2Var, int i7, boolean z10) {
@@ -303,14 +303,14 @@ public final class y0 extends w2 implements fs {
         final int i11 = 0;
         ArrayList arrayList = new ArrayList();
         this.o1 = arrayList;
-        this.F1 = ks.e4;
+        this.F1 = ls.e4;
         this.m1 = g2Var;
         this.E1 = xs0Var;
         Q(m6.h5);
         this.y1 = i10;
         this.z1 = z11;
-        this.x1 = mz.i(org.telegram.messenger.g0.y2(null, R.raw.star_loader));
-        y01 y01Var = new y01(11, getContext(), this);
+        this.x1 = nz.i(org.telegram.messenger.g0.y2(null, R.raw.star_loader));
+        x01 x01Var = new x01(11, getContext(), this);
         if (!z10 && i10 != 35) {
             PremiumPreviewFragment.s0(i7, arrayList);
         } else {
@@ -319,7 +319,7 @@ public final class y0 extends w2 implements fs {
         }
         if (i10 == 40) {
             arrayList.clear();
-            arrayList.add(new ws0(40, R.drawable.gift, gd.N0(2131750825, null), gd.N0(2131750824, null)));
+            arrayList.add(new ws0(40, R.drawable.gift, hd.N0(2131750825, null), hd.N0(2131750824, null)));
         }
         int i12 = 0;
         while (true) {
@@ -351,7 +351,7 @@ public final class y0 extends w2 implements fs {
         this.t1 = y61Var;
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.v1 = frameLayout;
-        frameLayout.setContentDescription(gd.N0(2131752029, null));
+        frameLayout.setContentDescription(hd.N0(2131752029, null));
         ImageView imageView = new ImageView(getContext());
         imageView.setImageResource(R.drawable.msg_close);
         int L = org.telegram.messenger.g0.L(12.0f);
@@ -378,7 +378,7 @@ public final class y0 extends w2 implements fs {
                 }
             }
         });
-        y01Var.addView(y61Var, ma.t(-1, -2, 1, 0, 16, 0, 0));
+        x01Var.addView(y61Var, ma.t(-1, -2, 1, 0, 16, 0, 0));
         w0 w0Var = new w0(this, getContext());
         this.s1 = w0Var;
         w0Var.setOverScrollMode(2);
@@ -386,12 +386,12 @@ public final class y0 extends w2 implements fs {
         w0Var.setAdapter(new n20(this, 4));
         this.B1 = i12;
         w0Var.setCurrentItem(i12);
-        y01Var.addView(w0Var, ma.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
-        y01Var.addView(frameLayout, ma.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
+        x01Var.addView(w0Var, ma.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
+        x01Var.addView(frameLayout, ma.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
         ia iaVar = new ia(getContext(), w0Var, this.o1.size());
         w0Var.b(new l7(this, iaVar, 1));
         LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.addView(y01Var);
+        linearLayout.addView(x01Var);
         linearLayout.setOrientation(1);
         int i13 = m6.V8;
         int i14 = m6.P9;
@@ -428,14 +428,14 @@ public final class y0 extends w2 implements fs {
         t6.h(m6.h5, frameLayout2, h6Var);
         linearLayout.addView(frameLayout2, ma.r(-1, 68, 80));
         if (i10 == 40) {
-            r0Var.c(f6.t2(gd.N0(2131743645, null)), true, false);
-        } else if (j10.i(i7).q()) {
-            r0Var.c(gd.N0(2131747637, null), false, false);
+            r0Var.c(f6.t2(hd.N0(2131743643, null)), true, false);
+        } else if (k10.i(i7).q()) {
+            r0Var.c(hd.N0(2131747637, null), false, false);
         }
         ScrollView scrollView = new ScrollView(getContext());
         scrollView.addView(linearLayout);
         this.O = scrollView;
-        ri.d0(i7).r1();
+        si.d0(i7).r1();
         K0();
         this.V0 = 83;
         n4 n4Var = new n4(this, getContext(), scrollView, getContext().getDrawable(R.drawable.header_shadow).mutate());

@@ -9,9 +9,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class z2 {
     public static final ThreadLocal a = new ThreadLocal();
@@ -25,7 +25,7 @@ public abstract class z2 {
     public static void a(View view, Context context) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(f.a.j);
         try {
-            if (!obtainStyledAttributes.hasValue(ks.C1)) {
+            if (!obtainStyledAttributes.hasValue(ls.C1)) {
                 Log.e("ThemeUtils", "View " + view.getClass() + " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).");
             }
         } finally {

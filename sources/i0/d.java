@@ -3,9 +3,9 @@ package i0;
 import android.graphics.Path;
 import android.util.Log;
 import c8.l0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class d {
     public char a;
@@ -150,27 +150,27 @@ public final class d {
             float f25 = fArr2[5];
             switch (c12) {
                 case 'A':
-                case ks.i1 /* 97 */:
+                case ls.i1 /* 97 */:
                     i7 = 7;
                     break;
-                case ks.E0 /* 67 */:
-                case ks.k1 /* 99 */:
+                case ls.E0 /* 67 */:
+                case ls.k1 /* 99 */:
                     i7 = 6;
                     break;
-                case ks.J0 /* 72 */:
-                case ks.X0 /* 86 */:
-                case ks.p1 /* 104 */:
-                case ks.D1 /* 118 */:
+                case ls.J0 /* 72 */:
+                case ls.X0 /* 86 */:
+                case ls.p1 /* 104 */:
+                case ls.D1 /* 118 */:
                     i7 = 1;
                     break;
-                case ks.S0 /* 81 */:
-                case ks.U0 /* 83 */:
-                case ks.y1 /* 113 */:
-                case ks.A1 /* 115 */:
+                case ls.S0 /* 81 */:
+                case ls.U0 /* 83 */:
+                case ls.y1 /* 113 */:
+                case ls.A1 /* 115 */:
                     i7 = 4;
                     break;
-                case ks.b1 /* 90 */:
-                case ks.G1 /* 122 */:
+                case ls.b1 /* 90 */:
+                case ls.G1 /* 122 */:
                     path2.close();
                     path2.moveTo(f24, f25);
                     f20 = f24;

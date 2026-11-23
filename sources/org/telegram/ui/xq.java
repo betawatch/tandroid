@@ -14,7 +14,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xq extends Drawable {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -96,7 +96,7 @@ public final class xq extends Drawable {
         Rect bounds = getBounds();
         if (c10 > 0.0f || c11 > 0.0f || d > 0.0f) {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.ks.e4, 31);
+            canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.ls.e4, 31);
         } else {
             canvas2 = canvas;
         }

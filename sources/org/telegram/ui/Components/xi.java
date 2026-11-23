@@ -4,22 +4,22 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xi implements org.telegram.messenger.q10 {
+public final /* synthetic */ class xi implements org.telegram.messenger.r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ej b;
-    public final /* synthetic */ org.telegram.messenger.mp c;
+    public final /* synthetic */ org.telegram.messenger.np c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ xi(ej ejVar, org.telegram.messenger.mp mpVar, int i7, int i10) {
+    public /* synthetic */ xi(ej ejVar, org.telegram.messenger.np npVar, int i7, int i10) {
         this.a = i10;
         this.b = ejVar;
-        this.c = mpVar;
+        this.c = npVar;
         this.d = i7;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio;
         TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio2;
@@ -51,7 +51,7 @@ public final /* synthetic */ class xi implements org.telegram.messenger.q10 {
                                 tL_message.from_id = tL_peerUser;
                                 TLRPC.Peer peer = tL_message.peer_id;
                                 int i11 = this.d;
-                                long e10 = org.telegram.messenger.j10.i(i11).e();
+                                long e10 = org.telegram.messenger.k10.i(i11).e();
                                 tL_peerUser.user_id = e10;
                                 peer.user_id = e10;
                                 tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -61,10 +61,10 @@ public final /* synthetic */ class xi implements org.telegram.messenger.q10 {
                                 tL_messageMediaDocument.flags |= 3;
                                 tL_messageMediaDocument.document = tL_botInlineMediaResult.document;
                                 tL_message.flags |= 768;
-                                org.telegram.messenger.ve veVar = new org.telegram.messenger.ve();
-                                org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(i11, tL_message, false, true);
-                                veVar.e = fjVar;
-                                TLRPC.Document F0 = fjVar.F0();
+                                org.telegram.messenger.we weVar = new org.telegram.messenger.we();
+                                org.telegram.messenger.gj gjVar = new org.telegram.messenger.gj(i11, tL_message, false, true);
+                                weVar.e = gjVar;
+                                TLRPC.Document F0 = gjVar.F0();
                                 if (F0 != null) {
                                     int i12 = 0;
                                     while (true) {
@@ -77,10 +77,10 @@ public final /* synthetic */ class xi implements org.telegram.messenger.q10 {
                                         }
                                     }
                                     if (tL_documentAttributeAudio != null) {
-                                        veVar.a = tL_documentAttributeAudio.performer;
-                                        veVar.b = tL_documentAttributeAudio.title;
-                                        veVar.c = (int) tL_documentAttributeAudio.duration;
-                                        ejVar.N.add(veVar);
+                                        weVar.a = tL_documentAttributeAudio.performer;
+                                        weVar.b = tL_documentAttributeAudio.title;
+                                        weVar.c = (int) tL_documentAttributeAudio.duration;
+                                        ejVar.N.add(weVar);
                                     }
                                 }
                             }
@@ -101,19 +101,19 @@ public final /* synthetic */ class xi implements org.telegram.messenger.q10 {
                 ejVar2.a0 = false;
                 if (messages_messages != null) {
                     ArrayList<TLRPC.User> arrayList3 = messages_messages.users;
-                    org.telegram.messenger.mp mpVar = this.c;
-                    mpVar.f4(arrayList3, false);
-                    mpVar.Z3(messages_messages.chats, false);
+                    org.telegram.messenger.np npVar = this.c;
+                    npVar.f4(arrayList3, false);
+                    npVar.Z3(messages_messages.chats, false);
                     ArrayList<TLRPC.Message> arrayList4 = messages_messages.messages;
                     int size2 = arrayList4.size();
                     int i13 = 0;
                     while (i13 < size2) {
                         TLRPC.Message message = arrayList4.get(i13);
                         i13++;
-                        org.telegram.messenger.ve veVar2 = new org.telegram.messenger.ve();
-                        org.telegram.messenger.fj fjVar2 = new org.telegram.messenger.fj(this.d, message, false, true);
-                        veVar2.e = fjVar2;
-                        TLRPC.Document F02 = fjVar2.F0();
+                        org.telegram.messenger.we weVar2 = new org.telegram.messenger.we();
+                        org.telegram.messenger.gj gjVar2 = new org.telegram.messenger.gj(this.d, message, false, true);
+                        weVar2.e = gjVar2;
+                        TLRPC.Document F02 = gjVar2.F0();
                         if (F02 != null) {
                             int i14 = 0;
                             while (true) {
@@ -126,10 +126,10 @@ public final /* synthetic */ class xi implements org.telegram.messenger.q10 {
                                 }
                             }
                             if (tL_documentAttributeAudio2 != null) {
-                                veVar2.a = tL_documentAttributeAudio2.performer;
-                                veVar2.b = tL_documentAttributeAudio2.title;
-                                veVar2.c = (int) tL_documentAttributeAudio2.duration;
-                                arrayList2.add(veVar2);
+                                weVar2.a = tL_documentAttributeAudio2.performer;
+                                weVar2.b = tL_documentAttributeAudio2.title;
+                                weVar2.c = (int) tL_documentAttributeAudio2.duration;
+                                arrayList2.add(weVar2);
                             }
                         }
                     }

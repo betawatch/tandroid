@@ -14,16 +14,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.gp;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -35,9 +35,9 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class u6 extends org.telegram.ui.Components.sa implements fs, org.telegram.messenger.y5, te.b {
+public final class u6 extends org.telegram.ui.Components.sa implements gs, org.telegram.messenger.y5, te.b {
     public boolean A2;
     public boolean B2;
     public int C2;
@@ -52,9 +52,9 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
     public final ArrayList X1;
     public final ArrayList Y1;
     public final ArrayList Z1;
-    public final gp a2;
-    public final x10 b2;
-    public fj c2;
+    public final hp a2;
+    public final y10 b2;
+    public gj c2;
     public boolean d2;
     public boolean e2;
     public final FrameLayout f2;
@@ -64,7 +64,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
     public final dh.c j2;
     public final r6 k2;
     public c51 l2;
-    public fj m2;
+    public gj m2;
     public String n2;
     public int o2;
     public boolean p2;
@@ -82,7 +82,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Type inference failed for: r1v1, types: [hi.p6] */
     /* JADX WARN: Type inference failed for: r1v3, types: [hi.p6] */
-    public u6(Context context, boolean z10, u6 u6Var, x10 x10Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public u6(Context context, boolean z10, u6 u6Var, y10 y10Var, org.telegram.ui.ActionBar.h6 h6Var) {
         super(2, context, h6Var, true);
         final int i7 = 2;
         final int i10 = 1;
@@ -133,7 +133,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                                     TLRPC.Peer peer = tL_message.peer_id;
                                     cursor = cursor2;
                                     try {
-                                        long e10 = j10.i(u6Var2.a).e();
+                                        long e10 = k10.i(u6Var2.a).e();
                                         tL_peerUser.user_id = e10;
                                         peer.user_id = e10;
                                         tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -168,7 +168,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                                         TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
                                         tL_documentAttributeFilename.file_name = file.getName();
                                         tL_message.media.document.attributes.add(tL_documentAttributeFilename);
-                                        arrayList.add(new fj(u6Var2.a, tL_message, false, true));
+                                        arrayList.add(new gj(u6Var2.a, tL_message, false, true));
                                         i11--;
                                         cursor2 = cursor;
                                         r42 = 1;
@@ -249,7 +249,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                                     TLRPC.Peer peer = tL_message.peer_id;
                                     cursor = cursor2;
                                     try {
-                                        long e10 = j10.i(u6Var2.a).e();
+                                        long e10 = k10.i(u6Var2.a).e();
                                         tL_peerUser.user_id = e10;
                                         peer.user_id = e10;
                                         tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -284,7 +284,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                                         TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
                                         tL_documentAttributeFilename.file_name = file.getName();
                                         tL_message.media.document.attributes.add(tL_documentAttributeFilename);
-                                        arrayList.add(new fj(u6Var2.a, tL_message, false, true));
+                                        arrayList.add(new gj(u6Var2.a, tL_message, false, true));
                                         i11--;
                                         cursor2 = cursor;
                                         r42 = 1;
@@ -330,11 +330,11 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
         this.V1 = z10;
         this.U1 = org.telegram.messenger.a6.q(this.a).k();
         this.W1 = u6Var;
-        this.b2 = x10Var;
+        this.b2 = y10Var;
         ui.c d = this.Y0.d(new q6(this));
         this.i2 = d;
         final int i11 = 0;
-        if (Build.VERSION.SDK_INT < 31 || !bz.f()) {
+        if (Build.VERSION.SDK_INT < 31 || !cz.f()) {
             this.h2 = null;
             this.j2 = new dh.c(d, d, d);
         } else {
@@ -348,7 +348,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
             dh.c cVar = new dh.c(fVar, fVar, fVar);
             this.j2 = cVar;
             cVar.k = true;
-            int L = pc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
+            int L = qc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
             cVar.d = L;
             cVar.e = L;
             cVar.j = this.Y0;
@@ -367,7 +367,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
         e10Var.updateColors();
         e10Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
         e10Var.r.addTextChangedListener(new ah.j(this, 7));
-        e10Var.r.setHint(gd.N0(2131745640, null));
+        e10Var.r.setHint(hd.N0(2131745640, null));
         frameLayout.addView(tiVar, c8.ma.g());
         frameLayout.addView(e10Var, c8.ma.d(-1, 48.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f));
         e10Var.setupBlurredBackground(this.j2.c(e10Var, c8.i0.o(h6Var), false));
@@ -429,7 +429,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                                             TLRPC.Peer peer = tL_message.peer_id;
                                             cursor = cursor2;
                                             try {
-                                                long e10 = j10.i(u6Var2.a).e();
+                                                long e10 = k10.i(u6Var2.a).e();
                                                 tL_peerUser.user_id = e10;
                                                 peer.user_id = e10;
                                                 tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -464,7 +464,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                                                 TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
                                                 tL_documentAttributeFilename.file_name = file.getName();
                                                 tL_message.media.document.attributes.add(tL_documentAttributeFilename);
-                                                arrayList.add(new fj(u6Var2.a, tL_message, false, true));
+                                                arrayList.add(new gj(u6Var2.a, tL_message, false, true));
                                                 i112--;
                                                 cursor2 = cursor;
                                                 r42 = 1;
@@ -505,14 +505,14 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
             }
         } else {
             int i14 = this.a;
-            gp gpVar = new gp(i14, j10.i(i14).e());
-            this.a2 = gpVar;
-            gpVar.b();
+            hp hpVar = new hp(i14, k10.i(i14).e());
+            this.a2 = hpVar;
+            hpVar.b();
             i1();
             h1();
         }
         this.o1.setOnScrollListener(new bi.u1(this, 16));
-        this.o1.setOnItemClickListener(new bi.t1(this, x10Var, h6Var, 2));
+        this.o1.setOnItemClickListener(new bi.t1(this, y10Var, h6Var, 2));
         this.Y0.b(this.o1);
         this.Y0.i(this.b);
         ri.q qVar = this.Y0;
@@ -551,8 +551,8 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
 
     @Override // org.telegram.messenger.y5
     public final void N(String str) {
-        fj fjVar = this.c2;
-        if (fjVar == null || !TextUtils.equals(fjVar.S0(), str)) {
+        gj gjVar = this.c2;
+        if (gjVar == null || !TextUtils.equals(gjVar.S0(), str)) {
             return;
         }
         this.b2.a(this.c2);
@@ -565,7 +565,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.N0(2131744367, null);
+        return hd.N0(2131744365, null);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -574,9 +574,9 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
         super.X0(canvas, view);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.W3) {
+        if (i7 == ls.W3) {
             this.l2.O(true);
         }
     }
@@ -608,19 +608,19 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                 }
                 Object obj = arrayList2.get(i13);
                 i13++;
-                fj fjVar = (fj) obj;
+                gj gjVar = (gj) obj;
                 if (!z10) {
-                    fjVar.K5(this.n2, true);
-                    arrayList3.add(fjVar);
+                    gjVar.K5(this.n2, true);
+                    arrayList3.add(gjVar);
                 } else if (TextUtils.isEmpty(lowerCase) || arrayList2 == this.Y1) {
-                    fjVar.K5(null, true);
-                    arrayList3.add(fjVar);
+                    gjVar.K5(null, true);
+                    arrayList3.add(gjVar);
                 } else {
-                    String y12 = fjVar.y1(true);
-                    String w12 = fjVar.w1(true);
+                    String y12 = gjVar.y1(true);
+                    String w12 = gjVar.w1(true);
                     if (j1(lowerCase, M3, y12) || j1(lowerCase, M3, w12)) {
-                        fjVar.K5(this.n2, true);
-                        arrayList3.add(fjVar);
+                        gjVar.K5(this.n2, true);
+                        arrayList3.add(gjVar);
                     }
                 }
             }
@@ -640,7 +640,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                     di.ta taVar = new di.ta(this, i10);
                     int i14 = org.telegram.ui.Cells.g7.b;
                     o41 K = o41.K(org.telegram.ui.Cells.g7.class);
-                    K.H = (fj) obj2;
+                    K.H = (gj) obj2;
                     K.I = taVar;
                     arrayList.add(K);
                     i11 += org.telegram.messenger.g0.L(56.0f);
@@ -652,7 +652,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                     i11 += org.telegram.messenger.g0.L(56.0f) * 3;
                 }
                 if (z12 && !z11) {
-                    o41 c10 = o41.c(i7, R.drawable.arrow_more, gd.N0(2131745143, null));
+                    o41 c10 = o41.c(i7, R.drawable.arrow_more, hd.N0(2131745143, null));
                     c10.r = true;
                     arrayList.add(c10);
                     i11 += org.telegram.messenger.g0.L(50.0f);
@@ -694,7 +694,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
 
     public final void h1() {
         String str;
-        String str2 = ((org.telegram.messenger.n0) mp.u1(this.a).A7.K.b).c;
+        String str2 = ((org.telegram.messenger.n0) np.u1(this.a).A7.K.b).c;
         if (TextUtils.isEmpty(str2)) {
             return;
         }
@@ -712,7 +712,7 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
         ArrayList arrayList = this.Z1;
         if (arrayList.isEmpty() || this.w2) {
             if (this.z2 == null) {
-                TLObject h22 = mp.u1(this.a).h2(str2);
+                TLObject h22 = np.u1(this.a).h2(str2);
                 this.z2 = h22 instanceof TLRPC.User ? (TLRPC.User) h22 : null;
             }
             if (this.z2 == null) {
@@ -720,14 +720,14 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
                     return;
                 }
                 this.A2 = true;
-                mp.u1(this.a).f2().a(str2, null, new s6(this, 0));
+                np.u1(this.a).f2().a(str2, null, new s6(this, 0));
                 return;
             }
             this.x2 = true;
-            TLRPC.User f10 = j10.i(this.a).f();
+            TLRPC.User f10 = k10.i(this.a).f();
             TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-            tL_messages_getInlineBotResults.bot = mp.u1(this.a).s1(this.z2);
-            tL_messages_getInlineBotResults.peer = mp.p1(f10);
+            tL_messages_getInlineBotResults.bot = np.u1(this.a).s1(this.z2);
+            tL_messages_getInlineBotResults.peer = np.p1(f10);
             if (arrayList.isEmpty() || (str = this.v2) == null) {
                 str = "";
             }
@@ -767,10 +767,10 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
             tL_messages_searchGlobal.q = str4;
             tL_messages_searchGlobal.limit = 20;
             if (arrayList.size() > 0) {
-                fj fjVar = (fj) i5.c.h(1, arrayList);
-                tL_messages_searchGlobal.offset_id = fjVar.e1();
+                gj gjVar = (gj) i5.c.h(1, arrayList);
+                tL_messages_searchGlobal.offset_id = gjVar.e1();
                 tL_messages_searchGlobal.offset_rate = this.o2;
-                tL_messages_searchGlobal.offset_peer = mp.u1(this.a).l1(fj.B1(fjVar.k.peer_id));
+                tL_messages_searchGlobal.offset_peer = np.u1(this.a).l1(gj.B1(gjVar.k.peer_id));
             } else {
                 tL_messages_searchGlobal.offset_rate = 0;
                 tL_messages_searchGlobal.offset_id = 0;
@@ -802,13 +802,13 @@ public final class u6 extends org.telegram.ui.Components.sa implements fs, org.t
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(this.a).c(this, ks.W3);
+        ls.f(this.a).c(this, ls.W3);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(this.a).n(this, ks.W3);
+        ls.f(this.a).n(this, ls.W3);
     }
 
     @Override // org.telegram.ui.ActionBar.w2

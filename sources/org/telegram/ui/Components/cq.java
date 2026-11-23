@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cq extends org.telegram.ui.ActionBar.w2 {
     public final Drawable m1;
@@ -38,7 +38,7 @@ public final class cq extends org.telegram.ui.ActionBar.w2 {
         this.s1 = new int[2];
         this.q1 = true;
         this.w0 = false;
-        TLRPC.ChatFull P0 = org.telegram.messenger.mp.u1(this.a).P0(chat.id);
+        TLRPC.ChatFull P0 = org.telegram.messenger.np.u1(this.a).P0(chat.id);
         int i7 = P0 != null ? P0.ttl_period : 0;
         if (i7 == 0) {
             this.t1 = 0;
@@ -69,31 +69,31 @@ public final class cq extends org.telegram.ui.ActionBar.w2 {
         zpVar.setOrientation(1);
         ypVar.addView(zpVar, c8.ma.x(-1, -2, 80));
         this.O = zpVar;
-        org.telegram.messenger.j10.i(this.a).e();
-        org.telegram.messenger.mp.u1(this.a);
+        org.telegram.messenger.k10.i(this.a).e();
+        org.telegram.messenger.np.u1(this.a);
         rh0 rh0Var = new rh0(activity);
         rh0Var.setAutoRepeat(false);
         rh0Var.f(R.raw.utyan_private, 120, 120, null);
         rh0Var.setPadding(0, org.telegram.messenger.g0.L(20.0f), 0, 0);
         rh0Var.d();
-        zpVar.addView(rh0Var, c8.ma.t(org.telegram.messenger.ks.q2, org.telegram.messenger.ks.q2, 49, 17, 0, 17, 0));
+        zpVar.addView(rh0Var, c8.ma.t(org.telegram.messenger.ls.q2, org.telegram.messenger.ls.q2, 49, 17, 0, 17, 0));
         TextView textView = new TextView(activity);
-        org.telegram.messenger.n10.p(textView, 1, 24.0f);
-        org.telegram.messenger.n10.r(textView, org.telegram.ui.ActionBar.m6.j5, null, null, 2131753866);
+        org.telegram.messenger.o10.p(textView, 1, 24.0f);
+        org.telegram.messenger.o10.r(textView, org.telegram.ui.ActionBar.m6.j5, null, null, 2131753866);
         zpVar.addView(textView, c8.ma.t(-2, -2, 49, 17, 18, 17, 0));
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.r5, null);
         textView2.setGravity(1);
         if (!org.telegram.messenger.v3.T(chat) || chat.megagroup) {
-            textView2.setText(org.telegram.messenger.gd.N0(2131753867, null));
+            textView2.setText(org.telegram.messenger.hd.N0(2131753867, null));
         } else {
-            textView2.setText(org.telegram.messenger.gd.N0(2131753868, null));
+            textView2.setText(org.telegram.messenger.hd.N0(2131753868, null));
         }
         zpVar.addView(textView2, c8.ma.t(-2, -2, 49, 30, 22, 30, 20));
         hu0 hu0Var = new hu0(activity, null);
         hu0Var.setCallback(new aq(this, ypVar));
-        hu0Var.b(this.t1, null, org.telegram.messenger.gd.N0(2131753846, null), org.telegram.messenger.gd.N0(2131753876, null), org.telegram.messenger.gd.N0(2131753875, null), org.telegram.messenger.gd.N0(2131753877, null));
+        hu0Var.b(this.t1, null, org.telegram.messenger.hd.N0(2131753846, null), org.telegram.messenger.hd.N0(2131753876, null), org.telegram.messenger.hd.N0(2131753875, null), org.telegram.messenger.hd.N0(2131753877, null));
         zpVar.addView(hu0Var, c8.ma.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
         FrameLayout frameLayout = new FrameLayout(activity);
         oq oqVar = new oq(new ColorDrawable(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.a7, this.J0)), org.telegram.ui.ActionBar.m6.Y0(activity, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.m6.b7));
@@ -102,12 +102,12 @@ public final class cq extends org.telegram.ui.ActionBar.w2 {
         arrayList.add(oqVar);
         zpVar.addView(frameLayout, c8.ma.o(-1, -2));
         org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(activity, null);
-        a9Var.setText(org.telegram.messenger.gd.N0(2131753849, null));
+        a9Var.setText(org.telegram.messenger.hd.N0(2131753849, null));
         frameLayout.addView(a9Var);
         bq bqVar = new bq(activity);
         this.p1 = bqVar;
         org.telegram.ui.ActionBar.t6.h(i10, bqVar, null);
-        bqVar.setText(org.telegram.messenger.gd.N0(2131753842, null));
+        bqVar.setText(org.telegram.messenger.hd.N0(2131753842, null));
         bqVar.a.setOnClickListener(new o0(this, 9));
         frameLayout.addView(bqVar);
         K0(false);

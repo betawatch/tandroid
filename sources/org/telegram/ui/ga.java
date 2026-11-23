@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final EditTextBoldCursor a;
@@ -35,10 +35,10 @@ public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.b
         editTextBoldCursor.setLines(1);
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 48);
+        editTextBoldCursor.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
         editTextBoldCursor.setInputType(180224);
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHint(org.telegram.messenger.gd.N0(2131743405, null));
+        editTextBoldCursor.setHint(org.telegram.messenger.hd.N0(2131743403, null));
         org.telegram.ui.ActionBar.t6.l(editTextBoldCursor, 30, i11, null);
         editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         editTextBoldCursor.setCursorWidth(1.5f);
@@ -59,7 +59,7 @@ public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.b
         textView.setText(laVar.getMessagesController().X2 + "/");
         textView.setTextSize(1, 17.0f);
         org.telegram.ui.ActionBar.t6.U(textView, i11, null);
-        textView.setGravity((org.telegram.messenger.gd.a0 ? 5 : 3) | 48);
+        textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
         textView.setTranslationY(-org.telegram.messenger.g0.L(3.0f));
         linearLayout.addView(textView, c8.ma.q(-2, -2, 0.0f, 16, 21, 15, 0, 15));
         linearLayout.addView(editTextBoldCursor, c8.ma.q(-2, -2, 1.0f, 16, 0, 15, 21, 15));

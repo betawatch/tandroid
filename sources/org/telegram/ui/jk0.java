@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jk0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -78,15 +78,15 @@ public final /* synthetic */ class jk0 implements View.OnClickListener {
                 break;
             case 8:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ml0Var.getParentActivity());
-                String N0 = org.telegram.messenger.gd.N0(2131743697, null);
+                String N0 = org.telegram.messenger.hd.N0(2131743695, null);
                 if (ml0Var.b0.has_secure_values) {
-                    N0 = i5.c.k(2131743698, null, p5.c.n(N0, "\n\n"));
+                    N0 = i5.c.k(2131743696, null, p5.c.n(N0, "\n\n"));
                 }
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.U = N0;
-                t1Var.S = org.telegram.messenger.gd.N0(2131743696, null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751423, null), new pk0(ml0Var, 3));
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                t1Var.S = org.telegram.messenger.hd.N0(2131743694, null);
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751423, null), new pk0(ml0Var, 3));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
                 ml0Var.showDialog(t1Var);
                 TextView textView = (TextView) t1Var.d(-1);
                 if (textView != null) {

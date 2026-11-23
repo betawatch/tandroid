@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -157,7 +157,7 @@ public abstract class g {
                 String str = field.getDeclaringClass().getName() + field.getName();
                 Object obj2 = bundle.get(str);
                 if (obj2 == null) {
-                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "android.support.v4.graphics.drawable.IconCompat"));
+                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "androidx.core.graphics.drawable.IconCompat"));
                 }
                 if (obj2 instanceof Bundle) {
                     field.set(newInstance, f((Bundle) obj2, eVar));

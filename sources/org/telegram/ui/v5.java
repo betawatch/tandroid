@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v5 extends rg.b {
     public final /* synthetic */ x5 d;
@@ -43,7 +43,7 @@ public final class v5 extends rg.b {
             String str = null;
             if (g22 instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) g22;
-                str = user.self ? org.telegram.messenger.gd.N0(2131745705, null) : org.telegram.messenger.i5.m(0, user.first_name, user.last_name);
+                str = user.self ? org.telegram.messenger.hd.N0(2131745705, null) : org.telegram.messenger.i5.m(0, user.first_name, user.last_name);
             } else if (g22 instanceof TLRPC.Chat) {
                 str = ((TLRPC.Chat) g22).title;
             }
@@ -65,7 +65,7 @@ public final class v5 extends rg.b {
                 view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.c0) null);
             } else if (i7 == 4) {
                 org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-                n8Var.k(org.telegram.messenger.gd.N0(2131747721, null), false);
+                n8Var.k(org.telegram.messenger.hd.N0(2131747721, null), false);
                 n8Var.g(-1, org.telegram.ui.ActionBar.m6.p7);
                 org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var, null);
                 view = n8Var;
@@ -73,7 +73,7 @@ public final class v5 extends rg.b {
             return i5.c.q(view2, view2, -1, -2);
         }
         org.telegram.ui.Cells.n8 n8Var2 = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-        n8Var2.o(R.drawable.msg_contact_add, org.telegram.messenger.gd.N0(2131747729, null), true);
+        n8Var2.o(R.drawable.msg_contact_add, org.telegram.messenger.hd.N0(2131747729, null), true);
         n8Var2.g(org.telegram.ui.ActionBar.m6.v6, org.telegram.ui.ActionBar.m6.u6);
         org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n8Var2, null);
         view = n8Var2;

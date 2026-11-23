@@ -11,15 +11,15 @@ import android.view.ViewConfiguration;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k6 extends View {
     public float E;
@@ -71,7 +71,7 @@ public final class k6 extends View {
         this.y = new f2(11, this, bnVar);
     }
 
-    private fj getMessageObject() {
+    private gj getMessageObject() {
         org.telegram.ui.Cells.z zVar = this.b;
         if (zVar instanceof org.telegram.ui.Cells.r1) {
             return ((org.telegram.ui.Cells.r1) zVar).getPrimaryMessageObject();
@@ -85,7 +85,7 @@ public final class k6 extends View {
     public final void a() {
         String str;
         if (getMessageObject() != null) {
-            fj messageObject = getMessageObject();
+            gj messageObject = getMessageObject();
             bn bnVar = this.a;
             y8 y10 = y8.y(bnVar.getCurrentAccount(), false);
             long E = y10.E(messageObject);
@@ -98,7 +98,7 @@ public final class k6 extends View {
             }
             long a10 = bnVar.a();
             if (a10 >= 0) {
-                str = o10.l(bnVar.getMessagesController().c2(Long.valueOf(a10)));
+                str = p10.l(bnVar.getMessagesController().c2(Long.valueOf(a10)));
             } else {
                 TLRPC.Chat O0 = bnVar.getMessagesController().O0(Long.valueOf(-a10));
                 str = O0 == null ? "" : O0.title;
@@ -136,7 +136,7 @@ public final class k6 extends View {
         if (this.b == null || this.J) {
             return;
         }
-        fj messageObject = getMessageObject();
+        gj messageObject = getMessageObject();
         ch.q0 reactionsLayoutInBubble = getReactionsLayoutInBubble();
         if (messageObject == null || reactionsLayoutInBubble == null) {
             return;
@@ -223,7 +223,7 @@ public final class k6 extends View {
         } else if ((zVar instanceof org.telegram.ui.Cells.v0) && !((org.telegram.ui.Cells.v0) zVar).j2) {
             return;
         }
-        fj messageObject = getMessageObject();
+        gj messageObject = getMessageObject();
         if ((messageObject != null ? messageObject.e1() : 0) != this.c) {
             setMessageCell(null);
             return;
@@ -293,8 +293,8 @@ public final class k6 extends View {
                 f11 = 255.0f;
                 org.telegram.ui.ActionBar.m6.r(v0Var.v0, v0Var.u0 + org.telegram.messenger.g0.L(f10), v0Var.getMeasuredWidth(), v0Var.w0);
             }
-            fj fjVar = v0Var.Q0;
-            if (fjVar == null || !fjVar.O5()) {
+            gj gjVar = v0Var.Q0;
+            if (gjVar == null || !gjVar.O5()) {
                 rectF = rectF2;
             } else {
                 q0Var.getClass();

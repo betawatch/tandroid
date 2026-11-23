@@ -3,9 +3,9 @@ package hi;
 import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ue;
+import org.telegram.messenger.ve;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g3 extends d3 {
     public final /* synthetic */ int l0 = 0;
@@ -92,8 +92,8 @@ public final class g3 extends d3 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g3(sa saVar, int i7, Context context, fi.b bVar, ue ueVar, boolean z10, boolean z11, boolean z12) {
-        super(i7, context, bVar, ueVar, z10, 1.39f, z11, z12);
+    public g3(sa saVar, int i7, Context context, fi.b bVar, ve veVar, boolean z10, boolean z11, boolean z12) {
+        super(i7, context, bVar, veVar, z10, 1.39f, z11, z12);
         this.m0 = saVar;
     }
 }

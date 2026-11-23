@@ -15,8 +15,8 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
@@ -26,7 +26,7 @@ import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
     public boolean E;
@@ -56,12 +56,12 @@ public final class m5 extends y implements org.telegram.ui.ActionBar.b6, i9 {
         f1Var.setAllowNewlines(false);
         f1Var.setInputType(147457);
         f1Var.setGravity(49);
-        f1Var.setTextSize(1, Math.max(8, bz.W0 - 2));
+        f1Var.setTextSize(1, Math.max(8, cz.W0 - 2));
         f1Var.setIncludeFontPadding(false);
         f1Var.setMinHeight(0);
         f1Var.setBackground(null);
         f1Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(2.0f), 0);
-        f1Var.setHint(gd.N0(2131753986, null));
+        f1Var.setHint(hd.N0(2131753986, null));
         f1Var.setCenterEmptyHint(true);
         f1Var.setListener(new hi.t5(this, 22));
         f1Var.setDelegate(new kg.x1(this, 26));

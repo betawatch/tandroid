@@ -11,10 +11,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import c8.ma;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p2 extends FrameLayout {
     public final org.telegram.ui.Components.x5 a;
@@ -36,12 +36,12 @@ public final class p2 extends FrameLayout {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         t6.s(imageView, m6.J5, h6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, ma.e(56, 48, (gd.a0 ? 5 : 3) | 16));
+        addView(imageView, ma.e(56, 48, (hd.a0 ? 5 : 3) | 16));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setScaleType(scaleType);
         t6.s(imageView2, m6.h7, h6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView2, ma.e(56, 48, (gd.a0 ? 3 : 5) | 16));
+        addView(imageView2, ma.e(56, 48, (hd.a0 ? 3 : 5) | 16));
         org.telegram.ui.Components.x5 x5Var = new org.telegram.ui.Components.x5(context);
         this.a = x5Var;
         x5Var.setLines(1);
@@ -51,7 +51,7 @@ public final class p2 extends FrameLayout {
         if (i7 == 0 || i7 == 4) {
             t6.U(x5Var, m6.j5, h6Var);
             x5Var.setTextSize(1, 16.0f);
-            addView(x5Var, ma.e(-2, -2, (gd.a0 ? 5 : 3) | 16));
+            addView(x5Var, ma.e(-2, -2, (hd.a0 ? 5 : 3) | 16));
             return;
         }
         if (i7 == 1) {
@@ -88,10 +88,10 @@ public final class p2 extends FrameLayout {
         }
         imageView.setVisibility(0);
         if (z10) {
-            x5Var.setPadding(org.telegram.messenger.g0.L(gd.a0 ? 21.0f : 72.0f), 0, org.telegram.messenger.g0.L(gd.a0 ? 72.0f : 21.0f), 0);
-            imageView.setPadding(gd.a0 ? 0 : org.telegram.messenger.g0.L(5.0f), 0, gd.a0 ? org.telegram.messenger.g0.L(5.0f) : 5, 0);
+            x5Var.setPadding(org.telegram.messenger.g0.L(hd.a0 ? 21.0f : 72.0f), 0, org.telegram.messenger.g0.L(hd.a0 ? 72.0f : 21.0f), 0);
+            imageView.setPadding(hd.a0 ? 0 : org.telegram.messenger.g0.L(5.0f), 0, hd.a0 ? org.telegram.messenger.g0.L(5.0f) : 5, 0);
         } else {
-            x5Var.setPadding(org.telegram.messenger.g0.L(gd.a0 ? 16.0f : 72.0f), 0, org.telegram.messenger.g0.L(gd.a0 ? 72.0f : 16.0f), 0);
+            x5Var.setPadding(org.telegram.messenger.g0.L(hd.a0 ? 16.0f : 72.0f), 0, org.telegram.messenger.g0.L(hd.a0 ? 72.0f : 16.0f), 0);
             imageView.setPadding(0, 0, 0, 0);
         }
     }

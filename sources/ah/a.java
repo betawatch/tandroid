@@ -13,8 +13,8 @@ import c8.ra;
 import di.eb;
 import di.ua;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.m80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a extends LinearLayout {
     public final /* synthetic */ int a = 1;
@@ -102,17 +102,17 @@ public final class a extends LinearLayout {
         s sVar = new s(2, context, h6Var, true);
         this.c = sVar;
         sVar.setMinWidth(g0.L(200.0f));
-        sVar.i(gd.N0(2131746521, null), false, true);
+        sVar.i(hd.N0(2131746521, null), false, true);
         addView(sVar, ma.r(-2, 44, 17));
         gi.j jVar = new gi.j(context, h6Var);
         this.d = jVar;
         t6.U(jVar, i7, h6Var);
-        jVar.setText(gd.N0(2131746507, null));
+        jVar.setText(hd.N0(2131746507, null));
         jVar.setTextSize(1, 14.0f);
         jVar.setTextAlignment(4);
         jVar.setGravity(17);
         jVar.setTypeface(g0.o());
-        addView(jVar, ma.t(ks.v2, -2, 17, 0, 17, 0, 12));
+        addView(jVar, ma.t(ls.v2, -2, 17, 0, 17, 0, 12));
         hi.e eVar = new hi.e(context, h6Var, false);
         this.e = eVar;
         eVar.setMinWidth(g0.L(200.0f));
@@ -134,7 +134,7 @@ public final class a extends LinearLayout {
         fVar.A = m6.Xk;
         fVar.b();
         mVar.setStarParticlesView(uaVar);
-        frameLayout.addView(mVar, ma.d(ks.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        frameLayout.addView(mVar, ma.d(ls.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         mVar.setPaused(false);
         eb ebVar = new eb(i7, context, h6Var);
         this.c = ebVar;

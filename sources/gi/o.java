@@ -7,12 +7,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class o extends LinearLayout {
     public final TextView a;
@@ -27,13 +27,13 @@ public final class o extends LinearLayout {
         this.a = textView;
         textView.setTextSize(1, 16.0f);
         t6.U(textView, m6.j5, null);
-        textView.setGravity(gd.a0 ? 5 : 3);
+        textView.setGravity(hd.a0 ? 5 : 3);
         addView(textView, ma.t(-1, -2, 51, 0, 7, 0, 0));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 13.0f);
         t6.U(textView2, m6.q5, null);
-        textView2.setGravity(gd.a0 ? 5 : 3);
+        textView2.setGravity(hd.a0 ? 5 : 3);
         addView(textView2, ma.t(-1, -2, 51, 0, 4, 0, 0));
     }
 

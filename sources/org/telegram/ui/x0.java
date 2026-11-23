@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x0 extends View implements org.telegram.messenger.y5, org.telegram.ui.Cells.i9 {
     public int E;
@@ -28,7 +28,7 @@ public final class x0 extends View implements org.telegram.messenger.y5, org.tel
     public final int K;
     public TL_iv.pageBlockAudio L;
     public TLRPC.Document M;
-    public org.telegram.messenger.fj N;
+    public org.telegram.messenger.gj N;
     public final p50 a;
     public final e4 b;
     public z2 c;
@@ -103,7 +103,7 @@ public final class x0 extends View implements org.telegram.messenger.y5, org.tel
             org.telegram.messenger.a6.q(i7).a(r10, null, this);
             if (org.telegram.messenger.w7.G(i7).S(r10)) {
                 this.I = 3;
-                Float w10 = org.telegram.messenger.ec.D().w(r10);
+                Float w10 = org.telegram.messenger.fc.D().w(r10);
                 if (w10 != null) {
                     radialProgress2.p(z10, w10.floatValue());
                 } else {
@@ -120,14 +120,14 @@ public final class x0 extends View implements org.telegram.messenger.y5, org.tel
     }
 
     public final void b() {
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         int i7;
-        if (this.M == null || (fjVar = this.N) == null) {
+        if (this.M == null || (gjVar = this.N) == null) {
             return;
         }
         org.telegram.ui.Components.ym0 ym0Var = this.f;
         if (!ym0Var.e) {
-            ym0Var.h(fjVar.b0);
+            ym0Var.h(gjVar.b0);
         }
         if (!MediaController.B().I(this.N)) {
             int i10 = 0;
@@ -160,7 +160,7 @@ public final class x0 extends View implements org.telegram.messenger.y5, org.tel
         invalidate();
     }
 
-    public org.telegram.messenger.fj getMessageObject() {
+    public org.telegram.messenger.gj getMessageObject() {
         return this.N;
     }
 
@@ -315,7 +315,7 @@ public final class x0 extends View implements org.telegram.messenger.y5, org.tel
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131754873, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.N0(2131754873, null));
         if (this.x != null) {
             sb2.append(", ");
             sb2.append(this.x.d.getText());

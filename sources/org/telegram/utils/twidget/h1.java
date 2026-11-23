@@ -22,10 +22,10 @@ import java.util.BitSet;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 import org.json.JSONArray;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class h1 {
     public final RectF A;
@@ -312,7 +312,7 @@ public final class h1 {
         while (i23 < i7) {
             Canvas canvas2 = (Canvas) eVar7.d;
             int o4 = jVar5.o();
-            int i24 = o4 & ks.e4;
+            int i24 = o4 & ls.e4;
             int i25 = o4 >>> 8;
             int i26 = i25 & 1;
             RectF rectF = h1Var2.p;

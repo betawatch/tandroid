@@ -16,16 +16,16 @@ import org.json.JSONObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mz;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.nz;
 import org.telegram.messenger.s2;
-import org.telegram.messenger.tz;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.uz;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v1 {
     public static final HashMap e = new HashMap();
@@ -117,17 +117,17 @@ public final class v1 {
         return null;
     }
 
-    public static ai.s e(s0 s0Var, x10 x10Var) {
+    public static ai.s e(s0 s0Var, y10 y10Var) {
         if (s0Var == null) {
-            x10Var.a(null);
+            y10Var.a(null);
             return null;
         }
         int i7 = 1;
         boolean[] zArr = {false};
         v1 v1Var = new v1();
         v1Var.a = s0Var.getUrl();
-        tz tzVar = !s2.a ? null : new tz("WebInstantView");
-        o1 o1Var = new o1(tz.d(tzVar, "getHTML"), zArr, tzVar, v1Var, x10Var, 0);
+        uz uzVar = !s2.a ? null : new uz("WebInstantView");
+        o1 o1Var = new o1(uz.d(uzVar, "getHTML"), zArr, uzVar, v1Var, y10Var, 0);
         System.currentTimeMillis();
         s0Var.evaluateJavascript(org.telegram.messenger.g0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "true"), new p1(v1Var, s0Var, new File(org.telegram.messenger.g0.E0(), "archive.mht"), o1Var, 0));
         return new ai.s(i7, zArr);
@@ -199,7 +199,7 @@ public final class v1 {
             c1 c1Var = (c1) b1Var.a.get("content-type");
             if ((c1Var == null ? null : c1Var.a).contains("svg")) {
                 if (u1Var.d > 0 && u1Var.e > 0) {
-                    decodeStream = mz.g(b1Var.a(), org.telegram.messenger.g0.L(u1Var.d), org.telegram.messenger.g0.L(u1Var.e));
+                    decodeStream = nz.g(b1Var.a(), org.telegram.messenger.g0.L(u1Var.d), org.telegram.messenger.g0.L(u1Var.e));
                 }
                 return;
             }
@@ -461,31 +461,31 @@ public final class v1 {
                             break;
                         }
                         break;
-                    case ks.i1 /* 97 */:
+                    case ls.i1 /* 97 */:
                         if (optString.equals("a")) {
                             c10 = 3;
                             break;
                         }
                         break;
-                    case ks.j1 /* 98 */:
+                    case ls.j1 /* 98 */:
                         if (optString.equals("b")) {
                             c10 = 4;
                             break;
                         }
                         break;
-                    case ks.q1 /* 105 */:
+                    case ls.q1 /* 105 */:
                         if (optString.equals("i")) {
                             c10 = 5;
                             break;
                         }
                         break;
-                    case ks.x1 /* 112 */:
+                    case ls.x1 /* 112 */:
                         if (optString.equals("p")) {
                             c10 = 6;
                             break;
                         }
                         break;
-                    case ks.A1 /* 115 */:
+                    case ls.A1 /* 115 */:
                         if (optString.equals("s")) {
                             c10 = 7;
                             break;
@@ -862,35 +862,35 @@ public final class v1 {
                         }
                         c10 = 65535;
                         break;
-                    case ks.i1 /* 97 */:
+                    case ls.i1 /* 97 */:
                         if (optString.equals("a")) {
                             c10 = 1;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case ks.j1 /* 98 */:
+                    case ls.j1 /* 98 */:
                         if (optString.equals("b")) {
                             c10 = 2;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case ks.q1 /* 105 */:
+                    case ls.q1 /* 105 */:
                         if (optString.equals("i")) {
                             c10 = 3;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case ks.x1 /* 112 */:
+                    case ls.x1 /* 112 */:
                         if (optString.equals("p")) {
                             c10 = 4;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case ks.A1 /* 115 */:
+                    case ls.A1 /* 115 */:
                         if (optString.equals("s")) {
                             c10 = 5;
                             break;

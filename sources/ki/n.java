@@ -1,10 +1,10 @@
 package ki;
 
-import bi.p6;
+import bi.o6;
 import org.telegram.messenger.a8;
 import org.telegram.ui.Components.qc0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class n extends a8.m1 {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final class n extends a8.m1 {
             case 0:
                 a8.b("BotBiometry onAuthenticationError " + i7 + " \"" + ((Object) charSequence) + "\"");
                 p pVar = (p) this.b;
-                p6 p6Var = pVar.j;
-                if (p6Var != null) {
+                o6 o6Var = pVar.j;
+                if (o6Var != null) {
                     pVar.j = null;
-                    p6Var.a(Boolean.FALSE, null);
+                    o6Var.a(Boolean.FALSE, null);
                     break;
                 }
                 break;
@@ -54,10 +54,10 @@ public final class n extends a8.m1 {
             case 0:
                 a8.b("BotBiometry onAuthenticationSucceeded");
                 p pVar = (p) this.b;
-                p6 p6Var = pVar.j;
-                if (p6Var != null) {
+                o6 o6Var = pVar.j;
+                if (o6Var != null) {
                     pVar.j = null;
-                    p6Var.a(Boolean.TRUE, uVar);
+                    o6Var.a(Boolean.TRUE, uVar);
                     break;
                 }
                 break;

@@ -7,9 +7,9 @@ import java.util.Collections;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jp0 implements z00, org.telegram.messenger.rr, org.telegram.ui.ww {
+public final /* synthetic */ class jp0 implements z00, org.telegram.messenger.sr, org.telegram.ui.ww {
     public final /* synthetic */ jt0 a;
 
     public /* synthetic */ jp0(jt0 jt0Var) {
@@ -26,7 +26,7 @@ public final /* synthetic */ class jp0 implements z00, org.telegram.messenger.rr
         return false;
     }
 
-    @Override // org.telegram.messenger.rr
+    @Override // org.telegram.messenger.sr
     public void a(String str) {
         r0.getStoriesController().r(r0.m1, str, new gp0(this.a, 0));
     }
@@ -64,7 +64,7 @@ public final /* synthetic */ class jp0 implements z00, org.telegram.messenger.rr
                 i11++;
                 Integer num = (Integer) obj;
                 if (num.intValue() > 0) {
-                    arrayList2.add((org.telegram.messenger.fj) sparseArrayArr[i12].get(num.intValue()));
+                    arrayList2.add((org.telegram.messenger.gj) sparseArrayArr[i12].get(num.intValue()));
                 }
             }
             sparseArrayArr[i12].clear();
@@ -77,8 +77,8 @@ public final /* synthetic */ class jp0 implements z00, org.telegram.messenger.rr
             us0Var.x.clear();
         }
         UndoView undoView = null;
-        if (arrayList.size() <= 1 && ((org.telegram.messenger.sr) arrayList.get(0)).a != g2Var.getUserConfig().e() && charSequence == null) {
-            long j3 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
+        if (arrayList.size() <= 1 && ((org.telegram.messenger.tr) arrayList.get(0)).a != g2Var.getUserConfig().e() && charSequence == null) {
+            long j3 = ((org.telegram.messenger.tr) arrayList.get(0)).a;
             Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
             if (org.telegram.messenger.n5.C(j3)) {
                 k10.putInt("enc_id", (int) (j3 & 4294967295L));
@@ -92,9 +92,9 @@ public final /* synthetic */ class jp0 implements z00, org.telegram.messenger.rr
                     return true;
                 }
             }
-            g2Var.getNotificationCenter().k(org.telegram.messenger.ks.t, new Object[0]);
+            g2Var.getNotificationCenter().k(org.telegram.messenger.ls.t, new Object[0]);
             org.telegram.ui.bn bnVar = new org.telegram.ui.bn(k10);
-            qg.c.a(bnVar, (org.telegram.messenger.sr) arrayList.get(0));
+            qg.c.a(bnVar, (org.telegram.messenger.tr) arrayList.get(0));
             cxVar.presentFragment(bnVar, true);
             bnVar.hc(arrayList2);
             return true;
@@ -102,9 +102,9 @@ public final /* synthetic */ class jp0 implements z00, org.telegram.messenger.rr
         jt0Var.L1(true);
         int i14 = 0;
         while (i14 < arrayList.size()) {
-            long j10 = ((org.telegram.messenger.sr) arrayList.get(i14)).a;
+            long j10 = ((org.telegram.messenger.tr) arrayList.get(i14)).a;
             if (charSequence != null) {
-                g2Var.getSendMessagesHelper().r0(org.telegram.messenger.xy.b(charSequence.toString(), j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                g2Var.getSendMessagesHelper().r0(org.telegram.messenger.yy.b(charSequence.toString(), j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
             }
             g2Var.getSendMessagesHelper().q0(arrayList2, j10, false, false, true, 0, 0, null, -1, 0L, 0L, null);
             i14++;
@@ -120,7 +120,7 @@ public final /* synthetic */ class jp0 implements z00, org.telegram.messenger.rr
             return z13;
         }
         if (arrayList.size() == z13) {
-            undoView3.m(((org.telegram.messenger.sr) arrayList.get(0)).a, Integer.valueOf(arrayList2.size()), 53);
+            undoView3.m(((org.telegram.messenger.tr) arrayList.get(0)).a, Integer.valueOf(arrayList2.size()), 53);
             return z13;
         }
         undoView3.k(0L, 53, Integer.valueOf(arrayList2.size()), Integer.valueOf(arrayList.size()), null, null);

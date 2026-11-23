@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.aj;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.zi;
+import org.telegram.messenger.bj;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.ef;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.em0;
@@ -50,7 +50,7 @@ import org.telegram.ui.ns;
 import org.telegram.ui.rq;
 import org.telegram.ui.tw;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b1 extends ek0 {
     public final /* synthetic */ int f3;
@@ -173,15 +173,15 @@ public final class b1 extends ek0 {
     @Override // org.telegram.ui.Components.ek0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         fi.r0 r0Var;
-        aj ajVar;
+        bj bjVar;
         ArrayList arrayList;
         b1 b1Var;
         qa0 qa0Var;
         int i7;
         b1 b1Var2;
         boolean z10;
-        aj currentMessagesGroup;
-        aj currentMessagesGroup2;
+        bj currentMessagesGroup;
+        bj currentMessagesGroup2;
         switch (this.f3) {
             case 1:
                 fi.a2 a2Var = (fi.a2) this.g3;
@@ -243,11 +243,11 @@ public final class b1 extends ek0 {
                     }
                 }
                 int childCount = getChildCount();
-                aj ajVar2 = null;
+                bj bjVar2 = null;
                 for (int i13 = 0; i13 < childCount; i13++) {
                     View childAt3 = getChildAt(i13);
-                    if ((childAt3 instanceof org.telegram.ui.Cells.r1) && ((currentMessagesGroup2 = ((org.telegram.ui.Cells.r1) childAt3).getCurrentMessagesGroup()) == null || currentMessagesGroup2 != ajVar2)) {
-                        ajVar2 = currentMessagesGroup2;
+                    if ((childAt3 instanceof org.telegram.ui.Cells.r1) && ((currentMessagesGroup2 = ((org.telegram.ui.Cells.r1) childAt3).getCurrentMessagesGroup()) == null || currentMessagesGroup2 != bjVar2)) {
+                        bjVar2 = currentMessagesGroup2;
                     }
                 }
                 int i14 = 0;
@@ -267,20 +267,20 @@ public final class b1 extends ek0 {
                                 if (childAt4 instanceof org.telegram.ui.Cells.r1) {
                                     org.telegram.ui.Cells.r1 r1Var = (org.telegram.ui.Cells.r1) childAt4;
                                     if (childAt4.getY() <= b1Var4.getHeight() && childAt4.getY() + childAt4.getHeight() >= 0.0f && (currentMessagesGroup = r1Var.getCurrentMessagesGroup()) != null) {
-                                        zi ziVar = currentMessagesGroup.m;
-                                        if ((i14 != 0 || currentMessagesGroup.d.size() != 1) && ((i14 != 1 || ziVar.i) && ((i14 != 0 || !r1Var.getMessageObject().Z) && ((i14 != 1 || r1Var.getMessageObject().Z) && ((i14 != i15 || r1Var.za) && (i14 == i15 || !r1Var.za)))))) {
+                                        aj ajVar = currentMessagesGroup.m;
+                                        if ((i14 != 0 || currentMessagesGroup.d.size() != 1) && ((i14 != 1 || ajVar.i) && ((i14 != 0 || !r1Var.getMessageObject().Z) && ((i14 != 1 || r1Var.getMessageObject().Z) && ((i14 != i15 || r1Var.za) && (i14 == i15 || !r1Var.za)))))) {
                                             if (!arrayList2.contains(currentMessagesGroup)) {
-                                                ziVar.a = r12;
-                                                ziVar.b = r12;
-                                                ziVar.c = r12;
-                                                ziVar.d = r12;
-                                                ziVar.l = r12;
-                                                ziVar.k = r12;
-                                                ziVar.m = r1Var;
+                                                ajVar.a = r12;
+                                                ajVar.b = r12;
+                                                ajVar.c = r12;
+                                                ajVar.d = r12;
+                                                ajVar.l = r12;
+                                                ajVar.k = r12;
+                                                ajVar.m = r1Var;
                                                 arrayList2.add(currentMessagesGroup);
                                             }
-                                            ziVar.k = r1Var.L2();
-                                            ziVar.l = r1Var.K2();
+                                            ajVar.k = r1Var.L2();
+                                            ajVar.l = r1Var.K2();
                                             int backgroundDrawableLeft = r1Var.getBackgroundDrawableLeft() + r1Var.getLeft();
                                             int backgroundDrawableRight = r1Var.getBackgroundDrawableRight() + r1Var.getLeft();
                                             int backgroundDrawableTop = r1Var.getBackgroundDrawableTop() + r1Var.getPaddingTop() + r1Var.getTop();
@@ -293,23 +293,23 @@ public final class b1 extends ek0 {
                                             }
                                             int i17 = backgroundDrawableBottom;
                                             if (r1Var.za) {
-                                                ziVar.m = r1Var;
+                                                ajVar.m = r1Var;
                                             }
-                                            int i18 = ziVar.b;
+                                            int i18 = ajVar.b;
                                             if (i18 == 0 || backgroundDrawableTop < i18) {
-                                                ziVar.b = backgroundDrawableTop;
+                                                ajVar.b = backgroundDrawableTop;
                                             }
-                                            int i19 = ziVar.d;
+                                            int i19 = ajVar.d;
                                             if (i19 == 0 || i17 > i19) {
-                                                ziVar.d = i17;
+                                                ajVar.d = i17;
                                             }
-                                            int i20 = ziVar.a;
+                                            int i20 = ajVar.a;
                                             if (i20 == 0 || backgroundDrawableLeft < i20) {
-                                                ziVar.a = backgroundDrawableLeft;
+                                                ajVar.a = backgroundDrawableLeft;
                                             }
-                                            int i21 = ziVar.c;
+                                            int i21 = ajVar.c;
                                             if (i21 == 0 || backgroundDrawableRight > i21) {
-                                                ziVar.c = backgroundDrawableRight;
+                                                ajVar.c = backgroundDrawableRight;
                                             }
                                         }
                                     }
@@ -321,23 +321,23 @@ public final class b1 extends ek0 {
                                 int i22 = 0;
                                 ArrayList arrayList3 = arrayList2;
                                 while (i22 < arrayList3.size()) {
-                                    aj ajVar3 = (aj) arrayList3.get(i22);
-                                    if (ajVar3 == null) {
+                                    bj bjVar3 = (bj) arrayList3.get(i22);
+                                    if (bjVar3 == null) {
                                         arrayList = arrayList3;
                                         b1Var2 = b1Var4;
                                         z10 = z12;
                                         qa0Var = qa0Var2;
                                         i7 = i22;
                                     } else {
-                                        zi ziVar2 = ajVar3.m;
-                                        float S1 = ziVar2.m.S1(z12);
-                                        float f10 = ziVar2.a + S1 + ziVar2.e;
-                                        float f11 = ziVar2.b + ziVar2.f;
-                                        float f12 = ziVar2.g + ziVar2.c + S1;
-                                        float f13 = ziVar2.d + ziVar2.h;
-                                        if (!ziVar2.j) {
-                                            f11 += ziVar2.m.getTranslationY();
-                                            f13 += ziVar2.m.getTranslationY();
+                                        aj ajVar2 = bjVar3.m;
+                                        float S1 = ajVar2.m.S1(z12);
+                                        float f10 = ajVar2.a + S1 + ajVar2.e;
+                                        float f11 = ajVar2.b + ajVar2.f;
+                                        float f12 = ajVar2.g + ajVar2.c + S1;
+                                        float f13 = ajVar2.d + ajVar2.h;
+                                        if (!ajVar2.j) {
+                                            f11 += ajVar2.m.getTranslationY();
+                                            f13 += ajVar2.m.getTranslationY();
                                         }
                                         if (f11 < (-org.telegram.messenger.g0.L(20.0f))) {
                                             f11 = -org.telegram.messenger.g0.L(20.0f);
@@ -347,33 +347,33 @@ public final class b1 extends ek0 {
                                             f13 = org.telegram.messenger.g0.L(20.0f) + b1Var4.getMeasuredHeight();
                                         }
                                         float f15 = f13;
-                                        boolean z13 = (ziVar2.m.getScaleX() == 1.0f && ziVar2.m.getScaleY() == 1.0f) ? false : true;
+                                        boolean z13 = (ajVar2.m.getScaleX() == 1.0f && ajVar2.m.getScaleY() == 1.0f) ? false : true;
                                         if (z13) {
                                             canvas.save();
-                                            ajVar = ajVar3;
+                                            bjVar = bjVar3;
                                             arrayList = arrayList3;
                                             b1Var = b1Var4;
-                                            canvas.scale(ziVar2.m.getScaleX(), ziVar2.m.getScaleY(), com.google.android.gms.internal.vision.e2.A(f12, f10, 2.0f, f10), com.google.android.gms.internal.vision.e2.A(f15, f14, 2.0f, f14));
+                                            canvas.scale(ajVar2.m.getScaleX(), ajVar2.m.getScaleY(), com.google.android.gms.internal.vision.e2.A(f12, f10, 2.0f, f10), com.google.android.gms.internal.vision.e2.A(f15, f14, 2.0f, f14));
                                         } else {
-                                            ajVar = ajVar3;
+                                            bjVar = bjVar3;
                                             arrayList = arrayList3;
                                             b1Var = b1Var4;
                                         }
                                         qa0Var = qa0Var2;
-                                        aj ajVar4 = ajVar;
+                                        bj bjVar4 = bjVar;
                                         i7 = i22;
                                         b1Var2 = b1Var;
                                         z10 = true;
-                                        ziVar2.m.K0(canvas, (int) f10, (int) f14, (int) f12, (int) f15, ziVar2.k, ziVar2.l, false, 0);
-                                        ziVar2.m = null;
-                                        ziVar2.o = ajVar4.c;
+                                        ajVar2.m.K0(canvas, (int) f10, (int) f14, (int) f12, (int) f15, ajVar2.k, ajVar2.l, false, 0);
+                                        ajVar2.m = null;
+                                        ajVar2.o = bjVar4.c;
                                         if (z13) {
                                             canvas.restore();
                                             for (int i23 = 0; i23 < childCount; i23++) {
                                                 View childAt5 = b1Var2.getChildAt(i23);
                                                 if (childAt5 instanceof org.telegram.ui.Cells.r1) {
                                                     org.telegram.ui.Cells.r1 r1Var2 = (org.telegram.ui.Cells.r1) childAt5;
-                                                    if (r1Var2.getCurrentMessagesGroup() == ajVar4) {
+                                                    if (r1Var2.getCurrentMessagesGroup() == bjVar4) {
                                                         int left = r1Var2.getLeft();
                                                         int top = r1Var2.getTop();
                                                         childAt5.setPivotX(((f12 - f10) / 2.0f) + (f10 - left));
@@ -729,7 +729,7 @@ public final class b1 extends ek0 {
                 super.onAttachedToWindow();
                 jg.l1 l1Var = ((bn) this.g3).b4;
                 if (l1Var != null) {
-                    ks.f(l1Var.r).c(l1Var, ks.A5);
+                    ls.f(l1Var.r).c(l1Var, ls.A5);
                     break;
                 }
                 break;
@@ -747,7 +747,7 @@ public final class b1 extends ek0 {
                 jg.l1 l1Var = ((bn) this.g3).b4;
                 if (l1Var != null) {
                     org.telegram.messenger.g0.r(l1Var.F);
-                    ks.f(l1Var.r).n(l1Var, ks.A5);
+                    ls.f(l1Var.r).n(l1Var, ls.A5);
                     break;
                 }
                 break;
@@ -815,7 +815,7 @@ public final class b1 extends ek0 {
     @Override // org.telegram.ui.Components.ek0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         int i13;
-        fj fjVar;
+        gj gjVar;
         switch (this.f3) {
             case 0:
                 ((h1) this.g3).J0();
@@ -830,12 +830,12 @@ public final class b1 extends ek0 {
                             org.telegram.ui.ib ibVar = lbVar.F;
                             if (i14 < ibVar.d) {
                                 if (i14 < ibVar.f || i14 >= ibVar.h) {
-                                    fjVar = null;
+                                    gjVar = null;
                                 } else {
                                     ArrayList arrayList = ibVar.n.p0;
-                                    fjVar = (fj) arrayList.get((arrayList.size() - (i14 - ibVar.f)) - 1);
+                                    gjVar = (gj) arrayList.get((arrayList.size() - (i14 - ibVar.f)) - 1);
                                 }
-                                if (fjVar == null || fjVar.T != lbVar.N0) {
+                                if (gjVar == null || gjVar.T != lbVar.N0) {
                                     i14++;
                                 } else {
                                     i13 = i14;

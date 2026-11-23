@@ -14,9 +14,9 @@ import c8.ma;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.n5;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b6;
@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.b9;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements b6 {
     public final h6 a;
@@ -71,9 +71,9 @@ public final class c extends FrameLayout implements b6 {
         if (chat == null) {
             return;
         }
-        TLRPC.ChatFull P0 = mp.u1(i7).P0(chat.id);
+        TLRPC.ChatFull P0 = np.u1(i7).P0(chat.id);
         setTitle(n5.u(chat));
-        setSubtitle(gd.G(P0 != null ? P0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
+        setSubtitle(hd.G(P0 != null ? P0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
         this.b.f(chat, new b9(chat));
     }
 

@@ -2,10 +2,10 @@ package bi;
 
 import android.os.Bundle;
 import android.view.View;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lc;
@@ -14,7 +14,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     long j3 = this.b;
-                    if (!o10.B(j3)) {
+                    if (!p10.B(j3)) {
                         Bundle bundle = new Bundle();
                         if (j3 > 0) {
                             bundle.putLong("user_id", j3);
-                            if (j3 == j10.i(yVar.a).e()) {
+                            if (j3 == k10.i(yVar.a).e()) {
                                 bundle.putBoolean("my_profile", true);
                             }
                         } else {
@@ -83,11 +83,11 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 r70Var.dismiss();
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
                 tL_messages_importChatInvite.hash = r70Var.n1;
-                ConnectionsManager.getInstance(r70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new f8(r70Var, this.b, tL_messages_importChatInvite), 2);
+                ConnectionsManager.getInstance(r70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new e8(r70Var, this.b, tL_messages_importChatInvite), 2);
                 break;
             case 4:
                 cx cxVar = (cx) this.c;
-                mp messagesController = cxVar.getMessagesController();
+                np messagesController = cxVar.getMessagesController();
                 long j11 = this.b;
                 boolean u22 = messagesController.u2(j11, 0L, null);
                 if (u22) {
@@ -99,9 +99,9 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 cxVar.finishPreviewFragment();
                 break;
             default:
-                x10 x10Var = ((sh.m) this.c).f;
-                if (x10Var != null) {
-                    x10Var.a(Long.valueOf(this.b));
+                y10 y10Var = ((sh.m) this.c).f;
+                if (y10Var != null) {
+                    y10Var.a(Long.valueOf(this.b));
                     break;
                 }
                 break;

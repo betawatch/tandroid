@@ -11,7 +11,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xx extends dk0 {
     public ou F;
@@ -75,7 +75,7 @@ public final class xx extends dk0 {
                 tyVar.m0.put(str3, messages_botresults);
             }
             if (!z12 && messages_botresults.cache_time != 0) {
-                org.telegram.messenger.tr.a0(tyVar.d1).v1(str3, messages_botresults);
+                org.telegram.messenger.ur.a0(tyVar.d1).v1(str3, messages_botresults);
             }
             this.r = messages_botresults.next_offset;
             int i7 = 0;
@@ -151,7 +151,7 @@ public final class xx extends dk0 {
         yv yvVar = tyVar.i0;
         aw awVar = tyVar.p0;
         int i11 = tyVar.d1;
-        TLObject h22 = org.telegram.messenger.mp.u1(i10).h2(org.telegram.messenger.mp.u1(i11).N3);
+        TLObject h22 = org.telegram.messenger.np.u1(i10).h2(org.telegram.messenger.np.u1(i11).N3);
         boolean z13 = h22 instanceof TLRPC.User;
         boolean z14 = this.d;
         if (!z13) {
@@ -159,7 +159,7 @@ public final class xx extends dk0 {
                 if (!this.G) {
                     this.G = true;
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-                    tL_contacts_resolveUsername.username = org.telegram.messenger.mp.u1(i11).N3;
+                    tL_contacts_resolveUsername.username = org.telegram.messenger.np.u1(i11).N3;
                     ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new f2(this, 4));
                 }
                 if (z14) {
@@ -212,7 +212,7 @@ public final class xx extends dk0 {
         }
         if (z12) {
             this.h = -1;
-            org.telegram.messenger.tr.a0(i11).M(l10, requestDelegate);
+            org.telegram.messenger.ur.a0(i11).M(l10, requestDelegate);
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
@@ -220,7 +220,7 @@ public final class xx extends dk0 {
             str = "";
         }
         tL_messages_getInlineBotResults.query = str;
-        tL_messages_getInlineBotResults.bot = org.telegram.messenger.mp.u1(i11).s1(this.n);
+        tL_messages_getInlineBotResults.bot = org.telegram.messenger.np.u1(i11).s1(this.n);
         tL_messages_getInlineBotResults.offset = str2;
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         this.h = ConnectionsManager.getInstance(i11).sendRequest(tL_messages_getInlineBotResults, requestDelegate);
@@ -267,7 +267,7 @@ public final class xx extends dk0 {
         yv yvVar = tyVar.i0;
         int currentPosition = bxVar.getCurrentPosition();
         if (currentPosition != tyVar.s0 && currentPosition != tyVar.t0) {
-            H((String) org.telegram.messenger.mp.u1(tyVar.d1).e4.get(currentPosition - tyVar.u0));
+            H((String) org.telegram.messenger.np.u1(tyVar.d1).e4.get(currentPosition - tyVar.u0));
             return;
         }
         v4.i0 adapter = yvVar.getAdapter();
@@ -402,7 +402,7 @@ public final class xx extends dk0 {
                 view = view3;
             } else {
                 org.telegram.ui.Cells.k8 k8Var = new org.telegram.ui.Cells.k8(this.c, false, false, tyVar.a2, tyVar.j2);
-                k8Var.a(0, org.telegram.messenger.gd.N0(2131750822, null));
+                k8Var.a(0, org.telegram.messenger.hd.N0(2131750822, null));
                 v4.q0 q0Var2 = new v4.q0(-1, -2);
                 ((ViewGroup.MarginLayoutParams) q0Var2).topMargin = org.telegram.messenger.g0.L(2.5f);
                 ((ViewGroup.MarginLayoutParams) q0Var2).bottomMargin = org.telegram.messenger.g0.L(5.5f);

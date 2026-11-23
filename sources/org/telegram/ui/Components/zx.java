@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zx extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final ImageView a;
@@ -34,7 +34,7 @@ public final class zx extends FrameLayout implements org.telegram.ui.ActionBar.b
         addView(imageView, c8.ma.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         this.b = textView;
-        org.telegram.messenger.n10.l(16.0f, 2131748014, 1, textView, null);
+        org.telegram.messenger.o10.l(16.0f, 2131748014, 1, textView, null);
         org.telegram.ui.ActionBar.t6.U(textView, i7, h6Var);
         addView(textView, c8.ma.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, h6Var);
@@ -55,7 +55,7 @@ public final class zx extends FrameLayout implements org.telegram.ui.ActionBar.b
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.n10.z(8.0f, r0 - r4.c1, 3) * 1.7f) : this.e.i0.getMeasuredHeight() - org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.o10.z(8.0f, r0 - r4.c1, 3) * 1.7f) : this.e.i0.getMeasuredHeight() - org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
     }
 
     @Override // org.telegram.ui.ActionBar.b6

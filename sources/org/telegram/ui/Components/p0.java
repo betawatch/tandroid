@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p0 extends sa {
     public c51 T1;
@@ -94,7 +94,7 @@ public final class p0 extends sa {
         org.telegram.ui.ActionBar.t6.h(i10, aVar, this.J0);
         hi.e eVar = new hi.e(getContext(), this.J0, true);
         eVar.f();
-        eVar.i(org.telegram.messenger.gd.N0(2131750991, null), false, true);
+        eVar.i(org.telegram.messenger.hd.N0(2131750991, null), false, true);
         eVar.setOnClickListener(new o0(this, i7));
         aVar.addView(eVar, c8.ma.r(-1, 48, 87));
         ViewGroup viewGroup = this.b;
@@ -120,7 +120,7 @@ public final class p0 extends sa {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return org.telegram.messenger.gd.N0(2131751067, null);
+        return org.telegram.messenger.hd.N0(2131751067, null);
     }
 
     public final String e1(int i7) {
@@ -159,7 +159,7 @@ public final class p0 extends sa {
                 Object obj = arrayList2.get(i7);
                 i7++;
                 long o4 = org.telegram.messenger.n5.o(((TLRPC.ChannelParticipant) obj).peer);
-                this.W1.k(org.telegram.messenger.mp.u1(this.a).c2(Long.valueOf(o4)), o4);
+                this.W1.k(org.telegram.messenger.np.u1(this.a).c2(Long.valueOf(o4)), o4);
             }
         }
         c51 c51Var = this.T1;

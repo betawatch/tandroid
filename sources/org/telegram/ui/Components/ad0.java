@@ -2,22 +2,22 @@ package org.telegram.ui.Components;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ad0 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class ad0 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ String[] b;
     public final /* synthetic */ Activity c;
-    public final /* synthetic */ org.telegram.messenger.x10 d;
+    public final /* synthetic */ org.telegram.messenger.y10 d;
 
-    public /* synthetic */ ad0(String[] strArr, Activity activity, org.telegram.messenger.x10 x10Var, int i7) {
+    public /* synthetic */ ad0(String[] strArr, Activity activity, org.telegram.messenger.y10 y10Var, int i7) {
         this.a = i7;
         this.b = strArr;
         this.c = activity;
-        this.d = x10Var;
+        this.d = y10Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
@@ -34,9 +34,9 @@ public final /* synthetic */ class ad0 implements org.telegram.messenger.x10 {
                         }
                     }
                 }
-                org.telegram.messenger.x10 x10Var = this.d;
-                if (x10Var != null) {
-                    x10Var.a(Boolean.valueOf(z10));
+                org.telegram.messenger.y10 y10Var = this.d;
+                if (y10Var != null) {
+                    y10Var.a(Boolean.valueOf(z10));
                     break;
                 }
                 break;
@@ -54,9 +54,9 @@ public final /* synthetic */ class ad0 implements org.telegram.messenger.x10 {
                         z11 = true;
                     }
                 }
-                org.telegram.messenger.x10 x10Var2 = this.d;
-                if (x10Var2 != null) {
-                    x10Var2.a(Boolean.valueOf(z11));
+                org.telegram.messenger.y10 y10Var2 = this.d;
+                if (y10Var2 != null) {
+                    y10Var2.a(Boolean.valueOf(z11));
                     break;
                 }
                 break;

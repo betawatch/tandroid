@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h60 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -173,16 +173,16 @@ public final /* synthetic */ class h60 implements ValueAnimator.AnimatorUpdateLi
                 uw0Var.a.invalidate();
                 break;
             case 27:
-                l01 l01Var = (l01) this.b;
-                l01Var.getClass();
-                l01Var.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l01Var.invalidate();
+                k01 k01Var = (k01) this.b;
+                k01Var.getClass();
+                k01Var.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k01Var.invalidate();
                 break;
             case 28:
-                b21 b21Var = (b21) this.b;
-                b21Var.getClass();
-                b21Var.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b21Var.p();
+                a21 a21Var = (a21) this.b;
+                a21Var.getClass();
+                a21Var.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a21Var.p();
                 break;
             default:
                 v31 v31Var = (v31) this.b;

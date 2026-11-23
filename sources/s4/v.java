@@ -14,11 +14,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ListIterator;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class v {
     public final u a;
@@ -381,7 +381,7 @@ public final class v {
                 }
             }
         }
-        x.c().a.b(ks.i4, this);
+        x.c().a.b(ls.i4, this);
     }
 
     public final String toString() {

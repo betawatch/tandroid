@@ -6,7 +6,7 @@ import j$.util.Collection;
 import java.nio.ByteBuffer;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t40 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final class t40 implements Runnable {
                                         i11++;
                                         j13 = j3;
                                     } else {
-                                        org.telegram.messenger.g0.g3(new org.telegram.messenger.re(this, Math.sqrt((d / read) / 2.0d), 1));
+                                        org.telegram.messenger.g0.g3(new org.telegram.messenger.se(this, Math.sqrt((d / read) / 2.0d), 1));
                                         byteBuffer.position(0);
                                     }
                                 }

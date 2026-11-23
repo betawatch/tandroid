@@ -20,15 +20,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.u;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 import s4.n;
 import s4.r0;
 import s4.s0;
 import s4.x;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class h {
     public boolean a;
@@ -325,7 +325,7 @@ public final class h {
     }
 
     public void n(int i7, Serializable serializable) {
-        ((Executor) this.b).execute(new j01(this, i7, serializable, 28));
+        ((Executor) this.b).execute(new f21(this, i7, serializable, 27));
     }
 
     public void o() {
@@ -472,10 +472,10 @@ public final class h {
                     break;
                 case 28:
                 case 29:
-                case ks.T /* 30 */:
+                case ls.T /* 30 */:
                     bArr = u4.d.e;
                     break;
-                case ks.U /* 31 */:
+                case ls.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:

@@ -1,70 +1,56 @@
 package org.telegram.messenger;
 
+import android.util.LongSparseArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ud0;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o9 implements q10 {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class o9 implements r10 {
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ c1 c;
 
-    public /* synthetic */ o9(Object obj, Object obj2, long j3, int i7) {
-        this.a = i7;
-        this.c = obj;
-        this.d = obj2;
+    public /* synthetic */ o9(v9 v9Var, long j3) {
+        this.c = v9Var;
         this.b = j3;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
-        switch (this.a) {
+        int i7 = this.a;
+        long j3 = this.b;
+        c1 c1Var = this.c;
+        switch (i7) {
             case 0:
-                ((bi.z) this.d).a(((u9) this.c).b(this.b), (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                mp mpVar = (mp) this.c;
-                li.i0 i0Var = (li.i0) this.d;
-                TLRPC.Bool bool = (TLRPC.Bool) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (bool != null) {
-                    mpVar.b3(0, this.b, true);
+                v9 v9Var = (v9) c1Var;
+                TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState = (TL_payments.TL_StarGiftAuctionState) obj;
+                LongSparseArray longSparseArray = v9Var.e;
+                if (tL_StarGiftAuctionState != null) {
+                    v9Var.getMessagesController().f4(tL_StarGiftAuctionState.users, false);
+                    v9Var.getMessagesController().Z3(tL_StarGiftAuctionState.chats, false);
                 }
-                i0Var.a(bool, tL_error);
-                break;
-            case 2:
-                mp mpVar2 = (mp) this.c;
-                li.i0 i0Var2 = (li.i0) this.d;
-                TLRPC.Bool bool2 = (TLRPC.Bool) obj;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (bool2 != null) {
-                    mpVar2.b3(0, this.b, true);
+                if (tL_StarGiftAuctionState != null && !((Boolean) longSparseArray.get(j3, Boolean.FALSE)).booleanValue()) {
+                    longSparseArray.put(j3, Boolean.TRUE);
+                    v9Var.j(j3, new o00(v9Var, j3, tL_StarGiftAuctionState));
+                    break;
+                } else if (tL_StarGiftAuctionState != null) {
+                    v9Var.f(j3, tL_StarGiftAuctionState);
+                    break;
                 }
-                i0Var2.a(bool2, tL_error2);
                 break;
             default:
-                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.c;
-                ud0 ud0Var = (ud0) this.d;
-                TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                t1Var.dismiss();
-                long j3 = this.b;
-                if (tL_error3 == null) {
-                    ud0Var.a(Long.valueOf(j3), auth_authorization, null);
-                    break;
-                } else {
-                    ud0Var.a(Long.valueOf(j3), null, tL_error3.text);
-                    break;
+                np npVar = (np) c1Var;
+                if (((TLRPC.Bool) obj) != null) {
+                    npVar.b3(0, j3, true);
                 }
+                int i10 = org.telegram.ui.Components.as.D2;
+                break;
         }
     }
 
-    public /* synthetic */ o9(mp mpVar, long j3, q10 q10Var, int i7) {
-        this.a = i7;
-        this.c = mpVar;
+    public /* synthetic */ o9(np npVar, long j3, jh.b bVar) {
+        this.c = npVar;
         this.b = j3;
-        this.d = q10Var;
     }
 }

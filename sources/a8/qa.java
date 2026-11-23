@@ -17,11 +17,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qa implements Runnable {
     public final /* synthetic */ int a;
@@ -253,7 +253,7 @@ public final /* synthetic */ class qa implements Runnable {
                             m10.c();
                             com.google.android.gms.internal.cast.k1.v((com.google.android.gms.internal.cast.k1) m10.b, i11);
                             b10.e((com.google.android.gms.internal.cast.k1) m10.a());
-                            x0Var.a.a((com.google.android.gms.internal.cast.p1) b10.a(), ks.G3);
+                            x0Var.a.a((com.google.android.gms.internal.cast.p1) b10.a(), ls.G3);
                             break;
                         default:
                             xa xaVar = new xa(10, 4);

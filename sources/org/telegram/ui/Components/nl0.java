@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nl0 implements qj0 {
     public final /* synthetic */ int a;
@@ -39,15 +39,15 @@ public final /* synthetic */ class nl0 implements qj0 {
                 sl0 sl0Var = (sl0) this.c;
                 org.telegram.ui.ActionBar.g2 g2Var = sl0Var.H;
                 di.l4 l4Var = sl0Var.c;
-                org.telegram.messenger.fj E = l4Var.E(i7);
+                org.telegram.messenger.gj E = l4Var.E(i7);
                 if (E != null) {
                     if (!sl0Var.J.V1()) {
                         if (view instanceof pl0) {
                             org.telegram.ui.Cells.i7 i7Var = ((pl0) view).a;
-                            org.telegram.messenger.fj message = i7Var.getMessage();
+                            org.telegram.messenger.gj message = i7Var.getMessage();
                             TLRPC.Document F0 = message.F0();
                             if (i7Var.H) {
-                                if (message.h4() || org.telegram.messenger.fj.R4(message.k)) {
+                                if (message.h4() || org.telegram.messenger.gj.R4(message.k)) {
                                     MediaController.B().S(message);
                                     break;
                                 } else {
@@ -57,13 +57,13 @@ public final /* synthetic */ class nl0 implements qj0 {
                                         boolean z10 = message2 != null && message2.noforwards;
                                         if (E.k.peer_id.channel_id != 0) {
                                             j3 = 0;
-                                            chat = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).O0(Long.valueOf(E.k.peer_id.channel_id));
+                                            chat = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).O0(Long.valueOf(E.k.peer_id.channel_id));
                                         } else {
                                             j3 = 0;
                                             chat = null;
                                         }
                                         if (chat == null) {
-                                            chat = E.k.peer_id.chat_id != j3 ? org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).O0(Long.valueOf(E.k.peer_id.chat_id)) : null;
+                                            chat = E.k.peer_id.chat_id != j3 ? org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).O0(Long.valueOf(E.k.peer_id.chat_id)) : null;
                                         }
                                         if (chat != null) {
                                             z10 = chat.noforwards;
@@ -82,11 +82,11 @@ public final /* synthetic */ class nl0 implements qj0 {
                                     }
                                 }
                             } else if (i7Var.G) {
-                                org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.j10.t0).a).f(F0);
+                                org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.k10.t0).a).f(F0);
                                 i7Var.f(true);
                             } else {
                                 E.P = true;
-                                org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.j10.t0).a).W(F0, E, 0, 0);
+                                org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.k10.t0).a).W(F0, E, 0, 0);
                                 i7Var.f(true);
                                 org.telegram.messenger.a6.q(this.b).y();
                             }
@@ -100,7 +100,7 @@ public final /* synthetic */ class nl0 implements qj0 {
                         sl0Var.J.Z0(E, view, 0);
                         org.telegram.ui.vz vzVar = sl0Var.K;
                         int e12 = E.e1();
-                        vzVar.a = org.telegram.messenger.fj.B0(E.k);
+                        vzVar.a = org.telegram.messenger.gj.B0(E.k);
                         vzVar.b = e12;
                         l4Var.g(i7);
                         if (!sl0Var.J.V1()) {
@@ -135,7 +135,7 @@ public final /* synthetic */ class nl0 implements qj0 {
                                     } else {
                                         fm0Var2.n = 0L;
                                         fm0Var2.h = -1;
-                                        fm0Var2.r = org.telegram.messenger.mp.r0(tL_starGiftUnique);
+                                        fm0Var2.r = org.telegram.messenger.np.r0(tL_starGiftUnique);
                                         fm0Var2.s = null;
                                     }
                                     fm0Var2.J = tL_starGiftUnique;
@@ -163,7 +163,7 @@ public final /* synthetic */ class nl0 implements qj0 {
                                     fm0Var2.n = 0L;
                                     fm0Var2.h = -1;
                                     fm0Var2.J = null;
-                                    fm0Var2.r = org.telegram.messenger.mp.r0(tL_starGiftUnique2);
+                                    fm0Var2.r = org.telegram.messenger.np.r0(tL_starGiftUnique2);
                                     fm0Var2.s = null;
                                 }
                                 fm0Var2.j(true);
@@ -229,7 +229,7 @@ public final /* synthetic */ class nl0 implements qj0 {
                         org.telegram.ui.cm0 cm0Var = new org.telegram.ui.cm0(fm0Var2, bm0Var);
                         fm0Var2.p0 = cm0Var;
                         j11VarArr[0] = cm0Var;
-                        cm0Var.showAsDropDown(em0Var4, 0, i10, (org.telegram.messenger.gd.a0 ? 3 : 5) | 48);
+                        cm0Var.showAsDropDown(em0Var4, 0, i10, (org.telegram.messenger.hd.a0 ? 3 : 5) | 48);
                         j11VarArr[0].b();
                     }
                     break;

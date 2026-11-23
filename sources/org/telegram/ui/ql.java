@@ -5,26 +5,26 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ql extends org.telegram.ui.Cells.k9 {
     public bn w0;
 
     @Override // org.telegram.ui.Cells.w9
-    public final void I(int i7, int i10, org.telegram.messenger.fj fjVar) {
+    public final void I(int i7, int i10, org.telegram.messenger.gj gjVar) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
-        org.telegram.messenger.aj U8;
+        org.telegram.messenger.bj U8;
         bn bnVar = this.w0;
         if (bnVar != null) {
             int min = Math.min(i10, bnVar.getMessagesController().r4 + i7);
-            if (fjVar.c1() != 0 && (U8 = this.w0.U8(fjVar.c1())) != null && !U8.i) {
-                fjVar = U8.h;
+            if (gjVar.c1() != 0 && (U8 = this.w0.U8(gjVar.c1())) != null && !U8.i) {
+                gjVar = U8.h;
             }
-            if (fjVar == null) {
+            if (gjVar == null) {
                 return;
             }
-            rm b10 = rm.b(i7, min, fjVar);
+            rm b10 = rm.b(i7, min, gjVar);
             if (b10.i == null) {
                 return;
             }
@@ -37,7 +37,7 @@ public final class ql extends org.telegram.ui.Cells.k9 {
                         this.w0.O7(false);
                     }
                 }
-                this.w0.jc(fjVar, b10);
+                this.w0.jc(gjVar, b10);
                 rj rjVar2 = this.w0.a0;
                 if (rjVar2 != null) {
                     rjVar2.i1();
@@ -47,10 +47,10 @@ public final class ql extends org.telegram.ui.Cells.k9 {
             }
             bn bnVar2 = this.w0;
             bnVar2.D5 = b10;
-            bnVar2.F5 = fjVar;
-            bnVar2.x5 = new org.telegram.messenger.jj(bnVar2.h != null, bnVar2.W9(), org.telegram.messenger.v3.p0(this.w0.e));
+            bnVar2.F5 = gjVar;
+            bnVar2.x5 = new org.telegram.messenger.kj(bnVar2.h != null, bnVar2.W9(), org.telegram.messenger.v3.p0(this.w0.e));
             bn bnVar3 = this.w0;
-            bnVar3.x5.f(bnVar3.F5, bnVar3.U8(fjVar.c1()), this.w0.a(), this.w0.D5);
+            bnVar3.x5.f(bnVar3.F5, bnVar3.U8(gjVar.c1()), this.w0.a(), this.w0.D5);
             Bundle l10 = org.telegram.ui.Cells.c0.l(3, "onlySelect", "dialogsType", true);
             l10.putBoolean("quote", true);
             l10.putInt("messagesCount", 1);
@@ -102,7 +102,7 @@ public final class ql extends org.telegram.ui.Cells.k9 {
         if (bnVar2 == null || bnVar2.a() != 489000) {
             bn bnVar3 = this.w0;
             boolean z10 = (bnVar3 != null && bnVar3.W9()) || !((r9Var = this.W) == null || ((org.telegram.ui.Cells.r1) r9Var).getMessageObject() == null || ((org.telegram.ui.Cells.r1) this.W).getMessageObject().k == null || !((org.telegram.ui.Cells.r1) this.W).getMessageObject().k.noforwards);
-            if (!this.s0 && (bnVar = this.w0) != null && bnVar.h == null && (((r9Var2 = this.W) == null || (((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() != null && ((org.telegram.ui.Cells.r1) this.W).getMessageObject().D != 23 && !((org.telegram.ui.Cells.r1) this.W).getMessageObject().T4() && !((org.telegram.ui.Cells.r1) this.W).getMessageObject().z3() && ((((org.telegram.ui.Cells.r1) this.W).getMessageObject().y2 == null || org.telegram.messenger.iv.c(((org.telegram.ui.Cells.r1) this.W).getMessageObject())) && !this.w0.u9.q0))) && !this.w0.getMessagesController().v7.B(this.w0.l6) && !org.telegram.messenger.o10.B(this.w0.l6) && (!z10 || (chat = this.w0.e) == null || org.telegram.messenger.v3.B(chat)))) {
+            if (!this.s0 && (bnVar = this.w0) != null && bnVar.h == null && (((r9Var2 = this.W) == null || (((org.telegram.ui.Cells.r1) r9Var2).getMessageObject() != null && ((org.telegram.ui.Cells.r1) this.W).getMessageObject().D != 23 && !((org.telegram.ui.Cells.r1) this.W).getMessageObject().T4() && !((org.telegram.ui.Cells.r1) this.W).getMessageObject().z3() && ((((org.telegram.ui.Cells.r1) this.W).getMessageObject().y2 == null || org.telegram.messenger.jv.c(((org.telegram.ui.Cells.r1) this.W).getMessageObject())) && !this.w0.u9.q0))) && !this.w0.getMessagesController().v7.B(this.w0.l6) && !org.telegram.messenger.p10.B(this.w0.l6) && (!z10 || (chat = this.w0.e) == null || org.telegram.messenger.v3.B(chat)))) {
                 return true;
             }
         }

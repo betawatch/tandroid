@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class na1 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -48,11 +48,11 @@ public final class na1 extends org.telegram.ui.Components.dk0 {
             }
             org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
             if (i7 == twoStepVerificationActivity.Q) {
-                a9Var.setText(org.telegram.messenger.gd.N0(2131745352, null));
+                a9Var.setText(org.telegram.messenger.hd.N0(2131745352, null));
                 return;
             } else {
                 if (i7 == twoStepVerificationActivity.T) {
-                    a9Var.setText(org.telegram.messenger.gd.N0(2131751130, null));
+                    a9Var.setText(org.telegram.messenger.hd.N0(2131751130, null));
                     return;
                 }
                 return;
@@ -64,20 +64,20 @@ public final class na1 extends org.telegram.ui.Components.dk0 {
         org.telegram.ui.ActionBar.t6.U(x9Var.getTextView(), i13, null);
         i10 = twoStepVerificationActivity.changePasswordRow;
         if (i7 == i10) {
-            x9Var.b(org.telegram.messenger.gd.N0(2131752529, null), true);
+            x9Var.b(org.telegram.messenger.hd.N0(2131752529, null), true);
             return;
         }
         if (i7 == twoStepVerificationActivity.P) {
-            x9Var.b(org.telegram.messenger.gd.N0(2131745353, null), true);
+            x9Var.b(org.telegram.messenger.hd.N0(2131745353, null), true);
             return;
         }
         i11 = twoStepVerificationActivity.turnPasswordOffRow;
         if (i7 == i11) {
-            x9Var.b(org.telegram.messenger.gd.N0(2131743699, null), true);
+            x9Var.b(org.telegram.messenger.hd.N0(2131743697, null), true);
         } else if (i7 == twoStepVerificationActivity.S) {
-            x9Var.b(org.telegram.messenger.gd.N0(2131752519, null), false);
+            x9Var.b(org.telegram.messenger.hd.N0(2131752519, null), false);
         } else if (i7 == twoStepVerificationActivity.R) {
-            x9Var.b(org.telegram.messenger.gd.N0(2131745319, null), false);
+            x9Var.b(org.telegram.messenger.hd.N0(2131745319, null), false);
         }
     }
 

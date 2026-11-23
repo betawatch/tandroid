@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jk implements org.telegram.ui.Components.wi0 {
     public final /* synthetic */ bn a;
@@ -36,7 +36,7 @@ public final class jk implements org.telegram.ui.Components.wi0 {
         HashSet hashSet;
         int i7;
         int i10;
-        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.gj gjVar;
         TLRPC.Message message;
         bn bnVar = this.a;
         SparseArray[] sparseArrayArr = bnVar.o6;
@@ -60,12 +60,12 @@ public final class jk implements org.telegram.ui.Components.wi0 {
             int i13 = i12;
             int i14 = 0;
             while (i14 < sparseArrayArr[i11].size()) {
-                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) sparseArrayArr[i11].valueAt(i14);
-                if (fjVar2.z2()) {
-                    org.telegram.messenger.aj u92 = bnVar.u9(fjVar2);
+                org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) sparseArrayArr[i11].valueAt(i14);
+                if (gjVar2.z2()) {
+                    org.telegram.messenger.bj u92 = bnVar.u9(gjVar2);
                     if (u92 != null && !hashSet2.contains(Long.valueOf(u92.a))) {
                         hashSet2.add(Long.valueOf(u92.a));
-                        fjVar2 = u92.c();
+                        gjVar2 = u92.c();
                     }
                     z12 = contains;
                     hashSet = hashSet2;
@@ -76,13 +76,13 @@ public final class jk implements org.telegram.ui.Components.wi0 {
                     contains = z12;
                     i11 = i7;
                 }
-                if (fjVar2.v2(p0Var) == contains) {
+                if (gjVar2.v2(p0Var) == contains) {
                     hashSet = hashSet2;
-                    fjVar = fjVar2;
+                    gjVar = gjVar2;
                     z12 = contains;
                     i7 = i11;
                     i10 = i14;
-                    bnVar.Eb(bnVar.J8(fjVar2.e1(), false), fjVar, null, null, 0.0f, 0.0f, p0Var, false, false, false, true);
+                    bnVar.Eb(bnVar.J8(gjVar2.e1(), false), gjVar, null, null, 0.0f, 0.0f, p0Var, false, false, false, true);
                     if (!z12) {
                         i13++;
                     }
@@ -91,28 +91,28 @@ public final class jk implements org.telegram.ui.Components.wi0 {
                     hashSet = hashSet2;
                     i7 = i11;
                     i10 = i14;
-                    fjVar = fjVar2;
+                    gjVar = gjVar2;
                 }
-                if (fjVar.k != null) {
+                if (gjVar.k != null) {
                     boolean z17 = bnVar.D0.O;
                     if (z17) {
-                        org.telegram.messenger.fj fjVar3 = (org.telegram.messenger.fj) bnVar.G6[0].get(fjVar.e1());
-                        if (fjVar3 != null && (message = fjVar3.k) != null) {
-                            message.reactions = fjVar.k.reactions;
+                        org.telegram.messenger.gj gjVar3 = (org.telegram.messenger.gj) bnVar.G6[0].get(gjVar.e1());
+                        if (gjVar3 != null && (message = gjVar3.k) != null) {
+                            message.reactions = gjVar.k.reactions;
                         }
                     } else if (!z17 && bnVar.F3 != null) {
                         z15 = true;
                     }
                 }
-                if (bnVar.D0.O && !fjVar.v2(bnVar.F3)) {
-                    org.telegram.messenger.aj u93 = bnVar.u9(fjVar);
+                if (bnVar.D0.O && !gjVar.v2(bnVar.F3)) {
+                    org.telegram.messenger.bj u93 = bnVar.u9(gjVar);
                     if (u93 != null) {
                         ArrayList arrayList = u93.d;
                         for (int i15 = 0; i15 < arrayList.size(); i15++) {
-                            bnVar.getMediaDataController().R1(((org.telegram.messenger.fj) arrayList.get(i15)).e1());
+                            bnVar.getMediaDataController().R1(((org.telegram.messenger.gj) arrayList.get(i15)).e1());
                         }
                     } else {
-                        bnVar.getMediaDataController().R1(fjVar.e1());
+                        bnVar.getMediaDataController().R1(gjVar.e1());
                     }
                     jg.l1 l1Var = bnVar.b4;
                     if (l1Var != null) {
@@ -138,14 +138,14 @@ public final class jk implements org.telegram.ui.Components.wi0 {
         if (i12 > 0) {
             long j3 = p0Var.g;
             if (j3 == 0) {
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).r.get(p0Var.f);
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.si.d0(org.telegram.messenger.k10.t0).r.get(p0Var.f);
                 if (tL_availableReaction == null) {
                     return;
                 } else {
                     e10 = tL_availableReaction.activate_animation;
                 }
             } else {
-                e10 = org.telegram.ui.Components.p5.e(org.telegram.messenger.j10.t0, j3);
+                e10 = org.telegram.ui.Components.p5.e(org.telegram.messenger.k10.t0, j3);
             }
             if (e10 == null) {
                 return;

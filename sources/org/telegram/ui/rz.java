@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rz extends v4.u0 {
     public final /* synthetic */ c00 a;
@@ -73,11 +73,11 @@ public final class rz extends v4.u0 {
         View view = K.a;
         if (view instanceof org.telegram.ui.Cells.q7) {
             org.telegram.ui.Cells.q7 q7Var = (org.telegram.ui.Cells.q7) view;
-            org.telegram.messenger.fj fjVar = q7Var.e <= 0 ? null : q7Var.b[0];
-            if (fjVar != null) {
-                int i11 = fjVar.k.date;
+            org.telegram.messenger.gj gjVar = q7Var.e <= 0 ? null : q7Var.b[0];
+            if (gjVar != null) {
+                int i11 = gjVar.k.date;
                 uzVar.getClass();
-                String u10 = org.telegram.messenger.gd.u(i11, false);
+                String u10 = org.telegram.messenger.hd.u(i11, false);
                 if (TextUtils.equals(uzVar.c, u10)) {
                     return;
                 }

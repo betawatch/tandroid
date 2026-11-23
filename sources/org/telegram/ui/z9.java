@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -122,8 +122,8 @@ public final /* synthetic */ class z9 implements RequestDelegate {
                 long[] jArr = (long[]) obj;
                 org.telegram.messenger.g0.r((org.telegram.messenger.camera.i) obj2);
                 bnVar.v5.k.voiceTranscriptionRated = true;
-                org.telegram.messenger.tr messagesStorage = bnVar.getMessagesStorage();
-                messagesStorage.a.c(new org.telegram.messenger.ek(messagesStorage, bnVar.v5.e1(), org.telegram.messenger.fj.B0(bnVar.v5.k), bnVar.v5.k, 6));
+                org.telegram.messenger.ur messagesStorage = bnVar.getMessagesStorage();
+                messagesStorage.a.c(new org.telegram.messenger.fk(messagesStorage, bnVar.v5.e1(), org.telegram.messenger.gj.B0(bnVar.v5.k), bnVar.v5.k, 6));
                 org.telegram.messenger.g0.h3(new vf(bnVar, 19), jArr[0] > 0 ? Math.max(0L, 300 - (SystemClock.elapsedRealtime() - jArr[0])) : 0L);
                 break;
             case 5:
@@ -150,7 +150,7 @@ public final /* synthetic */ class z9 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new vu((cx) obj3, (TLRPC.TL_attachMenuBot) obj2, (LaunchActivity) obj, i13));
                 break;
             case 10:
-                org.telegram.messenger.g0.g3(new up((j00) obj3, (org.telegram.ui.ActionBar.t1) obj2, (org.telegram.messenger.ro) obj, 9));
+                org.telegram.messenger.g0.g3(new up((j00) obj3, (org.telegram.ui.ActionBar.t1) obj2, (org.telegram.messenger.so) obj, 9));
                 break;
             case 11:
                 f40 f40Var = (f40) obj3;
@@ -172,7 +172,7 @@ public final /* synthetic */ class z9 implements RequestDelegate {
                             }
                         }
                     }
-                    org.telegram.messenger.mp.u1(f40Var.o1.a).V3(updates, false);
+                    org.telegram.messenger.np.u1(f40Var.o1.a).V3(updates, false);
                     break;
                 }
             case 12:
@@ -205,7 +205,7 @@ public final /* synthetic */ class z9 implements RequestDelegate {
                     String trim = str.toLowerCase(Locale.ROOT).trim();
                     ArrayList arrayList3 = new ArrayList();
                     i7 = ((org.telegram.ui.ActionBar.g2) n50Var).currentAccount;
-                    ArrayList u02 = org.telegram.messenger.ri.d0(i7).u0(n50Var.h0());
+                    ArrayList u02 = org.telegram.messenger.si.d0(i7).u0(n50Var.h0());
                     int size2 = u02.size();
                     while (i13 < size2) {
                         Object obj4 = u02.get(i13);

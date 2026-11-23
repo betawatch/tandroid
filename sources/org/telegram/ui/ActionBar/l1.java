@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.view.View;
 import android.widget.ScrollView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
+import org.telegram.messenger.gs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ge0;
 import org.telegram.ui.Components.l60;
@@ -14,17 +14,17 @@ import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.de0;
 import org.telegram.ui.hk0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l1 extends ScrollView {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l1(fs fsVar, Context context, int i7) {
+    public /* synthetic */ l1(gs gsVar, Context context, int i7) {
         super(context);
         this.a = i7;
-        this.b = fsVar;
+        this.b = gsVar;
     }
 
     @Override // android.view.ViewGroup

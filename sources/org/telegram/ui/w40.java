@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w40 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class w40 implements Runnable {
                 } else {
                     boolean z11 = true;
                     ?? r62 = 0;
-                    String T0 = org.telegram.messenger.gd.E0().T0(lowerCase, true, false);
+                    String T0 = org.telegram.messenger.hd.E0().T0(lowerCase, true, false);
                     if (lowerCase.equals(T0) || T0.isEmpty()) {
                         T0 = null;
                     }
@@ -78,7 +78,7 @@ public final /* synthetic */ class w40 implements Runnable {
                         if (z12) {
                             TLRPC.User user = (TLRPC.User) tLObject;
                             str = org.telegram.messenger.i5.m(r62, user.first_name, user.last_name).toLowerCase();
-                            K = org.telegram.messenger.o10.o(user);
+                            K = org.telegram.messenger.p10.o(user);
                         } else {
                             if (tLObject instanceof TLRPC.Chat) {
                                 TLRPC.Chat chat = (TLRPC.Chat) tLObject;
@@ -92,7 +92,7 @@ public final /* synthetic */ class w40 implements Runnable {
                             arrayList2 = arrayList;
                             r62 = 0;
                         }
-                        String T02 = org.telegram.messenger.gd.E0().T0(str, z11, r62);
+                        String T02 = org.telegram.messenger.hd.E0().T0(str, z11, r62);
                         if (str.equals(T02)) {
                             T02 = null;
                         }

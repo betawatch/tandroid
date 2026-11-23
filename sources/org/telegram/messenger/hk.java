@@ -1,25 +1,141 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class hk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
 
-    public /* synthetic */ hk(int i7, boolean[] zArr) {
-        this.a = i7;
-        this.b = zArr;
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class hk implements y10 {
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+
+    public /* synthetic */ hk(np npVar, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i7, TLRPC.Chat chat, Runnable runnable) {
+        this.b = npVar;
+        this.e = tL_messages_invitedUsers;
+        this.f = iArr;
+        this.d = i7;
+        this.g = chat;
+        this.c = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.y10
+    public final void a(Object obj) {
+        int i7 = this.a;
+        Object obj2 = this.c;
+        Object obj3 = this.g;
+        int i10 = this.d;
+        Object obj4 = this.f;
+        Object obj5 = this.e;
+        np npVar = this.b;
+        switch (i7) {
             case 0:
-                this.b[0] = true;
+                vf.b bVar = (vf.b) obj5;
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) obj4;
+                org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj3;
+                boolean[] zArr = (boolean[]) obj2;
+                Long l10 = (Long) obj;
+                try {
+                    if (bVar != null) {
+                        bVar.b();
+                    } else {
+                        t1VarArr[0].dismiss();
+                    }
+                } catch (Exception unused) {
+                }
+                t1VarArr[0] = null;
+                g2Var.setVisibleDialog(null);
+                if (!zArr[0]) {
+                    if (l10 != null) {
+                        if (l10.longValue() >= 0) {
+                            npVar.G3(npVar.c2(l10), null, g2Var, i10);
+                            break;
+                        } else {
+                            npVar.G3(null, npVar.O0(Long.valueOf(-l10.longValue())), g2Var, 1);
+                            break;
+                        }
+                    } else if (g2Var.getParentActivity() != null) {
+                        try {
+                            if (g2Var instanceof org.telegram.ui.bn) {
+                                ((org.telegram.ui.bn) g2Var).Xb();
+                            }
+                            org.telegram.ui.Components.lc.b0(g2Var).t(hd.N0(2131747941, null), null).j();
+                            break;
+                        } catch (Exception e10) {
+                            a8.g(e10, true);
+                            return;
+                        }
+                    }
+                }
+                break;
+            case 1:
+                boolean[] zArr2 = (boolean[]) obj2;
+                TL_bots.BotInfo[] botInfoArr = (TL_bots.BotInfo[]) obj5;
+                TLRPC.User user = (TLRPC.User) obj4;
+                rl rlVar = (rl) obj3;
+                TL_bots.BotInfo botInfo = (TL_bots.BotInfo) obj;
+                if (!zArr2[0]) {
+                    botInfoArr[0] = botInfo;
+                    if (botInfo != null) {
+                        rlVar.run();
+                        break;
+                    } else {
+                        TLRPC.UserFull d2 = npVar.d2(user.id);
+                        if (d2 != null) {
+                            botInfoArr[0] = d2.bot_info;
+                            rlVar.run();
+                            break;
+                        } else if (!zArr2[0]) {
+                            npVar.c3(user, i10, true, new e3(zArr2, botInfoArr, rlVar, 5));
+                            break;
+                        }
+                    }
+                }
                 break;
             default:
-                this.b[0] = true;
+                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj5;
+                int[] iArr = (int[]) obj4;
+                TLRPC.Chat chat = (TLRPC.Chat) obj3;
+                Runnable runnable = (Runnable) obj2;
+                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
+                npVar.getClass();
+                if (tL_messages_invitedUsers2 != null) {
+                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
+                }
+                int i11 = iArr[0] + 1;
+                iArr[0] = i11;
+                if (i11 >= i10) {
+                    if (!tL_messages_invitedUsers.missing_invitees.isEmpty()) {
+                        g0.g3(new zf(npVar, chat, tL_messages_invitedUsers, 2));
+                    }
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ hk(np npVar, vf.b bVar, org.telegram.ui.ActionBar.t1[] t1VarArr, org.telegram.ui.ActionBar.g2 g2Var, boolean[] zArr, int i7) {
+        this.b = npVar;
+        this.e = bVar;
+        this.f = t1VarArr;
+        this.g = g2Var;
+        this.c = zArr;
+        this.d = i7;
+    }
+
+    public /* synthetic */ hk(np npVar, boolean[] zArr, TL_bots.BotInfo[] botInfoArr, TLRPC.User user, int i7, rl rlVar) {
+        this.b = npVar;
+        this.c = zArr;
+        this.e = botInfoArr;
+        this.f = user;
+        this.d = i7;
+        this.g = rlVar;
     }
 }

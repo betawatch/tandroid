@@ -2,22 +2,22 @@ package hi;
 
 import android.graphics.Point;
 import android.graphics.RectF;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f9 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ long b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ fs e;
+    public final /* synthetic */ gs e;
     public final /* synthetic */ TLObject f;
     public final /* synthetic */ TLObject h;
 
@@ -35,10 +35,10 @@ public final /* synthetic */ class f9 implements Runnable {
         int i7 = this.a;
         TLObject tLObject = this.h;
         TLObject tLObject2 = this.f;
-        fs fsVar = this.e;
+        gs gsVar = this.e;
         switch (i7) {
             case 0:
-                sa saVar = (sa) fsVar;
+                sa saVar = (sa) gsVar;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) tLObject2;
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) tLObject;
                 boolean z10 = this.c;
@@ -61,10 +61,10 @@ public final /* synthetic */ class f9 implements Runnable {
                 storyItem.dialogId = j3;
                 storyItem.justUploaded = true;
                 T.getOrCreateStoryViewer().L(saVar.b, storyItem, null);
-                ks.f(saVar.c).k(ks.G2, Long.valueOf(inputGroupCall.id));
+                ls.f(saVar.c).k(ls.G2, Long.valueOf(inputGroupCall.id));
                 break;
             default:
-                cx cxVar = (cx) fsVar;
+                cx cxVar = (cx) gsVar;
                 TLRPC.Chat chat = (TLRPC.Chat) tLObject2;
                 TLRPC.User user = (TLRPC.User) tLObject;
                 long j10 = this.b;

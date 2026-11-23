@@ -1,70 +1,37 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class be implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t1 c;
+import android.content.DialogInterface;
 
-    public /* synthetic */ be(org.telegram.ui.ActionBar.t1 t1Var, boolean[] zArr, int i7) {
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class be implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ be(Object obj, int i7) {
         this.a = i7;
-        this.c = t1Var;
-        this.b = zArr;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         int i7 = this.a;
-        boolean[] zArr = this.b;
-        org.telegram.ui.ActionBar.t1 t1Var = this.c;
+        Object obj = this.b;
         switch (i7) {
             case 0:
                 String[] strArr = MediaController.W1;
-                if (!zArr[0]) {
-                    t1Var.show();
-                    break;
-                }
+                ((boolean[]) obj)[0] = true;
                 break;
             case 1:
                 String[] strArr2 = MediaController.W1;
-                if (!zArr[0]) {
-                    t1Var.show();
-                    break;
-                }
+                ((boolean[]) obj)[0] = true;
                 break;
             case 2:
-                String[] strArr3 = MediaController.W1;
-                try {
-                    if (t1Var.isShowing()) {
-                        t1Var.dismiss();
-                    } else {
-                        zArr[0] = true;
-                    }
-                    break;
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    return;
-                }
+                ((boolean[]) obj)[0] = true;
+                break;
             default:
-                String[] strArr4 = MediaController.W1;
-                try {
-                    if (t1Var.isShowing()) {
-                        t1Var.dismiss();
-                    } else {
-                        zArr[0] = true;
-                    }
-                    break;
-                } catch (Exception e11) {
-                    a8.g(e11, true);
-                    return;
-                }
+                ((bf) obj).f = true;
+                break;
         }
-    }
-
-    public /* synthetic */ be(boolean[] zArr, org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        this.a = i7;
-        this.b = zArr;
-        this.c = t1Var;
     }
 }

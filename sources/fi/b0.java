@@ -15,9 +15,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.t10;
 import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -27,9 +27,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.p51;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b0 implements s10 {
+public final /* synthetic */ class b0 implements t10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -40,7 +40,7 @@ public final /* synthetic */ class b0 implements s10 {
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.s10
+    @Override // org.telegram.messenger.t10
     public final void a(Object obj, Object obj2, Object obj3) {
         u9 u9Var;
         String str;
@@ -55,7 +55,7 @@ public final /* synthetic */ class b0 implements s10 {
                 if (((Boolean) obj2).booleanValue()) {
                     TL_phone.deleteGroupCallParticipantMessages deletegroupcallparticipantmessages = new TL_phone.deleteGroupCallParticipantMessages();
                     deletegroupcallparticipantmessages.call = a2Var.P;
-                    deletegroupcallparticipantmessages.participant = mp.u1(i7).l1(r0Var.c);
+                    deletegroupcallparticipantmessages.participant = np.u1(i7).l1(r0Var.c);
                     deletegroupcallparticipantmessages.report_spam = bool.booleanValue();
                     ConnectionsManager.getInstance(i7).sendRequest(deletegroupcallparticipantmessages, null);
                     long j3 = r0Var.c;
@@ -103,10 +103,10 @@ public final /* synthetic */ class b0 implements s10 {
                 }
                 if (bool2.booleanValue()) {
                     if (a2Var.N >= 0) {
-                        mp.u1(i7).w(a2Var.N);
+                        np.u1(i7).w(a2Var.N);
                         return;
                     } else {
-                        mp.u1(i7).e0(-a2Var.N, mp.u1(i7).l1(r0Var.c), true, null);
+                        np.u1(i7).e0(-a2Var.N, np.u1(i7).l1(r0Var.c), true, null);
                         return;
                     }
                 }
@@ -156,7 +156,7 @@ public final /* synthetic */ class b0 implements s10 {
                 return;
             case 2:
                 ki.p pVar = (ki.p) this.b;
-                q10 q10Var = (q10) this.c;
+                r10 r10Var = (r10) this.c;
                 Boolean bool3 = (Boolean) obj;
                 androidx.biometric.u uVar = (androidx.biometric.u) obj2;
                 androidx.biometric.v vVar = (androidx.biometric.v) obj3;
@@ -177,7 +177,7 @@ public final /* synthetic */ class b0 implements s10 {
                         bool3 = Boolean.FALSE;
                     }
                 }
-                q10Var.a(bool3, str4);
+                r10Var.a(bool3, str4);
                 return;
             case 3:
                 rn rnVar = (rn) this.b;
@@ -239,7 +239,7 @@ public final /* synthetic */ class b0 implements s10 {
                 return;
             case 4:
                 final org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) this.b;
-                q10 q10Var2 = (q10) this.c;
+                r10 r10Var2 = (r10) this.c;
                 TL_wallet.secretPhraseParts secretphraseparts = (TL_wallet.secretPhraseParts) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (secretphraseparts == null) {
@@ -251,10 +251,10 @@ public final /* synthetic */ class b0 implements s10 {
                     if (tL_error != null && (str2 = tL_error.text) != null) {
                         str5 = str2;
                     }
-                    q10Var2.a(null, str5);
+                    r10Var2.a(null, str5);
                     return;
                 }
-                final org.telegram.ui.Wallet.e eVar = new org.telegram.ui.Wallet.e(q10Var2, 2);
+                final org.telegram.ui.Wallet.e eVar = new org.telegram.ui.Wallet.e(r10Var2, 2);
                 ArrayList<Integer> arrayList3 = secretphraseparts.dcs;
                 if (arrayList3.size() <= 0) {
                     org.telegram.ui.Wallet.u0.n("getSecretPhrase: no secret parts, zero dcs");
@@ -275,8 +275,8 @@ public final /* synthetic */ class b0 implements s10 {
                     TL_wallet.fetchEncryptedSecretPhrasePart fetchencryptedsecretphrasepart = new TL_wallet.fetchEncryptedSecretPhrasePart();
                     fetchencryptedsecretphrasepart.token = secretphraseparts.token;
                     fetchencryptedsecretphrasepart.public_key = key_to_public_key;
-                    ConnectionsManager.getInstance(u0Var.a).sendRequestTyped(fetchencryptedsecretphrasepart, new d3.b(1), new q10() { // from class: org.telegram.ui.Wallet.d0
-                        @Override // org.telegram.messenger.q10
+                    ConnectionsManager.getInstance(u0Var.a).sendRequestTyped(fetchencryptedsecretphrasepart, new d3.b(1), new r10() { // from class: org.telegram.ui.Wallet.d0
+                        @Override // org.telegram.messenger.r10
                         public final void a(Object obj4, Object obj5) {
                             u0 u0Var2 = u0.this;
                             boolean[] zArr2 = zArr;

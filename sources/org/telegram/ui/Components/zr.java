@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zr {
     public final int a;
@@ -43,20 +43,20 @@ public final class zr {
         return true;
     }
 
-    public final void b(org.telegram.messenger.a20 a20Var) {
+    public final void b(org.telegram.messenger.b20 b20Var) {
         for (int i7 = 0; i7 < this.g; i7++) {
             boolean[] zArr = this.e;
             if (zArr == null || zArr[i7]) {
-                a20Var.a(i7, (TLObject) this.c.get(i7));
+                b20Var.a(i7, (TLObject) this.c.get(i7));
             }
         }
     }
 
-    public final void c(org.telegram.messenger.a20 a20Var) {
+    public final void c(org.telegram.messenger.b20 b20Var) {
         boolean[] zArr;
         for (int i7 = 0; i7 < this.g; i7++) {
             if (this.d[i7] && ((zArr = this.e) == null || zArr[i7])) {
-                a20Var.a(i7, (TLObject) this.c.get(i7));
+                b20Var.a(i7, (TLObject) this.c.get(i7));
             }
         }
     }
@@ -138,23 +138,23 @@ public final class zr {
             }
         }
         tLObject = null;
-        String l10 = tLObject instanceof TLRPC.User ? org.telegram.messenger.o10.l((TLRPC.User) tLObject) : org.telegram.messenger.i5.o(tLObject);
+        String l10 = tLObject instanceof TLRPC.User ? org.telegram.messenger.p10.l((TLRPC.User) tLObject) : org.telegram.messenger.i5.o(tLObject);
         int i11 = this.a;
         if (i11 == 0) {
-            this.b = org.telegram.messenger.gd.N0(2131751490, null);
+            this.b = org.telegram.messenger.hd.N0(2131751490, null);
             return;
         }
         if (i11 == 1) {
-            this.b = d() ? org.telegram.messenger.gd.N0(2131751570, null) : org.telegram.messenger.gd.a0(null, null, 2131751575, l10);
+            this.b = d() ? org.telegram.messenger.hd.N0(2131751570, null) : org.telegram.messenger.hd.a0(null, null, 2131751575, l10);
             return;
         }
         if (i11 == 3) {
-            this.b = d() ? org.telegram.messenger.gd.N0(2131751565, null) : org.telegram.messenger.gd.a0(null, null, 2131751566, l10);
+            this.b = d() ? org.telegram.messenger.hd.N0(2131751565, null) : org.telegram.messenger.hd.a0(null, null, 2131751566, l10);
         } else if (i11 == 2) {
             if (this.j.c2) {
-                this.b = d() ? org.telegram.messenger.gd.N0(2131751488, null) : org.telegram.messenger.gd.a0(null, null, 2131751489, l10);
+                this.b = d() ? org.telegram.messenger.hd.N0(2131751488, null) : org.telegram.messenger.hd.a0(null, null, 2131751489, l10);
             } else {
-                this.b = d() ? org.telegram.messenger.gd.N0(2131751555, null) : org.telegram.messenger.gd.a0(null, null, 2131751556, l10);
+                this.b = d() ? org.telegram.messenger.hd.N0(2131751555, null) : org.telegram.messenger.hd.a0(null, null, 2131751556, l10);
             }
         }
     }

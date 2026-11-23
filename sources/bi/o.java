@@ -7,8 +7,8 @@ import android.net.Uri;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.i61;
@@ -21,7 +21,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -112,11 +112,11 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 }
                 B.n0();
                 B.m();
-                fj fjVar = B.v0;
-                if (fjVar != null) {
-                    ks f10 = ks.f(fjVar.K1);
-                    fj fjVar2 = B.v0;
-                    f10.k(ks.g2, Integer.valueOf(fjVar2 != null ? fjVar2.e1() : 0));
+                gj gjVar = B.v0;
+                if (gjVar != null) {
+                    ls f10 = ls.f(gjVar.K1);
+                    gj gjVar2 = B.v0;
+                    f10.k(ls.g2, Integer.valueOf(gjVar2 != null ? gjVar2.e1() : 0));
                     break;
                 }
                 break;

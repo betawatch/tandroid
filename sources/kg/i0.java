@@ -8,13 +8,13 @@ import bi.m2;
 import hi.w4;
 import ki.r2;
 import ki.r3;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.ui.Cells.j3;
 import org.telegram.ui.Cells.l3;
 import org.telegram.ui.Components.c51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 ((m2) obj2).a(Boolean.FALSE);
                 return;
             case 5:
-                ks.f(((v1) obj2).a).k(ks.F1, new Object[0]);
+                ls.f(((v1) obj2).a).k(ls.F1, new Object[0]);
                 return;
             case 6:
                 ((ki.c0) obj2).invalidateSelf();

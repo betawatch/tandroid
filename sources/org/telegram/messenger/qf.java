@@ -1,72 +1,54 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gs0;
-import org.telegram.ui.Components.mp0;
-import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qf implements RequestDelegate {
+public final /* synthetic */ class qf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ si b;
+    public final /* synthetic */ TLRPC.messages_Messages c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int w;
 
-    public /* synthetic */ qf(Object obj, int i7, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = i7;
-        this.c = i10;
-        this.e = obj2;
+    public /* synthetic */ qf(si siVar, TLRPC.messages_Messages messages_messages, int i7, long j3, ArrayList arrayList, int i10, int i11, boolean z10, int i12, int i13, int i14) {
+        this.a = i14;
+        this.b = siVar;
+        this.c = messages_messages;
+        this.d = i7;
+        this.e = j3;
+        this.f = arrayList;
+        this.h = i10;
+        this.n = i11;
+        this.r = z10;
+        this.s = i12;
+        this.w = i13;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                g0.g3(new jg.o1(this.b, this.c, 8, (ri) this.d, (StickersActivity) this.e, tLObject));
-                break;
-            case 1:
-                mp mpVar = (mp) this.d;
-                Runnable runnable = (Runnable) this.e;
-                if (tL_error == null) {
-                    TLRPC.messages_Dialogs messages_dialogs = (TLRPC.messages_Dialogs) tLObject;
-                    mpVar.Q3(messages_dialogs, null, null, this.b, 0, this.c, 0, false, false, false);
-                    if (runnable != null && messages_dialogs.dialogs.isEmpty()) {
-                        g0.g3(runnable);
-                        break;
-                    }
-                }
+                g0.g3(new qf(this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w, 1));
                 break;
             default:
-                gs0 gs0Var = (gs0) this.d;
-                String str = (String) this.e;
-                ArrayList arrayList = new ArrayList();
-                if (tL_error == null) {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    for (int i7 = 0; i7 < messages_messages.messages.size(); i7++) {
-                        TLRPC.Message message = messages_messages.messages.get(i7);
-                        int i10 = this.b;
-                        if (i10 == 0 || message.id <= i10) {
-                            arrayList.add(new fj(gs0Var.w.y1.getCurrentAccount(), message, false, true));
-                        }
-                    }
-                }
-                g0.g3(new mp0(gs0Var, this.c, arrayList, str, 2));
+                TLRPC.messages_Messages messages_messages = this.c;
+                int i7 = messages_messages.count;
+                si siVar = this.b;
+                np messagesController = siVar.getMessagesController();
+                ArrayList<TLRPC.User> arrayList = messages_messages.users;
+                int i10 = this.d;
+                messagesController.f4(arrayList, i10 != 0);
+                siVar.getMessagesController().Z3(messages_messages.chats, i10 != 0);
+                siVar.getNotificationCenter().k(32, Long.valueOf(this.e), Integer.valueOf(i7), this.f, Integer.valueOf(this.h), Integer.valueOf(this.n), Boolean.valueOf(this.r), Boolean.valueOf(this.s != 0), Integer.valueOf(this.w));
                 break;
         }
-    }
-
-    public /* synthetic */ qf(ri riVar, int i7, StickersActivity stickersActivity, int i10) {
-        this.a = 0;
-        this.d = riVar;
-        this.b = i7;
-        this.e = stickersActivity;
-        this.c = i10;
     }
 }

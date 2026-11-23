@@ -4,10 +4,10 @@ import hi.na;
 import hi.sa;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.u10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.rh0;
@@ -16,9 +16,9 @@ import org.telegram.ui.cx;
 import org.telegram.ui.p51;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements u10 {
+public final /* synthetic */ class w1 implements v10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -30,7 +30,7 @@ public final /* synthetic */ class w1 implements u10 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:56:0x0145  */
-    @Override // org.telegram.messenger.u10
+    @Override // org.telegram.messenger.v10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -74,7 +74,7 @@ public final /* synthetic */ class w1 implements u10 {
                         ((w8) z3Var.A1).g(false);
                         z3Var.setActive(true);
                         z3Var.E3 = false;
-                        z3Var.S0 = new ai.b1(1, runnable);
+                        z3Var.S0 = new ai.a1(1, runnable);
                         if (bool.booleanValue()) {
                             z3Var.d1(false);
                         }
@@ -129,22 +129,22 @@ public final /* synthetic */ class w1 implements u10 {
                 break;
             case 1:
                 vs0 vs0Var = (vs0) this.b;
-                org.telegram.ui.b0 b0Var = (org.telegram.ui.b0) this.c;
+                org.telegram.ui.f0 f0Var = (org.telegram.ui.f0) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
                 int i10 = vs0Var.d;
-                mp.u1(i10).f4((ArrayList) obj2, true);
-                mp.u1(i10).Z3((ArrayList) obj3, true);
+                np.u1(i10).f4((ArrayList) obj2, true);
+                np.u1(i10).Z3((ArrayList) obj3, true);
                 org.telegram.ui.Components.p5.g(i10).d((ArrayList) obj4);
                 for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    fj fjVar = (fj) arrayList2.get(i11);
-                    if (fjVar.z2() && fjVar.k.reactions != null) {
-                        fjVar.S2 = true;
+                    gj gjVar = (gj) arrayList2.get(i11);
+                    if (gjVar.z2() && gjVar.k.reactions != null) {
+                        gjVar.S2 = true;
                     }
-                    fjVar.K5(vs0Var.x, true);
-                    vs0Var.n.add(fjVar);
+                    gjVar.K5(vs0Var.x, true);
+                    vs0Var.n.add(gjVar);
                 }
                 vs0Var.G(true);
-                org.telegram.messenger.g0.h3(b0Var, 540L);
+                org.telegram.messenger.g0.h3(f0Var, 540L);
                 break;
             default:
                 org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) this.b;
@@ -159,7 +159,7 @@ public final /* synthetic */ class w1 implements u10 {
                     o0Var.c = bArr;
                     o0Var.b = r0Var.b();
                     o0Var.a = sendtransfer;
-                    u0Var.c.q(j10.i(u0Var.a).e(), bArr, r0Var, new p51(u0Var, o0Var, y8Var));
+                    u0Var.c.q(k10.i(u0Var.a).e(), bArr, r0Var, new p51(u0Var, o0Var, y8Var));
                     break;
                 } else {
                     org.telegram.ui.Wallet.u0.n("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));

@@ -13,15 +13,15 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.xs;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ys;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.qo;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ea1;
 import org.telegram.ui.jx0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, o2.i, qo, zi.x0 {
     public final /* synthetic */ int a;
@@ -375,13 +375,13 @@ public final /* synthetic */ class va implements OnFailureListener, f3.p, f3.q, 
         int i7;
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         i7 = ((org.telegram.ui.ActionBar.g2) profileActivity).currentAccount;
-        SharedPreferences sharedPreferences = mp.u1(i7).g7;
+        SharedPreferences sharedPreferences = np.u1(i7).g7;
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j3 = this.b;
-        sb2.append(xs.v(j3, profileActivity.g1, false));
+        sb2.append(ys.v(j3, profileActivity.g1, false));
         boolean z10 = sharedPreferences.getBoolean(sb2.toString(), true);
         boolean z11 = !z10;
-        sharedPreferences.edit().putBoolean("sound_enabled_" + xs.v(j3, profileActivity.g1, false), z11).apply();
+        sharedPreferences.edit().putBoolean("sound_enabled_" + ys.v(j3, profileActivity.g1, false), z11).apply();
         if (lc.a(profileActivity)) {
             lc.S(z10 ? 1 : 0, profileActivity, profileActivity.A0).j();
         }

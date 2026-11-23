@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ec;
 import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -32,7 +32,7 @@ import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class w0 extends y implements org.telegram.ui.ActionBar.b6, i9, j0, org.telegram.messenger.y5 {
     public final RadialProgress2 E;
@@ -51,7 +51,7 @@ public final class w0 extends y implements org.telegram.ui.ActionBar.b6, i9, j0,
     public StaticLayout R;
     public StaticLayout S;
     public o3 T;
-    public fj U;
+    public gj U;
     public TLRPC.Document V;
     public int W;
     public boolean a0;
@@ -179,7 +179,7 @@ public final class w0 extends y implements org.telegram.ui.ActionBar.b6, i9, j0,
         File file = TextUtils.isEmpty(str2) ? null : new File(str2);
         String lowerCase = (document == null || (str = document.mime_type) == null) ? "" : str.toLowerCase();
         boolean z10 = j() && file != null && file.exists() && (lowerCase.startsWith("image/") || lowerCase.equals("video/mp4"));
-        boolean W2 = fj.W2(document);
+        boolean W2 = gj.W2(document);
         this.M = z10 || W2;
         int L = org.telegram.messenger.g0.L(16.0f) + (this.N ? 0 : this.c);
         this.L = L;
@@ -194,23 +194,23 @@ public final class w0 extends y implements org.telegram.ui.ActionBar.b6, i9, j0,
         ImageReceiver imageReceiver = this.F;
         if (z10) {
             imageReceiver.y0(this.L, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(86.0f), org.telegram.messenger.g0.L(86.0f));
-            imageReceiver.q0(fc.g(str2), "86_86", null, null, document, 1);
+            imageReceiver.q0(gc.g(str2), "86_86", null, null, document, 1);
             return;
         }
         if (!W2) {
             imageReceiver.f();
             return;
         }
-        TLRPC.PhotoSize w10 = w7.w(document.thumbs, ks.r5, false, null, true);
+        TLRPC.PhotoSize w10 = w7.w(document.thumbs, ls.r5, false, null, true);
         o3 o3Var = this.T;
-        fj fjVar = o3Var == null ? null : o3Var.a.q3;
+        gj gjVar = o3Var == null ? null : o3Var.a.q3;
         imageReceiver.y0(this.L, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(86.0f), org.telegram.messenger.g0.L(86.0f));
-        fc c10 = w10 != null ? fc.c(w10, document) : null;
-        BitmapDrawable m10 = ec.m(document.thumbs);
-        if (fjVar == null) {
-            fjVar = this.U;
+        gc c10 = w10 != null ? gc.c(w10, document) : null;
+        BitmapDrawable m10 = fc.m(document.thumbs);
+        if (gjVar == null) {
+            gjVar = this.U;
         }
-        imageReceiver.q0(c10, "86_86", m10, null, fjVar, 1);
+        imageReceiver.q0(c10, "86_86", m10, null, gjVar, 1);
     }
 
     @Override // oi.j0
@@ -356,7 +356,7 @@ public final class w0 extends y implements org.telegram.ui.ActionBar.b6, i9, j0,
                 radialProgress2.setIcon(2, false, z10);
             } else {
                 this.Q = 2;
-                Float w10 = ec.D().w(r10);
+                Float w10 = fc.D().w(r10);
                 radialProgress2.p(z10, w10 != null ? w10.floatValue() : 0.0f);
                 radialProgress2.setIcon(3, true, z10);
             }
@@ -455,7 +455,7 @@ public final class w0 extends y implements org.telegram.ui.ActionBar.b6, i9, j0,
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         Object[] objArr;
-        fj fjVar;
+        gj gjVar;
         if (motionEvent.getX() >= this.L && motionEvent.getX() <= getWidth() - org.telegram.messenger.g0.L(12.0f) && motionEvent.getY() >= org.telegram.messenger.g0.L(10.0f)) {
             if (motionEvent.getY() <= org.telegram.messenger.g0.L(this.M ? 96.0f : 54.0f)) {
                 objArr = true;
@@ -511,21 +511,21 @@ public final class w0 extends y implements org.telegram.ui.ActionBar.b6, i9, j0,
                                         activity = (Activity) context;
                                     }
                                 }
-                                if (activity != null && (fjVar = this.U) != null) {
-                                    org.telegram.messenger.g0.u2(fjVar, activity, this.r, false);
+                                if (activity != null && (gjVar = this.U) != null) {
+                                    org.telegram.messenger.g0.u2(gjVar, activity, this.r, false);
                                 }
                             } else {
                                 RadialProgress2 radialProgress2 = this.E;
                                 int i10 = this.n;
                                 if (i7 == 1 && h() != null) {
                                     o3 o3Var2 = this.T;
-                                    fj fjVar2 = o3Var2 != null ? o3Var2.a.q3 : null;
+                                    gj gjVar2 = o3Var2 != null ? o3Var2.a.q3 : null;
                                     w7 G = w7.G(i10);
                                     TLRPC.Document h = h();
-                                    if (fjVar2 == null) {
-                                        fjVar2 = this.U;
+                                    if (gjVar2 == null) {
+                                        gjVar2 = this.U;
                                     }
-                                    G.W(h, fjVar2, 1, 1);
+                                    G.W(h, gjVar2, 1, 1);
                                     this.Q = 2;
                                     radialProgress2.setIcon(3, true, true);
                                 } else if (this.Q == 2 && h() != null) {

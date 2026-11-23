@@ -2,7 +2,7 @@ package com.google.android.gms.common.api.internal;
 
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.Components.i61;
 import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.s61;
@@ -11,7 +11,7 @@ import org.telegram.ui.dq0;
 import org.telegram.ui.hf0;
 import p4.o1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class t implements r61 {
     public int a;
@@ -149,7 +149,7 @@ public final class t implements r61 {
     public void h(float f10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
         this.a = (int) (photoViewer.i8 * f10);
-        if (bz.o() != 2) {
+        if (cz.o() != 2) {
             if (((hf0) this.c) == null) {
                 hf0 hf0Var = new hf0(this, 18);
                 this.c = hf0Var;

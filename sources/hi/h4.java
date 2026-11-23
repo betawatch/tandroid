@@ -2,7 +2,7 @@ package hi;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h4 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class h4 implements Runnable {
                 }
                 break;
             case 1:
-                new ug.y0((org.telegram.ui.ActionBar.g2) new bi.c9(this.b, 5), 14, true).show();
+                new ug.y0((org.telegram.ui.ActionBar.g2) new bi.b9(this.b, 5), 14, true).show();
                 break;
             case 2:
                 this.b.w0(false);
@@ -41,12 +41,12 @@ public final /* synthetic */ class h4 implements Runnable {
                         sg.g gVar = (sg.g) list.get(i7);
                         int m10 = z10 ? gVar.m() : gVar.e();
                         String n10 = gVar.n();
-                        ai.c1 c1Var = new ai.c1(k5Var, gVar, m10, 16);
+                        ai.j1 j1Var = new ai.j1(k5Var, gVar, m10, 15);
                         h5 h5Var = new h5(k5Var, k5Var.getContext());
                         h5Var.setIcon(m10);
                         h5Var.setText(n10);
                         h5Var.setSelected(false);
-                        h5Var.setOnClickListener(new o4(c1Var, 0));
+                        h5Var.setOnClickListener(new o4(j1Var, 0));
                         h5Var.setOnLongClickListener(new n4(k5Var, 0));
                         k5Var.s1.a(h5Var, c8.ma.o(-1, 48));
                         i7++;

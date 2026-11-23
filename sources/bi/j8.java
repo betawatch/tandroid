@@ -1,86 +1,329 @@
 package bi;
 
+import android.animation.ValueAnimator;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.text.TextUtils;
+import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.TextView;
 import c8.ma;
-import java.io.Serializable;
+import c8.ra;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
-import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.y10;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.a70;
-import org.telegram.ui.Components.dk0;
-import org.telegram.ui.Components.ek0;
+import org.telegram.ui.Components.c10;
+import org.telegram.ui.Components.du0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.o41;
+import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.ot;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.yz;
+import org.telegram.ui.Components.wz;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class j8 extends sa {
-    public static final /* synthetic */ int g2 = 0;
-    public final String T1;
-    public final i8 U1;
-    public final HorizontalScrollView V1;
-    public final p7 W1;
-    public final p7 X1;
-    public final p7 Y1;
-    public final p7 Z1;
-    public final di.k4 a2;
-    public di.c2 b2;
-    public final HashSet c2;
-    public boolean d2;
-    public h8 e2;
-    public boolean f2;
+public class j8 extends org.telegram.ui.ActionBar.g2 implements te.b {
+    public static final ArrayList U = new ArrayList();
+    public LinearLayout E;
+    public o7 F;
+    public o7 G;
+    public o7 H;
+    public o7 I;
+    public wz J;
+    public int K;
+    public int L;
+    public float M;
+    public gh.e N;
+    public final p7 O;
+    public op P;
+    public boolean Q;
+    public ValueAnimator R;
+    public int S;
+    public LinearLayout T;
+    public final te.a a;
+    public final long b;
+    public final String c;
+    public final x7 d;
+    public y10 e;
+    public i7 f;
+    public View h;
+    public FrameLayout n;
+    public FrameLayout r;
+    public TextView s;
+    public t2 w;
+    public boolean x;
+    public HorizontalScrollView y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j8(final Context context, String str, final i8 i8Var) {
-        super(2, context, (org.telegram.ui.ActionBar.h6) null, false);
-        final int i7 = 2;
-        final int i10 = 0;
-        this.c2 = new HashSet();
-        this.F1 = org.telegram.messenger.g0.L(12.0f);
-        O();
-        this.T1 = str;
-        this.U1 = i8Var;
-        this.p1.setTitle(P0());
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setPadding(org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(6.0f));
-        linearLayout.setOrientation(0);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
-        this.V1 = horizontalScrollView;
-        horizontalScrollView.setHorizontalScrollBarEnabled(false);
-        horizontalScrollView.setClipChildren(false);
-        horizontalScrollView.setClipToPadding(false);
-        horizontalScrollView.addView(linearLayout);
-        p7 p7Var = new p7(context, this.J0, false);
-        this.W1 = p7Var;
-        p7Var.setSorting(i8Var.c.p);
-        linearLayout.addView(p7Var, ma.t(-2, -2, 16, 0, 0, 6, 0));
-        int i11 = 6;
-        p7Var.setOnClickListener(new ai.x2(i11, this, i8Var));
-        p7 p7Var2 = new p7(context, this.J0, false);
-        this.X1 = p7Var2;
-        p7Var2.setValue(gd.N0(2131750370, null));
-        linearLayout.addView(p7Var2, ma.t(-2, -2, 16, 0, 0, 6, 0));
-        p7Var2.setOnClickListener(new View.OnClickListener(this) { // from class: bi.g8
+    public j8(long j3, String str, long j10, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(null);
+        this.a = new te.a(0, this, nr.h, 380L, false);
+        p7 p7Var = new p7();
+        p7Var.e = this;
+        this.O = p7Var;
+        this.Q = true;
+        this.b = j3;
+        this.c = str;
+        this.resourceProvider = h6Var;
+        x7 x7Var = new x7(this.currentAccount, j10, new t6(this, 0));
+        boolean z10 = (j3 == 0 || j3 == k10.i(x7Var.a).e()) ? false : true;
+        x7Var.v = z10;
+        if (z10) {
+            x7Var.j();
+        }
+        this.d = x7Var;
+        x7Var.l(false);
+    }
+
+    public static void Z(j8 j8Var, Context context) {
+        x7 x7Var = j8Var.d;
+        if (j8Var.Q && !x7Var.f.isEmpty()) {
+            a70 a70Var = new a70(j8Var, j8Var.G, false, false);
+            a70Var.t = false;
+            a70Var.b0 = true;
+            a70Var.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+            a70Var.U = true;
+            a70Var.p = new e6(a70Var, 3);
+            String[] strArr = {""};
+            ArrayList arrayList = new ArrayList(x7Var.f);
+            int i7 = 2;
+            Collections.sort(arrayList, new x6(j8Var, i7));
+            i7 i7Var = new i7(j8Var, new y6(j8Var, strArr, arrayList, i7), new z6(j8Var, r14, i7), null, 1);
+            i7Var.g3.r = false;
+            h51[] h51VarArr = {i7Var};
+            FrameLayout frameLayout = new FrameLayout(context);
+            ImageView imageView = new ImageView(context);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            imageView.setImageResource(R.drawable.smiles_inputsearch);
+            org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.F8, j8Var.getResourceProvider(), PorterDuff.Mode.SRC_IN);
+            frameLayout.addView(imageView, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
+            ot otVar = new ot(context, j8Var.resourceProvider);
+            otVar.setTextSize(1, 16.0f);
+            otVar.setInputType(573441);
+            otVar.setRawInputType(573441);
+            org.telegram.ui.ActionBar.t6.D(otVar, org.telegram.ui.ActionBar.m6.A6, j8Var.resourceProvider);
+            org.telegram.ui.ActionBar.t6.l(otVar, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.resourceProvider);
+            otVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+            otVar.setCursorWidth(1.5f);
+            otVar.setHint(hd.N0(2131749992, null));
+            org.telegram.ui.ActionBar.t6.U(otVar, org.telegram.ui.ActionBar.m6.E8, j8Var.resourceProvider);
+            otVar.setBackground(null);
+            frameLayout.addView(otVar, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+            otVar.addTextChangedListener(new v(strArr, i7Var, false, 1));
+            if (arrayList.size() > 8) {
+                a70Var.r(frameLayout, ma.o(-1, 44));
+                a70Var.k();
+            }
+            if (!x7Var.j.isEmpty()) {
+                a70Var.c(R.drawable.msg_select, hd.N0(2131745474, null), new a7(j8Var, h51VarArr, a70Var, 2), false);
+            }
+            a70Var.q(i7Var);
+            j8Var.i0(j8Var.G, a70Var);
+        }
+    }
+
+    public static void a0(j8 j8Var, Context context) {
+        x7 x7Var = j8Var.d;
+        if (j8Var.Q && !x7Var.g.isEmpty()) {
+            a70 a70Var = new a70(j8Var, j8Var.H, false, false);
+            a70Var.t = false;
+            int i7 = 1;
+            a70Var.b0 = true;
+            a70Var.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+            a70Var.U = true;
+            int i10 = 2;
+            a70Var.p = new e6(a70Var, i10);
+            String[] strArr = {""};
+            ArrayList arrayList = new ArrayList(x7Var.g);
+            Collections.sort(arrayList, new x6(j8Var, i7));
+            i7 i7Var = new i7(j8Var, new y6(j8Var, strArr, arrayList, i7), new z6(j8Var, r14, i7), null, 2);
+            i7Var.g3.r = false;
+            h51[] h51VarArr = {i7Var};
+            FrameLayout frameLayout = new FrameLayout(context);
+            ImageView imageView = new ImageView(context);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            imageView.setImageResource(R.drawable.smiles_inputsearch);
+            org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.F8, j8Var.getResourceProvider(), PorterDuff.Mode.SRC_IN);
+            frameLayout.addView(imageView, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
+            ot otVar = new ot(context, j8Var.resourceProvider);
+            otVar.setTextSize(1, 16.0f);
+            otVar.setInputType(573441);
+            otVar.setRawInputType(573441);
+            org.telegram.ui.ActionBar.t6.D(otVar, org.telegram.ui.ActionBar.m6.A6, j8Var.resourceProvider);
+            org.telegram.ui.ActionBar.t6.l(otVar, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.resourceProvider);
+            otVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+            otVar.setCursorWidth(1.5f);
+            otVar.setHint(hd.N0(2131749992, null));
+            org.telegram.ui.ActionBar.t6.U(otVar, org.telegram.ui.ActionBar.m6.E8, j8Var.resourceProvider);
+            otVar.setBackground(null);
+            frameLayout.addView(otVar, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+            otVar.addTextChangedListener(new v(strArr, i7Var, false, i10));
+            if (arrayList.size() > 8) {
+                a70Var.r(frameLayout, ma.o(-1, 44));
+                a70Var.k();
+            }
+            if (!x7Var.k.isEmpty()) {
+                a70Var.c(R.drawable.msg_select, hd.N0(2131745474, null), new a7(j8Var, h51VarArr, a70Var, i7), false);
+            }
+            a70Var.q(i7Var);
+            j8Var.i0(j8Var.H, a70Var);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void b0(j8 j8Var, Context context) {
+        x7 x7Var = j8Var.d;
+        if (j8Var.Q && !x7Var.h.isEmpty()) {
+            Object[] objArr = 0;
+            a70 a70Var = new a70(j8Var, j8Var.I, false, false);
+            a70Var.t = false;
+            a70Var.b0 = true;
+            a70Var.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+            a70Var.U = true;
+            a70Var.p = new e6(a70Var, 1);
+            String[] strArr = {""};
+            ArrayList arrayList = new ArrayList(x7Var.h);
+            Collections.sort(arrayList, new x6(j8Var, 0));
+            i7 i7Var = new i7(j8Var, new y6(j8Var, strArr, arrayList, 0 == true ? 1 : 0), new z6(j8Var, r13, 0 == true ? 1 : 0), null, 3);
+            i7Var.g3.r = false;
+            h51[] h51VarArr = {i7Var};
+            FrameLayout frameLayout = new FrameLayout(context);
+            ImageView imageView = new ImageView(context);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            imageView.setImageResource(R.drawable.smiles_inputsearch);
+            org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.F8, j8Var.getResourceProvider(), PorterDuff.Mode.SRC_IN);
+            frameLayout.addView(imageView, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
+            ot otVar = new ot(context, j8Var.resourceProvider);
+            otVar.setTextSize(1, 16.0f);
+            otVar.setInputType(573441);
+            otVar.setRawInputType(573441);
+            org.telegram.ui.ActionBar.t6.D(otVar, org.telegram.ui.ActionBar.m6.A6, j8Var.resourceProvider);
+            org.telegram.ui.ActionBar.t6.l(otVar, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.resourceProvider);
+            otVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+            otVar.setCursorWidth(1.5f);
+            otVar.setHint(hd.N0(2131749992, null));
+            org.telegram.ui.ActionBar.t6.U(otVar, org.telegram.ui.ActionBar.m6.E8, j8Var.resourceProvider);
+            otVar.setBackground(null);
+            frameLayout.addView(otVar, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+            otVar.addTextChangedListener(new v(strArr, i7Var, 0 == true ? 1 : 0, 3));
+            if (arrayList.size() > 8) {
+                a70Var.r(frameLayout, ma.o(-1, 44));
+                a70Var.k();
+            }
+            if (!x7Var.l.isEmpty()) {
+                a70Var.c(R.drawable.msg_select, hd.N0(2131745474, null), new a7(j8Var, h51VarArr, a70Var, objArr == true ? 1 : 0), false);
+            }
+            a70Var.q(i7Var);
+            j8Var.i0(j8Var.I, a70Var);
+        }
+    }
+
+    public static void c0(j8 j8Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
+        if (j3 == k10.i(j8Var.currentAccount).e()) {
+            j8Var.d.n(tL_starGiftUnique);
+            if (j3 == k10.i(j8Var.currentAccount).e()) {
+                lc b02 = lc.b0(j8Var);
+                TLRPC.Document document = tL_starGiftUnique.getDocument();
+                String N0 = hd.N0(2131752875, null);
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append(tL_starGiftUnique.title);
+                sb2.append(" #");
+                gc O = b02.O(document, N0, hd.a0(null, null, 2131752876, i5.c.l(tL_starGiftUnique.num, ',', sb2)));
+                O.r = false;
+                O.j();
+            } else {
+                gc O2 = lc.b0(j8Var).O(tL_starGiftUnique.getDocument(), hd.N0(2131752873, null), hd.a0(null, null, 2131752874, org.telegram.messenger.n5.s(j8Var.currentAccount, j3)));
+                O2.r = false;
+                O2.j();
+            }
+            j8Var.J.c(true);
+            return;
+        }
+        Bundle bundle = new Bundle();
+        if (j3 >= 0) {
+            bundle.putLong("user_id", j3);
+        } else {
+            bundle.putLong("chat_id", -j3);
+        }
+        h7 h7Var = new h7(bundle, tL_starGiftUnique, j3);
+        org.telegram.ui.ActionBar.r4 r4Var = j8Var.parentLayout;
+        if (r4Var == null || !((ActionBarLayout) r4Var).b) {
+            j8Var.presentFragment(h7Var, true, z10);
+        } else {
+            Dialog dialog = j8Var.parentDialog;
+            if ((dialog instanceof org.telegram.ui.ActionBar.w2) && z10) {
+                ((org.telegram.ui.ActionBar.w2) dialog).O0 = true;
+            }
+            j8Var.finishFragment();
+            org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
+            if (T != null) {
+                T.presentFragment(h7Var, false, z10);
+            }
+        }
+        y10 y10Var = j8Var.e;
+        if (y10Var != null) {
+            y10Var.a(Boolean.valueOf(z10));
+        }
+    }
+
+    public static void e0(j8 j8Var, o41 o41Var) {
+        Object obj = o41Var.H;
+        if (obj instanceof TL_stars.TL_starGiftUnique) {
+            TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
+            di.f6 f6Var = new di.f6(j8Var.getParentActivity(), j8Var.currentAccount, j8Var.b, j8Var.resourceProvider, null);
+            f6Var.u2(tL_starGiftUnique.slug, tL_starGiftUnique, j8Var.d);
+            f6Var.N2 = new d7(j8Var);
+            j8Var.showDialog(f6Var);
+        }
+    }
+
+    @Override // te.b
+    public final void H(int i7, float f10, float f11, te.c cVar) {
+        if (i7 == 0) {
+            this.r.setTranslationY((-org.telegram.messenger.g0.L(52.0f)) * f10);
+            c10.d(this.n, f10);
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r11v1, types: [bi.u6] */
+    @Override // org.telegram.ui.ActionBar.g2
+    public final View createView(final Context context) {
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setActionBarMenuOnItemClick(new v1(this, 2));
+        this.simpleActionBar.setTitle(this.c);
+        l0();
+        du0 du0Var = new du0(context, null);
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.a7, du0Var, getResourceProvider());
+        this.fragmentView = du0Var;
+        ri.a baseSimpleGlass = getBaseSimpleGlass();
+        i7 i7Var = new i7(this, new b(this, 9), new d7(this), new a3.l(this, 22), 0);
+        this.f = i7Var;
+        final int i7 = 0;
+        i7Var.g3.r = false;
+        i7Var.setSpanCount(3);
+        final int i10 = 1;
+        this.f.j(new u1(this, i10));
+        du0Var.addView(this.f, ma.e(-1, -1, ls.E1));
+        t2 t2Var = new t2(context, new View.OnClickListener(this) { // from class: bi.u6
             public final /* synthetic */ j8 b;
 
             {
@@ -89,2737 +332,793 @@ public final class j8 extends sa {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                int i12 = i10;
-                final i8 i8Var2 = i8Var;
-                j8 j8Var = this.b;
-                final int i13 = 2;
-                final int i14 = 1;
+                switch (i10) {
+                    case 0:
+                        x7 x7Var = this.b.d;
+                        x7Var.k.clear();
+                        x7Var.j.clear();
+                        x7Var.l.clear();
+                        x7Var.m();
+                        break;
+                    default:
+                        j8 j8Var = this.b;
+                        x7 x7Var2 = j8Var.d;
+                        HashSet hashSet = x7Var2.k;
+                        HashSet hashSet2 = x7Var2.l;
+                        HashSet hashSet3 = x7Var2.j;
+                        boolean z10 = false;
+                        if (hashSet.isEmpty() && hashSet3.isEmpty() && hashSet2.isEmpty()) {
+                            boolean z11 = x7Var2.r;
+                            boolean z12 = x7Var2.s;
+                            boolean z13 = x7Var2.t;
+                            x7Var2.j();
+                            boolean z14 = (z11 == x7Var2.r && z12 == x7Var2.s && z13 == x7Var2.t) ? false : true;
+                            x7Var2.r = z11;
+                            x7Var2.s = z12;
+                            x7Var2.t = z13;
+                            if (!z14) {
+                                z10 = true;
+                            }
+                        }
+                        x7Var2.k.clear();
+                        hashSet3.clear();
+                        hashSet2.clear();
+                        if (z10) {
+                            x7Var2.r = x7Var2.g();
+                            x7Var2.s = x7Var2.h();
+                            x7Var2.t = x7Var2.f();
+                        } else {
+                            x7Var2.j();
+                        }
+                        op opVar = j8Var.P;
+                        if (opVar != null) {
+                            opVar.a(x7Var2.k(), true);
+                        }
+                        x7Var2.m();
+                        break;
+                }
+            }
+        }, this.resourceProvider);
+        this.w = t2Var;
+        this.x = false;
+        t2Var.setAlpha(0.0f);
+        this.w.setScaleX(0.95f);
+        this.w.setScaleY(0.95f);
+        this.w.setVisibility(8);
+        du0Var.addView(this.w, ma.e(-1, -1, ls.E1));
+        x7 x7Var = this.d;
+        if (x7Var.d.isEmpty() && !x7Var.y && x7Var.z) {
+            j0(true);
+        }
+        View view = new View(context);
+        this.h = view;
+        du0Var.addView(view, ma.e(-1, 0, 48));
+        baseSimpleGlass.f(du0Var, this.f, this.simpleActionBar, this.resourceProvider);
+        dh.c cVar = baseSimpleGlass.c;
+        View view2 = this.h;
+        view2.setBackground(baseSimpleGlass.a(view2));
+        this.simpleActionBar.setBackground(null);
+        l7 l7Var = new l7(this.currentAccount, context, this.resourceProvider);
+        fh.g c10 = cVar.c(l7Var, null, false);
+        c10.p(c8.i0.m(this.resourceProvider));
+        c10.r(org.telegram.messenger.g0.L(23.0f));
+        c10.q(org.telegram.messenger.g0.L(6.0f));
+        l7Var.setBackground(c10);
+        ra.a(l7Var);
+        l7Var.setOnClickListener(new ai.y2(5, this, l7Var));
+        l7Var.setOnWidthChanged(new t6(this, i10));
+        this.simpleActionBar.addView(l7Var, ma.e(-2, 58, 5));
+        this.N = c8.i0.m(this.resourceProvider);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.E = linearLayout;
+        linearLayout.setOrientation(0);
+        this.E.setClipChildren(false);
+        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
+        this.y = horizontalScrollView;
+        horizontalScrollView.setHorizontalScrollBarEnabled(false);
+        this.y.setOverScrollMode(2);
+        this.y.addView(this.E);
+        this.y.setClipChildren(false);
+        du0Var.addView(this.y, ma.e(-1, 52, 55));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(15.0f), 0);
+        linearLayout2.setOrientation(0);
+        final op opVar = new op(24, context, this.resourceProvider);
+        this.P = opVar;
+        opVar.b(org.telegram.ui.ActionBar.m6.h7, org.telegram.ui.ActionBar.m6.j7, org.telegram.ui.ActionBar.m6.k7);
+        opVar.setDrawUnchecked(true);
+        opVar.a(x7Var.k(), false);
+        opVar.setDrawBackgroundAsArc(10);
+        opVar.setTranslationX(org.telegram.messenger.g0.L(4.0f));
+        opVar.setScaleX(0.8f);
+        opVar.setScaleY(0.8f);
+        linearLayout2.addView(opVar, ma.r(26, 26, 16));
+        TextView textView = new TextView(context);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, this.resourceProvider);
+        i5.c.r(14.0f, 1, 2131749437, textView, null);
+        linearLayout2.addView(textView, ma.t(-2, -2, 16, 9, 0, 0, 0));
+        int L = org.telegram.messenger.g0.L(20.0f);
+        int i11 = org.telegram.ui.ActionBar.m6.Fi;
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.1f, getThemedColor(i11));
+        linearLayout2.setBackground(org.telegram.ui.ActionBar.m6.k0(L, L, L, L, 0, r12, r12));
+        this.T = linearLayout2;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.r = frameLayout;
+        frameLayout.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
+        View view3 = this.r;
+        fh.g c11 = cVar.c(view3, null, false);
+        c11.p(c8.i0.m(this.resourceProvider));
+        c11.q(org.telegram.messenger.g0.L(8.0f));
+        c11.r(org.telegram.messenger.g0.L(20.0f));
+        view3.setBackground(c11);
+        this.r.setOnClickListener(new View.OnClickListener(this) { // from class: bi.v6
+            public final /* synthetic */ j8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view4) {
+                final int i12 = 1;
+                final int i13 = 0;
+                switch (i10) {
+                    case 0:
+                        final j8 j8Var = this.b;
+                        x7 x7Var2 = j8Var.d;
+                        if (j8Var.Q) {
+                            a70 I = a70.I(j8Var, j8Var.F);
+                            I.c(R.drawable.menu_sort_value, hd.N0(2131745943, null), new Runnable() { // from class: bi.b7
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i13) {
+                                        case 0:
+                                            j8Var.d.p(w7.a);
+                                            break;
+                                        case 1:
+                                            j8Var.d.p(w7.b);
+                                            break;
+                                        default:
+                                            j8Var.d.p(w7.c);
+                                            break;
+                                    }
+                                }
+                            }, false);
+                            I.c(R.drawable.menu_sort_date, hd.N0(2131745947, null), new Runnable() { // from class: bi.b7
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i12) {
+                                        case 0:
+                                            j8Var.d.p(w7.a);
+                                            break;
+                                        case 1:
+                                            j8Var.d.p(w7.b);
+                                            break;
+                                        default:
+                                            j8Var.d.p(w7.c);
+                                            break;
+                                    }
+                                }
+                            }, false);
+                            final int i14 = 2;
+                            I.c(R.drawable.menu_sort_number, hd.N0(2131745945, null), new Runnable() { // from class: bi.b7
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i14) {
+                                        case 0:
+                                            j8Var.d.p(w7.a);
+                                            break;
+                                        case 1:
+                                            j8Var.d.p(w7.b);
+                                            break;
+                                        default:
+                                            j8Var.d.p(w7.c);
+                                            break;
+                                    }
+                                }
+                            }, false);
+                            I.k();
+                            org.telegram.ui.ActionBar.y0[] y0VarArr = new org.telegram.ui.ActionBar.y0[4];
+                            final ai.r rVar = new ai.r(j8Var, I, opVar, y0VarArr, 3);
+                            if (x7Var2.h()) {
+                                I.i(new Runnable() { // from class: bi.c7
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        switch (i13) {
+                                            case 0:
+                                                x7 x7Var3 = j8Var.d;
+                                                x7Var3.o(x7Var3.r, !x7Var3.s, x7Var3.t);
+                                                rVar.run();
+                                                break;
+                                            case 1:
+                                                x7 x7Var4 = j8Var.d;
+                                                x7Var4.o(!x7Var4.r, x7Var4.s, x7Var4.t);
+                                                rVar.run();
+                                                break;
+                                            default:
+                                                x7 x7Var5 = j8Var.d;
+                                                x7Var5.o(x7Var5.r, x7Var5.s, !x7Var5.t);
+                                                rVar.run();
+                                                break;
+                                        }
+                                    }
+                                }, hd.N0(2131749439, null), x7Var2.s);
+                                y0VarArr[2] = I.z();
+                            }
+                            if (x7Var2.g()) {
+                                I.i(new Runnable() { // from class: bi.c7
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        switch (i12) {
+                                            case 0:
+                                                x7 x7Var3 = j8Var.d;
+                                                x7Var3.o(x7Var3.r, !x7Var3.s, x7Var3.t);
+                                                rVar.run();
+                                                break;
+                                            case 1:
+                                                x7 x7Var4 = j8Var.d;
+                                                x7Var4.o(!x7Var4.r, x7Var4.s, x7Var4.t);
+                                                rVar.run();
+                                                break;
+                                            default:
+                                                x7 x7Var5 = j8Var.d;
+                                                x7Var5.o(x7Var5.r, x7Var5.s, !x7Var5.t);
+                                                rVar.run();
+                                                break;
+                                        }
+                                    }
+                                }, hd.N0(2131749441, null), x7Var2.r);
+                                y0VarArr[1] = I.z();
+                            }
+                            if (x7Var2.f()) {
+                                I.i(new Runnable() { // from class: bi.c7
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        switch (i14) {
+                                            case 0:
+                                                x7 x7Var3 = j8Var.d;
+                                                x7Var3.o(x7Var3.r, !x7Var3.s, x7Var3.t);
+                                                rVar.run();
+                                                break;
+                                            case 1:
+                                                x7 x7Var4 = j8Var.d;
+                                                x7Var4.o(!x7Var4.r, x7Var4.s, x7Var4.t);
+                                                rVar.run();
+                                                break;
+                                            default:
+                                                x7 x7Var5 = j8Var.d;
+                                                x7Var5.o(x7Var5.r, x7Var5.s, !x7Var5.t);
+                                                rVar.run();
+                                                break;
+                                        }
+                                    }
+                                }, hd.N0(2131749438, null), x7Var2.t);
+                                y0VarArr[3] = I.z();
+                            }
+                            I.t = false;
+                            I.b0 = true;
+                            I.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            j8Var.i0(j8Var.F, I);
+                            break;
+                        }
+                        break;
+                    default:
+                        x7 x7Var3 = this.b.d;
+                        if (x7Var3 != null) {
+                            if (x7Var3.k()) {
+                                x7Var3.o(true, true, true);
+                            } else {
+                                x7Var3.o(true, false, false);
+                            }
+                            opVar.a(x7Var3.k(), true);
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        this.r.addView(linearLayout2, ma.c(-1.0f, -2));
+        ra.b(this.r, 0.04f, 1.5f);
+        du0Var.addView(this.r, ma.e(-2, 56, 81));
+        if (!x7Var.g() || (!x7Var.h() && !x7Var.f())) {
+            this.r.setVisibility(8);
+        }
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.n = frameLayout2;
+        frameLayout2.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
+        View view4 = this.n;
+        fh.g c12 = cVar.c(view4, null, false);
+        c12.p(c8.i0.m(this.resourceProvider));
+        c12.q(org.telegram.messenger.g0.L(8.0f));
+        c12.r(org.telegram.messenger.g0.L(22.0f));
+        view4.setBackground(c12);
+        du0Var.addView(this.n, ma.e(-2, 60, 81));
+        this.s = new TextView(context);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x");
+        spannableStringBuilder.setSpan(new nq(R.drawable.msg_clearcache, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) hd.N0(2131749997, null));
+        this.s.setText(spannableStringBuilder);
+        org.telegram.ui.ActionBar.t6.U(this.s, i11, getResourceProvider());
+        this.s.setTypeface(org.telegram.messenger.g0.o());
+        this.s.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
+        TextView textView2 = this.s;
+        int L2 = org.telegram.messenger.g0.L(22.0f);
+        int r13 = org.telegram.ui.ActionBar.m6.r1(0.1f, getThemedColor(i11));
+        textView2.setBackground(org.telegram.ui.ActionBar.m6.k0(L2, L2, L2, L2, 0, r13, r13));
+        this.s.setGravity(17);
+        this.n.setOnClickListener(new View.OnClickListener(this) { // from class: bi.u6
+            public final /* synthetic */ j8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view5) {
+                switch (i7) {
+                    case 0:
+                        x7 x7Var2 = this.b.d;
+                        x7Var2.k.clear();
+                        x7Var2.j.clear();
+                        x7Var2.l.clear();
+                        x7Var2.m();
+                        break;
+                    default:
+                        j8 j8Var = this.b;
+                        x7 x7Var22 = j8Var.d;
+                        HashSet hashSet = x7Var22.k;
+                        HashSet hashSet2 = x7Var22.l;
+                        HashSet hashSet3 = x7Var22.j;
+                        boolean z10 = false;
+                        if (hashSet.isEmpty() && hashSet3.isEmpty() && hashSet2.isEmpty()) {
+                            boolean z11 = x7Var22.r;
+                            boolean z12 = x7Var22.s;
+                            boolean z13 = x7Var22.t;
+                            x7Var22.j();
+                            boolean z14 = (z11 == x7Var22.r && z12 == x7Var22.s && z13 == x7Var22.t) ? false : true;
+                            x7Var22.r = z11;
+                            x7Var22.s = z12;
+                            x7Var22.t = z13;
+                            if (!z14) {
+                                z10 = true;
+                            }
+                        }
+                        x7Var22.k.clear();
+                        hashSet3.clear();
+                        hashSet2.clear();
+                        if (z10) {
+                            x7Var22.r = x7Var22.g();
+                            x7Var22.s = x7Var22.h();
+                            x7Var22.t = x7Var22.f();
+                        } else {
+                            x7Var22.j();
+                        }
+                        op opVar2 = j8Var.P;
+                        if (opVar2 != null) {
+                            opVar2.a(x7Var22.k(), true);
+                        }
+                        x7Var22.m();
+                        break;
+                }
+            }
+        });
+        this.n.addView(this.s, ma.c(-1.0f, -2));
+        this.n.setVisibility(8);
+        ra.b(this.n, 0.05f, 1.5f);
+        onInsets(0, 0, 0, 0);
+        o7 o7Var = new o7(context, this.resourceProvider, true);
+        this.F = o7Var;
+        o7Var.setSorting(x7Var.p);
+        g0(this.F, false);
+        this.F.setOnClickListener(new View.OnClickListener(this) { // from class: bi.v6
+            public final /* synthetic */ j8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view42) {
+                final int i12 = 1;
+                final int i13 = 0;
+                switch (i7) {
+                    case 0:
+                        final j8 j8Var = this.b;
+                        x7 x7Var2 = j8Var.d;
+                        if (j8Var.Q) {
+                            a70 I = a70.I(j8Var, j8Var.F);
+                            I.c(R.drawable.menu_sort_value, hd.N0(2131745943, null), new Runnable() { // from class: bi.b7
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i13) {
+                                        case 0:
+                                            j8Var.d.p(w7.a);
+                                            break;
+                                        case 1:
+                                            j8Var.d.p(w7.b);
+                                            break;
+                                        default:
+                                            j8Var.d.p(w7.c);
+                                            break;
+                                    }
+                                }
+                            }, false);
+                            I.c(R.drawable.menu_sort_date, hd.N0(2131745947, null), new Runnable() { // from class: bi.b7
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i12) {
+                                        case 0:
+                                            j8Var.d.p(w7.a);
+                                            break;
+                                        case 1:
+                                            j8Var.d.p(w7.b);
+                                            break;
+                                        default:
+                                            j8Var.d.p(w7.c);
+                                            break;
+                                    }
+                                }
+                            }, false);
+                            final int i14 = 2;
+                            I.c(R.drawable.menu_sort_number, hd.N0(2131745945, null), new Runnable() { // from class: bi.b7
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i14) {
+                                        case 0:
+                                            j8Var.d.p(w7.a);
+                                            break;
+                                        case 1:
+                                            j8Var.d.p(w7.b);
+                                            break;
+                                        default:
+                                            j8Var.d.p(w7.c);
+                                            break;
+                                    }
+                                }
+                            }, false);
+                            I.k();
+                            org.telegram.ui.ActionBar.y0[] y0VarArr = new org.telegram.ui.ActionBar.y0[4];
+                            final ai.r rVar = new ai.r(j8Var, I, opVar, y0VarArr, 3);
+                            if (x7Var2.h()) {
+                                I.i(new Runnable() { // from class: bi.c7
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        switch (i13) {
+                                            case 0:
+                                                x7 x7Var3 = j8Var.d;
+                                                x7Var3.o(x7Var3.r, !x7Var3.s, x7Var3.t);
+                                                rVar.run();
+                                                break;
+                                            case 1:
+                                                x7 x7Var4 = j8Var.d;
+                                                x7Var4.o(!x7Var4.r, x7Var4.s, x7Var4.t);
+                                                rVar.run();
+                                                break;
+                                            default:
+                                                x7 x7Var5 = j8Var.d;
+                                                x7Var5.o(x7Var5.r, x7Var5.s, !x7Var5.t);
+                                                rVar.run();
+                                                break;
+                                        }
+                                    }
+                                }, hd.N0(2131749439, null), x7Var2.s);
+                                y0VarArr[2] = I.z();
+                            }
+                            if (x7Var2.g()) {
+                                I.i(new Runnable() { // from class: bi.c7
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        switch (i12) {
+                                            case 0:
+                                                x7 x7Var3 = j8Var.d;
+                                                x7Var3.o(x7Var3.r, !x7Var3.s, x7Var3.t);
+                                                rVar.run();
+                                                break;
+                                            case 1:
+                                                x7 x7Var4 = j8Var.d;
+                                                x7Var4.o(!x7Var4.r, x7Var4.s, x7Var4.t);
+                                                rVar.run();
+                                                break;
+                                            default:
+                                                x7 x7Var5 = j8Var.d;
+                                                x7Var5.o(x7Var5.r, x7Var5.s, !x7Var5.t);
+                                                rVar.run();
+                                                break;
+                                        }
+                                    }
+                                }, hd.N0(2131749441, null), x7Var2.r);
+                                y0VarArr[1] = I.z();
+                            }
+                            if (x7Var2.f()) {
+                                I.i(new Runnable() { // from class: bi.c7
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        switch (i14) {
+                                            case 0:
+                                                x7 x7Var3 = j8Var.d;
+                                                x7Var3.o(x7Var3.r, !x7Var3.s, x7Var3.t);
+                                                rVar.run();
+                                                break;
+                                            case 1:
+                                                x7 x7Var4 = j8Var.d;
+                                                x7Var4.o(!x7Var4.r, x7Var4.s, x7Var4.t);
+                                                rVar.run();
+                                                break;
+                                            default:
+                                                x7 x7Var5 = j8Var.d;
+                                                x7Var5.o(x7Var5.r, x7Var5.s, !x7Var5.t);
+                                                rVar.run();
+                                                break;
+                                        }
+                                    }
+                                }, hd.N0(2131749438, null), x7Var2.t);
+                                y0VarArr[3] = I.z();
+                            }
+                            I.t = false;
+                            I.b0 = true;
+                            I.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            j8Var.i0(j8Var.F, I);
+                            break;
+                        }
+                        break;
+                    default:
+                        x7 x7Var3 = this.b.d;
+                        if (x7Var3 != null) {
+                            if (x7Var3.k()) {
+                                x7Var3.o(true, true, true);
+                            } else {
+                                x7Var3.o(true, false, false);
+                            }
+                            opVar.a(x7Var3.k(), true);
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        o7 o7Var2 = new o7(context, this.resourceProvider, true);
+        this.G = o7Var2;
+        o7Var2.setValue(hd.N0(2131750370, null));
+        g0(this.G, false);
+        this.G.setOnClickListener(new View.OnClickListener(this) { // from class: bi.w6
+            public final /* synthetic */ j8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view5) {
+                switch (i7) {
+                    case 0:
+                        j8.Z(this.b, context);
+                        break;
+                    case 1:
+                        j8.a0(this.b, context);
+                        break;
+                    default:
+                        j8.b0(this.b, context);
+                        break;
+                }
+            }
+        });
+        o7 o7Var3 = new o7(context, this.resourceProvider, true);
+        this.H = o7Var3;
+        o7Var3.setValue(hd.N0(2131750371, null));
+        g0(this.H, false);
+        this.H.setOnClickListener(new View.OnClickListener(this) { // from class: bi.w6
+            public final /* synthetic */ j8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view5) {
+                switch (i10) {
+                    case 0:
+                        j8.Z(this.b, context);
+                        break;
+                    case 1:
+                        j8.a0(this.b, context);
+                        break;
+                    default:
+                        j8.b0(this.b, context);
+                        break;
+                }
+            }
+        });
+        o7 o7Var4 = new o7(context, this.resourceProvider, true);
+        this.I = o7Var4;
+        o7Var4.setValue(hd.N0(2131750363, null));
+        g0(this.I, true);
+        final int i12 = 2;
+        this.I.setOnClickListener(new View.OnClickListener(this) { // from class: bi.w6
+            public final /* synthetic */ j8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view5) {
                 switch (i12) {
                     case 0:
-                        y7 y7Var = i8Var2.c;
-                        if (!y7Var.f.isEmpty()) {
-                            final a70 a70Var = new a70(j8Var.c, j8Var.J0, j8Var.X1, false, true, false);
-                            a70Var.t = false;
-                            a70Var.b0 = true;
-                            a70Var.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var.U = true;
-                            a70Var.p = new f6(a70Var, 6);
-                            final String[] strArr = {""};
-                            final ArrayList arrayList = new ArrayList(y7Var.f);
-                            final int i15 = 2;
-                            Collections.sort(arrayList, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i15) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i16 = j8Var.a;
-                            final int i17 = 0;
-                            q10 q10Var = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i18 = i17;
-                                    boolean z10 = false;
-                                    ArrayList arrayList2 = arrayList;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr2 = strArr;
-                                    switch (i18) {
-                                        case 0:
-                                            ArrayList arrayList3 = (ArrayList) obj;
-                                            String lowerCase = strArr2[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var2 = i8Var3.c;
-                                            boolean isEmpty = y7Var2.j.isEmpty();
-                                            int size = arrayList2.size();
-                                            int i19 = 0;
-                                            while (i19 < size) {
-                                                Object obj3 = arrayList2.get(i19);
-                                                i19++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var2.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var2.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i20 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList3.add(K);
-                                                }
-                                            }
-                                            if (arrayList3.isEmpty()) {
-                                                arrayList3.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr2[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var3 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var3.k.isEmpty();
-                                            int size2 = arrayList2.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList2.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var3.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var3.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr2[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList2.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList2.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i17) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var2 = i8Var2.c;
-                                            HashSet hashSet = y7Var2.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList2 = y7Var2.f;
-                                                int size = arrayList2.size();
-                                                int i18 = 0;
-                                                while (i18 < size) {
-                                                    Object obj3 = arrayList2.get(i18);
-                                                    i18++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var2.m();
-                                            a70Var.v();
-                                            break;
-                                        case 1:
-                                            int i19 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var3 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var3.k;
-                                            if (hashSet2.contains(Integer.valueOf(i19))) {
-                                                hashSet2.remove(Integer.valueOf(i19));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList3 = y7Var3.g;
-                                                int size2 = arrayList3.size();
-                                                int i20 = 0;
-                                                while (i20 < size2) {
-                                                    Object obj4 = arrayList3.get(i20);
-                                                    i20++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i19) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i19));
-                                            }
-                                            y7Var3.m();
-                                            a70Var.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var = j8Var.J0;
-                            Context context2 = context;
-                            j7 j7Var = new j7(context2, i16, 0, false, q10Var, v10Var, null, h6Var, 4);
-                            j7Var.g3.r = false;
-                            FrameLayout frameLayout = new FrameLayout(context2);
-                            ImageView imageView = new ImageView(context2);
-                            imageView.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout.addView(imageView, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar = new ot(context2, j8Var.J0);
-                            otVar.setTextSize(1, 16.0f);
-                            otVar.setInputType(573441);
-                            otVar.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar.setCursorWidth(1.5f);
-                            otVar.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar.setBackground(null);
-                            frameLayout.addView(otVar, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar.addTextChangedListener(new v(strArr, j7Var, false, 4));
-                            if (arrayList.size() > 8) {
-                                a70Var.r(frameLayout, ma.o(-1, 44));
-                                a70Var.k();
-                            }
-                            if (!y7Var.j.isEmpty()) {
-                                a70Var.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 0), false);
-                            }
-                            a70Var.q(j7Var);
-                            a70Var.a0();
-                            break;
-                        }
+                        j8.Z(this.b, context);
                         break;
                     case 1:
-                        y7 y7Var2 = i8Var2.c;
-                        if (!y7Var2.g.isEmpty()) {
-                            final a70 a70Var2 = new a70(j8Var.c, j8Var.J0, j8Var.Y1, false, true, false);
-                            a70Var2.t = false;
-                            a70Var2.b0 = true;
-                            a70Var2.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var2.U = true;
-                            a70Var2.p = new f6(a70Var2, 4);
-                            final String[] strArr2 = {""};
-                            final ArrayList arrayList2 = new ArrayList(y7Var2.g);
-                            final int i18 = 0;
-                            Collections.sort(arrayList2, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i18) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i19 = j8Var.a;
-                            q10 q10Var2 = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i182 = i14;
-                                    boolean z10 = false;
-                                    ArrayList arrayList22 = arrayList2;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr22 = strArr2;
-                                    switch (i182) {
-                                        case 0:
-                                            ArrayList arrayList3 = (ArrayList) obj;
-                                            String lowerCase = strArr22[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var22 = i8Var3.c;
-                                            boolean isEmpty = y7Var22.j.isEmpty();
-                                            int size = arrayList22.size();
-                                            int i192 = 0;
-                                            while (i192 < size) {
-                                                Object obj3 = arrayList22.get(i192);
-                                                i192++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var22.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i20 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList3.add(K);
-                                                }
-                                            }
-                                            if (arrayList3.isEmpty()) {
-                                                arrayList3.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr22[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var3 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var3.k.isEmpty();
-                                            int size2 = arrayList22.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList22.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var3.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var3.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr22[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList22.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList22.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var2 = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i14) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var22 = i8Var2.c;
-                                            HashSet hashSet = y7Var22.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList22 = y7Var22.f;
-                                                int size = arrayList22.size();
-                                                int i182 = 0;
-                                                while (i182 < size) {
-                                                    Object obj3 = arrayList22.get(i182);
-                                                    i182++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var22.m();
-                                            a70Var2.v();
-                                            break;
-                                        case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var3 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var3.k;
-                                            if (hashSet2.contains(Integer.valueOf(i192))) {
-                                                hashSet2.remove(Integer.valueOf(i192));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList3 = y7Var3.g;
-                                                int size2 = arrayList3.size();
-                                                int i20 = 0;
-                                                while (i20 < size2) {
-                                                    Object obj4 = arrayList3.get(i20);
-                                                    i20++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i192) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i192));
-                                            }
-                                            y7Var3.m();
-                                            a70Var2.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var2.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var2 = j8Var.J0;
-                            Context context3 = context;
-                            j7 j7Var2 = new j7(context3, i19, 0, false, q10Var2, v10Var2, null, h6Var2, 5);
-                            j7Var2.g3.r = false;
-                            FrameLayout frameLayout2 = new FrameLayout(context3);
-                            ImageView imageView2 = new ImageView(context3);
-                            imageView2.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView2.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView2, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout2.addView(imageView2, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar2 = new ot(context3, j8Var.J0);
-                            otVar2.setTextSize(1, 16.0f);
-                            otVar2.setInputType(573441);
-                            otVar2.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar2, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar2, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar2.setCursorWidth(1.5f);
-                            otVar2.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar2, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar2.setBackground(null);
-                            frameLayout2.addView(otVar2, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar2.addTextChangedListener(new v(strArr2, j7Var2, false, 5));
-                            if (arrayList2.size() > 8) {
-                                a70Var2.r(frameLayout2, ma.o(-1, 44));
-                                a70Var2.k();
-                            }
-                            if (!y7Var2.k.isEmpty()) {
-                                a70Var2.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 1), false);
-                            }
-                            a70Var2.q(j7Var2);
-                            a70Var2.a0();
-                            break;
-                        }
+                        j8.a0(this.b, context);
                         break;
                     default:
-                        y7 y7Var3 = i8Var2.c;
-                        if (!y7Var3.h.isEmpty()) {
-                            final a70 a70Var3 = new a70(j8Var.c, j8Var.J0, j8Var.Z1, false, true, false);
-                            a70Var3.t = false;
-                            a70Var3.b0 = true;
-                            a70Var3.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var3.U = true;
-                            a70Var3.p = new f6(a70Var3, 5);
-                            final String[] strArr3 = {""};
-                            final ArrayList arrayList3 = new ArrayList(y7Var3.h);
-                            Collections.sort(arrayList3, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i14) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i20 = j8Var.a;
-                            q10 q10Var3 = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i182 = i13;
-                                    boolean z10 = false;
-                                    ArrayList arrayList22 = arrayList3;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr22 = strArr3;
-                                    switch (i182) {
-                                        case 0:
-                                            ArrayList arrayList32 = (ArrayList) obj;
-                                            String lowerCase = strArr22[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var22 = i8Var3.c;
-                                            boolean isEmpty = y7Var22.j.isEmpty();
-                                            int size = arrayList22.size();
-                                            int i192 = 0;
-                                            while (i192 < size) {
-                                                Object obj3 = arrayList22.get(i192);
-                                                i192++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var22.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i202 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList32.add(K);
-                                                }
-                                            }
-                                            if (arrayList32.isEmpty()) {
-                                                arrayList32.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr22[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var32 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var32.k.isEmpty();
-                                            int size2 = arrayList22.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList22.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var32.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr22[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList22.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList22.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var3 = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i13) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var22 = i8Var2.c;
-                                            HashSet hashSet = y7Var22.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList22 = y7Var22.f;
-                                                int size = arrayList22.size();
-                                                int i182 = 0;
-                                                while (i182 < size) {
-                                                    Object obj3 = arrayList22.get(i182);
-                                                    i182++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var22.m();
-                                            a70Var3.v();
-                                            break;
-                                        case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var32 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var32.k;
-                                            if (hashSet2.contains(Integer.valueOf(i192))) {
-                                                hashSet2.remove(Integer.valueOf(i192));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList32 = y7Var32.g;
-                                                int size2 = arrayList32.size();
-                                                int i202 = 0;
-                                                while (i202 < size2) {
-                                                    Object obj4 = arrayList32.get(i202);
-                                                    i202++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i192) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i192));
-                                            }
-                                            y7Var32.m();
-                                            a70Var3.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var3.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var3 = j8Var.J0;
-                            Context context4 = context;
-                            j7 j7Var3 = new j7(context4, i20, 0, false, q10Var3, v10Var3, null, h6Var3, 6);
-                            j7Var3.g3.r = false;
-                            FrameLayout frameLayout3 = new FrameLayout(context4);
-                            ImageView imageView3 = new ImageView(context4);
-                            imageView3.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView3.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView3, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout3.addView(imageView3, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar3 = new ot(context4, j8Var.J0);
-                            otVar3.setTextSize(1, 16.0f);
-                            otVar3.setInputType(573441);
-                            otVar3.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar3, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar3, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar3.setCursorWidth(1.5f);
-                            otVar3.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar3, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar3.setBackground(null);
-                            frameLayout3.addView(otVar3, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar3.addTextChangedListener(new v(strArr3, j7Var3, false, 6));
-                            if (arrayList3.size() > 8) {
-                                a70Var3.r(frameLayout3, ma.o(-1, 44));
-                                a70Var3.k();
-                            }
-                            if (!y7Var3.l.isEmpty()) {
-                                a70Var3.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 2), false);
-                            }
-                            a70Var3.q(j7Var3);
-                            a70Var3.a0();
-                            break;
-                        }
+                        j8.b0(this.b, context);
                         break;
                 }
             }
         });
-        p7 p7Var3 = new p7(context, this.J0, false);
-        this.Y1 = p7Var3;
-        p7Var3.setValue(gd.N0(2131750371, null));
-        linearLayout.addView(p7Var3, ma.t(-2, -2, 16, 0, 0, 6, 0));
-        final int i12 = 1;
-        p7Var3.setOnClickListener(new View.OnClickListener(this) { // from class: bi.g8
-            public final /* synthetic */ j8 b;
+        wz wzVar = new wz(getParentActivity());
+        this.J = wzVar;
+        du0Var.addView(wzVar, ma.c(-1.0f, -1));
+        h0(false, false);
+        return du0Var;
+    }
 
-            {
-                this.b = this;
-            }
+    public final void g0(o7 o7Var, boolean z10) {
+        int L = org.telegram.messenger.g0.L(6.0f);
+        FrameLayout frameLayout = new FrameLayout(getParentActivity());
+        frameLayout.setPadding(L, L, L, L);
+        fh.g c10 = getBaseSimpleGlass().c.c(frameLayout, null, false);
+        c10.p(this.N);
+        c10.r(org.telegram.messenger.g0.L(20.0f));
+        c10.q(L);
+        frameLayout.setBackground(c10);
+        frameLayout.addView(o7Var, ma.c(40.0f, -2));
+        frameLayout.setOnClickListener(new ah.d(o7Var, 7));
+        ra.a(frameLayout);
+        this.E.addView(frameLayout, ma.t(-2, -2, 16, 0, 0, z10 ? 0 : -4, 0));
+    }
 
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                int i122 = i12;
-                final i8 i8Var2 = i8Var;
-                j8 j8Var = this.b;
-                final int i13 = 2;
-                final int i14 = 1;
-                switch (i122) {
-                    case 0:
-                        y7 y7Var = i8Var2.c;
-                        if (!y7Var.f.isEmpty()) {
-                            final a70 a70Var = new a70(j8Var.c, j8Var.J0, j8Var.X1, false, true, false);
-                            a70Var.t = false;
-                            a70Var.b0 = true;
-                            a70Var.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var.U = true;
-                            a70Var.p = new f6(a70Var, 6);
-                            final String[] strArr = {""};
-                            final ArrayList arrayList = new ArrayList(y7Var.f);
-                            final int i15 = 2;
-                            Collections.sort(arrayList, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i15) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i16 = j8Var.a;
-                            final int i17 = 0;
-                            q10 q10Var = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i182 = i17;
-                                    boolean z10 = false;
-                                    ArrayList arrayList22 = arrayList;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr22 = strArr;
-                                    switch (i182) {
-                                        case 0:
-                                            ArrayList arrayList32 = (ArrayList) obj;
-                                            String lowerCase = strArr22[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var22 = i8Var3.c;
-                                            boolean isEmpty = y7Var22.j.isEmpty();
-                                            int size = arrayList22.size();
-                                            int i192 = 0;
-                                            while (i192 < size) {
-                                                Object obj3 = arrayList22.get(i192);
-                                                i192++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var22.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i202 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList32.add(K);
-                                                }
-                                            }
-                                            if (arrayList32.isEmpty()) {
-                                                arrayList32.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr22[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var32 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var32.k.isEmpty();
-                                            int size2 = arrayList22.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList22.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var32.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr22[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList22.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList22.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i17) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var22 = i8Var2.c;
-                                            HashSet hashSet = y7Var22.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList22 = y7Var22.f;
-                                                int size = arrayList22.size();
-                                                int i182 = 0;
-                                                while (i182 < size) {
-                                                    Object obj3 = arrayList22.get(i182);
-                                                    i182++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var22.m();
-                                            a70Var.v();
-                                            break;
-                                        case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var32 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var32.k;
-                                            if (hashSet2.contains(Integer.valueOf(i192))) {
-                                                hashSet2.remove(Integer.valueOf(i192));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList32 = y7Var32.g;
-                                                int size2 = arrayList32.size();
-                                                int i202 = 0;
-                                                while (i202 < size2) {
-                                                    Object obj4 = arrayList32.get(i202);
-                                                    i202++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i192) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i192));
-                                            }
-                                            y7Var32.m();
-                                            a70Var.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var = j8Var.J0;
-                            Context context2 = context;
-                            j7 j7Var = new j7(context2, i16, 0, false, q10Var, v10Var, null, h6Var, 4);
-                            j7Var.g3.r = false;
-                            FrameLayout frameLayout = new FrameLayout(context2);
-                            ImageView imageView = new ImageView(context2);
-                            imageView.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout.addView(imageView, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar = new ot(context2, j8Var.J0);
-                            otVar.setTextSize(1, 16.0f);
-                            otVar.setInputType(573441);
-                            otVar.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar.setCursorWidth(1.5f);
-                            otVar.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar.setBackground(null);
-                            frameLayout.addView(otVar, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar.addTextChangedListener(new v(strArr, j7Var, false, 4));
-                            if (arrayList.size() > 8) {
-                                a70Var.r(frameLayout, ma.o(-1, 44));
-                                a70Var.k();
-                            }
-                            if (!y7Var.j.isEmpty()) {
-                                a70Var.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 0), false);
-                            }
-                            a70Var.q(j7Var);
-                            a70Var.a0();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        y7 y7Var2 = i8Var2.c;
-                        if (!y7Var2.g.isEmpty()) {
-                            final a70 a70Var2 = new a70(j8Var.c, j8Var.J0, j8Var.Y1, false, true, false);
-                            a70Var2.t = false;
-                            a70Var2.b0 = true;
-                            a70Var2.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var2.U = true;
-                            a70Var2.p = new f6(a70Var2, 4);
-                            final String[] strArr2 = {""};
-                            final ArrayList arrayList2 = new ArrayList(y7Var2.g);
-                            final int i18 = 0;
-                            Collections.sort(arrayList2, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i18) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i19 = j8Var.a;
-                            q10 q10Var2 = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i182 = i14;
-                                    boolean z10 = false;
-                                    ArrayList arrayList22 = arrayList2;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr22 = strArr2;
-                                    switch (i182) {
-                                        case 0:
-                                            ArrayList arrayList32 = (ArrayList) obj;
-                                            String lowerCase = strArr22[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var22 = i8Var3.c;
-                                            boolean isEmpty = y7Var22.j.isEmpty();
-                                            int size = arrayList22.size();
-                                            int i192 = 0;
-                                            while (i192 < size) {
-                                                Object obj3 = arrayList22.get(i192);
-                                                i192++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var22.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i202 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList32.add(K);
-                                                }
-                                            }
-                                            if (arrayList32.isEmpty()) {
-                                                arrayList32.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr22[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var32 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var32.k.isEmpty();
-                                            int size2 = arrayList22.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList22.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var32.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr22[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList22.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList22.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var2 = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i14) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var22 = i8Var2.c;
-                                            HashSet hashSet = y7Var22.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList22 = y7Var22.f;
-                                                int size = arrayList22.size();
-                                                int i182 = 0;
-                                                while (i182 < size) {
-                                                    Object obj3 = arrayList22.get(i182);
-                                                    i182++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var22.m();
-                                            a70Var2.v();
-                                            break;
-                                        case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var32 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var32.k;
-                                            if (hashSet2.contains(Integer.valueOf(i192))) {
-                                                hashSet2.remove(Integer.valueOf(i192));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList32 = y7Var32.g;
-                                                int size2 = arrayList32.size();
-                                                int i202 = 0;
-                                                while (i202 < size2) {
-                                                    Object obj4 = arrayList32.get(i202);
-                                                    i202++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i192) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i192));
-                                            }
-                                            y7Var32.m();
-                                            a70Var2.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var2.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var2 = j8Var.J0;
-                            Context context3 = context;
-                            j7 j7Var2 = new j7(context3, i19, 0, false, q10Var2, v10Var2, null, h6Var2, 5);
-                            j7Var2.g3.r = false;
-                            FrameLayout frameLayout2 = new FrameLayout(context3);
-                            ImageView imageView2 = new ImageView(context3);
-                            imageView2.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView2.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView2, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout2.addView(imageView2, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar2 = new ot(context3, j8Var.J0);
-                            otVar2.setTextSize(1, 16.0f);
-                            otVar2.setInputType(573441);
-                            otVar2.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar2, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar2, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar2.setCursorWidth(1.5f);
-                            otVar2.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar2, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar2.setBackground(null);
-                            frameLayout2.addView(otVar2, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar2.addTextChangedListener(new v(strArr2, j7Var2, false, 5));
-                            if (arrayList2.size() > 8) {
-                                a70Var2.r(frameLayout2, ma.o(-1, 44));
-                                a70Var2.k();
-                            }
-                            if (!y7Var2.k.isEmpty()) {
-                                a70Var2.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 1), false);
-                            }
-                            a70Var2.q(j7Var2);
-                            a70Var2.a0();
-                            break;
-                        }
-                        break;
-                    default:
-                        y7 y7Var3 = i8Var2.c;
-                        if (!y7Var3.h.isEmpty()) {
-                            final a70 a70Var3 = new a70(j8Var.c, j8Var.J0, j8Var.Z1, false, true, false);
-                            a70Var3.t = false;
-                            a70Var3.b0 = true;
-                            a70Var3.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var3.U = true;
-                            a70Var3.p = new f6(a70Var3, 5);
-                            final String[] strArr3 = {""};
-                            final ArrayList arrayList3 = new ArrayList(y7Var3.h);
-                            Collections.sort(arrayList3, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i14) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i20 = j8Var.a;
-                            q10 q10Var3 = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i182 = i13;
-                                    boolean z10 = false;
-                                    ArrayList arrayList22 = arrayList3;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr22 = strArr3;
-                                    switch (i182) {
-                                        case 0:
-                                            ArrayList arrayList32 = (ArrayList) obj;
-                                            String lowerCase = strArr22[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var22 = i8Var3.c;
-                                            boolean isEmpty = y7Var22.j.isEmpty();
-                                            int size = arrayList22.size();
-                                            int i192 = 0;
-                                            while (i192 < size) {
-                                                Object obj3 = arrayList22.get(i192);
-                                                i192++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var22.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i202 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList32.add(K);
-                                                }
-                                            }
-                                            if (arrayList32.isEmpty()) {
-                                                arrayList32.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr22[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var32 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var32.k.isEmpty();
-                                            int size2 = arrayList22.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList22.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var32.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr22[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList22.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList22.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var3 = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i13) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var22 = i8Var2.c;
-                                            HashSet hashSet = y7Var22.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList22 = y7Var22.f;
-                                                int size = arrayList22.size();
-                                                int i182 = 0;
-                                                while (i182 < size) {
-                                                    Object obj3 = arrayList22.get(i182);
-                                                    i182++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var22.m();
-                                            a70Var3.v();
-                                            break;
-                                        case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var32 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var32.k;
-                                            if (hashSet2.contains(Integer.valueOf(i192))) {
-                                                hashSet2.remove(Integer.valueOf(i192));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList32 = y7Var32.g;
-                                                int size2 = arrayList32.size();
-                                                int i202 = 0;
-                                                while (i202 < size2) {
-                                                    Object obj4 = arrayList32.get(i202);
-                                                    i202++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i192) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i192));
-                                            }
-                                            y7Var32.m();
-                                            a70Var3.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var3.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var3 = j8Var.J0;
-                            Context context4 = context;
-                            j7 j7Var3 = new j7(context4, i20, 0, false, q10Var3, v10Var3, null, h6Var3, 6);
-                            j7Var3.g3.r = false;
-                            FrameLayout frameLayout3 = new FrameLayout(context4);
-                            ImageView imageView3 = new ImageView(context4);
-                            imageView3.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView3.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView3, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout3.addView(imageView3, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar3 = new ot(context4, j8Var.J0);
-                            otVar3.setTextSize(1, 16.0f);
-                            otVar3.setInputType(573441);
-                            otVar3.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar3, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar3, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar3.setCursorWidth(1.5f);
-                            otVar3.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar3, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar3.setBackground(null);
-                            frameLayout3.addView(otVar3, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar3.addTextChangedListener(new v(strArr3, j7Var3, false, 6));
-                            if (arrayList3.size() > 8) {
-                                a70Var3.r(frameLayout3, ma.o(-1, 44));
-                                a70Var3.k();
-                            }
-                            if (!y7Var3.l.isEmpty()) {
-                                a70Var3.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 2), false);
-                            }
-                            a70Var3.q(j7Var3);
-                            a70Var3.a0();
-                            break;
-                        }
-                        break;
+    public final void h0(boolean z10, boolean z11) {
+        if (this.Q == z10) {
+            return;
+        }
+        this.Q = z10;
+        ValueAnimator valueAnimator = this.R;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.R = null;
+        }
+        float f10 = z10 ? 0.0f : 1.0f;
+        if (!z11) {
+            this.M = f10;
+            k0();
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M, f10);
+        this.R = ofFloat;
+        ofFloat.addUpdateListener(new ah.g(this, 1));
+        this.R.setInterpolator(nr.h);
+        this.R.setDuration(420L);
+        this.R.start();
+    }
+
+    public final void i0(o7 o7Var, a70 a70Var) {
+        FrameLayout frameLayout;
+        org.telegram.ui.ActionBar.j5 simpleMenuOverlay = getSimpleMenuOverlay();
+        if (simpleMenuOverlay == null || !(a70Var.A instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) || !(o7Var.getParent() instanceof FrameLayout)) {
+            a70Var.a0();
+            return;
+        }
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) a70Var.A;
+        FrameLayout frameLayout2 = (FrameLayout) o7Var.getParent();
+        p7 p7Var = this.O;
+        if (p7Var.a && (frameLayout = (FrameLayout) p7Var.b) != null && frameLayout != frameLayout2) {
+            frameLayout.setVisibility(0);
+        }
+        p7Var.b = frameLayout2;
+        p7Var.c = o7Var;
+        p7Var.d = simpleMenuOverlay;
+        a70Var.p = new e7(simpleMenuOverlay, 0);
+        simpleMenuOverlay.setOnClosed(new f7(actionBarPopupWindow$ActionBarPopupWindowLayout, 0));
+        simpleMenuOverlay.d(p7Var, null, actionBarPopupWindow$ActionBarPopupWindowLayout);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final boolean isLightStatusBar() {
+        return (getLastStoryViewer() == null || getLastStoryViewer().H0) && i0.a.h(getThemedColor(org.telegram.ui.ActionBar.m6.a7)) > 0.699999988079071d;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    public final void j0(boolean z10) {
+        t2 t2Var = this.w;
+        if (t2Var == null || this.x == z10) {
+            return;
+        }
+        this.x = z10;
+        t2Var.setVisibility(0);
+        this.w.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.95f).scaleY(z10 ? 1.0f : 0.95f).setInterpolator(nr.h).setDuration(320L).setListener(new g7(0, this, z10)).start();
+    }
+
+    public final void k0() {
+        if (this.y == null) {
+            return;
+        }
+        float f10 = this.M;
+        float L = org.telegram.messenger.g0.L(47.0f) * f10;
+        this.y.setTranslationY((ri.a.d(this.K) - org.telegram.messenger.g0.L(6.0f)) - L);
+        this.y.setAlpha(1.0f - f10);
+        this.y.setVisibility(f10 >= 1.0f ? 8 : 0);
+        float f11 = -L;
+        this.f.setTranslationY(f11);
+        this.h.setTranslationY(f11);
+    }
+
+    public final void l0() {
+        org.telegram.ui.ActionBar.z4 z4Var = this.simpleActionBar;
+        if (z4Var == null) {
+            return;
+        }
+        int i7 = this.d.e;
+        z4Var.setSubtitle(i7 <= 0 ? hd.N0(2131749990, null) : hd.H(',', "Gift2ListingsCount", i7));
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final void onInsets(int i7, int i10, int i11, int i12) {
+        org.telegram.ui.ActionBar.z4 z4Var = this.simpleActionBar;
+        if (z4Var != null && z4Var.getOccupyStatusBar()) {
+            i10 = Math.max(i10, org.telegram.messenger.g0.m);
+        }
+        this.K = i10;
+        this.L = Math.max(i12, org.telegram.messenger.g0.n);
+        if (this.f == null) {
+            return;
+        }
+        int L = org.telegram.messenger.g0.L(40.0f) + ri.a.d(this.K);
+        int L2 = org.telegram.messenger.g0.L(47.0f);
+        int i13 = -ri.a.c(this.K);
+        int i14 = (-ri.a.c(this.L)) - L2;
+        org.telegram.messenger.g0.z3(this.f, org.telegram.messenger.g0.L(7.33f), i13, org.telegram.messenger.g0.L(7.33f), i14);
+        this.f.setPadding(0, (org.telegram.messenger.g0.L(4.0f) + L) - i13, 0, (org.telegram.messenger.g0.L(56.0f) + this.L) - i14);
+        this.h.getLayoutParams().height = org.telegram.messenger.g0.L(6.0f) + L;
+        this.h.requestLayout();
+        org.telegram.messenger.g0.z3(this.w, 0, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.K, 0, 0);
+        ((FrameLayout.LayoutParams) this.r.getLayoutParams()).bottomMargin = this.L;
+        ((FrameLayout.LayoutParams) this.n.getLayoutParams()).bottomMargin = this.L;
+        this.r.requestLayout();
+        this.n.requestLayout();
+        k0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.g2
+    public final void onThemeColorsChanged() {
+        try {
+            super.onThemeColorsChanged();
+            int r12 = org.telegram.ui.ActionBar.m6.r1(0.1f, getThemedColor(org.telegram.ui.ActionBar.m6.Fi));
+            if (r12 != this.S) {
+                this.S = r12;
+                TextView textView = this.s;
+                if (textView != null) {
+                    org.telegram.ui.ActionBar.m6.H1(textView.getBackground(), r12, true);
+                }
+                LinearLayout linearLayout = this.T;
+                if (linearLayout != null) {
+                    org.telegram.ui.ActionBar.m6.H1(linearLayout.getBackground(), r12, true);
                 }
             }
-        });
-        p7 p7Var4 = new p7(context, this.J0, false);
-        this.Z1 = p7Var4;
-        p7Var4.setValue(gd.N0(2131750363, null));
-        linearLayout.addView(p7Var4, ma.t(-2, -2, 16, 0, 0, 0, 0));
-        p7Var4.setOnClickListener(new View.OnClickListener(this) { // from class: bi.g8
-            public final /* synthetic */ j8 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                int i122 = i7;
-                final i8 i8Var2 = i8Var;
-                j8 j8Var = this.b;
-                final int i13 = 2;
-                final int i14 = 1;
-                switch (i122) {
-                    case 0:
-                        y7 y7Var = i8Var2.c;
-                        if (!y7Var.f.isEmpty()) {
-                            final a70 a70Var = new a70(j8Var.c, j8Var.J0, j8Var.X1, false, true, false);
-                            a70Var.t = false;
-                            a70Var.b0 = true;
-                            a70Var.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var.U = true;
-                            a70Var.p = new f6(a70Var, 6);
-                            final String[] strArr = {""};
-                            final ArrayList arrayList = new ArrayList(y7Var.f);
-                            final int i15 = 2;
-                            Collections.sort(arrayList, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i15) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i16 = j8Var.a;
-                            final int i17 = 0;
-                            q10 q10Var = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i182 = i17;
-                                    boolean z10 = false;
-                                    ArrayList arrayList22 = arrayList;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr22 = strArr;
-                                    switch (i182) {
-                                        case 0:
-                                            ArrayList arrayList32 = (ArrayList) obj;
-                                            String lowerCase = strArr22[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var22 = i8Var3.c;
-                                            boolean isEmpty = y7Var22.j.isEmpty();
-                                            int size = arrayList22.size();
-                                            int i192 = 0;
-                                            while (i192 < size) {
-                                                Object obj3 = arrayList22.get(i192);
-                                                i192++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var22.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i202 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList32.add(K);
-                                                }
-                                            }
-                                            if (arrayList32.isEmpty()) {
-                                                arrayList32.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr22[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var32 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var32.k.isEmpty();
-                                            int size2 = arrayList22.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList22.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var32.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr22[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList22.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList22.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i17) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var22 = i8Var2.c;
-                                            HashSet hashSet = y7Var22.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList22 = y7Var22.f;
-                                                int size = arrayList22.size();
-                                                int i182 = 0;
-                                                while (i182 < size) {
-                                                    Object obj3 = arrayList22.get(i182);
-                                                    i182++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var22.m();
-                                            a70Var.v();
-                                            break;
-                                        case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var32 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var32.k;
-                                            if (hashSet2.contains(Integer.valueOf(i192))) {
-                                                hashSet2.remove(Integer.valueOf(i192));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList32 = y7Var32.g;
-                                                int size2 = arrayList32.size();
-                                                int i202 = 0;
-                                                while (i202 < size2) {
-                                                    Object obj4 = arrayList32.get(i202);
-                                                    i202++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i192) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i192));
-                                            }
-                                            y7Var32.m();
-                                            a70Var.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var = j8Var.J0;
-                            Context context2 = context;
-                            j7 j7Var = new j7(context2, i16, 0, false, q10Var, v10Var, null, h6Var, 4);
-                            j7Var.g3.r = false;
-                            FrameLayout frameLayout = new FrameLayout(context2);
-                            ImageView imageView = new ImageView(context2);
-                            imageView.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout.addView(imageView, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar = new ot(context2, j8Var.J0);
-                            otVar.setTextSize(1, 16.0f);
-                            otVar.setInputType(573441);
-                            otVar.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar.setCursorWidth(1.5f);
-                            otVar.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar.setBackground(null);
-                            frameLayout.addView(otVar, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar.addTextChangedListener(new v(strArr, j7Var, false, 4));
-                            if (arrayList.size() > 8) {
-                                a70Var.r(frameLayout, ma.o(-1, 44));
-                                a70Var.k();
-                            }
-                            if (!y7Var.j.isEmpty()) {
-                                a70Var.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 0), false);
-                            }
-                            a70Var.q(j7Var);
-                            a70Var.a0();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        y7 y7Var2 = i8Var2.c;
-                        if (!y7Var2.g.isEmpty()) {
-                            final a70 a70Var2 = new a70(j8Var.c, j8Var.J0, j8Var.Y1, false, true, false);
-                            a70Var2.t = false;
-                            a70Var2.b0 = true;
-                            a70Var2.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var2.U = true;
-                            a70Var2.p = new f6(a70Var2, 4);
-                            final String[] strArr2 = {""};
-                            final ArrayList arrayList2 = new ArrayList(y7Var2.g);
-                            final int i18 = 0;
-                            Collections.sort(arrayList2, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i18) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i19 = j8Var.a;
-                            q10 q10Var2 = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i182 = i14;
-                                    boolean z10 = false;
-                                    ArrayList arrayList22 = arrayList2;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr22 = strArr2;
-                                    switch (i182) {
-                                        case 0:
-                                            ArrayList arrayList32 = (ArrayList) obj;
-                                            String lowerCase = strArr22[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var22 = i8Var3.c;
-                                            boolean isEmpty = y7Var22.j.isEmpty();
-                                            int size = arrayList22.size();
-                                            int i192 = 0;
-                                            while (i192 < size) {
-                                                Object obj3 = arrayList22.get(i192);
-                                                i192++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var22.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i202 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList32.add(K);
-                                                }
-                                            }
-                                            if (arrayList32.isEmpty()) {
-                                                arrayList32.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr22[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var32 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var32.k.isEmpty();
-                                            int size2 = arrayList22.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList22.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var32.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr22[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList22.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList22.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var2 = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i14) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var22 = i8Var2.c;
-                                            HashSet hashSet = y7Var22.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList22 = y7Var22.f;
-                                                int size = arrayList22.size();
-                                                int i182 = 0;
-                                                while (i182 < size) {
-                                                    Object obj3 = arrayList22.get(i182);
-                                                    i182++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var22.m();
-                                            a70Var2.v();
-                                            break;
-                                        case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var32 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var32.k;
-                                            if (hashSet2.contains(Integer.valueOf(i192))) {
-                                                hashSet2.remove(Integer.valueOf(i192));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList32 = y7Var32.g;
-                                                int size2 = arrayList32.size();
-                                                int i202 = 0;
-                                                while (i202 < size2) {
-                                                    Object obj4 = arrayList32.get(i202);
-                                                    i202++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i192) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i192));
-                                            }
-                                            y7Var32.m();
-                                            a70Var2.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var2.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var2 = j8Var.J0;
-                            Context context3 = context;
-                            j7 j7Var2 = new j7(context3, i19, 0, false, q10Var2, v10Var2, null, h6Var2, 5);
-                            j7Var2.g3.r = false;
-                            FrameLayout frameLayout2 = new FrameLayout(context3);
-                            ImageView imageView2 = new ImageView(context3);
-                            imageView2.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView2.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView2, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout2.addView(imageView2, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar2 = new ot(context3, j8Var.J0);
-                            otVar2.setTextSize(1, 16.0f);
-                            otVar2.setInputType(573441);
-                            otVar2.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar2, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar2, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar2.setCursorWidth(1.5f);
-                            otVar2.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar2, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar2.setBackground(null);
-                            frameLayout2.addView(otVar2, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar2.addTextChangedListener(new v(strArr2, j7Var2, false, 5));
-                            if (arrayList2.size() > 8) {
-                                a70Var2.r(frameLayout2, ma.o(-1, 44));
-                                a70Var2.k();
-                            }
-                            if (!y7Var2.k.isEmpty()) {
-                                a70Var2.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 1), false);
-                            }
-                            a70Var2.q(j7Var2);
-                            a70Var2.a0();
-                            break;
-                        }
-                        break;
-                    default:
-                        y7 y7Var3 = i8Var2.c;
-                        if (!y7Var3.h.isEmpty()) {
-                            final a70 a70Var3 = new a70(j8Var.c, j8Var.J0, j8Var.Z1, false, true, false);
-                            a70Var3.t = false;
-                            a70Var3.b0 = true;
-                            a70Var3.b0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            a70Var3.U = true;
-                            a70Var3.p = new f6(a70Var3, 5);
-                            final String[] strArr3 = {""};
-                            final ArrayList arrayList3 = new ArrayList(y7Var3.h);
-                            Collections.sort(arrayList3, new Comparator() { // from class: bi.d8
-                                @Override // java.util.Comparator
-                                public final int compare(Object obj, Object obj2) {
-                                    switch (i14) {
-                                        case 0:
-                                            i8 i8Var3 = i8Var2;
-                                            Integer num = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                                            Integer num2 = (Integer) i8Var3.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                                            if (num == null) {
-                                                return 1;
-                                            }
-                                            if (num2 == null) {
-                                                return -1;
-                                            }
-                                            return num2.intValue() - num.intValue();
-                                        case 1:
-                                            i8 i8Var4 = i8Var2;
-                                            Integer num3 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                                            Integer num4 = (Integer) i8Var4.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                                            if (num3 == null) {
-                                                return 1;
-                                            }
-                                            if (num4 == null) {
-                                                return -1;
-                                            }
-                                            return num4.intValue() - num3.intValue();
-                                        default:
-                                            i8 i8Var5 = i8Var2;
-                                            Integer num5 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                                            Integer num6 = (Integer) i8Var5.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                                            if (num5 == null) {
-                                                return 1;
-                                            }
-                                            if (num6 == null) {
-                                                return -1;
-                                            }
-                                            return num6.intValue() - num5.intValue();
-                                    }
-                                }
-                            });
-                            int i20 = j8Var.a;
-                            q10 q10Var3 = new q10() { // from class: bi.z7
-                                /* JADX WARN: Multi-variable type inference failed */
-                                /* JADX WARN: Type inference failed for: r2v25, types: [int] */
-                                /* JADX WARN: Type inference failed for: r2v27 */
-                                /* JADX WARN: Type inference failed for: r2v28 */
-                                @Override // org.telegram.messenger.q10
-                                public final void a(Object obj, Object obj2) {
-                                    int i182 = i13;
-                                    boolean z10 = false;
-                                    ArrayList arrayList22 = arrayList3;
-                                    i8 i8Var3 = i8Var2;
-                                    String[] strArr22 = strArr3;
-                                    switch (i182) {
-                                        case 0:
-                                            ArrayList arrayList32 = (ArrayList) obj;
-                                            String lowerCase = strArr22[0].toLowerCase();
-                                            String M3 = org.telegram.messenger.g0.M3(lowerCase);
-                                            y7 y7Var22 = i8Var3.c;
-                                            boolean isEmpty = y7Var22.j.isEmpty();
-                                            int size = arrayList22.size();
-                                            int i192 = 0;
-                                            while (i192 < size) {
-                                                Object obj3 = arrayList22.get(i192);
-                                                i192++;
-                                                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                                                boolean contains = y7Var22.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                                                boolean z11 = !contains;
-                                                if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(M3) || i5.c.B(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || stargiftattributemodel.name.toLowerCase().contains(" ".concat(M3))) {
-                                                    Integer num = (Integer) y7Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                                                    int intValue = num == null ? 0 : num.intValue();
-                                                    int i202 = s7.b;
-                                                    o41 K = o41.K(s7.class);
-                                                    K.H = stargiftattributemodel;
-                                                    K.m = lowerCase;
-                                                    K.A = intValue;
-                                                    if (!TextUtils.isEmpty(lowerCase)) {
-                                                        z11 = (isEmpty || contains) ? false : true;
-                                                    }
-                                                    K.L(z11);
-                                                    arrayList32.add(K);
-                                                }
-                                            }
-                                            if (arrayList32.isEmpty()) {
-                                                arrayList32.add(n7.i(gd.N0(2131749993, null)));
-                                                break;
-                                            }
-                                            break;
-                                        case 1:
-                                            ArrayList arrayList4 = (ArrayList) obj;
-                                            String lowerCase2 = strArr22[0].toLowerCase();
-                                            String M32 = org.telegram.messenger.g0.M3(lowerCase2);
-                                            y7 y7Var32 = i8Var3.c;
-                                            boolean isEmpty2 = y7Var32.k.isEmpty();
-                                            int size2 = arrayList22.size();
-                                            int i21 = 0;
-                                            while (i21 < size2) {
-                                                Object obj4 = arrayList22.get(i21);
-                                                i21++;
-                                                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                                                boolean contains2 = y7Var32.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                boolean z12 = !contains2;
-                                                if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(M32) || i5.c.B(" ", lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || stargiftattributebackdrop.name.toLowerCase().contains(" ".concat(M32))) {
-                                                    Integer num2 = (Integer) y7Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                                                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                                                    int i22 = k7.b;
-                                                    o41 K2 = o41.K(k7.class);
-                                                    K2.H = stargiftattributebackdrop;
-                                                    K2.m = lowerCase2;
-                                                    K2.A = intValue2;
-                                                    if (!TextUtils.isEmpty(lowerCase2)) {
-                                                        z12 = (isEmpty2 || contains2) ? false : true;
-                                                    }
-                                                    K2.L(z12);
-                                                    arrayList4.add(K2);
-                                                }
-                                            }
-                                            if (arrayList4.isEmpty()) {
-                                                arrayList4.add(n7.i(gd.N0(2131749998, null)));
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            ArrayList arrayList5 = (ArrayList) obj;
-                                            String lowerCase3 = strArr22[0].toLowerCase();
-                                            String M33 = org.telegram.messenger.g0.M3(lowerCase3);
-                                            y7 y7Var4 = i8Var3.c;
-                                            boolean isEmpty3 = y7Var4.l.isEmpty();
-                                            int size3 = arrayList22.size();
-                                            int i23 = 0;
-                                            while (i23 < size3) {
-                                                Object obj5 = arrayList22.get(i23);
-                                                i23++;
-                                                TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                                                boolean z13 = z10;
-                                                boolean contains3 = y7Var4.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                                                boolean z14 = !contains3;
-                                                if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(M33) || i5.c.B(" ", lowerCase3, stargiftattributepattern.name.toLowerCase()) || stargiftattributepattern.name.toLowerCase().contains(" ".concat(M33))) {
-                                                    Integer num3 = (Integer) y7Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                                                    ?? intValue3 = num3 == null ? z13 : num3.intValue();
-                                                    int i24 = v7.b;
-                                                    o41 K3 = o41.K(v7.class);
-                                                    K3.H = stargiftattributepattern;
-                                                    K3.m = lowerCase3;
-                                                    K3.A = intValue3;
-                                                    if (!TextUtils.isEmpty(lowerCase3)) {
-                                                        z14 = (isEmpty3 || contains3) ? z13 : true;
-                                                    }
-                                                    K3.L(z14);
-                                                    arrayList5.add(K3);
-                                                }
-                                                z10 = z13;
-                                            }
-                                            if (arrayList5.isEmpty()) {
-                                                arrayList5.add(n7.i(gd.N0(2131749991, null)));
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            };
-                            v10 v10Var3 = new v10() { // from class: bi.a8
-                                @Override // org.telegram.messenger.v10
-                                public final void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    o41 o41Var = (o41) obj;
-                                    switch (i13) {
-                                        case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) o41Var.H).document.id;
-                                            y7 y7Var22 = i8Var2.c;
-                                            HashSet hashSet = y7Var22.j;
-                                            if (hashSet.contains(Long.valueOf(j3))) {
-                                                hashSet.remove(Long.valueOf(j3));
-                                            } else if (hashSet.isEmpty()) {
-                                                ArrayList arrayList22 = y7Var22.f;
-                                                int size = arrayList22.size();
-                                                int i182 = 0;
-                                                while (i182 < size) {
-                                                    Object obj3 = arrayList22.get(i182);
-                                                    i182++;
-                                                    long j10 = ((TL_stars.starGiftAttributeModel) obj3).document.id;
-                                                    if (j10 != j3) {
-                                                        hashSet.add(Long.valueOf(j10));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet.add(Long.valueOf(j3));
-                                            }
-                                            y7Var22.m();
-                                            a70Var3.v();
-                                            break;
-                                        case 1:
-                                            int i192 = ((TL_stars.starGiftAttributeBackdrop) o41Var.H).backdrop_id;
-                                            y7 y7Var32 = i8Var2.c;
-                                            HashSet hashSet2 = y7Var32.k;
-                                            if (hashSet2.contains(Integer.valueOf(i192))) {
-                                                hashSet2.remove(Integer.valueOf(i192));
-                                            } else if (hashSet2.isEmpty()) {
-                                                ArrayList arrayList32 = y7Var32.g;
-                                                int size2 = arrayList32.size();
-                                                int i202 = 0;
-                                                while (i202 < size2) {
-                                                    Object obj4 = arrayList32.get(i202);
-                                                    i202++;
-                                                    int i21 = ((TL_stars.starGiftAttributeBackdrop) obj4).backdrop_id;
-                                                    if (i21 != i192) {
-                                                        hashSet2.add(Integer.valueOf(i21));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet2.add(Integer.valueOf(i192));
-                                            }
-                                            y7Var32.m();
-                                            a70Var3.v();
-                                            break;
-                                        default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) o41Var.H).document.id;
-                                            y7 y7Var4 = i8Var2.c;
-                                            HashSet hashSet3 = y7Var4.l;
-                                            if (hashSet3.contains(Long.valueOf(j11))) {
-                                                hashSet3.remove(Long.valueOf(j11));
-                                            } else if (hashSet3.isEmpty()) {
-                                                ArrayList arrayList4 = y7Var4.h;
-                                                int size3 = arrayList4.size();
-                                                int i22 = 0;
-                                                while (i22 < size3) {
-                                                    Object obj5 = arrayList4.get(i22);
-                                                    i22++;
-                                                    long j12 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
-                                                    if (j12 != j11) {
-                                                        hashSet3.add(Long.valueOf(j12));
-                                                    }
-                                                }
-                                            } else {
-                                                hashSet3.add(Long.valueOf(j11));
-                                            }
-                                            y7Var4.m();
-                                            a70Var3.v();
-                                            break;
-                                    }
-                                }
-                            };
-                            org.telegram.ui.ActionBar.h6 h6Var3 = j8Var.J0;
-                            Context context4 = context;
-                            j7 j7Var3 = new j7(context4, i20, 0, false, q10Var3, v10Var3, null, h6Var3, 6);
-                            j7Var3.g3.r = false;
-                            FrameLayout frameLayout3 = new FrameLayout(context4);
-                            ImageView imageView3 = new ImageView(context4);
-                            imageView3.setScaleType(ImageView.ScaleType.CENTER);
-                            imageView3.setImageResource(R.drawable.smiles_inputsearch);
-                            org.telegram.ui.ActionBar.t6.s(imageView3, org.telegram.ui.ActionBar.m6.F8, j8Var.J0, PorterDuff.Mode.SRC_IN);
-                            frameLayout3.addView(imageView3, ma.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            ot otVar3 = new ot(context4, j8Var.J0);
-                            otVar3.setTextSize(1, 16.0f);
-                            otVar3.setInputType(573441);
-                            otVar3.setRawInputType(573441);
-                            org.telegram.ui.ActionBar.t6.D(otVar3, org.telegram.ui.ActionBar.m6.A6, j8Var.J0);
-                            org.telegram.ui.ActionBar.t6.l(otVar3, 30, org.telegram.ui.ActionBar.m6.G6, j8Var.J0);
-                            otVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            otVar3.setCursorWidth(1.5f);
-                            otVar3.setHint(gd.N0(2131749992, null));
-                            org.telegram.ui.ActionBar.t6.U(otVar3, org.telegram.ui.ActionBar.m6.E8, j8Var.J0);
-                            otVar3.setBackground(null);
-                            frameLayout3.addView(otVar3, ma.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            otVar3.addTextChangedListener(new v(strArr3, j7Var3, false, 6));
-                            if (arrayList3.size() > 8) {
-                                a70Var3.r(frameLayout3, ma.o(-1, 44));
-                                a70Var3.k();
-                            }
-                            if (!y7Var3.l.isEmpty()) {
-                                a70Var3.c(R.drawable.msg_select, gd.N0(2131745474, null), new b8(i8Var2, 2), false);
-                            }
-                            a70Var3.q(j7Var3);
-                            a70Var3.a0();
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        getContext();
-        v4.t tVar = new v4.t(3);
-        tVar.O = new w2(this, i12);
-        this.o1.setLayoutManager(tVar);
-        this.o1.setOnItemClickListener(new ab.g(i11, this, i8Var));
-        this.o1.setPadding(org.telegram.messenger.g0.L(8.0f) + this.u0, 0, org.telegram.messenger.g0.L(8.0f) + this.u0, 0);
-        this.o1.setOnScrollListener(new u1(this, i7));
-        v4.k kVar = new v4.k();
-        kVar.m = false;
-        kVar.C = false;
-        kVar.o(nr.h);
-        kVar.n(350L);
-        this.o1.setItemAnimator(kVar);
-        this.o1.setItemSelectorColorProvider(new a3.l(23));
-        di.k4 k4Var = new di.k4(context);
-        this.a2 = k4Var;
-        int L = org.telegram.messenger.g0.L(20.0f);
-        int L2 = org.telegram.messenger.g0.L(9.0f);
-        k4Var.h = L;
-        k4Var.n = L2;
-        k4Var.setRoundRadius(org.telegram.messenger.g0.L(22.0f));
-        k4Var.setFullRect(true);
-        org.telegram.messenger.g0.m2(new ai.h0(k4Var, 11), 12.0f, 12, new ArrayList());
-        k4Var.setPivotY(0.0f);
-        this.c.addView(k4Var, ma.e(-1, -2, 55));
-        this.e2.O(false);
-        i8Var.d = new c8(this, i12);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
     }
 
-    @Override // org.telegram.ui.Components.sa
-    public final dk0 M0(ek0 ek0Var) {
-        h8 h8Var = new h8(this, ek0Var, getContext(), this.a, new b(this, 10), this.J0, 0);
-        this.e2 = h8Var;
-        return h8Var;
+    @Override // org.telegram.ui.ActionBar.g2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.sa
-    public final CharSequence P0() {
-        String str = this.T1;
-        return str != null ? str : gd.N0(2131749754, null);
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final void U0(float f10) {
-        float y10 = this.b.getY() + f10;
-        di.k4 k4Var = this.a2;
-        float measuredHeight = y10 - k4Var.getMeasuredHeight();
-        float l10 = 1.0f - Utilities.l(Math.max(0.0f, (-measuredHeight) + org.telegram.messenger.g0.L(8.0f)) / k4Var.getMeasuredHeight());
-        float height = this.c.getHeight() / 2.0f;
-        if (measuredHeight > height) {
-            l10 = Math.min(l10, Utilities.l(1.0f - ((measuredHeight - height) / org.telegram.messenger.g0.N(128.0f))));
-        }
-        k4Var.setScaleX(l10);
-        k4Var.setScaleY(l10);
-        k4Var.setAlpha(org.telegram.messenger.g0.z1(l10, 0.5f, 1.0f));
-        k4Var.setTranslationY(measuredHeight);
-    }
-
-    public final void e1() {
-        int R;
-        o41 G;
-        int i7 = 0;
-        boolean z10 = false;
-        boolean z11 = false;
-        while (true) {
-            ek0 ek0Var = this.o1;
-            if (i7 >= ek0Var.getChildCount()) {
-                break;
-            }
-            View childAt = ek0Var.getChildAt(i7);
-            if ((childAt instanceof yz) && (R = RecyclerView.R(childAt) - 1) >= 0 && (G = this.e2.G(R)) != null) {
-                if (G.d < 10) {
-                    z10 = true;
-                } else {
-                    z11 = true;
-                }
-            }
-            i7++;
-        }
-        i8 i8Var = this.U1;
-        if (z10) {
-            i8Var.b.a();
-        }
-        if (z11) {
-            i8Var.c.l(false);
-        }
+    @Override // te.b
+    public final /* synthetic */ void D(float f10, int i7) {
     }
 }

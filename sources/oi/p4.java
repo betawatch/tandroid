@@ -6,11 +6,11 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.a70;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class p4 implements View.OnClickListener {
                         final r rVar = (r) n10.get(indexOf);
                         a70 G0 = s4Var.O.a.p3.G0((View) arrayList.get(indexOf));
                         boolean z10 = rVar.n;
-                        G0.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, gd.N0(z10 ? 2131751418 : 2131751142, null), new Runnable() { // from class: oi.q4
+                        G0.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, hd.N0(z10 ? 2131751418 : 2131751142, null), new Runnable() { // from class: oi.q4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -87,7 +87,7 @@ public final /* synthetic */ class p4 implements View.OnClickListener {
                                 }
                             }
                         }, false);
-                        G0.c(R.drawable.msg_delete, gd.N0(2131751586, null), new Runnable() { // from class: oi.q4
+                        G0.c(R.drawable.msg_delete, hd.N0(2131751586, null), new Runnable() { // from class: oi.q4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;

@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hb0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -77,9 +77,9 @@ public final /* synthetic */ class hb0 implements Runnable {
                     pb0Var.F = false;
                     de0Var.N1(false, true);
                     if (tL_error.text.contains("EMAIL_ADDRESS_INVALID")) {
-                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.N0(2131751192, null));
+                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.N0(2131751192, null));
                     } else if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
-                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.N0(2131748986, "InvalidPhoneNumber"));
+                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.N0(2131748986, "InvalidPhoneNumber"));
                     } else if (tL_error.text.contains("CODE_EMPTY") || tL_error.text.contains("CODE_INVALID") || tL_error.text.contains("EMAIL_CODE_INVALID") || tL_error.text.contains("PHONE_CODE_INVALID")) {
                         ib0 ib0Var = pb0Var.T;
                         ob0 ob0Var = pb0Var.R;
@@ -108,16 +108,16 @@ public final /* synthetic */ class hb0 implements Runnable {
                             }
                         }
                     } else if (tL_error.text.contains("EMAIL_NOT_ALLOWED")) {
-                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.N0(2131751188, null));
+                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.N0(2131751188, null));
                     } else if (tL_error.text.contains("EMAIL_TOKEN_INVALID")) {
-                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.N0(2131751185, null));
+                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.N0(2131751185, null));
                     } else if (tL_error.text.contains("EMAIL_VERIFY_EXPIRED")) {
                         de0Var.M1(0, true, null, true);
-                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.N0(2131752009, "CodeExpired"));
+                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.N0(2131752009, "CodeExpired"));
                     } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                        de0Var.D1(org.telegram.messenger.gd.N0(2131745875, null), org.telegram.messenger.gd.N0(2131750670, "FloodWait"));
+                        de0Var.D1(org.telegram.messenger.hd.N0(2131745875, null), org.telegram.messenger.hd.N0(2131750670, "FloodWait"));
                     } else {
-                        String N0 = org.telegram.messenger.gd.N0(2131745875, null);
+                        String N0 = org.telegram.messenger.hd.N0(2131745875, null);
                         StringBuilder sb2 = new StringBuilder();
                         org.telegram.ui.Cells.c0.u("ErrorOccurred", 2131751093, sb2, "\n");
                         sb2.append(tL_error.text);
@@ -144,12 +144,12 @@ public final /* synthetic */ class hb0 implements Runnable {
                 de0 de0Var2 = pb0Var.a0;
                 de0Var2.N1(false, true);
                 if (tL_error != null) {
-                    de0Var2.D1(org.telegram.messenger.gd.N0(2131745875, null), tL_error.text);
+                    de0Var2.D1(org.telegram.messenger.hd.N0(2131745875, null), tL_error.text);
                     break;
                 } else {
                     TL_account.Password password = (TL_account.Password) tLObject;
                     if (!TwoStepVerificationActivity.n0(password, true)) {
-                        org.telegram.ui.Components.c5.u0(de0Var2.getParentActivity(), org.telegram.messenger.gd.N0(2131743577, "UpdateAppAlert"), true);
+                        org.telegram.ui.Components.c5.u0(de0Var2.getParentActivity(), org.telegram.messenger.hd.N0(2131743575, "UpdateAppAlert"), true);
                         break;
                     } else {
                         final Bundle bundle2 = new Bundle();

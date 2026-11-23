@@ -11,11 +11,11 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b0 extends Drawable {
     public final RectF a = new RectF();
@@ -35,7 +35,7 @@ public final class b0 extends Drawable {
         this.j = paint;
         this.b = i7;
         this.c = h6Var;
-        xy0 xy0Var = new xy0(gd.N0(2131753065, null), 14.0f, org.telegram.messenger.g0.o());
+        xy0 xy0Var = new xy0(hd.N0(2131753065, null), 14.0f, org.telegram.messenger.g0.o());
         this.d = xy0Var;
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         xy0Var.a();
@@ -46,7 +46,7 @@ public final class b0 extends Drawable {
         this.f = context.getResources().getDrawable(R.drawable.filled_topic_new_24).mutate();
         Drawable g10 = i5.c.g(context, R.drawable.arrow_more);
         this.g = g10;
-        g10.setAlpha(ks.j2);
+        g10.setAlpha(ls.j2);
         paint.setColor(-16777216);
         paint.setAlpha(30);
     }

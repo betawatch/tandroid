@@ -26,7 +26,7 @@ import java.util.Map;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class gl0 extends HorizontalScrollView {
     public static final /* synthetic */ int u0 = 0;
@@ -637,7 +637,7 @@ public abstract class gl0 extends HorizontalScrollView {
         int i11;
         int i12;
         String str;
-        org.telegram.messenger.fc k10;
+        org.telegram.messenger.gc k10;
         boolean z10;
         Object obj;
         Object obj2;
@@ -684,7 +684,7 @@ public abstract class gl0 extends HorizontalScrollView {
                     Object tag2 = sv0Var.getTag(R.id.object_tag);
                     Drawable drawable = tag instanceof Drawable ? (Drawable) tag : null;
                     if (tag2 instanceof TLRPC.Document) {
-                        q9Var.j(org.telegram.messenger.fc.b((TLRPC.Document) tag2), !org.telegram.messenger.pc.e(i13) ? "36_36_firstframe" : "36_36_nolimit", null, null);
+                        q9Var.j(org.telegram.messenger.gc.b((TLRPC.Document) tag2), !org.telegram.messenger.qc.e(i13) ? "36_36_firstframe" : "36_36_nolimit", null, null);
                     } else {
                         q9Var.setImageDrawable(drawable);
                     }
@@ -700,7 +700,7 @@ public abstract class gl0 extends HorizontalScrollView {
                         if (!sv0Var.c) {
                             sv0Var.w = org.telegram.messenger.u5.f((TLRPC.Document) tag3, org.telegram.ui.ActionBar.m6.c7, 0.2f, null);
                         }
-                        k10 = org.telegram.messenger.fc.b(document);
+                        k10 = org.telegram.messenger.gc.b(document);
                         i7 = paddingLeft;
                         i10 = min;
                         str = null;
@@ -741,7 +741,7 @@ public abstract class gl0 extends HorizontalScrollView {
                             i12 = 0;
                         }
                         str = photoSize.type;
-                        k10 = org.telegram.messenger.fc.k(photoSize, document, i12);
+                        k10 = org.telegram.messenger.gc.k(photoSize, document, i12);
                     } else {
                         i7 = paddingLeft;
                         i10 = min;
@@ -753,10 +753,10 @@ public abstract class gl0 extends HorizontalScrollView {
                     }
                     if (k10 != null) {
                         sv0Var.c = true;
-                        org.telegram.messenger.lz lzVar = sv0Var.w;
-                        boolean e10 = org.telegram.messenger.pc.e(1);
+                        org.telegram.messenger.mz mzVar = sv0Var.w;
+                        boolean e10 = org.telegram.messenger.qc.e(1);
                         String str2 = !e10 ? "40_40_firstframe" : "40_40";
-                        if (str == null && org.telegram.messenger.fj.N4(document)) {
+                        if (str == null && org.telegram.messenger.gj.N4(document)) {
                             d61Var = d61Var2;
                             ArrayList<TLRPC.PhotoSize> arrayList2 = document.thumbs;
                             if (arrayList2 != null) {
@@ -765,26 +765,26 @@ public abstract class gl0 extends HorizontalScrollView {
                             d61Var = d61Var2;
                         }
                         if (str == null || !str.equalsIgnoreCase("v")) {
-                            org.telegram.messenger.fc fcVar = k10;
-                            if (!(str == null && org.telegram.messenger.fj.K2(document, true)) && (str == null || !str.equalsIgnoreCase("a"))) {
+                            org.telegram.messenger.gc gcVar = k10;
+                            if (!(str == null && org.telegram.messenger.gj.K2(document, true)) && (str == null || !str.equalsIgnoreCase("a"))) {
                                 i11 = 1;
-                                if (fcVar.p == 1) {
+                                if (gcVar.p == 1) {
                                     obj = tag4;
-                                    q9Var.k(fcVar, str2, "tgs", lzVar, obj);
+                                    q9Var.k(gcVar, str2, "tgs", mzVar, obj);
                                 } else {
                                     obj = tag4;
-                                    q9Var.k(fcVar, str2, "webp", lzVar, obj);
+                                    q9Var.k(gcVar, str2, "webp", mzVar, obj);
                                 }
                                 obj2 = obj;
                                 sv0Var.h.setText(!(obj2 instanceof TLRPC.TL_messages_stickerSet) ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
-                            } else if (lzVar != null) {
-                                q9Var.p(fcVar, str2, lzVar, tag4);
+                            } else if (mzVar != null) {
+                                q9Var.p(gcVar, str2, mzVar, tag4);
                                 obj2 = tag4;
                                 i11 = 1;
                                 sv0Var.h.setText(!(obj2 instanceof TLRPC.TL_messages_stickerSet) ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
                             } else {
                                 obj3 = tag4;
-                                q9Var.l(fcVar, str2, fcVar, null, 0, obj3);
+                                q9Var.l(gcVar, str2, gcVar, null, 0, obj3);
                                 obj2 = obj3;
                                 i11 = 1;
                                 sv0Var.h.setText(!(obj2 instanceof TLRPC.TL_messages_stickerSet) ? ((TLRPC.TL_messages_stickerSet) obj2).set.title : null);
@@ -792,22 +792,22 @@ public abstract class gl0 extends HorizontalScrollView {
                         }
                         if (str == null) {
                             if (!e10) {
-                                q9Var.p(org.telegram.messenger.fc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document), "40_40", lzVar, tag4);
-                            } else if (lzVar != null) {
-                                q9Var.p(org.telegram.messenger.fc.b(document), str2, lzVar, tag4);
+                                q9Var.p(org.telegram.messenger.gc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document), "40_40", mzVar, tag4);
+                            } else if (mzVar != null) {
+                                q9Var.p(org.telegram.messenger.gc.b(document), str2, mzVar, tag4);
                             } else {
                                 obj3 = tag4;
-                                q9Var.l(org.telegram.messenger.fc.b(document), str2, k10, null, 0, obj3);
+                                q9Var.l(org.telegram.messenger.gc.b(document), str2, k10, null, 0, obj3);
                                 obj2 = obj3;
                             }
                             obj2 = tag4;
                         } else {
                             obj2 = tag4;
-                            org.telegram.messenger.fc fcVar2 = k10;
-                            if (lzVar != null) {
-                                q9Var.p(fcVar2, str2, lzVar, obj2);
+                            org.telegram.messenger.gc gcVar2 = k10;
+                            if (mzVar != null) {
+                                q9Var.p(gcVar2, str2, mzVar, obj2);
                             } else {
-                                q9Var.l(fcVar2, str2, null, null, 0, obj2);
+                                q9Var.l(gcVar2, str2, null, null, 0, obj2);
                             }
                         }
                         i11 = 1;

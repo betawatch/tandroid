@@ -1,47 +1,27 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g00 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z00 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ fj d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
+public final /* synthetic */ class g00 implements oc, nc {
+    public final /* synthetic */ a10 a;
+    public final /* synthetic */ gj b;
+    public final /* synthetic */ f3.s c;
+    public final /* synthetic */ di.p9 d;
 
-    public /* synthetic */ g00(z00 z00Var, String str, fj fjVar, long j3, int i7, int i10) {
-        this.a = i10;
-        this.b = z00Var;
-        this.c = str;
-        this.d = fjVar;
-        this.e = j3;
-        this.f = i7;
+    public /* synthetic */ g00(a10 a10Var, gj gjVar, f3.s sVar, di.p9 p9Var) {
+        this.a = a10Var;
+        this.b = gjVar;
+        this.c = sVar;
+        this.d = p9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                z00 z00Var = this.b;
-                fj fjVar = this.d;
-                long j3 = this.e;
-                int i7 = this.f;
-                c6.d(this.c, new j00(z00Var, fjVar, j3, i7), new j00(z00Var, fjVar, j3, i7), false);
-                break;
-            default:
-                z00 z00Var2 = this.b;
-                z00Var2.getClass();
-                String str = this.c;
-                if (str == null) {
-                    str = "und";
-                }
-                fj fjVar2 = this.d;
-                fjVar2.k.originalLanguage = str;
-                z00Var2.getMessagesStorage().X1(this.e, fjVar2.k);
-                z00Var2.w.remove(Integer.valueOf(this.f));
-                z00Var2.f(fjVar2);
-                break;
-        }
+    @Override // org.telegram.messenger.oc
+    public void a(String str) {
+        g0.g3(new gn(this.a, this.b, str, this.c, this.d, 18));
+    }
+
+    @Override // org.telegram.messenger.nc
+    public void q(Exception exc) {
+        g0.g3(new ul(this.a, this.b, this.c, this.d, 27));
     }
 }

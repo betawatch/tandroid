@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lk0 extends Drawable {
     public final nv e;
@@ -49,7 +49,7 @@ public final class lk0 extends Drawable {
         rect.inset(-org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(interpolation, 10, 11)), -org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(interpolation, 2, 3)));
         nv nvVar2 = this.e;
         nvVar2.setBounds(rect);
-        nvVar2.setAlpha(org.telegram.messenger.g0.W1(interpolation, 128, org.telegram.messenger.ks.e4));
+        nvVar2.setAlpha(org.telegram.messenger.g0.W1(interpolation, 128, org.telegram.messenger.ls.e4));
         nvVar2.draw(canvas);
     }
 
@@ -75,7 +75,7 @@ public final class lk0 extends Drawable {
         rect.offset(0, org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(interpolation, 0, 8)));
         nv nvVar2 = this.e;
         nvVar2.setBounds(rect);
-        nvVar2.setAlpha(org.telegram.messenger.ks.e4);
+        nvVar2.setAlpha(org.telegram.messenger.ls.e4);
         nvVar2.draw(canvas);
     }
 
@@ -101,7 +101,7 @@ public final class lk0 extends Drawable {
         rect.offset(0, org.telegram.messenger.g0.L(8.0f));
         nv nvVar2 = this.e;
         nvVar2.setBounds(rect);
-        nvVar2.setAlpha(org.telegram.messenger.g0.W1(interpolation, org.telegram.messenger.ks.e4, 128));
+        nvVar2.setAlpha(org.telegram.messenger.g0.W1(interpolation, org.telegram.messenger.ls.e4, 128));
         nvVar2.draw(canvas);
     }
 

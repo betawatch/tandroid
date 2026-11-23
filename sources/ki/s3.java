@@ -8,14 +8,14 @@ import android.text.TextPaint;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -28,9 +28,9 @@ import org.telegram.ui.Components.ui;
 import org.telegram.ui.bn;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class s3 extends mi implements fs {
+public final class s3 extends mi implements gs {
     public int E;
     public long F;
     public int G;
@@ -99,7 +99,7 @@ public final class s3 extends mi implements fs {
     @Override // org.telegram.ui.Components.mi
     public final void I(mi miVar) {
         k2 k2Var = this.n;
-        CharSequence q10 = o10.q(mp.u1(this.G).c2(Long.valueOf(this.w)));
+        CharSequence q10 = p10.q(np.u1(this.G).c2(Long.valueOf(this.w)));
         try {
             TextPaint textPaint = new TextPaint();
             textPaint.setTextSize(org.telegram.messenger.g0.L(20.0f));
@@ -148,14 +148,14 @@ public final class s3 extends mi implements fs {
             this.b.dismiss();
             return true;
         }
-        TLRPC.User c22 = mp.u1(this.G).c2(Long.valueOf(this.w));
+        TLRPC.User c22 = np.u1(this.G).c2(Long.valueOf(this.w));
         String m10 = c22 != null ? i5.m(0, c22.first_name, c22.last_name) : null;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = m10;
-        t1Var.U = gd.N0(2131752905, null);
-        alertDialog$Builder.k(gd.N0(2131752904, null), new l3(this));
-        alertDialog$Builder.h(gd.N0(2131752577, null), null);
+        t1Var.U = hd.N0(2131752905, null);
+        alertDialog$Builder.k(hd.N0(2131752904, null), new l3(this));
+        alertDialog$Builder.h(hd.N0(2131752577, null), null);
         t1Var.show();
         t6.U((TextView) t1Var.d(-1), m6.q7, this.a);
         return false;
@@ -174,12 +174,12 @@ public final class s3 extends mi implements fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         k2 k2Var = this.n;
-        if (i7 != ks.z1) {
-            if (i7 == ks.q4) {
-                k2Var.n.b(m6.w0(m6.h5, this.a), ks.j2);
+        if (i7 != ls.z1) {
+            if (i7 == ls.q4) {
+                k2Var.n.b(m6.w0(m6.h5, this.a), ls.j2);
                 return;
             }
             return;
@@ -265,8 +265,8 @@ public final class s3 extends mi implements fs {
 
     @Override // org.telegram.ui.Components.mi
     public final void p() {
-        ks.f(this.G).n(this, ks.z1);
-        ks.e().n(this, ks.q4);
+        ls.f(this.G).n(this, ls.z1);
+        ls.e().n(this, ls.q4);
         org.telegram.ui.ActionBar.y s5 = this.b.V2.s();
         org.telegram.ui.ActionBar.q0 q0Var = this.L;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = q0Var.b;
@@ -378,20 +378,20 @@ public final class s3 extends mi implements fs {
             n3Var.setLoadProgress(0.0f);
             n3Var.setAlpha(1.0f);
             n3Var.setVisibility(0);
-            k2Var.setBotUser(mp.u1(this.G).c2(Long.valueOf(this.w)));
+            k2Var.setBotUser(np.u1(this.G).c2(Long.valueOf(this.w)));
             k2Var.s(this.G, this.w);
-            ks.f(k2Var.N).d(new org.telegram.ui.web.q(k2Var, 1));
+            ls.f(k2Var.N).d(new org.telegram.ui.web.q(k2Var, 1));
             return;
         }
         if (i7 == R.id.menu_delete_bot) {
-            ArrayList<TLRPC.TL_attachMenuBot> arrayList = ri.d0(this.G).b.bots;
+            ArrayList<TLRPC.TL_attachMenuBot> arrayList = si.d0(this.G).b.bots;
             int size = arrayList.size();
             while (i10 < size) {
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = arrayList.get(i10);
                 i10++;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                 if (tL_attachMenuBot2.bot_id == this.w) {
-                    uiVar.l1(tL_attachMenuBot2, mp.u1(this.G).c2(Long.valueOf(this.w)));
+                    uiVar.l1(tL_attachMenuBot2, np.u1(this.G).c2(Long.valueOf(this.w)));
                     return;
                 }
             }
@@ -403,11 +403,11 @@ public final class s3 extends mi implements fs {
             k2Var.y("settings_button_pressed", null);
         } else {
             if (i7 == R.id.menu_add_to_home_screen_bot) {
-                ri.d0(this.G).A0(this.w, ri.f2, null);
+                si.d0(this.G).A0(this.w, si.f2, null);
                 return;
             }
             if (i7 == R.id.menu_tos_bot) {
-                vf.c.t(getContext(), gd.N0(2131752881, null));
+                vf.c.t(getContext(), hd.N0(2131752881, null));
                 return;
             }
             if (i7 == R.id.menu_report_bot) {

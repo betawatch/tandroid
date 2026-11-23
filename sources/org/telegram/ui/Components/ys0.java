@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ys0 {
     public boolean g;
@@ -32,11 +32,11 @@ public final class ys0 {
     public final ArrayList s = new ArrayList();
     public v4.w0 x = new v4.w0();
 
-    public final boolean a(org.telegram.messenger.fj fjVar, int i7, boolean z10, boolean z11) {
+    public final boolean a(org.telegram.messenger.gj gjVar, int i7, boolean z10, boolean z11) {
         SparseArray[] sparseArrayArr = this.b;
         SparseArray sparseArray = sparseArrayArr[i7];
-        int e12 = fjVar.e1();
-        String str = fjVar.Y;
+        int e12 = gjVar.e1();
+        String str = gjVar.Y;
         if (sparseArray.indexOfKey(e12) >= 0) {
             return false;
         }
@@ -54,45 +54,45 @@ public final class ys0 {
         }
         ArrayList arrayList3 = this.a;
         if (z10) {
-            arrayList.add(0, fjVar);
-            arrayList3.add(0, fjVar);
+            arrayList.add(0, gjVar);
+            arrayList3.add(0, gjVar);
         } else {
-            arrayList.add(fjVar);
-            arrayList3.add(fjVar);
+            arrayList.add(gjVar);
+            arrayList3.add(gjVar);
         }
-        sparseArrayArr[i7].put(fjVar.e1(), fjVar);
+        sparseArrayArr[i7].put(gjVar.e1(), gjVar);
         int[] iArr = this.j;
         if (z11) {
-            iArr[i7] = Math.max(fjVar.e1(), iArr[i7]);
-            this.k = Math.min(fjVar.e1(), this.k);
-        } else if (fjVar.e1() > 0) {
-            iArr[i7] = Math.min(fjVar.e1(), iArr[i7]);
-            this.k = Math.max(fjVar.e1(), this.k);
+            iArr[i7] = Math.max(gjVar.e1(), iArr[i7]);
+            this.k = Math.min(gjVar.e1(), this.k);
+        } else if (gjVar.e1() > 0) {
+            iArr[i7] = Math.min(gjVar.e1(), iArr[i7]);
+            this.k = Math.max(gjVar.e1(), this.k);
         }
-        if (!this.v && org.telegram.messenger.fj.L4(fjVar.k)) {
+        if (!this.v && org.telegram.messenger.gj.L4(gjVar.k)) {
             this.v = true;
         }
-        if (!this.w && org.telegram.messenger.fj.S3(fjVar.k)) {
+        if (!this.w && org.telegram.messenger.gj.S3(gjVar.k)) {
             this.w = true;
         }
         return true;
     }
 
-    public final org.telegram.messenger.fj b(int i7, int i10) {
+    public final org.telegram.messenger.gj b(int i7, int i10) {
         SparseArray[] sparseArrayArr = this.b;
-        org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) sparseArrayArr[i10].get(i7);
-        if (fjVar == null) {
+        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) sparseArrayArr[i10].get(i7);
+        if (gjVar == null) {
             return null;
         }
-        String str = fjVar.Y;
+        String str = gjVar.Y;
         HashMap hashMap = this.d;
         ArrayList arrayList = (ArrayList) hashMap.get(str);
         if (arrayList == null) {
             return null;
         }
-        arrayList.remove(fjVar);
-        this.a.remove(fjVar);
-        sparseArrayArr[i10].remove(fjVar.e1());
+        arrayList.remove(gjVar);
+        this.a.remove(gjVar);
+        sparseArrayArr[i10].remove(gjVar.e1());
         if (arrayList.isEmpty()) {
             hashMap.remove(str);
             this.c.remove(str);
@@ -103,7 +103,7 @@ public final class ys0 {
         if (i11 < 0) {
             iArr[i10] = 0;
         }
-        return fjVar;
+        return gjVar;
     }
 
     public final ArrayList c() {
@@ -121,11 +121,11 @@ public final class ys0 {
 
     public final void f(int i7, int i10, int i11) {
         SparseArray[] sparseArrayArr = this.b;
-        org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) sparseArrayArr[i7].get(i10);
-        if (fjVar != null) {
+        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) sparseArrayArr[i7].get(i10);
+        if (gjVar != null) {
             sparseArrayArr[i7].remove(i10);
-            sparseArrayArr[i7].put(i11, fjVar);
-            fjVar.k.id = i11;
+            sparseArrayArr[i7].put(i11, gjVar);
+            gjVar.k.id = i11;
             int[] iArr = this.j;
             iArr[i7] = Math.min(i11, iArr[i7]);
         }

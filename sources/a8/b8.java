@@ -34,12 +34,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.od;
-import org.telegram.messenger.vy;
-import org.telegram.messenger.xr;
+import org.telegram.messenger.pd;
+import org.telegram.messenger.wy;
+import org.telegram.messenger.yr;
 import org.telegram.ui.Components.jw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class b8 {
     public Object a;
@@ -193,8 +193,8 @@ public class b8 {
     }
 
     public void d() {
-        ((LocationManager) this.b).removeUpdates((od) this.c);
-        ((LocationManager) this.b).removeUpdates((od) this.d);
+        ((LocationManager) this.b).removeUpdates((pd) this.c);
+        ((LocationManager) this.b).removeUpdates((pd) this.d);
         this.f = null;
         this.e = null;
     }
@@ -411,12 +411,12 @@ public class b8 {
             this.b = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
         }
         try {
-            ((LocationManager) this.b).requestLocationUpdates("gps", 1L, 0.0f, (od) this.c);
+            ((LocationManager) this.b).requestLocationUpdates("gps", 1L, 0.0f, (pd) this.c);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
         try {
-            ((LocationManager) this.b).requestLocationUpdates("network", 1L, 0.0f, (od) this.d);
+            ((LocationManager) this.b).requestLocationUpdates("network", 1L, 0.0f, (pd) this.d);
         } catch (Exception e11) {
             org.telegram.messenger.a8.g(e11, true);
         }
@@ -429,22 +429,22 @@ public class b8 {
         } catch (Exception e12) {
             org.telegram.messenger.a8.g(e12, true);
         }
-        xr xrVar = (xr) this.e;
-        if (xrVar != null) {
-            org.telegram.messenger.g0.r(xrVar);
+        yr yrVar = (yr) this.e;
+        if (yrVar != null) {
+            org.telegram.messenger.g0.r(yrVar);
         }
-        xr xrVar2 = new xr(this, 14);
-        this.e = xrVar2;
-        org.telegram.messenger.g0.h3(xrVar2, 5000L);
+        yr yrVar2 = new yr(this, 14);
+        this.e = yrVar2;
+        org.telegram.messenger.g0.h3(yrVar2, 5000L);
     }
 
     public void p() {
         if (((LocationManager) this.b) == null) {
             return;
         }
-        xr xrVar = (xr) this.e;
-        if (xrVar != null) {
-            org.telegram.messenger.g0.r(xrVar);
+        yr yrVar = (yr) this.e;
+        if (yrVar != null) {
+            org.telegram.messenger.g0.r(yrVar);
         }
         d();
     }
@@ -570,10 +570,10 @@ public class b8 {
         this.f = jVar;
     }
 
-    public b8(vy vyVar) {
+    public b8(wy wyVar) {
         int i7 = 1;
-        this.c = new od(this, i7);
-        this.d = new od(this, i7);
-        this.a = vyVar;
+        this.c = new pd(this, i7);
+        this.d = new pd(this, i7);
+        this.a = wyVar;
     }
 }

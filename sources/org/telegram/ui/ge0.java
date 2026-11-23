@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ge0 extends org.telegram.ui.ActionBar.g2 {
     public l4 a;
@@ -33,7 +33,7 @@ public final class ge0 extends org.telegram.ui.ActionBar.g2 {
     public static void Z(ge0 ge0Var, org.telegram.ui.ActionBar.t1 t1Var) {
         long j3;
         t1Var.dismiss();
-        if (((org.telegram.messenger.h0) org.telegram.messenger.mp.u1(ge0Var.currentAccount).A7.p0.b).c) {
+        if (((org.telegram.messenger.h0) org.telegram.messenger.np.u1(ge0Var.currentAccount).A7.p0.b).c) {
             org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(ge0Var.currentAccount);
             if (D.A() > 0) {
                 TL_wallet.WalletState walletState = D.e;
@@ -56,12 +56,12 @@ public final class ge0 extends org.telegram.ui.ActionBar.g2 {
             j3 = 0;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ge0Var.getParentActivity());
-        String N0 = org.telegram.messenger.gd.N0(2131748550, null);
+        String N0 = org.telegram.messenger.hd.N0(2131748550, null);
         org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
         t1Var2.S = N0;
-        t1Var2.U = org.telegram.messenger.g0.W2(j3 > 0 ? org.telegram.messenger.gd.a0(null, null, 2131754078, org.telegram.ui.Wallet.u0.x(j3, false)) : org.telegram.messenger.gd.N0(2131754079, null));
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131748550, null), new ee0(ge0Var));
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        t1Var2.U = org.telegram.messenger.g0.W2(j3 > 0 ? org.telegram.messenger.hd.a0(null, null, 2131754078, org.telegram.ui.Wallet.u0.x(j3, false)) : org.telegram.messenger.hd.N0(2131754079, null));
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131748550, null), new ee0(ge0Var));
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
         alertDialog$Builder.d(-1);
         alertDialog$Builder.p();
     }
@@ -71,21 +71,21 @@ public final class ge0 extends org.telegram.ui.ActionBar.g2 {
         Integer num = null;
         if (i7 == ge0Var.c) {
             for (int i11 = 3; i11 >= 0; i11--) {
-                if (!org.telegram.messenger.j10.i(i11).p()) {
+                if (!org.telegram.messenger.k10.i(i11).p()) {
                     i10++;
                     if (num == null) {
                         num = Integer.valueOf(i11);
                     }
                 }
             }
-            if (!org.telegram.messenger.j10.o()) {
+            if (!org.telegram.messenger.k10.o()) {
                 i10--;
             }
             if (i10 > 0 && num != null) {
                 ge0Var.presentFragment(new de0(num.intValue()));
                 return;
             } else {
-                if (org.telegram.messenger.j10.o()) {
+                if (org.telegram.messenger.k10.o()) {
                     return;
                 }
                 ge0Var.showDialog(new ug.k0(7, ge0Var.currentAccount, ge0Var.getParentActivity(), ge0Var, null));
@@ -116,7 +116,7 @@ public final class ge0 extends org.telegram.ui.ActionBar.g2 {
         int i12 = ge0Var.currentAccount;
         fe0 fe0Var = new fe0(i10, ge0Var, t1Var);
         org.telegram.ui.Wallet.u0[] u0VarArr = org.telegram.ui.Wallet.u0.R;
-        if (((org.telegram.messenger.h0) org.telegram.messenger.mp.u1(i12).A7.p0.b).c) {
+        if (((org.telegram.messenger.h0) org.telegram.messenger.np.u1(i12).A7.p0.b).c) {
             org.telegram.messenger.g0.g3(new jw0(i12, fe0Var, 4));
         } else {
             fe0Var.run();
@@ -146,7 +146,7 @@ public final class ge0 extends org.telegram.ui.ActionBar.g2 {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131748548, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131748548, null));
         org.telegram.ui.ActionBar.r4 r4Var = this.parentLayout;
         if (r4Var != null && ((ActionBarLayout) r4Var).T0) {
             this.simpleActionBar.setOccupyStatusBar(false);
@@ -191,14 +191,14 @@ public final class ge0 extends org.telegram.ui.ActionBar.g2 {
     public final boolean onFragmentCreate() {
         super.onFragmentCreate();
         this.w = 1;
-        if (org.telegram.messenger.j10.c() < 4) {
+        if (org.telegram.messenger.k10.c() < 4) {
             int i7 = this.w;
             this.w = i7 + 1;
             this.c = i7;
         } else {
             this.c = -1;
         }
-        if (org.telegram.messenger.bz.s.length() <= 0) {
+        if (org.telegram.messenger.cz.s.length() <= 0) {
             int i10 = this.w;
             this.w = i10 + 1;
             this.d = i10;

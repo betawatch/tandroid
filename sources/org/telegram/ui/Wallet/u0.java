@@ -32,14 +32,14 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -53,7 +53,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.cd0;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class u0 {
     public static volatile u0[] R = new u0[4];
@@ -179,7 +179,7 @@ public final class u0 {
                         if (l0Var2 != null) {
                             l0Var2.e();
                         }
-                        di.y8.y(i14, false).O(j10.i(i14).e());
+                        di.y8.y(i14, false).O(k10.i(i14).e());
                         break;
                 }
             }
@@ -256,7 +256,7 @@ public final class u0 {
                         if (l0Var2 != null) {
                             l0Var2.e();
                         }
-                        di.y8.y(i14, false).O(j10.i(i14).e());
+                        di.y8.y(i14, false).O(k10.i(i14).e());
                         break;
                 }
             }
@@ -331,7 +331,7 @@ public final class u0 {
                         if (l0Var2 != null) {
                             l0Var2.e();
                         }
-                        di.y8.y(i14, false).O(j10.i(i14).e());
+                        di.y8.y(i14, false).O(k10.i(i14).e());
                         break;
                 }
             }
@@ -408,7 +408,7 @@ public final class u0 {
                         if (l0Var2 != null) {
                             l0Var2.e();
                         }
-                        di.y8.y(i14, false).O(j10.i(i14).e());
+                        di.y8.y(i14, false).O(k10.i(i14).e());
                         break;
                 }
             }
@@ -541,9 +541,9 @@ public final class u0 {
         org.telegram.messenger.a8.b("[gram-wallet] " + str);
     }
 
-    public static boolean Q(fj fjVar, TL_wallet.walletTransaction wallettransaction) {
-        if (fjVar != null && fjVar.k != null && wallettransaction != null && fjVar.P3()) {
-            TLRPC.Message message = fjVar.k;
+    public static boolean Q(gj gjVar, TL_wallet.walletTransaction wallettransaction) {
+        if (gjVar != null && gjVar.k != null && wallettransaction != null && gjVar.P3()) {
+            TLRPC.Message message = gjVar.k;
             TLRPC.MessageAction messageAction = message.action;
             if (messageAction instanceof TLRPC.TL_messageActionGramTransfer) {
                 TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) messageAction;
@@ -551,7 +551,7 @@ public final class u0 {
                 if (j3 != 0 && message.random_id == j3) {
                     return true;
                 }
-                if (wallettransaction.localMessageId != 0 && fjVar.e1() == wallettransaction.localMessageId) {
+                if (wallettransaction.localMessageId != 0 && gjVar.e1() == wallettransaction.localMessageId) {
                     return true;
                 }
                 if (!TextUtils.isEmpty(wallettransaction.id) && TextUtils.equals(wallettransaction.id, tL_messageActionGramTransfer.transaction_id)) {
@@ -584,7 +584,7 @@ public final class u0 {
     }
 
     public static byte[] b0(byte[] bArr) {
-        byte[] bArr2 = new byte[ks.s3];
+        byte[] bArr2 = new byte[ls.s3];
         Arrays.fill(bArr2, (byte) 32);
         try {
             boolean z10 = false;
@@ -766,7 +766,7 @@ public final class u0 {
         if (bArr.length != 215) {
             throw new IllegalArgumentException("INVALID_MNEMONIC_BACKUP_SIZE");
         }
-        byte[][] bArr2 = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 3, ks.s3);
+        byte[][] bArr2 = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, 3, ls.s3);
         try {
             secureRandom.nextBytes(bArr2[0]);
             secureRandom.nextBytes(bArr2[1]);
@@ -784,11 +784,11 @@ public final class u0 {
 
     public static SpannableStringBuilder q(String str, CharSequence charSequence, int i7) {
         String replace = charSequence.toString().replace((char) 8211, '-');
-        String N0 = gd.N0(i7, null);
+        String N0 = hd.N0(i7, null);
         if (replace.indexOf(46) < 0) {
             try {
                 long parseLong = Long.parseLong(replace);
-                N0 = gd.K0((int) ((parseLong < -2147483647L || parseLong > 2147483647L) ? Math.abs(parseLong % 100) + 100 : Math.abs(parseLong)), str);
+                N0 = hd.K0((int) ((parseLong < -2147483647L || parseLong > 2147483647L) ? Math.abs(parseLong % 100) + 100 : Math.abs(parseLong)), str);
             } catch (NumberFormatException unused) {
             }
         }
@@ -948,9 +948,9 @@ public final class u0 {
         return null;
     }
 
-    public final void F(boolean z10, boolean z11, boolean z12, q10 q10Var) {
+    public final void F(boolean z10, boolean z11, boolean z12, r10 r10Var) {
         P("getSecretPhrase: whenReady...");
-        x0(new org.telegram.messenger.k4(this, q10Var, z12, z10, z11, 2));
+        x0(new org.telegram.messenger.k4(this, r10Var, z12, z10, z11, 2));
     }
 
     public final t0 H() {
@@ -960,10 +960,10 @@ public final class u0 {
         return this.n;
     }
 
-    public final void I(boolean z10, boolean z11, r0 r0Var, x10 x10Var) {
+    public final void I(boolean z10, boolean z11, r0 r0Var, y10 y10Var) {
         try {
             if (!WalletEngine2.isTgWalletSecretPhrase(r0Var)) {
-                x10Var.a("WRONG_CONTRACT");
+                y10Var.a("WRONG_CONTRACT");
                 return;
             }
         } catch (Exception unused) {
@@ -973,9 +973,9 @@ public final class u0 {
             byte[] secretPhraseToAnchorPublicKey = WalletEngine2.secretPhraseToAnchorPublicKey(r0Var);
             r0 b10 = r0Var.b();
             P("import wallet: requesting proof challenge");
-            n3.a(this.a, null, new s(this, b10, x10Var, secretPhraseToAnchorPublicKey, 1), null, null, new v(this, x10Var, secretPhraseToPublicKey, b10), z10, z11, new m.b3(new m(b10, 1), null));
+            n3.a(this.a, null, new s(this, b10, y10Var, secretPhraseToAnchorPublicKey, 1), null, null, new v(this, y10Var, secretPhraseToPublicKey, b10), z10, z11, new m.b3(new m(b10, 1), null));
         } catch (Exception unused2) {
-            x10Var.a("INVALID_PHRASE");
+            y10Var.a("INVALID_PHRASE");
         }
     }
 
@@ -1039,11 +1039,11 @@ public final class u0 {
     }
 
     public final boolean S() {
-        return this.m && !bz.s.isEmpty();
+        return this.m && !cz.s.isEmpty();
     }
 
     public final void T() {
-        ks.f(this.a).k(ks.d4, this);
+        ls.f(this.a).k(ls.d4, this);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(22:215|216|(4:218|219|220|(6:222|(2:224|(1:226))|227|95|(2:97|98)(8:99|(1:101)(4:181|(2:183|(1:207)(7:189|(1:193)|194|(1:205)(1:200)|201|202|(1:204)))|210|211)|(1:103)|104|(3:106|(1:108)(1:167)|(6:110|(3:112|(1:114)|115)|116|(1:118)|119|120)(13:121|(3:123|(2:125|(3:132|133|134)(1:141))|144)|145|(1:147)|148|(1:150)(1:166)|151|(1:165)(1:155)|156|(1:158)|(1:162)|163|164))(1:180)|169|(2:171|(1:(2:173|(2:175|176)(1:177))(2:178|179)))(0)|(0)(0))|84))(1:417)|228|229|230|231|232|233|234|235|(3:237|(7:241|(3:246|(2:248|249)(2:250|(2:255|(2:257|258)(1:259)))|245)|243|244|245|238|239)|260)(1:406)|261|(1:403)(1:278)|(1:402)(4:282|283|284|(5:286|(5:(1:300)(1:396)|301|(2:303|(1:305))(1:395)|306|(1:308)(29:309|310|311|312|313|314|(2:319|(3:321|322|323)(2:328|329))|330|(1:332)(1:391)|333|(1:335)(3:388|389|390)|(1:337)(1:387)|338|(2:382|383)(1:(1:381)(1:343))|344|(1:348)|(1:350)(1:380)|351|(3:355|(3:358|(2:360|361)(1:377)|356)|378)|379|362|(1:364)(1:376)|365|(2:374|375)(2:369|370)|371|(3:373|(0)(0)|84)|327|(0)(0)|84))|95|(0)(0)|84))|397|(0)|(0)(0)|301|(0)(0)|306|(0)(0)) */
@@ -1625,7 +1625,7 @@ public final class u0 {
                                                     long parseLong2 = Long.parseLong(jSONObject6.getString("value"));
                                                     if (z12 == 0) {
                                                         jSONObject2 = optJSONObject6;
-                                                        if (parseLong2 < ((org.telegram.messenger.l0) mp.u1(u0Var.a).A7.r0.b).c) {
+                                                        if (parseLong2 < ((org.telegram.messenger.l0) np.u1(u0Var.a).A7.r0.b).c) {
                                                         }
                                                     } else {
                                                         jSONObject2 = optJSONObject6;
@@ -2215,10 +2215,10 @@ public final class u0 {
         }
     }
 
-    public final void d0(r0 r0Var, boolean z10, q10 q10Var) {
+    public final void d0(r0 r0Var, boolean z10, r10 r10Var) {
         r0 b10 = r0Var.b();
         P("requesting proof challenge");
-        ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_wallet.getProofChallenge(), new d3.b(1), new c0(this, b10, q10Var, z10, 0));
+        ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_wallet.getProofChallenge(), new d3.b(1), new c0(this, b10, r10Var, z10, 0));
     }
 
     public final void e(TL_wallet.walletTransaction wallettransaction, TL_update.TL_updateSentWalletTransaction tL_updateSentWalletTransaction) {
@@ -2248,7 +2248,7 @@ public final class u0 {
     public final void f0() {
         int i7;
         this.L = y();
-        ArrayList o4 = z0.o(org.telegram.messenger.t0.b, j10.i(this.a).e());
+        ArrayList o4 = z0.o(org.telegram.messenger.t0.b, k10.i(this.a).e());
         o4.remove(this.L);
         HashMap hashMap = new HashMap();
         ArrayList arrayList = this.J;
@@ -2343,9 +2343,9 @@ public final class u0 {
                     arrayList.remove(n0Var);
                 }
             }
-            x10 x10Var = (x10) this.q.remove(wallettransaction);
-            if (x10Var != null) {
-                x10Var.a(Boolean.valueOf(z10));
+            y10 y10Var = (y10) this.q.remove(wallettransaction);
+            if (y10Var != null) {
+                y10Var.a(Boolean.valueOf(z10));
             }
             P("completed pending transaction: msg_hash=" + wallettransaction.messageHash + ", body_hash=" + wallettransaction.gaslessMessageBodyHash + ", transaction_id=" + wallettransaction.id + ", tx_hash=" + wallettransaction.tx_hash + ", success=" + z10);
             H.k();
@@ -2359,53 +2359,53 @@ public final class u0 {
         this.C = ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_wallet.getState(), new d3.b(1), new i(this, 1));
     }
 
-    public final void i0(q10 q10Var, String str) {
+    public final void i0(r10 r10Var, String str) {
         if (str == null) {
-            q10Var.a(null, null);
+            r10Var.a(null, null);
             return;
         }
         HashMap hashMap = this.P;
         if (hashMap.containsKey(str)) {
-            q10Var.a((TL_wallet.walletUserAddress) hashMap.get(str), null);
+            r10Var.a((TL_wallet.walletUserAddress) hashMap.get(str), null);
             return;
         }
         TL_wallet.getUserAddresses getuseraddresses = new TL_wallet.getUserAddresses();
         getuseraddresses.addresses.add(str);
-        ConnectionsManager.getInstance(this.a).sendRequestTyped(getuseraddresses, new d3.b(1), new j((Object) this, (Object) str, (Object) q10Var, 0));
+        ConnectionsManager.getInstance(this.a).sendRequestTyped(getuseraddresses, new d3.b(1), new j((Object) this, (Object) str, (Object) r10Var, 0));
     }
 
-    public final void j0(TLRPC.User user, q10 q10Var) {
+    public final void j0(TLRPC.User user, r10 r10Var) {
         if (user == null) {
-            q10Var.a(null, null);
+            r10Var.a(null, null);
             return;
         }
         Long valueOf = Long.valueOf(user.id);
         HashMap hashMap = this.O;
         if (hashMap.containsKey(valueOf)) {
-            q10Var.a((TL_wallet.walletUserAddress) hashMap.get(Long.valueOf(user.id)), null);
+            r10Var.a((TL_wallet.walletUserAddress) hashMap.get(Long.valueOf(user.id)), null);
             return;
         }
         TL_wallet.getUserAddresses getuseraddresses = new TL_wallet.getUserAddresses();
         getuseraddresses.force = true;
         ArrayList<TLRPC.InputUser> arrayList = getuseraddresses.id;
         int i7 = this.a;
-        arrayList.add(mp.u1(i7).s1(user));
-        ConnectionsManager.getInstance(i7).sendRequestTyped(getuseraddresses, new d3.b(1), new j(this, (Object) q10Var, (Object) user, 1));
+        arrayList.add(np.u1(i7).s1(user));
+        ConnectionsManager.getInstance(i7).sendRequestTyped(getuseraddresses, new d3.b(1), new j(this, (Object) r10Var, (Object) user, 1));
     }
 
-    public final Runnable k(TL_stars.starGiftDepositPayload stargiftdepositpayload, q10 q10Var) {
+    public final Runnable k(TL_stars.starGiftDepositPayload stargiftdepositpayload, r10 r10Var) {
         try {
             boolean[] zArr = new boolean[1];
-            x0(new x(this, zArr, q10Var, j(stargiftdepositpayload), 1));
+            x0(new x(this, zArr, r10Var, j(stargiftdepositpayload), 1));
             return new y(1, zArr);
         } catch (Exception e10) {
             o("emulateDepositNFT: invalid payload", e10);
-            org.telegram.messenger.g0.g3(new w(q10Var, e10, 1));
+            org.telegram.messenger.g0.g3(new w(r10Var, e10, 1));
             return new cd0(8);
         }
     }
 
-    public final void k0(String str, x10 x10Var) {
+    public final void k0(String str, y10 y10Var) {
         JSONObject jSONObject;
         TL_toncenter.performApiRequest performapirequest = new TL_toncenter.performApiRequest();
         int i7 = 1;
@@ -2423,38 +2423,38 @@ public final class u0 {
         }
         performapirequest.payload = jSONObject.toString();
         int i10 = this.a;
-        ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new d3.b(i7), new bi.p6(this, str, x10Var), mp.u1(i10).Q3, 0);
+        ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new d3.b(i7), new bi.o6(this, str, y10Var), np.u1(i10).Q3, 0);
     }
 
-    public final Runnable l(p0 p0Var, q10 q10Var) {
+    public final Runnable l(p0 p0Var, r10 r10Var) {
         try {
             boolean[] zArr = new boolean[1];
-            x0(new x(this, zArr, q10Var, c0(p0Var), 0));
+            x0(new x(this, zArr, r10Var, c0(p0Var), 0));
             return new y(0, zArr);
         } catch (Exception e10) {
             o("emulatePreparedMessage: invalid message", e10);
-            org.telegram.messenger.g0.g3(new w(q10Var, e10, 0));
+            org.telegram.messenger.g0.g3(new w(r10Var, e10, 0));
             return new cd0(8);
         }
     }
 
-    public final m m(String str, long j3, String str2, byte[] bArr, q10 q10Var) {
-        g0 g0Var = new g0(this, str, j3, str2, bArr, q10Var);
+    public final m m(String str, long j3, String str2, byte[] bArr, r10 r10Var) {
+        g0 g0Var = new g0(this, str, j3, str2, bArr, r10Var);
         x0(g0Var);
         return new m(g0Var, 0);
     }
 
-    public final void m0(TLRPC.User user, String str, long j3, String str2, byte[] bArr, TL_wallet.nftItem nftitem, String str3, x10 x10Var, x10 x10Var2) {
-        n0(user, str, j3, str2, bArr, nftitem, str3, x10Var, x10Var2, null, null, null);
+    public final void m0(TLRPC.User user, String str, long j3, String str2, byte[] bArr, TL_wallet.nftItem nftitem, String str3, y10 y10Var, y10 y10Var2) {
+        n0(user, str, j3, str2, bArr, nftitem, str3, y10Var, y10Var2, null, null, null);
     }
 
-    public final void n0(TLRPC.User user, String str, long j3, String str2, byte[] bArr, TL_wallet.nftItem nftitem, String str3, x10 x10Var, x10 x10Var2, k2 k2Var, k2 k2Var2, p0 p0Var) {
+    public final void n0(TLRPC.User user, String str, long j3, String str2, byte[] bArr, TL_wallet.nftItem nftitem, String str3, y10 y10Var, y10 y10Var2, k2 k2Var, k2 k2Var2, p0 p0Var) {
         String y10 = y();
         P("send to " + str + ", amount " + j3 + ", when ready...");
-        x0(new n(this, str, x10Var, nftitem, y10, str2, bArr, j3, p0Var, k2Var, user, str3, x10Var2, k2Var2, 0));
+        x0(new n(this, str, y10Var, nftitem, y10, str2, bArr, j3, p0Var, k2Var, user, str3, y10Var2, k2Var2, 0));
     }
 
-    public final void o0(p0 p0Var, x10 x10Var, x10 x10Var2, Runnable runnable) {
+    public final void o0(p0 p0Var, y10 y10Var, y10 y10Var2, Runnable runnable) {
         k2 c02;
         try {
             k2 c03 = c0(p0Var);
@@ -2466,13 +2466,13 @@ public final class u0 {
                 } catch (Exception e10) {
                     o("sendPreparedMessage: invalid gasless message, sending the normal one", e10);
                 }
-                n0(null, str, p0Var.b, null, null, null, null, x10Var, new o(this, x10Var2, runnable, 1), c03, c02, p0Var);
+                n0(null, str, p0Var.b, null, null, null, null, y10Var, new o(this, y10Var2, runnable, 1), c03, c02, p0Var);
             }
             c02 = null;
-            n0(null, str, p0Var.b, null, null, null, null, x10Var, new o(this, x10Var2, runnable, 1), c03, c02, p0Var);
+            n0(null, str, p0Var.b, null, null, null, null, y10Var, new o(this, y10Var2, runnable, 1), c03, c02, p0Var);
         } catch (Exception e11) {
             o("sendPreparedMessage: invalid message", e11);
-            x10Var.a(e11.getMessage() == null ? "NULL_ERROR" : e11.getMessage());
+            y10Var.a(e11.getMessage() == null ? "NULL_ERROR" : e11.getMessage());
         }
     }
 
@@ -2501,7 +2501,7 @@ public final class u0 {
             int i10 = j10.exp;
             double d = j10.rate;
             if (d > 0.0d && !Double.isNaN(d) && !Double.isInfinite(d)) {
-                double d2 = d * ((org.telegram.messenger.i0) mp.u1(this.a).A7.l.b).a;
+                double d2 = d * ((org.telegram.messenger.i0) np.u1(this.a).A7.l.b).a;
                 int max = Math.max(0, Math.min(i10, 20));
                 BigDecimal movePointLeft = BigDecimal.valueOf(j3).multiply(BigDecimal.valueOf(d2)).movePointLeft(9);
                 if (!z10 || movePointLeft.signum() == 0) {
@@ -2622,7 +2622,7 @@ public final class u0 {
             return null;
         }
         int i7 = this.a;
-        if (j0Var != null && j0Var.e && ConnectionsManager.getInstance(i7).getCurrentTime() < j0Var.d + ks.X4) {
+        if (j0Var != null && j0Var.e && ConnectionsManager.getInstance(i7).getCurrentTime() < j0Var.d + ls.X4) {
             if (rVar != null) {
                 rVar.a(j0Var);
             }
@@ -2640,14 +2640,14 @@ public final class u0 {
         hashMap.put(str, j0Var2);
         final int i10 = 0;
         final int i11 = 1;
-        Utilities.B(new p(this, str, j0Var2, i10), new x10(this) { // from class: org.telegram.ui.Wallet.q
+        Utilities.B(new p(this, str, j0Var2, i10), new y10(this) { // from class: org.telegram.ui.Wallet.q
             public final /* synthetic */ u0 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.x10
+            @Override // org.telegram.messenger.y10
             public final void a(Object obj) {
                 switch (i10) {
                     case 0:
@@ -2661,7 +2661,7 @@ public final class u0 {
                         performapirequest.query = sb2.toString();
                         u0 u0Var = this.b;
                         int i12 = u0Var.a;
-                        ConnectionsManager.getInstance(i12).sendRequestTyped(performapirequest, new d3.b(1), new s(u0Var, j0Var2, str2, runnable, 0), mp.u1(i12).Q3, 0);
+                        ConnectionsManager.getInstance(i12).sendRequestTyped(performapirequest, new d3.b(1), new s(u0Var, j0Var2, str2, runnable, 0), np.u1(i12).Q3, 0);
                         break;
                     default:
                         u0 u0Var2 = this.b;
@@ -2671,14 +2671,14 @@ public final class u0 {
                         break;
                 }
             }
-        }, new x10(this) { // from class: org.telegram.ui.Wallet.q
+        }, new y10(this) { // from class: org.telegram.ui.Wallet.q
             public final /* synthetic */ u0 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.x10
+            @Override // org.telegram.messenger.y10
             public final void a(Object obj) {
                 switch (i11) {
                     case 0:
@@ -2692,7 +2692,7 @@ public final class u0 {
                         performapirequest.query = sb2.toString();
                         u0 u0Var = this.b;
                         int i12 = u0Var.a;
-                        ConnectionsManager.getInstance(i12).sendRequestTyped(performapirequest, new d3.b(1), new s(u0Var, j0Var2, str2, runnable, 0), mp.u1(i12).Q3, 0);
+                        ConnectionsManager.getInstance(i12).sendRequestTyped(performapirequest, new d3.b(1), new s(u0Var, j0Var2, str2, runnable, 0), np.u1(i12).Q3, 0);
                         break;
                     default:
                         u0 u0Var2 = this.b;

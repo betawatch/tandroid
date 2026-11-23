@@ -24,7 +24,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ThemeEditorView {
     public static volatile ThemeEditorView p;
@@ -44,7 +44,7 @@ public class ThemeEditorView {
     public final int g = org.telegram.messenger.g0.L(54.0f);
     public final int h = org.telegram.messenger.g0.L(54.0f);
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class EditorAlert extends org.telegram.ui.ActionBar.w2 {
         public static final /* synthetic */ int H1 = 0;
         public int A1;
@@ -142,7 +142,7 @@ public class ThemeEditorView {
             this.p1 = vyVar;
             vyVar.setShowAtCenter(true);
             vyVar.c();
-            vyVar.setText(org.telegram.messenger.gd.N0(2131747974, null));
+            vyVar.setText(org.telegram.messenger.hd.N0(2131747974, null));
             this.n1.setEmptyView(vyVar);
             this.b.addView(vyVar, c8.ma.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, org.telegram.messenger.g0.f1(), 51);
@@ -172,7 +172,7 @@ public class ThemeEditorView {
             textView.setGravity(17);
             textView.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.h0(788529152, 0, -1));
             textView.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView.setText(org.telegram.messenger.gd.N0(2131752028, null).toUpperCase());
+            textView.setText(org.telegram.messenger.hd.N0(2131752028, null).toUpperCase());
             textView.setTypeface(org.telegram.messenger.g0.o());
             frameLayout2.addView(textView, c8.ma.e(-2, -1, 51));
             textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.sz0
@@ -233,7 +233,7 @@ public class ThemeEditorView {
             textView2.setGravity(17);
             textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.h0(788529152, 0, -1));
             textView2.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView2.setText(org.telegram.messenger.gd.N0(2131745736, null).toUpperCase());
+            textView2.setText(org.telegram.messenger.hd.N0(2131745736, null).toUpperCase());
             textView2.setTypeface(org.telegram.messenger.g0.o());
             frameLayout2.addView(textView2, c8.ma.e(-2, -1, 53));
             textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.sz0
@@ -299,7 +299,7 @@ public class ThemeEditorView {
             textView3.setGravity(17);
             textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.h0(788529152, 0, -1));
             textView3.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView3.setText(org.telegram.messenger.gd.N0(2131752577, null).toUpperCase());
+            textView3.setText(org.telegram.messenger.hd.N0(2131752577, null).toUpperCase());
             textView3.setTypeface(org.telegram.messenger.g0.o());
             frameLayout3.addView(textView3, c8.ma.e(-2, -1, 51));
             final int i15 = 2;
@@ -364,7 +364,7 @@ public class ThemeEditorView {
             textView4.setGravity(17);
             textView4.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.h0(788529152, 0, -1));
             textView4.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView4.setText(org.telegram.messenger.gd.N0(2131751588, null).toUpperCase());
+            textView4.setText(org.telegram.messenger.hd.N0(2131751588, null).toUpperCase());
             textView4.setTypeface(org.telegram.messenger.g0.o());
             linearLayout.addView(textView4, c8.ma.e(-2, -1, 51));
             final int i16 = 3;
@@ -426,7 +426,7 @@ public class ThemeEditorView {
             textView5.setGravity(17);
             textView5.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.h0(788529152, 0, -1));
             textView5.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView5.setText(org.telegram.messenger.gd.N0(2131745750, null).toUpperCase());
+            textView5.setText(org.telegram.messenger.hd.N0(2131745750, null).toUpperCase());
             textView5.setTypeface(org.telegram.messenger.g0.o());
             linearLayout.addView(textView5, c8.ma.e(-2, -1, 51));
             final int i17 = 4;

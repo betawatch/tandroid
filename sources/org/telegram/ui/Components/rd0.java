@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rd0 extends FrameLayout {
     public final org.telegram.ui.ActionBar.h6 E;
@@ -67,8 +67,8 @@ public final class rd0 extends FrameLayout {
         cropAreaView.invalidate();
     }
 
-    public final void b(Bitmap bitmap, int i7, boolean z10, boolean z11, og.g gVar, y51 y51Var, org.telegram.messenger.we weVar) {
-        org.telegram.messenger.we weVar2;
+    public final void b(Bitmap bitmap, int i7, boolean z10, boolean z11, og.g gVar, y51 y51Var, org.telegram.messenger.xe xeVar) {
+        org.telegram.messenger.xe xeVar2;
         requestLayout();
         this.f = false;
         this.e.w0(null);
@@ -84,15 +84,15 @@ public final class rd0 extends FrameLayout {
         if (bitmap == null && y51Var == null) {
             oVar.M = null;
             imageView.setImageDrawable(null);
-            weVar2 = weVar;
+            xeVar2 = xeVar;
         } else {
             int currentWidth = oVar.getCurrentWidth();
             int currentHeight = oVar.getCurrentHeight();
             og.m mVar = oVar.M;
             if (mVar == null || !z11) {
                 oVar.M = new og.m(oVar, currentWidth, currentHeight);
-                weVar2 = weVar;
-                cropAreaView.getViewTreeObserver().addOnPreDrawListener(new og.k(oVar, weVar2, currentHeight, currentWidth, 1));
+                xeVar2 = xeVar;
+                cropAreaView.getViewTreeObserver().addOnPreDrawListener(new og.k(oVar, xeVar2, currentHeight, currentWidth, 1));
             } else {
                 float f10 = currentWidth;
                 mVar.e *= mVar.a / f10;
@@ -108,7 +108,7 @@ public final class rd0 extends FrameLayout {
                 float[] fArr = oVar2.I;
                 matrix.postTranslate(fArr[2], fArr[5]);
                 oVar2.r(false);
-                weVar2 = weVar;
+                xeVar2 = xeVar;
             }
             imageView.setImageBitmap(y51Var == null ? oVar.x : null);
         }
@@ -117,10 +117,10 @@ public final class rd0 extends FrameLayout {
         fVar.b(0.0f);
         fVar.setMirrored(false);
         fVar.setRotated(false);
-        if (weVar2 != null) {
-            fVar.b(weVar2.d);
-            fVar.setRotated(weVar2.k != 0);
-            fVar.setMirrored(weVar2.l);
+        if (xeVar2 != null) {
+            fVar.b(xeVar2.d);
+            fVar.setRotated(xeVar2.k != 0);
+            fVar.setMirrored(xeVar2.l);
         } else {
             fVar.setRotated(false);
             fVar.setMirrored(false);
@@ -158,7 +158,7 @@ public final class rd0 extends FrameLayout {
                 canvas.drawCircle(actualRect.centerX(), actualRect.centerY(), actualRect.width() / 2.0f, paint);
             }
             paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.qg, this.E));
-            paint.setAlpha(Math.min(org.telegram.messenger.ks.e4, (int) (this.r * 255.0f * this.n)));
+            paint.setAlpha(Math.min(org.telegram.messenger.ls.e4, (int) (this.r * 255.0f * this.n)));
             canvas.drawCircle(L2 + r1, org.telegram.messenger.g0.L(8.0f) + measuredHeight + L, org.telegram.messenger.g0.L(3.0f), paint);
         }
         return drawChild;

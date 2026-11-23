@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import android.graphics.Point;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f71 extends c8.ia {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.fs b;
+    public final /* synthetic */ org.telegram.messenger.gs b;
 
-    public /* synthetic */ f71(org.telegram.messenger.fs fsVar, int i7) {
+    public /* synthetic */ f71(org.telegram.messenger.gs gsVar, int i7) {
         this.a = i7;
-        this.b = fsVar;
+        this.b = gsVar;
     }
 
     @Override // c8.ia

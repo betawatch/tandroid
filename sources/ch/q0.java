@@ -21,14 +21,14 @@ import java.util.Iterator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.lz;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.mz;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.si;
 import org.telegram.messenger.u5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.sq;
 import org.telegram.ui.pl;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q0 {
     public static int W;
@@ -80,7 +80,7 @@ public final class q0 {
     public final float q;
     public int r;
     public final org.telegram.ui.Cells.z w;
-    public fj x;
+    public gj x;
     public h6 y;
     public Integer z;
     public static final Paint S = new Paint(1);
@@ -98,7 +98,7 @@ public final class q0 {
     public final ArrayList K = new ArrayList();
     public final RectF L = new RectF();
     public final Rect M = new Rect();
-    public final int l = j10.t0;
+    public final int l = k10.t0;
 
     public q0(org.telegram.ui.Cells.z zVar) {
         this.w = zVar;
@@ -310,9 +310,9 @@ public final class q0 {
                 int i10 = W;
                 W = i10 + 1;
                 imageReceiver.w1 = Integer.toString(i10);
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(this.l).r.get(p0Var.f);
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(this.l).r.get(p0Var.f);
                 if (tL_availableReaction != null) {
-                    imageReceiver.q0(fc.b(tL_availableReaction.center_icon), "40_40_nolimit", null, "tgs", tL_availableReaction, 1);
+                    imageReceiver.q0(gc.b(tL_availableReaction.center_icon), "40_40_nolimit", null, "tgs", tL_availableReaction, 1);
                 }
                 imageReceiver.W(0);
                 imageReceiver.P();
@@ -338,10 +338,10 @@ public final class q0 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public final boolean c(MotionEvent motionEvent) {
-        fj fjVar;
+        gj gjVar;
         TLRPC.Message message;
         int i7 = 0;
-        if (this.p || (fjVar = this.x) == null || (message = fjVar.k) == null || message.reactions == null) {
+        if (this.p || (gjVar = this.x) == null || (message = gjVar.k) == null || message.reactions == null) {
             return false;
         }
         float x10 = motionEvent.getX();
@@ -594,9 +594,9 @@ public final class q0 {
                     }
                     if (n0Var.q != null && !p0Var.a) {
                         if (p0Var.f != null) {
-                            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(i12).r.get(p0Var.f);
+                            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(i12).r.get(p0Var.f);
                             if (tL_availableReaction != null && tL_availableReaction.activate_animation != null) {
-                                lz f13 = u5.f(tL_availableReaction.static_icon, m6.a7, 1.0f, null);
+                                mz f13 = u5.f(tL_availableReaction.static_icon, m6.a7, 1.0f, null);
                                 ImageReceiver imageReceiver = new ImageReceiver(view);
                                 n0Var.e0 = imageReceiver;
                                 imageReceiver.E0(7);
@@ -608,7 +608,7 @@ public final class q0 {
                                 imageReceiver2.W(1);
                                 ImageReceiver imageReceiver3 = n0Var.e0;
                                 imageReceiver3.x0 = true;
-                                imageReceiver3.q0(fc.b(tL_availableReaction.activate_animation), "140_140", f13, null, tL_availableReaction, 1);
+                                imageReceiver3.q0(gc.b(tL_availableReaction.activate_animation), "140_140", f13, null, tL_availableReaction, 1);
                             }
                         } else if (p0Var.g != 0) {
                             p5 p5Var = new p5(24, i12, p0Var.g);
@@ -663,7 +663,7 @@ public final class q0 {
 
     public final boolean m() {
         if (this.I) {
-            return !(this.p && this.t.isEmpty()) && pc.e(8200) && pc.e(131072);
+            return !(this.p && this.t.isEmpty()) && qc.e(8200) && qc.e(131072);
         }
         return false;
     }
@@ -826,7 +826,7 @@ public final class q0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void r(fj fjVar, boolean z10, h6 h6Var) {
+    public final void r(gj gjVar, boolean z10, h6 h6Var) {
         int i7;
         TLRPC.TL_messageReactions tL_messageReactions;
         ?? r72;
@@ -839,7 +839,7 @@ public final class q0 {
         boolean z13 = z10;
         this.y = h6Var;
         this.J = z13;
-        this.x = fjVar;
+        this.x = gjVar;
         ArrayList arrayList = this.s;
         ArrayList arrayList2 = new ArrayList(arrayList);
         ?? r52 = 0;
@@ -848,22 +848,22 @@ public final class q0 {
         this.H = false;
         this.I = false;
         arrayList.clear();
-        if (fjVar != null) {
-            long B0 = fj.B0(fjVar.k);
+        if (gjVar != null) {
+            long B0 = gj.B0(gjVar.k);
             m0 m0Var = X;
             m0Var.a = B0;
-            TLRPC.TL_messageReactions tL_messageReactions2 = fjVar.k.reactions;
+            TLRPC.TL_messageReactions tL_messageReactions2 = gjVar.k.reactions;
             if (tL_messageReactions2 != null && tL_messageReactions2.results != null) {
                 int i12 = 0;
-                for (int i13 = 0; i13 < fjVar.k.reactions.results.size(); i13++) {
-                    i12 += fjVar.k.reactions.results.get(i13).count;
+                for (int i13 = 0; i13 < gjVar.k.reactions.results.size(); i13++) {
+                    i12 += gjVar.k.reactions.results.get(i13).count;
                 }
                 int i14 = this.l;
-                TLRPC.ChatFull P0 = mp.u1(i14).P0(-fj.B0(fjVar.k));
-                if (!fjVar.k.reactions.results.isEmpty() && P0 != null && P0.paid_reactions_available) {
+                TLRPC.ChatFull P0 = np.u1(i14).P0(-gj.B0(gjVar.k));
+                if (!gjVar.k.reactions.results.isEmpty() && P0 != null && P0.paid_reactions_available) {
                     boolean z14 = false;
-                    for (int i15 = 0; i15 < fjVar.k.reactions.results.size(); i15++) {
-                        TLRPC.Reaction reaction = fjVar.k.reactions.results.get(i15).reaction;
+                    for (int i15 = 0; i15 < gjVar.k.reactions.results.size(); i15++) {
+                        TLRPC.Reaction reaction = gjVar.k.reactions.results.get(i15).reaction;
                         if (reaction instanceof TLRPC.TL_reactionPaid) {
                             z14 = true;
                         }
@@ -880,14 +880,14 @@ public final class q0 {
                             arrayList3.add(new TLRPC.TL_reactionPaid());
                         }
                         i10 = -arrayList3.size();
-                        while (i10 < fjVar.k.reactions.results.size()) {
+                        while (i10 < gjVar.k.reactions.results.size()) {
                             if (i10 < 0) {
                                 reactionCount = new TLRPC.TL_reactionCount();
                                 reactionCount.reaction = (TLRPC.Reaction) arrayList3.get(arrayList3.size() + i10);
                                 reactionCount.chosen = r52;
                                 reactionCount.count = r52 == true ? 1 : 0;
                             } else {
-                                reactionCount = fjVar.k.reactions.results.get(i10);
+                                reactionCount = gjVar.k.reactions.results.get(i10);
                             }
                             int i16 = r52 == true ? 1 : 0;
                             while (true) {
@@ -903,16 +903,16 @@ public final class q0 {
                                 }
                             }
                             o0 o0Var = new o0(this, n0Var, reactionCount, z13);
-                            o0Var.Q = fjVar.z2();
+                            o0Var.Q = gjVar.z2();
                             arrayList.add(o0Var);
                             this.I = (this.I || o0Var.l) ? true : r52 == true ? 1 : 0;
                             if (!z13) {
-                                TLRPC.Message message = fjVar.k;
+                                TLRPC.Message message = gjVar.k;
                                 if (message.reactions.recent_reactions != null) {
-                                    if (fj.B0(message) > 0 && !o10.z(fj.B0(fjVar.k))) {
+                                    if (gj.B0(message) > 0 && !p10.z(gj.B0(gjVar.k))) {
                                         ArrayList arrayList4 = new ArrayList();
-                                        TLRPC.User f10 = j10.i(i14).f();
-                                        TLRPC.User c22 = mp.u1(i14).c2(Long.valueOf(fj.B0(fjVar.k)));
+                                        TLRPC.User f10 = k10.i(i14).f();
+                                        TLRPC.User c22 = np.u1(i14).c2(Long.valueOf(gj.B0(gjVar.k)));
                                         if (reactionCount.count == 2) {
                                             if (f10 != null) {
                                                 arrayList4.add(f10);
@@ -943,13 +943,13 @@ public final class q0 {
                                     } else if (reactionCount.count <= 3 && i12 <= 3) {
                                         int i17 = 0;
                                         ArrayList arrayList5 = null;
-                                        while (i17 < fjVar.k.reactions.recent_reactions.size()) {
-                                            TLRPC.MessagePeerReaction messagePeerReaction = fjVar.k.reactions.recent_reactions.get(i17);
+                                        while (i17 < gjVar.k.reactions.recent_reactions.size()) {
+                                            TLRPC.MessagePeerReaction messagePeerReaction = gjVar.k.reactions.recent_reactions.get(i17);
                                             p0 d = p0.d(messagePeerReaction.reaction);
                                             p0 d2 = p0.d(reactionCount.reaction);
                                             int i18 = i17;
                                             int i19 = i14;
-                                            TLObject g22 = mp.u1(i14).g2(fj.B1(messagePeerReaction.peer_id));
+                                            TLObject g22 = np.u1(i14).g2(gj.B1(messagePeerReaction.peer_id));
                                             if (d.equals(d2) && g22 != null) {
                                                 if (arrayList5 == null) {
                                                     arrayList5 = new ArrayList();
@@ -1007,7 +1007,7 @@ public final class q0 {
                 if (z11) {
                 }
                 i10 = -arrayList32.size();
-                while (i10 < fjVar.k.reactions.results.size()) {
+                while (i10 < gjVar.k.reactions.results.size()) {
                 }
             }
             i7 = r52;
@@ -1020,7 +1020,7 @@ public final class q0 {
                     reactionCount2.lastDrawnPosition = i21;
                 }
             }
-            TLRPC.Message message2 = fjVar.k;
+            TLRPC.Message message2 = gjVar.k;
             if (message2 != null && (tL_messageReactions = message2.reactions) != null) {
                 for (int i22 = i7; i22 < tL_messageReactions.recent_reactions.size(); i22++) {
                     if (tL_messageReactions.recent_reactions.get(i22).unread) {

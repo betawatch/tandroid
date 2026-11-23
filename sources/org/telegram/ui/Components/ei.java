@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Intent;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ei implements ck {
     public final /* synthetic */ ui a;
@@ -61,9 +61,9 @@ public final class ei implements ck {
             ArrayList arrayList4 = new ArrayList();
             int size = arrayList.size();
             for (int i10 = 0; i10 < size; i10++) {
-                org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
-                yyVar.c = (String) arrayList.get(i10);
-                arrayList4.add(yyVar);
+                org.telegram.messenger.zy zyVar = new org.telegram.messenger.zy();
+                zyVar.c = (String) arrayList.get(i10);
+                arrayList4.add(zyVar);
             }
             hk0Var.K1(arrayList4);
         }

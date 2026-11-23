@@ -14,11 +14,11 @@ import android.graphics.Shader;
 import android.os.Build;
 import android.os.SystemClock;
 import java.util.Random;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u0 {
     public static float U;
@@ -79,16 +79,16 @@ public final class u0 {
         this.g = new RectF();
         this.h = true;
         this.i = SystemClock.uptimeMillis();
-        this.j = new float[ks.W1];
-        this.k = new float[ks.W1];
-        this.l = new float[ks.W1];
-        this.m = new float[ks.W1];
-        this.n = new float[ks.W1];
-        this.o = new float[ks.W1];
-        this.p = new float[ks.W1];
-        this.q = new float[ks.W1];
-        this.r = new int[ks.W1];
-        this.s = new boolean[ks.W1];
+        this.j = new float[ls.W1];
+        this.k = new float[ls.W1];
+        this.l = new float[ls.W1];
+        this.m = new float[ls.W1];
+        this.n = new float[ls.W1];
+        this.o = new float[ls.W1];
+        this.p = new float[ls.W1];
+        this.q = new float[ls.W1];
+        this.r = new int[ls.W1];
+        this.s = new boolean[ls.W1];
         this.t = new Random();
         this.x = new Path();
         this.y = new RectF();
@@ -99,17 +99,17 @@ public final class u0 {
         this.E = 1.0f;
         this.F = 1.0f;
         this.G = 1.0f;
-        this.I = new float[ks.W1];
-        this.J = new float[ks.W1];
-        this.K = new float[ks.W1];
-        this.L = new float[ks.W1];
-        this.M = new float[ks.W1];
-        this.N = new float[ks.W1];
-        this.O = new float[ks.W1];
-        this.P = new float[ks.W1];
-        this.Q = new int[ks.W1];
-        this.R = new boolean[ks.W1];
-        this.S = new boolean[ks.W1];
+        this.I = new float[ls.W1];
+        this.J = new float[ls.W1];
+        this.K = new float[ls.W1];
+        this.L = new float[ls.W1];
+        this.M = new float[ls.W1];
+        this.N = new float[ls.W1];
+        this.O = new float[ls.W1];
+        this.P = new float[ls.W1];
+        this.Q = new int[ls.W1];
+        this.R = new boolean[ls.W1];
+        this.S = new boolean[ls.W1];
         if (Build.VERSION.SDK_INT >= 33) {
             try {
                 t0.c();
@@ -854,7 +854,7 @@ public final class u0 {
                     f15 = v0.d(f21);
                     f12 = v0.d(f22);
                     c10 = 1;
-                    f16 = n10.A(f18, 0.16f, 0.95f, f16);
+                    f16 = o10.A(f18, 0.16f, 0.95f, f16);
                 } else {
                     c10 = 1;
                     f15 = h7 - 28.0f;

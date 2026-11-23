@@ -7,7 +7,7 @@ import android.animation.ObjectAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class dv0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -54,9 +54,9 @@ public final class dv0 extends AnimatorListenerAdapter {
                     m10.w(zu0Var);
                 }
                 imageReceiver.f();
-                org.telegram.messenger.hc hcVar = zu0Var.a0;
-                if (hcVar != null) {
-                    hcVar.a();
+                org.telegram.messenger.ic icVar = zu0Var.a0;
+                if (icVar != null) {
+                    icVar.a();
                     zu0Var.a0 = null;
                 }
                 zu0Var.W = 0.0f;

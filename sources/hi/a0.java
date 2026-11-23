@@ -3,15 +3,15 @@ package hi;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.widget.FrameLayout;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class a0 extends FrameLayout {
     public final x a;
     public v b;
-    public x10 c;
+    public y10 c;
     public float d;
     public boolean e;
     public ValueAnimator f;
@@ -25,7 +25,7 @@ public final class a0 extends FrameLayout {
         xVar.setClipToPadding(false);
         xVar.setVisibility(8);
         xVar.setWillNotDraw(false);
-        xVar.setOnItemClickListener(new bi.l8(this, 8));
+        xVar.setOnItemClickListener(new bi.k8(this, 8));
         addView(xVar, c8.ma.c(56.0f, -1));
     }
 
@@ -49,14 +49,14 @@ public final class a0 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
         this.f = ofFloat;
         ofFloat.addUpdateListener(new ah.g(this, 27));
-        this.f.addListener(new bi.h7(9, this, z10));
+        this.f.addListener(new bi.g7(9, this, z10));
         this.f.setInterpolator(nr.h);
         this.f.setDuration(340L);
         this.f.start();
     }
 
-    public void setOnLayoutClick(x10 x10Var) {
-        this.c = x10Var;
+    public void setOnLayoutClick(y10 y10Var) {
+        this.c = y10Var;
     }
 
     public void setSelected(v vVar) {

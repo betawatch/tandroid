@@ -1,13 +1,13 @@
 package ai;
 
-import bi.g6;
+import bi.f6;
 import java.util.HashMap;
-import org.telegram.messenger.ep;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.fp;
+import org.telegram.messenger.np;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,25 +34,25 @@ public final /* synthetic */ class g0 implements Runnable {
                 p0Var.f(j3, Math.max(120L, j10 - j3));
                 break;
             case 1:
-                mp mpVar = (mp) this.d;
+                np npVar = (np) this.d;
                 long j11 = this.b;
                 long j12 = this.c;
-                a0.h hVar = mpVar.T1;
-                HashMap hashMap = mpVar.V1;
+                a0.h hVar = npVar.T1;
+                HashMap hashMap = npVar.V1;
                 if (j11 == 0) {
-                    ep epVar = (ep) hVar.f(j12);
-                    if (epVar != null) {
-                        mpVar.R(epVar);
-                        mpVar.S1.remove(epVar);
+                    fp fpVar = (fp) hVar.f(j12);
+                    if (fpVar != null) {
+                        npVar.R(fpVar);
+                        npVar.S1.remove(fpVar);
                         hVar.l(j12);
                         break;
                     }
                 } else {
                     String str = j12 + "_" + j11;
-                    ep epVar2 = (ep) hashMap.get(str);
-                    if (epVar2 != null) {
-                        mpVar.R(epVar2);
-                        mpVar.U1.remove(epVar2);
+                    fp fpVar2 = (fp) hashMap.get(str);
+                    if (fpVar2 != null) {
+                        npVar.R(fpVar2);
+                        npVar.U1.remove(fpVar2);
                         hashMap.remove(str);
                         break;
                     }
@@ -67,8 +67,8 @@ public final /* synthetic */ class g0 implements Runnable {
                 long j14 = this.c;
                 n1Var.h = j13;
                 n1Var.n = j14;
-                g6 g6Var = n1Var.a;
-                if (g6Var != null && (c51Var = g6Var.g3) != null && g6Var.H) {
+                f6 f6Var = n1Var.a;
+                if (f6Var != null && (c51Var = f6Var.g3) != null && f6Var.H) {
                     c51Var.O(true);
                     break;
                 }

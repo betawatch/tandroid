@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fm0 extends FrameLayout {
     public static final /* synthetic */ int r0 = 0;
@@ -24,7 +24,7 @@ public final class fm0 extends FrameLayout {
     public boolean H;
     public boolean I;
     public TL_stars.TL_starGiftUnique J;
-    public bi.y7 K;
+    public bi.x7 K;
     public TL_stars.StarGift L;
     public final ArrayList M;
     public final HashMap N;
@@ -130,10 +130,10 @@ public final class fm0 extends FrameLayout {
         addView(wl0Var, c8.ma.c(-1.0f, -1));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
         spannableStringBuilder.setSpan(new org.telegram.ui.Components.nq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
-        String N0 = org.telegram.messenger.gd.N0(lm0Var.a ? 2131752423 : 2131743512, null);
+        String N0 = org.telegram.messenger.hd.N0(lm0Var.a ? 2131752423 : 2131743510, null);
         this.P = N0;
         this.O = new SpannableStringBuilder(spannableStringBuilder).append((CharSequence) " ").append((CharSequence) N0);
-        this.Q = org.telegram.messenger.gd.N0(2131743511, null);
+        this.Q = org.telegram.messenger.hd.N0(2131743509, null);
         f(false);
         v4.k kVar = new v4.k();
         kVar.n(350L);
@@ -145,7 +145,7 @@ public final class fm0 extends FrameLayout {
         this.x = view;
         dh.d dVar = new dh.d(cVar.c(view, null, false));
         dVar.b(-org.telegram.messenger.g0.L(24.0f), true);
-        dVar.H = org.telegram.messenger.ks.x3;
+        dVar.H = org.telegram.messenger.ls.x3;
         view.setBackground(dVar);
         addView(view, c8.ma.e(-1, 72, 55));
         if (i7 == 0) {
@@ -274,8 +274,8 @@ public final class fm0 extends FrameLayout {
         TLRPC.User f10 = lm0Var.getUserConfig().f();
         if (f10 != null) {
             if (i7 == 1) {
-                ?? r12 = this.h == (f10.color instanceof TLRPC.TL_peerColorCollectible ? -1 : org.telegram.messenger.o10.f(f10));
-                ?? r22 = this.n == org.telegram.messenger.o10.g(f10);
+                ?? r12 = this.h == (f10.color instanceof TLRPC.TL_peerColorCollectible ? -1 : org.telegram.messenger.p10.f(f10));
+                ?? r22 = this.n == org.telegram.messenger.p10.g(f10);
                 TLRPC.PeerColor peerColor3 = f10.color;
                 TLRPC.TL_peerColorCollectible tL_peerColorCollectible3 = peerColor3 instanceof TLRPC.TL_peerColorCollectible ? (TLRPC.TL_peerColorCollectible) peerColor3 : null;
                 TLRPC.TL_peerColorCollectible tL_peerColorCollectible4 = this.s;
@@ -284,7 +284,7 @@ public final class fm0 extends FrameLayout {
                     return true;
                 }
             } else {
-                ?? r13 = this.h == (f10.emoji_status instanceof TLRPC.TL_emojiStatusCollectible ? -1 : org.telegram.messenger.o10.m(f10));
+                ?? r13 = this.h == (f10.emoji_status instanceof TLRPC.TL_emojiStatusCollectible ? -1 : org.telegram.messenger.p10.m(f10));
                 long j11 = this.n;
                 TLRPC.EmojiStatus emojiStatus2 = f10.emoji_status;
                 if (!(emojiStatus2 instanceof TLRPC.TL_emojiStatusCollectible)) {
@@ -321,8 +321,8 @@ public final class fm0 extends FrameLayout {
         TLRPC.TL_peerColorCollectible tL_peerColorCollectible = null;
         if (i7 == 0) {
             TLRPC.User f10 = lm0Var.getUserConfig().f();
-            this.h = org.telegram.messenger.o10.m(f10);
-            this.n = org.telegram.messenger.o10.n(f10);
+            this.h = org.telegram.messenger.p10.m(f10);
+            this.n = org.telegram.messenger.p10.n(f10);
             if (f10 != null) {
                 TLRPC.EmojiStatus emojiStatus = f10.emoji_status;
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
@@ -336,8 +336,8 @@ public final class fm0 extends FrameLayout {
             this.s = null;
         } else {
             TLRPC.User f11 = lm0Var.getUserConfig().f();
-            this.h = org.telegram.messenger.o10.f(f11);
-            this.n = org.telegram.messenger.o10.g(f11);
+            this.h = org.telegram.messenger.p10.f(f11);
+            this.n = org.telegram.messenger.p10.g(f11);
             this.r = null;
             if (f11 != null) {
                 TLRPC.PeerColor peerColor = f11.color;
@@ -374,10 +374,10 @@ public final class fm0 extends FrameLayout {
         if (tL_starGiftUnique != null) {
             cg.a resellAmount = tL_starGiftUnique.getResellAmount(cg.b.a);
             if (tL_starGiftUnique.resale_ton_only) {
-                lVar.b = di.pb.t1(di.pb.V0(org.telegram.messenger.gd.a0(null, null, 2131745950, tL_starGiftUnique.getResellAmount(cg.b.b).d()), true), true);
-                lVar.c = di.pb.T0(org.telegram.messenger.gd.H(',', "ResellGiftBuyEq", (int) resellAmount.a()));
+                lVar.b = di.pb.t1(di.pb.V0(org.telegram.messenger.hd.a0(null, null, 2131745950, tL_starGiftUnique.getResellAmount(cg.b.b).d()), true), true);
+                lVar.c = di.pb.T0(org.telegram.messenger.hd.H(',', "ResellGiftBuyEq", (int) resellAmount.a()));
             } else {
-                lVar.b = di.pb.T0(org.telegram.messenger.gd.H(',', "ResellGiftBuy", (int) resellAmount.a()));
+                lVar.b = di.pb.T0(org.telegram.messenger.hd.H(',', "ResellGiftBuy", (int) resellAmount.a()));
                 lVar.c = null;
             }
         } else {
@@ -465,7 +465,7 @@ public final class fm0 extends FrameLayout {
     }
 
     public final void i() {
-        org.telegram.messenger.fj messageObject;
+        org.telegram.messenger.gj messageObject;
         am0 am0Var = this.w;
         if (am0Var != null) {
             org.telegram.ui.Cells.r1[] cells = am0Var.getCells();
@@ -502,13 +502,13 @@ public final class fm0 extends FrameLayout {
             TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = this.r;
             if (tL_emojiStatusCollectible != null) {
                 jm0Var.e(tL_emojiStatusCollectible.document_id, true, z10);
-                jm0Var.c(org.telegram.messenger.bp.a(this.r), z10);
+                jm0Var.c(org.telegram.messenger.cp.a(this.r), z10);
                 jm0Var.d(this.r.pattern_document_id, true, z10);
             } else {
                 if (org.telegram.messenger.n5.A()) {
                     jm0Var.e(0L, false, z10);
                 } else {
-                    TLRPC.User c22 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).c2(0L);
+                    TLRPC.User c22 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).c2(0L);
                     jm0Var.e(c22 != null ? org.telegram.messenger.n5.f(c22.emoji_status) : 0L, org.telegram.messenger.n5.A(), z10);
                 }
                 jm0Var.b(this.h, z10);
@@ -519,7 +519,7 @@ public final class fm0 extends FrameLayout {
         if (i11 == 0 && (ql0Var = (lm0Var = this.q0).e) != null) {
             TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible2 = this.r;
             if (tL_emojiStatusCollectible2 != null) {
-                ql0Var.c(org.telegram.messenger.bp.a(tL_emojiStatusCollectible2), z10);
+                ql0Var.c(org.telegram.messenger.cp.a(tL_emojiStatusCollectible2), z10);
             } else {
                 i10 = ((org.telegram.ui.ActionBar.g2) lm0Var).currentAccount;
                 ql0Var.b(i10, this.h, z10);
@@ -627,7 +627,7 @@ public final class fm0 extends FrameLayout {
                 }
             } else if (this.K != null) {
                 i7 = ((org.telegram.ui.ActionBar.g2) lm0Var).currentAccount;
-                long e10 = org.telegram.messenger.j10.i(i7).e();
+                long e10 = org.telegram.messenger.k10.i(i7).e();
                 for (int i19 = 0; i19 < this.K.d.size(); i19++) {
                     TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.K.d.get(i19);
                     if (org.telegram.messenger.n5.o(tL_starGiftUnique.owner_id) != e10 && org.telegram.messenger.n5.o(tL_starGiftUnique.host_id) != e10) {
@@ -641,8 +641,8 @@ public final class fm0 extends FrameLayout {
                 this.g0 = size2;
                 int i21 = this.l0;
                 this.d0 = i21;
-                bi.y7 y7Var = this.K;
-                if (y7Var.y || !y7Var.z) {
+                bi.x7 x7Var = this.K;
+                if (x7Var.y || !x7Var.z) {
                     this.e0 = i21;
                     int i22 = 3 - (size2 % 3);
                     if (size2 <= 0) {

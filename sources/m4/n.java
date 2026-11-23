@@ -5,9 +5,9 @@ import f3.i0;
 import java.util.Arrays;
 import java.util.Collections;
 import l2.l0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -29,7 +29,7 @@ public final class n implements i {
         lVar.e = new byte[128];
         this.d = lVar;
         this.k = -9223372036854775807L;
-        this.e = new l0(ks.I2);
+        this.e = new l0(ls.I2);
         this.b = new h2.x();
     }
 

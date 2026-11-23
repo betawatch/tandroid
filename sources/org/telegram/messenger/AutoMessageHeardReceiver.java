@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class AutoMessageHeardReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -15,12 +15,12 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
         final long longExtra = intent.getLongExtra("dialog_id", 0L);
         final int intExtra = intent.getIntExtra("max_id", 0);
         final int intExtra2 = intent.getIntExtra("currentAccount", 0);
-        if (longExtra == 0 || intExtra == 0 || !j10.r(intExtra2)) {
+        if (longExtra == 0 || intExtra == 0 || !k10.r(intExtra2)) {
             return;
         }
         final c a10 = c.a(intExtra2);
         if (n5.E(longExtra)) {
-            if (mp.u1(a10.a).c2(Long.valueOf(longExtra)) == null) {
+            if (np.u1(a10.a).c2(Long.valueOf(longExtra)) == null) {
                 final int i7 = 0;
                 Utilities.e.c(new Runnable() { // from class: org.telegram.messenger.a1
                     @Override // java.lang.Runnable
@@ -29,14 +29,14 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
                             case 0:
                                 int i10 = AutoMessageHeardReceiver.a;
                                 c cVar = a10;
-                                tr a02 = tr.a0(cVar.a);
+                                ur a02 = ur.a0(cVar.a);
                                 long j3 = longExtra;
                                 g0.g3(new b1(cVar, a02.k0(j3), intExtra2, j3, intExtra, 0));
                                 break;
                             default:
                                 int i11 = AutoMessageHeardReceiver.a;
                                 c cVar2 = a10;
-                                tr a03 = tr.a0(cVar2.a);
+                                ur a03 = ur.a0(cVar2.a);
                                 long j10 = longExtra;
                                 g0.g3(new b1(cVar2, a03.P(-j10), intExtra2, j10, intExtra, 1));
                                 break;
@@ -45,7 +45,7 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
                 });
                 return;
             }
-        } else if (n5.z(longExtra) && mp.u1(a10.a).O0(Long.valueOf(-longExtra)) == null) {
+        } else if (n5.z(longExtra) && np.u1(a10.a).O0(Long.valueOf(-longExtra)) == null) {
             final int i10 = 1;
             Utilities.e.c(new Runnable() { // from class: org.telegram.messenger.a1
                 @Override // java.lang.Runnable
@@ -54,14 +54,14 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
                         case 0:
                             int i102 = AutoMessageHeardReceiver.a;
                             c cVar = a10;
-                            tr a02 = tr.a0(cVar.a);
+                            ur a02 = ur.a0(cVar.a);
                             long j3 = longExtra;
                             g0.g3(new b1(cVar, a02.k0(j3), intExtra2, j3, intExtra, 0));
                             break;
                         default:
                             int i11 = AutoMessageHeardReceiver.a;
                             c cVar2 = a10;
-                            tr a03 = tr.a0(cVar2.a);
+                            ur a03 = ur.a0(cVar2.a);
                             long j10 = longExtra;
                             g0.g3(new b1(cVar2, a03.P(-j10), intExtra2, j10, intExtra, 1));
                             break;
@@ -70,7 +70,7 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
             });
             return;
         }
-        mp.u1(intExtra2).q3(longExtra, intExtra, intExtra, 0, false, 0L, 0, true, 0);
-        mp.u1(intExtra2).A3(longExtra, 0L);
+        np.u1(intExtra2).q3(longExtra, intExtra, intExtra, 0, false, 0L, 0, true, 0);
+        np.u1(intExtra2).A3(longExtra, 0L);
     }
 }

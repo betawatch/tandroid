@@ -12,14 +12,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g extends FrameLayout {
     public final h6 a;
@@ -49,9 +49,9 @@ public final class g extends FrameLayout {
         addView(linearLayout, d2);
         TextView textView = new TextView(context);
         this.e = textView;
-        n10.p(textView, 1, 15.0f);
+        o10.p(textView, 1, 15.0f);
         t6.U(textView, m6.G6, h6Var);
-        TextView f10 = n10.f(linearLayout, textView, ma.t(-1, -2, 55, 0, 0, 0, 0), context);
+        TextView f10 = o10.f(linearLayout, textView, ma.t(-1, -2, 55, 0, 0, 0, 0), context);
         this.f = f10;
         f10.setTextSize(1, 14.0f);
         t6.U(f10, m6.z6, h6Var);

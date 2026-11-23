@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class nc0 extends FrameLayout {
     public final ImageView a;
@@ -21,7 +21,7 @@ public final class nc0 extends FrameLayout {
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.fingerprint);
-        addView(imageView, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(imageView, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTypeface(org.telegram.messenger.g0.o());

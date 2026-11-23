@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cu0 implements Runnable {
     public final /* synthetic */ int a;
@@ -43,15 +43,15 @@ public final /* synthetic */ class cu0 implements Runnable {
                         profileActivity2.C1.b();
                         profileActivity2.v2.participants = new TLRPC.TL_chatParticipants();
                         profileActivity2.getMessagesStorage().m1(tL_channels_channelParticipants.users, tL_channels_channelParticipants.chats, true, true);
-                        org.telegram.messenger.tr messagesStorage = profileActivity2.getMessagesStorage();
-                        messagesStorage.a.c(new org.telegram.messenger.gr(messagesStorage, profileActivity2.f1, tL_channels_channelParticipants.participants, 3));
+                        org.telegram.messenger.ur messagesStorage = profileActivity2.getMessagesStorage();
+                        messagesStorage.a.c(new org.telegram.messenger.hr(messagesStorage, profileActivity2.f1, tL_channels_channelParticipants.participants, 3));
                     }
                     for (int i7 = 0; i7 < tL_channels_channelParticipants.participants.size(); i7++) {
                         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
                         TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i7);
                         tL_chatChannelParticipant.channelParticipant = channelParticipant;
                         tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-                        long B1 = org.telegram.messenger.fj.B1(channelParticipant.peer);
+                        long B1 = org.telegram.messenger.gj.B1(channelParticipant.peer);
                         tL_chatChannelParticipant.user_id = B1;
                         tL_chatChannelParticipant.date = tL_chatChannelParticipant.channelParticipant.date;
                         if (profileActivity2.C1.h(B1) < 0) {

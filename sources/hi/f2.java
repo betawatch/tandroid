@@ -11,10 +11,10 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import di.yb;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class f2 extends e2 {
     public Drawable i;
@@ -54,7 +54,7 @@ public final class f2 extends e2 {
         canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), (Paint) this.o.b);
         if (this.j != null) {
-            canvas.saveLayerAlpha(rectF, ks.e4, 31);
+            canvas.saveLayerAlpha(rectF, ls.e4, 31);
         }
         if (this.i == null) {
             org.telegram.messenger.f6 f14 = org.telegram.messenger.j6.f(null);
@@ -76,7 +76,7 @@ public final class f2 extends e2 {
             this.j.draw(canvas);
             canvas.restore();
         }
-        n10.k(this.k.getHeight(), 2.0f, (this.c / 2.0f) + rectF.top, (rectF.left + org.telegram.messenger.g0.L((this.i != null ? 28 : 0) + 6)) - this.m, canvas);
+        o10.k(this.k.getHeight(), 2.0f, (this.c / 2.0f) + rectF.top, (rectF.left + org.telegram.messenger.g0.L((this.i != null ? 28 : 0) + 6)) - this.m, canvas);
         this.k.draw(canvas);
         canvas.restore();
     }

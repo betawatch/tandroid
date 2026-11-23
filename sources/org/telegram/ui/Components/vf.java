@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vf extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -24,7 +24,7 @@ public final class vf extends AnimatorListenerAdapter {
         chatActivityEnterView.a2.setAlpha(1.0f);
         chatActivityEnterView.a2.setTranslationX(0.0f);
         rg rgVar = chatActivityEnterView.E2;
-        if (rgVar != null && org.telegram.messenger.bz.O < 3) {
+        if (rgVar != null && org.telegram.messenger.cz.O < 3) {
             ChatActivityEnterView chatActivityEnterView2 = rgVar.Q0;
             chatActivityEnterView2.U4 = true;
             chatActivityEnterView2.V4 = System.currentTimeMillis();

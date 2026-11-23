@@ -14,16 +14,16 @@ import di.xb;
 import hi.l3;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.rh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w1 extends LinearLayout implements b6 {
     public final /* synthetic */ int a = 0;
@@ -57,29 +57,29 @@ public final class w1 extends LinearLayout implements b6 {
         int i10 = 22;
         if (i7 == 9) {
             rh0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(gd.N0(2131742632, null));
-            xbVar.setText(gd.N0(2131742633, null));
+            textView.setText(hd.N0(2131742630, null));
+            xbVar.setText(hd.N0(2131742631, null));
             xbVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), l3.a(xbVar.getText(), xbVar.getPaint())));
         } else if ("hello".equalsIgnoreCase(str)) {
             rh0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(gd.N0(2131752753, null));
-            xbVar.setText(gd.N0(2131752754, null));
+            textView.setText(hd.N0(2131752753, null));
+            xbVar.setText(hd.N0(2131752754, null));
             xbVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), l3.a(xbVar.getText(), xbVar.getPaint())));
         } else if ("away".equalsIgnoreCase(str)) {
             rh0Var.setImageResource(R.drawable.large_away);
-            textView.setText(gd.N0(2131752821, null));
-            xbVar.setText(gd.N0(2131752822, null));
+            textView.setText(hd.N0(2131752821, null));
+            xbVar.setText(hd.N0(2131752822, null));
             xbVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), l3.a(xbVar.getText(), xbVar.getPaint())));
         } else {
             if (i7 == 5) {
                 rh0Var.setImageResource(R.drawable.large_quickreplies);
-                u1 c10 = v1.f(j10.t0).c(j3);
+                u1 c10 = v1.f(k10.t0).c(j3);
                 String str2 = c10 == null ? str : c10.b;
-                textView.setText(gd.N0(2131752655, null));
+                textView.setText(hd.N0(2131752655, null));
                 xbVar.setMaxWidth(org.telegram.messenger.g0.L(208.0f));
                 xbVar.setTextAlignment(2);
                 xbVar.setGravity(3);
-                xbVar.setText(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131752657, str2)));
+                xbVar.setText(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131752657, str2)));
                 xbVar.setPadding(org.telegram.messenger.g0.L(28.0f), 0, 0, 0);
                 xb xbVar2 = new xb(activity, 2);
                 this.e = xbVar2;
@@ -87,7 +87,7 @@ public final class w1 extends LinearLayout implements b6 {
                 xbVar2.setTextAlignment(2);
                 xbVar2.setGravity(3);
                 xbVar2.setTextSize(1, 13.0f);
-                xbVar2.setText(org.telegram.messenger.g0.W2(gd.N0(2131752656, null)));
+                xbVar2.setText(org.telegram.messenger.g0.W2(hd.N0(2131752656, null)));
                 xbVar2.setPadding(org.telegram.messenger.g0.L(28.0f), 0, 0, 0);
             }
             i10 = 12;
@@ -174,7 +174,7 @@ public final class w1 extends LinearLayout implements b6 {
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity(5);
         addView(textView, ma.t(-2, -2, 19, 8, 0, 0, 0));
-        addView(new Space(context), ma.p(0, -2, 1.0f, ks.E1));
+        addView(new Space(context), ma.p(0, -2, 1.0f, ls.E1));
         addView(textView2, ma.t(-2, -2, 21, 8, 0, 0, 0));
         imageView.setImageResource(k0Var.a);
         textView.setText(k0Var.b);

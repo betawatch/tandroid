@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class uu extends dk0 {
     public final /* synthetic */ ev c;
@@ -53,7 +53,7 @@ public final class uu extends dk0 {
         ArrayList arrayList;
         ev evVar = this.c;
         qu quVar = evVar.p1;
-        ?? r22 = (org.telegram.messenger.j10.i(evVar.a).q() || (arrayList = quVar.b) == null || arrayList.size() != 1 || !org.telegram.messenger.fj.V3((TLRPC.TL_messages_stickerSet) quVar.b.get(0))) ? 0 : 1;
+        ?? r22 = (org.telegram.messenger.k10.i(evVar.a).q() || (arrayList = quVar.b) == null || arrayList.size() != 1 || !org.telegram.messenger.gj.V3((TLRPC.TL_messages_stickerSet) quVar.b.get(0))) ? 0 : 1;
         evVar.D1 = r22;
         int i10 = r22 + 1;
         if (quVar.c != null) {
@@ -217,7 +217,7 @@ public final class uu extends dk0 {
             TextView textView2 = (TextView) view;
             textView2.setTextSize(1, 13.0f);
             org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.Of, evVar.J0);
-            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131746811, null)));
+            textView2.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131746811, null)));
             textView2.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(14.0f));
             return;
         }
@@ -245,7 +245,7 @@ public final class uu extends dk0 {
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (arrayList2 == null || i16 >= arrayList2.size()) ? null : (TLRPC.TL_messages_stickerSet) quVar.b.get(i16);
         if (tL_messages_stickerSet2 != null && tL_messages_stickerSet2.documents != null) {
             for (int i18 = 0; i18 < tL_messages_stickerSet2.documents.size(); i18++) {
-                if (!org.telegram.messenger.fj.m3(tL_messages_stickerSet2.documents.get(i18))) {
+                if (!org.telegram.messenger.gj.m3(tL_messages_stickerSet2.documents.get(i18))) {
                     z10 = true;
                     break;
                 }
@@ -317,7 +317,7 @@ public final class uu extends dk0 {
                                 }
                                 if (z10) {
                                     Pattern pattern = ev.Q1;
-                                    if (!org.telegram.messenger.j10.i(evVar2.a).q()) {
+                                    if (!org.telegram.messenger.k10.i(evVar2.a).q()) {
                                     }
                                 }
                                 if (r0Var != null) {
@@ -356,14 +356,14 @@ public final class uu extends dk0 {
             textView = avVar.b;
             if (textView != null) {
                 if (tL_messages_stickerSet2 == null || (stickerSet = tL_messages_stickerSet2.set) == null || stickerSet.emojis) {
-                    textView.setText(org.telegram.messenger.gd.G(size3, "EmojiCount", new Object[0]));
+                    textView.setText(org.telegram.messenger.hd.G(size3, "EmojiCount", new Object[0]));
                 } else {
-                    textView.setText(org.telegram.messenger.gd.G(size3, "Stickers", new Object[0]));
+                    textView.setText(org.telegram.messenger.hd.G(size3, "Stickers", new Object[0]));
                 }
             }
             if (z10 && r0Var != null) {
                 Pattern pattern2 = ev.Q1;
-                if (!org.telegram.messenger.j10.i(evVar2.a).q()) {
+                if (!org.telegram.messenger.k10.i(evVar2.a).q()) {
                     r0Var.setVisibility(0);
                     if (textView4 != null) {
                         textView4.setVisibility(8);
@@ -386,7 +386,7 @@ public final class uu extends dk0 {
             }
             if (tL_messages_stickerSet2 != null) {
                 Pattern pattern3 = ev.Q1;
-                if (org.telegram.messenger.ri.d0(evVar2.a).E0(tL_messages_stickerSet2.set.id, true)) {
+                if (org.telegram.messenger.si.d0(evVar2.a).E0(tL_messages_stickerSet2.set.id, true)) {
                     z11 = true;
                     avVar.a(z11, false);
                 }
@@ -406,7 +406,7 @@ public final class uu extends dk0 {
         } else {
             if (i7 == 1) {
                 xu xuVar = new xu(evVar.getContext());
-                xuVar.a = new org.telegram.messenger.gc[2];
+                xuVar.a = new org.telegram.messenger.hc[2];
                 view2 = xuVar;
             } else if (i7 == 2) {
                 view2 = new av(evVar, evVar.getContext(), evVar.p1.c.length <= 1);

@@ -60,14 +60,14 @@ import m.o3;
 import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
 import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.h71;
 import org.telegram.ui.Components.qo0;
 import org.telegram.ui.Components.qt0;
 import org.telegram.ui.q11;
 import org.telegram.ui.r00;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c implements SuccessContinuation, r0, a0, androidx.activity.result.b, h71, q11, q0, qt0, n, q, qo0, i1, OnCompleteListener, ib.b {
     public static volatile c c;
@@ -176,7 +176,7 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
                                 char charAt3 = charSequence.charAt(i11);
                                 if (Character.isSurrogatePair(charAt2, charAt3)) {
                                     int codePoint = Character.toCodePoint(charAt2, charAt3);
-                                    byteBuffer.put((byte) ((codePoint >>> 18) | ks.P3));
+                                    byteBuffer.put((byte) ((codePoint >>> 18) | ls.P3));
                                     byteBuffer.put((byte) (((codePoint >>> 12) & 63) | 128));
                                     byteBuffer.put((byte) (((codePoint >>> 6) & 63) | 128));
                                     byteBuffer.put((byte) ((codePoint & 63) | 128));
@@ -244,7 +244,7 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
                                 char charAt5 = charSequence.charAt(i15);
                                 if (Character.isSurrogatePair(charAt4, charAt5)) {
                                     int codePoint2 = Character.toCodePoint(charAt4, charAt5);
-                                    array[i7] = (byte) ((codePoint2 >>> 18) | ks.P3);
+                                    array[i7] = (byte) ((codePoint2 >>> 18) | ls.P3);
                                     array[i7 + 1] = (byte) (((codePoint2 >>> 12) & 63) | 128);
                                     int i16 = i7 + 3;
                                     array[i7 + 2] = (byte) (((codePoint2 >>> 6) & 63) | 128);
@@ -604,7 +604,7 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
 
     public void u(int i7) {
         while ((i7 & (-128)) != 0) {
-            t((i7 & ks.L1) | 128);
+            t((i7 & ls.L1) | 128);
             i7 >>>= 7;
         }
         t(i7);
@@ -616,7 +616,7 @@ public final class c implements SuccessContinuation, r0, a0, androidx.activity.r
 
     public void y(long j3) {
         while (((-128) & j3) != 0) {
-            t((((int) j3) & ks.L1) | 128);
+            t((((int) j3) & ls.L1) | 128);
             j3 >>>= 7;
         }
         t((int) j3);

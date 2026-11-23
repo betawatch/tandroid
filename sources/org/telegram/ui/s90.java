@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s90 {
     public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
@@ -194,7 +194,7 @@ public final class s90 {
                                                             if (TextUtils.isEmpty(str2)) {
                                                             }
                                                             break;
-                                                        case org.telegram.messenger.ks.k1 /* 99 */:
+                                                        case org.telegram.messenger.ls.k1 /* 99 */:
                                                             if (str3.equals("c")) {
                                                                 break;
                                                             }
@@ -325,7 +325,7 @@ public final class s90 {
             return false;
         }
         LaunchActivity launchActivity = this.a;
-        return (launchActivity.isFinishing() || launchActivity.isDestroyed() || !LaunchActivity.G1 || org.telegram.messenger.bz.x || org.telegram.messenger.bz.C || org.telegram.messenger.j10.t0 != this.b) ? false : true;
+        return (launchActivity.isFinishing() || launchActivity.isDestroyed() || !LaunchActivity.G1 || org.telegram.messenger.cz.x || org.telegram.messenger.cz.C || org.telegram.messenger.k10.t0 != this.b) ? false : true;
     }
 
     public final void b() {
@@ -359,8 +359,8 @@ public final class s90 {
         return this.a.M();
     }
 
-    public final org.telegram.messenger.j10 f() {
-        return org.telegram.messenger.j10.i(this.b);
+    public final org.telegram.messenger.k10 f() {
+        return org.telegram.messenger.k10.i(this.b);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -454,7 +454,7 @@ public final class s90 {
                                         return true;
                                     }
                                     o();
-                                    org.telegram.messenger.mp.u1(i10).f2().a(str4, null, new r3(this, 10));
+                                    org.telegram.messenger.np.u1(i10).f2().a(str4, null, new r3(this, 10));
                                     return true;
                                 }
                             }
@@ -465,7 +465,7 @@ public final class s90 {
             }
             if (!"tg".equalsIgnoreCase(scheme)) {
                 if ("ton".equalsIgnoreCase(scheme)) {
-                    if (((org.telegram.messenger.h0) org.telegram.messenger.mp.u1(i10).A7.p0.b).c && (pathSegments = (s5 = s(uri2)).getPathSegments()) != null) {
+                    if (((org.telegram.messenger.h0) org.telegram.messenger.np.u1(i10).A7.p0.b).c && (pathSegments = (s5 = s(uri2)).getPathSegments()) != null) {
                         ArrayList arrayList = new ArrayList(pathSegments);
                         String authority = s5.getAuthority();
                         if (TextUtils.isEmpty(authority)) {
@@ -588,7 +588,7 @@ public final class s90 {
                                     u(new ContactsActivity(a8.p0.k("destroyAfterSelect", true)), false);
                                     return true;
                                 }
-                                SharedPreferences g12 = org.telegram.messenger.mp.g1();
+                                SharedPreferences g12 = org.telegram.messenger.np.g1();
                                 boolean z11 = org.telegram.messenger.s2.a;
                                 u(new g(0), false);
                                 g12.edit().putBoolean("channel_intro", true).commit();
@@ -643,7 +643,7 @@ public final class s90 {
                     String queryParameter5 = s9.getQueryParameter("username");
                     if (!TextUtils.isEmpty(queryParameter5)) {
                         o();
-                        org.telegram.messenger.mp.u1(i10).f2().a(queryParameter5, null, new r3(this, 10));
+                        org.telegram.messenger.np.u1(i10).f2().a(queryParameter5, null, new r3(this, 10));
                         return true;
                     }
                     return true;
@@ -696,7 +696,7 @@ public final class s90 {
         }
         o();
         TLRPC.User[] userArr = {null};
-        org.telegram.messenger.mp.u1(this.b).f2().a(str, null, new x(this, userArr, new org.telegram.ui.Components.q20(this, T, userArr, tL_requestPeerTypeCreateBot, 21), 10));
+        org.telegram.messenger.np.u1(this.b).f2().a(str, null, new x(this, userArr, new org.telegram.ui.Components.q20(this, T, userArr, tL_requestPeerTypeCreateBot, 21), 10));
     }
 
     public final boolean k(Uri uri, String str) {
@@ -710,7 +710,7 @@ public final class s90 {
         TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
         tL_messages_requestUrlAuth.flags |= 4;
         tL_messages_requestUrlAuth.url = uri.toString();
-        ConnectionsManager.getInstance(this.b).sendRequestTyped(tL_messages_requestUrlAuth, new d3.b(1), new bi.p6(23, this, tL_messages_requestUrlAuth));
+        ConnectionsManager.getInstance(this.b).sendRequestTyped(tL_messages_requestUrlAuth, new d3.b(1), new bi.o6(23, this, tL_messages_requestUrlAuth));
         return true;
     }
 
@@ -718,7 +718,7 @@ public final class s90 {
         Uri uri2;
         long j3;
         int i7 = this.b;
-        if (!((org.telegram.messenger.h0) org.telegram.messenger.mp.u1(i7).A7.p0.b).c) {
+        if (!((org.telegram.messenger.h0) org.telegram.messenger.np.u1(i7).A7.p0.b).c) {
             return false;
         }
         String queryParameter = uri.getQueryParameter("startapp");
@@ -991,7 +991,7 @@ public final class s90 {
                                 }
                                 NotificationsSettingsActivity notificationsSettingsActivity = new NotificationsSettingsActivity();
                                 o();
-                                notificationsSettingsActivity.F0(new org.telegram.ui.Components.mp0(this, notificationsSettingsActivity, i11, str9, 10));
+                                notificationsSettingsActivity.F0(new org.telegram.ui.Components.lp0(this, notificationsSettingsActivity, i11, str9, 11));
                                 return true;
                             }
                             t(new NotificationsSettingsActivity());
@@ -1165,7 +1165,7 @@ public final class s90 {
                                             return true;
                                         }
                                     }
-                                } else if (org.telegram.messenger.mp.u1(i13).b4 || !"archive-and-mute".equalsIgnoreCase(str4)) {
+                                } else if (org.telegram.messenger.np.u1(i13).b4 || !"archive-and-mute".equalsIgnoreCase(str4)) {
                                     t(new PrivacySettingsActivity());
                                     if ("blocked".equalsIgnoreCase(str4)) {
                                         x("blockedRow");
@@ -1534,15 +1534,15 @@ public final class s90 {
                                     return true;
                                 }
                                 if ("faq".equalsIgnoreCase(str3)) {
-                                    vf.c.t(launchActivity, org.telegram.messenger.gd.M0(2131743999));
+                                    vf.c.t(launchActivity, org.telegram.messenger.hd.M0(2131743997));
                                     return true;
                                 }
                                 if ("features".equalsIgnoreCase(str3)) {
-                                    vf.c.t(launchActivity, org.telegram.messenger.gd.M0(2131743997));
+                                    vf.c.t(launchActivity, org.telegram.messenger.hd.M0(2131743995));
                                     return true;
                                 }
                                 if ("privacy-policy".equalsIgnoreCase(str3)) {
-                                    vf.c.t(launchActivity, org.telegram.messenger.gd.M0(2131746587));
+                                    vf.c.t(launchActivity, org.telegram.messenger.hd.M0(2131746587));
                                     return true;
                                 }
                                 t(new o31());
@@ -1579,7 +1579,7 @@ public final class s90 {
                                         break;
                                     }
                                     if (((u90) arrayList.get(i14)).f == 1) {
-                                        z90Var.b.e1(new ai.u1(z90Var, i14, 15), 700, true);
+                                        z90Var.b.e1(new ai.v1(z90Var, i14, 15), 700, true);
                                         return true;
                                     }
                                     i14++;

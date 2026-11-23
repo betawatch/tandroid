@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class p5 extends Drawable {
     public static SparseArray r;
@@ -61,7 +61,7 @@ public class p5 extends Drawable {
     }
 
     public static int f() {
-        return org.telegram.messenger.bz.o() == 0 ? 0 : 2;
+        return org.telegram.messenger.cz.o() == 0 ? 0 : 2;
     }
 
     public static l5 g(int i7) {
@@ -193,8 +193,8 @@ public class p5 extends Drawable {
     }
 
     public static void w() {
-        t = org.telegram.messenger.pc.e(16388);
-        u = org.telegram.messenger.pc.e(8200);
+        t = org.telegram.messenger.qc.e(16388);
+        u = org.telegram.messenger.qc.e(8200);
     }
 
     public final void a(View view) {
@@ -234,7 +234,7 @@ public class p5 extends Drawable {
         if (this.e == null) {
             return false;
         }
-        if (!k() && !org.telegram.messenger.fj.C4(this.e)) {
+        if (!k() && !org.telegram.messenger.gj.C4(this.e)) {
             z10 = false;
         }
         this.n = Boolean.valueOf(z10);
@@ -306,12 +306,12 @@ public class p5 extends Drawable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void i(boolean z10) {
-        org.telegram.messenger.lz d;
+        org.telegram.messenger.mz d;
         String str;
-        org.telegram.messenger.fc fcVar;
-        org.telegram.messenger.fc b10;
-        org.telegram.messenger.ib ibVar;
-        org.telegram.messenger.fc fcVar2;
+        org.telegram.messenger.gc gcVar;
+        org.telegram.messenger.gc b10;
+        org.telegram.messenger.jb jbVar;
+        org.telegram.messenger.gc gcVar2;
         Drawable g10;
         Drawable drawable;
         fi.s2 s2Var;
@@ -342,7 +342,7 @@ public class p5 extends Drawable {
                     this.k.w1 = com.google.android.gms.internal.vision.e2.i(i10 == 12 ? 2 : i10, "_");
                 }
                 this.k.z1 = true;
-                boolean z11 = (org.telegram.messenger.bz.o() == 0 && i10 == 5) || ((i10 == 2 || i10 == 25) && !t) || (i10 == 3 && !u);
+                boolean z11 = (org.telegram.messenger.cz.o() == 0 && i10 == 5) || ((i10 == 2 || i10 == 25) && !t) || (i10 == 3 && !u);
                 if (i10 == 13 || i10 == 16) {
                     z11 = true;
                 }
@@ -353,7 +353,7 @@ public class p5 extends Drawable {
                 if (i10 == 12) {
                     str3 = p5.c.v(str3, "_d_nostream");
                 }
-                if (i10 != 17 && i10 != 15 && i10 != 14 && i10 != 8 && ((i10 != 1 || org.telegram.messenger.bz.o() < 2) && i10 != 12)) {
+                if (i10 != 17 && i10 != 15 && i10 != 14 && i10 != 8 && ((i10 != 1 || org.telegram.messenger.cz.o() < 2) && i10 != 12)) {
                     str3 = p5.c.v(str3, "_pcache");
                 }
                 if (i10 != 17 && i10 != 0 && i10 != 26 && i10 != 1 && i10 != 14 && i10 != 15 && i10 != 19 && i10 != 20 && i10 != 21) {
@@ -364,21 +364,21 @@ public class p5 extends Drawable {
                 }
                 TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(this.e.thumbs, 90, false, null, false);
                 if ("video/webm".equals(this.e.mime_type)) {
-                    b10 = org.telegram.messenger.fc.b(this.e);
+                    b10 = org.telegram.messenger.gc.b(this.e);
                     str3 = p5.c.v(str3, "_g");
                     d = org.telegram.messenger.u5.d(this.e.thumbs, org.telegram.ui.ActionBar.m6.m6, 0.2f, true);
                 } else {
                     if (!"application/x-tgsticker".equals(this.e.mime_type)) {
                         d = org.telegram.messenger.u5.d(this.e.thumbs, org.telegram.ui.ActionBar.m6.m6, 0.2f, true);
-                        if (d != null && org.telegram.messenger.fj.K2(this.e, true)) {
+                        if (d != null && org.telegram.messenger.gj.K2(this.e, true)) {
                             d.e = 512;
                             d.f = 512;
                         }
                         str = str3;
-                        fcVar = null;
+                        gcVar = null;
                         if (i10 != 20 || i10 == 21) {
-                            fcVar2 = null;
-                            g10 = org.telegram.messenger.j6.g(org.telegram.messenger.fj.V(this.e, null, null));
+                            gcVar2 = null;
+                            g10 = org.telegram.messenger.j6.g(org.telegram.messenger.gj.V(this.e, null, null));
                             if (g10 != null) {
                                 drawable = g10;
                                 if (str2 != null) {
@@ -386,36 +386,36 @@ public class p5 extends Drawable {
                                 } else if (i10 == 8) {
                                     fi.s2 s2Var4 = this.k;
                                     TLRPC.Document document2 = this.e;
-                                    s2Var4.u0(null, null, fcVar, str, null, null, drawable, document2.size, null, document2, 1);
+                                    s2Var4.u0(null, null, gcVar, str, null, null, drawable, document2.size, null, document2, 1);
                                 } else {
                                     String str4 = str;
                                     if (z11 || !(t || i10 == 14)) {
-                                        org.telegram.messenger.fc c10 = i10 == 16 ? org.telegram.messenger.fc.c(w10, this.e) : fcVar2;
+                                        org.telegram.messenger.gc c10 = i10 == 16 ? org.telegram.messenger.gc.c(w10, this.e) : gcVar2;
                                         if ("video/webm".equals(this.e.mime_type)) {
                                             fi.s2 s2Var5 = this.k;
-                                            org.telegram.messenger.fc c11 = org.telegram.messenger.fc.c(w10, this.e);
+                                            org.telegram.messenger.gc c11 = org.telegram.messenger.gc.c(w10, this.e);
                                             String str5 = this.d + "_" + this.d;
                                             TLRPC.Document document3 = this.e;
                                             s2Var5.u0(null, null, c11, str5, c10, null, drawable, document3.size, null, document3, 1);
-                                        } else if (org.telegram.messenger.fj.K2(this.e, true)) {
+                                        } else if (org.telegram.messenger.gj.K2(this.e, true)) {
                                             fi.s2 s2Var6 = this.k;
                                             String v10 = p5.c.v(str4, "_firstframe");
                                             TLRPC.Document document4 = this.e;
-                                            s2Var6.r0(fcVar, v10, c10, null, drawable, document4.size, null, document4, 1);
+                                            s2Var6.r0(gcVar, v10, c10, null, drawable, document4.size, null, document4, 1);
                                         } else {
                                             fi.s2 s2Var7 = this.k;
-                                            org.telegram.messenger.fc c12 = org.telegram.messenger.fc.c(w10, this.e);
+                                            org.telegram.messenger.gc c12 = org.telegram.messenger.gc.c(w10, this.e);
                                             String str6 = this.d + "_" + this.d;
                                             TLRPC.Document document5 = this.e;
                                             s2Var7.r0(c12, str6, c10, null, drawable, document5.size, null, document5, 1);
                                         }
                                     } else {
-                                        org.telegram.messenger.fc c13 = i10 == 17 ? org.telegram.messenger.fc.c(w10, this.e) : fcVar2;
+                                        org.telegram.messenger.gc c13 = i10 == 17 ? org.telegram.messenger.gc.c(w10, this.e) : gcVar2;
                                         fi.s2 s2Var8 = this.k;
-                                        org.telegram.messenger.fc c14 = org.telegram.messenger.fc.c(w10, this.e);
+                                        org.telegram.messenger.gc c14 = org.telegram.messenger.gc.c(w10, this.e);
                                         String str7 = this.d + "_" + this.d;
                                         TLRPC.Document document6 = this.e;
-                                        s2Var8.u0(fcVar, str4, c14, str7, c13, null, drawable, document6.size, null, document6, 1);
+                                        s2Var8.u0(gcVar, str4, c14, str7, c13, null, drawable, document6.size, null, document6, 1);
                                     }
                                 }
                                 v(this.k);
@@ -444,7 +444,7 @@ public class p5 extends Drawable {
                                 j();
                             }
                         } else {
-                            fcVar2 = null;
+                            gcVar2 = null;
                         }
                         drawable = d;
                         if (str2 != null) {
@@ -475,9 +475,9 @@ public class p5 extends Drawable {
                     sb2.append("@");
                     sb2.append(str3);
                     String sb3 = sb2.toString();
-                    if (org.telegram.messenger.bz.o() != 0 || i10 == 2 || i10 == 25 || i10 == 22 || (ibVar = org.telegram.messenger.ec.D().e) == null || !((LinkedHashMap) ibVar.c).containsKey(sb3)) {
-                        org.telegram.messenger.lz d2 = org.telegram.messenger.u5.d(this.e.thumbs, org.telegram.ui.ActionBar.m6.m6, i10 == 22 ? 0.8f : 0.2f, false);
-                        if (d2 != null && org.telegram.messenger.fj.K2(this.e, true)) {
+                    if (org.telegram.messenger.cz.o() != 0 || i10 == 2 || i10 == 25 || i10 == 22 || (jbVar = org.telegram.messenger.fc.D().e) == null || !((LinkedHashMap) jbVar.c).containsKey(sb3)) {
+                        org.telegram.messenger.mz d2 = org.telegram.messenger.u5.d(this.e.thumbs, org.telegram.ui.ActionBar.m6.m6, i10 == 22 ? 0.8f : 0.2f, false);
+                        if (d2 != null && org.telegram.messenger.gj.K2(this.e, true)) {
                             d2.e = 512;
                             d2.f = 512;
                         }
@@ -485,14 +485,14 @@ public class p5 extends Drawable {
                     } else {
                         d = null;
                     }
-                    b10 = org.telegram.messenger.fc.b(this.e);
+                    b10 = org.telegram.messenger.gc.b(this.e);
                 }
-                fcVar = b10;
+                gcVar = b10;
                 str = str3;
                 if (i10 != 20) {
                 }
-                fcVar2 = null;
-                g10 = org.telegram.messenger.j6.g(org.telegram.messenger.fj.V(this.e, null, null));
+                gcVar2 = null;
+                g10 = org.telegram.messenger.j6.g(org.telegram.messenger.gj.V(this.e, null, null));
                 if (g10 != null) {
                 }
                 drawable = d;
@@ -555,7 +555,7 @@ public class p5 extends Drawable {
         TLRPC.Document document = this.e;
         boolean z10 = false;
         if (document != null) {
-            TLRPC.InputStickerSet i12 = org.telegram.messenger.fj.i1(document);
+            TLRPC.InputStickerSet i12 = org.telegram.messenger.gj.i1(document);
             if (!(i12 instanceof TLRPC.TL_inputStickerSetEmojiDefaultStatuses)) {
                 if (i12 instanceof TLRPC.TL_inputStickerSetID) {
                     long j3 = i12.id;
@@ -655,7 +655,7 @@ public class p5 extends Drawable {
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("AnimatedEmojiDrawable{");
         TLRPC.Document document = this.e;
-        return a8.p0.s(sb2, document == null ? "null" : org.telegram.messenger.fj.V(document, null, null), "}");
+        return a8.p0.s(sb2, document == null ? "null" : org.telegram.messenger.gj.V(document, null, null), "}");
     }
 
     public final void u() {
@@ -722,7 +722,7 @@ public class p5 extends Drawable {
             return;
         }
         if (i7 == 24) {
-            this.d = org.telegram.messenger.ks.W1;
+            this.d = org.telegram.messenger.ls.W1;
             return;
         }
         if (i7 == 23) {

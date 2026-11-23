@@ -15,9 +15,9 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.m6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y extends View implements b6 {
     public final org.telegram.ui.Cells.y E;
@@ -58,7 +58,7 @@ public final class y extends View implements b6 {
         this.d = vVar;
         oh0 oh0Var = new oh0(R.raw.bot_webview_sheet_to_cross, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(20.0f));
         this.e = oh0Var;
-        this.n = gd.N0(2131752879, null);
+        this.n = hd.N0(2131752879, null);
         this.F = true;
         updateColors();
         vVar.n = true;
@@ -76,7 +76,7 @@ public final class y extends View implements b6 {
         k02.setCallback(this);
         oh0Var.setCallback(this);
         oh0Var.R(this);
-        setContentDescription(gd.N0(2131754917, "AccDescrBotMenu"));
+        setContentDescription(hd.N0(2131754917, "AccDescrBotMenu"));
     }
 
     @Override // org.telegram.ui.ActionBar.b6
@@ -117,7 +117,7 @@ public final class y extends View implements b6 {
                         this.c.setAlpha((int) (255.0f * interpolation));
                     }
                     if (this.F) {
-                        this.a.set(0.0f, 0.0f, n10.b(this.s, org.telegram.messenger.g0.L(4.0f), interpolation, org.telegram.messenger.g0.L(40.0f)), getMeasuredHeight());
+                        this.a.set(0.0f, 0.0f, o10.b(this.s, org.telegram.messenger.g0.L(4.0f), interpolation, org.telegram.messenger.g0.L(40.0f)), getMeasuredHeight());
                         canvas.drawRoundRect(this.a, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), this.b);
                         int x02 = m6.x0(null, m6.Hi, false);
                         if (x02 != this.G) {

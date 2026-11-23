@@ -13,10 +13,10 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import ob.c;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Wallet.e1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
             default:
                 e1 e1Var = (e1) obj;
                 if (e1Var.f() && (alertDialog = e1Var.i) != null) {
-                    alertDialog.setMessage(gd.N0(2131742872, null));
+                    alertDialog.setMessage(hd.N0(2131742870, null));
                     break;
                 }
                 break;

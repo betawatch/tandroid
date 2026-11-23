@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
@@ -15,9 +15,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements q10 {
+public final /* synthetic */ class e implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class e implements q10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         c51 c51Var;
         String str;
@@ -58,7 +58,7 @@ public final /* synthetic */ class e implements q10 {
                     break;
                 }
             case 2:
-                ((q10) this.b).a((r0) obj, (String) obj2);
+                ((r10) this.b).a((r0) obj, (String) obj2);
                 break;
             case 3:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
@@ -110,8 +110,8 @@ public final /* synthetic */ class e implements q10 {
                 if (password != null) {
                     n6Var.V0 = true;
                     n6Var.W0 = password.has_password;
-                    bi.g6 g6Var = n6Var.a;
-                    if (g6Var != null && (c51Var = g6Var.g3) != null) {
+                    bi.f6 f6Var = n6Var.a;
+                    if (f6Var != null && (c51Var = f6Var.g3) != null) {
                         c51Var.O(true);
                         break;
                     }

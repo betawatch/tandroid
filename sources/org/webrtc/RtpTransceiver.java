@@ -7,14 +7,14 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpCapabilities;
 import org.webrtc.RtpParameters;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class RtpTransceiver {
     private RtpReceiver cachedReceiver;
     private RtpSender cachedSender;
     private long nativeRtpTransceiver;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public enum RtpTransceiverDirection {
         SEND_RECV(0),
         SEND_ONLY(1),
@@ -42,7 +42,7 @@ public class RtpTransceiver {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static final class RtpTransceiverInit {
         private final RtpTransceiverDirection direction;
         private final List<RtpParameters.Encoding> sendEncodings;

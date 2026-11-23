@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class q0 extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -25,11 +25,11 @@ public final class q0 extends BroadcastReceiver {
                 boolean p10 = t0.p();
                 for (int i7 = 0; i7 < 4; i7++) {
                     ConnectionsManager.getInstance(i7).checkConnection();
-                    w7.K.c(new i10(1, w7.G(i7), p10));
+                    w7.K.c(new j10(1, w7.G(i7), p10));
                 }
                 break;
             case 1:
-                pc.h(intent);
+                qc.h(intent);
                 break;
             case 2:
                 if ("android.media.AUDIO_BECOMING_NOISY".equals(intent.getAction())) {
@@ -42,16 +42,16 @@ public final class q0 extends BroadcastReceiver {
                     if (s2.a) {
                         a8.b("screen off");
                     }
-                    ConnectionsManager.getInstance(j10.t0).setAppPaused(true, true);
+                    ConnectionsManager.getInstance(k10.t0).setAppPaused(true, true);
                     t0.w = false;
                 } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
                     if (s2.a) {
                         a8.b("screen on");
                     }
-                    ConnectionsManager.getInstance(j10.t0).setAppPaused(false, true);
+                    ConnectionsManager.getInstance(k10.t0).setAppPaused(false, true);
                     t0.w = true;
                 }
-                ks.e().k(ks.N4, new Object[0]);
+                ls.e().k(ls.N4, new Object[0]);
                 break;
         }
     }

@@ -1,7 +1,7 @@
 package a3;
 
 import ab.d0;
-import ai.k1;
+import ai.l1;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -55,25 +55,24 @@ import ki.s3;
 import oi.b2;
 import oi.c4;
 import oi.g2;
-import oi.l1;
 import oi.q3;
 import oi.t3;
 import org.telegram.messenger.a8;
+import org.telegram.messenger.az;
 import org.telegram.messenger.f4;
-import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.mp;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.ni;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.np;
 import org.telegram.messenger.oi;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.rr;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.pi;
+import org.telegram.messenger.si;
 import org.telegram.messenger.sr;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -111,9 +110,9 @@ import org.telegram.ui.u7;
 import org.telegram.ui.ww;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h implements p, SuccessContinuation, k1, androidx.car.app.utils.b, Continuation, ww, rr, a9, OnFailureListener, oi, q1, ll0, ll, l0, rb0, a5 {
+public final /* synthetic */ class h implements p, SuccessContinuation, l1, androidx.car.app.utils.b, Continuation, ww, sr, a9, OnFailureListener, pi, q1, ll0, ll, l0, rb0, a5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -156,7 +155,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
         return false;
     }
 
-    @Override // org.telegram.messenger.rr
+    @Override // org.telegram.messenger.sr
     public void a(String str) {
         r3 r3Var = (r3) this.c;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.b;
@@ -216,14 +215,14 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                         g2Var4.h();
                     }
                     uiVar2.a(true);
-                    b2Var.Q.post(new l1(b2Var, aVar2, 9));
+                    b2Var.Q.post(new oi.l1(b2Var, aVar2, 9));
                     break;
                 }
                 break;
         }
     }
 
-    @Override // ai.k1
+    @Override // ai.l1
     public void c(long j3, long j10) {
         String str = (String) this.b;
         ai.t tVar = (ai.t) this.c;
@@ -306,7 +305,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.oi
+    @Override // org.telegram.messenger.pi
     public void e(String str, ArrayList arrayList) {
         int i7;
         int i10;
@@ -317,7 +316,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
         ArrayList arrayList5 = arrayList;
         x1 x1Var = (x1) this.c;
         String str2 = (String) this.b;
-        ri riVar = (ri) this.d;
+        si siVar = (si) this.d;
         ArrayList arrayList6 = x1Var.h;
         SparseIntArray sparseIntArray = x1Var.E;
         ArrayList arrayList7 = x1Var.n;
@@ -330,9 +329,9 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
             int i12 = 0;
             for (int i13 = 0; i13 < j3.size(); i13++) {
                 try {
-                    ni niVar = new ni();
-                    niVar.a = ((org.telegram.messenger.h6) j3.get(i13)).c.toString();
-                    arrayList5.add(niVar);
+                    oi oiVar = new oi();
+                    oiVar.a = ((org.telegram.messenger.h6) j3.get(i13)).c.toString();
+                    arrayList5.add(oiVar);
                 } catch (Exception unused) {
                 }
             }
@@ -348,9 +347,9 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
             if (y1Var.a == 0) {
                 hashSet.clear();
                 for (int i15 = 0; i15 < arrayList5.size(); i15++) {
-                    ni niVar2 = (ni) arrayList5.get(i15);
-                    String str3 = niVar2.a;
-                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) x1Var.d.get(niVar2.a)) != null) {
+                    oi oiVar2 = (oi) arrayList5.get(i15);
+                    String str3 = oiVar2.a;
+                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) x1Var.d.get(oiVar2.a)) != null) {
                         hashSet.addAll(arrayList4);
                     }
                 }
@@ -362,13 +361,13 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                 i7 = 1;
                 i10 = 0;
             } else {
-                HashMap hashMap = riVar.e0;
+                HashMap hashMap = siVar.e0;
                 int i17 = 0;
                 while (i17 < arrayList5.size()) {
-                    ni niVar3 = (ni) arrayList5.get(i17);
+                    oi oiVar3 = (oi) arrayList5.get(i17);
                     int i18 = i12;
-                    String str4 = niVar3.a;
-                    if (str4 == null || str4.startsWith("animated_") || (arrayList3 = (ArrayList) hashMap.get(niVar3.a)) == null || arrayList3.isEmpty()) {
+                    String str4 = oiVar3.a;
+                    if (str4 == null || str4.startsWith("animated_") || (arrayList3 = (ArrayList) hashMap.get(oiVar3.a)) == null || arrayList3.isEmpty()) {
                         i11 = i14;
                     } else {
                         i11 = i14;
@@ -386,11 +385,11 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                 }
                 i7 = i14;
                 i10 = i12;
-                ArrayList arrayList10 = riVar.t0[i10];
+                ArrayList arrayList10 = siVar.t0[i10];
                 int i20 = i10;
                 while (i20 < arrayList5.size()) {
-                    ni niVar4 = (ni) arrayList5.get(i20);
-                    String str5 = niVar4.a;
+                    oi oiVar4 = (oi) arrayList5.get(i20);
+                    String str5 = oiVar4.a;
                     if (str5 != null && !str5.startsWith("animated_")) {
                         for (int i21 = i10; i21 < arrayList10.size(); i21++) {
                             TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList10.get(i21);
@@ -404,8 +403,8 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                                 arrayList2 = arrayList11;
                             }
                             for (int i22 = i10; i22 < arrayList2.size(); i22++) {
-                                String V = fj.V(arrayList2.get(i22), null, null);
-                                if (V != null && V.contains(niVar4.a)) {
+                                String V = gj.V(arrayList2.get(i22), null, null);
+                                if (V != null && V.contains(oiVar4.a)) {
                                     arrayList9.add(arrayList2.get(i22));
                                     x1Var.y++;
                                 }
@@ -486,7 +485,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                 h1Var.getClass();
                 zArr[0] = true;
                 if (user != null) {
-                    mp.u1(h1Var.f).g7.edit().putBoolean("inlinegeo_" + user.id, true).commit();
+                    np.u1(h1Var.f).g7.edit().putBoolean("inlinegeo_" + user.id, true).commit();
                     h1Var.G();
                     break;
                 }
@@ -531,23 +530,23 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                 break;
             case 18:
                 boolean[] zArr3 = (boolean[]) this.c;
-                x10 x10Var = (x10) this.b;
+                y10 y10Var = (y10) this.b;
                 org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.d;
                 zArr3[0] = true;
-                x10Var.a(Boolean.FALSE);
+                y10Var.a(Boolean.FALSE);
                 t1VarArr[0].dismiss();
                 break;
             case 22:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                fj fjVar = (fj) this.b;
+                gj gjVar = (gj) this.b;
                 TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.d;
                 Activity activity2 = chatActivityEnterView.E3;
                 if (activity2.checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION") == 0) {
-                    zy.C(chatActivityEnterView.R).o0(fjVar, keyboardButtonProto);
+                    az.C(chatActivityEnterView.R).o0(gjVar, keyboardButtonProto);
                     break;
                 } else {
                     activity2.requestPermissions(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, 2);
-                    chatActivityEnterView.Y3 = fjVar;
+                    chatActivityEnterView.Y3 = gjVar;
                     chatActivityEnterView.Z3 = keyboardButtonProto;
                     break;
                 }
@@ -557,11 +556,11 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                 TLRPC.User user2 = (TLRPC.User) this.d;
                 int i11 = uiVar.H3;
                 if (tL_attachMenuBot == null) {
-                    ri.d0(i11).Q1(user2.id);
+                    si.d0(i11).Q1(user2.id);
                     break;
                 } else {
                     TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
-                    tL_messages_toggleBotInAttachMenu.bot = mp.u1(i11).s1(user2);
+                    tL_messages_toggleBotInAttachMenu.bot = np.u1(i11).s1(user2);
                     tL_messages_toggleBotInAttachMenu.enabled = false;
                     ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new u7(13, uiVar, tL_attachMenuBot), 66);
                     break;
@@ -675,7 +674,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.b;
                 cx cxVar2 = (cx) this.d;
                 if (!arrayList.isEmpty()) {
-                    long j3 = ((sr) arrayList.get(0)).a;
+                    long j3 = ((tr) arrayList.get(0)).a;
                     Long l10 = (Long) f4.f(f6Var.a).r.get(tL_starGiftUnique.slug);
                     long longValue = l10 != null ? l10.longValue() : 0L;
                     if (longValue == 0 || longValue == j3) {
@@ -689,19 +688,19 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                fj fjVar = (fj) this.b;
+                gj gjVar = (gj) this.b;
                 TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.d;
                 bn bnVar = chatActivityEnterView.F3;
-                TLRPC.Message message = fjVar.k;
+                TLRPC.Message message = gjVar.k;
                 long j10 = message.from_id.user_id;
                 long j11 = message.via_bot_id;
                 if (j11 != 0) {
                     j10 = j11;
                 }
-                TLRPC.User c22 = mp.u1(chatActivityEnterView.S.a).c2(Long.valueOf(j10));
+                TLRPC.User c22 = np.u1(chatActivityEnterView.S.a).c2(Long.valueOf(j10));
                 if (c22 != null) {
-                    long j12 = ((sr) arrayList.get(0)).a;
-                    ri.d0(chatActivityEnterView.R).V1(j12, 0, "@" + o10.o(c22) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, null, null, 0L, true, false, null);
+                    long j12 = ((tr) arrayList.get(0)).a;
+                    si.d0(chatActivityEnterView.R).V1(j12, 0, "@" + p10.o(c22) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, null, null, 0L, true, false, null);
                     if (j12 == chatActivityEnterView.G3) {
                         cxVar.finishFragment();
                         break;
@@ -712,7 +711,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, k1, andr
                         } else {
                             bundle.putLong("chat_id", -j12);
                         }
-                        if (mp.u1(chatActivityEnterView.S.a).E(bundle, cxVar, null, null)) {
+                        if (np.u1(chatActivityEnterView.S.a).E(bundle, cxVar, null, null)) {
                             if (!bnVar.presentFragment(new bn(bundle), true)) {
                                 cxVar.finishFragment();
                                 break;

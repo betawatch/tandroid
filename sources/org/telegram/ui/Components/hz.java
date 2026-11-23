@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hz {
     public int A;
@@ -525,9 +525,9 @@ public final class hz {
             GLES20.glUniform1f(this.j0, this.f1.getFadeValue());
             int tintHighlightsColor = this.f1.getTintHighlightsColor();
             int tintShadowsColor = this.f1.getTintShadowsColor();
-            GLES20.glUniform3f(this.n0, ((tintHighlightsColor >> 16) & org.telegram.messenger.ks.e4) / 255.0f, ((tintHighlightsColor >> 8) & org.telegram.messenger.ks.e4) / 255.0f, (tintHighlightsColor & org.telegram.messenger.ks.e4) / 255.0f);
+            GLES20.glUniform3f(this.n0, ((tintHighlightsColor >> 16) & org.telegram.messenger.ls.e4) / 255.0f, ((tintHighlightsColor >> 8) & org.telegram.messenger.ls.e4) / 255.0f, (tintHighlightsColor & org.telegram.messenger.ls.e4) / 255.0f);
             GLES20.glUniform1f(this.l0, this.f1.getTintHighlightsIntensityValue());
-            GLES20.glUniform3f(this.m0, ((tintShadowsColor >> 16) & org.telegram.messenger.ks.e4) / 255.0f, ((tintShadowsColor >> 8) & org.telegram.messenger.ks.e4) / 255.0f, (tintShadowsColor & org.telegram.messenger.ks.e4) / 255.0f);
+            GLES20.glUniform3f(this.m0, ((tintShadowsColor >> 16) & org.telegram.messenger.ls.e4) / 255.0f, ((tintShadowsColor >> 8) & org.telegram.messenger.ls.e4) / 255.0f, (tintShadowsColor & org.telegram.messenger.ls.e4) / 255.0f);
             GLES20.glUniform1f(this.k0, this.f1.getTintShadowsIntensityValue());
             boolean s5 = this.f1.s();
             GLES20.glUniform1f(this.i0, s5 ? 0.0f : 1.0f);
@@ -535,7 +535,7 @@ public final class hz {
                 ByteBuffer j3 = this.f1.j();
                 GLES20.glActiveTexture(33985);
                 GLES20.glBindTexture(3553, this.V0[0]);
-                GLES20.glTexImage2D(3553, 0, 6408, org.telegram.messenger.ks.e3, 1, 0, 6408, 5121, j3);
+                GLES20.glTexImage2D(3553, 0, 6408, org.telegram.messenger.ls.e3, 1, 0, 6408, 5121, j3);
                 GLES20.glUniform1i(this.h0, 1);
             }
         }

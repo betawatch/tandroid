@@ -12,9 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ma;
 import di.n4;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.m6;
@@ -24,7 +24,7 @@ import org.telegram.ui.r61;
 import org.telegram.ui.t4;
 import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -106,7 +106,7 @@ public final class m0 extends FrameLayout {
                 org.telegram.ui.ActionBar.q0 q0Var = (org.telegram.ui.ActionBar.q0) this.c;
                 super.onLayout(z10, i7, i10, i11, i12);
                 int i13 = 0;
-                if (!gd.a0 && q0Var.h.getVisibility() == 0) {
+                if (!hd.a0 && q0Var.h.getVisibility() == 0) {
                     i13 = org.telegram.messenger.g0.L(4.0f) + q0Var.h.getMeasuredWidth();
                 }
                 if (q0Var.f.getVisibility() == 0) {
@@ -136,7 +136,7 @@ public final class m0 extends FrameLayout {
                 if (view != null) {
                     measureChildWithMargins(view, i7, 0, i10, 0);
                 }
-                if (!gd.a0) {
+                if (!hd.a0) {
                     if (q0Var.h.getVisibility() == 0) {
                         measureChildWithMargins(q0Var.h, i7, View.MeasureSpec.getSize(i7) / 2, i10, 0);
                         i12 = org.telegram.messenger.g0.L(4.0f) + q0Var.h.getMeasuredWidth();
@@ -165,7 +165,7 @@ public final class m0 extends FrameLayout {
                     this.b = true;
                     measureChildWithMargins(q0Var.f, i7, i11, i10, 0);
                     int measuredWidth2 = q0Var.f.getVisibility() == 0 ? q0Var.f.getMeasuredWidth() : 0;
-                    measureChildWithMargins(q0Var.e, n10.c(12.0f, size2, 0), i11 + measuredWidth2, i10, 0);
+                    measureChildWithMargins(q0Var.e, o10.c(12.0f, size2, 0), i11 + measuredWidth2, i10, 0);
                     this.b = false;
                     setMeasuredDimension(Math.max(q0Var.e.getMeasuredWidth() + measuredWidth2, size2), View.MeasureSpec.getSize(i10));
                     break;
@@ -181,7 +181,7 @@ public final class m0 extends FrameLayout {
                 }
                 TextView textView2 = bnVar.a2;
                 if (textView2 != null && textView2.getVisibility() == 0 && (textView = bnVar.c2) != null && textView.getVisibility() == 0) {
-                    size3 = n10.z(31.0f, size3, 2);
+                    size3 = o10.z(31.0f, size3, 2);
                 }
                 this.b = true;
                 TextView textView3 = bnVar.c2;
@@ -275,7 +275,7 @@ public final class m0 extends FrameLayout {
                         if (frameLayout != null) {
                             FrameLayout.LayoutParams layoutParams6 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
                             if (i15 == 0) {
-                                f10 = ((x71) this.c).b == 2 ? ks.s5 : ks.w4;
+                                f10 = ((x71) this.c).b == 2 ? ls.s5 : ls.w4;
                             } else {
                                 f10 = 316.0f;
                             }

@@ -6,14 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class x2 extends kj0 {
     public final /* synthetic */ d3 c;
@@ -29,7 +29,7 @@ public final class x2 extends kj0 {
 
     @Override // org.telegram.ui.Components.kj0
     public final String F(int i7) {
-        ef efVar;
+        ff ffVar;
         int i10 = i7 - 2;
         d3 d3Var = this.c;
         if (d3Var.d0) {
@@ -39,19 +39,19 @@ public final class x2 extends kj0 {
             i10 = i7 - 3;
         } else if (d3Var.e0) {
             if (i10 >= 0 && i10 < d3Var.c0.size()) {
-                return gd.e0(((c7) d3Var.c0.get(i10)).d / 1000, true);
+                return hd.e0(((c7) d3Var.c0.get(i10)).d / 1000, true);
             }
             i10 -= d3Var.c0.size();
         }
         ArrayList arrayList = d3Var.g0;
-        if (arrayList == null || i10 < 0 || i10 >= arrayList.size() || (efVar = (ef) d3Var.g0.get(i10)) == null) {
+        if (arrayList == null || i10 < 0 || i10 >= arrayList.size() || (ffVar = (ff) d3Var.g0.get(i10)) == null) {
             return null;
         }
-        long j3 = efVar.D;
+        long j3 = ffVar.D;
         if (Build.VERSION.SDK_INT <= 28) {
             j3 /= 1000;
         }
-        return gd.e0(j3, true);
+        return hd.e0(j3, true);
     }
 
     @Override // org.telegram.ui.Components.kj0
@@ -139,25 +139,25 @@ public final class x2 extends kj0 {
             if (arrayList3 == null || i12 < 0 || i12 >= arrayList3.size()) {
                 return;
             }
-            ef efVar = (ef) d3Var.g0.get(i12);
-            z2Var.f(arrayList.indexOf(efVar), !arrayList.isEmpty() || d3Var.R, z2Var.T == efVar);
-            z2Var.T = efVar;
-            z2Var.g((efVar == null || !efVar.b || efVar.d()) ? null : org.telegram.messenger.g0.g0(efVar.E, false, false));
+            ff ffVar = (ff) d3Var.g0.get(i12);
+            z2Var.f(arrayList.indexOf(ffVar), !arrayList.isEmpty() || d3Var.R, z2Var.T == ffVar);
+            z2Var.T = ffVar;
+            z2Var.g((ffVar == null || !ffVar.b || ffVar.d()) ? null : org.telegram.messenger.g0.g0(ffVar.E, false, false));
             z2Var.G = null;
-            if (efVar == null) {
+            if (ffVar == null) {
                 z2Var.P = null;
-            } else if (efVar.b) {
+            } else if (ffVar.b) {
                 StringBuilder sb2 = new StringBuilder();
                 org.telegram.ui.Cells.c0.u(null, 2131753930, sb2, ", ");
-                sb2.append(gd.z(efVar.E));
+                sb2.append(hd.z(ffVar.E));
                 z2Var.P = sb2.toString();
             } else {
-                z2Var.P = gd.N0(2131753945, null);
+                z2Var.P = hd.N0(2131753945, null);
             }
-            z2Var.b(efVar);
+            z2Var.b(ffVar);
             z2Var.invalidate();
             if (d3Var.N) {
-                z2Var.J.setOnClickListener(new ah.h(this, efVar, z2Var, 14));
+                z2Var.J.setOnClickListener(new ah.h(this, ffVar, z2Var, 14));
             }
         }
     }
@@ -178,7 +178,7 @@ public final class x2 extends kj0 {
             textView.setTextColor(-1);
             textView.setTypeface(org.telegram.messenger.g0.o());
             textView.setText(d3Var.getTitle());
-            t2Var.addView(textView, c8.ma.d(-1, -1.0f, ks.E1, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
+            t2Var.addView(textView, c8.ma.d(-1, -1.0f, ls.E1, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
             d3Var.j0 = t2Var;
             view = t2Var;
         } else {
@@ -194,10 +194,10 @@ public final class x2 extends kj0 {
         if (f1Var.f == 2) {
             z2 z2Var = (z2) f1Var.a;
             Object obj = z2Var.T;
-            if (!(obj instanceof ef)) {
+            if (!(obj instanceof ff)) {
                 z2Var.f(-1, false, false);
             } else {
-                z2Var.f(arrayList.indexOf((ef) obj), !arrayList.isEmpty() || d3Var.R, false);
+                z2Var.f(arrayList.indexOf((ff) obj), !arrayList.isEmpty() || d3Var.R, false);
             }
         }
     }

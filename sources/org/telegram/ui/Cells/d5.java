@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class d5 extends FrameLayout {
     public TextView a;
@@ -49,7 +49,7 @@ public abstract class d5 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+        canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
     }
 
     @Override // android.view.ViewGroup
@@ -68,7 +68,7 @@ public abstract class d5 extends FrameLayout {
         TextView textView = this.b;
         textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
         this.a.measure(View.MeasureSpec.makeMeasureSpec(i5.c.d(8.0f, measuredWidth - textView.getMeasuredWidth(), org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
-        this.c.measure(n10.c(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+        this.c.measure(o10.c(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
@@ -84,7 +84,7 @@ public abstract class d5 extends FrameLayout {
         float f10;
         float f11;
         this.d = j3;
-        this.b.setText(gd.a0("AutodownloadSizeLimitUpTo", null, 2131753769, org.telegram.messenger.g0.i0(j3, false, false)));
+        this.b.setText(hd.a0("AutodownloadSizeLimitUpTo", null, 2131753769, org.telegram.messenger.g0.i0(j3, false, false)));
         long j10 = j3 - 512000;
         if (j10 < 536576) {
             f11 = Math.max(0.0f, j10 / 536576.0f) * 0.25f;

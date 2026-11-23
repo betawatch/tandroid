@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kf implements org.telegram.ui.Components.fi0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ bn b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ org.telegram.messenger.fj d;
+    public final /* synthetic */ org.telegram.messenger.gj d;
 
-    public /* synthetic */ kf(bn bnVar, boolean z10, org.telegram.messenger.fj fjVar, int i7) {
+    public /* synthetic */ kf(bn bnVar, boolean z10, org.telegram.messenger.gj gjVar, int i7) {
         this.a = i7;
         this.b = bnVar;
         this.c = z10;
-        this.d = fjVar;
+        this.d = gjVar;
     }
 
     @Override // org.telegram.ui.Components.fi0
@@ -33,11 +33,11 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.fi0 
                         arrayList2.add(g22);
                         final TLRPC.ChannelParticipant[] channelParticipantArr = new TLRPC.ChannelParticipant[1];
                         TLRPC.TL_channels_getParticipant tL_channels_getParticipant = new TLRPC.TL_channels_getParticipant();
-                        tL_channels_getParticipant.channel = org.telegram.messenger.mp.k1(bnVar.e);
-                        tL_channels_getParticipant.participant = org.telegram.messenger.mp.m1(g22);
+                        tL_channels_getParticipant.channel = org.telegram.messenger.np.k1(bnVar.e);
+                        tL_channels_getParticipant.participant = org.telegram.messenger.np.m1(g22);
                         final int i7 = 0;
-                        bnVar.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new d3.b(1), new org.telegram.messenger.q10() { // from class: org.telegram.ui.jg
-                            @Override // org.telegram.messenger.q10
+                        bnVar.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new d3.b(1), new org.telegram.messenger.r10() { // from class: org.telegram.ui.jg
+                            @Override // org.telegram.messenger.r10
                             public final void a(Object obj, Object obj2) {
                                 TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
                                 switch (i7) {
@@ -84,11 +84,11 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.fi0 
                     arrayList4.add(g23);
                     final TLRPC.ChannelParticipant[] channelParticipantArr2 = new TLRPC.ChannelParticipant[1];
                     TLRPC.TL_channels_getParticipant tL_channels_getParticipant2 = new TLRPC.TL_channels_getParticipant();
-                    tL_channels_getParticipant2.channel = org.telegram.messenger.mp.k1(bnVar2.e);
-                    tL_channels_getParticipant2.participant = org.telegram.messenger.mp.m1(g23);
+                    tL_channels_getParticipant2.channel = org.telegram.messenger.np.k1(bnVar2.e);
+                    tL_channels_getParticipant2.participant = org.telegram.messenger.np.m1(g23);
                     final int i10 = 1;
-                    bnVar2.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant2, new d3.b(1), new org.telegram.messenger.q10() { // from class: org.telegram.ui.jg
-                        @Override // org.telegram.messenger.q10
+                    bnVar2.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant2, new d3.b(1), new org.telegram.messenger.r10() { // from class: org.telegram.ui.jg
+                        @Override // org.telegram.messenger.r10
                         public final void a(Object obj, Object obj2) {
                             TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
                             switch (i10) {

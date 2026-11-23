@@ -2,9 +2,9 @@ package di;
 
 import android.text.SpannableString;
 import java.util.Arrays;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -19,12 +19,11 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.cx;
 import org.telegram.ui.f40;
-import org.telegram.ui.np;
 import org.telegram.ui.qv0;
 import org.telegram.ui.rv0;
 import org.telegram.ui.s90;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -68,23 +67,23 @@ public final /* synthetic */ class m implements Runnable {
                 return;
             case 1:
                 y8 y8Var = (y8) obj4;
-                x10 x10Var = (x10) obj3;
+                y10 y10Var = (y10) obj3;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj2;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) obj;
                 if (y8Var.e) {
-                    y8Var.H(starGift, this.b, tL_textWithEntities, this.c, x10Var);
+                    y8Var.H(starGift, this.b, tL_textWithEntities, this.c, y10Var);
                     return;
                 } else {
                     y8.e("NO_BALANCE");
-                    x10Var.a(null);
+                    y10Var.a(null);
                     return;
                 }
             case 2:
                 fi.z3 z3Var = (fi.z3) obj4;
-                final mp mpVar = (mp) obj3;
+                final np npVar = (np) obj3;
                 String str = (String) obj;
                 TLObject tLObject2 = (TLObject) obj2;
-                fi.p6 R1 = mpVar.R1();
+                fi.p6 R1 = npVar.R1();
                 final long j10 = this.b;
                 final boolean z11 = this.c;
                 R1.l0(j10, z11, false);
@@ -95,10 +94,10 @@ public final /* synthetic */ class m implements Runnable {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                mpVar.R1().l0(j10, !z11, false);
+                                npVar.R1().l0(j10, !z11, false);
                                 break;
                             default:
-                                mpVar.R1().l0(j10, z11, true);
+                                npVar.R1().l0(j10, z11, true);
                                 break;
                         }
                     }
@@ -109,49 +108,49 @@ public final /* synthetic */ class m implements Runnable {
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                mpVar.R1().l0(j10, !z11, false);
+                                npVar.R1().l0(j10, !z11, false);
                                 break;
                             default:
-                                mpVar.R1().l0(j10, z11, true);
+                                npVar.R1().l0(j10, z11, true);
                                 break;
                         }
                     }
                 };
-                org.telegram.ui.Components.gc V = new org.telegram.ui.Components.lc(z3Var.N0, z3Var.l0).V(Arrays.asList(tLObject2), !z11 ? org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744517, org.telegram.messenger.i5.m(10, str, null))) : org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744518, org.telegram.messenger.i5.m(10, str, null))), null, aVar);
+                org.telegram.ui.Components.gc V = new org.telegram.ui.Components.lc(z3Var.N0, z3Var.l0).V(Arrays.asList(tLObject2), !z11 ? org.telegram.messenger.g0.W2(hd.a0(null, null, 2131744515, org.telegram.messenger.i5.m(10, str, null))) : org.telegram.messenger.g0.W2(hd.a0(null, null, 2131744516, org.telegram.messenger.i5.m(10, str, null))), null, aVar);
                 V.a = 2;
                 V.k(true);
                 return;
             case 3:
                 fi.p6 p6Var = (fi.p6) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
-                x10 x10Var2 = (x10) obj2;
+                y10 y10Var2 = (y10) obj2;
                 org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj;
                 if (tL_error == null) {
-                    x10Var2.a(Boolean.TRUE);
+                    y10Var2.a(Boolean.TRUE);
                     return;
                 }
                 if (tL_error.text.contains("BOOSTS_REQUIRED")) {
                     if (!z10) {
-                        x10Var2.a(Boolean.FALSE);
+                        y10Var2.a(Boolean.FALSE);
                         return;
                     }
-                    mp u12 = mp.u1(p6Var.a);
+                    np u12 = np.u1(p6Var.a);
                     org.telegram.messenger.h3 I0 = u12.I0();
                     long j11 = this.b;
-                    I0.a(j11, new bi.i2(p6Var, x10Var2, u12, j11));
+                    I0.a(j11, new bi.i2(p6Var, y10Var2, u12, j11));
                     return;
                 }
                 if (tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
                     org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
                     if (z10 && Q != null) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), h6Var);
-                        String N0 = gd.N0(2131748633, null);
+                        String N0 = hd.N0(2131748633, null);
                         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         t1Var.S = N0;
-                        t1Var.U = gd.N0(2131748634, null);
+                        t1Var.U = hd.N0(2131748634, null);
                         org.telegram.messenger.f3.m(null, 2131747637, alertDialog$Builder, null);
                     }
-                    x10Var2.a(Boolean.FALSE);
+                    y10Var2.a(Boolean.FALSE);
                     return;
                 }
                 if (!tL_error.text.equalsIgnoreCase("PREMIUM_ACCOUNT_REQUIRED")) {
@@ -159,14 +158,14 @@ public final /* synthetic */ class m implements Runnable {
                     if (Y != null) {
                         Y.g0(tL_error, false);
                     }
-                    x10Var2.a(Boolean.FALSE);
+                    y10Var2.a(Boolean.FALSE);
                     return;
                 }
                 org.telegram.ui.ActionBar.g2 Q2 = LaunchActivity.Q();
                 if (z10 && Q2 != null) {
                     Q2.showDialog(new ug.y0(Q2, 14, true));
                 }
-                x10Var2.a(Boolean.FALSE);
+                y10Var2.a(Boolean.FALSE);
                 return;
             case 4:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj3;
@@ -236,9 +235,9 @@ public final /* synthetic */ class m implements Runnable {
                     return;
                 }
                 TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject3;
-                mp.u1(i12).f4(tL_contacts_resolvedPeer.users, false);
-                mp.u1(i12).Z3(tL_contacts_resolvedPeer.chats, false);
-                TLRPC.User c22 = mp.u1(i12).c2(Long.valueOf(tL_contacts_resolvedPeer.peer.user_id));
+                np.u1(i12).f4(tL_contacts_resolvedPeer.users, false);
+                np.u1(i12).Z3(tL_contacts_resolvedPeer.chats, false);
+                TLRPC.User c22 = np.u1(i12).c2(Long.valueOf(tL_contacts_resolvedPeer.peer.user_id));
                 if (c22 != null) {
                     org.telegram.ui.Wallet.da daVar = new org.telegram.ui.Wallet.da(c22);
                     daVar.s = j3;
@@ -252,37 +251,37 @@ public final /* synthetic */ class m implements Runnable {
             default:
                 rv0 rv0Var = (rv0) obj4;
                 ProfileActivity profileActivity = rv0Var.b;
-                np npVar = new np(profileActivity.e1, -j3, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj2, 2, true, !z10, null);
-                npVar.Y0 = new qv0(rv0Var, (cx) obj);
-                profileActivity.presentFragment(npVar);
+                org.telegram.ui.np npVar2 = new org.telegram.ui.np(profileActivity.e1, -j3, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj2, 2, true, !z10, null);
+                npVar2.Y0 = new qv0(rv0Var, (cx) obj);
+                profileActivity.presentFragment(npVar2);
                 return;
         }
     }
 
-    public /* synthetic */ m(y8 y8Var, x10 x10Var, TL_stars.StarGift starGift, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
+    public /* synthetic */ m(y8 y8Var, y10 y10Var, TL_stars.StarGift starGift, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
         this.d = y8Var;
-        this.e = x10Var;
+        this.e = y10Var;
         this.f = starGift;
         this.b = j3;
         this.h = tL_textWithEntities;
         this.c = z10;
     }
 
-    public /* synthetic */ m(fi.z3 z3Var, mp mpVar, long j3, boolean z10, String str, TLObject tLObject) {
+    public /* synthetic */ m(fi.z3 z3Var, np npVar, long j3, boolean z10, String str, TLObject tLObject) {
         this.d = z3Var;
-        this.e = mpVar;
+        this.e = npVar;
         this.b = j3;
         this.c = z10;
         this.h = str;
         this.f = tLObject;
     }
 
-    public /* synthetic */ m(fi.p6 p6Var, TLRPC.TL_error tL_error, boolean z10, long j3, x10 x10Var, org.telegram.ui.ActionBar.h6 h6Var) {
+    public /* synthetic */ m(fi.p6 p6Var, TLRPC.TL_error tL_error, boolean z10, long j3, y10 y10Var, org.telegram.ui.ActionBar.h6 h6Var) {
         this.d = p6Var;
         this.e = tL_error;
         this.c = z10;
         this.b = j3;
-        this.f = x10Var;
+        this.f = y10Var;
         this.h = h6Var;
     }
 

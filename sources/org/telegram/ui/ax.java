@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ax extends v4.w {
     public v4.f1 d;
@@ -48,15 +48,15 @@ public final class ax extends v4.w {
 
     /* JADX WARN: Code restructure failed: missing block: B:102:0x0148, code lost:
     
-        if (org.telegram.messenger.bz.m(r14) == 4) goto L84;
+        if (org.telegram.messenger.cz.m(r14) == 4) goto L84;
      */
     /* JADX WARN: Code restructure failed: missing block: B:105:0x00e9, code lost:
     
-        if (org.telegram.messenger.bz.m(r14) != 2) goto L64;
+        if (org.telegram.messenger.cz.m(r14) != 2) goto L64;
      */
     /* JADX WARN: Code restructure failed: missing block: B:50:0x00c2, code lost:
     
-        if (org.telegram.messenger.bz.m(r8) != 5) goto L52;
+        if (org.telegram.messenger.cz.m(r8) != 5) goto L52;
      */
     /* JADX WARN: Code restructure failed: missing block: B:64:0x00fd, code lost:
     
@@ -131,17 +131,17 @@ public final class ax extends v4.w {
                                 }
                                 if (cxVar.getMessagesController().I2(dialogId, false)) {
                                     int i18 = cxVar.getMessagesController().D2;
-                                    int i19 = org.telegram.messenger.mp.I8;
+                                    int i19 = org.telegram.messenger.np.I8;
                                 }
                                 if (cxVar.Y2 == 0) {
                                     i11 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                    if (dialogId >= 0 || !org.telegram.messenger.v3.Y(org.telegram.messenger.mp.u1(i11).O0(Long.valueOf(-dialogId)))) {
+                                    if (dialogId >= 0 || !org.telegram.messenger.v3.Y(org.telegram.messenger.np.u1(i11).O0(Long.valueOf(-dialogId)))) {
                                         i12 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                        if (org.telegram.messenger.bz.m(i12) != 3) {
+                                        if (org.telegram.messenger.cz.m(i12) != 3) {
                                             i13 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                            if (org.telegram.messenger.bz.m(i13) != 1) {
+                                            if (org.telegram.messenger.cz.m(i13) != 1) {
                                                 i14 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                                if (org.telegram.messenger.bz.m(i14) != 0) {
+                                                if (org.telegram.messenger.cz.m(i14) != 0) {
                                                     i15 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
                                                 }
                                             }
@@ -150,22 +150,22 @@ public final class ax extends v4.w {
                                     if (!cxVar.H3.c()) {
                                         z10 = true;
                                         i10 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                        if (org.telegram.messenger.bz.m(i10) == 1 && (dialog = (TLRPC.Dialog) cxVar.getMessagesController().R.f(dialogId)) != null && cxVar.H4(bxVar, dialog) && cxVar.getMessagesController().w2(dialog)) {
+                                        if (org.telegram.messenger.cz.m(i10) == 1 && (dialog = (TLRPC.Dialog) cxVar.getMessagesController().R.f(dialogId)) != null && cxVar.H4(bxVar, dialog) && cxVar.getMessagesController().w2(dialog)) {
                                             z10 = false;
                                         }
                                         this.f = false;
-                                        this.e = !(z10 || org.telegram.messenger.n5.D(u2Var.getDialogId())) || (org.telegram.messenger.bz.q1 && org.telegram.messenger.n5.D(u2Var.getDialogId()));
+                                        this.e = !(z10 || org.telegram.messenger.n5.D(u2Var.getDialogId())) || (org.telegram.messenger.cz.q1 && org.telegram.messenger.n5.D(u2Var.getDialogId()));
                                         u2Var.setSliding(true);
                                         return v4.w.l(0, 4);
                                     }
                                 }
                                 z10 = false;
                                 i10 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                if (org.telegram.messenger.bz.m(i10) == 1) {
+                                if (org.telegram.messenger.cz.m(i10) == 1) {
                                     z10 = false;
                                 }
                                 this.f = false;
-                                this.e = !(z10 || org.telegram.messenger.n5.D(u2Var.getDialogId())) || (org.telegram.messenger.bz.q1 && org.telegram.messenger.n5.D(u2Var.getDialogId()));
+                                this.e = !(z10 || org.telegram.messenger.n5.D(u2Var.getDialogId())) || (org.telegram.messenger.cz.q1 && org.telegram.messenger.n5.D(u2Var.getDialogId()));
                                 u2Var.setSliding(true);
                                 return v4.w.l(0, 4);
                             }
@@ -218,7 +218,7 @@ public final class ax extends v4.w {
                 TLRPC.Dialog dialog3 = (TLRPC.Dialog) d42.get(H2);
                 int i11 = kvVar.h;
                 if (i11 == 7 || i11 == 8) {
-                    LongSparseIntArray longSparseIntArray = org.telegram.messenger.mp.u1(i10).N[kvVar.h == 8 ? (char) 1 : (char) 0].j;
+                    LongSparseIntArray longSparseIntArray = org.telegram.messenger.np.u1(i10).N[kvVar.h == 8 ? (char) 1 : (char) 0].j;
                     int i12 = longSparseIntArray.get(dialog2.id);
                     longSparseIntArray.put(dialog2.id, longSparseIntArray.get(dialog3.id));
                     longSparseIntArray.put(dialog3.id, i12);
@@ -239,11 +239,11 @@ public final class ax extends v4.w {
                 } else {
                     i7 = 8;
                 }
-                org.telegram.messenger.ro roVar = cxVar.getMessagesController().N[cxVar.f0[0].s == i7 ? (char) 1 : (char) 0];
-                if (arrayList.contains(roVar)) {
+                org.telegram.messenger.so soVar = cxVar.getMessagesController().N[cxVar.f0[0].s == i7 ? (char) 1 : (char) 0];
+                if (arrayList.contains(soVar)) {
                     return true;
                 }
-                arrayList.add(roVar);
+                arrayList.add(soVar);
                 return true;
             }
         }
@@ -288,7 +288,7 @@ public final class ax extends v4.w {
         }
         if (!cxVar.getMessagesController().I2(dialogId, false) && cxVar.Y2 == 0) {
             i7 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-            if (org.telegram.messenger.bz.m(i7) == 1) {
+            if (org.telegram.messenger.cz.m(i7) == 1) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(Long.valueOf(dialogId));
                 cxVar.P2 = (dialog.unread_count > 0 || dialog.unread_mark) ? 1 : 0;
@@ -299,7 +299,7 @@ public final class ax extends v4.w {
         if (org.telegram.messenger.v3.Y(cxVar.getMessagesController().O0(Long.valueOf(-dialogId)))) {
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(Long.valueOf(dialogId));
-            cxVar.K4(arrayList2, org.telegram.messenger.ks.w1, true, false, null);
+            cxVar.K4(arrayList2, org.telegram.messenger.ls.w1, true, false, null);
             return;
         }
         cxVar.Y0 = u2Var;

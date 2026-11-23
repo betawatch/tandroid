@@ -1,14 +1,14 @@
 package di;
 
 import android.content.Context;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r1 implements x10 {
+public final /* synthetic */ class r1 implements y10 {
     public final /* synthetic */ f6 a;
     public final /* synthetic */ bi.k1 b;
     public final /* synthetic */ cg.b c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class r1 implements x10 {
         this.g = z10;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) obj;
         final f6 f6Var = this.a;
@@ -49,8 +49,8 @@ public final /* synthetic */ class r1 implements x10 {
         final long j3 = this.e;
         final TLRPC.TL_textWithEntities tL_textWithEntities = this.f;
         final boolean z10 = this.g;
-        h5 h5Var = new h5(context, h6Var, tL_starGiftUnique, f5Var, i7, j3, E1, false, new q10() { // from class: di.m2
-            @Override // org.telegram.messenger.q10
+        h5 h5Var = new h5(context, h6Var, tL_starGiftUnique, f5Var, i7, j3, E1, false, new r10() { // from class: di.m2
+            @Override // org.telegram.messenger.r10
             public final void a(Object obj2, Object obj3) {
                 f5 f5Var2 = (f5) obj2;
                 vf.b bVar = (vf.b) obj3;

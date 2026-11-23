@@ -9,7 +9,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uo0 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class uo0 implements Runnable {
             case 0:
                 xo0 xo0Var3 = this.b;
                 xo0Var3.f = null;
-                org.telegram.messenger.q5 q5Var = org.telegram.messenger.tr.a0(xo0Var3.L.a).a;
+                org.telegram.messenger.q5 q5Var = org.telegram.messenger.ur.a0(xo0Var3.L.a).a;
                 String str = this.d;
                 int i15 = this.c;
                 q5Var.c(new uo0(xo0Var3, str, i15, 2));
@@ -83,10 +83,10 @@ public final /* synthetic */ class uo0 implements Runnable {
                     try {
                         if (lowerCase.length() == 0) {
                             xo0Var5.r = -1;
-                            org.telegram.messenger.g0.g3(new org.telegram.ui.b0(xo0Var5, xo0Var5.r, new ArrayList(), 18));
+                            org.telegram.messenger.g0.g3(new org.telegram.ui.f0(xo0Var5, xo0Var5.r, new ArrayList(), 17));
                             break;
                         } else {
-                            String T0 = org.telegram.messenger.gd.E0().T0(lowerCase, true, false);
+                            String T0 = org.telegram.messenger.hd.E0().T0(lowerCase, true, false);
                             if (lowerCase.equals(T0) || T0.length() == 0) {
                                 T0 = null;
                             }
@@ -99,7 +99,7 @@ public final /* synthetic */ class uo0 implements Runnable {
                             ArrayList arrayList = new ArrayList();
                             ArrayList arrayList2 = new ArrayList();
                             a0.h hVar = new a0.h();
-                            SQLiteCursor queryFinalized = org.telegram.messenger.tr.a0(ap0Var.a).b.queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
+                            SQLiteCursor queryFinalized = org.telegram.messenger.ur.a0(ap0Var.a).b.queryFinalized("SELECT did, date FROM dialogs ORDER BY date DESC LIMIT 400", new Object[0]);
                             while (queryFinalized.next()) {
                                 long longValue = queryFinalized.longValue(0);
                                 po0 po0Var = new po0();
@@ -124,7 +124,7 @@ public final /* synthetic */ class uo0 implements Runnable {
                                 strArr = strArr2;
                                 i11 = 0;
                             } else {
-                                SQLiteDatabase sQLiteDatabase = org.telegram.messenger.tr.a0(ap0Var.a).b;
+                                SQLiteDatabase sQLiteDatabase = org.telegram.messenger.ur.a0(ap0Var.a).b;
                                 Locale locale = Locale.US;
                                 String join = TextUtils.join(",", arrayList);
                                 StringBuilder sb2 = new StringBuilder();
@@ -137,7 +137,7 @@ public final /* synthetic */ class uo0 implements Runnable {
                                 while (queryFinalized2.next()) {
                                     String stringValue = queryFinalized2.stringValue(2);
                                     int i21 = i20;
-                                    String T02 = org.telegram.messenger.gd.E0().T0(stringValue, true, false);
+                                    String T02 = org.telegram.messenger.hd.E0().T0(stringValue, true, false);
                                     if (stringValue.equals(T02)) {
                                         T02 = null;
                                     }
@@ -188,7 +188,7 @@ public final /* synthetic */ class uo0 implements Runnable {
                                                             if (r22 == z11) {
                                                                 po0Var2.d = org.telegram.messenger.g0.r0(TLdeserialize.first_name, TLdeserialize.last_name, str3);
                                                             } else {
-                                                                po0Var2.d = org.telegram.messenger.g0.r0("@" + org.telegram.messenger.o10.o(TLdeserialize), null, "@" + str3);
+                                                                po0Var2.d = org.telegram.messenger.g0.r0("@" + org.telegram.messenger.p10.o(TLdeserialize), null, "@" + str3);
                                                             }
                                                             po0Var2.b = TLdeserialize;
                                                             po0Var2.a.id = TLdeserialize.id;
@@ -224,12 +224,12 @@ public final /* synthetic */ class uo0 implements Runnable {
                             if (arrayList2.isEmpty()) {
                                 i12 = i10;
                             } else {
-                                SQLiteDatabase sQLiteDatabase2 = org.telegram.messenger.tr.a0(ap0Var.a).b;
+                                SQLiteDatabase sQLiteDatabase2 = org.telegram.messenger.ur.a0(ap0Var.a).b;
                                 Locale locale2 = Locale.US;
                                 SQLiteCursor queryFinalized3 = sQLiteDatabase2.queryFinalized("SELECT data, name FROM chats WHERE uid IN(" + TextUtils.join(",", arrayList2) + ")", new Object[0]);
                                 while (queryFinalized3.next()) {
                                     String stringValue2 = queryFinalized3.stringValue(1);
-                                    String T03 = org.telegram.messenger.gd.E0().T0(stringValue2, true, false);
+                                    String T03 = org.telegram.messenger.hd.E0().T0(stringValue2, true, false);
                                     if (stringValue2.equals(T03)) {
                                         T03 = null;
                                     }
@@ -272,12 +272,12 @@ public final /* synthetic */ class uo0 implements Runnable {
                                     arrayList3.add(po0Var4);
                                 }
                             }
-                            SQLiteCursor queryFinalized4 = org.telegram.messenger.tr.a0(ap0Var.a).b.queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
+                            SQLiteCursor queryFinalized4 = org.telegram.messenger.ur.a0(ap0Var.a).b.queryFinalized("SELECT u.data, u.status, u.name, u.uid FROM users as u INNER JOIN contacts as c ON u.uid = c.uid", new Object[0]);
                             while (queryFinalized4.next()) {
                                 if (hVar.h(queryFinalized4.longValue(3)) < 0) {
                                     char c10 = 2;
                                     String stringValue3 = queryFinalized4.stringValue(2);
-                                    String T04 = org.telegram.messenger.gd.E0().T0(stringValue3, true, false);
+                                    String T04 = org.telegram.messenger.hd.E0().T0(stringValue3, true, false);
                                     if (stringValue3.equals(T04)) {
                                         T04 = null;
                                     }
@@ -314,7 +314,7 @@ public final /* synthetic */ class uo0 implements Runnable {
                                                             if (c11 == 1) {
                                                                 po0Var5.d = org.telegram.messenger.g0.r0(TLdeserialize3.first_name, TLdeserialize3.last_name, str5);
                                                             } else {
-                                                                po0Var5.d = org.telegram.messenger.g0.r0("@" + org.telegram.messenger.o10.o(TLdeserialize3), null, "@" + str5);
+                                                                po0Var5.d = org.telegram.messenger.g0.r0("@" + org.telegram.messenger.p10.o(TLdeserialize3), null, "@" + str5);
                                                             }
                                                             arrayList3.add(po0Var5);
                                                         }
@@ -333,7 +333,7 @@ public final /* synthetic */ class uo0 implements Runnable {
                             }
                             queryFinalized4.dispose();
                             Collections.sort(arrayList3, new org.telegram.ui.pe(15));
-                            org.telegram.messenger.g0.g3(new org.telegram.ui.b0(xo0Var, i7, arrayList3, 18));
+                            org.telegram.messenger.g0.g3(new org.telegram.ui.f0(xo0Var, i7, arrayList3, 17));
                             break;
                         }
                     } catch (Exception e11) {

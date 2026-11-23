@@ -1,8 +1,8 @@
 package hi;
 
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o9 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -30,7 +30,7 @@ public final /* synthetic */ class o9 implements Runnable {
                 runnable.run();
                 sa saVar = p9Var.a;
                 i3 i3Var = saVar.U0;
-                i3Var.a.t(gd.N0(z10 ? 2131744419 : 2131744420, null), false, true);
+                i3Var.a.t(hd.N0(z10 ? 2131744417 : 2131744418, null), false, true);
                 i3Var.invalidate();
                 saVar.g(true, true);
                 saVar.c0(true);

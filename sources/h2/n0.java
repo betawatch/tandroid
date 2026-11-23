@@ -5,11 +5,11 @@ import java.io.File;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.lb;
-import org.telegram.messenger.ob;
+import org.telegram.messenger.mb;
+import org.telegram.messenger.pb;
 import org.telegram.messenger.t7;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.messenger.y8;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Cells.f2;
@@ -17,7 +17,7 @@ import org.telegram.ui.Cells.i2;
 import org.telegram.ui.Wallet.u0;
 import org.telegram.ui.Wallet.z0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,9 +58,9 @@ public final /* synthetic */ class n0 implements Runnable {
                 } else {
                     t7Var.d.h.remove(str);
                 }
-                ob obVar = t7Var.d.F;
-                if (obVar != null) {
-                    Utilities.d.c(new lb(obVar, obVar.a, str, z12));
+                pb pbVar = t7Var.d.F;
+                if (pbVar != null) {
+                    Utilities.d.c(new mb(pbVar, pbVar.a, str, z12));
                 }
                 if (!z13) {
                     w7 w7Var = t7Var.d;
@@ -101,16 +101,16 @@ public final /* synthetic */ class n0 implements Runnable {
                 break;
             default:
                 u0 u0Var = (u0) this.d;
-                x10 x10Var = (x10) this.e;
+                y10 y10Var = (y10) this.e;
                 boolean z16 = this.b;
                 boolean z17 = this.c;
                 TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) u0Var.e;
                 z0 z0Var = u0Var.c;
                 if (z0Var == null || !TextUtils.equals(z0Var.c, tL_walletState.address) || !u0Var.c.f(tL_walletState.public_key)) {
-                    u0Var.F(z16, z17, false, new org.telegram.ui.Wallet.j((Object) u0Var, (Object) x10Var, (Object) tL_walletState, 2));
+                    u0Var.F(z16, z17, false, new org.telegram.ui.Wallet.j((Object) u0Var, (Object) y10Var, (Object) tL_walletState, 2));
                     break;
                 } else {
-                    x10Var.a(null);
+                    y10Var.a(null);
                     break;
                 }
                 break;

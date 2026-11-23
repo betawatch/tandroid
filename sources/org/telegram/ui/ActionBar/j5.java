@@ -20,17 +20,17 @@ import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
-import bi.f7;
+import bi.e7;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.jf0;
 import org.telegram.ui.Components.kf0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j5 extends FrameLayout {
     public int E;
@@ -392,7 +392,7 @@ public final class j5 extends FrameLayout {
                 this.R = (f16 <= 0.0f || !this.J) ? 0.0f : f15 * 0.07f * ((float) Math.exp((-f16) / 0.11f)) * ((float) Math.sin((f16 * 6.283185307179586d) / 0.17000000178813934d));
                 if (!this.J ? f16 >= 0.0f : f16 > 0.45f) {
                     this.R = 0.0f;
-                    post(new f7(this, 2));
+                    post(new e7(this, 2));
                 }
             }
             float f17 = this.h0;
@@ -782,7 +782,7 @@ public final class j5 extends FrameLayout {
         int i14 = i11 - min;
         int menuMaxHeight = this.d.getMenuMaxHeight();
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = this.f;
-        int c10 = n10.c(16.0f, size, TLObject.FLAG_31);
+        int c10 = o10.c(16.0f, size, TLObject.FLAG_31);
         int L = org.telegram.messenger.g0.L(48.0f);
         if (menuMaxHeight > 0) {
             i14 = Math.min(menuMaxHeight, i14);

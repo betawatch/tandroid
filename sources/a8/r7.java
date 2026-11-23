@@ -55,9 +55,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ec;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.an0;
 import org.telegram.ui.Components.bn0;
@@ -73,9 +73,9 @@ import org.telegram.ui.md0;
 import org.telegram.ui.qm0;
 import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.xa, an0, q5.b, u9.b {
+public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.ya, an0, q5.b, u9.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -709,7 +709,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.x
             com.google.android.gms.internal.cast.v1 v1Var = (com.google.android.gms.internal.cast.v1) l11.a();
             o1Var.c();
             com.google.android.gms.internal.cast.p1.q((com.google.android.gms.internal.cast.p1) o1Var.b, v1Var);
-            r6Var.f.a((com.google.android.gms.internal.cast.p1) o1Var.a(), ks.J3);
+            r6Var.f.a((com.google.android.gms.internal.cast.p1) o1Var.a(), ls.J3);
             this.e = null;
         }
     }
@@ -833,11 +833,11 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.x
         ArrayList arrayList = new ArrayList(4);
         for (int i7 = 0; i7 < 4; i7++) {
             int i10 = i7 * 8;
-            arrayList.add(strArr[(int) (((b11[i10 + 7] & 255) | ((((((((b11[i10] & 127) << 56) | ((b11[i10 + 1] & 255) << 48)) | ((b11[i10 + 2] & 255) << 40)) | ((b11[i10 + 3] & 255) << 32)) | ((b11[i10 + 4] & 255) << 24)) | ((b11[i10 + 5] & 255) << 16)) | ((b11[i10 + 6] & 255) << 8))) % ks.e3)]);
+            arrayList.add(strArr[(int) (((b11[i10 + 7] & 255) | ((((((((b11[i10] & 127) << 56) | ((b11[i10 + 1] & 255) << 48)) | ((b11[i10 + 2] & 255) << 40)) | ((b11[i10 + 3] & 255) << 32)) | ((b11[i10 + 4] & 255) << 24)) | ((b11[i10 + 5] & 255) << 16)) | ((b11[i10 + 6] & 255) << 8))) % ls.e3)]);
         }
         this.f = arrayList;
         org.telegram.messenger.a8.b("wear-auth: built answer; session " + yc1.d(bArr2) + " emojis=" + ((ArrayList) this.f));
-        byte[] bArr4 = new byte[ks.L4];
+        byte[] bArr4 = new byte[ls.L4];
         System.arraycopy(bArr2, 0, bArr4, 0, 16);
         System.arraycopy(bArr3, 0, bArr4, 16, 16);
         System.arraycopy(a10, 0, bArr4, 32, 256);
@@ -986,7 +986,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.x
             dz0Var.e(false, isAttachedToWindow);
             org.telegram.messenger.g0.X3(dz0Var3, false, 0.8f, true, isAttachedToWindow);
         } else {
-            dz0Var3.c(gd.a0("UpToFileSize", null, 2131743580, org.telegram.messenger.g0.i0(j3, true, false)), false, true);
+            dz0Var3.c(hd.a0("UpToFileSize", null, 2131743578, org.telegram.messenger.g0.i0(j3, true, false)), false, true);
             dz0Var2.e(false, isAttachedToWindow);
             dz0Var3.e(true, isAttachedToWindow);
             dz0Var.e(false, isAttachedToWindow);
@@ -1036,15 +1036,15 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.x
 
     public void t(q0.a aVar) {
         ai.l0 l0Var = (ai.l0) this.b;
-        org.telegram.messenger.fa faVar = new org.telegram.messenger.fa(this, aVar);
+        org.telegram.messenger.ga gaVar = new org.telegram.messenger.ga(this, aVar);
         l0Var.getClass();
         q6.m.e("getMapAsync() must be called on the main thread");
         m.o3 o3Var = (m.o3) l0Var.b;
         h6.m mVar = (h6.m) o3Var.b;
         if (mVar != null) {
-            mVar.y(faVar);
+            mVar.y(gaVar);
         } else {
-            ((ArrayList) o3Var.g).add(faVar);
+            ((ArrayList) o3Var.g).add(gaVar);
         }
     }
 
@@ -1085,7 +1085,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.x
                 try {
                     this.f = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
                     Point c12 = org.telegram.messenger.g0.c1();
-                    Bitmap K = ec.K(null, intent.getData(), (float) c12.x, (float) c12.y, true);
+                    Bitmap K = fc.K(null, intent.getData(), (float) c12.x, (float) c12.y, true);
                     K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream((File) this.f));
                     o71Var.b((File) this.f, K, false);
                     return;
@@ -1098,7 +1098,7 @@ public final class r7 implements ib.b, wi0, c4.d, te.b, org.telegram.messenger.x
             try {
                 this.f = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
                 Point c13 = org.telegram.messenger.g0.c1();
-                Bitmap K2 = ec.K((String) this.b, null, (float) c13.x, (float) c13.y, true);
+                Bitmap K2 = fc.K((String) this.b, null, (float) c13.x, (float) c13.y, true);
                 fileOutputStream = new FileOutputStream((File) this.f);
                 try {
                     try {

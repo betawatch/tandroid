@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ke;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.le;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.l80;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.n80;
 import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.sy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class p implements Runnable {
         synchronized (((e0.g) aVar.c).f) {
             ((HashMap) ((e0.g) aVar.c).g).put(Long.valueOf(j3), file);
         }
-        ((Handler) ((e0.g) aVar.c).d).post(new org.telegram.messenger.u0(aVar, j3, (ke) aVar.b, file, 1));
+        ((Handler) ((e0.g) aVar.c).d).post(new org.telegram.messenger.u0(aVar, j3, (le) aVar.b, file, 1));
     }
 
     @Override // java.lang.Runnable
@@ -72,13 +72,13 @@ public final /* synthetic */ class p implements Runnable {
         switch (this.a) {
             case 0:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
-                x10 x10Var = (x10) this.c;
-                x10 x10Var2 = (x10) this.d;
+                y10 y10Var = (y10) this.c;
+                y10 y10Var2 = (y10) this.d;
                 if (tL_error != null) {
-                    x10Var.a(tL_error);
+                    y10Var.a(tL_error);
                     return;
                 } else {
-                    x10Var2.a(null);
+                    y10Var2.a(null);
                     return;
                 }
             case 1:
@@ -106,12 +106,12 @@ public final /* synthetic */ class p implements Runnable {
                 String str = eVar.b;
                 int i7 = eVar.a;
                 if (tLObject != null) {
-                    ri.d0(i7).l1(str, (TLRPC.Document) tLObject, false);
+                    si.d0(i7).l1(str, (TLRPC.Document) tLObject, false);
                 } else {
                     eVar.a();
-                    ri.d0(i7).l1(str, null, true);
+                    si.d0(i7).l1(str, null, true);
                     if (tL_error2 != null) {
-                        ks.f(i7).d(new q(18, eVar, tL_error2));
+                        ls.f(i7).d(new q(18, eVar, tL_error2));
                     }
                 }
                 eVar.a();

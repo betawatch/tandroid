@@ -3,12 +3,12 @@ package ki;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.a70;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class b3 extends ClickableSpan {
     public final /* synthetic */ int a = 1;
@@ -81,10 +81,10 @@ public final class b3 extends ClickableSpan {
                                 break;
                         }
                     }
-                }, gd.N0(2131752466, null), i11 == 3);
+                }, hd.N0(2131752466, null), i11 == 3);
                 final int i12 = 2;
                 boolean z10 = i11 == 2;
-                String N0 = gd.N0(2131752464, null);
+                String N0 = hd.N0(2131752464, null);
                 final char c11 = c10 == true ? 1 : 0;
                 I.i(new Runnable() { // from class: ki.a3
                     @Override // java.lang.Runnable
@@ -183,7 +183,7 @@ public final class b3 extends ClickableSpan {
                                 break;
                         }
                     }
-                }, gd.N0(2131752465, null), i11 == 1);
+                }, hd.N0(2131752465, null), i11 == 1);
                 I.W(5);
                 I.t = false;
                 I.s = 0;

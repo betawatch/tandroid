@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Stack;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.fz0;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.xy0;
 import org.telegram.ui.vf;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m4 {
     public float A;
@@ -913,7 +913,7 @@ public final class m4 {
             this.J.e(true, 0.0f);
             v0Var.invalidate();
         }
-        String N0 = z14 ? gd.N0(2131742715, null) : z10 ? gd.N0(2131742713, null) : gd.N0(2131742714, null);
+        String N0 = z14 ? hd.N0(2131742713, null) : z10 ? hd.N0(2131742711, null) : hd.N0(2131742712, null);
         j4 j4Var = this.I;
         if (z15) {
             j4Var.g(10, N0, true);

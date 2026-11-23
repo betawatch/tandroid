@@ -42,7 +42,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class EditTextBoldCursor extends rt {
     public static Field E1;
@@ -575,7 +575,7 @@ public class EditTextBoldCursor extends rt {
                 float lineLeft = this.p0.getLineLeft(0);
                 float lineWidth = this.p0.getLineWidth(0);
                 int i13 = lineLeft != 0.0f ? (int) (0 - lineLeft) : 0;
-                if (this.G0 && org.telegram.messenger.gd.a0) {
+                if (this.G0 && org.telegram.messenger.hd.a0) {
                     float scrollX = getScrollX() + i13 + (getMeasuredWidth() - lineWidth);
                     this.q0 = scrollX;
                     canvas2.translate(scrollX, (this.M0 - this.p0.getHeight()) - org.telegram.messenger.g0.L(7.0f));
@@ -586,7 +586,7 @@ public class EditTextBoldCursor extends rt {
                 }
                 if (this.T0) {
                     float f17 = 1.0f - (this.X0 * 0.3f);
-                    if (this.G0 && org.telegram.messenger.gd.a0) {
+                    if (this.G0 && org.telegram.messenger.hd.a0) {
                         float f18 = lineWidth + lineLeft;
                         canvas2.translate(f18 - (f18 * f17), 0.0f);
                     } else if (lineLeft != 0.0f) {
@@ -671,7 +671,7 @@ public class EditTextBoldCursor extends rt {
                 getPaint().setColor(color);
                 canvas2.restore();
                 if (this.z1) {
-                    canvas2.saveLayerAlpha((getPaddingLeft() + getScrollX()) - this.D1, 0.0f, ((getWidth() + getScrollX()) - getPaddingRight()) + this.D1, getHeight(), org.telegram.messenger.ks.e4, 31);
+                    canvas2.saveLayerAlpha((getPaddingLeft() + getScrollX()) - this.D1, 0.0f, ((getWidth() + getScrollX()) - getPaddingRight()) + this.D1, getHeight(), org.telegram.messenger.ls.e4, 31);
                 }
                 int extendedPaddingTop = getExtendedPaddingTop();
                 this.m0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -713,7 +713,7 @@ public class EditTextBoldCursor extends rt {
                         if (this.D0 && z10) {
                             canvas2.save();
                             if (I1 != null) {
-                                if ((getGravity() & org.telegram.messenger.ks.x1) != 48) {
+                                if ((getGravity() & org.telegram.messenger.ls.x1) != 48) {
                                     totalPaddingTop = ((Integer) I1.invoke(this, Boolean.TRUE)).intValue();
                                     canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop);
                                     Layout layout = getLayout();
@@ -766,7 +766,7 @@ public class EditTextBoldCursor extends rt {
                                 n(canvas2, gradientDrawable);
                                 canvas2.restore();
                             } else {
-                                if ((getGravity() & org.telegram.messenger.ks.x1) != 48) {
+                                if ((getGravity() & org.telegram.messenger.ls.x1) != 48) {
                                     totalPaddingTop = getTotalPaddingTop() - getExtendedPaddingTop();
                                     canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop);
                                     Layout layout22 = getLayout();
@@ -825,7 +825,7 @@ public class EditTextBoldCursor extends rt {
                     try {
                         canvas2.save();
                         if (I1 != null) {
-                            if ((getGravity() & org.telegram.messenger.ks.x1) != 48) {
+                            if ((getGravity() & org.telegram.messenger.ls.x1) != 48) {
                                 totalPaddingTop2 = ((Integer) I1.invoke(this, Boolean.TRUE)).intValue();
                                 canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop2);
                                 Layout layout3 = getLayout();
@@ -880,7 +880,7 @@ public class EditTextBoldCursor extends rt {
                             canvas2.restore();
                             this.H0 = false;
                         } else {
-                            if ((getGravity() & org.telegram.messenger.ks.x1) != 48) {
+                            if ((getGravity() & org.telegram.messenger.ls.x1) != 48) {
                                 totalPaddingTop2 = getTotalPaddingTop() - getExtendedPaddingTop();
                                 canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop2);
                                 Layout layout322 = getLayout();
@@ -1215,7 +1215,7 @@ public class EditTextBoldCursor extends rt {
         CharSequence charSequence4 = charSequence;
         gt gtVar = this.u0;
         if (gtVar != null) {
-            gtVar.t(charSequence4, !org.telegram.messenger.gd.a0, true);
+            gtVar.t(charSequence4, !org.telegram.messenger.hd.a0, true);
             return;
         }
         if (charSequence4 == null) {

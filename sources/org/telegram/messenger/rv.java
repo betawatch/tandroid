@@ -1,57 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rv implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xv b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ yv b;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public /* synthetic */ rv(xv xvVar, long j3, int i7) {
+    public /* synthetic */ rv(yv yvVar, TLRPC.EncryptedChat encryptedChat, int i7) {
         this.a = i7;
-        this.b = xvVar;
-        this.c = j3;
+        this.b = yvVar;
+        this.c = encryptedChat;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        int i10 = 2;
-        long j3 = this.c;
-        int i11 = 1;
-        xv xvVar = this.b;
+        TLRPC.EncryptedChat encryptedChat = this.c;
+        yv yvVar = this.b;
         switch (i7) {
             case 0:
-                a0.h hVar = xvVar.getMessagesController().R;
-                long j10 = this.c;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) hVar.f(j10);
-                if (dialog != null) {
-                    dialog.unread_count = 0;
-                    xvVar.getMessagesController().S.l(dialog.id);
-                }
-                xvVar.getMessagesStorage().a.c(new rv(xvVar, j10, i11));
-                tr messagesStorage = xvVar.getMessagesStorage();
-                messagesStorage.a.c(new vp(messagesStorage, 1, j10, 1));
-                xvVar.getNotificationCenter().k(3, new Object[0]);
-                xvVar.getNotificationCenter().k(41, Long.valueOf(j10), Boolean.FALSE, null);
+                yvVar.getNotificationCenter().k(35, encryptedChat);
                 break;
             case 1:
-                g0.g3(new rv(xvVar, j3, i10));
-                break;
-            case 2:
-                xs notificationsController = xvVar.getNotificationsController();
-                long j11 = this.c;
-                notificationsController.L(null, j11, 0, ConnectionsManager.DEFAULT_DATACENTER_ID, false);
-                LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
-                longSparseIntArray.put(j11, 0);
-                xvVar.getNotificationsController().J(longSparseIntArray);
+                yvVar.getNotificationCenter().k(35, encryptedChat);
+                yvVar.w(encryptedChat, null);
                 break;
             default:
-                xvVar.getMessagesController().X(0, j3, false);
+                yvVar.getNotificationCenter().k(35, encryptedChat);
+                yvVar.w(encryptedChat, null);
                 break;
         }
     }

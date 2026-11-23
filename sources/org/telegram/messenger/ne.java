@@ -2,35 +2,13 @@ package org.telegram.messenger;
 
 import java.io.File;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class ne extends File {
-    public final /* synthetic */ int a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ne(int i7, File file, String str) {
-        super(file, str);
-        this.a = i7;
-    }
-
     @Override // java.io.File
     public final boolean delete() {
-        switch (this.a) {
-            case 0:
-                if (s2.a) {
-                    a8.d("delete voice file (trimmed)");
-                }
-                break;
-            case 1:
-                if (s2.a) {
-                    a8.d("delete voice file (from resume)");
-                }
-                break;
-            default:
-                if (s2.a) {
-                    a8.d("delete camera file");
-                }
-                break;
+        if (s2.a) {
+            a8.d("delete voice file (joined)");
         }
         return super.delete();
     }

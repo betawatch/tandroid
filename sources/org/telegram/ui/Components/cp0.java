@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,14 +57,14 @@ public final /* synthetic */ class cp0 implements Runnable {
                     us0Var.h = false;
                     ArrayList arrayList4 = new ArrayList();
                     for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-                        if (((org.telegram.messenger.ov) arrayList3.get(i10)).b) {
-                            arrayList4.add(Long.valueOf(((org.telegram.messenger.ov) arrayList3.get(i10)).a));
+                        if (((org.telegram.messenger.pv) arrayList3.get(i10)).b) {
+                            arrayList4.add(Long.valueOf(((org.telegram.messenger.pv) arrayList3.get(i10)).a));
                         }
                     }
-                    org.telegram.messenger.pv I1 = us0Var.y.y1.getMessagesController().I1();
-                    ArrayList d = org.telegram.messenger.pv.d(I1.j);
+                    org.telegram.messenger.qv I1 = us0Var.y.y1.getMessagesController().I1();
+                    ArrayList d = org.telegram.messenger.qv.d(I1.j);
                     int i11 = I1.a;
-                    if (arrayList4.size() <= (org.telegram.messenger.j10.i(i11).q() ? org.telegram.messenger.mp.u1(i11).q6 : org.telegram.messenger.mp.u1(i11).p6) && !org.telegram.messenger.pv.k(d, arrayList4)) {
+                    if (arrayList4.size() <= (org.telegram.messenger.k10.i(i11).q() ? org.telegram.messenger.np.u1(i11).q6 : org.telegram.messenger.np.u1(i11).p6) && !org.telegram.messenger.qv.k(d, arrayList4)) {
                         I1.p(arrayList4);
                         break;
                     }
@@ -119,7 +119,7 @@ public final /* synthetic */ class cp0 implements Runnable {
                             CharSequence fieldText = ax0Var.c.getFieldText();
                             boolean z10 = fieldText instanceof Spanned;
                             org.telegram.messenger.g6[] g6VarArr = z10 ? (org.telegram.messenger.g6[]) ((Spanned) fieldText).getSpans(Math.max(0, selectionEnd - 24), selectionEnd, org.telegram.messenger.g6.class) : null;
-                            if (g6VarArr == null || g6VarArr.length <= 0 || !org.telegram.messenger.bz.F || !org.telegram.messenger.j10.i(i12).q()) {
+                            if (g6VarArr == null || g6VarArr.length <= 0 || !org.telegram.messenger.cz.F || !org.telegram.messenger.k10.i(i12).q()) {
                                 y5[] y5VarArr = z10 ? (y5[]) ((Spanned) fieldText).getSpans(Math.max(0, selectionEnd), selectionEnd, y5.class) : null;
                                 if ((y5VarArr == null || y5VarArr.length == 0) && selectionEnd < 52) {
                                     ax0Var.s = true;
@@ -142,7 +142,7 @@ public final /* synthetic */ class cp0 implements Runnable {
                                             String[] strArr = G0;
                                             String[] strArr2 = ax0Var.M;
                                             if (strArr2 == null || !Arrays.equals(strArr, strArr2)) {
-                                                org.telegram.messenger.ri.d0(i12).O(strArr, false);
+                                                org.telegram.messenger.si.d0(i12).O(strArr, false);
                                             }
                                             ax0Var.M = strArr;
                                             Runnable runnable = ax0Var.N;
@@ -150,7 +150,7 @@ public final /* synthetic */ class cp0 implements Runnable {
                                                 org.telegram.messenger.g0.r(runnable);
                                                 ax0Var.N = null;
                                             }
-                                            ax0Var.N = new mp0(ax0Var, strArr, substring, i13, 3);
+                                            ax0Var.N = new lp0(ax0Var, strArr, substring, i13, 4);
                                             ArrayList arrayList5 = ax0Var.x;
                                             if (arrayList5 == null || arrayList5.isEmpty()) {
                                                 org.telegram.messenger.g0.h3(ax0Var.N, 600L);
@@ -193,7 +193,7 @@ public final /* synthetic */ class cp0 implements Runnable {
                                                 if (runnable2 != null) {
                                                     org.telegram.messenger.g0.r(runnable2);
                                                 }
-                                                ax0Var.N = new org.telegram.ui.b0(ax0Var, substring2, i14, 28);
+                                                ax0Var.N = new org.telegram.ui.f0(ax0Var, substring2, i14, 27);
                                                 ArrayList arrayList6 = ax0Var.x;
                                                 if (arrayList6 == null || arrayList6.isEmpty()) {
                                                     org.telegram.messenger.g0.h3(ax0Var.N, 600L);
@@ -249,7 +249,7 @@ public final /* synthetic */ class cp0 implements Runnable {
             case 14:
                 boolean[] zArr = (boolean[]) obj;
                 if (!zArr[0]) {
-                    SharedPreferences g12 = org.telegram.messenger.mp.g1();
+                    SharedPreferences g12 = org.telegram.messenger.np.g1();
                     g12.edit().putInt("showchattagsinfo", g12.getInt("showchattagsinfo", 3) - 1).apply();
                     zArr[0] = true;
                     break;
@@ -269,37 +269,37 @@ public final /* synthetic */ class cp0 implements Runnable {
                 }
                 break;
             case 17:
-                l01 l01Var = (l01) obj;
-                l01Var.K = null;
-                l01Var.I.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).setInterpolator(nr.f).start();
+                k01 k01Var = (k01) obj;
+                k01Var.K = null;
+                k01Var.I.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).setInterpolator(nr.f).start();
                 break;
             case 18:
-                p01 p01Var = (p01) obj;
-                ViewPropertyAnimator duration = p01Var.animate().alpha(0.0f).setListener(new s60(p01Var, 29)).setDuration(300L);
-                p01Var.b = duration;
+                o01 o01Var = (o01) obj;
+                ViewPropertyAnimator duration = o01Var.animate().alpha(0.0f).setListener(new s60(o01Var, 29)).setDuration(300L);
+                o01Var.b = duration;
                 duration.start();
                 break;
             case 19:
-                r01 r01Var = (r01) obj;
-                org.telegram.messenger.x10 x10Var = r01Var.b;
-                if (x10Var != null) {
-                    x10Var.a(Long.valueOf(r01Var.a.t));
+                q01 q01Var = (q01) obj;
+                org.telegram.messenger.y10 y10Var = q01Var.b;
+                if (y10Var != null) {
+                    y10Var.a(Long.valueOf(q01Var.a.t));
                     break;
                 }
                 break;
             case 20:
-                b21 b21Var = (b21) ((org.telegram.ui.on) obj).c;
-                if (b21Var.l()) {
-                    b21Var.m();
+                a21 a21Var = (a21) ((org.telegram.ui.on) obj).c;
+                if (a21Var.l()) {
+                    a21Var.m();
                     break;
                 }
                 break;
             case 21:
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj;
-                org.telegram.messenger.ks.f(fjVar.K1).k(org.telegram.messenger.ks.A1, fjVar);
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) obj;
+                org.telegram.messenger.ls.f(gjVar.K1).k(org.telegram.messenger.ls.A1, gjVar);
                 break;
             case 22:
-                ((org.telegram.messenger.q10) obj).a(null, Boolean.FALSE);
+                ((org.telegram.messenger.r10) obj).a(null, Boolean.FALSE);
                 break;
             case 23:
                 ((org.telegram.ui.ActionBar.g1) obj).dismiss();

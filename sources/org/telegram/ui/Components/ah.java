@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ah extends rh0 {
     public final d6 E;
@@ -97,13 +97,13 @@ public class ah extends rh0 {
                 org.telegram.messenger.g0.g3(new org.telegram.ui.Cells.p0(oh0Var, 1));
                 ordinal = ygVar.ordinal();
                 if (ordinal != 0) {
-                    setContentDescription(org.telegram.messenger.gd.N0(2131754733, null));
+                    setContentDescription(org.telegram.messenger.hd.N0(2131754733, null));
                     return;
                 } else {
                     if (ordinal != 1) {
                         return;
                     }
-                    setContentDescription(org.telegram.messenger.gd.N0(2131754735, null));
+                    setContentDescription(org.telegram.messenger.hd.N0(2131754735, null));
                     return;
                 }
             }

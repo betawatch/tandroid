@@ -10,9 +10,9 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import java.util.Arrays;
 import java.util.Random;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class f9 extends View {
     public ValueAnimator E;
@@ -52,7 +52,7 @@ public final class f9 extends View {
         this.h = f11;
         this.r = (fontMetrics.bottom - f10) + f11;
         setImportantForAccessibility(1);
-        setContentDescription(gd.N0(2131748586, null));
+        setContentDescription(hd.N0(2131748586, null));
     }
 
     public final float a() {
@@ -82,7 +82,7 @@ public final class f9 extends View {
             String str2 = this.w;
             this.y = str2 != null;
             if (str2 == null) {
-                str2 = gd.N0(2131748586, null);
+                str2 = hd.N0(2131748586, null);
             }
             setContentDescription(str2);
             requestLayout();

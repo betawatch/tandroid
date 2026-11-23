@@ -7,11 +7,11 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.we;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.xe;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class k0 extends View {
     public final Paint a;
@@ -62,7 +62,7 @@ public final class k0 extends View {
     public final void a(Matrix matrix, boolean z10) {
         int currentWidth;
         int currentHeight;
-        we weVar;
+        xe xeVar;
         l0 l0Var = this.s;
         currentWidth = l0Var.getCurrentWidth();
         currentHeight = l0Var.getCurrentHeight();
@@ -85,9 +85,9 @@ public final class k0 extends View {
         matrix.preTranslate(gVar.d, gVar.e);
         float f15 = (gVar.f / f12) * containerWidth;
         c7 c7Var = l0Var.y;
-        if (c7Var != null && (weVar = c7Var.m0) != null) {
+        if (c7Var != null && (xeVar = c7Var.m0) != null) {
             if (z10) {
-                f10 = weVar.c;
+                f10 = xeVar.c;
             }
             f10 = f15;
         }
@@ -95,19 +95,19 @@ public final class k0 extends View {
         float f16 = gVar.b;
         float f17 = gVar.c;
         if (l0Var.E && z10) {
-            we weVar2 = l0Var.y.m0;
-            float f18 = weVar2 == null ? 0.0f : !z11 ? weVar2.a : weVar2.b;
-            float f19 = weVar2 == null ? 0.0f : !z11 ? weVar2.b : weVar2.a;
+            xe xeVar2 = l0Var.y.m0;
+            float f18 = xeVar2 == null ? 0.0f : !z11 ? xeVar2.a : xeVar2.b;
+            float f19 = xeVar2 == null ? 0.0f : !z11 ? xeVar2.b : xeVar2.a;
             f16 = f18;
             f17 = f19;
         }
         matrix.preTranslate(f16 * f13, f17 * f14);
         c7 c7Var2 = l0Var.y;
         float f20 = c7Var2.Q + gVar.g + i7;
-        we weVar3 = c7Var2.m0;
-        if (weVar3 != null) {
+        xe xeVar3 = c7Var2.m0;
+        if (xeVar3 != null) {
             if (z10) {
-                f11 = weVar3.d + weVar3.k;
+                f11 = xeVar3.d + xeVar3.k;
             }
             f11 = f20;
         }
@@ -203,13 +203,13 @@ public final class k0 extends View {
             if (matrix3.invert(matrix5)) {
                 c7 c7Var = l0Var.y;
                 int i7 = c7Var.Q;
-                we weVar = c7Var.m0;
-                boolean z13 = ((i7 + (weVar != null ? weVar.k : 0)) / 90) % 2 == 1;
+                xe xeVar = c7Var.m0;
+                boolean z13 = ((i7 + (xeVar != null ? xeVar.k : 0)) / 90) % 2 == 1;
                 float contentWidth = v5Var.getContentWidth();
                 float contentHeight = v5Var.getContentHeight();
-                we weVar2 = l0Var.y.m0;
-                float f15 = weVar2 != null ? weVar2.e : 1.0f;
-                float f16 = weVar2 != null ? weVar2.f : 1.0f;
+                xe xeVar2 = l0Var.y.m0;
+                float f15 = xeVar2 != null ? xeVar2.e : 1.0f;
+                float f16 = xeVar2 != null ? xeVar2.f : 1.0f;
                 float f17 = ((z13 ? contentHeight : contentWidth) * f15) / f12;
                 if (!z13) {
                     contentWidth = contentHeight;
@@ -231,8 +231,8 @@ public final class k0 extends View {
                     }
                     z12 = false;
                 } else {
-                    we weVar3 = l0Var.y.m0;
-                    if (weVar3 != null) {
+                    xe xeVar3 = l0Var.y.m0;
+                    if (xeVar3 != null) {
                     }
                     z12 = false;
                 }
@@ -265,7 +265,7 @@ public final class k0 extends View {
                 } else if (v5Var.a != null && v5Var.d != null) {
                     matrix7.reset();
                     matrix7.preScale(v5Var.d.k0 / v5Var.a.getWidth(), v5Var.d.l0 / v5Var.a.getHeight());
-                    paint2.setAlpha(ks.e4);
+                    paint2.setAlpha(ls.e4);
                     canvas2.drawBitmap(v5Var.a, matrix7, paint2);
                 }
                 canvas2.restore();

@@ -22,16 +22,16 @@ import hi.ha;
 import kg.i0;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.si;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -45,9 +45,9 @@ import org.telegram.ui.Components.voip.n;
 import org.telegram.ui.i20;
 import xh.l;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class c extends ViewGroup implements ue.a, fs, te.b {
+public final class c extends ViewGroup implements ue.a, gs, te.b {
     public static final Rect M = new Rect();
     public final i0 E;
     public RenderNode F;
@@ -167,9 +167,9 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
         return ((RectF) this.x.c).contains(f10, f11) ? 0 : -1;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.l4) {
+        if (i7 == ls.l4) {
             invalidate();
         }
     }
@@ -258,7 +258,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
         if (p5Var != null) {
             p5Var.a(this);
         }
-        ks.e().c(this, ks.l4);
+        ls.e().c(this, ls.l4);
         GroupCallMessage groupCallMessage = this.I;
         if (groupCallMessage != null) {
             groupCallMessage.subscribeToStateUpdates(this.E);
@@ -274,7 +274,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
         if (p5Var != null) {
             p5Var.n(this);
         }
-        ks.e().n(this, ks.l4);
+        ls.e().n(this, ls.l4);
         GroupCallMessage groupCallMessage = this.I;
         if (groupCallMessage != null) {
             groupCallMessage.unsubscribeFromStateUpdates(this.E);
@@ -304,7 +304,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
             int paddingLeft = getPaddingLeft();
             int paddingRight = getPaddingRight();
             p0 p0Var = this.s;
-            int c10 = n10.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
+            int c10 = o10.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
             l lVar = this.w;
             lVar.measure(c10, makeMeasureSpec);
@@ -393,7 +393,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
             this.a.a(groupCallMessage4.isSendDelayed(), false);
             this.b.a(this.I.isSendError(), false);
         }
-        TLObject g22 = mp.u1(j10.t0).g2(groupCallMessage.fromId);
+        TLObject g22 = np.u1(k10.t0).g2(groupCallMessage.fromId);
         String m10 = n5.m(g22);
         b9 b9Var = new b9((h6) null);
         b9Var.p(g22);
@@ -410,7 +410,7 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
         p0 p0Var = groupCallMessage.visibleReaction;
         l lVar = this.w;
         if (p0Var == null) {
-            CharSequence j02 = fj.j0(groupCallMessage.message, false, true, lVar.getPaint());
+            CharSequence j02 = gj.j0(groupCallMessage.message, false, true, lVar.getPaint());
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             boolean b10 = b(spannableStringBuilder);
             boolean b11 = b(j02);
@@ -425,9 +425,9 @@ public final class c extends ViewGroup implements ue.a, fs, te.b {
             spannableStringBuilder2.append(j02);
             spannableStringBuilder = spannableStringBuilder2;
         } else if (p0Var.f != null) {
-            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(groupCallMessage.currentAccount).r.get(groupCallMessage.visibleReaction.f);
+            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(groupCallMessage.currentAccount).r.get(groupCallMessage.visibleReaction.f);
             if (tL_availableReaction != null) {
-                imageReceiver.q0(fc.b(tL_availableReaction.select_animation), "28_28", null, null, null, 0);
+                imageReceiver.q0(gc.b(tL_availableReaction.select_animation), "28_28", null, null, null, 0);
             }
         } else if (p0Var.g != 0) {
             p5 p5Var = new p5(0, groupCallMessage.currentAccount, groupCallMessage.visibleReaction.g);

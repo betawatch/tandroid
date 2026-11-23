@@ -7,7 +7,7 @@ import j$.util.Objects;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class gc {
     public static gc w;
@@ -68,7 +68,7 @@ public class gc {
             i7++;
         }
         if (gcVar != null) {
-            gcVar.c(0L, org.telegram.messenger.mp.g1().getBoolean("view_animations", true));
+            gcVar.c(0L, org.telegram.messenger.np.g1().getBoolean("view_animations", true));
         }
     }
 
@@ -102,7 +102,7 @@ public class gc {
     }
 
     public final void b() {
-        c(0L, org.telegram.messenger.mp.g1().getBoolean("view_animations", true));
+        c(0L, org.telegram.messenger.np.g1().getBoolean("view_animations", true));
     }
 
     public final void c(long j3, boolean z10) {

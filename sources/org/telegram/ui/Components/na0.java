@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class na0 implements qj0 {
     public final /* synthetic */ qa0 a;
@@ -17,7 +17,7 @@ public final class na0 implements qj0 {
         if (qa0Var.a != 1 || qa0Var.r.f.size() <= 1) {
             return;
         }
-        int e12 = ((org.telegram.messenger.fj) qa0Var.r.f.get(i7)).e1();
+        int e12 = ((org.telegram.messenger.gj) qa0Var.r.f.get(i7)).e1();
         boolean z10 = qa0Var.r.g.get(e12, false);
         boolean z11 = !z10;
         if (qa0Var.r.g.size() == 1 && z10) {

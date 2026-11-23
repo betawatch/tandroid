@@ -2,12 +2,12 @@ package ai;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h {
     public static final g c = new g(null, 0, null, true);
@@ -17,7 +17,7 @@ public final class h {
     public h(int i7) {
         this.a = i7;
         try {
-            mp.u1(i7).T1().b();
+            np.u1(i7).T1().b();
         } catch (Exception unused) {
         }
     }
@@ -54,7 +54,7 @@ public final class h {
 
     public final ArrayList c() {
         ArrayList arrayList = new ArrayList();
-        org.telegram.messenger.e T1 = mp.u1(this.a).T1();
+        org.telegram.messenger.e T1 = np.u1(this.a).T1();
         if (T1 != null) {
             ArrayList arrayList2 = T1.b;
             int size = arrayList2.size();

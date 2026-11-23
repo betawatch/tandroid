@@ -14,7 +14,7 @@ import hi.d2;
 import hi.m8;
 import jg.o0;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m0;
 import org.telegram.ui.ActionBar.q0;
 import org.telegram.ui.ActionBar.z4;
@@ -34,7 +34,7 @@ import org.telegram.ui.hv;
 import org.telegram.ui.jo;
 import org.telegram.ui.lz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i extends EditTextBoldCursor {
     public final /* synthetic */ int M1;
@@ -63,7 +63,7 @@ public final class i extends EditTextBoldCursor {
             case 11:
                 h6.m mVar = (h6.m) this.N1;
                 if (length() != 0) {
-                    canvas.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), ks.e4, 31);
+                    canvas.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), ls.e4, 31);
                     super.onDraw(canvas);
                     RectF rectF = g0.P;
                     rectF.set(getScrollX(), 0.0f, g0.L(12.0f) + getScrollX(), getHeight());
@@ -237,7 +237,7 @@ public final class i extends EditTextBoldCursor {
                     oVar.f = null;
                 }
                 if (motionEvent.getAction() == 0 && !g0.I3(this)) {
-                    oVar.fullScroll(ks.O1);
+                    oVar.fullScroll(ls.O1);
                     clearFocus();
                     requestFocus();
                 }
@@ -261,7 +261,7 @@ public final class i extends EditTextBoldCursor {
                     m8Var.f = null;
                 }
                 if (motionEvent.getAction() == 0 && !g0.I3(this)) {
-                    m8Var.fullScroll(ks.O1);
+                    m8Var.fullScroll(ls.O1);
                     clearFocus();
                     requestFocus();
                 }

@@ -14,9 +14,9 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.animation.OvershootInterpolator;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v9 extends View {
     public final Paint a;
@@ -121,7 +121,7 @@ public final class v9 extends View {
                 float f13 = l10[0] + w9Var.a;
                 canvas.translate(f13, f12);
                 r9 r9Var2 = w9Var.W;
-                fj messageObject = r9Var2 instanceof r1 ? ((r1) r9Var2).getMessageObject() : null;
+                gj messageObject = r9Var2 instanceof r1 ? ((r1) r9Var2).getMessageObject() : null;
                 if (messageObject == null || !messageObject.P3()) {
                     paint.setColor(w9Var.t(org.telegram.ui.ActionBar.m6.mg));
                 } else {

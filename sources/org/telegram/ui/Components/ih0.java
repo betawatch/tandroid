@@ -5,7 +5,7 @@ import android.text.TextPaint;
 import android.text.style.LineHeightSpan;
 import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ih0 extends MetricAffectingSpan implements LineHeightSpan {
     public jh0 a;
@@ -32,12 +32,12 @@ public final class ih0 extends MetricAffectingSpan implements LineHeightSpan {
         if (textPaint == null) {
             return;
         }
-        textPaint.setTextSize(org.telegram.messenger.g0.L(this.a.a ? 16.0f : org.telegram.messenger.bz.W0 - 2));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(this.a.a ? 16.0f : org.telegram.messenger.cz.W0 - 2));
     }
 
     @Override // android.text.style.MetricAffectingSpan
     public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.g0.L(this.a.a ? 16.0f : org.telegram.messenger.bz.W0 - 2));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(this.a.a ? 16.0f : org.telegram.messenger.cz.W0 - 2));
         textPaint.setTextScaleX(this.a.a ? 1.1f : 1.0f);
     }
 }

@@ -20,12 +20,12 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -46,7 +46,7 @@ import org.telegram.ui.ss;
 import org.telegram.ui.ws;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o3 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,18 +79,18 @@ public final /* synthetic */ class o3 implements Runnable {
                 int i11 = 24;
                 f6 f6Var = (f6) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
-                x10 x10Var = (x10) this.e;
+                y10 y10Var = (y10) this.e;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.f;
                 boolean z10 = this.b;
                 TLObject tLObject = (TLObject) this.h;
                 long j3 = f6Var.T1;
                 if (f6Var.getContext() != null) {
-                    if (tL_error != null && x10Var != null && tL_error.text.startsWith("TMP_PASSWORD")) {
-                        x10Var.a(Boolean.TRUE);
+                    if (tL_error != null && y10Var != null && tL_error.text.startsWith("TMP_PASSWORD")) {
+                        y10Var.a(Boolean.TRUE);
                         break;
                     } else {
-                        if (x10Var != null) {
-                            x10Var.a(Boolean.FALSE);
+                        if (y10Var != null) {
+                            y10Var.a(Boolean.FALSE);
                         }
                         if (tL_error != null) {
                             f6Var.Y1(tL_error, twoStepVerificationActivity, z10);
@@ -122,7 +122,7 @@ public final /* synthetic */ class o3 implements Runnable {
                                     D.A = i12 + 1;
                                     org.telegram.messenger.g0.h3(hVar, jArr[i12]);
                                 }
-                                long e10 = j10.i(f6Var.a).e();
+                                long e10 = k10.i(f6Var.a).e();
                                 y8.y(f6Var.a, false).O(e10);
                                 if (j3 != 0 && j3 != e10) {
                                     y8.y(f6Var.a, false).O(j3);
@@ -131,9 +131,9 @@ public final /* synthetic */ class o3 implements Runnable {
                                     int i13 = f6Var.a;
                                     String str3 = M1.slug;
                                     if (!TextUtils.isEmpty(str3)) {
-                                        org.telegram.messenger.g0.h3(new bi.r4(i13, 0, str3, true), bi.y4.b[0]);
+                                        org.telegram.messenger.g0.h3(new bi.r4(i13, 0, str3, true), bi.x4.b[0]);
                                     }
-                                    org.telegram.messenger.g0.g3(new aa.r((Object) new ai.n(8), (Object) M1.getDocument(), (Object) gd.N0(2131750084, null), i11));
+                                    org.telegram.messenger.g0.g3(new aa.r((Object) new ai.n(8), (Object) M1.getDocument(), (Object) hd.N0(2131750084, null), i11));
                                 }
                                 f6Var.dismiss();
                                 break;
@@ -179,7 +179,7 @@ public final /* synthetic */ class o3 implements Runnable {
                             twoStepVerificationActivity2.t0();
                         }
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
-                        alertDialog$Builder.a.S = gd.N0(2131751285, null);
+                        alertDialog$Builder.a.S = hd.N0(2131751285, null);
                         LinearLayout linearLayout = new LinearLayout(activity);
                         linearLayout.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(24.0f), 0);
                         linearLayout.setOrientation(1);
@@ -188,23 +188,23 @@ public final /* synthetic */ class o3 implements Runnable {
                         int i15 = org.telegram.ui.ActionBar.m6.j5;
                         org.telegram.ui.ActionBar.t6.U(textView, i15, null);
                         textView.setTextSize(1, 16.0f);
-                        textView.setGravity((gd.a0 ? 5 : 3) | 48);
-                        textView.setText(org.telegram.messenger.g0.W2(gd.N0(2131742600, null)));
+                        textView.setGravity((hd.a0 ? 5 : 3) | 48);
+                        textView.setText(org.telegram.messenger.g0.W2(hd.N0(2131742598, null)));
                         linearLayout.addView(textView, c8.ma.o(-1, -2));
                         LinearLayout linearLayout2 = new LinearLayout(activity);
                         linearLayout2.setOrientation(0);
                         linearLayout.addView(linearLayout2, c8.ma.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         ImageView imageView = new ImageView(activity);
                         imageView.setImageResource(R.drawable.list_circle);
-                        imageView.setPadding(gd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
+                        imageView.setPadding(hd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
                         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                         org.telegram.ui.ActionBar.t6.s(imageView, i15, null, mode);
                         TextView textView2 = new TextView(activity);
                         org.telegram.ui.ActionBar.t6.U(textView2, i15, null);
                         textView2.setTextSize(1, 16.0f);
-                        textView2.setGravity((gd.a0 ? 5 : 3) | 48);
-                        textView2.setText(org.telegram.messenger.g0.W2(gd.N0(2131751288, null)));
-                        if (gd.a0) {
+                        textView2.setGravity((hd.a0 ? 5 : 3) | 48);
+                        textView2.setText(org.telegram.messenger.g0.W2(hd.N0(2131751288, null)));
+                        if (hd.a0) {
                             linearLayout2.addView(textView2, c8.ma.o(-1, -2));
                             linearLayout2.addView(imageView, c8.ma.r(-2, -2, 5));
                         } else {
@@ -215,14 +215,14 @@ public final /* synthetic */ class o3 implements Runnable {
                         linearLayout.addView(f10, c8.ma.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         ImageView imageView2 = new ImageView(activity);
                         imageView2.setImageResource(R.drawable.list_circle);
-                        imageView2.setPadding(gd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
+                        imageView2.setPadding(hd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
                         org.telegram.ui.ActionBar.t6.s(imageView2, i15, null, mode);
                         TextView textView3 = new TextView(activity);
                         org.telegram.ui.ActionBar.t6.U(textView3, i15, null);
                         textView3.setTextSize(1, 16.0f);
-                        textView3.setGravity((gd.a0 ? 5 : 3) | 48);
-                        textView3.setText(org.telegram.messenger.g0.W2(gd.N0(2131751287, null)));
-                        if (gd.a0) {
+                        textView3.setGravity((hd.a0 ? 5 : 3) | 48);
+                        textView3.setText(org.telegram.messenger.g0.W2(hd.N0(2131751287, null)));
+                        if (hd.a0) {
                             f10.addView(textView3, c8.ma.o(-1, -2));
                             i7 = 5;
                             f10.addView(imageView2, c8.ma.r(-2, -2, 5));
@@ -232,15 +232,15 @@ public final /* synthetic */ class o3 implements Runnable {
                             f10.addView(textView3, c8.ma.o(-1, -2));
                         }
                         if ("PASSWORD_MISSING".equals(tL_error2.text)) {
-                            alertDialog$Builder.k(gd.N0(2131751279, null), new bd(xdVar));
-                            alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                            alertDialog$Builder.k(hd.N0(2131751279, null), new bd(xdVar));
+                            alertDialog$Builder.h(hd.N0(2131752577, null), null);
                         } else {
                             TextView textView4 = new TextView(activity);
                             org.telegram.ui.ActionBar.t6.U(textView4, i15, null);
                             textView4.setTextSize(1, 16.0f);
-                            org.telegram.messenger.f3.k(textView4, (gd.a0 ? i7 : 3) | 48, null, 2131751286);
+                            org.telegram.messenger.f3.k(textView4, (hd.a0 ? i7 : 3) | 48, null, 2131751286);
                             linearLayout.addView(textView4, c8.ma.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                            alertDialog$Builder.h(gd.N0(2131747637, null), null);
+                            alertDialog$Builder.h(hd.N0(2131747637, null), null);
                         }
                         if (twoStepVerificationActivity2 != null) {
                             twoStepVerificationActivity2.showDialog(alertDialog$Builder.a);
@@ -271,7 +271,7 @@ public final /* synthetic */ class o3 implements Runnable {
                 org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.d;
                 boolean[] zArr = (boolean[]) this.e;
                 boolean z12 = this.b;
-                fj fjVar = (fj) this.f;
+                gj gjVar = (gj) this.f;
                 TLRPC.WebPage webPage = (TLRPC.WebPage) this.h;
                 try {
                     t1Var.dismiss();
@@ -279,15 +279,15 @@ public final /* synthetic */ class o3 implements Runnable {
                 }
                 if (!zArr[0]) {
                     if (z12) {
-                        bnVar.createArticleViewer(false).L(fjVar, webPage, null, null);
+                        bnVar.createArticleViewer(false).L(gjVar, webPage, null, null);
                         break;
                     } else {
                         try {
-                            org.telegram.messenger.g0.u2(fjVar, bnVar.getParentActivity(), bnVar.Ba, false);
+                            org.telegram.messenger.g0.u2(gjVar, bnVar.getParentActivity(), bnVar.Ba, false);
                             break;
                         } catch (Exception e11) {
                             org.telegram.messenger.a8.g(e11, true);
-                            bnVar.M6(fjVar);
+                            bnVar.M6(gjVar);
                             return;
                         }
                     }
@@ -326,9 +326,9 @@ public final /* synthetic */ class o3 implements Runnable {
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.d;
                 if (tLObject4 instanceof TLRPC.Updates) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject4;
-                    mp.u1(wsVar.a).f4(updates.users, false);
-                    mp.u1(wsVar.a).Z3(updates.chats, false);
-                    ArrayList A0 = mp.A0(updates, TL_update.TL_updateGroupCall.class);
+                    np.u1(wsVar.a).f4(updates.users, false);
+                    np.u1(wsVar.a).Z3(updates.chats, false);
+                    ArrayList A0 = np.A0(updates, TL_update.TL_updateGroupCall.class);
                     int size = A0.size();
                     int i17 = 0;
                     TLRPC.GroupCall groupCall = null;
@@ -352,8 +352,8 @@ public final /* synthetic */ class o3 implements Runnable {
                     }
                 } else if (tLObject4 instanceof TL_phone.groupCall) {
                     TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject4;
-                    mp.u1(wsVar.a).f4(groupcall.users, false);
-                    mp.u1(wsVar.a).Z3(groupcall.chats, false);
+                    np.u1(wsVar.a).f4(groupcall.users, false);
+                    np.u1(wsVar.a).Z3(groupcall.chats, false);
                     if (LaunchActivity.H1 == null) {
                         wsVar.Y1 = false;
                         eVar.setLoading(false);
@@ -382,9 +382,9 @@ public final /* synthetic */ class o3 implements Runnable {
                 org.telegram.messenger.r5 r5Var = org.telegram.ui.Wallet.sa.a;
                 int i18 = 0;
                 while (true) {
-                    int i19 = ks.K4;
+                    int i19 = ls.K4;
                     if (i18 < 288) {
-                        int i20 = i18 * ks.L4;
+                        int i20 = i18 * ls.L4;
                         int i21 = 8;
                         for (int i22 = 0; i22 < 288; i22++) {
                             int i23 = i20 + i22;
@@ -405,7 +405,7 @@ public final /* synthetic */ class o3 implements Runnable {
                         int i26 = 0;
                         while (i26 < 288) {
                             for (int i27 = i10; i27 < 288; i27++) {
-                                iArr4[i27] = iArr3[(i27 * ks.L4) + i26];
+                                iArr4[i27] = iArr3[(i27 * ls.L4) + i26];
                             }
                             int i28 = i10;
                             while (i28 < 288) {
@@ -421,14 +421,14 @@ public final /* synthetic */ class o3 implements Runnable {
                                         }
                                     }
                                 }
-                                iArr3[(i28 * ks.L4) + i26] = org.telegram.ui.Wallet.sa.b[i29];
+                                iArr3[(i28 * ls.L4) + i26] = org.telegram.ui.Wallet.sa.b[i29];
                                 i28++;
                                 i10 = 0;
-                                i19 = ks.K4;
+                                i19 = ls.K4;
                             }
                             i26++;
                             i10 = 0;
-                            i19 = ks.K4;
+                            i19 = ls.K4;
                         }
                         int i33 = 0;
                         while (i33 < 82944) {
@@ -439,12 +439,12 @@ public final /* synthetic */ class o3 implements Runnable {
                                 if (i35 == 0) {
                                     i34 = (max2 << 24) | 16777215;
                                 } else {
-                                    int i36 = ((255 - i35) * max2) / ks.e4;
+                                    int i36 = ((255 - i35) * max2) / ls.e4;
                                     int i37 = i35 + i36;
-                                    int i38 = ((i34 >> 16) & ks.e4) * i35;
-                                    int i39 = i36 * ks.e4;
+                                    int i38 = ((i34 >> 16) & ls.e4) * i35;
+                                    int i39 = i36 * ls.e4;
                                     c10 = c11;
-                                    i34 = ((((i34 & ks.e4) * i35) + i39) / i37) | ((((((i34 >> 8) & ks.e4) * i35) + i39) / i37) << 8) | (i37 << 24) | (((i38 + i39) / i37) << 16);
+                                    i34 = ((((i34 & ls.e4) * i35) + i39) / i37) | ((((((i34 >> 8) & ls.e4) * i35) + i39) / i37) << 8) | (i37 << 24) | (((i38 + i39) / i37) << 16);
                                     iArr2[i33] = i34;
                                     i33++;
                                     c11 = c10;
@@ -463,10 +463,10 @@ public final /* synthetic */ class o3 implements Runnable {
                                 }
                             }
                             if (i40 > 592) {
-                                Bitmap createBitmap = Bitmap.createBitmap(iArr2, ks.L4, ks.L4, Bitmap.Config.ARGB_8888);
+                                Bitmap createBitmap = Bitmap.createBitmap(iArr2, ls.L4, ls.L4, Bitmap.Config.ARGB_8888);
                                 Bitmap createScaledBitmap = Bitmap.createScaledBitmap(createBitmap, 128, 128, true);
                                 Bitmap extractAlpha = createScaledBitmap.extractAlpha();
-                                bitmap = Bitmap.createBitmap(ks.G2, ks.G2, Bitmap.Config.ALPHA_8);
+                                bitmap = Bitmap.createBitmap(ls.G2, ls.G2, Bitmap.Config.ALPHA_8);
                                 Paint paint = new Paint(1);
                                 paint.setMaskFilter(new BlurMaskFilter(5.0f, BlurMaskFilter.Blur.NORMAL));
                                 new Canvas(bitmap).drawBitmap(extractAlpha, 24.0f, 24.0f, paint);
@@ -504,13 +504,13 @@ public final /* synthetic */ class o3 implements Runnable {
         this.h = tLObject;
     }
 
-    public /* synthetic */ o3(bn bnVar, org.telegram.ui.ActionBar.t1 t1Var, boolean[] zArr, boolean z10, fj fjVar, TLRPC.TL_webPage tL_webPage) {
+    public /* synthetic */ o3(bn bnVar, org.telegram.ui.ActionBar.t1 t1Var, boolean[] zArr, boolean z10, gj gjVar, TLRPC.TL_webPage tL_webPage) {
         this.a = 5;
         this.c = bnVar;
         this.d = t1Var;
         this.e = zArr;
         this.b = z10;
-        this.f = fjVar;
+        this.f = gjVar;
         this.h = tL_webPage;
     }
 

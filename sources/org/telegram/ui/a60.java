@@ -16,9 +16,9 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs, View.OnClickListener, te.b, rh.c {
+public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs, View.OnClickListener, te.b, rh.c {
     public final HashMap E;
     public final ArrayList F;
     public org.telegram.ui.Components.p20 G;
@@ -137,7 +137,7 @@ public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         a60Var.h.setVerticalScrollBarEnabled(false);
         a60Var.r.e(false, true);
         a60Var.r.setStickerType(0);
-        a60Var.r.d.setText(org.telegram.messenger.gd.N0(2131748030, null));
+        a60Var.r.d.setText(org.telegram.messenger.hd.N0(2131748030, null));
         a60Var.r.e.setText("");
     }
 
@@ -186,15 +186,15 @@ public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.E.clear();
         this.G = null;
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131748958, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131748958, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new dv(this, 12));
         org.telegram.ui.ActionBar.g5 b10 = this.simpleActionBar.t().b(1, R.drawable.outline_header_search);
         this.c = b10;
-        b10.setContentDescription(org.telegram.messenger.gd.N0(2131745640, null));
+        b10.setContentDescription(org.telegram.messenger.hd.N0(2131745640, null));
         org.telegram.ui.ActionBar.g5 g5Var = this.c;
         g5Var.O();
         g5Var.C0 = new bi.w1(this, 14);
-        this.c.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
+        this.c.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
         k0 k0Var = new k0(11, context, this);
         this.fragmentView = k0Var;
         ScrollView scrollView = new ScrollView(context);
@@ -212,7 +212,7 @@ public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.r = nv0Var;
         nv0Var.addView(yzVar, 0);
         this.r.setAnimateLayoutChange(true);
-        this.r.d.setText(org.telegram.messenger.gd.N0(2131748030, null));
+        this.r.d.setText(org.telegram.messenger.hd.N0(2131748030, null));
         this.r.e.setText("");
         this.r.e(org.telegram.messenger.i5.r(this.currentAccount).y(), true);
         this.n = new v4.c0(1, false);
@@ -225,19 +225,19 @@ public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         this.h.setAdapter(this.s);
         this.h.setLayoutManager(this.n);
         this.h.setVerticalScrollBarEnabled(false);
-        this.h.setVerticalScrollbarPosition(org.telegram.messenger.gd.a0 ? 1 : 2);
+        this.h.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
         k0Var.addView(this.h, c8.ma.c(-1.0f, -1));
         k0Var.addView(this.r);
         this.h.setOnItemClickListener(new h(this, 15));
         this.h.setOnScrollListener(new g3(this, 17));
         org.telegram.ui.ActionBar.x1 x1Var = new org.telegram.ui.ActionBar.x1(false);
-        x1Var.l = org.telegram.messenger.ks.K2;
+        x1Var.l = org.telegram.messenger.ls.K2;
         x1Var.invalidateSelf();
         org.telegram.ui.Components.c10 c10Var = new org.telegram.ui.Components.c10(context, this.resourceProvider, false);
         this.b = c10Var;
         c10Var.c.setImageDrawable(x1Var);
         this.b.e(false, false);
-        this.b.setContentDescription(org.telegram.messenger.gd.N0(2131748057, null));
+        this.b.setContentDescription(org.telegram.messenger.hd.N0(2131748057, null));
         this.b.setOnClickListener(new j40(this, 3));
         x50 x50Var = this.s;
         if (x50Var != null && !this.y) {
@@ -252,13 +252,13 @@ public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         org.telegram.ui.Components.nv0 nv0Var;
-        if (i7 == org.telegram.messenger.ks.P) {
+        if (i7 == org.telegram.messenger.ls.P) {
             f0();
         } else {
-            if (i7 != org.telegram.messenger.ks.O || (nv0Var = this.r) == null) {
+            if (i7 != org.telegram.messenger.ls.O || (nv0Var = this.r) == null) {
                 return;
             }
             nv0Var.e(false, true);
@@ -361,13 +361,13 @@ public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.teleg
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.P);
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.O);
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.P);
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.O);
         f0();
-        if (!org.telegram.messenger.j10.i(this.currentAccount).I) {
+        if (!org.telegram.messenger.k10.i(this.currentAccount).I) {
             org.telegram.messenger.i5.r(this.currentAccount).l();
-            org.telegram.messenger.j10.i(this.currentAccount).I = true;
-            org.telegram.messenger.j10.i(this.currentAccount).v(false);
+            org.telegram.messenger.k10.i(this.currentAccount).I = true;
+            org.telegram.messenger.k10.i(this.currentAccount).v(false);
         }
         return super.onFragmentCreate();
     }
@@ -375,8 +375,8 @@ public final class a60 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.P);
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.O);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.P);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.O);
     }
 
     @Override // org.telegram.ui.ActionBar.g2

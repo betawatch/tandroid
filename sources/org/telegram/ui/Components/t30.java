@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t30 implements si {
     public final /* synthetic */ x30 a;
@@ -60,51 +60,51 @@ public final class t30 implements si {
         boolean z14 = false;
         for (int i12 = 0; i12 < selectedPhotosOrder.size(); i12++) {
             Object obj = selectedPhotos.get(selectedPhotosOrder.get(i12));
-            org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
-            arrayList.add(yyVar);
-            if (obj instanceof org.telegram.messenger.ef) {
-                org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) obj;
-                String str = efVar.h;
+            org.telegram.messenger.zy zyVar = new org.telegram.messenger.zy();
+            arrayList.add(zyVar);
+            if (obj instanceof org.telegram.messenger.ff) {
+                org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) obj;
+                String str = ffVar.h;
                 if (str != null) {
-                    yyVar.c = str;
+                    zyVar.c = str;
                 } else {
-                    yyVar.c = efVar.I;
+                    zyVar.c = ffVar.I;
                 }
-                yyVar.e = efVar.c;
-                yyVar.f = efVar.g;
-                yyVar.k = efVar.s;
-                yyVar.p = efVar.d();
-                yyVar.o = efVar.b;
-                yyVar.z = efVar.m;
-                yyVar.q = true;
-                CharSequence charSequence = efVar.a;
-                yyVar.d = charSequence != null ? charSequence.toString() : null;
-                yyVar.i = efVar.n;
-                yyVar.j = efVar.r;
-                yyVar.h = efVar.x;
-                TLRPC.VideoSize videoSize = efVar.S;
-                yyVar.v = videoSize;
+                zyVar.e = ffVar.c;
+                zyVar.f = ffVar.g;
+                zyVar.k = ffVar.s;
+                zyVar.p = ffVar.d();
+                zyVar.o = ffVar.b;
+                zyVar.z = ffVar.m;
+                zyVar.q = true;
+                CharSequence charSequence = ffVar.a;
+                zyVar.d = charSequence != null ? charSequence.toString() : null;
+                zyVar.i = ffVar.n;
+                zyVar.j = ffVar.r;
+                zyVar.h = ffVar.x;
+                TLRPC.VideoSize videoSize = ffVar.S;
+                zyVar.v = videoSize;
                 z14 = videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup;
-            } else if (obj instanceof org.telegram.messenger.hf) {
-                org.telegram.messenger.hf hfVar = (org.telegram.messenger.hf) obj;
-                String str2 = hfVar.h;
+            } else if (obj instanceof org.telegram.messenger.jf) {
+                org.telegram.messenger.jf jfVar = (org.telegram.messenger.jf) obj;
+                String str2 = jfVar.h;
                 if (str2 != null) {
-                    yyVar.c = str2;
+                    zyVar.c = str2;
                 } else {
-                    yyVar.l = hfVar;
+                    zyVar.l = jfVar;
                 }
-                yyVar.e = hfVar.c;
-                yyVar.f = hfVar.g;
-                yyVar.k = hfVar.s;
-                CharSequence charSequence2 = hfVar.I;
-                yyVar.d = charSequence2 != null ? charSequence2.toString() : null;
-                yyVar.i = hfVar.n;
-                yyVar.j = hfVar.r;
-                yyVar.h = hfVar.x;
-                TLRPC.BotInlineResult botInlineResult = hfVar.N;
-                if (botInlineResult != null && hfVar.H == 1) {
-                    yyVar.m = botInlineResult;
-                    yyVar.n = hfVar.O;
+                zyVar.e = jfVar.c;
+                zyVar.f = jfVar.g;
+                zyVar.k = jfVar.s;
+                CharSequence charSequence2 = jfVar.I;
+                zyVar.d = charSequence2 != null ? charSequence2.toString() : null;
+                zyVar.i = jfVar.n;
+                zyVar.j = jfVar.r;
+                zyVar.h = jfVar.x;
+                TLRPC.BotInlineResult botInlineResult = jfVar.N;
+                if (botInlineResult != null && jfVar.H == 1) {
+                    zyVar.m = botInlineResult;
+                    zyVar.n = jfVar.O;
                 }
                 System.currentTimeMillis();
             }

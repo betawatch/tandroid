@@ -3,9 +3,9 @@ package x2;
 import a8.la;
 import android.net.Uri;
 import java.util.Map;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class t implements j2.h {
     public final j2.h a;
@@ -57,7 +57,7 @@ public final class t implements j2.h {
             byte[] bArr2 = this.d;
             int i12 = 0;
             if (hVar.read(bArr2, 0, 1) != -1) {
-                int i13 = (bArr2[0] & ks.e4) << 4;
+                int i13 = (bArr2[0] & ls.e4) << 4;
                 if (i13 != 0) {
                     byte[] bArr3 = new byte[i13];
                     int i14 = i13;

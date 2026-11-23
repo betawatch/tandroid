@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u30 extends View {
     public int[] a;
@@ -42,7 +42,7 @@ public final class u30 extends View {
         boolean z11 = false;
         if (iArr2 == null || iArr[0] != iArr2[0] || iArr[1] != iArr2[1]) {
             if (iArr2 == null) {
-                paint.setAlpha(org.telegram.messenger.ks.e4);
+                paint.setAlpha(org.telegram.messenger.ls.e4);
             }
             this.a = iArr;
             if (f40Var.c3 != null) {

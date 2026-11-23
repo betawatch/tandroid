@@ -15,9 +15,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, org.telegram.ui.Cells.w5, org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.f1, r0.m, org.telegram.messenger.r10, org.telegram.ui.Cells.a5, org.telegram.messenger.mc, RequestTimeDelegate, org.telegram.ui.ActionBar.f2, org.telegram.ui.Components.sj0, lg.e, jg.y1 {
+public final /* synthetic */ class qi0 implements org.telegram.messenger.w10, org.telegram.ui.Cells.w5, org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.f1, r0.m, org.telegram.messenger.s10, org.telegram.ui.Cells.a5, org.telegram.messenger.nc, RequestTimeDelegate, org.telegram.ui.ActionBar.f2, org.telegram.ui.Components.sj0, lg.e, jg.y1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -136,15 +136,15 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         return null;
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.s10
     public Object g(Number number, Object obj) {
         Integer num = (Integer) obj;
         PrivacyControlActivity privacyControlActivity = ((kt0) this.b).d;
         if (((Integer) number).intValue() != 0) {
-            return org.telegram.messenger.gd.E(num.intValue(), ',');
+            return org.telegram.messenger.hd.E(num.intValue(), ',');
         }
         if (privacyControlActivity.getUserConfig().q()) {
-            return org.telegram.messenger.gd.H(',', "Stars", num.intValue());
+            return org.telegram.messenger.hd.H(',', "Stars", num.intValue());
         }
         if (privacyControlActivity.B0 == null) {
             SpannableString spannableString = new SpannableString("l");
@@ -159,7 +159,7 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) privacyControlActivity.B0);
         spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.H(',', "Stars", num.intValue()));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.H(',', "Stars", num.intValue()));
         return spannableStringBuilder;
     }
 
@@ -210,18 +210,18 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                 while (i14 < size) {
                     Object obj = arrayList.get(i14);
                     i14++;
-                    org.telegram.messenger.bz.i((org.telegram.messenger.az) obj);
+                    org.telegram.messenger.cz.i((org.telegram.messenger.bz) obj);
                 }
-                if (org.telegram.messenger.bz.B1 == null) {
+                if (org.telegram.messenger.cz.B1 == null) {
                     proxyListActivity.d = false;
                 }
-                org.telegram.messenger.ks.e().n(proxyListActivity, org.telegram.messenger.ks.D4);
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.D4, new Object[0]);
-                org.telegram.messenger.ks.e().c(proxyListActivity, org.telegram.messenger.ks.D4);
+                org.telegram.messenger.ls.e().n(proxyListActivity, org.telegram.messenger.ls.D4);
+                org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.D4, new Object[0]);
+                org.telegram.messenger.ls.e().c(proxyListActivity, org.telegram.messenger.ls.D4);
                 proxyListActivity.h0(true);
                 l4 l4Var = proxyListActivity.a;
                 if (l4Var != null) {
-                    if (org.telegram.messenger.bz.B1 == null) {
+                    if (org.telegram.messenger.cz.B1 == null) {
                         i10 = proxyListActivity.useProxyRow;
                         l4Var.h(i10, 0);
                     }
@@ -281,7 +281,7 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
                 org.telegram.ui.ActionBar.m6.l0(l6Var, x71Var.w, true);
                 org.telegram.ui.ActionBar.m6.p();
                 org.telegram.ui.ActionBar.m6.t1(false, false);
-                org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.w4, l6Var, Boolean.valueOf(x71Var.h0), null, -1);
+                org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.w4, l6Var, Boolean.valueOf(x71Var.h0), null, -1);
                 x71Var.finishFragment();
                 break;
             default:
@@ -290,7 +290,7 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         }
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         switch (this.a) {
             case 0:
@@ -335,12 +335,12 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
         }
     }
 
-    @Override // org.telegram.messenger.mc
+    @Override // org.telegram.messenger.nc
     public void q(Exception exc) {
-        bi.g5 g5Var = (bi.g5) this.b;
+        bi.f5 f5Var = (bi.f5) this.b;
         RectF rectF = ProfileActivity.Z6;
         org.telegram.messenger.a8.e("mlkit: failed to detect language in selection", exc);
-        g5Var.run();
+        f5Var.run();
     }
 
     @Override // jg.y1
@@ -354,7 +354,7 @@ public final /* synthetic */ class qi0 implements org.telegram.messenger.v10, or
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j3) {
-        org.telegram.messenger.g0.g3(new qx0((org.telegram.messenger.az) this.b, j3, 0));
+        org.telegram.messenger.g0.g3(new qx0((org.telegram.messenger.bz) this.b, j3, 0));
     }
 
     @Override // jg.y1

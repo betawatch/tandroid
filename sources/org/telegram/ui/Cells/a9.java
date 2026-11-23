@@ -16,11 +16,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.m80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class a9 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final c2 a;
@@ -199,7 +199,7 @@ public class a9 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
         c2 c2Var = new c2(this, context, o0Var, h6Var);
         this.a = c2Var;
         c2Var.setTextSize(1, 14.0f);
-        c2Var.setGravity(gd.a0 ? 5 : 3);
+        c2Var.setGravity(hd.a0 ? 5 : 3);
         c2Var.setPadding(0, org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(17.0f));
         c2Var.setMovementMethod(LinkMovementMethod.getInstance());
         int i10 = org.telegram.ui.ActionBar.m6.B6;
@@ -210,8 +210,8 @@ public class a9 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
         org.telegram.ui.ActionBar.t6.G(c2Var, this.c, h6Var);
         c2Var.setImportantForAccessibility(2);
         float f10 = i7;
-        addView(c2Var, c8.ma.d(-1, -2.0f, (gd.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
-        this.n = gd.a0;
+        addView(c2Var, c8.ma.d(-1, -2.0f, (hd.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
+        this.n = hd.a0;
         setWillNotDraw(false);
     }
 

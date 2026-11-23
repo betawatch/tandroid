@@ -7,19 +7,19 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.we;
+import org.telegram.messenger.xe;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.we0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class u9 extends k5 {
     public boolean j2;
     public final /* synthetic */ sa k2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u9(sa saVar, Context context, boolean z10, File file, boolean z11, boolean z12, ra raVar, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, c7 c7Var, int i11, int i12, we weVar, org.telegram.ui.Components.ca caVar, fi.b bVar, u5 u5Var, ga gaVar) {
-        super(context, z10, file, z11, z12, raVar, activity, i7, bitmap, bitmap2, i10, arrayList, c7Var, i11, i12, weVar, caVar, bVar, u5Var, gaVar);
+    public u9(sa saVar, Context context, boolean z10, File file, boolean z11, boolean z12, ra raVar, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, c7 c7Var, int i11, int i12, xe xeVar, org.telegram.ui.Components.ca caVar, fi.b bVar, u5 u5Var, ga gaVar) {
+        super(context, z10, file, z11, z12, raVar, activity, i7, bitmap, bitmap2, i10, arrayList, c7Var, i11, i12, xeVar, caVar, bVar, u5Var, gaVar);
         this.k2 = saVar;
     }
 

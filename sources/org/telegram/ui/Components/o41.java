@@ -8,7 +8,7 @@ import j$.util.Objects;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o41 extends rg.a {
     public static int K = 10000;
@@ -17,10 +17,10 @@ public final class o41 extends rg.a {
     public int A;
     public float B;
     public long C;
-    public org.telegram.messenger.x10 D;
+    public org.telegram.messenger.y10 D;
     public View.OnClickListener E;
     public View.OnClickListener F;
-    public org.telegram.messenger.x10 G;
+    public org.telegram.messenger.y10 G;
     public Object H;
     public Object I;
     public boolean J;

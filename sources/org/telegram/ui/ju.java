@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ju implements org.telegram.ui.Components.dp0, org.telegram.ui.Components.rj0, org.telegram.ui.Components.sj0, tz, org.telegram.ui.ActionBar.q1, ri.m, r0.m, ri.n, org.telegram.ui.Components.gj0 {
     public final /* synthetic */ int a;
@@ -87,17 +87,17 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.dp0,
                 org.telegram.ui.Components.o41 G = cxVar.D0.m0.G(i7);
                 Object obj = G != null ? G.H : null;
                 if (!(obj instanceof TLRPC.Chat)) {
-                    if (obj instanceof org.telegram.messenger.fj) {
-                        org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj;
+                    if (obj instanceof org.telegram.messenger.gj) {
+                        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) obj;
                         Bundle bundle = new Bundle();
-                        if (org.telegram.messenger.fj.B0(fjVar.k) >= 0) {
-                            bundle.putLong("user_id", org.telegram.messenger.fj.B0(fjVar.k));
+                        if (org.telegram.messenger.gj.B0(gjVar.k) >= 0) {
+                            bundle.putLong("user_id", org.telegram.messenger.gj.B0(gjVar.k));
                         } else {
-                            bundle.putLong("chat_id", -org.telegram.messenger.fj.B0(fjVar.k));
+                            bundle.putLong("chat_id", -org.telegram.messenger.gj.B0(gjVar.k));
                         }
-                        bundle.putInt("message_id", fjVar.e1());
+                        bundle.putInt("message_id", gjVar.e1());
                         bn bnVar = new bn(bundle);
-                        cx.r4(bnVar, fjVar);
+                        cx.r4(bnVar, gjVar);
                         cxVar.presentFragment(bnVar);
                         break;
                     }
@@ -137,17 +137,17 @@ public final /* synthetic */ class ju implements org.telegram.ui.Components.dp0,
                 org.telegram.ui.Components.o41 G3 = cxVar2.D0.r0.G(i7);
                 Object obj3 = G3 != null ? G3.H : null;
                 if (!(obj3 instanceof TLRPC.User)) {
-                    if (obj3 instanceof org.telegram.messenger.fj) {
-                        org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) obj3;
+                    if (obj3 instanceof org.telegram.messenger.gj) {
+                        org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) obj3;
                         Bundle bundle3 = new Bundle();
-                        if (org.telegram.messenger.fj.B0(fjVar2.k) >= 0) {
-                            bundle3.putLong("user_id", org.telegram.messenger.fj.B0(fjVar2.k));
+                        if (org.telegram.messenger.gj.B0(gjVar2.k) >= 0) {
+                            bundle3.putLong("user_id", org.telegram.messenger.gj.B0(gjVar2.k));
                         } else {
-                            bundle3.putLong("chat_id", -org.telegram.messenger.fj.B0(fjVar2.k));
+                            bundle3.putLong("chat_id", -org.telegram.messenger.gj.B0(gjVar2.k));
                         }
-                        bundle3.putInt("message_id", fjVar2.e1());
+                        bundle3.putInt("message_id", gjVar2.e1());
                         bn bnVar3 = new bn(bundle3);
-                        cx.r4(bnVar3, fjVar2);
+                        cx.r4(bnVar3, gjVar2);
                         cxVar2.presentFragment(bnVar3);
                         break;
                     }

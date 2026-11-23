@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l00 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public org.telegram.ui.ActionBar.m5 a;
@@ -31,13 +31,13 @@ public final class l00 extends FrameLayout implements org.telegram.ui.ActionBar.
         int i13 = i11 - i7;
         org.telegram.ui.ActionBar.m5 m5Var = this.a;
         int textHeight = ((i12 - i10) - m5Var.getTextHeight()) / 2;
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             L = (getMeasuredWidth() - m5Var.getMeasuredWidth()) - org.telegram.messenger.g0.L(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
         } else {
             L = org.telegram.messenger.g0.L(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
         }
         m5Var.layout(L, textHeight, m5Var.getMeasuredWidth() + L, m5Var.getMeasuredHeight() + textHeight);
-        int L2 = !org.telegram.messenger.gd.a0 ? org.telegram.messenger.g0.L(20.0f) : (i13 - imageView.getMeasuredWidth()) - org.telegram.messenger.g0.L(20.0f);
+        int L2 = !org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(20.0f) : (i13 - imageView.getMeasuredWidth()) - org.telegram.messenger.g0.L(20.0f);
         imageView.layout(L2, 0, imageView.getMeasuredWidth() + L2, imageView.getMeasuredHeight());
     }
 
@@ -45,7 +45,7 @@ public final class l00 extends FrameLayout implements org.telegram.ui.ActionBar.
     public final void onMeasure(int i7, int i10) {
         int size = View.MeasureSpec.getSize(i7);
         org.telegram.messenger.g0.L(48.0f);
-        this.a.measure(org.telegram.messenger.n10.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(20.0f), TLObject.FLAG_30));
+        this.a.measure(org.telegram.messenger.o10.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(20.0f), TLObject.FLAG_30));
         this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
         setMeasuredDimension(size, org.telegram.messenger.g0.L(50.0f));
     }

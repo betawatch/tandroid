@@ -14,9 +14,9 @@ import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import c8.ma;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.we0;
 import org.telegram.ui.Components.zi0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public boolean E;
@@ -84,13 +84,13 @@ public final class a extends FrameLayout {
         this.r = we0Var;
         we0Var.f = this;
         we0Var.setCallback(this);
-        we0Var.h = ks.j4;
+        we0Var.h = ls.j4;
         textPaint.setTextSize(g0.L(15.0f));
         i iVar = new i(12, context, this);
         this.c = iVar;
         iVar.setBackground(null);
         iVar.setPadding(0, 0, 0, 0);
-        iVar.setTextSize(1, bz.W0);
+        iVar.setTextSize(1, cz.W0);
         iVar.setMaxLines(6);
         iVar.setGravity(51);
         iVar.setImeOptions(TLObject.FLAG_28);

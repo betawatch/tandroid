@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ej0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class ej0 extends FrameLayout {
                     if (lineCount > 1) {
                         i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
                     }
-                    if (org.telegram.messenger.gd.a0) {
+                    if (org.telegram.messenger.hd.a0) {
                         float f10 = 0.0f;
                         while (true) {
                             if (i11 < lineCount) {
@@ -103,7 +103,7 @@ public final class ej0 extends FrameLayout {
                     if (lineCount2 > 1) {
                         i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount2 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
                     }
-                    if (org.telegram.messenger.gd.a0) {
+                    if (org.telegram.messenger.hd.a0) {
                         float f11 = 0.0f;
                         while (true) {
                             if (i12 < lineCount2) {
@@ -132,7 +132,7 @@ public final class ej0 extends FrameLayout {
                     if (lineCount3 > 1) {
                         i10 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount3 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.g0.L(64.0f), TLObject.FLAG_30);
                     }
-                    if (org.telegram.messenger.gd.a0) {
+                    if (org.telegram.messenger.hd.a0) {
                         float f12 = 0.0f;
                         while (true) {
                             if (i13 < lineCount3) {

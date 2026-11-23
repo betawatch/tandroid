@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sq0 extends View {
     public final Paint a;
@@ -72,15 +72,15 @@ public final class sq0 extends View {
         boolean z11 = false;
         int max = Math.max(0, i7);
         int max2 = Math.max(max, i10);
-        if (org.telegram.messenger.gd.E0().B != null && !TextUtils.equals(this.n, org.telegram.messenger.gd.E0().B.c)) {
+        if (org.telegram.messenger.hd.E0().B != null && !TextUtils.equals(this.n, org.telegram.messenger.hd.E0().B.c)) {
             c();
         }
-        this.b.t(String.format("%d", Integer.valueOf(org.telegram.messenger.gd.a0 ? max2 : max)), (!z10 || this.w || org.telegram.messenger.gd.a0) ? false : true, true);
-        if (!org.telegram.messenger.gd.a0) {
+        this.b.t(String.format("%d", Integer.valueOf(org.telegram.messenger.hd.a0 ? max2 : max)), (!z10 || this.w || org.telegram.messenger.hd.a0) ? false : true, true);
+        if (!org.telegram.messenger.hd.a0) {
             max = max2;
         }
         String format = String.format("%d", Integer.valueOf(max));
-        if (z10 && !this.w && !org.telegram.messenger.gd.a0) {
+        if (z10 && !this.w && !org.telegram.messenger.hd.a0) {
             z11 = true;
         }
         this.h.t(format, z11, true);
@@ -88,8 +88,8 @@ public final class sq0 extends View {
     }
 
     public final void c() {
-        this.n = org.telegram.messenger.gd.E0().B.c;
-        StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.gd.N0(2131747635, null).replace("%1$d", "").replace("%2$d", ""), this.c, org.telegram.messenger.g0.L(200.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        this.n = org.telegram.messenger.hd.E0().B.c;
+        StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.hd.N0(2131747635, null).replace("%1$d", "").replace("%2$d", ""), this.c, org.telegram.messenger.g0.L(200.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         this.d = staticLayout;
         if (staticLayout.getLineCount() >= 1) {
             this.e = this.d.getLineWidth(0);
@@ -162,7 +162,7 @@ public final class sq0 extends View {
         this.x = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m;
         this.b.N = size;
         this.h.N = size;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), org.telegram.messenger.n10.C(43.0f, this.x, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), org.telegram.messenger.o10.C(43.0f, this.x, TLObject.FLAG_30));
     }
 
     @Override // android.view.View

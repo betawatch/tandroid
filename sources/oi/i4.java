@@ -5,20 +5,20 @@ import android.graphics.Paint;
 import android.text.Editable;
 import android.text.style.ReplacementSpan;
 import android.view.View;
-import org.telegram.messenger.cu;
-import org.telegram.messenger.ev;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.du;
+import org.telegram.messenger.fv;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i4 extends ReplacementSpan {
     public final TL_iv.textButton a;
-    public cu b;
+    public du b;
     public View c;
-    public int d = j10.t0;
+    public int d = k10.t0;
     public h6 e;
 
     public i4(TL_iv.textButton textbutton) {
@@ -31,9 +31,9 @@ public final class i4 extends ReplacementSpan {
 
     public final void a(int i7, View view, h6 h6Var) {
         View view2;
-        cu cuVar = this.b;
-        if (cuVar != null && (view2 = this.c) != null) {
-            cuVar.b(view2);
+        du duVar = this.b;
+        if (duVar != null && (view2 = this.c) != null) {
+            duVar.b(view2);
         }
         this.c = view;
         this.d = i7;
@@ -42,15 +42,15 @@ public final class i4 extends ReplacementSpan {
         b();
     }
 
-    public final cu b() {
+    public final du b() {
         if (this.b == null) {
             int i7 = this.d;
             int L = org.telegram.messenger.g0.L(240.0f);
-            cu cuVar = new cu(new ev(i7, L, this.e), L, this.a, Boolean.FALSE);
-            this.b = cuVar;
+            du duVar = new du(new fv(i7, L, this.e), L, this.a, Boolean.FALSE);
+            this.b = duVar;
             View view = this.c;
             if (view != null) {
-                cuVar.a(view);
+                duVar.a(view);
             }
         }
         return this.b;

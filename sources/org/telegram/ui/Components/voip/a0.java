@@ -16,11 +16,11 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.u3;
 import org.telegram.messenger.voip.VoIPService;
@@ -31,7 +31,7 @@ import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.ik;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a0 extends ViewGroup {
     public final z E;
@@ -519,10 +519,10 @@ public final class a0 extends ViewGroup {
             }
             int callState = sharedInstance.getCallState();
             if (callState == 5) {
-                textView.setText(gd.N0(2131743010, null));
+                textView.setText(hd.N0(2131743008, null));
                 textView.setVisibility(0);
             } else if (callState != 3) {
-                textView.setText(gd.N0(2131743176, null));
+                textView.setText(hd.N0(2131743174, null));
                 textView.setVisibility(0);
             } else {
                 textView.setVisibility(8);
@@ -741,7 +741,7 @@ public final class a0 extends ViewGroup {
                 } else if (!isEmpty && !this.a.isEmpty()) {
                     i13 = 0;
                     if (((d0) this.a.get(0)).b != null) {
-                        this.G = fj.B1(((d0) this.a.get(0)).b.a.peer);
+                        this.G = gj.B1(((d0) this.a.get(0)).b.a.peer);
                     }
                     if (j11 == j12) {
                         long j18 = this.G;
@@ -755,7 +755,7 @@ public final class a0 extends ViewGroup {
                                 if (i20 >= t3Var.e.size()) {
                                     break;
                                 }
-                                long B12 = fj.B1(((TLRPC.GroupCallParticipant) t3Var.e.get(i20)).peer);
+                                long B12 = gj.B1(((TLRPC.GroupCallParticipant) t3Var.e.get(i20)).peer);
                                 if (B12 != selfId) {
                                     selfId = B12;
                                     break;
@@ -804,13 +804,13 @@ public final class a0 extends ViewGroup {
                                     d0Var10.invalidate();
                                 }
                                 u3 u3Var4 = d0Var10.b;
-                                B1 = u3Var4 == null ? fj.B1(u3Var4.a.peer) : j11;
+                                B1 = u3Var4 == null ? gj.B1(u3Var4.a.peer) : j11;
                                 if (B1 != d0Var10.G) {
                                     d0Var10.G = B1;
-                                    mp u12 = mp.u1(voIPService2.getAccount());
+                                    np u12 = np.u1(voIPService2.getAccount());
                                     if (n5.E(B1)) {
                                         TLRPC.User c22 = u12.c2(Long.valueOf(B1));
-                                        str = o10.q(c22);
+                                        str = p10.q(c22);
                                         chat = c22;
                                     } else {
                                         TLRPC.Chat O0 = u12.O0(Long.valueOf(-B1));

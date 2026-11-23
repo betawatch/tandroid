@@ -9,7 +9,7 @@ import java.security.SecureRandom;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m30 extends org.telegram.ui.ActionBar.m5 {
     public LinearGradient N0;
@@ -84,7 +84,7 @@ public final class m30 extends org.telegram.ui.ActionBar.m5 {
                 f11 = this.S0;
                 if (f11 != 0.0f || this.T0 >= f11) {
                     SecureRandom secureRandom = Utilities.b;
-                    this.S0 = secureRandom.nextInt(org.telegram.messenger.ks.e3) + 1500;
+                    this.S0 = secureRandom.nextInt(org.telegram.messenger.ls.e3) + 1500;
                     this.T0 = 0.0f;
                     if (this.Q0 == -1.0f) {
                         this.Q0 = ((secureRandom.nextInt(100) - 50) * 0.2f) / 50.0f;
@@ -119,7 +119,7 @@ public final class m30 extends org.telegram.ui.ActionBar.m5 {
             if (f11 != 0.0f) {
             }
             SecureRandom secureRandom2 = Utilities.b;
-            this.S0 = secureRandom2.nextInt(org.telegram.messenger.ks.e3) + 1500;
+            this.S0 = secureRandom2.nextInt(org.telegram.messenger.ls.e3) + 1500;
             this.T0 = 0.0f;
             if (this.Q0 == -1.0f) {
             }

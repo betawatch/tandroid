@@ -8,12 +8,12 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.Date;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -35,7 +35,7 @@ import yg.d0;
 import yg.r;
 import yg.t;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class e extends dk0 {
     public final h6 c;
@@ -102,21 +102,21 @@ public abstract class e extends dk0 {
         if (i11 == 0) {
             r rVar = (r) view;
             if (this.d) {
-                rVar.c.setText(gd.a0("BoostingGiftLink", null, 2131753497, new Object[0]));
-                rVar.d.setText(g0.W2(gd.a0("BoostingLinkAllows", null, 2131753340, new Object[0])));
+                rVar.c.setText(hd.a0("BoostingGiftLink", null, 2131753497, new Object[0]));
+                rVar.d.setText(g0.W2(hd.a0("BoostingLinkAllows", null, 2131753340, new Object[0])));
             } else {
-                rVar.c.setText(gd.a0("BoostingUsedGiftLink", null, 2131753170, new Object[0]));
-                rVar.d.setText(g0.W2(gd.a0("BoostingLinkUsed", null, 2131753336, new Object[0])));
+                rVar.c.setText(hd.a0("BoostingUsedGiftLink", null, 2131753170, new Object[0]));
+                rVar.d.setText(g0.W2(hd.a0("BoostingLinkUsed", null, 2131753336, new Object[0])));
             }
             TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = this.f;
             if (tL_payments_checkedGiftCode.boost != null) {
                 long j3 = tL_payments_checkedGiftCode.to_id;
                 final z zVar = new z(this, i12);
-                rVar.c.setText(gd.a0("BoostingGiftLink", null, 2131753497, new Object[0]));
-                SpannableStringBuilder W2 = g0.W2(gd.N0(2131753338, null));
-                final TLRPC.User c22 = mp.u1(j10.t0).c2(Long.valueOf(j3));
+                rVar.c.setText(hd.a0("BoostingGiftLink", null, 2131753497, new Object[0]));
+                SpannableStringBuilder W2 = g0.W2(hd.N0(2131753338, null));
+                final TLRPC.User c22 = np.u1(k10.t0).c2(Long.valueOf(j3));
                 final int i14 = 0;
-                rVar.d.setText(g0.K2(W2, g0.R2("**" + o10.q(c22) + "**", m6.Xc, 2, new Runnable() { // from class: yg.n
+                rVar.d.setText(g0.K2(W2, g0.R2("**" + p10.q(c22) + "**", m6.Xc, 2, new Runnable() { // from class: yg.n
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i14) {
@@ -131,8 +131,8 @@ public abstract class e extends dk0 {
                 }, rVar.e), "%1$s"));
             }
             if (this.f.to_id == -1) {
-                rVar.c.setText(gd.a0("BoostingGiftLink", null, 2131753497, new Object[0]));
-                rVar.d.setText(g0.W2(gd.a0("BoostingLinkAllowsAnyone", null, 2131753339, new Object[0])));
+                rVar.c.setText(hd.a0("BoostingGiftLink", null, 2131753497, new Object[0]));
+                rVar.d.setText(g0.W2(hd.a0("BoostingLinkAllowsAnyone", null, 2131753339, new Object[0])));
                 return;
             }
             return;
@@ -165,7 +165,7 @@ public abstract class e extends dk0 {
                     hi.e eVar = aVar.a;
                     eVar.setShowZero(false);
                     eVar.setEnabled(true);
-                    eVar.i(gd.a0("Close", null, 2131752029, new Object[0]), false, true);
+                    eVar.i(hd.a0("Close", null, 2131752029, new Object[0]), false, true);
                     aVar.setOnClickListener(new u(this, 6));
                     return;
                 }
@@ -179,17 +179,17 @@ public abstract class e extends dk0 {
             TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode3 = this.f;
             if (tL_payments_checkedGiftCode3.boost == null) {
                 if (this.d) {
-                    d0Var.setText(g0.R2(tL_payments_checkedGiftCode3.to_id == -1 ? gd.N0(2131753268, null) : gd.N0(2131753267, null), m6.Xc, 0, new c(this, i15), this.c));
+                    d0Var.setText(g0.R2(tL_payments_checkedGiftCode3.to_id == -1 ? hd.N0(2131753268, null) : hd.N0(2131753267, null), m6.Xc, 0, new c(this, i15), this.c));
                     return;
                 } else {
                     Date date = new Date(this.f.used_date * 1000);
-                    d0Var.setText(gd.a0("BoostingUsedLinkDate", null, 2131753169, gd.a0("formatDateAtTime", null, 2131742519, gd.E0().C0().format(date), gd.E0().p0().format(date))));
+                    d0Var.setText(hd.a0("BoostingUsedLinkDate", null, 2131753169, hd.a0("formatDateAtTime", null, 2131742517, hd.E0().C0().format(date), hd.E0().p0().format(date))));
                     return;
                 }
             }
             String str2 = this.h;
             if (str2 == null || str2.isEmpty()) {
-                d0Var.setText(gd.N0(2131753337, null));
+                d0Var.setText(hd.N0(2131753337, null));
                 return;
             } else {
                 d0Var.setFixedSize(14);
@@ -207,15 +207,15 @@ public abstract class e extends dk0 {
         TextView textView2 = c0Var2.b;
         h6 h6Var = c0Var2.n;
         Date date2 = new Date(tL_payments_checkedGiftCode4.date * 1000);
-        c0Var2.e.setText(gd.a0("formatDateAtTime", null, 2131742519, gd.E0().C0().format(date2), gd.E0().p0().format(date2)));
+        c0Var2.e.setText(hd.a0("formatDateAtTime", null, 2131742517, hd.E0().C0().format(date2), hd.E0().p0().format(date2)));
         TextView textView3 = c0Var2.d;
         t6.U(textView3, tL_payments_checkedGiftCode4.via_giveaway ? m6.m5 : m6.j5, h6Var);
-        TLRPC.Chat O0 = mp.u1(j10.t0).O0(Long.valueOf(-n5.o(tL_payments_checkedGiftCode4.from_id)));
+        TLRPC.Chat O0 = np.u1(k10.t0).O0(Long.valueOf(-n5.o(tL_payments_checkedGiftCode4.from_id)));
         boolean V = v3.V(O0);
         if (tL_payments_checkedGiftCode4.via_giveaway) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             spannableStringBuilder.append((CharSequence) "**");
-            spannableStringBuilder.append((CharSequence) gd.N0(2131753489, null));
+            spannableStringBuilder.append((CharSequence) hd.N0(2131753489, null));
             spannableStringBuilder.append((CharSequence) "**");
             textView3.setText(g0.R2(spannableStringBuilder.toString(), m6.Xc, 0, new Runnable() { // from class: yg.z
                 @Override // java.lang.Runnable
@@ -232,23 +232,23 @@ public abstract class e extends dk0 {
             }, h6Var));
             textView3.setOnClickListener(new y0(4, zVar2, tL_payments_checkedGiftCode4));
         } else {
-            textView3.setText(gd.N0(V ? 2131753162 : 2131753161, null));
+            textView3.setText(hd.N0(V ? 2131753162 : 2131753161, null));
             textView3.setOnClickListener(null);
         }
         int i16 = tL_payments_checkedGiftCode4.months;
         if (i16 == 12) {
             i10 = 1;
-            G = gd.G(1, "Years", new Object[0]);
+            G = hd.G(1, "Years", new Object[0]);
             c10 = 0;
         } else {
             i10 = 1;
             c10 = 0;
-            G = gd.G(i16, "Months", new Object[0]);
+            G = hd.G(i16, "Months", new Object[0]);
         }
         TextView textView4 = c0Var2.c;
         Object[] objArr = new Object[i10];
         objArr[c10] = G;
-        textView4.setText(gd.a0("BoostingTelegramPremiumFor", null, 2131753177, objArr));
+        textView4.setText(hd.a0("BoostingTelegramPremiumFor", null, 2131753177, objArr));
         if (O0 != null) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             spannableStringBuilder2.append((CharSequence) "**");
@@ -258,9 +258,9 @@ public abstract class e extends dk0 {
             q9Var2.f(O0, new b9(O0));
             frameLayout.setOnClickListener(new y0(5, zVar2, O0));
         } else {
-            final TLRPC.User c23 = mp.u1(j10.t0).c2(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
+            final TLRPC.User c23 = np.u1(k10.t0).c2(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
             final int i17 = 0;
-            textView.setText(j6.m(o10.k(c23, true), textView.getPaint().getFontMetricsInt(), false, null, 0));
+            textView.setText(j6.m(p10.k(c23, true), textView.getPaint().getFontMetricsInt(), false, null, 0));
             q9Var2.f(c23, new b9(0, c23));
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: yg.a0
                 @Override // android.view.View.OnClickListener
@@ -279,7 +279,7 @@ public abstract class e extends dk0 {
         if (tL_payments_checkedGiftCode4.to_id == -1 && tL_payments_checkedGiftCode4.via_giveaway) {
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
             spannableStringBuilder3.append((CharSequence) "**");
-            spannableStringBuilder3.append((CharSequence) gd.N0(2131753342, null));
+            spannableStringBuilder3.append((CharSequence) hd.N0(2131753342, null));
             spannableStringBuilder3.append((CharSequence) "**");
             final int i18 = 1;
             textView3.setText(g0.R2(spannableStringBuilder3.toString(), m6.Xc, 0, new Runnable() { // from class: yg.z
@@ -295,18 +295,18 @@ public abstract class e extends dk0 {
                     }
                 }
             }, h6Var));
-            textView2.setText(gd.N0(2131753332, null));
+            textView2.setText(hd.N0(2131753332, null));
             t6.U(textView2, m6.j5, h6Var);
             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).leftMargin = 0;
             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).rightMargin = 0;
             q9Var.setVisibility(8);
         } else {
-            final TLRPC.User c24 = mp.u1(j10.t0).c2(Long.valueOf(tL_payments_checkedGiftCode4.to_id));
+            final TLRPC.User c24 = np.u1(k10.t0).c2(Long.valueOf(tL_payments_checkedGiftCode4.to_id));
             if (c24 != null) {
                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                 spannableStringBuilder4.append((CharSequence) "**");
                 final int i19 = 1;
-                spannableStringBuilder4.append((CharSequence) o10.k(c24, true));
+                spannableStringBuilder4.append((CharSequence) p10.k(c24, true));
                 spannableStringBuilder4.append((CharSequence) "**");
                 textView2.setText(j6.m(g0.R2(spannableStringBuilder4.toString(), m6.Xc, 0, new Runnable() { // from class: yg.n
                     @Override // java.lang.Runnable

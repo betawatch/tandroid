@@ -3,10 +3,10 @@ package fi;
 import android.graphics.Canvas;
 import android.view.View;
 import hi.pb;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class j9 extends g9 {
     public final i9 a;
@@ -24,7 +24,7 @@ public final class j9 extends g9 {
         this.a = i9Var;
         i9Var.setMaxWidth(org.telegram.messenger.g0.q.x);
         i9Var.setIsVideo(false);
-        i9Var.d(j10.t0, pbVar.c);
+        i9Var.d(k10.t0, pbVar.c);
         i9Var.setText(pbVar.a());
         i9Var.e(3, tL_mediaAreaWeather.color);
         i9Var.f();

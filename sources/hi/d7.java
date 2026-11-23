@@ -6,9 +6,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -23,9 +23,9 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.q20;
 import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d7 implements q10 {
+public final /* synthetic */ class d7 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -40,17 +40,17 @@ public final /* synthetic */ class d7 implements q10 {
         arrayList.add(o41.E(0, org.telegram.messenger.g0.L(12.0f)));
         arrayList.add(o41.j(1, aVar.V1));
         arrayList.add(o41.E(2, org.telegram.messenger.g0.L(12.0f)));
-        arrayList.add(o41.t(3, gd.N0(2131751935, null)));
+        arrayList.add(o41.t(3, hd.N0(2131751935, null)));
         aVar.Y1 = arrayList.size();
-        String N0 = gd.N0(2131751934, null);
+        String N0 = hd.N0(2131751934, null);
         boolean z10 = aVar.X1;
-        o41 y10 = o41.y(ks.h2, N0, gd.N0(z10 ? 2131751933 : 2131751932, null));
+        o41 y10 = o41.y(ls.h2, N0, hd.N0(z10 ? 2131751933 : 2131751932, null));
         y10.L(true ^ aVar.U1);
         arrayList.add(y10);
-        o41 y11 = o41.y(ks.g2, gd.N0(2131751938, null), gd.N0(z10 ? 2131751937 : 2131751936, null));
+        o41 y11 = o41.y(ls.g2, hd.N0(2131751938, null), hd.N0(z10 ? 2131751937 : 2131751936, null));
         y11.L(aVar.U1);
         arrayList.add(y11);
-        arrayList.add(o41.B(6, gd.N0(2131751939, null)));
+        arrayList.add(o41.B(6, hd.N0(2131751939, null)));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:492:0x08a1, code lost:
@@ -59,7 +59,7 @@ public final /* synthetic */ class d7 implements q10 {
      */
     /* JADX WARN: Removed duplicated region for block: B:100:0x01c6  */
     /* JADX WARN: Removed duplicated region for block: B:63:0x0153  */
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -103,7 +103,7 @@ public final /* synthetic */ class d7 implements q10 {
                 }
                 arrayList.add(o41.k(k7Var.U1));
                 arrayList.add(o41.B(1, null));
-                o41 i16 = o41.i(2, gd.N0(2131744396, null));
+                o41 i16 = o41.i(2, hd.N0(2131744394, null));
                 i16.L(k7Var.i2);
                 arrayList.add(i16);
                 if (k7Var.i2) {
@@ -173,7 +173,7 @@ public final /* synthetic */ class d7 implements q10 {
                     str = null;
                 } else {
                     a70 K2 = J.K();
-                    K2.c(R.drawable.ic_ab_back, gd.N0(2131753753, null), new hb0(J, 23), false);
+                    K2.c(R.drawable.ic_ab_back, hd.N0(2131753753, null), new hb0(J, 23), false);
                     K2.k();
                     if (!TextUtils.isEmpty(tL_sponsoredPeer.sponsor_info)) {
                         K2.p(13, -1, tL_sponsoredPeer.sponsor_info);
@@ -186,13 +186,13 @@ public final /* synthetic */ class d7 implements q10 {
                     }
                     str = null;
                     z10 = false;
-                    J.c(R.drawable.msg_channel, gd.N0(2131745007, null), new bi.y5(J, K2, i12), false);
+                    J.c(R.drawable.msg_channel, hd.N0(2131745005, null), new bi.x5(J, K2, i12), false);
                 }
-                J.c(R.drawable.msg_info, gd.N0(2131754943, str), new q20(nm0Var, cxVar, nm0Var.K0, J, 5), z10);
-                J.c(R.drawable.msg_block2, gd.N0(2131746038, str), new q20(nm0Var, cxVar, tL_sponsoredPeer, J, 6), z10);
+                J.c(R.drawable.msg_info, hd.N0(2131754943, str), new q20(nm0Var, cxVar, nm0Var.K0, J, 5), z10);
+                J.c(R.drawable.msg_block2, hd.N0(2131746038, str), new q20(nm0Var, cxVar, tL_sponsoredPeer, J, 6), z10);
                 J.k();
-                J.c(R.drawable.msg_cancel, gd.N0(2131746124, str), new org.telegram.ui.Components.g(nm0Var, cxVar, J, 24), z10);
-                J.W(gd.a0 ? 3 : 5);
+                J.c(R.drawable.msg_cancel, hd.N0(2131746124, str), new org.telegram.ui.Components.g(nm0Var, cxVar, J, 24), z10);
+                J.W(hd.a0 ? 3 : 5);
                 J.b0 = true;
                 J.t = z10;
                 J.a0();
@@ -209,8 +209,8 @@ public final /* synthetic */ class d7 implements q10 {
                 org.telegram.messenger.g0.r(nVar.e);
                 nVar.n.setSticker(nVar.E);
                 nVar.j0(true);
-                bi.g6 g6Var = nVar.a;
-                if (g6Var != null && (c51Var = g6Var.g3) != null) {
+                bi.f6 f6Var = nVar.a;
+                if (f6Var != null && (c51Var = f6Var.g3) != null) {
                     c51Var.O(true);
                     break;
                 }
@@ -227,29 +227,29 @@ public final /* synthetic */ class d7 implements q10 {
                         str2 = null;
                         i5.c.s(2131745363, null, arrayList3);
                         if (TLObject.hasFlag(tL_connectedBot.flags, 1)) {
-                            arrayList3.add(o41.f(gd.N0(2131745360, null), tL_connectedBot.device, 1));
+                            arrayList3.add(o41.f(hd.N0(2131745360, null), tL_connectedBot.device, 1));
                         }
                         if (TLObject.hasFlag(tL_connectedBot.flags, 4)) {
                             i7 = 2;
-                            arrayList3.add(o41.f(gd.N0(2131745359, null), tL_connectedBot.location, 2));
+                            arrayList3.add(o41.f(hd.N0(2131745359, null), tL_connectedBot.location, 2));
                         } else {
                             i7 = 2;
                         }
                         if (TLObject.hasFlag(tL_connectedBot.flags, i7)) {
-                            arrayList3.add(o41.f(gd.N0(2131745361, null), gd.x(tL_connectedBot.date, false), 3));
+                            arrayList3.add(o41.f(hd.N0(2131745361, null), hd.x(tL_connectedBot.date, false), 3));
                         }
                         arrayList3.add(o41.C(null));
                     } else {
                         str2 = null;
                     }
                     c51Var3.V();
-                    arrayList3.add(o41.u(gd.N0(2131752807, str2)));
+                    arrayList3.add(o41.u(hd.N0(2131752807, str2)));
                     int i17 = kg.k0.g2;
-                    o41 x10 = o41.x(-1, gd.N0(2131752769, str2));
+                    o41 x10 = o41.x(-1, hd.N0(2131752769, str2));
                     x10.L(k0Var.b2);
                     arrayList3.add(x10);
                     int i18 = kg.k0.h2;
-                    o41 x11 = o41.x(-2, gd.N0(2131752764, str2));
+                    o41 x11 = o41.x(-2, hd.N0(2131752764, str2));
                     x11.L(!k0Var.b2);
                     arrayList3.add(x11);
                     c51Var3.U();
@@ -258,7 +258,7 @@ public final /* synthetic */ class d7 implements q10 {
                     if (b0Var != null) {
                         b0Var.a(arrayList3, c51Var3, true);
                     }
-                    arrayList3.add(o41.C(gd.N0(2131752806, str2)));
+                    arrayList3.add(o41.C(hd.N0(2131752806, str2)));
                     break;
                 }
                 break;
@@ -267,8 +267,8 @@ public final /* synthetic */ class d7 implements q10 {
                 ArrayList arrayList4 = (ArrayList) obj;
                 c51 c51Var4 = (c51) obj2;
                 LongSparseArray longSparseArray = s0Var.O;
-                String N0 = gd.N0(2131752771, null);
-                String N02 = gd.N0(2131752770, null);
+                String N0 = hd.N0(2131752771, null);
+                String N02 = hd.N0(2131752770, null);
                 o41 o41Var = new o41(2);
                 o41Var.m = N0;
                 o41Var.p = N02;
@@ -412,16 +412,16 @@ public final /* synthetic */ class d7 implements q10 {
                     s0Var.h.setVisibility(z15 ? 0 : 8);
                     c51Var2.U();
                 }
-                arrayList4.add(o41.C(gd.N0(2131752803, null)));
+                arrayList4.add(o41.C(hd.N0(2131752803, null)));
                 c51Var2.V();
-                o41 u10 = o41.u(gd.N0(2131752807, null));
+                o41 u10 = o41.u(hd.N0(2131752807, null));
                 u10.g = s0Var.N != null;
                 arrayList4.add(u10);
-                o41 x12 = o41.x(-1, gd.N0(2131752769, null));
+                o41 x12 = o41.x(-1, hd.N0(2131752769, null));
                 x12.L(s0Var.J);
                 x12.g = s0Var.N != null;
                 arrayList4.add(x12);
-                o41 x13 = o41.x(-2, gd.N0(2131752764, null));
+                o41 x13 = o41.x(-2, hd.N0(2131752764, null));
                 x13.L(!s0Var.J);
                 x13.g = s0Var.N != null;
                 arrayList4.add(x13);
@@ -429,11 +429,11 @@ public final /* synthetic */ class d7 implements q10 {
                 arrayList4.add(o41.C(null));
                 c51 c51Var5 = c51Var2;
                 s0Var.w.a(arrayList4, c51Var5, s0Var.N != null);
-                arrayList4.add(o41.C(gd.N0(2131752806, null)));
+                arrayList4.add(o41.C(hd.N0(2131752806, null)));
                 if (s0Var.N != null) {
                     c51Var5.V();
-                    arrayList4.add(o41.u(gd.N0(2131752796, null)));
-                    String N03 = gd.N0(2131752783, null);
+                    arrayList4.add(o41.u(hd.N0(2131752796, null)));
+                    String N03 = hd.N0(2131752783, null);
                     StringBuilder sb2 = new StringBuilder();
                     TL_account.TL_businessBotRights tL_businessBotRights = s0Var.K;
                     sb2.append((tL_businessBotRights.reply ? 1 : 0) + 1 + (tL_businessBotRights.read_messages ? 1 : 0) + (tL_businessBotRights.delete_sent_messages ? 1 : 0) + (tL_businessBotRights.delete_received_messages ? 1 : 0));
@@ -514,31 +514,31 @@ public final /* synthetic */ class d7 implements q10 {
                     arrayList4.add(o4);
                     if (s0Var.Q) {
                         str3 = null;
-                        o41 z16 = o41.z(-5, gd.N0(2131752785, null));
+                        o41 z16 = o41.z(-5, hd.N0(2131752785, null));
                         z16.L(true);
                         z16.g = false;
                         z16.i = 1;
                         arrayList4.add(z16);
-                        o41 z17 = o41.z(-6, gd.N0(2131752784, null));
+                        o41 z17 = o41.z(-6, hd.N0(2131752784, null));
                         z17.L(s0Var.K.reply);
                         z17.i = 1;
                         arrayList4.add(z17);
-                        o41 z18 = o41.z(-7, gd.N0(2131752786, null));
+                        o41 z18 = o41.z(-7, hd.N0(2131752786, null));
                         z18.L(s0Var.K.read_messages);
                         z18.i = 1;
                         arrayList4.add(z18);
-                        o41 z19 = o41.z(-8, gd.N0(2131752787, null));
+                        o41 z19 = o41.z(-8, hd.N0(2131752787, null));
                         z19.L(s0Var.K.delete_sent_messages);
                         z19.i = 1;
                         arrayList4.add(z19);
-                        o41 z20 = o41.z(-9, gd.N0(2131752788, null));
+                        o41 z20 = o41.z(-9, hd.N0(2131752788, null));
                         z20.L(s0Var.K.delete_received_messages);
                         z20.i = 1;
                         arrayList4.add(z20);
                     } else {
                         str3 = null;
                     }
-                    String N04 = gd.N0(2131752779, str3);
+                    String N04 = hd.N0(2131752779, str3);
                     StringBuilder sb3 = new StringBuilder();
                     TL_account.TL_businessBotRights tL_businessBotRights3 = s0Var.K;
                     sb3.append((tL_businessBotRights3.edit_name ? 1 : 0) + (tL_businessBotRights3.edit_bio ? 1 : 0) + (tL_businessBotRights3.edit_profile_photo ? 1 : 0) + (tL_businessBotRights3.edit_username ? 1 : 0));
@@ -620,26 +620,26 @@ public final /* synthetic */ class d7 implements q10 {
                     arrayList4.add(o10);
                     if (s0Var.R) {
                         str4 = null;
-                        o41 z21 = o41.z(-11, gd.N0(2131752781, null));
+                        o41 z21 = o41.z(-11, hd.N0(2131752781, null));
                         z21.L(s0Var.K.edit_name);
                         z21.i = 1;
                         arrayList4.add(z21);
-                        o41 z22 = o41.z(-12, gd.N0(2131752782, null));
+                        o41 z22 = o41.z(-12, hd.N0(2131752782, null));
                         z22.L(s0Var.K.edit_bio);
                         z22.i = 1;
                         arrayList4.add(z22);
-                        o41 z23 = o41.z(-13, gd.N0(2131752780, null));
+                        o41 z23 = o41.z(-13, hd.N0(2131752780, null));
                         z23.L(s0Var.K.edit_profile_photo);
                         z23.i = 1;
                         arrayList4.add(z23);
-                        o41 z24 = o41.z(-14, gd.N0(2131752778, null));
+                        o41 z24 = o41.z(-14, hd.N0(2131752778, null));
                         z24.L(s0Var.K.edit_username);
                         z24.i = 1;
                         arrayList4.add(z24);
                     } else {
                         str4 = null;
                     }
-                    String N05 = gd.N0(2131752795, str4);
+                    String N05 = hd.N0(2131752795, str4);
                     StringBuilder sb4 = new StringBuilder();
                     TL_account.TL_businessBotRights tL_businessBotRights5 = s0Var.K;
                     sb4.append((tL_businessBotRights5.view_gifts ? 1 : 0) + (tL_businessBotRights5.sell_gifts ? 1 : 0) + (tL_businessBotRights5.change_gift_settings ? 1 : 0) + (tL_businessBotRights5.transfer_and_upgrade_gifts ? 1 : 0) + (tL_businessBotRights5.transfer_stars ? 1 : 0));
@@ -721,30 +721,30 @@ public final /* synthetic */ class d7 implements q10 {
                     arrayList4.add(o11);
                     if (s0Var.S) {
                         str5 = null;
-                        o41 z25 = o41.z(-16, gd.N0(2131752790, null));
+                        o41 z25 = o41.z(-16, hd.N0(2131752790, null));
                         z25.L(s0Var.K.view_gifts);
                         z25.i = 1;
                         arrayList4.add(z25);
-                        o41 z26 = o41.z(-17, gd.N0(2131752794, null));
+                        o41 z26 = o41.z(-17, hd.N0(2131752794, null));
                         z26.L(s0Var.K.sell_gifts);
                         z26.i = 1;
                         arrayList4.add(z26);
-                        o41 z27 = o41.z(-18, gd.N0(2131752793, null));
+                        o41 z27 = o41.z(-18, hd.N0(2131752793, null));
                         z27.L(s0Var.K.change_gift_settings);
                         z27.i = 1;
                         arrayList4.add(z27);
-                        o41 z28 = o41.z(-19, gd.N0(2131752792, null));
+                        o41 z28 = o41.z(-19, hd.N0(2131752792, null));
                         z28.L(s0Var.K.transfer_and_upgrade_gifts);
                         z28.i = 1;
                         arrayList4.add(z28);
-                        o41 z29 = o41.z(-20, gd.N0(2131752791, null));
+                        o41 z29 = o41.z(-20, hd.N0(2131752791, null));
                         z29.L(s0Var.K.transfer_stars);
                         z29.i = 1;
                         arrayList4.add(z29);
                     } else {
                         str5 = null;
                     }
-                    o41 o12 = o41.o(-21, gd.N0(2131752777, str5), "");
+                    o41 o12 = o41.o(-21, hd.N0(2131752777, str5), "");
                     o12.L(s0Var.K.manage_stories);
                     final int i24 = 4;
                     o12.E = new View.OnClickListener() { // from class: kg.o0
@@ -831,8 +831,8 @@ public final /* synthetic */ class d7 implements q10 {
             case 12:
                 kg.c1 c1Var = (kg.c1) this.b;
                 ArrayList arrayList5 = (ArrayList) obj;
-                String N06 = gd.N0(2131752686, null);
-                String N07 = gd.N0(2131752680, null);
+                String N06 = hd.N0(2131752686, null);
+                String N07 = hd.N0(2131752680, null);
                 o41 o41Var5 = new o41(2);
                 o41Var5.m = N06;
                 o41Var5.p = N07;
@@ -840,7 +840,7 @@ public final /* synthetic */ class d7 implements q10 {
                 arrayList5.add(o41Var5);
                 arrayList5.add(o41.k(c1Var.d));
                 arrayList5.add(o41.C(null));
-                o41 i25 = o41.i(1, gd.N0(2131752679, null));
+                o41 i25 = o41.i(1, hd.N0(2131752679, null));
                 i25.L(c1Var.x != null);
                 arrayList5.add(i25);
                 if (c1Var.x != null) {
@@ -852,7 +852,7 @@ public final /* synthetic */ class d7 implements q10 {
                 }
                 c1Var.G = z12;
                 if (z12) {
-                    o41 e10 = o41.e(2, gd.N0(2131752684, null));
+                    o41 e10 = o41.e(2, hd.N0(2131752684, null));
                     e10.s = true;
                     arrayList5.add(e10);
                     arrayList5.add(o41.C(null));
@@ -867,7 +867,7 @@ public final /* synthetic */ class d7 implements q10 {
                 ArrayList arrayList6 = (ArrayList) obj;
                 ArrayList arrayList7 = g1Var.b;
                 String str10 = null;
-                String N08 = gd.N0(2131752740, null);
+                String N08 = hd.N0(2131752740, null);
                 o41 o41Var6 = new o41(9);
                 o41Var6.d = -1;
                 o41Var6.m = N08;
@@ -885,9 +885,9 @@ public final /* synthetic */ class d7 implements q10 {
                         } else {
                             int i26 = i13 * 3;
                             str6 = null;
-                            arrayList6.add(o41.f(gd.N0(2131752739, null), kg.d1.a(d1Var.a), i26));
-                            arrayList6.add(o41.f(gd.N0(2131752745, null), kg.d1.a(d1Var.b), i26 + 1));
-                            o41 e11 = o41.e(i26 + 2, gd.N0(2131746125, null));
+                            arrayList6.add(o41.f(hd.N0(2131752739, null), kg.d1.a(d1Var.a), i26));
+                            arrayList6.add(o41.f(hd.N0(2131752745, null), kg.d1.a(d1Var.b), i26 + 1));
+                            o41 e11 = o41.e(i26 + 2, hd.N0(2131746125, null));
                             e11.s = true;
                             arrayList6.add(e11);
                         }
@@ -897,11 +897,11 @@ public final /* synthetic */ class d7 implements q10 {
                     String str11 = str10;
                     if (g1Var.a0()) {
                         arrayList6.add(o41.C(str11));
-                        o41 c10 = o41.c(-2, R.drawable.menu_premium_clock_add, gd.N0(2131752746, str11));
+                        o41 c10 = o41.c(-2, R.drawable.menu_premium_clock_add, hd.N0(2131752746, str11));
                         c10.r = true;
                         arrayList6.add(c10);
                     }
-                    arrayList6.add(o41.C(gd.N0(2131752741, str11)));
+                    arrayList6.add(o41.C(hd.N0(2131752741, str11)));
                     break;
                 }
                 break;
@@ -1065,7 +1065,7 @@ public final /* synthetic */ class d7 implements q10 {
                     sb5.append(upperCase.toUpperCase());
                 }
                 if (sb5.length() <= 0) {
-                    sb5.append(gd.N0(2131753972, null));
+                    sb5.append(hd.N0(2131753972, null));
                 }
                 o6Var.setText(sb5);
                 break;
@@ -1073,7 +1073,7 @@ public final /* synthetic */ class d7 implements q10 {
                 ki.g1 g1Var2 = (ki.g1) this.b;
                 ArrayList arrayList8 = (ArrayList) obj;
                 arrayList8.add(o41.j(-1, g1Var2.W1));
-                arrayList8.add(o41.C(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131752968, g1Var2.U1))));
+                arrayList8.add(o41.C(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131752968, g1Var2.U1))));
                 break;
             case 20:
                 ki.s2 s2Var = (ki.s2) this.b;
@@ -1106,7 +1106,7 @@ public final /* synthetic */ class d7 implements q10 {
                 ((ArrayList) obj).add(o41.j(0, ((ni.b) this.b).T1));
                 break;
             case 26:
-                Utilities.i.c(new ji.i(i11, (String[]) this.b, (q10) obj2));
+                Utilities.i.c(new ji.i(i11, (String[]) this.b, (r10) obj2));
                 break;
             case 27:
                 oi.v vVar = (oi.v) this.b;

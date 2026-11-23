@@ -42,9 +42,9 @@ import java.util.List;
 import java.util.Map;
 import m9.v;
 import m9.y;
-import org.telegram.messenger.cj;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.i10;
+import org.telegram.messenger.dj;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.j10;
 import org.telegram.messenger.p2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -70,7 +70,7 @@ import org.telegram.ui.Components.ya;
 import org.telegram.ui.fr0;
 import u2.x;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class s implements androidx.car.app.messaging.model.b, b7.e, com.google.android.gms.common.api.internal.r, eg.a, fg.a, si, ja.a, SuccessContinuation, u9.d, gh.a, kb, m1, q2.q, r0.q, u2.k, y9.a, s0 {
     public static s b;
@@ -423,7 +423,7 @@ public final class s implements androidx.car.app.messaging.model.b, b7.e, com.go
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean T1(r1 r1Var, fj fjVar) {
+    public /* synthetic */ boolean T1(r1 r1Var, gj gjVar) {
         return false;
     }
 
@@ -528,8 +528,8 @@ public final class s implements androidx.car.app.messaging.model.b, b7.e, com.go
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean f1(fj fjVar) {
-        return c0.a(fjVar);
+    public /* synthetic */ boolean f1(gj gjVar) {
+        return c0.a(gjVar);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -688,7 +688,7 @@ public final class s implements androidx.car.app.messaging.model.b, b7.e, com.go
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean y0(fj fjVar) {
+    public /* synthetic */ boolean y0(gj gjVar) {
         return true;
     }
 
@@ -782,7 +782,7 @@ public final class s implements androidx.car.app.messaging.model.b, b7.e, com.go
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void L(cj cjVar) {
+    public /* synthetic */ void L(dj djVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -794,7 +794,7 @@ public final class s implements androidx.car.app.messaging.model.b, b7.e, com.go
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void O1(fj fjVar) {
+    public /* synthetic */ void O1(gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -802,7 +802,7 @@ public final class s implements androidx.car.app.messaging.model.b, b7.e, com.go
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void R(fj fjVar) {
+    public /* synthetic */ void R(gj gjVar) {
     }
 
     @Override // org.telegram.ui.Components.si
@@ -902,7 +902,7 @@ public final class s implements androidx.car.app.messaging.model.b, b7.e, com.go
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void a2(r1 r1Var, i10 i10Var) {
+    public /* synthetic */ void a2(r1 r1Var, j10 j10Var) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -1006,7 +1006,7 @@ public final class s implements androidx.car.app.messaging.model.b, b7.e, com.go
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void S1(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    public /* synthetic */ void S1(gj gjVar, String str, String str2, String str3, String str4, int i7, int i10) {
     }
 
     @Override // org.telegram.ui.Components.si

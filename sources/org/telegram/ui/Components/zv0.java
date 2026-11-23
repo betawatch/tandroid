@@ -4,7 +4,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zv0 implements org.telegram.ui.ls {
     public final /* synthetic */ kw0 a;
@@ -45,7 +45,7 @@ public final class zv0 implements org.telegram.ui.ls {
         org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, kw0Var.getContext(), kw0Var.J0);
         t1Var.r(350L);
         TLRPC.TL_stickers_removeStickerFromSet tL_stickers_removeStickerFromSet = new TLRPC.TL_stickers_removeStickerFromSet();
-        tL_stickers_removeStickerFromSet.sticker = org.telegram.messenger.ri.c0(document, "").document;
+        tL_stickers_removeStickerFromSet.sticker = org.telegram.messenger.si.c0(document, "").document;
         ConnectionsManager.getInstance(kw0Var.a).sendRequest(tL_stickers_removeStickerFromSet, new di.o8(this, isEmpty, t1Var, 4));
     }
 
@@ -128,8 +128,8 @@ public final class zv0 implements org.telegram.ui.ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final void i(org.telegram.messenger.sy syVar) {
-        this.a.T0(syVar);
+    public final void i(org.telegram.messenger.ty tyVar) {
+        this.a.T0(tyVar);
     }
 
     @Override // org.telegram.ui.ls
@@ -170,7 +170,7 @@ public final class zv0 implements org.telegram.ui.ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ org.telegram.messenger.fj z() {
+    public final /* synthetic */ org.telegram.messenger.gj z() {
         return null;
     }
 

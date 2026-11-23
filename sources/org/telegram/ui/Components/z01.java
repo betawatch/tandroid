@@ -1,49 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.widget.EditText;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class z01 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final RectF b = new RectF();
-    public final /* synthetic */ int c;
-    public final /* synthetic */ h11 d;
+public final class z01 extends v4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ g11 c;
 
-    public z01(h11 h11Var, int i7) {
-        this.d = h11Var;
-        this.c = i7;
+    public z01(g11 g11Var, int i7, long j3) {
+        this.c = g11Var;
+        this.a = i7;
+        this.b = j3;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.b;
-        rectF.set(bounds);
-        int i7 = this.c;
-        rectF.inset(i7, i7);
-        float height = rectF.height() / 2.0f;
-        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.O5, this.d.e);
-        Paint paint = this.a;
-        paint.setColor(w02);
-        canvas.drawRoundRect(rectF, height, height, paint);
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        EditText editText = this.c.w;
+        if (i7 == 1 && editText.hasFocus()) {
+            org.telegram.messenger.g0.v1(editText);
+            editText.clearFocus();
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        g11 g11Var = this.c;
+        g11Var.o();
+        v4.c0 c0Var = (v4.c0) recyclerView.getLayoutManager();
+        if (c0Var == null || c0Var.N0() < g11Var.s.c.size() - 3) {
+            return;
+        }
+        if (g11Var.j()) {
+            g11Var.k();
+            return;
+        }
+        boolean z10 = g11Var.d;
+        int i11 = this.a;
+        if (z10) {
+            org.telegram.messenger.np.u1(i11).I1().g(false);
+            return;
+        }
+        org.telegram.messenger.f00 f00Var = org.telegram.messenger.np.u1(i11).t7;
+        long j3 = -this.b;
+        if (f00Var.e(j3)) {
+            return;
+        }
+        f00Var.o(j3);
     }
 }

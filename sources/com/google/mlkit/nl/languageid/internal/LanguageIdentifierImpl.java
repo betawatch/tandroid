@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import n6.c;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.md0;
 import pb.g;
@@ -41,7 +41,7 @@ import y7.k6;
 import y7.k7;
 import y7.l6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final d9 a;
@@ -104,7 +104,7 @@ public class LanguageIdentifierImpl implements b {
                 boolean z11 = z10;
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
-                    String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), ks.e3)));
+                    String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), ls.e3)));
                     jn jnVar = new jn(28);
                     aa.b0 b0Var = new aa.b0();
                     b0Var.a = e10;

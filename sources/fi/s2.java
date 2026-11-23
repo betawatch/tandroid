@@ -4,13 +4,13 @@ import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.og;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.en;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class s2 extends ImageReceiver {
     public final /* synthetic */ int K1;
@@ -93,7 +93,7 @@ public final class s2 extends ImageReceiver {
                 return x02;
             case 1:
                 if (drawable != null && i7 != 1) {
-                    n10.o(((kg.c1) ((t3) obj).I).h.animate().alpha(1.0f).translationY(0.0f), nr.k, 250L);
+                    o10.o(((kg.c1) ((t3) obj).I).h.animate().alpha(1.0f).translationY(0.0f), nr.k, 250L);
                 }
                 return super.x0(drawable, str, i7, z10, i10);
             case 2:

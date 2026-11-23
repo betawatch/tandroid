@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q20 extends org.telegram.ui.Components.tb0 {
     public q20(LaunchActivity launchActivity) {
@@ -9,6 +9,6 @@ public final class q20 extends org.telegram.ui.Components.tb0 {
 
     @Override // org.telegram.ui.Components.tb0
     public final CharSequence d(int i7) {
-        return org.telegram.messenger.gd.G(i7, "Minutes", new Object[0]);
+        return org.telegram.messenger.hd.G(i7, "Minutes", new Object[0]);
     }
 }

@@ -13,12 +13,12 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import j$.util.Objects;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qc;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.cb0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x2 extends FrameLayout {
     public final cb0 E;
@@ -68,7 +68,7 @@ public final class x2 extends FrameLayout {
         this.S = false;
         this.T = false;
         this.U = l1Var;
-        boolean e10 = pc.e(512);
+        boolean e10 = qc.e(512);
         this.V = e10;
         this.a = z10 ? new w2() : new cb0(-4958504, -8304404, -14637865, -12612630, false, 0, true);
         this.b = z10 ? new w2() : new cb0(-12224791, -12879119, -16207709, -15226140, false, 0, true);
@@ -118,8 +118,8 @@ public final class x2 extends FrameLayout {
             return;
         }
         this.W = 1;
-        this.G = ks.e4;
-        ValueAnimator ofInt2 = ValueAnimator.ofInt(ks.e4, 0, ks.e4);
+        this.G = ls.e4;
+        ValueAnimator ofInt2 = ValueAnimator.ofInt(ls.e4, 0, ls.e4);
         this.O = ofInt2;
         ofInt2.addUpdateListener(new v2(this, 3));
         this.O.setRepeatCount(-1);
@@ -187,13 +187,13 @@ public final class x2 extends FrameLayout {
             this.O.cancel();
             this.O = null;
         }
-        this.H = ks.e4;
+        this.H = ls.e4;
         this.Q = new AnimatorSet();
-        ValueAnimator ofInt = ValueAnimator.ofInt(0, ks.e4, ks.e4, ks.e4, 0);
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, ls.e4, ls.e4, ls.e4, 0);
         ofInt.addUpdateListener(new v2(this, 4));
         ofInt.setRepeatCount(-1);
         ofInt.setRepeatMode(1);
-        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, ks.e4, 0, 0);
+        ValueAnimator ofInt2 = ValueAnimator.ofInt(0, 0, ls.e4, 0, 0);
         ofInt2.addUpdateListener(new v2(this, 5));
         ofInt2.setRepeatCount(-1);
         ofInt2.setRepeatMode(1);
@@ -290,20 +290,20 @@ public final class x2 extends FrameLayout {
             Objects.requireNonNull(this.U);
             Objects.requireNonNull(this.U);
             canvas.scale(1.12f, 1.12f, width, height);
-            this.c.setAlpha(ks.e4);
+            this.c.setAlpha(ls.e4);
             this.c.draw(canvas);
             this.L.rewind();
             this.L.addCircle(this.M / 4.0f, this.N / 4.0f, this.J / 4.0f, direction);
             ((Canvas) this.U.c.b).drawColor(0, mode);
             ((Canvas) this.U.c.b).save();
             ((Canvas) this.U.c.b).clipPath(this.L);
-            this.y.setAlpha(ks.e4);
+            this.y.setAlpha(ls.e4);
             this.y.draw((Canvas) this.U.c.b);
             ((Canvas) this.U.c.b).restore();
             ((Canvas) this.U.d.b).drawColor(0, mode);
             ((Canvas) this.U.d.b).save();
             ((Canvas) this.U.d.b).clipPath(this.L);
-            this.E.setAlpha(ks.e4);
+            this.E.setAlpha(ls.e4);
             this.E.draw((Canvas) this.U.d.b);
             ((Canvas) this.U.d.b).restore();
         }
@@ -329,6 +329,6 @@ public final class x2 extends FrameLayout {
         l1Var.c = new b8(i13, i14);
         b8 b8Var = new b8(i13, i14);
         l1Var.d = b8Var;
-        ((Paint) b8Var.a).setAlpha(ks.K2);
+        ((Paint) b8Var.a).setAlpha(ls.K2);
     }
 }

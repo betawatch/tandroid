@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class z3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public org.telegram.ui.Components.q9 a;
@@ -39,7 +39,7 @@ public abstract class z3 extends FrameLayout implements org.telegram.ui.ActionBa
         Canvas canvas2;
         if (this.r) {
             canvas2 = canvas;
-            canvas2.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(68.0f) : 0), getMeasuredHeight() - 1, this.h);
+            canvas2.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(68.0f) : 0), getMeasuredHeight() - 1, this.h);
         } else {
             canvas2 = canvas;
         }

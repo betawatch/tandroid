@@ -6,12 +6,12 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 final class zztv<T> implements zzug<T> {
     private static final int[] zza = new int[0];
@@ -642,7 +642,7 @@ final class zztv<T> implements zzug<T> {
                 iArr[i76] = i77;
                 i76++;
             }
-            int i86 = charAt24 & ks.e4;
+            int i86 = charAt24 & ls.e4;
             zzue zzueVar2 = zzueVar;
             int i87 = charAt24 & 2048;
             if (i86 >= 51) {
@@ -958,7 +958,7 @@ final class zztv<T> implements zzug<T> {
     }
 
     private static int zzt(int i7) {
-        return (i7 >>> 20) & ks.e4;
+        return (i7 >>> 20) & ls.e4;
     }
 
     private final int zzu(int i7) {
@@ -1442,7 +1442,7 @@ final class zztv<T> implements zzug<T> {
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.T /* 30 */:
+                case ls.T /* 30 */:
                     List list9 = (List) unsafe.getObject(obj2, j3);
                     int i36 = zzui.zza;
                     size = list9.size();
@@ -1460,7 +1460,7 @@ final class zztv<T> implements zzug<T> {
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.U /* 31 */:
+                case ls.U /* 31 */:
                     zzh = zzui.zzb(i18, (List) unsafe.getObject(obj2, j3), false);
                     i14 += zzh;
                     i12 += 3;
@@ -1739,21 +1739,21 @@ final class zztv<T> implements zzug<T> {
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.o0 /* 51 */:
+                case ls.o0 /* 51 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         i14 = e2.u(i18 << 3, 8, i14);
                     }
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.p0 /* 52 */:
+                case ls.p0 /* 52 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         i14 = e2.u(i18 << 3, 4, i14);
                     }
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.q0 /* 53 */:
+                case ls.q0 /* 53 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         long zzv = zzv(obj2, j3);
                         zzA10 = zzqv.zzA(i18 << 3);
@@ -1767,7 +1767,7 @@ final class zztv<T> implements zzug<T> {
                         obj2 = obj;
                         i11 = 1048575;
                     }
-                case ks.r0 /* 54 */:
+                case ls.r0 /* 54 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         long zzv2 = zzv(obj2, j3);
                         zzA10 = zzqv.zzA(i18 << 3);
@@ -1781,7 +1781,7 @@ final class zztv<T> implements zzug<T> {
                         obj2 = obj;
                         i11 = 1048575;
                     }
-                case ks.s0 /* 55 */:
+                case ls.s0 /* 55 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         long zzp = zzp(obj2, j3);
                         zzA10 = zzqv.zzA(i18 << 3);
@@ -1795,28 +1795,28 @@ final class zztv<T> implements zzug<T> {
                         obj2 = obj;
                         i11 = 1048575;
                     }
-                case ks.t0 /* 56 */:
+                case ls.t0 /* 56 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         i14 = e2.u(i18 << 3, 8, i14);
                     }
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.u0 /* 57 */:
+                case ls.u0 /* 57 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         i14 = e2.u(i18 << 3, 4, i14);
                     }
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.v0 /* 58 */:
+                case ls.v0 /* 58 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         i14 = e2.u(i18 << 3, 1, i14);
                     }
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.w0 /* 59 */:
+                case ls.w0 /* 59 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         int i42 = i18 << 3;
                         Object object2 = unsafe.getObject(obj2, j3);
@@ -1841,7 +1841,7 @@ final class zztv<T> implements zzug<T> {
                         obj2 = obj;
                         i11 = 1048575;
                     }
-                case ks.x0 /* 60 */:
+                case ls.x0 /* 60 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         zzh = zzui.zzh(i18, unsafe.getObject(obj2, j3), zztvVar.zzx(i12));
                         i14 += zzh;
@@ -1853,7 +1853,7 @@ final class zztv<T> implements zzug<T> {
                         obj2 = obj;
                         i11 = 1048575;
                     }
-                case ks.y0 /* 61 */:
+                case ls.y0 /* 61 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         zzqm zzqmVar2 = (zzqm) unsafe.getObject(obj2, j3);
                         zze = zzqv.zzA(i18 << 3);
@@ -1868,14 +1868,14 @@ final class zztv<T> implements zzug<T> {
                         obj2 = obj;
                         i11 = 1048575;
                     }
-                case ks.z0 /* 62 */:
+                case ls.z0 /* 62 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         i14 = e2.u(zzp(obj2, j3), zzqv.zzA(i18 << 3), i14);
                     }
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.A0 /* 63 */:
+                case ls.A0 /* 63 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         long zzp2 = zzp(obj2, j3);
                         zzA10 = zzqv.zzA(i18 << 3);
@@ -1903,7 +1903,7 @@ final class zztv<T> implements zzug<T> {
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.D0 /* 66 */:
+                case ls.D0 /* 66 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         int zzp3 = zzp(obj2, j3);
                         i14 = e2.u((zzp3 >> 31) ^ (zzp3 + zzp3), zzqv.zzA(i18 << 3), i14);
@@ -1911,7 +1911,7 @@ final class zztv<T> implements zzug<T> {
                     i12 += 3;
                     obj2 = obj;
                     i11 = 1048575;
-                case ks.E0 /* 67 */:
+                case ls.E0 /* 67 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         long zzv3 = zzv(obj2, j3);
                         zzA10 = zzqv.zzA(i18 << 3);
@@ -1925,7 +1925,7 @@ final class zztv<T> implements zzug<T> {
                         obj2 = obj;
                         i11 = 1048575;
                     }
-                case ks.F0 /* 68 */:
+                case ls.F0 /* 68 */:
                     if (zztvVar.zzR(obj2, i18, i12)) {
                         zzw = zzqv.zzw(i18, (zzts) unsafe.getObject(obj2, j3), zztvVar.zzx(i12));
                         i14 += zzw;
@@ -2088,8 +2088,8 @@ final class zztv<T> implements zzug<T> {
                 case 27:
                 case 28:
                 case 29:
-                case ks.T /* 30 */:
-                case ks.U /* 31 */:
+                case ls.T /* 30 */:
+                case ls.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -2117,7 +2117,7 @@ final class zztv<T> implements zzug<T> {
                     floatToIntBits = zzvc.zzf(obj, j3).hashCode();
                     i13 = floatToIntBits + i10;
                     break;
-                case ks.o0 /* 51 */:
+                case ls.o0 /* 51 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2128,7 +2128,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.p0 /* 52 */:
+                case ls.p0 /* 52 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2137,7 +2137,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = floatToIntBits + i10;
                         break;
                     }
-                case ks.q0 /* 53 */:
+                case ls.q0 /* 53 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2148,7 +2148,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.r0 /* 54 */:
+                case ls.r0 /* 54 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2159,7 +2159,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.s0 /* 55 */:
+                case ls.s0 /* 55 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2168,7 +2168,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.t0 /* 56 */:
+                case ls.t0 /* 56 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2179,7 +2179,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.u0 /* 57 */:
+                case ls.u0 /* 57 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2188,7 +2188,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.v0 /* 58 */:
+                case ls.v0 /* 58 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2197,7 +2197,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = floatToIntBits + i10;
                         break;
                     }
-                case ks.w0 /* 59 */:
+                case ls.w0 /* 59 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2206,7 +2206,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = floatToIntBits + i10;
                         break;
                     }
-                case ks.x0 /* 60 */:
+                case ls.x0 /* 60 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2215,7 +2215,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = floatToIntBits + i10;
                         break;
                     }
-                case ks.y0 /* 61 */:
+                case ls.y0 /* 61 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2224,7 +2224,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = floatToIntBits + i10;
                         break;
                     }
-                case ks.z0 /* 62 */:
+                case ls.z0 /* 62 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2233,7 +2233,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.A0 /* 63 */:
+                case ls.A0 /* 63 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2262,7 +2262,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.D0 /* 66 */:
+                case ls.D0 /* 66 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2271,7 +2271,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.E0 /* 67 */:
+                case ls.E0 /* 67 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2282,7 +2282,7 @@ final class zztv<T> implements zzug<T> {
                         i13 = i7 + zzc;
                         break;
                     }
-                case ks.F0 /* 68 */:
+                case ls.F0 /* 68 */:
                     if (!zzR(obj, i15, i12)) {
                         break;
                     } else {
@@ -2346,8 +2346,8 @@ final class zztv<T> implements zzug<T> {
                             case 27:
                             case 28:
                             case 29:
-                            case ks.T /* 30 */:
-                            case ks.U /* 31 */:
+                            case ls.T /* 30 */:
+                            case ls.U /* 31 */:
                             case 32:
                             case 33:
                             case 34:
@@ -2561,8 +2561,8 @@ final class zztv<T> implements zzug<T> {
                 case 27:
                 case 28:
                 case 29:
-                case ks.T /* 30 */:
-                case ks.U /* 31 */:
+                case ls.T /* 30 */:
+                case ls.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -2600,15 +2600,15 @@ final class zztv<T> implements zzug<T> {
                     int i12 = zzui.zza;
                     zzvc.zzs(obj, j3, zztn.zzb(zzvc.zzf(obj, j3), zzvc.zzf(obj2, j3)));
                     break;
-                case ks.o0 /* 51 */:
-                case ks.p0 /* 52 */:
-                case ks.q0 /* 53 */:
-                case ks.r0 /* 54 */:
-                case ks.s0 /* 55 */:
-                case ks.t0 /* 56 */:
-                case ks.u0 /* 57 */:
-                case ks.v0 /* 58 */:
-                case ks.w0 /* 59 */:
+                case ls.o0 /* 51 */:
+                case ls.p0 /* 52 */:
+                case ls.q0 /* 53 */:
+                case ls.r0 /* 54 */:
+                case ls.s0 /* 55 */:
+                case ls.t0 /* 56 */:
+                case ls.u0 /* 57 */:
+                case ls.v0 /* 58 */:
+                case ls.w0 /* 59 */:
                     if (!zzR(obj2, i11, i7)) {
                         break;
                     } else {
@@ -2616,16 +2616,16 @@ final class zztv<T> implements zzug<T> {
                         zzI(obj, i11, i7);
                         break;
                     }
-                case ks.x0 /* 60 */:
+                case ls.x0 /* 60 */:
                     zzF(obj, obj2, i7);
                     break;
-                case ks.y0 /* 61 */:
-                case ks.z0 /* 62 */:
-                case ks.A0 /* 63 */:
+                case ls.y0 /* 61 */:
+                case ls.z0 /* 62 */:
+                case ls.A0 /* 63 */:
                 case 64:
                 case 65:
-                case ks.D0 /* 66 */:
-                case ks.E0 /* 67 */:
+                case ls.D0 /* 66 */:
+                case ls.E0 /* 67 */:
                     if (!zzR(obj2, i11, i7)) {
                         break;
                     } else {
@@ -2633,7 +2633,7 @@ final class zztv<T> implements zzug<T> {
                         zzI(obj, i11, i7);
                         break;
                     }
-                case ks.F0 /* 68 */:
+                case ls.F0 /* 68 */:
                     zzF(obj, obj2, i7);
                     break;
             }
@@ -2927,7 +2927,7 @@ final class zztv<T> implements zzug<T> {
                                 zzufVar.zzL(zztf.zza(obj2, zzu & 1048575));
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.T /* 30 */:
+                            case ls.T /* 30 */:
                                 obj3 = obj4;
                                 zzuvVar2 = zzuvVar;
                                 try {
@@ -2957,7 +2957,7 @@ final class zztv<T> implements zzug<T> {
                                 }
                                 obj = obj2;
                                 break;
-                            case ks.U /* 31 */:
+                            case ls.U /* 31 */:
                                 obj2 = obj5;
                                 obj3 = obj4;
                                 zzuvVar2 = zzuvVar;
@@ -3149,7 +3149,7 @@ final class zztv<T> implements zzug<T> {
                                 }
                                 throw null;
                                 break;
-                            case ks.o0 /* 51 */:
+                            case ls.o0 /* 51 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Double.valueOf(zzufVar.zza()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3157,7 +3157,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.p0 /* 52 */:
+                            case ls.p0 /* 52 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Float.valueOf(zzufVar.zzb()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3165,7 +3165,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.q0 /* 53 */:
+                            case ls.q0 /* 53 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Long.valueOf(zzufVar.zzl()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3173,7 +3173,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.r0 /* 54 */:
+                            case ls.r0 /* 54 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Long.valueOf(zzufVar.zzo()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3181,7 +3181,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.s0 /* 55 */:
+                            case ls.s0 /* 55 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Integer.valueOf(zzufVar.zzg()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3189,7 +3189,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.t0 /* 56 */:
+                            case ls.t0 /* 56 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Long.valueOf(zzufVar.zzk()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3197,7 +3197,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.u0 /* 57 */:
+                            case ls.u0 /* 57 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Integer.valueOf(zzufVar.zzf()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3205,7 +3205,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.v0 /* 58 */:
+                            case ls.v0 /* 58 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Boolean.valueOf(zzufVar.zzN()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3213,7 +3213,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.w0 /* 59 */:
+                            case ls.w0 /* 59 */:
                                 zzG(obj5, zzu, zzufVar);
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3221,7 +3221,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.x0 /* 60 */:
+                            case ls.x0 /* 60 */:
                                 zzts zztsVar3 = (zzts) zzB(obj5, zzc, zzq);
                                 zzufVar.zzu(zztsVar3, zzx(zzq), zzryVar);
                                 zzK(obj5, zzc, zzq, zztsVar3);
@@ -3230,7 +3230,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.y0 /* 61 */:
+                            case ls.y0 /* 61 */:
                                 zzvc.zzs(obj5, zzu & 1048575, zzufVar.zzp());
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3238,7 +3238,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.z0 /* 62 */:
+                            case ls.z0 /* 62 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Integer.valueOf(zzufVar.zzj()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3246,7 +3246,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.A0 /* 63 */:
+                            case ls.A0 /* 63 */:
                                 int zze3 = zzufVar.zze();
                                 zzsr zzw2 = zzw(zzq);
                                 if (zzw2 != null && !zzw2.zza(zze3)) {
@@ -3278,7 +3278,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.D0 /* 66 */:
+                            case ls.D0 /* 66 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Integer.valueOf(zzufVar.zzi()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3286,7 +3286,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.E0 /* 67 */:
+                            case ls.E0 /* 67 */:
                                 zzvc.zzs(obj5, zzu & 1048575, Long.valueOf(zzufVar.zzn()));
                                 zzI(obj5, zzc, zzq);
                                 obj2 = obj5;
@@ -3294,7 +3294,7 @@ final class zztv<T> implements zzug<T> {
                                 zzuvVar2 = zzuvVar;
                                 obj6 = obj3;
                                 obj = obj2;
-                            case ks.F0 /* 68 */:
+                            case ls.F0 /* 68 */:
                                 zzts zztsVar4 = (zzts) zzB(obj5, zzc, zzq);
                                 zzufVar.zzt(zztsVar4, zzx(zzq), zzryVar);
                                 zzK(obj5, zzc, zzq, zztsVar4);
@@ -4036,14 +4036,14 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.T /* 30 */:
+                        case ls.T /* 30 */:
                             zzui.zzt(iArr[i7], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i7 += 3;
                             i16 = i11;
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.U /* 31 */:
+                        case ls.U /* 31 */:
                             zzui.zzz(iArr[i7], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i7 += 3;
                             i16 = i11;
@@ -4194,7 +4194,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.o0 /* 51 */:
+                        case ls.o0 /* 51 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzf(i17, zzn(obj, j3));
                             }
@@ -4203,7 +4203,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.p0 /* 52 */:
+                        case ls.p0 /* 52 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzo(i17, zzo(obj, j3));
                             }
@@ -4212,7 +4212,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.q0 /* 53 */:
+                        case ls.q0 /* 53 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzt(i17, zzv(obj, j3));
                             }
@@ -4221,7 +4221,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.r0 /* 54 */:
+                        case ls.r0 /* 54 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzK(i17, zzv(obj, j3));
                             }
@@ -4230,7 +4230,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.s0 /* 55 */:
+                        case ls.s0 /* 55 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzr(i17, zzp(obj, j3));
                             }
@@ -4239,7 +4239,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.t0 /* 56 */:
+                        case ls.t0 /* 56 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzm(i17, zzv(obj, j3));
                             }
@@ -4248,7 +4248,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.u0 /* 57 */:
+                        case ls.u0 /* 57 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzk(i17, zzp(obj, j3));
                             }
@@ -4257,7 +4257,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.v0 /* 58 */:
+                        case ls.v0 /* 58 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzb(i17, zzS(obj, j3));
                             }
@@ -4266,7 +4266,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.w0 /* 59 */:
+                        case ls.w0 /* 59 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzT(i17, unsafe.getObject(obj, j3), zzviVar);
                             }
@@ -4275,7 +4275,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.x0 /* 60 */:
+                        case ls.x0 /* 60 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzv(i17, unsafe.getObject(obj, j3), zztvVar.zzx(i7));
                             }
@@ -4284,7 +4284,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.y0 /* 61 */:
+                        case ls.y0 /* 61 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzd(i17, (zzqm) unsafe.getObject(obj, j3));
                             }
@@ -4293,7 +4293,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.z0 /* 62 */:
+                        case ls.z0 /* 62 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzI(i17, zzp(obj, j3));
                             }
@@ -4302,7 +4302,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.A0 /* 63 */:
+                        case ls.A0 /* 63 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzi(i17, zzp(obj, j3));
                             }
@@ -4329,7 +4329,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.D0 /* 66 */:
+                        case ls.D0 /* 66 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzB(i17, zzp(obj, j3));
                             }
@@ -4338,7 +4338,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.E0 /* 67 */:
+                        case ls.E0 /* 67 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzD(i17, zzv(obj, j3));
                             }
@@ -4347,7 +4347,7 @@ final class zztv<T> implements zzug<T> {
                             i14 = i13;
                             i15 = i10;
                             entry = entry2;
-                        case ks.F0 /* 68 */:
+                        case ls.F0 /* 68 */:
                             if (zztvVar.zzR(obj, i17, i7)) {
                                 zzviVar.zzq(i17, unsafe.getObject(obj, j3), zztvVar.zzx(i7));
                             }
@@ -4495,8 +4495,8 @@ final class zztv<T> implements zzug<T> {
                 case 27:
                 case 28:
                 case 29:
-                case ks.T /* 30 */:
-                case ks.U /* 31 */:
+                case ls.T /* 30 */:
+                case ls.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -4520,24 +4520,24 @@ final class zztv<T> implements zzug<T> {
                 case 50:
                     zzF = zzui.zzF(zzvc.zzf(obj, j3), zzvc.zzf(obj2, j3));
                     break;
-                case ks.o0 /* 51 */:
-                case ks.p0 /* 52 */:
-                case ks.q0 /* 53 */:
-                case ks.r0 /* 54 */:
-                case ks.s0 /* 55 */:
-                case ks.t0 /* 56 */:
-                case ks.u0 /* 57 */:
-                case ks.v0 /* 58 */:
-                case ks.w0 /* 59 */:
-                case ks.x0 /* 60 */:
-                case ks.y0 /* 61 */:
-                case ks.z0 /* 62 */:
-                case ks.A0 /* 63 */:
+                case ls.o0 /* 51 */:
+                case ls.p0 /* 52 */:
+                case ls.q0 /* 53 */:
+                case ls.r0 /* 54 */:
+                case ls.s0 /* 55 */:
+                case ls.t0 /* 56 */:
+                case ls.u0 /* 57 */:
+                case ls.v0 /* 58 */:
+                case ls.w0 /* 59 */:
+                case ls.x0 /* 60 */:
+                case ls.y0 /* 61 */:
+                case ls.z0 /* 62 */:
+                case ls.A0 /* 63 */:
                 case 64:
                 case 65:
-                case ks.D0 /* 66 */:
-                case ks.E0 /* 67 */:
-                case ks.F0 /* 68 */:
+                case ls.D0 /* 66 */:
+                case ls.E0 /* 67 */:
+                case ls.F0 /* 68 */:
                     long zzr = zzr(i7) & 1048575;
                     if (zzvc.zzc(obj, zzr) == zzvc.zzc(obj2, zzr) && zzui.zzF(zzvc.zzf(obj, j3), zzvc.zzf(obj2, j3))) {
                         continue;

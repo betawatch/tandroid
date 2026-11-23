@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class y50 extends org.telegram.ui.Cells.ra {
     public final TextView c0;
@@ -22,6 +22,6 @@ public final class y50 extends org.telegram.ui.Cells.ra {
         org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, null);
         textView2.setTextSize(1, 13.0f);
         g10.addView(textView2, c8.ma.t(-2, -2, 5, 0, 1, 0, 0));
-        addView(g10, c8.ma.d(-2, -2.0f, (org.telegram.messenger.gd.a0 ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
+        addView(g10, c8.ma.d(-2, -2.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
     }
 }

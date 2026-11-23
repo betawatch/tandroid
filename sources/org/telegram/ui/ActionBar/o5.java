@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.dl;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.el;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o5 implements Runnable {
     public final /* synthetic */ int a;
@@ -183,14 +183,14 @@ public final /* synthetic */ class o5 implements Runnable {
                         }
                     }
                     m6.y1(true, false);
-                    Collections.sort(m6.F, new dl(24));
+                    Collections.sort(m6.F, new el(24));
                     if (z12) {
-                        ks.e().k(ks.r4, new Object[0]);
+                        ls.e().k(ls.r4, new Object[0]);
                     }
                     if (z11) {
                         g6.a(true);
                     }
-                    ri d02 = ri.d0(i10);
+                    si d02 = si.d0(i10);
                     SharedPreferences.Editor edit = org.telegram.messenger.t0.b.getSharedPreferences("emojithemes_config_" + i10, 0).edit();
                     edit.putInt("count", arrayList.size());
                     for (int i16 = 0; i16 < arrayList.size(); i16++) {
@@ -202,7 +202,7 @@ public final /* synthetic */ class o5 implements Runnable {
                     edit.apply();
                     if (arrayList.isEmpty()) {
                         d02.B0.clear();
-                        ks.e().k(ks.X4, new Object[0]);
+                        ls.e().k(ls.X4, new Object[0]);
                         break;
                     } else {
                         ArrayList arrayList4 = new ArrayList();
@@ -224,7 +224,7 @@ public final /* synthetic */ class o5 implements Runnable {
                 int i18 = this.c;
                 String str2 = LaunchActivity.C1;
                 if (tLObject2 instanceof TLRPC.TL_boolTrue) {
-                    ri.d0(i18).H0(false, true, null);
+                    si.d0(i18).H0(false, true, null);
                     break;
                 }
                 break;
@@ -233,7 +233,7 @@ public final /* synthetic */ class o5 implements Runnable {
                 int i19 = this.c;
                 String str3 = LaunchActivity.C1;
                 if (tLObject3 instanceof TLRPC.TL_boolTrue) {
-                    ri.d0(i19).H0(false, true, null);
+                    si.d0(i19).H0(false, true, null);
                     break;
                 }
                 break;

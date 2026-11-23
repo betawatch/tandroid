@@ -3,8 +3,8 @@ package ki;
 import android.util.SparseIntArray;
 import fi.y7;
 import java.util.Calendar;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.gi0;
 import org.telegram.ui.Components.rb0;
 import org.telegram.ui.Components.tb0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements org.telegram.ui.ActionBar.q1, ei0, rb0 {
     public final /* synthetic */ int a;
@@ -25,13 +25,13 @@ public final /* synthetic */ class v3 implements org.telegram.ui.ActionBar.q1, e
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ v3(int i7, boolean[] zArr, TLRPC.Document document, int i10, boolean[] zArr2, x10 x10Var) {
+    public /* synthetic */ v3(int i7, boolean[] zArr, TLRPC.Document document, int i10, boolean[] zArr2, y10 y10Var) {
         this.a = i7;
         this.c = zArr;
         this.e = document;
         this.b = i10;
         this.d = zArr2;
-        this.f = x10Var;
+        this.f = y10Var;
     }
 
     @Override // org.telegram.ui.Components.ei0
@@ -53,9 +53,9 @@ public final /* synthetic */ class v3 implements org.telegram.ui.ActionBar.q1, e
         boolean[] zArr = (boolean[]) this.c;
         TLRPC.Document document = (TLRPC.Document) this.e;
         boolean[] zArr2 = (boolean[]) this.d;
-        x10 x10Var = (x10) this.f;
+        y10 y10Var = (y10) this.f;
         int i10 = this.a;
-        if (!j10.i(i10).q()) {
+        if (!k10.i(i10).q()) {
             new ug.y0((org.telegram.ui.ActionBar.g2) new y3(null), 12, false).show();
             return;
         }
@@ -69,7 +69,7 @@ public final /* synthetic */ class v3 implements org.telegram.ui.ActionBar.q1, e
             tL_emojiStatus.until = ConnectionsManager.getInstance(i10).getCurrentTime() + i11;
         }
         updateemojistatus.emoji_status = tL_emojiStatus;
-        ConnectionsManager.getInstance(i10).sendRequest(updateemojistatus, new y7(zArr2, x10Var, i10, updateemojistatus, 1));
+        ConnectionsManager.getInstance(i10).sendRequest(updateemojistatus, new y7(zArr2, y10Var, i10, updateemojistatus, 1));
     }
 
     @Override // org.telegram.ui.Components.rb0

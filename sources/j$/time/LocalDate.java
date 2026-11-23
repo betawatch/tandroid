@@ -7,7 +7,7 @@ import j$.util.Objects;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
 /* loaded from: classes2.dex */
 public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.chrono.b, Serializable {
@@ -56,9 +56,9 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
             j14 = j11 - ((j13 / 400) + (((j13 / 4) + (365 * j13)) - (j13 / 100)));
         }
         int i7 = (int) j14;
-        int i10 = ((i7 * 5) + 2) / ks.j2;
+        int i10 = ((i7 * 5) + 2) / ls.j2;
         int i11 = ((i10 + 2) % 12) + 1;
-        int i12 = (i7 - (((i10 * ks.d5) + 5) / 10)) + 1;
+        int i12 = (i7 - (((i10 * ls.d5) + 5) / 10)) + 1;
         long j15 = j13 + j10 + (i10 / 10);
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
         return new LocalDate(aVar.b.a(j15, aVar), i11, i12);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hw extends oq0 {
     public final /* synthetic */ boolean[] a;
@@ -18,7 +18,7 @@ public final class hw extends oq0 {
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final CharSequence C(int i7) {
         cx cxVar = this.b;
-        if (i7 < 0 || i7 >= cxVar.F2.size() || !((org.telegram.messenger.ef) cxVar.F2.get(i7)).b) {
+        if (i7 < 0 || i7 >= cxVar.F2.size() || !((org.telegram.messenger.ff) cxVar.F2.get(i7)).b) {
             return cx.x2(cxVar);
         }
         return null;
@@ -36,7 +36,7 @@ public final class hw extends oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public final wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         cx cxVar = this.b;
         org.telegram.ui.Components.ep0 ep0Var = cxVar.I2;
         org.telegram.ui.Components.q9 f10 = ep0Var != null ? ep0Var.f(i7) : null;
@@ -109,7 +109,7 @@ public final class hw extends oq0 {
         }
         int size = cxVar.F2.size();
         if (size == 1) {
-            return org.telegram.messenger.gd.N0(((org.telegram.messenger.ef) cxVar.F2.get(0)).b ? 2131753930 : 2131753945, null);
+            return org.telegram.messenger.hd.N0(((org.telegram.messenger.ff) cxVar.F2.get(0)).b ? 2131753930 : 2131753945, null);
         }
         ArrayList arrayList2 = cxVar.F2;
         int size2 = arrayList2.size();
@@ -119,13 +119,13 @@ public final class hw extends oq0 {
         while (i12 < size2) {
             Object obj = arrayList2.get(i12);
             i12++;
-            if (((org.telegram.messenger.ef) obj).b) {
+            if (((org.telegram.messenger.ff) obj).b) {
                 i10++;
             } else {
                 i11++;
             }
         }
-        return i10 == 0 ? org.telegram.messenger.gd.G(size, "ShareSendPhotos", new Object[0]) : i11 == 0 ? org.telegram.messenger.gd.G(size, "ShareSendVideos", new Object[0]) : org.telegram.messenger.gd.G(size, "ShareSendItems", new Object[0]);
+        return i10 == 0 ? org.telegram.messenger.hd.G(size, "ShareSendPhotos", new Object[0]) : i11 == 0 ? org.telegram.messenger.hd.G(size, "ShareSendVideos", new Object[0]) : org.telegram.messenger.hd.G(size, "ShareSendItems", new Object[0]);
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
@@ -142,7 +142,7 @@ public final class hw extends oq0 {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                ((org.telegram.messenger.ef) obj).a = charSequence;
+                ((org.telegram.messenger.ff) obj).a = charSequence;
             }
         }
     }
@@ -154,7 +154,7 @@ public final class hw extends oq0 {
         if (cxVar.K2.isEmpty()) {
             return false;
         }
-        org.telegram.messenger.mp messagesController = cxVar.getMessagesController();
+        org.telegram.messenger.np messagesController = cxVar.getMessagesController();
         ArrayList arrayList = cxVar.K2;
         int size = arrayList.size();
         int i7 = 0;
@@ -162,7 +162,7 @@ public final class hw extends oq0 {
             Object obj = arrayList.get(i7);
             i7++;
             Long l10 = (Long) obj;
-            if (!org.telegram.messenger.n5.E(l10.longValue()) || (c22 = messagesController.c2(l10)) == null || c22.bot || org.telegram.messenger.o10.C(c22)) {
+            if (!org.telegram.messenger.n5.E(l10.longValue()) || (c22 = messagesController.c2(l10)) == null || c22.bot || org.telegram.messenger.p10.C(c22)) {
                 return false;
             }
         }
@@ -170,7 +170,7 @@ public final class hw extends oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final org.telegram.messenger.hc j(int i7) {
+    public final org.telegram.messenger.ic j(int i7) {
         org.telegram.ui.Components.ep0 ep0Var = this.b.I2;
         org.telegram.ui.Components.q9 f10 = ep0Var != null ? ep0Var.f(i7) : null;
         if (f10 != null) {
@@ -180,15 +180,15 @@ public final class hw extends oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
         int i12;
         ArrayList arrayList;
         cx cxVar = this.b;
         ArrayList arrayList2 = cxVar.K2;
         if (cxVar.D1 != null && (arrayList = cxVar.F2) != null && !arrayList.isEmpty()) {
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) cxVar.F2.get(0);
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) cxVar.F2.get(0);
             nv nvVar = cxVar.D1;
-            CharSequence charSequence = efVar.a;
+            CharSequence charSequence = ffVar.a;
             if (charSequence == null) {
                 charSequence = "";
             }
@@ -208,7 +208,7 @@ public final class hw extends oq0 {
         cxVar.O2 = z11;
         ArrayList arrayList3 = new ArrayList();
         for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-            arrayList3.add(org.telegram.messenger.sr.a(((Long) arrayList2.get(i13)).longValue(), 0L));
+            arrayList3.add(org.telegram.messenger.tr.a(((Long) arrayList2.get(i13)).longValue(), 0L));
         }
         PhotoViewer.p1().z0(true, false);
         cxVar.E2.y(cxVar, arrayList3, cxVar.D1.getFieldText(), false, z10, i10, i11, null);
@@ -234,7 +234,7 @@ public final class hw extends oq0 {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                ((org.telegram.messenger.ef) obj).a = charSequence;
+                ((org.telegram.messenger.ff) obj).a = charSequence;
             }
         }
     }
@@ -245,7 +245,7 @@ public final class hw extends oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final int k(int i7, org.telegram.messenger.e20 e20Var) {
+    public final int k(int i7, org.telegram.messenger.f20 f20Var) {
         return i7;
     }
 }

@@ -10,7 +10,7 @@ import org.w3c.dom.NodeList;
 import p5.c;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class TeXFormulaParser {
     private static final String ARG_OBJ_ATTR = "formula";
@@ -28,17 +28,17 @@ public class TeXFormulaParser {
     private final Map<String, TeXFormula> tempFormulas;
     private int type;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public interface ActionParser {
         void parse(Element element);
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public interface ArgumentValueParser {
         Object parseValue(String str, String str2);
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class BooleanValueParser implements ArgumentValueParser {
         public BooleanValueParser() {
         }
@@ -56,7 +56,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class CharValueParser implements ArgumentValueParser {
         public CharValueParser() {
         }
@@ -71,7 +71,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class ColorConstantValueParser implements ArgumentValueParser {
         public ColorConstantValueParser() {
         }
@@ -87,7 +87,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class CreateCommandParser implements ActionParser {
         public CreateCommandParser() {
         }
@@ -123,7 +123,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class CreateTeXFormulaParser implements ActionParser {
         public CreateTeXFormulaParser() {
         }
@@ -145,7 +145,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class FloatValueParser implements ArgumentValueParser {
         public FloatValueParser() {
         }
@@ -161,7 +161,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class IntValueParser implements ArgumentValueParser {
         public IntValueParser() {
         }
@@ -177,7 +177,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class MethodInvocationParser implements ActionParser {
         public MethodInvocationParser() {
         }
@@ -204,7 +204,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class ReturnParser implements ActionParser {
         public ReturnParser() {
         }
@@ -224,7 +224,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class TeXConstantsValueParser implements ArgumentValueParser {
         public TeXConstantsValueParser() {
         }
@@ -240,7 +240,7 @@ public class TeXFormulaParser {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class TeXFormulaValueParser implements ArgumentValueParser {
         public TeXFormulaValueParser() {
         }
@@ -359,7 +359,7 @@ public class TeXFormulaParser {
         return this.result;
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class StringValueParser implements ArgumentValueParser {
         public StringValueParser() {
         }

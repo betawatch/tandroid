@@ -7,22 +7,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.c6;
-import org.telegram.messenger.cz;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.dz;
 import org.telegram.messenger.g7;
+import org.telegram.messenger.gj;
 import org.telegram.messenger.h7;
 import org.telegram.messenger.i7;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.messenger.r8;
 import org.telegram.messenger.s2;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.vn;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.wn;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -67,9 +67,9 @@ public final /* synthetic */ class r implements RequestDelegate {
                         hVar2.k(user, user.id);
                     }
                     for (int i15 = 0; i15 < messages_messages.messages.size(); i15++) {
-                        fj fjVar = new fj(h0Var.t0, messages_messages.messages.get(i15), hVar2, hVar, false, true);
-                        arrayList.add(fjVar);
-                        fjVar.K5(str, true);
+                        gj gjVar = new gj(h0Var.t0, messages_messages.messages.get(i15), hVar2, hVar, false, true);
+                        arrayList.add(gjVar);
+                        gjVar.K5(str, true);
                     }
                 }
                 org.telegram.messenger.g0.g3(new t(h0Var, i11, i12, tL_error, str, tLObject, tL_messages_search, arrayList, 0));
@@ -101,9 +101,9 @@ public final /* synthetic */ class r implements RequestDelegate {
                     int i21 = 0;
                     while (i21 < messages_messages2.messages.size()) {
                         a0.h hVar5 = hVar3;
-                        fj fjVar2 = new fj(h0Var3.t0, messages_messages2.messages.get(i21), hVar4, hVar5, false, true);
-                        arrayList2.add(fjVar2);
-                        fjVar2.K5(str2, true);
+                        gj gjVar2 = new gj(h0Var3.t0, messages_messages2.messages.get(i21), hVar4, hVar5, false, true);
+                        arrayList2.add(gjVar2);
+                        gjVar2.K5(str2, true);
                         i21++;
                         hVar3 = hVar5;
                     }
@@ -115,10 +115,10 @@ public final /* synthetic */ class r implements RequestDelegate {
                     int i22 = 0;
                     while (i22 < messages_messages3.messages.size()) {
                         TLRPC.Message message = messages_messages3.messages.get(i22);
-                        long B0 = fj.B0(message);
+                        long B0 = gj.B0(message);
                         int i23 = i18;
                         TLRPC.messages_Messages messages_messages4 = messages_messages3;
-                        if (((Integer) (message.out ? mp.u1(i23).Q : mp.u1(i23).P).get(Long.valueOf(B0))) == null) {
+                        if (((Integer) (message.out ? np.u1(i23).Q : np.u1(i23).P).get(Long.valueOf(B0))) == null) {
                             hashSet.add(new Pair(Boolean.valueOf(message.out), Long.valueOf(B0)));
                         }
                         i22++;
@@ -132,7 +132,7 @@ public final /* synthetic */ class r implements RequestDelegate {
                     org.telegram.messenger.g0.g3(tVar);
                     return;
                 } else {
-                    tr.a0(i24).a.c(new a8(h0Var2, hashSet, tVar, 21));
+                    ur.a0(i24).a.c(new a8(h0Var2, hashSet, tVar, 21));
                     return;
                 }
             default:
@@ -273,7 +273,7 @@ public final /* synthetic */ class r implements RequestDelegate {
                     TLRPC.TL_upload_reuploadCdnFile tL_upload_reuploadCdnFile = new TLRPC.TL_upload_reuploadCdnFile();
                     tL_upload_reuploadCdnFile.file_token = i7Var.x0;
                     tL_upload_reuploadCdnFile.request_token = ((TLRPC.TL_upload_cdnFileReuploadNeeded) tLObject).request_token;
-                    ConnectionsManager.getInstance(i7Var.R).sendRequest(tL_upload_reuploadCdnFile, new vn(i7Var, i26, h7Var, 1), null, null, 0, i7Var.T, 1, true);
+                    ConnectionsManager.getInstance(i7Var.R).sendRequest(tL_upload_reuploadCdnFile, new wn(i7Var, i26, h7Var, 1), null, null, 0, i7Var.T, 1, true);
                     return;
                 }
                 if (tLObject instanceof TLRPC.TL_upload_file) {
@@ -290,17 +290,17 @@ public final /* synthetic */ class r implements RequestDelegate {
                 if (tLObject != null) {
                     int i30 = i7Var.b1;
                     if (i30 == 50331648) {
-                        cz.e(i7Var.R).h(tLObject.networkType, 3, tLObject.getObjectSize() + 4);
+                        dz.e(i7Var.R).h(tLObject.networkType, 3, tLObject.getObjectSize() + 4);
                     } else if (i30 == 33554432) {
-                        cz.e(i7Var.R).h(tLObject.networkType, 2, tLObject.getObjectSize() + 4);
+                        dz.e(i7Var.R).h(tLObject.networkType, 2, tLObject.getObjectSize() + 4);
                     } else if (i30 == 16777216) {
-                        cz.e(i7Var.R).h(tLObject.networkType, 4, tLObject.getObjectSize() + 4);
+                        dz.e(i7Var.R).h(tLObject.networkType, 4, tLObject.getObjectSize() + 4);
                     } else if (i30 == 67108864) {
                         String str3 = i7Var.P0;
                         if (str3 == null || !(str3.toLowerCase().endsWith("mp3") || i7Var.P0.toLowerCase().endsWith("m4a"))) {
-                            cz.e(i7Var.R).h(tLObject.networkType, 5, tLObject.getObjectSize() + 4);
+                            dz.e(i7Var.R).h(tLObject.networkType, 5, tLObject.getObjectSize() + 4);
                         } else {
-                            cz.e(i7Var.R).h(tLObject.networkType, 7, tLObject.getObjectSize() + 4);
+                            dz.e(i7Var.R).h(tLObject.networkType, 7, tLObject.getObjectSize() + 4);
                         }
                     }
                 }

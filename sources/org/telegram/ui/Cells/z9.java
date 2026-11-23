@@ -5,10 +5,10 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.PathInterpolator;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.si;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class z9 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -26,15 +26,15 @@ public final class z9 extends GestureDetector.SimpleOnGestureListener {
                 aa aaVar = (aa) this.b;
                 int i7 = aaVar.a6;
                 boolean z10 = false;
-                if (aaVar.Cd == 2 && ri.d0(i7).S() != null) {
-                    boolean H5 = aaVar.getMessageObject().H5(ch.p0.b(ri.d0(i7).S()), false);
+                if (aaVar.Cd == 2 && si.d0(i7).S() != null) {
+                    boolean H5 = aaVar.getMessageObject().H5(ch.p0.b(si.d0(i7).S()), false);
                     aaVar.y3(aaVar.getMessageObject(), null, false, false, false, false);
                     aaVar.requestLayout();
                     ch.l0.b(false);
                     z10 = true;
                     if (H5) {
                         ba baVar = aaVar.Dd;
-                        ch.l0.d(baVar.x, null, baVar.n[1], null, motionEvent.getX(), motionEvent.getY(), ch.p0.b(ri.d0(i7).S()), aaVar.a6, 0);
+                        ch.l0.d(baVar.x, null, baVar.n[1], null, motionEvent.getX(), motionEvent.getY(), ch.p0.b(si.d0(i7).S()), aaVar.a6, 0);
                         ch.l0.f();
                     }
                     aaVar.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.ActionBar.h1(this, 1));

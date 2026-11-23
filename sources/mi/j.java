@@ -11,8 +11,8 @@ import c8.ma;
 import java.util.HashSet;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.ra0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class j extends LinearLayout implements b6 {
     public final h6 a;
@@ -50,13 +50,13 @@ public final class j extends LinearLayout implements b6 {
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView f10 = n10.f(g10, textView, ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView f10 = o10.f(g10, textView, ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = f10;
         f10.setGravity(17);
         f10.setMinWidth(g0.L(20.66f));
         f10.setPadding(g0.L(6.33f), 0, g0.L(6.33f), 0);
         f10.setTextSize(1, 16.0f);
-        if (gd.a0) {
+        if (hd.a0) {
             addView(f10, ma.j(13.33f, 0.0f));
             addView(g10, ma.q(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
             addView(frameLayout, ma.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));

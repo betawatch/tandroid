@@ -27,19 +27,19 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.r10;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.v10;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.xs;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.w10;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.ys;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -63,9 +63,9 @@ import org.telegram.ui.cx;
 import org.telegram.ui.ll0;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj0, r10, rj0, fi.x6, fi.z8, xh.j, r0.m, h9.h1, org.telegram.ui.ActionBar.q1, gj0, sg.j1, CameraController.VideoTakeCallback, rt0, f3.g {
+public final /* synthetic */ class v6 implements ll0, w10, OnSuccessListener, sj0, s10, rj0, fi.x6, fi.z8, xh.j, r0.m, h9.h1, org.telegram.ui.ActionBar.q1, gj0, sg.j1, CameraController.VideoTakeCallback, rt0, f3.g {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -174,32 +174,32 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                     final long j10 = ((fi.p) view).F;
                     cx cxVar = tvVar.P0;
                     i10 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                    ri.d0(i10).P0(true);
+                    si.d0(i10).P0(true);
                     a70 I = a70.I(cxVar, view);
                     I.z.set(0, org.telegram.messenger.g0.L(8.0f), 0, 0);
                     I.X(org.telegram.ui.ActionBar.m6.e0(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), cxVar.getThemedColor(org.telegram.ui.ActionBar.m6.d6)));
                     I.b0(0.0f, org.telegram.messenger.g0.L(8.0f));
                     cxVar.M0 = I;
-                    if (!o10.B(j10)) {
+                    if (!p10.B(j10)) {
                         try {
                             view.performHapticFeedback(0);
                         } catch (Exception unused) {
                         }
                         i11 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                        if (j10 != j10.i(i11).e()) {
+                        if (j10 != k10.i(i11).e()) {
                             final TLRPC.User c22 = cxVar.getMessagesController().c2(Long.valueOf(j10));
                             TLRPC.Chat O0 = cxVar.getMessagesController().O0(Long.valueOf(-j10));
-                            final String v = xs.v(j10, 0L, false);
+                            final String v = ys.v(j10, 0L, false);
                             i12 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
                             boolean h02 = NotificationsCustomSettingsActivity.h0(i12, j10);
                             i13 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                            boolean K3 = mp.u1(i13).K3();
+                            boolean K3 = np.u1(i13).K3();
                             i14 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                            boolean q10 = j10.i(i14).q();
+                            boolean q10 = k10.i(i14).q();
                             i15 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                            boolean L = mp.u1(i15).R1().L(j10);
+                            boolean L = np.u1(i15).R1().L(j10);
                             i16 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                            boolean H = mp.u1(i16).R1().H(j10);
+                            boolean H = np.u1(i16).R1().H(j10);
                             if (K3 || j10 <= 0 || q10) {
                                 j3 = 0;
                             } else {
@@ -214,7 +214,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                     oqVar = new oq(drawable2, drawable);
                                     if (j10 < j3 && cxVar.k4().j(j10)) {
                                         final int i23 = 4;
-                                        cxVar.M0.b(R.drawable.msg_stories_add, null, gd.N0(2131754381, null), org.telegram.ui.ActionBar.m6.F8, org.telegram.ui.ActionBar.m6.E8, new Runnable() { // from class: org.telegram.ui.pv
+                                        cxVar.M0.b(R.drawable.msg_stories_add, null, hd.N0(2131754381, null), org.telegram.ui.ActionBar.m6.F8, org.telegram.ui.ActionBar.m6.E8, new Runnable() { // from class: org.telegram.ui.pv
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 int i24;
@@ -231,7 +231,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                     case 3:
                                                         cx cxVar2 = tvVar.P0;
                                                         i24 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                        org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i24);
+                                                        org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i24);
                                                         long j11 = j10;
                                                         d02.S1(j11);
                                                         cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -251,11 +251,11 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                     }
                                     if (c22 != null && !c22.contact) {
                                         i18 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                        if (ri.d0(i18).I(j10)) {
+                                        if (si.d0(i18).I(j10)) {
                                             z10 = true;
                                             a70 a70Var2 = cxVar.M0;
                                             final int i24 = 5;
-                                            a70Var2.l(R.drawable.msg_discussion, gd.N0(2131745405, null), new Runnable() { // from class: org.telegram.ui.pv
+                                            a70Var2.l(R.drawable.msg_discussion, hd.N0(2131745405, null), new Runnable() { // from class: org.telegram.ui.pv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i242;
@@ -272,7 +272,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 3:
                                                             cx cxVar2 = tvVar.P0;
                                                             i242 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i242);
+                                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i242);
                                                             long j11 = j10;
                                                             d02.S1(j11);
                                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -290,7 +290,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 }
                                             }, j10 > j3);
                                             final int i25 = 6;
-                                            a70Var2.l(R.drawable.msg_openprofile, gd.N0(2131747592, null), new Runnable() { // from class: org.telegram.ui.pv
+                                            a70Var2.l(R.drawable.msg_openprofile, hd.N0(2131747592, null), new Runnable() { // from class: org.telegram.ui.pv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i242;
@@ -307,7 +307,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 3:
                                                             cx cxVar2 = tvVar.P0;
                                                             i242 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i242);
+                                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i242);
                                                             long j11 = j10;
                                                             d02.S1(j11);
                                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -325,7 +325,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 }
                                             }, j10 > j3);
                                             final int i26 = 0;
-                                            a70Var2.l(R.drawable.msg_channel, gd.N0(org.telegram.messenger.v3.V(O0) ? 2131747617 : 2131747605, null), new Runnable() { // from class: org.telegram.ui.pv
+                                            a70Var2.l(R.drawable.msg_channel, hd.N0(org.telegram.messenger.v3.V(O0) ? 2131747617 : 2131747605, null), new Runnable() { // from class: org.telegram.ui.pv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i242;
@@ -342,7 +342,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 3:
                                                             cx cxVar2 = tvVar.P0;
                                                             i242 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i242);
+                                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i242);
                                                             long j11 = j10;
                                                             d02.S1(j11);
                                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -360,7 +360,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 }
                                             }, j10 < j3);
                                             final int i27 = 0;
-                                            a70Var2.l(R.drawable.msg_mute, gd.N0(2131747669, null), new Runnable() { // from class: org.telegram.ui.qv
+                                            a70Var2.l(R.drawable.msg_mute, hd.N0(2131747669, null), new Runnable() { // from class: org.telegram.ui.qv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i28;
@@ -374,33 +374,33 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 0:
                                                             cx cxVar2 = tvVar2.P0;
                                                             i28 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                            org.telegram.messenger.mp.u1(i28).g7.edit().putBoolean("stories_" + str, false).apply();
+                                                            org.telegram.messenger.np.u1(i28).g7.edit().putBoolean("stories_" + str, false).apply();
                                                             cxVar2.getNotificationsController().c0(j10, 0L, true);
                                                             trim = user != null ? user.first_name.trim() : "";
                                                             int indexOf = trim.indexOf(" ");
                                                             if (indexOf > 0) {
                                                                 trim = trim.substring(0, indexOf);
                                                             }
-                                                            org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
+                                                            org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
                                                             break;
                                                         default:
                                                             cx cxVar3 = tvVar2.P0;
                                                             i29 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                                            org.telegram.messenger.mp.u1(i29).g7.edit().putBoolean("stories_" + str, true).apply();
+                                                            org.telegram.messenger.np.u1(i29).g7.edit().putBoolean("stories_" + str, true).apply();
                                                             cxVar3.getNotificationsController().c0(j10, 0L, true);
                                                             trim = user != null ? user.first_name.trim() : "";
                                                             int indexOf2 = trim.indexOf(" ");
                                                             if (indexOf2 > 0) {
                                                                 trim = trim.substring(0, indexOf2);
                                                             }
-                                                            org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
+                                                            org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
                                                             break;
                                                     }
                                                 }
                                             }, !h02 && j10 > j3);
                                             a70Var2.F();
                                             final int i28 = 1;
-                                            a70Var2.l(R.drawable.msg_unmute, gd.N0(2131747666, null), new Runnable() { // from class: org.telegram.ui.qv
+                                            a70Var2.l(R.drawable.msg_unmute, hd.N0(2131747666, null), new Runnable() { // from class: org.telegram.ui.qv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i282;
@@ -414,33 +414,33 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 0:
                                                             cx cxVar2 = tvVar2.P0;
                                                             i282 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                            org.telegram.messenger.mp.u1(i282).g7.edit().putBoolean("stories_" + str, false).apply();
+                                                            org.telegram.messenger.np.u1(i282).g7.edit().putBoolean("stories_" + str, false).apply();
                                                             cxVar2.getNotificationsController().c0(j10, 0L, true);
                                                             trim = user != null ? user.first_name.trim() : "";
                                                             int indexOf = trim.indexOf(" ");
                                                             if (indexOf > 0) {
                                                                 trim = trim.substring(0, indexOf);
                                                             }
-                                                            org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
+                                                            org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
                                                             break;
                                                         default:
                                                             cx cxVar3 = tvVar2.P0;
                                                             i29 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                                            org.telegram.messenger.mp.u1(i29).g7.edit().putBoolean("stories_" + str, true).apply();
+                                                            org.telegram.messenger.np.u1(i29).g7.edit().putBoolean("stories_" + str, true).apply();
                                                             cxVar3.getNotificationsController().c0(j10, 0L, true);
                                                             trim = user != null ? user.first_name.trim() : "";
                                                             int indexOf2 = trim.indexOf(" ");
                                                             if (indexOf2 > 0) {
                                                                 trim = trim.substring(0, indexOf2);
                                                             }
-                                                            org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
+                                                            org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
                                                             break;
                                                     }
                                                 }
                                             }, h02 && j10 > j3);
                                             a70Var2.F();
                                             final int i29 = 0;
-                                            a70Var2.l(R.drawable.msg_stories_stealth2, gd.N0(2131743319, null), new Runnable() { // from class: org.telegram.ui.rv
+                                            a70Var2.l(R.drawable.msg_stories_stealth2, hd.N0(2131743317, null), new Runnable() { // from class: org.telegram.ui.rv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     org.telegram.ui.ActionBar.h6 h6Var;
@@ -450,7 +450,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 0:
                                                             tv tvVar2 = tvVar;
                                                             cx cxVar2 = tvVar2.P0;
-                                                            TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).R1().B;
+                                                            TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).R1().B;
                                                             View view2 = view;
                                                             if (tL_storiesStealthMode != null) {
                                                                 i30 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
@@ -481,7 +481,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             }, K3 && j10 > j3 && q10 && L && !H);
                                             a70Var2.F();
                                             z11 = K3 && j10 > j3 && !q10 && L && !H;
-                                            String N0 = gd.N0(2131743319, null);
+                                            String N0 = hd.N0(2131743317, null);
                                             final int i30 = 1;
                                             Runnable runnable = new Runnable() { // from class: org.telegram.ui.rv
                                                 @Override // java.lang.Runnable
@@ -493,7 +493,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 0:
                                                             tv tvVar2 = tvVar;
                                                             cx cxVar2 = tvVar2.P0;
-                                                            TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).R1().B;
+                                                            TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).R1().B;
                                                             View view2 = view;
                                                             if (tL_storiesStealthMode != null) {
                                                                 i302 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
@@ -530,7 +530,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             }
                                             a70Var.F();
                                             final int i31 = 1;
-                                            a70Var.l(R.drawable.msg_archive, gd.N0(2131754150, null), new Runnable() { // from class: org.telegram.ui.pv
+                                            a70Var.l(R.drawable.msg_archive, hd.N0(2131754150, null), new Runnable() { // from class: org.telegram.ui.pv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i242;
@@ -547,7 +547,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 3:
                                                             cx cxVar2 = tvVar.P0;
                                                             i242 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i242);
+                                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i242);
                                                             long j11 = j10;
                                                             d02.S1(j11);
                                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -566,7 +566,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             }, z10 && !cxVar.t4());
                                             a70Var.F();
                                             final int i32 = 2;
-                                            a70Var.l(R.drawable.msg_unarchive, gd.N0(2131743671, null), new Runnable() { // from class: org.telegram.ui.pv
+                                            a70Var.l(R.drawable.msg_unarchive, hd.N0(2131743669, null), new Runnable() { // from class: org.telegram.ui.pv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i242;
@@ -583,7 +583,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 3:
                                                             cx cxVar2 = tvVar.P0;
                                                             i242 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i242);
+                                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i242);
                                                             long j11 = j10;
                                                             d02.S1(j11);
                                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -602,7 +602,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             }, z10 && cxVar.t4());
                                             a70Var.F();
                                             i17 = 3;
-                                            a70Var.l(R.drawable.msg_delete, gd.N0(2131744507, null), new Runnable() { // from class: org.telegram.ui.pv
+                                            a70Var.l(R.drawable.msg_delete, hd.N0(2131744505, null), new Runnable() { // from class: org.telegram.ui.pv
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     int i242;
@@ -619,7 +619,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                         case 3:
                                                             cx cxVar2 = tvVar.P0;
                                                             i242 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i242);
+                                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i242);
                                                             long j11 = j10;
                                                             d02.S1(j11);
                                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -641,7 +641,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                     z10 = false;
                                     a70 a70Var22 = cxVar.M0;
                                     final int i242 = 5;
-                                    a70Var22.l(R.drawable.msg_discussion, gd.N0(2131745405, null), new Runnable() { // from class: org.telegram.ui.pv
+                                    a70Var22.l(R.drawable.msg_discussion, hd.N0(2131745405, null), new Runnable() { // from class: org.telegram.ui.pv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2422;
@@ -658,7 +658,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 3:
                                                     cx cxVar2 = tvVar.P0;
                                                     i2422 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i2422);
+                                                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i2422);
                                                     long j11 = j10;
                                                     d02.S1(j11);
                                                     cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -676,7 +676,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         }
                                     }, j10 > j3);
                                     final int i252 = 6;
-                                    a70Var22.l(R.drawable.msg_openprofile, gd.N0(2131747592, null), new Runnable() { // from class: org.telegram.ui.pv
+                                    a70Var22.l(R.drawable.msg_openprofile, hd.N0(2131747592, null), new Runnable() { // from class: org.telegram.ui.pv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2422;
@@ -693,7 +693,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 3:
                                                     cx cxVar2 = tvVar.P0;
                                                     i2422 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i2422);
+                                                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i2422);
                                                     long j11 = j10;
                                                     d02.S1(j11);
                                                     cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -711,7 +711,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         }
                                     }, j10 > j3);
                                     final int i262 = 0;
-                                    a70Var22.l(R.drawable.msg_channel, gd.N0(org.telegram.messenger.v3.V(O0) ? 2131747617 : 2131747605, null), new Runnable() { // from class: org.telegram.ui.pv
+                                    a70Var22.l(R.drawable.msg_channel, hd.N0(org.telegram.messenger.v3.V(O0) ? 2131747617 : 2131747605, null), new Runnable() { // from class: org.telegram.ui.pv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2422;
@@ -728,7 +728,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 3:
                                                     cx cxVar2 = tvVar.P0;
                                                     i2422 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i2422);
+                                                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i2422);
                                                     long j11 = j10;
                                                     d02.S1(j11);
                                                     cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -746,7 +746,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         }
                                     }, j10 < j3);
                                     final int i272 = 0;
-                                    a70Var22.l(R.drawable.msg_mute, gd.N0(2131747669, null), new Runnable() { // from class: org.telegram.ui.qv
+                                    a70Var22.l(R.drawable.msg_mute, hd.N0(2131747669, null), new Runnable() { // from class: org.telegram.ui.qv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i282;
@@ -760,33 +760,33 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 0:
                                                     cx cxVar2 = tvVar2.P0;
                                                     i282 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                    org.telegram.messenger.mp.u1(i282).g7.edit().putBoolean("stories_" + str, false).apply();
+                                                    org.telegram.messenger.np.u1(i282).g7.edit().putBoolean("stories_" + str, false).apply();
                                                     cxVar2.getNotificationsController().c0(j10, 0L, true);
                                                     trim = user != null ? user.first_name.trim() : "";
                                                     int indexOf = trim.indexOf(" ");
                                                     if (indexOf > 0) {
                                                         trim = trim.substring(0, indexOf);
                                                     }
-                                                    org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
+                                                    org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
                                                     break;
                                                 default:
                                                     cx cxVar3 = tvVar2.P0;
                                                     i292 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                                    org.telegram.messenger.mp.u1(i292).g7.edit().putBoolean("stories_" + str, true).apply();
+                                                    org.telegram.messenger.np.u1(i292).g7.edit().putBoolean("stories_" + str, true).apply();
                                                     cxVar3.getNotificationsController().c0(j10, 0L, true);
                                                     trim = user != null ? user.first_name.trim() : "";
                                                     int indexOf2 = trim.indexOf(" ");
                                                     if (indexOf2 > 0) {
                                                         trim = trim.substring(0, indexOf2);
                                                     }
-                                                    org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
+                                                    org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
                                                     break;
                                             }
                                         }
                                     }, !h02 && j10 > j3);
                                     a70Var22.F();
                                     final int i282 = 1;
-                                    a70Var22.l(R.drawable.msg_unmute, gd.N0(2131747666, null), new Runnable() { // from class: org.telegram.ui.qv
+                                    a70Var22.l(R.drawable.msg_unmute, hd.N0(2131747666, null), new Runnable() { // from class: org.telegram.ui.qv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2822;
@@ -800,33 +800,33 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 0:
                                                     cx cxVar2 = tvVar2.P0;
                                                     i2822 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                    org.telegram.messenger.mp.u1(i2822).g7.edit().putBoolean("stories_" + str, false).apply();
+                                                    org.telegram.messenger.np.u1(i2822).g7.edit().putBoolean("stories_" + str, false).apply();
                                                     cxVar2.getNotificationsController().c0(j10, 0L, true);
                                                     trim = user != null ? user.first_name.trim() : "";
                                                     int indexOf = trim.indexOf(" ");
                                                     if (indexOf > 0) {
                                                         trim = trim.substring(0, indexOf);
                                                     }
-                                                    org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
+                                                    org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
                                                     break;
                                                 default:
                                                     cx cxVar3 = tvVar2.P0;
                                                     i292 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                                    org.telegram.messenger.mp.u1(i292).g7.edit().putBoolean("stories_" + str, true).apply();
+                                                    org.telegram.messenger.np.u1(i292).g7.edit().putBoolean("stories_" + str, true).apply();
                                                     cxVar3.getNotificationsController().c0(j10, 0L, true);
                                                     trim = user != null ? user.first_name.trim() : "";
                                                     int indexOf2 = trim.indexOf(" ");
                                                     if (indexOf2 > 0) {
                                                         trim = trim.substring(0, indexOf2);
                                                     }
-                                                    org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
+                                                    org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
                                                     break;
                                             }
                                         }
                                     }, h02 && j10 > j3);
                                     a70Var22.F();
                                     final int i292 = 0;
-                                    a70Var22.l(R.drawable.msg_stories_stealth2, gd.N0(2131743319, null), new Runnable() { // from class: org.telegram.ui.rv
+                                    a70Var22.l(R.drawable.msg_stories_stealth2, hd.N0(2131743317, null), new Runnable() { // from class: org.telegram.ui.rv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             org.telegram.ui.ActionBar.h6 h6Var;
@@ -836,7 +836,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 0:
                                                     tv tvVar2 = tvVar;
                                                     cx cxVar2 = tvVar2.P0;
-                                                    TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).R1().B;
+                                                    TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).R1().B;
                                                     View view2 = view;
                                                     if (tL_storiesStealthMode != null) {
                                                         i302 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
@@ -868,7 +868,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                     a70Var22.F();
                                     if (K3) {
                                     }
-                                    String N02 = gd.N0(2131743319, null);
+                                    String N02 = hd.N0(2131743317, null);
                                     final int i302 = 1;
                                     Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.rv
                                         @Override // java.lang.Runnable
@@ -880,7 +880,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 0:
                                                     tv tvVar2 = tvVar;
                                                     cx cxVar2 = tvVar2.P0;
-                                                    TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).R1().B;
+                                                    TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).R1().B;
                                                     View view2 = view;
                                                     if (tL_storiesStealthMode != null) {
                                                         i3022 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
@@ -913,7 +913,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                     }
                                     a70Var.F();
                                     final int i312 = 1;
-                                    a70Var.l(R.drawable.msg_archive, gd.N0(2131754150, null), new Runnable() { // from class: org.telegram.ui.pv
+                                    a70Var.l(R.drawable.msg_archive, hd.N0(2131754150, null), new Runnable() { // from class: org.telegram.ui.pv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2422;
@@ -930,7 +930,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 3:
                                                     cx cxVar2 = tvVar.P0;
                                                     i2422 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i2422);
+                                                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i2422);
                                                     long j11 = j10;
                                                     d02.S1(j11);
                                                     cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -949,7 +949,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                     }, z10 && !cxVar.t4());
                                     a70Var.F();
                                     final int i322 = 2;
-                                    a70Var.l(R.drawable.msg_unarchive, gd.N0(2131743671, null), new Runnable() { // from class: org.telegram.ui.pv
+                                    a70Var.l(R.drawable.msg_unarchive, hd.N0(2131743669, null), new Runnable() { // from class: org.telegram.ui.pv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2422;
@@ -966,7 +966,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 3:
                                                     cx cxVar2 = tvVar.P0;
                                                     i2422 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i2422);
+                                                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i2422);
                                                     long j11 = j10;
                                                     d02.S1(j11);
                                                     cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -985,7 +985,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                     }, z10 && cxVar.t4());
                                     a70Var.F();
                                     i17 = 3;
-                                    a70Var.l(R.drawable.msg_delete, gd.N0(2131744507, null), new Runnable() { // from class: org.telegram.ui.pv
+                                    a70Var.l(R.drawable.msg_delete, hd.N0(2131744505, null), new Runnable() { // from class: org.telegram.ui.pv
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             int i2422;
@@ -1002,7 +1002,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                                 case 3:
                                                     cx cxVar2 = tvVar.P0;
                                                     i2422 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                    org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i2422);
+                                                    org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i2422);
                                                     long j11 = j10;
                                                     d02.S1(j11);
                                                     cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -1024,7 +1024,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                             oqVar = null;
                             if (j10 < j3) {
                                 final int i232 = 4;
-                                cxVar.M0.b(R.drawable.msg_stories_add, null, gd.N0(2131754381, null), org.telegram.ui.ActionBar.m6.F8, org.telegram.ui.ActionBar.m6.E8, new Runnable() { // from class: org.telegram.ui.pv
+                                cxVar.M0.b(R.drawable.msg_stories_add, null, hd.N0(2131754381, null), org.telegram.ui.ActionBar.m6.F8, org.telegram.ui.ActionBar.m6.E8, new Runnable() { // from class: org.telegram.ui.pv
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         int i2422;
@@ -1041,7 +1041,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             case 3:
                                                 cx cxVar2 = tvVar.P0;
                                                 i2422 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                                org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i2422);
+                                                org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i2422);
                                                 long j11 = j10;
                                                 d02.S1(j11);
                                                 cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -1061,13 +1061,13 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                             }
                             if (c22 != null) {
                                 i18 = ((org.telegram.ui.ActionBar.g2) cxVar).currentAccount;
-                                if (ri.d0(i18).I(j10)) {
+                                if (si.d0(i18).I(j10)) {
                                 }
                             }
                             z10 = false;
                             a70 a70Var222 = cxVar.M0;
                             final int i2422 = 5;
-                            a70Var222.l(R.drawable.msg_discussion, gd.N0(2131745405, null), new Runnable() { // from class: org.telegram.ui.pv
+                            a70Var222.l(R.drawable.msg_discussion, hd.N0(2131745405, null), new Runnable() { // from class: org.telegram.ui.pv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i24222;
@@ -1084,7 +1084,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 3:
                                             cx cxVar2 = tvVar.P0;
                                             i24222 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i24222);
+                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i24222);
                                             long j11 = j10;
                                             d02.S1(j11);
                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -1102,7 +1102,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                 }
                             }, j10 > j3);
                             final int i2522 = 6;
-                            a70Var222.l(R.drawable.msg_openprofile, gd.N0(2131747592, null), new Runnable() { // from class: org.telegram.ui.pv
+                            a70Var222.l(R.drawable.msg_openprofile, hd.N0(2131747592, null), new Runnable() { // from class: org.telegram.ui.pv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i24222;
@@ -1119,7 +1119,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 3:
                                             cx cxVar2 = tvVar.P0;
                                             i24222 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i24222);
+                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i24222);
                                             long j11 = j10;
                                             d02.S1(j11);
                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -1137,7 +1137,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                 }
                             }, j10 > j3);
                             final int i2622 = 0;
-                            a70Var222.l(R.drawable.msg_channel, gd.N0(org.telegram.messenger.v3.V(O0) ? 2131747617 : 2131747605, null), new Runnable() { // from class: org.telegram.ui.pv
+                            a70Var222.l(R.drawable.msg_channel, hd.N0(org.telegram.messenger.v3.V(O0) ? 2131747617 : 2131747605, null), new Runnable() { // from class: org.telegram.ui.pv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i24222;
@@ -1154,7 +1154,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 3:
                                             cx cxVar2 = tvVar.P0;
                                             i24222 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i24222);
+                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i24222);
                                             long j11 = j10;
                                             d02.S1(j11);
                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -1172,7 +1172,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                 }
                             }, j10 < j3);
                             final int i2722 = 0;
-                            a70Var222.l(R.drawable.msg_mute, gd.N0(2131747669, null), new Runnable() { // from class: org.telegram.ui.qv
+                            a70Var222.l(R.drawable.msg_mute, hd.N0(2131747669, null), new Runnable() { // from class: org.telegram.ui.qv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i2822;
@@ -1186,33 +1186,33 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 0:
                                             cx cxVar2 = tvVar2.P0;
                                             i2822 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            org.telegram.messenger.mp.u1(i2822).g7.edit().putBoolean("stories_" + str, false).apply();
+                                            org.telegram.messenger.np.u1(i2822).g7.edit().putBoolean("stories_" + str, false).apply();
                                             cxVar2.getNotificationsController().c0(j10, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf = trim.indexOf(" ");
                                             if (indexOf > 0) {
                                                 trim = trim.substring(0, indexOf);
                                             }
-                                            org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
+                                            org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
                                             break;
                                         default:
                                             cx cxVar3 = tvVar2.P0;
                                             i2922 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                            org.telegram.messenger.mp.u1(i2922).g7.edit().putBoolean("stories_" + str, true).apply();
+                                            org.telegram.messenger.np.u1(i2922).g7.edit().putBoolean("stories_" + str, true).apply();
                                             cxVar3.getNotificationsController().c0(j10, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf2 = trim.indexOf(" ");
                                             if (indexOf2 > 0) {
                                                 trim = trim.substring(0, indexOf2);
                                             }
-                                            org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
+                                            org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
                                             break;
                                     }
                                 }
                             }, !h02 && j10 > j3);
                             a70Var222.F();
                             final int i2822 = 1;
-                            a70Var222.l(R.drawable.msg_unmute, gd.N0(2131747666, null), new Runnable() { // from class: org.telegram.ui.qv
+                            a70Var222.l(R.drawable.msg_unmute, hd.N0(2131747666, null), new Runnable() { // from class: org.telegram.ui.qv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i28222;
@@ -1226,33 +1226,33 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 0:
                                             cx cxVar2 = tvVar2.P0;
                                             i28222 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            org.telegram.messenger.mp.u1(i28222).g7.edit().putBoolean("stories_" + str, false).apply();
+                                            org.telegram.messenger.np.u1(i28222).g7.edit().putBoolean("stories_" + str, false).apply();
                                             cxVar2.getNotificationsController().c0(j10, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf = trim.indexOf(" ");
                                             if (indexOf > 0) {
                                                 trim = trim.substring(0, indexOf);
                                             }
-                                            org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
+                                            org.telegram.ui.Components.lc.b0(cxVar2).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747668, trim)), null, null).j();
                                             break;
                                         default:
                                             cx cxVar3 = tvVar2.P0;
                                             i2922 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                            org.telegram.messenger.mp.u1(i2922).g7.edit().putBoolean("stories_" + str, true).apply();
+                                            org.telegram.messenger.np.u1(i2922).g7.edit().putBoolean("stories_" + str, true).apply();
                                             cxVar3.getNotificationsController().c0(j10, 0L, true);
                                             trim = user != null ? user.first_name.trim() : "";
                                             int indexOf2 = trim.indexOf(" ");
                                             if (indexOf2 > 0) {
                                                 trim = trim.substring(0, indexOf2);
                                             }
-                                            org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
+                                            org.telegram.ui.Components.lc.b0(cxVar3).V(Arrays.asList(user), org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747665, trim)), null, null).j();
                                             break;
                                     }
                                 }
                             }, h02 && j10 > j3);
                             a70Var222.F();
                             final int i2922 = 0;
-                            a70Var222.l(R.drawable.msg_stories_stealth2, gd.N0(2131743319, null), new Runnable() { // from class: org.telegram.ui.rv
+                            a70Var222.l(R.drawable.msg_stories_stealth2, hd.N0(2131743317, null), new Runnable() { // from class: org.telegram.ui.rv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     org.telegram.ui.ActionBar.h6 h6Var;
@@ -1262,7 +1262,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 0:
                                             tv tvVar2 = tvVar;
                                             cx cxVar2 = tvVar2.P0;
-                                            TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).R1().B;
+                                            TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).R1().B;
                                             View view2 = view;
                                             if (tL_storiesStealthMode != null) {
                                                 i3022 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
@@ -1294,7 +1294,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                             a70Var222.F();
                             if (K3) {
                             }
-                            String N022 = gd.N0(2131743319, null);
+                            String N022 = hd.N0(2131743317, null);
                             final int i3022 = 1;
                             Runnable runnable22 = new Runnable() { // from class: org.telegram.ui.rv
                                 @Override // java.lang.Runnable
@@ -1306,7 +1306,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 0:
                                             tv tvVar2 = tvVar;
                                             cx cxVar2 = tvVar2.P0;
-                                            TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).R1().B;
+                                            TL_stories.TL_storiesStealthMode tL_storiesStealthMode = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).R1().B;
                                             View view2 = view;
                                             if (tL_storiesStealthMode != null) {
                                                 i30222 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
@@ -1339,7 +1339,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                             }
                             a70Var.F();
                             final int i3122 = 1;
-                            a70Var.l(R.drawable.msg_archive, gd.N0(2131754150, null), new Runnable() { // from class: org.telegram.ui.pv
+                            a70Var.l(R.drawable.msg_archive, hd.N0(2131754150, null), new Runnable() { // from class: org.telegram.ui.pv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i24222;
@@ -1356,7 +1356,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 3:
                                             cx cxVar2 = tvVar.P0;
                                             i24222 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i24222);
+                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i24222);
                                             long j11 = j10;
                                             d02.S1(j11);
                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -1375,7 +1375,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                             }, z10 && !cxVar.t4());
                             a70Var.F();
                             final int i3222 = 2;
-                            a70Var.l(R.drawable.msg_unarchive, gd.N0(2131743671, null), new Runnable() { // from class: org.telegram.ui.pv
+                            a70Var.l(R.drawable.msg_unarchive, hd.N0(2131743669, null), new Runnable() { // from class: org.telegram.ui.pv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i24222;
@@ -1392,7 +1392,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 3:
                                             cx cxVar2 = tvVar.P0;
                                             i24222 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i24222);
+                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i24222);
                                             long j11 = j10;
                                             d02.S1(j11);
                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -1411,7 +1411,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                             }, z10 && cxVar.t4());
                             a70Var.F();
                             i17 = 3;
-                            a70Var.l(R.drawable.msg_delete, gd.N0(2131744507, null), new Runnable() { // from class: org.telegram.ui.pv
+                            a70Var.l(R.drawable.msg_delete, hd.N0(2131744505, null), new Runnable() { // from class: org.telegram.ui.pv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i24222;
@@ -1428,7 +1428,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                         case 3:
                                             cx cxVar2 = tvVar.P0;
                                             i24222 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i24222);
+                                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i24222);
                                             long j11 = j10;
                                             d02.S1(j11);
                                             cxVar2.getMessagesController().R1().l0(j11, true, false);
@@ -1447,7 +1447,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                             }, z10);
                         } else if (cxVar.P3) {
                             a70 a70Var3 = cxVar.M0;
-                            String N03 = gd.N0(2131754381, null);
+                            String N03 = hd.N0(2131754381, null);
                             int i33 = org.telegram.ui.ActionBar.m6.F8;
                             int i34 = org.telegram.ui.ActionBar.m6.E8;
                             a70Var3.b(R.drawable.msg_stories_add, null, N03, i33, i34, new Runnable() { // from class: org.telegram.ui.ov
@@ -1463,7 +1463,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             Bundle bundle = new Bundle();
                                             cx cxVar2 = tvVar.P0;
                                             i35 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            bundle.putLong("dialog_id", org.telegram.messenger.j10.i(i35).e());
+                                            bundle.putLong("dialog_id", org.telegram.messenger.k10.i(i35).e());
                                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             bundle.putInt("start_from", 9);
                                             cxVar2.presentFragment(new org.telegram.ui.Components.k90(bundle, null));
@@ -1472,14 +1472,14 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             Bundle bundle2 = new Bundle();
                                             cx cxVar3 = tvVar.P0;
                                             i36 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                            bundle2.putLong("dialog_id", org.telegram.messenger.j10.i(i36).e());
+                                            bundle2.putLong("dialog_id", org.telegram.messenger.k10.i(i36).e());
                                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             cxVar3.presentFragment(new org.telegram.ui.Components.k90(bundle2, null));
                                             break;
                                     }
                                 }
                             });
-                            cxVar.M0.b(R.drawable.msg_stories_archive, null, gd.N0(2131754120, null), i33, i34, new Runnable() { // from class: org.telegram.ui.ov
+                            cxVar.M0.b(R.drawable.msg_stories_archive, null, hd.N0(2131754120, null), i33, i34, new Runnable() { // from class: org.telegram.ui.ov
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i35;
@@ -1492,7 +1492,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             Bundle bundle = new Bundle();
                                             cx cxVar2 = tvVar.P0;
                                             i35 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            bundle.putLong("dialog_id", org.telegram.messenger.j10.i(i35).e());
+                                            bundle.putLong("dialog_id", org.telegram.messenger.k10.i(i35).e());
                                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             bundle.putInt("start_from", 9);
                                             cxVar2.presentFragment(new org.telegram.ui.Components.k90(bundle, null));
@@ -1501,14 +1501,14 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             Bundle bundle2 = new Bundle();
                                             cx cxVar3 = tvVar.P0;
                                             i36 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                            bundle2.putLong("dialog_id", org.telegram.messenger.j10.i(i36).e());
+                                            bundle2.putLong("dialog_id", org.telegram.messenger.k10.i(i36).e());
                                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             cxVar3.presentFragment(new org.telegram.ui.Components.k90(bundle2, null));
                                             break;
                                     }
                                 }
                             });
-                            cxVar.M0.b(R.drawable.msg_stories_saved, null, gd.N0(2131745689, null), i33, i34, new Runnable() { // from class: org.telegram.ui.ov
+                            cxVar.M0.b(R.drawable.msg_stories_saved, null, hd.N0(2131745689, null), i33, i34, new Runnable() { // from class: org.telegram.ui.ov
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i35;
@@ -1521,7 +1521,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             Bundle bundle = new Bundle();
                                             cx cxVar2 = tvVar.P0;
                                             i35 = ((org.telegram.ui.ActionBar.g2) cxVar2).currentAccount;
-                                            bundle.putLong("dialog_id", org.telegram.messenger.j10.i(i35).e());
+                                            bundle.putLong("dialog_id", org.telegram.messenger.k10.i(i35).e());
                                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             bundle.putInt("start_from", 9);
                                             cxVar2.presentFragment(new org.telegram.ui.Components.k90(bundle, null));
@@ -1530,7 +1530,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                                             Bundle bundle2 = new Bundle();
                                             cx cxVar3 = tvVar.P0;
                                             i36 = ((org.telegram.ui.ActionBar.g2) cxVar3).currentAccount;
-                                            bundle2.putLong("dialog_id", org.telegram.messenger.j10.i(i36).e());
+                                            bundle2.putLong("dialog_id", org.telegram.messenger.k10.i(i36).e());
                                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             cxVar3.presentFragment(new org.telegram.ui.Components.k90(bundle2, null));
                                             break;
@@ -1558,7 +1558,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                 if (fq0Var.H.F1 || !(view instanceof org.telegram.ui.Cells.p7)) {
                     return false;
                 }
-                fj messageObject = ((org.telegram.ui.Cells.p7) view).getMessageObject();
+                gj messageObject = ((org.telegram.ui.Cells.p7) view).getMessageObject();
                 if (fq0Var.c(messageObject)) {
                     fq0Var.g(messageObject);
                 } else {
@@ -1587,12 +1587,12 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                 if (i35 < 0 || i35 >= d3Var.g0.size()) {
                     return false;
                 }
-                ef efVar = (ef) d3Var.g0.get(i35);
+                ff ffVar = (ff) d3Var.g0.get(i35);
                 if (!arrayList2.isEmpty() || d3Var.R) {
                     return false;
                 }
-                if (arrayList2.contains(efVar)) {
-                    arrayList2.remove(efVar);
+                if (arrayList2.contains(ffVar)) {
+                    arrayList2.remove(ffVar);
                 } else {
                     if (arrayList2.size() + 1 > d3Var.S) {
                         int i36 = -d3Var.O;
@@ -1601,7 +1601,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                         q2Var.a();
                         return true;
                     }
-                    arrayList2.add(efVar);
+                    arrayList2.add(ffVar);
                 }
                 org.telegram.messenger.g0.Z3(d3Var.d);
                 d3Var.j();
@@ -1625,14 +1625,14 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                 }
                 break;
             default:
-                bi.f8 f8Var = (bi.f8) this.b;
+                bi.e8 e8Var = (bi.e8) this.b;
                 if (i7 != 1) {
                     if (i7 != 3) {
-                        f8Var.a(Boolean.FALSE, null);
+                        e8Var.a(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    f8Var.a(Boolean.TRUE, null);
+                    e8Var.a(Boolean.TRUE, null);
                     break;
                 }
                 break;
@@ -1725,7 +1725,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
         b1Var.setItemAnimator(itemAnimator);
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.s10
     public Object g(Number number, Object obj) {
         int i7 = this.a;
         Object obj2 = this.b;
@@ -1737,7 +1737,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                 if (((Integer) number).intValue() != -1) {
                     return Boolean.FALSE;
                 }
-                new gi.p(fq0Var.a, gd.N0(2131746497, null), new ai.h0(fq0Var, 20)).show();
+                new gi.p(fq0Var.a, hd.N0(2131746497, null), new ai.h0(fq0Var, 20)).show();
                 return Boolean.TRUE;
         }
     }
@@ -1810,26 +1810,26 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                         ConnectionsManager.getInstance(i11).sendRequest(tL_messages_deleteQuickReplyShortcut, new fi.l5(6));
                         if ("hello".equals(c10.b)) {
                             ConnectionsManager.getInstance(i11).sendRequest(new TL_account.updateBusinessGreetingMessage(), null);
-                            TLRPC.UserFull d2 = mp.u1(i11).d2(j10.i(i11).e());
+                            TLRPC.UserFull d2 = np.u1(i11).d2(k10.i(i11).e());
                             if (d2 != null) {
                                 d2.flags2 &= -5;
                                 d2.business_greeting_message = null;
-                                tr.a0(i11).j2(d2, true);
+                                ur.a0(i11).j2(d2, true);
                             }
                         } else if ("away".equals(c10.b)) {
                             ConnectionsManager.getInstance(i11).sendRequest(new TL_account.updateBusinessAwayMessage(), null);
-                            TLRPC.UserFull d22 = mp.u1(i11).d2(j10.i(i11).e());
+                            TLRPC.UserFull d22 = np.u1(i11).d2(k10.i(i11).e());
                             if (d22 != null) {
                                 d22.flags2 &= -9;
                                 d22.business_away_message = null;
-                                tr.a0(i11).j2(d22, true);
+                                ur.a0(i11).j2(d22, true);
                             }
                         }
                     }
                     f10.l();
-                    tr a02 = tr.a0(i11);
+                    ur a02 = ur.a0(i11);
                     a02.a.c(new hi.z0(a02, arrayList, 2));
-                    ks.f(i11).k(ks.F1, new Object[0]);
+                    ls.f(i11).k(ls.F1, new Object[0]);
                 }
                 kg.s1.c0(s1Var);
                 break;
@@ -1851,7 +1851,7 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
         return h2.l0.j((j3 * r0.e) / 1000000, 0L, ((f3.u) this.b).j - 1);
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         org.telegram.ui.ActionBar.g2 T;
         int i7;
@@ -1881,20 +1881,20 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                 if (c7Var != saVar.L1 && !saVar.Y1) {
                     saVar.e1.setSelected(i13);
                     saVar.Y1 = true;
-                    ai.y0 y0Var = new ai.y0(saVar, i13, 12);
+                    ai.c1 c1Var = new ai.c1(saVar, i13, 12);
                     hi.u9 u9Var = saVar.w1;
                     hi.c7 c7Var2 = saVar.L1;
                     if (u9Var != null && c7Var2 != null) {
                         if (u9Var.r0()) {
                             c7Var2.f();
-                            Utilities.g.c(new hi.u8(saVar, u9Var, c7Var2.i0, c7Var2.j0, c7Var2, u9Var.y0.getPainting().E, u9Var.r0(), y0Var, 0));
+                            Utilities.g.c(new hi.u8(saVar, u9Var, c7Var2.i0, c7Var2.j0, c7Var2, u9Var.y0.getPainting().E, u9Var.r0(), c1Var, 0));
                             break;
                         } else {
-                            y0Var.run();
+                            c1Var.run();
                             break;
                         }
                     } else {
-                        y0Var.run();
+                        c1Var.run();
                         break;
                     }
                 }
@@ -1915,11 +1915,11 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                 } else if (i14 == -2) {
                     kg.y1 y1Var = new kg.y1(null);
                     y1Var.n = e1Var.n;
-                    y1Var.c = new ai.x1(25, e1Var, view);
+                    y1Var.c = new ai.y1(25, e1Var, view);
                     e1Var.presentFragment(y1Var);
                     break;
                 } else if (o41Var3.a == 5 && i14 >= 0 && i14 < e1Var.f.length) {
-                    if (!gd.a0 ? floatValue < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f) : floatValue > org.telegram.messenger.g0.L(76.0f)) {
+                    if (!hd.a0 ? floatValue < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f) : floatValue > org.telegram.messenger.g0.L(76.0f)) {
                         int i15 = (o41Var3.d + 6) % 7;
                         int i16 = 0;
                         for (int i17 = 0; i17 < e1Var.f[i15].size(); i17++) {
@@ -2019,13 +2019,13 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                     int i29 = o41Var4.d % 3;
                     if (i29 == 0) {
                         Activity parentActivity = g1Var2.getParentActivity();
-                        String N0 = gd.N0(2131752738, null);
+                        String N0 = hd.N0(2131752738, null);
                         int i30 = d1Var2.a;
                         if (d1Var != null) {
                             i23 = d1Var.b + 1;
                         }
-                        org.telegram.ui.Components.c5.U(parentActivity, N0, i30, i23, d1Var2.b - 1, new x10() { // from class: kg.f1
-                            @Override // org.telegram.messenger.x10
+                        org.telegram.ui.Components.c5.U(parentActivity, N0, i30, i23, d1Var2.b - 1, new y10() { // from class: kg.f1
+                            @Override // org.telegram.messenger.y10
                             public final void a(Object obj4) {
                                 Integer num = (Integer) obj4;
                                 switch (i12) {
@@ -2067,14 +2067,14 @@ public final /* synthetic */ class v6 implements ll0, v10, OnSuccessListener, sj
                         break;
                     } else if (i29 == 1) {
                         Activity parentActivity2 = g1Var2.getParentActivity();
-                        String N02 = gd.N0(2131752744, null);
+                        String N02 = hd.N0(2131752744, null);
                         int i31 = d1Var2.b;
                         int i32 = d1Var2.a + 1;
                         if (d1Var3 != null) {
                             i24 = d1Var3.a - 1;
                         }
-                        org.telegram.ui.Components.c5.U(parentActivity2, N02, i31, i32, i24, new x10() { // from class: kg.f1
-                            @Override // org.telegram.messenger.x10
+                        org.telegram.ui.Components.c5.U(parentActivity2, N02, i31, i32, i24, new y10() { // from class: kg.f1
+                            @Override // org.telegram.messenger.y10
                             public final void a(Object obj4) {
                                 Integer num = (Integer) obj4;
                                 switch (i11) {

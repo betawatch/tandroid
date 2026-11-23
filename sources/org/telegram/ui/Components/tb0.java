@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class tb0 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public static final nr y0 = new nr(0.0f, 0.5f, 0.5f, 1.0f);
@@ -77,7 +77,7 @@ public class tb0 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public int s0;
     public final org.telegram.ui.ActionBar.h6 t0;
     public boolean u0;
-    public org.telegram.messenger.y10 v0;
+    public org.telegram.messenger.z10 v0;
     public final int w;
     public Integer w0;
     public int x;
@@ -122,9 +122,9 @@ public class tb0 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
         }
         this.W = 0;
         if (z10) {
-            this.U.d(-this.R, org.telegram.messenger.ks.X4);
+            this.U.d(-this.R, org.telegram.messenger.ls.X4);
         } else {
-            this.U.d(this.R, org.telegram.messenger.ks.X4);
+            this.U.d(this.R, org.telegram.messenger.ls.X4);
         }
         invalidate();
     }
@@ -815,8 +815,8 @@ public class tb0 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
         setWrapSelectorWheel(this.j0);
     }
 
-    public void setContentDescriptionCallback(org.telegram.messenger.y10 y10Var) {
-        this.v0 = y10Var;
+    public void setContentDescriptionCallback(org.telegram.messenger.z10 z10Var) {
+        this.v0 = z10Var;
     }
 
     public void setDisplayedValues(String[] strArr) {

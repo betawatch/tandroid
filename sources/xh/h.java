@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.r5;
 import tg.y;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h {
     public static h q;
@@ -38,7 +38,7 @@ public final class h {
     public final Rect o = new Rect();
 
     public h() {
-        int L = g0.L(bz.o() == 2 ? 150.0f : 100.0f);
+        int L = g0.L(cz.o() == 2 ? 150.0f : 100.0f);
         Point point = g0.q;
         int min = (int) Math.min(Math.min(point.x, point.y) * 0.5f, L);
         this.k = min < g0.L(80.0f) ? g0.L(80.0f) : min;

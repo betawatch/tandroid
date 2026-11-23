@@ -14,8 +14,8 @@ import java.util.HashSet;
 import java.util.TimeZone;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.EditTextBoldCursor;
@@ -27,10 +27,10 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.oa;
 import org.telegram.ui.hs0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class x0 extends e51 {
-    public final x10 e;
+    public final y10 e;
     public boolean n;
     public String r;
     public NumberTextView s;
@@ -40,8 +40,8 @@ public final class x0 extends e51 {
     public final ArrayList h = new ArrayList();
     public final HashSet w = new HashSet();
 
-    public x0(org.telegram.ui.z zVar, x10 x10Var) {
-        this.e = x10Var;
+    public x0(org.telegram.ui.z zVar, y10 y10Var) {
+        this.e = y10Var;
     }
 
     @Override // org.telegram.ui.Components.e51
@@ -59,7 +59,7 @@ public final class x0 extends e51 {
                     calendar.setTimeInMillis(w0Var.b);
                     int i12 = calendar.get(5) + (calendar.get(2) * 100) + (calendar.get(1) * 10000);
                     if (i11 != i12) {
-                        arrayList.add(o41.r(gd.u(w0Var.b / 1000, false)));
+                        arrayList.add(o41.r(hd.u(w0Var.b / 1000, false)));
                         i11 = i12;
                     }
                     String str = this.r;
@@ -81,7 +81,7 @@ public final class x0 extends e51 {
                 calendar.setTimeInMillis(w0Var2.b);
                 int i15 = calendar.get(i7) + (calendar.get(i10) * 100) + (calendar.get(1) * 10000);
                 if (i14 != i15) {
-                    arrayList.add(o41.r(gd.u(w0Var2.b / 1000, false)));
+                    arrayList.add(o41.r(hd.u(w0Var2.b / 1000, false)));
                     i14 = i15;
                 }
                 String str2 = this.r;
@@ -110,7 +110,7 @@ public final class x0 extends e51 {
 
     @Override // org.telegram.ui.Components.e51
     public final CharSequence a0() {
-        return gd.N0(2131742656, null);
+        return hd.N0(2131742654, null);
     }
 
     @Override // org.telegram.ui.Components.e51
@@ -155,15 +155,15 @@ public final class x0 extends e51 {
         c10.O();
         c10.I = new s2(this);
         this.x = c10;
-        c10.setSearchFieldHint(gd.N0(2131745640, null));
-        this.x.setContentDescription(gd.N0(2131745640, null));
+        c10.setSearchFieldHint(hd.N0(2131745640, null));
+        this.x.setContentDescription(hd.N0(2131745640, null));
         EditTextBoldCursor searchField = this.x.getSearchField();
         t6.U(searchField, i10, getResourceProvider());
         t6.D(searchField, m6.Jj, getResourceProvider());
         t6.v(searchField, i10, getResourceProvider());
         nv0 nv0Var = new nv0(context, null, 1, null);
         this.y = nv0Var;
-        nv0Var.d.setText(gd.N0(TextUtils.isEmpty(this.r) ? 2131742654 : 2131742653, null));
+        nv0Var.d.setText(hd.N0(TextUtils.isEmpty(this.r) ? 2131742652 : 2131742651, null));
         this.y.e.setVisibility(8);
         this.y.e(false, false);
         this.y.setAnimateLayoutChange(true);

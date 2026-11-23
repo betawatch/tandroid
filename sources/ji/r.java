@@ -1,7 +1,7 @@
 package ji;
 
-import ai.i2;
-import ai.y0;
+import ai.c1;
+import ai.j2;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -43,8 +43,8 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -54,7 +54,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.rg;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class r extends View {
     public static int X1;
@@ -220,10 +220,10 @@ public final class r extends View {
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{-603979776, -1073741824, TLObject.FLAG_31, 939524096, 201326592, 0}, new float[]{0.0f, 0.18f, 0.42f, 0.66f, 0.86f, 1.0f}, Shader.TileMode.CLAMP);
         this.E = linearGradient;
         this.F = new Matrix();
-        String N0 = gd.N0(2131745054, null);
+        String N0 = hd.N0(2131745054, null);
         this.L = N0;
         this.M = N0;
-        this.N = gd.N0(2131745065, null);
+        this.N = hd.N0(2131745065, null);
         this.R = new RectF();
         this.S = new RectF();
         this.T = new RectF();
@@ -278,8 +278,8 @@ public final class r extends View {
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.G = context.getResources().getDrawable(R.drawable.msg_edit).mutate();
         this.H = i5.c.g(context, R.drawable.send_plane_24);
-        this.I = gd.N0(2131751323, null);
-        this.J = gd.N0(2131745038, null);
+        this.I = hd.N0(2131751323, null);
+        this.J = hd.N0(2131745036, null);
         setVisibility(8);
     }
 
@@ -1133,7 +1133,7 @@ public final class r extends View {
                                 max2 = Math.max(0.0f, height - max);
                                 boolean z16 = uptimeMillis - this.R0 >= 900;
                                 if (this.U0 && z16) {
-                                    max2 = n10.A(max2, textSize, this.F0, max2);
+                                    max2 = o10.A(max2, textSize, this.F0, max2);
                                 }
                                 this.F0 = max2;
                                 float max10 = Math.max(max9, max2);
@@ -1399,7 +1399,7 @@ public final class r extends View {
                                                             double d11 = 1.6d * f70 * 2.0f * 3.141592653589793d;
                                                             double d12 = i23;
                                                             float T1 = g0.T1(0.4f, 1.0f, this.a1) * g0.W1(b((((((((float) Math.sin((1.9d * d12) + d11)) * 0.5f) + 0.5f) * 0.55f) + 0.45f) * this.Y0) + (((float) Math.sin((d12 * 1.3d) + (r8 * 0.7d))) * 0.1f) + 0.16f), g0.L(2.5f), g0.L(10.5f));
-                                                            float b12 = n10.b(N, N2, i23, this.V0);
+                                                            float b12 = o10.b(N, N2, i23, this.V0);
                                                             RectF rectF3 = g0.P;
                                                             float f71 = this.W0;
                                                             float f72 = T1 / 2.0f;
@@ -1651,7 +1651,7 @@ public final class r extends View {
                         if (uptimeMillis - this.R0 >= 900) {
                         }
                         if (this.U0) {
-                            max2 = n10.A(max2, textSize, this.F0, max2);
+                            max2 = o10.A(max2, textSize, this.F0, max2);
                         }
                         this.F0 = max2;
                         float max102 = Math.max(max92, max2);
@@ -2068,7 +2068,7 @@ public final class r extends View {
                         performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
-                    post(new y0(this, i7, 15));
+                    post(new c1(this, i7, 15));
                 }
             }
             if (this.t1 && this.u1 && (velocityTracker = this.v1) != null) {
@@ -2136,7 +2136,7 @@ public final class r extends View {
             q qVar = (q) obj;
             int i10 = qVar.b;
             if (i10 > qVar.a && i10 <= spannableString.length()) {
-                spannableString.setSpan(new i2(qVar, 2), qVar.a, qVar.b, 65569);
+                spannableString.setSpan(new j2(qVar, 2), qVar.a, qVar.b, 65569);
             }
         }
         int i11 = this.y1;

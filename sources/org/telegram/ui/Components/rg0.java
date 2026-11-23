@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.Locale;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rg0 implements pb0, rb0 {
     public final /* synthetic */ int a;
@@ -19,19 +19,19 @@ public final /* synthetic */ class rg0 implements pb0, rb0 {
         wg0 wg0Var = this.b;
         switch (i10) {
             case 0:
-                return wg0Var.P ? org.telegram.messenger.gd.a0("MilesShort", null, 2131748234, Integer.valueOf(i7)) : org.telegram.messenger.gd.a0("KMetersShort", null, 2131748868, Integer.valueOf(i7));
+                return wg0Var.P ? org.telegram.messenger.hd.a0("MilesShort", null, 2131748234, Integer.valueOf(i7)) : org.telegram.messenger.hd.a0("KMetersShort", null, 2131748868, Integer.valueOf(i7));
             default:
                 if (!wg0Var.P) {
                     if (i7 == 1) {
-                        return org.telegram.messenger.gd.a0("MetersShort", null, 2131748249, 50);
+                        return org.telegram.messenger.hd.a0("MetersShort", null, 2131748249, 50);
                     }
                     if (i7 > 1) {
                         i7--;
                     }
-                    return org.telegram.messenger.gd.a0("MetersShort", null, 2131748249, Integer.valueOf(i7 * 100));
+                    return org.telegram.messenger.hd.a0("MetersShort", null, 2131748249, Integer.valueOf(i7 * 100));
                 }
                 if (i7 == 1) {
-                    return org.telegram.messenger.gd.a0("FootsShort", null, 2131750584, Integer.valueOf(org.telegram.messenger.ks.Z3));
+                    return org.telegram.messenger.hd.a0("FootsShort", null, 2131750584, Integer.valueOf(org.telegram.messenger.ls.Z3));
                 }
                 if (i7 > 1) {
                     i7--;

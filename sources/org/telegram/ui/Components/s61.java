@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class s61 extends View {
     public static final Object g0 = new Object();
@@ -296,12 +296,12 @@ public abstract class s61 extends View {
             canvas2 = canvas;
         } else {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ls.e4, 31);
             float N2 = f13 - org.telegram.messenger.g0.N(f11);
             float N3 = org.telegram.messenger.g0.N(f11) + f14;
             RectF rectF4 = this.O;
             rectF4.set(N2, f15, N3, L4);
-            paint3.setAlpha(org.telegram.messenger.ks.e4);
+            paint3.setAlpha(org.telegram.messenger.ls.e4);
             canvas2.drawRoundRect(rectF4, org.telegram.messenger.g0.N(f12), org.telegram.messenger.g0.N(f12), paint3);
             rectF4.set(f13, org.telegram.messenger.g0.N(f10) + f15, f14, L4 - org.telegram.messenger.g0.N(f10));
             canvas2.drawRect(rectF4, this.b0);

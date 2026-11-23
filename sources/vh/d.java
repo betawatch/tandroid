@@ -4,8 +4,8 @@ import android.content.Context;
 import android.view.View;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.j10;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.qj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d implements qj0 {
     public final /* synthetic */ h6 a;
@@ -42,7 +42,7 @@ public final class d implements qj0 {
             int size = hashMap.size();
             int i10 = gVar.i2;
             if (size >= i10) {
-                n10.u(gd.a0(null, null, 2131746918, Integer.valueOf(i10)), new lc(gVar.j2, this.a), R.raw.info, 36);
+                o10.u(hd.a0(null, null, 2131746918, Integer.valueOf(i10)), new lc(gVar.j2, this.a), R.raw.info, 36);
                 return;
             }
             p20 p20Var = new p20(this.b, tL_help_country);

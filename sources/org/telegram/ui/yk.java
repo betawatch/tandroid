@@ -2,21 +2,21 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yk extends oq0 {
-    public final /* synthetic */ org.telegram.messenger.fj a;
-    public final /* synthetic */ org.telegram.messenger.ef b;
+    public final /* synthetic */ org.telegram.messenger.gj a;
+    public final /* synthetic */ org.telegram.messenger.ff b;
     public final /* synthetic */ bn c;
 
-    public yk(bn bnVar, org.telegram.messenger.fj fjVar, org.telegram.messenger.ef efVar) {
+    public yk(bn bnVar, org.telegram.messenger.gj gjVar, org.telegram.messenger.ff ffVar) {
         this.c = bnVar;
-        this.a = fjVar;
-        this.b = efVar;
+        this.a = gjVar;
+        this.b = ffVar;
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+    public final wq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
         return bn.P1(this.c, this.a, null, i7, z10, true);
     }
 
@@ -31,11 +31,11 @@ public final class yk extends oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final org.telegram.messenger.fj V() {
-        org.telegram.messenger.fj fjVar = this.c.H5;
-        org.telegram.messenger.fj fjVar2 = this.a;
-        if (fjVar == fjVar2) {
-            return fjVar2;
+    public final org.telegram.messenger.gj V() {
+        org.telegram.messenger.gj gjVar = this.c.H5;
+        org.telegram.messenger.gj gjVar2 = this.a;
+        if (gjVar == gjVar2) {
+            return gjVar2;
         }
         return null;
     }
@@ -51,14 +51,14 @@ public final class yk extends oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
         bn bnVar = this.c;
         if (bnVar.H5 != this.a) {
             return;
         }
-        org.telegram.messenger.ef efVar = this.b;
-        if (efVar.w || efVar.v || efVar.u || e20Var != null) {
-            bnVar.u(efVar, e20Var, z10, i10, 0, z11, 0L);
+        org.telegram.messenger.ff ffVar = this.b;
+        if (ffVar.w || ffVar.v || ffVar.u || f20Var != null) {
+            bnVar.u(ffVar, f20Var, z10, i10, 0, z11, 0L);
         } else {
             bnVar.a0.u0();
         }

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mw implements c5.h {
     public final /* synthetic */ boolean a;
@@ -21,7 +21,7 @@ public final class mw implements c5.h {
             int i10 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
             if (tyVar.B1 != i10) {
                 tyVar.B1 = i10;
-                org.telegram.messenger.mp.f1().edit().putInt("selected_page", i10).commit();
+                org.telegram.messenger.np.f1().edit().putInt("selected_page", i10).commit();
             }
         }
         tyVar.M(i7 == 0, true);

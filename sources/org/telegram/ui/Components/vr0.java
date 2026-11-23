@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class vr0 extends dk0 {
     public final Context c;
@@ -65,14 +65,14 @@ public final class vr0 extends dk0 {
                     String str2 = channelParticipant.rank;
                     if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
                         if (TextUtils.isEmpty(str2)) {
-                            str2 = org.telegram.messenger.gd.N0(2131752411, "ChannelCreator");
+                            str2 = org.telegram.messenger.hd.N0(2131752411, "ChannelCreator");
                         }
                         z14 = true;
                         z15 = true;
                         z13 = false;
                     } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
                         if (TextUtils.isEmpty(str2)) {
-                            str2 = org.telegram.messenger.gd.N0(2131752508, "ChannelAdmin");
+                            str2 = org.telegram.messenger.hd.N0(2131752508, "ChannelAdmin");
                         }
                         z13 = channelParticipant.promoted_by == g2Var.getUserConfig().e();
                         z14 = true;
@@ -91,7 +91,7 @@ public final class vr0 extends dk0 {
                     String str3 = chatParticipant.rank;
                     if (chatParticipant instanceof TLRPC.TL_chatParticipantCreator) {
                         if (TextUtils.isEmpty(str3)) {
-                            str3 = org.telegram.messenger.gd.N0(2131752411, "ChannelCreator");
+                            str3 = org.telegram.messenger.hd.N0(2131752411, "ChannelCreator");
                         }
                         str = str3;
                         z10 = true;
@@ -99,7 +99,7 @@ public final class vr0 extends dk0 {
                         z12 = false;
                     } else if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
                         if (TextUtils.isEmpty(str3)) {
-                            str3 = org.telegram.messenger.gd.N0(2131752508, "ChannelAdmin");
+                            str3 = org.telegram.messenger.hd.N0(2131752508, "ChannelAdmin");
                         }
                         z12 = chatParticipant.inviter_id == g2Var.getUserConfig().e();
                         str = str3;
@@ -113,7 +113,7 @@ public final class vr0 extends dk0 {
                     }
                 }
                 TLRPC.User c22 = g2Var.getMessagesController().c2(Long.valueOf(chatParticipant.user_id));
-                raVar.a(str, z10, z11, org.telegram.messenger.o10.C(c22) && org.telegram.messenger.v3.h(g2Var.getMessagesController().O0(Long.valueOf(-jt0Var.m1))), new q50(this, c22, str, z10, z11, z12, 1));
+                raVar.a(str, z10, z11, org.telegram.messenger.p10.C(c22) && org.telegram.messenger.v3.h(g2Var.getMessagesController().O0(Long.valueOf(-jt0Var.m1))), new q50(this, c22, str, z10, z11, z12, 1));
                 raVar.d(c22, null, null, i7 != this.d.participants.participants.size() - 1);
             }
         }

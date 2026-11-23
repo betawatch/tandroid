@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vd implements org.telegram.messenger.u10 {
+public final /* synthetic */ class vd implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
     public final /* synthetic */ long c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class vd implements org.telegram.messenger.u10 {
         this.d = h6Var;
     }
 
-    @Override // org.telegram.messenger.u10
+    @Override // org.telegram.messenger.v10
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         int i7 = this.a;
         int i10 = 0;

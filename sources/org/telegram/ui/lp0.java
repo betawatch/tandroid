@@ -1,14 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lp0 extends org.telegram.ui.Components.i61 {
     public final /* synthetic */ int n0;
-    public final /* synthetic */ org.telegram.messenger.fs o0;
+    public final /* synthetic */ org.telegram.messenger.gs o0;
 
-    public /* synthetic */ lp0(org.telegram.messenger.fs fsVar, int i7) {
+    public /* synthetic */ lp0(org.telegram.messenger.gs gsVar, int i7) {
         this.n0 = i7;
-        this.o0 = fsVar;
+        this.o0 = gsVar;
     }
 
     @Override // org.telegram.ui.Components.i61

@@ -8,19 +8,19 @@ import android.os.Build;
 import android.text.Editable;
 import android.view.View;
 import android.view.ViewGroup;
-import bi.w5;
+import bi.v5;
 import c8.ma;
 import java.util.Iterator;
 import org.telegram.messenger.g6;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n2 extends j {
     public boolean A0;
@@ -41,7 +41,7 @@ public final class n2 extends j {
         this.u0 = i7;
         m2 m2Var = new m2(this, context);
         this.r0 = m2Var;
-        ks.i(m2Var);
+        ls.i(m2Var);
         m2Var.setGravity(19);
         m2Var.setBackgroundColor(0);
         m2Var.setPadding(org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f));
@@ -73,7 +73,7 @@ public final class n2 extends j {
         setSwatch(h1Var);
         setType(i10);
         k();
-        m2Var.addTextChangedListener(new w5(3, this));
+        m2Var.addTextChangedListener(new v5(3, this));
     }
 
     @Override // tg.j
@@ -114,7 +114,7 @@ public final class n2 extends j {
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.g0.L(52.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float y10 = n10.y(L, 2.0f, getPositionX(), scaleX);
+        float y10 = o10.y(L, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         m2 m2Var = this.r0;
         return new aj0(y10, (positionY - (((L2 - m2Var.getExtendedPaddingTop()) - org.telegram.messenger.g0.N(4.0f)) / 2.0f)) * scaleX, ((L * scaleX) + y10) - y10, (L2 - m2Var.getExtendedPaddingBottom()) * scaleX);
@@ -223,7 +223,7 @@ public final class n2 extends j {
         if (m2Var.getText().length() > 0) {
             m2Var.setHint((CharSequence) null);
         } else {
-            m2Var.setHint(gd.N0(2131743952, null));
+            m2Var.setHint(hd.N0(2131743950, null));
             m2Var.setHintTextColor(1627389951);
         }
     }
@@ -317,7 +317,7 @@ public final class n2 extends j {
         int align2 = getAlign();
         if (align2 == 1) {
             i7 = 4;
-        } else if (align2 == 2 ? !gd.a0 : gd.a0) {
+        } else if (align2 == 2 ? !hd.a0 : hd.a0) {
             i7 = 3;
         }
         this.r0.setTextAlignment(i7);

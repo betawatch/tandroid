@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qm extends ViewGroup {
     public long E;
@@ -74,7 +74,7 @@ public final class qm extends ViewGroup {
         setWillNotDraw(false);
         org.telegram.ui.Cells.v0 v0Var = new org.telegram.ui.Cells.v0(context, rmVar.n, true);
         this.a = v0Var;
-        v0Var.setCustomText(org.telegram.messenger.gd.N0(2131753957, null));
+        v0Var.setCustomText(org.telegram.messenger.hd.N0(2131753957, null));
         addView(v0Var);
     }
 
@@ -91,11 +91,11 @@ public final class qm extends ViewGroup {
             if (arrayList2.size() != 0) {
                 int size2 = arrayList2.size();
                 for (int i10 = 0; i10 < size2; i10++) {
-                    org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) arrayList2.get(i10);
+                    org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) arrayList2.get(i10);
                     HashMap hashMap = this.c;
-                    if (hashMap.containsKey(efVar)) {
-                        Object obj = hashMap.get(efVar);
-                        this.f.put(obj, efVar);
+                    if (hashMap.containsKey(ffVar)) {
+                        Object obj = hashMap.get(ffVar);
+                        this.f.put(obj, ffVar);
                         this.h.add(obj);
                     } else {
                         int i11 = 0;
@@ -103,7 +103,7 @@ public final class qm extends ViewGroup {
                             if (i11 < this.e.size()) {
                                 Map.Entry entry = (Map.Entry) this.e.get(i11);
                                 Object value = entry.getValue();
-                                if (value == efVar) {
+                                if (value == ffVar) {
                                     Object key = entry.getKey();
                                     this.f.put(key, value);
                                     this.h.add(key);
@@ -116,7 +116,7 @@ public final class qm extends ViewGroup {
                                     if (i12 < this.e.size()) {
                                         Map.Entry entry2 = (Map.Entry) this.e.get(i12);
                                         Object value2 = entry2.getValue();
-                                        if ((value2 instanceof org.telegram.messenger.ef) && (str = ((org.telegram.messenger.ef) value2).I) != null && efVar != null && str.equals(efVar.I)) {
+                                        if ((value2 instanceof org.telegram.messenger.ff) && (str = ((org.telegram.messenger.ff) value2).I) != null && ffVar != null && str.equals(ffVar.I)) {
                                             Object key2 = entry2.getKey();
                                             this.f.put(key2, value2);
                                             this.h.add(key2);
@@ -182,7 +182,7 @@ public final class qm extends ViewGroup {
         for (int i12 = 0; i12 < size; i12++) {
             Integer num = (Integer) this.h.get(i12);
             num.getClass();
-            arrayList3.add((org.telegram.messenger.ef) this.d.get(num));
+            arrayList3.add((org.telegram.messenger.ff) this.d.get(num));
             if (i12 % 10 == 9 || i12 == i11) {
                 pm pmVar = new pm(this);
                 pm.a(pmVar, new lm(this.Q, arrayList3), false);
@@ -230,11 +230,11 @@ public final class qm extends ViewGroup {
         return v0Var.getMeasuredHeight() + i7;
     }
 
-    public final void f(pm pmVar, org.telegram.messenger.ef efVar, int i7) {
+    public final void f(pm pmVar, org.telegram.messenger.ff ffVar, int i7) {
         ArrayList arrayList = (ArrayList) pmVar.k.f;
-        arrayList.add(Math.min(arrayList.size(), i7), efVar);
+        arrayList.add(Math.min(arrayList.size(), i7), ffVar);
         if (((ArrayList) pmVar.k.f).size() == 11) {
-            org.telegram.messenger.ef efVar2 = (org.telegram.messenger.ef) ((ArrayList) pmVar.k.f).get(10);
+            org.telegram.messenger.ff ffVar2 = (org.telegram.messenger.ff) ((ArrayList) pmVar.k.f).get(10);
             ((ArrayList) pmVar.k.f).remove(10);
             ArrayList arrayList2 = this.b;
             int indexOf = arrayList2.indexOf(pmVar);
@@ -244,11 +244,11 @@ public final class qm extends ViewGroup {
                 if (pmVar2 == null) {
                     pm pmVar3 = new pm(this);
                     ArrayList arrayList3 = new ArrayList();
-                    arrayList3.add(efVar2);
+                    arrayList3.add(ffVar2);
                     pm.a(pmVar3, new lm(this.Q, arrayList3), true);
                     invalidate();
                 } else {
-                    f(pmVar2, efVar2, 0);
+                    f(pmVar2, ffVar2, 0);
                 }
             }
         }
@@ -328,7 +328,7 @@ public final class qm extends ViewGroup {
                     if (uiVar.O2 != 0 || uiVar.C1) {
                         s5Var.getCheckBox().setVisibility(8);
                     }
-                    org.telegram.messenger.ef e02 = chatAttachAlertPhotoLayout.e0(R);
+                    org.telegram.messenger.ff e02 = chatAttachAlertPhotoLayout.e0(R);
                     if (e02 != null) {
                         int i10 = e02.C;
                         s5Var.d(e02, hashMap2.size() > 1, z14 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0, R == jmVar.b() - 1, uiVar.d2);
@@ -375,7 +375,7 @@ public final class qm extends ViewGroup {
                 ArrayList arrayList2 = new ArrayList();
                 int min = Math.min(size2, ((ArrayList) pmVar2.k.f).size());
                 for (int i10 = 0; i10 < min; i10++) {
-                    arrayList2.add((org.telegram.messenger.ef) ((ArrayList) pmVar2.k.f).remove(0));
+                    arrayList2.add((org.telegram.messenger.ff) ((ArrayList) pmVar2.k.f).remove(0));
                 }
                 ((ArrayList) pmVar.k.f).addAll(arrayList2);
                 pm.a(pmVar, pmVar.k, true);
@@ -481,7 +481,7 @@ public final class qm extends ViewGroup {
             } else {
                 if (pmVar.u == null || pmVar.v != j3) {
                     pmVar.v = j3;
-                    pmVar.u = new xy0(di.pb.b1(false, org.telegram.messenger.gd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    pmVar.u = new xy0(di.pb.b1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
                 float L = org.telegram.messenger.g0.L(28.0f) + pmVar.u.c;
                 float L2 = org.telegram.messenger.g0.L(32.0f);
@@ -802,8 +802,8 @@ public final class qm extends ViewGroup {
                                     if (ChatAttachAlertPhotoLayout.W()) {
                                     }
                                 } else if (rmVar.getSelectedItemsCount() > 1) {
-                                    org.telegram.messenger.ef efVar = this.G.b;
-                                    int indexOf2 = ((ArrayList) this.F.k.f).indexOf(efVar);
+                                    org.telegram.messenger.ff ffVar = this.G.b;
+                                    int indexOf2 = ((ArrayList) this.F.k.f).indexOf(ffVar);
                                     if (indexOf2 >= 0) {
                                         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = rmVar.Q;
                                         if (chatAttachAlertPhotoLayout != null) {
@@ -814,8 +814,8 @@ public final class qm extends ViewGroup {
                                                 if (i23 >= size5) {
                                                     break;
                                                 }
-                                                if (((Map.Entry) arrayList7.get(i23)).getValue() == efVar) {
-                                                    this.c.put(efVar, ((Map.Entry) arrayList7.get(i23)).getKey());
+                                                if (((Map.Entry) arrayList7.get(i23)).getValue() == ffVar) {
+                                                    this.c.put(ffVar, ((Map.Entry) arrayList7.get(i23)).getKey());
                                                     break;
                                                 }
                                                 i23++;
@@ -828,7 +828,7 @@ public final class qm extends ViewGroup {
                                         i(rmVar.Q, false);
                                         int i24 = this.P + 1;
                                         this.P = i24;
-                                        rmVar.x.k(0L, 82, efVar, null, null, new bi.x4(this, pmVar5, efVar, indexOf2, 21));
+                                        rmVar.x.k(0L, 82, ffVar, null, null, new ai.b1(this, pmVar5, ffVar, indexOf2, 22));
                                         postDelayed(new org.telegram.ui.ii(this, i24, 10), 4000L);
                                     }
                                     ValueAnimator valueAnimator2 = rmVar.M;

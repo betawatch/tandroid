@@ -12,7 +12,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k71 extends View {
     public ObjectAnimator E;
@@ -142,7 +142,7 @@ public final class k71 extends View {
         int w02 = org.telegram.ui.ActionBar.m6.w0(i7, h6Var);
         TextPaint textPaint = this.d;
         textPaint.setColor(w02);
-        int z10 = org.telegram.messenger.n10.z(28.0f, getMeasuredWidth() - this.h, 2);
+        int z10 = org.telegram.messenger.o10.z(28.0f, getMeasuredWidth() - this.h, 2);
         canvas2.drawText(this.f, org.telegram.messenger.g0.L(28.0f) + z10, org.telegram.messenger.g0.L(21.0f), textPaint);
         canvas2.save();
         canvas2.translate(z10, org.telegram.messenger.g0.L(7.0f));
@@ -204,7 +204,7 @@ public final class k71 extends View {
                     while (i10 < 2) {
                         paint.setColor(this.G[i10]);
                         RectF rectF5 = rectF3;
-                        canvas.drawArc(rectF5, (i10 * org.telegram.messenger.ks.K2) - 90, 180.0f, true, paint);
+                        canvas.drawArc(rectF5, (i10 * org.telegram.messenger.ls.K2) - 90, 180.0f, true, paint);
                         i10++;
                         rectF3 = rectF5;
                     }
@@ -226,7 +226,7 @@ public final class k71 extends View {
 
     @Override // android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(org.telegram.messenger.n10.C(56.0f, this.n, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_30));
+        super.onMeasure(org.telegram.messenger.o10.C(56.0f, this.n, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_30));
     }
 
     public void setDimAmount(float f10) {

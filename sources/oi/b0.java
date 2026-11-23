@@ -6,20 +6,20 @@ import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import org.telegram.messenger.au;
-import org.telegram.messenger.ev;
+import org.telegram.messenger.bu;
+import org.telegram.messenger.fv;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class b0 extends View {
-    public final au a;
+    public final bu a;
     public final int b;
     public boolean c;
     public boolean d;
-    public final ai.y0 e;
+    public final ai.c1 e;
     public final /* synthetic */ e0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -31,13 +31,13 @@ public final class b0 extends View {
         int d = i5.c.d(32.0f, org.telegram.messenger.g0.q.x, org.telegram.messenger.g0.L(240.0f));
         h6 h6Var = e0Var.r;
         kg.i0 i0Var = new kg.i0(this, 27);
-        ev evVar = new ev(i10, d, h6Var);
-        SpannableStringBuilder l10 = evVar.l(pageButton.text, ev.R(16, 13));
+        fv fvVar = new fv(i10, d, h6Var);
+        SpannableStringBuilder l10 = fvVar.l(pageButton.text, fv.R(16, 13));
         TL_keyboard.InlineButtonType inlineButtonType = pageButton.type;
-        au auVar = new au(evVar, d, l10, pageButton, inlineButtonType, pageButton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, false, false, false, false, Boolean.FALSE, i0Var);
-        this.a = auVar;
-        this.e = new ai.y0(this, i7, 19);
-        auVar.e = auVar.h();
+        bu buVar = new bu(fvVar, d, l10, pageButton, inlineButtonType, pageButton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, false, false, false, false, Boolean.FALSE, i0Var);
+        this.a = buVar;
+        this.e = new ai.c1(this, i7, 19);
+        buVar.e = buVar.h();
         setContentDescription(c6.l(pageButton.text));
         setClickable(true);
         setLongClickable(true);
@@ -61,16 +61,16 @@ public final class b0 extends View {
         super.onDraw(canvas);
         canvas.save();
         int height = getHeight();
-        au auVar = this.a;
-        canvas.translate(0.0f, (height - auVar.c()) / 2.0f);
-        auVar.a(canvas);
+        bu buVar = this.a;
+        canvas.translate(0.0f, (height - buVar.c()) / 2.0f);
+        buVar.a(canvas);
         canvas.restore();
     }
 
     @Override // android.view.View
     public final void onMeasure(int i7, int i10) {
-        au auVar = this.a;
-        setMeasuredDimension(auVar.e, org.telegram.messenger.g0.L(8.0f) + auVar.c());
+        bu buVar = this.a;
+        setMeasuredDimension(buVar.e, org.telegram.messenger.g0.L(8.0f) + buVar.c());
     }
 
     @Override // android.view.View
@@ -79,20 +79,20 @@ public final class b0 extends View {
         c0 c0Var;
         a aVar;
         int actionMasked = motionEvent.getActionMasked();
-        ai.y0 y0Var = this.e;
-        au auVar = this.a;
+        ai.c1 c1Var = this.e;
+        bu buVar = this.a;
         if (actionMasked == 0) {
             this.c = true;
             this.d = false;
-            auVar.m(true);
-            org.telegram.messenger.g0.h3(y0Var, ViewConfiguration.getLongPressTimeout());
+            buVar.m(true);
+            org.telegram.messenger.g0.h3(c1Var, ViewConfiguration.getLongPressTimeout());
             return true;
         }
         if (actionMasked == 1) {
             boolean z10 = this.c && !this.d;
             this.c = false;
-            auVar.m(false);
-            org.telegram.messenger.g0.r(y0Var);
+            buVar.m(false);
+            org.telegram.messenger.g0.r(c1Var);
             if (z10 && (c0Var = (e0Var = this.f).F) != null && (aVar = e0Var.a) != null) {
                 t3 t3Var = ((l3) c0Var).a;
                 TL_iv.PageBlock pageBlock = aVar.b;
@@ -133,14 +133,14 @@ public final class b0 extends View {
                     return super.onTouchEvent(motionEvent);
                 }
                 this.c = false;
-                auVar.m(false);
-                org.telegram.messenger.g0.r(y0Var);
+                buVar.m(false);
+                org.telegram.messenger.g0.r(c1Var);
                 return true;
             }
             if (motionEvent.getX() < 0.0f || motionEvent.getY() < 0.0f || motionEvent.getX() > getWidth() || motionEvent.getY() > getHeight()) {
                 this.c = false;
-                auVar.m(false);
-                org.telegram.messenger.g0.r(y0Var);
+                buVar.m(false);
+                org.telegram.messenger.g0.r(c1Var);
                 return true;
             }
         }

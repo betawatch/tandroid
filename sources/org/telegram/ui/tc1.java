@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class tc1 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -73,15 +73,15 @@ public final class tc1 extends org.telegram.ui.Components.dk0 {
             org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
             i10 = wallpapersListActivity.uploadImageRow;
             if (i7 == i10) {
-                n8Var.o(R.drawable.msg_photos, org.telegram.messenger.gd.N0(2131745460, null), true);
+                n8Var.o(R.drawable.msg_photos, org.telegram.messenger.hd.N0(2131745460, null), true);
                 return;
             }
             if (i7 == wallpapersListActivity.b) {
-                n8Var.o(R.drawable.msg_palette, org.telegram.messenger.gd.N0(2131745342, null), false);
+                n8Var.o(R.drawable.msg_palette, org.telegram.messenger.hd.N0(2131745342, null), false);
                 return;
             }
             if (i7 == wallpapersListActivity.e) {
-                n8Var.k(org.telegram.messenger.gd.N0(2131745912, null), false);
+                n8Var.k(org.telegram.messenger.hd.N0(2131745912, null), false);
                 return;
             } else {
                 if (i7 == wallpapersListActivity.h) {
@@ -98,7 +98,7 @@ public final class tc1 extends org.telegram.ui.Components.dk0 {
             }
             org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
             if (i7 == wallpapersListActivity.f) {
-                a9Var.setText(org.telegram.messenger.gd.N0(2131745909, null));
+                a9Var.setText(org.telegram.messenger.hd.N0(2131745909, null));
                 return;
             } else {
                 if (i7 == wallpapersListActivity.n) {

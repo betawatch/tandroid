@@ -3,10 +3,10 @@ package bi;
 import android.text.SpannableStringBuilder;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
@@ -14,9 +14,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cx;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v3 implements x10 {
+public final /* synthetic */ class v3 implements y10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
@@ -31,7 +31,7 @@ public final /* synthetic */ class v3 implements x10 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         String str;
         TLRPC.Chat chat;
@@ -51,7 +51,7 @@ public final /* synthetic */ class v3 implements x10 {
                     i4.t(2131749570, tL_messageActionStarGiftOnchainOffer.gift);
                     break;
                 } else {
-                    gc G = i4.h().G(R.raw.contact_check, 3, gd.a0(null, null, 2131749610, str2));
+                    gc G = i4.h().G(R.raw.contact_check, 3, hd.a0(null, null, 2131749610, str2));
                     G.t = true;
                     G.j();
                     break;
@@ -69,11 +69,11 @@ public final /* synthetic */ class v3 implements x10 {
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T != null) {
                     if (j3 >= 0) {
-                        TLRPC.User c22 = mp.u1(i10).c2(Long.valueOf(j3));
-                        str = o10.l(c22);
+                        TLRPC.User c22 = np.u1(i10).c2(Long.valueOf(j3));
+                        str = p10.l(c22);
                         chat = c22;
                     } else {
-                        TLRPC.Chat O0 = mp.u1(i10).O0(Long.valueOf(-j3));
+                        TLRPC.Chat O0 = np.u1(i10).O0(Long.valueOf(-j3));
                         if (O0 == null) {
                             str = "";
                             chat = O0;
@@ -83,7 +83,7 @@ public final /* synthetic */ class v3 implements x10 {
                         }
                     }
                     lc b02 = lc.b0(T);
-                    SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, bool.booleanValue() ? 2131752976 : 2131752975, str));
+                    SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(hd.a0(null, null, bool.booleanValue() ? 2131752976 : 2131752975, str));
                     b02.getClass();
                     b02.V(Arrays.asList(chat), W2, null, null).k(false);
                     break;

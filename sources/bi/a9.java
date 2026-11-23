@@ -1,25 +1,54 @@
 package bi;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.widget.FrameLayout;
+import android.graphics.PointF;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class a9 extends FrameLayout {
-    public final /* synthetic */ float a;
+public final class a9 extends v4.o0 {
+    public final PointF a = new PointF();
+    public final /* synthetic */ c9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a9(Context context, float f10) {
-        super(context);
-        this.a = f10;
+    public a9(c9 c9Var) {
+        this.b = c9Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    @Override // v4.o0
+    public final void f(Canvas canvas, RecyclerView recyclerView) {
+        float f10;
+        m3 m3Var;
+        float height = recyclerView.getHeight();
+        float width = recyclerView.getWidth();
+        c9 c9Var = this.b;
+        w8 w8Var = c9Var.p2;
+        v8 v8Var = c9Var.d2;
+        ek0 ek0Var = c9Var.o1;
+        PointF pointF = this.a;
+        float f11 = 0.0f;
+        if (jh.k.b(v8Var, ek0Var, pointF)) {
+            float f12 = pointF.x;
+            height = Math.min(height, pointF.y);
+            f11 = Math.max(0.0f, pointF.y + v8Var.getMeasuredHeight());
+            f10 = f12;
+            width = v8Var.getMeasuredWidth() + f12;
+        } else {
+            f10 = 0.0f;
+        }
+        if (jh.k.b(w8Var, ek0Var, pointF)) {
+            height = Math.min(height, pointF.y);
+            f11 = Math.max(f11, pointF.y + w8Var.getMeasuredHeight() + org.telegram.messenger.g0.L(12.0f));
+        }
+        if (height >= f11 || (m3Var = v8Var.M) == null) {
+            return;
+        }
+        float height2 = (f11 - height) / m3Var.getHeight();
         canvas.save();
-        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
-        super.dispatchDraw(canvas);
+        canvas.clipRect(f10, height, width, f11);
+        canvas.translate(f10, height);
+        canvas.scale(height2, height2);
+        v8Var.M.draw(canvas);
         canvas.restore();
     }
 }

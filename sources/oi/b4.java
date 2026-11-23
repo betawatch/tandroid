@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.gz0;
 import org.telegram.ui.Components.u41;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class b4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -91,35 +91,35 @@ public abstract class b4 {
                             }
                             i7 = -1;
                             break;
-                        case ks.i1 /* 97 */:
+                        case ls.i1 /* 97 */:
                             if (str3.equals("a")) {
                                 i7 = 4;
                                 break;
                             }
                             i7 = -1;
                             break;
-                        case ks.j1 /* 98 */:
+                        case ls.j1 /* 98 */:
                             if (str3.equals("b")) {
                                 i7 = 5;
                                 break;
                             }
                             i7 = -1;
                             break;
-                        case ks.q1 /* 105 */:
+                        case ls.q1 /* 105 */:
                             if (str3.equals("i")) {
                                 i7 = 6;
                                 break;
                             }
                             i7 = -1;
                             break;
-                        case ks.A1 /* 115 */:
+                        case ls.A1 /* 115 */:
                             if (str3.equals("s")) {
                                 i7 = 7;
                                 break;
                             }
                             i7 = -1;
                             break;
-                        case ks.C1 /* 117 */:
+                        case ls.C1 /* 117 */:
                             if (str3.equals("u")) {
                                 i7 = 8;
                                 break;
@@ -253,7 +253,7 @@ public abstract class b4 {
                                     }
                                     i10 = -1;
                                     break;
-                                case ks.x1 /* 112 */:
+                                case ls.x1 /* 112 */:
                                     if (str3.equals("p")) {
                                         i10 = 3;
                                         break;
@@ -680,35 +680,35 @@ public abstract class b4 {
                                                             }
                                                             i14 = -1;
                                                             break;
-                                                        case ks.i1 /* 97 */:
+                                                        case ls.i1 /* 97 */:
                                                             if (str4.equals("a")) {
                                                                 i14 = 4;
                                                                 break;
                                                             }
                                                             i14 = -1;
                                                             break;
-                                                        case ks.j1 /* 98 */:
+                                                        case ls.j1 /* 98 */:
                                                             if (str4.equals("b")) {
                                                                 i14 = 5;
                                                                 break;
                                                             }
                                                             i14 = -1;
                                                             break;
-                                                        case ks.q1 /* 105 */:
+                                                        case ls.q1 /* 105 */:
                                                             if (str4.equals("i")) {
                                                                 i14 = 6;
                                                                 break;
                                                             }
                                                             i14 = -1;
                                                             break;
-                                                        case ks.A1 /* 115 */:
+                                                        case ls.A1 /* 115 */:
                                                             if (str4.equals("s")) {
                                                                 i14 = 7;
                                                                 break;
                                                             }
                                                             i14 = -1;
                                                             break;
-                                                        case ks.C1 /* 117 */:
+                                                        case ls.C1 /* 117 */:
                                                             if (str4.equals("u")) {
                                                                 i14 = 8;
                                                                 break;
@@ -2053,7 +2053,7 @@ public abstract class b4 {
         if (i7 != 0) {
             fz0 fz0Var = new fz0();
             fz0Var.a = i7 & 114975;
-            spannableStringBuilder.setSpan(new gz0(fz0Var, org.telegram.messenger.g0.L(bz.W0)), length, length2, 33);
+            spannableStringBuilder.setSpan(new gz0(fz0Var, org.telegram.messenger.g0.L(cz.W0)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(c6.k(str2), length, length2, 33);

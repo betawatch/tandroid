@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.we;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.xe;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class o0 extends FrameLayout {
     public final og.g E;
@@ -52,7 +52,7 @@ public abstract class o0 extends FrameLayout {
         addView(i0Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;
-        addView(frameLayout, c8.ma.e(-1, -1, ks.E1));
+        addView(frameLayout, c8.ma.e(-1, -1, ls.E1));
         og.f fVar = new og.f(context);
         this.n = fVar;
         fVar.setListener(new j0(i10, this));
@@ -65,9 +65,9 @@ public abstract class o0 extends FrameLayout {
         final int i11 = 0;
         textView.setBackground(org.telegram.ui.ActionBar.m6.h0(-12763843, 0, -1));
         textView.setTextColor(-1);
-        textView.setText(gd.N0(2131752577, null));
+        textView.setText(hd.N0(2131752577, null));
         textView.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
-        frameLayout2.addView(textView, c8.ma.e(-2, -1, ks.A1));
+        frameLayout2.addView(textView, c8.ma.e(-2, -1, ls.A1));
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: hi.m0
             public final /* synthetic */ o0 b;
 
@@ -93,7 +93,7 @@ public abstract class o0 extends FrameLayout {
                         o0 o0Var2 = this.b;
                         tg.p1 p1Var = o0Var2.b;
                         if (p1Var != null) {
-                            p1Var.H0 = new we();
+                            p1Var.H0 = new xe();
                             o0Var2.h.b(o0Var2.b.H0);
                             tg.p1 p1Var2 = o0Var2.b;
                             p1Var2.H0.z = p1Var2.getOrientation();
@@ -113,9 +113,9 @@ public abstract class o0 extends FrameLayout {
         textView2.setTypeface(org.telegram.messenger.g0.o());
         textView2.setBackground(org.telegram.ui.ActionBar.m6.h0(-12763843, 0, -1));
         textView2.setTextColor(-1);
-        textView2.setText(gd.N0(2131751684, null));
+        textView2.setText(hd.N0(2131751684, null));
         textView2.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
-        frameLayout2.addView(textView2, c8.ma.e(-2, -1, ks.y1));
+        frameLayout2.addView(textView2, c8.ma.e(-2, -1, ls.y1));
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: hi.m0
             public final /* synthetic */ o0 b;
 
@@ -141,7 +141,7 @@ public abstract class o0 extends FrameLayout {
                         o0 o0Var2 = this.b;
                         tg.p1 p1Var = o0Var2.b;
                         if (p1Var != null) {
-                            p1Var.H0 = new we();
+                            p1Var.H0 = new xe();
                             o0Var2.h.b(o0Var2.b.H0);
                             tg.p1 p1Var2 = o0Var2.b;
                             p1Var2.H0.z = p1Var2.getOrientation();
@@ -161,9 +161,9 @@ public abstract class o0 extends FrameLayout {
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setBackground(org.telegram.ui.ActionBar.m6.h0(-12763843, 0, -1));
         textView3.setTextColor(-15098625);
-        textView3.setText(gd.N0(2131744447, null));
+        textView3.setText(hd.N0(2131744445, null));
         textView3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
-        frameLayout2.addView(textView3, c8.ma.e(-2, -1, ks.C1));
+        frameLayout2.addView(textView3, c8.ma.e(-2, -1, ls.C1));
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: hi.m0
             public final /* synthetic */ o0 b;
 
@@ -189,7 +189,7 @@ public abstract class o0 extends FrameLayout {
                         o0 o0Var2 = this.b;
                         tg.p1 p1Var = o0Var2.b;
                         if (p1Var != null) {
-                            p1Var.H0 = new we();
+                            p1Var.H0 = new xe();
                             o0Var2.h.b(o0Var2.b.H0);
                             tg.p1 p1Var2 = o0Var2.b;
                             p1Var2.H0.z = p1Var2.getOrientation();
@@ -255,20 +255,20 @@ public abstract class o0 extends FrameLayout {
         getLocationOnScreen(this.w);
         this.a.getLocationOnScreen(this.x);
         p1Var.getLocationOnScreen(this.y);
-        we weVar = p1Var.H0;
-        if (weVar == null) {
-            weVar = null;
+        xe xeVar = p1Var.H0;
+        if (xeVar == null) {
+            xeVar = null;
         }
-        i0Var.p(p1Var.getOrientation(), this.E, weVar);
+        i0Var.p(p1Var.getOrientation(), this.E, xeVar);
         float rotation = i0Var.getRotation();
         og.f fVar = this.n;
         fVar.setRotation(rotation);
         org.telegram.ui.Components.d6 d6Var = this.c;
-        if (weVar != null) {
-            fVar.b(weVar.d);
-            fVar.setRotated(weVar.k != 0);
-            fVar.setMirrored(weVar.l);
-            d6Var.f(weVar.l, false);
+        if (xeVar != null) {
+            fVar.b(xeVar.d);
+            fVar.setRotated(xeVar.k != 0);
+            fVar.setMirrored(xeVar.l);
+            d6Var.f(xeVar.l, false);
         } else {
             fVar.b(0.0f);
             fVar.setRotated(false);

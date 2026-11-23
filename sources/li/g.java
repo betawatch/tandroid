@@ -8,10 +8,10 @@ import c8.ma;
 import hi.s6;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.messenger.z3;
 import org.telegram.tgnet.ConnectionsManager;
@@ -29,9 +29,9 @@ import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class g extends g2 implements fs {
+public final class g extends g2 implements gs {
     public ui.c a;
     public long b;
     public TLRPC.Chat c;
@@ -46,7 +46,7 @@ public final class g extends g2 implements fs {
         g gVar2;
         if (o41Var.d == 1) {
             gVar2 = gVar;
-            c5.O(gVar.getParentActivity(), gVar2, gd.N0(2131751894, null), null, gd.N0(2131751895, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, gd.N0(2131751741, null), gVar.resourceProvider, new b(gVar));
+            c5.O(gVar.getParentActivity(), gVar2, hd.N0(2131751894, null), null, hd.N0(2131751895, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, hd.N0(2131751741, null), gVar.resourceProvider, new b(gVar));
         } else {
             gVar2 = gVar;
         }
@@ -65,7 +65,7 @@ public final class g extends g2 implements fs {
             getMessagesController().T(getParentActivity(), -this.b, this, new a3.g(this, t1Var, str, z10, 3), null);
             return;
         }
-        mp messagesController = getMessagesController();
+        np messagesController = getMessagesController();
         long j3 = this.b;
         a aVar = new a(this, 1);
         messagesController.getClass();
@@ -80,7 +80,7 @@ public final class g extends g2 implements fs {
         if (v3.T(this.c) || this.d != null) {
             int i7 = this.currentAccount;
             long j10 = -this.b;
-            mp.u1(i7).W2(-j10, j3, false, z10, new bi.n(this, j10, 1));
+            np.u1(i7).W2(-j10, j3, false, z10, new bi.n(this, j10, 1));
         } else {
             t1 t1Var = new t1(3, getParentActivity(), null);
             t1Var.r(250L);
@@ -108,8 +108,8 @@ public final class g extends g2 implements fs {
         t6.h(m6.a7, frameLayout, null);
         f fVar = new f(context, this.resourceProvider);
         this.h = fVar;
-        fVar.setTitle(gd.N0(2131751835, null));
-        this.h.setSubtitle(gd.N0(this.d != null ? 2131751921 : v3.V(this.c) ? 2131751920 : 2131751919, null));
+        fVar.setTitle(hd.N0(2131751835, null));
+        this.h.setSubtitle(hd.N0(this.d != null ? 2131751921 : v3.V(this.c) ? 2131751920 : 2131751919, null));
         this.h.setTag(-33024);
         TLRPC.User user = this.d;
         if (user != null) {
@@ -135,9 +135,9 @@ public final class g extends g2 implements fs {
         return frameLayout2;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.T) {
+        if (i7 == ls.T) {
             TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
             long j3 = chatFull.id;
             View B1 = this.f.B1((int) (j3 ^ (j3 >>> 32)));
@@ -147,7 +147,7 @@ public final class g extends g2 implements fs {
             }
             h6 h6Var = (h6) B1;
             ArrayList<TL_communities.CommunityPeer> arrayList = chatFull.linked_peers;
-            h6Var.setSubLabel(gd.G(arrayList != null ? arrayList.size() : 0, "Chats", new Object[0]));
+            h6Var.setSubLabel(hd.G(arrayList != null ? arrayList.size() : 0, "Chats", new Object[0]));
         }
     }
 
@@ -162,15 +162,15 @@ public final class g extends g2 implements fs {
         this.c = getMessagesController().O0(Long.valueOf(-this.b));
         this.d = getMessagesController().c2(Long.valueOf(this.b));
         this.n = getMessagesController().W7;
-        mp messagesController = getMessagesController();
+        np messagesController = getMessagesController();
         s6 s6Var = new s6(this, 14);
         int i7 = this.classGuid;
         messagesController.getClass();
         messagesController.getConnectionsManager().bindRequestToGuid(messagesController.getConnectionsManager().sendRequestTyped(new TL_communities.TL_communities_getJoinedCommunities(), new d3.b(1), new z3(4, messagesController, s6Var)), i7);
-        ks notificationCenter = getNotificationCenter();
+        ls notificationCenter = getNotificationCenter();
         notificationCenter.getClass();
         xi.e eVar = new xi.e(notificationCenter, this);
-        eVar.c(ks.T);
+        eVar.c(ls.T);
         this.r = eVar;
         return super.onFragmentCreate();
     }

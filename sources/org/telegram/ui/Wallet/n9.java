@@ -5,7 +5,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n9 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class n9 implements Runnable {
                 daVar.presentFragment(bn.ua(daVar.f.id));
                 break;
             default:
-                org.telegram.messenger.f3.n(null, 2131742957, lc.b0(daVar), R.raw.copy, 36);
+                org.telegram.messenger.f3.n(null, 2131742955, lc.b0(daVar), R.raw.copy, 36);
                 break;
         }
     }

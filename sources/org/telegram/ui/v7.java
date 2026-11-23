@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class v7 implements fi.b9, org.telegram.messenger.lr {
+public final class v7 implements fi.b9, org.telegram.messenger.mr {
     public final /* synthetic */ i8 a;
 
     public /* synthetic */ v7(i8 i8Var) {
         this.a = i8Var;
     }
 
-    @Override // org.telegram.messenger.lr
+    @Override // org.telegram.messenger.mr
     public void d(boolean z10) {
         org.telegram.ui.ActionBar.r4 r4Var;
         org.telegram.ui.ActionBar.r4 r4Var2;

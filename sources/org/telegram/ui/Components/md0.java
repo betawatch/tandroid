@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class md0 extends org.telegram.ui.ActionBar.w2 {
     public static final /* synthetic */ int J1 = 0;
@@ -211,7 +211,7 @@ public final class md0 extends org.telegram.ui.ActionBar.w2 {
                     this.o1.addView(u10, c8.ma.o(-1, -2));
                     if ((i10 >= this.A1 && i10 < this.B1) || (i10 >= this.C1 && i10 < this.D1)) {
                         u10.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.N0(false));
-                        u10.setOnClickListener(new bi.i5(this, i10, u10, 14));
+                        u10.setOnClickListener(new bi.h5(this, i10, u10, 14));
                         u10.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.dd0
                             @Override // android.view.View.OnLongClickListener
                             public final boolean onLongClick(View view) {
@@ -239,13 +239,13 @@ public final class md0 extends org.telegram.ui.ActionBar.w2 {
                                     yb ybVar = new yb(context, h6Var2);
                                     int i18 = f0Var4.c;
                                     if (i18 == 0) {
-                                        ybVar.b.setText(org.telegram.messenger.gd.N0(2131747101, null));
+                                        ybVar.b.setText(org.telegram.messenger.hd.N0(2131747101, null));
                                         ybVar.a.setImageResource(R.drawable.msg_calls);
                                     } else if (i18 == 1) {
-                                        ybVar.b.setText(org.telegram.messenger.gd.N0(2131751191, null));
+                                        ybVar.b.setText(org.telegram.messenger.hd.N0(2131751191, null));
                                         ybVar.a.setImageResource(R.drawable.msg_mention);
                                     } else {
-                                        ybVar.b.setText(org.telegram.messenger.gd.N0(2131743953, null));
+                                        ybVar.b.setText(org.telegram.messenger.hd.N0(2131743951, null));
                                         ybVar.a.setImageResource(R.drawable.msg_info);
                                     }
                                     if (org.telegram.messenger.g0.G3()) {
@@ -268,9 +268,9 @@ public final class md0 extends org.telegram.ui.ActionBar.w2 {
                 gd0Var.setOccupyStatusBar(false);
                 gd0Var.setAlpha(0.0f);
                 if (this.E1) {
-                    gd0Var.setTitle(org.telegram.messenger.gd.N0(2131745264, null));
+                    gd0Var.setTitle(org.telegram.messenger.hd.N0(2131745264, null));
                 } else {
-                    gd0Var.setTitle(org.telegram.messenger.gd.N0(2131754446, null));
+                    gd0Var.setTitle(org.telegram.messenger.hd.N0(2131754446, null));
                 }
                 this.b.addView(gd0Var, c8.ma.c(-2.0f, -1));
                 gd0Var.setActionBarMenuOnItemClick(new hd0(this));
@@ -292,9 +292,9 @@ public final class md0 extends org.telegram.ui.ActionBar.w2 {
                 textView.setTextColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ji, this.J0));
                 textView.setTextSize(1, 14.0f);
                 if (this.E1) {
-                    textView.setText(org.telegram.messenger.gd.N0(2131745264, null));
+                    textView.setText(org.telegram.messenger.hd.N0(2131745264, null));
                 } else {
-                    textView.setText(org.telegram.messenger.gd.N0(2131754446, null));
+                    textView.setText(org.telegram.messenger.hd.N0(2131754446, null));
                 }
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 int L = org.telegram.messenger.g0.L(8.0f);

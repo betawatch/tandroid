@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.au;
+import org.telegram.messenger.bu;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Cells.i4;
 import org.telegram.ui.Cells.n7;
@@ -31,7 +31,7 @@ import org.telegram.ui.t4;
 import org.telegram.ui.t5;
 import org.telegram.ui.t9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final class m3 extends AnimatorListenerAdapter {
                 }
             case 8:
                 super.onAnimationEnd(animator);
-                ((au) this.b).w = null;
+                ((bu) this.b).w = null;
                 break;
             case 9:
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;

@@ -1,27 +1,27 @@
 package jg;
 
 import bi.k2;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class z0 implements Runnable {
     public final /* synthetic */ String a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ mp c;
-    public final /* synthetic */ tr d;
+    public final /* synthetic */ np c;
+    public final /* synthetic */ ur d;
     public final /* synthetic */ h1 e;
 
-    public z0(h1 h1Var, String str, String str2, mp mpVar, tr trVar) {
+    public z0(h1 h1Var, String str, String str2, np npVar, ur urVar) {
         this.e = h1Var;
         this.a = str;
         this.b = str2;
-        this.c = mpVar;
-        this.d = trVar;
+        this.c = npVar;
+        this.d = urVar;
     }
 
     @Override // java.lang.Runnable
@@ -41,14 +41,14 @@ public final class z0 implements Runnable {
         }
         String str = this.b;
         h1Var.r0 = str;
-        mp mpVar = this.c;
-        TLObject h22 = mpVar.h2(str);
+        np npVar = this.c;
+        TLObject h22 = npVar.h2(str);
         if (h22 instanceof TLRPC.User) {
             h1Var.R((TLRPC.User) h22);
             return;
         }
         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
         tL_contacts_resolveUsername.username = h1Var.r0;
-        h1Var.u0 = ConnectionsManager.getInstance(h1Var.f).sendRequest(tL_contacts_resolveUsername, new k2(this, str, mpVar, this.d, 8));
+        h1Var.u0 = ConnectionsManager.getInstance(h1Var.f).sendRequest(tL_contacts_resolveUsername, new k2(this, str, npVar, this.d, 8));
     }
 }

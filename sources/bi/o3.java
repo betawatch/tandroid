@@ -1,6 +1,6 @@
 package bi;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o3 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,9 +37,9 @@ public final /* synthetic */ class o3 implements Runnable {
                 }
                 if (!s3Var2.k2) {
                     s3Var2.k2 = true;
-                    ai.c1 c1Var = s3Var2.t2;
-                    if (c1Var != null) {
-                        c1Var.run();
+                    ai.j1 j1Var = s3Var2.t2;
+                    if (j1Var != null) {
+                        j1Var.run();
                         break;
                     }
                 }

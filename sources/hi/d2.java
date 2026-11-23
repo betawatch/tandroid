@@ -6,15 +6,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.hv0;
 import org.telegram.ui.Components.ul0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -28,7 +28,7 @@ public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b
     public final ImageView r;
     public boolean s;
     public boolean w;
-    public q10 x;
+    public r10 x;
 
     public d2(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
@@ -45,7 +45,7 @@ public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b
         final int i10 = 1;
         frameLayout.setClipToOutline(true);
         frameLayout.setOutlineProvider(new bg.q0(3));
-        addView(frameLayout, c8.ma.d(-1, 36.0f, ks.E1, 10.0f, 6.0f, 10.0f, 8.0f));
+        addView(frameLayout, c8.ma.d(-1, 36.0f, ls.E1, 10.0f, 6.0f, 10.0f, 8.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout.addView(frameLayout2, c8.ma.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
@@ -71,7 +71,7 @@ public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b
         iVar.setLines(1);
         iVar.setSingleLine(true);
         iVar.setImeOptions(268435459);
-        iVar.setHint(gd.N0(2131745640, null));
+        iVar.setHint(hd.N0(2131745640, null));
         int i13 = org.telegram.ui.ActionBar.m6.Di;
         org.telegram.ui.ActionBar.t6.l(iVar, 30, i13, h6Var);
         org.telegram.ui.ActionBar.t6.l(iVar, 36, i13, h6Var);
@@ -174,14 +174,14 @@ public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b
             ah.i iVar = this.e;
             c2Var2.setDontOccupyWidth(org.telegram.messenger.g0.L(16.0f) + ((int) iVar.getPaint().measureText(((Object) iVar.getHint()) + "")));
             final int i10 = 0;
-            this.h.setOnScrollIntoOccupiedWidth(new x10(this) { // from class: hi.a2
+            this.h.setOnScrollIntoOccupiedWidth(new y10(this) { // from class: hi.a2
                 public final /* synthetic */ d2 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.messenger.x10
+                @Override // org.telegram.messenger.y10
                 public final void a(Object obj) {
                     switch (i10) {
                         case 0:
@@ -200,16 +200,16 @@ public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b
                                     d2Var2.h.I1(hv0Var);
                                     String str = hv0Var.a;
                                     int categoryIndex = d2Var2.h.getCategoryIndex();
-                                    q10 q10Var = d2Var2.x;
-                                    if (q10Var != null) {
-                                        q10Var.a(str, Integer.valueOf(categoryIndex));
+                                    r10 r10Var = d2Var2.x;
+                                    if (r10Var != null) {
+                                        r10Var.a(str, Integer.valueOf(categoryIndex));
                                         break;
                                     }
                                 } else {
                                     d2Var2.h.I1(null);
-                                    q10 q10Var2 = d2Var2.x;
-                                    if (q10Var2 != null) {
-                                        q10Var2.a(null, -1);
+                                    r10 r10Var2 = d2Var2.x;
+                                    if (r10Var2 != null) {
+                                        r10Var2.a(null, -1);
                                         break;
                                     }
                                 }
@@ -219,14 +219,14 @@ public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b
                 }
             });
             final int i11 = 1;
-            this.h.setOnCategoryClick(new x10(this) { // from class: hi.a2
+            this.h.setOnCategoryClick(new y10(this) { // from class: hi.a2
                 public final /* synthetic */ d2 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.messenger.x10
+                @Override // org.telegram.messenger.y10
                 public final void a(Object obj) {
                     switch (i11) {
                         case 0:
@@ -245,16 +245,16 @@ public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b
                                     d2Var2.h.I1(hv0Var);
                                     String str = hv0Var.a;
                                     int categoryIndex = d2Var2.h.getCategoryIndex();
-                                    q10 q10Var = d2Var2.x;
-                                    if (q10Var != null) {
-                                        q10Var.a(str, Integer.valueOf(categoryIndex));
+                                    r10 r10Var = d2Var2.x;
+                                    if (r10Var != null) {
+                                        r10Var.a(str, Integer.valueOf(categoryIndex));
                                         break;
                                     }
                                 } else {
                                     d2Var2.h.I1(null);
-                                    q10 q10Var2 = d2Var2.x;
-                                    if (q10Var2 != null) {
-                                        q10Var2.a(null, -1);
+                                    r10 r10Var2 = d2Var2.x;
+                                    if (r10Var2 != null) {
+                                        r10Var2.a(null, -1);
                                         break;
                                     }
                                 }
@@ -269,9 +269,9 @@ public final class d2 extends FrameLayout implements org.telegram.ui.ActionBar.b
 
     public final void b() {
         this.e.setText("");
-        q10 q10Var = this.x;
-        if (q10Var != null) {
-            q10Var.a(null, -1);
+        r10 r10Var = this.x;
+        if (r10Var != null) {
+            r10Var.a(null, -1);
         }
         c2 c2Var = this.h;
         if (c2Var != null) {

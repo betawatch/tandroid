@@ -39,9 +39,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class gd0 extends org.telegram.ui.Components.iu0 implements org.telegram.messenger.fs {
+public final class gd0 extends org.telegram.ui.Components.iu0 implements org.telegram.messenger.gs {
     public static final /* synthetic */ int w0 = 0;
     public final FrameLayout E;
     public final TextView F;
@@ -132,12 +132,12 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         TextView textView2 = new TextView(context);
         this.r = textView2;
         i5.c.x(textView2, 1, 18.0f);
-        textView2.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        textView2.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
         textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView2.setGravity(49);
-        String N0 = de0Var.G != 1 ? null : org.telegram.messenger.gd.N0(2131752576, null);
+        String N0 = de0Var.G != 1 ? null : org.telegram.messenger.hd.N0(2131752576, null);
         if (i7 == 11) {
-            textView2.setText(N0 == null ? org.telegram.messenger.gd.N0(2131748218, null) : N0);
+            textView2.setText(N0 == null ? org.telegram.messenger.hd.N0(2131748218, null) : N0);
             FrameLayout frameLayout = new FrameLayout(context);
             ImageView imageView = new ImageView(context);
             this.M = imageView;
@@ -154,7 +154,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
             textView3.setTextSize(1, 14.0f);
             textView3.setGravity(1);
             textView3.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-            textView3.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131748220, null)));
+            textView3.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131748220, null)));
             addView(textView3, c8.ma.t(-1, -2, 49, 36, 16, 36, 0));
             dd0 dd0Var = new dd0(this, context, 0);
             this.f = dd0Var;
@@ -174,7 +174,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
             textView5.setTextSize(1, 14.0f);
             textView5.setGravity(1);
             textView5.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-            textView5.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131748219, null)));
+            textView5.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131748219, null)));
             addView(textView5, c8.ma.t(-1, -2, 49, 36, 28, 36, 12));
         } else {
             if (i7 == 3) {
@@ -194,7 +194,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                 this.a = oh0Var;
                 rh0Var.setAnimation(oh0Var);
                 frameLayout3.addView(rh0Var, c8.ma.c(64.0f, 64));
-                textView2.setText(N0 == null ? org.telegram.messenger.gd.N0(2131742563, null) : N0);
+                textView2.setText(N0 == null ? org.telegram.messenger.hd.N0(2131742561, null) : N0);
                 linearLayout.addView(textView2, c8.ma.t(-2, -2, 1, 0, 16, 0, 0));
                 linearLayout.addView(textView, c8.ma.t(-2, -2, 1, 0, 8, 0, 0));
                 viewGroup = frameLayout2;
@@ -242,7 +242,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                                     if (i15 != 4 && i15 != 2 && i15 != 17 && i15 != 16 && i15 != 11 && i15 != 15) {
                                         if (i15 == 3) {
                                             org.telegram.messenger.g0.C3(false);
-                                            org.telegram.messenger.ks.e().n(gd0Var, org.telegram.messenger.ks.j4);
+                                            org.telegram.messenger.ls.e().n(gd0Var, org.telegram.messenger.ls.j4);
                                             gd0Var.f0 = false;
                                             gd0Var.t();
                                             gd0Var.l0 = false;
@@ -251,9 +251,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                                         }
                                     } else {
                                         if (i15 == 4 || i15 == 11) {
-                                            ed0Var.setText(org.telegram.messenger.gd.N0(2131752585, null));
+                                            ed0Var.setText(org.telegram.messenger.hd.N0(2131752585, null));
                                         } else {
-                                            ed0Var.setText(org.telegram.messenger.gd.N0(2131745381, null));
+                                            ed0Var.setText(org.telegram.messenger.hd.N0(2131745381, null));
                                         }
                                         Bundle bundle = new Bundle();
                                         bundle.putString("phone", gd0Var.b);
@@ -319,7 +319,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                                     if (i15 != 4 && i15 != 2 && i15 != 17 && i15 != 16 && i15 != 11 && i15 != 15) {
                                         if (i15 == 3) {
                                             org.telegram.messenger.g0.C3(false);
-                                            org.telegram.messenger.ks.e().n(gd0Var, org.telegram.messenger.ks.j4);
+                                            org.telegram.messenger.ls.e().n(gd0Var, org.telegram.messenger.ls.j4);
                                             gd0Var.f0 = false;
                                             gd0Var.t();
                                             gd0Var.l0 = false;
@@ -328,9 +328,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                                         }
                                     } else {
                                         if (i15 == 4 || i15 == 11) {
-                                            ed0Var2.setText(org.telegram.messenger.gd.N0(2131752585, null));
+                                            ed0Var2.setText(org.telegram.messenger.hd.N0(2131752585, null));
                                         } else {
-                                            ed0Var2.setText(org.telegram.messenger.gd.N0(2131745381, null));
+                                            ed0Var2.setText(org.telegram.messenger.hd.N0(2131745381, null));
                                         }
                                         Bundle bundle = new Bundle();
                                         bundle.putString("phone", gd0Var.b);
@@ -428,7 +428,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                                         if (i152 != 4 && i152 != 2 && i152 != 17 && i152 != 16 && i152 != 11 && i152 != 15) {
                                             if (i152 == 3) {
                                                 org.telegram.messenger.g0.C3(false);
-                                                org.telegram.messenger.ks.e().n(gd0Var, org.telegram.messenger.ks.j4);
+                                                org.telegram.messenger.ls.e().n(gd0Var, org.telegram.messenger.ls.j4);
                                                 gd0Var.f0 = false;
                                                 gd0Var.t();
                                                 gd0Var.l0 = false;
@@ -437,9 +437,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                                             }
                                         } else {
                                             if (i152 == 4 || i152 == 11) {
-                                                ed0Var22.setText(org.telegram.messenger.gd.N0(2131752585, null));
+                                                ed0Var22.setText(org.telegram.messenger.hd.N0(2131752585, null));
                                             } else {
-                                                ed0Var22.setText(org.telegram.messenger.gd.N0(2131745381, null));
+                                                ed0Var22.setText(org.telegram.messenger.hd.N0(2131745381, null));
                                             }
                                             Bundle bundle = new Bundle();
                                             bundle.putString("phone", gd0Var.b);
@@ -473,7 +473,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                     rh0Var2.f(R.raw.fragment, 36, 36, null);
                     linearLayout2.addView(rh0Var2, c8.ma.t(36, 36, 16, 0, 0, 2, 0));
                     TextView textView6 = new TextView(context);
-                    textView6.setText(org.telegram.messenger.gd.N0(2131747611, null));
+                    textView6.setText(org.telegram.messenger.hd.N0(2131747611, null));
                     textView6.setTextColor(-1);
                     textView6.setTextSize(1, 15.0f);
                     textView6.setGravity(17);
@@ -482,7 +482,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                 }
                 TextView textView7 = new TextView(context);
                 this.F = textView7;
-                textView7.setText(org.telegram.messenger.gd.N0(2131742597, null));
+                textView7.setText(org.telegram.messenger.hd.N0(2131742595, null));
                 textView7.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                 textView7.setTextSize(1, 15.0f);
                 textView7.setGravity(49);
@@ -524,7 +524,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
             }
             frameLayout6.addView(rh0Var3, c8.ma.d(i16, i16, 51, 0.0f, 0.0f, 0.0f, (i7 != 1 || org.telegram.messenger.g0.O1()) ? 0.0f : -org.telegram.messenger.g0.L(16.0f)));
             if (N0 == null) {
-                N0 = org.telegram.messenger.gd.N0(i7 == 1 ? 2131745376 : 2131745370, null);
+                N0 = org.telegram.messenger.hd.N0(i7 == 1 ? 2131745376 : 2131745370, null);
             }
             textView2.setText(N0);
             addView(textView2, c8.ma.t(-2, -2, 49, 0, 18, 0, 0));
@@ -572,7 +572,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                             if (i152 != 4 && i152 != 2 && i152 != 17 && i152 != 16 && i152 != 11 && i152 != 15) {
                                 if (i152 == 3) {
                                     org.telegram.messenger.g0.C3(false);
-                                    org.telegram.messenger.ks.e().n(gd0Var, org.telegram.messenger.ks.j4);
+                                    org.telegram.messenger.ls.e().n(gd0Var, org.telegram.messenger.ls.j4);
                                     gd0Var.f0 = false;
                                     gd0Var.t();
                                     gd0Var.l0 = false;
@@ -581,9 +581,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                                 }
                             } else {
                                 if (i152 == 4 || i152 == 11) {
-                                    ed0Var22.setText(org.telegram.messenger.gd.N0(2131752585, null));
+                                    ed0Var22.setText(org.telegram.messenger.hd.N0(2131752585, null));
                                 } else {
-                                    ed0Var22.setText(org.telegram.messenger.gd.N0(2131745381, null));
+                                    ed0Var22.setText(org.telegram.messenger.hd.N0(2131745381, null));
                                 }
                                 Bundle bundle = new Bundle();
                                 bundle.putString("phone", gd0Var.b);
@@ -649,7 +649,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                             if (i152 != 4 && i152 != 2 && i152 != 17 && i152 != 16 && i152 != 11 && i152 != 15) {
                                 if (i152 == 3) {
                                     org.telegram.messenger.g0.C3(false);
-                                    org.telegram.messenger.ks.e().n(gd0Var, org.telegram.messenger.ks.j4);
+                                    org.telegram.messenger.ls.e().n(gd0Var, org.telegram.messenger.ls.j4);
                                     gd0Var.f0 = false;
                                     gd0Var.t();
                                     gd0Var.l0 = false;
@@ -658,9 +658,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                                 }
                             } else {
                                 if (i152 == 4 || i152 == 11) {
-                                    ed0Var22.setText(org.telegram.messenger.gd.N0(2131752585, null));
+                                    ed0Var22.setText(org.telegram.messenger.hd.N0(2131752585, null));
                                 } else {
-                                    ed0Var22.setText(org.telegram.messenger.gd.N0(2131745381, null));
+                                    ed0Var22.setText(org.telegram.messenger.hd.N0(2131745381, null));
                                 }
                                 Bundle bundle = new Bundle();
                                 bundle.putString("phone", gd0Var.b);
@@ -695,7 +695,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         }
         TextView textView72 = new TextView(context);
         this.F = textView72;
-        textView72.setText(org.telegram.messenger.gd.N0(2131742597, null));
+        textView72.setText(org.telegram.messenger.hd.N0(2131742595, null));
         textView72.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView72.setTextSize(1, 15.0f);
         textView72.setGravity(49);
@@ -892,7 +892,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
             intent.putExtra("android.intent.extra.TEXT", sb3.toString());
             gd0Var.getContext().startActivity(Intent.createChooser(intent, "Send email..."));
         } catch (Exception unused2) {
-            gd0Var.v0.D1(org.telegram.messenger.gd.N0(R.string.AppName, null), org.telegram.messenger.gd.N0(2131748006, "NoMailInstalled"));
+            gd0Var.v0.D1(org.telegram.messenger.hd.N0(R.string.AppName, null), org.telegram.messenger.hd.N0(2131748006, "NoMailInstalled"));
         }
     }
 
@@ -944,12 +944,12 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         }
         if (!z10) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(de0Var.getParentActivity());
-            String N0 = org.telegram.messenger.gd.N0(2131751251, null);
+            String N0 = org.telegram.messenger.hd.N0(2131751251, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("EditNumberInfo", null, 2131751250, this.b));
-            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131752029, null), null);
-            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751323, null), new vc0(this, i10));
+            t1Var.U = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("EditNumberInfo", null, 2131751250, this.b));
+            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131752029, null), null);
+            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751323, null), new vc0(this, i10));
             de0Var.showDialog(t1Var);
             return false;
         }
@@ -963,16 +963,16 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         u();
         t();
         this.I = null;
-        int i12 = org.telegram.messenger.ks.j4;
+        int i12 = org.telegram.messenger.ls.j4;
         int i13 = this.i0;
         if (i13 == 15) {
-            org.telegram.messenger.ks.e().n(this, i12);
+            org.telegram.messenger.ls.e().n(this, i12);
         } else if (i13 == 2) {
             org.telegram.messenger.g0.C3(false);
-            org.telegram.messenger.ks.e().n(this, i12);
+            org.telegram.messenger.ls.e().n(this, i12);
         } else if (i13 == 3) {
             org.telegram.messenger.g0.B3(false);
-            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.k4);
         }
         this.f0 = false;
         return true;
@@ -983,19 +983,19 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         this.g0 = false;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (this.f0) {
             br brVar = this.f;
             if (brVar.f == null) {
                 return;
             }
-            if (i7 == org.telegram.messenger.ks.j4) {
+            if (i7 == org.telegram.messenger.ls.j4) {
                 brVar.setText("" + objArr[0]);
                 h(null);
                 return;
             }
-            if (i7 == org.telegram.messenger.ks.k4) {
+            if (i7 == org.telegram.messenger.ls.k4) {
                 String str = "" + objArr[0];
                 if (org.telegram.messenger.g0.x(this.m0, str)) {
                     if (!this.m0.equals("*")) {
@@ -1004,7 +1004,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                     }
                     h(str);
                     int i11 = CallReceiver.a;
-                    org.telegram.messenger.bz.q().edit().remove("last_call_phone_number").remove("last_call_time").apply();
+                    org.telegram.messenger.cz.q().edit().remove("last_call_phone_number").remove("last_call_time").apply();
                 }
             }
         }
@@ -1012,16 +1012,16 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
 
     @Override // org.telegram.ui.Components.iu0
     public final void f() {
-        int i7 = org.telegram.messenger.ks.j4;
+        int i7 = org.telegram.messenger.ls.j4;
         int i10 = this.i0;
         if (i10 == 15) {
-            org.telegram.messenger.ks.e().n(this, i7);
+            org.telegram.messenger.ls.e().n(this, i7);
         } else if (i10 == 2) {
             org.telegram.messenger.g0.C3(false);
-            org.telegram.messenger.ks.e().n(this, i7);
+            org.telegram.messenger.ls.e().n(this, i7);
         } else if (i10 == 3) {
             org.telegram.messenger.g0.B3(false);
-            org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+            org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.k4);
         }
         this.f0 = false;
         u();
@@ -1042,7 +1042,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
     @Override // org.telegram.ui.Components.iu0
     public String getHeaderName() {
         int i7 = this.i0;
-        return (i7 == 3 || i7 == 11) ? this.b : org.telegram.messenger.gd.N0(2131742563, "YourCode");
+        return (i7 == 3 || i7 == 11) ? this.b : org.telegram.messenger.hd.N0(2131742561, "YourCode");
     }
 
     @Override // org.telegram.ui.Components.iu0
@@ -1076,15 +1076,15 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         int i14 = de0Var.a;
         if (i14 < 1 || i14 > 4 || !brVar.e) {
             this.g0 = true;
-            int i15 = org.telegram.messenger.ks.j4;
+            int i15 = org.telegram.messenger.ls.j4;
             int i16 = this.i0;
             if (i16 == 15) {
-                org.telegram.messenger.ks.e().n(this, i15);
+                org.telegram.messenger.ls.e().n(this, i15);
             } else if (i16 == 2) {
                 org.telegram.messenger.g0.C3(false);
-                org.telegram.messenger.ks.e().n(this, i15);
+                org.telegram.messenger.ls.e().n(this, i15);
             } else if (i16 == 3) {
-                org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.k4);
+                org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.k4);
             }
             this.f0 = false;
             int i17 = de0Var.G;
@@ -1223,7 +1223,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         int i7;
         String str2;
         String string;
-        int i10 = org.telegram.messenger.ks.j4;
+        int i10 = org.telegram.messenger.ls.j4;
         int i11 = 0;
         int i12 = 8;
         String str3 = null;
@@ -1238,7 +1238,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                 ed0Var.setVisibility(0);
                 org.telegram.ui.ActionBar.t6.U(this.y, org.telegram.ui.ActionBar.m6.I6, null);
                 int i13 = this.j0;
-                this.y.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.gd.N0(i13 == 17 ? 2131745854 : i13 == 16 ? 2131745852 : 2131745853, null), true, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                this.y.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.hd.N0(i13 == 17 ? 2131745854 : i13 == 16 ? 2131745852 : 2131745853, null), true, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
                 return;
             }
             return;
@@ -1246,13 +1246,13 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         this.f0 = true;
         int i14 = this.i0;
         if (i14 == 15) {
-            org.telegram.messenger.ks.e().b(this, i10);
+            org.telegram.messenger.ls.e().b(this, i10);
         } else if (i14 == 2) {
             org.telegram.messenger.g0.C3(true);
-            org.telegram.messenger.ks.e().b(this, i10);
+            org.telegram.messenger.ls.e().b(this, i10);
         } else if (i14 == 3) {
             org.telegram.messenger.g0.B3(true);
-            org.telegram.messenger.ks.e().b(this, org.telegram.messenger.ks.k4);
+            org.telegram.messenger.ls.e().b(this, org.telegram.messenger.ls.k4);
             if (z10) {
                 org.telegram.messenger.g0.g3(new cd0(i11));
             }
@@ -1293,10 +1293,10 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         int i17 = this.k0;
         if (i17 == 17) {
             this.h.setVisibility(0);
-            this.h.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.gd.N0(2131753751, null), true, org.telegram.messenger.g0.L(-1.0f), org.telegram.messenger.g0.L(1.0f)));
+            this.h.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.hd.N0(2131753751, null), true, org.telegram.messenger.g0.L(-1.0f), org.telegram.messenger.g0.L(1.0f)));
         } else if (i17 == 16) {
             this.h.setVisibility(0);
-            this.h.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.gd.N0(2131753750, null), true, org.telegram.messenger.g0.L(-1.0f), org.telegram.messenger.g0.L(1.0f)));
+            this.h.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.hd.N0(2131753750, null), true, org.telegram.messenger.g0.L(-1.0f), org.telegram.messenger.g0.L(1.0f)));
         } else {
             this.h.setVisibility(8);
         }
@@ -1305,7 +1305,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
         }
         String b10 = pf.b.c().b(this.b);
         if (this.v0.A1()) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("CancelAccountResetInfo2", null, 2131752575, pf.b.c().b("+" + b10))));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("CancelAccountResetInfo2", null, 2131752575, pf.b.c().b("+" + b10))));
             int indexOf = TextUtils.indexOf((CharSequence) spannableStringBuilder, '*');
             int lastIndexOf = TextUtils.lastIndexOf(spannableStringBuilder, '*');
             str = spannableStringBuilder;
@@ -1320,7 +1320,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
             }
         } else {
             int i18 = this.i0;
-            str = i18 == 1 ? org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("SentAppCodeWithPhone", null, 2131745375, org.telegram.messenger.gd.a(b10))) : i18 == 2 ? org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("SentSmsCode", null, 2131745371, org.telegram.messenger.gd.a(b10))) : i18 == 3 ? org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("SentCallCode", null, 2131745374, org.telegram.messenger.gd.a(b10))) : i18 == 4 ? org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("SentCallOnly", null, 2131745373, org.telegram.messenger.gd.a(b10))) : i18 == 15 ? org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("SentFragmentCode", null, 2131745372, org.telegram.messenger.gd.a(b10))) : "";
+            str = i18 == 1 ? org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("SentAppCodeWithPhone", null, 2131745375, org.telegram.messenger.hd.a(b10))) : i18 == 2 ? org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("SentSmsCode", null, 2131745371, org.telegram.messenger.hd.a(b10))) : i18 == 3 ? org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("SentCallCode", null, 2131745374, org.telegram.messenger.hd.a(b10))) : i18 == 4 ? org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("SentCallOnly", null, 2131745373, org.telegram.messenger.hd.a(b10))) : i18 == 15 ? org.telegram.messenger.g0.W2(org.telegram.messenger.hd.a0("SentFragmentCode", null, 2131745372, org.telegram.messenger.hd.a(b10))) : "";
         }
         this.n.setText(str);
         int i19 = this.i0;
@@ -1328,16 +1328,16 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
             if (i19 == 1) {
                 int i20 = this.j0;
                 if (i20 == 3 || i20 == 4 || i20 == 11) {
-                    this.y.setText(org.telegram.messenger.gd.N0(2131751432, null));
+                    this.y.setText(org.telegram.messenger.hd.N0(2131751432, null));
                 } else if (i20 == 15) {
-                    this.y.setText(org.telegram.messenger.gd.N0(2131751435, null));
+                    this.y.setText(org.telegram.messenger.hd.N0(2131751435, null));
                 } else if (i20 == 0) {
-                    this.y.setText(org.telegram.messenger.gd.N0(2131751437, null));
+                    this.y.setText(org.telegram.messenger.hd.N0(2131751437, null));
                 } else {
-                    this.y.setText(org.telegram.messenger.gd.N0(2131751431, null));
+                    this.y.setText(org.telegram.messenger.hd.N0(2131751431, null));
                 }
             } else {
-                this.y.setText(org.telegram.messenger.gd.N0(2131751437, null));
+                this.y.setText(org.telegram.messenger.hd.N0(2131751437, null));
             }
         }
         if (this.i0 != 3) {
@@ -1367,9 +1367,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                     this.y.setVisibility(8);
                     int i24 = this.j0;
                     if (i24 == 4 || i24 == 11) {
-                        this.w.setText(org.telegram.messenger.gd.a0("CallAvailableIn", null, 2131752618, 1, 0));
+                        this.w.setText(org.telegram.messenger.hd.a0("CallAvailableIn", null, 2131752618, 1, 0));
                     } else if (i24 == 2 || i24 == 17 || i24 == 16) {
-                        this.w.setText(org.telegram.messenger.gd.a0("SmsAvailableIn", null, 2131745101, 1, 0));
+                        this.w.setText(org.telegram.messenger.hd.a0("SmsAvailableIn", null, 2131745101, 1, 0));
                     }
                 } else {
                     this.w.setVisibility(8);
@@ -1430,9 +1430,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                     int i26 = this.j0;
                     if (i26 == 2 || i26 == 17 || i26 == 16 || i26 == 4 || i26 == 3) {
                         if (i26 == 2 || i26 == 17 || i26 == 16) {
-                            this.w.setText(org.telegram.messenger.gd.a0("SmsAvailableIn", null, 2131745101, 1, 0));
+                            this.w.setText(org.telegram.messenger.hd.a0("SmsAvailableIn", null, 2131745101, 1, 0));
                         } else {
-                            this.w.setText(org.telegram.messenger.gd.a0("CallAvailableIn", null, 2131752618, 2, 0));
+                            this.w.setText(org.telegram.messenger.hd.a0("CallAvailableIn", null, 2131752618, 2, 0));
                         }
                         setProblemTextVisible(this.b0 < 1000);
                         this.w.setVisibility(this.b0 < 1000 ? 8 : 0);
@@ -1444,7 +1444,7 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                         String string3 = sharedPreferences.getString("sms_hash", null);
                         if (!TextUtils.isEmpty(string3) && (string = sharedPreferences.getString("sms_hash_code", null)) != null) {
                             if (string.contains(string3 + "|") && !this.v0.y) {
-                                str2 = string.substring(string.indexOf(org.telegram.messenger.ks.I1) + 1);
+                                str2 = string.substring(string.indexOf(org.telegram.messenger.ls.I1) + 1);
                                 if (str2 == null) {
                                     this.f.setCode(str2);
                                     h(null);
@@ -1466,9 +1466,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                     int i27 = this.j0;
                     int i28 = (i27 == 2 || i27 == 17 || i27 == 11) ? 16 : 16;
                     if (i27 == 2 || i27 == 17 || i27 == i28) {
-                        this.w.setText(org.telegram.messenger.gd.a0("SmsAvailableIn", null, 2131745101, 1, 0));
+                        this.w.setText(org.telegram.messenger.hd.a0("SmsAvailableIn", null, 2131745101, 1, 0));
                     } else {
-                        this.w.setText(org.telegram.messenger.gd.a0("CallAvailableIn", null, 2131752618, 2, 0));
+                        this.w.setText(org.telegram.messenger.hd.a0("CallAvailableIn", null, 2131752618, 2, 0));
                     }
                     setProblemTextVisible(this.b0 < 1000);
                     this.w.setVisibility(this.b0 < 1000 ? 8 : 0);
@@ -1486,9 +1486,9 @@ public final class gd0 extends org.telegram.ui.Components.iu0 implements org.tel
                         this.y.setVisibility(8);
                         int i30 = this.j0;
                         if (i30 == 4 || i30 == 11) {
-                            this.w.setText(org.telegram.messenger.gd.a0("CallAvailableIn", null, 2131752618, 1, 0));
+                            this.w.setText(org.telegram.messenger.hd.a0("CallAvailableIn", null, 2131752618, 1, 0));
                         } else if (i30 == 2 || i30 == 17 || i30 == 16) {
-                            this.w.setText(org.telegram.messenger.gd.a0("SmsAvailableIn", null, 2131745101, 1, 0));
+                            this.w.setText(org.telegram.messenger.hd.a0("SmsAvailableIn", null, 2131745101, 1, 0));
                         }
                         s();
                     }

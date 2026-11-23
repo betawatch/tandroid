@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.ur;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class b1 {
     public final int a;
@@ -25,7 +25,7 @@ public final class b1 {
         }
         this.f = true;
         x0 x0Var = new x0(this, 0);
-        tr a02 = tr.a0(i7);
+        ur a02 = ur.a0(i7);
         a02.a.c(new di.p6((Object) a02, true, (Object) x0Var, 3));
     }
 
@@ -34,7 +34,7 @@ public final class b1 {
         StringBuilder sb2;
         long j3;
         int i7 = this.a;
-        tr a02 = tr.a0(i7);
+        ur a02 = ur.a0(i7);
         StringBuilder sb3 = new StringBuilder("StoryDraft append ");
         sb3.append(a1Var.a);
         sb3.append(" (edit=");
@@ -64,7 +64,7 @@ public final class b1 {
         sb3.append(")");
         org.telegram.messenger.a8.b(sb3.toString());
         a02.a.c(new y0(a02, a1Var, 1));
-        ks.f(i7).k(ks.B5, new Object[0]);
+        ls.f(i7).k(ls.B5, new Object[0]);
     }
 
     public final void b(c7 c7Var) {
@@ -121,9 +121,9 @@ public final class b1 {
         }
         this.b.removeAll(arrayList);
         int i10 = this.a;
-        tr a02 = tr.a0(i10);
+        ur a02 = ur.a0(i10);
         a02.a.c(new z0(a02, arrayList2, 0));
-        ks.f(i10).k(ks.B5, new Object[0]);
+        ls.f(i10).k(ls.B5, new Object[0]);
     }
 
     public final void d(c7 c7Var) {
@@ -138,9 +138,9 @@ public final class b1 {
         }
         a1 a1Var = new a1(c7Var);
         int i7 = this.a;
-        tr a02 = tr.a0(i7);
+        ur a02 = ur.a0(i7);
         a02.a.c(new y0(a02, a1Var, 0));
-        ks.f(i7).k(ks.B5, new Object[0]);
+        ls.f(i7).k(ls.B5, new Object[0]);
     }
 
     public final void e(c7 c7Var) {

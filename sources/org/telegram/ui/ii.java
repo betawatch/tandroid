@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ii implements Runnable {
     public final /* synthetic */ int a;
@@ -63,24 +63,24 @@ public final /* synthetic */ class ii implements Runnable {
                 ConnectionsManager.getInstance(i7).cancelRequest(i14, true);
                 break;
             case 3:
-                org.telegram.messenger.ks.f(i14).k(4, new Object[0]);
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.a2((org.telegram.messenger.lr) obj, 1), 250L);
+                org.telegram.messenger.ls.f(i14).k(4, new Object[0]);
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.a2((org.telegram.messenger.mr) obj, 1), 250L);
                 break;
             case 4:
                 org.telegram.ui.Components.m80 m80Var = (org.telegram.ui.Components.m80) obj;
                 ArrayList v = org.telegram.messenger.i5.r(i14).v(11);
                 String str = null;
-                String N0 = org.telegram.messenger.gd.N0(2131751229, null);
+                String N0 = org.telegram.messenger.hd.N0(2131751229, null);
                 if (v != null && !v.isEmpty()) {
                     int i15 = 0;
                     while (true) {
                         if (i15 < v.size()) {
                             if (v.get(i15) instanceof TLRPC.TL_privacyValueAllowContacts) {
-                                N0 = org.telegram.messenger.gd.N0(2131751229, str);
+                                N0 = org.telegram.messenger.hd.N0(2131751229, str);
                             } else {
                                 if ((v.get(i15) instanceof TLRPC.TL_privacyValueAllowAll) || (v.get(i15) instanceof TLRPC.TL_privacyValueDisallowAll)) {
                                     str = null;
-                                    N0 = org.telegram.messenger.gd.N0(2131751230, null);
+                                    N0 = org.telegram.messenger.hd.N0(2131751230, null);
                                 } else {
                                     str = null;
                                 }
@@ -92,19 +92,19 @@ public final /* synthetic */ class ii implements Runnable {
                 m80Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.T2(N0, new org.telegram.ui.Components.o1(i12, v)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(0.66f)));
                 break;
             case 5:
-                ((org.telegram.messenger.pe) obj).u(i14);
+                ((org.telegram.messenger.qe) obj).u(i14);
                 break;
             case 6:
                 org.telegram.ui.Components.yc ycVar = (org.telegram.ui.Components.yc) obj;
                 hi.l3 l3Var = ycVar.d1;
                 if (ycVar.b1 != i14) {
                     ycVar.setTimer(i14);
-                    org.telegram.messenger.x10 x10Var = ycVar.r1;
-                    if (x10Var != null) {
-                        x10Var.a(Integer.valueOf(i14));
+                    org.telegram.messenger.y10 y10Var = ycVar.r1;
+                    if (y10Var != null) {
+                        y10Var.a(Integer.valueOf(i14));
                     }
                     if (i14 == 0) {
-                        W2 = org.telegram.messenger.gd.N0(ycVar.q1 ? 2131743887 : 2131743892, null);
+                        W2 = org.telegram.messenger.hd.N0(ycVar.q1 ? 2131743885 : 2131743890, null);
                         l3Var.h = ycVar.getMeasuredWidth();
                         l3Var.r(false);
                         l3Var.n(13.0f, 4.0f, 10.0f, 4.0f);
@@ -112,7 +112,7 @@ public final /* synthetic */ class ii implements Runnable {
                         l3Var.e0 = -org.telegram.messenger.g0.L(1.0f);
                         f10 = 1.0f;
                     } else if (i14 == Integer.MAX_VALUE) {
-                        W2 = org.telegram.messenger.gd.N0(ycVar.q1 ? 2131743886 : 2131743891, null);
+                        W2 = org.telegram.messenger.hd.N0(ycVar.q1 ? 2131743884 : 2131743889, null);
                         l3Var.h = ycVar.getMeasuredWidth();
                         l3Var.r(false);
                         l3Var.n(13.0f, 4.0f, 10.0f, 4.0f);
@@ -122,7 +122,7 @@ public final /* synthetic */ class ii implements Runnable {
                     } else {
                         f10 = 1.0f;
                         if (i14 > 0) {
-                            W2 = org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(i14, ycVar.q1 ? "TimerPeriodVideoSetSeconds" : "TimerPeriodPhotoSetSeconds", new Object[0]));
+                            W2 = org.telegram.messenger.g0.W2(org.telegram.messenger.hd.G(i14, ycVar.q1 ? "TimerPeriodVideoSetSeconds" : "TimerPeriodPhotoSetSeconds", new Object[0]));
                             l3Var.r(true);
                             l3Var.h = hi.l3.a(W2, l3Var.getTextPaint());
                             l3Var.n(12.0f, 7.0f, 11.0f, 7.0f);
@@ -240,22 +240,22 @@ public final /* synthetic */ class ii implements Runnable {
                     if (i14 != 5) {
                         if (i14 != 150) {
                             if (i14 == 100) {
-                                textView2.setText(org.telegram.messenger.gd.N0(2131742567, null));
+                                textView2.setText(org.telegram.messenger.hd.N0(2131742565, null));
                                 break;
                             } else if (i14 != 101) {
                             }
                         }
-                        textView2.setText(org.telegram.messenger.gd.N0(2131742568, null));
-                        textView.setText(org.telegram.messenger.gd.N0(2131742566, null));
+                        textView2.setText(org.telegram.messenger.hd.N0(2131742566, null));
+                        textView.setText(org.telegram.messenger.hd.N0(2131742564, null));
                         textView.setVisibility(0);
                         textView.setOnClickListener(new org.telegram.ui.Components.j70(ke0Var, 6));
                         break;
                     } else {
-                        textView2.setText(org.telegram.messenger.gd.N0(2131742570, null));
+                        textView2.setText(org.telegram.messenger.hd.N0(2131742568, null));
                         break;
                     }
                 } else {
-                    textView2.setText(org.telegram.messenger.gd.N0(2131742569, null));
+                    textView2.setText(org.telegram.messenger.hd.N0(2131742567, null));
                     break;
                 }
                 break;
@@ -398,12 +398,12 @@ public final /* synthetic */ class ii implements Runnable {
                 ProfileActivity profileActivity = (ProfileActivity) obj;
                 RectF rectF = ProfileActivity.Z6;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, profileActivity.getParentActivity(), profileActivity.A0);
-                String N02 = org.telegram.messenger.gd.N0(2131746451, null);
+                String N02 = org.telegram.messenger.hd.N0(2131746451, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N02;
-                t1Var.U = org.telegram.messenger.gd.N0(2131746452, null);
-                alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751586, null), new ai.u1(profileActivity, i14, 20));
-                alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                t1Var.U = org.telegram.messenger.hd.N0(2131746452, null);
+                alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new ai.v1(profileActivity, i14, 20));
+                alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;

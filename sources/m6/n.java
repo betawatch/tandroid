@@ -34,12 +34,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Cells.s2;
 import org.telegram.ui.Components.n6;
 import org.telegram.ui.vf;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class n implements OnSuccessListener, te.i {
     public static n e;
@@ -188,7 +188,7 @@ public final class n implements OnSuccessListener, te.i {
     public void j(Throwable th2) {
         w wVar = (w) this.d;
         if (th2 instanceof TimeoutException) {
-            wVar.G(ks.n1, 28, z.p);
+            wVar.G(ls.n1, 28, z.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
             wVar.G(95, 28, z.p);

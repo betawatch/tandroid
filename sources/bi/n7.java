@@ -2,32 +2,43 @@ package bi;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.o41;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import c8.ma;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class n7 extends n41 {
-    static {
-        n41.h(new n7());
+public final class n7 extends LinearLayout {
+    public final TextView a;
+
+    public n7(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context);
+        setOrientation(1);
+        q9 q9Var = new q9(context);
+        q9Var.setImageDrawable(new oh0(R.raw.utyan_empty, org.telegram.messenger.g0.L(130.0f), org.telegram.messenger.g0.L(130.0f)));
+        addView(q9Var, ma.t(64, 64, 17, 0, 32, 0, 0));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.A6, h6Var);
+        textView.setTextSize(1, 14.0f);
+        textView.setGravity(17);
+        addView(textView, ma.t(-1, -2, 7, 12, 12, 12, 24));
     }
 
-    public static o41 i(String str) {
-        o41 K = o41.K(n7.class);
-        K.m = str;
-        return K;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE) {
+            size = org.telegram.messenger.g0.L(250.0f);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i10);
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final void b(View view, o41 o41Var, boolean z10, c51 c51Var, h51 h51Var) {
-        ((o7) view).set(o41Var.m);
-    }
-
-    @Override // org.telegram.ui.Components.n41
-    public final View d(Context context, ek0 ek0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
-        return new o7(context, h6Var);
+    public void set(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

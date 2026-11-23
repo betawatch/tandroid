@@ -4,7 +4,7 @@ import android.util.Pair;
 import di.o3;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c1 implements x2.k0, q2.k {
     public final e1 a;
@@ -59,7 +59,7 @@ public final class c1 implements x2.k0, q2.k {
     public final void N(int i7, x2.g0 g0Var, int i10) {
         Pair a10 = a(i7, g0Var);
         if (a10 != null) {
-            this.b.i.d(new ai.c1(this, a10, i10, 23));
+            this.b.i.d(new ai.j1(this, a10, i10, 22));
         }
     }
 

@@ -9,11 +9,11 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.w60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e8 extends bi.g3 {
     public boolean A0;
@@ -72,7 +72,7 @@ public final class e8 extends bi.g3 {
                 org.telegram.ui.Components.q9 q9Var = this.E;
                 float left2 = q9Var.getLeft() + left + (q9Var.getWidth() / 2.0f);
                 float height = (q9Var.getHeight() / 2.0f) + q9Var.getTop() + frameLayout.getTop();
-                float C = com.google.android.gms.internal.vision.e2.C(f14, 0.025f, (0.07f * f13) + 1.0f, (q9Var.getWidth() * ks.L4) / 268.0f);
+                float C = com.google.android.gms.internal.vision.e2.C(f14, 0.025f, (0.07f * f13) + 1.0f, (q9Var.getWidth() * ls.L4) / 268.0f);
                 if (f13 > 0.01f && q8Var.w != null) {
                     float f15 = ((176.0f * C) / 128.0f) / 2.0f;
                     float L = (org.telegram.messenger.g0.L(2.0f) * f13) + height;
@@ -86,7 +86,7 @@ public final class e8 extends bi.g3 {
                 float L2 = height - (org.telegram.messenger.g0.L(5.0f) * f13);
                 float f16 = f13 * (-5.0f);
                 if (l11 < 0.99f) {
-                    paint.setAlpha(ks.e4);
+                    paint.setAlpha(ls.e4);
                     f11 = L2;
                     f10 = C;
                     i7 = 255;

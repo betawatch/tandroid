@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oa extends v4.u0 {
     public final /* synthetic */ int a;
@@ -128,11 +128,11 @@ public final class oa extends v4.u0 {
                 if (i7 == 0) {
                     if (ek0Var2.u2) {
                         ek0Var2.u2 = false;
-                        org.telegram.messenger.ks.e().k(99, 512);
+                        org.telegram.messenger.ls.e().k(99, 512);
                     }
                 } else if (!ek0Var2.u2 && ek0Var2.w1) {
                     ek0Var2.u2 = true;
-                    org.telegram.messenger.ks.e().k(98, 512);
+                    org.telegram.messenger.ls.e().k(98, 512);
                 }
                 if (i7 != 0 && ek0Var2.M1 != null) {
                     uj0 uj0Var = ek0Var2.d1;

@@ -2,8 +2,8 @@ package org.telegram.ui.Wallet;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.h20;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.c51;
@@ -12,7 +12,7 @@ import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class wa extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -30,7 +30,7 @@ public final class wa extends n41 {
         if (tonconnectmanifest != null) {
             TLRPC.WebDocument webDocument = tonconnectmanifest.icon;
             if (webDocument != null) {
-                xaVar.b.p(fc.p(h20.c(webDocument)), "28_28", null, tonconnectsession.manifest);
+                xaVar.b.p(gc.p(i20.c(webDocument)), "28_28", null, tonconnectsession.manifest);
             }
             xaVar.c.setText(tonconnectsession.manifest.name);
             xaVar.d.setText(org.telegram.messenger.g0.K0(tonconnectsession.manifest.url, false));

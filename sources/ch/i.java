@@ -1,17 +1,17 @@
 package ch;
 
-import ai.c1;
+import ai.j1;
 import android.text.SpannableStringBuilder;
 import android.view.KeyEvent;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements x10 {
+public final /* synthetic */ class i implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ p b;
 
@@ -20,7 +20,7 @@ public final /* synthetic */ class i implements x10 {
         this.b = pVar;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         s8 s8Var;
         switch (this.a) {
@@ -54,7 +54,7 @@ public final /* synthetic */ class i implements x10 {
                                 org.telegram.messenger.g0.h3(hVar, 350L);
                                 break;
                             } else {
-                                y5Var.setRemoved(new c1(pVar2, y5Var, editTextSelectionEnd, 4));
+                                y5Var.setRemoved(new j1(pVar2, y5Var, editTextSelectionEnd, 3));
                                 pVar2.c0(y5Var);
                                 pVar2.e0(false);
                                 break;

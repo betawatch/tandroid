@@ -4,8 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.b9;
 import org.webrtc.JavaI420Buffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h1 {
     public final ImageReceiver a;
@@ -33,7 +33,7 @@ public final class h1 {
         imageReceiver.J0(60);
         imageReceiver.h1 = new org.telegram.tgnet.u(this, 9);
         imageReceiver.P();
-        imageReceiver.q0(chat != null ? fc.a(1, chat) : null, "100_100", b9Var, null, chat, 0);
+        imageReceiver.q0(chat != null ? gc.a(1, chat) : null, "100_100", b9Var, null, chat, 0);
         a();
     }
 
@@ -61,18 +61,18 @@ public final class h1 {
             while (i10 < width) {
                 int i11 = iArr[(i7 * width) + i10];
                 Bitmap bitmap = createBitmap;
-                int i12 = (i11 >> 16) & ks.e4;
-                int i13 = (i11 >> 8) & ks.e4;
-                int i14 = i11 & ks.e4;
+                int i12 = (i11 >> 16) & ls.e4;
+                int i13 = (i11 >> 8) & ls.e4;
+                int i14 = i11 & ls.e4;
                 int[] iArr2 = iArr;
                 int i15 = width;
-                dataY.put((i7 * strideY) + i10, (byte) (((((i14 * 25) + ((i13 * ks.N1) + (i12 * 66))) + 128) >> 8) + 16));
+                dataY.put((i7 * strideY) + i10, (byte) (((((i14 * 25) + ((i13 * ls.N1) + (i12 * 66))) + 128) >> 8) + 16));
                 if ((i7 & 1) == 0 && (i10 & 1) == 0) {
                     int i16 = i7 >> 1;
                     int i17 = i10 >> 1;
                     byteBuffer = dataY;
-                    dataU.put((i16 * strideU) + i17, (byte) (((((i14 * ks.x1) + ((i12 * (-38)) - (i13 * 74))) + 128) >> 8) + 128));
-                    dataV.put((i16 * strideV) + i17, (byte) ((((((i12 * ks.x1) - (i13 * 94)) - (i14 * 18)) + 128) >> 8) + 128));
+                    dataU.put((i16 * strideU) + i17, (byte) (((((i14 * ls.x1) + ((i12 * (-38)) - (i13 * 74))) + 128) >> 8) + 128));
+                    dataV.put((i16 * strideV) + i17, (byte) ((((((i12 * ls.x1) - (i13 * 94)) - (i14 * 18)) + 128) >> 8) + 128));
                 } else {
                     byteBuffer = dataY;
                 }

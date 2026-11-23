@@ -14,7 +14,7 @@ import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.ui;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class ra {
     public final ui a;
@@ -240,9 +240,9 @@ public final class ra {
         animatorSet.addListener(new qa(this, uiVar, m7Var));
         n6Var.T0();
         n6Var.c1(false);
-        bi.g6 g6Var = n6Var.a;
-        if (g6Var != null) {
-            g6Var.C0();
+        bi.f6 f6Var = n6Var.a;
+        if (f6Var != null) {
+            f6Var.C0();
             n6Var.a.f3.h1(0, 0);
             h51 h51Var = n6Var.u0[0];
             if (h51Var != null) {

@@ -26,14 +26,14 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import java.util.Stack;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.bv0;
 import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.zu0;
 import org.telegram.ui.xw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class m5 extends View implements Drawable.Callback {
     public final Stack A0;
@@ -426,7 +426,7 @@ public class m5 extends View implements Drawable.Callback {
             return true;
         }
         d(((getMaxTextWidth() - getPaddingLeft()) - getPaddingRight()) - this.x0);
-        if ((this.n & ks.x1) == 16) {
+        if ((this.n & ls.x1) == 16) {
             this.e0 = (getMeasuredHeight() - this.h0) / 2;
             return true;
         }
@@ -768,7 +768,7 @@ public class m5 extends View implements Drawable.Callback {
             if ((i19 & 7) == 1) {
                 i18 += this.d0;
             }
-            int measuredHeight = (i19 & ks.x1) == 16 ? ((getMeasuredHeight() - this.w.getIntrinsicHeight()) / 2) + this.K : this.K + ((this.h0 - this.w.getIntrinsicHeight()) / 2) + getPaddingTop();
+            int measuredHeight = (i19 & ls.x1) == 16 ? ((getMeasuredHeight() - this.w.getIntrinsicHeight()) / 2) + this.K : this.K + ((this.h0 - this.w.getIntrinsicHeight()) / 2) + getPaddingTop();
             Drawable drawable2 = this.w;
             drawable2.setBounds(i18, measuredHeight, drawable2.getIntrinsicWidth() + i18, this.w.getIntrinsicHeight() + measuredHeight);
             this.w.draw(canvas);
@@ -783,7 +783,7 @@ public class m5 extends View implements Drawable.Callback {
             if ((i22 & 7) == 1) {
                 i21 += this.d0;
             }
-            int measuredHeight2 = (i22 & ks.x1) == 16 ? ((getMeasuredHeight() - this.E.getIntrinsicHeight()) / 2) + this.K : this.K + ((this.h0 - drawable3.getIntrinsicHeight()) / 2);
+            int measuredHeight2 = (i22 & ls.x1) == 16 ? ((getMeasuredHeight() - this.E.getIntrinsicHeight()) / 2) + this.K : this.K + ((this.h0 - drawable3.getIntrinsicHeight()) / 2);
             Drawable drawable4 = this.E;
             drawable4.setBounds(i21, measuredHeight2, drawable4.getIntrinsicWidth() + i21, this.E.getIntrinsicHeight() + measuredHeight2);
             this.E.draw(canvas);
@@ -806,7 +806,7 @@ public class m5 extends View implements Drawable.Callback {
             }
             int intrinsicWidth2 = (int) (r3.getIntrinsicWidth() * this.I);
             int intrinsicHeight = (int) (this.x.getIntrinsicHeight() * this.I);
-            if ((this.n & ks.x1) == 16) {
+            if ((this.n & ls.x1) == 16) {
                 e18 = (getMeasuredHeight() - intrinsicHeight) / 2;
                 i17 = this.L;
             } else {
@@ -832,7 +832,7 @@ public class m5 extends View implements Drawable.Callback {
             }
             int intrinsicWidth3 = (int) (this.y.getIntrinsicWidth() * this.I);
             int intrinsicHeight2 = (int) (this.y.getIntrinsicHeight() * this.I);
-            if ((this.n & ks.x1) == 16) {
+            if ((this.n & ls.x1) == 16) {
                 e17 = (getMeasuredHeight() - intrinsicHeight2) / 2;
                 i16 = this.L;
             } else {
@@ -849,7 +849,7 @@ public class m5 extends View implements Drawable.Callback {
         if (f16 != f10) {
             if (this.w != null && !this.l0) {
                 int i31 = ((int) (-f16)) + L;
-                int measuredHeight3 = (this.n & ks.x1) == 16 ? ((getMeasuredHeight() - this.w.getIntrinsicHeight()) / 2) + this.K : this.K + ((this.h0 - this.w.getIntrinsicHeight()) / 2) + getPaddingTop();
+                int measuredHeight3 = (this.n & ls.x1) == 16 ? ((getMeasuredHeight() - this.w.getIntrinsicHeight()) / 2) + this.K : this.K + ((this.h0 - this.w.getIntrinsicHeight()) / 2) + getPaddingTop();
                 Drawable drawable5 = this.w;
                 drawable5.setBounds(i31, measuredHeight3, drawable5.getIntrinsicWidth() + i31, this.w.getIntrinsicHeight() + measuredHeight3);
                 this.w.draw(canvas);
@@ -860,7 +860,7 @@ public class m5 extends View implements Drawable.Callback {
                 int intrinsicWidth4 = (int) (r3.getIntrinsicWidth() * this.I);
                 int intrinsicHeight3 = (int) (this.x.getIntrinsicHeight() * this.I);
                 int i32 = this.f0 + i24 + this.J + ((int) (-this.S)) + L;
-                if ((this.n & ks.x1) == 16) {
+                if ((this.n & ls.x1) == 16) {
                     e16 = (getMeasuredHeight() - intrinsicHeight3) / 2;
                     i15 = this.L;
                 } else {
@@ -881,7 +881,7 @@ public class m5 extends View implements Drawable.Callback {
                 if (this.x != null) {
                     i34 += ((int) (r6.getIntrinsicWidth() * this.I)) + this.J;
                 }
-                if ((this.n & ks.x1) == 16) {
+                if ((this.n & ls.x1) == 16) {
                     e15 = (getMeasuredHeight() - intrinsicHeight4) / 2;
                     i14 = this.L;
                 } else {
@@ -979,7 +979,7 @@ public class m5 extends View implements Drawable.Callback {
                 }
                 int intrinsicWidth6 = (int) (r3.getIntrinsicWidth() * this.I);
                 int intrinsicHeight5 = (int) (this.x.getIntrinsicHeight() * this.I);
-                if ((this.n & ks.x1) == 16) {
+                if ((this.n & ls.x1) == 16) {
                     e14 = (getMeasuredHeight() - intrinsicHeight5) / 2;
                     i13 = this.L;
                 } else {
@@ -1004,7 +1004,7 @@ public class m5 extends View implements Drawable.Callback {
                 }
                 int intrinsicWidth7 = (int) (this.y.getIntrinsicWidth() * this.I);
                 int intrinsicHeight6 = (int) (this.y.getIntrinsicHeight() * this.I);
-                if ((this.n & ks.x1) == 16) {
+                if ((this.n & ls.x1) == 16) {
                     e13 = (getMeasuredHeight() - intrinsicHeight6) / 2;
                     i12 = this.L;
                 } else {
@@ -1021,9 +1021,9 @@ public class m5 extends View implements Drawable.Callback {
                     this.V.setAlpha((int) ((this.S / org.telegram.messenger.g0.L(10.0f)) * 255.0f));
                 } else {
                     if (this.S > (org.telegram.messenger.g0.L(f11) + this.g0) - org.telegram.messenger.g0.L(10.0f)) {
-                        this.V.setAlpha((int) n10.y(this.S - ((org.telegram.messenger.g0.L(f11) + this.g0) - org.telegram.messenger.g0.L(10.0f)), org.telegram.messenger.g0.L(10.0f), 1.0f, 255.0f));
+                        this.V.setAlpha((int) o10.y(this.S - ((org.telegram.messenger.g0.L(f11) + this.g0) - org.telegram.messenger.g0.L(10.0f)), org.telegram.messenger.g0.L(10.0f), 1.0f, 255.0f));
                     } else {
-                        this.V.setAlpha(ks.e4);
+                        this.V.setAlpha(ls.e4);
                     }
                 }
                 canvas.drawRect(i24, 0.0f, org.telegram.messenger.g0.L(6.0f) + i24, getMeasuredHeight(), this.V);
@@ -1061,7 +1061,7 @@ public class m5 extends View implements Drawable.Callback {
                         z10 = true;
                     } else if (this.S >= L2 - org.telegram.messenger.g0.L(100.0f)) {
                         z10 = true;
-                        f14 = n10.w(this.S - (L2 - org.telegram.messenger.g0.L(100.0f)), org.telegram.messenger.g0.L(100.0f), 20.0f, 50.0f);
+                        f14 = o10.w(this.S - (L2 - org.telegram.messenger.g0.L(100.0f)), org.telegram.messenger.g0.L(100.0f), 20.0f, 50.0f);
                     } else {
                         z10 = true;
                         f14 = 50.0f;
@@ -1086,7 +1086,7 @@ public class m5 extends View implements Drawable.Callback {
         if (drawable8 != null && this.l0) {
             int intrinsicWidth8 = drawable8.getIntrinsicWidth();
             int intrinsicHeight7 = this.w.getIntrinsicHeight();
-            if ((this.n & ks.x1) == 16) {
+            if ((this.n & ls.x1) == 16) {
                 e12 = (getMeasuredHeight() - intrinsicHeight7) / 2;
                 i11 = this.K;
             } else {
@@ -1103,7 +1103,7 @@ public class m5 extends View implements Drawable.Callback {
             int min = Math.min(i48 + (f25 == 0.0f ? -L : (int) (-f25)) + L, (getMaxTextWidth() - this.s0) + this.J);
             int intrinsicWidth9 = (int) (this.x.getIntrinsicWidth() * this.I);
             int intrinsicHeight8 = (int) (this.x.getIntrinsicHeight() * this.I);
-            if ((this.n & ks.x1) == 16) {
+            if ((this.n & ls.x1) == 16) {
                 e11 = (getMeasuredHeight() - intrinsicHeight8) / 2;
                 i10 = this.L;
             } else {
@@ -1127,7 +1127,7 @@ public class m5 extends View implements Drawable.Callback {
         }
         int intrinsicWidth10 = (int) (this.y.getIntrinsicWidth() * this.I);
         int intrinsicHeight9 = (int) (this.y.getIntrinsicHeight() * this.I);
-        if ((this.n & ks.x1) == 16) {
+        if ((this.n & ls.x1) == 16) {
             e10 = (getMeasuredHeight() - intrinsicHeight9) / 2;
             i7 = this.L;
         } else {
@@ -1178,7 +1178,7 @@ public class m5 extends View implements Drawable.Callback {
             size = Math.max(Math.min(size, getPaddingRight() + getPaddingLeft() + this.f0 + this.x0 + ((!this.l0 || (drawable3 = this.w) == null) ? 0 : drawable3.getIntrinsicWidth() + this.J) + ((!this.m0 || (drawable2 = this.x) == null) ? 0 : drawable2.getIntrinsicWidth() + this.J) + ((!this.m0 || (drawable = this.y) == null) ? 0 : drawable.getIntrinsicWidth() + this.J)), 0);
         }
         setMeasuredDimension(size, size2);
-        if ((this.n & ks.x1) == 16) {
+        if ((this.n & ls.x1) == 16) {
             this.e0 = i5.c.e((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), this.h0, 2, getPaddingTop());
         } else {
             this.e0 = getPaddingTop();

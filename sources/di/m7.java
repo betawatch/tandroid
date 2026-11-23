@@ -7,10 +7,10 @@ import android.widget.TextView;
 import com.android.billingclient.api.Purchase;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -33,7 +33,7 @@ import org.telegram.ui.mm;
 import org.telegram.ui.ne;
 import org.telegram.ui.wj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -62,10 +62,10 @@ public final /* synthetic */ class m7 implements RequestDelegate {
         Object obj5 = this.e;
         switch (i7) {
             case 0:
-                org.telegram.messenger.g0.g3(new m6((y8) obj4, tLObject, (fj) obj3, (TLRPC.InputInvoice) obj2, (x10) obj5, (org.telegram.ui.Components.lc) obj, tL_error));
+                org.telegram.messenger.g0.g3(new m6((y8) obj4, tLObject, (gj) obj3, (TLRPC.InputInvoice) obj2, (y10) obj5, (org.telegram.ui.Components.lc) obj, tL_error));
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new bi.l2((int[]) obj4, tLObject, (mp) obj3, (TLRPC.User[]) obj2, (hi.mb) obj5, (hi.kb) obj, 9, false));
+                org.telegram.messenger.g0.g3(new bi.l2((int[]) obj4, tLObject, (np) obj3, (TLRPC.User[]) obj2, (hi.mb) obj5, (hi.kb) obj, 9, false));
                 break;
             case 2:
                 org.telegram.messenger.g0.g3(new bi.l2(tLObject, obj4, obj3, obj2, obj5, obj, 11));
@@ -77,7 +77,7 @@ public final /* synthetic */ class m7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new m6((bn) obj4, tL_error, (TLObject) obj3, tLObject, (ne) obj2, (String) obj5, (vf.b) obj));
                 break;
             case 5:
-                org.telegram.messenger.g0.g3(new m6((mm) obj4, (org.telegram.ui.ActionBar.t1) obj2, tLObject, (HashSet) obj5, (TLRPC.TL_inputGroupCallInviteMessage) obj, (fj) obj3, tL_error, 6));
+                org.telegram.messenger.g0.g3(new m6((mm) obj4, (org.telegram.ui.ActionBar.t1) obj2, tLObject, (HashSet) obj5, (TLRPC.TL_inputGroupCallInviteMessage) obj, (gj) obj3, tL_error, 6));
                 break;
             case 6:
                 org.telegram.messenger.g0.g3(new bi.l2(tL_error, (Context) obj4, (org.telegram.ui.ActionBar.h6) obj3, (hi.e) obj2, (org.telegram.ui.o6) obj5, (Runnable) obj));
@@ -102,7 +102,7 @@ public final /* synthetic */ class m7 implements RequestDelegate {
                     }
                 } else {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    ArrayList B0 = mp.B0(updates, TL_update.TL_updateSentPhoneCode.class);
+                    ArrayList B0 = np.B0(updates, TL_update.TL_updateSentPhoneCode.class);
                     int size = B0.size();
                     int i10 = 0;
                     while (i10 < size) {
@@ -117,7 +117,7 @@ public final /* synthetic */ class m7 implements RequestDelegate {
                 }
                 break;
             case 10:
-                org.telegram.messenger.g0.g3(new m6((fs) obj4, (Object) tL_error, (Object) tLObject, obj3, (String) obj2, obj5, obj, 9));
+                org.telegram.messenger.g0.g3(new m6((gs) obj4, (Object) tL_error, (Object) tLObject, obj3, (String) obj2, obj5, obj, 9));
                 break;
             case 11:
                 org.telegram.messenger.g0.g3(new m6((lj0) obj4, tLObject, (String) obj3, (TLRPC.TL_secureRequiredType) obj2, (mj0) obj5, tL_error, (wj0) obj));
@@ -126,29 +126,29 @@ public final /* synthetic */ class m7 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new bi.l2((c21) obj4, tL_error, (TLRPC.InputCheckPasswordSRP) obj3, (TLRPC.User) obj2, (TwoStepVerificationActivity) obj5, (TLRPC.TL_channels_editCreator) obj));
                 break;
             case 13:
-                org.telegram.messenger.g0.g3(new m6(tL_error, (wg.v) obj4, tLObject, (mp) obj3, (TLRPC.TL_inputInvoicePremiumGiftCode) obj2, (org.telegram.ui.ActionBar.g2) obj5, (wg.v) obj, 16));
+                org.telegram.messenger.g0.g3(new m6(tL_error, (wg.v) obj4, tLObject, (np) obj3, (TLRPC.TL_inputInvoicePremiumGiftCode) obj2, (org.telegram.ui.ActionBar.g2) obj5, (wg.v) obj, 16));
                 break;
             default:
-                org.telegram.messenger.g0.g3(new m6(tL_error, (x10) obj5, tLObject, (mp) obj4, (TLRPC.TL_inputInvoicePremiumGiftCode) obj3, (org.telegram.ui.ActionBar.g2) obj2, (x10) obj));
+                org.telegram.messenger.g0.g3(new m6(tL_error, (y10) obj5, tLObject, (np) obj4, (TLRPC.TL_inputInvoicePremiumGiftCode) obj3, (org.telegram.ui.ActionBar.g2) obj2, (y10) obj));
                 break;
         }
     }
 
-    public /* synthetic */ m7(x10 x10Var, mp mpVar, TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode, org.telegram.ui.ActionBar.g2 g2Var, x10 x10Var2) {
+    public /* synthetic */ m7(y10 y10Var, np npVar, TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode, org.telegram.ui.ActionBar.g2 g2Var, y10 y10Var2) {
         this.a = 14;
-        this.e = x10Var;
-        this.b = mpVar;
+        this.e = y10Var;
+        this.b = npVar;
         this.c = tL_inputInvoicePremiumGiftCode;
         this.d = g2Var;
-        this.f = x10Var2;
+        this.f = y10Var2;
     }
 
-    public /* synthetic */ m7(mm mmVar, org.telegram.ui.ActionBar.t1 t1Var, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, fj fjVar) {
+    public /* synthetic */ m7(mm mmVar, org.telegram.ui.ActionBar.t1 t1Var, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, gj gjVar) {
         this.a = 5;
         this.b = mmVar;
         this.d = t1Var;
         this.e = hashSet;
         this.f = tL_inputGroupCallInviteMessage;
-        this.c = fjVar;
+        this.c = gjVar;
     }
 }

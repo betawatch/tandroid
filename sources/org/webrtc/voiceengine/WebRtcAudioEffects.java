@@ -6,11 +6,11 @@ import android.media.audiofx.NoiseSuppressor;
 import android.os.Build;
 import java.util.List;
 import java.util.UUID;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.webrtc.Logging;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class WebRtcAudioEffects {
     private static final UUID AOSP_ACOUSTIC_ECHO_CANCELER = UUID.fromString("bb392ec0-8d4d-11e0-a896-0002a5d5c51b");
@@ -143,7 +143,7 @@ public class WebRtcAudioEffects {
             this.aec = create;
             if (create != null) {
                 boolean enabled = create.getEnabled();
-                boolean z11 = this.shouldEnableAec && canUseAcousticEchoCanceler() && !bz.V;
+                boolean z11 = this.shouldEnableAec && canUseAcousticEchoCanceler() && !cz.V;
                 if (this.aec.setEnabled(z11) != 0) {
                     Logging.e(TAG, "Failed to set the AcousticEchoCanceler state");
                 }
@@ -166,7 +166,7 @@ public class WebRtcAudioEffects {
                 return;
             }
             boolean enabled2 = create2.getEnabled();
-            if (this.shouldEnableNs && canUseNoiseSuppressor() && !bz.V) {
+            if (this.shouldEnableNs && canUseNoiseSuppressor() && !cz.V) {
                 z10 = true;
             }
             if (this.ns.setEnabled(z10) != 0) {

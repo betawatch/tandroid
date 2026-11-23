@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w31 implements Runnable {
     public final /* synthetic */ int a;
@@ -53,10 +53,10 @@ public final /* synthetic */ class w31 implements Runnable {
                 if (!arrayList4.isEmpty()) {
                     int size2 = arrayList4.size();
                     for (int i11 = 0; i11 < size2; i11++) {
-                        org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList4.get(i11);
-                        int i12 = c51Var2.t0.get(fjVar.e1(), -1);
-                        if (i12 >= 0 && ((z41) arrayList3.get(i12)).b() == fjVar.e1()) {
-                            ((z41) arrayList3.get(i12)).b = fjVar;
+                        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList4.get(i11);
+                        int i12 = c51Var2.t0.get(gjVar.e1(), -1);
+                        if (i12 >= 0 && ((z41) arrayList3.get(i12)).b() == gjVar.e1()) {
+                            ((z41) arrayList3.get(i12)).b = gjVar;
                         }
                     }
                     arrayList2.clear();

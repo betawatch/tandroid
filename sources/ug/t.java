@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.g3;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e2;
@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.tm;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -92,23 +92,23 @@ public final /* synthetic */ class t implements View.OnClickListener {
                     if (!hashSet.isEmpty()) {
                         if (i10 != 2) {
                             if (i10 == 5) {
-                                TLRPC.User c22 = mp.u1(k0Var.a).c2(Long.valueOf(j10.i(k0Var.a).e()));
+                                TLRPC.User c22 = np.u1(k0Var.a).c2(Long.valueOf(k10.i(k0Var.a).e()));
                                 ArrayList arrayList = new ArrayList();
                                 Iterator it = hashSet.iterator();
                                 while (it.hasNext()) {
                                     arrayList.add((TLRPC.Chat) it.next());
                                 }
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, k0Var.getContext(), k0Var.J0);
-                                String G = gd.G(arrayList.size(), "LeaveCommunities", new Object[0]);
+                                String G = hd.G(arrayList.size(), "LeaveCommunities", new Object[0]);
                                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                                 t1Var.S = G;
                                 if (arrayList.size() == 1) {
-                                    t1Var.U = org.telegram.messenger.g0.W2(gd.a0("ChannelLeaveAlertWithName", null, 2131752377, ((TLRPC.Chat) arrayList.get(0)).title));
+                                    t1Var.U = org.telegram.messenger.g0.W2(hd.a0("ChannelLeaveAlertWithName", null, 2131752377, ((TLRPC.Chat) arrayList.get(0)).title));
                                 } else {
-                                    t1Var.U = org.telegram.messenger.g0.W2(gd.a0("ChatsLeaveAlert", null, 2131752164, new Object[0]));
+                                    t1Var.U = org.telegram.messenger.g0.W2(hd.a0("ChatsLeaveAlert", null, 2131752164, new Object[0]));
                                 }
-                                alertDialog$Builder.h(gd.N0(2131752577, null), null);
-                                alertDialog$Builder.k(gd.N0(2131743121, null), new tm(k0Var, arrayList, c22, 13));
+                                alertDialog$Builder.h(hd.N0(2131752577, null), null);
+                                alertDialog$Builder.k(hd.N0(2131743119, null), new tm(k0Var, arrayList, c22, 13));
                                 t1Var.show();
                                 TextView textView = (TextView) t1Var.d(-1);
                                 if (textView != null) {

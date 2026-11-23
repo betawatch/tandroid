@@ -17,15 +17,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.fc;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.gc;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.si;
 import org.telegram.messenger.u5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.sq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class n0 {
     public int A;
@@ -171,7 +171,7 @@ public abstract class n0 {
         if (reaction != null) {
             if (d.a) {
                 this.l = true;
-                if (pc.e(8200)) {
+                if (qc.e(8200)) {
                     if (n0Var == null || (oh0Var = n0Var.Z) == null) {
                         this.Z = new oh0(R.raw.star_reaction_click, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(40.0f));
                     } else {
@@ -182,13 +182,13 @@ public abstract class n0 {
                     this.B.w0(org.telegram.messenger.t0.b.getResources().getDrawable(R.drawable.star_reaction).mutate());
                 }
                 if (n0Var == null || (ecVar = n0Var.Y) == null) {
-                    ecVar = new ec(1, bz.o() == 2 ? 18 : 8);
+                    ecVar = new ec(1, cz.o() == 2 ? 18 : 8);
                 }
                 this.Y = ecVar;
             } else if (d.f != null) {
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(i7).r.get(d.f);
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(i7).r.get(d.f);
                 if (tL_availableReaction != null) {
-                    this.B.q0(fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", u5.f(tL_availableReaction.static_icon, m6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
+                    this.B.q0(gc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", u5.f(tL_availableReaction.static_icon, m6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
                 }
             } else if (d.g != 0) {
                 this.C = new p5(i(), i7, d.g);
@@ -197,12 +197,12 @@ public abstract class n0 {
         this.E.d(org.telegram.messenger.g0.L(26.0f), org.telegram.messenger.g0.L(100.0f));
         this.E.e = q0.V;
         if (z10) {
-            this.u = mp.u1(i7).M1(reaction);
+            this.u = np.u1(i7).M1(reaction);
             this.t = !TextUtils.isEmpty(r1);
         }
         if (this.t) {
             n6 n6Var3 = this.F;
-            n6Var3.t(j6.m(this.u, n6Var3.a.getFontMetricsInt(), false, null, 0), !gd.a0, true);
+            n6Var3.t(j6.m(this.u, n6Var3.a.getFontMetricsInt(), false, null, 0), !hd.a0, true);
             if (this instanceof cm0) {
                 Integer.toString(reactionCount.count);
                 this.E.c(this.v, false);
@@ -294,7 +294,7 @@ public abstract class n0 {
         int L;
         int L2;
         ImageReceiver imageReceiver2;
-        gc gcVar;
+        hc hcVar;
         boolean z13;
         Paint paint;
         u4 M1;
@@ -385,7 +385,7 @@ public abstract class n0 {
                 n6Var.m(0.6f, 650L, 1.6f, nr.k);
                 n6Var.t(org.telegram.messenger.g0.o0(this.v, 0), false, true);
                 view = view2;
-                n6Var.t(gd.E(this.v, ','), true, true);
+                n6Var.t(hd.E(this.v, ','), true, true);
             } else {
                 sqVar = sqVar2;
                 f15 = 0.0f;
@@ -459,11 +459,11 @@ public abstract class n0 {
         }
         if (z15) {
             rectF.right += org.telegram.messenger.g0.L(f20);
-            canvas.saveLayerAlpha(rectF, ks.e4, 31);
+            canvas.saveLayerAlpha(rectF, ls.e4, 31);
             rectF.right -= org.telegram.messenger.g0.L(f20);
         }
         if (this.Y != null) {
-            pc.e(8200);
+            qc.e(8200);
         }
         g(canvas, rectF, f27, paint2);
         if (this.R && h()) {
@@ -547,16 +547,16 @@ public abstract class n0 {
                     k10.y0(floor, floor2, imageReceiver2.N0 * 2.0f, imageReceiver2.O0 * 2.0f);
                     canvas.save();
                     canvas.translate(f28 - floor, f29 - floor2);
-                    gcVar = null;
+                    hcVar = null;
                     k10.h(canvas, null);
                     canvas.restore();
                 } else {
                     n6Var2 = n6Var3;
-                    gcVar = null;
+                    hcVar = null;
                     z13 = true;
                 }
                 if (z13) {
-                    imageReceiver2.h(canvas, gcVar);
+                    imageReceiver2.h(canvas, hcVar);
                 }
                 this.m = true;
             }
@@ -634,7 +634,7 @@ public abstract class n0 {
             return false;
         }
         RectF rectF = ecVar.c;
-        if (!pc.e(8200) || !pc.e(131072)) {
+        if (!qc.e(8200) || !qc.e(131072)) {
             return false;
         }
         RectF rectF2 = org.telegram.messenger.g0.P;
@@ -644,7 +644,7 @@ public abstract class n0 {
         rectF.inset(-org.telegram.messenger.g0.L(4.0f), -org.telegram.messenger.g0.L(4.0f));
         ecVar.g(rectF);
         boolean d = ecVar.d();
-        ecVar.a(canvas, i0.a.f(j(), i0.a.o(this.I, ks.e4), i0.a.f(0.4f, this.L, i0.a.o(this.I, ks.e4))));
+        ecVar.a(canvas, i0.a.f(j(), i0.a.o(this.I, ls.e4), i0.a.f(0.4f, this.L, i0.a.o(this.I, ls.e4))));
         if (this.P) {
             Path path = this.c0;
             path.rewind();

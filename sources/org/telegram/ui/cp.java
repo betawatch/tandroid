@@ -10,9 +10,9 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class cp extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class cp extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public org.telegram.ui.Cells.j6 E;
     public final ArrayList F;
     public TLRPC.Chat a;
@@ -102,13 +102,13 @@ public final class cp extends org.telegram.ui.ActionBar.g2 implements org.telegr
     public final View createView(Context context) {
         final int i7 = 1;
         setHasOwnBackground(true);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131746191, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131746191, null));
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new x7(this, 10));
         FrameLayout frameLayout = new FrameLayout(context);
         this.n.addAll(getMediaDataController().n);
         org.telegram.ui.Cells.o4 o4Var = new org.telegram.ui.Cells.o4(context);
-        o4Var.setText(org.telegram.messenger.gd.N0(2131753756, null));
+        o4Var.setText(org.telegram.messenger.hd.N0(2131753756, null));
         LinearLayout linearLayout = new LinearLayout(context);
         this.r = linearLayout;
         linearLayout.setOrientation(1);
@@ -116,13 +116,13 @@ public final class cp extends org.telegram.ui.ActionBar.g2 implements org.telegr
         org.telegram.ui.Cells.j6 j6Var = new org.telegram.ui.Cells.j6(context, null);
         this.x = j6Var;
         final int i10 = 0;
-        j6Var.c(org.telegram.messenger.gd.N0(2131754288, null), false, true);
+        j6Var.c(org.telegram.messenger.hd.N0(2131754288, null), false, true);
         org.telegram.ui.Cells.j6 j6Var2 = new org.telegram.ui.Cells.j6(context, null);
         this.y = j6Var2;
-        j6Var2.c(org.telegram.messenger.gd.N0(2131745096, null), false, true);
+        j6Var2.c(org.telegram.messenger.hd.N0(2131745096, null), false, true);
         org.telegram.ui.Cells.j6 j6Var3 = new org.telegram.ui.Cells.j6(context, null);
         this.E = j6Var3;
-        j6Var3.c(org.telegram.messenger.gd.N0(2131747982, null), false, false);
+        j6Var3.c(org.telegram.messenger.hd.N0(2131747982, null), false, false);
         this.r.addView(o4Var, c8.ma.o(-1, -2));
         this.r.addView(this.x, c8.ma.o(-1, -2));
         this.r.addView(this.y, c8.ma.o(-1, -2));
@@ -377,19 +377,19 @@ public final class cp extends org.telegram.ui.ActionBar.g2 implements org.telegr
         return this.e;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (i10 != this.currentAccount) {
             return;
         }
-        if (i7 == org.telegram.messenger.ks.Y4) {
+        if (i7 == org.telegram.messenger.ls.Y4) {
             ArrayList arrayList = this.n;
             arrayList.clear();
             arrayList.addAll(getMediaDataController().n);
             this.h.f();
             return;
         }
-        if (i7 == org.telegram.messenger.ks.y1 && ((Long) objArr[0]).longValue() == (-this.c)) {
+        if (i7 == org.telegram.messenger.ls.y1 && ((Long) objArr[0]).longValue() == (-this.c)) {
             org.telegram.ui.ActionBar.r4 r4Var = this.parentLayout;
             if (r4Var == null || r4Var.getLastFragment() != this) {
                 removeSelfFromStack();
@@ -416,34 +416,34 @@ public final class cp extends org.telegram.ui.ActionBar.g2 implements org.telegr
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        org.telegram.messenger.mp messagesController = getMessagesController();
+        org.telegram.messenger.np messagesController = getMessagesController();
         long j3 = this.c;
         TLRPC.Chat O0 = messagesController.O0(Long.valueOf(j3));
         this.a = O0;
         if (O0 == null) {
-            TLRPC.Chat P = org.telegram.messenger.tr.a0(this.currentAccount).P(j3);
+            TLRPC.Chat P = org.telegram.messenger.ur.a0(this.currentAccount).P(j3);
             this.a = P;
             if (P == null) {
                 return false;
             }
             getMessagesController().X3(this.a, true);
             if (this.b == null) {
-                TLRPC.ChatFull F0 = org.telegram.messenger.tr.a0(this.currentAccount).F0(this.c, org.telegram.messenger.v3.T(this.a), new CountDownLatch(1), false, false, 0);
+                TLRPC.ChatFull F0 = org.telegram.messenger.ur.a0(this.currentAccount).F0(this.c, org.telegram.messenger.v3.T(this.a), new CountDownLatch(1), false, false, 0);
                 this.b = F0;
                 if (F0 == null) {
                     return false;
                 }
             }
         }
-        getNotificationCenter().c(this, org.telegram.messenger.ks.Y4);
-        getNotificationCenter().c(this, org.telegram.messenger.ks.y1);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.Y4);
+        getNotificationCenter().c(this, org.telegram.messenger.ls.y1);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.mp messagesController = getMessagesController();
+        org.telegram.messenger.np messagesController = getMessagesController();
         int i7 = this.s;
         ArrayList arrayList = this.d;
         messagesController.getClass();
@@ -463,9 +463,9 @@ public final class cp extends org.telegram.ui.ActionBar.g2 implements org.telegr
                 tL_chatReactionsSome.reactions.add(tL_reactionEmoji);
             }
         }
-        messagesController.getConnectionsManager().sendRequest(tL_messages_setChatAvailableReactions, new org.telegram.messenger.go(messagesController, j3, tL_messages_setChatAvailableReactions, 4));
-        getNotificationCenter().n(this, org.telegram.messenger.ks.Y4);
-        getNotificationCenter().n(this, org.telegram.messenger.ks.y1);
+        messagesController.getConnectionsManager().sendRequest(tL_messages_setChatAvailableReactions, new org.telegram.messenger.ho(messagesController, j3, tL_messages_setChatAvailableReactions, 4));
+        getNotificationCenter().n(this, org.telegram.messenger.ls.Y4);
+        getNotificationCenter().n(this, org.telegram.messenger.ls.y1);
     }
 
     @Override // org.telegram.ui.ActionBar.g2

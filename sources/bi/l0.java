@@ -1,12 +1,12 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.ap0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ TL_stars.StarGift a;
@@ -30,7 +30,7 @@ public final class l0 extends org.telegram.ui.ActionBar.j {
             }
             return;
         }
-        String str = mp.u1(j10.t0).X2 + "/auction/" + starGift.auction_slug;
+        String str = np.u1(k10.t0).X2 + "/auction/" + starGift.auction_slug;
         if (i7 == 3) {
             org.telegram.messenger.g0.g(str);
         } else {

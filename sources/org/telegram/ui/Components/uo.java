@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class uo extends LinearLayout {
     public xi0 a;
@@ -86,7 +86,7 @@ public abstract class uo extends LinearLayout {
                         f10 = 16.0f;
                         f11 = 24.0f;
                     } else {
-                        int D = org.telegram.messenger.n10.D(16.0f, xi0Var2.getMeasuredWidth(), org.telegram.messenger.g0.L(320.0f));
+                        int D = org.telegram.messenger.o10.D(16.0f, xi0Var2.getMeasuredWidth(), org.telegram.messenger.g0.L(320.0f));
                         StaticLayout staticLayout = new StaticLayout(xi0Var2.S0.getText(), xi0Var2.S0.getPaint(), D, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                         xi0Var2.U0 = staticLayout.getHeight();
                         xi0Var2.T0 = 0;

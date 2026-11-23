@@ -2,11 +2,11 @@ package di;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c0 {
     public final int a;
@@ -45,7 +45,7 @@ public final class c0 {
         this.h = true;
         TL_payments.getSuggestedStarRefBots getsuggestedstarrefbots = new TL_payments.getSuggestedStarRefBots();
         int i7 = this.a;
-        getsuggestedstarrefbots.peer = mp.u1(i7).l1(this.b);
+        getsuggestedstarrefbots.peer = np.u1(i7).l1(this.b);
         getsuggestedstarrefbots.limit = 20;
         int i10 = this.g;
         getsuggestedstarrefbots.order_by_date = i10 == 3;

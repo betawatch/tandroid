@@ -6,12 +6,12 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
-import bi.l8;
-import org.telegram.messenger.ks;
+import bi.k8;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class z0 extends ek0 {
     public static final Paint k3;
@@ -47,7 +47,7 @@ public abstract class z0 extends ek0 {
         setLayoutManager(new v4.t(7));
         setAdapter(new x0(this, context));
         setOverScrollMode(2);
-        setOnItemClickListener(new l8(this, 21));
+        setOnItemClickListener(new k8(this, 21));
     }
 
     public static void A1(float f10, float f11, float f12, int i7, Canvas canvas) {
@@ -59,7 +59,7 @@ public abstract class z0 extends ek0 {
         }
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(f10 - f12, f11 - f12, f10 + f12, f11 + f12);
-        paint.setAlpha(ks.e4);
+        paint.setAlpha(ls.e4);
         canvas.drawArc(rectF, -45.0f, -180.0f, true, paint);
         Path path = m3;
         path.rewind();

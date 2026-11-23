@@ -8,7 +8,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xu0 extends View implements org.telegram.ui.ActionBar.b6 {
     public final r9 a;
@@ -63,7 +63,7 @@ public final class xu0 extends View implements org.telegram.ui.ActionBar.b6 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         float d = this.c.d(this.d);
-        int z10 = org.telegram.messenger.n10.z(24.0f, getMeasuredWidth(), 2);
+        int z10 = org.telegram.messenger.o10.z(24.0f, getMeasuredWidth(), 2);
         int measuredHeight = (getMeasuredHeight() - org.telegram.messenger.g0.L(24.0f)) / 2;
         canvas.save();
         canvas.translate(z10, measuredHeight);

@@ -1,8 +1,8 @@
 package l2;
 
 import a8.la;
-import ai.t1;
 import ai.u1;
+import ai.v1;
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
@@ -18,6 +18,7 @@ import android.view.SurfaceHolder;
 import android.view.TextureView;
 import e2.s1;
 import e2.x1;
+import h9.t1;
 import hi.e9;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import org.telegram.ui.Components.b61;
 import x2.r1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class f0 extends com.google.android.gms.common.api.q implements p {
     public final ei.a A;
@@ -577,7 +578,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         }
         boolean z17 = g1Var2.g != g1Var.g;
         if (!equals) {
-            this.m.c(0, new u1(g1Var, i7, 3));
+            this.m.c(0, new v1(g1Var, i7, 3));
         }
         if (z10) {
             e2.i1 i1Var2 = new e2.i1();
@@ -652,14 +653,14 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             long h04 = h2.l0.h0(j3);
             long h05 = this.p0.b.b() ? h2.l0.h0(m1(this.p0)) : h04;
             x2.g0 g0Var5 = this.p0.b;
-            this.m.c(11, new t1(i10, b1Var, new e2.b1(obj3, o02, l0Var3, obj4, i18, h04, h05, g0Var5.b, g0Var5.c), 4));
+            this.m.c(11, new u1(i10, b1Var, new e2.b1(obj3, o02, l0Var3, obj4, i18, h04, h05, g0Var5.b, g0Var5.c), 4));
         } else {
             z12 = booleanValue;
             z13 = equals2;
             z14 = z16;
         }
         if (z12) {
-            this.m.c(1, new u1(l0Var, intValue, 4));
+            this.m.c(1, new v1(l0Var, intValue, 4));
         }
         if (g1Var2.f != g1Var.f) {
             final int i19 = 7;
@@ -1940,7 +1941,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         if (l1Var.p()) {
             x2.g0 g0Var = g1.u;
             long S = h2.l0.S(this.r0);
-            g1 c10 = j3.d(g0Var, S, S, S, 0L, r1.d, this.b, h9.t1.e).c(g0Var);
+            g1 c10 = j3.d(g0Var, S, S, S, 0L, r1.d, this.b, t1.e).c(g0Var);
             c10.q = c10.s;
             return c10;
         }
@@ -1965,7 +1966,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                 list = j3.j;
             } else {
                 h9.g0 g0Var4 = h9.i0.b;
-                list = h9.t1.e;
+                list = t1.e;
             }
             g1 c11 = j3.d(g0Var3, longValue, longValue, longValue, 0L, r1Var, yVar, list).c(g0Var3);
             c11.q = longValue;
@@ -2154,7 +2155,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
     public final void stop() {
         F1();
         A1(null);
-        this.e0 = new g2.c(this.p0.s, h9.t1.e);
+        this.e0 = new g2.c(this.p0.s, t1.e);
     }
 
     @Override // e2.c1

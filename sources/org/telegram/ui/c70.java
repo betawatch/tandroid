@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c70 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -65,7 +65,7 @@ public final /* synthetic */ class c70 implements Runnable {
                                 int i11 = launchActivity.P;
                                 Integer valueOf = Integer.valueOf(message.id);
                                 int i12 = launchActivity.P;
-                                launchActivity.z0(i11, null, valueOf, null, Long.valueOf(org.telegram.messenger.fj.b2(i12, message, org.telegram.messenger.mp.u1(i12).y2(org.telegram.messenger.fj.B0(message)), false)), num, this.c, org.telegram.messenger.mp.u1(launchActivity.P).O0(Long.valueOf(-j3)), runnable, this.f, this.d, this.h);
+                                launchActivity.z0(i11, null, valueOf, null, Long.valueOf(org.telegram.messenger.gj.b2(i12, message, org.telegram.messenger.np.u1(i12).y2(org.telegram.messenger.gj.B0(message)), false)), num, this.c, org.telegram.messenger.np.u1(launchActivity.P).O0(Long.valueOf(-j3)), runnable, this.f, this.d, this.h);
                                 break;
                             } else {
                                 Bundle bundle = new Bundle();
@@ -141,7 +141,7 @@ public final /* synthetic */ class c70 implements Runnable {
                                         if (tLObject3 instanceof TLRPC.TL_messages_chats) {
                                             TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject3;
                                             if (!tL_messages_chats.chats.isEmpty()) {
-                                                org.telegram.messenger.mp.u1(launchActivity5.P).Z3(tL_messages_chats.chats, false);
+                                                org.telegram.messenger.np.u1(launchActivity5.P).Z3(tL_messages_chats.chats, false);
                                                 TLRPC.Chat chat = tL_messages_chats.chats.get(0);
                                                 int i17 = i15;
                                                 if (chat != null && chat.forum) {
@@ -149,7 +149,7 @@ public final /* synthetic */ class c70 implements Runnable {
                                                 }
                                                 org.telegram.ui.ActionBar.g2 g2Var3 = g2Var2;
                                                 Bundle bundle4 = bundle3;
-                                                if (g2Var3 == null || org.telegram.messenger.mp.u1(launchActivity5.P).E(bundle4, g2Var3, null, null)) {
+                                                if (g2Var3 == null || org.telegram.messenger.np.u1(launchActivity5.P).E(bundle4, g2Var3, null, null)) {
                                                     bn bnVar3 = new bn(bundle4);
                                                     bnVar2.Sb(i17, i16, str5);
                                                     ((ActionBarLayout) launchActivity5.M()).S(bnVar3);
@@ -158,7 +158,7 @@ public final /* synthetic */ class c70 implements Runnable {
                                                 return;
                                             }
                                         }
-                                        launchActivity5.F0(org.telegram.ui.Components.c5.E(launchActivity5, org.telegram.messenger.gd.N0(2131751442, null), org.telegram.messenger.gd.N0(2131748702, null)));
+                                        launchActivity5.F0(org.telegram.ui.Components.c5.E(launchActivity5, org.telegram.messenger.hd.N0(2131751442, null), org.telegram.messenger.hd.N0(2131748702, null)));
                                     }
                                 });
                             }

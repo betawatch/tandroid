@@ -5,10 +5,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class r1 extends dk0 {
     public String e;
@@ -38,7 +38,7 @@ public final class r1 extends dk0 {
         arrayList.clear();
         i2 i2Var = t1Var.r;
         int i7 = i2.C1;
-        arrayList.addAll(new ArrayList(ri.d0(i2Var.a).j0));
+        arrayList.addAll(new ArrayList(si.d0(i2Var.a).j0));
         if (z10) {
             r1Var.f();
         }
@@ -85,7 +85,7 @@ public final class r1 extends dk0 {
         }
         if (this.f == null) {
             int i10 = i2.C1;
-            TLObject h22 = mp.u1(i2Var.a).h2(mp.u1(i2Var.a).N3);
+            TLObject h22 = np.u1(i2Var.a).h2(np.u1(i2Var.a).N3);
             if (h22 instanceof TLRPC.User) {
                 this.f = (TLRPC.User) h22;
             }
@@ -94,7 +94,7 @@ public final class r1 extends dk0 {
         if (user == null && !this.n) {
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
             int i11 = i2.C1;
-            tL_contacts_resolveUsername.username = mp.u1(i2Var.a).N3;
+            tL_contacts_resolveUsername.username = np.u1(i2Var.a).N3;
             this.d = ConnectionsManager.getInstance(i2Var.a).sendRequest(tL_contacts_resolveUsername, new ai.g1(this, 9));
             return;
         }
@@ -103,7 +103,7 @@ public final class r1 extends dk0 {
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
         int i12 = i2.C1;
-        tL_messages_getInlineBotResults.bot = mp.u1(i2Var.a).s1(this.f);
+        tL_messages_getInlineBotResults.bot = np.u1(i2Var.a).s1(this.f);
         String str = this.e;
         if (str == null) {
             str = "";
@@ -114,7 +114,7 @@ public final class r1 extends dk0 {
         tL_messages_getInlineBotResults.offset = str2 != null ? str2 : "";
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         String str3 = "gif_search_" + tL_messages_getInlineBotResults.query + "_" + tL_messages_getInlineBotResults.offset;
-        tr.a0(i2Var.a).M(str3, new di.j3(this, isEmpty, tL_messages_getInlineBotResults, str3));
+        ur.a0(i2Var.a).M(str3, new di.j3(this, isEmpty, tL_messages_getInlineBotResults, str3));
     }
 
     public final void H(String str) {
@@ -212,7 +212,7 @@ public final class r1 extends dk0 {
             i2 i2Var2 = t1Var.r;
             int i10 = i2.C1;
             ?? k8Var = new org.telegram.ui.Cells.k8(context, false, false, i2Var2.J0, false);
-            k8Var.a(0, gd.N0(2131750822, null));
+            k8Var.a(0, hd.N0(2131750822, null));
             v4.q0 q0Var = new v4.q0(-1, -2);
             ((ViewGroup.MarginLayoutParams) q0Var).topMargin = org.telegram.messenger.g0.L(2.5f);
             ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin = org.telegram.messenger.g0.L(5.5f);

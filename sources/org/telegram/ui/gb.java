@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gb implements org.telegram.ui.Cells.s0 {
     public final /* synthetic */ ib a;
@@ -66,14 +66,14 @@ public final class gb implements org.telegram.ui.Cells.s0 {
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", -j3);
             i10 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-            if (org.telegram.messenger.mp.u1(i10).E(bundle, lbVar, null, null)) {
+            if (org.telegram.messenger.np.u1(i10).E(bundle, lbVar, null, null)) {
                 lbVar.presentFragment(new bn(bundle), true);
                 return;
             }
             return;
         }
         i7 = ((org.telegram.ui.ActionBar.g2) lbVar).currentAccount;
-        if (j3 != org.telegram.messenger.j10.i(i7).e()) {
+        if (j3 != org.telegram.messenger.k10.i(i7).e()) {
             Bundle j10 = a8.p0.j(j3, "user_id");
             lb.u0(lbVar, j10, j3);
             ProfileActivity profileActivity = new ProfileActivity(j10, null);
@@ -107,7 +107,7 @@ public final class gb implements org.telegram.ui.Cells.s0 {
     @Override // org.telegram.ui.Cells.s0
     public final void x(org.telegram.ui.Cells.v0 v0Var) {
         lb lbVar = this.a.n;
-        org.telegram.messenger.fj messageObject = v0Var.getMessageObject();
+        org.telegram.messenger.gj messageObject = v0Var.getMessageObject();
         if (messageObject.D == 22) {
             qc qcVar = new qc(a());
             qcVar.m0 = lbVar;
@@ -119,7 +119,7 @@ public final class gb implements org.telegram.ui.Cells.s0 {
         if (w10 == null) {
             PhotoViewer.p1().e2(messageObject, null, 0L, 0L, 0L, lbVar.C0);
         } else {
-            PhotoViewer.p1().c2(w10.location, org.telegram.messenger.fc.i(w10, messageObject.k.action.photo), lbVar.C0);
+            PhotoViewer.p1().c2(w10.location, org.telegram.messenger.gc.i(w10, messageObject.k.action.photo), lbVar.C0);
         }
     }
 

@@ -1,12 +1,12 @@
 package oi;
 
 import android.text.Editable;
-import org.telegram.messenger.cu;
+import org.telegram.messenger.du;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.mt;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements j5, d1 {
     public final /* synthetic */ t3 a;
@@ -52,9 +52,9 @@ public final /* synthetic */ class s2 implements j5, d1 {
         if (text2 == null || text2.getSpanStart(i4Var) < 0) {
             return;
         }
-        cu cuVar = i4Var.b;
-        if (cuVar != null && i4Var.c == f1Var) {
-            cuVar.b(f1Var);
+        du duVar = i4Var.b;
+        if (duVar != null && i4Var.c == f1Var) {
+            duVar.b(f1Var);
             i4Var.c = null;
         }
         text2.removeSpan(i4Var);

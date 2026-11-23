@@ -10,10 +10,10 @@ import android.graphics.SweepGradient;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.y01;
+import org.telegram.ui.Components.x01;
 import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f0 extends FrameLayout {
     public float a;
@@ -127,9 +127,9 @@ public final class f0 extends FrameLayout {
     @Override // android.view.View
     public final void setTranslationY(float f10) {
         super.setTranslationY(f10);
-        y01 y01Var = this.c.N0;
-        if (y01Var != null) {
-            y01Var.invalidate();
+        x01 x01Var = this.c.N0;
+        if (x01Var != null) {
+            x01Var.invalidate();
         }
     }
 }

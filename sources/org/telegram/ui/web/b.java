@@ -10,17 +10,17 @@ import java.util.Collections;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements q10 {
+public final /* synthetic */ class b implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -29,7 +29,7 @@ public final /* synthetic */ class b implements q10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
         final int i10 = 1;
@@ -116,7 +116,7 @@ public final /* synthetic */ class b implements q10 {
                     i14++;
                 }
                 if (!arrayList3.isEmpty()) {
-                    arrayList.add(o41.s(gd.N0(2131742648, null), gd.N0(2131742652, null), new o4(kVar, 27)));
+                    arrayList.add(o41.s(hd.N0(2131742646, null), hd.N0(2131742650, null), new o4(kVar, 27)));
                     int i16 = 0;
                     while (i16 < arrayList3.size()) {
                         final String str2 = (String) arrayList3.get(i16);
@@ -159,15 +159,15 @@ public final /* synthetic */ class b implements q10 {
                 if (iVar != null) {
                     ArrayList arrayList5 = iVar.a;
                     if (!arrayList5.isEmpty()) {
-                        arrayList.add(o41.r(gd.N0(2131742649, null)));
+                        arrayList.add(o41.r(hd.N0(2131742647, null)));
                         while (i11 < arrayList5.size()) {
-                            fj fjVar = (fj) arrayList5.get(i11);
-                            if (!TextUtils.isEmpty(k.a(fjVar))) {
+                            gj gjVar = (gj) arrayList5.get(i11);
+                            if (!TextUtils.isEmpty(k.a(gjVar))) {
                                 int i18 = g.b;
                                 o41 K3 = o41.K(g.class);
                                 K3.A = 3;
                                 K3.r = true;
-                                K3.I = fjVar;
+                                K3.I = gjVar;
                                 arrayList.add(K3);
                             }
                             i11++;

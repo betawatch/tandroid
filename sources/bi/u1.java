@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import di.mb;
 import di.pb;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.Components.ef;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.h51;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.tv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u1 extends v4.u0 {
     public final /* synthetic */ int a;
@@ -176,21 +176,21 @@ public final class u1 extends v4.u0 {
                 }
                 break;
             case 1:
-                k8 k8Var = (k8) obj;
-                for (int i19 = 0; i19 < k8Var.f.getChildCount(); i19++) {
-                    if (k8Var.f.getChildAt(i19) instanceof yz) {
-                        k8Var.d.l(false);
+                j8 j8Var = (j8) obj;
+                for (int i19 = 0; i19 < j8Var.f.getChildCount(); i19++) {
+                    if (j8Var.f.getChildAt(i19) instanceof yz) {
+                        j8Var.d.l(false);
                         break;
                     }
                 }
                 break;
             case 2:
-                ((j8) obj).e1();
+                ((i8) obj).e1();
                 break;
             case 3:
-                o8 o8Var = (o8) obj;
-                if (o8Var.f1()) {
-                    o8Var.U1.a();
+                n8 n8Var = (n8) obj;
+                if (n8Var.f1()) {
+                    n8Var.U1.a();
                     break;
                 }
                 break;
@@ -460,7 +460,7 @@ public final class u1 extends v4.u0 {
                     int abs = L0 != -1 ? Math.abs(c0Var.N0() - L0) + 1 : 0;
                     int b10 = recyclerView.getAdapter().b();
                     MediaController.B();
-                    if (bz.O0) {
+                    if (cz.O0) {
                         if (L0 < 10) {
                             MediaController.B().P();
                             break;

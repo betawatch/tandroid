@@ -21,12 +21,13 @@ import e2.c1;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.z8;
 import org.telegram.ui.LaunchActivity;
 import p4.r;
 import p4.x;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class p {
     public final l2.i a;
@@ -82,7 +83,7 @@ public final class p {
         int a02 = lVar.a0();
         if (J > 0 && a02 > 0) {
             float f10 = J / a02;
-            Rational rational = f10 < 0.45f ? new Rational(45, 100) : f10 > 2.35f ? new Rational(ks.L3, 100) : new Rational(J, a02);
+            Rational rational = f10 < 0.45f ? new Rational(45, 100) : f10 > 2.35f ? new Rational(ls.L3, 100) : new Rational(J, a02);
             builder.setAspectRatio(rational);
             sb2.append(rational);
         }
@@ -211,7 +212,7 @@ public final class p {
             SurfaceTexture surfaceTexture = oVar.a;
             oVar.a = null;
             if (surfaceTexture == null && Build.VERSION.SDK_INT >= 26) {
-                surfaceTexture = f9.b.d();
+                surfaceTexture = z8.c();
             }
             if (surfaceTexture != null) {
                 nVar.a.D(surfaceTexture);

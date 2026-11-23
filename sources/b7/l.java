@@ -3,12 +3,12 @@ package b7;
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.i61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.v9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class l implements c, g6.h {
     public int a;
@@ -41,7 +41,7 @@ public final class l implements c, g6.h {
     @Override // g6.h
     public void h(g6.f fVar, String str) {
         MediaController B;
-        fj fjVar;
+        gj gjVar;
         g6.c cVar = (g6.c) fVar;
         if (cVar == null) {
             return;
@@ -69,8 +69,8 @@ public final class l implements c, g6.h {
             if (i61Var != null) {
                 j3 = i61Var.S();
             }
-        } else if (i7 == 1 && (fjVar = (B = MediaController.B()).v0) != null) {
-            j3 = B.D(fjVar);
+        } else if (i7 == 1 && (gjVar = (B = MediaController.B()).v0) != null) {
+            j3 = B.D(gjVar);
         }
         if (j3 >= 0) {
             d1.f.v(j3);

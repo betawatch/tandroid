@@ -3,9 +3,9 @@ package li;
 import fi.t3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
@@ -24,7 +24,7 @@ import org.telegram.ui.o30;
 import org.telegram.ui.o31;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class l implements Runnable {
                 TLRPC.InputFile inputFile4 = this.c;
                 TLRPC.VideoSize videoSize2 = this.d;
                 if (inputFile3 == null && inputFile4 == null && videoSize2 == null) {
-                    pVar.x.j(fc.e(fileLocation), "50_50", pVar.F, pVar.J);
+                    pVar.x.j(gc.e(fileLocation), "50_50", pVar.F, pVar.J);
                     pVar.f0(true, false);
                 } else {
                     pVar.getMessagesController().B(pVar.c, null, inputFile3, inputFile4, videoSize2, this.f, this.e, photoSize2.location, photoSize.location, null);
@@ -107,7 +107,7 @@ public final /* synthetic */ class l implements Runnable {
                     TLRPC.FileLocation fileLocation2 = photoSize2.location;
                     adVar.E = fileLocation2;
                     adVar.F = photoSize.location;
-                    adVar.f.j(fc.e(fileLocation2), "50_50", adVar.w, null);
+                    adVar.f.j(gc.e(fileLocation2), "50_50", adVar.w, null);
                     adVar.k0(true, false);
                     break;
                 }
@@ -169,14 +169,14 @@ public final /* synthetic */ class l implements Runnable {
                     break;
                 } else {
                     t3 t3Var = rnVar.e;
-                    fc e12 = fc.e(fileLocation3);
+                    gc e12 = gc.e(fileLocation3);
                     b9 b9Var = rnVar.r;
                     Object obj = rnVar.D0;
                     if (obj == null) {
                         obj = rnVar.x0;
                     }
                     t3Var.j(e12, "50_50", b9Var, obj);
-                    rnVar.c0.o(R.drawable.msg_addphoto, gd.N0(2131752201, "ChatSetNewPhoto"), true);
+                    rnVar.c0.o(R.drawable.msg_addphoto, hd.N0(2131752201, "ChatSetNewPhoto"), true);
                     if (rnVar.S0 == null) {
                         rnVar.S0 = new oh0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
                     }
@@ -198,7 +198,7 @@ public final /* synthetic */ class l implements Runnable {
                     double d10 = this.f;
                     String str2 = this.e;
                     if (j10 <= 0) {
-                        mp.u1(cVar.a).B(-j10, null, inputFile7, inputFile8, videoSize4, d10, str2, photoSize2.location, photoSize.location, new lz(o30Var, 7));
+                        np.u1(cVar.a).B(-j10, null, inputFile7, inputFile8, videoSize4, d10, str2, photoSize2.location, photoSize.location, new lz(o30Var, 7));
                         break;
                     } else {
                         TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto2 = new TLRPC.TL_photos_uploadProfilePhoto();
@@ -223,9 +223,9 @@ public final /* synthetic */ class l implements Runnable {
                     o30Var.c = photoSize2.location;
                     TLRPC.FileLocation fileLocation4 = photoSize.location;
                     o30Var.b = fileLocation4;
-                    fc e13 = fc.e(fileLocation4);
+                    gc e13 = gc.e(fileLocation4);
                     o30Var.d = e13;
-                    f40Var.m1.A(e13, fc.e(o30Var.c));
+                    f40Var.m1.A(e13, gc.e(o30Var.c));
                     org.telegram.messenger.g0.Z3(f40Var.L1);
                     break;
                 }
@@ -247,7 +247,7 @@ public final /* synthetic */ class l implements Runnable {
                     TLRPC.FileLocation fileLocation5 = photoSize2.location;
                     f50Var.E = fileLocation5;
                     f50Var.F = photoSize.location;
-                    f50Var.d.j(fc.e(fileLocation5), "50_50", f50Var.r, null);
+                    f50Var.d.j(gc.e(fileLocation5), "50_50", f50Var.r, null);
                     f50Var.e0(true, false);
                     break;
                 }

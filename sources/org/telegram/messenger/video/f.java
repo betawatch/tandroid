@@ -7,9 +7,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.t10;
 import org.telegram.messenger.v3;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.ConnectionsManager;
@@ -27,10 +27,9 @@ import org.telegram.ui.f40;
 import org.telegram.ui.p20;
 import org.telegram.ui.q20;
 import org.telegram.ui.s20;
-import org.telegram.ui.t10;
 import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,11 +41,11 @@ public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ f(hi.e eVar, r5 r5Var, s10 s10Var, String[] strArr, boolean[] zArr, e3[] e3VarArr, h6 h6Var) {
+    public /* synthetic */ f(hi.e eVar, r5 r5Var, t10 t10Var, String[] strArr, boolean[] zArr, e3[] e3VarArr, h6 h6Var) {
         this.a = 2;
         this.b = eVar;
         this.c = r5Var;
-        this.d = s10Var;
+        this.d = t10Var;
         this.e = strArr;
         this.h = zArr;
         this.n = e3VarArr;
@@ -75,7 +74,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 org.telegram.messenger.c cVar = (org.telegram.messenger.c) obj3;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj2;
-                t10 t10Var = f40Var.Z2;
+                org.telegram.ui.t10 t10Var = f40Var.Z2;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 f40Var.S2 = ofFloat;
                 ofFloat.setDuration(600L);
@@ -83,9 +82,9 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 f40Var.S2.addListener(new s20(f40Var));
                 f40Var.S2.start();
                 if (v3.W(f40Var.U2)) {
-                    t10Var.b(gd.N0(2131743204, null), true);
+                    t10Var.b(hd.N0(2131743202, null), true);
                 } else {
-                    t10Var.b(gd.N0(2131743063, null), true);
+                    t10Var.b(hd.N0(2131743061, null), true);
                 }
                 Calendar calendar = Calendar.getInstance();
                 boolean g10 = c5.g(null, null, 0L, 604800L, 3, tb0Var, p20Var, q20Var);
@@ -99,7 +98,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 f40Var.j4 = (int) (calendar.getTimeInMillis() / 1000);
                 f40Var.U1(false);
                 TL_phone.createGroupCall creategroupcall = new TL_phone.createGroupCall();
-                creategroupcall.peer = mp.n1(chat);
+                creategroupcall.peer = np.n1(chat);
                 creategroupcall.random_id = Utilities.b.nextInt();
                 creategroupcall.schedule_date = f40Var.j4;
                 creategroupcall.flags |= 2;
@@ -108,7 +107,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
             default:
                 hi.e eVar = (hi.e) obj7;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj6;
-                s10 s10Var = (s10) obj5;
+                t10 t10Var2 = (t10) obj5;
                 String[] strArr = (String[]) obj4;
                 boolean[] zArr = (boolean[]) obj3;
                 e3[] e3VarArr = (e3[]) obj2;
@@ -119,7 +118,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                         break;
                     } else {
                         eVar.setLoading(true);
-                        s10Var.a(strArr[0], Boolean.valueOf(zArr[0]), new org.telegram.ui.Wallet.o(eVar, e3VarArr, h6Var, 6));
+                        t10Var2.a(strArr[0], Boolean.valueOf(zArr[0]), new org.telegram.ui.Wallet.o(eVar, e3VarArr, h6Var, 6));
                         break;
                     }
                 }

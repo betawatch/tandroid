@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class y9 extends org.telegram.ui.ActionBar.g2 {
     public x9 a;
@@ -25,7 +25,7 @@ public final class y9 extends org.telegram.ui.ActionBar.g2 {
 
     public static void Z(y9 y9Var) {
         String str;
-        TLRPC.User f10 = org.telegram.messenger.j10.i(y9Var.currentAccount).f();
+        TLRPC.User f10 = org.telegram.messenger.k10.i(y9Var.currentAccount).f();
         if (f10 == null || y9Var.b.getText() == null || y9Var.a.getText() == null) {
             return;
         }
@@ -39,14 +39,14 @@ public final class y9 extends org.telegram.ui.ActionBar.g2 {
             f10.first_name = obj;
             updateprofile.last_name = obj2;
             f10.last_name = obj2;
-            TLRPC.User c22 = org.telegram.messenger.mp.u1(y9Var.currentAccount).c2(Long.valueOf(org.telegram.messenger.j10.i(y9Var.currentAccount).e()));
+            TLRPC.User c22 = org.telegram.messenger.np.u1(y9Var.currentAccount).c2(Long.valueOf(org.telegram.messenger.k10.i(y9Var.currentAccount).e()));
             if (c22 != null) {
                 c22.first_name = updateprofile.first_name;
                 c22.last_name = updateprofile.last_name;
             }
-            org.telegram.messenger.j10.i(y9Var.currentAccount).v(true);
-            org.telegram.messenger.ks.f(y9Var.currentAccount).k(org.telegram.messenger.ks.j0, new Object[0]);
-            org.telegram.messenger.ks.f(y9Var.currentAccount).k(org.telegram.messenger.ks.r, 1);
+            org.telegram.messenger.k10.i(y9Var.currentAccount).v(true);
+            org.telegram.messenger.ls.f(y9Var.currentAccount).k(org.telegram.messenger.ls.j0, new Object[0]);
+            org.telegram.messenger.ls.f(y9Var.currentAccount).k(org.telegram.messenger.ls.r, 1);
             ConnectionsManager.getInstance(y9Var.currentAccount).sendRequest(updateprofile, new fi.l5(9));
         }
     }
@@ -68,12 +68,12 @@ public final class y9 extends org.telegram.ui.ActionBar.g2 {
         org.telegram.ui.ActionBar.t6.l(this.actionBar, 1, org.telegram.ui.ActionBar.m6.v8, h6Var);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(org.telegram.messenger.gd.N0(2131751252, null));
+        this.actionBar.setTitle(org.telegram.messenger.hd.N0(2131751252, null));
         this.actionBar.setActionBarMenuOnItemClick(new x7(this, 3));
-        this.c = this.actionBar.s().h(1, R.drawable.ic_ab_done, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.gd.N0(2131751342, null));
-        TLRPC.User c22 = org.telegram.messenger.mp.u1(this.currentAccount).c2(Long.valueOf(org.telegram.messenger.j10.i(this.currentAccount).e()));
+        this.c = this.actionBar.s().h(1, R.drawable.ic_ab_done, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.hd.N0(2131751342, null));
+        TLRPC.User c22 = org.telegram.messenger.np.u1(this.currentAccount).c2(Long.valueOf(org.telegram.messenger.k10.i(this.currentAccount).e()));
         if (c22 == null) {
-            c22 = org.telegram.messenger.j10.i(this.currentAccount).f();
+            c22 = org.telegram.messenger.k10.i(this.currentAccount).f();
         }
         LinearLayout linearLayout = new LinearLayout(context);
         this.fragmentView = linearLayout;
@@ -99,10 +99,10 @@ public final class y9 extends org.telegram.ui.ActionBar.g2 {
         this.a.setMaxLines(1);
         this.a.setLines(1);
         this.a.setSingleLine(true);
-        this.a.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        this.a.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
         this.a.setInputType(49152);
         this.a.setImeOptions(5);
-        this.a.setHint(org.telegram.messenger.gd.N0(2131750677, null));
+        this.a.setHint(org.telegram.messenger.hd.N0(2131750677, null));
         org.telegram.ui.ActionBar.t6.v(this.a, i12, h6Var);
         this.a.setCursorSize(org.telegram.messenger.g0.L(20.0f));
         this.a.setCursorWidth(1.5f);
@@ -146,10 +146,10 @@ public final class y9 extends org.telegram.ui.ActionBar.g2 {
         this.b.setMaxLines(1);
         this.b.setLines(1);
         this.b.setSingleLine(true);
-        this.b.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        this.b.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
         this.b.setInputType(49152);
         this.b.setImeOptions(6);
-        this.b.setHint(org.telegram.messenger.gd.N0(2131748839, null));
+        this.b.setHint(org.telegram.messenger.hd.N0(2131748839, null));
         org.telegram.ui.ActionBar.t6.v(this.b, i12, h6Var);
         this.b.setCursorSize(org.telegram.messenger.g0.L(20.0f));
         this.b.setCursorWidth(1.5f);
@@ -214,7 +214,7 @@ public final class y9 extends org.telegram.ui.ActionBar.g2 {
     @Override // org.telegram.ui.ActionBar.g2
     public final void onResume() {
         super.onResume();
-        if (org.telegram.messenger.mp.g1().getBoolean("view_animations", true)) {
+        if (org.telegram.messenger.np.g1().getBoolean("view_animations", true)) {
             return;
         }
         this.a.requestFocus();

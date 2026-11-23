@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class t00 implements Runnable {
     public final /* synthetic */ FragmentContextView a;
@@ -24,10 +24,10 @@ public final class t00 implements Runnable {
             return;
         }
         int currentTime = groupCall.b.schedule_date - g2Var.getConnectionsManager().getCurrentTime();
-        String G = currentTime >= 86400 ? org.telegram.messenger.gd.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]) : org.telegram.messenger.g0.j0(currentTime);
+        String G = currentTime >= 86400 ? org.telegram.messenger.hd.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]) : org.telegram.messenger.g0.j0(currentTime);
         n6 n6Var = fragmentContextView.k0;
         if (!fragmentContextView.j0) {
-            G = org.telegram.messenger.gd.N0(2131743197, null);
+            G = org.telegram.messenger.hd.N0(2131743195, null);
         }
         n6Var.t(G, true, true);
         org.telegram.messenger.g0.h3(fragmentContextView.n0, 1000L);

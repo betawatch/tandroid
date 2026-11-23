@@ -4,13 +4,13 @@ import android.text.SpannableString;
 import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.bj;
+import org.telegram.messenger.cj;
 import org.telegram.messenger.j6;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.tx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class n implements tx {
     public final /* synthetic */ o a;
@@ -181,7 +181,7 @@ public final class n implements tx {
     }
 
     @Override // org.telegram.ui.Components.tx
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, bj bjVar, boolean z10, int i7) {
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, cj cjVar, boolean z10, int i7) {
     }
 
     @Override // org.telegram.ui.Components.tx

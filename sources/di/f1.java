@@ -6,12 +6,12 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.HashSet;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.lz;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.mz;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f1 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -36,7 +36,7 @@ public final class f1 extends FrameLayout implements te.b, org.telegram.ui.Actio
         this.c = c3Var;
         frameLayout.setBackground(c3Var);
         c3Var.w = 1;
-        addView(frameLayout, c8.ma.e(-1, -1, ks.E1));
+        addView(frameLayout, c8.ma.e(-1, -1, ls.E1));
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.d = q9Var;
         q9Var.getImageReceiver().W(0);
@@ -71,7 +71,7 @@ public final class f1 extends FrameLayout implements te.b, org.telegram.ui.Actio
         }
         f1Var.n = document;
         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, org.telegram.messenger.g0.L(100.0f), false, null, false);
-        lz f10 = org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.m6.a7, 0.3f, null);
+        mz f10 = org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.m6.a7, 0.3f, null);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(i7);
         sb2.append("_");
@@ -79,7 +79,7 @@ public final class f1 extends FrameLayout implements te.b, org.telegram.ui.Actio
         sb2.append(z10 ? "_nolimit_pcache" : "");
         String sb3 = sb2.toString();
         q9Var.setLayoutParams(c8.ma.d(i7, i7, 49, 0.0f, r3 + 17, 0.0f, (80 - i7) / 2));
-        q9Var.m(org.telegram.messenger.fc.b(document), sb3, org.telegram.messenger.fc.c(w10, document), sb3, f10, obj);
+        q9Var.m(org.telegram.messenger.gc.b(document), sb3, org.telegram.messenger.gc.c(w10, document), sb3, f10, obj);
     }
 
     @Override // te.b
@@ -107,7 +107,7 @@ public final class f1 extends FrameLayout implements te.b, org.telegram.ui.Actio
             textView.setTextColor(i0.a.f(aVar.e, i0.a.f(0.5f, org.telegram.ui.ActionBar.m6.x0(null, i7, false), org.telegram.ui.ActionBar.m6.x0(null, i10, false)), -1));
             f10 = f11;
         } else {
-            f10 = i0.a.f(0.5f, i0.a.o(this.w.a.center_color, ks.e4), i0.a.o(this.w.a.pattern_color, ks.e4));
+            f10 = i0.a.f(0.5f, i0.a.o(this.w.a.center_color, ls.e4), i0.a.o(this.w.a.pattern_color, ls.e4));
             textView.setTextColor(-1);
         }
         if (textView.getBackground() instanceof ShapeDrawable) {

@@ -13,7 +13,7 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class m6 {
     public final MappedByteBuffer a;
@@ -89,7 +89,7 @@ public final class m6 {
                             int p10 = p(f10 + 16);
                             int p11 = p(f10 + 17);
                             int i18 = f10 + 18;
-                            int p12 = p(i18) & ks.L1;
+                            int p12 = p(i18) & ls.L1;
                             if (i17 < i15 || o10 == 0) {
                                 i7 = i16;
                             } else {
@@ -153,7 +153,7 @@ public final class m6 {
                                         }
                                         i11 = i20;
                                         c10 = 6;
-                                        if (o13 == 0 && p(i18) == 0 && p11 == 0 && (p(f10 + 19) & ks.L1) == 0) {
+                                        if (o13 == 0 && p(i18) == 0 && p11 == 0 && (p(f10 + 19) & ls.L1) == 0) {
                                             i10 = 65535;
                                             if (o11 == 65535 && o12 == 65535) {
                                                 i16 = i11 + 1;
@@ -353,7 +353,7 @@ public final class m6 {
                 c(i7, bArr);
                 int o10 = o(f10 + 14);
                 int i13 = f10 + 18;
-                int p11 = p(i13) & ks.L1;
+                int p11 = p(i13) & ls.L1;
                 int i14 = o10 * p11;
                 boolean z10 = (p(i13) & 128) != 0;
                 if (z10) {
@@ -374,7 +374,7 @@ public final class m6 {
                         if (i17 > 1) {
                             p13 |= (z10 ? bArr2[i18 + 1] & 255 : p((i18 + i11) + 1)) << (8 - i17);
                         }
-                        int i19 = p13 & ks.L1;
+                        int i19 = p13 & ls.L1;
                         bArr3[i15] = (byte) ((i19 >>> 6) | (i19 << 1));
                         i15++;
                         i12 = 3;
@@ -501,7 +501,7 @@ public final class m6 {
             for (int i12 = 0; i12 < 4096; i12++) {
                 int[] iArr = this.j;
                 int i13 = iArr[i12];
-                iArr[i12] = (i13 & 16777215) | (((((i13 >>> 24) * (this.i[i12] & ks.e4)) + ks.L1) / ks.e4) << 24);
+                iArr[i12] = (i13 & 16777215) | (((((i13 >>> 24) * (this.i[i12] & ls.e4)) + ls.L1) / ls.e4) << 24);
             }
             return Bitmap.createBitmap(this.j, 64, 64, Bitmap.Config.ARGB_8888);
         }
@@ -548,7 +548,7 @@ public final class m6 {
         int i10;
         int i11 = i7 + 18;
         if ((p(i11) & 128) == 0) {
-            int o4 = o(i7 + 14) * (p(i11) & ks.L1);
+            int o4 = o(i7 + 14) * (p(i11) & ls.L1);
             return (p(i7 + 19) & 1) != 0 ? ((o4 * 7) + 7) / 8 : o4;
         }
         int i12 = i7 + 8;

@@ -8,10 +8,10 @@ import c8.jc;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.yt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i1 {
     public final Bitmap a;
@@ -79,13 +79,13 @@ public final class i1 {
             this.a.getPixels(iArr2, 0, width, 0, 0, width, height);
             for (int i12 = 0; i12 < i11; i12++) {
                 int i13 = iArr2[i12];
-                iArr2[i12] = ((i13 >> 16) & ks.e4) | (i13 & (-16711936)) | ((i13 & ks.e4) << 16);
+                iArr2[i12] = ((i13 >> 16) & ls.e4) | (i13 & (-16711936)) | ((i13 & ls.e4) << 16);
             }
             GLES20.glTexImage2D(3553, 0, 6408, width, height, 0, 6408, 5121, IntBuffer.wrap(iArr2));
         }
         if (!bitmap.isRecycled() && Build.VERSION.SDK_INT <= 28) {
             int pixel = bitmap.getPixel(0, 0);
-            int i14 = ((pixel >> 16) & ks.e4) | (pixel & (-16711936)) | ((pixel & ks.e4) << 16);
+            int i14 = ((pixel >> 16) & ls.e4) | (pixel & (-16711936)) | ((pixel & ls.e4) << 16);
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(4);
             allocateDirect.putInt(i14).position(0);
             GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);

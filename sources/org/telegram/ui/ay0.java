@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ay0 extends org.telegram.ui.Components.dk0 {
     public final /* synthetic */ Context c;
@@ -55,7 +55,7 @@ public final class ay0 extends org.telegram.ui.Components.dk0 {
         TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ey0Var.getMediaDataController().h.get(i7 - ey0Var.d);
         String str = tL_availableReaction.reaction;
         i10 = ((org.telegram.ui.ActionBar.g2) ey0Var).currentAccount;
-        boolean contains = str.contains(org.telegram.messenger.ri.d0(i10).S());
+        boolean contains = str.contains(org.telegram.messenger.si.d0(i10).S());
         i11 = ((org.telegram.ui.ActionBar.g2) ey0Var).currentAccount;
         xVar.a(tL_availableReaction, contains, i11);
     }
@@ -74,7 +74,7 @@ public final class ay0 extends org.telegram.ui.Components.dk0 {
             view = baVar;
         } else if (i7 == 2) {
             org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(context);
-            a9Var.setText(org.telegram.messenger.gd.N0(2131751340, null));
+            a9Var.setText(org.telegram.messenger.hd.N0(2131751340, null));
             view = a9Var;
         } else if (i7 == 3) {
             dy0 dy0Var = new dy0(ey0Var, context);

@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lb1 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,7 +82,7 @@ public final /* synthetic */ class lb1 implements Runnable {
                     break;
                 } else {
                     boolean z19 = false;
-                    String T0 = org.telegram.messenger.gd.E0().T0(lowerCase, true, false);
+                    String T0 = org.telegram.messenger.hd.E0().T0(lowerCase, true, false);
                     if (lowerCase.equals(T0) || T0.length() == 0) {
                         T0 = null;
                     }
@@ -109,12 +109,12 @@ public final /* synthetic */ class lb1 implements Runnable {
                             TLRPC.User user = (TLRPC.User) tLObject;
                             z10 = z17;
                             strArr2[z19 ? 1 : 0] = org.telegram.messenger.i5.m(z19 ? 1 : 0, user.first_name, user.last_name).toLowerCase();
-                            str = org.telegram.messenger.o10.o(user);
-                            if (org.telegram.messenger.o10.A(user)) {
-                                strArr2[2] = org.telegram.messenger.gd.N0(2131746070, null).toLowerCase();
-                            } else if (org.telegram.messenger.o10.C(user)) {
+                            str = org.telegram.messenger.p10.o(user);
+                            if (org.telegram.messenger.p10.A(user)) {
+                                strArr2[2] = org.telegram.messenger.hd.N0(2131746070, null).toLowerCase();
+                            } else if (org.telegram.messenger.p10.C(user)) {
                                 if (mb1Var3.w.H) {
-                                    strArr2[2] = org.telegram.messenger.gd.N0(2131745705, null).toLowerCase();
+                                    strArr2[2] = org.telegram.messenger.hd.N0(2131745705, null).toLowerCase();
                                 } else {
                                     z11 = z18;
                                     arrayList = arrayList2;
@@ -123,7 +123,7 @@ public final /* synthetic */ class lb1 implements Runnable {
                             } else if (user.bot) {
                             }
                             z11 = z18;
-                            String T02 = org.telegram.messenger.gd.E0().T0(strArr2[z19 ? 1 : 0], true, z19);
+                            String T02 = org.telegram.messenger.hd.E0().T0(strArr2[z19 ? 1 : 0], true, z19);
                             strArr2[1] = T02;
                             if (strArr2[z19 ? 1 : 0].equals(T02)) {
                                 strArr2[1] = null;

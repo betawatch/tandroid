@@ -38,10 +38,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.co;
 import org.telegram.ui.Components.du0;
@@ -54,7 +54,7 @@ import org.telegram.ui.Components.wm0;
 import org.telegram.ui.Components.yn;
 import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements te.b, b6, t4 {
     public boolean A0;
@@ -183,7 +183,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
         this.N = true;
         this.h0 = new Object[3];
         this.l0 = true;
-        this.m0 = ks.e4;
+        this.m0 = ls.e4;
         this.w0 = 0;
         this.N0 = new Paint();
         this.O0 = new Rect();
@@ -195,7 +195,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
         this.o1 = new te.c(0, this, nrVar, 320L);
         this.p1 = new te.a(0, this, nrVar, 320L, false);
         this.w1 = true;
-        this.x1 = ks.e4;
+        this.x1 = ls.e4;
         this.D1 = true;
         this.E1 = 1.0f;
         this.K0 = h6Var;
@@ -547,7 +547,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
                 this.r.setVisibility(0);
                 this.r.setAlpha(0.0f);
             }
-            n10.n(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
+            o10.n(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
         }
         m5 m5Var = m5VarArr[1];
         if (m5Var != null) {
@@ -613,9 +613,9 @@ public class k extends FrameLayout implements te.b, b6, t4 {
         if (str2 == null || !str2.equals(str)) {
             this.g0 = str;
             if (this.y1 != null) {
-                this.y1.b(i7 == 2131751793 ? org.telegram.messenger.g0.I2(gd.N0(2131743872, null), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(2.0f)) : null, true);
+                this.y1.b(i7 == 2131751793 ? org.telegram.messenger.g0.I2(hd.N0(2131743870, null), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(2.0f)) : null, true);
             }
-            CharSequence N0 = str != null ? gd.N0(i7, str) : this.d0;
+            CharSequence N0 = str != null ? hd.N0(i7, str) : this.d0;
             Drawable drawable = str == null ? this.e0 : null;
             ab.q qVar = this.P0;
             if (str == null || (indexOf = TextUtils.indexOf(N0, "...")) < 0) {
@@ -712,11 +712,11 @@ public class k extends FrameLayout implements te.b, b6, t4 {
         }
         fh.g c11 = cVar.c(this, null, false);
         c11.p(eVar);
-        n10.s(c11, org.telegram.messenger.g0.L(23.0f), 6.0f);
+        o10.s(c11, org.telegram.messenger.g0.L(23.0f), 6.0f);
         this.b = c11;
         fh.g c12 = cVar.c(this, null, false);
         c12.p(eVar);
-        n10.s(c12, org.telegram.messenger.g0.L(23.0f), 6.0f);
+        o10.s(c12, org.telegram.messenger.g0.L(23.0f), 6.0f);
         this.c = c12;
         y yVar = this.F;
         if (yVar != null) {
@@ -782,7 +782,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
             i10 = this.y;
         }
         if (i10 == 0 || this.Q0) {
-            ks.e().k(ks.u4, new Object[0]);
+            ls.e().k(ls.u4, new Object[0]);
         } else if (i0.a.h(i10) < 0.699999988079071d) {
             org.telegram.messenger.g0.o3((Activity) getContext(), false);
         } else {
@@ -956,7 +956,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
                         float y10 = getY();
                         float f11 = f10 - (this.A1 ? f10 : this.E1);
                         du0Var.getClass();
-                        du0Var.I(canvas, y10, this.O0, paint, true, org.telegram.messenger.g0.W1(f11, ks.e4, Color.alpha(m6.w0((du0.E() && bz.o() == i7) ? m6.og : m6.pg, du0Var.getResourceProvider()))));
+                        du0Var.I(canvas, y10, this.O0, paint, true, org.telegram.messenger.g0.W1(f11, ls.e4, Color.alpha(m6.w0((du0.E() && cz.o() == i7) ? m6.og : m6.pg, du0Var.getResourceProvider()))));
                     }
                 }
                 this.u1 = true;
@@ -1054,7 +1054,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
             canvas.clipRect(0.0f, (-getTranslationY()) + (this.J ? org.telegram.messenger.g0.m : 0), getMeasuredWidth(), getMeasuredHeight());
         }
         boolean drawChild = super.drawChild(canvas, view, j3);
-        if (this.S && !this.j0 && !gd.a0) {
+        if (this.S && !this.j0 && !hd.a0) {
             m5[] m5VarArr = this.n;
             if ((view == m5VarArr[0] || view == m5VarArr[1] || (view == this.G0 && this.H0)) && (B0 = m6.B0()) != null) {
                 m5 m5Var = view == this.G0 ? m5VarArr[0] : (m5) view;
@@ -1115,7 +1115,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
                                     SecureRandom secureRandom2 = Utilities.b;
                                     float f13 = f12;
                                     boolean z13 = drawChild;
-                                    double nextInt2 = (secureRandom2.nextInt(ks.t4) - 225) * 0.017453292519943295d;
+                                    double nextInt2 = (secureRandom2.nextInt(ls.t4) - 225) * 0.017453292519943295d;
                                     boolean z14 = z12;
                                     int i13 = i11;
                                     float cos = (float) Math.cos(nextInt2);
@@ -1219,7 +1219,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
         }
         fh.g c10 = cVar.c(j5Var, null, false);
         c10.p(this.W0);
-        n10.s(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
+        o10.s(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
         return c10;
     }
 
@@ -1435,7 +1435,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
     }
 
     public final void j() {
-        if (gd.a0) {
+        if (hd.a0) {
             return;
         }
         TransitionSet transitionSet = new TransitionSet();
@@ -1525,7 +1525,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
                 i7 = this.y;
             }
             if (i7 == 0 || this.Q0) {
-                ks.e().k(ks.u4, new Object[0]);
+                ls.e().k(ls.u4, new Object[0]);
             } else if (i0.a.h(i7) < 0.699999988079071d) {
                 org.telegram.messenger.g0.o3((Activity) getContext(), false);
             } else {
@@ -1546,7 +1546,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
         if (this.K) {
             int i7 = this.y;
             if (i7 == 0 || this.x == 0 || this.Q0) {
-                ks.e().k(ks.u4, new Object[0]);
+                ls.e().k(ls.u4, new Object[0]);
             } else if (i0.a.h(i7) < 0.699999988079071d) {
                 org.telegram.messenger.g0.o3((Activity) getContext(), false);
             } else {
@@ -1562,7 +1562,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         Drawable B0;
-        if (this.S && !this.j0 && !gd.a0 && motionEvent.getAction() == 0 && (B0 = m6.B0()) != null && B0.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+        if (this.S && !this.j0 && !hd.a0 && motionEvent.getAction() == 0 && (B0 = m6.B0()) != null && B0.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
             this.W = true;
             ou0 ou0Var = this.T;
             m5[] m5VarArr = this.n;
@@ -1692,7 +1692,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
                 if (i27 == -1) {
                     i27 = 51;
                 }
-                int i28 = i27 & ks.x1;
+                int i28 = i27 & ls.x1;
                 int i29 = i27 & 7;
                 if (i29 == 1) {
                     measuredWidth = ((getMeasuredWidth() - measuredWidth4) / 2) + layoutParams.leftMargin;
@@ -1777,7 +1777,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
                 } else if (org.telegram.messenger.g0.Q1()) {
                     f10 = 74.0f;
                 }
-                makeMeasureSpec = n10.c(f10, size, TLObject.FLAG_30);
+                makeMeasureSpec = o10.c(f10, size, TLObject.FLAG_30);
                 if (!kVar.E) {
                     kVar.F.r(0.0f);
                 }
@@ -1961,7 +1961,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
         this.e.setPadding(org.telegram.messenger.g0.L(1.0f), 0, 0, 0);
         addView(this.e, ma.e(54, 54, 51));
         this.e.setOnClickListener(new b(this, 1));
-        this.e.setContentDescription(gd.N0(2131754878, null));
+        this.e.setContentDescription(hd.N0(2131754878, null));
     }
 
     @Override // android.view.View, android.view.ViewParent
@@ -2500,7 +2500,7 @@ public class k extends FrameLayout implements te.b, b6, t4 {
         }
         int i12 = this.y;
         if (i12 == 0 || this.Q0) {
-            ks.e().k(ks.u4, new Object[0]);
+            ls.e().k(ls.u4, new Object[0]);
         } else if (i0.a.h(i12) < 0.699999988079071d) {
             org.telegram.messenger.g0.o3((Activity) getContext(), false);
         } else {

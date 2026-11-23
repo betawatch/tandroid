@@ -3,10 +3,10 @@ package fi;
 import c8.na;
 import j$.util.Objects;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class w0 implements Runnable {
                 break;
             case 3:
                 c1 c1Var = this.b;
-                ks.f(c1Var.e).k(ks.G2, Long.valueOf(c1Var.w.id));
+                ls.f(c1Var.e).k(ls.G2, Long.valueOf(c1Var.w.id));
                 c1Var.u(true);
                 break;
             case 4:

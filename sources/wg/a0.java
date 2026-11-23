@@ -11,10 +11,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -29,9 +29,9 @@ import org.telegram.ui.Components.hr;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.sa;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class a0 extends sa implements fs {
+public final class a0 extends sa implements gs {
     public final ArrayList T1;
     public final List U1;
     public final List V1;
@@ -119,7 +119,7 @@ public final class a0 extends sa implements fs {
         ek0Var.setPadding(i14, 0, i14, org.telegram.messenger.g0.L(68.0f));
         this.o1.setOnScrollListener(new z());
         this.o1.setOnItemClickListener(new g4(23, this, g2Var));
-        TLRPC.Chat O0 = mp.u1(this.a).O0(Long.valueOf(-j3));
+        TLRPC.Chat O0 = np.u1(this.a).O0(Long.valueOf(-j3));
         this.X1 = O0;
         xg.b bVar = this.c2;
         ArrayList arrayList = this.T1;
@@ -140,7 +140,7 @@ public final class a0 extends sa implements fs {
         k1(false);
         this.b.addView(aVar, ma.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         s.j(this.a, O0, new v(this, i7));
-        ks.f(this.a).c(this, ks.z3);
+        ls.f(this.a).c(this, ls.z3);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -154,7 +154,7 @@ public final class a0 extends sa implements fs {
     public final CharSequence P0() {
         int i7 = this.e2;
         int i10 = yg.d.w;
-        return i7 == 1 ? gd.N0(2131749507, null) : gd.a0("BoostingStartGiveaway", null, 2131753190, new Object[0]);
+        return i7 == 1 ? hd.N0(2131749507, null) : hd.a0("BoostingStartGiveaway", null, 2131753190, new Object[0]);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -162,10 +162,10 @@ public final class a0 extends sa implements fs {
         this.o2 = i7;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         ek0 ek0Var;
-        if (i7 == ks.z3 && (ek0Var = this.o1) != null && ek0Var.H) {
+        if (i7 == ls.z3 && (ek0Var = this.o1) != null && ek0Var.H) {
             l1(true, true);
         }
     }
@@ -176,7 +176,7 @@ public final class a0 extends sa implements fs {
         if (iVar != null) {
             iVar.run();
         }
-        ks.f(this.a).n(this, ks.z3);
+        ls.f(this.a).n(this, ls.z3);
     }
 
     public final ArrayList e1(long j3) {
@@ -296,7 +296,7 @@ public final class a0 extends sa implements fs {
         eVar.setShowZero(true);
         eVar.setEnabled(z11);
         eVar.c(g10, z10);
-        eVar.i(gd.N0(2131749507, null), z10, true);
+        eVar.i(hd.N0(2131749507, null), z10, true);
         t6.h(m6.h5, aVar.b, aVar.c);
     }
 
@@ -372,7 +372,7 @@ public final class a0 extends sa implements fs {
         ArrayList arrayList5 = this.Y1;
         if (i15 == 3) {
             if (!j1()) {
-                String N0 = gd.N0(2131753197, null);
+                String N0 = hd.N0(2131753197, null);
                 int g12 = g1();
                 xg.a aVar5 = new xg.a(13, false);
                 aVar5.c = N0;
@@ -430,26 +430,26 @@ public final class a0 extends sa implements fs {
                     arrayList.add(xg.a.d(null, 2, 1L, false, false));
                 }
                 aVar5.i = g1();
-                arrayList.add(xg.a.c(gd.N0(2131753196, null), false));
+                arrayList.add(xg.a.c(hd.N0(2131753196, null), false));
                 List i110 = i1();
                 int i22 = this.k2;
                 if (i22 < 0 || i22 >= i110.size()) {
                     this.k2 = 0;
                 }
                 if (i110.size() > 1) {
-                    arrayList.add(xg.a.f(gd.N0(2131753192, null)));
+                    arrayList.add(xg.a.f(hd.N0(2131753192, null)));
                     List i111 = i1();
                     int i23 = this.k2;
                     xg.a aVar6 = new xg.a(5, false);
                     aVar6.k = i111;
                     aVar6.i = i23;
                     arrayList.add(aVar6);
-                    arrayList.add(xg.a.c(gd.N0(2131753191, null), false));
+                    arrayList.add(xg.a.c(hd.N0(2131753191, null), false));
                 }
             } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
                 this.l2 = ((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars;
             }
-            arrayList.add(xg.a.f(gd.N0(2131753555, null)));
+            arrayList.add(xg.a.f(hd.N0(2131753555, null)));
             if (!j1()) {
                 arrayList.add(xg.a.b(g1(), chat, false));
             } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
@@ -482,17 +482,17 @@ public final class a0 extends sa implements fs {
             } else {
                 r103 = 0;
             }
-            arrayList.add(xg.a.c(gd.N0(2131753550, null), r103));
-            arrayList.add(xg.a.f(gd.N0(2131753533, null)));
+            arrayList.add(xg.a.c(hd.N0(2131753550, null), r103));
+            arrayList.add(xg.a.f(hd.N0(2131753533, null)));
             int i25 = yg.u.w;
             arrayList.add(xg.a.e(r103, this.f2, true, arrayList4));
             arrayList.add(xg.a.e(1, this.f2, r103, arrayList4));
-            arrayList.add(xg.a.c(gd.N0(V ? 2131753548 : 2131753547, null), r103));
+            arrayList.add(xg.a.c(hd.N0(V ? 2131753548 : 2131753547, null), r103));
         } else {
             String str2 = null;
             if (this.e2 == 0) {
                 if (!j1()) {
-                    String N02 = gd.N0(2131753320, null);
+                    String N02 = hd.N0(2131753320, null);
                     int g14 = g1();
                     xg.a aVar8 = new xg.a(13, false);
                     aVar8.c = N02;
@@ -504,9 +504,9 @@ public final class a0 extends sa implements fs {
                     aVar9.i = i26;
                     arrayList.add(aVar9);
                     str2 = null;
-                    arrayList.add(xg.a.c(gd.N0(2131753549, null), false));
+                    arrayList.add(xg.a.c(hd.N0(2131753549, null), false));
                 }
-                arrayList.add(xg.a.f(gd.N0(2131753555, str2)));
+                arrayList.add(xg.a.f(hd.N0(2131753555, str2)));
                 if (!j1()) {
                     arrayList.add(xg.a.b(g1(), chat, false));
                 } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
@@ -539,16 +539,16 @@ public final class a0 extends sa implements fs {
                 } else {
                     r10 = 0;
                 }
-                arrayList.add(xg.a.c(gd.N0(2131753550, null), r10));
-                arrayList.add(xg.a.f(gd.N0(2131753533, null)));
+                arrayList.add(xg.a.c(hd.N0(2131753550, null), r10));
+                arrayList.add(xg.a.f(hd.N0(2131753533, null)));
                 int i28 = yg.u.w;
                 arrayList.add(xg.a.e(r10, this.f2, true, arrayList4));
                 arrayList.add(xg.a.e(1, this.f2, r10, arrayList4));
                 str2 = null;
-                arrayList.add(xg.a.c(gd.N0(V ? 2131753548 : 2131753547, null), r10));
+                arrayList.add(xg.a.c(hd.N0(V ? 2131753548 : 2131753547, null), r10));
             }
             if (!j1()) {
-                arrayList.add(xg.a.f(gd.N0(2131753534, str2)));
+                arrayList.add(xg.a.f(hd.N0(2131753534, str2)));
                 int i29 = this.e2;
                 int i30 = yg.d.w;
                 ArrayList b10 = s.b(i29 == 0 ? f1() : arrayList3.size(), this.b2);
@@ -579,11 +579,11 @@ public final class a0 extends sa implements fs {
             }
             if (!j1()) {
                 i7 = 3;
-                arrayList.add(xg.a.c(org.telegram.messenger.g0.R2(gd.N0(2131753184, null), m6.Xc, 0, new t(this, i7), this.J0), true));
+                arrayList.add(xg.a.c(org.telegram.messenger.g0.R2(hd.N0(2131753184, null), m6.Xc, 0, new t(this, i7), this.J0), true));
                 i10 = this.d2;
                 int i37 = yg.d.w;
                 if (i10 != i7 || this.e2 == 0) {
-                    String N03 = gd.N0(2131753481, null);
+                    String N03 = hd.N0(2131753481, null);
                     boolean z15 = this.s2;
                     int i38 = yg.y.M;
                     xg.a aVar12 = new xg.a(15, z15);
@@ -594,28 +594,28 @@ public final class a0 extends sa implements fs {
                     if (this.s2) {
                         z12 = false;
                         str = null;
-                        arrayList.add(xg.a.c(gd.N0(this.d2 == 3 ? 2131753234 : 2131753482, null), false));
+                        arrayList.add(xg.a.c(hd.N0(this.d2 == 3 ? 2131753234 : 2131753482, null), false));
                     } else {
                         int f13 = j1() ? prepaidGiveaway.quantity : f1();
                         z12 = false;
                         xg.a aVar13 = new xg.a(16, false);
                         aVar13.i = f13;
                         arrayList.add(aVar13);
-                        String G = gd.G(this.h2, "BoldMonths", new Object[0]);
+                        String G = hd.G(this.h2, "BoldMonths", new Object[0]);
                         if (this.d2 == 3) {
                             if (this.r2.isEmpty()) {
-                                arrayList.add(xg.a.c(org.telegram.messenger.g0.W2(gd.G((int) this.l2, "BoostingStarsGiveawayAdditionPrizeCountHint", new Object[0])), false));
+                                arrayList.add(xg.a.c(org.telegram.messenger.g0.W2(hd.G((int) this.l2, "BoostingStarsGiveawayAdditionPrizeCountHint", new Object[0])), false));
                             } else {
-                                arrayList.add(xg.a.c(org.telegram.messenger.g0.W2(gd.G((int) this.l2, "BoostingStarsGiveawayAdditionPrizeCountNameHint", Integer.valueOf(f13), this.r2)), false));
+                                arrayList.add(xg.a.c(org.telegram.messenger.g0.W2(hd.G((int) this.l2, "BoostingStarsGiveawayAdditionPrizeCountNameHint", Integer.valueOf(f13), this.r2)), false));
                             }
                         } else if (this.r2.isEmpty()) {
-                            arrayList.add(xg.a.c(org.telegram.messenger.g0.W2(gd.G(f13, "BoostingGiveawayAdditionPrizeCountHint", G)), false));
+                            arrayList.add(xg.a.c(org.telegram.messenger.g0.W2(hd.G(f13, "BoostingGiveawayAdditionPrizeCountHint", G)), false));
                         } else {
-                            arrayList.add(xg.a.c(org.telegram.messenger.g0.W2(gd.G(f13, "BoostingGiveawayAdditionPrizeCountNameHint", this.r2, G)), false));
+                            arrayList.add(xg.a.c(org.telegram.messenger.g0.W2(hd.G(f13, "BoostingGiveawayAdditionPrizeCountNameHint", this.r2, G)), false));
                         }
                         str = null;
                     }
-                    arrayList.add(xg.a.f(gd.N0(2131753535, str)));
+                    arrayList.add(xg.a.f(hd.N0(2131753535, str)));
                     long j11 = this.i2;
                     xg.a aVar14 = new xg.a(10, z12);
                     aVar14.h = j11;
@@ -623,31 +623,31 @@ public final class a0 extends sa implements fs {
                     if (this.d2 != 3) {
                         if (j1()) {
                             r102 = 0;
-                            arrayList.add(xg.a.c(gd.G(prepaidGiveaway.quantity, V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", gd.G((int) this.l2, "BoostingStarsChooseRandomStars", new Object[0])), false));
+                            arrayList.add(xg.a.c(hd.G(prepaidGiveaway.quantity, V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", hd.G((int) this.l2, "BoostingStarsChooseRandomStars", new Object[0])), false));
                         } else {
                             r102 = 0;
-                            arrayList.add(xg.a.c(gd.G(f1(), V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", gd.G((int) this.l2, "BoostingStarsChooseRandomStars", new Object[0])), false));
+                            arrayList.add(xg.a.c(hd.G(f1(), V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", hd.G((int) this.l2, "BoostingStarsChooseRandomStars", new Object[0])), false));
                         }
                     } else {
                         r102 = 0;
                         r102 = 0;
                         if (j1()) {
-                            arrayList.add(xg.a.c(gd.G(prepaidGiveaway.quantity, V ? "BoostingChooseRandom" : "BoostingChooseRandomGroup", new Object[0]), false));
+                            arrayList.add(xg.a.c(hd.G(prepaidGiveaway.quantity, V ? "BoostingChooseRandom" : "BoostingChooseRandomGroup", new Object[0]), false));
                         } else {
-                            arrayList.add(xg.a.c(gd.G(f1(), V ? "BoostingChooseRandom" : "BoostingChooseRandomGroup", new Object[0]), false));
+                            arrayList.add(xg.a.c(hd.G(f1(), V ? "BoostingChooseRandom" : "BoostingChooseRandomGroup", new Object[0]), false));
                         }
                     }
-                    String N04 = gd.N0(2131753365, null);
+                    String N04 = hd.N0(2131753365, null);
                     xg.a aVar15 = new xg.a(15, this.t2);
                     aVar15.c = N04;
                     aVar15.g = r102;
                     aVar15.l = r102;
                     arrayList.add(aVar15);
                     if (j1()) {
-                        arrayList.add(xg.a.c(gd.N0(2131753364, null), r102));
+                        arrayList.add(xg.a.c(hd.N0(2131753364, null), r102));
                     } else {
                         StringBuilder sb2 = new StringBuilder();
-                        sb2.append(gd.N0(2131753364, null));
+                        sb2.append(hd.N0(2131753364, null));
                         sb2.append(this.d2 != 3 ? i5.c.k(2131753184, null, new StringBuilder("\n\n")) : "");
                         arrayList.add(xg.a.c(org.telegram.messenger.g0.R2(sb2.toString(), m6.Xc, 0, new t(this, 4), this.J0), true));
                     }
@@ -670,7 +670,7 @@ public final class a0 extends sa implements fs {
         int i372 = yg.d.w;
         if (i10 != i7) {
         }
-        String N032 = gd.N0(2131753481, null);
+        String N032 = hd.N0(2131753481, null);
         boolean z152 = this.s2;
         int i382 = yg.y.M;
         xg.a aVar122 = new xg.a(15, z152);
@@ -680,14 +680,14 @@ public final class a0 extends sa implements fs {
         arrayList.add(aVar122);
         if (this.s2) {
         }
-        arrayList.add(xg.a.f(gd.N0(2131753535, str)));
+        arrayList.add(xg.a.f(hd.N0(2131753535, str)));
         long j112 = this.i2;
         xg.a aVar142 = new xg.a(10, z12);
         aVar142.h = j112;
         arrayList.add(aVar142);
         if (this.d2 != 3) {
         }
-        String N042 = gd.N0(2131753365, null);
+        String N042 = hd.N0(2131753365, null);
         xg.a aVar152 = new xg.a(15, this.t2);
         aVar152.c = N042;
         aVar152.g = r102;

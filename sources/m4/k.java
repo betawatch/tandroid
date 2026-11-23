@@ -6,9 +6,9 @@ import f3.i0;
 import java.util.Arrays;
 import java.util.Collections;
 import l2.l0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
@@ -37,7 +37,7 @@ public final class k implements i {
         jVar.d = new byte[128];
         this.h = jVar;
         if (c0Var != null) {
-            this.f = new l0(ks.I2);
+            this.f = new l0(ls.I2);
             this.e = new h2.x();
         } else {
             this.f = null;
@@ -146,7 +146,7 @@ public final class k implements i {
                             this.l = ((Long) create.second).longValue();
                             this.k = true;
                         } else {
-                            f10 = i22 * ks.F1;
+                            f10 = i22 * ls.F1;
                             i11 = i21 * 100;
                         }
                         f11 = f10 / i11;

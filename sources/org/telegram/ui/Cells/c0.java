@@ -12,15 +12,15 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Random;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class c0 {
     public static int A(int i7, int i10, Drawable drawable) {
@@ -51,8 +51,8 @@ public abstract /* synthetic */ class c0 {
         throw null;
     }
 
-    public static boolean a(fj fjVar) {
-        return fjVar != null && fj.B0(fjVar.k) == 1271266957;
+    public static boolean a(gj gjVar) {
+        return gjVar != null && gj.B0(gjVar.k) == 1271266957;
     }
 
     public static void b(RecyclerView recyclerView) {
@@ -123,13 +123,13 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static Integer n(int i7, ArrayList arrayList, int i10, ArrayList arrayList2, int i11) {
-        arrayList.add(gd.N0(i7, null));
+        arrayList.add(hd.N0(i7, null));
         arrayList2.add(Integer.valueOf(i10));
         return Integer.valueOf(i11);
     }
 
     public static Integer o(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num, int i10) {
-        arrayList.add(gd.N0(i7, null));
+        arrayList.add(hd.N0(i7, null));
         arrayList2.add(num);
         return Integer.valueOf(i10);
     }
@@ -150,7 +150,7 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static void s(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(gd.N0(i7, null));
+        arrayList.add(hd.N0(i7, null));
         arrayList2.add(num);
     }
 
@@ -159,12 +159,12 @@ public abstract /* synthetic */ class c0 {
     }
 
     public static void u(String str, int i7, StringBuilder sb2, String str2) {
-        sb2.append(gd.N0(i7, str));
+        sb2.append(hd.N0(i7, str));
         sb2.append(str2);
     }
 
     public static void v(String str, int i7, ArrayList arrayList, int i10, ArrayList arrayList2) {
-        arrayList.add(gd.N0(i7, str));
+        arrayList.add(hd.N0(i7, str));
         arrayList2.add(Integer.valueOf(i10));
     }
 

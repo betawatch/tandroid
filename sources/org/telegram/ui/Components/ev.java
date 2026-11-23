@@ -21,9 +21,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.messenger.fs {
+public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.messenger.gs {
     public static Pattern Q1;
     public final up A1;
     public org.telegram.ui.ActionBar.g1 B1;
@@ -147,14 +147,14 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
         frameLayout.addView(m10, c8.ma.d(-1, -1.0f, 80, 0.0f, 0.0f, 0.0f, 19.0f));
         ug.r0 r0Var = new ug.r0(context, this.J0, false);
         this.x1 = r0Var;
-        r0Var.b(org.telegram.messenger.gd.N0(2131743622, null), new o0(this, 12), false);
+        r0Var.b(org.telegram.messenger.hd.N0(2131743620, null), new o0(this, 12), false);
         r0Var.setIcon(R.raw.unlock_icon);
         r0Var.w.setClickable(true);
         frameLayout.addView(r0Var, c8.ma.d(-1, 48.0f, 80, 12.0f, 10.0f, 12.0f, 10.0f));
     }
 
     public static void K0(final org.telegram.ui.ActionBar.g2 g2Var, TLObject tLObject, final boolean z10, final di.p9 p9Var, final oo ooVar) {
-        final int currentAccount = g2Var == null ? org.telegram.messenger.j10.t0 : g2Var.getCurrentAccount();
+        final int currentAccount = g2Var == null ? org.telegram.messenger.k10.t0 : g2Var.getCurrentAccount();
         TLRPC.StickerSet stickerSet = null;
         final View fragmentView = g2Var == null ? null : g2Var.getFragmentView();
         if (tLObject == null) {
@@ -170,7 +170,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
         if (stickerSet2 == null) {
             return;
         }
-        Runnable runnable = (Runnable) org.telegram.messenger.ri.d0(currentAccount).U.f(stickerSet2.id);
+        Runnable runnable = (Runnable) org.telegram.messenger.si.d0(currentAccount).U.f(stickerSet2.id);
         if (runnable != null) {
             runnable.run();
             if (p9Var != null) {
@@ -193,7 +193,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                 final org.telegram.ui.ActionBar.g2 g2Var2 = g2Var;
                 final TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = tL_messages_stickerSet;
                 final int i7 = currentAccount;
-                final org.telegram.messenger.x10 x10Var = p9Var;
+                final org.telegram.messenger.y10 y10Var = p9Var;
                 final Runnable runnable2 = ooVar;
                 org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.Components.mu
                     @Override // java.lang.Runnable
@@ -205,7 +205,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                         View view2 = view;
                         org.telegram.ui.ActionBar.g2 g2Var3 = g2Var2;
                         int i11 = i7;
-                        org.telegram.messenger.x10 x10Var2 = x10Var;
+                        org.telegram.messenger.y10 y10Var2 = y10Var;
                         try {
                             if (tL_error2 == null) {
                                 if (z11 && view2 != null) {
@@ -214,23 +214,23 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                                     gc.g(g2Var3, new pv0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, g2Var3.getResourceProvider()), 1500).j();
                                 }
                                 if (tLObject3 instanceof TLRPC.TL_messages_stickerSetInstallResultArchive) {
-                                    org.telegram.messenger.ri.d0(i11).E1(g2Var3, true, i10, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject3);
+                                    org.telegram.messenger.si.d0(i11).E1(g2Var3, true, i10, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject3);
                                 }
-                                if (x10Var2 != null) {
-                                    x10Var2.a(Boolean.TRUE);
+                                if (y10Var2 != null) {
+                                    y10Var2.a(Boolean.TRUE);
                                 }
                             } else if (view2 != null) {
-                                Toast.makeText(g2Var3.getFragmentView().getContext(), org.telegram.messenger.gd.N0(2131751093, null), 0).show();
-                                if (x10Var2 != null) {
-                                    x10Var2.a(Boolean.FALSE);
+                                Toast.makeText(g2Var3.getFragmentView().getContext(), org.telegram.messenger.hd.N0(2131751093, null), 0).show();
+                                if (y10Var2 != null) {
+                                    y10Var2.a(Boolean.FALSE);
                                 }
-                            } else if (x10Var2 != null) {
-                                x10Var2.a(Boolean.FALSE);
+                            } else if (y10Var2 != null) {
+                                y10Var2.a(Boolean.FALSE);
                             }
                         } catch (Exception e10) {
                             org.telegram.messenger.a8.g(e10, true);
                         }
-                        org.telegram.messenger.ri.d0(i11).e1(i10, false, true, false, new z2(runnable2, 6));
+                        org.telegram.messenger.si.d0(i11).e1(i10, false, true, false, new z2(runnable2, 6));
                     }
                 });
             }
@@ -285,7 +285,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
             }
             i11++;
         }
-        org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(this.a);
+        org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(this.a);
         final ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
@@ -369,9 +369,9 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
             textView2.setVisibility(0);
             textView.setVisibility(8);
             if (arrayList4.size() == 1) {
-                textView2.setText(org.telegram.messenger.gd.G(((TLRPC.TL_messages_stickerSet) arrayList4.get(0)).documents.size(), "AddManyEmojiCount", new Object[0]));
+                textView2.setText(org.telegram.messenger.hd.G(((TLRPC.TL_messages_stickerSet) arrayList4.get(0)).documents.size(), "AddManyEmojiCount", new Object[0]));
             } else {
-                textView2.setText(org.telegram.messenger.gd.G(arrayList4.size(), "AddManyEmojiPacksCount", new Object[0]));
+                textView2.setText(org.telegram.messenger.hd.G(arrayList4.size(), "AddManyEmojiPacksCount", new Object[0]));
             }
             textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.lu
                 /* JADX WARN: Multi-variable type inference failed */
@@ -411,7 +411,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                             org.telegram.ui.ActionBar.g2 g2Var = evVar3.n1;
                             ArrayList arrayList6 = arrayList4;
                             if (g2Var != null) {
-                                org.telegram.messenger.ri d03 = org.telegram.messenger.ri.d0(g2Var.getCurrentAccount());
+                                org.telegram.messenger.si d03 = org.telegram.messenger.si.d0(g2Var.getCurrentAccount());
                                 Context context = g2Var.getContext();
                                 ArrayList[] arrayListArr2 = d03.H;
                                 if (!arrayList6.isEmpty() && (tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) i5.c.h(1, arrayList6)) != null) {
@@ -454,11 +454,11 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                                     ArrayList arrayList7 = arrayListArr2[i20];
                                     int i25 = d03.Z[i20];
                                     long[] jArr = d03.Y;
-                                    long s5 = org.telegram.messenger.ri.s(arrayList7);
+                                    long s5 = org.telegram.messenger.si.s(arrayList7);
                                     jArr[i20] = s5;
                                     int i26 = i20;
                                     d03.O1(i26, i25, s5, arrayList7);
-                                    org.telegram.messenger.ks notificationCenter = d03.getNotificationCenter();
+                                    org.telegram.messenger.ls notificationCenter = d03.getNotificationCenter();
                                     Object[] objArr = new Object[2];
                                     objArr[z15 ? 1 : 0] = Integer.valueOf(i26);
                                     objArr[i24] = Boolean.TRUE;
@@ -469,7 +469,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                                     pv0 pv0Var = new pv0(context, tL_messages_stickerSet2, arrayList6.size(), 0, null, g2Var.getResourceProvider());
                                     ?? r14 = new boolean[i24];
                                     ec ecVar = new ec(context, null, z15);
-                                    ecVar.b = new org.telegram.messenger.yj(d03, (Serializable) r14, arrayList6, i26, (Serializable) r92, 2);
+                                    ecVar.b = new org.telegram.messenger.zj(d03, (Serializable) r14, arrayList6, i26, (Serializable) r92, 2);
                                     ecVar.c = new bg.m0(d03, (boolean[]) r14, arrayList6, context, g2Var, i26);
                                     pv0Var.setButton(ecVar);
                                     for (int i28 = 0; i28 < arrayList6.size(); i28++) {
@@ -484,7 +484,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                                     Context context2 = evVar3.getContext();
                                     boolean z16 = i29 == 0;
                                     if (tL_messages_stickerSet4 != null) {
-                                        org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).l2(context2, tL_messages_stickerSet4, null, 0, null, null, true, z16, null, true);
+                                        org.telegram.messenger.si.d0(org.telegram.messenger.k10.t0).l2(context2, tL_messages_stickerSet4, null, 0, null, null, true, z16, null, true);
                                     }
                                     i29++;
                                 }
@@ -506,9 +506,9 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
         textView2.setVisibility(8);
         textView.setVisibility(0);
         if (arrayList2.size() == 1) {
-            textView.setText(org.telegram.messenger.gd.G(((TLRPC.TL_messages_stickerSet) arrayList2.get(0)).documents.size(), "RemoveManyEmojiCount", new Object[0]));
+            textView.setText(org.telegram.messenger.hd.G(((TLRPC.TL_messages_stickerSet) arrayList2.get(0)).documents.size(), "RemoveManyEmojiCount", new Object[0]));
         } else {
-            textView.setText(org.telegram.messenger.gd.G(arrayList2.size(), "RemoveManyEmojiPacksCount", new Object[0]));
+            textView.setText(org.telegram.messenger.hd.G(arrayList2.size(), "RemoveManyEmojiPacksCount", new Object[0]));
         }
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.lu
             /* JADX WARN: Multi-variable type inference failed */
@@ -548,7 +548,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                         org.telegram.ui.ActionBar.g2 g2Var = evVar3.n1;
                         ArrayList arrayList6 = arrayList2;
                         if (g2Var != null) {
-                            org.telegram.messenger.ri d03 = org.telegram.messenger.ri.d0(g2Var.getCurrentAccount());
+                            org.telegram.messenger.si d03 = org.telegram.messenger.si.d0(g2Var.getCurrentAccount());
                             Context context = g2Var.getContext();
                             ArrayList[] arrayListArr2 = d03.H;
                             if (!arrayList6.isEmpty() && (tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) i5.c.h(1, arrayList6)) != null) {
@@ -591,11 +591,11 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                                 ArrayList arrayList7 = arrayListArr2[i20];
                                 int i25 = d03.Z[i20];
                                 long[] jArr = d03.Y;
-                                long s5 = org.telegram.messenger.ri.s(arrayList7);
+                                long s5 = org.telegram.messenger.si.s(arrayList7);
                                 jArr[i20] = s5;
                                 int i26 = i20;
                                 d03.O1(i26, i25, s5, arrayList7);
-                                org.telegram.messenger.ks notificationCenter = d03.getNotificationCenter();
+                                org.telegram.messenger.ls notificationCenter = d03.getNotificationCenter();
                                 Object[] objArr = new Object[2];
                                 objArr[z15 ? 1 : 0] = Integer.valueOf(i26);
                                 objArr[i24] = Boolean.TRUE;
@@ -606,7 +606,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                                 pv0 pv0Var = new pv0(context, tL_messages_stickerSet2, arrayList6.size(), 0, null, g2Var.getResourceProvider());
                                 ?? r14 = new boolean[i24];
                                 ec ecVar = new ec(context, null, z15);
-                                ecVar.b = new org.telegram.messenger.yj(d03, (Serializable) r14, arrayList6, i26, (Serializable) r92, 2);
+                                ecVar.b = new org.telegram.messenger.zj(d03, (Serializable) r14, arrayList6, i26, (Serializable) r92, 2);
                                 ecVar.c = new bg.m0(d03, (boolean[]) r14, arrayList6, context, g2Var, i26);
                                 pv0Var.setButton(ecVar);
                                 for (int i28 = 0; i28 < arrayList6.size(); i28++) {
@@ -621,7 +621,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
                                 Context context2 = evVar3.getContext();
                                 boolean z16 = i29 == 0;
                                 if (tL_messages_stickerSet4 != null) {
-                                    org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).l2(context2, tL_messages_stickerSet4, null, 0, null, null, true, z16, null, true);
+                                    org.telegram.messenger.si.d0(org.telegram.messenger.k10.t0).l2(context2, tL_messages_stickerSet4, null, 0, null, null, true, z16, null, true);
                                 }
                                 i29++;
                             }
@@ -682,11 +682,11 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
         return org.telegram.messenger.g0.L(8.0f) + measuredHeight + (viewGroup != null ? viewGroup.getPaddingTop() : 0) + org.telegram.messenger.g0.n;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         av avVar;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
-        if (i7 != org.telegram.messenger.ks.x0) {
+        if (i7 != org.telegram.messenger.ls.x0) {
             return;
         }
         int i11 = 0;
@@ -698,7 +698,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
             }
             View childAt = xVar.getChildAt(i11);
             if ((childAt instanceof av) && (tL_messages_stickerSet = (avVar = (av) childAt).r) != null && tL_messages_stickerSet.set != null) {
-                avVar.a(org.telegram.messenger.ri.d0(this.a).E0(avVar.r.set.id, true), true);
+                avVar.a(org.telegram.messenger.si.d0(this.a).E0(avVar.r.set.id, true), true);
             }
             i11++;
         }
@@ -714,15 +714,15 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
         super.dismiss();
         qu quVar = this.p1;
         if (quVar != null) {
-            org.telegram.messenger.ks.f(quVar.d).n(quVar, org.telegram.messenger.ks.B0);
+            org.telegram.messenger.ls.f(quVar.d).n(quVar, org.telegram.messenger.ls.B0);
         }
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.k1, 4);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.k1, 4);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.x0);
+        org.telegram.messenger.ls.f(this.a).c(this, org.telegram.messenger.ls.x0);
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
@@ -737,7 +737,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.x0);
+        org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.x0);
     }
 
     @Override // org.telegram.ui.ActionBar.w2
@@ -770,7 +770,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
         this.s1 = uuVar;
         this.r1.setAdapter(uuVar);
         int i7 = 0;
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.j1, 4);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.j1, 4);
         qu quVar = this.p1;
         if (!quVar.e) {
             quVar.e = true;
@@ -778,12 +778,12 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
             int i10 = quVar.d;
             quVar.b = new ArrayList(quVar.a.size());
             quVar.c = new ArrayList[quVar.a.size()];
-            org.telegram.messenger.ks.f(i10).c(quVar, 64);
+            org.telegram.messenger.ls.f(i10).c(quVar, 64);
             boolean[] zArr = new boolean[1];
             int i11 = 0;
             while (true) {
                 if (i11 < quVar.c.length) {
-                    TLRPC.TL_messages_stickerSet n02 = org.telegram.messenger.ri.d0(i10).n0((TLRPC.InputStickerSet) quVar.a.get(i11), null, false, false, new rh(2, quVar, zArr));
+                    TLRPC.TL_messages_stickerSet n02 = org.telegram.messenger.si.d0(i10).n0((TLRPC.InputStickerSet) quVar.a.get(i11), null, false, false, new rh(2, quVar, zArr));
                     if (quVar.c.length != 1 || n02 == null || (stickerSet = n02.set) == null || stickerSet.emojis) {
                         quVar.b.add(n02);
                         quVar.a(i11, n02);
@@ -808,7 +808,7 @@ public class ev extends org.telegram.ui.ActionBar.w2 implements org.telegram.mes
         }
         O0();
         org.telegram.ui.ActionBar.g2 g2Var3 = this.n1;
-        org.telegram.messenger.ri.d0(g2Var3 == null ? org.telegram.messenger.j10.t0 : g2Var3.getCurrentAccount()).D(5);
+        org.telegram.messenger.si.d0(g2Var3 == null ? org.telegram.messenger.k10.t0 : g2Var3.getCurrentAccount()).D(5);
     }
 
     public void L0(boolean z10) {

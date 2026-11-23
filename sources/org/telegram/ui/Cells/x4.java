@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x4 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -29,7 +29,7 @@ public final class x4 extends FrameLayout implements org.telegram.ui.ActionBar.b
         m5Var.setDrawablePadding(org.telegram.messenger.g0.L(8.0f));
         org.telegram.ui.ActionBar.t6.X(m5Var, org.telegram.ui.ActionBar.m6.Ji, h6Var);
         m5Var.setTextSize(14);
-        m5Var.l(gd.N0(2131751424, null), false);
+        m5Var.l(hd.N0(2131751424, null), false);
         m5Var.setLeftDrawable(R.drawable.filled_directions);
         m5Var.setTypeface(org.telegram.messenger.g0.o());
         frameLayout.addView(m5Var, c8.ma.c(-1.0f, -1));

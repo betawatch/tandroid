@@ -1,16 +1,16 @@
 package yf;
 
 import java.io.File;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class e implements fs {
+public final class e implements gs {
     public final int a;
     public final String b;
     public boolean c;
@@ -18,20 +18,20 @@ public final class e implements fs {
     public e(String str, int i7) {
         this.a = i7;
         this.b = str;
-        ks.f(i7).b(this, ks.U1);
-        ks.f(i7).b(this, ks.V1);
+        ls.f(i7).b(this, ls.U1);
+        ls.f(i7).b(this, ls.V1);
         w7.G(i7).h0(false, ConnectionsManager.FileTypeAudio, str, true);
     }
 
     public final void a() {
         int i7 = this.a;
-        ks.f(i7).n(this, ks.U1);
-        ks.f(i7).n(this, ks.V1);
+        ls.f(i7).n(this, ls.U1);
+        ls.f(i7).n(this, ls.V1);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.U1) {
+        if (i7 == ls.U1) {
             String str = (String) objArr[0];
             if (!this.c && str.equals(this.b)) {
                 TLRPC.InputFile inputFile = (TLRPC.InputFile) objArr[1];

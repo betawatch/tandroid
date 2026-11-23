@@ -7,13 +7,13 @@ import android.widget.FrameLayout;
 import java.io.Serializable;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.sr;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.tr;
 import org.telegram.messenger.v3;
 import org.telegram.messenger.w10;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Cells.r8;
@@ -26,9 +26,9 @@ import org.telegram.ui.y91;
 import r0.i1;
 import r0.l1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u implements v10, r0.m, w10 {
+public final /* synthetic */ class u implements w10, r0.m, x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ d0 b;
 
@@ -49,7 +49,7 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
         return l1.b;
     }
 
-    @Override // org.telegram.messenger.w10
+    @Override // org.telegram.messenger.x10
     public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
         boolean z10;
         long j3;
@@ -64,7 +64,7 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
                 long j10 = user.id;
-                boolean u10 = o10.u(user);
+                boolean u10 = p10.u(user);
                 TLRPC.Chat chat = d0Var.q1;
                 z10 = chat != null && ((user.bot && user.bot_can_edit) || v3.y(27, chat));
                 j3 = j10;
@@ -84,7 +84,7 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
         z11 = false;
         if (z10) {
             a70 G = a70.G(d0Var.c, null, view);
-            G.c(R.drawable.msg_cancel, gd.N0(2131751903, null), new m(d0Var, z11, z12, j3, 1), true);
+            G.c(R.drawable.msg_cancel, hd.N0(2131751903, null), new m(d0Var, z11, z12, j3, 1), true);
             G.X(d0Var.v1.d.U0(view, true));
             G.a0();
             return Boolean.valueOf(z14);
@@ -93,7 +93,7 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
         return Boolean.valueOf(z14);
     }
 
-    @Override // org.telegram.messenger.v10
+    @Override // org.telegram.messenger.w10
     public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         long j3;
         TLRPC.Chat chat;
@@ -164,7 +164,7 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
                                     g2Var.presentFragment(new bn(bundle));
                                 } else if (v3.a(chat)) {
                                     bn bnVar2 = new bn(bundle);
-                                    qg.c.a(bnVar2, sr.a(j3, mp.u1(d0Var.a).h7.getLong(p0.o(chat.id, "forumlasttopic"), 1L)));
+                                    qg.c.a(bnVar2, tr.a(j3, np.u1(d0Var.a).h7.getLong(p0.o(chat.id, "forumlasttopic"), 1L)));
                                     g2Var.presentFragment(bnVar2);
                                 } else {
                                     g2Var.presentFragment(new y91(bundle));
@@ -179,7 +179,7 @@ public final /* synthetic */ class u implements v10, r0.m, w10 {
                         }
                     } else {
                         d0Var.r1 = !d0Var.r1;
-                        mp.u1(d0Var.a).q5(d0Var.p1, d0Var.r1);
+                        np.u1(d0Var.a).q5(d0Var.p1, d0Var.r1);
                         if (!(view instanceof r8)) {
                             d0Var.v1.d.g3.O(false);
                             break;

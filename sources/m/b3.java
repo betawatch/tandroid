@@ -7,11 +7,11 @@ import android.util.SparseArray;
 import android.view.View;
 import fi.q5;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Wallet.u4;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class b3 implements m9.t {
     public boolean a;
@@ -32,12 +32,12 @@ public final class b3 implements m9.t {
         if (i10 < 0 || i10 >= bnVar.M6.size()) {
             return false;
         }
-        fj fjVar = (fj) bnVar.M6.get(i10);
-        if (fjVar.U != 0) {
+        gj gjVar = (gj) bnVar.M6.get(i10);
+        if (gjVar.U != 0) {
             return false;
         }
-        if (z10 || sparseArray.get(fjVar.e1(), null) != null) {
-            return z10 && sparseArray.get(fjVar.e1(), null) != null;
+        if (z10 || sparseArray.get(gjVar.e1(), null) != null) {
+            return z10 && sparseArray.get(gjVar.e1(), null) != null;
         }
         return true;
     }
@@ -83,9 +83,9 @@ public final class b3 implements m9.t {
         if (i10 < 0 || i10 >= arrayList.size()) {
             return;
         }
-        fj fjVar = (fj) arrayList.get(i10);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(fjVar.e1()) < 0 && sparseArrayArr[1].indexOfKey(fjVar.e1()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(fjVar.e1()) >= 0 || sparseArrayArr[1].indexOfKey(fjVar.e1()) >= 0) && fjVar.U == 0) {
+        gj gjVar = (gj) arrayList.get(i10);
+        if (!z10 || (sparseArrayArr[0].indexOfKey(gjVar.e1()) < 0 && sparseArrayArr[1].indexOfKey(gjVar.e1()) < 0)) {
+            if ((z10 || sparseArrayArr[0].indexOfKey(gjVar.e1()) >= 0 || sparseArrayArr[1].indexOfKey(gjVar.e1()) >= 0) && gjVar.U == 0) {
                 if (z10) {
                     if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
                         this.a = true;
@@ -97,7 +97,7 @@ public final class b3 implements m9.t {
                                 return;
                             }
                         }
-                        bnVar.K6(fjVar, false, true);
+                        bnVar.K6(gjVar, false, true);
                         bnVar.Lc();
                         bnVar.Gd(false);
                     }
@@ -106,7 +106,7 @@ public final class b3 implements m9.t {
                 K = bnVar.A0.K(i7);
                 if (K != null) {
                 }
-                bnVar.K6(fjVar, false, true);
+                bnVar.K6(gjVar, false, true);
                 bnVar.Lc();
                 bnVar.Gd(false);
             }

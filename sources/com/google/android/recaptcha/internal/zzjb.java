@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
 import java.util.HashMap;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class zzjb {
     private final zzja zza;
@@ -18,7 +18,7 @@ public final class zzjb {
         this.zza = zzjaVar;
         HashMap hashMap = new HashMap();
         this.zzb = hashMap;
-        zzjaVar.zzd(ks.D2, hashMap);
+        zzjaVar.zzd(ls.D2, hashMap);
     }
 
     public final zzja zza() {
@@ -28,7 +28,7 @@ public final class zzjb {
     public final void zzb() {
         zzja zzjaVar = this.zza;
         zzjaVar.zzc();
-        zzjaVar.zzd(ks.D2, this.zzb);
+        zzjaVar.zzd(ls.D2, this.zzb);
     }
 
     public final zzdo zzc() {

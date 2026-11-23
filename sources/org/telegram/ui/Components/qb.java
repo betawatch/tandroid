@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qb implements wi0 {
     public final /* synthetic */ rb a;
@@ -27,17 +27,17 @@ public final class qb implements wi0 {
         if (rbVar.e == null) {
             return;
         }
-        boolean z12 = (g2Var instanceof org.telegram.ui.bn) && ((org.telegram.ui.bn) g2Var).a() == org.telegram.messenger.j10.i(g2Var.getCurrentAccount()).e();
+        boolean z12 = (g2Var instanceof org.telegram.ui.bn) && ((org.telegram.ui.bn) g2Var).a() == org.telegram.messenger.k10.i(g2Var.getCurrentAccount()).e();
         int i7 = 0;
         for (int i10 = 0; i10 < rbVar.e.size(); i10++) {
             int keyAt = rbVar.e.keyAt(i10);
             TLRPC.Message message = new TLRPC.Message();
             message.dialog_id = g2Var.getUserConfig().e();
             message.id = keyAt;
-            org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(g2Var.getCurrentAccount(), message, false, false);
+            org.telegram.messenger.gj gjVar = new org.telegram.messenger.gj(g2Var.getCurrentAccount(), message, false, false);
             ArrayList arrayList = new ArrayList();
             arrayList.add(p0Var);
-            g2Var.getSendMessagesHelper().s0(fjVar, arrayList, p0Var, false, false, rbVar.f, null);
+            g2Var.getSendMessagesHelper().s0(gjVar, arrayList, p0Var, false, false, rbVar.f, null);
             i7 = message.id;
         }
         rbVar.f();

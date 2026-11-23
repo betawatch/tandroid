@@ -15,9 +15,9 @@ import ki.k2;
 import ki.q2;
 import ki.s2;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.fq0;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.i00;
 import org.telegram.ui.Components.lp;
-import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.ov;
 import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.sl0;
@@ -42,7 +42,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ml;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class k implements Runnable {
             case 2:
                 f6 f6Var = (f6) obj;
                 f6Var.getClass();
-                f6Var.C2(f6Var.i3, org.telegram.messenger.g0.W2(gd.a0(null, null, z10 ? 2131750407 : 2131750404, f6Var.E1())), true);
+                f6Var.C2(f6Var.i3, org.telegram.messenger.g0.W2(hd.a0(null, null, z10 ? 2131750407 : 2131750404, f6Var.E1())), true);
                 break;
             case 3:
                 f6 f6Var2 = ((h4) obj).W;
@@ -111,7 +111,7 @@ public final /* synthetic */ class k implements Runnable {
                 gi.m mVar = (gi.m) obj;
                 fq0 fq0Var = mVar.a0;
                 if (z10) {
-                    new gi.p(fq0Var.a, gd.N0(2131746497, null), new ai.h0(fq0Var, 20)).show();
+                    new gi.p(fq0Var.a, hd.N0(2131746497, null), new ai.h0(fq0Var, 20)).show();
                     break;
                 } else {
                     fq0Var.b(mVar.a.E);
@@ -167,11 +167,11 @@ public final /* synthetic */ class k implements Runnable {
                 q2Var.setLoadProgress(0.0f);
                 q2Var.setAlpha(1.0f);
                 q2Var.setVisibility(0);
-                k2Var.setBotUser(z10 ? null : mp.u1(s2Var.I).c2(Long.valueOf(s2Var.J)));
+                k2Var.setBotUser(z10 ? null : np.u1(s2Var.I).c2(Long.valueOf(s2Var.J)));
                 if (!z10) {
                     k2Var.s(s2Var.I, s2Var.J);
                 }
-                ks.f(k2Var.N).d(new org.telegram.ui.web.q(k2Var, c10 == true ? 1 : 0));
+                ls.f(k2Var.N).d(new org.telegram.ui.web.q(k2Var, c10 == true ? 1 : 0));
                 break;
             case 11:
                 ((li.k0) obj).f(z10, false);
@@ -214,7 +214,7 @@ public final /* synthetic */ class k implements Runnable {
                 q0Var.r0 = true;
                 break;
             case 19:
-                vf.c.t((Context) obj, gd.N0(z10 ? 2131753026 : 2131748199, null));
+                vf.c.t((Context) obj, hd.N0(z10 ? 2131753026 : 2131748199, null));
                 break;
             case 20:
                 ax0 ax0Var = ((ml) obj).b.s1;
@@ -238,7 +238,7 @@ public final /* synthetic */ class k implements Runnable {
                 n0Var.C2.setLoading(z10);
                 break;
             case 23:
-                np npVar = (np) obj;
+                org.telegram.ui.Components.np npVar = (org.telegram.ui.Components.np) obj;
                 lp lpVar = npVar.r1;
                 if (lpVar != null && lpVar.d != null && !npVar.J) {
                     npVar.V0(z10, true);
@@ -252,13 +252,13 @@ public final /* synthetic */ class k implements Runnable {
                             npVar.s1.r(s3Var, wallPaper, false, Boolean.valueOf(z10), false);
                         }
                     }
-                    if (org.telegram.messenger.g0.Q1() && (K0 = np.K0(z10)) != null && K0 != m6.I) {
+                    if (org.telegram.messenger.g0.Q1() && (K0 = org.telegram.ui.Components.np.K0(z10)) != null && K0 != m6.I) {
                         npVar.d2 = z10 != npVar.u1;
                         npVar.Y0(K0);
                     }
                     if (lpVar.d != null) {
                         for (int i10 = 0; i10 < lpVar.d.size(); i10++) {
-                            ((org.telegram.ui.Components.mp) lpVar.d.get(i10)).c = z10 ? 1 : 0;
+                            ((mp) lpVar.d.get(i10)).c = z10 ? 1 : 0;
                         }
                         lpVar.f();
                         break;
@@ -298,7 +298,7 @@ public final /* synthetic */ class k implements Runnable {
                     c50Var.j0 = true;
                     c50Var.w();
                     c50Var.invalidate();
-                    ks.f(c50Var.e).k(ks.l2, Integer.valueOf(c50Var.V), Boolean.FALSE);
+                    ls.f(c50Var.e).k(ls.l2, Integer.valueOf(c50Var.V), Boolean.FALSE);
                     break;
                 }
                 break;

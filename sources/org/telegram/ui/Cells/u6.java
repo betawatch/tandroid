@@ -2,7 +2,7 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.yo;
+import org.telegram.messenger.zo;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.h51;
@@ -10,7 +10,7 @@ import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.vw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u6 extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -25,8 +25,8 @@ public final class u6 extends n41 {
         if (obj instanceof vw0) {
             vw0 vw0Var = (vw0) obj;
             ((w6) view).b(o41Var.m, vw0Var.d, vw0Var.e, z10);
-        } else if (obj instanceof yo) {
-            ((w6) view).a(o41Var.m, ((yo) obj).b, true, z10);
+        } else if (obj instanceof zo) {
+            ((w6) view).a(o41Var.m, ((zo) obj).b, true, z10);
         }
     }
 

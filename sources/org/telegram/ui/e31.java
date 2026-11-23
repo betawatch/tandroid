@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e31 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,11 +38,11 @@ public final /* synthetic */ class e31 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new mz0(3, (o31) this.b, (TLRPC.TL_attachMenuBot) this.c));
                 break;
             case 1:
-                org.telegram.messenger.g0.g3(new kg0((org.telegram.messenger.fs) this.b, (Object) tL_error, (Object) tLObject, (String) this.c, 21));
+                org.telegram.messenger.g0.g3(new kg0((org.telegram.messenger.gs) this.b, (Object) tL_error, (Object) tLObject, (String) this.c, 21));
                 break;
             case 2:
                 o41 o41Var = (o41) this.b;
-                org.telegram.messenger.p10 p10Var = (org.telegram.messenger.p10) this.c;
+                org.telegram.messenger.q10 q10Var = (org.telegram.messenger.q10) this.c;
                 int i7 = o41Var.i;
                 String str3 = null;
                 if (tL_error == null) {
@@ -66,7 +66,7 @@ public final /* synthetic */ class e31 implements RequestDelegate {
                                 if (tLObject instanceof TL_stats.TL_statsGraphError) {
                                 }
                                 str = str2;
-                                org.telegram.messenger.g0.g3(new kg0(o41Var, str3, str, p10Var, 23));
+                                org.telegram.messenger.g0.g3(new kg0(o41Var, str3, str, q10Var, 23));
                                 return;
                             }
                         } catch (JSONException e11) {
@@ -85,7 +85,7 @@ public final /* synthetic */ class e31 implements RequestDelegate {
                 } else {
                     str = null;
                 }
-                org.telegram.messenger.g0.g3(new kg0(o41Var, str3, str, p10Var, 23));
+                org.telegram.messenger.g0.g3(new kg0(o41Var, str3, str, q10Var, 23));
                 break;
             case 3:
                 org.telegram.messenger.g0.g3(new v21((a81) this.b, (String) this.c, tL_error));
@@ -123,18 +123,18 @@ public final /* synthetic */ class e31 implements RequestDelegate {
                 org.telegram.messenger.g0.g3(new p4.s0((tg.f2) this.b, tLObject, (tg.d2) this.c, tL_error, 5));
                 break;
             case 10:
-                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.es0(tLObject, (org.telegram.messenger.mp) this.b, (wg.u0) this.c, 29));
+                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.es0(tLObject, (org.telegram.messenger.np) this.b, (wg.u0) this.c, 29));
                 break;
             default:
-                org.telegram.messenger.mp mpVar = (org.telegram.messenger.mp) this.b;
+                org.telegram.messenger.np npVar = (org.telegram.messenger.np) this.b;
                 org.telegram.ui.Components.rh rhVar = (org.telegram.ui.Components.rh) this.c;
                 if (tLObject instanceof TLRPC.TL_contacts_found) {
                     TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
-                    mpVar.f4(tL_contacts_found.users, false);
+                    npVar.f4(tL_contacts_found.users, false);
                     ArrayList arrayList = new ArrayList();
                     for (int i10 = 0; i10 < tL_contacts_found.users.size(); i10++) {
                         TLRPC.User user = tL_contacts_found.users.get(i10);
-                        if (!user.self && !org.telegram.messenger.o10.y(user) && !org.telegram.messenger.o10.B(user.id)) {
+                        if (!user.self && !org.telegram.messenger.p10.y(user) && !org.telegram.messenger.p10.B(user.id)) {
                             arrayList.add(user);
                         }
                     }

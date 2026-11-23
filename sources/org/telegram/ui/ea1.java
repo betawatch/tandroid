@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ea1 extends org.telegram.ui.ActionBar.g2 {
     public ca1 a;
@@ -18,10 +18,10 @@ public final class ea1 extends org.telegram.ui.ActionBar.g2 {
     public HashSet e;
 
     public static void Z(ea1 ea1Var, int i7) {
-        org.telegram.messenger.ys ysVar = ea1Var.getNotificationsController().h0;
-        ysVar.getClass();
-        String v = org.telegram.messenger.xs.v(ea1Var.c, i7, true);
-        ysVar.b().edit().remove("notify2_" + v).remove("custom_" + v).remove("notifyuntil_" + v).remove("content_preview_" + v).remove("silent_" + v).remove("stories_" + v).apply();
+        org.telegram.messenger.zs zsVar = ea1Var.getNotificationsController().h0;
+        zsVar.getClass();
+        String v = org.telegram.messenger.ys.v(ea1Var.c, i7, true);
+        zsVar.b().edit().remove("notify2_" + v).remove("custom_" + v).remove("notifyuntil_" + v).remove("content_preview_" + v).remove("silent_" + v).remove("stories_" + v).apply();
         TL_account.updateNotifySettings updatenotifysettings = new TL_account.updateNotifySettings();
         updatenotifysettings.settings = new TLRPC.TL_inputPeerNotifySettings();
         TLRPC.TL_inputNotifyForumTopic tL_inputNotifyForumTopic = new TLRPC.TL_inputNotifyForumTopic();
@@ -73,7 +73,7 @@ public final class ea1 extends org.telegram.ui.ActionBar.g2 {
         this.fragmentView = frameLayout;
         this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.x1(false));
         this.simpleActionBar.setActionBarMenuOnItemClick(new hs0(this, 19));
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131747718, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131747718, null));
         org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
         this.b = ek0Var;
         ek0Var.r1();

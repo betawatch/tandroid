@@ -10,26 +10,26 @@ import java.net.URI;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r21 extends Thread {
     public final /* synthetic */ String a;
     public final /* synthetic */ String b;
     public final /* synthetic */ String c;
-    public final /* synthetic */ org.telegram.messenger.q10 d;
+    public final /* synthetic */ org.telegram.messenger.r10 d;
 
-    public r21(String str, String str2, String str3, org.telegram.messenger.q10 q10Var) {
+    public r21(String str, String str2, String str3, org.telegram.messenger.r10 r10Var) {
         this.a = str;
         this.b = str2;
         this.c = str3;
-        this.d = q10Var;
+        this.d = r10Var;
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
     public final void run() {
         HttpURLConnection httpURLConnection;
         String str;
-        org.telegram.messenger.q10 q10Var = this.d;
+        org.telegram.messenger.r10 r10Var = this.d;
         String str2 = this.c;
         boolean z10 = false;
         try {
@@ -76,7 +76,7 @@ public final class r21 extends Thread {
             if (str2.length() > 0 && str2.charAt(0) == '\n') {
                 str3 = "\n" + str3;
             }
-            org.telegram.messenger.g0.g3(new q21(str3, 0, q10Var));
+            org.telegram.messenger.g0.g3(new q21(str3, 0, r10Var));
         } catch (Exception e11) {
             e = e11;
             try {
@@ -96,11 +96,11 @@ public final class r21 extends Thread {
                         z10 = true;
                     }
                 } catch (Exception unused2) {
-                    org.telegram.messenger.g0.g3(new cp0(q10Var, 22));
+                    org.telegram.messenger.g0.g3(new cp0(r10Var, 22));
                     return;
                 }
             }
-            org.telegram.messenger.g0.g3(new rp0(5, q10Var, z10));
+            org.telegram.messenger.g0.g3(new rp0(5, r10Var, z10));
         }
     }
 }

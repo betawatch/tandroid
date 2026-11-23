@@ -5,12 +5,12 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import hi.a5;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.u4;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u0 implements h6 {
     public final TextPaint a;
@@ -32,8 +32,8 @@ public final class u0 implements h6 {
         this.d = new Paint(3);
         Paint paint = new Paint(3);
         this.e = paint;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, bz.W0) - 2));
-        textPaint2.setTextSize(org.telegram.messenger.g0.L(Math.max(16, bz.W0) - 2));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, cz.W0) - 2));
+        textPaint2.setTextSize(org.telegram.messenger.g0.L(Math.max(16, cz.W0) - 2));
         textPaint3.setTextSize(org.telegram.messenger.g0.L(15.0f));
         textPaint3.setTypeface(org.telegram.messenger.g0.o());
         paint.setColor(352321536);
@@ -131,7 +131,7 @@ public final class u0 implements h6 {
 
     @Override // org.telegram.ui.ActionBar.h6
     public final boolean h() {
-        return bz.H0;
+        return cz.H0;
     }
 
     @Override // org.telegram.ui.ActionBar.h6

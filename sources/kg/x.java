@@ -2,15 +2,15 @@ package kg;
 
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -39,8 +39,8 @@ public final /* synthetic */ class x implements RequestDelegate {
                                 if (tLObject2 instanceof TL_account.TL_businessChatLink) {
                                     TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) tLObject2;
                                     zVar2.b.add(tL_businessChatLink);
-                                    ks.f(i11).k(ks.J1, new Object[0]);
-                                    ks.f(i11).k(ks.K1, tL_businessChatLink);
+                                    ls.f(i11).k(ls.J1, new Object[0]);
+                                    ls.f(i11).k(ls.K1, tL_businessChatLink);
                                     zVar2.f();
                                     break;
                                 }
@@ -52,10 +52,10 @@ public final /* synthetic */ class x implements RequestDelegate {
                                     TL_account.businessChatLinks businesschatlinks = (TL_account.businessChatLinks) tLObject2;
                                     arrayList.clear();
                                     arrayList.addAll(businesschatlinks.links);
-                                    mp.u1(i12).f4(businesschatlinks.users, false);
-                                    mp.u1(i12).Z3(businesschatlinks.chats, false);
-                                    tr.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
-                                    ks.f(i12).k(ks.J1, new Object[0]);
+                                    np.u1(i12).f4(businesschatlinks.users, false);
+                                    np.u1(i12).Z3(businesschatlinks.chats, false);
+                                    ur.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
+                                    ls.f(i12).k(ls.J1, new Object[0]);
                                     zVar2.f();
                                 } else {
                                     a8.g(new RuntimeException("Unexpected response from server!"), true);
@@ -82,8 +82,8 @@ public final /* synthetic */ class x implements RequestDelegate {
                                 if (tLObject2 instanceof TL_account.TL_businessChatLink) {
                                     TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) tLObject2;
                                     zVar22.b.add(tL_businessChatLink);
-                                    ks.f(i11).k(ks.J1, new Object[0]);
-                                    ks.f(i11).k(ks.K1, tL_businessChatLink);
+                                    ls.f(i11).k(ls.J1, new Object[0]);
+                                    ls.f(i11).k(ls.K1, tL_businessChatLink);
                                     zVar22.f();
                                     break;
                                 }
@@ -95,10 +95,10 @@ public final /* synthetic */ class x implements RequestDelegate {
                                     TL_account.businessChatLinks businesschatlinks = (TL_account.businessChatLinks) tLObject2;
                                     arrayList.clear();
                                     arrayList.addAll(businesschatlinks.links);
-                                    mp.u1(i12).f4(businesschatlinks.users, false);
-                                    mp.u1(i12).Z3(businesschatlinks.chats, false);
-                                    tr.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
-                                    ks.f(i12).k(ks.J1, new Object[0]);
+                                    np.u1(i12).f4(businesschatlinks.users, false);
+                                    np.u1(i12).Z3(businesschatlinks.chats, false);
+                                    ur.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
+                                    ls.f(i12).k(ls.J1, new Object[0]);
                                     zVar22.f();
                                 } else {
                                     a8.g(new RuntimeException("Unexpected response from server!"), true);

@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class ey0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class ey0 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public org.telegram.ui.Components.ek0 a;
     public ay0 b;
     public int c;
@@ -34,7 +34,7 @@ public final class ey0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
                 ey0Var.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) ey0Var, 4, true));
                 return;
             } else {
-                org.telegram.messenger.ri.d0(ey0Var.currentAccount).f2(xVar.f.reaction);
+                org.telegram.messenger.si.d0(ey0Var.currentAccount).f2(xVar.f.reaction);
                 ey0Var.a.getAdapter().k(0, ey0Var.a.getAdapter().b());
                 return;
             }
@@ -87,7 +87,7 @@ public final class ey0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         setHasOwnBackground(true);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131746191, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131746191, null));
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new hs0(this, 8));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -109,14 +109,14 @@ public final class ey0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return frameLayout;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (i10 != this.currentAccount) {
             return;
         }
-        if (i7 == org.telegram.messenger.ks.Y4) {
+        if (i7 == org.telegram.messenger.ls.Y4) {
             this.b.f();
-        } else if (i7 == org.telegram.messenger.ks.i5) {
+        } else if (i7 == org.telegram.messenger.ls.i5) {
             h0();
             this.b.f();
         }
@@ -135,7 +135,7 @@ public final class ey0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final void h0() {
         this.f = 2;
         this.c = 1;
-        if (!org.telegram.messenger.j10.i(this.currentAccount).q()) {
+        if (!org.telegram.messenger.k10.i(this.currentAccount).q()) {
             this.e = -1;
             this.d = this.f;
         } else {
@@ -158,11 +158,11 @@ public final class ey0 extends org.telegram.ui.ActionBar.g2 implements org.teleg
             eVar.b();
             this.h = null;
         }
-        org.telegram.messenger.ks notificationCenter = getNotificationCenter();
+        org.telegram.messenger.ls notificationCenter = getNotificationCenter();
         notificationCenter.getClass();
         xi.e eVar2 = new xi.e(notificationCenter, this);
-        eVar2.c(org.telegram.messenger.ks.Y4);
-        eVar2.c(org.telegram.messenger.ks.i5);
+        eVar2.c(org.telegram.messenger.ls.Y4);
+        eVar2.c(org.telegram.messenger.ls.i5);
         this.h = eVar2;
         return super.onFragmentCreate();
     }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ss implements Runnable {
     public final /* synthetic */ int a;
@@ -95,7 +95,7 @@ public final /* synthetic */ class ss implements Runnable {
                 }
                 break;
             case 2:
-                org.telegram.messenger.mp.u1(((ws) obj2).a).V3((TLRPC.Updates) obj, false);
+                org.telegram.messenger.np.u1(((ws) obj2).a).V3((TLRPC.Updates) obj, false);
                 break;
             case 3:
                 ut utVar = (ut) obj2;
@@ -113,10 +113,10 @@ public final /* synthetic */ class ss implements Runnable {
                 org.telegram.ui.Components.oh0 oh0Var = xtVar.d;
                 oh0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
                 if (org.telegram.ui.ActionBar.m6.k1()) {
-                    n8Var.p(org.telegram.messenger.gd.N0(2131745270, null), oh0Var, true);
+                    n8Var.p(org.telegram.messenger.hd.N0(2131745270, null), oh0Var, true);
                     n8Var.x += 2;
                 } else {
-                    n8Var.p(org.telegram.messenger.gd.N0(2131745271, null), oh0Var, true);
+                    n8Var.p(org.telegram.messenger.hd.N0(2131745271, null), oh0Var, true);
                     n8Var.x += 2;
                 }
                 org.telegram.ui.ActionBar.m6.M1(g2Var);
@@ -186,28 +186,28 @@ public final /* synthetic */ class ss implements Runnable {
                     long j3 = ((TLRPC.Dialog) arrayList4.get(i12)).id;
                     TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList4.get(i12);
                     if (cxVar4.getMessagesController().y2(j3) || cxVar4.getMessagesController().F2(j3)) {
-                        org.telegram.messenger.mp messagesController = cxVar4.getMessagesController();
-                        org.telegram.messenger.tr messagesStorage = messagesController.getMessagesStorage();
-                        org.telegram.messenger.kl klVar = new org.telegram.messenger.kl(messagesController, j3);
+                        org.telegram.messenger.np messagesController = cxVar4.getMessagesController();
+                        org.telegram.messenger.ur messagesStorage = messagesController.getMessagesStorage();
+                        org.telegram.messenger.ll llVar = new org.telegram.messenger.ll(messagesController, j3);
                         org.telegram.messenger.q5 q5Var = messagesStorage.a;
-                        org.telegram.messenger.d4 d4Var = new org.telegram.messenger.d4(messagesStorage, j3, klVar, 5);
+                        org.telegram.messenger.d4 d4Var = new org.telegram.messenger.d4(messagesStorage, j3, llVar, 5);
                         j3 = j3;
                         q5Var.c(d4Var);
                     }
                     cxVar4.getMessagesController().v3(j3, 0L);
-                    org.telegram.messenger.mp messagesController2 = cxVar4.getMessagesController();
+                    org.telegram.messenger.np messagesController2 = cxVar4.getMessagesController();
                     int i15 = dialog2.top_message;
                     messagesController2.q3(j3, i15, i15, dialog2.last_message_date, false, 0L, 0, true, 0);
                     i12++;
                 }
                 break;
             case 11:
-                ((tw) obj2).d((org.telegram.messenger.ro) obj);
+                ((tw) obj2).d((org.telegram.messenger.so) obj);
                 break;
             case 12:
                 nx nxVar = (nx) obj2;
                 bn bnVar = nxVar.a;
-                org.telegram.ui.Components.kw0 kw0Var = new org.telegram.ui.Components.kw0(bnVar.getParentActivity(), nxVar.a, org.telegram.messenger.fj.j1(((org.telegram.messenger.fj) obj).k), null, bnVar.a0, bnVar.getResourceProvider());
+                org.telegram.ui.Components.kw0 kw0Var = new org.telegram.ui.Components.kw0(bnVar.getParentActivity(), nxVar.a, org.telegram.messenger.gj.j1(((org.telegram.messenger.gj) obj).k), null, bnVar.a0, bnVar.getResourceProvider());
                 boolean V9 = bnVar.V9();
                 kw0Var.i0 = V9;
                 kw0Var.n = V9;
@@ -219,9 +219,9 @@ public final /* synthetic */ class ss implements Runnable {
                 ((org.telegram.ui.ActionBar.t1) obj).dismiss();
                 jy jyVar = iyVar.F;
                 ky kyVar = jyVar.c;
-                org.telegram.messenger.x10 x10Var = kyVar.x;
-                if (x10Var != null) {
-                    x10Var.a(kyVar.d);
+                org.telegram.messenger.y10 y10Var = kyVar.x;
+                if (y10Var != null) {
+                    y10Var.a(kyVar.d);
                 }
                 jyVar.c.finishFragment();
                 break;
@@ -238,7 +238,7 @@ public final /* synthetic */ class ss implements Runnable {
                 kzVar2.s = false;
                 kzVar2.r.g = kzVar2.E;
                 kzVar2.o0(true);
-                kzVar2.getNotificationCenter().k(org.telegram.messenger.ks.O2, new Object[0]);
+                kzVar2.getNotificationCenter().k(org.telegram.messenger.ls.O2, new Object[0]);
                 ((Runnable) obj).run();
                 break;
             case 16:
@@ -259,7 +259,7 @@ public final /* synthetic */ class ss implements Runnable {
             case 17:
                 kz kzVar4 = (kz) obj2;
                 org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj;
-                org.telegram.messenger.ro roVar = kzVar4.r;
+                org.telegram.messenger.so soVar = kzVar4.r;
                 if (t1Var != null) {
                     try {
                         t1Var.dismiss();
@@ -267,9 +267,9 @@ public final /* synthetic */ class ss implements Runnable {
                         org.telegram.messenger.a8.g(e10, true);
                     }
                 }
-                kzVar4.getMessagesController().p4(roVar);
-                org.telegram.messenger.tr messagesStorage2 = kzVar4.getMessagesStorage();
-                messagesStorage2.a.c(new org.telegram.messenger.rq(i10, messagesStorage2, roVar));
+                kzVar4.getMessagesController().p4(soVar);
+                org.telegram.messenger.ur messagesStorage2 = kzVar4.getMessagesStorage();
+                messagesStorage2.a.c(new org.telegram.messenger.sq(i10, messagesStorage2, soVar));
                 kzVar4.finishFragment();
                 break;
             case 18:
@@ -288,7 +288,7 @@ public final /* synthetic */ class ss implements Runnable {
             case 20:
                 FiltersSetupActivity filtersSetupActivity2 = ((j00) obj2).e;
                 filtersSetupActivity2.getMessagesController().W0.remove((TLRPC.TL_dialogFilterSuggested) obj);
-                filtersSetupActivity2.getNotificationCenter().k(org.telegram.messenger.ks.O2, new Object[0]);
+                filtersSetupActivity2.getNotificationCenter().k(org.telegram.messenger.ls.O2, new Object[0]);
                 break;
             case 21:
                 ArrayList arrayList6 = (ArrayList) obj;
@@ -312,7 +312,7 @@ public final /* synthetic */ class ss implements Runnable {
                 break;
             case 22:
                 f40 f40Var = (f40) obj2;
-                org.telegram.messenger.ks.f(f40Var.o1.a).k(75, 6, ((TLRPC.TL_error) obj).text);
+                org.telegram.messenger.ls.f(f40Var.o1.a).k(75, 6, ((TLRPC.TL_error) obj).text);
                 f40Var.dismiss();
                 break;
             case 23:

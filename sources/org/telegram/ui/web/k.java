@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-import ai.w2;
+import ai.x2;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import bi.g6;
+import bi.f6;
 import c8.ma;
 import c8.ra;
 import com.google.android.gms.internal.vision.e2;
@@ -30,15 +30,15 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.ln;
 import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public final i E;
@@ -64,26 +64,26 @@ public final class k extends FrameLayout {
     public final TextView r;
     public final TextView s;
     public final ln w;
-    public final g6 x;
+    public final f6 x;
     public final ArrayList y;
 
     public k(Activity activity) {
         super(activity);
-        int i7 = j10.t0;
+        int i7 = k10.t0;
         this.y = new ArrayList();
         this.K = 0.0f;
         setWillNotDraw(false);
-        int i10 = j10.t0;
+        int i10 = k10.t0;
         b bVar = new b(this, 0);
         a aVar = new a(this);
         c5 c5Var = new c5(2, null);
         this.a = c5Var;
-        g6 g6Var = new g6(this, activity, i10, bVar, aVar, c5Var);
-        this.x = g6Var;
-        g6Var.g3.r = false;
-        g6Var.setOverScrollMode(2);
-        g6Var.setPadding(0, 0, 0, 0);
-        addView(g6Var, ma.e(-1, -1, ks.E1));
+        f6 f6Var = new f6(this, activity, i10, bVar, aVar, c5Var);
+        this.x = f6Var;
+        f6Var.g3.r = false;
+        f6Var.setOverScrollMode(2);
+        f6Var.setPadding(0, 0, 0, 0);
+        addView(f6Var, ma.e(-1, -1, ls.E1));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
@@ -129,19 +129,19 @@ public final class k extends FrameLayout {
         setImportantForAccessibility(4);
     }
 
-    public static String a(fj fjVar) {
-        TLRPC.Message message = fjVar.k;
+    public static String a(gj gjVar) {
+        TLRPC.Message message = gjVar.k;
         if (message != null) {
             TLRPC.MessageMedia messageMedia = message.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                 return messageMedia.webpage.url;
             }
         }
-        CharSequence charSequence = fjVar.v;
+        CharSequence charSequence = gjVar.v;
         if (charSequence == null || charSequence.length() <= 0) {
             return null;
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(fjVar.v);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gjVar.v);
         for (URLSpan uRLSpan : (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class)) {
             String url = uRLSpan.getURL();
             if (url != null && !url.startsWith("@") && !url.startsWith("#") && !url.startsWith("$")) {
@@ -329,15 +329,15 @@ public final class k extends FrameLayout {
         boolean z10 = !arrayList.isEmpty();
         if (TextUtils.isEmpty(str)) {
             arrayList.clear();
-            g6 g6Var = this.x;
-            g6Var.g3.O(true);
+            f6 f6Var = this.x;
+            f6Var.g3.O(true);
             if (z10 != (!arrayList.isEmpty())) {
-                g6Var.f3.h1(0, 0);
+                f6Var.f3.h1(0, 0);
                 return;
             }
             return;
         }
-        y0 y0Var = new y0(new w2(10, this, z10));
+        y0 y0Var = new y0(new x2(10, this, z10));
         String str3 = e1.a().c;
         if (str3 != null) {
             StringBuilder m10 = e2.m(str3);

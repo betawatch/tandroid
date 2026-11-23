@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ec extends db implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -31,10 +31,10 @@ public final class ec extends db implements org.telegram.ui.ActionBar.b6 {
             textView.setBackground(org.telegram.ui.ActionBar.m6.h0((k10 & 16777215) | 419430400, 7, -1));
             this.h = textView.getBackground();
             i5.c.x(textView, 1, 14.0f);
-            org.telegram.messenger.n10.r(textView, i7, h6Var, null, 2131743642);
+            org.telegram.messenger.o10.r(textView, i7, h6Var, null, 2131743640);
             textView.setGravity(16);
             float f10 = z11 ? 34.0f : 12.0f;
-            boolean z12 = org.telegram.messenger.gd.a0;
+            boolean z12 = org.telegram.messenger.hd.a0;
             c8.xa.a(textView, z12 ? 12.0f : f10, 8.0f, z12 ? f10 : 12.0f, 8.0f);
             addView(textView, c8.ma.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
         }

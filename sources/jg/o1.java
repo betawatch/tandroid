@@ -14,16 +14,16 @@ import oi.m5;
 import oi.u5;
 import oi.v5;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.f5;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.j9;
@@ -33,7 +33,7 @@ import org.telegram.ui.Wallet.q6;
 import org.telegram.ui.Wallet.s6;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class o1 implements Runnable {
                     org.telegram.messenger.g0.g3(new ai.i1(s1Var, i14, new ArrayList(), new ArrayList(), s1Var.I, 5));
                     break;
                 } else {
-                    String T0 = gd.E0().T0(lowerCase, true, false);
+                    String T0 = hd.E0().T0(lowerCase, true, false);
                     if (lowerCase.equals(T0) || T0.length() == 0) {
                         T0 = null;
                     }
@@ -101,23 +101,23 @@ public final /* synthetic */ class o1 implements Runnable {
                     String str2 = null;
                     while (i16 < arrayList2.size()) {
                         String[] strArr2 = strArr;
-                        TLRPC.User c22 = mp.u1(i12).c2(Long.valueOf(((TLRPC.TL_contact) arrayList2.get(i16)).user_id));
+                        TLRPC.User c22 = np.u1(i12).c2(Long.valueOf(((TLRPC.TL_contact) arrayList2.get(i16)).user_id));
                         if (s1Var.w || !c22.self) {
                             String[] strArr3 = new String[3];
                             i7 = i12;
                             strArr3[0] = i5.m(0, c22.first_name, c22.last_name).toLowerCase();
                             arrayList = arrayList2;
-                            String T02 = gd.E0().T0(strArr3[0], true, false);
+                            String T02 = hd.E0().T0(strArr3[0], true, false);
                             strArr3[1] = T02;
                             if (strArr3[0].equals(T02)) {
                                 strArr3[1] = str2;
                             }
-                            if (o10.A(c22)) {
-                                strArr3[2] = gd.N0(2131746070, str2).toLowerCase();
+                            if (p10.A(c22)) {
+                                strArr3[2] = hd.N0(2131746070, str2).toLowerCase();
                             } else {
                                 String str3 = str2;
                                 if (c22.self) {
-                                    strArr3[2] = gd.N0(2131745705, str3).toLowerCase();
+                                    strArr3[2] = hd.N0(2131745705, str3).toLowerCase();
                                 }
                             }
                             char c11 = 0;
@@ -128,7 +128,7 @@ public final /* synthetic */ class o1 implements Runnable {
                                     String str5 = strArr3[i18];
                                     if (str5 != null && (str5.startsWith(str4) || i5.c.B(" ", str4, str5))) {
                                         c10 = 1;
-                                        String o4 = o10.o(c22);
+                                        String o4 = p10.o(c22);
                                         c11 = (c10 == 0 || o4 == null || !o4.startsWith(str4)) ? c10 : (char) 2;
                                         if (c11 == 0) {
                                             z10 = true;
@@ -137,7 +137,7 @@ public final /* synthetic */ class o1 implements Runnable {
                                                 str = null;
                                             } else {
                                                 str = null;
-                                                arrayList4.add(org.telegram.messenger.g0.r0("@" + o10.o(c22), null, "@" + str4));
+                                                arrayList4.add(org.telegram.messenger.g0.r0("@" + p10.o(c22), null, "@" + str4));
                                             }
                                             arrayList3.add(c22);
                                             i16++;
@@ -149,7 +149,7 @@ public final /* synthetic */ class o1 implements Runnable {
                                     }
                                 }
                                 c10 = c12;
-                                String o42 = o10.o(c22);
+                                String o42 = p10.o(c22);
                                 if (c10 == 0) {
                                 }
                                 if (c11 == 0) {
@@ -285,44 +285,44 @@ public final /* synthetic */ class o1 implements Runnable {
                     mediaController.Y0 = false;
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                     a0Var.f = messages_messages.next_rate;
-                    tr.a0(i12).m1(messages_messages.users, messages_messages.chats, true, true);
-                    mp.u1(i12).f4(messages_messages.users, false);
-                    mp.u1(i12).Z3(messages_messages.chats, false);
+                    ur.a0(i12).m1(messages_messages.users, messages_messages.chats, true, true);
+                    np.u1(i12).f4(messages_messages.users, false);
+                    np.u1(i12).Z3(messages_messages.chats, false);
                     int size2 = messages_messages.messages.size();
                     int i22 = 0;
                     for (int i23 = 0; i23 < size2; i23++) {
-                        fj fjVar = new fj(i12, messages_messages.messages.get(i23), false, true);
-                        if (!fjVar.S4() && !hashMap.containsKey(Integer.valueOf(fjVar.e1()))) {
-                            arrayList7.add(0, fjVar);
-                            hashMap.put(Integer.valueOf(fjVar.e1()), fjVar);
+                        gj gjVar = new gj(i12, messages_messages.messages.get(i23), false, true);
+                        if (!gjVar.S4() && !hashMap.containsKey(Integer.valueOf(gjVar.e1()))) {
+                            arrayList7.add(0, gjVar);
+                            hashMap.put(Integer.valueOf(gjVar.e1()), gjVar);
                             i22++;
                         }
                     }
                     mediaController.t0();
                     mediaController.Y0 = false;
                     mediaController.D0.e = arrayList7.size() == mediaController.D0.d;
-                    if (bz.N0) {
+                    if (cz.N0) {
                         mediaController.g();
                     }
                     if (i22 != 0) {
-                        ks.f(mediaController.v0.K1).k(74, Integer.valueOf(i22));
+                        ls.f(mediaController.v0.K1).k(74, Integer.valueOf(i22));
                         break;
                     }
                 }
                 break;
             case 8:
-                ri riVar = (ri) obj3;
+                si siVar = (si) obj3;
                 TLObject tLObject2 = (TLObject) obj2;
                 StickersActivity stickersActivity = (StickersActivity) obj;
                 int i24 = this.c;
                 if (i13 != 0) {
                     if (tLObject2 instanceof TLRPC.TL_messages_stickerSetInstallResultArchive) {
-                        riVar.E1(stickersActivity, true, i24, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject2);
+                        siVar.E1(stickersActivity, true, i24, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject2);
                     }
-                    riVar.e1(i24, false, false, true, null);
+                    siVar.e1(i24, false, false, true, null);
                     break;
                 } else {
-                    riVar.d1(i24, false, true);
+                    siVar.d1(i24, false, true);
                     break;
                 }
             case 9:

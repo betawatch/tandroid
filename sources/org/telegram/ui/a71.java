@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a71 implements org.telegram.ui.Components.lq {
     public final /* synthetic */ x71 a;
@@ -25,13 +25,13 @@ public final class a71 implements org.telegram.ui.Components.lq {
         if (j6Var.r == null) {
             x71Var.finishFragment();
             i10 = ((org.telegram.ui.ActionBar.g2) x71Var).currentAccount;
-            org.telegram.messenger.mp.u1(i10).H4(j6Var.b, j6Var);
-            org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.v4, j6Var.b, j6Var);
+            org.telegram.messenger.np.u1(i10).H4(j6Var.b, j6Var);
+            org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.v4, j6Var.b, j6Var);
             return;
         }
         StringBuilder sb2 = new StringBuilder("https://");
         i7 = ((org.telegram.ui.ActionBar.g2) x71Var).currentAccount;
-        sb2.append(org.telegram.messenger.mp.u1(i7).X2);
+        sb2.append(org.telegram.messenger.np.u1(i7).X2);
         sb2.append("/addtheme/");
         sb2.append(j6Var.r.slug);
         String sb3 = sb2.toString();
@@ -45,12 +45,12 @@ public final class a71 implements org.telegram.ui.Components.lq {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(x71Var.getParentActivity());
-        String N0 = org.telegram.messenger.gd.N0(2131751472, null);
+        String N0 = org.telegram.messenger.hd.N0(2131751472, null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = org.telegram.messenger.gd.N0(2131751473, null);
-        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131751586, null), new qi0(this, 19));
-        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+        t1Var.U = org.telegram.messenger.hd.N0(2131751473, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131751586, null), new qi0(this, 19));
+        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
         x71Var.showDialog(t1Var);
         TextView textView = (TextView) t1Var.d(-1);
         if (textView != null) {

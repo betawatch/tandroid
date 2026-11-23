@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class og implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final /* synthetic */ class og implements Runnable {
                             if (rgVar != null) {
                                 rgVar.E.d(1, true, false);
                             }
-                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(rjVar.R);
+                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(rjVar.R);
                             long j3 = rjVar.G3;
                             bn bnVar = rjVar.F3;
                             d02.j2(j3, (bnVar == null || !bnVar.x4) ? 0L : bnVar.d(), true);

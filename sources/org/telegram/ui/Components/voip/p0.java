@@ -10,12 +10,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import c8.ma;
 import hi.j3;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qc;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout {
     public final o0 a;
@@ -36,14 +36,14 @@ public final class p0 extends FrameLayout {
         o0Var.e = true;
         q9 q9Var = new q9(activity);
         this.b = q9Var;
-        addView(q9Var, ma.e(ks.R1, ks.R1, 17));
+        addView(q9Var, ma.e(ls.R1, ls.R1, 17));
         setWillNotDraw(false);
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
         this.c.setInterpolator(nr.g);
         this.c.setDuration(3000L);
-        boolean e10 = pc.e(512);
+        boolean e10 = qc.e(512);
         this.f = e10;
         if (e10) {
             this.c.start();

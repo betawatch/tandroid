@@ -7,14 +7,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.wq;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.xq;
 import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.d81;
 import org.telegram.ui.Components.rk0;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class d1 {
     public boolean A;
@@ -211,8 +211,8 @@ public final class d1 {
                     int max2 = Math.max(50, Math.min(600, n0.f(this.i)));
                     boolean z12 = this.l;
                     if (f10 > 0 && h.f == 0 && !h.k && n0.l(h.a()).a(f10, max2, z12)) {
-                        tr a02 = tr.a0(h.b);
-                        a02.a.c(new wq(a02, h.c, h.d, f10, max2, z12 ? 1 : 0, 1));
+                        ur a02 = ur.a0(h.b);
+                        a02.a.c(new xq(a02, h.c, h.d, f10, max2, z12 ? 1 : 0, 1));
                     }
                     rk0 rk0Var = h.u;
                     if (rk0Var != null) {

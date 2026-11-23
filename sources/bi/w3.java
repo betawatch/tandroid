@@ -1,12 +1,12 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w3 implements x10 {
+public final /* synthetic */ class w3 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ int c;
@@ -21,16 +21,16 @@ public final /* synthetic */ class w3 implements x10 {
         this.e = s3Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
                 lc k10 = this.e.k();
-                y4.q(this.b, this.c, this.d, k10, (String) obj, null);
+                x4.q(this.b, this.c, this.d, k10, (String) obj, null);
                 break;
             default:
                 lc k11 = this.e.k();
-                y4.q(this.b, this.c, this.d, k11, (String) obj, null);
+                x4.q(this.b, this.c, this.d, k11, (String) obj, null);
                 break;
         }
     }

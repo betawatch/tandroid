@@ -1,14 +1,14 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.gd;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.m80;
 import org.telegram.ui.u60;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements x10 {
+public final /* synthetic */ class k implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -17,19 +17,19 @@ public final /* synthetic */ class k implements x10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         CharSequence V;
         int i7 = this.a;
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                ((ai.w2) obj2).a(Boolean.valueOf(((String) obj) == null));
+                ((ai.x2) obj2).a(Boolean.valueOf(((String) obj) == null));
                 break;
             case 1:
                 String str = (String) obj;
                 l2.m("disconnect session", str);
-                ((x10) obj2).a(str);
+                ((y10) obj2).a(str);
                 break;
             case 2:
                 String str2 = (String) obj;
@@ -53,10 +53,10 @@ public final /* synthetic */ class k implements x10 {
                     Object[] objArr = new Object[1];
                     if (bArr != null) {
                         objArr[0] = valueOf;
-                        V = gd.V(null, null, 2131742848, objArr);
+                        V = hd.V(null, null, 2131742846, objArr);
                     } else {
                         objArr[0] = valueOf;
-                        V = gd.V(null, null, 2131742846, objArr);
+                        V = hd.V(null, null, 2131742844, objArr);
                     }
                     m80Var.setText(V);
                     break;

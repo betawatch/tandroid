@@ -3,12 +3,12 @@ package di;
 import android.content.Context;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.or;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.vm;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.pr;
+import org.telegram.messenger.r10;
 import org.telegram.messenger.wm;
+import org.telegram.messenger.xm;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s6 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -29,9 +29,9 @@ public final /* synthetic */ class s6 implements RequestDelegate {
     public final /* synthetic */ Object h;
     public final /* synthetic */ TLObject i;
 
-    public /* synthetic */ s6(y8 y8Var, q10 q10Var, long j3, String str, Context context, org.telegram.ui.ActionBar.h6 h6Var, TLRPC.ChatInvite chatInvite, String str2) {
+    public /* synthetic */ s6(y8 y8Var, r10 r10Var, long j3, String str, Context context, org.telegram.ui.ActionBar.h6 h6Var, TLRPC.ChatInvite chatInvite, String str2) {
         this.d = y8Var;
-        this.e = q10Var;
+        this.e = r10Var;
         this.c = j3;
         this.f = str;
         this.b = context;
@@ -45,7 +45,7 @@ public final /* synthetic */ class s6 implements RequestDelegate {
         switch (this.a) {
             case 0:
                 final y8 y8Var = (y8) this.d;
-                final q10 q10Var = (q10) this.e;
+                final r10 r10Var = (r10) this.e;
                 final String str = (String) this.f;
                 final org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.h;
                 final TLRPC.ChatInvite chatInvite = (TLRPC.ChatInvite) this.i;
@@ -58,7 +58,7 @@ public final /* synthetic */ class s6 implements RequestDelegate {
                         u80 u80Var;
                         y8 y8Var2 = y8.this;
                         TLObject tLObject2 = tLObject;
-                        q10 q10Var2 = q10Var;
+                        r10 r10Var2 = r10Var;
                         long j10 = j3;
                         String str3 = str;
                         TLRPC.TL_error tL_error2 = tL_error;
@@ -71,17 +71,17 @@ public final /* synthetic */ class s6 implements RequestDelegate {
                         int i7 = 1;
                         if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
                             if (tL_error2 == null || !"BALANCE_TOO_LOW".equals(tL_error2.text)) {
-                                q10Var2.a(0L, Boolean.FALSE);
-                                b02.Q(R.raw.error, 36, gd.a0(null, null, 2131743635, tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS")).j();
+                                r10Var2.a(0L, Boolean.FALSE);
+                                b02.Q(R.raw.error, 36, hd.a0(null, null, 2131743633, tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS")).j();
                                 return;
-                            } else if (mp.u1(y8Var2.a).m7) {
-                                q10Var2.a(0L, Boolean.FALSE);
+                            } else if (np.u1(y8Var2.a).m7) {
+                                r10Var2.a(0L, Boolean.FALSE);
                                 y8.c0(context2, h6Var2);
                                 return;
                             } else {
                                 boolean[] zArr = {false};
-                                fb fbVar = new fb(context2, h6Var2, j10, 1, chatInvite2.title, new ai.b(y8Var2, zArr, str4, chatInvite2, q10Var2), 0L);
-                                fbVar.setOnDismissListener(new n7(0, q10Var2, zArr));
+                                fb fbVar = new fb(context2, h6Var2, j10, 1, chatInvite2.title, new ai.b(y8Var2, zArr, str4, chatInvite2, r10Var2), 0L);
+                                fbVar.setOnDismissListener(new n7(0, r10Var2, zArr));
                                 fbVar.show();
                                 return;
                             }
@@ -98,9 +98,9 @@ public final /* synthetic */ class s6 implements RequestDelegate {
                                 }
                             }
                         }
-                        q10Var2.a(Long.valueOf(j11), Boolean.TRUE);
+                        r10Var2.a(Long.valueOf(j11), Boolean.TRUE);
                         if (j11 == 0) {
-                            b02.I(R.raw.stars_send, gd.N0(2131744753, null), org.telegram.messenger.g0.W2(gd.G((int) j10, "StarsSubscriptionCompletedText", str3))).j();
+                            b02.I(R.raw.stars_send, hd.N0(2131744751, null), org.telegram.messenger.g0.W2(hd.G((int) j10, "StarsSubscriptionCompletedText", str3))).j();
                         }
                         LaunchActivity launchActivity = LaunchActivity.H1;
                         if (launchActivity != null && (u80Var = launchActivity.w0) != null) {
@@ -112,9 +112,9 @@ public final /* synthetic */ class s6 implements RequestDelegate {
                 });
                 break;
             default:
-                mp mpVar = (mp) this.d;
+                np npVar = (np) this.d;
                 org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.e;
-                or orVar = (or) this.f;
+                pr prVar = (pr) this.f;
                 Runnable runnable = (Runnable) this.g;
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.h;
                 TLRPC.TL_messages_migrateChat tL_messages_migrateChat = (TLRPC.TL_messages_migrateChat) this.i;
@@ -123,25 +123,25 @@ public final /* synthetic */ class s6 implements RequestDelegate {
                     if (runnable != null) {
                         runnable.run();
                     }
-                    org.telegram.messenger.g0.g3(new wm(mpVar, orVar, context2, t1Var, tL_error, g2Var, tL_messages_migrateChat, 0));
+                    org.telegram.messenger.g0.g3(new xm(npVar, prVar, context2, t1Var, tL_error, g2Var, tL_messages_migrateChat, 0));
                     break;
                 } else {
                     if (context2 != null) {
-                        org.telegram.messenger.g0.g3(new vm(0, context2, t1Var));
+                        org.telegram.messenger.g0.g3(new wm(0, context2, t1Var));
                     }
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    mpVar.V3(updates, false);
-                    org.telegram.messenger.g0.g3(new org.telegram.messenger.d4(orVar, updates, this.c, 17));
+                    npVar.V3(updates, false);
+                    org.telegram.messenger.g0.g3(new org.telegram.messenger.d4(prVar, updates, this.c, 17));
                     break;
                 }
         }
     }
 
-    public /* synthetic */ s6(mp mpVar, Context context, org.telegram.ui.ActionBar.t1 t1Var, or orVar, long j3, Runnable runnable, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_messages_migrateChat tL_messages_migrateChat) {
-        this.d = mpVar;
+    public /* synthetic */ s6(np npVar, Context context, org.telegram.ui.ActionBar.t1 t1Var, pr prVar, long j3, Runnable runnable, org.telegram.ui.ActionBar.g2 g2Var, TLRPC.TL_messages_migrateChat tL_messages_migrateChat) {
+        this.d = npVar;
         this.b = context;
         this.e = t1Var;
-        this.f = orVar;
+        this.f = prVar;
         this.c = j3;
         this.g = runnable;
         this.h = g2Var;

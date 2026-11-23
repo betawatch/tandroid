@@ -8,12 +8,12 @@ import java.nio.ByteOrder;
 import ji.o;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ke;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.vr;
+import org.telegram.messenger.le;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.wr;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class a implements Runnable {
                         throw new IllegalStateException("AudioRecord read failed: " + read);
                     }
                     byteBuffer.limit(read);
-                    o oVar = vr.k;
+                    o oVar = wr.k;
                     if (oVar != null && read > 0) {
                         try {
                             oVar.n(byteBuffer, read, 48000, 2);
@@ -121,9 +121,9 @@ public final /* synthetic */ class a implements Runnable {
                                         long j13 = jVar.j();
                                         double d = sqrt;
                                         if (d >= 0.0d) {
-                                            MediaController mediaController = ((ke) jVar.f.b).a;
+                                            MediaController mediaController = ((le) jVar.f.b).a;
                                             mediaController.l1 = j13;
-                                            ks.f(mediaController.i1).k(ks.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d / 2.0d));
+                                            ls.f(mediaController.i1).k(ls.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d / 2.0d));
                                         }
                                     }
                                 }

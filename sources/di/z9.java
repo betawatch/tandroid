@@ -10,9 +10,9 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -22,13 +22,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.f21;
 import org.telegram.ui.Components.hi0;
-import org.telegram.ui.Components.j01;
 import org.telegram.ui.Components.jr;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.tb0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z9 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -95,7 +95,7 @@ public final /* synthetic */ class z9 implements View.OnClickListener {
                 if (arrayList3 != null) {
                     arrayList.addAll(arrayList3);
                 }
-                arrayList.add(0, j10.i(i11).f());
+                arrayList.add(0, k10.i(i11).f());
                 a70 a70Var = new a70(w2Var.b, h6Var, linearLayout, false, false, true);
                 int size = arrayList.size();
                 int i13 = 0;
@@ -145,7 +145,7 @@ public final /* synthetic */ class z9 implements View.OnClickListener {
             case 3:
                 tb0 tb0Var = (tb0) obj3;
                 hi.w4 w4Var = (hi.w4) obj2;
-                x10 x10Var = (x10) obj;
+                y10 y10Var = (y10) obj;
                 TL_account.TL_birthday tL_birthday = new TL_account.TL_birthday();
                 tL_birthday.day = ((tb0) obj5).getValue();
                 tL_birthday.month = ((tb0) obj4).getValue() + 1;
@@ -154,16 +154,16 @@ public final /* synthetic */ class z9 implements View.OnClickListener {
                     tL_birthday.year = tb0Var.getValue();
                 }
                 ((org.telegram.ui.ActionBar.w2) w4Var.b).y0.run();
-                x10Var.a(tL_birthday);
+                y10Var.a(tL_birthday);
                 break;
             case 4:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj3, (fi.b) obj2);
-                String N0 = gd.N0(2131748605, null);
+                String N0 = hd.N0(2131748605, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = gd.N0(2131748606, null);
-                alertDialog$Builder.k(gd.N0(2131745828, null), new bg.g0((jr) obj4, (hi.e) obj5, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 3));
-                alertDialog$Builder.h(gd.N0(2131752577, null), null);
+                t1Var.U = hd.N0(2131748606, null);
+                alertDialog$Builder.k(hd.N0(2131745828, null), new bg.g0((jr) obj4, (hi.e) obj5, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 3));
+                alertDialog$Builder.h(hd.N0(2131752577, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;
@@ -173,9 +173,9 @@ public final /* synthetic */ class z9 implements View.OnClickListener {
                 Context context = (Context) obj;
                 a70 G = a70.G(((org.telegram.ui.Wallet.e3[]) obj5)[0].c, h6Var2, (ImageView) obj3);
                 if (!TextUtils.isEmpty(wallettransactionArr[0].tx_hash)) {
-                    G.c(R.drawable.msg_search, gd.N0(2131742699, null), new j01(context, i11, wallettransactionArr, 19), false);
+                    G.c(R.drawable.msg_search, hd.N0(2131742697, null), new f21(context, i11, wallettransactionArr, 18), false);
                 }
-                G.c(R.drawable.wallet_help, gd.N0(2131742697, null), new a(i10, context, h6Var2), false);
+                G.c(R.drawable.wallet_help, hd.N0(2131742695, null), new a(i10, context, h6Var2), false);
                 G.b0(0.0f, -org.telegram.messenger.g0.L(48.0f));
                 G.a0();
                 break;
@@ -209,13 +209,13 @@ public final /* synthetic */ class z9 implements View.OnClickListener {
         this.b = i7;
     }
 
-    public /* synthetic */ z9(tb0 tb0Var, tb0 tb0Var2, tb0 tb0Var3, int i7, hi.w4 w4Var, x10 x10Var) {
+    public /* synthetic */ z9(tb0 tb0Var, tb0 tb0Var2, tb0 tb0Var3, int i7, hi.w4 w4Var, y10 y10Var) {
         this.c = tb0Var;
         this.d = tb0Var2;
         this.e = tb0Var3;
         this.b = i7;
         this.f = w4Var;
-        this.h = x10Var;
+        this.h = y10Var;
     }
 
     public /* synthetic */ z9(org.telegram.ui.Wallet.e3[] e3VarArr, org.telegram.ui.ActionBar.h6 h6Var, ImageView imageView, TL_wallet.walletTransaction[] wallettransactionArr, Context context, int i7) {

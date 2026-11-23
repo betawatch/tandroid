@@ -13,9 +13,9 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.zo;
+import org.telegram.messenger.ap;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
@@ -31,9 +31,9 @@ import org.telegram.ui.f40;
 import org.telegram.ui.oa1;
 import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q1, org.telegram.messenger.jc, rj0, zo, w5.b, v5.e, ua.a {
+public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q1, org.telegram.messenger.kc, rj0, ap, w5.b, v5.e, ua.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -46,7 +46,7 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q
         this.d = obj2;
     }
 
-    @Override // org.telegram.messenger.zo
+    @Override // org.telegram.messenger.ap
     public void a(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
         org.telegram.messenger.g0.g3(new m((rv0) this.c, this.b, tL_chatAdminRights, str, z10, (cx) this.d));
     }
@@ -135,9 +135,9 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q
                 break;
             case 3:
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.c;
-                q10 q10Var = (q10) this.d;
+                r10 r10Var = (r10) this.d;
                 TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                bg.f0 f0Var = new bg.f0(g2Var, this.b, twoStepVerificationActivity, q10Var, 3);
+                bg.f0 f0Var = new bg.f0(g2Var, this.b, twoStepVerificationActivity, r10Var, 3);
                 twoStepVerificationActivity.a0 = 1;
                 twoStepVerificationActivity.c0 = f0Var;
                 twoStepVerificationActivity.x0(new ii.b(g2Var, twoStepVerificationActivity, 0));
@@ -146,7 +146,7 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q
             case 5:
             default:
                 f40 f40Var = (f40) this.c;
-                mp.u1(f40Var.o1.a).n(f40Var.m1(), (TLRPC.User) this.d, null, (org.telegram.ui.ActionBar.g2) f40Var.d2.M().getFragmentStack().get(f40Var.d2.M().getFragmentStack().size() - 1), new bi.c4(f40Var, this.b, 27));
+                np.u1(f40Var.o1.a).n(f40Var.m1(), (TLRPC.User) this.d, null, (org.telegram.ui.ActionBar.g2) f40Var.d2.M().getFragmentStack().get(f40Var.d2.M().getFragmentStack().size() - 1), new bi.c4(f40Var, this.b, 27));
                 break;
             case 6:
                 jr jrVar = (jr) this.c;
@@ -154,7 +154,7 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q
                 if (!eVar.R) {
                     eVar.setLoading(true);
                     TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
-                    getgroupcallstreamrtmpurl.peer = mp.u1(jrVar.a).l1(this.b);
+                    getgroupcallstreamrtmpurl.peer = np.u1(jrVar.a).l1(this.b);
                     getgroupcallstreamrtmpurl.revoke = true;
                     ConnectionsManager.getInstance(jrVar.a).sendRequest(getgroupcallstreamrtmpurl, new fr(jrVar, eVar, 0));
                     break;
@@ -168,12 +168,12 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q
         ((t) this.c).v0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         ResultCallback resultCallback = (ResultCallback) this.c;
         long j3 = this.b;
         File file = (File) this.d;
-        org.telegram.messenger.hc p10 = imageReceiver.p();
+        org.telegram.messenger.ic p10 = imageReceiver.p();
         if (!z10 || p10 == null || p10.c.isRecycled()) {
             return;
         }
@@ -201,11 +201,11 @@ public final /* synthetic */ class h implements oa1, org.telegram.ui.ActionBar.q
         this.b = j3;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 

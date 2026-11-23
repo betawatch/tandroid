@@ -1,9 +1,9 @@
 package di;
 
 import android.content.Context;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.z00;
+import org.telegram.messenger.a10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -14,7 +14,7 @@ import org.telegram.ui.ky0;
 import org.telegram.ui.qy0;
 import org.telegram.ui.zn0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -75,19 +75,19 @@ public final /* synthetic */ class m3 implements Runnable {
                 }
                 break;
             case 1:
-                z00 z00Var = (z00) this.c;
-                fj fjVar = (fj) this.d;
+                a10 a10Var = (a10) this.c;
+                gj gjVar = (gj) this.d;
                 String str = (String) this.e;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.f;
                 TLRPC.TL_textWithEntities tL_textWithEntities2 = (TLRPC.TL_textWithEntities) this.h;
                 f3.s sVar = (f3.s) this.n;
                 zn0 zn0Var = (zn0) this.r;
-                z00Var.getClass();
-                TLRPC.Message message = fjVar.k;
+                a10Var.getClass();
+                TLRPC.Message message = gjVar.k;
                 message.translatedToLanguage = str;
                 message.translatedText = b31.R0(tL_textWithEntities, tL_textWithEntities2);
-                z00Var.getMessagesStorage().X1(sVar.a, fjVar.k);
-                z00Var.M.remove(sVar);
+                a10Var.getMessagesStorage().X1(sVar.a, gjVar.k);
+                a10Var.M.remove(sVar);
                 org.telegram.messenger.g0.h3(zn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - this.b)));
                 break;
             case 2:
@@ -107,14 +107,14 @@ public final /* synthetic */ class m3 implements Runnable {
                 qy0Var.show();
                 break;
             default:
-                ((WalletEngine2) this.c).lambda$prepareSend$53((byte[]) this.d, (String) this.e, this.b, (byte[]) this.f, (byte[]) this.h, (String) this.n, (s10) this.r);
+                ((WalletEngine2) this.c).lambda$prepareSend$53((byte[]) this.d, (String) this.e, this.b, (byte[]) this.f, (byte[]) this.h, (String) this.n, (t10) this.r);
                 break;
         }
     }
 
-    public /* synthetic */ m3(z00 z00Var, fj fjVar, String str, TLRPC.TL_textWithEntities tL_textWithEntities, TLRPC.TL_textWithEntities tL_textWithEntities2, f3.s sVar, zn0 zn0Var, long j3) {
-        this.c = z00Var;
-        this.d = fjVar;
+    public /* synthetic */ m3(a10 a10Var, gj gjVar, String str, TLRPC.TL_textWithEntities tL_textWithEntities, TLRPC.TL_textWithEntities tL_textWithEntities2, f3.s sVar, zn0 zn0Var, long j3) {
+        this.c = a10Var;
+        this.d = gjVar;
         this.e = str;
         this.f = tL_textWithEntities;
         this.h = tL_textWithEntities2;
@@ -145,7 +145,7 @@ public final /* synthetic */ class m3 implements Runnable {
         this.r = tL_messages_checkHistoryImportPeer;
     }
 
-    public /* synthetic */ m3(WalletEngine2 walletEngine2, byte[] bArr, String str, long j3, byte[] bArr2, byte[] bArr3, String str2, s10 s10Var) {
+    public /* synthetic */ m3(WalletEngine2 walletEngine2, byte[] bArr, String str, long j3, byte[] bArr2, byte[] bArr3, String str2, t10 t10Var) {
         this.c = walletEngine2;
         this.d = bArr;
         this.e = str;
@@ -153,6 +153,6 @@ public final /* synthetic */ class m3 implements Runnable {
         this.f = bArr2;
         this.h = bArr3;
         this.n = str2;
-        this.r = s10Var;
+        this.r = t10Var;
     }
 }

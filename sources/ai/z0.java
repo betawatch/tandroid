@@ -1,101 +1,60 @@
 package ai;
 
-import fi.y6;
-import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.lc;
+import java.util.concurrent.ThreadFactory;
+import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Dictation.DictationLid;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cx;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class z0 implements ThreadFactory {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ z0(e1 e1Var, boolean z10, float[] fArr, long j3, int i7) {
-        this.e = e1Var;
-        this.d = z10;
-        this.f = fArr;
-        this.c = j3;
-        this.b = i7;
+    public /* synthetic */ z0(int i7) {
+        this.a = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TL_stories.StoryItem storyItem;
-        int i7 = this.a;
-        r2 = null;
-        y6 a10 = null;
-        boolean z10 = this.d;
-        long j3 = this.c;
-        int i10 = this.b;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        switch (i7) {
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        Thread lambda$new$0;
+        switch (this.a) {
             case 0:
-                e1 e1Var = (e1) obj2;
-                float[] fArr = (float[]) obj;
                 ExecutorService executorService = DictationLid.a;
-                e1Var.a(z10 ? fArr : null, j3, i10);
-                break;
+                return new Thread(new a1(0, runnable), "DictationLid");
+            case 1:
+                return new Thread(runnable, "ExoPlayer:AudioTrackReleaseThread");
+            case 2:
+                return new Thread(runnable, "Lottie-" + oh0.Q0.getAndIncrement());
+            case 3:
+                return new Thread(runnable, "LottieLow-" + oh0.R0.getAndIncrement());
+            case 4:
+                return new Thread(runnable, "GramWalletStorage");
+            case 5:
+                lambda$new$0 = WalletEngine2.lambda$new$0(runnable);
+                return lambda$new$0;
+            case 6:
+                String str = WidgetEngineService.b;
+                Thread thread = new Thread(runnable, "widget-engine-destroy");
+                thread.setDaemon(true);
+                return thread;
+            case 7:
+                Thread thread2 = new Thread(runnable, "widget-sandbox-io");
+                thread2.setDaemon(true);
+                return thread2;
+            case 8:
+                Thread thread3 = new Thread(runnable, "PrismaHighlight");
+                thread3.setDaemon(true);
+                return thread3;
+            case 9:
+                return new Thread(runnable, "AudioRecorderFiles");
+            case 10:
+                return new Thread(runnable, "AudioRecorderOutput");
+            case 11:
+                return new Thread(runnable, "RoundVideoFiles");
             default:
-                LaunchActivity launchActivity = (LaunchActivity) obj2;
-                TLObject tLObject = (TLObject) obj;
-                String str = LaunchActivity.C1;
-                if (tLObject instanceof TL_stories.TL_stories_stories) {
-                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
-                    int i11 = 0;
-                    while (true) {
-                        if (i11 >= tL_stories_stories.stories.size()) {
-                            storyItem = null;
-                        } else if (tL_stories_stories.stories.get(i11).id == i10) {
-                            storyItem = tL_stories_stories.stories.get(i11);
-                        } else {
-                            i11++;
-                        }
-                    }
-                    if (storyItem != null) {
-                        storyItem.dialogId = j3;
-                        org.telegram.ui.ActionBar.g2 Q = LaunchActivity.Q();
-                        if (Q != null) {
-                            if (Q instanceof cx) {
-                                try {
-                                    a10 = y6.a(((cx) Q).F0.h);
-                                } catch (Exception unused) {
-                                }
-                            }
-                            y6 y6Var = a10;
-                            Q.getOrCreateStoryViewer().B();
-                            ArrayList arrayList = new ArrayList();
-                            arrayList.add(Long.valueOf(j3));
-                            if (z10) {
-                                Q.getOrCreateStoryViewer().w1 = true;
-                            }
-                            Q.getOrCreateStoryViewer().M(launchActivity, storyItem, arrayList, 0, null, null, y6Var, false);
-                            break;
-                        }
-                    }
-                }
-                lc.Y().Q(R.raw.error, 36, gd.N0(2131744365, null)).k(false);
-                break;
+                return new Thread(runnable, "RoundVideoOutput");
         }
-    }
-
-    public /* synthetic */ z0(LaunchActivity launchActivity, TLObject tLObject, int i7, long j3, boolean z10) {
-        this.e = launchActivity;
-        this.f = tLObject;
-        this.b = i7;
-        this.c = j3;
-        this.d = z10;
     }
 }

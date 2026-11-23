@@ -27,9 +27,9 @@ import java.util.HashMap;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.s2;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLObject;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.r80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -110,14 +110,14 @@ public final /* synthetic */ class x implements Runnable {
                     break;
                 } else {
                     Context context = v0Var2.getContext();
-                    String q10 = o10.q(v0Var2.V);
+                    String q10 = p10.q(v0Var2.V);
                     final m2 m2Var = new m2(v0Var2, f7Var, str5, str6, 16);
                     HashMap hashMap = ki.g0.g;
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                    String N0 = gd.N0(2131753092, null);
+                    String N0 = hd.N0(2131753092, null);
                     org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                     t1Var.S = N0;
-                    t1Var.U = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753093, q10));
+                    t1Var.U = org.telegram.messenger.g0.W2(hd.a0(null, null, 2131753093, q10));
                     LinearLayout linearLayout = new LinearLayout(context);
                     linearLayout.setPadding(org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
                     linearLayout.setOrientation(0);
@@ -160,7 +160,7 @@ public final /* synthetic */ class x implements Runnable {
                     linearLayout.addView(linearLayout2, ma.t(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.o(linearLayout);
                     final boolean[] zArr = new boolean[1];
-                    alertDialog$Builder.h(gd.N0(2131752577, null), new org.telegram.ui.ActionBar.q1() { // from class: ki.z
+                    alertDialog$Builder.h(hd.N0(2131752577, null), new org.telegram.ui.ActionBar.q1() { // from class: ki.z
                         @Override // org.telegram.ui.ActionBar.q1
                         public final void h(org.telegram.ui.ActionBar.t1 t1Var2, int i15) {
                             switch (i12) {
@@ -183,7 +183,7 @@ public final /* synthetic */ class x implements Runnable {
                             }
                         }
                     });
-                    alertDialog$Builder.k(gd.N0(2131753094, null), new org.telegram.ui.ActionBar.q1() { // from class: ki.z
+                    alertDialog$Builder.k(hd.N0(2131753094, null), new org.telegram.ui.ActionBar.q1() { // from class: ki.z
                         @Override // org.telegram.ui.ActionBar.q1
                         public final void h(org.telegram.ui.ActionBar.t1 t1Var2, int i15) {
                             switch (i11) {
@@ -232,7 +232,7 @@ public final /* synthetic */ class x implements Runnable {
                 if (tLObject2 != null) {
                     strArr[0] = "allowed";
                     if (tLObject2 instanceof TLRPC.Updates) {
-                        mp.u1(v0Var4.N).V3((TLRPC.Updates) tLObject2, false);
+                        np.u1(v0Var4.N).V3((TLRPC.Updates) tLObject2, false);
                     }
                 }
                 if (tL_error != null) {
@@ -250,7 +250,7 @@ public final /* synthetic */ class x implements Runnable {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str9));
                     request.setMimeType(str10);
                     request.addRequestHeader("User-Agent", str11);
-                    request.setDescription(gd.N0(2131742664, null));
+                    request.setDescription(hd.N0(2131742662, null));
                     request.setTitle(str12);
                     request.setNotificationVisibility(1);
                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, str12);
@@ -260,7 +260,7 @@ public final /* synthetic */ class x implements Runnable {
                     }
                     v0 v0Var5 = s0Var.R;
                     if (v0Var5 != null) {
-                        new lc(v0Var5, v0Var5.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.W2(gd.a0(null, null, 2131742663, str12))).k(true);
+                        new lc(v0Var5, v0Var5.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.W2(hd.a0(null, null, 2131742661, str12))).k(true);
                         break;
                     }
                 } catch (Exception e10) {
@@ -320,7 +320,7 @@ public final /* synthetic */ class x implements Runnable {
                                     if (bArr == null) {
                                     }
                                     launchActivity2.q1 = new s6(botWebViewContainer$WebViewProxy, 22);
-                                    launchActivity2.startActivityForResult(Intent.createChooser(intent, gd.N0(2131745263, null)), 521);
+                                    launchActivity2.startActivityForResult(Intent.createChooser(intent, hd.N0(2131745263, null)), 521);
                                     return;
                                 }
                             } catch (Exception e13) {
@@ -397,7 +397,7 @@ public final /* synthetic */ class x implements Runnable {
                                 intent2.setType("text/plain");
                             }
                             launchActivity2.q1 = new s6(botWebViewContainer$WebViewProxy, 22);
-                            launchActivity2.startActivityForResult(Intent.createChooser(intent2, gd.N0(2131745263, null)), 521);
+                            launchActivity2.startActivityForResult(Intent.createChooser(intent2, hd.N0(2131745263, null)), 521);
                         }
                     }
                 }

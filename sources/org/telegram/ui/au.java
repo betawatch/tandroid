@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Paint;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class au extends org.telegram.ui.Components.sa {
     public final zt T1;
@@ -55,28 +55,28 @@ public final class au extends org.telegram.ui.Components.sa {
         org.telegram.ui.Cells.d2 d2Var = null;
         while (i11 < i10) {
             if (i11 == 0) {
-                N0 = org.telegram.messenger.gd.N0(2131748570, str2);
+                N0 = org.telegram.messenger.hd.N0(2131748570, str2);
                 i7 = org.telegram.ui.ActionBar.m6.ck;
             } else if (i11 == r62) {
-                N0 = org.telegram.messenger.gd.N0(2131748566, str2);
+                N0 = org.telegram.messenger.hd.N0(2131748566, str2);
                 i7 = org.telegram.ui.ActionBar.m6.Yj;
             } else if (i11 == 2) {
-                N0 = org.telegram.messenger.gd.N0(2131748575, str2);
+                N0 = org.telegram.messenger.hd.N0(2131748575, str2);
                 i7 = org.telegram.ui.ActionBar.m6.Zj;
             } else if (i11 == 3) {
-                N0 = org.telegram.messenger.gd.N0(2131748572, str2);
+                N0 = org.telegram.messenger.hd.N0(2131748572, str2);
                 i7 = org.telegram.ui.ActionBar.m6.ak;
             } else if (i11 == 4) {
-                N0 = org.telegram.messenger.gd.N0(2131748582, str2);
+                N0 = org.telegram.messenger.hd.N0(2131748582, str2);
                 i7 = org.telegram.ui.ActionBar.m6.dk;
             } else if (i11 == 5) {
-                N0 = org.telegram.messenger.gd.N0(2131748568, str2);
+                N0 = org.telegram.messenger.hd.N0(2131748568, str2);
                 i7 = org.telegram.ui.ActionBar.m6.ek;
             } else if (i11 == 7) {
-                N0 = org.telegram.messenger.gd.N0(2131748567, str2);
+                N0 = org.telegram.messenger.hd.N0(2131748567, str2);
                 i7 = org.telegram.ui.ActionBar.m6.fk;
             } else {
-                N0 = org.telegram.messenger.gd.N0(2131748573, str2);
+                N0 = org.telegram.messenger.hd.N0(2131748573, str2);
                 i7 = org.telegram.ui.ActionBar.m6.gk;
             }
             String str3 = N0;

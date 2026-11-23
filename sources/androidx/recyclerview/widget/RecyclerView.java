@@ -40,7 +40,7 @@ import java.util.WeakHashMap;
 import jg.m1;
 import jh.g;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qf;
@@ -80,7 +80,7 @@ import v4.x0;
 import v4.y0;
 import v4.z0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] R0 = {R.attr.clipToPadding};
@@ -933,7 +933,7 @@ public class RecyclerView extends ViewGroup {
         x0 x0Var = this.b;
         if (z12 && (i7 == 2 || i7 == 1)) {
             if (this.y.e()) {
-                if (focusFinder.findNextFocus(this, view, i7 == 2 ? ks.O1 : 33) == null) {
+                if (focusFinder.findNextFocus(this, view, i7 == 2 ? ls.O1 : 33) == null) {
                     z10 = true;
                     if (!z10 && this.y.d()) {
                         RecyclerView recyclerView = this.y.b;

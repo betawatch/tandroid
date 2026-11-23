@@ -5,9 +5,9 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d80 implements org.telegram.messenger.or {
+public final /* synthetic */ class d80 implements org.telegram.messenger.pr {
     public final /* synthetic */ LaunchActivity a;
     public final /* synthetic */ int b;
     public final /* synthetic */ cx c;
@@ -26,7 +26,7 @@ public final /* synthetic */ class d80 implements org.telegram.messenger.or {
         this.h = t1Var;
     }
 
-    @Override // org.telegram.messenger.or
+    @Override // org.telegram.messenger.pr
     public final void run(long j3) {
         org.telegram.ui.ActionBar.t1 t1Var = this.h;
         LaunchActivity launchActivity = this.a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class d80 implements org.telegram.messenger.or {
             String str = LaunchActivity.C1;
             Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
             if (!org.telegram.messenger.g0.Q1()) {
-                org.telegram.messenger.ks.f(this.b).k(org.telegram.messenger.ks.t, new Object[0]);
+                org.telegram.messenger.ls.f(this.b).k(org.telegram.messenger.ls.t, new Object[0]);
             }
             if (org.telegram.messenger.n5.E(j3)) {
                 k10.putLong("user_id", j3);

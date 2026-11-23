@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p4 extends s41 {
     public final /* synthetic */ int e;
@@ -27,7 +27,7 @@ public final class p4 extends s41 {
                 break;
             case 1:
                 kw0 kw0Var = (kw0) this.f;
-                org.telegram.messenger.mp.u1(kw0Var.a).F3(getURL(), kw0Var.G1, 1, null);
+                org.telegram.messenger.np.u1(kw0Var.a).F3(getURL(), kw0Var.G1, 1, null);
                 kw0Var.dismiss();
                 break;
             case 2:
@@ -37,7 +37,7 @@ public final class p4 extends s41 {
             case 3:
                 org.telegram.ui.n50 n50Var = ((org.telegram.ui.l50) this.f).d;
                 i7 = ((org.telegram.ui.ActionBar.g2) n50Var).currentAccount;
-                org.telegram.messenger.mp.u1(i7).F3("stickers", n50Var, 1, null);
+                org.telegram.messenger.np.u1(i7).F3("stickers", n50Var, 1, null);
                 break;
             case 4:
                 ((org.telegram.ui.qj0) this.f).a.dismissCurrentDialog();
@@ -46,7 +46,7 @@ public final class p4 extends s41 {
             default:
                 StickersActivity stickersActivity = (StickersActivity) this.f;
                 i10 = ((org.telegram.ui.ActionBar.g2) stickersActivity).currentAccount;
-                org.telegram.messenger.mp.u1(i10).F3("stickers", stickersActivity, 3, null);
+                org.telegram.messenger.np.u1(i10).F3("stickers", stickersActivity, 3, null);
                 break;
         }
     }

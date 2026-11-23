@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class hj extends org.telegram.ui.Components.r01 {
+public final class hj extends org.telegram.ui.Components.q01 {
     public final /* synthetic */ bn e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class hj extends org.telegram.ui.Components.r01 {
         this.e = bnVar;
     }
 
-    @Override // org.telegram.ui.Components.r01, android.view.View
+    @Override // org.telegram.ui.Components.q01, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         if (getAlpha() == 0.0f) {

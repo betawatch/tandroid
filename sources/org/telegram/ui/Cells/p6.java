@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p6 extends LinearLayout {
     public static final /* synthetic */ int c = 0;
@@ -25,9 +25,9 @@ public final class p6 extends LinearLayout {
         ArrayList arrayList = this.b;
         if (bool != null) {
             if (bool.booleanValue()) {
-                arrayList.add(q6.a(org.telegram.messenger.g0.W2(gd.N0(i7, null))));
+                arrayList.add(q6.a(org.telegram.messenger.g0.W2(hd.N0(i7, null))));
             } else {
-                arrayList.add(q6.a(org.telegram.messenger.g0.W2(gd.N0(i10, null))));
+                arrayList.add(q6.a(org.telegram.messenger.g0.W2(hd.N0(i10, null))));
             }
         }
     }
@@ -47,63 +47,63 @@ public final class p6 extends LinearLayout {
                     a(requestPeerType.has_username, 2131747153, 2131747154);
                     Boolean bool = requestPeerType.bot_participant;
                     if (bool != null && bool.booleanValue()) {
-                        arrayList.add(q6.a(org.telegram.messenger.g0.W2(gd.N0(2131747156, null))));
+                        arrayList.add(q6.a(org.telegram.messenger.g0.W2(hd.N0(2131747156, null))));
                     }
                     Boolean bool2 = requestPeerType.creator;
                     if (bool2 != null && bool2.booleanValue()) {
-                        arrayList.add(q6.a(org.telegram.messenger.g0.W2(gd.N0(2131747155, null))));
+                        arrayList.add(q6.a(org.telegram.messenger.g0.W2(hd.N0(2131747155, null))));
                     }
                 } else {
                     a(requestPeerType.has_username, 2131747147, 2131747148);
                     a(requestPeerType.forum, 2131747151, 2131747152);
                     Boolean bool3 = requestPeerType.bot_participant;
                     if (bool3 != null && bool3.booleanValue()) {
-                        arrayList.add(q6.a(org.telegram.messenger.g0.W2(gd.N0(2131747150, null))));
+                        arrayList.add(q6.a(org.telegram.messenger.g0.W2(hd.N0(2131747150, null))));
                     }
                     Boolean bool4 = requestPeerType.creator;
                     if (bool4 != null && bool4.booleanValue()) {
-                        arrayList.add(q6.a(org.telegram.messenger.g0.W2(gd.N0(2131747149, null))));
+                        arrayList.add(q6.a(org.telegram.messenger.g0.W2(hd.N0(2131747149, null))));
                     }
                 }
                 Boolean bool5 = requestPeerType.creator;
                 if (bool5 == null || !bool5.booleanValue()) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.user_admin_rights;
-                    SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.N0(2131747143, null));
-                    SpannableStringBuilder W22 = org.telegram.messenger.g0.W2(gd.N0(2131747144, null));
+                    SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(hd.N0(2131747143, null));
+                    SpannableStringBuilder W22 = org.telegram.messenger.g0.W2(hd.N0(2131747144, null));
                     if (tL_chatAdminRights != null) {
                         ArrayList arrayList2 = new ArrayList();
                         if (tL_chatAdminRights.change_info) {
-                            c0.r(1, z10 ? gd.N0(2131751312, null) : gd.N0(2131751311, null), arrayList2);
+                            c0.r(1, z10 ? hd.N0(2131751312, null) : hd.N0(2131751311, null), arrayList2);
                         }
                         if (tL_chatAdminRights.post_messages && z10) {
-                            c0.r(1, gd.N0(2131751300, null), arrayList2);
+                            c0.r(1, hd.N0(2131751300, null), arrayList2);
                         }
                         if (tL_chatAdminRights.edit_messages && z10) {
-                            c0.r(1, gd.N0(2131751307, null), arrayList2);
+                            c0.r(1, hd.N0(2131751307, null), arrayList2);
                         }
                         if (tL_chatAdminRights.delete_messages) {
-                            c0.r(1, gd.N0(z10 ? 2131751309 : 2131751304, null), arrayList2);
+                            c0.r(1, hd.N0(z10 ? 2131751309 : 2131751304, null), arrayList2);
                         }
                         if (tL_chatAdminRights.ban_users && !z10) {
-                            c0.r(1, gd.N0(2131751316, null), arrayList2);
+                            c0.r(1, hd.N0(2131751316, null), arrayList2);
                         }
                         if (tL_chatAdminRights.invite_users) {
-                            c0.r(1, gd.N0(2131751318, null), arrayList2);
+                            c0.r(1, hd.N0(2131751318, null), arrayList2);
                         }
                         if (tL_chatAdminRights.pin_messages && !z10) {
-                            c0.r(1, gd.N0(2131751301, null), arrayList2);
+                            c0.r(1, hd.N0(2131751301, null), arrayList2);
                         }
                         if (tL_chatAdminRights.add_admins) {
-                            c0.r(1, gd.N0(2131751319, null), arrayList2);
+                            c0.r(1, hd.N0(2131751319, null), arrayList2);
                         }
                         if (tL_chatAdminRights.anonymous && !z10) {
-                            c0.r(1, gd.N0(2131751291, null), arrayList2);
+                            c0.r(1, hd.N0(2131751291, null), arrayList2);
                         }
                         if (tL_chatAdminRights.manage_call) {
-                            c0.r(1, gd.N0(2131744660, null), arrayList2);
+                            c0.r(1, hd.N0(2131744658, null), arrayList2);
                         }
                         if (tL_chatAdminRights.manage_topics && !z10) {
-                            c0.r(1, gd.N0(2131748499, null), arrayList2);
+                            c0.r(1, hd.N0(2131748499, null), arrayList2);
                         }
                         if (arrayList2.size() == 1) {
                             arrayList.add(q6.a(TextUtils.concat(W22, " ", ((q6) arrayList2.get(0)).b)));
@@ -126,7 +126,7 @@ public final class p6 extends LinearLayout {
                 return;
             }
             o4 o4Var = new o4(getContext(), 20);
-            o4Var.setText(gd.N0(2131747142, null));
+            o4Var.setText(hd.N0(2131747142, null));
             int i11 = org.telegram.ui.ActionBar.m6.d6;
             org.telegram.ui.ActionBar.t6.h(i11, o4Var, null);
             addView(o4Var, c8.ma.o(-1, -2));
@@ -141,21 +141,21 @@ public final class p6 extends LinearLayout {
                 i12++;
                 q6 q6Var = (q6) obj;
                 Context context = getContext();
-                ai.t2 t2Var = new ai.t2(context, i7);
-                org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, t2Var, null);
-                t2Var.setOrientation(0);
+                ai.u2 u2Var = new ai.u2(context, i7);
+                org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, u2Var, null);
+                u2Var.setOrientation(0);
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(q6Var.a <= 0 ? R.drawable.list_check : R.drawable.list_circle);
                 org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.L6, null, PorterDuff.Mode.MULTIPLY);
-                t2Var.addView(imageView, c8.ma.q(20, 20, 0.0f, 51, (q6Var.a * 16) + 17, -1, 0, 0));
+                u2Var.addView(imageView, c8.ma.q(20, 20, 0.0f, 51, (q6Var.a * 16) + 17, -1, 0, 0));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 14.0f);
                 org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.z6, null);
                 textView.setSingleLine(false);
                 textView.setText(q6Var.b);
-                t2Var.addView(textView, c8.ma.t(-1, -2, 1, 6, 4, 24, 4));
-                addView(t2Var, c8.ma.o(-1, -2));
+                u2Var.addView(textView, c8.ma.t(-1, -2, 1, 6, 4, 24, 4));
+                addView(u2Var, c8.ma.o(-1, -2));
             }
             int i13 = org.telegram.ui.ActionBar.m6.d6;
             View w3Var2 = new w3(getContext(), 12, 1);

@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final hi.w4 A;
@@ -109,7 +109,7 @@ public final class p0 {
         this.m = d("need_age_video_verification", false);
         this.n = e(800, "stars_stargift_resale_commission_permille");
         this.o = e(800, "ton_stargift_resale_commission_permille");
-        this.p = e(ks.J1, "stars_stargift_resale_amount_min");
+        this.p = e(ls.J1, "stars_stargift_resale_amount_min");
         this.q = e(35000, "stars_stargift_resale_amount_max");
         this.r = f(10000000L, "ton_stargift_resale_amount_min");
         this.s = f(10000000000000L, "ton_stargift_resale_amount_max");
@@ -137,9 +137,9 @@ public final class p0 {
         this.L = e(12, "poll_answers_max");
         this.M = e(12, "poll_countries_max");
         this.N = e(100, "poll_answer_length_max");
-        e(ks.e4, "poll_question_length_max");
-        e(ks.e3, "poll_solution_length_max");
-        this.O = e(ks.X4, "poll_caption_length_max");
+        e(ls.e4, "poll_question_length_max");
+        e(ls.e3, "poll_solution_length_max");
+        this.O = e(ls.X4, "poll_caption_length_max");
         this.P = h(300L, "poll_answer_delete_period");
         this.Q = e(20, "bots_create_limit_default");
         this.R = e(40, "bots_create_limit_premium");

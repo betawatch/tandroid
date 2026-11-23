@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class tq extends org.telegram.ui.Components.e51 {
     public final gb1 e;
@@ -35,7 +35,7 @@ public final class tq extends org.telegram.ui.Components.e51 {
         boolean isEmpty = TextUtils.isEmpty(this.n);
         long j3 = this.f;
         if (isEmpty && j3 != 0) {
-            org.telegram.ui.Components.o41 c10 = org.telegram.ui.Components.o41.c(1, R.drawable.msg_archive_hide, org.telegram.messenger.gd.N0(2131751223, null));
+            org.telegram.ui.Components.o41 c10 = org.telegram.ui.Components.o41.c(1, R.drawable.msg_archive_hide, org.telegram.messenger.hd.N0(2131751223, null));
             c10.s = true;
             arrayList.add(c10);
             arrayList.add(org.telegram.ui.Components.o41.C(null));
@@ -70,7 +70,7 @@ public final class tq extends org.telegram.ui.Components.e51 {
             }
         }
         if (TextUtils.isEmpty(this.n) && i7 == 0) {
-            org.telegram.ui.Components.o41 c11 = org.telegram.ui.Components.o41.c(2, R.drawable.msg_channel_create, org.telegram.messenger.gd.N0(2131751220, null));
+            org.telegram.ui.Components.o41 c11 = org.telegram.ui.Components.o41.c(2, R.drawable.msg_channel_create, org.telegram.messenger.hd.N0(2131751220, null));
             c11.r = true;
             arrayList.add(c11);
         }
@@ -83,7 +83,7 @@ public final class tq extends org.telegram.ui.Components.e51 {
 
     @Override // org.telegram.ui.Components.e51
     public final CharSequence a0() {
-        return org.telegram.messenger.gd.N0(2131751219, null);
+        return org.telegram.messenger.hd.N0(2131751219, null);
     }
 
     @Override // org.telegram.ui.Components.e51
@@ -104,7 +104,7 @@ public final class tq extends org.telegram.ui.Components.e51 {
             return;
         }
         this.s = true;
-        SharedPreferences g12 = org.telegram.messenger.mp.g1();
+        SharedPreferences g12 = org.telegram.messenger.np.g1();
         boolean z10 = org.telegram.messenger.s2.a;
         presentFragment(new g(0));
         g12.edit().putBoolean("channel_intro", true).apply();
@@ -123,8 +123,8 @@ public final class tq extends org.telegram.ui.Components.e51 {
         b10.O();
         b10.C0 = new bi.w1(this, 5);
         this.r = b10;
-        b10.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
-        this.r.setContentDescription(org.telegram.messenger.gd.N0(2131745640, null));
+        b10.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
+        this.r.setContentDescription(org.telegram.messenger.hd.N0(2131745640, null));
         this.r.setVisibility(8);
         setHasOwnBackground(true);
         super.createView(context);

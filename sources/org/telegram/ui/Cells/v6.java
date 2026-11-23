@@ -6,10 +6,10 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.text.style.ImageSpan;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.i21;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v6 extends ImageSpan {
     public static i21 b;
@@ -27,7 +27,7 @@ public final class v6 extends ImageSpan {
                 canvas.save();
                 int i14 = paint.getFontMetricsInt().descent;
                 canvas.translate(f10, ((i12 + i14) - ((i14 - r4.ascent) / 2)) - ((drawable.getBounds().bottom - drawable.getBounds().top) / 2));
-                if (gd.a0) {
+                if (hd.a0) {
                     canvas.scale(-1.0f, 1.0f, drawable.getIntrinsicWidth() / 2, drawable.getIntrinsicHeight() / 2);
                 }
                 drawable.draw(canvas);

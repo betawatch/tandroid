@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e5 extends FrameLayout {
     public boolean a;
@@ -24,7 +24,7 @@ public final class e5 extends FrameLayout {
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         o6 o6Var = this.d;
         o6 o6Var2 = this.c;
-        int z11 = org.telegram.messenger.n10.z(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? org.telegram.messenger.g0.m : 0);
+        int z11 = org.telegram.messenger.o10.z(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? org.telegram.messenger.g0.m : 0);
         int i13 = this.b;
         if (o6Var.getVisibility() != 8) {
             o6Var2.layout(i13, (org.telegram.messenger.g0.L(1.0f) + z11) - o6Var2.getPaddingTop(), o6Var2.getMeasuredWidth() + i13, o6Var2.getPaddingBottom() + ((org.telegram.messenger.g0.L(1.3f) + (o6Var2.getTextHeight() + z11)) - o6Var2.getPaddingTop()));

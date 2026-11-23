@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -21,16 +21,16 @@ public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateList
                 ((View) this.b).setTranslationX((float) (Math.sin(((Float) valueAnimator.getAnimatedValue()).floatValue() * 3.141592653589793d * 4.0d) * (1.0f - r9) * r9 * 4.0f * g0.L(4.0f)));
                 break;
             case 1:
-                au auVar = (au) this.b;
-                auVar.getClass();
-                auVar.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                auVar.t.run();
+                bu buVar = (bu) this.b;
+                buVar.getClass();
+                buVar.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                buVar.t.run();
                 break;
             default:
-                qu quVar = (qu) this.b;
-                quVar.getClass();
-                quVar.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = quVar.W;
+                ru ruVar = (ru) this.b;
+                ruVar.getClass();
+                ruVar.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = ruVar.W;
                 if (view != null) {
                     view.invalidate();
                     break;

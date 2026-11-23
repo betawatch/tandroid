@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import hi.k3;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.n2;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l1 extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -58,7 +58,7 @@ public final class l1 extends n41 {
         }
         m1Var.h = null;
         if (j3 != 0) {
-            p5 m10 = p5.m(j10.t0, j3, null, 1);
+            p5 m10 = p5.m(k10.t0, j3, null, 1);
             m1Var.d = m10;
             m10.a(imageView);
             imageView.setImageDrawable(m1Var.d);

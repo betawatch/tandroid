@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bu implements ww, yr {
     public final /* synthetic */ eu a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class bu implements ww, yr {
         if (arrayList.isEmpty()) {
             return true;
         }
-        long j3 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
+        long j3 = ((org.telegram.messenger.tr) arrayList.get(0)).a;
         if (!org.telegram.messenger.n5.E(j3)) {
             return true;
         }

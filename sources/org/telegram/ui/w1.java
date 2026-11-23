@@ -18,7 +18,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class w1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
     public final p50 a;
@@ -136,7 +136,7 @@ public final class w1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.N0(2131748497, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.N0(2131748497, null));
         if (this.d != null) {
             sb2.append(", ");
             sb2.append(this.d.d.getText());
@@ -157,7 +157,7 @@ public final class w1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
             if (pageblockmap.level > 0) {
                 i12 = org.telegram.messenger.g0.L(18.0f) + org.telegram.messenger.g0.L(r0 * 14);
                 this.n = i12;
-                i13 = org.telegram.messenger.n10.x(18.0f, i12, size);
+                i13 = org.telegram.messenger.o10.x(18.0f, i12, size);
                 L = i13;
             } else {
                 this.n = org.telegram.messenger.g0.L(18.0f);
@@ -191,12 +191,12 @@ public final class w1 extends FrameLayout implements org.telegram.ui.Cells.i9 {
             String e02 = org.telegram.messenger.g0.e0(i16, d, d2, (int) (f11 / f13), (int) (f12 / f13), true, 15, -1);
             TLRPC.GeoPoint geoPoint2 = this.y.geo;
             float f14 = org.telegram.messenger.g0.p;
-            org.telegram.messenger.h20 b10 = org.telegram.messenger.h20.b(geoPoint2, (int) (f11 / f14), (int) (f12 / f14), 15, Math.min(2, (int) Math.ceil(f14)));
-            int i17 = org.telegram.messenger.mp.u1(i16).p3;
+            org.telegram.messenger.i20 b10 = org.telegram.messenger.i20.b(geoPoint2, (int) (f11 / f14), (int) (f12 / f14), 15, Math.min(2, (int) Math.ceil(f14)));
+            int i17 = org.telegram.messenger.np.u1(i16).p3;
             this.x = i17;
             e4 e4Var = this.b;
             if (i17 == 2) {
-                imageReceiver.q0(org.telegram.messenger.fc.p(b10), null, null, null, e4Var != null ? e4Var.F : null, 0);
+                imageReceiver.q0(org.telegram.messenger.gc.p(b10), null, null, null, e4Var != null ? e4Var.F : null, 0);
             } else {
                 imageReceiver.o0(e02, null, null, null, 0L);
             }

@@ -16,10 +16,10 @@ import android.widget.TextView;
 import c8.ma;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class t6 extends FrameLayout {
     public final ArrayList a;
@@ -47,21 +47,21 @@ public final class t6 extends FrameLayout {
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(gd.N0(2131744522, null));
+        textView.setText(hd.N0(2131744520, null));
         textView.setTextSize(1, 20.0f);
         linearLayout.addView(textView, ma.o(-2, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(-1761607681);
-        textView2.setText(gd.N0(2131744519, null));
+        textView2.setText(hd.N0(2131744517, null));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
         linearLayout.addView(textView2, ma.k(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
         ArrayList arrayList = new ArrayList(4);
         this.a = arrayList;
-        arrayList.add(new s6(context, R.raw.stories_intro_go_forward, gd.N0(2131744526, null), gd.N0(2131744525, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_pause, gd.N0(2131744521, null), gd.N0(2131744520, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_go_back, gd.N0(2131744528, null), gd.N0(2131744527, null)));
-        arrayList.add(new s6(context, R.raw.stories_intro_go_to_next, gd.N0(2131744524, null), gd.N0(2131744523, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_forward, hd.N0(2131744524, null), hd.N0(2131744523, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_pause, hd.N0(2131744519, null), hd.N0(2131744518, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_back, hd.N0(2131744526, null), hd.N0(2131744525, null)));
+        arrayList.add(new s6(context, R.raw.stories_intro_go_to_next, hd.N0(2131744522, null), hd.N0(2131744521, null)));
         int measuredWidth = t8Var.getMeasuredWidth() - org.telegram.messenger.g0.L(100.0f);
         int size = arrayList.size();
         int i10 = 0;
@@ -95,7 +95,7 @@ public final class t6 extends FrameLayout {
         TextView textView3 = new TextView(context);
         textView3.setTextColor(-1);
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setText(gd.N0(2131744529, null));
+        textView3.setText(hd.N0(2131744527, null));
         textView3.setTextSize(1, 14.0f);
         linearLayout.addView(textView3, ma.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
         addView(linearLayout, ma.e(-1, -2, 17));

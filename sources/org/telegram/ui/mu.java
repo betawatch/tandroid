@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mu implements org.telegram.ui.Components.qj0 {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class mu implements org.telegram.ui.Components.qj0 
             case 0:
                 cx cxVar = this.b;
                 Object obj = cxVar.D0.y0.G(i7).H;
-                if (!(obj instanceof org.telegram.messenger.fj)) {
+                if (!(obj instanceof org.telegram.messenger.gj)) {
                     if (obj instanceof fi.b6) {
                         fi.b6 b6Var = (fi.b6) obj;
                         Bundle f10 = p5.c.f(3, TeXSymbolParser.TYPE_ATTR);
@@ -32,16 +32,16 @@ public final /* synthetic */ class mu implements org.telegram.ui.Components.qj0 
                         break;
                     }
                 } else {
-                    org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj;
+                    org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) obj;
                     Bundle bundle = new Bundle();
-                    if (org.telegram.messenger.fj.B0(fjVar.k) >= 0) {
-                        bundle.putLong("user_id", org.telegram.messenger.fj.B0(fjVar.k));
+                    if (org.telegram.messenger.gj.B0(gjVar.k) >= 0) {
+                        bundle.putLong("user_id", org.telegram.messenger.gj.B0(gjVar.k));
                     } else {
-                        bundle.putLong("chat_id", -org.telegram.messenger.fj.B0(fjVar.k));
+                        bundle.putLong("chat_id", -org.telegram.messenger.gj.B0(gjVar.k));
                     }
-                    bundle.putInt("message_id", fjVar.e1());
+                    bundle.putInt("message_id", gjVar.e1());
                     bn bnVar = new bn(bundle);
-                    cx.r4(bnVar, fjVar);
+                    cx.r4(bnVar, gjVar);
                     cxVar.presentFragment(bnVar);
                     break;
                 }

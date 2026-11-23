@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bb extends jb {
     public final jh.l h0;
@@ -54,11 +54,11 @@ public final class bb extends jb {
     @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.fj fjVar = MediaController.B().v0;
-        if (fjVar == null || !fjVar.h4() || fjVar.T == 0) {
+        org.telegram.messenger.gj gjVar = MediaController.B().v0;
+        if (gjVar == null || !gjVar.h4() || gjVar.T == 0) {
             return;
         }
-        long B0 = org.telegram.messenger.fj.B0(fjVar.k);
+        long B0 = org.telegram.messenger.gj.B0(gjVar.k);
         lb lbVar = this.i0;
         if (B0 == (-lbVar.f.id)) {
             MediaController.B().p0(lbVar.V0(false), lbVar.f0, lbVar.e0, true);
@@ -105,7 +105,7 @@ public final class bb extends jb {
                 if (i21 == -1) {
                     i21 = 51;
                 }
-                int i22 = i21 & org.telegram.messenger.ks.x1;
+                int i22 = i21 & org.telegram.messenger.ls.x1;
                 int i23 = i21 & 7;
                 if (i23 == 1) {
                     i13 = (((i11 - i7) - measuredWidth) / 2) + layoutParams.leftMargin;

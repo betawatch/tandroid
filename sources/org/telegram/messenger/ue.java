@@ -1,26 +1,27 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class ue {
-    public final int a;
-    public boolean b;
-    public final String c;
-    public final ef d;
-    public final ArrayList e = new ArrayList();
-    public final SparseArray f = new SparseArray();
+public final /* synthetic */ class ue implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ float c;
 
-    public ue(int i7, String str, ef efVar) {
+    public /* synthetic */ ue(String str, int i7, float f10) {
         this.a = i7;
-        this.c = str;
-        this.d = efVar;
+        this.b = str;
+        this.c = f10;
     }
 
-    public final void a(ef efVar) {
-        this.e.add(efVar);
-        this.f.put(efVar.C, efVar);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                t0.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
+                break;
+            default:
+                t0.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
+                break;
+        }
     }
 }

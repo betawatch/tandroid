@@ -10,9 +10,9 @@ import android.graphics.PathMeasure;
 import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import java.util.ArrayList;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class n {
     public static final Matrix p = new Matrix();
@@ -38,7 +38,7 @@ public final class n {
         this.i = 0.0f;
         this.j = 0.0f;
         this.k = 0.0f;
-        this.l = ks.e4;
+        this.l = ls.e4;
         this.m = null;
         this.n = null;
         this.o = new a0.f(0);
@@ -143,7 +143,7 @@ public final class n {
                                 f11 = 255.0f;
                             } else {
                                 paint2.setShader(null);
-                                paint2.setAlpha(ks.e4);
+                                paint2.setAlpha(ls.e4);
                                 int i14 = xaVar.b;
                                 float f21 = jVar.h;
                                 PorterDuff.Mode mode = q.w;
@@ -178,7 +178,7 @@ public final class n {
                                 paint4.setAlpha(Math.round(jVar.g * f11));
                             } else {
                                 paint4.setShader(null);
-                                paint4.setAlpha(ks.e4);
+                                paint4.setAlpha(ls.e4);
                                 int i15 = xaVar2.b;
                                 float f22 = jVar.g;
                                 PorterDuff.Mode mode2 = q.w;
@@ -222,7 +222,7 @@ public final class n {
         this.i = 0.0f;
         this.j = 0.0f;
         this.k = 0.0f;
-        this.l = ks.e4;
+        this.l = ls.e4;
         this.m = null;
         this.n = null;
         a0.f fVar = new a0.f(0);

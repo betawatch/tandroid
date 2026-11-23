@@ -8,9 +8,9 @@ import hi.d7;
 import hi.s6;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.q2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -22,9 +22,9 @@ import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class u0 extends g2 implements fs {
+public final class u0 extends g2 implements gs {
     public c5 a;
     public h51 b;
     public b0 c;
@@ -50,21 +50,21 @@ public final class u0 extends g2 implements fs {
             if (i7 >= iArr2.length) {
                 return;
             }
-            this.e[i7] = gd.G(iArr2[i7], "DaysSchedule", new Object[0]);
+            this.e[i7] = hd.G(iArr2[i7], "DaysSchedule", new Object[0]);
             i7++;
         }
     }
 
     public static void Z(u0 u0Var, ArrayList arrayList, c51 c51Var) {
-        String N0 = gd.N0(2131752763, null);
-        String N02 = gd.N0(2131752761, null);
+        String N0 = hd.N0(2131752763, null);
+        String N02 = hd.N0(2131752761, null);
         o41 o41Var = new o41(2);
         o41Var.m = N0;
         o41Var.p = N02;
         o41Var.n = "RestrictedEmoji";
         o41Var.o = "👋";
         arrayList.add(o41Var);
-        o41 i7 = o41.i(1, gd.N0(2131752757, null));
+        o41 i7 = o41.i(1, hd.N0(2131752757, null));
         i7.L(u0Var.r);
         arrayList.add(i7);
         arrayList.add(o41.C(null));
@@ -75,22 +75,22 @@ public final class u0 extends g2 implements fs {
                 o41Var2.H = d;
                 arrayList.add(o41Var2);
             } else {
-                o41 c10 = o41.c(2, R.drawable.msg2_chats_add, gd.N0(2131752762, null));
+                o41 c10 = o41.c(2, R.drawable.msg2_chats_add, hd.N0(2131752762, null));
                 c10.r = true;
                 arrayList.add(c10);
             }
             arrayList.add(o41.C(null));
-            arrayList.add(o41.u(gd.N0(2131752676, null)));
-            o41 x10 = o41.x(3, gd.N0(2131752769, null));
+            arrayList.add(o41.u(hd.N0(2131752676, null)));
+            o41 x10 = o41.x(3, hd.N0(2131752769, null));
             x10.L(u0Var.s);
             arrayList.add(x10);
-            o41 x11 = o41.x(4, gd.N0(2131752764, null));
+            o41 x11 = o41.x(4, hd.N0(2131752764, null));
             x11.L(!u0Var.s);
             arrayList.add(x11);
             arrayList.add(o41.C(null));
             u0Var.c.a(arrayList, c51Var, true);
-            arrayList.add(o41.C(gd.N0(2131752758, null)));
-            arrayList.add(o41.u(gd.N0(2131752760, null)));
+            arrayList.add(o41.C(hd.N0(2131752758, null)));
+            arrayList.add(o41.u(hd.N0(2131752760, null)));
             int i10 = 0;
             while (true) {
                 int[] iArr = u0Var.d;
@@ -111,7 +111,7 @@ public final class u0 extends g2 implements fs {
             o41Var3.D = s6Var;
             o41Var3.C = -1L;
             arrayList.add(o41Var3);
-            arrayList.add(o41.C(gd.N0(2131752759, null)));
+            arrayList.add(o41.C(hd.N0(2131752759, null)));
         }
     }
 
@@ -184,9 +184,9 @@ public final class u0 extends g2 implements fs {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(gd.N0(2131752763, null));
+        this.simpleActionBar.setTitle(hd.N0(2131752763, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 9));
-        this.a = this.simpleActionBar.s(gd.N0(2131745750, null));
+        this.a = this.simpleActionBar.s(hd.N0(2131745750, null));
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         int i7 = 2;
@@ -234,11 +234,11 @@ public final class u0 extends g2 implements fs {
         this.f = true;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         c51 c51Var;
-        if (i7 != ks.F1) {
-            if (i7 == ks.E0) {
+        if (i7 != ls.F1) {
+            if (i7 == ls.E0) {
                 d0();
             }
         } else {
@@ -272,12 +272,12 @@ public final class u0 extends g2 implements fs {
                 return false;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String N0 = gd.N0(2131743592, null);
+            String N0 = hd.N0(2131743590, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = gd.N0(2131752756, null);
-            alertDialog$Builder.k(gd.N0(2131754213, null), new t0(this, i7));
-            alertDialog$Builder.h(gd.N0(2131747386, null), new t0(this, 1));
+            t1Var.U = hd.N0(2131752756, null);
+            alertDialog$Builder.k(hd.N0(2131754213, null), new t0(this, i7));
+            alertDialog$Builder.h(hd.N0(2131747386, null), new t0(this, 1));
             showDialog(t1Var);
         }
         return false;
@@ -285,8 +285,8 @@ public final class u0 extends g2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ks.F1);
-        getNotificationCenter().c(this, ks.E0);
+        getNotificationCenter().c(this, ls.F1);
+        getNotificationCenter().c(this, ls.E0);
         v1.f(this.currentAccount).h();
         d0();
         return super.onFragmentCreate();
@@ -294,8 +294,8 @@ public final class u0 extends g2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ks.F1);
-        getNotificationCenter().n(this, ks.E0);
+        getNotificationCenter().n(this, ls.F1);
+        getNotificationCenter().n(this, ls.E0);
         super.onFragmentDestroy();
     }
 

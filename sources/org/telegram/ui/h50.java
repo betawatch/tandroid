@@ -11,9 +11,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class h50 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.fs {
+public final class h50 extends org.telegram.ui.ActionBar.g2 implements org.telegram.messenger.gs {
     public g50 a;
     public org.telegram.ui.Components.ek0 b;
     public org.telegram.ui.Components.vy c;
@@ -57,7 +57,7 @@ public final class h50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131748956, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131748956, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new dv(this, 9));
         this.a = new g50(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -79,10 +79,10 @@ public final class h50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         long j3 = this.d;
-        if (i7 == org.telegram.messenger.ks.T) {
+        if (i7 == org.telegram.messenger.ls.T) {
             TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
             int intValue = ((Integer) objArr[1]).intValue();
             if (chatFull.id == j3 && intValue == this.classGuid) {
@@ -121,7 +121,7 @@ public final class h50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
         super.onFragmentCreate();
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.T);
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.T);
         getMessagesController().b3(this.classGuid, this.d, true);
         this.e = true;
         this.h = 1;
@@ -136,7 +136,7 @@ public final class h50 extends org.telegram.ui.ActionBar.g2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.T);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.T);
     }
 
     @Override // org.telegram.ui.ActionBar.g2

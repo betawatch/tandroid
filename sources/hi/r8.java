@@ -8,14 +8,14 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r8 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class r8 implements Runnable {
                 break;
             case 1:
                 if (saVar.u2 >= 0) {
-                    mp.g1().edit().putFloat("frontflash_warmth", saVar.s.o).putFloat("frontflash_intensity", saVar.s.p).apply();
+                    np.g1().edit().putFloat("frontflash_warmth", saVar.s.o).putFloat("frontflash_intensity", saVar.s.p).apply();
                 }
                 saVar.s.e(0.0f, 240L, null);
                 saVar.F0.setSelected(false);
@@ -134,12 +134,12 @@ public final /* synthetic */ class r8 implements Runnable {
                                 if (c7Var3 == c7Var2) {
                                     CharSequence[] charSequenceArr = new CharSequence[1];
                                     charSequenceArr[i10] = saVar.d1.getText();
-                                    ArrayList Y = mp.u1(i7).j5() ? ri.d0(i7).Y(charSequenceArr, true, true) : new ArrayList();
+                                    ArrayList Y = np.u1(i7).j5() ? si.d0(i7).Y(charSequenceArr, true, true) : new ArrayList();
                                     CharSequence[] charSequenceArr2 = new CharSequence[1];
                                     charSequenceArr2[i10] = saVar.L1.C0;
-                                    ArrayList Y2 = mp.u1(i7).j5() ? ri.d0(i7).Y(charSequenceArr2, true, true) : new ArrayList();
+                                    ArrayList Y2 = np.u1(i7).j5() ? si.d0(i7).Y(charSequenceArr2, true, true) : new ArrayList();
                                     c7 c7Var4 = saVar.L1;
-                                    c7Var4.k = (TextUtils.equals(c7Var4.C0, charSequenceArr[i10]) && ri.M(Y, Y2)) ? i10 : 1;
+                                    c7Var4.k = (TextUtils.equals(c7Var4.C0, charSequenceArr[i10]) && si.M(Y, Y2)) ? i10 : 1;
                                     saVar.L1.C0 = new SpannableString(saVar.d1.getText());
                                 } else if (c7Var2.C0 == null) {
                                     c7Var3.k = i10;
@@ -151,14 +151,14 @@ public final /* synthetic */ class r8 implements Runnable {
                         }
                     } else {
                         CharSequence[] charSequenceArr3 = {saVar.d1.getText()};
-                        ArrayList Y3 = mp.u1(i7).j5() ? ri.d0(i7).Y(charSequenceArr3, true, true) : new ArrayList();
-                        ArrayList Y4 = mp.u1(i7).j5() ? ri.d0(i7).Y(new CharSequence[]{saVar.L1.C0}, true, true) : new ArrayList();
+                        ArrayList Y3 = np.u1(i7).j5() ? si.d0(i7).Y(charSequenceArr3, true, true) : new ArrayList();
+                        ArrayList Y4 = np.u1(i7).j5() ? si.d0(i7).Y(new CharSequence[]{saVar.L1.C0}, true, true) : new ArrayList();
                         c7 c7Var5 = saVar.L1;
-                        c7Var5.k = (TextUtils.equals(c7Var5.C0, charSequenceArr3[0]) && ri.M(Y3, Y4)) ? false : true;
+                        c7Var5.k = (TextUtils.equals(c7Var5.C0, charSequenceArr3[0]) && si.M(Y3, Y4)) ? false : true;
                         saVar.L1.C0 = new SpannableString(saVar.d1.getText());
                         s8Var.a(saVar.L1);
                     }
-                    long j14 = j10.i(i7).n;
+                    long j14 = k10.i(i7).n;
                     TLRPC.InputPeer inputPeer = saVar.L1.v0;
                     if (inputPeer != null && !(inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
                         j14 = org.telegram.messenger.n5.n(inputPeer);
@@ -175,7 +175,7 @@ public final /* synthetic */ class r8 implements Runnable {
                     } else {
                         c4Var.run();
                     }
-                    mp.g1().edit().putInt("storyhint2", 2).apply();
+                    np.g1().edit().putInt("storyhint2", 2).apply();
                     break;
                 }
                 break;
@@ -336,7 +336,7 @@ public final /* synthetic */ class r8 implements Runnable {
                 saVar.c1.setShareEnabled(false);
                 v0 v0Var = saVar.f1;
                 v0Var.getClass();
-                v0Var.c(gd.O0("VideoConvertFail"));
+                v0Var.c(hd.O0("VideoConvertFail"));
                 break;
             case 18:
                 saVar.B0.setCameraThumb(saVar.z());
@@ -344,7 +344,7 @@ public final /* synthetic */ class r8 implements Runnable {
             case 19:
                 ra raVar2 = saVar.n;
                 fi.b bVar = saVar.a;
-                new lc(raVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.R2(gd.N0(2131744340, null), org.telegram.ui.ActionBar.m6.Xc, 0, new r8(saVar, 27), bVar)).k(true);
+                new lc(raVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.R2(hd.N0(2131744338, null), org.telegram.ui.ActionBar.m6.Xc, 0, new r8(saVar, 27), bVar)).k(true);
                 break;
             case 20:
                 p8 p8Var = saVar.r0;

@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class u6 extends View {
     public final w3 a;
@@ -75,7 +75,7 @@ public final class u6 extends View {
                 Drawable drawable = w3Var.o;
                 Drawable drawable2 = w3Var.o;
                 drawable.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
-                drawable2.setAlpha(ks.e4);
+                drawable2.setAlpha(ls.e4);
                 drawable2.draw(canvas);
             }
             if (e10 > 0.0f) {
@@ -144,15 +144,15 @@ public final class u6 extends View {
         this.f = null;
         if (p0Var != null) {
             if (p0Var.g != 0) {
-                org.telegram.ui.Components.p5 p5Var2 = new org.telegram.ui.Components.p5(3, j10.t0, p0Var.g);
+                org.telegram.ui.Components.p5 p5Var2 = new org.telegram.ui.Components.p5(3, k10.t0, p0Var.g);
                 this.f = p5Var2;
                 if (this.s) {
                     p5Var2.a(this);
                 }
             } else {
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(j10.t0).r.get(p0Var.f);
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.d0(k10.t0).r.get(p0Var.f);
                 if (tL_availableReaction != null) {
-                    this.d.q0(fc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.m6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
+                    this.d.q0(gc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", org.telegram.messenger.u5.f(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.m6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
                 }
             }
         }

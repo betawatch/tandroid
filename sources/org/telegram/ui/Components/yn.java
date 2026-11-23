@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yn extends q9 {
     public final org.telegram.ui.Cells.l6 H;
@@ -58,8 +58,8 @@ public final class yn extends q9 {
         if (!this.J || !getImageReceiver().L()) {
             accessibilityNodeInfo.setVisibleToUser(false);
         } else {
-            accessibilityNodeInfo.setText(org.telegram.messenger.gd.N0(2131754797, null));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.gd.N0(2131747623, null)));
+            accessibilityNodeInfo.setText(org.telegram.messenger.hd.N0(2131754797, null));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.hd.N0(2131747623, null)));
         }
     }
 

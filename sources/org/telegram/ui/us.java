@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class us extends org.telegram.ui.ActionBar.g2 {
     public org.telegram.ui.Components.ek0 a;
@@ -35,7 +35,7 @@ public final class us extends org.telegram.ui.ActionBar.g2 {
 
     public static org.telegram.ui.Cells.x9 Z(Context context) {
         org.telegram.ui.Cells.x9 x9Var = new org.telegram.ui.Cells.x9(context);
-        x9Var.setPadding(org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? 16.0f : 12.0f), 0, org.telegram.messenger.g0.L(org.telegram.messenger.gd.a0 ? 12.0f : 16.0f), 0);
+        x9Var.setPadding(org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? 16.0f : 12.0f), 0, org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? 12.0f : 16.0f), 0);
         e5 e5Var = new e5();
         e5Var.b = new os(0, x9Var);
         x9Var.addOnAttachStateChangeListener(e5Var);
@@ -44,7 +44,7 @@ public final class us extends org.telegram.ui.ActionBar.g2 {
 
     public static SpannableStringBuilder a0(ps psVar) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String F0 = org.telegram.messenger.gd.F0(psVar.d);
+        String F0 = org.telegram.messenger.hd.F0(psVar.d);
         if (F0 != null) {
             spannableStringBuilder.append((CharSequence) F0).append((CharSequence) " ");
             spannableStringBuilder.setSpan(new org.telegram.ui.Components.uy(1), F0.length(), F0.length() + 1, 0);
@@ -70,7 +70,7 @@ public final class us extends org.telegram.ui.ActionBar.g2 {
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
-        this.actionBar.setTitle(org.telegram.messenger.gd.N0(2131752122, null));
+        this.actionBar.setTitle(org.telegram.messenger.hd.N0(2131752122, null));
         org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, this.actionBar, null);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i7 = org.telegram.ui.ActionBar.m6.G6;
@@ -81,7 +81,7 @@ public final class us extends org.telegram.ui.ActionBar.g2 {
         org.telegram.ui.ActionBar.q0 a10 = this.actionBar.s().a(0, R.drawable.outline_header_search);
         a10.O();
         a10.I = new bi.w1(this, 10);
-        a10.setSearchFieldHint(org.telegram.messenger.gd.N0(2131745640, null));
+        a10.setSearchFieldHint(org.telegram.messenger.hd.N0(2131745640, null));
         this.actionBar.L(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.y6, false), true);
         this.actionBar.L(org.telegram.ui.ActionBar.m6.x0(null, i7, false), false);
         this.actionBar.setSearchCursorColor(org.telegram.ui.ActionBar.m6.x0(null, i7, false));
@@ -96,7 +96,7 @@ public final class us extends org.telegram.ui.ActionBar.g2 {
         this.b = vyVar;
         vyVar.c();
         this.b.setShowAtCenter(true);
-        this.b.setText(org.telegram.messenger.gd.N0(2131747974, null));
+        this.b.setText(org.telegram.messenger.hd.N0(2131747974, null));
         org.telegram.ui.Components.ek0 ek0Var = new org.telegram.ui.Components.ek0(context, null);
         this.a = ek0Var;
         ek0Var.setSectionsType(3);
@@ -106,7 +106,7 @@ public final class us extends org.telegram.ui.ActionBar.g2 {
         this.a.setFastScrollVisible(true);
         this.a.setLayoutManager(new v4.c0(1, false));
         this.a.setAdapter(this.c);
-        this.a.setVerticalScrollbarPosition(org.telegram.messenger.gd.a0 ? 1 : 2);
+        this.a.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
         frameLayout.addView(this.a, c8.ma.c(-1.0f, -1));
         frameLayout.addView(this.b, c8.ma.c(-1.0f, -1));
         this.a.setOnItemClickListener(new h(this, 7));

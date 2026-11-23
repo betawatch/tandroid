@@ -1,11 +1,11 @@
 package hi;
 
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l6 extends m6 {
     public final /* synthetic */ TLRPC.Chat b;
@@ -18,7 +18,7 @@ public final class l6 extends m6 {
 
     @Override // hi.m6
     public final String a() {
-        return gd.N0(2131754818, null);
+        return hd.N0(2131754818, null);
     }
 
     @Override // hi.m6

@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e1 extends v4.i0 {
     public final /* synthetic */ h1 c;
@@ -39,11 +39,11 @@ public final class e1 extends v4.i0 {
         View view = f1Var.a;
         if (i10 == 0) {
             a2 a2Var = (a2) view;
-            a2Var.S = (org.telegram.messenger.xi) g1Var.b.get(pageBlock);
+            a2Var.S = (org.telegram.messenger.yi) g1Var.b.get(pageBlock);
             a2Var.a((TL_iv.pageBlockPhoto) pageBlock, h1Var.x.F.cached_page, false, true);
         } else {
             v2 v2Var = (v2) view;
-            v2Var.U = (org.telegram.messenger.xi) g1Var.b.get(pageBlock);
+            v2Var.U = (org.telegram.messenger.yi) g1Var.b.get(pageBlock);
             TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
             v2Var.b(pageblockvideo, (w2) h1Var.y.E.f(pageblockvideo.video_id), false, true);
         }

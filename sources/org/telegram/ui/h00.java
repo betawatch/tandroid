@@ -3,11 +3,11 @@ package org.telegram.ui;
 import android.text.TextUtils;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h00 extends rg.a {
     public CharSequence c;
-    public org.telegram.messenger.ro d;
+    public org.telegram.messenger.so d;
     public TLRPC.TL_dialogFilterSuggested e;
 
     public final boolean equals(Object obj) {
@@ -28,13 +28,13 @@ public final class h00 extends rg.a {
         }
         int i11 = this.a;
         if (i11 == 2) {
-            org.telegram.messenger.ro roVar = this.d;
-            boolean z10 = roVar == null;
-            org.telegram.messenger.ro roVar2 = h00Var.d;
-            if (z10 != (roVar2 == null)) {
+            org.telegram.messenger.so soVar = this.d;
+            boolean z10 = soVar == null;
+            org.telegram.messenger.so soVar2 = h00Var.d;
+            if (z10 != (soVar2 == null)) {
                 return false;
             }
-            if (roVar != null && roVar.a != roVar2.a) {
+            if (soVar != null && soVar.a != soVar2.a) {
                 return false;
             }
         }

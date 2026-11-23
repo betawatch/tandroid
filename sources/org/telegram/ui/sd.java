@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sd extends org.telegram.ui.Components.b71 {
     public final Context a;
@@ -30,7 +30,7 @@ public final class sd extends org.telegram.ui.Components.b71 {
 
     @Override // org.telegram.ui.Components.b71
     public final View d(int i7) {
-        return new rd(this.f, this.a, i7, this.b, this.c, new ai.y0(this, i7, 24), this.d);
+        return new rd(this.f, this.a, i7, this.b, this.c, new ai.c1(this, i7, 24), this.d);
     }
 
     @Override // org.telegram.ui.Components.b71
@@ -41,7 +41,7 @@ public final class sd extends org.telegram.ui.Components.b71 {
     @Override // org.telegram.ui.Components.b71
     public final CharSequence g(int i7) {
         int h = h(i7);
-        return h != 0 ? h != 1 ? "" : org.telegram.messenger.gd.N0(2131748159, null) : org.telegram.messenger.gd.N0(2131748160, null);
+        return h != 0 ? h != 1 ? "" : org.telegram.messenger.hd.N0(2131748159, null) : org.telegram.messenger.hd.N0(2131748160, null);
     }
 
     @Override // org.telegram.ui.Components.b71

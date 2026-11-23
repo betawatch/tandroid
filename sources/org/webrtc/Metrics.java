@@ -3,13 +3,13 @@ package org.webrtc;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class Metrics {
     private static final String TAG = "Metrics";
     public final Map<String, HistogramInfo> map = new HashMap();
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class HistogramInfo {
         public final int bucketCount;
         public final int max;

@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xo0 extends org.telegram.ui.Components.s61 {
     public final org.telegram.ui.Components.ga h0;
@@ -33,7 +33,7 @@ public final class xo0 extends org.telegram.ui.Components.s61 {
     @Override // android.view.View
     public final void invalidate() {
         int i7;
-        if (org.telegram.messenger.bz.c0 && ((i7 = this.i0.n4) == 1 || i7 == 2 || i7 == 3)) {
+        if (org.telegram.messenger.cz.c0 && ((i7 = this.i0.n4) == 1 || i7 == 2 || i7 == 3)) {
             return;
         }
         super.invalidate();

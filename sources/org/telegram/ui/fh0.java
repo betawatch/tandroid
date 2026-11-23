@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterView.OnItemSelectedListener {
     public static final /* synthetic */ int Z1 = 0;
@@ -124,7 +124,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         this.n1 = wb0Var;
         wb0Var.getEditText().setInputType(49152);
         this.n1.getEditText().setImeOptions(5);
-        this.n1.setHint(org.telegram.messenger.gd.N0(2131750677, null));
+        this.n1.setHint(org.telegram.messenger.hd.N0(2131750677, null));
         if (this.E1 != null) {
             this.n1.getEditText().setText(this.E1);
             this.E1 = null;
@@ -195,7 +195,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         wb0Var2.setBackground(null);
         this.o1.getEditText().setInputType(49152);
         this.o1.getEditText().setImeOptions(5);
-        this.o1.setHint(org.telegram.messenger.gd.N0(2131748839, null));
+        this.o1.setHint(org.telegram.messenger.hd.N0(2131748839, null));
         if (this.F1 != null) {
             this.o1.getEditText().setText(this.F1);
             this.F1 = null;
@@ -267,7 +267,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         org.telegram.ui.Components.yb0 yb0Var = new org.telegram.ui.Components.yb0(context2, null);
         this.t1 = yb0Var;
         yb0Var.addView(linearLayout2, c8.ma.d(-1, -2.0f, 16, 4.0f, 8.0f, 16.0f, 8.0f));
-        this.t1.setText(org.telegram.messenger.gd.N0(2131747096, null));
+        this.t1.setText(org.telegram.messenger.hd.N0(2131747096, null));
         this.m1.addView(this.t1, c8.ma.k(0.0f, 12.0f, 0.0f, 6.0f, -1, 58));
         org.telegram.ui.Components.m80 m80Var = new org.telegram.ui.Components.m80(context2, null);
         this.u1 = m80Var;
@@ -377,7 +377,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         this.I1.setGravity(19);
         this.I1.setImeOptions(268435461);
         this.I1.setBackground(null);
-        this.I1.setContentDescription(org.telegram.messenger.gd.N0(2131748547, null));
+        this.I1.setContentDescription(org.telegram.messenger.hd.N0(2131748547, null));
         linearLayout2.addView(this.I1, c8.ma.k(-9.0f, 0.0f, 0.0f, 0.0f, 55, 36));
         this.I1.addTextChangedListener(new m0(this, 13));
         final int i17 = 3;
@@ -457,7 +457,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         this.K1.setGravity(19);
         this.K1.setImeOptions(268435461);
         this.K1.setBackground(null);
-        this.K1.setContentDescription(org.telegram.messenger.gd.N0(2131747096, null));
+        this.K1.setContentDescription(org.telegram.messenger.hd.N0(2131747096, null));
         linearLayout2.addView(this.K1, c8.ma.o(-1, 36));
         this.K1.addTextChangedListener(new ar(this, 2));
         this.K1.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.bh0
@@ -536,7 +536,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         this.N1 = textView2;
         org.telegram.ui.ActionBar.t6.U(textView2, i16, this.J0);
         this.N1.setTextSize(1, 14.0f);
-        this.N1.setText(org.telegram.messenger.gd.N0(2131754442, null));
+        this.N1.setText(org.telegram.messenger.hd.N0(2131754442, null));
         LinearLayout linearLayout3 = new LinearLayout(context2);
         this.O1 = linearLayout3;
         linearLayout3.setOrientation(0);
@@ -630,7 +630,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("QR");
         spannableStringBuilder.setSpan(new org.telegram.ui.Components.nq(R.drawable.header_qr_24, 0), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) "  ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131754445, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131754445, null));
         this.r1.i(spannableStringBuilder, false, true);
         this.r1.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ah0
             public final /* synthetic */ fh0 b;
@@ -705,7 +705,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         wb0Var3.setBackground(null);
         this.s1.getEditText().setInputType(49152);
         this.s1.getEditText().setImeOptions(5);
-        this.s1.setHint(org.telegram.messenger.gd.N0(2131746454, null));
+        this.s1.setHint(org.telegram.messenger.hd.N0(2131746454, null));
         this.p1.addView(this.s1, c8.ma.d(-1, 58.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
         this.s1.getEditText().setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.bh0
             public final /* synthetic */ fh0 b;
@@ -874,7 +874,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         this.R1.setGravity(17);
         this.R1.setLines(1);
         this.R1.setSingleLine(true);
-        this.R1.setText(org.telegram.messenger.gd.N0(2131751739, null));
+        this.R1.setText(org.telegram.messenger.hd.N0(2131751739, null));
         TextView textView4 = this.R1;
         org.telegram.ui.ActionBar.g2 g2Var2 = this.G1;
         int i19 = org.telegram.ui.ActionBar.m6.Ji;
@@ -962,7 +962,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         org.telegram.ui.ActionBar.t6.U(this.U1, org.telegram.ui.ActionBar.m6.G6, null);
         org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.k6, this.J1, null);
         this.O = scrollView;
-        this.P = org.telegram.messenger.gd.N0(2131748083, null);
+        this.P = org.telegram.messenger.hd.N0(2131748083, null);
         this.Q = true;
     }
 
@@ -1120,7 +1120,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
     public final void N0(String str, ps psVar) {
         int i7;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String F0 = org.telegram.messenger.gd.F0(psVar.d);
+        String F0 = org.telegram.messenger.hd.F0(psVar.d);
         if (F0 != null) {
             spannableStringBuilder.append((CharSequence) F0);
         }
@@ -1178,7 +1178,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        TLRPC.User f10 = org.telegram.messenger.j10.i(this.a).f();
+        TLRPC.User f10 = org.telegram.messenger.k10.i(this.a).f();
         if (this.C1.startsWith("+")) {
             this.I1.setText(this.C1.substring(1));
         } else if (this.D1 || f10 == null || TextUtils.isEmpty(f10.phone)) {
@@ -1215,7 +1215,7 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
     public final void P0(boolean z10) {
         ViewPropertyAnimator translationY = this.O1.animate().translationY(z10 ? -org.telegram.messenger.g0.L(21.33f) : 0.0f);
         org.telegram.ui.Components.nr nrVar = org.telegram.ui.Components.nr.h;
-        org.telegram.messenger.n10.o(translationY, nrVar, 420L);
+        org.telegram.messenger.o10.o(translationY, nrVar, 420L);
         this.p1.animate().translationY(z10 ? -org.telegram.messenger.g0.L(10.665f) : 0.0f).setInterpolator(nrVar).setDuration(420L).start();
     }
 
@@ -1379,12 +1379,12 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
             this.W1 = -1;
         }
         if (TextUtils.isEmpty(str)) {
-            org.telegram.messenger.n10.o(this.L1.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f), org.telegram.ui.Components.nr.h, 420L);
+            org.telegram.messenger.o10.o(this.L1.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f), org.telegram.ui.Components.nr.h, 420L);
             this.u1.setText("");
             P0(true);
             return;
         }
-        org.telegram.messenger.n10.o(this.L1.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), org.telegram.ui.Components.nr.h, 420L);
+        org.telegram.messenger.o10.o(this.L1.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), org.telegram.ui.Components.nr.h, 420L);
         this.L1.setImageDrawable(new org.telegram.ui.Components.up(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.m5, this.J0)));
         this.u1.setText("");
         P0(true);
@@ -1395,11 +1395,11 @@ public final class fh0 extends org.telegram.ui.ActionBar.w2 implements AdapterVi
             tL_contacts_resolvePhone.phone = pf.b.d(str, false);
             this.W1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_contacts_resolvePhone, new e00(14, this, rhVar));
         } else {
-            TLRPC.User c22 = org.telegram.messenger.mp.u1(this.a).c2(Long.valueOf(tL_contact.user_id));
+            TLRPC.User c22 = org.telegram.messenger.np.u1(this.a).c2(Long.valueOf(tL_contact.user_id));
             if (c22 != null) {
                 rhVar.a(c22);
             } else {
-                org.telegram.messenger.tr.a0(this.a).a.c(new mc0(this, tL_contact, rhVar, 8));
+                org.telegram.messenger.ur.a0(this.a).a.c(new mc0(this, tL_contact, rhVar, 8));
             }
         }
     }

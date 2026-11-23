@@ -12,13 +12,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
-import org.telegram.ui.Components.a21;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.tb0;
 import org.telegram.ui.Components.tn0;
 import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Components.z11;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class x4 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -54,14 +54,14 @@ public final class x4 extends LinearLayout {
             case 5:
                 canvas.save();
                 org.telegram.ui.Components.d6 d6Var = (org.telegram.ui.Components.d6) this.b;
-                a21 a21Var = (a21) this.c;
-                float d = d6Var.d(a21Var.y);
+                z11 z11Var = (z11) this.c;
+                float d = d6Var.d(z11Var.y);
                 if (d > 0.0f) {
-                    if (a21Var.c == null) {
-                        a21Var.c = new tn0(this);
+                    if (z11Var.c == null) {
+                        z11Var.c = new tn0(this);
                     }
                     canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-                    a21Var.c.a(canvas, d);
+                    z11Var.c.a(canvas, d);
                     canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
                 }
                 super.dispatchDraw(canvas);
@@ -265,10 +265,10 @@ public final class x4 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(a21 a21Var, Context context) {
+    public x4(z11 z11Var, Context context) {
         super(context);
         this.a = 5;
-        this.c = a21Var;
+        this.c = z11Var;
         this.b = new org.telegram.ui.Components.d6(this, 360L, nr.h);
     }
 

@@ -5,14 +5,14 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.util.SparseArray;
 import android.view.View;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.le0;
 import org.telegram.ui.me0;
 import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i {
     public final RenderNode a;
@@ -42,7 +42,7 @@ public final class i {
         int themedColor = me0Var.getThemedColor(m6.d6);
         RectF rectF = me0Var.V;
         aVar.a(themedColor);
-        aVar.b(bz.f());
+        aVar.b(cz.f());
         SparseArray sparseArray = me0Var.a;
         int size = sparseArray.size();
         for (int i10 = 0; i10 < size; i10++) {

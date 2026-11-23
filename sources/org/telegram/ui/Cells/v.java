@@ -15,17 +15,17 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.xa;
 import java.util.ArrayList;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.lz;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.mz;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.pg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout implements Checkable {
     public final boolean a;
@@ -48,7 +48,7 @@ public final class v extends FrameLayout implements Checkable {
             pg0 pg0Var = new pg0(context);
             this.f = pg0Var;
             this.n = pg0Var;
-            pg0Var.setText(gd.N0(2131754483, null));
+            pg0Var.setText(hd.N0(2131754483, null));
             org.telegram.ui.ActionBar.t6.U(pg0Var, org.telegram.ui.ActionBar.m6.Ji, null);
             pg0Var.setProgressColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ei, false));
             int i7 = org.telegram.ui.ActionBar.m6.Fi;
@@ -69,7 +69,7 @@ public final class v extends FrameLayout implements Checkable {
             pg0Var2.setTextSize(1, 14.0f);
             int i10 = org.telegram.ui.ActionBar.m6.Ii;
             org.telegram.ui.ActionBar.t6.U(pg0Var2, i10, null);
-            pg0Var2.setText(gd.N0(2131744614, null));
+            pg0Var2.setText(hd.N0(2131744612, null));
             y J0 = org.telegram.ui.ActionBar.m6.J0(org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.m6.x0(null, i10, false));
             org.telegram.ui.ActionBar.p6 g10 = org.telegram.ui.ActionBar.t6.g(i10, 25);
             pg0Var2.setBackground(J0);
@@ -89,7 +89,7 @@ public final class v extends FrameLayout implements Checkable {
         TextView textView = new TextView(context);
         this.b = textView;
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
-        n10.q(textView, 1, 16.0f, 1, 1);
+        o10.q(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(c8.ma.y());
@@ -97,7 +97,7 @@ public final class v extends FrameLayout implements Checkable {
         TextView textView2 = new TextView(context);
         this.c = textView2;
         org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, null);
-        n10.q(textView2, 1, 13.0f, 1, 1);
+        o10.q(textView2, 1, 13.0f, 1, 1);
         textView2.setSingleLine(true);
         textView2.setGravity(c8.ma.y());
         addView(textView2, c8.ma.i(-2.0f, -2.0f, 8388611, 71.0f, 35.0f, 21.0f, 0.0f));
@@ -135,7 +135,7 @@ public final class v extends FrameLayout implements Checkable {
             hVar.k(stickerSetCovered, stickerSetCovered.set.id);
         }
         i7 = ((org.telegram.ui.ActionBar.g2) oVar).currentAccount;
-        ri.d0(i7).k2(oVar.getParentActivity(), stickerSetCovered, z10 ? 2 : 1, oVar, false, false);
+        si.d0(i7).k2(oVar.getParentActivity(), stickerSetCovered, z10 ? 2 : 1, oVar, false, false);
     }
 
     public final void b(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
@@ -148,9 +148,9 @@ public final class v extends FrameLayout implements Checkable {
         boolean z11 = stickerSet.emojis;
         TextView textView = this.c;
         if (z11) {
-            textView.setText(gd.G(stickerSet.count, "EmojiCount", new Object[0]));
+            textView.setText(hd.G(stickerSet.count, "EmojiCount", new Object[0]));
         } else {
-            textView.setText(gd.G(stickerSet.count, "Stickers", new Object[0]));
+            textView.setText(hd.G(stickerSet.count, "Stickers", new Object[0]));
         }
         if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
             ArrayList<TLRPC.Document> arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
@@ -189,15 +189,15 @@ public final class v extends FrameLayout implements Checkable {
         if (w10 == null) {
             w10 = document;
         }
-        lz d = org.telegram.messenger.u5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.m6.a7, 1.0f, false);
+        mz d = org.telegram.messenger.u5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.m6.a7, 1.0f, false);
         boolean z12 = w10 instanceof TLRPC.Document;
-        fc c10 = z12 ? fc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document) : fc.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
-        if (z12 && (fj.K2(document, true) || fj.N4(document))) {
+        gc c10 = z12 ? gc.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document) : gc.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
+        if (z12 && (gj.K2(document, true) || gj.N4(document))) {
             if (d != null) {
-                q9Var.p(fc.b(document), "50_50", d, stickerSetCovered);
+                q9Var.p(gc.b(document), "50_50", d, stickerSetCovered);
                 return;
             } else {
-                q9Var.l(fc.b(document), "50_50", c10, null, 0, stickerSetCovered);
+                q9Var.l(gc.b(document), "50_50", c10, null, 0, stickerSetCovered);
                 return;
             }
         }

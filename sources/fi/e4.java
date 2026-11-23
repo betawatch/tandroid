@@ -6,13 +6,13 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.fc;
+import org.telegram.messenger.gc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.s10;
 import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class e4 {
     public final ImageReceiver a;
@@ -54,9 +54,9 @@ public final class e4 {
             o6 o6Var = i5Var.b;
             s10[] s10VarArr = i7.a;
             if (o6Var.c.K) {
-                imageReceiver.r0(fc.g(o6Var.f), "320_180", null, null, null, 0L, null, null, 0);
+                imageReceiver.r0(gc.g(o6Var.f), "320_180", null, null, null, 0L, null, null, 0);
             } else {
-                imageReceiver.r0(fc.g(o6Var.e), "320_180", null, null, null, 0L, null, null, 0);
+                imageReceiver.r0(gc.g(o6Var.e), "320_180", null, null, null, 0L, null, null, 0);
             }
         }
         b();

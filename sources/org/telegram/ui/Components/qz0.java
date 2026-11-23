@@ -5,7 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import java.io.File;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qz0 implements o71 {
     public final /* synthetic */ ThemeEditorView a;
@@ -64,6 +64,6 @@ public final class qz0 implements o71 {
         org.telegram.ui.ActionBar.m6.b0 = i10;
         org.telegram.ui.ActionBar.m6.i();
         org.telegram.ui.ActionBar.m6.h(org.telegram.ui.ActionBar.m6.e0);
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.C4, new Object[0]);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.C4, new Object[0]);
     }
 }

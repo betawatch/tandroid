@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s60 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -214,7 +214,7 @@ public final class s60 extends AnimatorListenerAdapter {
                 ((ez0) this.b).setVisibility(4);
                 break;
             default:
-                ((p01) this.b).setVisibility(8);
+                ((o01) this.b).setVisibility(8);
                 break;
         }
     }

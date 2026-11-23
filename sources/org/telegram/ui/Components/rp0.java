@@ -14,7 +14,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.g81;
 import org.telegram.ui.i81;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class rp0 implements Runnable {
                 }
                 break;
             case 5:
-                ((org.telegram.messenger.q10) this.c).a(null, Boolean.valueOf(this.b));
+                ((org.telegram.messenger.r10) this.c).a(null, Boolean.valueOf(this.b));
                 break;
             case 6:
                 ((c51) this.c).Q(this.b);
@@ -146,7 +146,7 @@ public final /* synthetic */ class rp0 implements Runnable {
                 ((FrameLayout) this.c).setVisibility(this.b ? 4 : 0);
                 break;
             case 14:
-                vf.c.t(((org.telegram.ui.lw0) this.c).e.getParentActivity(), org.telegram.messenger.gd.N0(this.b ? 2131746508 : 2131746510, null));
+                vf.c.t(((org.telegram.ui.lw0) this.c).e.getParentActivity(), org.telegram.messenger.hd.N0(this.b ? 2131746508 : 2131746510, null));
                 break;
             case 15:
                 i81 i81Var = (i81) this.c;

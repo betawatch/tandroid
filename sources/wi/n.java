@@ -25,7 +25,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.p6;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.qf;
 import org.telegram.ui.LaunchActivity;
 import v4.f0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class n {
     public final l a;
@@ -56,7 +56,7 @@ public final class n {
         this.a = lVar;
     }
 
-    public final void a(x10 x10Var) {
+    public final void a(y10 y10Var) {
         h hVar;
         if (this.c != 1 || (hVar = this.e) == null) {
             return;
@@ -65,7 +65,7 @@ public final class n {
         this.c = 0;
         hVar.K = true;
         hVar.d();
-        g0.h3(new wg.q(8, hVar, x10Var), 100L);
+        g0.h3(new wg.q(8, hVar, y10Var), 100L);
         this.b.f();
     }
 

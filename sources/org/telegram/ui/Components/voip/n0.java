@@ -6,13 +6,13 @@ import android.os.SystemClock;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.rh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n0 {
     public final oh0 a = new oh0(R.raw.voice_mini, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), true, null);
@@ -66,7 +66,7 @@ public final class n0 {
                         if (nextInt < 32) {
                             i10 = 0;
                         } else {
-                            i10 = ks.P3;
+                            i10 = ls.P3;
                             if (nextInt >= 64) {
                                 i11 = 420;
                                 if (nextInt >= 97) {
@@ -137,7 +137,7 @@ public final class n0 {
                         if (nextInt < 32) {
                             i102 = 0;
                         } else {
-                            i102 = ks.P3;
+                            i102 = ls.P3;
                             if (nextInt >= 64) {
                                 i11 = 420;
                                 if (nextInt >= 97) {
@@ -208,7 +208,7 @@ public final class n0 {
                         if (nextInt < 32) {
                             i102 = 0;
                         } else {
-                            i102 = ks.P3;
+                            i102 = ls.P3;
                             if (nextInt >= 64) {
                                 i112 = 420;
                                 if (nextInt >= 97) {
@@ -279,7 +279,7 @@ public final class n0 {
                         if (nextInt < 32) {
                             i102 = 0;
                         } else {
-                            i102 = ks.P3;
+                            i102 = ls.P3;
                             if (nextInt >= 64) {
                                 i112 = 420;
                                 if (nextInt >= 97) {
@@ -372,7 +372,7 @@ public final class n0 {
             if (j3 != 0 && j10 <= 5000) {
                 org.telegram.messenger.g0.h3(this.m, 5000 - j10);
             }
-            P = oh0Var.P(ks.S1);
+            P = oh0Var.P(ls.S1);
         } else {
             this.c.setAnimation(oh0Var);
             oh0Var.S(0, null);
@@ -388,7 +388,7 @@ public final class n0 {
         } else if (P) {
             if (z15) {
                 oh0Var.M(99);
-                oh0Var.P(ks.S1);
+                oh0Var.P(ls.S1);
             } else if (z14 && this.f && !z15) {
                 oh0Var.M(0);
                 oh0Var.P(36);

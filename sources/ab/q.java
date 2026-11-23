@@ -39,12 +39,12 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
 import m.o3;
-import org.telegram.messenger.hf;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.yy;
+import org.telegram.messenger.jf;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.lp0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.x30;
 import org.telegram.ui.Wallet.h1;
@@ -56,7 +56,7 @@ import org.telegram.ui.u4;
 import org.telegram.ui.w0;
 import org.telegram.ui.w4;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class q implements f3.q, bn0 {
     public static q e;
@@ -71,7 +71,7 @@ public final class q implements f3.q, bn0 {
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(k(tVarArr[0], 0, ks.e4, 0, ks.X4), k(tVarArr[1], 0, ks.e4, ks.g2, ks.X4), k(tVarArr[2], 0, ks.e4, ks.X4, ks.X4), k(tVarArr[0], ks.e4, 0, 1000, 400), k(tVarArr[1], ks.e4, 0, 1000, 400), k(tVarArr[2], ks.e4, 0, 1000, 400));
+        animatorSet.playTogether(k(tVarArr[0], 0, ls.e4, 0, ls.X4), k(tVarArr[1], 0, ls.e4, ls.g2, ls.X4), k(tVarArr[2], 0, ls.e4, ls.X4, ls.X4), k(tVarArr[0], ls.e4, 0, 1000, 400), k(tVarArr[1], ls.e4, 0, 1000, 400), k(tVarArr[2], ls.e4, 0, 1000, 400));
         animatorSet.addListener(new a3(this, view));
     }
 
@@ -355,7 +355,7 @@ public final class q implements f3.q, bn0 {
             try {
                 try {
                     rc.u uVar = (rc.u) this.b;
-                    org.telegram.messenger.g0.g3(new mp0(h1Var.c, uVar, h1Var.a, "websocket error: " + i1.a(vVar), 19));
+                    org.telegram.messenger.g0.g3(new lp0(h1Var.c, uVar, h1Var.a, "websocket error: " + i1.a(vVar), 20));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
@@ -640,23 +640,23 @@ public final class q implements f3.q, bn0 {
         ArrayList arrayList2 = new ArrayList();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             Object obj = hashMap.get(arrayList.get(i10));
-            yy yyVar = new yy();
-            arrayList2.add(yyVar);
-            if (obj instanceof hf) {
-                hf hfVar = (hf) obj;
-                String str = hfVar.h;
+            zy zyVar = new zy();
+            arrayList2.add(zyVar);
+            if (obj instanceof jf) {
+                jf jfVar = (jf) obj;
+                String str = jfVar.h;
                 if (str != null) {
-                    yyVar.c = str;
+                    zyVar.c = str;
                 } else {
-                    yyVar.l = hfVar;
+                    zyVar.l = jfVar;
                 }
-                yyVar.k = hfVar.s;
-                yyVar.e = hfVar.c;
-                CharSequence charSequence = hfVar.I;
-                yyVar.d = charSequence != null ? charSequence.toString() : null;
-                yyVar.i = hfVar.n;
-                yyVar.j = hfVar.r;
-                yyVar.h = hfVar.x;
+                zyVar.k = jfVar.s;
+                zyVar.e = jfVar.c;
+                CharSequence charSequence = jfVar.I;
+                zyVar.d = charSequence != null ? charSequence.toString() : null;
+                zyVar.i = jfVar.n;
+                zyVar.j = jfVar.r;
+                zyVar.h = jfVar.x;
             }
         }
         x30.a(x30Var, false, arrayList2);

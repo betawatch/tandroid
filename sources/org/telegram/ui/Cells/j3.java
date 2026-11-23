@@ -7,13 +7,13 @@ import android.text.SpannableStringBuilder;
 import android.view.ActionMode;
 import android.view.Menu;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.fz0;
 import org.telegram.ui.Components.gz0;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j3 extends ot {
     public final /* synthetic */ int e2;
@@ -43,18 +43,18 @@ public final class j3 extends ot {
     public final void o(ActionMode actionMode, Menu menu) {
         if (this.g2 && menu.findItem(R.id.menu_bold) == null) {
             menu.removeItem(android.R.id.shareText);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gd.N0(2131753668, null));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.N0(2131753668, null));
             spannableStringBuilder.setSpan(new l41(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(gd.N0(2131748894, null));
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(hd.N0(2131748894, null));
             spannableStringBuilder2.setSpan(new l41(org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
-            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(gd.N0(2131744196, null));
+            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(hd.N0(2131744194, null));
             fz0 fz0Var = new fz0();
             fz0Var.a |= 8;
             spannableStringBuilder3.setSpan(new gz0(fz0Var, 0), 0, spannableStringBuilder3.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 8, spannableStringBuilder3);
-            menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, gd.N0(2131746141, null));
+            menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, hd.N0(2131746141, null));
         }
     }
 

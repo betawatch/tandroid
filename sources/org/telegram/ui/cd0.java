@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cd0 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,10 +44,10 @@ public final /* synthetic */ class cd0 implements Runnable {
                 CallReceiver.a();
                 return;
             case 1:
-                org.telegram.ui.Components.lc.Y().N(org.telegram.messenger.gd.N0(2131745665, null), org.telegram.messenger.gd.N0(2131751093, null)).j();
+                org.telegram.ui.Components.lc.Y().N(org.telegram.messenger.hd.N0(2131745665, null), org.telegram.messenger.hd.N0(2131751093, null)).j();
                 return;
             case 2:
-                org.telegram.ui.Components.lc.Y().N(org.telegram.messenger.gd.N0(2131745665, null), org.telegram.messenger.gd.N0(2131751093, null)).j();
+                org.telegram.ui.Components.lc.Y().N(org.telegram.messenger.hd.N0(2131745665, null), org.telegram.messenger.hd.N0(2131751093, null)).j();
                 return;
             case 3:
                 Drawable[] drawableArr = PhotoViewer.Z8;
@@ -57,7 +57,7 @@ public final /* synthetic */ class cd0 implements Runnable {
                 if (T == null || (b02 = org.telegram.ui.Components.lc.b0(T)) == null) {
                     return;
                 }
-                org.telegram.ui.Components.gc I = b02.I(R.raw.msg_antispam, org.telegram.messenger.gd.N0(2131746026, null), org.telegram.messenger.gd.N0(2131745989, null));
+                org.telegram.ui.Components.gc I = b02.I(R.raw.msg_antispam, org.telegram.messenger.hd.N0(2131746026, null), org.telegram.messenger.hd.N0(2131745989, null));
                 I.j = 5000;
                 I.j();
                 return;
@@ -82,7 +82,7 @@ public final /* synthetic */ class cd0 implements Runnable {
                 if (T2 == null) {
                     return;
                 }
-                org.telegram.ui.Components.gc I2 = org.telegram.ui.Components.lc.b0(T2).I(R.raw.contact_check, org.telegram.messenger.gd.N0(2131742947, null), org.telegram.messenger.gd.N0(2131742945, null));
+                org.telegram.ui.Components.gc I2 = org.telegram.ui.Components.lc.b0(T2).I(R.raw.contact_check, org.telegram.messenger.hd.N0(2131742945, null), org.telegram.messenger.hd.N0(2131742943, null));
                 I2.j = 5000;
                 I2.j();
                 return;
@@ -188,8 +188,8 @@ public final /* synthetic */ class cd0 implements Runnable {
                 org.telegram.utils.twidget.n0.j();
                 return;
             case 20:
-                org.telegram.messenger.bz.D1 = !org.telegram.messenger.bz.D1;
-                org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putBoolean("drawActionBarShadow", org.telegram.messenger.bz.D1);
+                org.telegram.messenger.cz.D1 = !org.telegram.messenger.cz.D1;
+                org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putBoolean("drawActionBarShadow", org.telegram.messenger.cz.D1);
                 org.telegram.messenger.g0.c0(LaunchActivity.H1.y0.getRootView(), new pg.c(i10));
                 return;
             case 21:
@@ -233,7 +233,7 @@ public final /* synthetic */ class cd0 implements Runnable {
                 }
                 return;
             case 25:
-                org.telegram.messenger.ks.f(org.telegram.messenger.j10.t0).m(org.telegram.messenger.ks.u3, new Object[0]);
+                org.telegram.messenger.ls.f(org.telegram.messenger.k10.t0).m(org.telegram.messenger.ls.u3, new Object[0]);
                 return;
             case 26:
                 int i13 = AlarmManagerSchedulerBroadcastReceiver.a;

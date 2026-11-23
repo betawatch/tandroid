@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.os.Bundle;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class q80 implements org.telegram.messenger.ap {
+public final class q80 implements org.telegram.messenger.bp {
     public final /* synthetic */ h60 a;
     public final /* synthetic */ String b;
     public final /* synthetic */ org.telegram.ui.ActionBar.g2 c;
@@ -24,11 +24,11 @@ public final class q80 implements org.telegram.messenger.ap {
         this.f = bundle;
     }
 
-    @Override // org.telegram.messenger.ap
+    @Override // org.telegram.messenger.bp
     public final void a() {
         LaunchActivity launchActivity = this.h;
         if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.c5.r0((org.telegram.ui.ActionBar.g2) i5.c.h(1, launchActivity.e0), null, org.telegram.messenger.gd.N0(2131748882, null), null);
+            org.telegram.ui.Components.c5.r0((org.telegram.ui.ActionBar.g2) i5.c.h(1, launchActivity.e0), null, org.telegram.messenger.hd.N0(2131748882, null), null);
         }
         try {
             this.a.run();
@@ -37,7 +37,7 @@ public final class q80 implements org.telegram.messenger.ap {
         }
     }
 
-    @Override // org.telegram.messenger.ap
+    @Override // org.telegram.messenger.bp
     public final void f(boolean z10) {
         try {
             this.a.run();

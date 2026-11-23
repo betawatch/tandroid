@@ -10,17 +10,17 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.cj;
+import org.telegram.messenger.au;
 import org.telegram.messenger.dj;
-import org.telegram.messenger.ev;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.zt;
+import org.telegram.messenger.ej;
+import org.telegram.messenger.fv;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.uy;
 import org.telegram.ui.yg0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class y1 {
     public boolean A;
@@ -69,10 +69,10 @@ public final class y1 {
     public boolean L0;
     public boolean L2;
     public float M;
-    public ev M0;
+    public fv M0;
     public boolean M2;
     public int N;
-    public ev N0;
+    public fv N0;
     public boolean N2;
     public int O;
     public float O0;
@@ -131,12 +131,12 @@ public final class y1 {
     public boolean b3;
     public float c;
     public boolean c0;
-    public dj c1;
+    public ej c1;
     public int c2;
     public boolean c3;
     public float d;
     public boolean d0;
-    public dj d1;
+    public ej d1;
     public StaticLayout d2;
     public HashSet d3;
     public float e;
@@ -301,12 +301,12 @@ public final class y1 {
         HashSet hashSet2;
         boolean z12;
         boolean z13;
-        fj fjVar;
+        gj gjVar;
         int i12;
-        fj fjVar2;
+        gj gjVar2;
         StaticLayout staticLayout;
         m0 m0Var;
-        ev evVar;
+        fv fvVar;
         org.telegram.ui.Components.w5 w5Var;
         boolean z14 = false;
         if (!this.w0) {
@@ -326,20 +326,20 @@ public final class y1 {
             z10 = false;
         }
         this.H0 = false;
-        fj fjVar3 = r1Var.Q5;
-        ArrayList arrayList2 = fjVar3.B2;
+        gj gjVar3 = r1Var.Q5;
+        ArrayList arrayList2 = gjVar3.B2;
         ArrayList arrayList3 = this.J0;
         if (arrayList2 != arrayList3) {
-            boolean z17 = fjVar3.v2 == this.K0 || z15 == z16;
+            boolean z17 = gjVar3.v2 == this.K0 || z15 == z16;
             if (arrayList2 != null && arrayList3 != null && arrayList2.size() == this.J0.size()) {
                 for (int i13 = 0; i13 < this.J0.size(); i13++) {
-                    String charSequence = ((cj) r1Var.Q5.B2.get(i13)).e == null ? null : ((cj) r1Var.Q5.B2.get(i13)).e.getText().toString();
-                    String charSequence2 = ((cj) this.J0.get(i13)).e == null ? null : ((cj) this.J0.get(i13)).e.getText().toString();
+                    String charSequence = ((dj) r1Var.Q5.B2.get(i13)).e == null ? null : ((dj) r1Var.Q5.B2.get(i13)).e.getText().toString();
+                    String charSequence2 = ((dj) this.J0.get(i13)).e == null ? null : ((dj) this.J0.get(i13)).e.getText().toString();
                     if ((charSequence != null || charSequence2 == null) && ((charSequence == null || charSequence2 != null) && charSequence.equals(charSequence2))) {
                         org.telegram.ui.Components.u5 u5Var = r1Var.Aa;
                         if (u5Var != null) {
-                            StaticLayout staticLayout2 = ((cj) r1Var.Q5.B2.get(i13)).e;
-                            StaticLayout staticLayout3 = ((cj) this.J0.get(i13)).e;
+                            StaticLayout staticLayout2 = ((dj) r1Var.Q5.B2.get(i13)).e;
+                            StaticLayout staticLayout3 = ((dj) this.J0.get(i13)).e;
                             HashMap hashMap = u5Var.b;
                             if (staticLayout3 != null && (w5Var = (org.telegram.ui.Components.w5) hashMap.remove(staticLayout3)) != null) {
                                 ArrayList arrayList4 = w5Var.b;
@@ -357,55 +357,55 @@ public final class y1 {
                     ArrayList arrayList5 = this.J0;
                     this.I0 = arrayList5;
                     this.O0 = this.p2;
-                    this.P0 = org.telegram.ui.Components.y5.update(0, (View) r1Var, this.P0, (ArrayList<cj>) arrayList5, true);
-                    r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, r1Var.Aa, (ArrayList<cj>) r1Var.Q5.B2);
+                    this.P0 = org.telegram.ui.Components.y5.update(0, (View) r1Var, this.P0, (ArrayList<dj>) arrayList5, true);
+                    r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, r1Var.Aa, (ArrayList<dj>) r1Var.Q5.B2);
                     z10 = true;
                 } else {
-                    r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, r1Var.Aa, (ArrayList<cj>) r1Var.Q5.B2);
+                    r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, r1Var.Aa, (ArrayList<dj>) r1Var.Q5.B2);
                 }
             }
             z17 = false;
             if (z17) {
             }
         }
-        ev evVar2 = r1Var.Q5.y2;
-        if (evVar2 != null && (evVar2.s || evVar2.u)) {
+        fv fvVar2 = r1Var.Q5.y2;
+        if (fvVar2 != null && (fvVar2.s || fvVar2.u)) {
             this.w1 = true;
             z10 = true;
         }
         this.L0 = false;
-        if (evVar2 != this.N0) {
+        if (fvVar2 != this.N0) {
             yg0 yg0Var = r1Var.Ac;
             boolean z18 = yg0Var != null && yg0Var.h;
-            ev evVar3 = this.M0;
-            if (evVar3 != null) {
-                evVar3.f(r1Var);
+            fv fvVar3 = this.M0;
+            if (fvVar3 != null) {
+                fvVar3.f(r1Var);
                 this.M0 = null;
             }
             if (z18) {
-                ev evVar4 = r1Var.Q5.y2;
-                if (evVar4 != null && (evVar = this.N0) != null) {
-                    evVar4.J(evVar);
+                fv fvVar4 = r1Var.Q5.y2;
+                if (fvVar4 != null && (fvVar = this.N0) != null) {
+                    fvVar4.J(fvVar);
                 }
             } else {
-                ev evVar5 = r1Var.Q5.y2;
-                if (evVar5 != null) {
-                    ev evVar6 = this.N0;
-                    ArrayList arrayList6 = evVar5.g;
-                    if (evVar6 != null) {
-                        ArrayList arrayList7 = evVar6.g;
+                fv fvVar5 = r1Var.Q5.y2;
+                if (fvVar5 != null) {
+                    fv fvVar6 = this.N0;
+                    ArrayList arrayList6 = fvVar5.g;
+                    if (fvVar6 != null) {
+                        ArrayList arrayList7 = fvVar6.g;
                         if (arrayList6.size() == 1 && arrayList7.size() == 1) {
-                            zt ztVar = (zt) arrayList6.get(0);
-                            zt ztVar2 = (zt) arrayList7.get(0);
-                            boolean z19 = (ztVar instanceof rk0) && (ztVar2 instanceof rk0) && TextUtils.equals(((rk0) ztVar).X.url, ((rk0) ztVar2).X.url);
+                            au auVar = (au) arrayList6.get(0);
+                            au auVar2 = (au) arrayList7.get(0);
+                            boolean z19 = (auVar instanceof rk0) && (auVar2 instanceof rk0) && TextUtils.equals(((rk0) auVar).X.url, ((rk0) auVar2).X.url);
                         }
                     }
                 }
                 this.L0 = true;
-                ev evVar7 = this.N0;
-                this.M0 = evVar7;
-                if (evVar7 != null) {
-                    evVar7.b(r1Var);
+                fv fvVar7 = this.N0;
+                this.M0 = fvVar7;
+                if (fvVar7 != null) {
+                    fvVar7.b(r1Var);
                 }
             }
         }
@@ -434,7 +434,7 @@ public final class y1 {
         }
         boolean z20 = r1Var.jb;
         if (z20 && !this.a1 && r1Var.z9 != null) {
-            String N0 = gd.N0(2131751198, "EditedMessage");
+            String N0 = hd.N0(2131751198, "EditedMessage");
             CharSequence text2 = r1Var.z9.getText();
             int indexOf = text2.toString().indexOf(N0);
             if (indexOf >= 0) {
@@ -553,18 +553,18 @@ public final class y1 {
             this.o1 = true;
             z10 = true;
         }
-        fj fjVar4 = r1Var.Q5;
-        boolean z21 = fjVar4 != null ? fjVar4.M2 : false;
-        dj djVar = r1Var.m3;
-        dj djVar2 = this.d1;
-        if (djVar != djVar2) {
-            String charSequence3 = djVar2 == null ? null : djVar2.a.toString();
-            dj djVar3 = r1Var.m3;
-            String charSequence4 = djVar3 == null ? null : djVar3.a.toString();
+        gj gjVar4 = r1Var.Q5;
+        boolean z21 = gjVar4 != null ? gjVar4.M2 : false;
+        ej ejVar = r1Var.m3;
+        ej ejVar2 = this.d1;
+        if (ejVar != ejVar2) {
+            String charSequence3 = ejVar2 == null ? null : ejVar2.a.toString();
+            ej ejVar3 = r1Var.m3;
+            String charSequence4 = ejVar3 == null ? null : ejVar3.a.toString();
             if (this.F0 != r1Var.Y6 || this.e1 != z21) {
-                dj djVar4 = r1Var.m3;
-                int i25 = djVar4 == null ? 0 : djVar4.c;
-                dj djVar5 = this.d1;
+                ej ejVar4 = r1Var.m3;
+                int i25 = ejVar4 == null ? 0 : ejVar4.c;
+                ej ejVar5 = this.d1;
             }
             if ((charSequence4 == null) == (charSequence3 == null) && (charSequence3 == null || charSequence3.equals(charSequence4))) {
                 r1Var.R3();
@@ -577,19 +577,19 @@ public final class y1 {
                 }
             }
             this.b1 = true;
-            dj djVar6 = this.d1;
-            this.c1 = djVar6;
-            this.P0 = org.telegram.ui.Components.y5.update(0, r1Var, (org.telegram.ui.Components.u5) null, (ArrayList<cj>) (djVar6 == null ? null : djVar6.e));
+            ej ejVar6 = this.d1;
+            this.c1 = ejVar6;
+            this.P0 = org.telegram.ui.Components.y5.update(0, r1Var, (org.telegram.ui.Components.u5) null, (ArrayList<dj>) (ejVar6 == null ? null : ejVar6.e));
             org.telegram.ui.Components.u5 u5Var2 = r1Var.Aa;
-            dj djVar7 = r1Var.m3;
-            r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, u5Var2, (ArrayList<cj>) (djVar7 == null ? null : djVar7.e));
+            ej ejVar7 = r1Var.m3;
+            r1Var.Aa = org.telegram.ui.Components.y5.update(0, r1Var, u5Var2, (ArrayList<dj>) (ejVar7 == null ? null : ejVar7.e));
             if (this.F0 != r1Var.Y6 || this.e1 != z21) {
                 this.t0 = true;
                 this.r0 = this.f;
                 this.s0 = this.g;
             }
             z10 = true;
-        } else if (djVar != null && djVar2 != null) {
+        } else if (ejVar != null && ejVar2 != null) {
             r1Var.R3();
             float f14 = this.f;
             if (f14 != r1Var.s3 || this.g != r1Var.t3) {
@@ -744,8 +744,8 @@ public final class y1 {
                     z10 = true;
                 }
                 hashSet = this.d3;
-                fj fjVar5 = r1Var.Q5;
-                hashSet2 = fjVar5 != null ? fjVar5.K0 : null;
+                gj gjVar5 = r1Var.Q5;
+                hashSet2 = gjVar5 != null ? gjVar5.K0 : null;
                 if (hashSet == null || hashSet2 != null) {
                     if ((hashSet != null ? 0 : hashSet.size()) == (hashSet2 != null ? 0 : hashSet2.size()) || hashSet == null || !hashSet.equals(hashSet2)) {
                         z12 = false;
@@ -755,13 +755,13 @@ public final class y1 {
                             z10 = true;
                         }
                         z13 = this.g3;
-                        fjVar = r1Var.Q5;
-                        if (z13 != (fjVar == null && fjVar.L0)) {
+                        gjVar = r1Var.Q5;
+                        if (z13 != (gjVar == null && gjVar.L0)) {
                             this.i3 = true;
                             this.h3 = z13;
                             z10 = true;
                         }
-                        if (fjVar != null || this.x2 == fjVar.n5()) {
+                        if (gjVar != null || this.x2 == gjVar.n5()) {
                             i12 = this.I2;
                             if (i12 != r1Var.Ua) {
                                 this.G2 = true;
@@ -791,8 +791,8 @@ public final class y1 {
                                     z10 = true;
                                 }
                             }
-                            fjVar2 = r1Var.Q5;
-                            if ((fjVar2 == null && fjVar2.L2) != this.j3 || r1Var.o2 == null || (staticLayout = this.k3) == null) {
+                            gjVar2 = r1Var.Q5;
+                            if ((gjVar2 == null && gjVar2.L2) != this.j3 || r1Var.o2 == null || (staticLayout = this.k3) == null) {
                                 return z10;
                             }
                             this.l3 = staticLayout;
@@ -816,8 +816,8 @@ public final class y1 {
                         }
                         if (r1Var.Q7 != null) {
                         }
-                        fjVar2 = r1Var.Q5;
-                        if ((fjVar2 == null && fjVar2.L2) != this.j3) {
+                        gjVar2 = r1Var.Q5;
+                        if ((gjVar2 == null && gjVar2.L2) != this.j3) {
                         }
                         return z10;
                     }
@@ -826,10 +826,10 @@ public final class y1 {
                 if (!z12) {
                 }
                 z13 = this.g3;
-                fjVar = r1Var.Q5;
-                if (z13 != (fjVar == null && fjVar.L0)) {
+                gjVar = r1Var.Q5;
+                if (z13 != (gjVar == null && gjVar.L0)) {
                 }
-                if (fjVar != null) {
+                if (gjVar != null) {
                 }
                 i12 = this.I2;
                 if (i12 != r1Var.Ua) {
@@ -841,8 +841,8 @@ public final class y1 {
                 }
                 if (r1Var.Q7 != null) {
                 }
-                fjVar2 = r1Var.Q5;
-                if ((fjVar2 == null && fjVar2.L2) != this.j3) {
+                gjVar2 = r1Var.Q5;
+                if ((gjVar2 == null && gjVar2.L2) != this.j3) {
                 }
                 return z10;
             }
@@ -879,8 +879,8 @@ public final class y1 {
         if (this.b3 != r1Var.s8) {
         }
         hashSet = this.d3;
-        fj fjVar52 = r1Var.Q5;
-        if (fjVar52 != null) {
+        gj gjVar52 = r1Var.Q5;
+        if (gjVar52 != null) {
         }
         if (hashSet == null) {
         }
@@ -890,10 +890,10 @@ public final class y1 {
         if (!z12) {
         }
         z13 = this.g3;
-        fjVar = r1Var.Q5;
-        if (z13 != (fjVar == null && fjVar.L0)) {
+        gjVar = r1Var.Q5;
+        if (z13 != (gjVar == null && gjVar.L0)) {
         }
-        if (fjVar != null) {
+        if (gjVar != null) {
         }
         i12 = this.I2;
         if (i12 != r1Var.Ua) {
@@ -905,8 +905,8 @@ public final class y1 {
         }
         if (r1Var.Q7 != null) {
         }
-        fjVar2 = r1Var.Q5;
-        if ((fjVar2 == null && fjVar2.L2) != this.j3) {
+        gjVar2 = r1Var.Q5;
+        if ((gjVar2 == null && gjVar2.L2) != this.j3) {
         }
         return z10;
     }
@@ -935,8 +935,8 @@ public final class y1 {
             z10 = false;
         } else {
             if (r1Var.Q5.q4()) {
-                fj fjVar = r1Var.Q5;
-                i7 = (fjVar.r1 || fjVar.F4()) ? 0 : 1;
+                gj gjVar = r1Var.Q5;
+                i7 = (gjVar.r1 || gjVar.F4()) ? 0 : 1;
                 z10 = false;
             } else {
                 i7 = 0;
@@ -945,8 +945,8 @@ public final class y1 {
             }
             z11 = z10;
         }
-        fj fjVar2 = r1Var.Q5;
-        if (fjVar2.w1 || fj.b4(fjVar2.k)) {
+        gj gjVar2 = r1Var.Q5;
+        if (gjVar2.w1 || gj.b4(gjVar2.k)) {
             i7 = 0;
             z12 = false;
             z10 = false;
@@ -970,15 +970,15 @@ public final class y1 {
             this.E0.set(u4Var.getBounds());
         }
         this.F0 = r1Var.Y6;
-        fj fjVar = r1Var.Q5;
-        this.J0 = fjVar != null ? fjVar.B2 : null;
-        this.K0 = fjVar != null ? fjVar.v2 : 0;
+        gj gjVar = r1Var.Q5;
+        this.J0 = gjVar != null ? gjVar.B2 : null;
+        this.K0 = gjVar != null ? gjVar.v2 : 0;
         this.a1 = r1Var.jb;
-        this.N0 = fjVar != null ? fjVar.y2 : null;
+        this.N0 = gjVar != null ? gjVar.y2 : null;
         this.f = r1Var.s3;
         this.g = r1Var.t3;
         this.d1 = r1Var.m3;
-        this.e1 = fjVar != null ? fjVar.M2 : false;
+        this.e1 = gjVar != null ? gjVar.M2 : false;
         ArrayList arrayList2 = this.M1;
         arrayList2.clear();
         if (!arrayList.isEmpty()) {
@@ -993,8 +993,8 @@ public final class y1 {
         this.H1 = r1Var.W1;
         this.D1 = r1Var.v1;
         this.F1 = r1Var.w1;
-        fj fjVar2 = r1Var.Q5;
-        this.L2 = fjVar2 != null && fjVar2.D == 27 && (m0Var = r1Var.w) != null && m0Var.d();
+        gj gjVar2 = r1Var.Q5;
+        this.L2 = gjVar2 != null && gjVar2.D == 27 && (m0Var = r1Var.w) != null && m0Var.d();
         if (r1Var.n7 != null) {
             this.N = r1Var.getRepliesCount();
             this.O = r1Var.v7;
@@ -1033,8 +1033,8 @@ public final class y1 {
         StaticLayout[] staticLayoutArr2 = this.y2;
         staticLayoutArr2[0] = staticLayout;
         staticLayoutArr2[1] = staticLayoutArr[1];
-        fj fjVar3 = r1Var.Q5;
-        this.x2 = fjVar3 != null && fjVar3.n5();
+        gj gjVar3 = r1Var.Q5;
+        this.x2 = gjVar3 != null && gjVar3.n5();
         this.B2 = r1Var.t9;
         int i7 = r1Var.Ua;
         this.w2 = i7;
@@ -1045,8 +1045,8 @@ public final class y1 {
         if (u4Var2 != null) {
             this.k1 = u4Var2.getBounds().right;
         }
-        fj fjVar4 = r1Var.Q5;
-        this.p2 = fjVar4 != null ? fjVar4.x2 : 0.0f;
+        gj gjVar4 = r1Var.Q5;
+        this.p2 = gjVar4 != null ? gjVar4.x2 : 0.0f;
         this.Q0 = r1Var.a8;
         this.F2 = r1Var.R7;
         this.J2 = r1Var.b8;
@@ -1065,9 +1065,9 @@ public final class y1 {
         this.W2 = r1Var.Q1;
         this.b3 = r1Var.s8;
         this.d3 = r1Var.getPrimaryMessageObject() != null ? r1Var.getPrimaryMessageObject().K0 : null;
-        fj fjVar5 = r1Var.Q5;
-        this.g3 = fjVar5 != null && fjVar5.L0;
-        this.j3 = fjVar5 != null && fjVar5.L2;
+        gj gjVar5 = r1Var.Q5;
+        this.g3 = gjVar5 != null && gjVar5.L0;
+        this.j3 = gjVar5 != null && gjVar5.L2;
         this.k3 = r1Var.o2;
     }
 
@@ -1127,9 +1127,9 @@ public final class y1 {
         this.P2 = false;
         this.Q2 = false;
         this.I0 = null;
-        ev evVar = this.M0;
-        if (evVar != null) {
-            evVar.f(r1Var);
+        fv fvVar = this.M0;
+        if (fvVar != null) {
+            fvVar.f(r1Var);
         }
         this.M0 = null;
         this.V0 = null;

@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
@@ -56,10 +56,10 @@ public class ShareActivity extends Activity {
         TLdeserialize.readAttachPath(serializedData, 0L);
         serializedData.cleanup();
         String string2 = sharedPreferences.getString(queryParameter + "_link", null);
-        org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(org.telegram.messenger.j10.t0, TLdeserialize, false, true);
-        fjVar.k.with_my_score = true;
+        org.telegram.messenger.gj gjVar = new org.telegram.messenger.gj(org.telegram.messenger.k10.t0, TLdeserialize, false, true);
+        gjVar.k.with_my_score = true;
         try {
-            org.telegram.ui.Components.ap0 O0 = org.telegram.ui.Components.ap0.O0(this, fjVar, null, false, string2);
+            org.telegram.ui.Components.ap0 O0 = org.telegram.ui.Components.ap0.O0(this, gjVar, null, false, string2);
             this.a = O0;
             O0.setCanceledOnTouchOutside(true);
             this.a.setOnDismissListener(new q5(this, 15));

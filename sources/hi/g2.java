@@ -7,10 +7,10 @@ import di.yb;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Timer;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g2 extends e2 {
     public ch.g0 i;
@@ -36,7 +36,7 @@ public final class g2 extends e2 {
         this.c = org.telegram.messenger.g0.L(36.0f);
         i2 i2Var = (i2) ybVar.h;
         int i7 = i2.C1;
-        ArrayList arrayList = ri.d0(i2Var.a).h;
+        ArrayList arrayList = si.d0(i2Var.a).h;
         for (int i10 = 0; i10 < Math.min(arrayList.size(), 8); i10++) {
             this.o.add(ch.p0.c((TLRPC.TL_availableReaction) arrayList.get(i10)));
         }

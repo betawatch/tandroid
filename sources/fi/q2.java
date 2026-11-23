@@ -3,15 +3,15 @@ package fi;
 import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ap0;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class q2 extends ap0 {
     public final /* synthetic */ z3 V2;
@@ -35,21 +35,21 @@ public final class q2 extends ap0 {
             lc lcVar = new lc(z3Var.M0, this.J0);
             if (hVar.m() == 1) {
                 long j3 = hVar.j(0);
-                if (j3 == j10.i(this.a).n) {
-                    gc G = lcVar.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744222, new Object[0])));
+                if (j3 == k10.i(this.a).n) {
+                    gc G = lcVar.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.W2(hd.a0(null, null, 2131744220, new Object[0])));
                     G.r = false;
                     G.j();
                 } else if (j3 < 0) {
-                    gc G2 = lcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744235, tL_forumTopic != null ? tL_forumTopic.title : mp.u1(this.a).O0(Long.valueOf(-j3)).title)));
+                    gc G2 = lcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.W2(hd.a0(null, null, 2131744233, tL_forumTopic != null ? tL_forumTopic.title : np.u1(this.a).O0(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.j();
                 } else {
-                    gc G3 = lcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744235, mp.u1(this.a).c2(Long.valueOf(j3)).first_name)));
+                    gc G3 = lcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.W2(hd.a0(null, null, 2131744233, np.u1(this.a).c2(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.j();
                 }
             } else {
-                gc Q = lcVar.Q(R.raw.forward, 36, org.telegram.messenger.g0.W2(gd.G(hVar.m(), "StorySharedToManyChats", Integer.valueOf(hVar.m()))));
+                gc Q = lcVar.Q(R.raw.forward, 36, org.telegram.messenger.g0.W2(hd.G(hVar.m(), "StorySharedToManyChats", Integer.valueOf(hVar.m()))));
                 Q.r = false;
                 Q.j();
             }

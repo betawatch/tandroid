@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class n6 {
     public static final String[] e = {"/dev/socket/genyd", "/dev/socket/baseband_genyd"};
@@ -40,11 +40,11 @@ public final class n6 {
         l = new f5.a[]{new f5.a(i7, "init.svc.qemud", str), new f5.a(i7, "init.svc.qemu-props", str), new f5.a(i7, "qemu.hw.mainkeys", str), new f5.a(i7, "qemu.sf.fake_camera", str), new f5.a(i7, "qemu.sf.lcd_density", str), new f5.a(i7, "ro.bootloader", str2), new f5.a(i7, "ro.bootmode", str2), new f5.a(i7, "ro.hardware", "goldfish"), new f5.a(i7, "ro.kernel.android.qemud", str), new f5.a(i7, "ro.kernel.qemu.gles", str), new f5.a(i7, "ro.kernel.qemu", "1"), new f5.a(i7, "ro.product.device", "generic"), new f5.a(i7, "ro.product.model", str3), new f5.a(i7, "ro.product.name", str3), new f5.a(i7, "ro.serialno", null)};
     }
 
-    public n6(Window window, h9 h9Var) {
+    public n6(Window window, i9 i9Var) {
         this.a = false;
         this.b = false;
         this.c = window;
-        this.d = h9Var;
+        this.d = i9Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x00db  */
@@ -237,7 +237,7 @@ public final class n6 {
     }
 
     public void g() {
-        boolean z10 = this.a && ((h9) this.d).run();
+        boolean z10 = this.a && ((i9) this.d).run();
         if (z10 != this.b) {
             this.b = z10;
             int i7 = z10 ? 1 : -1;

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class x50 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -114,7 +114,7 @@ public final class x50 extends org.telegram.ui.Components.dk0 {
             org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(context);
             int i10 = org.telegram.ui.ActionBar.m6.G6;
             n8Var.g(i10, i10);
-            n8Var.u(org.telegram.messenger.gd.N0(2131745231, null), "", false, R.drawable.msg_shareout, false);
+            n8Var.u(org.telegram.messenger.hd.N0(2131745231, null), "", false, R.drawable.msg_shareout, false);
             view = n8Var;
         } else {
             view = i7 == 2 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c0) null) : new org.telegram.ui.Cells.r4(context, true);

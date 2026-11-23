@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m31 extends sa {
     public ImageView T1;
@@ -76,14 +76,14 @@ public final class m31 extends sa {
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
         int i7 = 1;
         CharSequence[] charSequenceArr = {this.W1};
-        tL_textWithEntities.entities = org.telegram.messenger.ri.d0(this.a).Y(charSequenceArr, true, true);
+        tL_textWithEntities.entities = org.telegram.messenger.si.d0(this.a).Y(charSequenceArr, true, true);
         CharSequence charSequence = charSequenceArr[0];
         tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
         if (this.Z1 != null) {
             this.V1.setLoading(true);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131748586, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131748586, null));
         spannableStringBuilder.setSpan(new r80(null, org.telegram.messenger.g0.L(120.0f), 0, null), 0, spannableStringBuilder.length(), 33);
         this.Y1 = spannableStringBuilder;
         this.X1 = true;

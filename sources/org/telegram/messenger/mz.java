@@ -1,849 +1,344 @@
 package org.telegram.messenger;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.ComposeShader;
+import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FilterInputStream;
-import java.io.InputStream;
-import java.io.StringReader;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.util.SparseArray;
+import android.view.View;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.regex.Pattern;
-import javax.xml.parsers.SAXParserFactory;
-import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public abstract class mz {
-    public static final double[] a = new double[128];
-    public static final Pattern b;
+public final class mz extends Drawable {
+    public static float v;
+    public static float w;
+    public static long x;
+    public static j2 y;
+    public static WeakReference z;
+    public Paint c;
+    public Paint d;
+    public int e;
+    public int f;
+    public ImageReceiver k;
+    public int m;
+    public Integer n;
+    public org.telegram.ui.ActionBar.h6 o;
+    public float p;
+    public static final int[] u = new int[2];
+    public static boolean A = qc.e(32);
+    public final ArrayList a = new ArrayList();
+    public final HashMap b = new HashMap();
+    public final Bitmap[] g = new Bitmap[3];
+    public final Canvas[] h = new Canvas[3];
+    public final LinearGradient[] i = new LinearGradient[3];
+    public final Matrix[] j = new Matrix[3];
+    public final int[] l = new int[2];
+    public float q = 1.0f;
+    public final SparseArray r = new SparseArray();
+    public boolean s = true;
+    public boolean t = false;
 
-    static {
+    public static void a(mz mzVar, Object obj, Paint paint) {
+        mzVar.a.add(obj);
+        mzVar.b.put(obj, new Paint(paint));
+    }
+
+    /* renamed from: b, reason: merged with bridge method [inline-methods] */
+    public final mz clone() {
+        mz mzVar = new mz();
         int i7 = 0;
         while (true) {
-            double[] dArr = a;
-            if (i7 >= dArr.length) {
-                b = Pattern.compile("(?<=\\))\\s*(?=[A-Za-z])");
-                return;
-            } else {
-                dArr[i7] = Math.pow(10.0d, i7);
-                i7++;
+            ArrayList arrayList = this.a;
+            if (i7 >= arrayList.size()) {
+                mzVar.e = this.e;
+                mzVar.f = this.f;
+                return mzVar;
             }
-        }
-    }
-
-    public static String a(byte[] bArr) {
-        try {
-            StringBuilder sb2 = new StringBuilder(bArr.length * 2);
-            sb2.append('M');
-            for (byte b10 : bArr) {
-                int i7 = b10 & 255;
-                if (i7 >= 192) {
-                    sb2.append("AACAAAAHAAALMAAAQASTAVAAAZaacaaaahaaalmaaaqastava.az0123456789-,".charAt(i7 - 192));
-                } else {
-                    if (i7 >= 128) {
-                        sb2.append(',');
-                    } else if (i7 >= 64) {
-                        sb2.append('-');
-                    }
-                    sb2.append(b10 & 63);
-                }
+            mzVar.a.add(arrayList.get(i7));
+            Paint paint = (Paint) this.b.get(arrayList.get(i7));
+            if (paint != null) {
+                Paint paint2 = new Paint();
+                paint2.setColor(paint.getColor());
+                paint2.setStrokeCap(paint.getStrokeCap());
+                paint2.setStrokeJoin(paint.getStrokeJoin());
+                paint2.setStrokeWidth(paint.getStrokeWidth());
+                paint2.setStyle(paint.getStyle());
+                mzVar.b.put(arrayList.get(i7), paint2);
             }
-            sb2.append('z');
-            return sb2.toString();
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return "";
+            i7++;
         }
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0081, code lost:
-    
-        if (r6 != 'T') goto L42;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static Path b(String str) {
-        char c10;
-        float f10;
-        int i7;
-        hz hzVar;
-        float f11;
-        float f12;
-        float f13;
-        float f14;
-        float f15;
-        boolean z10;
-        String str2 = str;
-        t0.m();
-        int length = str2.length();
-        hz hzVar2 = new hz();
-        hzVar2.b = str2;
-        hzVar2.c = 0;
-        hzVar2.d = str2.length();
-        hzVar2.a = str2.charAt(0);
-        hzVar2.d();
-        Path path = new Path();
-        char c11 = 0;
-        float f16 = 0.0f;
-        float f17 = 0.0f;
-        float f18 = 0.0f;
-        float f19 = 0.0f;
-        float f20 = 0.0f;
-        float f21 = 0.0f;
-        while (true) {
-            int i10 = hzVar2.c;
-            if (i10 >= length) {
-                return path;
-            }
-            char charAt = str2.charAt(i10);
-            switch (charAt) {
-                case '+':
-                case '-':
-                case '.':
-                case '0':
-                case '1':
-                case '2':
-                case ks.o0 /* 51 */:
-                case ks.p0 /* 52 */:
-                case ks.q0 /* 53 */:
-                case ks.r0 /* 54 */:
-                case ks.s0 /* 55 */:
-                case ks.t0 /* 56 */:
-                case ks.u0 /* 57 */:
-                    if (c11 != 'm' && c11 != 'M') {
-                        if (c11 != 'c') {
-                            if (c11 != 'C') {
-                                if (c11 != 'l') {
-                                    if (c11 != 'L') {
-                                        if (c11 != 's') {
-                                            if (c11 != 'S') {
-                                                if (c11 != 'h') {
-                                                    if (c11 != 'H') {
-                                                        if (c11 != 'v') {
-                                                            if (c11 != 'V') {
-                                                                if (c11 != 'q') {
-                                                                    if (c11 != 'Q') {
-                                                                        if (c11 != 'a') {
-                                                                            if (c11 != 'A') {
-                                                                                if (c11 != 't') {
-                                                                                    break;
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        c10 = c11;
-                        break;
-                    } else {
-                        c10 = c11;
-                        c11 = (char) (c11 - 1);
-                        break;
-                    }
-                    break;
-                case ',':
-                case '/':
-                default:
-                    hzVar2.a = hzVar2.b();
-                    c11 = charAt;
-                    c10 = c11;
-                    break;
-            }
-            boolean z11 = true;
-            switch (c11) {
-                case 'A':
-                case ks.i1 /* 97 */:
-                    float a10 = hzVar2.a();
-                    float a11 = hzVar2.a();
-                    float a12 = hzVar2.a();
-                    boolean z12 = ((int) hzVar2.a()) == 1;
-                    boolean z13 = ((int) hzVar2.a()) == 1;
-                    float a13 = hzVar2.a();
-                    float a14 = hzVar2.a();
-                    if (c11 == 'a') {
-                        f10 = a13 + f16;
-                        a14 += f17;
-                    } else {
-                        f10 = a13;
-                    }
-                    float f22 = a14;
-                    if (f16 == f10 && f17 == f22) {
-                        i7 = length;
-                        hzVar = hzVar2;
-                        f11 = f22;
-                        f12 = f18;
-                        f13 = f19;
-                        f14 = f20;
-                        f15 = f21;
-                    } else if (a10 == 0.0f || a11 == 0.0f) {
-                        i7 = length;
-                        hzVar = hzVar2;
-                        f11 = f22;
-                        f12 = f18;
-                        f13 = f19;
-                        f14 = f20;
-                        f15 = f21;
-                        path.lineTo(f10, f11);
-                    } else {
-                        float abs = Math.abs(a10);
-                        float abs2 = Math.abs(a11);
-                        i7 = length;
-                        hzVar = hzVar2;
-                        double radians = Math.toRadians(a12 % 360.0d);
-                        double cos = Math.cos(radians);
-                        double sin = Math.sin(radians);
-                        float f23 = f16;
-                        float f24 = f17;
-                        double d = (f23 - f10) / 2.0d;
-                        double d2 = (f24 - f22) / 2.0d;
-                        double d10 = (sin * d2) + (cos * d);
-                        f12 = f18;
-                        f13 = f19;
-                        double d11 = (cos * d2) + ((-sin) * d);
-                        double d12 = abs * abs;
-                        double d13 = abs2 * abs2;
-                        double d14 = d10 * d10;
-                        double d15 = d11 * d11;
-                        double d16 = (d15 / d13) + (d14 / d12);
-                        if (d16 > 0.99999d) {
-                            double sqrt = Math.sqrt(d16) * 1.00001d;
-                            abs = (float) (abs * sqrt);
-                            abs2 = (float) (abs2 * sqrt);
-                            d12 = abs * abs;
-                            d13 = abs2 * abs2;
-                        }
-                        double d17 = d12;
-                        double d18 = d13;
-                        double d19 = z12 == z13 ? -1.0d : 1.0d;
-                        double d20 = d17 * d15;
-                        double d21 = (d17 * d18) - d20;
-                        double d22 = d18 * d14;
-                        double d23 = (d21 - d22) / (d20 + d22);
-                        if (d23 < 0.0d) {
-                            d23 = 0.0d;
-                        }
-                        double sqrt2 = Math.sqrt(d23) * d19;
-                        double d24 = abs;
-                        double d25 = d24 * d11;
-                        double d26 = abs2;
-                        double d27 = (d25 / d26) * sqrt2;
-                        double d28 = sqrt2 * (-((d26 * d10) / d24));
-                        double d29 = (f24 + f22) / 2.0d;
-                        double d30 = ((cos * d27) - (sin * d28)) + ((f23 + f10) / 2.0d);
-                        f14 = f20;
-                        f15 = f21;
-                        double d31 = (cos * d28) + (sin * d27) + d29;
-                        double d32 = (d10 - d27) / d24;
-                        double d33 = (d11 - d28) / d26;
-                        double d34 = ((-d10) - d27) / d24;
-                        double d35 = ((-d11) - d28) / d26;
-                        double d36 = (d33 * d33) + (d32 * d32);
-                        double acos = Math.acos(d32 / Math.sqrt(d36)) * (d33 < 0.0d ? -1.0d : 1.0d);
-                        double sqrt3 = ((d33 * d35) + (d32 * d34)) / Math.sqrt(((d35 * d35) + (d34 * d34)) * d36);
-                        double acos2 = ((d32 * d35) - (d33 * d34) < 0.0d ? -1.0d : 1.0d) * (sqrt3 < -1.0d ? 3.141592653589793d : sqrt3 > 1.0d ? 0.0d : Math.acos(sqrt3));
-                        if (acos2 == 0.0d) {
-                            path.lineTo(f10, f22);
-                            f11 = f22;
-                        } else {
-                            if (!z13 && acos2 > 0.0d) {
-                                acos2 -= 6.283185307179586d;
-                            } else if (z13 && acos2 < 0.0d) {
-                                acos2 += 6.283185307179586d;
-                            }
-                            double d37 = acos2 % 6.283185307179586d;
-                            double d38 = acos % 6.283185307179586d;
-                            int ceil = (int) Math.ceil((Math.abs(d37) * 2.0d) / 3.141592653589793d);
-                            double d39 = d37 / ceil;
-                            double d40 = d39 / 2.0d;
-                            double sin2 = (Math.sin(d40) * 1.3333333333333333d) / (Math.cos(d40) + 1.0d);
-                            int i11 = ceil * 6;
-                            float[] fArr = new float[i11];
-                            int i12 = 0;
-                            int i13 = 0;
-                            while (i12 < ceil) {
-                                Path path2 = path;
-                                double d41 = (i12 * d39) + d38;
-                                double cos2 = Math.cos(d41);
-                                double sin3 = Math.sin(d41);
-                                fArr[i13] = (float) (cos2 - (sin2 * sin3));
-                                fArr[i13 + 1] = (float) ((cos2 * sin2) + sin3);
-                                double d42 = d41 + d39;
-                                double cos3 = Math.cos(d42);
-                                double d43 = d39;
-                                double sin4 = Math.sin(d42);
-                                int i14 = i12;
-                                fArr[i13 + 2] = (float) ((sin2 * sin4) + cos3);
-                                fArr[i13 + 3] = (float) (sin4 - (sin2 * cos3));
-                                int i15 = i13 + 5;
-                                fArr[i13 + 4] = (float) cos3;
-                                i13 += 6;
-                                fArr[i15] = (float) sin4;
-                                i12 = i14 + 1;
-                                path = path2;
-                                f22 = f22;
-                                d39 = d43;
-                                i11 = i11;
-                            }
-                            Path path3 = path;
-                            float f25 = f22;
-                            int i16 = i11;
-                            Matrix matrix = new Matrix();
-                            matrix.postScale(abs, abs2);
-                            matrix.postRotate(a12);
-                            matrix.postTranslate((float) d30, (float) d31);
-                            matrix.mapPoints(fArr);
-                            fArr[i16 - 2] = f10;
-                            fArr[i16 - 1] = f25;
-                            for (int i17 = 0; i17 < i16; i17 += 6) {
-                                path3.cubicTo(fArr[i17], fArr[i17 + 1], fArr[i17 + 2], fArr[i17 + 3], fArr[i17 + 4], fArr[i17 + 5]);
-                            }
-                            path = path3;
-                            f11 = f25;
-                        }
-                    }
-                    f16 = f10;
-                    f17 = f11;
-                    f20 = f14;
-                    f21 = f15;
-                    f18 = f12;
-                    f19 = f13;
-                    z11 = false;
-                    break;
-                case ks.E0 /* 67 */:
-                case ks.k1 /* 99 */:
-                    z10 = true;
-                    float a15 = hzVar2.a();
-                    float a16 = hzVar2.a();
-                    float a17 = hzVar2.a();
-                    float a18 = hzVar2.a();
-                    float a19 = hzVar2.a();
-                    float a20 = hzVar2.a();
-                    if (c11 == 'c') {
-                        a15 += f16;
-                        a17 += f16;
-                        a19 += f16;
-                        a16 += f17;
-                        a18 += f17;
-                        a20 += f17;
-                    }
-                    float f26 = a15;
-                    float f27 = a16;
-                    float f28 = a17;
-                    float f29 = a18;
-                    float f30 = a19;
-                    float f31 = a20;
-                    path.cubicTo(f26, f27, f28, f29, f30, f31);
-                    f18 = f28;
-                    f19 = f29;
-                    f16 = f30;
-                    f17 = f31;
-                    i7 = length;
-                    hzVar = hzVar2;
-                    z11 = z10;
-                    break;
-                case ks.J0 /* 72 */:
-                case ks.p1 /* 104 */:
-                    float a21 = hzVar2.a();
-                    if (c11 == 'h') {
-                        path.rLineTo(a21, 0.0f);
-                        f16 += a21;
-                        i7 = length;
-                        hzVar = hzVar2;
-                        z11 = false;
-                        break;
-                    } else {
-                        path.lineTo(a21, f17);
-                        i7 = length;
-                        hzVar = hzVar2;
-                        f16 = a21;
-                        z11 = false;
-                    }
-                case ks.N0 /* 76 */:
-                case ks.t1 /* 108 */:
-                    float a22 = hzVar2.a();
-                    float a23 = hzVar2.a();
-                    if (c11 == 'l') {
-                        path.rLineTo(a22, a23);
-                        f16 += a22;
-                        f17 += a23;
-                        i7 = length;
-                        hzVar = hzVar2;
-                        z11 = false;
-                        break;
-                    } else {
-                        path.lineTo(a22, a23);
-                        i7 = length;
-                        hzVar = hzVar2;
-                        f16 = a22;
-                        f17 = a23;
-                        z11 = false;
-                    }
-                case ks.O0 /* 77 */:
-                case ks.u1 /* 109 */:
-                    float a24 = hzVar2.a();
-                    float a25 = hzVar2.a();
-                    if (c11 == 'm') {
-                        f20 += a24;
-                        f21 += a25;
-                        path.rMoveTo(a24, a25);
-                        f16 += a24;
-                        f17 += a25;
-                        i7 = length;
-                        hzVar = hzVar2;
-                        z11 = false;
-                        break;
-                    } else {
-                        path.moveTo(a24, a25);
-                        i7 = length;
-                        hzVar = hzVar2;
-                        f16 = a24;
-                        f20 = f16;
-                        f17 = a25;
-                        f21 = f17;
-                        z11 = false;
-                    }
-                case ks.S0 /* 81 */:
-                case ks.y1 /* 113 */:
-                    z10 = true;
-                    float a26 = hzVar2.a();
-                    float a27 = hzVar2.a();
-                    float a28 = hzVar2.a();
-                    float a29 = hzVar2.a();
-                    if (c11 == 'q') {
-                        a26 += f16;
-                        a27 += f17;
-                        a28 += f16;
-                        a29 += f17;
-                    }
-                    f18 = a26;
-                    f19 = a27;
-                    f16 = a28;
-                    f17 = a29;
-                    path.quadTo(f18, f19, f16, f17);
-                    i7 = length;
-                    hzVar = hzVar2;
-                    z11 = z10;
-                    break;
-                case ks.U0 /* 83 */:
-                case ks.A1 /* 115 */:
-                    float a30 = hzVar2.a();
-                    float a31 = hzVar2.a();
-                    float a32 = hzVar2.a();
-                    float a33 = hzVar2.a();
-                    if (c11 == 's') {
-                        a30 += f16;
-                        a32 += f16;
-                        a31 += f17;
-                        a33 += f17;
-                    }
-                    float f32 = a33;
-                    float f33 = (f16 * 2.0f) - f18;
-                    float f34 = (f17 * 2.0f) - f19;
-                    float f35 = a30;
-                    float f36 = a31;
-                    float f37 = a32;
-                    path.cubicTo(f33, f34, f35, f36, f37, f32);
-                    i7 = length;
-                    hzVar = hzVar2;
-                    f18 = f35;
-                    f19 = f36;
-                    f16 = f37;
-                    f17 = f32;
-                    z11 = true;
-                    break;
-                case ks.V0 /* 84 */:
-                case ks.B1 /* 116 */:
-                    float a34 = hzVar2.a();
-                    float a35 = hzVar2.a();
-                    if (c11 == 't') {
-                        a34 += f16;
-                        a35 += f17;
-                    }
-                    f18 = (f16 * 2.0f) - f18;
-                    f19 = (f17 * 2.0f) - f19;
-                    path.quadTo(f18, f19, a34, a35);
-                    i7 = length;
-                    hzVar = hzVar2;
-                    f16 = a34;
-                    f17 = a35;
-                    break;
-                case ks.X0 /* 86 */:
-                case ks.D1 /* 118 */:
-                    float a36 = hzVar2.a();
-                    if (c11 == 'v') {
-                        path.rLineTo(0.0f, a36);
-                        f17 += a36;
-                        i7 = length;
-                        hzVar = hzVar2;
-                        z11 = false;
-                        break;
-                    } else {
-                        path.lineTo(f16, a36);
-                        i7 = length;
-                        hzVar = hzVar2;
-                        f17 = a36;
-                        z11 = false;
-                    }
-                case ks.b1 /* 90 */:
-                case ks.G1 /* 122 */:
-                    path.close();
-                    path.moveTo(f20, f21);
-                    i7 = length;
-                    hzVar = hzVar2;
-                    f16 = f20;
-                    f18 = f16;
-                    f17 = f21;
-                    f19 = f17;
-                    break;
-                default:
-                    i7 = length;
-                    hzVar = hzVar2;
-                    z11 = false;
-                    break;
-            }
-            if (!z11) {
-                f18 = f16;
-                f19 = f17;
-            }
-            hzVar.d();
-            str2 = str;
-            length = i7;
-            hzVar2 = hzVar;
-            c11 = c10;
+    public final void c(Canvas canvas, boolean z10, int i7, long j3, float f10, float f11, float f12, float f13) {
+        int i10;
+        int i11 = this.m;
+        if (i11 >= 0) {
+            f(i11, this.o, this.p, z10);
         }
-    }
-
-    public static Bitmap c(float f10, int i7, int i10, int i11, int i12, int i13) {
-        try {
-            InputStream openRawResource = t0.b.getResources().openRawResource(i7);
-            try {
-                XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-                jz jzVar = new jz(i10, i11, Integer.valueOf(i12), false, f10, i13);
-                xMLReader.setContentHandler(jzVar);
-                xMLReader.parse(new InputSource(openRawResource));
-                Bitmap bitmap = jzVar.b;
-                if (openRawResource != null) {
-                    openRawResource.close();
-                }
-                return bitmap;
-            } finally {
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    public static Bitmap d(int i7, int i10, int i11, int i12) {
-        return c(1.0f, i7, i10, i11, i12, 1);
-    }
-
-    public static Bitmap e(int i7, int i10, String str) {
-        try {
-            XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            jz jzVar = new jz(i7, i10, null, false);
-            xMLReader.setContentHandler(jzVar);
-            xMLReader.parse(new InputSource(new StringReader(str)));
-            return jzVar.b;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    public static Bitmap f(File file, int i7, int i10, int i11) {
-        try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            try {
-                XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-                jz jzVar = new jz(i7, i10, null, false, 1.0f, i11);
-                jzVar.F = true;
-                xMLReader.setContentHandler(jzVar);
-                xMLReader.parse(new InputSource(fileInputStream));
-                Bitmap bitmap = jzVar.b;
-                fileInputStream.close();
-                return bitmap;
-            } finally {
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    public static Bitmap g(FilterInputStream filterInputStream, int i7, int i10) {
-        try {
-            XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            jz jzVar = new jz(i7, i10, null, false);
-            xMLReader.setContentHandler(jzVar);
-            xMLReader.parse(new InputSource(filterInputStream));
-            return jzVar.b;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    public static lz h(int i7, Integer num) {
-        try {
-            XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            jz jzVar = new jz(0, 0, num, true);
-            xMLReader.setContentHandler(jzVar);
-            xMLReader.parse(new InputSource(t0.b.getResources().openRawResource(i7)));
-            return jzVar.c;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    public static lz i(String str) {
-        try {
-            XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            jz jzVar = new jz(0, 0, null, true);
-            xMLReader.setContentHandler(jzVar);
-            xMLReader.parse(new InputSource(new StringReader(str)));
-            return jzVar.c;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    public static lz j(int i7, int i10, Path path) {
-        try {
-            lz lzVar = new lz();
-            lzVar.a.add(path);
-            lzVar.b.put(path, new Paint(1));
-            lzVar.e = i7;
-            lzVar.f = i10;
-            return lzVar;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    public static Float k(String str, Attributes attributes) {
-        String l10 = l(str, attributes);
-        if (l10 == null) {
-            return null;
-        }
-        if (l10.endsWith("px")) {
-            l10 = com.google.android.gms.internal.vision.e2.k(l10, 2, 0);
-        } else if (l10.endsWith("mm")) {
-            return null;
-        }
-        return Float.valueOf(Float.parseFloat(l10));
-    }
-
-    public static String l(String str, Attributes attributes) {
-        int length = attributes.getLength();
-        for (int i7 = 0; i7 < length; i7++) {
-            if (attributes.getLocalName(i7).equals(str)) {
-                return attributes.getValue(i7);
-            }
-        }
-        return null;
-    }
-
-    public static jz m(File file, int i7, int i10, boolean z10) {
-        try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            try {
-                XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-                jz jzVar = new jz(i7, i10, z10 ? -1 : null, false);
-                if (!z10) {
-                    jzVar.F = true;
-                }
-                xMLReader.setContentHandler(jzVar);
-                xMLReader.parse(new InputSource(fileInputStream));
-                fileInputStream.close();
-                return jzVar;
-            } finally {
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    public static fz n(String str) {
-        int length = str.length();
-        ArrayList arrayList = new ArrayList();
-        int i7 = 0;
-        boolean z10 = false;
-        for (int i10 = 1; i10 < length; i10++) {
-            if (z10) {
-                z10 = false;
-            } else {
-                char charAt = str.charAt(i10);
-                switch (charAt) {
-                    case '\t':
-                    case '\n':
-                    case ' ':
-                    case ',':
-                    case '-':
-                        if (charAt != '-' || str.charAt(i10 - 1) != 'e') {
-                            String substring = str.substring(i7, i10);
-                            if (substring.trim().length() > 0) {
-                                arrayList.add(Float.valueOf(Float.parseFloat(substring)));
-                                if (charAt == '-') {
-                                    i7 = i10;
-                                    break;
-                                } else {
-                                    i7 = i10 + 1;
-                                    z10 = true;
-                                    break;
-                                }
-                            } else {
-                                i7++;
+        float f14 = ((int) f12) / this.e;
+        float f15 = ((int) f13) / this.f;
+        float max = this.s ? Math.max(f14, f15) : Math.min(f14, f15);
+        LinearGradient[] linearGradientArr = this.i;
+        if (linearGradientArr[i7] != null) {
+            float f16 = w;
+            if (f16 > 0.0f && A) {
+                if (z10) {
+                    long j10 = j3 - x;
+                    long j11 = j10 > 64 ? 64L : j10;
+                    if (j11 > 0) {
+                        x = j3;
+                        v = a8.p0.f(j11, f16, 1800.0f, v);
+                        while (true) {
+                            float f17 = v;
+                            float f18 = w * 2.0f;
+                            if (f17 < f18) {
                                 break;
+                            } else {
+                                v = f17 - f18;
                             }
-                        } else {
+                        }
+                    }
+                } else if (y == null || z.get() == this) {
+                    long j12 = j3 - x;
+                    long j13 = j12 <= 64 ? j12 : 64L;
+                    long j14 = j13 < 0 ? 0L : j13;
+                    x = j3;
+                    v = a8.p0.f(j14, w, 1800.0f, v);
+                    while (true) {
+                        float f19 = v;
+                        float f20 = w;
+                        if (f19 < f20 / 2.0f) {
                             break;
+                        } else {
+                            v = f19 - f20;
                         }
-                    case ')':
-                    case 'A':
-                    case ks.E0 /* 67 */:
-                    case ks.J0 /* 72 */:
-                    case ks.N0 /* 76 */:
-                    case ks.O0 /* 77 */:
-                    case ks.S0 /* 81 */:
-                    case ks.U0 /* 83 */:
-                    case ks.V0 /* 84 */:
-                    case ks.X0 /* 86 */:
-                    case ks.b1 /* 90 */:
-                    case ks.i1 /* 97 */:
-                    case ks.k1 /* 99 */:
-                    case ks.p1 /* 104 */:
-                    case ks.t1 /* 108 */:
-                    case ks.u1 /* 109 */:
-                    case ks.y1 /* 113 */:
-                    case ks.A1 /* 115 */:
-                    case ks.B1 /* 116 */:
-                    case ks.D1 /* 118 */:
-                    case ks.G1 /* 122 */:
-                        String substring2 = str.substring(i7, i10);
-                        if (substring2.trim().length() > 0) {
-                            arrayList.add(Float.valueOf(Float.parseFloat(substring2)));
-                        }
-                        return new fz(arrayList);
+                    }
+                    z = new WeakReference(this);
+                    j2 j2Var = y;
+                    if (j2Var != null) {
+                        g0.r(j2Var);
+                    }
+                    j2 j2Var2 = new j2(18);
+                    y = j2Var2;
+                    g0.h3(j2Var2, ((int) (1000.0f / g0.r)) - 1);
+                }
+                ImageReceiver imageReceiver = this.k;
+                if (imageReceiver == null || z10) {
+                    i10 = 0;
+                } else {
+                    View view = imageReceiver.e;
+                    int[] iArr = u;
+                    if (view != null) {
+                        view.getLocationInWindow(iArr);
+                    }
+                    i10 = iArr[0];
+                }
+                int i12 = z10 ? i7 + 1 : 0;
+                Matrix[] matrixArr = this.j;
+                Matrix matrix = matrixArr[i12];
+                if (matrix != null) {
+                    matrix.reset();
+                    if (z10) {
+                        matrixArr[i12].postTranslate(((-i10) + v) - f10, 0.0f);
+                    } else {
+                        matrixArr[i12].postTranslate(((-i10) + v) - f10, 0.0f);
+                    }
+                    float f21 = 1.0f / max;
+                    matrixArr[i12].postScale(f21, f21);
+                    linearGradientArr[i12].setLocalMatrix(matrixArr[i12]);
+                    ImageReceiver imageReceiver2 = this.k;
+                    if (imageReceiver2 != null && !z10) {
+                        imageReceiver2.invalidate();
+                    }
                 }
             }
         }
-        String substring3 = str.substring(i7);
-        if (substring3.length() > 0) {
-            try {
-                arrayList.add(Float.valueOf(Float.parseFloat(substring3)));
-            } catch (NumberFormatException unused) {
+        canvas.save();
+        canvas.translate(f10, f11);
+        if (!this.s || this.t) {
+            canvas.translate(com.google.android.gms.internal.vision.e2.w(this.e, max, f12, 2.0f), com.google.android.gms.internal.vision.e2.w(this.f, max, f13, 2.0f));
+        }
+        canvas.scale(max, max);
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        for (int i13 = 0; i13 < size; i13++) {
+            Object obj = arrayList.get(i13);
+            if (obj instanceof Matrix) {
+                canvas.save();
+                canvas.concat((Matrix) obj);
+            } else if (obj == null) {
+                canvas.restore();
+            } else {
+                Paint paint = (Paint) this.r.get(i13);
+                if (paint == null) {
+                    paint = this.c;
+                }
+                if (z10) {
+                    paint = this.d;
+                } else if (paint == null) {
+                    paint = (Paint) this.b.get(obj);
+                }
+                int alpha = paint.getAlpha();
+                paint.setAlpha((int) (this.q * alpha));
+                if (obj instanceof Path) {
+                    canvas.drawPath((Path) obj, paint);
+                } else if (obj instanceof Rect) {
+                    canvas.drawRect((Rect) obj, paint);
+                } else if (obj instanceof RectF) {
+                    canvas.drawRect((RectF) obj, paint);
+                } else if (obj instanceof fz) {
+                    fz fzVar = (fz) obj;
+                    canvas.drawLine(fzVar.a, fzVar.b, fzVar.c, fzVar.d, paint);
+                } else if (obj instanceof ez) {
+                    ez ezVar = (ez) obj;
+                    canvas.drawCircle(ezVar.a, ezVar.b, ezVar.c, paint);
+                } else if (obj instanceof hz) {
+                    canvas.drawOval(((hz) obj).a, paint);
+                } else if (obj instanceof jz) {
+                    jz jzVar = (jz) obj;
+                    RectF rectF = jzVar.a;
+                    float f22 = jzVar.b;
+                    canvas.drawRoundRect(rectF, f22, f22, paint);
+                }
+                paint.setAlpha(alpha);
             }
         }
-        return new fz(arrayList);
+        canvas.restore();
     }
 
-    public static Matrix o(String str) {
-        List<String> list;
-        Matrix matrix;
-        float floatValue;
-        Matrix matrix2;
-        Matrix matrix3 = new Matrix();
-        if (str == null) {
-            list = Collections.EMPTY_LIST;
-        } else {
-            String trim = str.trim();
-            if (trim.isEmpty()) {
-                list = Collections.EMPTY_LIST;
-            } else {
-                String[] split = b.split(trim);
-                ArrayList arrayList = new ArrayList(split.length);
-                for (String str2 : split) {
-                    String trim2 = str2.trim();
-                    if (!trim2.isEmpty()) {
-                        arrayList.add(trim2);
+    public final void d() {
+        this.t = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        c(canvas, false, 0, System.currentTimeMillis(), getBounds().left, getBounds().top, getBounds().width(), getBounds().height());
+    }
+
+    public final void e(int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        this.m = i7;
+        this.o = h6Var;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r16v1, types: [android.graphics.LinearGradient] */
+    /* JADX WARN: Type inference failed for: r28v1 */
+    /* JADX WARN: Type inference failed for: r28v10 */
+    /* JADX WARN: Type inference failed for: r28v11 */
+    /* JADX WARN: Type inference failed for: r28v12 */
+    /* JADX WARN: Type inference failed for: r28v13 */
+    /* JADX WARN: Type inference failed for: r28v2 */
+    /* JADX WARN: Type inference failed for: r28v3 */
+    /* JADX WARN: Type inference failed for: r28v4 */
+    /* JADX WARN: Type inference failed for: r28v5 */
+    /* JADX WARN: Type inference failed for: r28v6 */
+    /* JADX WARN: Type inference failed for: r28v7 */
+    /* JADX WARN: Type inference failed for: r28v8 */
+    /* JADX WARN: Type inference failed for: r28v9 */
+    public final void f(int i7, org.telegram.ui.ActionBar.h6 h6Var, float f10, boolean z10) {
+        BitmapShader bitmapShader;
+        Integer num = this.n;
+        int w02 = num == null ? org.telegram.ui.ActionBar.m6.w0(i7, h6Var) : num.intValue();
+        this.o = h6Var;
+        int[] iArr = this.l;
+        if (iArr[z10 ? 1 : 0] != w02) {
+            this.p = f10;
+            this.m = i7;
+            iArr[z10 ? 1 : 0] = w02;
+            w = g0.q.x * 2;
+            boolean z11 = A;
+            HashMap hashMap = this.b;
+            if (!z11) {
+                int o4 = i0.a.o(w02, 70);
+                if (z10) {
+                    if (this.d == null) {
+                        this.d = new Paint(1);
                     }
+                    this.d.setShader(null);
+                    this.d.setColor(o4);
+                    return;
                 }
-                list = arrayList;
+                for (Paint paint : hashMap.values()) {
+                    paint.setShader(null);
+                    paint.setColor(o4);
+                }
+                return;
+            }
+            float L = g0.L(180.0f) / w;
+            int argb = Color.argb((int) ((Color.alpha(w02) / 2) * this.p), Color.red(w02), Color.green(w02), Color.blue(w02));
+            float f11 = (1.0f - L) / 2.0f;
+            float f12 = L / 2.0f;
+            Shader.TileMode tileMode = Shader.TileMode.REPEAT;
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, w, 0.0f, new int[]{0, 0, argb, 0, 0}, new float[]{0.0f, f11 - f12, f11, f12 + f11, 1.0f}, tileMode);
+            LinearGradient[] linearGradientArr = this.i;
+            linearGradientArr[z10 ? 1 : 0] = linearGradient;
+            if (Build.VERSION.SDK_INT >= 28) {
+                bitmapShader = new LinearGradient(0.0f, 0.0f, w, 0.0f, new int[]{argb, argb}, (float[]) null, tileMode);
+            } else {
+                Bitmap[] bitmapArr = this.g;
+                Bitmap bitmap = bitmapArr[z10 ? 1 : 0];
+                Canvas[] canvasArr = this.h;
+                if (bitmap == null) {
+                    bitmapArr[z10 ? 1 : 0] = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+                    canvasArr[z10 ? 1 : 0] = new Canvas(bitmapArr[z10 ? 1 : 0]);
+                }
+                canvasArr[z10 ? 1 : 0].drawColor(argb);
+                bitmapShader = new BitmapShader(bitmapArr[z10 ? 1 : 0], tileMode, tileMode);
+            }
+            Matrix matrix = new Matrix();
+            this.j[z10 ? 1 : 0] = matrix;
+            linearGradientArr[z10 ? 1 : 0].setLocalMatrix(matrix);
+            if (z10) {
+                if (this.d == null) {
+                    this.d = new Paint(1);
+                }
+                this.d.setShader(new ComposeShader(linearGradientArr[z10 ? 1 : 0], bitmapShader, PorterDuff.Mode.ADD));
+            } else {
+                Iterator it = hashMap.values().iterator();
+                while (it.hasNext()) {
+                    ((Paint) it.next()).setShader(new ComposeShader(linearGradientArr[z10 ? 1 : 0], bitmapShader, PorterDuff.Mode.ADD));
+                }
             }
         }
-        for (String str3 : list) {
-            if (str3.startsWith("matrix(")) {
-                ArrayList arrayList2 = n(str3.substring(7)).a;
-                if (arrayList2.size() == 6) {
-                    matrix = new Matrix();
-                    matrix.setValues(new float[]{((Float) arrayList2.get(0)).floatValue(), ((Float) arrayList2.get(2)).floatValue(), ((Float) arrayList2.get(4)).floatValue(), ((Float) arrayList2.get(1)).floatValue(), ((Float) arrayList2.get(3)).floatValue(), ((Float) arrayList2.get(5)).floatValue(), 0.0f, 0.0f, 1.0f});
-                }
-                matrix = null;
-            } else if (str3.startsWith("translate(")) {
-                ArrayList arrayList3 = n(str3.substring(10)).a;
-                if (arrayList3.size() > 0) {
-                    float floatValue2 = ((Float) arrayList3.get(0)).floatValue();
-                    floatValue = arrayList3.size() > 1 ? ((Float) arrayList3.get(1)).floatValue() : 0.0f;
-                    matrix2 = new Matrix();
-                    matrix2.postTranslate(floatValue2, floatValue);
-                    matrix = matrix2;
-                }
-                matrix = null;
-            } else {
-                if (str3.startsWith("scale(")) {
-                    ArrayList arrayList4 = n(str3.substring(6)).a;
-                    if (arrayList4.size() > 0) {
-                        float floatValue3 = ((Float) arrayList4.get(0)).floatValue();
-                        floatValue = arrayList4.size() > 1 ? ((Float) arrayList4.get(1)).floatValue() : 0.0f;
-                        matrix2 = new Matrix();
-                        matrix2.postScale(floatValue3, floatValue);
-                        matrix = matrix2;
-                    }
-                } else if (str3.startsWith("skewX(")) {
-                    ArrayList arrayList5 = n(str3.substring(6)).a;
-                    if (arrayList5.size() > 0) {
-                        float floatValue4 = ((Float) arrayList5.get(0)).floatValue();
-                        matrix = new Matrix();
-                        matrix.postSkew((float) Math.tan(floatValue4), 0.0f);
-                    }
-                } else if (str3.startsWith("skewY(")) {
-                    ArrayList arrayList6 = n(str3.substring(6)).a;
-                    if (arrayList6.size() > 0) {
-                        float floatValue5 = ((Float) arrayList6.get(0)).floatValue();
-                        matrix = new Matrix();
-                        matrix.postSkew(0.0f, (float) Math.tan(floatValue5));
-                    }
-                } else if (str3.startsWith("rotate(")) {
-                    ArrayList arrayList7 = n(str3.substring(7)).a;
-                    if (arrayList7.size() > 0) {
-                        matrix = new Matrix();
-                        float floatValue6 = ((Float) arrayList7.get(0)).floatValue();
-                        if (arrayList7.size() > 2) {
-                            matrix.postRotate(floatValue6, ((Float) arrayList7.get(1)).floatValue(), ((Float) arrayList7.get(2)).floatValue());
-                        } else {
-                            matrix.postRotate(floatValue6);
-                        }
-                    }
-                }
-                matrix = null;
-            }
-            if (matrix != null) {
-                matrix3.preConcat(matrix);
-            }
-        }
-        return matrix3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.e;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.q = i7 / 255.0f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

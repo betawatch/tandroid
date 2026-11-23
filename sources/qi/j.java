@@ -10,10 +10,10 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import ki.l1;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import p4.r0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public abstract class j {
     public static int c;
@@ -44,7 +44,7 @@ public abstract class j {
             int i12 = b10[i10 + 1];
             int i13 = b10[i10 + 2];
             if (i11 >= 0 && i12 <= i7 && i11 < i12) {
-                int i14 = i13 & ks.e4;
+                int i14 = i13 & ls.e4;
                 if (i14 != 0) {
                     spannable.setSpan(new c(i14), i11, i12, 33);
                 }

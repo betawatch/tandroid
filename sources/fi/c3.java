@@ -15,8 +15,8 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gc;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.fr0;
 import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class c3 extends v {
     public final org.telegram.ui.Components.d6 d;
@@ -47,7 +47,7 @@ public final class c3 extends v {
         nr nrVar = nr.f;
         this.d = new org.telegram.ui.Components.d6(this, 150L, nrVar);
         this.e = new org.telegram.ui.Components.d6(this, 150L, nrVar);
-        this.f = new org.telegram.ui.Components.voip.n(32, ks.n1, ks.P3);
+        this.f = new org.telegram.ui.Components.voip.n(32, ls.n1, ls.P3);
         org.telegram.ui.Components.d6 d6Var = new org.telegram.ui.Components.d6(this);
         this.h = d6Var;
         org.telegram.ui.Components.d6 d6Var2 = new org.telegram.ui.Components.d6(this);
@@ -99,7 +99,7 @@ public final class c3 extends v {
             z3 z3Var2 = x3Var.k;
             TL_stories.PeerStories peerStories = z3Var2.e1;
             f9 f9Var = z3Var2.t0;
-            if (peerStories == null && (peerStories = z3Var2.C1.y(z3Var2.l1)) == null && (d2 = mp.u1(z3Var2.m2).d2(z3Var2.l1)) != null) {
+            if (peerStories == null && (peerStories = z3Var2.C1.y(z3Var2.l1)) == null && (d2 = np.u1(z3Var2.m2).d2(z3Var2.l1)) != null) {
                 peerStories = d2.stories;
             }
             if (z3Var2.u1 && (storyItem2 = x3Var.a) != null && peerStories != null && ((!i7.v(storyItem2) && ((i7 = x3Var.a.id) > peerStories.max_read_id || i7 > z3Var2.C1.f.get(z3Var2.l1, 0))) || z3Var2.m1)) {
@@ -560,7 +560,7 @@ public final class c3 extends v {
         Drawable drawable = w3Var.d;
         Paint paint = w3Var.c;
         Drawable drawable2 = w3Var.e;
-        drawable.setAlpha(ks.e4);
+        drawable.setAlpha(ls.e4);
         w3Var.d.draw(canvas2);
         if (z3Var.m1 || !z3Var.h2 || g3Var.getVisibility() == 0) {
             if (g3Var.getVisibility() == 0) {

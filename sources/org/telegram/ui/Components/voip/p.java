@@ -11,11 +11,11 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p extends View {
     public org.telegram.ui.Cells.y a;
@@ -40,7 +40,7 @@ public final class p extends View {
         this.e = new RectF();
         this.n = -761748;
         this.r = org.telegram.messenger.g0.L(26.0f);
-        this.s = ks.e4;
+        this.s = ls.e4;
         this.w = 0;
         Drawable mutate = getContext().getDrawable(R.drawable.calls_decline).mutate();
         this.f = mutate;
@@ -57,7 +57,7 @@ public final class p extends View {
         paint2.setColor(-16777216);
         setLayerType(2, null);
         setClickable(true);
-        this.h = gd.N0(2131752029, null);
+        this.h = hd.N0(2131752029, null);
     }
 
     @Override // android.view.View
@@ -106,7 +106,7 @@ public final class p extends View {
         int i10 = this.w;
         Paint paint2 = this.c;
         paint2.setAlpha(i10);
-        int i11 = (this.w / ks.e4) * 38;
+        int i11 = (this.w / ls.e4) * 38;
         Paint paint3 = this.d;
         paint3.setAlpha(i11);
         String str = this.h;

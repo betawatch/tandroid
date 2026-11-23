@@ -9,13 +9,13 @@ import android.os.SystemClock;
 import android.text.style.ReplacementSpan;
 import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q1 extends ReplacementSpan {
     public static final /* synthetic */ int d = 0;
@@ -48,7 +48,7 @@ public final class q1 extends ReplacementSpan {
                 float f13 = (i11 + i13) / 2.0f;
                 RectF rectF2 = org.telegram.messenger.g0.P;
                 rectF2.set(f10, f13 - org.telegram.messenger.g0.L(7.66f), ((xy0) this.c).c + f10 + org.telegram.messenger.g0.L(6.66f), org.telegram.messenger.g0.L(7.66f) + f13);
-                canvas.saveLayerAlpha(rectF2, ks.e4, 31);
+                canvas.saveLayerAlpha(rectF2, ls.e4, 31);
                 Paint paint3 = (Paint) this.b;
                 paint3.setColor(paint.getColor());
                 canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f), paint3);
@@ -87,7 +87,7 @@ public final class q1 extends ReplacementSpan {
     public q1(int i7) {
         this.a = 0;
         this.b = new Paint(1);
-        this.c = new xy0(gd.G(i7, "BusinessRepliesMore", new Object[0]), 9.33f, org.telegram.messenger.g0.o());
+        this.c = new xy0(hd.G(i7, "BusinessRepliesMore", new Object[0]), 9.33f, org.telegram.messenger.g0.o());
     }
 
     public q1() {

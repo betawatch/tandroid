@@ -33,13 +33,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ef;
 import org.telegram.messenger.ff;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.jc;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.ur;
+import org.telegram.messenger.gf;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.kc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.vr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
@@ -67,9 +67,9 @@ import org.telegram.ui.pm0;
 import org.telegram.ui.vp0;
 import org.telegram.ui.zs;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0, jc, jg.y1, is0, h71, org.telegram.ui.s9, te.b, tg.c, tg.m1, com.google.android.gms.common.api.internal.q {
+public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0, kc, jg.y1, is0, h71, org.telegram.ui.s9, te.b, tg.c, tg.m1, com.google.android.gms.common.api.internal.q {
     public final Object a;
 
     public /* synthetic */ c5(Object obj) {
@@ -121,7 +121,7 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
     public v0.i A() {
         String string;
         Context context = (Context) this.a;
-        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), ks.Q1);
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), ls.Q1);
         ArrayList arrayList = new ArrayList();
         ServiceInfo[] serviceInfoArr = packageInfo.services;
         if (serviceInfoArr != null) {
@@ -218,7 +218,7 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
         ((ji.r) this.a).setLanguagePillHidden(z10);
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void V(ImageReceiver imageReceiver) {
         dg0 dg0Var = ((gg0) this.a).h.H0;
         if (dg0Var != null) {
@@ -339,27 +339,27 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
 
     @Override // org.telegram.ui.Components.gz
     public float getBlurAngle() {
-        return ((ff) this.a).t;
+        return ((gf) this.a).t;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getBlurExcludeBlurSize() {
-        return ((ff) this.a).s;
+        return ((gf) this.a).s;
     }
 
     @Override // org.telegram.ui.Components.gz
     public PointF getBlurExcludePoint() {
-        return ((ff) this.a).r;
+        return ((gf) this.a).r;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getBlurExcludeSize() {
-        return ((ff) this.a).q;
+        return ((gf) this.a).q;
     }
 
     @Override // org.telegram.ui.Components.gz
     public int getBlurType() {
-        return ((ff) this.a).n;
+        return ((gf) this.a).n;
     }
 
     @Override // org.telegram.ui.Components.an0
@@ -374,37 +374,37 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
 
     @Override // org.telegram.ui.Components.gz
     public float getContrastValue() {
-        return com.google.android.gms.internal.vision.e2.c(((ff) this.a).d, 100.0f, 0.3f, 1.0f);
+        return com.google.android.gms.internal.vision.e2.c(((gf) this.a).d, 100.0f, 0.3f, 1.0f);
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getEnhanceValue() {
-        return ((ff) this.a).a / 100.0f;
+        return ((gf) this.a).a / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getExposureValue() {
-        return ((ff) this.a).c / 100.0f;
+        return ((gf) this.a).c / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getFadeValue() {
-        return ((ff) this.a).g / 100.0f;
+        return ((gf) this.a).g / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getGrainValue() {
-        return (((ff) this.a).m / 100.0f) * 0.04f;
+        return (((gf) this.a).m / 100.0f) * 0.04f;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getHighlightsValue() {
-        return com.google.android.gms.internal.vision.e2.y(((ff) this.a).j, 0.75f, 100.0f, 100.0f);
+        return com.google.android.gms.internal.vision.e2.y(((gf) this.a).j, 0.75f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getSaturationValue() {
-        float f10 = ((ff) this.a).f / 100.0f;
+        float f10 = ((gf) this.a).f / 100.0f;
         if (f10 > 0.0f) {
             f10 *= 1.05f;
         }
@@ -413,47 +413,47 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
 
     @Override // org.telegram.ui.Components.gz
     public float getShadowsValue() {
-        return com.google.android.gms.internal.vision.e2.y(((ff) this.a).k, 0.55f, 100.0f, 100.0f);
+        return com.google.android.gms.internal.vision.e2.y(((gf) this.a).k, 0.55f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getSharpenValue() {
-        return com.google.android.gms.internal.vision.e2.c(((ff) this.a).o, 100.0f, 0.6f, 0.11f);
+        return com.google.android.gms.internal.vision.e2.c(((gf) this.a).o, 100.0f, 0.6f, 0.11f);
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getSoftenSkinValue() {
-        return ((ff) this.a).b / 100.0f;
+        return ((gf) this.a).b / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.gz
     public int getTintHighlightsColor() {
-        return ((ff) this.a).i;
+        return ((gf) this.a).i;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getTintHighlightsIntensityValue() {
-        return ((ff) this.a).i == 0 ? 0.0f : 0.5f;
+        return ((gf) this.a).i == 0 ? 0.0f : 0.5f;
     }
 
     @Override // org.telegram.ui.Components.gz
     public int getTintShadowsColor() {
-        return ((ff) this.a).h;
+        return ((gf) this.a).h;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getTintShadowsIntensityValue() {
-        return ((ff) this.a).h == 0 ? 0.0f : 0.5f;
+        return ((gf) this.a).h == 0 ? 0.0f : 0.5f;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getVignetteValue() {
-        return ((ff) this.a).l / 100.0f;
+        return ((gf) this.a).l / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.gz
     public float getWarmthValue() {
-        return ((ff) this.a).e / 100.0f;
+        return ((gf) this.a).e / 100.0f;
     }
 
     @Override // org.telegram.ui.Components.h71
@@ -484,9 +484,9 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
 
     @Override // org.telegram.ui.Components.gz
     public ByteBuffer j() {
-        ff ffVar = (ff) this.a;
-        ffVar.p.q();
-        return (ByteBuffer) ffVar.p.f;
+        gf gfVar = (gf) this.a;
+        gfVar.p.q();
+        return (ByteBuffer) gfVar.p.f;
     }
 
     @Override // org.telegram.ui.Components.h71
@@ -513,7 +513,7 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
 
     @Override // org.telegram.ui.Components.hk0
     public boolean m(int i7) {
-        ef M = ((ChatAttachAlertPhotoLayout) this.a).H.M(i7);
+        ff M = ((ChatAttachAlertPhotoLayout) this.a).H.M(i7);
         return M != null && ChatAttachAlertPhotoLayout.t1.containsKey(Integer.valueOf(M.C));
     }
 
@@ -535,14 +535,14 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
         }
         int i10 = (int) c10;
         long j3 = i10;
-        zsVar.b.setText(gd.a0("AutodownloadSizeLimitUpTo", null, 2131753769, org.telegram.messenger.g0.i0(j3, false, false)));
+        zsVar.b.setText(hd.a0("AutodownloadSizeLimitUpTo", null, 2131753769, org.telegram.messenger.g0.i0(j3, false, false)));
         zsVar.d = j3;
         s8[] s8VarArr = zsVar.h;
         AnimatorSet[] animatorSetArr = zsVar.n;
         int i11 = zsVar.e;
         i7 = zsVar.r.videosRow;
         if (i11 == i7) {
-            zsVar.f.setText(gd.a0("AutoDownloadPreloadVideoInfo", null, 2131753807, org.telegram.messenger.g0.i0(j3, false, false)));
+            zsVar.f.setText(hd.a0("AutoDownloadPreloadVideoInfo", null, 2131753807, org.telegram.messenger.g0.i0(j3, false, false)));
             boolean z11 = i10 > 2097152;
             if (z11 != s8VarArr[0].isEnabled()) {
                 ArrayList arrayList = new ArrayList();
@@ -611,7 +611,7 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
 
     @Override // org.telegram.ui.Components.gz
     public boolean s() {
-        return !((ff) this.a).p.F();
+        return !((gf) this.a).p.F();
     }
 
     public s0.c t(int i7) {
@@ -651,23 +651,23 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
             org.telegram.ui.ActionBar.t6.U(textView, i11, h6Var);
             textView.setTextSize(1, 16.0f);
             textView.setSingleLine(false);
-            textView.setGravity((gd.a0 ? 5 : 3) | 48);
+            textView.setGravity((hd.a0 ? 5 : 3) | 48);
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            boolean z13 = gd.a0;
+            boolean z13 = hd.a0;
             kd0Var2.addView(textView, c8.ma.d(-1, -1.0f, (z13 ? 5 : 3) | 48, z13 ? z12 ? 17 : 64 : 72.0f, 10.0f, z13 ? 72.0f : z12 ? 17 : 64, 0.0f));
             TextView textView2 = new TextView(context);
             kd0Var2.b = textView2;
             org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, md0Var.J0);
-            n10.q(textView2, 1, 13.0f, 1, 1);
+            o10.q(textView2, 1, 13.0f, 1, 1);
             textView2.setSingleLine(true);
-            textView2.setGravity(gd.a0 ? 5 : 3);
-            boolean z14 = gd.a0;
+            textView2.setGravity(hd.a0 ? 5 : 3);
+            boolean z14 = hd.a0;
             kd0Var2.addView(textView2, c8.ma.d(-2, -2.0f, z14 ? 5 : 3, z14 ? z12 ? 17 : 64 : 72.0f, 35.0f, z14 ? 72.0f : z12 ? 17 : 64, 0.0f));
             ImageView imageView = new ImageView(context);
             kd0Var2.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.m6, md0Var.J0, PorterDuff.Mode.MULTIPLY);
-            boolean z15 = gd.a0;
+            boolean z15 = hd.a0;
             kd0Var2.addView(imageView, c8.ma.d(-2, -2.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : 20.0f, 20.0f, z15 ? 20.0f : 0.0f, 0.0f));
             kd0Var = kd0Var2;
             if (!z12) {
@@ -677,7 +677,7 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
                 int i14 = org.telegram.ui.ActionBar.m6.N6;
                 int i15 = org.telegram.ui.ActionBar.m6.d6;
                 r92.d(i13, i14, i15, i15);
-                kd0Var2.addView(r92, c8.ma.d(37, 40.0f, (gd.a0 ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+                kd0Var2.addView(r92, c8.ma.d(37, 40.0f, (hd.a0 ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
                 kd0Var = kd0Var2;
             }
         } else {
@@ -693,7 +693,7 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
                     z10 = true;
                     str = null;
                 } else {
-                    str = gd.d0(md0Var.a, tL_userContact_old2, null, null);
+                    str = hd.d0(md0Var.a, tL_userContact_old2, null, null);
                     z10 = true;
                 }
             }
@@ -705,7 +705,7 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
             q9Var.f(tL_userContact_old2, b9Var);
             ld0Var.addView(q9Var, c8.ma.t(80, 80, 49, 0, 32, 0, 0));
             TextView textView3 = new TextView(context);
-            n10.p(textView3, 1, 17.0f);
+            o10.p(textView3, 1, 17.0f);
             org.telegram.ui.ActionBar.t6.U(textView3, org.telegram.ui.ActionBar.m6.j5, md0Var.J0);
             textView3.setSingleLine(true);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -757,13 +757,13 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
             TextView textView5 = kd0Var3.b;
             int i18 = f0Var.c;
             if (i18 == 4) {
-                str2 = gd.N0(2131751775, null);
+                str2 = hd.N0(2131751775, null);
             } else if (i18 == 3) {
-                str2 = gd.N0(2131751769, null);
+                str2 = hd.N0(2131751769, null);
             } else if (i18 == 5) {
-                str2 = gd.N0(2131751791, null);
+                str2 = hd.N0(2131751791, null);
             } else if (i18 == 6) {
-                str2 = "ORG".equalsIgnoreCase(f0Var.a(true)) ? gd.N0(2131751780, null) : gd.N0(2131751779, null);
+                str2 = "ORG".equalsIgnoreCase(f0Var.a(true)) ? hd.N0(2131751780, null) : hd.N0(2131751779, null);
             } else {
                 int indexOf = f0Var.b.indexOf(58);
                 if (indexOf < 0) {
@@ -824,19 +824,19 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
                         switch (c10) {
                             case 0:
                             case 1:
-                                N0 = gd.N0(2131747097, null);
+                                N0 = hd.N0(2131747097, null);
                                 break;
                             case 2:
-                                N0 = gd.N0(2131747099, null);
+                                N0 = hd.N0(2131747099, null);
                                 break;
                             case 3:
-                                N0 = gd.N0(2131747098, null);
+                                N0 = hd.N0(2131747098, null);
                                 break;
                             case 4:
-                                N0 = gd.N0(2131747087, null);
+                                N0 = hd.N0(2131747087, null);
                                 break;
                             case 5:
-                                N0 = gd.N0(2131747088, null);
+                                N0 = hd.N0(2131747088, null);
                                 break;
                             default:
                                 N0 = substring2;
@@ -938,7 +938,7 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
     }
 
     @Override // org.telegram.ui.s9
-    public /* synthetic */ void S0(ur urVar) {
+    public /* synthetic */ void S0(vr vrVar) {
     }
 
     @Override // org.telegram.ui.Components.an0
@@ -949,11 +949,11 @@ public class c5 implements an0, org.telegram.ui.Components.a5, oe0, hk0, gz, pm0
     public void o() {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
     }
 }

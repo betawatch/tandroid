@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
@@ -160,7 +160,7 @@ public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
             wnVar.run();
             photoViewer.p4 = null;
             photoViewer.f0.setAlpha(1.0f);
-            backgroundDrawable.setAlpha(org.telegram.messenger.ks.e4);
+            backgroundDrawable.setAlpha(org.telegram.messenger.ls.e4);
             for (ClippingImageView clippingImageView2 : clippingImageViewArr) {
                 clippingImageView2.setAnimationProgress(1.0f);
             }
@@ -187,7 +187,7 @@ public final class aq0 implements ViewTreeObserver.OnPreDrawListener {
             if (clippingImageViewArr.length > 1) {
                 arrayList.add(ObjectAnimator.ofFloat(photoViewer.i0, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
             }
-            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.r6.d, 0, org.telegram.messenger.ks.e4));
+            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.r6.d, 0, org.telegram.messenger.ls.e4));
             qq0 qq0Var = photoViewer.f0;
             Property property = View.ALPHA;
             arrayList.add(ObjectAnimator.ofFloat(qq0Var, (Property<qq0, Float>) property, 0.0f, 1.0f));

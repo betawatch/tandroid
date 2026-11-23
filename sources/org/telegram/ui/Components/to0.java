@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class to0 extends dk0 {
     public final Context c;
@@ -32,20 +32,20 @@ public final class to0 extends dk0 {
         a0.h hVar = this.e;
         hVar.b();
         ap0 ap0Var = this.f;
-        long j3 = org.telegram.messenger.j10.i(ap0Var.a).n;
+        long j3 = org.telegram.messenger.k10.i(ap0Var.a).n;
         if (ap0Var.V1) {
             so0 so0Var = new so0();
             so0Var.id = Long.MAX_VALUE;
             arrayList.add(so0Var);
             hVar.k(so0Var, so0Var.id);
         }
-        if (!org.telegram.messenger.mp.u1(ap0Var.a).E.isEmpty()) {
-            TLRPC.Dialog dialog = (TLRPC.Dialog) org.telegram.messenger.mp.u1(ap0Var.a).E.get(0);
+        if (!org.telegram.messenger.np.u1(ap0Var.a).E.isEmpty()) {
+            TLRPC.Dialog dialog = (TLRPC.Dialog) org.telegram.messenger.np.u1(ap0Var.a).E.get(0);
             arrayList.add(dialog);
             hVar.k(dialog, dialog.id);
         }
         ArrayList arrayList2 = new ArrayList();
-        ArrayList arrayList3 = org.telegram.messenger.mp.u1(ap0Var.a).y;
+        ArrayList arrayList3 = org.telegram.messenger.np.u1(ap0Var.a).y;
         for (int i7 = 0; i7 < arrayList3.size(); i7++) {
             TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList3.get(i7);
             if (dialog2 instanceof TLRPC.TL_dialog) {
@@ -59,7 +59,7 @@ public final class to0 extends dk0 {
                         }
                         hVar.k(dialog2, dialog2.id);
                     } else {
-                        TLRPC.Chat O0 = org.telegram.messenger.mp.u1(ap0Var.a).O0(Long.valueOf(-dialog2.id));
+                        TLRPC.Chat O0 = org.telegram.messenger.np.u1(ap0Var.a).O0(Long.valueOf(-dialog2.id));
                         if (O0 != null && !org.telegram.messenger.v3.r0(O0) && ((!O0.gigagroup || org.telegram.messenger.v3.N(O0)) && (!org.telegram.messenger.v3.T(O0) || O0.creator || (((tL_chatAdminRights = O0.admin_rights) != null && tL_chatAdminRights.post_messages) || O0.megagroup)))) {
                             if (dialog2.folder_id == 1) {
                                 arrayList2.add(dialog2);
@@ -121,7 +121,7 @@ public final class to0 extends dk0 {
                     return;
                 }
                 ap0 ap0Var = this.f;
-                e7Var.d((TLRPC.TL_forumTopic) ap0Var.R1.get(dialog), org.telegram.messenger.mp.u1(ap0Var.a).E2(dialog.id), false);
+                e7Var.d((TLRPC.TL_forumTopic) ap0Var.R1.get(dialog), org.telegram.messenger.np.u1(ap0Var.a).E2(dialog.id), false);
                 long j3 = dialog.id;
                 e7Var.c(j3, ap0Var.Q1.h(j3) >= 0, null);
                 return;

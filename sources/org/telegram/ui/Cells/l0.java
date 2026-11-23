@@ -6,15 +6,15 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l0 {
     public final r1 a;
@@ -63,8 +63,8 @@ public final class l0 {
             a();
         }
         this.d.setTextSize(org.telegram.messenger.g0.L(11.0f));
-        boolean q10 = j10.i(r1Var.a6).q();
-        this.e = gd.N0(q10 ? 2131748137 : 2131743611, null);
+        boolean q10 = k10.i(r1Var.a6).q();
+        this.e = hd.N0(q10 ? 2131748137 : 2131743609, null);
         this.i.setStyle(Paint.Style.STROKE);
         this.g = true;
         this.h = q10 ? null : r1Var.getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
@@ -80,10 +80,10 @@ public final class l0 {
         if (tLObject instanceof TLRPC.Chat) {
             int i10 = ((TLRPC.Chat) tLObject).participants_count;
             if (i10 > 1) {
-                return gd.S(null, i10);
+                return hd.S(null, i10);
             }
         } else if ((tLObject instanceof TLRPC.User) && (i7 = ((TLRPC.User) tLObject).bot_active_users) > 1) {
-            return gd.S(null, i7);
+            return hd.S(null, i7);
         }
         return null;
     }
@@ -127,7 +127,7 @@ public final class l0 {
         if (tLObject instanceof TLRPC.Chat) {
             charSequence = ((TLRPC.Chat) tLObject).title;
         } else if (tLObject instanceof TLRPC.User) {
-            charSequence = o10.q((TLRPC.User) tLObject);
+            charSequence = p10.q((TLRPC.User) tLObject);
         } else {
             charSequence = "";
         }

@@ -19,7 +19,7 @@ import android.view.ViewConfiguration;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class jj0 extends View implements org.telegram.ui.ActionBar.b6 {
     public float E;
@@ -94,7 +94,7 @@ public final class jj0 extends View implements org.telegram.ui.ActionBar.b6 {
         this.S = i7;
         if (i7 == 0) {
             textPaint.setTextSize(org.telegram.messenger.g0.L(45.0f));
-            this.h0 = org.telegram.messenger.gd.a0;
+            this.h0 = org.telegram.messenger.hd.a0;
         } else {
             this.h0 = false;
             textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
@@ -108,7 +108,7 @@ public final class jj0 extends View implements org.telegram.ui.ActionBar.b6 {
         for (int i11 = 0; i11 < 8; i11++) {
             this.M[i11] = org.telegram.messenger.g0.L(44.0f);
         }
-        int L = org.telegram.messenger.g0.L(this.h0 ? 10.0f : (i7 == 0 ? org.telegram.messenger.ks.Q1 : org.telegram.messenger.ks.P3) - 15);
+        int L = org.telegram.messenger.g0.L(this.h0 ? 10.0f : (i7 == 0 ? org.telegram.messenger.ls.Q1 : org.telegram.messenger.ls.P3) - 15);
         this.R = L;
         if (ek0Var.b1()) {
             this.R = org.telegram.messenger.g0.L(this.h0 ? -4.0f : 6.0f) + L;
@@ -234,7 +234,7 @@ public final class jj0 extends View implements org.telegram.ui.ActionBar.b6 {
     public final void d() {
         ek0 ek0Var = this.q0;
         int i7 = this.S;
-        this.T = i7 == 0 ? org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.m7, ek0Var.o2) : i0.a.o(-16777216, org.telegram.messenger.ks.n1);
+        this.T = i7 == 0 ? org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.m7, ek0Var.o2) : i0.a.o(-16777216, org.telegram.messenger.ls.n1);
         this.U = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.l7, ek0Var.o2);
         this.c.setColor(this.T);
         TextPaint textPaint = this.I;
@@ -459,7 +459,7 @@ public final class jj0 extends View implements org.telegram.ui.ActionBar.b6 {
                     if (this.y != null) {
                         textPaint.setAlpha((int) (alpha2 * this.W));
                         canvas.save();
-                        org.telegram.messenger.n10.k(this.y.getHeight(), f13, centerY, (L9 - this.y.getWidth()) - org.telegram.messenger.g0.L(f11), canvas);
+                        org.telegram.messenger.o10.k(this.y.getHeight(), f13, centerY, (L9 - this.y.getWidth()) - org.telegram.messenger.g0.L(f11), canvas);
                         this.y.draw(canvas);
                         canvas.restore();
                     }

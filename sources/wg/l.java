@@ -3,11 +3,11 @@ package wg;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
-import bi.c9;
+import bi.b9;
 import di.i4;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g2;
@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Components.gc;
 import tg.o1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l extends w2 {
     public static l p1;
@@ -48,7 +48,7 @@ public final class l extends w2 {
         w0Var.q2 = new k(this, a0Var, h6Var);
         w0Var.o2 = new i(this, 1);
         if (!z10) {
-            mp.u1(this.a).R1().U();
+            np.u1(this.a).R1().U();
         }
         gc.a(this.c, new bi.t(14));
     }
@@ -58,8 +58,8 @@ public final class l extends w2 {
             return;
         }
         boolean z10 = h6Var instanceof fi.b;
-        g2 c9Var = z10 ? new c9(g2Var) : g2Var;
-        l lVar = new l(g2Var.getParentActivity(), new a0(c9Var, j3, prepaidGiveaway), new w0(c9Var, j3), c9Var.getResourceProvider(), z10);
+        g2 b9Var = z10 ? new b9(g2Var) : g2Var;
+        l lVar = new l(g2Var.getParentActivity(), new a0(b9Var, j3, prepaidGiveaway), new w0(b9Var, j3), b9Var.getResourceProvider(), z10);
         lVar.show();
         p1 = lVar;
     }
@@ -105,12 +105,12 @@ public final class l extends w2 {
         r0 r0Var = new r0(w0Var, 0);
         r0 r0Var2 = new r0(w0Var, 6);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
-        String N0 = gd.N0(2131743592, "UnsavedChanges");
+        String N0 = hd.N0(2131743590, "UnsavedChanges");
         t1 t1Var = alertDialog$Builder.a;
         t1Var.S = N0;
-        t1Var.U = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.N0(2131753593, "BoostingApplyChangesCountries") : gd.N0(2131753594, "BoostingApplyChangesChannels") : gd.N0(2131753592, "BoostingApplyChangesUsers");
-        alertDialog$Builder.k(gd.N0(2131754213, "ApplyTheme"), new o1(r0Var, 13));
-        alertDialog$Builder.h(gd.N0(2131751394, "Discard"), new o1(r0Var2, 10));
+        t1Var.U = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.N0(2131753593, "BoostingApplyChangesCountries") : hd.N0(2131753594, "BoostingApplyChangesChannels") : hd.N0(2131753592, "BoostingApplyChangesUsers");
+        alertDialog$Builder.k(hd.N0(2131754213, "ApplyTheme"), new o1(r0Var, 13));
+        alertDialog$Builder.h(hd.N0(2131751394, "Discard"), new o1(r0Var2, 10));
         alertDialog$Builder.p();
     }
 }

@@ -14,12 +14,12 @@ import android.widget.ImageView;
 import c8.ma;
 import c8.ra;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class a extends FrameLayout {
     public final ImageView a;
@@ -57,7 +57,7 @@ public final class a extends FrameLayout {
         jVar.f = org.telegram.messenger.g0.L(1.0f);
         frameLayout.setBackground(jVar);
         addView(frameLayout, ma.e(40, 40, 17));
-        ImageView e10 = n10.e(context, R.drawable.menu_comments);
+        ImageView e10 = o10.e(context, R.drawable.menu_comments);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         e10.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
         frameLayout.addView(e10, ma.e(20, 20, 17));
@@ -77,7 +77,7 @@ public final class a extends FrameLayout {
         this.e = z10;
         ImageView imageView = this.a;
         if (z11) {
-            n10.o(imageView.animate().rotation(z10 ? 0.0f : 180.0f), nr.h, 420L);
+            o10.o(imageView.animate().rotation(z10 ? 0.0f : 180.0f), nr.h, 420L);
         } else {
             imageView.setRotation(z10 ? 0.0f : 180.0f);
         }
@@ -85,7 +85,7 @@ public final class a extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ls.e4, 31);
         super.dispatchDraw(canvas);
         float f10 = this.h;
         org.telegram.ui.Components.n6 n6Var = this.b;
@@ -106,7 +106,7 @@ public final class a extends FrameLayout {
     }
 
     public void setCount(int i7) {
-        this.b.t(i7 <= 0 ? "" : gd.E(i7, ','), true, true);
+        this.b.t(i7 <= 0 ? "" : hd.E(i7, ','), true, true);
         if (this.f != i7) {
             ValueAnimator valueAnimator = this.n;
             if (valueAnimator != null) {

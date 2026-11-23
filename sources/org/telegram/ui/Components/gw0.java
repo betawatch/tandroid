@@ -13,7 +13,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gw0 extends dk0 {
     public final Context c;
@@ -141,7 +141,7 @@ public final class gw0 extends dk0 {
         ArrayList arrayList = kw0Var.R1;
         if (arrayList == null) {
             if (kw0Var.S1 != null) {
-                ((org.telegram.ui.Cells.a8) view).setSticker((org.telegram.messenger.sy) kw0Var.T1.get(i7));
+                ((org.telegram.ui.Cells.a8) view).setSticker((org.telegram.messenger.ty) kw0Var.T1.get(i7));
                 return;
             }
             if (f1Var.f != 3) {

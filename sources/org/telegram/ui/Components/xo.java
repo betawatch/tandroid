@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -24,12 +24,12 @@ public final /* synthetic */ class xo implements View.OnClickListener {
             case 0:
                 ui uiVar = npVar.S1;
                 if (uiVar.w2 != uiVar.e2) {
-                    npVar.U1.setText(org.telegram.messenger.gd.N0(2131745341, null));
+                    npVar.U1.setText(org.telegram.messenger.hd.N0(2131745341, null));
                     ui uiVar2 = npVar.S1;
                     uiVar2.G1(uiVar2.e2);
                     break;
                 } else {
-                    npVar.U1.setText(org.telegram.messenger.gd.N0(2131752126, null));
+                    npVar.U1.setText(org.telegram.messenger.hd.N0(2131752126, null));
                     ui uiVar3 = npVar.S1;
                     if (uiVar3.m2 == null) {
                         Context context = uiVar3.getContext();

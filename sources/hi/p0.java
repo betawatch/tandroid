@@ -1,9 +1,9 @@
 package hi;
 
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 break;
             default:
                 if (v0Var.c && v0Var.r != null) {
-                    v0Var.n.b(R.raw.error, 3500, gd.O0("VideoConvertFail"));
+                    v0Var.n.b(R.raw.error, 3500, hd.O0("VideoConvertFail"));
                     v0Var.c = false;
                     v0Var.d();
                     break;

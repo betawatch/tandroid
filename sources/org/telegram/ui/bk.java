@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class bk extends org.telegram.ui.Components.em0 {
     public final /* synthetic */ bn J;
@@ -36,7 +36,7 @@ public final class bk extends org.telegram.ui.Components.em0 {
         bnVar.F3 = p0Var;
         bnVar.G3 = p0Var != null;
         if (p0Var == null) {
-            org.telegram.messenger.ri mediaDataController = bnVar.getMediaDataController();
+            org.telegram.messenger.si mediaDataController = bnVar.getMediaDataController();
             mediaDataController.Z0.clear();
             mediaDataController.a1.clear();
             mediaDataController.b1.clear();
@@ -46,7 +46,7 @@ public final class bk extends org.telegram.ui.Components.em0 {
         bnVar.qd();
         bnVar.dd();
         bnVar.I3 = bnVar.k0.getSearchField().getText().toString();
-        org.telegram.messenger.ri mediaDataController2 = bnVar.getMediaDataController();
+        org.telegram.messenger.si mediaDataController2 = bnVar.getMediaDataController();
         String str = bnVar.I3;
         long j3 = bnVar.l6;
         long j10 = bnVar.d7;

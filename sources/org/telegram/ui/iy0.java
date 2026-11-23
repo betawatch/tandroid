@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iy0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,15 +30,15 @@ public final /* synthetic */ class iy0 implements Runnable {
         switch (i7) {
             case 0:
                 aVar.run();
-                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.N0(2131754484, null), -1, 2, new fu(context, i10), h0Var)).j();
+                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.hd.N0(2131754484, null), -1, 2, new fu(context, i10), h0Var)).j();
                 break;
             case 1:
                 aVar.run();
-                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.N0(2131754484, null), -1, 2, new fu(context, 5), h0Var)).j();
+                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.hd.N0(2131754484, null), -1, 2, new fu(context, 5), h0Var)).j();
                 break;
             default:
                 aVar.run();
-                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.N0(2131754484, null), -1, 2, new fu(context, 6), h0Var)).j();
+                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.hd.N0(2131754484, null), -1, 2, new fu(context, 6), h0Var)).j();
                 break;
         }
     }

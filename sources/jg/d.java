@@ -1,20 +1,20 @@
 package jg;
 
 import java.util.Comparator;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mp b;
+    public final /* synthetic */ np b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ d(mp mpVar, int i7, int i10) {
+    public /* synthetic */ d(np npVar, int i7, int i10) {
         this.a = i10;
-        this.b = mpVar;
+        this.b = npVar;
         this.c = i7;
     }
 
@@ -47,9 +47,9 @@ public final /* synthetic */ class d implements Comparator {
         switch (this.a) {
             case 0:
                 Long valueOf = Long.valueOf(((TLRPC.TL_contact) obj2).user_id);
-                mp mpVar = this.b;
-                TLRPC.User c22 = mpVar.c2(valueOf);
-                TLRPC.User c23 = mpVar.c2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                np npVar = this.b;
+                TLRPC.User c22 = npVar.c2(valueOf);
+                TLRPC.User c23 = npVar.c2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
                 int i15 = this.c;
                 if (c22 != null) {
                     if (c22.self) {
@@ -109,9 +109,9 @@ public final /* synthetic */ class d implements Comparator {
                 break;
             case 1:
                 Long valueOf2 = Long.valueOf(((TLRPC.TL_contact) obj2).user_id);
-                mp mpVar2 = this.b;
-                TLRPC.User c24 = mpVar2.c2(valueOf2);
-                TLRPC.User c25 = mpVar2.c2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                np npVar2 = this.b;
+                TLRPC.User c24 = npVar2.c2(valueOf2);
+                TLRPC.User c25 = npVar2.c2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
                 int i16 = this.c;
                 if (c24 != null) {
                     if (c24.self) {
@@ -173,9 +173,9 @@ public final /* synthetic */ class d implements Comparator {
                 TLObject tLObject = (TLObject) obj;
                 TLObject tLObject2 = (TLObject) obj2;
                 boolean z10 = tLObject2 instanceof TLRPC.TL_contact;
-                mp mpVar3 = this.b;
-                TLRPC.User c26 = z10 ? mpVar3.c2(Long.valueOf(((TLRPC.TL_contact) tLObject2).user_id)) : null;
-                TLRPC.User c27 = tLObject instanceof TLRPC.TL_contact ? mpVar3.c2(Long.valueOf(((TLRPC.TL_contact) tLObject).user_id)) : null;
+                np npVar3 = this.b;
+                TLRPC.User c26 = z10 ? npVar3.c2(Long.valueOf(((TLRPC.TL_contact) tLObject2).user_id)) : null;
+                TLRPC.User c27 = tLObject instanceof TLRPC.TL_contact ? npVar3.c2(Long.valueOf(((TLRPC.TL_contact) tLObject).user_id)) : null;
                 int i17 = this.c;
                 if (c26 != null) {
                     if (c26.self) {

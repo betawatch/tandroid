@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class id implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -97,12 +97,12 @@ public final /* synthetic */ class id implements View.OnClickListener {
                             xeVar.l(new r1.g[0]);
                             break;
                         } else {
-                            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(chatActivityEnterView2.R);
+                            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(chatActivityEnterView2.R);
                             if (chatActivityEnterView2.p7) {
                                 peer = chatActivityEnterView2.P3.t();
                             } else {
-                                org.telegram.messenger.mp.u1(chatActivityEnterView2.R).O0(Long.valueOf(-chatActivityEnterView2.G3));
-                                TLRPC.ChatFull P0 = org.telegram.messenger.mp.u1(chatActivityEnterView2.R).P0(-chatActivityEnterView2.G3);
+                                org.telegram.messenger.np.u1(chatActivityEnterView2.R).O0(Long.valueOf(-chatActivityEnterView2.G3));
+                                TLRPC.ChatFull P0 = org.telegram.messenger.np.u1(chatActivityEnterView2.R).P0(-chatActivityEnterView2.G3);
                                 r15 = P0;
                                 peer = P0 != 0 ? P0.default_send_as : null;
                             }
@@ -118,7 +118,7 @@ public final /* synthetic */ class id implements View.OnClickListener {
                             xe xeVar2 = new xe(chatActivityEnterView2, chatActivityEnterView2.getContext(), chatActivityEnterView2.F3, u12, V, peer2, chatActivityEnterView2.P3.J(), new a3.h(chatActivityEnterView2, r15, u12, 24), chatActivityEnterView2.M4);
                             chatActivityEnterView2.r0 = xeVar2;
                             xeVar2.e = true;
-                            xeVar2.c = org.telegram.messenger.ks.x3;
+                            xeVar2.c = org.telegram.messenger.ls.x3;
                             xeVar2.setOutsideTouchable(true);
                             chatActivityEnterView2.r0.setClippingEnabled(true);
                             chatActivityEnterView2.r0.setFocusable(true);
@@ -592,18 +592,18 @@ public final /* synthetic */ class id implements View.OnClickListener {
                 }
                 break;
             case 13:
-                SharedPreferences.Editor edit = org.telegram.messenger.mp.u1(chatActivityEnterView.R).h7.edit();
+                SharedPreferences.Editor edit = org.telegram.messenger.np.u1(chatActivityEnterView.R).h7.edit();
                 org.telegram.ui.bn bnVar2 = chatActivityEnterView.F3;
                 if (org.telegram.messenger.v1.d(bnVar2.s8)) {
                     edit.putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + bnVar2.a(), false);
                 } else {
                     edit.putBoolean("show_gift_for_" + bnVar2.a(), false);
                 }
-                if (org.telegram.messenger.mp.u1(chatActivityEnterView.R).y7 && org.telegram.messenger.mp.u1(chatActivityEnterView.R).z7) {
+                if (org.telegram.messenger.np.u1(chatActivityEnterView.R).y7 && org.telegram.messenger.np.u1(chatActivityEnterView.R).z7) {
                     edit.putBoolean("show_gift_for_" + bnVar2.a(), false);
                 }
                 edit.apply();
-                TLRPC.UserFull d2 = org.telegram.messenger.mp.u1(chatActivityEnterView.R).d2(org.telegram.messenger.j10.i(chatActivityEnterView.R).e());
+                TLRPC.UserFull d2 = org.telegram.messenger.np.u1(chatActivityEnterView.R).d2(org.telegram.messenger.k10.i(chatActivityEnterView.R).e());
                 if ((chatActivityEnterView.getParentFragment().s8 == null || !chatActivityEnterView.getParentFragment().s8.display_gifts_button) && (d2 == null || !d2.display_gifts_button)) {
                     org.telegram.messenger.g0.V3(chatActivityEnterView.A2, false);
                 }

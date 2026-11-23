@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m40 extends qc {
     public jc A0;
@@ -148,7 +148,7 @@ public final class m40 extends qc {
             return;
         }
         this.C0 = true;
-        org.telegram.messenger.mp.u1(this.currentAccount).I0().b(this.a, this.c, new ai.a2(this, i7, 7));
+        org.telegram.messenger.np.u1(this.currentAccount).I0().b(this.a, this.c, new ai.b2(this, i7, 7));
     }
 
     @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.g2
@@ -162,10 +162,10 @@ public final class m40 extends qc {
         return createView;
     }
 
-    @Override // org.telegram.ui.qc, org.telegram.messenger.fs
+    @Override // org.telegram.ui.qc, org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         super.didReceivedNotification(i7, i10, objArr);
-        if (i7 == org.telegram.messenger.ks.T && ((TLRPC.ChatFull) objArr[0]).id == (-this.a)) {
+        if (i7 == org.telegram.messenger.ls.T && ((TLRPC.ChatFull) objArr[0]).id == (-this.a)) {
             i1();
         }
     }
@@ -177,7 +177,7 @@ public final class m40 extends qc {
         if (jcVar != null) {
             TextView textView = jcVar.d;
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.c;
-            textView.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
+            textView.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
         }
     }
 
@@ -262,13 +262,13 @@ public final class m40 extends qc {
 
     @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        org.telegram.messenger.ks.f(this.currentAccount).c(this, org.telegram.messenger.ks.T);
+        org.telegram.messenger.ls.f(this.currentAccount).c(this, org.telegram.messenger.ls.T);
         return super.onFragmentCreate();
     }
 
     @Override // org.telegram.ui.qc, org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.messenger.ks.f(this.currentAccount).n(this, org.telegram.messenger.ks.T);
+        org.telegram.messenger.ls.f(this.currentAccount).n(this, org.telegram.messenger.ls.T);
     }
 }

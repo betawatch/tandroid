@@ -11,7 +11,7 @@ import c8.ma;
 import hi.o4;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.n6;
@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.o6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y extends b0 {
     public final /* synthetic */ int h;
@@ -54,7 +54,7 @@ public final class y extends b0 {
                 t6.l(this.a, 3, m6.z8, d0Var.J0);
                 this.a.setBackButtonImage(R.drawable.ic_ab_back);
                 t6.l(this.a, 1, m6.y8, d0Var.J0);
-                this.a.setTitle(gd.N0(2131751874, null));
+                this.a.setTitle(hd.N0(2131751874, null));
                 this.a.getTitleTextView().setTranslationX(-org.telegram.messenger.g0.L(18.0f));
                 this.a.setActionBarMenuOnItemClick(new v1(this, 22));
                 this.c.addView(this.a, ma.e(-1, 56, 48));
@@ -64,7 +64,7 @@ public final class y extends b0 {
                 eVar.e();
                 int i14 = m6.d6;
                 eVar.setColor(i0.a.f(0.125f, m6.w0(i14, d0Var.J0), m6.w0(i13, d0Var.J0)));
-                eVar.setText(gd.N0(2131751888, null));
+                eVar.setText(hd.N0(2131751888, null));
                 eVar.f();
                 if (eVar.getBackground() != null) {
                     Drawable background = eVar.getBackground();
@@ -103,7 +103,7 @@ public final class y extends b0 {
                 g10.addView(eVar, ma.q(0, 48, 1.0f, 0, 4, 0, 4, 0));
                 final int i15 = 1;
                 hi.e eVar2 = new hi.e(context, d0Var.J0, true);
-                eVar2.setText(gd.N0(2131751890, null));
+                eVar2.setText(hd.N0(2131751890, null));
                 eVar2.f();
                 eVar2.setOnClickListener(new View.OnClickListener(this) { // from class: li.c0
                     public final /* synthetic */ y b;
@@ -150,7 +150,7 @@ public final class y extends b0 {
                 boolean z10 = d0Var.I1;
                 kVar4.setBackButtonImage(z10 ? R.drawable.ic_ab_close : R.drawable.ic_ab_back);
                 t6.l(this.a, 1, m6.y8, d0Var.J0);
-                this.a.setTitle(gd.N0(2131751976, null));
+                this.a.setTitle(hd.N0(2131751976, null));
                 this.a.getTitleTextView().setTranslationX(-org.telegram.messenger.g0.L(18.0f));
                 this.a.setActionBarMenuOnItemClick(new v1(this, 20));
                 this.c.addView(this.a, ma.e(-1, 56, 48));
@@ -162,7 +162,7 @@ public final class y extends b0 {
                 hi.e eVar3 = new hi.e(getContext(), d0Var.J0, true);
                 d0Var.t1 = eVar3;
                 eVar3.f();
-                d0Var.t1.setText(gd.N0(2131747637, null));
+                d0Var.t1.setText(hd.N0(2131747637, null));
                 d0Var.t1.setOnClickListener(new o4(this, 14));
                 if (z10) {
                     d0Var.t1.setVisibility(8);

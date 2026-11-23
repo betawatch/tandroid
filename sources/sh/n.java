@@ -5,9 +5,10 @@ import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import bi.g6;
 import c8.ma;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -16,7 +17,7 @@ import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
     public final g9 a;
@@ -38,17 +39,17 @@ public final class n extends FrameLayout {
         addView(textView, ma.g());
     }
 
-    public final h51 a(g2 g2Var, long j3, int i7, byte[] bArr, int i10, x10 x10Var) {
+    public final h51 a(g2 g2Var, long j3, int i7, byte[] bArr, int i10, y10 y10Var) {
         i iVar = this.c;
         if (iVar != null) {
             return iVar;
         }
-        m mVar = new m(g2Var.getCurrentAccount(), g2Var.getMessagesController().l1(j3), i7, bArr, new z0(this, 17), x10Var);
+        m mVar = new m(g2Var.getCurrentAccount(), g2Var.getMessagesController().l1(j3), i7, bArr, new z0(this, 17), y10Var);
         g0.h3(new z0(mVar, 18), 1000L);
         i iVar2 = new i(g2Var, new h(mVar, 0), i10);
         this.c = iVar2;
         iVar2.g3.r = false;
-        iVar2.j(new bi.h6(10, this, mVar));
+        iVar2.j(new g6(10, this, mVar));
         return this.c;
     }
 

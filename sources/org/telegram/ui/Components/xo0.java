@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xo0 extends dk0 {
     public int H;
@@ -239,7 +239,7 @@ public final class xo0 extends dk0 {
             } else {
                 if (tLObject4 instanceof TLRPC.TL_encryptedChat) {
                     tL_encryptedChat2 = (TLRPC.TL_encryptedChat) tLObject4;
-                    TLRPC.User c22 = org.telegram.messenger.mp.u1(ap0Var.a).c2(Long.valueOf(tL_encryptedChat2.user_id));
+                    TLRPC.User c22 = org.telegram.messenger.np.u1(ap0Var.a).c2(Long.valueOf(tL_encryptedChat2.user_id));
                     if (c22 != null) {
                         j11 = c22.id;
                         m10 = org.telegram.messenger.i5.m(0, c22.first_name, c22.last_name);
@@ -297,7 +297,7 @@ public final class xo0 extends dk0 {
             org.telegram.ui.Cells.y3 y3Var = new org.telegram.ui.Cells.y3(context, ap0Var.J0);
             y3Var.setTextColor(org.telegram.ui.ActionBar.m6.f7);
             org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.e7, y3Var, ap0Var.J0);
-            y3Var.setText(org.telegram.messenger.gd.N0(2131746174, null));
+            y3Var.setText(org.telegram.messenger.hd.N0(2131746174, null));
             view = y3Var;
         } else if (i7 == 4) {
             view = new bi.m3(24, context, this);

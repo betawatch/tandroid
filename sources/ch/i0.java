@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Cells.r1;
 import org.telegram.ui.Cells.v0;
@@ -19,13 +19,13 @@ import org.telegram.ui.Components.vi0;
 import org.telegram.ui.bj;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i0 extends FrameLayout {
     public final /* synthetic */ g2 a;
     public final /* synthetic */ View b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ fj d;
+    public final /* synthetic */ gj d;
     public final /* synthetic */ bn e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
@@ -37,13 +37,13 @@ public final class i0 extends FrameLayout {
     public final /* synthetic */ l0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(l0 l0Var, Context context, g2 g2Var, View view, boolean z10, fj fjVar, bn bnVar, int i7, int i10, boolean z11, float f10, float f11, float f12, p0 p0Var) {
+    public i0(l0 l0Var, Context context, g2 g2Var, View view, boolean z10, gj gjVar, bn bnVar, int i7, int i10, boolean z11, float f10, float f11, float f12, p0 p0Var) {
         super(context);
         this.y = l0Var;
         this.a = g2Var;
         this.b = view;
         this.c = z10;
-        this.d = fjVar;
+        this.d = gjVar;
         this.e = bnVar;
         this.f = i7;
         this.h = i10;
@@ -64,7 +64,7 @@ public final class i0 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x0539, code lost:
     
-        if (((int) org.telegram.messenger.n10.w(r24.y.b.getImageReceiver().B().b0, r24.y.b.getImageReceiver().B().e[0], r8, r8)) < r6.b) goto L260;
+        if (((int) org.telegram.messenger.o10.w(r24.y.b.getImageReceiver().B().b0, r24.y.b.getImageReceiver().B().e[0], r8, r8)) < r6.b) goto L260;
      */
     /* JADX WARN: Code restructure failed: missing block: B:234:0x03b5, code lost:
     
@@ -83,7 +83,7 @@ public final class i0 extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:48:0x0139  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x02c2  */
     /* JADX WARN: Type inference failed for: r4v44, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r9v17, types: [org.telegram.messenger.gc] */
+    /* JADX WARN: Type inference failed for: r9v17, types: [org.telegram.messenger.hc] */
     /* JADX WARN: Type inference failed for: r9v3 */
     /* JADX WARN: Type inference failed for: r9v4 */
     @Override // android.view.ViewGroup, android.view.View
@@ -111,7 +111,7 @@ public final class i0 extends FrameLayout {
         n0 n0Var;
         int paddingTop;
         bn bnVar;
-        fj messageObject;
+        gj messageObject;
         l0 l0Var2 = this.y;
         final int i10 = 0;
         if (l0Var2.l) {
@@ -184,7 +184,7 @@ public final class i0 extends FrameLayout {
         } else {
             view = this.b;
         }
-        float L = this.c ? org.telegram.messenger.g0.L(bz.j() ? 120.0f : 50.0f) : this.d != null ? org.telegram.messenger.g0.L(20.0f) : org.telegram.messenger.g0.L(14.0f);
+        float L = this.c ? org.telegram.messenger.g0.L(cz.j() ? 120.0f : 50.0f) : this.d != null ? org.telegram.messenger.g0.L(20.0f) : org.telegram.messenger.g0.L(14.0f);
         final int i13 = 1;
         if (view != null) {
             view.getLocationInWindow(this.y.j);

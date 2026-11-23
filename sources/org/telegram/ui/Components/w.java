@@ -11,9 +11,9 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class w extends sa implements org.telegram.messenger.fs {
+public final class w extends sa implements org.telegram.messenger.gs {
     public final TL_aicompose.AiComposeTone T1;
     public final org.telegram.messenger.e U1;
     public final ImageView V1;
@@ -32,11 +32,11 @@ public final class w extends sa implements org.telegram.messenger.fs {
         super(context, null, false, false, 2, h6Var);
         int i7 = 0;
         this.d2 = 0;
-        org.telegram.messenger.e T1 = org.telegram.messenger.mp.u1(this.a).T1();
+        org.telegram.messenger.e T1 = org.telegram.messenger.np.u1(this.a).T1();
         this.U1 = T1;
         T1.b();
         this.T1 = aiComposeTone;
-        TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = new TL_aicompose.aiComposeToneExample[((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.U.b).c];
+        TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = new TL_aicompose.aiComposeToneExample[((org.telegram.messenger.j0) org.telegram.messenger.np.u1(this.a).A7.U.b).c];
         this.e2 = aicomposetoneexampleArr;
         if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
             aicomposetoneexampleArr[0] = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).example_english;
@@ -117,11 +117,11 @@ public final class w extends sa implements org.telegram.messenger.fs {
         d.leftMargin = i16 + i17;
         d.rightMargin += i17;
         this.b.addView(frameLayout4, d);
-        hi.e g10 = org.telegram.messenger.n10.g(24, context, h6Var, true);
+        hi.e g10 = org.telegram.messenger.o10.g(24, context, h6Var, true);
         this.b2 = g10;
-        g10.setText(org.telegram.messenger.gd.N0(e1() ? 2131754980 : 2131755005, null));
+        g10.setText(org.telegram.messenger.hd.N0(e1() ? 2131754980 : 2131755005, null));
         g10.setOnClickListener(new ah.h(this, aiComposeTone, h6Var, 20));
-        frameLayout3.addView(g10, c8.ma.e(-1, 48, org.telegram.messenger.ks.E1));
+        frameLayout3.addView(g10, c8.ma.e(-1, 48, org.telegram.messenger.ls.E1));
         this.c2.O(false);
     }
 
@@ -133,7 +133,7 @@ public final class w extends sa implements org.telegram.messenger.fs {
             }
             int L = org.telegram.messenger.g0.L((int) (Math.random() * 50.0d));
             int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.N0(2131748586, null));
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.N0(2131748586, null));
             r80 r80Var = new r80(null, L, 0, null);
             r80Var.f = org.telegram.messenger.g0.L(6.0f);
             r80Var.h = 0.5f;
@@ -169,17 +169,17 @@ public final class w extends sa implements org.telegram.messenger.fs {
         this.V1.setTranslationY(((1.0f - f10) * org.telegram.messenger.g0.L(28.0f)) + ((height - r2.getHeight()) / 2.0f) + translationY);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.b4) {
-            this.b2.setText(org.telegram.messenger.gd.N0(e1() ? 2131754980 : 2131755005, null));
+        if (i7 == org.telegram.messenger.ls.b4) {
+            this.b2.setText(org.telegram.messenger.hd.N0(e1() ? 2131754980 : 2131755005, null));
         }
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         super.dismiss();
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.b4);
+        org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.b4);
     }
 
     public final boolean e1() {
@@ -220,6 +220,6 @@ public final class w extends sa implements org.telegram.messenger.fs {
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
         super.show();
-        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.b4);
+        org.telegram.messenger.ls.f(this.a).c(this, org.telegram.messenger.ls.b4);
     }
 }

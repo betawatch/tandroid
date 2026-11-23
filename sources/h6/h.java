@@ -24,9 +24,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class h implements f6.f {
     public static final j6.b k = new j6.b("RemoteMediaClient", null);
@@ -430,7 +430,7 @@ public final class h implements f6.f {
                                             qVar2.b(jSONObject2, 0);
                                             mVar.f = qVar2;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ks.L1;
+                                            i10 = ls.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -473,7 +473,7 @@ public final class h implements f6.f {
                                             qVar22.b(jSONObject2, 0);
                                             mVar.f = qVar22;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ks.L1;
+                                            i10 = ls.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -498,7 +498,7 @@ public final class h implements f6.f {
                                             qVar222.b(jSONObject2, 0);
                                             mVar.f = qVar222;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ks.L1;
+                                            i10 = ls.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {

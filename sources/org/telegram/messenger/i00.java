@@ -1,45 +1,57 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import android.icu.text.Collator;
+import java.util.Comparator;
+import java.util.List;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i00 implements Runnable {
+public final /* synthetic */ class i00 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z00 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ i00(z00 z00Var, long j3, int i7) {
+    public /* synthetic */ i00(Object obj, int i7) {
         this.a = i7;
-        this.b = z00Var;
-        this.c = j3;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        long j3 = this.c;
-        z00 z00Var = this.b;
-        switch (i7) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int compare;
+        switch (this.a) {
             case 0:
-                ks.f(z00Var.currentAccount).k(ks.O1, Long.valueOf(j3));
-                break;
+                compare = ((Collator) this.b).compare(((t00) obj).b, ((t00) obj2).b);
+                return compare;
             default:
-                ArrayList arrayList = (ArrayList) z00Var.n.S.f(j3);
-                if (arrayList != null) {
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        fj fjVar = (fj) arrayList.get(i10);
-                        if (fjVar == null || fjVar.k == null) {
-                            arrayList2.add(null);
-                        } else {
-                            arrayList2.add(z00Var.getMessagesStorage().e0(fjVar.e1(), fj.B0(fjVar.k)));
+                dd ddVar = (dd) this.b;
+                dd ddVar2 = (dd) obj;
+                dd ddVar3 = (dd) obj2;
+                if (ddVar2 != ddVar) {
+                    if (ddVar3 != ddVar) {
+                        List list = a10.N;
+                        int indexOf = list.indexOf(ddVar2.f);
+                        int indexOf2 = list.indexOf(ddVar3.f);
+                        if (indexOf >= 0 && indexOf2 >= 0) {
+                            return indexOf - indexOf2;
+                        }
+                        if (indexOf < 0) {
+                            if (indexOf2 < 0) {
+                                int i7 = ddVar2.k;
+                                int i10 = ddVar3.k;
+                                if (i7 == i10) {
+                                    return ddVar2.a.compareTo(ddVar3.a);
+                                }
+                                if (i7 <= i10) {
+                                    if (i7 >= i10) {
+                                        return 0;
+                                    }
+                                }
+                            }
                         }
                     }
-                    g0.g3(new yf(z00Var, arrayList2, arrayList, 5));
-                    break;
+                    return 1;
                 }
-                break;
+                return -1;
         }
     }
 }

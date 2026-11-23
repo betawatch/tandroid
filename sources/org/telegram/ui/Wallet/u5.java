@@ -1,29 +1,29 @@
 package org.telegram.ui.Wallet;
 
 import android.view.View;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class u5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ fi.r a;
     public final /* synthetic */ TL_wallet.walletTransaction[] b;
-    public final /* synthetic */ fs c;
+    public final /* synthetic */ gs c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ q10 e;
+    public final /* synthetic */ r10 e;
     public final /* synthetic */ e3[] f;
     public final /* synthetic */ String[] h;
     public final /* synthetic */ boolean[] n;
 
-    public u5(fi.r rVar, TL_wallet.walletTransaction[] wallettransactionArr, t5 t5Var, int i7, q10 q10Var, e3[] e3VarArr, String[] strArr, boolean[] zArr) {
+    public u5(fi.r rVar, TL_wallet.walletTransaction[] wallettransactionArr, t5 t5Var, int i7, r10 r10Var, e3[] e3VarArr, String[] strArr, boolean[] zArr) {
         this.a = rVar;
         this.b = wallettransactionArr;
         this.c = t5Var;
         this.d = i7;
-        this.e = q10Var;
+        this.e = r10Var;
         this.f = e3VarArr;
         this.h = strArr;
         this.n = zArr;
@@ -32,25 +32,25 @@ public final class u5 implements View.OnAttachStateChangeListener {
     @Override // android.view.View.OnAttachStateChangeListener
     public final void onViewAttachedToWindow(View view) {
         this.a.a(this.b[0]);
-        fs fsVar = this.c;
-        if (fsVar != null) {
+        gs gsVar = this.c;
+        if (gsVar != null) {
             int i7 = this.d;
-            ks.f(i7).c(fsVar, ks.d4);
-            ks.f(i7).c(fsVar, ks.e4);
+            ls.f(i7).c(gsVar, ls.d4);
+            ls.f(i7).c(gsVar, ls.e4);
         }
-        q10 q10Var = this.e;
-        if (q10Var != null) {
-            this.f[0].n(new p(q10Var, this.h, this.n, 15));
+        r10 r10Var = this.e;
+        if (r10Var != null) {
+            this.f[0].n(new p(r10Var, this.h, this.n, 15));
         }
     }
 
     @Override // android.view.View.OnAttachStateChangeListener
     public final void onViewDetachedFromWindow(View view) {
-        fs fsVar = this.c;
-        if (fsVar != null) {
+        gs gsVar = this.c;
+        if (gsVar != null) {
             int i7 = this.d;
-            ks.f(i7).n(fsVar, ks.d4);
-            ks.f(i7).n(fsVar, ks.e4);
+            ls.f(i7).n(gsVar, ls.d4);
+            ls.f(i7).n(gsVar, ls.e4);
         }
     }
 }

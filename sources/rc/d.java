@@ -2,9 +2,9 @@ package rc;
 
 import ab.b0;
 import h2.j0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final int[] a = {16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15};
@@ -67,19 +67,19 @@ public abstract class d {
             char charAt = str.charAt(i7);
             if (charAt != '\t' && charAt != ' ' && charAt != '\"' && charAt != ',' && charAt != '/' && charAt != '{' && charAt != '}' && charAt != '(' && charAt != ')') {
                 switch (charAt) {
-                    case ks.v0 /* 58 */:
-                    case ks.w0 /* 59 */:
-                    case ks.x0 /* 60 */:
-                    case ks.y0 /* 61 */:
-                    case ks.z0 /* 62 */:
-                    case ks.A0 /* 63 */:
+                    case ls.v0 /* 58 */:
+                    case ls.w0 /* 59 */:
+                    case ls.x0 /* 60 */:
+                    case ls.y0 /* 61 */:
+                    case ls.z0 /* 62 */:
+                    case ls.A0 /* 63 */:
                     case '@':
                         break;
                     default:
                         switch (charAt) {
-                            case ks.c1 /* 91 */:
-                            case ks.d1 /* 92 */:
-                            case ks.e1 /* 93 */:
+                            case ls.c1 /* 91 */:
+                            case ls.d1 /* 92 */:
+                            case ls.e1 /* 93 */:
                                 break;
                             default:
                         }
@@ -189,15 +189,15 @@ public abstract class d {
                 i11 = i7;
                 return jVar.r(iArr, i10) + i11;
             case 14:
-                i11 = ks.N1;
+                i11 = ls.N1;
                 i10 = 6;
                 return jVar.r(iArr, i10) + i11;
             case 15:
-                i11 = ks.X2;
+                i11 = ls.X2;
                 i10 = 6;
                 return jVar.r(iArr, i10) + i11;
             case 16:
-                i11 = ks.g4;
+                i11 = ls.g4;
                 i10 = 7;
                 return jVar.r(iArr, i10) + i11;
             case 17:
@@ -258,7 +258,7 @@ public abstract class d {
     }
 
     public static void e(b3.j jVar, int[] iArr, j0[] j0VarArr) {
-        int r10 = jVar.r(iArr, 5) + ks.g4;
+        int r10 = jVar.r(iArr, 5) + ls.g4;
         int r11 = jVar.r(iArr, 5) + 1;
         int r12 = jVar.r(iArr, 4) + 4;
         int[] iArr2 = new int[19];
@@ -280,93 +280,93 @@ public abstract class d {
         int i10;
         int i11 = 1;
         switch (i7) {
-            case ks.g4 /* 257 */:
-            case ks.h4 /* 258 */:
-            case ks.i4 /* 259 */:
-            case ks.j4 /* 260 */:
-            case ks.k4 /* 261 */:
-            case ks.l4 /* 262 */:
-            case ks.m4 /* 263 */:
-            case ks.n4 /* 264 */:
+            case ls.g4 /* 257 */:
+            case ls.h4 /* 258 */:
+            case ls.i4 /* 259 */:
+            case ls.j4 /* 260 */:
+            case ls.k4 /* 261 */:
+            case ls.l4 /* 262 */:
+            case ls.m4 /* 263 */:
+            case ls.n4 /* 264 */:
                 return i7 - 254;
-            case ks.o4 /* 265 */:
+            case ls.o4 /* 265 */:
                 i10 = 11;
                 return jVar.r(iArr, i11) + i10;
-            case ks.p4 /* 266 */:
+            case ls.p4 /* 266 */:
                 i10 = 13;
                 return jVar.r(iArr, i11) + i10;
-            case ks.q4 /* 267 */:
+            case ls.q4 /* 267 */:
                 i10 = 15;
                 return jVar.r(iArr, i11) + i10;
-            case ks.r4 /* 268 */:
+            case ls.r4 /* 268 */:
                 i10 = 17;
                 return jVar.r(iArr, i11) + i10;
-            case ks.s4 /* 269 */:
+            case ls.s4 /* 269 */:
                 i10 = 19;
                 i11 = 2;
                 return jVar.r(iArr, i11) + i10;
-            case ks.t4 /* 270 */:
+            case ls.t4 /* 270 */:
                 i10 = 23;
                 i11 = 2;
                 return jVar.r(iArr, i11) + i10;
-            case ks.u4 /* 271 */:
+            case ls.u4 /* 271 */:
                 i10 = 27;
                 i11 = 2;
                 return jVar.r(iArr, i11) + i10;
-            case ks.v4 /* 272 */:
+            case ls.v4 /* 272 */:
                 i10 = 31;
                 i11 = 2;
                 return jVar.r(iArr, i11) + i10;
-            case ks.w4 /* 273 */:
+            case ls.w4 /* 273 */:
                 i10 = 35;
                 i11 = 3;
                 return jVar.r(iArr, i11) + i10;
-            case ks.x4 /* 274 */:
+            case ls.x4 /* 274 */:
                 i10 = 43;
                 i11 = 3;
                 return jVar.r(iArr, i11) + i10;
-            case ks.y4 /* 275 */:
+            case ls.y4 /* 275 */:
                 i10 = 51;
                 i11 = 3;
                 return jVar.r(iArr, i11) + i10;
-            case ks.z4 /* 276 */:
+            case ls.z4 /* 276 */:
                 i10 = 59;
                 i11 = 3;
                 return jVar.r(iArr, i11) + i10;
-            case ks.A4 /* 277 */:
+            case ls.A4 /* 277 */:
                 i10 = 67;
                 i11 = 4;
                 return jVar.r(iArr, i11) + i10;
-            case ks.B4 /* 278 */:
+            case ls.B4 /* 278 */:
                 i10 = 83;
                 i11 = 4;
                 return jVar.r(iArr, i11) + i10;
-            case ks.C4 /* 279 */:
+            case ls.C4 /* 279 */:
                 i10 = 99;
                 i11 = 4;
                 return jVar.r(iArr, i11) + i10;
-            case ks.D4 /* 280 */:
-                i10 = ks.A1;
+            case ls.D4 /* 280 */:
+                i10 = ls.A1;
                 i11 = 4;
                 return jVar.r(iArr, i11) + i10;
-            case ks.E4 /* 281 */:
-                i10 = ks.P1;
+            case ls.E4 /* 281 */:
+                i10 = ls.P1;
                 i11 = 5;
                 return jVar.r(iArr, i11) + i10;
-            case ks.F4 /* 282 */:
-                i10 = ks.t2;
+            case ls.F4 /* 282 */:
+                i10 = ls.t2;
                 i11 = 5;
                 return jVar.r(iArr, i11) + i10;
-            case ks.G4 /* 283 */:
-                i10 = ks.Z2;
+            case ls.G4 /* 283 */:
+                i10 = ls.Z2;
                 i11 = 5;
                 return jVar.r(iArr, i11) + i10;
-            case ks.H4 /* 284 */:
-                i10 = ks.E3;
+            case ls.H4 /* 284 */:
+                i10 = ls.E3;
                 i11 = 5;
                 return jVar.r(iArr, i11) + i10;
-            case ks.I4 /* 285 */:
-                return ks.h4;
+            case ls.I4 /* 285 */:
+                return ls.h4;
             default:
                 throw new b0(String.format("[%s] Bad literal/length code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(i7), Integer.valueOf(iArr[0])));
         }

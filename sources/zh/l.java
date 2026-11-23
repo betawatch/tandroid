@@ -9,10 +9,10 @@ import java.util.Collections;
 import kg.n0;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
 import org.telegram.messenger.q5;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ti;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -28,14 +28,14 @@ import org.telegram.ui.Components.yz;
 import ug.i1;
 import wg.q;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class l implements f5 {
     public final boolean a;
     public boolean b;
     public final g2 g;
     public final FrameLayout h;
-    public final si i;
+    public final ti i;
     public final long j;
     public final int k;
     public final boolean l;
@@ -70,7 +70,7 @@ public abstract class l implements f5 {
         this.k = currentAccount;
         this.a = v3.U(currentAccount, j3);
         this.l = z10;
-        this.i = si.b(currentAccount);
+        this.i = ti.b(currentAccount);
     }
 
     public static void k(View view, boolean z10, boolean z11) {
@@ -99,8 +99,8 @@ public abstract class l implements f5 {
             nv0 nv0Var = new nv0(g2Var.getParentActivity(), null, 16, g2Var.getResourceProvider());
             this.n = nv0Var;
             boolean z10 = this.a;
-            nv0Var.d.setText(gd.N0(z10 ? 2131747953 : 2131748002, null));
-            this.n.e.setText(gd.N0(z10 ? 2131747952 : 2131748001, null));
+            nv0Var.d.setText(hd.N0(z10 ? 2131747953 : 2131748002, null));
+            this.n.e.setText(hd.N0(z10 ? 2131747952 : 2131748001, null));
             this.n.setAnimateLayoutChange(true);
             this.n.setVisibility(8);
         }
@@ -131,8 +131,8 @@ public abstract class l implements f5 {
             if (this.B) {
                 t6.h(m6.d6, nv0Var, g2Var.getResourceProvider());
             }
-            this.o.d.setText(gd.N0(2131747974, null));
-            this.o.e.setText(gd.N0(2131745611, null));
+            this.o.d.setText(hd.N0(2131747974, null));
+            this.o.e.setText(hd.N0(2131745611, null));
             this.o.setAnimateLayoutChange(true);
             this.o.setVisibility(8);
         }
@@ -147,8 +147,8 @@ public abstract class l implements f5 {
         TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = new TLRPC.TL_messages_hideChatJoinRequest();
         tL_messages_hideChatJoinRequest.approved = z10;
         int i7 = this.k;
-        tL_messages_hideChatJoinRequest.peer = mp.u1(i7).l1(-this.j);
-        tL_messages_hideChatJoinRequest.user_id = mp.u1(i7).s1(user);
+        tL_messages_hideChatJoinRequest.peer = np.u1(i7).l1(-this.j);
+        tL_messages_hideChatJoinRequest.user_id = np.u1(i7).s1(user);
         ConnectionsManager.getInstance(i7).sendRequest(tL_messages_hideChatJoinRequest, new n0(this, tL_chatInviteImporter, z10, user, tL_messages_hideChatJoinRequest));
     }
 

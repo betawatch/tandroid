@@ -1,65 +1,125 @@
 package org.telegram.messenger;
 
-import android.view.View;
-import java.util.ArrayList;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bv implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ dv b;
-    public final /* synthetic */ ev c;
-    public final /* synthetic */ View d;
+public final class bv extends MetricAffectingSpan {
+    public final fv a;
+    public final int b;
+    public final boolean c;
+    public boolean d;
+    public int e;
 
-    public /* synthetic */ bv(dv dvVar, View view, ev evVar) {
-        this.b = dvVar;
-        this.d = view;
-        this.c = evVar;
+    public bv(fv fvVar, int i7, boolean z10) {
+        this.a = fvVar;
+        this.b = i7;
+        this.c = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                dv dvVar = this.b;
-                dvVar.getClass();
-                View view = this.d;
-                if (view != null) {
-                    view.post(new bv(dvVar, this.c, view));
+    public final void a(TextPaint textPaint) {
+        Typeface o12;
+        int L;
+        int w02;
+        int i7 = this.b;
+        int i10 = i7 & 15;
+        if (i10 == 8) {
+            o12 = Typeface.MONOSPACE;
+        } else if (i10 == 11) {
+            o12 = g0.o();
+        } else if (i10 >= 1 && i10 <= 6) {
+            o12 = TLObject.hasFlag(i7, 32) ? g0.o1("fonts/rmediumitalic.ttf") : g0.o();
+        } else if (TLObject.hasFlag(i7, 256)) {
+            o12 = Typeface.MONOSPACE;
+        } else {
+            boolean hasFlag = TLObject.hasFlag(i7, 16);
+            boolean z10 = TLObject.hasFlag(i7, 32) || i10 == 12;
+            o12 = (hasFlag && z10) ? g0.o1("fonts/rmediumitalic.ttf") : hasFlag ? g0.o() : z10 ? g0.o1("fonts/ritalic.ttf") : null;
+        }
+        if (o12 != null) {
+            textPaint.setTypeface(o12);
+        }
+        int i11 = cz.W0;
+        if (i10 != 14 || !this.d) {
+            switch (i10) {
+                case 1:
+                    L = g0.L(i11 + 4);
                     break;
-                }
-                break;
-            default:
-                dv dvVar2 = this.b;
-                ev evVar = this.c;
-                if (evVar != null) {
-                    dvVar2.getClass();
-                    fj fjVar = evVar.b;
-                    if (fjVar != null) {
-                        fjVar.N0 = true;
-                    }
-                    ArrayList arrayList = evVar.n;
-                    int size = arrayList.size();
-                    int i7 = 0;
-                    while (i7 < size) {
-                        Object obj = arrayList.get(i7);
-                        i7++;
-                        org.telegram.ui.Cells.u9 u9Var = (org.telegram.ui.Cells.u9) obj;
-                        if (u9Var instanceof dv) {
-                            ((dv) u9Var).x.clear();
-                        }
-                    }
+                case 2:
+                    L = g0.L(i11 + 2);
+                    break;
+                case 3:
+                    L = g0.L(i11 + 1);
+                    break;
+                case 4:
+                case 5:
+                case 6:
+                    L = g0.L(i11);
+                    break;
+                case 7:
+                case 13:
+                    L = g0.L(i11 - 2);
+                    break;
+                case 8:
+                    int i12 = i11 - 2;
+                    L = g0.L(Math.max(Math.min(10, i12), i12 - this.e));
+                    break;
+                case 9:
+                case 11:
+                case 12:
+                    L = g0.L(i11 - 2);
+                    break;
+                case 10:
+                    L = g0.L(i11 - 2);
+                    break;
+                case 14:
+                    L = g0.L(Math.max(8, i11 - 2));
+                    break;
+                case 15:
+                    L = g0.L(i11 - 2);
+                    break;
+                default:
+                    L = g0.L(i11);
+                    break;
+            }
+        } else {
+            L = g0.L(i11);
+        }
+        if (TLObject.hasFlag(i7, 6144)) {
+            L -= g0.L(4.0f);
+        }
+        textPaint.setTextSize(L);
+        if (!this.c) {
+            textPaint.setFlags(TLObject.setFlag(TLObject.setFlag(textPaint.getFlags(), 8, TLObject.hasFlag(i7, 64)), 16, TLObject.hasFlag(i7, 128)));
+            if (i10 != 8) {
+                fv fvVar = this.a;
+                if (i10 == 11) {
+                    w02 = org.telegram.ui.ActionBar.m6.w0(fvVar.E() ? org.telegram.ui.ActionBar.m6.Tb : org.telegram.ui.ActionBar.m6.Nd, fvVar.D);
+                } else if (i10 == 10) {
+                    w02 = org.telegram.ui.ActionBar.m6.r1(0.5f, org.telegram.ui.ActionBar.m6.w0(fvVar.E() ? org.telegram.ui.ActionBar.m6.Wc : org.telegram.ui.ActionBar.m6.Vc, fvVar.D));
                 } else {
-                    dvVar2.x.clear();
+                    w02 = org.telegram.ui.ActionBar.m6.w0(fvVar.E() ? org.telegram.ui.ActionBar.m6.Wc : org.telegram.ui.ActionBar.m6.Vc, fvVar.D);
                 }
-                this.d.invalidate();
-                break;
+                textPaint.setColor(w02);
+            }
+        }
+        if (TLObject.hasFlag(i7, TLObject.FLAG_12)) {
+            textPaint.baselineShift -= g0.L(6.0f);
+        } else if (TLObject.hasFlag(i7, 2048)) {
+            textPaint.baselineShift = g0.L(2.0f) + textPaint.baselineShift;
         }
     }
 
-    public /* synthetic */ bv(dv dvVar, ev evVar, View view) {
-        this.b = dvVar;
-        this.c = evVar;
-        this.d = view;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        a(textPaint);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        a(textPaint);
     }
 }

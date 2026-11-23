@@ -19,20 +19,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.au;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cj;
-import org.telegram.messenger.ev;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
-import org.telegram.messenger.zt;
+import org.telegram.messenger.dj;
+import org.telegram.messenger.fv;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b1 extends AccessibilityNodeProvider {
     public final r1 a;
@@ -75,25 +75,25 @@ public final class b1 extends AccessibilityNodeProvider {
         return clickableSpanArr2[i11];
     }
 
-    public final zt b(int[] iArr, int i7) {
-        ev evVar;
-        fj fjVar = this.a.Q5;
-        if (fjVar == null || (evVar = fjVar.y2) == null) {
+    public final au b(int[] iArr, int i7) {
+        fv fvVar;
+        gj gjVar = this.a.Q5;
+        if (gjVar == null || (fvVar = gjVar.y2) == null) {
             return null;
         }
-        ArrayList arrayList = evVar.g;
+        ArrayList arrayList = fvVar.g;
         int i10 = i7 - 6000;
         if (i10 < 0) {
             return null;
         }
         int i11 = 0;
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            zt ztVar = (zt) arrayList.get(i12);
-            if (ztVar.S()) {
-                int B = ztVar.B() + (ztVar.r == null ? 0 : 1) + i11;
+            au auVar = (au) arrayList.get(i12);
+            if (auVar.S()) {
+                int B = auVar.B() + (auVar.r == null ? 0 : 1) + i11;
                 if (i10 < B) {
                     iArr[0] = i10 - i11;
-                    return ztVar;
+                    return auVar;
                 }
                 i11 = B;
             }
@@ -172,7 +172,7 @@ public final class b1 extends AccessibilityNodeProvider {
         long j10;
         ArrayList arrayList4;
         TLRPC.Document document;
-        ev evVar;
+        fv fvVar;
         Spanned spanned;
         TLRPC.TL_messageReactions tL_messageReactions;
         int i12;
@@ -194,8 +194,8 @@ public final class b1 extends AccessibilityNodeProvider {
         int i16;
         s1 s1Var;
         int i17;
-        fj fjVar;
-        ev evVar2;
+        gj gjVar;
+        fv fvVar2;
         int i18;
         RectF rectF;
         ArrayList arrayList7;
@@ -217,7 +217,7 @@ public final class b1 extends AccessibilityNodeProvider {
             if (i7 == 5000) {
                 TLRPC.User user = r1Var.ja;
                 if (user != null) {
-                    obtain.setText(o10.q(user));
+                    obtain.setText(p10.q(user));
                     float f10 = r1Var.h9;
                     int i20 = (int) f10;
                     float f11 = r1Var.i9;
@@ -240,7 +240,7 @@ public final class b1 extends AccessibilityNodeProvider {
             }
             if (i7 >= 6000) {
                 int[] iArr2 = {0};
-                zt b10 = b(iArr2, i7);
+                au b10 = b(iArr2, i7);
                 if (b10 != null) {
                     obtain.setText(b10.x(iArr2[0]));
                     b10.w(iArr2[0], rect);
@@ -297,19 +297,19 @@ public final class b1 extends AccessibilityNodeProvider {
                             }
                             Object obj = arrayList10.get(i22);
                             i22++;
-                            cj cjVar = (cj) obj;
-                            int length = cjVar.e.getText().length();
-                            int i23 = cjVar.n;
+                            dj djVar = (dj) obj;
+                            int length = djVar.e.getText().length();
+                            int i23 = djVar.n;
                             ArrayList arrayList11 = arrayList10;
                             int i24 = X1[0];
                             if (i23 <= i24) {
                                 int i25 = length + i23;
                                 int i26 = X1[1];
                                 if (i25 >= i26) {
-                                    cjVar.e.getSelectionPath(i24 - i23, i26 - i23, path);
+                                    djVar.e.getSelectionPath(i24 - i23, i26 - i23, path);
                                     path.computeBounds(rectF2, true);
                                     rect.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                                    rect.offset(0, (int) cjVar.p(r1Var.m3.e, r1Var.ib));
+                                    rect.offset(0, (int) djVar.p(r1Var.m3.e, r1Var.ib));
                                     rect.offset(r1Var.o0, r1Var.u0);
                                     obtain.setBoundsInParent(rect);
                                     if (sparseArray.get(i7) == null) {
@@ -351,18 +351,18 @@ public final class b1 extends AccessibilityNodeProvider {
                             }
                             Object obj2 = arrayList12.get(i27);
                             i27++;
-                            cj cjVar2 = (cj) obj2;
-                            int length2 = cjVar2.e.getText().length();
-                            int i28 = cjVar2.n;
+                            dj djVar2 = (dj) obj2;
+                            int length2 = djVar2.e.getText().length();
+                            int i28 = djVar2.n;
                             int i29 = X12[0];
                             if (i28 <= i29) {
                                 int i30 = length2 + i28;
                                 int i31 = X12[1];
                                 if (i30 >= i31) {
-                                    cjVar2.e.getSelectionPath(i29 - i28, i31 - i28, path);
+                                    djVar2.e.getSelectionPath(i29 - i28, i31 - i28, path);
                                     path.computeBounds(rectF2, true);
                                     rect.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                                    rect.offset(0, (int) cjVar2.p(r1Var.Q5.B2, r1Var.ib));
+                                    rect.offset(0, (int) djVar2.p(r1Var.Q5.B2, r1Var.ib));
                                     rect.offset(r1Var.o0, r1Var.u0);
                                     obtain.setBoundsInParent(rect);
                                     if (sparseArray.get(i7) == null) {
@@ -431,7 +431,7 @@ public final class b1 extends AccessibilityNodeProvider {
                                 str2 = "AccDescrQuizIncorrectAnswer";
                                 i11 = 2131754793;
                             }
-                            sb2.append(gd.N0(i11, str2));
+                            sb2.append(hd.N0(i11, str2));
                         }
                     } else {
                         obtain.setClassName("android.widget.Button");
@@ -458,7 +458,7 @@ public final class b1 extends AccessibilityNodeProvider {
             if (i7 == 495) {
                 obtain.setClassName("android.widget.Button");
                 obtain.setEnabled(true);
-                obtain.setText(gd.M0(2131754794));
+                obtain.setText(hd.M0(2131754794));
                 obtain.addAction(16);
                 rect.set(r1Var.o5 - org.telegram.messenger.g0.L(8.0f), r1Var.p5 - org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(32.0f) + r1Var.o5, org.telegram.messenger.g0.L(32.0f) + r1Var.p5);
                 obtain.setBoundsInParent(rect);
@@ -495,9 +495,9 @@ public final class b1 extends AccessibilityNodeProvider {
                         obtain.setClassName("android.widget.ImageButton");
                         obtain.setEnabled(true);
                         if (r1Var.I2(r1Var.Q5)) {
-                            obtain.setContentDescription(gd.N0(2131754818, "AccDescrOpenChat"));
+                            obtain.setContentDescription(hd.N0(2131754818, "AccDescrOpenChat"));
                         } else {
-                            obtain.setContentDescription(gd.N0(2131745263, "ShareFile"));
+                            obtain.setContentDescription(hd.N0(2131745263, "ShareFile"));
                         }
                         obtain.addAction(16);
                         int i38 = (int) r1Var.R8;
@@ -565,13 +565,13 @@ public final class b1 extends AccessibilityNodeProvider {
                         obtain.setClassName("android.widget.Button");
                         obtain.setEnabled(true);
                         int repliesCount = r1Var.getRepliesCount();
-                        fj fjVar2 = r1Var.Q5;
-                        if (fjVar2 == null || fjVar2.P5() || r1Var.Q5.G2()) {
-                            S = (r1Var.u6 || repliesCount <= 0) ? null : gd.S(null, repliesCount);
+                        gj gjVar2 = r1Var.Q5;
+                        if (gjVar2 == null || gjVar2.P5() || r1Var.Q5.G2()) {
+                            S = (r1Var.u6 || repliesCount <= 0) ? null : hd.S(null, repliesCount);
                         } else if (r1Var.u6) {
-                            S = gd.N0(2131743309, "ViewInChat");
+                            S = hd.N0(2131743307, "ViewInChat");
                         } else {
-                            S = repliesCount == 0 ? gd.N0(2131748815, "LeaveAComment") : gd.G(repliesCount, "CommentsCount", new Object[0]);
+                            S = repliesCount == 0 ? hd.N0(2131748815, "LeaveAComment") : hd.G(repliesCount, "CommentsCount", new Object[0]);
                         }
                         if (S != null) {
                             obtain.setText(S);
@@ -596,10 +596,10 @@ public final class b1 extends AccessibilityNodeProvider {
                             str = "AccActionOpenTranscription";
                             i10 = 2131754931;
                         }
-                        obtain.setText(gd.N0(i10, str));
+                        obtain.setText(hd.N0(i10, str));
                         obtain.addAction(16);
                         if (r1Var.J4 != null) {
-                            rect.set((int) r1Var.D1().b, (int) r1Var.D1().c, (int) (r1Var.D1().b + r1Var.J4.A()), (int) (r1Var.D1().c + r1Var.J4.h()));
+                            rect.set((int) r1Var.D1().b, (int) r1Var.D1().c, (int) (r1Var.D1().b + r1Var.J4.B()), (int) (r1Var.D1().c + r1Var.J4.h()));
                         }
                         obtain.setBoundsInParent(rect);
                         z10 = true;
@@ -668,15 +668,15 @@ public final class b1 extends AccessibilityNodeProvider {
         }
         AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain(r1Var);
         r1Var.onInitializeAccessibilityNodeInfo(obtain2);
-        fj fjVar3 = r1Var.Q5;
-        if (fjVar3 != null && fjVar3.N3()) {
-            fj fjVar4 = r1Var.Q5;
-            if (!fjVar4.r1 && fjVar4.F4()) {
+        gj gjVar3 = r1Var.Q5;
+        if (gjVar3 != null && gjVar3.N3()) {
+            gj gjVar4 = r1Var.Q5;
+            if (!gjVar4.r1 && gjVar4.F4()) {
                 z13 = true;
-                fj fjVar5 = r1Var.Q5;
-                boolean z16 = fjVar5 == null && fjVar5.R2();
-                fj fjVar6 = r1Var.Q5;
-                j3 = fjVar6 == null ? fjVar6.H0 : 0L;
+                gj gjVar5 = r1Var.Q5;
+                boolean z16 = gjVar5 == null && gjVar5.R2();
+                gj gjVar6 = r1Var.Q5;
+                j3 = gjVar6 == null ? gjVar6.H0 : 0L;
                 if (r1Var.P2 == null && r1Var.Q2 == z13 && r1Var.R2 == z16) {
                     arrayList2 = arrayList8;
                     arrayList3 = arrayList9;
@@ -696,15 +696,15 @@ public final class b1 extends AccessibilityNodeProvider {
                         if (collectionItemInfo != null) {
                             accessibilityNodeInfo2.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(collectionItemInfo.getRowIndex(), 1, 0, 1, false));
                         }
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, gd.N0(2131754936, "AccActionMessageOptions")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.N0(2131754936, "AccActionMessageOptions")));
                         int iconForCurrentState = r1Var.getIconForCurrentState();
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState != 0 ? iconForCurrentState != 1 ? iconForCurrentState != 2 ? iconForCurrentState != 3 ? iconForCurrentState != 5 ? r1Var.Q5.D == 16 ? gd.N0(2131752621, "CallAgain") : null : gd.N0(2131754933, "AccActionOpenFile") : gd.N0(2131754941, "AccActionCancelDownload") : gd.N0(2131754938, "AccActionDownload") : gd.N0(2131754930, "AccActionPause") : gd.N0(2131754929, "AccActionPlay")));
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, gd.N0(2131754937, "AccActionEnterSelectionMode")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState != 0 ? iconForCurrentState != 1 ? iconForCurrentState != 2 ? iconForCurrentState != 3 ? iconForCurrentState != 5 ? r1Var.Q5.D == 16 ? hd.N0(2131752621, "CallAgain") : null : hd.N0(2131754933, "AccActionOpenFile") : hd.N0(2131754941, "AccActionCancelDownload") : hd.N0(2131754938, "AccActionDownload") : hd.N0(2131754930, "AccActionPause") : hd.N0(2131754929, "AccActionPlay")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.N0(2131754937, "AccActionEnterSelectionMode")));
                         if (r1Var.getMiniIconForCurrentState() == 2) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_small_button, gd.N0(2131754938, "AccActionDownload")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_small_button, hd.N0(2131754938, "AccActionDownload")));
                         }
                         if (!r1Var.J8 || r1Var.s8) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, gd.N0(2131744087, "SummaryTitle")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.N0(2131744085, "SummaryTitle")));
                         }
                         arrayList6 = r1Var.Q5.B2;
                         if (arrayList6 != null) {
@@ -716,8 +716,8 @@ public final class b1 extends AccessibilityNodeProvider {
                                 }
                                 Object obj3 = arrayList6.get(i44);
                                 i44++;
-                                if (((cj) obj3).O) {
-                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_copy_code, gd.N0(2131751753, "CopyCode")));
+                                if (((dj) obj3).O) {
+                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_copy_code, hd.N0(2131751753, "CopyCode")));
                                     break;
                                 }
                             }
@@ -809,13 +809,13 @@ public final class b1 extends AccessibilityNodeProvider {
                         if (r1Var.Q7 != null) {
                             accessibilityNodeInfo2.addChild(r1Var, 497);
                         }
-                        fjVar = r1Var.Q5;
-                        if (fjVar != null && (evVar2 = fjVar.y2) != null) {
+                        gjVar = r1Var.Q5;
+                        if (gjVar != null && (fvVar2 = gjVar.y2) != null) {
                             int i49 = 0;
-                            for (i18 = 0; i18 < evVar2.g.size(); i18++) {
-                                zt ztVar = (zt) evVar2.g.get(i18);
-                                if (ztVar.S()) {
-                                    int B = ztVar.B() + (ztVar.r == null ? 0 : 1);
+                            for (i18 = 0; i18 < fvVar2.g.size(); i18++) {
+                                au auVar = (au) fvVar2.g.get(i18);
+                                if (auVar.S()) {
+                                    int B = auVar.B() + (auVar.r == null ? 0 : 1);
                                     for (int i50 = 0; i50 < B; i50++) {
                                         accessibilityNodeInfo2.addChild(r1Var, i49 + 6000 + i50);
                                     }
@@ -824,7 +824,7 @@ public final class b1 extends AccessibilityNodeProvider {
                             }
                         }
                         if (staticLayoutArr[0] != null && staticLayoutArr[1] != null) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, gd.N0(2131754932, "AccActionOpenForwardedOrigin")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, hd.N0(2131754932, "AccActionOpenForwardedOrigin")));
                         }
                         if (r1Var.k1 && r1Var.getBackground() == null) {
                             return accessibilityNodeInfo2;
@@ -843,7 +843,7 @@ public final class b1 extends AccessibilityNodeProvider {
                     j10 = j3;
                     arrayList4 = arrayList2;
                 } else {
-                    spannableStringBuilder.append((CharSequence) o10.q(r1Var.ja));
+                    spannableStringBuilder.append((CharSequence) p10.q(r1Var.ja));
                     staticLayoutArr = staticLayoutArr2;
                     accessibilityNodeInfo = obtain2;
                     arrayList4 = arrayList2;
@@ -853,7 +853,7 @@ public final class b1 extends AccessibilityNodeProvider {
                         j10 = j3;
                     } else if (r1Var.Z8) {
                         j10 = j3;
-                        spannableStringBuilder.append(' ').append((CharSequence) gd.Z(r1Var.X8 ? 2131754726 : 2131754725, adminAccessibilityText));
+                        spannableStringBuilder.append(' ').append((CharSequence) hd.Z(r1Var.X8 ? 2131754726 : 2131754725, adminAccessibilityText));
                     } else {
                         j10 = j3;
                         spannableStringBuilder.append((CharSequence) ", ").append(adminAccessibilityText);
@@ -875,26 +875,26 @@ public final class b1 extends AccessibilityNodeProvider {
                 if (document != null && r1Var.M1 == 1) {
                     s5 = org.telegram.messenger.w7.s(document);
                     if (s5.indexOf(46) != -1) {
-                        spannableStringBuilder.append((CharSequence) gd.Z(2131754889, s5.substring(s5.lastIndexOf(46) + 1).toUpperCase(Locale.ROOT)));
+                        spannableStringBuilder.append((CharSequence) hd.Z(2131754889, s5.substring(s5.lastIndexOf(46) + 1).toUpperCase(Locale.ROOT)));
                     }
                 }
-                evVar = r1Var.Q5.y2;
-                if (evVar == null && !evVar.g.isEmpty()) {
+                fvVar = r1Var.Q5.y2;
+                if (fvVar == null && !fvVar.g.isEmpty()) {
                     ArrayList arrayList14 = r1Var.Q5.y2.g;
                     int size7 = arrayList14.size();
                     int i52 = 0;
                     while (i52 < size7) {
                         Object obj7 = arrayList14.get(i52);
                         i52++;
-                        zt ztVar2 = (zt) obj7;
-                        if (ztVar2.S()) {
+                        au auVar2 = (au) obj7;
+                        if (auVar2.S()) {
                             int length3 = spannableStringBuilder.length();
                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                            ztVar2.k(spannableStringBuilder2);
+                            auVar2.k(spannableStringBuilder2);
                             ArrayList arrayList15 = arrayList14;
-                            CharSequence y10 = ztVar2.y();
+                            CharSequence y10 = auVar2.y();
                             int i53 = size7;
-                            CharSequence text = (!ztVar2.x || (staticLayout = ztVar2.d) == null) ? null : staticLayout.getText();
+                            CharSequence text = (!auVar2.x || (staticLayout = auVar2.d) == null) ? null : staticLayout.getText();
                             if (!TextUtils.isEmpty(text)) {
                                 spannableStringBuilder.append(text);
                                 if (!TextUtils.isEmpty(y10) || spannableStringBuilder2.length() > 0) {
@@ -933,7 +933,7 @@ public final class b1 extends AccessibilityNodeProvider {
                                     spanned = spanned2;
                                 } else {
                                     spanned = spanned2;
-                                    spannableStringBuilder3.insert(spanStart, (CharSequence) (((Object) (TextUtils.isEmpty(gVar.a) ? gd.M0(2131754897) : gd.Z(2131754896, cj.b(gVar.a)))) + ". "));
+                                    spannableStringBuilder3.insert(spanStart, (CharSequence) (((Object) (TextUtils.isEmpty(gVar.a) ? hd.M0(2131754897) : hd.Z(2131754896, dj.b(gVar.a)))) + ". "));
                                 }
                                 i54++;
                                 length4 = i55;
@@ -947,21 +947,21 @@ public final class b1 extends AccessibilityNodeProvider {
                 if (r1Var.N1 != null && (((i14 = r1Var.M1) == 1 || i14 == 2 || i14 == 4) && r1Var.O3 == 1 && r1Var.A3 != null)) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     boolean o4 = r1Var.Q5.o4();
-                    spannableStringBuilder.append((CharSequence) gd.Y(!o4 ? 2131754741 : 2131754888, !o4 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(r1Var.Q5.H0, false, false), org.telegram.messenger.g0.i0(r1Var.A1, false, false)));
+                    spannableStringBuilder.append((CharSequence) hd.Y(!o4 ? 2131754741 : 2131754888, !o4 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(r1Var.Q5.H0, false, false), org.telegram.messenger.g0.i0(r1Var.A1, false, false)));
                 }
                 if (!r1Var.Q5.I3()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) gd.Y(2131754831, "AccDescrMusicInfo", r1Var.Q5.w1(true), r1Var.Q5.y1(true)));
+                    spannableStringBuilder.append((CharSequence) hd.Y(2131754831, "AccDescrMusicInfo", r1Var.Q5.w1(true), r1Var.Q5.y1(true)));
                     spannableStringBuilder.append((CharSequence) ", ");
-                    spannableStringBuilder.append((CharSequence) gd.z((int) r1Var.Q5.L0()));
+                    spannableStringBuilder.append((CharSequence) hd.z((int) r1Var.Q5.L0()));
                 } else if (r1Var.Q5.P4() || r1Var.yb) {
                     spannableStringBuilder.append((CharSequence) ", ");
-                    spannableStringBuilder.append((CharSequence) gd.z((int) r1Var.Q5.L0()));
+                    spannableStringBuilder.append((CharSequence) hd.z((int) r1Var.Q5.L0()));
                     spannableStringBuilder.append((CharSequence) ", ");
                     if (r1Var.Q5.R2()) {
-                        spannableStringBuilder.append((CharSequence) gd.N0(2131754837, "AccDescrMsgNotPlayed"));
+                        spannableStringBuilder.append((CharSequence) hd.N0(2131754837, "AccDescrMsgNotPlayed"));
                     } else {
-                        spannableStringBuilder.append((CharSequence) gd.N0(2131754836, "AccDescrMsgPlayed"));
+                        spannableStringBuilder.append((CharSequence) hd.N0(2131754836, "AccDescrMsgPlayed"));
                     }
                 }
                 if (r1Var.j5 != null) {
@@ -969,17 +969,17 @@ public final class b1 extends AccessibilityNodeProvider {
                     spannableStringBuilder.append((CharSequence) r1Var.j5.question.text);
                     spannableStringBuilder.append((CharSequence) ", ");
                     if (r1Var.X4) {
-                        N0 = gd.N0(2131750678, "FinalResults");
+                        N0 = hd.N0(2131750678, "FinalResults");
                     } else {
                         TLRPC.Poll poll2 = r1Var.j5;
-                        N0 = poll2.quiz ? poll2.public_voters ? gd.N0(2131746249, "QuizPoll") : gd.N0(2131754245, "AnonymousQuizPoll") : poll2.public_voters ? gd.N0(2131746392, "PublicPoll") : gd.N0(2131754246, "AnonymousPoll");
+                        N0 = poll2.quiz ? poll2.public_voters ? hd.N0(2131746249, "QuizPoll") : hd.N0(2131754245, "AnonymousQuizPoll") : poll2.public_voters ? hd.N0(2131746392, "PublicPoll") : hd.N0(2131754246, "AnonymousPoll");
                     }
                     spannableStringBuilder.append((CharSequence) N0);
                 }
                 if (r1Var.N1 != null) {
                     if (r1Var.M1 == 4) {
                         spannableStringBuilder.append((CharSequence) ", ");
-                        spannableStringBuilder.append((CharSequence) gd.z((int) r1Var.Q5.L0()));
+                        spannableStringBuilder.append((CharSequence) hd.z((int) r1Var.Q5.L0()));
                     }
                     if (r1Var.O3 == 0 || r1Var.M1 == 1) {
                         spannableStringBuilder.append((CharSequence) ", ");
@@ -989,25 +989,25 @@ public final class b1 extends AccessibilityNodeProvider {
                 if (!r1Var.Q5.T4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     spannableStringBuilder.append(r1Var.Q5.i2());
-                } else if (fj.n1(r1Var.Q5.k) != null && !TextUtils.isEmpty(r1Var.Q5.z)) {
+                } else if (gj.n1(r1Var.Q5.k) != null && !TextUtils.isEmpty(r1Var.Q5.z)) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     spannableStringBuilder.append(r1Var.Q5.z);
                 }
                 if (r1Var.Q5.N3()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     StringBuilder sb5 = new StringBuilder();
-                    c0.u("TodayAt", 2131743871, sb5, " ");
+                    c0.u("TodayAt", 2131743869, sb5, " ");
                     sb5.append((Object) r1Var.E9);
-                    spannableStringBuilder.append((CharSequence) gd.Y(2131754788, "AccDescrReceivedDate", sb5.toString()));
+                    spannableStringBuilder.append((CharSequence) hd.Y(2131754788, "AccDescrReceivedDate", sb5.toString()));
                 } else if (r1Var.Q5.q4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     if (r1Var.Q5.r1) {
-                        spannableStringBuilder.append((CharSequence) gd.Y(2131754780, "AccDescrScheduledDate", r1Var.E9));
+                        spannableStringBuilder.append((CharSequence) hd.Y(2131754780, "AccDescrScheduledDate", r1Var.E9));
                     } else {
                         StringBuilder sb6 = new StringBuilder();
-                        c0.u("TodayAt", 2131743871, sb6, " ");
+                        c0.u("TodayAt", 2131743869, sb6, " ");
                         sb6.append((Object) r1Var.E9);
-                        spannableStringBuilder.append((CharSequence) gd.Y(2131754764, "AccDescrSentDate", sb6.toString()));
+                        spannableStringBuilder.append((CharSequence) hd.Y(2131754764, "AccDescrSentDate", sb6.toString()));
                         spannableStringBuilder.append((CharSequence) ", ");
                         if (r1Var.Q5.F4()) {
                             str3 = "AccDescrMsgUnread";
@@ -1016,11 +1016,11 @@ public final class b1 extends AccessibilityNodeProvider {
                             str3 = "AccDescrMsgRead";
                             i13 = 2131754835;
                         }
-                        spannableStringBuilder.append((CharSequence) gd.N0(i13, str3));
+                        spannableStringBuilder.append((CharSequence) hd.N0(i13, str3));
                     }
                 } else if (r1Var.Q5.o4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) gd.N0(2131754834, "AccDescrMsgSending"));
+                    spannableStringBuilder.append((CharSequence) hd.N0(2131754834, "AccDescrMsgSending"));
                     RadialProgress2 radialProgress2 = r1Var.Q0;
                     float f15 = (radialProgress2.c ? radialProgress2.j : radialProgress2.i).w;
                     if (f15 > 0.0f) {
@@ -1028,11 +1028,11 @@ public final class b1 extends AccessibilityNodeProvider {
                     }
                 } else if (r1Var.Q5.n4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) gd.N0(2131754833, "AccDescrMsgSendingError"));
+                    spannableStringBuilder.append((CharSequence) hd.N0(2131754833, "AccDescrMsgSendingError"));
                 }
                 if (r1Var.getRepliesCount() > 0 && !r1Var.e2()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) gd.G(r1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) hd.G(r1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
                 }
                 tL_messageReactions = r1Var.Q5.k.reactions;
                 if (tL_messageReactions != null && (arrayList5 = tL_messageReactions.results) != null) {
@@ -1048,23 +1048,23 @@ public final class b1 extends AccessibilityNodeProvider {
                             if (arrayList16 == null || arrayList16.size() != 1 || (messagePeerReaction = r1Var.Q5.k.reactions.recent_reactions.get(0)) == null) {
                                 z14 = false;
                             } else {
-                                TLRPC.User c22 = mp.u1(r1Var.a6).c2(Long.valueOf(fj.B1(messagePeerReaction.peer_id)));
-                                z14 = o10.C(c22);
+                                TLRPC.User c22 = np.u1(r1Var.a6).c2(Long.valueOf(gj.B1(messagePeerReaction.peer_id)));
+                                z14 = p10.C(c22);
                                 if (c22 != null) {
-                                    str4 = o10.j(c22);
+                                    str4 = p10.j(c22);
                                 }
                             }
                             if (z14) {
-                                spannableStringBuilder.append((CharSequence) gd.Y(2131754724, "AccDescrYouReactedWith", str5));
+                                spannableStringBuilder.append((CharSequence) hd.Y(2131754724, "AccDescrYouReactedWith", str5));
                             } else {
-                                spannableStringBuilder.append((CharSequence) gd.Y(2131754790, "AccDescrReactedWith", str4, str5));
+                                spannableStringBuilder.append((CharSequence) hd.Y(2131754790, "AccDescrReactedWith", str4, str5));
                             }
                         } else if (i56 > 1) {
                             spannableStringBuilder.append((CharSequence) "\n");
-                            spannableStringBuilder.append((CharSequence) gd.G(reactionCount.count, "AccDescrNumberOfPeopleReactions", str5));
+                            spannableStringBuilder.append((CharSequence) hd.G(reactionCount.count, "AccDescrNumberOfPeopleReactions", str5));
                         }
                     } else {
-                        spannableStringBuilder.append((CharSequence) gd.N0(2131746191, "Reactions")).append((CharSequence) ": ");
+                        spannableStringBuilder.append((CharSequence) hd.N0(2131746191, "Reactions")).append((CharSequence) ": ");
                         int size8 = r1Var.Q5.k.reactions.results.size();
                         int i57 = 0;
                         while (i57 < size8) {
@@ -1082,7 +1082,7 @@ public final class b1 extends AccessibilityNodeProvider {
                 if ((r1Var.Q5.k.flags & 1024) == 0) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     i12 = 0;
-                    spannableStringBuilder.append((CharSequence) gd.G(r1Var.Q5.k.views, "AccDescrNumberOfViews", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) hd.G(r1Var.Q5.k.views, "AccDescrNumberOfViews", new Object[0]));
                 } else {
                     i12 = 0;
                 }
@@ -1103,15 +1103,15 @@ public final class b1 extends AccessibilityNodeProvider {
                 collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
                 if (collectionItemInfo != null) {
                 }
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, gd.N0(2131754936, "AccActionMessageOptions")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.N0(2131754936, "AccActionMessageOptions")));
                 int iconForCurrentState2 = r1Var.getIconForCurrentState();
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState2 != 0 ? iconForCurrentState2 != 1 ? iconForCurrentState2 != 2 ? iconForCurrentState2 != 3 ? iconForCurrentState2 != 5 ? r1Var.Q5.D == 16 ? gd.N0(2131752621, "CallAgain") : null : gd.N0(2131754933, "AccActionOpenFile") : gd.N0(2131754941, "AccActionCancelDownload") : gd.N0(2131754938, "AccActionDownload") : gd.N0(2131754930, "AccActionPause") : gd.N0(2131754929, "AccActionPlay")));
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, gd.N0(2131754937, "AccActionEnterSelectionMode")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState2 != 0 ? iconForCurrentState2 != 1 ? iconForCurrentState2 != 2 ? iconForCurrentState2 != 3 ? iconForCurrentState2 != 5 ? r1Var.Q5.D == 16 ? hd.N0(2131752621, "CallAgain") : null : hd.N0(2131754933, "AccActionOpenFile") : hd.N0(2131754941, "AccActionCancelDownload") : hd.N0(2131754938, "AccActionDownload") : hd.N0(2131754930, "AccActionPause") : hd.N0(2131754929, "AccActionPlay")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.N0(2131754937, "AccActionEnterSelectionMode")));
                 if (r1Var.getMiniIconForCurrentState() == 2) {
                 }
                 if (!r1Var.J8) {
                 }
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, gd.N0(2131744087, "SummaryTitle")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.N0(2131744085, "SummaryTitle")));
                 arrayList6 = r1Var.Q5.B2;
                 if (arrayList6 != null) {
                 }
@@ -1159,14 +1159,14 @@ public final class b1 extends AccessibilityNodeProvider {
                 accessibilityNodeInfo2.addChild(r1Var, 498);
                 if (r1Var.Q7 != null) {
                 }
-                fjVar = r1Var.Q5;
-                if (fjVar != null) {
+                gjVar = r1Var.Q5;
+                if (gjVar != null) {
                     int i492 = 0;
-                    while (i18 < evVar2.g.size()) {
+                    while (i18 < fvVar2.g.size()) {
                     }
                 }
                 if (staticLayoutArr[0] != null) {
-                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, gd.N0(2131754932, "AccActionOpenForwardedOrigin")));
+                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, hd.N0(2131754932, "AccActionOpenForwardedOrigin")));
                 }
                 if (r1Var.k1) {
                 }
@@ -1175,11 +1175,11 @@ public final class b1 extends AccessibilityNodeProvider {
             }
         }
         z13 = false;
-        fj fjVar52 = r1Var.Q5;
-        if (fjVar52 == null) {
+        gj gjVar52 = r1Var.Q5;
+        if (gjVar52 == null) {
         }
-        fj fjVar62 = r1Var.Q5;
-        if (fjVar62 == null) {
+        gj gjVar62 = r1Var.Q5;
+        if (gjVar62 == null) {
         }
         if (r1Var.P2 == null) {
         }
@@ -1200,15 +1200,15 @@ public final class b1 extends AccessibilityNodeProvider {
             if (s5.indexOf(46) != -1) {
             }
         }
-        evVar = r1Var.Q5.y2;
-        if (evVar == null) {
+        fvVar = r1Var.Q5.y2;
+        if (fvVar == null) {
         }
         if (!TextUtils.isEmpty(r1Var.Q5.v)) {
         }
         if (r1Var.N1 != null) {
             spannableStringBuilder.append((CharSequence) "\n");
             boolean o42 = r1Var.Q5.o4();
-            spannableStringBuilder.append((CharSequence) gd.Y(!o42 ? 2131754741 : 2131754888, !o42 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(r1Var.Q5.H0, false, false), org.telegram.messenger.g0.i0(r1Var.A1, false, false)));
+            spannableStringBuilder.append((CharSequence) hd.Y(!o42 ? 2131754741 : 2131754888, !o42 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(r1Var.Q5.H0, false, false), org.telegram.messenger.g0.i0(r1Var.A1, false, false)));
         }
         if (!r1Var.Q5.I3()) {
         }
@@ -1222,7 +1222,7 @@ public final class b1 extends AccessibilityNodeProvider {
         }
         if (r1Var.getRepliesCount() > 0) {
             spannableStringBuilder.append((CharSequence) "\n");
-            spannableStringBuilder.append((CharSequence) gd.G(r1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
+            spannableStringBuilder.append((CharSequence) hd.G(r1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
         }
         tL_messageReactions = r1Var.Q5.k.reactions;
         if (tL_messageReactions != null) {
@@ -1245,15 +1245,15 @@ public final class b1 extends AccessibilityNodeProvider {
         collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
         if (collectionItemInfo != null) {
         }
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, gd.N0(2131754936, "AccActionMessageOptions")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.N0(2131754936, "AccActionMessageOptions")));
         int iconForCurrentState22 = r1Var.getIconForCurrentState();
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState22 != 0 ? iconForCurrentState22 != 1 ? iconForCurrentState22 != 2 ? iconForCurrentState22 != 3 ? iconForCurrentState22 != 5 ? r1Var.Q5.D == 16 ? gd.N0(2131752621, "CallAgain") : null : gd.N0(2131754933, "AccActionOpenFile") : gd.N0(2131754941, "AccActionCancelDownload") : gd.N0(2131754938, "AccActionDownload") : gd.N0(2131754930, "AccActionPause") : gd.N0(2131754929, "AccActionPlay")));
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, gd.N0(2131754937, "AccActionEnterSelectionMode")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState22 != 0 ? iconForCurrentState22 != 1 ? iconForCurrentState22 != 2 ? iconForCurrentState22 != 3 ? iconForCurrentState22 != 5 ? r1Var.Q5.D == 16 ? hd.N0(2131752621, "CallAgain") : null : hd.N0(2131754933, "AccActionOpenFile") : hd.N0(2131754941, "AccActionCancelDownload") : hd.N0(2131754938, "AccActionDownload") : hd.N0(2131754930, "AccActionPause") : hd.N0(2131754929, "AccActionPlay")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.N0(2131754937, "AccActionEnterSelectionMode")));
         if (r1Var.getMiniIconForCurrentState() == 2) {
         }
         if (!r1Var.J8) {
         }
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, gd.N0(2131744087, "SummaryTitle")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.N0(2131744085, "SummaryTitle")));
         arrayList6 = r1Var.Q5.B2;
         if (arrayList6 != null) {
         }
@@ -1289,8 +1289,8 @@ public final class b1 extends AccessibilityNodeProvider {
         accessibilityNodeInfo2.addChild(r1Var, 498);
         if (r1Var.Q7 != null) {
         }
-        fjVar = r1Var.Q5;
-        if (fjVar != null) {
+        gjVar = r1Var.Q5;
+        if (gjVar != null) {
         }
         if (staticLayoutArr[0] != null) {
         }
@@ -1335,7 +1335,7 @@ public final class b1 extends AccessibilityNodeProvider {
                 }
             } else if (i7 >= 6000) {
                 int[] iArr = {0};
-                zt b10 = b(iArr, i7);
+                au b10 = b(iArr, i7);
                 if (b10 != null) {
                     int i11 = iArr[0];
                     CheckBoxBase checkBoxBase = b10.r;
@@ -1354,7 +1354,7 @@ public final class b1 extends AccessibilityNodeProvider {
                             objArr = 1;
                         }
                         if (objArr != null) {
-                            D = gd.N0(b10.G() ? 2131754902 : 2131754829, null);
+                            D = hd.N0(b10.G() ? 2131754902 : 2131754829, null);
                         } else {
                             D = b10.D();
                         }
@@ -1482,7 +1482,7 @@ public final class b1 extends AccessibilityNodeProvider {
                                 return true;
                             }
                         } else if (i7 == 493 && (c1Var = r1Var.J4) != null) {
-                            c1Var.o();
+                            c1Var.p();
                             return true;
                         }
                     }

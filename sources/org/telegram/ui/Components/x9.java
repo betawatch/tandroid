@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x9 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -25,8 +25,8 @@ public final /* synthetic */ class x9 implements View.OnClickListener {
                 y9Var.w = i10;
                 if (i10 >= 10) {
                     y9Var.setVisibility(8);
-                    org.telegram.messenger.bz.j1 = null;
-                    org.telegram.messenger.bz.y();
+                    org.telegram.messenger.cz.j1 = null;
+                    org.telegram.messenger.cz.y();
                     break;
                 }
                 break;

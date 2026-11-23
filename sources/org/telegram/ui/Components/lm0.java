@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lm0 extends i30 {
     public final /* synthetic */ org.telegram.ui.kw f0;
@@ -18,7 +18,7 @@ public final class lm0 extends i30 {
         super.O(z10);
         hm0 hm0Var = this.f0.v0;
         hm0Var.e(false, z10);
-        hm0Var.d.setText(org.telegram.messenger.gd.N0(2131747974, null));
+        hm0Var.d.setText(org.telegram.messenger.hd.N0(2131747974, null));
         hm0Var.e.setVisibility(8);
     }
 }

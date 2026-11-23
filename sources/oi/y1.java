@@ -5,17 +5,17 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class y1 extends Drawable {
     public boolean c;
     public final Paint a = new Paint(1);
     public final org.telegram.ui.Components.d6 b = new org.telegram.ui.Components.d6(new kg.i0(this, 29), 420, nr.h, 0);
-    public int d = ks.e4;
+    public int d = ls.e4;
 
     public y1(int i7) {
         a(i7);

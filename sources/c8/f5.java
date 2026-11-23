@@ -1,8 +1,8 @@
 package c8;
 
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class f5 implements na.d {
     public static final f5 a = new f5();
@@ -104,36 +104,36 @@ public final class f5 implements na.d {
     public static final na.c S0 = new na.c("onDeviceDocumentCroppingLoadLogEvent", i5.c.p(a8.p0.x(w.class, new s(99))));
     public static final na.c T0 = new na.c("onDeviceDocumentCroppingLogEvent", i5.c.p(a8.p0.x(w.class, new s(100))));
     public static final na.c U0 = new na.c("aggregatedOnDeviceDocumentCroppingLogEvent", i5.c.p(a8.p0.x(w.class, new s(101))));
-    public static final na.c V0 = new na.c("onDeviceDocumentEnhancementCreateLogEvent", i5.c.p(a8.p0.x(w.class, new s(ks.n1))));
-    public static final na.c W0 = new na.c("onDeviceDocumentEnhancementLoadLogEvent", i5.c.p(a8.p0.x(w.class, new s(ks.o1))));
-    public static final na.c X0 = a8.p0.y(ks.p1, na.c.a("onDeviceDocumentEnhancementLogEvent"));
-    public static final na.c Y0 = a8.p0.y(ks.q1, na.c.a("aggregatedOnDeviceDocumentEnhancementLogEvent"));
-    public static final na.c Z0 = a8.p0.y(ks.r1, na.c.a("scannerAutoZoomEvent"));
-    public static final na.c a1 = a8.p0.y(ks.s1, na.c.a("lowLightAutoExposureComputationEvent"));
-    public static final na.c b1 = a8.p0.y(ks.t1, na.c.a("lowLightFrameProcessEvent"));
-    public static final na.c c1 = a8.p0.y(ks.u1, na.c.a("lowLightSceneDetectionEvent"));
-    public static final na.c d1 = a8.p0.y(ks.v1, na.c.a("onDeviceStainRemovalLogEvent"));
-    public static final na.c e1 = a8.p0.y(ks.w1, na.c.a("aggregatedOnDeviceStainRemovalLogEvent"));
-    public static final na.c f1 = a8.p0.y(ks.x1, na.c.a("stainRemovalOptionalModuleLogEvent"));
-    public static final na.c g1 = a8.p0.y(ks.y1, na.c.a("onDeviceShadowRemovalLogEvent"));
-    public static final na.c h1 = a8.p0.y(ks.z1, na.c.a("aggregatedOnDeviceShadowRemovalLogEvent"));
-    public static final na.c i1 = a8.p0.y(ks.A1, na.c.a("shadowRemovalOptionalModuleLogEvent"));
-    public static final na.c j1 = a8.p0.y(ks.B1, na.c.a("onDeviceDigitalInkSegmentationLogEvent"));
-    public static final na.c k1 = a8.p0.y(ks.C1, na.c.a("onDeviceDocumentScannerStartLogEvent"));
-    public static final na.c l1 = a8.p0.y(ks.D1, na.c.a("onDeviceDocumentScannerFinishLogEvent"));
-    public static final na.c m1 = a8.p0.y(ks.E1, na.c.a("onDeviceDocumentScannerUiStartLogEvent"));
+    public static final na.c V0 = new na.c("onDeviceDocumentEnhancementCreateLogEvent", i5.c.p(a8.p0.x(w.class, new s(ls.n1))));
+    public static final na.c W0 = new na.c("onDeviceDocumentEnhancementLoadLogEvent", i5.c.p(a8.p0.x(w.class, new s(ls.o1))));
+    public static final na.c X0 = a8.p0.y(ls.p1, na.c.a("onDeviceDocumentEnhancementLogEvent"));
+    public static final na.c Y0 = a8.p0.y(ls.q1, na.c.a("aggregatedOnDeviceDocumentEnhancementLogEvent"));
+    public static final na.c Z0 = a8.p0.y(ls.r1, na.c.a("scannerAutoZoomEvent"));
+    public static final na.c a1 = a8.p0.y(ls.s1, na.c.a("lowLightAutoExposureComputationEvent"));
+    public static final na.c b1 = a8.p0.y(ls.t1, na.c.a("lowLightFrameProcessEvent"));
+    public static final na.c c1 = a8.p0.y(ls.u1, na.c.a("lowLightSceneDetectionEvent"));
+    public static final na.c d1 = a8.p0.y(ls.v1, na.c.a("onDeviceStainRemovalLogEvent"));
+    public static final na.c e1 = a8.p0.y(ls.w1, na.c.a("aggregatedOnDeviceStainRemovalLogEvent"));
+    public static final na.c f1 = a8.p0.y(ls.x1, na.c.a("stainRemovalOptionalModuleLogEvent"));
+    public static final na.c g1 = a8.p0.y(ls.y1, na.c.a("onDeviceShadowRemovalLogEvent"));
+    public static final na.c h1 = a8.p0.y(ls.z1, na.c.a("aggregatedOnDeviceShadowRemovalLogEvent"));
+    public static final na.c i1 = a8.p0.y(ls.A1, na.c.a("shadowRemovalOptionalModuleLogEvent"));
+    public static final na.c j1 = a8.p0.y(ls.B1, na.c.a("onDeviceDigitalInkSegmentationLogEvent"));
+    public static final na.c k1 = a8.p0.y(ls.C1, na.c.a("onDeviceDocumentScannerStartLogEvent"));
+    public static final na.c l1 = a8.p0.y(ls.D1, na.c.a("onDeviceDocumentScannerFinishLogEvent"));
+    public static final na.c m1 = a8.p0.y(ls.E1, na.c.a("onDeviceDocumentScannerUiStartLogEvent"));
     public static final na.c n1 = a8.p0.y(120, na.c.a("onDeviceDocumentScannerUiFinishLogEvent"));
-    public static final na.c o1 = a8.p0.y(ks.F1, na.c.a("documentScannerUiOptionalModuleSessionStartLogEvent"));
-    public static final na.c p1 = a8.p0.y(ks.G1, na.c.a("documentScannerUiOptionalModuleSessionFinishLogEvent"));
-    public static final na.c q1 = a8.p0.y(ks.H1, na.c.a("onDeviceDocumentScannerUiCreateLogEvent"));
-    public static final na.c r1 = a8.p0.y(ks.I1, na.c.a("onDeviceSubjectSegmentationCreateLogEvent"));
-    public static final na.c s1 = a8.p0.y(ks.J1, na.c.a("onDeviceSubjectSegmentationLoadLogEvent"));
-    public static final na.c t1 = a8.p0.y(ks.K1, na.c.a("onDeviceSubjectSegmentationInferenceLogEvent"));
-    public static final na.c u1 = a8.p0.y(ks.L1, na.c.a("aggregatedOnDeviceSubjectSegmentationLogEvent"));
+    public static final na.c o1 = a8.p0.y(ls.F1, na.c.a("documentScannerUiOptionalModuleSessionStartLogEvent"));
+    public static final na.c p1 = a8.p0.y(ls.G1, na.c.a("documentScannerUiOptionalModuleSessionFinishLogEvent"));
+    public static final na.c q1 = a8.p0.y(ls.H1, na.c.a("onDeviceDocumentScannerUiCreateLogEvent"));
+    public static final na.c r1 = a8.p0.y(ls.I1, na.c.a("onDeviceSubjectSegmentationCreateLogEvent"));
+    public static final na.c s1 = a8.p0.y(ls.J1, na.c.a("onDeviceSubjectSegmentationLoadLogEvent"));
+    public static final na.c t1 = a8.p0.y(ls.K1, na.c.a("onDeviceSubjectSegmentationInferenceLogEvent"));
+    public static final na.c u1 = a8.p0.y(ls.L1, na.c.a("aggregatedOnDeviceSubjectSegmentationLogEvent"));
     public static final na.c v1 = a8.p0.y(128, na.c.a("subjectSegmentationOptionalModuleLogEvent"));
-    public static final na.c w1 = a8.p0.y(ks.N1, na.c.a("documentScannerUiModuleScreenViewEvent"));
-    public static final na.c x1 = a8.p0.y(ks.O1, na.c.a("documentScannerUiModuleScreenClickEvent"));
-    public static final na.c y1 = a8.p0.y(ks.P1, na.c.a("documentScannerUiModuleScreenErrorEvent"));
+    public static final na.c w1 = a8.p0.y(ls.N1, na.c.a("documentScannerUiModuleScreenViewEvent"));
+    public static final na.c x1 = a8.p0.y(ls.O1, na.c.a("documentScannerUiModuleScreenClickEvent"));
+    public static final na.c y1 = a8.p0.y(ls.P1, na.c.a("documentScannerUiModuleScreenErrorEvent"));
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {

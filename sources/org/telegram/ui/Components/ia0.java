@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ia0 extends v4.u {
     public final /* synthetic */ int S;
@@ -21,24 +21,24 @@ public final class ia0 extends v4.u {
     public final boolean B1(int i7) {
         byte b10;
         byte b11;
-        org.telegram.messenger.xi d;
+        org.telegram.messenger.yi d;
         byte b12;
         switch (this.S) {
             case 0:
                 qa0 qa0Var = (qa0) this.T;
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) qa0Var.r.f.get(i7);
-                org.telegram.messenger.aj a10 = qa0.a(qa0Var, fjVar);
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) qa0Var.r.f.get(i7);
+                org.telegram.messenger.bj a10 = qa0.a(qa0Var, gjVar);
                 if (a10 != null) {
                     ArrayList arrayList = a10.e;
-                    org.telegram.messenger.xi d2 = a10.d(fjVar);
+                    org.telegram.messenger.yi d2 = a10.d(gjVar);
                     if (d2.a != d2.b && (b10 = d2.c) == d2.d && b10 != 0) {
                         int size = arrayList.size();
                         for (int i10 = 0; i10 < size; i10++) {
-                            org.telegram.messenger.xi xiVar = (org.telegram.messenger.xi) arrayList.get(i10);
-                            if (xiVar != d2) {
-                                byte b13 = xiVar.c;
+                            org.telegram.messenger.yi yiVar = (org.telegram.messenger.yi) arrayList.get(i10);
+                            if (yiVar != d2) {
+                                byte b13 = yiVar.c;
                                 byte b14 = d2.c;
-                                if (b13 <= b14 && xiVar.d >= b14) {
+                                if (b13 <= b14 && yiVar.d >= b14) {
                                     break;
                                 }
                             }
@@ -49,19 +49,19 @@ public final class ia0 extends v4.u {
                 break;
             case 1:
                 org.telegram.ui.eg0 eg0Var = (org.telegram.ui.eg0) this.T;
-                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) eg0Var.N.get((B() - 1) - i7);
-                org.telegram.messenger.aj l10 = eg0Var.l(fjVar2);
+                org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) eg0Var.N.get((B() - 1) - i7);
+                org.telegram.messenger.bj l10 = eg0Var.l(gjVar2);
                 if (l10 != null) {
                     ArrayList arrayList2 = l10.e;
-                    org.telegram.messenger.xi d10 = l10.d(fjVar2);
+                    org.telegram.messenger.yi d10 = l10.d(gjVar2);
                     if (d10.a != d10.b && (b11 = d10.c) == d10.d && b11 != 0) {
                         int size2 = arrayList2.size();
                         for (int i11 = 0; i11 < size2; i11++) {
-                            org.telegram.messenger.xi xiVar2 = (org.telegram.messenger.xi) arrayList2.get(i11);
-                            if (xiVar2 != d10) {
-                                byte b15 = xiVar2.c;
+                            org.telegram.messenger.yi yiVar2 = (org.telegram.messenger.yi) arrayList2.get(i11);
+                            if (yiVar2 != d10) {
+                                byte b15 = yiVar2.c;
                                 byte b16 = d10.c;
-                                if (b15 <= b16 && xiVar2.d >= b16) {
+                                if (b15 <= b16 && yiVar2.d >= b16) {
                                     break;
                                 }
                             }
@@ -73,15 +73,15 @@ public final class ia0 extends v4.u {
                 hi.a5 a5Var = (hi.a5) this.T;
                 ArrayList arrayList3 = a5Var.t0;
                 int size3 = (arrayList3.size() - 1) - i7;
-                org.telegram.messenger.aj ajVar = a5Var.u0;
-                if (ajVar != null && size3 >= 0 && size3 < arrayList3.size() && (d = ajVar.d((org.telegram.messenger.fj) arrayList3.get(size3))) != null && d.a != d.b && (b12 = d.c) == d.d && b12 != 0) {
-                    int size4 = ajVar.e.size();
+                org.telegram.messenger.bj bjVar = a5Var.u0;
+                if (bjVar != null && size3 >= 0 && size3 < arrayList3.size() && (d = bjVar.d((org.telegram.messenger.gj) arrayList3.get(size3))) != null && d.a != d.b && (b12 = d.c) == d.d && b12 != 0) {
+                    int size4 = bjVar.e.size();
                     for (int i12 = 0; i12 < size4; i12++) {
-                        org.telegram.messenger.xi xiVar3 = (org.telegram.messenger.xi) ajVar.e.get(i12);
-                        if (xiVar3 != d) {
-                            byte b17 = xiVar3.c;
+                        org.telegram.messenger.yi yiVar3 = (org.telegram.messenger.yi) bjVar.e.get(i12);
+                        if (yiVar3 != d) {
+                            byte b17 = yiVar3.c;
                             byte b18 = d.c;
-                            if (b17 <= b18 && xiVar3.d >= b18) {
+                            if (b17 <= b18 && yiVar3.d >= b18) {
                                 break;
                             }
                         }

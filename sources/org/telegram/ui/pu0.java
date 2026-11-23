@@ -5,7 +5,7 @@ import android.view.TextureView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pu0 implements org.telegram.ui.ActionBar.n0, dr0, gh.a, org.telegram.ui.Components.j8 {
     public final /* synthetic */ ProfileActivity a;
@@ -32,7 +32,7 @@ public final class pu0 implements org.telegram.ui.ActionBar.n0, dr0, gh.a, org.t
     }
 
     @Override // org.telegram.ui.dr0
-    public void G0(org.telegram.messenger.fj fjVar) {
+    public void G0(org.telegram.messenger.gj gjVar) {
         ProfileActivity profileActivity = this.a;
         profileActivity.a.I0(true);
         vv0 vv0Var = profileActivity.O;
@@ -43,7 +43,7 @@ public final class pu0 implements org.telegram.ui.ActionBar.n0, dr0, gh.a, org.t
     }
 
     @Override // org.telegram.ui.dr0
-    public void H(org.telegram.messenger.fj fjVar) {
+    public void H(org.telegram.messenger.gj gjVar) {
         org.telegram.ui.Components.zf0 zf0Var = this.a.n0;
         if (zf0Var == null || !zf0Var.a) {
             return;

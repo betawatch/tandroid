@@ -4,8 +4,8 @@ import a8.ja;
 import a8.la;
 import a8.p0;
 import a8.u7;
-import ai.c2;
-import ai.e2;
+import ai.d2;
+import ai.f2;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -60,22 +60,21 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ke;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.kz;
-import org.telegram.messenger.lr;
-import org.telegram.messenger.mi;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.mz;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.vr;
-import org.telegram.messenger.xs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.le;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.lz;
+import org.telegram.messenger.mr;
+import org.telegram.messenger.ni;
+import org.telegram.messenger.np;
+import org.telegram.messenger.nz;
+import org.telegram.messenger.si;
+import org.telegram.messenger.wr;
+import org.telegram.messenger.ys;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.u;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Cells.d2;
 import org.telegram.ui.Cells.i4;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Components.a70;
@@ -109,9 +108,9 @@ import org.telegram.ui.zt;
 import org.xml.sax.Attributes;
 import q4.t;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class l implements c2, c4.m, a0, Continuation, com.google.android.gms.common.api.internal.q, e1, an0, lr, qo, wa, h7, tj0, g61, h2.d, q5.b, te.b {
+public final class l implements d2, c4.m, a0, Continuation, com.google.android.gms.common.api.internal.q, e1, an0, mr, qo, wa, h7, tj0, g61, h2.d, q5.b, te.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -316,13 +315,13 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
         if (arrayList != null && !arrayList.isEmpty()) {
             int size = arrayList.size();
             for (int i7 = 0; i7 < size; i7++) {
-                str2 = (String) ((kz) arrayList.get(i7)).a.get(str);
+                str2 = (String) ((lz) arrayList.get(i7)).a.get(str);
                 if (str2 != null) {
                     break;
                 }
             }
         }
-        return str2 == null ? mz.l(str, (Attributes) this.c) : str2;
+        return str2 == null ? nz.l(str, (Attributes) this.c) : str2;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -342,7 +341,7 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
         try {
             return Integer.valueOf(Integer.parseInt(L.substring(1), 16));
         } catch (NumberFormatException unused) {
-            double[] dArr = mz.a;
+            double[] dArr = nz.a;
             String lowerCase = L.toLowerCase();
             lowerCase.getClass();
             switch (lowerCase.hashCode()) {
@@ -461,22 +460,22 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
         yi.h hVar = jVar.z;
         File file = (jVar.G != 5 || hVar == null) ? null : hVar.b;
         if (file == null) {
-            ke keVar = (ke) this.b;
+            le leVar = (le) this.b;
             IllegalStateException illegalStateException = new IllegalStateException("Preview file is unavailable");
-            MediaController mediaController = keVar.a;
+            MediaController mediaController = leVar.a;
             String[] strArr = MediaController.W1;
             a8.e("AudioRecorderV2 failed", illegalStateException);
-            ks.f(mediaController.i1).k(ks.m2, Integer.valueOf(mediaController.h1));
+            ls.f(mediaController.i1).k(ls.m2, Integer.valueOf(mediaController.h1));
             mediaController.x(false);
             return;
         }
-        MediaController mediaController2 = ((ke) this.b).a;
+        MediaController mediaController2 = ((le) this.b).a;
         mediaController2.k1 = file;
         mediaController2.l1 = j3;
         mediaController2.G0(file, j3, bArr);
-        ri.d0(mediaController2.i1).F1(mediaController2.n1, mediaController2.o1, mi.a(mediaController2, file.getAbsolutePath(), mediaController2.K1));
-        ks.f(mediaController2.i1).k(ks.o2, new Object[0]);
-        ks.f(mediaController2.i1).k(ks.s2, Integer.valueOf(mediaController2.h1), mediaController2.g1, file.getAbsolutePath());
+        si.d0(mediaController2.i1).F1(mediaController2.n1, mediaController2.o1, ni.a(mediaController2, file.getAbsolutePath(), mediaController2.K1));
+        ls.f(mediaController2.i1).k(ls.o2, new Object[0]);
+        ls.f(mediaController2.i1).k(ls.s2, Integer.valueOf(mediaController2.h1), mediaController2.g1, file.getAbsolutePath());
         mediaController2.Y(false);
         MediaController.j0(false);
     }
@@ -528,37 +527,37 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
         return i10;
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public void a(String str, String str2) {
         o oVar = (o) this.c;
-        e2 e2Var = (e2) this.b;
+        f2 f2Var = (f2) this.b;
         if (!oVar.J) {
-            if (e2Var == oVar.f) {
+            if (f2Var == oVar.f) {
                 oVar.a(str, str2);
                 return;
             }
             return;
         }
-        if (e2Var == oVar.U) {
+        if (f2Var == oVar.U) {
             oVar.U = null;
             if (!str.isEmpty()) {
-                oVar.u(e2Var, str);
+                oVar.u(f2Var, str);
             }
             oVar.e();
             Log.d("VoiceLive", "field: final words in (" + oVar.L.size() + " words)");
             oVar.o();
             return;
         }
-        if (e2Var != oVar.f) {
+        if (f2Var != oVar.f) {
             return;
         }
         Log.d("VoiceLive", "field: recogniser ended by itself error=" + str2);
         if (!str.isEmpty()) {
-            oVar.u(e2Var, str);
+            oVar.u(f2Var, str);
         }
         oVar.f = null;
-        if (vr.k == oVar) {
-            vr.k = null;
+        if (wr.k == oVar) {
+            wr.k = null;
         }
         oVar.d = null;
         oVar.e = null;
@@ -635,7 +634,7 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
         }
     }
 
-    @Override // org.telegram.messenger.lr
+    @Override // org.telegram.messenger.mr
     public void d(boolean z10) {
         f8 f8Var = ((d8) this.c).b;
         f8Var.y.finishFragment();
@@ -675,7 +674,7 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
             ((ImageView) view.getTag(R.id.object_tag)).getHitRect(rect);
             if (!rect.contains((int) f10, (int) f11)) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kxVar.getParentActivity());
-                alertDialog$Builder.f(new CharSequence[]{gd.N0(2131751586, null)}, new fx(this, i7, i10));
+                alertDialog$Builder.f(new CharSequence[]{hd.N0(2131751586, null)}, new fx(this, i7, i10));
                 kxVar.showDialog(alertDialog$Builder.a);
                 return true;
             }
@@ -712,23 +711,23 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
         return null;
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public void h(float f10) {
-        e2 e2Var = (e2) this.b;
+        f2 f2Var = (f2) this.b;
         o oVar = (o) this.c;
-        if (e2Var == oVar.f) {
+        if (f2Var == oVar.f) {
             oVar.h(f10);
         }
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public void i(String str) {
-        o.b((o) this.c, (e2) this.b, str, -1);
+        o.b((o) this.c, (f2) this.b, str, -1);
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public void l(int i7, String str) {
-        o.b((o) this.c, (e2) this.b, str, i7);
+        o.b((o) this.c, (f2) this.b, str, i7);
     }
 
     @Override // org.telegram.ui.h7
@@ -740,36 +739,36 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
             auVar.a2.e();
             ei.c cVar = auVar.c2;
             qw0[] qw0VarArr = auVar.X1;
-            d2[] d2VarArr = auVar.Y1;
-            d2 d2Var = d2VarArr[0];
+            org.telegram.ui.Cells.d2[] d2VarArr = auVar.Y1;
+            org.telegram.ui.Cells.d2 d2Var = d2VarArr[0];
             if (d2Var != null) {
                 qw0 qw0Var = qw0VarArr[0];
                 boolean z11 = cVar.m;
                 qw0Var.c = z11;
                 d2Var.c(z11, true);
             }
-            d2 d2Var2 = d2VarArr[1];
+            org.telegram.ui.Cells.d2 d2Var2 = d2VarArr[1];
             if (d2Var2 != null) {
                 qw0 qw0Var2 = qw0VarArr[1];
                 boolean z12 = cVar.n;
                 qw0Var2.c = z12;
                 d2Var2.c(z12, true);
             }
-            d2 d2Var3 = d2VarArr[2];
+            org.telegram.ui.Cells.d2 d2Var3 = d2VarArr[2];
             if (d2Var3 != null) {
                 qw0 qw0Var3 = qw0VarArr[2];
                 boolean z13 = cVar.o;
                 qw0Var3.c = z13;
                 d2Var3.c(z13, true);
             }
-            d2 d2Var4 = d2VarArr[3];
+            org.telegram.ui.Cells.d2 d2Var4 = d2VarArr[3];
             if (d2Var4 != null) {
                 qw0 qw0Var4 = qw0VarArr[3];
                 boolean z14 = cVar.p;
                 qw0Var4.c = z14;
                 d2Var4.c(z14, true);
             }
-            d2 d2Var5 = d2VarArr[4];
+            org.telegram.ui.Cells.d2 d2Var5 = d2VarArr[4];
             if (d2Var5 != null) {
                 qw0 qw0Var5 = qw0VarArr[4];
                 boolean z15 = cVar.q;
@@ -1312,21 +1311,21 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
         ((a70) this.b).v();
         bn bnVar = (bn) this.c;
         i7 = ((g2) bnVar).currentAccount;
-        SharedPreferences sharedPreferences = mp.u1(i7).g7;
-        boolean z10 = sharedPreferences.getBoolean("sound_enabled_" + xs.v(bnVar.l6, bnVar.d(), false), true);
+        SharedPreferences sharedPreferences = np.u1(i7).g7;
+        boolean z10 = sharedPreferences.getBoolean("sound_enabled_" + ys.v(bnVar.l6, bnVar.d(), false), true);
         boolean z11 = !z10;
-        sharedPreferences.edit().putBoolean("sound_enabled_" + xs.v(bnVar.l6, bnVar.d(), false), z11).apply();
+        sharedPreferences.edit().putBoolean("sound_enabled_" + ys.v(bnVar.l6, bnVar.d(), false), z11).apply();
         if (lc.a(bnVar)) {
             lc.S(z10 ? 1 : 0, bnVar, bnVar.getResourceProvider()).j();
         }
         bnVar.yd(false);
     }
 
-    @Override // ai.c2
+    @Override // ai.d2
     public void x(String str) {
-        e2 e2Var = (e2) this.b;
+        f2 f2Var = (f2) this.b;
         o oVar = (o) this.c;
-        if (e2Var == oVar.f) {
+        if (f2Var == oVar.f) {
             oVar.x(str);
         }
     }
@@ -1449,20 +1448,20 @@ public final class l implements c2, c4.m, a0, Continuation, com.google.android.g
     public l(Attributes attributes, HashMap hashMap) {
         this.a = 11;
         this.c = attributes;
-        String l10 = mz.l("style", attributes);
+        String l10 = nz.l("style", attributes);
         if (l10 != null) {
             ArrayList arrayList = new ArrayList();
             this.b = arrayList;
-            arrayList.add(new kz(l10));
+            arrayList.add(new lz(l10));
             return;
         }
-        String l11 = mz.l("class", attributes);
+        String l11 = nz.l("class", attributes);
         if (l11 != null) {
             this.b = new ArrayList();
             for (String str : l11.split(" ")) {
-                kz kzVar = (kz) hashMap.get(str.trim());
-                if (kzVar != null) {
-                    ((ArrayList) this.b).add(kzVar);
+                lz lzVar = (lz) hashMap.get(str.trim());
+                if (lzVar != null) {
+                    ((ArrayList) this.b).add(lzVar);
                 }
             }
         }

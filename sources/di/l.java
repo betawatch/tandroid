@@ -1,6 +1,6 @@
 package di;
 
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -10,7 +10,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.s90;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -36,7 +36,7 @@ public final /* synthetic */ class l implements RequestDelegate {
                 r70 r70Var = (r70) this.d;
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) this.e;
                 if (tLObject instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    mp.u1(r70Var.a).V3(((TLRPC.TL_chatInviteJoinResultOk) tLObject).updates, false);
+                    np.u1(r70Var.a).V3(((TLRPC.TL_chatInviteJoinResultOk) tLObject).updates, false);
                 } else if (tLObject instanceof TLRPC.TL_chatInviteJoinResultWebView) {
                     org.telegram.messenger.g0.g3(new m70(r70Var, (TLRPC.TL_chatInviteJoinResultWebView) tLObject, this.b, 0));
                 }

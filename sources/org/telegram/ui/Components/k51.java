@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k51 extends Drawable {
     public final Drawable a;
@@ -100,7 +100,7 @@ public final class k51 extends Drawable {
         this.a.setColorFilter(new PorterDuffColorFilter(x02, mode));
         this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.r1(0.11f, -16777216), mode));
         this.c.setColor(x02);
-        this.d.setColor(i0.a.o(x02, org.telegram.messenger.ks.J2));
+        this.d.setColor(i0.a.o(x02, org.telegram.messenger.ls.J2));
         this.e.setColor(x02);
         this.f.setColor(org.telegram.ui.ActionBar.m6.r1(0.11f, -16777216));
     }

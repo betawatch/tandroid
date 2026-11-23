@@ -32,11 +32,11 @@ import java.util.List;
 import java.util.Stack;
 import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.bz;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.g6;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pc;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.j2;
@@ -49,7 +49,7 @@ import org.telegram.ui.Components.uc;
 import org.telegram.ui.k71;
 import tg.y;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f extends Drawable {
     public static final int A;
@@ -87,9 +87,9 @@ public final class f extends Drawable {
     public final RectF z;
 
     static {
-        int i7 = bz.o() != 2 ? 100 : ks.g2;
+        int i7 = cz.o() != 2 ? 100 : ls.g2;
         A = i7;
-        B = bz.o() != 2 ? 10 : 30;
+        B = cz.o() != 2 ? 10 : 30;
         float[] fArr = {0.3f, 0.6f, 1.0f};
         C = fArr;
         D = (float[][]) Array.newInstance((Class<?>) Float.TYPE, fArr.length, i7 * 5);
@@ -105,7 +105,7 @@ public final class f extends Drawable {
         this.f = new int[fArr.length];
         this.h = new ArrayList();
         this.n = -1.0f;
-        this.s = ks.e4;
+        this.s = ls.e4;
         this.t = new uc(1);
         this.z = new RectF();
         for (int i7 = 0; i7 < fArr.length; i7++) {
@@ -121,7 +121,7 @@ public final class f extends Drawable {
             }
             this.b[i7] = this.a[i7].getStrokeWidth() * 0.5f;
         }
-        bz.o();
+        cz.o();
         h(0);
     }
 
@@ -395,7 +395,7 @@ public final class f extends Drawable {
             hVar.h = System.currentTimeMillis();
         } else {
             i7 = 128;
-            if (hVar.p && !pc.e(128)) {
+            if (hVar.p && !qc.e(128)) {
                 hVar.d = 0;
                 hVar.a(new Canvas((Bitmap) yVarArr[0].b), new Rect(0, 0, i10, i10));
                 hVar.g.setShader((BitmapShader) yVarArr[0].c);
@@ -406,7 +406,7 @@ public final class f extends Drawable {
         Paint paint = hVar.g;
         paint.setColorFilter(this.v);
         canvas.drawRect(bounds, paint);
-        if (pc.e(i7)) {
+        if (qc.e(i7)) {
             bg.k d = bg.k.d();
             d.getClass();
             bg.k.c();
@@ -508,7 +508,7 @@ public final class f extends Drawable {
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        int alpha = this.o ? ks.e4 : this.a[C.length - 1].getAlpha();
+        int alpha = this.o ? ls.e4 : this.a[C.length - 1].getAlpha();
         ValueAnimator duration = ValueAnimator.ofFloat(this.n, z10 ? 0.0f : 1.0f).setDuration((long) l9.a(this.m * 0.3f, 250.0f, 550.0f));
         this.r = duration;
         duration.setInterpolator(this.t);

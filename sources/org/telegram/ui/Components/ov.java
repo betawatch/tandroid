@@ -10,7 +10,7 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class ov extends kl0 {
     public static final int[] f0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
@@ -50,7 +50,7 @@ public abstract class ov extends kl0 {
     public ov(Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10, boolean z11, boolean z12, boolean z13, int i7, Runnable runnable, int i10, boolean z14) {
         super(context);
         this.h = R.drawable.msg_emoji_recent;
-        this.n = !org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q();
+        this.n = !org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q();
         this.r = true;
         this.I = new HashMap();
         this.L = 0.0f;
@@ -84,7 +84,7 @@ public abstract class ov extends kl0 {
             kv kvVar = new kv(this, context, R.drawable.msg_emoji_stickers, false);
             this.y = kvVar;
             linearLayout.addView(kvVar);
-            kvVar.setContentDescription(org.telegram.messenger.gd.N0(2131754755, null));
+            kvVar.setContentDescription(org.telegram.messenger.hd.N0(2131754755, null));
         }
         if (i7 == 3) {
             this.h = R.drawable.msg_emoji_smiles;
@@ -97,7 +97,7 @@ public abstract class ov extends kl0 {
             kv kvVar2 = new kv(this, context, this.h, false);
             this.E = kvVar2;
             linearLayout2.addView(kvVar2);
-            kvVar2.setContentDescription(org.telegram.messenger.gd.N0(2131746165, null));
+            kvVar2.setContentDescription(org.telegram.messenger.hd.N0(2131746165, null));
             kvVar2.a = Long.valueOf(-934918565);
         }
         if (z11) {
@@ -105,7 +105,7 @@ public abstract class ov extends kl0 {
             kv kvVar3 = new kv(this, context, R.drawable.msg_emoji_gem, false);
             this.F = kvVar3;
             linearLayout3.addView(kvVar3);
-            kvVar3.setContentDescription(org.telegram.messenger.gd.N0(2131751163, null));
+            kvVar3.setContentDescription(org.telegram.messenger.hd.N0(2131751163, null));
             kvVar3.setAlpha(0.0f);
             kvVar3.a = Long.valueOf(98352451);
         }
@@ -133,7 +133,7 @@ public abstract class ov extends kl0 {
             kv kvVar5 = new kv(this, context, R.drawable.smiles_tab_settings, true);
             this.G = kvVar5;
             linearLayout5.addView(kvVar5);
-            kvVar5.setContentDescription(org.telegram.messenger.gd.N0(2131745299, null));
+            kvVar5.setContentDescription(org.telegram.messenger.hd.N0(2131745299, null));
             kvVar5.a = Long.valueOf(1434631203);
             kvVar5.setAlpha(0.0f);
         }
@@ -143,21 +143,21 @@ public abstract class ov extends kl0 {
     public static String f(int i7) {
         switch (i7) {
             case 0:
-                return org.telegram.messenger.gd.N0(2131751183, null);
+                return org.telegram.messenger.hd.N0(2131751183, null);
             case 1:
-                return org.telegram.messenger.gd.N0(2131751182, null);
+                return org.telegram.messenger.hd.N0(2131751182, null);
             case 2:
-                return org.telegram.messenger.gd.N0(2131751181, null);
+                return org.telegram.messenger.hd.N0(2131751181, null);
             case 3:
-                return org.telegram.messenger.gd.N0(2131751180, null);
+                return org.telegram.messenger.hd.N0(2131751180, null);
             case 4:
-                return org.telegram.messenger.gd.N0(2131751179, null);
+                return org.telegram.messenger.hd.N0(2131751179, null);
             case 5:
-                return org.telegram.messenger.gd.N0(2131751178, null);
+                return org.telegram.messenger.hd.N0(2131751178, null);
             case 6:
-                return org.telegram.messenger.gd.N0(2131751177, null);
+                return org.telegram.messenger.hd.N0(2131751177, null);
             case 7:
-                return org.telegram.messenger.gd.N0(2131751176, null);
+                return org.telegram.messenger.hd.N0(2131751176, null);
             default:
                 return null;
         }
@@ -412,7 +412,7 @@ public abstract class ov extends kl0 {
         boolean z11;
         TLRPC.Document document;
         if (this.x) {
-            if (!this.d0 || org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).X[5]) {
+            if (!this.d0 || org.telegram.messenger.si.d0(org.telegram.messenger.k10.t0).X[5]) {
                 this.d0 = false;
                 if (arrayList == null) {
                     return;
@@ -427,7 +427,7 @@ public abstract class ov extends kl0 {
                 }
                 arrayList.size();
                 e();
-                boolean z12 = org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q() || d();
+                boolean z12 = org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q() || d();
                 ArrayList arrayList2 = new ArrayList();
                 int i14 = 0;
                 while (i14 < Math.max(arrayList.size(), i13)) {

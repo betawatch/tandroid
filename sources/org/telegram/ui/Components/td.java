@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class td implements Runnable {
                 org.telegram.ui.bn bnVar = chatActivityEnterView.F3;
                 TL_iv.RichMessage richMessage = chatActivityEnterView.u2;
                 if (richMessage != null && chatActivityEnterView.F0 != null && bnVar != null) {
-                    org.telegram.messenger.mp.u1(chatActivityEnterView.R);
+                    org.telegram.messenger.np.u1(chatActivityEnterView.R);
                     boolean z10 = org.telegram.messenger.s2.a;
                     oi.b2 b2Var = new oi.b2(richMessage);
                     b2Var.e = true;

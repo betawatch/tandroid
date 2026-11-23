@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class pa0 extends org.telegram.ui.Components.du0 implements r0.l {
     public final /* synthetic */ int g0 = 1;
@@ -341,9 +341,9 @@ public final class pa0 extends org.telegram.ui.Components.du0 implements r0.l {
                 boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
                 if (motionEvent.getActionMasked() == 1 && (j6Var = n6Var.t0) != null) {
                     org.telegram.ui.Wallet.m mVar = j6Var.i;
-                    bi.g6 g6Var = j6Var.c;
-                    if (g6Var != null) {
-                        g6Var.removeCallbacks(mVar);
+                    bi.f6 f6Var = j6Var.c;
+                    if (f6Var != null) {
+                        f6Var.removeCallbacks(mVar);
                         j6Var.c.post(mVar);
                     }
                 }
@@ -379,9 +379,9 @@ public final class pa0 extends org.telegram.ui.Components.du0 implements r0.l {
                 org.telegram.ui.Wallet.j6 j6Var = ((org.telegram.ui.Wallet.n6) this.j0).t0;
                 if (j6Var != null) {
                     org.telegram.ui.Wallet.m mVar = j6Var.i;
-                    bi.g6 g6Var = j6Var.c;
-                    if (g6Var != null) {
-                        g6Var.removeCallbacks(mVar);
+                    bi.f6 f6Var = j6Var.c;
+                    if (f6Var != null) {
+                        f6Var.removeCallbacks(mVar);
                         j6Var.c.post(mVar);
                         break;
                     }

@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i5 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class i5 implements Runnable {
                 ArrayList arrayList = this.c;
                 l5 l5Var = this.b;
                 int i7 = l5Var.e;
-                org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(i7);
+                org.telegram.messenger.ur a02 = org.telegram.messenger.ur.a0(i7);
                 SQLiteDatabase sQLiteDatabase = a02.b;
                 if (sQLiteDatabase != null) {
                     try {
@@ -72,7 +72,7 @@ public final /* synthetic */ class i5 implements Runnable {
                                 ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.u7(11, l5Var, arrayList3));
                             }
                         } else {
-                            org.telegram.messenger.ks.f(i7).d(new j5(l5Var, arrayList2, hashSet, 0));
+                            org.telegram.messenger.ls.f(i7).d(new j5(l5Var, arrayList2, hashSet, 0));
                         }
                         queryFinalized.dispose();
                         break;
@@ -85,7 +85,7 @@ public final /* synthetic */ class i5 implements Runnable {
             default:
                 ArrayList arrayList4 = this.c;
                 try {
-                    SQLitePreparedStatement executeFast = org.telegram.messenger.tr.a0(this.b.e).b.executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
+                    SQLitePreparedStatement executeFast = org.telegram.messenger.ur.a0(this.b.e).b.executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
                     for (int i10 = 0; i10 < arrayList4.size(); i10++) {
                         if (arrayList4.get(i10) instanceof TLRPC.Document) {
                             TLRPC.Document document = (TLRPC.Document) arrayList4.get(i10);

@@ -9,9 +9,9 @@ import android.text.TextUtils;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class o0 {
     public static final o0 L = new o0(new n0());
@@ -158,7 +158,7 @@ public final class o0 {
                         case 17:
                         case 18:
                         case 19:
-                        case ks.U /* 31 */:
+                        case ls.U /* 31 */:
                         case 32:
                         case 33:
                         case 34:
@@ -169,7 +169,7 @@ public final class o0 {
                         case 27:
                         case 28:
                         case 29:
-                        case ks.T /* 30 */:
+                        case ls.T /* 30 */:
                         default:
                             i7 = 0;
                             break;

@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import c8.ma;
 import java.util.ArrayList;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.h6;
@@ -21,7 +21,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.d61;
 import ug.h1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j0 extends h1 {
     public final ArrayList M2;
@@ -89,7 +89,7 @@ public final class j0 extends h1 {
         if (Q == null) {
             return;
         }
-        j0 j0Var = new j0(Q, j10.t0, arrayList, Q.getResourceProvider());
+        j0 j0Var = new j0(Q, k10.t0, arrayList, Q.getResourceProvider());
         j0Var.F2 = true;
         j0Var.G2 = true;
         j0Var.show();
@@ -120,26 +120,26 @@ public final class j0 extends h1 {
         this.L2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         m80 m80Var = this.K2[0];
         ArrayList arrayList = this.M2;
-        m80Var.setText(gd.K0(arrayList.size(), "GiftPremiumGiftsSent"));
+        m80Var.setText(hd.K0(arrayList.size(), "GiftPremiumGiftsSent"));
         ((ViewGroup.MarginLayoutParams) this.L2.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(16.0f);
         ((ViewGroup.MarginLayoutParams) this.L2.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(4.0f);
         int size = arrayList.size();
         if (size == 1) {
-            a02 = gd.a0(null, null, 2131749480, gd.a0(null, null, 2131749482, o10.k((TLRPC.User) arrayList.get(0), true)));
+            a02 = hd.a0(null, null, 2131749480, hd.a0(null, null, 2131749482, p10.k((TLRPC.User) arrayList.get(0), true)));
         } else if (size == 2) {
-            a02 = gd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749480, gd.a0("GiftPremiumUsersTwo", null, 2131749475, o10.k((TLRPC.User) arrayList.get(0), true), o10.k((TLRPC.User) arrayList.get(1), true)));
+            a02 = hd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749480, hd.a0("GiftPremiumUsersTwo", null, 2131749475, p10.k((TLRPC.User) arrayList.get(0), true), p10.k((TLRPC.User) arrayList.get(1), true)));
         } else if (size != 3) {
-            a02 = gd.G(arrayList.size() - 3, "GiftPremiumUsersPurchasedMany", gd.a0("GiftPremiumUsersThree", null, 2131749476, o10.k((TLRPC.User) arrayList.get(0), true), o10.k((TLRPC.User) arrayList.get(1), true), o10.k((TLRPC.User) arrayList.get(2), true)));
+            a02 = hd.G(arrayList.size() - 3, "GiftPremiumUsersPurchasedMany", hd.a0("GiftPremiumUsersThree", null, 2131749476, p10.k((TLRPC.User) arrayList.get(0), true), p10.k((TLRPC.User) arrayList.get(1), true), p10.k((TLRPC.User) arrayList.get(2), true)));
         } else {
-            a02 = gd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749480, gd.a0("GiftPremiumUsersThree", null, 2131749476, o10.k((TLRPC.User) arrayList.get(0), true), o10.k((TLRPC.User) arrayList.get(1), true), o10.k((TLRPC.User) arrayList.get(2), true)));
+            a02 = hd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749480, hd.a0("GiftPremiumUsersThree", null, 2131749476, p10.k((TLRPC.User) arrayList.get(0), true), p10.k((TLRPC.User) arrayList.get(1), true), p10.k((TLRPC.User) arrayList.get(2), true)));
         }
         this.L2.setText(org.telegram.messenger.g0.W2(a02));
         this.L2.append("\n");
         this.L2.append("\n");
         if (arrayList.size() == 1) {
-            this.L2.append(org.telegram.messenger.g0.W2(gd.a0("GiftPremiumGiftsSentStatusForUser", null, 2131749495, o10.k((TLRPC.User) arrayList.get(0), true))));
+            this.L2.append(org.telegram.messenger.g0.W2(hd.a0("GiftPremiumGiftsSentStatusForUser", null, 2131749495, p10.k((TLRPC.User) arrayList.get(0), true))));
         } else {
-            this.L2.append(org.telegram.messenger.g0.W2(gd.N0(2131749496, "GiftPremiumGiftsSentStatus")));
+            this.L2.append(org.telegram.messenger.g0.W2(hd.N0(2131749496, "GiftPremiumGiftsSentStatus")));
         }
     }
 

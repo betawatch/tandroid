@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l2 implements pb0, org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6, a5, org.telegram.messenger.jc, org.telegram.messenger.cb, org.telegram.messenger.i9, p.a, ih.b, vt0, wt0 {
+public final /* synthetic */ class l2 implements pb0, org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6, a5, org.telegram.messenger.kc, org.telegram.messenger.db, org.telegram.messenger.j9, p.a, ih.b, vt0, wt0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l2(int i7) {
@@ -107,7 +107,7 @@ public final /* synthetic */ class l2 implements pb0, org.telegram.ui.ActionBar.
     public String i(int i7) {
         switch (this.a) {
             case 2:
-                boolean z10 = org.telegram.messenger.gd.c0;
+                boolean z10 = org.telegram.messenger.hd.c0;
                 String format = String.format("%02d", Integer.valueOf((i7 % 12 != 0 || z10) ? i7 % (z10 ? 24 : 12) : 12));
                 if (i7 >= 24) {
                     break;
@@ -150,7 +150,7 @@ public final /* synthetic */ class l2 implements pb0, org.telegram.ui.ActionBar.
         return String.format("%02d", Integer.valueOf(i7));
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.j9
     public Object m(Object obj) {
         switch (this.a) {
             case 21:
@@ -161,7 +161,7 @@ public final /* synthetic */ class l2 implements pb0, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Drawable t6 = imageReceiver.t();
         if (t6 instanceof oh0) {
@@ -172,16 +172,16 @@ public final /* synthetic */ class l2 implements pb0, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.messenger.cb
+    @Override // org.telegram.messenger.db
     public void onClick() {
         int i7 = ml.G0;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 }

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class mg0 extends org.telegram.ui.Components.dk0 {
     public final Context c;
@@ -94,12 +94,12 @@ public final class mg0 extends org.telegram.ui.Components.dk0 {
                 if (i7 == og0Var.P) {
                     o4Var.setTopMargin(9);
                     o4Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(8.0f));
-                    o4Var.setText(org.telegram.messenger.gd.a0("StatisticOverview", null, 2131744654, new Object[0]));
+                    o4Var.setText(org.telegram.messenger.hd.a0("StatisticOverview", null, 2131744652, new Object[0]));
                     return;
                 } else {
                     o4Var.setTopMargin(11);
                     o4Var.setPadding(0, 0, 0, 0);
-                    o4Var.setText(org.telegram.messenger.gd.a0("PublicShares", null, 2131746387, new Object[0]));
+                    o4Var.setText(org.telegram.messenger.hd.a0("PublicShares", null, 2131746387, new Object[0]));
                     return;
                 }
             }
@@ -123,27 +123,27 @@ public final class mg0 extends org.telegram.ui.Components.dk0 {
             TextView[] textViewArr2 = ng0Var.b;
             og0 og0Var2 = ng0Var.c;
             z41 z41Var = og0Var2.f0;
-            org.telegram.messenger.fj fjVar = og0Var2.n;
+            org.telegram.messenger.gj gjVar = og0Var2.n;
             if (z41Var != null) {
                 i11 = z41Var.d();
                 i12 = z41Var.a();
                 i13 = z41Var.c();
                 c10 = 1;
             } else {
-                boolean x42 = fjVar.x4();
-                TL_stories.StoryItem storyItem = fjVar.l;
-                int i16 = x42 ? storyItem.views.views_count : fjVar.k.views;
-                int i17 = fjVar.x4() ? storyItem.views.forwards_count : fjVar.k.forwards;
-                if (fjVar.x4()) {
+                boolean x42 = gjVar.x4();
+                TL_stories.StoryItem storyItem = gjVar.l;
+                int i16 = x42 ? storyItem.views.views_count : gjVar.k.views;
+                int i17 = gjVar.x4() ? storyItem.views.forwards_count : gjVar.k.forwards;
+                if (gjVar.x4()) {
                     i11 = i16;
                     i13 = storyItem.views.reactions_count;
                     c10 = 1;
                 } else {
                     c10 = 1;
-                    if (fjVar.k.reactions != null) {
+                    if (gjVar.k.reactions != null) {
                         int i18 = 0;
-                        for (int i19 = 0; i19 < fjVar.k.reactions.results.size(); i19++) {
-                            i18 += fjVar.k.reactions.results.get(i19).count;
+                        for (int i19 = 0; i19 < gjVar.k.reactions.results.size(); i19++) {
+                            i18 += gjVar.k.reactions.results.get(i19).count;
                         }
                         i11 = i16;
                         i13 = i18;
@@ -156,31 +156,31 @@ public final class mg0 extends org.telegram.ui.Components.dk0 {
                 i12 = i17;
             }
             textViewArr[0].setText(org.telegram.messenger.g0.o0(i11, 0));
-            textViewArr2[0].setText(org.telegram.messenger.gd.N0(2131744652, null));
+            textViewArr2[0].setText(org.telegram.messenger.hd.N0(2131744650, null));
             textViewArr[c10].setText(org.telegram.messenger.g0.o0(og0Var2.V, 0));
-            textViewArr2[c10].setText(org.telegram.messenger.gd.a0("PublicShares", null, 2131746387, new Object[0]));
+            textViewArr2[c10].setText(org.telegram.messenger.hd.a0("PublicShares", null, 2131746387, new Object[0]));
             textViewArr[2].setText(org.telegram.messenger.g0.o0(i13, 0));
-            textViewArr2[2].setText(org.telegram.messenger.gd.a0("Reactions", null, 2131746191, new Object[0]));
+            textViewArr2[2].setText(org.telegram.messenger.hd.a0("Reactions", null, 2131746191, new Object[0]));
             TLRPC.ChatFull chatFull = og0Var2.a;
             if (chatFull != null && (chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone) && i13 == 0) {
                 ((ViewGroup) textViewArr2[2].getParent()).setVisibility(8);
             }
             textViewArr[3].setText(org.telegram.messenger.g0.o0(Math.max(0, i12 - og0Var2.V), 0));
-            textViewArr2[3].setText(org.telegram.messenger.gd.a0("PrivateShares", null, 2131746550, new Object[0]));
+            textViewArr2[3].setText(org.telegram.messenger.hd.a0("PrivateShares", null, 2131746550, new Object[0]));
             ng0Var.a();
             return;
         }
         org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) view;
         int i20 = og0Var.J;
-        org.telegram.messenger.fj fjVar2 = (i7 < i20 || i7 >= og0Var.K) ? null : (org.telegram.messenger.fj) og0Var.y.get(i7 - i20);
-        TLRPC.Message message = fjVar2.k;
-        TL_stories.StoryItem storyItem2 = fjVar2.l;
-        long B0 = org.telegram.messenger.fj.B0(message);
-        if (fjVar2.x4()) {
+        org.telegram.messenger.gj gjVar2 = (i7 < i20 || i7 >= og0Var.K) ? null : (org.telegram.messenger.gj) og0Var.y.get(i7 - i20);
+        TLRPC.Message message = gjVar2.k;
+        TL_stories.StoryItem storyItem2 = gjVar2.l;
+        long B0 = org.telegram.messenger.gj.B0(message);
+        if (gjVar2.x4()) {
             TLObject c22 = org.telegram.messenger.n5.E(B0) ? og0Var.getMessagesController().c2(Long.valueOf(B0)) : og0Var.getMessagesController().O0(Long.valueOf(-B0));
             TL_stories.StoryViews storyViews = storyItem2.views;
-            b5Var.c(c22, null, (storyViews == null || (i10 = storyViews.views_count) == 0) ? org.telegram.messenger.gd.N0(2131747939, null) : org.telegram.messenger.gd.G(i10, "Views", new Object[0]), i7 != og0Var.K + (-1));
-            jg0 jg0Var = new jg0(i15, this, fjVar2);
+            b5Var.c(c22, null, (storyViews == null || (i10 = storyViews.views_count) == 0) ? org.telegram.messenger.hd.N0(2131747939, null) : org.telegram.messenger.hd.G(i10, "Views", new Object[0]), i7 != og0Var.K + (-1));
+            jg0 jg0Var = new jg0(i15, this, gjVar2);
             b5Var.r = storyItem2;
             b5Var.a.setOnClickListener(jg0Var);
             return;
@@ -192,12 +192,12 @@ public final class mg0 extends org.telegram.ui.Components.dk0 {
             if (!org.telegram.messenger.v3.T(O0) || O0.megagroup) {
                 int i21 = O0.participants_count;
                 if (i21 != 0) {
-                    format = String.format("%1$s, %2$s", org.telegram.messenger.gd.G(i21, "Members", new Object[0]), org.telegram.messenger.gd.G(fjVar2.k.views, "Views", new Object[0]));
+                    format = String.format("%1$s, %2$s", org.telegram.messenger.hd.G(i21, "Members", new Object[0]), org.telegram.messenger.hd.G(gjVar2.k.views, "Views", new Object[0]));
                 } else {
                     user = O0;
                 }
             } else {
-                format = org.telegram.messenger.gd.G(fjVar2.k.views, "Views", new Object[0]);
+                format = org.telegram.messenger.hd.G(gjVar2.k.views, "Views", new Object[0]);
             }
             str = format;
             user = O0;

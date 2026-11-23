@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b6 implements Runnable {
     public final /* synthetic */ int a;
@@ -107,11 +107,11 @@ public final /* synthetic */ class b6 implements Runnable {
                                                         ArrayList d12 = org.telegram.messenger.g0.d1();
                                                         File file = (File) d12.get(0);
                                                         file.getAbsolutePath();
-                                                        if (!TextUtils.isEmpty(org.telegram.messenger.bz.h0)) {
+                                                        if (!TextUtils.isEmpty(org.telegram.messenger.cz.h0)) {
                                                             int size = d12.size();
                                                             for (int i11 = 0; i11 < size; i11++) {
                                                                 File file2 = (File) d12.get(i11);
-                                                                if (file2.getAbsolutePath().startsWith(org.telegram.messenger.bz.h0)) {
+                                                                if (file2.getAbsolutePath().startsWith(org.telegram.messenger.cz.h0)) {
                                                                     file = file2;
                                                                 }
                                                             }

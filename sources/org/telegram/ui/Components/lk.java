@@ -17,7 +17,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class lk extends zj0 {
     public jg.o0 E;
@@ -148,7 +148,7 @@ public final class lk extends zj0 {
         if (i10 < arrayList.size()) {
             y3Var.setAlpha(1.0f);
             if (((ArrayList) this.R.get((String) arrayList.get(i10))) != null) {
-                y3Var.setText((i10 != 0 || this.s.isEmpty()) ? org.telegram.messenger.gd.e0(((org.telegram.messenger.fj) r1.get(0)).k.date, false) : org.telegram.messenger.gd.N0(2131749359, null));
+                y3Var.setText((i10 != 0 || this.s.isEmpty()) ? org.telegram.messenger.hd.e0(((org.telegram.messenger.gj) r1.get(0)).k.date, false) : org.telegram.messenger.hd.N0(2131749359, null));
             }
         }
         return view;
@@ -176,7 +176,7 @@ public final class lk extends zj0 {
             if (((ArrayList) hashMap.get((String) arrayList.get(i13))) == null) {
                 return;
             }
-            ((org.telegram.ui.Cells.y3) view).setText((i13 != 0 || this.s.isEmpty()) ? org.telegram.messenger.gd.e0(((org.telegram.messenger.fj) r3.get(0)).k.date, false) : org.telegram.messenger.gd.N0(2131749359, null));
+            ((org.telegram.ui.Cells.y3) view).setText((i13 != 0 || this.s.isEmpty()) ? org.telegram.messenger.hd.e0(((org.telegram.messenger.gj) r3.get(0)).k.date, false) : org.telegram.messenger.hd.N0(2131749359, null));
             return;
         }
         if (i12 == 1 || i12 == 4) {
@@ -207,13 +207,13 @@ public final class lk extends zj0 {
             if (arrayList2 == null) {
                 return;
             }
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList2.get(i11);
-            boolean z11 = i7Var.getMessage() != null && i7Var.getMessage().e1() == fjVar.e1();
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList2.get(i11);
+            boolean z11 = i7Var.getMessage() != null && i7Var.getMessage().e1() == gjVar.e1();
             if (i11 != arrayList2.size() - 1 || (i15 == arrayList.size() - 1 && this.T)) {
                 z10 = true;
             }
-            i7Var.c(fjVar, z10);
-            i7Var.getViewTreeObserver().addOnPreDrawListener(new kk(this, i7Var, fjVar, z11, 0));
+            i7Var.c(gjVar, z10);
+            i7Var.getViewTreeObserver().addOnPreDrawListener(new kk(this, i7Var, gjVar, z11, 0));
         }
     }
 
@@ -326,7 +326,7 @@ public final class lk extends zj0 {
         }
         final int i7 = 1 + this.U;
         this.U = i7;
-        final org.telegram.messenger.c a10 = org.telegram.messenger.c.a(org.telegram.messenger.j10.t0);
+        final org.telegram.messenger.c a10 = org.telegram.messenger.c.a(org.telegram.messenger.k10.t0);
         ?? r02 = new Runnable() { // from class: org.telegram.ui.Components.gk
             /* JADX WARN: Multi-variable type inference failed */
             @Override // java.lang.Runnable
@@ -351,7 +351,7 @@ public final class lk extends zj0 {
                     tL_messages_search.q = str4;
                     tL_messages_search.limit = 20;
                     tL_messages_search.filter = lkVar.E.e;
-                    tL_messages_search.peer = org.telegram.messenger.mp.u1(i11).l1(j14);
+                    tL_messages_search.peer = org.telegram.messenger.np.u1(i11).l1(j14);
                     if (j15 > 0) {
                         tL_messages_search.min_date = (int) (j15 / 1000);
                     }
@@ -359,7 +359,7 @@ public final class lk extends zj0 {
                         tL_messages_search.max_date = (int) (j16 / 1000);
                     }
                     if (z13 && str4.equals(lkVar.K) && !arrayList6.isEmpty()) {
-                        tL_messages_search.offset_id = ((org.telegram.messenger.fj) i5.c.h(1, arrayList6)).e1();
+                        tL_messages_search.offset_id = ((org.telegram.messenger.gj) i5.c.h(1, arrayList6)).e1();
                     } else {
                         tL_messages_search.offset_id = 0;
                     }
@@ -375,7 +375,7 @@ public final class lk extends zj0 {
                         ArrayList arrayList7 = new ArrayList();
                         i10 = 20;
                         j12 = j15;
-                        org.telegram.messenger.tr.a0(i11).M0(0, str4, arrayList7, new ArrayList(), new ArrayList(), null, -1);
+                        org.telegram.messenger.ur.a0(i11).M0(0, str4, arrayList7, new ArrayList(), new ArrayList(), null, -1);
                         arrayList4 = arrayList7;
                     }
                     TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = new TLRPC.TL_messages_searchGlobal();
@@ -389,20 +389,20 @@ public final class lk extends zj0 {
                         tL_messages_searchGlobal2.max_date = (int) (j16 / 1000);
                     }
                     if (z13 && str4.equals(lkVar.K) && !arrayList6.isEmpty()) {
-                        org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) i5.c.h(1, arrayList6);
-                        tL_messages_searchGlobal2.offset_id = fjVar.e1();
+                        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) i5.c.h(1, arrayList6);
+                        tL_messages_searchGlobal2.offset_id = gjVar.e1();
                         tL_messages_searchGlobal2.offset_rate = lkVar.H;
-                        TLRPC.Peer peer = fjVar.k.peer_id;
+                        TLRPC.Peer peer = gjVar.k.peer_id;
                         long j17 = peer.channel_id;
                         if (j17 == 0) {
                             j17 = peer.chat_id;
                             if (j17 == 0) {
                                 j13 = peer.user_id;
-                                tL_messages_searchGlobal2.offset_peer = org.telegram.messenger.mp.u1(i11).l1(j13);
+                                tL_messages_searchGlobal2.offset_peer = org.telegram.messenger.np.u1(i11).l1(j13);
                             }
                         }
                         j13 = -j17;
-                        tL_messages_searchGlobal2.offset_peer = org.telegram.messenger.mp.u1(i11).l1(j13);
+                        tL_messages_searchGlobal2.offset_peer = org.telegram.messenger.np.u1(i11).l1(j13);
                     } else {
                         tL_messages_searchGlobal2.offset_rate = 0;
                         tL_messages_searchGlobal2.offset_id = 0;
@@ -428,9 +428,9 @@ public final class lk extends zj0 {
                             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                             int size = messages_messages.messages.size();
                             for (int i13 = 0; i13 < size; i13++) {
-                                org.telegram.messenger.fj fjVar2 = new org.telegram.messenger.fj(cVar2.a, messages_messages.messages.get(i13), false, true);
-                                fjVar2.K5(str5, true);
-                                arrayList9.add(fjVar2);
+                                org.telegram.messenger.gj gjVar2 = new org.telegram.messenger.gj(cVar2.a, messages_messages.messages.get(i13), false, true);
+                                gjVar2.K5(str5, true);
+                                arrayList9.add(gjVar2);
                             }
                         }
                         org.telegram.messenger.g0.g3(new ki.x2(lk.this, i12, tL_error, tLObject, cVar2, z13, str5, arrayList9, j14, j18, arrayList5, arrayList8));

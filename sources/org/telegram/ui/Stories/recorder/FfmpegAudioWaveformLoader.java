@@ -1,20 +1,20 @@
 package org.telegram.ui.Stories.recorder;
 
-import ai.c1;
+import ai.j1;
 import hi.l;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.r10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class FfmpegAudioWaveformLoader {
-    private q10 onChunkReceived;
+    private r10 onChunkReceived;
     private volatile boolean running = true;
 
-    public FfmpegAudioWaveformLoader(String str, int i7, q10 q10Var) {
-        this.onChunkReceived = q10Var;
-        Utilities.h.c(new c1(this, str, i7, 14));
+    public FfmpegAudioWaveformLoader(String str, int i7, r10 r10Var) {
+        this.onChunkReceived = r10Var;
+        Utilities.h.c(new j1(this, str, i7, 13));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -32,7 +32,7 @@ public class FfmpegAudioWaveformLoader {
     }
 
     private void receiveChunk(short[] sArr, int i7) {
-        g0.g3(new c1(this, sArr, i7, 15));
+        g0.g3(new j1(this, sArr, i7, 14));
     }
 
     public void destroy() {

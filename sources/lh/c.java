@@ -12,13 +12,13 @@ import c8.ma;
 import c8.ra;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.pi;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
@@ -43,8 +43,8 @@ public final class c extends LinearLayout {
         r7Var2.b = c11;
         c11.setOnClickListener(new o(i7));
         ra.b((kh.a) r7Var2.b, 0.065f, 2.0f);
-        a(r7Var, gd.N0(2131746067, null), R.drawable.input_reply, false);
-        a(r7Var2, gd.N0(2131750570, null), R.drawable.input_forward, true);
+        a(r7Var, hd.N0(2131746067, null), R.drawable.input_reply, false);
+        a(r7Var2, hd.N0(2131750570, null), R.drawable.input_forward, true);
         setOrientation(0);
         setClipChildren(false);
         addView((kh.a) r7Var.b, ma.m(1.0f, 0, 56, 1, -1, 0));

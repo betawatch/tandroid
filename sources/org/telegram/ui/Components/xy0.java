@@ -14,7 +14,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class xy0 {
     public final TextPaint a;
@@ -88,7 +88,7 @@ public final class xy0 {
         }
         float f10 = this.p;
         if (f10 >= 0.0f && this.c > f10) {
-            canvas.saveLayerAlpha(0.0f, -this.t, f10 - 1.0f, r0.getHeight() + this.t, org.telegram.messenger.ks.e4, 31);
+            canvas.saveLayerAlpha(0.0f, -this.t, f10 - 1.0f, r0.getHeight() + this.t, org.telegram.messenger.ls.e4, 31);
         }
         canvas.save();
         canvas.translate(-this.d, 0.0f);

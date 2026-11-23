@@ -13,22 +13,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bj;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.lz;
-import org.telegram.messenger.ri;
-import org.telegram.messenger.sy;
+import org.telegram.messenger.cj;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.mz;
+import org.telegram.messenger.si;
+import org.telegram.messenger.ty;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class a8 extends FrameLayout implements fs, rg.c {
+public class a8 extends FrameLayout implements gs, rg.c {
     public static final AccelerateInterpolator O = new AccelerateInterpolator(0.5f);
     public boolean E;
     public final int F;
@@ -43,7 +43,7 @@ public class a8 extends FrameLayout implements fs, rg.c {
     public final z7 a;
     public final ug.b1 b;
     public TLRPC.Document c;
-    public sy d;
+    public ty d;
     public Object e;
     public String f;
     public final TextView h;
@@ -57,7 +57,7 @@ public class a8 extends FrameLayout implements fs, rg.c {
     public a8(Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z10) {
         super(context);
         this.n = 1.0f;
-        this.F = j10.t0;
+        this.F = k10.t0;
         this.I = 1.0f;
         this.N = h6Var;
         this.G = z10;
@@ -178,14 +178,14 @@ public class a8 extends FrameLayout implements fs, rg.c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(TLRPC.Document document, sy syVar, Object obj, String str, boolean z10, boolean z11) {
+    public final void d(TLRPC.Document document, ty tyVar, Object obj, String str, boolean z10, boolean z11) {
         boolean z12;
         boolean z13;
         int[] iArr;
         TextView textView;
         int i7;
         this.f = str;
-        this.H = fj.X3(document);
+        this.H = gj.X3(document);
         this.M = false;
         z7 z7Var = this.a;
         z7Var.p1 = null;
@@ -207,18 +207,18 @@ public class a8 extends FrameLayout implements fs, rg.c {
             b1Var.invalidate();
         }
         TextView textView2 = this.h;
-        if (syVar != null) {
-            this.d = syVar;
-            if (syVar.c) {
+        if (tyVar != null) {
+            this.d = tyVar;
+            if (tyVar.c) {
                 i7 = 4;
                 iArr = null;
                 textView = textView2;
-                z7Var.r0(fc.g(syVar.a), "80_80", null, null, org.telegram.messenger.u5.b(org.telegram.ui.ActionBar.m6.i5), 0L, syVar.e ? "tgs" : null, 0, 1);
+                z7Var.r0(gc.g(tyVar.a), "80_80", null, null, org.telegram.messenger.u5.b(org.telegram.ui.ActionBar.m6.i5), 0L, tyVar.e ? "tgs" : null, 0, 1);
             } else {
                 iArr = null;
                 textView = textView2;
                 i7 = 4;
-                z7Var.r0(null, null, null, null, org.telegram.messenger.u5.b(org.telegram.ui.ActionBar.m6.i5), 0L, syVar.e ? "tgs" : null, 0, 1);
+                z7Var.r0(null, null, null, null, org.telegram.messenger.u5.b(org.telegram.ui.ActionBar.m6.i5), 0L, tyVar.e ? "tgs" : null, 0, 1);
             }
             if (str != null) {
                 TextView textView3 = textView;
@@ -235,12 +235,12 @@ public class a8 extends FrameLayout implements fs, rg.c {
             int i11 = z14 ? org.telegram.ui.ActionBar.m6.c7 : org.telegram.ui.ActionBar.m6.a7;
             float f10 = z14 ? 0.2f : 1.0f;
             org.telegram.ui.ActionBar.h6 h6Var = this.N;
-            lz f11 = org.telegram.messenger.u5.f(document, i11, f10, h6Var);
+            mz f11 = org.telegram.messenger.u5.f(document, i11, f10, h6Var);
             String str2 = z14 ? "66_66_pcache_compress" : "66_66";
-            if (fj.C4(document)) {
+            if (gj.C4(document)) {
                 z7Var.p1 = org.telegram.ui.ActionBar.m6.o0(h6Var);
             }
-            if (fj.p(document)) {
+            if (gj.p(document)) {
                 if (z14) {
                     z13 = true;
                     this.M = true;
@@ -248,27 +248,27 @@ public class a8 extends FrameLayout implements fs, rg.c {
                     z13 = true;
                 }
                 if (f11 != null) {
-                    z7Var.u0(fc.b(document), str2, fc.c(w10, document), null, null, null, f11, 0L, null, this.e, 1);
+                    z7Var.u0(gc.b(document), str2, gc.c(w10, document), null, null, null, f11, 0L, null, this.e, 1);
                     z12 = z13;
                 } else if (w10 != null) {
                     z12 = z13;
-                    z7Var.t0(fc.b(document), str2, fc.c(w10, document), null, null, this.e, 1);
+                    z7Var.t0(gc.b(document), str2, gc.c(w10, document), null, null, this.e, 1);
                 } else {
                     z12 = z13;
-                    z7Var.q0(fc.b(document), str2, null, null, this.e, 1);
+                    z7Var.q0(gc.b(document), str2, null, null, this.e, 1);
                 }
             } else {
                 z12 = true;
                 if (f11 != null) {
                     if (w10 != null) {
-                        z7Var.q0(fc.c(w10, document), str2, f11, "webp", this.e, 1);
+                        z7Var.q0(gc.c(w10, document), str2, f11, "webp", this.e, 1);
                     } else {
-                        z7Var.q0(fc.b(document), str2, f11, "webp", this.e, 1);
+                        z7Var.q0(gc.b(document), str2, f11, "webp", this.e, 1);
                     }
                 } else if (w10 != null) {
-                    z7Var.q0(fc.c(w10, document), str2, null, "webp", this.e, 1);
+                    z7Var.q0(gc.c(w10, document), str2, null, "webp", this.e, 1);
                 } else {
-                    z7Var.q0(fc.b(document), str2, null, "webp", this.e, 1);
+                    z7Var.q0(gc.b(document), str2, null, "webp", this.e, 1);
                 }
             }
             if (str != null) {
@@ -290,7 +290,7 @@ public class a8 extends FrameLayout implements fs, rg.c {
                         i12++;
                     }
                 }
-                String str4 = (String) ri.d0(this.F).d0.f(this.c.id);
+                String str4 = (String) si.d0(this.F).d0.f(this.c.id);
                 if (str4 == null) {
                     str4 = "";
                 }
@@ -317,9 +317,9 @@ public class a8 extends FrameLayout implements fs, rg.c {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.i5) {
+        if (i7 == ls.i5) {
             e(true);
         }
     }
@@ -340,7 +340,7 @@ public class a8 extends FrameLayout implements fs, rg.c {
         }
         ug.b1 b1Var = this.b;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) b1Var.getLayoutParams();
-        if (j10.i(this.F).q()) {
+        if (k10.i(this.F).q()) {
             int L = org.telegram.messenger.g0.L(16.0f);
             layoutParams.width = L;
             layoutParams.height = L;
@@ -357,7 +357,7 @@ public class a8 extends FrameLayout implements fs, rg.c {
             layoutParams.bottomMargin = org.telegram.messenger.g0.L(8.0f);
             b1Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
         }
-        b1Var.setLocked(!j10.i(r4).q());
+        b1Var.setLocked(!k10.i(r4).q());
         org.telegram.messenger.g0.X3(b1Var, this.J, 0.9f, true, z10);
         invalidate();
     }
@@ -374,29 +374,29 @@ public class a8 extends FrameLayout implements fs, rg.c {
         return this.e;
     }
 
-    public bj getSendAnimationData() {
+    public cj getSendAnimationData() {
         z7 z7Var = this.a;
         if (!z7Var.L()) {
             return null;
         }
-        bj bjVar = new bj();
+        cj cjVar = new cj();
         getLocationInWindow(new int[2]);
-        bjVar.a = z7Var.r() + r2[0];
-        bjVar.b = z7Var.s() + r2[1];
-        bjVar.c = z7Var.N0;
-        return bjVar;
+        cjVar.a = z7Var.r() + r2[0];
+        cjVar.b = z7Var.s() + r2[1];
+        cjVar.c = z7Var.N0;
+        return cjVar;
     }
 
     public TLRPC.Document getSticker() {
         return this.c;
     }
 
-    public sy getStickerPath() {
-        sy syVar = this.d;
-        if (syVar == null || !syVar.c) {
+    public ty getStickerPath() {
+        ty tyVar = this.d;
+        if (tyVar == null || !tyVar.c) {
             return null;
         }
-        return syVar;
+        return tyVar;
     }
 
     @Override // android.view.View
@@ -420,20 +420,20 @@ public class a8 extends FrameLayout implements fs, rg.c {
             z7Var.H0(this);
         }
         z7Var.P();
-        ks.f(this.F).c(this, ks.i5);
+        ls.f(this.F).c(this, ls.i5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.a.R();
-        ks.f(this.F).n(this, ks.i5);
+        ls.f(this.F).n(this, ls.i5);
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        String N0 = gd.N0(2131753933, null);
+        String N0 = hd.N0(2131753933, null);
         if (this.c != null) {
             int i7 = 0;
             while (true) {
@@ -468,8 +468,8 @@ public class a8 extends FrameLayout implements fs, rg.c {
         invalidate();
     }
 
-    public void setSticker(sy syVar) {
-        String str = syVar.b;
-        d(null, syVar, null, str, str != null, false);
+    public void setSticker(ty tyVar) {
+        String str = tyVar.b;
+        d(null, tyVar, null, str, str != null, false);
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class io0 implements jg.f0 {
     public final /* synthetic */ ap0 a;
@@ -30,11 +30,11 @@ public final class io0 implements jg.f0 {
             jg.g0 g0Var = (jg.g0) ap0Var.A2.get(i10);
             TLObject tLObject2 = g0Var.a;
             if (tLObject2 instanceof TLRPC.User) {
-                org.telegram.messenger.mp.u1(ap0Var.a).e4((TLRPC.User) g0Var.a, true, false);
+                org.telegram.messenger.np.u1(ap0Var.a).e4((TLRPC.User) g0Var.a, true, false);
             } else if (tLObject2 instanceof TLRPC.Chat) {
-                org.telegram.messenger.mp.u1(ap0Var.a).X3((TLRPC.Chat) g0Var.a, true);
+                org.telegram.messenger.np.u1(ap0Var.a).X3((TLRPC.Chat) g0Var.a, true);
             } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
-                org.telegram.messenger.mp.u1(ap0Var.a).b4((TLRPC.EncryptedChat) g0Var.a, true);
+                org.telegram.messenger.np.u1(ap0Var.a).b4((TLRPC.EncryptedChat) g0Var.a, true);
             }
         }
         ap0Var.I1.f();

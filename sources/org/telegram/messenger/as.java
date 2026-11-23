@@ -1,57 +1,181 @@
 package org.telegram.messenger;
 
-import android.os.SystemClock;
-import android.util.SparseArray;
-import java.util.ArrayList;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class as implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ks b;
+public abstract class as {
+    public static final LinkedList a;
+    public static boolean b;
+    public static xr c;
+    public static ComponentName d;
 
-    public /* synthetic */ as(ks ksVar, int i7) {
-        this.a = i7;
-        this.b = ksVar;
+    static {
+        LinkedList linkedList = new LinkedList();
+        a = linkedList;
+        linkedList.add(NotificationBadge$AdwHomeBadger.class);
+        linkedList.add(NotificationBadge$ApexHomeBadger.class);
+        linkedList.add(NotificationBadge$NewHtcHomeBadger.class);
+        linkedList.add(NotificationBadge$NovaHomeBadger.class);
+        linkedList.add(NotificationBadge$SonyHomeBadger.class);
+        linkedList.add(NotificationBadge$XiaomiHomeBadger.class);
+        linkedList.add(NotificationBadge$AsusHomeBadger.class);
+        linkedList.add(NotificationBadge$HuaweiHomeBadger.class);
+        linkedList.add(NotificationBadge$OPPOHomeBader.class);
+        linkedList.add(NotificationBadge$SamsungHomeBadger.class);
+        linkedList.add(NotificationBadge$ZukHomeBadger.class);
+        linkedList.add(NotificationBadge$VivoHomeBadger.class);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ks ksVar = this.b;
-                ArrayList arrayList = null;
-                ksVar.i = null;
-                SparseArray sparseArray = ksVar.n;
-                if (sparseArray.size() != 0) {
-                    long elapsedRealtime = SystemClock.elapsedRealtime();
-                    long j3 = Long.MAX_VALUE;
-                    for (int i7 = 0; i7 < sparseArray.size(); i7++) {
-                        long j10 = ((ds) sparseArray.valueAt(i7)).b;
-                        if (elapsedRealtime - j10 > 1000) {
-                            if (arrayList == null) {
-                                arrayList = new ArrayList();
-                            }
-                            arrayList.add(Integer.valueOf(sparseArray.keyAt(i7)));
-                        } else {
-                            j3 = Math.min(j10, j3);
-                        }
+    public static boolean a(Intent intent) {
+        List<ResolveInfo> queryBroadcastReceivers = t0.b.getPackageManager().queryBroadcastReceivers(intent, 0);
+        return queryBroadcastReceivers != null && queryBroadcastReceivers.size() > 0;
+    }
+
+    public static void b() {
+        xr xrVar;
+        xr xrVar2;
+        Context context = t0.b;
+        Intent launchIntentForPackage = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+        if (launchIntentForPackage == null) {
+            return;
+        }
+        d = launchIntentForPackage.getComponent();
+        Intent intent = new Intent("android.intent.action.MAIN");
+        intent.addCategory("android.intent.category.HOME");
+        ResolveInfo resolveActivity = context.getPackageManager().resolveActivity(intent, 65536);
+        if (resolveActivity != null) {
+            String str = resolveActivity.activityInfo.packageName;
+            Iterator it = a.iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    break;
+                }
+                try {
+                    xrVar2 = (xr) ((Class) it.next()).newInstance();
+                } catch (Exception unused) {
+                    xrVar2 = null;
+                }
+                if (xrVar2 != null && xrVar2.b().contains(str)) {
+                    c = xrVar2;
+                    break;
+                }
+            }
+            if (c != null) {
+                return;
+            }
+        }
+        List<ResolveInfo> queryIntentActivities = context.getPackageManager().queryIntentActivities(intent, 65536);
+        if (queryIntentActivities != null) {
+            for (int i7 = 0; i7 < queryIntentActivities.size(); i7++) {
+                String str2 = queryIntentActivities.get(i7).activityInfo.packageName;
+                Iterator it2 = a.iterator();
+                while (true) {
+                    if (!it2.hasNext()) {
+                        break;
                     }
-                    if (arrayList != null) {
-                        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                            ksVar.j(((Integer) arrayList.get(i10)).intValue());
-                        }
+                    try {
+                        xrVar = (xr) ((Class) it2.next()).newInstance();
+                    } catch (Exception unused2) {
+                        xrVar = null;
                     }
-                    if (j3 != Long.MAX_VALUE) {
-                        g0.h3(new as(ksVar, 1), Math.max(17L, 5017 - (elapsedRealtime - j3)));
+                    if (xrVar != null && xrVar.b().contains(str2)) {
+                        c = xrVar;
                         break;
                     }
                 }
-                break;
-            default:
-                ks ksVar2 = this.b;
-                ksVar2.i = new as(ksVar2, 0);
-                break;
+                if (c != null) {
+                    break;
+                }
+            }
+        }
+        if (c == null) {
+            String str3 = Build.MANUFACTURER;
+            if (str3.equalsIgnoreCase("Xiaomi")) {
+                c = new xr() { // from class: org.telegram.messenger.NotificationBadge$XiaomiHomeBadger
+                    @Override // org.telegram.messenger.xr
+                    public final void a(int i10) {
+                        try {
+                            Object newInstance = Class.forName("android.app.MiuiNotification").newInstance();
+                            Field declaredField = newInstance.getClass().getDeclaredField("messageCount");
+                            declaredField.setAccessible(true);
+                            declaredField.set(newInstance, String.valueOf(i10 == 0 ? "" : Integer.valueOf(i10)));
+                        } catch (Throwable unused3) {
+                            Intent intent2 = new Intent("android.intent.action.APPLICATION_MESSAGE_UPDATE");
+                            intent2.putExtra("android.intent.extra.update_application_component_name", as.d.getPackageName() + "/" + as.d.getClassName());
+                            intent2.putExtra("android.intent.extra.update_application_message_text", String.valueOf(i10 != 0 ? Integer.valueOf(i10) : ""));
+                            if (as.a(intent2)) {
+                                g0.g3(new j6.o(intent2, 12));
+                            }
+                        }
+                    }
+
+                    @Override // org.telegram.messenger.xr
+                    public final List b() {
+                        return Arrays.asList("com.miui.miuilite", "com.miui.home", "com.miui.miuihome", "com.miui.miuihome2", "com.miui.mihome", "com.miui.mihome2");
+                    }
+                };
+                return;
+            }
+            if (str3.equalsIgnoreCase("ZUK")) {
+                c = new NotificationBadge$ZukHomeBadger();
+                return;
+            }
+            if (str3.equalsIgnoreCase("OPPO")) {
+                c = new xr() { // from class: org.telegram.messenger.NotificationBadge$OPPOHomeBader
+                    public int a = -1;
+
+                    @Override // org.telegram.messenger.xr
+                    public final void a(int i10) {
+                        if (this.a == i10) {
+                            return;
+                        }
+                        this.a = i10;
+                        try {
+                            Bundle bundle = new Bundle();
+                            bundle.putInt("app_badge_count", i10);
+                            t0.b.getContentResolver().call(Uri.parse("content://com.android.badge/badge"), "setAppBadgeCount", (String) null, bundle);
+                        } catch (Throwable unused3) {
+                        }
+                    }
+
+                    @Override // org.telegram.messenger.xr
+                    public final List b() {
+                        return Collections.singletonList("com.oppo.launcher");
+                    }
+                };
+            } else if (str3.equalsIgnoreCase("VIVO")) {
+                c = new xr() { // from class: org.telegram.messenger.NotificationBadge$VivoHomeBadger
+                    @Override // org.telegram.messenger.xr
+                    public final void a(int i10) {
+                        Intent intent2 = new Intent("launcher.action.CHANGE_APPLICATION_NOTIFICATION_NUM");
+                        intent2.setPackage("com.vivo.launcher");
+                        intent2.putExtra("packageName", t0.b.getPackageName());
+                        intent2.putExtra("className", as.d.getClassName());
+                        intent2.putExtra("notificationNum", i10);
+                        t0.b.sendBroadcast(intent2);
+                    }
+
+                    @Override // org.telegram.messenger.xr
+                    public final List b() {
+                        return Arrays.asList("com.vivo.launcher");
+                    }
+                };
+            } else {
+                c = new NotificationBadge$DefaultBadger();
+            }
         }
     }
 }

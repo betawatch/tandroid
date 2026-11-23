@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j70 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final /* synthetic */ class j70 implements View.OnClickListener {
                                     o6Var2.dismiss();
                                     org.telegram.messenger.a6 q10 = org.telegram.messenger.a6.q(o6Var2.a);
                                     q10.I.clear();
-                                    q10.getNotificationCenter().k(org.telegram.messenger.ks.e5, new Object[0]);
+                                    q10.getNotificationCenter().k(org.telegram.messenger.ls.e5, new Object[0]);
                                     q10.getMessagesStorage().a.c(new org.telegram.messenger.x5(q10, 2));
                                     break;
                             }
@@ -144,7 +144,7 @@ public final /* synthetic */ class j70 implements View.OnClickListener {
                     ov0 ov0Var = new ov0(activity, o6Var.a);
                     ov0Var.setStickerNum(9);
                     ov0Var.getImageReceiver().W(1);
-                    linearLayout.addView(ov0Var, c8.ma.t(org.telegram.messenger.ks.v1, org.telegram.messenger.ks.v1, 1, 0, 26, 0, 0));
+                    linearLayout.addView(ov0Var, c8.ma.t(org.telegram.messenger.ls.v1, org.telegram.messenger.ls.v1, 1, 0, 26, 0, 0));
                     TextView textView = new TextView(activity);
                     textView.setGravity(1);
                     int i14 = org.telegram.ui.ActionBar.m6.j5;
@@ -156,7 +156,7 @@ public final /* synthetic */ class j70 implements View.OnClickListener {
                     textView2.setTextSize(1, 14.0f);
                     org.telegram.ui.ActionBar.t6.U(textView2, i14, null);
                     textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-                    textView2.setText(org.telegram.messenger.gd.a0("DownloadedFilesMessage", null, 2131751333, new Object[0]));
+                    textView2.setText(org.telegram.messenger.hd.a0("DownloadedFilesMessage", null, 2131751333, new Object[0]));
                     linearLayout.addView(textView2, c8.ma.d(-1, -2.0f, 0, 28.0f, 7.0f, 28.0f, 0.0f));
                     TextView textView3 = new TextView(activity);
                     textView3.setGravity(17);
@@ -165,7 +165,7 @@ public final /* synthetic */ class j70 implements View.OnClickListener {
                     textView3.setSingleLine(true);
                     textView3.setTextSize(1, 14.0f);
                     textView3.setTypeface(org.telegram.messenger.g0.o());
-                    textView3.setText(org.telegram.messenger.gd.N0(2131748504, null));
+                    textView3.setText(org.telegram.messenger.hd.N0(2131748504, null));
                     org.telegram.ui.ActionBar.t6.U(textView3, org.telegram.ui.ActionBar.m6.Ji, null);
                     int L2 = org.telegram.messenger.g0.L(8.0f);
                     int i15 = org.telegram.ui.ActionBar.m6.Fi;
@@ -183,7 +183,7 @@ public final /* synthetic */ class j70 implements View.OnClickListener {
                     textView4.setSingleLine(true);
                     textView4.setTextSize(1, 14.0f);
                     textView4.setTypeface(org.telegram.messenger.g0.o());
-                    textView4.setText(org.telegram.messenger.gd.N0(2131752081, null));
+                    textView4.setText(org.telegram.messenger.hd.N0(2131752081, null));
                     org.telegram.ui.ActionBar.t6.U(textView4, i15, null);
                     int L3 = org.telegram.messenger.g0.L(8.0f);
                     int o10 = i0.a.o(org.telegram.ui.ActionBar.m6.x0(null, i15, false), 120);
@@ -209,7 +209,7 @@ public final /* synthetic */ class j70 implements View.OnClickListener {
                                     o6Var2.dismiss();
                                     org.telegram.messenger.a6 q10 = org.telegram.messenger.a6.q(o6Var2.a);
                                     q10.I.clear();
-                                    q10.getNotificationCenter().k(org.telegram.messenger.ks.e5, new Object[0]);
+                                    q10.getNotificationCenter().k(org.telegram.messenger.ls.e5, new Object[0]);
                                     q10.getMessagesStorage().a.c(new org.telegram.messenger.x5(q10, 2));
                                     break;
                             }
@@ -273,7 +273,7 @@ public final /* synthetic */ class j70 implements View.OnClickListener {
                 org.telegram.messenger.g0.I3(e01Var);
                 break;
             case 20:
-                ((q01) obj).b.getImageReceiver().P0(false);
+                ((p01) obj).b.getImageReceiver().P0(false);
                 break;
             case 21:
                 ((b31) obj).dismiss();
@@ -284,7 +284,7 @@ public final /* synthetic */ class j70 implements View.OnClickListener {
                     bnVar.getMessagesController().v7.K(bnVar.a(), !r2.B(r3));
                 } else {
                     i7 = ((org.telegram.ui.ActionBar.g2) bnVar).currentAccount;
-                    org.telegram.messenger.mp.u1(i7).g7.edit().putInt("dialog_show_translate_count" + bnVar.a(), 14).commit();
+                    org.telegram.messenger.np.u1(i7).g7.edit().putInt("dialog_show_translate_count" + bnVar.a(), 14).commit();
                     bnVar.showDialog(new ug.y0((org.telegram.ui.ActionBar.g2) bnVar, 13, false));
                 }
                 bnVar.zd(true);

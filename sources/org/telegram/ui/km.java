@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class km implements ls {
     public final /* synthetic */ TLRPC.TL_messageMediaPoll a;
@@ -58,7 +58,7 @@ public final class km implements ls {
     public final void K() {
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(this.b);
-        org.telegram.messenger.zy sendMessagesHelper = this.d.a.getSendMessagesHelper();
+        org.telegram.messenger.az sendMessagesHelper = this.d.a.getSendMessagesHelper();
         org.telegram.ui.Cells.r1 r1Var = this.c;
         sendMessagesHelper.w0(r1Var.getMessageObject(), arrayList, null);
         r1Var.a0(true);
@@ -153,7 +153,7 @@ public final class km implements ls {
 
     @Override // org.telegram.ui.ls
     public final void q() {
-        org.telegram.messenger.zy sendMessagesHelper = this.d.a.getSendMessagesHelper();
+        org.telegram.messenger.az sendMessagesHelper = this.d.a.getSendMessagesHelper();
         org.telegram.ui.Cells.r1 r1Var = this.c;
         sendMessagesHelper.w0(r1Var.getMessageObject(), null, null);
         r1Var.a0(true);
@@ -165,7 +165,7 @@ public final class km implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final org.telegram.messenger.fj z() {
+    public final org.telegram.messenger.gj z() {
         return this.c.getMessageObject();
     }
 
@@ -186,7 +186,7 @@ public final class km implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ void i(org.telegram.messenger.sy syVar) {
+    public final /* synthetic */ void i(org.telegram.messenger.ty tyVar) {
     }
 
     @Override // org.telegram.ui.ls

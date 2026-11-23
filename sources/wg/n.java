@@ -1,21 +1,21 @@
 package wg;
 
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x10 b;
-    public final /* synthetic */ x10 c;
+    public final /* synthetic */ y10 b;
+    public final /* synthetic */ y10 c;
 
-    public /* synthetic */ n(x10 x10Var, x10 x10Var2, int i7) {
+    public /* synthetic */ n(y10 y10Var, y10 y10Var2, int i7) {
         this.a = i7;
-        this.b = x10Var;
-        this.c = x10Var2;
+        this.b = y10Var;
+        this.c = y10Var2;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate

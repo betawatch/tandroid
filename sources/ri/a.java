@@ -7,14 +7,14 @@ import android.widget.FrameLayout;
 import c8.i0;
 import c8.ma;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.u;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.z4;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class a {
     public final q a;
@@ -112,10 +112,10 @@ public final class a {
         fVar.w = true;
         fVar.updateColors();
         fVar.invalidateSelf();
-        fVar.J = ks.q2;
+        fVar.J = ls.q2;
         ui.c cVar = fVar.H;
         if (cVar != null) {
-            fVar.I = m6.r1(ks.q2 / 255.0f, cVar.b);
+            fVar.I = m6.r1(ls.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -154,10 +154,10 @@ public final class a {
         fVar.w = true;
         fVar.updateColors();
         fVar.invalidateSelf();
-        fVar.J = ks.q2;
+        fVar.J = ls.q2;
         ui.c cVar = fVar.H;
         if (cVar != null) {
-            fVar.I = m6.r1(ks.q2 / 255.0f, cVar.b);
+            fVar.I = m6.r1(ls.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();

@@ -3,12 +3,12 @@ package hi;
 import android.content.Context;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class t1 extends u1 implements fs {
+public final class t1 extends u1 implements gs {
     public final di.b1 b;
     public final r1 c;
     public final d2 d;
@@ -36,11 +36,11 @@ public final class t1 extends u1 implements fs {
         b1Var.i(new ai.j0(this, 1));
         b1Var.setClipToPadding(true);
         b1Var.setVerticalScrollBarEnabled(false);
-        bi.l8 l8Var = new bi.l8(this, 9);
-        b1Var.setOnTouchListener(new p1(0, this, l8Var));
-        b1Var.setOnItemClickListener(l8Var);
+        bi.k8 k8Var = new bi.k8(this, 9);
+        b1Var.setOnTouchListener(new p1(0, this, k8Var));
+        b1Var.setOnItemClickListener(k8Var);
         b1Var.setOnScrollListener(new bi.u1(this, 14));
-        addView(b1Var, c8.ma.d(-1, -1.0f, ks.E1, 0.0f, 58.0f, 0.0f, 40.0f));
+        addView(b1Var, c8.ma.d(-1, -1.0f, ls.E1, 0.0f, 58.0f, 0.0f, 40.0f));
         int i7 = i2.C1;
         d2 d2Var = new d2(context, i2Var.J0);
         this.d = d2Var;
@@ -80,9 +80,9 @@ public final class t1 extends u1 implements fs {
         this.d.setTranslationY(org.telegram.messenger.g0.L(10.0f) + Math.max(0.0f, b()));
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.X0) {
+        if (i7 == ls.X0) {
             r1.E(this.c, true);
         }
     }
@@ -91,14 +91,14 @@ public final class t1 extends u1 implements fs {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i7 = i2.C1;
-        ks.f(this.r.a).c(this, ks.X0);
+        ls.f(this.r.a).c(this, ls.X0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         int i7 = i2.C1;
-        ks.f(this.r.a).n(this, ks.X0);
+        ls.f(this.r.a).n(this, ls.X0);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

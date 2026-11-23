@@ -1,33 +1,40 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ld implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qd b;
-    public final /* synthetic */ Integer c;
+import android.location.Location;
 
-    public /* synthetic */ ld(qd qdVar, Integer num, int i7) {
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ld implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rd b;
+
+    public /* synthetic */ ld(rd rdVar, int i7) {
         this.a = i7;
-        this.b = qdVar;
-        this.c = num;
+        this.b = rdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        int i10 = 1;
-        Integer num = this.c;
-        qd qdVar = this.b;
-        switch (i7) {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
             case 0:
-                if (!qdVar.b.isEmpty()) {
-                    g0.g3(new ld(qdVar, num, i10));
-                    break;
-                }
+                this.b.m((Location) obj);
                 break;
             default:
-                qdVar.getNotificationCenter().k(76, num);
+                rd rdVar = this.b;
+                Integer num = (Integer) obj;
+                rdVar.getClass();
+                int intValue = num.intValue();
+                boolean z10 = true;
+                if (intValue == 0) {
+                    Utilities.d.c(new j10(3, rdVar, z10));
+                    break;
+                } else if (intValue == 1) {
+                    Utilities.d.c(new md(rdVar, num, 0));
+                    break;
+                } else if (intValue == 2) {
+                    Utilities.d.c(new id(rdVar, 4));
+                    break;
+                }
                 break;
         }
     }

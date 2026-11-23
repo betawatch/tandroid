@@ -8,7 +8,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pe implements Comparator {
     public final /* synthetic */ int a;
@@ -25,12 +25,12 @@ public final /* synthetic */ class pe implements Comparator {
         long[] jArr2;
         switch (this.a) {
             case 0:
-                e12 = ((org.telegram.messenger.fj) obj2).e1();
-                e13 = ((org.telegram.messenger.fj) obj).e1();
+                e12 = ((org.telegram.messenger.gj) obj2).e1();
+                e13 = ((org.telegram.messenger.gj) obj).e1();
                 break;
             case 1:
-                e12 = ((org.telegram.messenger.fj) obj2).e1();
-                e13 = ((org.telegram.messenger.fj) obj).e1();
+                e12 = ((org.telegram.messenger.gj) obj2).e1();
+                e13 = ((org.telegram.messenger.gj) obj).e1();
                 break;
             case 2:
                 return ((Integer) obj2).compareTo((Integer) obj);
@@ -46,7 +46,7 @@ public final /* synthetic */ class pe implements Comparator {
                     return -1;
                 }
                 if ((tLObject instanceof TLRPC.ChannelParticipant) && (tLObject2 instanceof TLRPC.ChannelParticipant)) {
-                    return (int) (org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) tLObject).peer) - org.telegram.messenger.fj.B1(((TLRPC.ChannelParticipant) tLObject2).peer));
+                    return (int) (org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) tLObject).peer) - org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) tLObject2).peer));
                 }
                 return 0;
             case 4:
@@ -182,8 +182,8 @@ public final /* synthetic */ class pe implements Comparator {
             case 22:
                 return Long.compare(((lt) obj2).c, ((lt) obj).c);
             case 23:
-                long j11 = org.telegram.messenger.j10.i(((Integer) obj).intValue()).Z;
-                long j12 = org.telegram.messenger.j10.i(((Integer) obj2).intValue()).Z;
+                long j11 = org.telegram.messenger.k10.i(((Integer) obj).intValue()).Z;
+                long j12 = org.telegram.messenger.k10.i(((Integer) obj2).intValue()).Z;
                 if (j11 > j12) {
                     return 1;
                 }
@@ -196,15 +196,15 @@ public final /* synthetic */ class pe implements Comparator {
                 }
                 return i15 < i16 ? 1 : 0;
             case 25:
-                long j13 = org.telegram.messenger.j10.i(((Integer) obj).intValue()).Z;
-                long j14 = org.telegram.messenger.j10.i(((Integer) obj2).intValue()).Z;
+                long j13 = org.telegram.messenger.k10.i(((Integer) obj).intValue()).Z;
+                long j14 = org.telegram.messenger.k10.i(((Integer) obj2).intValue()).Z;
                 if (j13 > j14) {
                     return 1;
                 }
                 return j13 < j14 ? -1 : 0;
             case 26:
-                long j15 = org.telegram.messenger.j10.i(((Integer) obj).intValue()).Z;
-                long j16 = org.telegram.messenger.j10.i(((Integer) obj2).intValue()).Z;
+                long j15 = org.telegram.messenger.k10.i(((Integer) obj).intValue()).Z;
+                long j16 = org.telegram.messenger.k10.i(((Integer) obj2).intValue()).Z;
                 if (j15 > j16) {
                     return 1;
                 }
@@ -213,7 +213,7 @@ public final /* synthetic */ class pe implements Comparator {
                 return ((String) obj).compareTo((String) obj2);
             case 28:
                 Drawable[] drawableArr = PhotoViewer.Z8;
-                return ((org.telegram.messenger.fj) obj).e1() - ((org.telegram.messenger.fj) obj2).e1();
+                return ((org.telegram.messenger.gj) obj).e1() - ((org.telegram.messenger.gj) obj2).e1();
             default:
                 return (int) (((View) obj).getY() - ((View) obj2).getY());
         }

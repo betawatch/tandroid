@@ -21,14 +21,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.ec;
+import org.telegram.messenger.cz;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.lz;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.mz;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.si;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -37,9 +37,9 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class w1 extends FrameLayout implements n0, fs {
+public final class w1 extends FrameLayout implements n0, gs {
     public static final float[] V = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
     public boolean E;
     public boolean F;
@@ -58,7 +58,7 @@ public final class w1 extends FrameLayout implements n0, fs {
     public final TLRPC.Document S;
     public int T;
     public long U;
-    public final lz a;
+    public final mz a;
     public final Paint b;
     public final Paint c;
     public final boolean d;
@@ -79,7 +79,7 @@ public final class w1 extends FrameLayout implements n0, fs {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public w1(Context context, lz lzVar, int i7, int i10, h6 h6Var) {
+    public w1(Context context, mz mzVar, int i7, int i10, h6 h6Var) {
         super(context);
         boolean[] zArr;
         Paint paint = new Paint(1);
@@ -91,11 +91,11 @@ public final class w1 extends FrameLayout implements n0, fs {
         this.n = imageReceiver;
         this.s = i7;
         this.w = i10;
-        this.a = lzVar;
+        this.a = mzVar;
         paint.setColor(-16777216);
         paint2.setColor(i0.a.f(0.5f, m6.w0(m6.Dk, h6Var), -16777216));
         imageReceiver.E0(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        TLRPC.TL_help_premiumPromo tL_help_premiumPromo = ri.d0(i7).E;
+        TLRPC.TL_help_premiumPromo tL_help_premiumPromo = si.d0(i7).E;
         String q02 = PremiumPreviewFragment.q0(i10);
         if (tL_help_premiumPromo != null) {
             int i11 = 0;
@@ -114,14 +114,14 @@ public final class w1 extends FrameLayout implements n0, fs {
                 v1 v1Var = null;
                 for (int i12 = 0; i12 < document.thumbs.size(); i12++) {
                     if (document.thumbs.get(i12) instanceof TLRPC.TL_photoStrippedSize) {
-                        this.L = new j0.a(getResources(), ec.F("b", document.thumbs.get(i12).bytes));
+                        this.L = new j0.a(getResources(), fc.F("b", document.thumbs.get(i12).bytes));
                         org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n();
                         nVar.m = 4.0f;
                         nVar.g = 3.5f;
                         nVar.l = true;
-                        lz lzVar2 = this.a;
+                        mz mzVar2 = this.a;
                         nVar.o = this;
-                        this.M = new fi.i0(nVar, lzVar2);
+                        this.M = new fi.i0(nVar, mzVar2);
                         v1Var = new v1(this, this.L, this.M);
                         v1Var.x = true;
                     }
@@ -202,7 +202,7 @@ public final class w1 extends FrameLayout implements n0, fs {
                         }
                     }
                 } else {
-                    s1 s1Var2 = new s1(bz.o() == 2 ? 800 : bz.o() == 1 ? 400 : 100);
+                    s1 s1Var2 = new s1(cz.o() == 2 ? 800 : cz.o() == 1 ? 400 : 100);
                     this.O = s1Var2;
                     s1Var2.P = h6Var;
                     s1Var2.Q = m6.Qk;
@@ -249,12 +249,12 @@ public final class w1 extends FrameLayout implements n0, fs {
 
     public final void a() {
         File file = this.e;
-        if ((file != null && file.exists()) || bz.B0) {
+        if ((file != null && file.exists()) || cz.B0) {
             File file2 = this.e;
             if (file2 == null || !file2.exists()) {
                 this.f = 0.671f;
             } else {
-                if ((ks.e().p & 512) != 0) {
+                if ((ls.e().p & 512) != 0) {
                     org.telegram.ui.web.z0 z0Var = this.r;
                     if (z0Var != null) {
                         org.telegram.messenger.g0.r(z0Var);
@@ -285,7 +285,7 @@ public final class w1 extends FrameLayout implements n0, fs {
     public final void b() {
         Uri uri;
         int i7 = this.s;
-        if ((this.e != null || bz.B0) && this.I == null) {
+        if ((this.e != null || cz.B0) && this.I == null) {
             this.J.a(this.f, 0);
             hi.e0 e0Var = new hi.e0(this, 1);
             this.I = e0Var;
@@ -307,7 +307,7 @@ public final class w1 extends FrameLayout implements n0, fs {
                     sb2.append("&mime=");
                     sb2.append(URLEncoder.encode(this.S.mime_type, "UTF-8"));
                     sb2.append("&rid=");
-                    sb2.append(w7.G(i7).F(ri.d0(i7).E));
+                    sb2.append(w7.G(i7).F(si.d0(i7).E));
                     sb2.append("&name=");
                     sb2.append(URLEncoder.encode(w7.B(this.S), "UTF-8"));
                     sb2.append("&reference=");
@@ -349,9 +349,9 @@ public final class w1 extends FrameLayout implements n0, fs {
         }
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.Y1) {
+        if (i7 == ls.Y1) {
             String str = (String) objArr[0];
             String str2 = this.h;
             if (str2 == null || !str2.equals(str)) {
@@ -464,7 +464,7 @@ public final class w1 extends FrameLayout implements n0, fs {
                                 g5.a aVar3 = Utilities.c;
                                 h1Var2.a = Math.abs(((int) aVar3.nextLong()) % 16);
                                 h1Var2.b = Math.abs(((int) aVar3.nextLong()) % 16);
-                                h1Var2.c = Math.abs(((int) aVar3.nextLong()) % ks.X4) + currentTimeMillis + j3;
+                                h1Var2.c = Math.abs(((int) aVar3.nextLong()) % ls.X4) + currentTimeMillis + j3;
                                 i19++;
                                 f14 = f14;
                             }
@@ -547,11 +547,11 @@ public final class w1 extends FrameLayout implements n0, fs {
                                             canvas.drawBitmap(bitmapArr[h1Var3.a], f17, f18, paint);
                                             paint.setAlpha((int) (i24 * i25 * 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.b], f17, f18, paint);
-                                            paint.setAlpha(ks.e4);
+                                            paint.setAlpha(ls.e4);
                                             if (i25 >= 1.0f) {
                                                 h1Var3.a = h1Var3.b;
                                                 h1Var3.b = Math.abs(((int) Utilities.c.nextLong()) % 16);
-                                                h1Var3.c = Math.abs(((int) r2.nextLong()) % ks.X4) + currentTimeMillis + j3;
+                                                h1Var3.c = Math.abs(((int) r2.nextLong()) % ls.X4) + currentTimeMillis + j3;
                                             }
                                         } else {
                                             i13 = i21;
@@ -657,7 +657,7 @@ public final class w1 extends FrameLayout implements n0, fs {
                                     float pow2 = 1.0f - (((float) Math.pow(kVar.l - 0.5f, 2.0d)) * 4.0f);
                                     float B = e2.B(pow2, 0.4f, 0.7f, kVar.k / t0Var2.b);
                                     float f30 = f19;
-                                    n10.k(kVar.i, f30, kVar.c, kVar.b - (kVar.h / f19), canvas);
+                                    o10.k(kVar.i, f30, kVar.c, kVar.b - (kVar.h / f19), canvas);
                                     canvas.scale(B, B, kVar.h / f30, kVar.i / f30);
                                     paint3.setAlpha((int) (kVar.d * pow2));
                                     canvas.drawBitmap(kVar.f, 0.0f, 0.0f, paint3);
@@ -780,7 +780,7 @@ public final class w1 extends FrameLayout implements n0, fs {
         if (!this.G) {
             a();
         }
-        ks.f(this.s).c(this, ks.Y1);
+        ls.f(this.s).c(this, ls.Y1);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -788,7 +788,7 @@ public final class w1 extends FrameLayout implements n0, fs {
         super.onDetachedFromWindow();
         this.y = false;
         c();
-        ks.f(this.s).n(this, ks.Y1);
+        ls.f(this.s).n(this, ls.Y1);
         org.telegram.ui.Cells.t0 t0Var = this.Q;
         if (t0Var != null) {
             HashMap hashMap = (HashMap) t0Var.f;

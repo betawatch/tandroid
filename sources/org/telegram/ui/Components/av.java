@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class av extends FrameLayout {
     public final m80 a;
@@ -23,7 +23,7 @@ public final class av extends FrameLayout {
     public final ug.r0 e;
     public final org.telegram.ui.ActionBar.q0 f;
     public final boolean h;
-    public final bi.c9 n;
+    public final bi.b9 n;
     public TLRPC.TL_messages_stickerSet r;
     public boolean s;
     public float w;
@@ -37,7 +37,7 @@ public final class av extends FrameLayout {
         float f11;
         float f12;
         this.y = evVar;
-        this.n = new bi.c9(this, 7);
+        this.n = new bi.b9(this, 7);
         final int i7 = 0;
         this.s = false;
         this.w = 0.0f;
@@ -48,7 +48,7 @@ public final class av extends FrameLayout {
         } else {
             Pattern pattern = ev.Q1;
             float f13 = 8.0f;
-            if (org.telegram.messenger.j10.i(evVar.a).q()) {
+            if (org.telegram.messenger.k10.i(evVar.a).q()) {
                 f11 = 28.0f;
                 f12 = 16.0f;
             } else {
@@ -56,7 +56,7 @@ public final class av extends FrameLayout {
                 f11 = 28.0f;
                 ug.r0 r0Var = new ug.r0(org.telegram.messenger.g0.L(4.0f), context, evVar.J0, false);
                 this.e = r0Var;
-                r0Var.b(org.telegram.messenger.gd.N0(2131743633, null), new View.OnClickListener(this) { // from class: org.telegram.ui.Components.yu
+                r0Var.b(org.telegram.messenger.hd.N0(2131743631, null), new View.OnClickListener(this) { // from class: org.telegram.ui.Components.yu
                     public final /* synthetic */ av b;
 
                     {
@@ -78,12 +78,12 @@ public final class av extends FrameLayout {
                                 avVar.a(true, true);
                                 break;
                             case 2:
-                                bi.c9 c9Var = avVar.n;
+                                bi.b9 b9Var = avVar.n;
                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = avVar.r;
                                 oo ooVar = new oo(avVar, 13);
                                 Pattern pattern2 = ev.Q1;
-                                if (c9Var != null && tL_messages_stickerSet != null && c9Var.getFragmentView() != null) {
-                                    org.telegram.messenger.ri.d0(c9Var.getCurrentAccount()).l2(c9Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, c9Var, null, true, true, ooVar, true);
+                                if (b9Var != null && tL_messages_stickerSet != null && b9Var.getFragmentView() != null) {
+                                    org.telegram.messenger.si.d0(b9Var.getCurrentAccount()).l2(b9Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, b9Var, null, true, true, ooVar, true);
                                 }
                                 avVar.a(false, true);
                                 break;
@@ -118,7 +118,7 @@ public final class av extends FrameLayout {
             org.telegram.ui.ActionBar.h6 h6Var = evVar.J0;
             textView.setBackground(e10);
             org.telegram.ui.ActionBar.t6.j(textView, e10, M, e11, h6Var);
-            textView.setText(org.telegram.messenger.gd.N0(2131754483, null));
+            textView.setText(org.telegram.messenger.hd.N0(2131754483, null));
             textView.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
             textView.setGravity(17);
             textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.yu
@@ -143,12 +143,12 @@ public final class av extends FrameLayout {
                             avVar.a(true, true);
                             break;
                         case 2:
-                            bi.c9 c9Var = avVar.n;
+                            bi.b9 b9Var = avVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = avVar.r;
                             oo ooVar = new oo(avVar, 13);
                             Pattern pattern2 = ev.Q1;
-                            if (c9Var != null && tL_messages_stickerSet != null && c9Var.getFragmentView() != null) {
-                                org.telegram.messenger.ri.d0(c9Var.getCurrentAccount()).l2(c9Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, c9Var, null, true, true, ooVar, true);
+                            if (b9Var != null && tL_messages_stickerSet != null && b9Var.getFragmentView() != null) {
+                                org.telegram.messenger.si.d0(b9Var.getCurrentAccount()).l2(b9Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, b9Var, null, true, true, ooVar, true);
                             }
                             avVar.a(false, true);
                             break;
@@ -170,7 +170,7 @@ public final class av extends FrameLayout {
             org.telegram.ui.ActionBar.h6 h6Var2 = evVar.J0;
             textView2.setBackground(a02);
             org.telegram.ui.ActionBar.t6.j(textView2, a02, null, g10, h6Var2);
-            textView2.setText(org.telegram.messenger.gd.N0(2131744614, null));
+            textView2.setText(org.telegram.messenger.hd.N0(2131744612, null));
             textView2.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
             textView2.setGravity(17);
             final int i12 = 2;
@@ -196,12 +196,12 @@ public final class av extends FrameLayout {
                             avVar.a(true, true);
                             break;
                         case 2:
-                            bi.c9 c9Var = avVar.n;
+                            bi.b9 b9Var = avVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = avVar.r;
                             oo ooVar = new oo(avVar, 13);
                             Pattern pattern2 = ev.Q1;
-                            if (c9Var != null && tL_messages_stickerSet != null && c9Var.getFragmentView() != null) {
-                                org.telegram.messenger.ri.d0(c9Var.getCurrentAccount()).l2(c9Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, c9Var, null, true, true, ooVar, true);
+                            if (b9Var != null && tL_messages_stickerSet != null && b9Var.getFragmentView() != null) {
+                                org.telegram.messenger.si.d0(b9Var.getCurrentAccount()).l2(b9Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, b9Var, null, true, true, ooVar, true);
                             }
                             avVar.a(false, true);
                             break;
@@ -261,8 +261,8 @@ public final class av extends FrameLayout {
             q0Var.setBackground(h02);
             org.telegram.ui.ActionBar.t6.j(q0Var, h02, null, M2, h6Var3);
             addView(q0Var, c8.ma.d(40, 40.0f, 53, 0.0f, 5.0f, 5.0f - (evVar.u0 / org.telegram.messenger.g0.p), 0.0f));
-            q0Var.e(1, R.drawable.msg_share, org.telegram.messenger.gd.N0(2131744605, null));
-            q0Var.e(2, R.drawable.msg_link, org.telegram.messenger.gd.N0(2131751750, null));
+            q0Var.e(1, R.drawable.msg_share, org.telegram.messenger.hd.N0(2131744603, null));
+            q0Var.e(2, R.drawable.msg_link, org.telegram.messenger.hd.N0(2131751750, null));
             final int i14 = 3;
             q0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.yu
                 public final /* synthetic */ av b;
@@ -286,12 +286,12 @@ public final class av extends FrameLayout {
                             avVar.a(true, true);
                             break;
                         case 2:
-                            bi.c9 c9Var = avVar.n;
+                            bi.b9 b9Var = avVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = avVar.r;
                             oo ooVar = new oo(avVar, 13);
                             Pattern pattern22 = ev.Q1;
-                            if (c9Var != null && tL_messages_stickerSet != null && c9Var.getFragmentView() != null) {
-                                org.telegram.messenger.ri.d0(c9Var.getCurrentAccount()).l2(c9Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, c9Var, null, true, true, ooVar, true);
+                            if (b9Var != null && tL_messages_stickerSet != null && b9Var.getFragmentView() != null) {
+                                org.telegram.messenger.si.d0(b9Var.getCurrentAccount()).l2(b9Var.getFragmentView().getContext(), tL_messages_stickerSet, null, 0, b9Var, null, true, true, ooVar, true);
                             }
                             avVar.a(false, true);
                             break;
@@ -302,7 +302,7 @@ public final class av extends FrameLayout {
                 }
             });
             q0Var.setDelegate(new c0(evVar, 28));
-            q0Var.setContentDescription(org.telegram.messenger.gd.N0(2131754838, null));
+            q0Var.setContentDescription(org.telegram.messenger.hd.N0(2131754838, null));
         }
     }
 

@@ -2,15 +2,15 @@ package bg;
 
 import java.util.Map;
 import java.util.function.ToIntFunction;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.q9;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.r9;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.e6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements ToIntFunction {
     public final /* synthetic */ int a;
@@ -45,11 +45,11 @@ public final /* synthetic */ class d implements ToIntFunction {
             case 10:
                 return ((Integer) ((Object[]) obj)[1]).intValue();
             case 11:
-                return ((q9) obj).e.bid_date;
+                return ((r9) obj).e.bid_date;
             case 12:
                 return Integer.parseInt((String) obj);
             case 13:
-                return ((fj) obj).e1();
+                return ((gj) obj).e1();
             case 14:
                 return -((TLRPC.TL_forumTopic) obj).top_message;
             case 15:

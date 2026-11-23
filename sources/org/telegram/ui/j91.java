@@ -9,7 +9,7 @@ import java.util.Iterator;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class j91 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -27,7 +27,7 @@ public final class j91 extends org.telegram.ui.ActionBar.j {
         v91 v91Var;
         TLRPC.TL_forumTopic tL_forumTopic;
         y91 y91Var = this.b;
-        org.telegram.messenger.e00 e00Var = y91Var.s;
+        org.telegram.messenger.f00 f00Var = y91Var.s;
         ArrayList arrayList = y91Var.b;
         HashSet hashSet = y91Var.b0;
         long j3 = y91Var.a;
@@ -42,12 +42,12 @@ public final class j91 extends org.telegram.ui.ActionBar.j {
         int i11 = 0;
         switch (i7) {
             case 1:
-                org.telegram.messenger.e00 e00Var2 = y91Var.getMessagesController().t7;
-                e00Var2.getClass();
+                org.telegram.messenger.f00 f00Var2 = y91Var.getMessagesController().t7;
+                f00Var2.getClass();
                 TLRPC.TL_channels_toggleViewForumAsMessages tL_channels_toggleViewForumAsMessages = new TLRPC.TL_channels_toggleViewForumAsMessages();
-                tL_channels_toggleViewForumAsMessages.channel_id = e00Var2.getMessagesController().j1(j3);
+                tL_channels_toggleViewForumAsMessages.channel_id = f00Var2.getMessagesController().j1(j3);
                 tL_channels_toggleViewForumAsMessages.enabled = true;
-                e00Var2.getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new org.telegram.messenger.s1(e00Var2, 7));
+                f00Var2.getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new org.telegram.messenger.s1(f00Var2, 7));
                 y91Var.J = true;
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", j3);
@@ -104,10 +104,10 @@ public final class j91 extends org.telegram.ui.ActionBar.j {
             case 8:
                 ArrayList arrayList2 = new ArrayList(hashSet);
                 for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                    TLRPC.TL_forumTopic f10 = e00Var.f(j3, ((Integer) arrayList2.get(i12)).intValue());
+                    TLRPC.TL_forumTopic f10 = f00Var.f(j3, ((Integer) arrayList2.get(i12)).intValue());
                     if (f10 != null) {
                         y91Var.getMessagesController().v3(-j3, f10.id);
-                        org.telegram.messenger.mp messagesController = y91Var.getMessagesController();
+                        org.telegram.messenger.np messagesController = y91Var.getMessagesController();
                         long j11 = -j3;
                         int i13 = f10.top_message;
                         TLRPC.Message message = f10.topMessage;
@@ -122,7 +122,7 @@ public final class j91 extends org.telegram.ui.ActionBar.j {
                 y91Var.O0 = true;
                 ArrayList arrayList3 = new ArrayList(hashSet);
                 for (int i14 = 0; i14 < arrayList3.size(); i14++) {
-                    e00Var.z(((Integer) arrayList3.get(i14)).intValue(), j3, i7 == 9);
+                    f00Var.z(((Integer) arrayList3.get(i14)).intValue(), j3, i7 == 9);
                 }
                 y91Var.G0();
                 break;
@@ -184,7 +184,7 @@ public final class j91 extends org.telegram.ui.ActionBar.j {
                     y91Var.presentFragment(t5Var);
                     break;
                 } else {
-                    y91Var.getNotificationCenter().k(org.telegram.messenger.ks.p3, Long.valueOf(-j3));
+                    y91Var.getNotificationCenter().k(org.telegram.messenger.ls.p3, Long.valueOf(-j3));
                     break;
                 }
             case 15:

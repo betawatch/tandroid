@@ -4,11 +4,11 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
+import org.telegram.messenger.gj;
 import org.telegram.ui.Components.c50;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class k7 extends c5.a {
     public final /* synthetic */ Context c;
@@ -93,8 +93,8 @@ public final class k7 extends c5.a {
             m7Var.c = arrayList3;
             h6 h6Var = f9Var.O0;
             if ((h6Var instanceof b6) || (h6Var instanceof k6)) {
-                fj f10 = h6Var.f(((Integer) arrayList3.get(0)).intValue());
-                m7Var.b = f10 == null ? wVar.x0 : fj.B0(f10.k);
+                gj f10 = h6Var.f(((Integer) arrayList3.get(0)).intValue());
+                m7Var.b = f10 == null ? wVar.x0 : gj.B0(f10.k);
             } else {
                 m7Var.b = wVar.x0;
             }

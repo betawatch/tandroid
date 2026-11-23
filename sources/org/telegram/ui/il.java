@@ -10,7 +10,7 @@ import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.PipRoundVideoView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class il implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -76,11 +76,11 @@ public final class il implements ViewTreeObserver.OnPreDrawListener {
             default:
                 bn bnVar2 = klVar.R;
                 r1Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                org.telegram.messenger.bj bjVar = r1Var.getMessageObject().N1;
-                if (bjVar != null) {
+                org.telegram.messenger.cj cjVar = r1Var.getMessageObject().N1;
+                if (cjVar != null) {
                     bnVar2.F6.add(r1Var);
                     ImageReceiver photoImage2 = r1Var.getPhotoImage();
-                    float f13 = bjVar.h ? 1.0f : bjVar.c / photoImage2.N0;
+                    float f13 = cjVar.h ? 1.0f : cjVar.c / photoImage2.N0;
                     int[] iArr2 = new int[2];
                     r1Var.getTransitionParams().y0 = true;
                     r1Var.getLocationInWindow(iArr2);
@@ -92,15 +92,15 @@ public final class il implements ViewTreeObserver.OnPreDrawListener {
                     q0 q0Var = new q0("p1", i10);
                     jl jlVar = new jl(this, 0);
                     AnimatorSet animatorSet4 = new AnimatorSet();
-                    animatorSet4.playTogether(ObjectAnimator.ofFloat(bjVar, q0Var, f13, 1.0f), ObjectAnimator.ofFloat(bjVar, new jl(this, 1), 0.0f, 1.0f));
-                    animatorSet3.playTogether(ObjectAnimator.ofFloat(bjVar, jlVar, bjVar.a, iArr2[0] + (bjVar.h ? 0.0f : photoImage2.r())), animatorSet4);
+                    animatorSet4.playTogether(ObjectAnimator.ofFloat(cjVar, q0Var, f13, 1.0f), ObjectAnimator.ofFloat(cjVar, new jl(this, 1), 0.0f, 1.0f));
+                    animatorSet3.playTogether(ObjectAnimator.ofFloat(cjVar, jlVar, cjVar.a, iArr2[0] + (cjVar.h ? 0.0f : photoImage2.r())), animatorSet4);
                     animatorSet3.setInterpolator(org.telegram.ui.Components.nr.h);
                     animatorSet3.setDuration(460L);
                     animatorSet3.addListener(new org.telegram.ui.Cells.y9(this, 8));
                     animatorSet3.start();
                     jl jlVar2 = new jl(this, 2);
                     AnimatorSet animatorSet5 = new AnimatorSet();
-                    animatorSet5.playTogether(ObjectAnimator.ofFloat(bjVar, jlVar2, 0.0f, 1.0f));
+                    animatorSet5.playTogether(ObjectAnimator.ofFloat(cjVar, jlVar2, 0.0f, 1.0f));
                     animatorSet5.setDuration(100L);
                     animatorSet5.setStartDelay(150L);
                     animatorSet5.setInterpolator(new DecelerateInterpolator());

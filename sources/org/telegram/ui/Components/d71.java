@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d71 extends v4.d0 {
     public final /* synthetic */ jg.i0 r;
@@ -34,7 +34,7 @@ public final class d71 extends v4.d0 {
             j3 -= org.telegram.messenger.g0.L(60.0f);
         }
         int k10 = k(p(), view);
-        int max = Math.max(org.telegram.messenger.ks.K2, m((int) Math.sqrt((k10 * k10) + (j3 * j3))));
+        int max = Math.max(org.telegram.messenger.ls.K2, m((int) Math.sqrt((k10 * k10) + (j3 * j3))));
         if (max > 0) {
             a1Var.b(-j3, -k10, max, this.j);
         }

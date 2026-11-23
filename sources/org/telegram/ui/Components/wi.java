@@ -5,9 +5,9 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wi implements org.telegram.messenger.y10 {
+public final /* synthetic */ class wi implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -16,22 +16,22 @@ public final /* synthetic */ class wi implements org.telegram.messenger.y10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.y10
+    @Override // org.telegram.messenger.z10
     public final Object a(Object obj) {
         int i7 = this.a;
         char c10 = 1;
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                return Boolean.valueOf(ej.P((ej) obj2, (org.telegram.messenger.fj) obj));
+                return Boolean.valueOf(ej.P((ej) obj2, (org.telegram.messenger.gj) obj));
             case 1:
                 th.f fVar = (th.f) obj2;
                 View view = (View) obj;
                 ImageReceiver imageReceiver = new ImageReceiver(view);
-                org.telegram.messenger.lz c11 = org.telegram.messenger.u5.c((org.telegram.ui.ActionBar.m6.I.q() ? 3 : 6) * 0.12f, org.telegram.ui.ActionBar.m6.Gc);
+                org.telegram.messenger.mz c11 = org.telegram.messenger.u5.c((org.telegram.ui.ActionBar.m6.I.q() ? 3 : 6) * 0.12f, org.telegram.ui.ActionBar.m6.Gc);
                 c11.t = true;
                 c11.m = org.telegram.ui.ActionBar.m6.hf;
-                imageReceiver.s0(org.telegram.messenger.fc.p(org.telegram.messenger.h20.b(fVar.b.geo, org.telegram.messenger.ks.X4, org.telegram.messenger.ks.y2, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, new eq(c11), null, 0);
+                imageReceiver.s0(org.telegram.messenger.gc.p(org.telegram.messenger.i20.b(fVar.b.geo, org.telegram.messenger.ls.X4, org.telegram.messenger.ls.y2, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, new eq(c11), null, 0);
                 view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.m8(imageReceiver, c10 == true ? 1 : 0));
                 imageReceiver.J0(org.telegram.messenger.g0.L(14.0f));
                 return new sc(4, imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());

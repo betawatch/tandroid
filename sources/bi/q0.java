@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q0 extends g3 {
     public final /* synthetic */ t0 A0;
@@ -54,7 +54,7 @@ public final class q0 extends g3 {
                 canvas.save();
                 canvas.clipPath(this.z0);
                 canvas.scale(0.6f, 0.6f, rectF2.centerX(), rectF2.centerY());
-                n10.k(o0Var.getHeight(), 2.0f, rectF2.centerY(), rectF2.centerX() - (o0Var.getWidth() / 2.0f), canvas);
+                o10.k(o0Var.getHeight(), 2.0f, rectF2.centerY(), rectF2.centerX() - (o0Var.getWidth() / 2.0f), canvas);
                 o0Var.b(o0Var.getWidth() / 2.0f, org.telegram.messenger.g0.L(104.0f), o0Var.getWidth(), o0Var.getHeight(), canvas);
                 o0Var.c(o0Var.getWidth() / 2.0f, org.telegram.messenger.g0.L(104.0f), o0Var.getWidth(), o0Var.getHeight(), canvas);
                 canvas.restore();

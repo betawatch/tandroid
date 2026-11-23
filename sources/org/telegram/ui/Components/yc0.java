@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yc0 extends org.telegram.ui.ActionBar.w2 {
     public final TextView m1;
@@ -67,20 +67,20 @@ public final class yc0 extends org.telegram.ui.ActionBar.w2 {
         g80Var.b(true);
         g80Var.setDelegate(new ky(this, 9));
         TextView textView = new TextView(context);
-        textView.setText(org.telegram.messenger.gd.N0(2131748956, null));
+        textView.setText(org.telegram.messenger.hd.N0(2131748956, null));
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 20.0f);
         textView.setGravity(1);
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
         TextView textView2 = new TextView(context);
-        textView2.setText(org.telegram.messenger.gd.N0(z10 ? 2131748717 : 2131748718, null));
+        textView2.setText(org.telegram.messenger.hd.N0(z10 ? 2131748717 : 2131748718, null));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
         org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.j5, null);
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
         TextView textView3 = new TextView(context);
         this.m1 = textView3;
-        textView3.setText(org.telegram.messenger.gd.N0(2131748502, null));
+        textView3.setText(org.telegram.messenger.hd.N0(2131748502, null));
         textView3.setGravity(17);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
         textView3.setSingleLine(true);
@@ -105,7 +105,7 @@ public final class yc0 extends org.telegram.ui.ActionBar.w2 {
         nestedScrollView.setVerticalScrollBarEnabled(false);
         nestedScrollView.addView(frameLayout);
         this.O = nestedScrollView;
-        TLRPC.Chat O0 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).O0(Long.valueOf(j3));
+        TLRPC.Chat O0 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).O0(Long.valueOf(j3));
         if (O0 != null && org.telegram.messenger.v3.t0(O0)) {
             g80Var.setLink("https://t.me/" + org.telegram.messenger.v3.K(O0, false));
             textView3.setVisibility(8);
@@ -169,7 +169,7 @@ public final class yc0 extends org.telegram.ui.ActionBar.w2 {
         this.r1 = true;
         TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
         tL_messages_exportChatInvite.legacy_revoke_permanent = true;
-        tL_messages_exportChatInvite.peer = org.telegram.messenger.mp.u1(this.a).l1(-this.q1);
+        tL_messages_exportChatInvite.peer = org.telegram.messenger.np.u1(this.a).l1(-this.q1);
         ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_exportChatInvite, new hi.b3(6, this, z10));
     }
 

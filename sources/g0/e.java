@@ -16,18 +16,18 @@ import gb.r;
 import hi.d3;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.j;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.i9;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.r10;
-import org.telegram.messenger.ue;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.j9;
+import org.telegram.messenger.qc;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.ve;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, i9, r10 {
+public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, j9, s10 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e(int i7) {
@@ -77,11 +77,11 @@ public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, i9, r10 {
         }
     }
 
-    @Override // org.telegram.messenger.r10
+    @Override // org.telegram.messenger.s10
     public Object g(Number number, Object obj) {
         Integer num = (Integer) obj;
         if (((Integer) number).intValue() == 0) {
-            return num.intValue() == 0 ? gd.N0(2131748612, null) : gd.H(',', "Stars", num.intValue());
+            return num.intValue() == 0 ? hd.N0(2131748612, null) : hd.H(',', "Stars", num.intValue());
         }
         return "" + num;
     }
@@ -90,20 +90,20 @@ public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, i9, r10 {
     public int j(h6 h6Var, boolean z10) {
         switch (this.a) {
             case 9:
-                return z10 ? m6.r1(0.9f, -15658735) : i0.n(pc.e(262144) ? 0.82f : 0.76f, m6.w0(m6.d6, h6Var), -14145496);
+                return z10 ? m6.r1(0.9f, -15658735) : i0.n(qc.e(262144) ? 0.82f : 0.76f, m6.w0(m6.d6, h6Var), -14145496);
             case 10:
-                return m6.r1(pc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var));
+                return m6.r1(qc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var));
             case 11:
-                if (!pc.e(256)) {
+                if (!qc.e(256)) {
                     return m6.x0(null, m6.G8, false);
                 }
                 return m6.r1(z10 ? 0.85f : 0.825f, m6.x0(null, m6.G8, false));
             case 12:
-                return i0.n(pc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var), m6.w0(m6.Ql, h6Var));
+                return i0.n(qc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var), m6.w0(m6.Ql, h6Var));
             case 13:
-                return i0.n(pc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var), m6.w0(m6.Je, h6Var));
+                return i0.n(qc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var), m6.w0(m6.Je, h6Var));
             case 14:
-                return i0.n(pc.e(262144) ? 0.85f : 0.8f, m6.w0(m6.a7, h6Var), m6.w0(m6.d6, h6Var));
+                return i0.n(qc.e(262144) ? 0.85f : 0.8f, m6.w0(m6.a7, h6Var), m6.w0(m6.d6, h6Var));
             case 15:
                 return 855638016;
             case 16:
@@ -113,28 +113,28 @@ public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, i9, r10 {
             case 18:
                 return m6.r1(0.075f, -16777216);
             case 19:
-                return m6.r1(pc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.wj, h6Var));
+                return m6.r1(qc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.wj, h6Var));
             case 20:
                 return m6.r1(0.88f, m6.w0(m6.d6, h6Var));
             case 21:
                 return m6.r1(z10 ? 0.85f : 0.825f, m6.w0(m6.G8, h6Var));
             case 22:
-                return i0.n(pc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var), m6.w0(m6.Pl, h6Var));
+                return i0.n(qc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var), m6.w0(m6.Pl, h6Var));
             case 23:
-                return m6.r1(pc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var));
+                return m6.r1(qc.e(262144) ? 0.85f : 0.76f, m6.w0(m6.d6, h6Var));
             case 24:
                 return m6.r1(0.78f, m6.w0(m6.h5, h6Var));
             case 25:
                 return m6.r1(0.7f, m6.w0(m6.d6, h6Var));
             default:
-                pc.e(262144);
+                qc.e(262144);
                 return 0;
         }
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.j9
     public Object m(Object obj) {
-        ue ueVar = d3.k0;
+        ve veVar = d3.k0;
         return 0;
     }
 

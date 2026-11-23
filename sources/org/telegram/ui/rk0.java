@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class rk0 implements TextWatcher {
     public boolean a;
@@ -48,7 +48,7 @@ public final class rk0 implements TextWatcher {
         long longValue = l10 != null ? l10.longValue() : 0L;
         String str = this.b;
         if (str == null) {
-            str = org.telegram.messenger.gd.n(editable.toString());
+            str = org.telegram.messenger.hd.n(editable.toString());
         }
         int a10 = a(str);
         boolean z10 = a10 >= 0;
@@ -121,7 +121,7 @@ public final class rk0 implements TextWatcher {
             ml0Var.f[0].setText("");
         } else {
             EditTextBoldCursor editTextBoldCursor = ml0Var.f[0];
-            str3 = org.telegram.messenger.gd.E0().q(ml0Var.I0.longValue(), false, z10, true, ml0Var.D0.invoice.currency);
+            str3 = org.telegram.messenger.hd.E0().q(ml0Var.I0.longValue(), false, z10, true, ml0Var.D0.invoice.currency);
             editTextBoldCursor.setText(str3);
         }
         if (longValue < ml0Var.I0.longValue() && longValue != 0 && this.a && selectionStart >= 0) {
@@ -162,7 +162,7 @@ public final class rk0 implements TextWatcher {
         if (!z10) {
             return;
         }
-        String n10 = org.telegram.messenger.gd.n(charSequence);
+        String n10 = org.telegram.messenger.hd.n(charSequence);
         char charAt = n10.charAt(i7);
         int a10 = a(n10);
         String substring = a10 >= 0 ? n10.substring(a10 + 1) : "";

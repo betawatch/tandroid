@@ -14,9 +14,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r3 implements org.telegram.messenger.x10 {
+public final /* synthetic */ class r3 implements org.telegram.messenger.y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -25,7 +25,7 @@ public final /* synthetic */ class r3 implements org.telegram.messenger.x10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         org.telegram.ui.ActionBar.h6 h6Var;
         org.telegram.ui.ActionBar.h6 h6Var2;
@@ -90,7 +90,7 @@ public final /* synthetic */ class r3 implements org.telegram.messenger.x10 {
                 Long l10 = (Long) obj;
                 int i10 = s90Var.b;
                 s90Var.c();
-                TLRPC.User c22 = (l10 == null || l10.longValue() <= 0) ? null : org.telegram.messenger.mp.u1(i10).c2(l10);
+                TLRPC.User c22 = (l10 == null || l10.longValue() <= 0) ? null : org.telegram.messenger.np.u1(i10).c2(l10);
                 if (c22 == null || !c22.bot) {
                     org.telegram.messenger.f3.o(null, 2131747941, s90.d(), null);
                     break;
@@ -118,31 +118,31 @@ public final /* synthetic */ class r3 implements org.telegram.messenger.x10 {
                     if (list != null && !list.isEmpty()) {
                         db.c cVar = (db.c) list.get(0);
                         Context context = ce0Var.getContext();
-                        org.telegram.messenger.d1 a10 = org.telegram.messenger.g9.a(context, cVar);
+                        org.telegram.messenger.d1 a10 = org.telegram.messenger.h9.a(context, cVar);
                         de0 de0Var = ce0Var.h0;
                         h6Var = ((org.telegram.ui.ActionBar.g2) de0Var).resourceProvider;
                         org.telegram.ui.Components.ey0 ey0Var = new org.telegram.ui.Components.ey0(context, h6Var);
                         if (a10.b != null) {
-                            ey0Var.e(org.telegram.messenger.gd.N0(2131750511, null), a10.b, null, null);
+                            ey0Var.e(org.telegram.messenger.hd.N0(2131750511, null), a10.b, null, null);
                         }
                         if (a10.a >= 0) {
-                            ey0Var.e(org.telegram.messenger.gd.N0(2131750508, null), org.telegram.messenger.gd.a0(null, null, 2131750507, Integer.valueOf(a10.a + 1)), null, null);
+                            ey0Var.e(org.telegram.messenger.hd.N0(2131750508, null), org.telegram.messenger.hd.a0(null, null, 2131750507, Integer.valueOf(a10.a + 1)), null, null);
                         }
                         if (a10.c != null) {
-                            ey0Var.e(org.telegram.messenger.gd.N0(2131750509, null), a10.c.startsWith("+") ? pf.b.c().b(a10.c) : a10.c, null, null);
+                            ey0Var.e(org.telegram.messenger.hd.N0(2131750509, null), a10.c.startsWith("+") ? pf.b.c().b(a10.c) : a10.c, null, null);
                         }
                         FrameLayout frameLayout = new FrameLayout(context);
                         frameLayout.addView(ey0Var, c8.ma.d(-1, -2.0f, 55, 24.0f, 4.0f, 24.0f, 4.0f));
                         final boolean[] zArr = new boolean[1];
                         h6Var2 = ((org.telegram.ui.ActionBar.g2) de0Var).resourceProvider;
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var2);
-                        String N0 = org.telegram.messenger.gd.N0(2131750505, null);
+                        String N0 = org.telegram.messenger.hd.N0(2131750505, null);
                         final org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                         t1Var.S = N0;
-                        t1Var.U = org.telegram.messenger.gd.N0(2131750506, null);
+                        t1Var.U = org.telegram.messenger.hd.N0(2131750506, null);
                         alertDialog$Builder.o(frameLayout);
-                        alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131750510, null), new at(26, ce0Var, zArr));
-                        alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131752577, null), null);
+                        alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131750510, null), new at(26, ce0Var, zArr));
+                        alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131752577, null), null);
                         t1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.vd0
                             @Override // android.content.DialogInterface.OnDismissListener
                             public final void onDismiss(DialogInterface dialogInterface) {
@@ -255,7 +255,7 @@ public final /* synthetic */ class r3 implements org.telegram.messenger.x10 {
                 RectF rectF = ProfileActivity.Z6;
                 ViewPropertyAnimator scaleY = m80VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
                 org.telegram.ui.Components.nr nrVar = org.telegram.ui.Components.nr.h;
-                org.telegram.messenger.n10.o(scaleY, nrVar, 600L);
+                org.telegram.messenger.o10.o(scaleY, nrVar, 600L);
                 m80VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(nrVar).setDuration(600L).start();
                 break;
             case 24:

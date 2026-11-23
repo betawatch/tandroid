@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e {
     public final int a;
@@ -35,7 +35,7 @@ public final class e {
         if (!z10) {
             this.e = true;
             try {
-                String string = mp.u1(i7).h7.getString("ai_styles", null);
+                String string = np.u1(i7).h7.getString("ai_styles", null);
                 if (string != null) {
                     SerializedData serializedData = new SerializedData(Base64.getDecoder().decode(string));
                     TL_aicompose.Tones TLdeserialize = TL_aicompose.Tones.TLdeserialize(serializedData, serializedData.readInt32(true), true);
@@ -57,7 +57,7 @@ public final class e {
     }
 
     public final void c() {
-        ks.f(this.a).k(ks.b4, this);
+        ls.f(this.a).k(ls.b4, this);
     }
 
     public final void d() {
@@ -66,6 +66,6 @@ public final class e {
         tL_tones.tones.addAll(this.b);
         SerializedData serializedData = new SerializedData(tL_tones.getObjectSize());
         tL_tones.serializeToStream(serializedData);
-        mp.u1(this.a).h7.edit().putString("ai_styles", Base64.getEncoder().encodeToString(serializedData.toByteArray())).apply();
+        np.u1(this.a).h7.edit().putString("ai_styles", Base64.getEncoder().encodeToString(serializedData.toByteArray())).apply();
     }
 }

@@ -17,10 +17,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import r0.f1;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class h extends da {
     public static final f1 b = new f1(26);
@@ -184,7 +184,7 @@ public final class h extends da {
         if (i15 == 4) {
             E = xVar.E();
             if (!z10) {
-                E = (((E >> 24) & ks.e4) << 21) | (E & ks.e4) | (((E >> 8) & ks.e4) << 7) | (((E >> 16) & ks.e4) << 14);
+                E = (((E >> 24) & ls.e4) << 21) | (E & ls.e4) | (((E >> 8) & ls.e4) << 7) | (((E >> 16) & ls.e4) << 14);
             }
         } else {
             E = i15 == 3 ? xVar.E() : xVar.D();

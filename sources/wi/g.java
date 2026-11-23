@@ -5,11 +5,11 @@ import android.view.View;
 import android.view.WindowManager;
 import fi.u2;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.a61;
 import org.telegram.ui.Components.p10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g extends p10 {
     public float a;
@@ -51,7 +51,7 @@ public final class g extends p10 {
                 a61Var.d(!z10);
                 long j10 = a61Var.o + 10000;
                 a61Var.o = j10;
-                a61Var.p = gd.G((int) (j10 / 1000), "Seconds", new Object[0]);
+                a61Var.p = hd.G((int) (j10 / 1000), "Seconds", new Object[0]);
                 lVar.c(j3);
                 a61Var.g(0L);
                 hVar.I = j3 / duration;

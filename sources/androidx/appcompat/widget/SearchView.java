@@ -51,11 +51,11 @@ import m.w2;
 import m.x1;
 import m.y2;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class SearchView extends w1 implements k.b {
     public static final f x0;
@@ -100,7 +100,7 @@ public class SearchView extends w1 implements k.b {
     public final q2 v0;
     public final WeakHashMap w0;
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class SearchAutoComplete extends l {
         public int e;
         public SearchView f;
@@ -116,7 +116,7 @@ public class SearchView extends w1 implements k.b {
             int i7 = configuration.screenWidthDp;
             int i10 = configuration.screenHeightDp;
             if (i7 < 960 || i10 < 720 || configuration.orientation != 2) {
-                return i7 < 600 ? (i7 < 640 || i10 < 480) ? ks.q2 : ks.W2 : ks.W2;
+                return i7 < 600 ? (i7 < 640 || i10 < 480) ? ls.q2 : ls.W2 : ls.W2;
             }
             return 256;
         }

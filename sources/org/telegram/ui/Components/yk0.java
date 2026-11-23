@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yk0 extends Dialog {
     public static final /* synthetic */ int P = 0;
@@ -72,7 +72,7 @@ public final class yk0 extends Dialog {
         du0 du0Var = new du0(context, null);
         this.w = du0Var;
         du0Var.setClipToPadding(false);
-        e3Var.addView(du0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        e3Var.addView(du0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         ui.b bVar = new ui.b();
         this.h = bVar;
         dh.c cVar = new dh.c(bVar, bVar, bVar);
@@ -84,8 +84,8 @@ public final class yk0 extends Dialog {
         r0.a0.i(e3Var, qfVar);
     }
 
-    public static void d(org.telegram.messenger.q10 q10Var) {
-        org.telegram.messenger.g0.l2(new z2(q10Var, 12), 15.0f);
+    public static void d(org.telegram.messenger.r10 r10Var) {
+        org.telegram.messenger.g0.l2(new z2(r10Var, 12), 15.0f);
     }
 
     public final void c(Runnable runnable, boolean z10) {
@@ -185,8 +185,8 @@ public final class yk0 extends Dialog {
         Bitmap bitmap;
         SpannableStringBuilder spannableStringBuilder;
         int i13;
-        org.telegram.messenger.ev evVar;
-        org.telegram.messenger.qt qtVar;
+        org.telegram.messenger.fv fvVar;
+        org.telegram.messenger.rt rtVar;
         ArrayList<org.telegram.ui.Cells.q1> pollButtons;
         int i14;
         int i15;
@@ -198,7 +198,7 @@ public final class yk0 extends Dialog {
             return;
         }
         r1Var.getCurrentMessagesGroup();
-        org.telegram.messenger.fj messageObject = r1Var.getMessageObject();
+        org.telegram.messenger.gj messageObject = r1Var.getMessageObject();
         int i18 = 0;
         boolean z12 = r1Var.getExplanationLayout() != null && messageObject.L0;
         if (z12 && z10) {
@@ -226,8 +226,8 @@ public final class yk0 extends Dialog {
         if (arrayList != null) {
             int i19 = 0;
             while (i19 < arrayList.size()) {
-                org.telegram.messenger.cj cjVar = (org.telegram.messenger.cj) arrayList.get(i19);
-                StaticLayout staticLayout = cjVar.e;
+                org.telegram.messenger.dj djVar = (org.telegram.messenger.dj) arrayList.get(i19);
+                StaticLayout staticLayout = djVar.e;
                 if (staticLayout != null && (staticLayout.getText() instanceof Spanned)) {
                     z11 = z12;
                     CharacterStyle[] characterStyleArr = (CharacterStyle[]) ((Spanned) staticLayout.getText()).getSpans(i18, staticLayout.getText().length(), CharacterStyle.class);
@@ -238,9 +238,9 @@ public final class yk0 extends Dialog {
                             if (characterStyleArr[i20] == characterStyle) {
                                 i7 = ((Spanned) staticLayout.getText()).getSpanStart(characterStyle);
                                 i11 = ((Spanned) staticLayout.getText()).getSpanEnd(characterStyle);
-                                f10 += cjVar.l() ? (int) Math.ceil(f12) : 0;
-                                f11 += cjVar.p(arrayList, r1Var.ib) + cjVar.f;
-                                i10 = cjVar.s;
+                                f10 += djVar.l() ? (int) Math.ceil(f12) : 0;
+                                f11 += djVar.p(arrayList, r1Var.ib) + djVar.f;
+                                i10 = djVar.s;
                                 r15 = staticLayout;
                                 if (r15 == 0 && r1Var.getDescriptionlayout() != null) {
                                     StaticLayout descriptionlayout = r1Var.getDescriptionlayout();
@@ -314,30 +314,30 @@ public final class yk0 extends Dialog {
                                         r15 = r15;
                                     }
                                 }
-                                if (r15 == 0 && messageObject != null && (evVar = messageObject.y2) != null) {
-                                    ArrayList arrayList2 = evVar.g;
+                                if (r15 == 0 && messageObject != null && (fvVar = messageObject.y2) != null) {
+                                    ArrayList arrayList2 = fvVar.g;
                                     if (characterStyle != null) {
-                                        qtVar = new org.telegram.messenger.qt();
+                                        rtVar = new org.telegram.messenger.rt();
                                         int i21 = 0;
                                         for (int i22 = 0; i22 < arrayList2.size(); i22++) {
-                                            org.telegram.messenger.zt ztVar = (org.telegram.messenger.zt) arrayList2.get(i22);
-                                            if (ztVar.S()) {
-                                                if (ztVar.u(characterStyle, i21, qtVar)) {
+                                            org.telegram.messenger.au auVar = (org.telegram.messenger.au) arrayList2.get(i22);
+                                            if (auVar.S()) {
+                                                if (auVar.u(characterStyle, i21, rtVar)) {
                                                     break;
                                                 } else {
-                                                    i21 = ztVar.I() + i21;
+                                                    i21 = auVar.I() + i21;
                                                 }
                                             }
                                         }
                                     }
-                                    qtVar = null;
-                                    if (qtVar != null) {
-                                        r15 = qtVar.a;
-                                        i7 = qtVar.b;
-                                        i11 = qtVar.c;
-                                        i10 = qtVar.d;
-                                        f10 = r1Var.getTextX() + qtVar.e;
-                                        f11 = r1Var.getTextY() + qtVar.f;
+                                    rtVar = null;
+                                    if (rtVar != null) {
+                                        r15 = rtVar.a;
+                                        i7 = rtVar.b;
+                                        i11 = rtVar.c;
+                                        i10 = rtVar.d;
+                                        f10 = r1Var.getTextX() + rtVar.e;
+                                        f11 = r1Var.getTextY() + rtVar.f;
                                     }
                                 }
                                 float f18 = f10;
@@ -360,7 +360,7 @@ public final class yk0 extends Dialog {
                                     r15.getSelectionPath(i23, i11, h80Var);
                                     RectF rectF2 = new RectF();
                                     h80Var.computeBounds(rectF2, true);
-                                    StaticLayout g52 = org.telegram.messenger.fj.g5(charSequence, r15.getPaint(), r15.getWidth(), 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
+                                    StaticLayout g52 = org.telegram.messenger.gj.g5(charSequence, r15.getPaint(), r15.getWidth(), 1.0f, 0.0f, false, Layout.Alignment.ALIGN_NORMAL);
                                     i11 = charSequence.length();
                                     float width = g52.getWidth();
                                     float f19 = 0.0f;
@@ -432,7 +432,7 @@ public final class yk0 extends Dialog {
                                         if (messageObject.R1 >= 4) {
                                             f15 = -1.0f;
                                         }
-                                        StaticLayout g53 = org.telegram.messenger.fj.g5(spannableStringBuilder, textPaint, i24, 1.0f, f15, false, Layout.Alignment.ALIGN_NORMAL);
+                                        StaticLayout g53 = org.telegram.messenger.gj.g5(spannableStringBuilder, textPaint, i24, 1.0f, f15, false, Layout.Alignment.ALIGN_NORMAL);
                                         int[] iArr = new int[2];
                                         r1Var.getLocationOnScreen(iArr);
                                         float f20 = f14;
@@ -476,7 +476,7 @@ public final class yk0 extends Dialog {
                                 }
                                 if (messageObject.R1 >= 4) {
                                 }
-                                StaticLayout g532 = org.telegram.messenger.fj.g5(spannableStringBuilder, textPaint2, i24, 1.0f, f15, false, Layout.Alignment.ALIGN_NORMAL);
+                                StaticLayout g532 = org.telegram.messenger.gj.g5(spannableStringBuilder, textPaint2, i24, 1.0f, f15, false, Layout.Alignment.ALIGN_NORMAL);
                                 int[] iArr2 = new int[2];
                                 r1Var.getLocationOnScreen(iArr2);
                                 float f202 = f14;
@@ -516,11 +516,11 @@ public final class yk0 extends Dialog {
             }
         }
         if (r15 == 0) {
-            ArrayList arrayList22 = evVar.g;
+            ArrayList arrayList22 = fvVar.g;
             if (characterStyle != null) {
             }
-            qtVar = null;
-            if (qtVar != null) {
+            rtVar = null;
+            if (rtVar != null) {
             }
         }
         float f182 = f10;
@@ -548,7 +548,7 @@ public final class yk0 extends Dialog {
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.height = -1;
-        attributes.gravity = org.telegram.messenger.ks.E1;
+        attributes.gravity = org.telegram.messenger.ls.E1;
         attributes.dimAmount = 0.0f;
         int i7 = attributes.flags & (-3);
         attributes.softInputMode = 16;

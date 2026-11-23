@@ -9,12 +9,12 @@ import fi.w4;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.mk;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -116,7 +116,7 @@ public final /* synthetic */ class x2 implements Runnable {
                     long j10 = this.f;
                     di.b0 d = g10.d(j10);
                     int i12 = d.a;
-                    mp.u1(i12).f4(connectedstarrefbots.users, false);
+                    np.u1(i12).f4(connectedstarrefbots.users, false);
                     d.c = 0;
                     d.h = false;
                     d.d = false;
@@ -131,7 +131,7 @@ public final /* synthetic */ class x2 implements Runnable {
                     arrayList2.addAll(connectedstarrefbots.connected_bots);
                     d.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= d.c;
                     d.h = false;
-                    ks.f(i12).k(ks.O3, Long.valueOf(d.b));
+                    ls.f(i12).k(ls.O3, Long.valueOf(d.b));
                     d.a();
                     w2Var.dismiss();
                     int i13 = 0;
@@ -158,13 +158,13 @@ public final /* synthetic */ class x2 implements Runnable {
                                 if (((TL_payments.starRefProgram) arrayList3.get(i14)).bot_id == j11) {
                                     arrayList3.remove(i14);
                                     e10.c--;
-                                    ks.f(e10.a).k(ks.N3, Long.valueOf(e10.b));
+                                    ls.f(e10.a).k(ls.N3, Long.valueOf(e10.b));
                                 } else {
                                     i14++;
                                 }
                             }
                         }
-                        new lc(h3.K0(context, i11, connectedbotstarref, j10, h6Var).F, h6Var).V(Arrays.asList(user), gd.N0(2131754332, null), gd.N0(2131754333, null), null).j();
+                        new lc(h3.K0(context, i11, connectedbotstarref, j10, h6Var).F, h6Var).V(Arrays.asList(user), hd.N0(2131754332, null), hd.N0(2131754333, null), null).j();
                         break;
                     }
                 }
@@ -195,9 +195,9 @@ public final /* synthetic */ class x2 implements Runnable {
                         lkVar.H = messages_messages.next_rate;
                         int i15 = cVar.a;
                         ak akVar2 = akVar;
-                        tr.a0(i15).m1(messages_messages.users, messages_messages.chats, true, true);
-                        mp.u1(i15).f4(messages_messages.users, false);
-                        mp.u1(i15).Z3(messages_messages.chats, false);
+                        ur.a0(i15).m1(messages_messages.users, messages_messages.chats, true, true);
+                        np.u1(i15).f4(messages_messages.users, false);
+                        np.u1(i15).Z3(messages_messages.chats, false);
                         if (!z10) {
                             arrayList9.clear();
                             sparseArray.clear();
@@ -209,8 +209,8 @@ public final /* synthetic */ class x2 implements Runnable {
                         int size = arrayList4.size();
                         int i17 = 0;
                         while (i17 < size) {
-                            fj fjVar = (fj) arrayList4.get(i17);
-                            String str2 = fjVar.Y;
+                            gj gjVar = (gj) arrayList4.get(i17);
+                            String str2 = gjVar.Y;
                             ArrayList arrayList11 = (ArrayList) hashMap.get(str2);
                             ArrayList arrayList12 = arrayList4;
                             if (arrayList11 == null) {
@@ -220,9 +220,9 @@ public final /* synthetic */ class x2 implements Runnable {
                             } else {
                                 arrayList = arrayList11;
                             }
-                            arrayList.add(fjVar);
-                            arrayList9.add(fjVar);
-                            sparseArray.put(fjVar.e1(), fjVar);
+                            arrayList.add(gjVar);
+                            arrayList9.add(gjVar);
+                            sparseArray.put(gjVar.e1(), gjVar);
                             i17++;
                             arrayList4 = arrayList12;
                         }
@@ -232,13 +232,13 @@ public final /* synthetic */ class x2 implements Runnable {
                         lkVar.W = arrayList9.size() >= i16;
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(lkVar.L) && this.f == 0 && j3 == 0) {
-                                lVar.setText(gd.N0(2131745605, null));
+                                lVar.setText(hd.N0(2131745605, null));
                                 m80Var.setVisibility(0);
-                                m80Var.setText(gd.N0(2131745610, null));
+                                m80Var.setText(hd.N0(2131745610, null));
                             } else {
-                                lVar.setText(gd.N0(2131745604, null));
+                                lVar.setText(hd.N0(2131745604, null));
                                 m80Var.setVisibility(0);
-                                m80Var.setText(gd.N0(2131745611, null));
+                                m80Var.setText(hd.N0(2131745611, null));
                             }
                         }
                         if (!z10) {
@@ -246,12 +246,12 @@ public final /* synthetic */ class x2 implements Runnable {
                             if (arrayList5 != null) {
                                 arrayList10.addAll(arrayList5);
                             }
-                            if (str.length() >= 3 && (gd.N0(2131745705, null).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
+                            if (str.length() >= 3 && (hd.N0(2131745705, null).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
                                 int i18 = 0;
                                 while (true) {
                                     if (i18 >= arrayList10.size()) {
-                                        arrayList10.add(0, j10.i(j10.t0).f());
-                                    } else if (!(arrayList10.get(i18) instanceof TLRPC.User) || j10.i(j10.t0).f().id != ((TLRPC.User) arrayList10.get(i18)).id) {
+                                        arrayList10.add(0, k10.i(k10.t0).f());
+                                    } else if (!(arrayList10.get(i18) instanceof TLRPC.User) || k10.i(k10.t0).f().id != ((TLRPC.User) arrayList10.get(i18)).id) {
                                         i18++;
                                     }
                                 }
@@ -287,9 +287,9 @@ public final /* synthetic */ class x2 implements Runnable {
                     } else {
                         xh.l lVar2 = w4Var.d;
                         m80 m80Var2 = w4Var.e;
-                        lVar2.setText(gd.N0(2131745604, null));
+                        lVar2.setText(hd.N0(2131745604, null));
                         m80Var2.setVisibility(0);
-                        m80Var2.setText(gd.N0(2131745611, null));
+                        m80Var2.setText(hd.N0(2131745611, null));
                         w4Var.e(false, true);
                         break;
                     }

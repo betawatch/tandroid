@@ -4,13 +4,13 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.o10;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.ok0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class s1 {
     public final r1 a;
@@ -55,7 +55,7 @@ public final class s1 {
             r1Var.v0 = org.telegram.messenger.g0.L(60.0f) + r1Var.v0;
             if (z13 != this.f) {
                 this.f = 0;
-                int z14 = n10.z(75.0f, r1Var.b7, i7);
+                int z14 = o10.z(75.0f, r1Var.b7, i7);
                 float N = (r1Var.b7 - org.telegram.messenger.g0.N(37.0f)) / i7;
                 ArrayList arrayList = this.g;
                 if (arrayList == null) {
@@ -65,15 +65,15 @@ public final class s1 {
                 }
                 if (this.d) {
                     this.f |= 1;
-                    this.g.add(r1.w0(5, gd.N0(2131743313, "ViewContact"), z14, N));
+                    this.g.add(r1.w0(5, hd.N0(2131743311, "ViewContact"), z14, N));
                 }
                 if (this.c) {
                     this.f |= 2;
-                    this.g.add(r1.w0(30, gd.N0(2131745221, "SharedContactMessage"), z14, N));
+                    this.g.add(r1.w0(30, hd.N0(2131745221, "SharedContactMessage"), z14, N));
                 }
                 if (this.e) {
                     this.f |= 4;
-                    this.g.add(r1.w0(31, gd.N0(2131745222, "SharedContactAdd"), z14, N));
+                    this.g.add(r1.w0(31, hd.N0(2131745222, "SharedContactAdd"), z14, N));
                 }
             }
         }
@@ -135,7 +135,7 @@ public final class s1 {
         } else {
             f10 = 2.0f;
         }
-        float floor = (float) Math.floor(bz.Y0 / 3.0f);
+        float floor = (float) Math.floor(cz.Y0 / 3.0f);
         int i10 = (int) floor;
         float f12 = 1.0f;
         r1Var.q8.c(floor, floor, floor, 1.0f, canvas, r1Var.v2);

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class am extends fm {
     public final /* synthetic */ boolean b;
@@ -77,7 +77,7 @@ public final class am extends fm {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final org.telegram.messenger.hc j(int i7) {
+    public final org.telegram.messenger.ic j(int i7) {
         return null;
     }
 
@@ -101,22 +101,22 @@ public final class am extends fm {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+    public final void o(int i7, org.telegram.messenger.f20 f20Var, boolean z10, int i10, int i11, boolean z11) {
         ui uiVar = this.c.b;
         ArrayList arrayList = ChatAttachAlertPhotoLayout.s1;
         if (arrayList.isEmpty() || uiVar.Q1) {
             return;
         }
-        if (e20Var != null && i7 >= 0 && i7 < arrayList.size()) {
-            ((org.telegram.messenger.ef) arrayList.get(i7)).s = e20Var;
+        if (f20Var != null && i7 >= 0 && i7 < arrayList.size()) {
+            ((org.telegram.messenger.ff) arrayList.get(i7)).s = f20Var;
         }
         org.telegram.ui.ActionBar.g2 g2Var = uiVar.a2;
         if (!(g2Var instanceof org.telegram.ui.bn) || !((org.telegram.ui.bn) g2Var).z()) {
             int size = arrayList.size();
             for (int i12 = 0; i12 < size; i12++) {
-                org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) ChatAttachAlertPhotoLayout.s1.get(i12);
-                if (efVar.x <= 0) {
-                    org.telegram.messenger.g0.e(efVar.I);
+                org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) ChatAttachAlertPhotoLayout.s1.get(i12);
+                if (ffVar.x <= 0) {
+                    org.telegram.messenger.g0.e(ffVar.I);
                 }
             }
         }
@@ -142,13 +142,13 @@ public final class am extends fm {
             if (arrayList.size() == 1) {
                 int size = arrayList.size();
                 for (int i7 = 0; i7 < size; i7++) {
-                    org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) ChatAttachAlertPhotoLayout.s1.get(i7);
-                    new File(efVar.I).delete();
-                    if (efVar.h != null) {
-                        new File(efVar.h).delete();
+                    org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) ChatAttachAlertPhotoLayout.s1.get(i7);
+                    new File(ffVar.I).delete();
+                    if (ffVar.h != null) {
+                        new File(ffVar.h).delete();
                     }
-                    if (efVar.c != null) {
-                        new File(efVar.c).delete();
+                    if (ffVar.c != null) {
+                        new File(ffVar.c).delete();
                     }
                 }
                 ChatAttachAlertPhotoLayout.s1.clear();

@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.e00;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.xy;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.az;
+import org.telegram.messenger.f00;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
+import org.telegram.messenger.yy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -29,7 +29,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.mf0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,10 +65,10 @@ public final /* synthetic */ class p4 implements Runnable {
                 int i11 = this.b;
                 long j3 = this.c;
                 k1Var.run();
-                y4.s(tL_starGiftUnique, gd.a0(null, null, bool.booleanValue() ? 2131749517 : 2131749518, str));
+                x4.s(tL_starGiftUnique, hd.a0(null, null, bool.booleanValue() ? 2131749517 : 2131749518, str));
                 String str2 = tL_starGiftUnique.slug;
                 if (!TextUtils.isEmpty(str2)) {
-                    org.telegram.messenger.g0.h3(new o4(i11, 0, j3, str2, true), y4.a[0]);
+                    org.telegram.messenger.g0.h3(new o4(i11, 0, j3, str2, true), x4.a[0]);
                     break;
                 }
                 break;
@@ -83,40 +83,40 @@ public final /* synthetic */ class p4 implements Runnable {
                 di.e0.g(i12).f(context, j10, connectedbotstarref.bot_id, new a4(i12, j10, context, connectedbotstarref, (org.telegram.ui.ActionBar.w2) this.f, (org.telegram.ui.ActionBar.h6) this.h));
                 break;
             case 3:
-                e00 e00Var = (e00) this.d;
+                f00 f00Var = (f00) this.d;
                 TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) this.e;
                 long j11 = this.c;
                 TLRPC.TL_messages_forumTopics tL_messages_forumTopics2 = (TLRPC.TL_messages_forumTopics) this.f;
                 a0.h hVar = (a0.h) this.h;
                 int i13 = this.b;
-                e00Var.getMessagesStorage().m1(tL_messages_forumTopics.users, tL_messages_forumTopics.chats, true, true);
-                e00Var.getMessagesController().f4(tL_messages_forumTopics.users, false);
-                e00Var.getMessagesController().Z3(tL_messages_forumTopics.chats, false);
-                e00Var.c.put(j11, 0);
+                f00Var.getMessagesStorage().m1(tL_messages_forumTopics.users, tL_messages_forumTopics.chats, true, true);
+                f00Var.getMessagesController().f4(tL_messages_forumTopics.users, false);
+                f00Var.getMessagesController().Z3(tL_messages_forumTopics.chats, false);
+                f00Var.c.put(j11, 0);
                 ArrayList<Long> arrayList = tL_messages_forumTopics2.top_icons;
                 if (arrayList != null) {
-                    e00Var.f.k(arrayList, j11);
-                    e00Var.h.put(j11, System.currentTimeMillis());
+                    f00Var.f.k(arrayList, j11);
+                    f00Var.h.put(j11, System.currentTimeMillis());
                 }
-                e00Var.u(j11, tL_messages_forumTopics2.topics, hVar, false, i13, tL_messages_forumTopics.count);
-                e00Var.y(j11, true);
-                e00Var.getMessagesStorage().C1(e00Var.getConnectionsManager().getCurrentTime(), -j11, (List) e00Var.a.f(j11), true);
-                e00Var.getMessagesStorage().j1(tL_messages_forumTopics2.messages, false, true, false, 0, false, 0, 0L);
+                f00Var.u(j11, tL_messages_forumTopics2.topics, hVar, false, i13, tL_messages_forumTopics.count);
+                f00Var.y(j11, true);
+                f00Var.getMessagesStorage().C1(f00Var.getConnectionsManager().getCurrentTime(), -j11, (List) f00Var.a.f(j11), true);
+                f00Var.getMessagesStorage().j1(tL_messages_forumTopics2.messages, false, true, false, 0, false, 0, 0L);
                 if (tL_messages_forumTopics2.topics.isEmpty() || i13 != 1) {
-                    if (e00Var.l(j11) == null || e00Var.l(j11).size() < tL_messages_forumTopics2.count) {
-                        e00Var.s.l(j11);
-                        e00Var.o(j11);
+                    if (f00Var.l(j11) == null || f00Var.l(j11).size() < tL_messages_forumTopics2.count) {
+                        f00Var.s.l(j11);
+                        f00Var.o(j11);
                         break;
                     }
                 } else {
                     TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) i5.c.h(1, tL_messages_forumTopics2.topics);
                     TLRPC.Message message = (TLRPC.Message) hVar.f(tL_forumTopic.top_message);
-                    e00Var.x(j11, tL_forumTopic.id, tL_forumTopic.top_message, message == null ? 0 : message.date);
+                    f00Var.x(j11, tL_forumTopic.id, tL_forumTopic.top_message, message == null ? 0 : message.date);
                     break;
                 }
                 break;
             case 4:
-                org.telegram.ui.Cells.f6.a((org.telegram.ui.Cells.f6) this.d, (TLObject) this.e, (tr) this.f, this.c, this.b, (ArrayList) this.h);
+                org.telegram.ui.Cells.f6.a((org.telegram.ui.Cells.f6) this.d, (TLObject) this.e, (ur) this.f, this.c, this.b, (ArrayList) this.h);
                 break;
             case 5:
                 TLObject tLObject = (TLObject) this.d;
@@ -127,9 +127,9 @@ public final /* synthetic */ class p4 implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
                 if (tLObject instanceof TLRPC.Updates) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    mp.u1(i14).f4(updates.users, false);
-                    mp.u1(i14).Z3(updates.chats, false);
-                    ArrayList A0 = mp.A0(updates, TL_update.TL_updateGroupCall.class);
+                    np.u1(i14).f4(updates.users, false);
+                    np.u1(i14).Z3(updates.chats, false);
+                    ArrayList A0 = np.A0(updates, TL_update.TL_updateGroupCall.class);
                     int size = A0.size();
                     int i15 = 0;
                     while (i15 < size) {
@@ -140,7 +140,7 @@ public final /* synthetic */ class p4 implements Runnable {
                     Utilities.d.c(new org.telegram.tgnet.g(i14, updates, i10));
                     if (groupCall != null && LaunchActivity.H1 != null) {
                         w2Var.dismiss();
-                        zy.C(i14).r0(xy.a(j12, groupCall.invite_link));
+                        az.C(i14).r0(yy.a(j12, groupCall.invite_link));
                         org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                         if (T != null) {
                             if (T instanceof bn) {
@@ -157,8 +157,8 @@ public final /* synthetic */ class p4 implements Runnable {
                     }
                 } else if (tLObject instanceof TL_phone.groupCall) {
                     TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-                    mp.u1(i14).f4(groupcall.users, false);
-                    mp.u1(i14).Z3(groupcall.chats, false);
+                    np.u1(i14).f4(groupcall.users, false);
+                    np.u1(i14).Z3(groupcall.chats, false);
                     if (LaunchActivity.H1 == null) {
                         eVar.setLoading(false);
                         break;
@@ -169,7 +169,7 @@ public final /* synthetic */ class p4 implements Runnable {
                         tL_inputGroupCall.access_hash = groupCall2.access_hash;
                         w2Var.dismiss();
                         org.telegram.ui.Components.voip.b2.g(LaunchActivity.H1, i14, tL_inputGroupCall, false, groupcall.call, null);
-                        zy.C(i14).r0(xy.a(j12, groupcall.call.invite_link));
+                        az.C(i14).r0(yy.a(j12, groupcall.call.invite_link));
                         break;
                     }
                 } else if (tL_error != null) {
@@ -178,7 +178,7 @@ public final /* synthetic */ class p4 implements Runnable {
                 }
                 break;
             case 6:
-                fj fjVar = (fj) this.d;
+                gj gjVar = (gj) this.d;
                 TLRPC.Message message2 = (TLRPC.Message) this.e;
                 String str3 = (String) this.h;
                 int[] iArr = (int[]) this.f;
@@ -186,7 +186,7 @@ public final /* synthetic */ class p4 implements Runnable {
                 long j13 = this.c;
                 HashMap hashMap = j21.P;
                 if (hashMap != null) {
-                    hashMap.remove(Integer.valueOf(j21.q(fjVar)));
+                    hashMap.remove(Integer.valueOf(j21.r(gjVar)));
                 }
                 message2.voiceTranscription = str3;
                 if (iArr.length <= 0) {
@@ -197,12 +197,12 @@ public final /* synthetic */ class p4 implements Runnable {
                 message2.voiceTranscriptionFinal = true;
                 message2.voiceTranscriptionOpen = true;
                 message2.voiceTranscriptionId = 0L;
-                j21.p(fjVar);
-                tr a02 = tr.a0(i16);
-                a02.a.c(new org.telegram.messenger.z1(a02, fjVar.e1(), j13, message2, str3, 2));
-                ks f10 = ks.f(i16);
+                j21.q(gjVar);
+                ur a02 = ur.a0(i16);
+                a02.a.c(new org.telegram.messenger.z1(a02, gjVar.e1(), j13, message2, str3, 2));
+                ls f10 = ls.f(i16);
                 Boolean bool2 = Boolean.TRUE;
-                f10.k(ks.A1, fjVar, null, null, bool2, bool2);
+                f10.k(ls.A1, gjVar, null, null, bool2, bool2);
                 break;
             default:
                 final mf0 mf0Var = (mf0) this.d;
@@ -231,7 +231,7 @@ public final /* synthetic */ class p4 implements Runnable {
                             long j15 = tL_readParticipantDate.user_id;
                             Long valueOf = Long.valueOf(j15);
                             if (j14 != j15) {
-                                mp.u1(i17).c2(valueOf);
+                                np.u1(i17).c2(valueOf);
                                 arrayList4.add(new Pair(valueOf, Integer.valueOf(i19)));
                                 arrayList2.add(valueOf);
                             }
@@ -241,12 +241,12 @@ public final /* synthetic */ class p4 implements Runnable {
                                 Long l10 = (Long) obj2;
                                 if (j14 != l10.longValue()) {
                                     if (l10.longValue() > 0) {
-                                        mp.u1(i17).c2(l10);
+                                        np.u1(i17).c2(l10);
                                         arrayList4.add(new Pair(l10, 0));
                                         arrayList2.add(l10);
                                     } else {
                                         vector = vector2;
-                                        mp.u1(i17).O0(Long.valueOf(-l10.longValue()));
+                                        np.u1(i17).O0(Long.valueOf(-l10.longValue()));
                                         arrayList4.add(new Pair(l10, 0));
                                         arrayList3.add(l10);
                                         i18 = i7 + 1;
@@ -270,10 +270,10 @@ public final /* synthetic */ class p4 implements Runnable {
                         break;
                     } else if (org.telegram.messenger.v3.T(chat)) {
                         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-                        tL_channels_getParticipants.limit = mp.u1(i17).s3;
+                        tL_channels_getParticipants.limit = np.u1(i17).s3;
                         tL_channels_getParticipants.offset = 0;
                         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
-                        tL_channels_getParticipants.channel = mp.u1(i17).j1(chat.id);
+                        tL_channels_getParticipants.channel = np.u1(i17).j1(chat.id);
                         final int i21 = 0;
                         ConnectionsManager.getInstance(i17).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.jf0
                             @Override // org.telegram.tgnet.RequestDelegate
@@ -302,7 +302,7 @@ public final /* synthetic */ class p4 implements Runnable {
                                                                 HashMap hashMap4 = hashMap3;
                                                                 if (i25 < size3) {
                                                                     TLRPC.User user = tL_channels_channelParticipants.users.get(i25);
-                                                                    org.telegram.messenger.mp.u1(i23).e4(user, false, false);
+                                                                    org.telegram.messenger.np.u1(i23).e4(user, false, false);
                                                                     hashMap4.put(Long.valueOf(user.id), user);
                                                                     i25++;
                                                                 } else {
@@ -334,7 +334,7 @@ public final /* synthetic */ class p4 implements Runnable {
                                                                 HashMap hashMap5 = hashMap3;
                                                                 if (i27 < size4) {
                                                                     TLRPC.User user2 = tL_messages_chatFull.users.get(i27);
-                                                                    org.telegram.messenger.mp.u1(i23).e4(user2, false, false);
+                                                                    org.telegram.messenger.np.u1(i23).e4(user2, false, false);
                                                                     hashMap5.put(Long.valueOf(user2.id), user2);
                                                                     i27++;
                                                                 } else {
@@ -380,7 +380,7 @@ public final /* synthetic */ class p4 implements Runnable {
                                                                 HashMap hashMap42 = hashMap4;
                                                                 if (i252 < size3) {
                                                                     TLRPC.User user = tL_channels_channelParticipants.users.get(i252);
-                                                                    org.telegram.messenger.mp.u1(i25).e4(user, false, false);
+                                                                    org.telegram.messenger.np.u1(i25).e4(user, false, false);
                                                                     hashMap42.put(Long.valueOf(user.id), user);
                                                                     i252++;
                                                                 } else {
@@ -412,7 +412,7 @@ public final /* synthetic */ class p4 implements Runnable {
                                                                 HashMap hashMap5 = hashMap4;
                                                                 if (i27 < size4) {
                                                                     TLRPC.User user2 = tL_messages_chatFull.users.get(i27);
-                                                                    org.telegram.messenger.mp.u1(i25).e4(user2, false, false);
+                                                                    org.telegram.messenger.np.u1(i25).e4(user2, false, false);
                                                                     hashMap5.put(Long.valueOf(user2.id), user2);
                                                                     i27++;
                                                                 } else {
@@ -470,7 +470,7 @@ public final /* synthetic */ class p4 implements Runnable {
                                                                 HashMap hashMap42 = hashMap3;
                                                                 if (i252 < size3) {
                                                                     TLRPC.User user = tL_channels_channelParticipants.users.get(i252);
-                                                                    org.telegram.messenger.mp.u1(i23).e4(user, false, false);
+                                                                    org.telegram.messenger.np.u1(i23).e4(user, false, false);
                                                                     hashMap42.put(Long.valueOf(user.id), user);
                                                                     i252++;
                                                                 } else {
@@ -502,7 +502,7 @@ public final /* synthetic */ class p4 implements Runnable {
                                                                 HashMap hashMap5 = hashMap3;
                                                                 if (i27 < size4) {
                                                                     TLRPC.User user2 = tL_messages_chatFull.users.get(i27);
-                                                                    org.telegram.messenger.mp.u1(i23).e4(user2, false, false);
+                                                                    org.telegram.messenger.np.u1(i23).e4(user2, false, false);
                                                                     hashMap5.put(Long.valueOf(user2.id), user2);
                                                                     i27++;
                                                                 } else {
@@ -548,7 +548,7 @@ public final /* synthetic */ class p4 implements Runnable {
                                                                 HashMap hashMap42 = hashMap4;
                                                                 if (i252 < size3) {
                                                                     TLRPC.User user = tL_channels_channelParticipants.users.get(i252);
-                                                                    org.telegram.messenger.mp.u1(i25).e4(user, false, false);
+                                                                    org.telegram.messenger.np.u1(i25).e4(user, false, false);
                                                                     hashMap42.put(Long.valueOf(user.id), user);
                                                                     i252++;
                                                                 } else {
@@ -580,7 +580,7 @@ public final /* synthetic */ class p4 implements Runnable {
                                                                 HashMap hashMap5 = hashMap4;
                                                                 if (i27 < size4) {
                                                                     TLRPC.User user2 = tL_messages_chatFull.users.get(i27);
-                                                                    org.telegram.messenger.mp.u1(i25).e4(user2, false, false);
+                                                                    org.telegram.messenger.np.u1(i25).e4(user2, false, false);
                                                                     hashMap5.put(Long.valueOf(user2.id), user2);
                                                                     i27++;
                                                                 } else {
@@ -642,9 +642,9 @@ public final /* synthetic */ class p4 implements Runnable {
         this.h = obj3;
     }
 
-    public /* synthetic */ p4(fj fjVar, TLRPC.Message message, String str, int[] iArr, int i7, long j3) {
+    public /* synthetic */ p4(gj gjVar, TLRPC.Message message, String str, int[] iArr, int i7, long j3) {
         this.a = 6;
-        this.d = fjVar;
+        this.d = gjVar;
         this.e = message;
         this.h = str;
         this.f = iArr;
@@ -652,9 +652,9 @@ public final /* synthetic */ class p4 implements Runnable {
         this.c = j3;
     }
 
-    public /* synthetic */ p4(e00 e00Var, TLRPC.TL_messages_forumTopics tL_messages_forumTopics, long j3, TLRPC.TL_messages_forumTopics tL_messages_forumTopics2, a0.h hVar, int i7) {
+    public /* synthetic */ p4(f00 f00Var, TLRPC.TL_messages_forumTopics tL_messages_forumTopics, long j3, TLRPC.TL_messages_forumTopics tL_messages_forumTopics2, a0.h hVar, int i7) {
         this.a = 3;
-        this.d = e00Var;
+        this.d = f00Var;
         this.e = tL_messages_forumTopics;
         this.c = j3;
         this.f = tL_messages_forumTopics2;

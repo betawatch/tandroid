@@ -24,19 +24,19 @@ import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.y01;
+import org.telegram.ui.Components.x01;
 import org.telegram.ui.uv;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public class x6 extends FrameLayout implements fs {
+public class x6 extends FrameLayout implements gs {
     public static Typeface k0;
     public static Typeface l0;
     public final s6 E;
@@ -195,9 +195,9 @@ public class x6 extends FrameLayout implements fs {
         this.j0 = false;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.d4) {
+        if (i7 == ls.d4) {
             Object obj = objArr[0];
             u0 u0Var = this.a0;
             if (obj == u0Var) {
@@ -215,8 +215,8 @@ public class x6 extends FrameLayout implements fs {
         Matrix matrix2 = (Matrix) s6Var.e.d;
         Matrix matrix3 = this.w;
         matrix3.set(matrix2);
-        y01 y01Var = s6Var.f;
-        matrix3.preTranslate(y01Var.getLeft(), y01Var.getTop());
+        x01 x01Var = s6Var.f;
+        matrix3.preTranslate(x01Var.getLeft(), x01Var.getTop());
         k(view2, matrix);
         matrix.preConcat(matrix3);
         matrix.preTranslate(this.F.getLeft() - r0.getScrollX(), this.F.getTop() - r0.getScrollY());
@@ -325,10 +325,10 @@ public class x6 extends FrameLayout implements fs {
         spannableStringBuilder.append((CharSequence) e(j3));
         spannableStringBuilder.append((CharSequence) " ");
         int length = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) gd.N0(2131749340, null));
+        spannableStringBuilder.append((CharSequence) hd.N0(2131749340, null));
         spannableStringBuilder.setSpan(new oi.w5(this, 5), length, spannableStringBuilder.length(), 33);
         this.O.setText(spannableStringBuilder);
-        long round = Math.round((j3 / 1.0E9d) * ((org.telegram.messenger.i0) mp.u1(i7).A7.l.b).a * 100.0d);
+        long round = Math.round((j3 / 1.0E9d) * ((org.telegram.messenger.i0) np.u1(i7).A7.l.b).a * 100.0d);
         org.telegram.messenger.r1 i10 = org.telegram.messenger.r1.i();
         boolean z10 = round % 100 == 0;
         i10.getClass();
@@ -340,7 +340,7 @@ public class x6 extends FrameLayout implements fs {
             return;
         }
         int i7 = u0Var.a;
-        setCardHolder(o10.q(j10.i(i7).f()).toUpperCase());
+        setCardHolder(p10.q(k10.i(i7).f()).toUpperCase());
         if (u0Var.y() != null) {
             setCardNumber(d(u0Var.y().toUpperCase()));
         }
@@ -385,10 +385,10 @@ public class x6 extends FrameLayout implements fs {
                 int i14 = (int) fArr[i13];
                 int i15 = i11 * 3;
                 int i16 = i15 + 30;
-                float f13 = ((i14 >> 16) & ks.e4) / 255.0f;
+                float f13 = ((i14 >> 16) & ls.e4) / 255.0f;
                 f10 = f11;
-                float f14 = ((i14 >> 8) & ks.e4) / 255.0f;
-                float f15 = (i14 & ks.e4) / 255.0f;
+                float f14 = ((i14 >> 8) & ls.e4) / 255.0f;
+                float f15 = (i14 & ls.e4) / 255.0f;
                 float min = Math.min(f13, Math.min(f14, f15));
                 float max = Math.max(f13, Math.max(f14, f15)) - min;
                 float f16 = (fArr2[i10] * 0.0722f) + (fArr2[z11 ? 1 : 0] * 0.7152f) + (fArr2[0] * 0.2126f);
@@ -424,9 +424,9 @@ public class x6 extends FrameLayout implements fs {
             int i24 = i22 * 4;
             int f18 = (fArr.length < 18 || fArr[i24 + 10] < f17) ? i0.a.f(0.2f, -16611884, -16748084) : i0.a.f(0.2f, ((int) fArr[i24 + 12]) | (-16777216), ((int) fArr[i24 + 11]) | (-16777216));
             int i25 = i22 * 3;
-            fArr3[i25 + 36] = ((f18 >> 16) & ks.e4) / 255.0f;
-            fArr3[i25 + 37] = ((f18 >> 8) & ks.e4) / 255.0f;
-            fArr3[i25 + 38] = (f18 & ks.e4) / 255.0f;
+            fArr3[i25 + 36] = ((f18 >> 16) & ls.e4) / 255.0f;
+            fArr3[i25 + 37] = ((f18 >> 8) & ls.e4) / 255.0f;
+            fArr3[i25 + 38] = (f18 & ls.e4) / 255.0f;
             i22++;
         }
         System.arraycopy(fArr, 6, fArr3, 24, 4);
@@ -516,7 +516,7 @@ public class x6 extends FrameLayout implements fs {
             }
         }
         if (this.a0 != null) {
-            ks.f(this.W).c(this, ks.d4);
+            ls.f(this.W).c(this, ls.d4);
         }
     }
 
@@ -528,7 +528,7 @@ public class x6 extends FrameLayout implements fs {
         }
         super.onDetachedFromWindow();
         if (this.a0 != null) {
-            ks.f(this.W).n(this, ks.d4);
+            ls.f(this.W).n(this, ls.d4);
         }
     }
 
@@ -603,7 +603,7 @@ public class x6 extends FrameLayout implements fs {
         this.w = new Matrix();
         this.x = new Matrix();
         this.y = new Matrix();
-        this.J = new Paint(ks.X2);
+        this.J = new Paint(ls.X2);
         final int i11 = 0;
         Runnable runnable = new Runnable(this) { // from class: org.telegram.ui.Wallet.t6
             public final /* synthetic */ x6 b;
@@ -631,7 +631,7 @@ public class x6 extends FrameLayout implements fs {
         };
         nr nrVar = nr.h;
         this.L = new org.telegram.ui.Components.d6(runnable, 240L, nrVar, 0);
-        this.W = j10.t0;
+        this.W = k10.t0;
         final int i12 = 1;
         this.g0 = new org.telegram.ui.Components.d6(new Runnable(this) { // from class: org.telegram.ui.Wallet.t6
             public final /* synthetic */ x6 b;

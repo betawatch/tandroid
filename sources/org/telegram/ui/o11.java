@@ -26,7 +26,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class o11 extends Dialog {
     public final int E;
@@ -60,7 +60,7 @@ public abstract class o11 extends Dialog {
     public o11(s11 s11Var, Context context, Runnable runnable, View view, c11 c11Var, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         boolean z10;
-        org.telegram.messenger.fc b10;
+        org.telegram.messenger.gc b10;
         String str;
         ColorFilter colorFilter;
         this.Q = s11Var;
@@ -83,12 +83,12 @@ public abstract class o11 extends Dialog {
         setContentView(k0Var, new ViewGroup.LayoutParams(-1, -1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        linearLayout.addView(new uv(10, context, i01Var), c8.ma.t(org.telegram.messenger.ks.q2, org.telegram.messenger.ks.q2, 17, 0, 0, 0, 16));
+        linearLayout.addView(new uv(10, context, i01Var), c8.ma.t(org.telegram.messenger.ls.q2, org.telegram.messenger.ls.q2, 17, 0, 0, 0, 16));
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, 0, context, h6Var);
         this.w = actionBarPopupWindow$ActionBarPopupWindowLayout;
         linearLayout.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, c8.ma.t(-2, -2, 17, 0, 0, 0, 0));
         final int i7 = 0;
-        org.telegram.ui.ActionBar.q0.c(true, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.gd.N0(2131745336, null), false, h6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.l11
+        org.telegram.ui.ActionBar.q0.c(true, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.N0(2131745336, null), false, h6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.l11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i7) {
@@ -108,7 +108,7 @@ public abstract class o11 extends Dialog {
             }
         });
         final int i10 = 1;
-        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.gd.N0(2131745334, null), false, h6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.l11
+        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.N0(2131745334, null), false, h6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.l11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i10) {
@@ -128,7 +128,7 @@ public abstract class o11 extends Dialog {
             }
         });
         final int i11 = 2;
-        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.gd.N0(2131745333, null), false, h6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.l11
+        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.N0(2131745333, null), false, h6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.l11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i11) {
@@ -148,7 +148,7 @@ public abstract class o11 extends Dialog {
             }
         });
         final int i12 = 3;
-        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.gd.N0(2131745335, null), false, h6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.l11
+        org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.N0(2131745335, null), false, h6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.l11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i12) {
@@ -167,7 +167,7 @@ public abstract class o11 extends Dialog {
                 }
             }
         });
-        org.telegram.ui.ActionBar.q0.c(false, true, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.gd.N0(2131745331, null), false, h6Var).setOnClickListener(new jg0(10, i01Var, context));
+        org.telegram.ui.ActionBar.q0.c(false, true, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.N0(2131745331, null), false, h6Var).setOnClickListener(new jg0(10, i01Var, context));
         k0Var.addView(linearLayout, c8.ma.e(-2, -2, 17));
         Window window = getWindow();
         if (window != null) {
@@ -207,27 +207,27 @@ public abstract class o11 extends Dialog {
             }
         }
         if (document != null) {
-            org.telegram.messenger.lz d = org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.m6.m6, 0.2f, false);
+            org.telegram.messenger.mz d = org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.m6.m6, 0.2f, false);
             TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
             if ("video/webm".equals(document.mime_type)) {
-                b10 = org.telegram.messenger.fc.b(document);
+                b10 = org.telegram.messenger.gc.b(document);
                 if (d != null) {
                     d.e = 512;
                     d.f = 512;
                 }
                 str = "160_160_g";
             } else {
-                if (d != null && org.telegram.messenger.fj.K2(document, false)) {
+                if (d != null && org.telegram.messenger.gj.K2(document, false)) {
                     d.e = 512;
                     d.f = 512;
                 }
-                b10 = org.telegram.messenger.fc.b(document);
+                b10 = org.telegram.messenger.gc.b(document);
                 str = "160_160";
             }
             TLRPC.Document document2 = document;
-            imageReceiver.u0(b10, str, org.telegram.messenger.fc.c(w10, document), "160_160", null, null, d, document.size, null, document2, 1);
-            if ((c11Var.F instanceof org.telegram.ui.Components.p5) && (org.telegram.messenger.fj.C4(document2) || ((org.telegram.ui.Components.p5) c11Var.F).c())) {
-                if (!org.telegram.messenger.fj.C4(document2)) {
+            imageReceiver.u0(b10, str, org.telegram.messenger.gc.c(w10, document), "160_160", null, null, d, document.size, null, document2, 1);
+            if ((c11Var.F instanceof org.telegram.ui.Components.p5) && (org.telegram.messenger.gj.C4(document2) || ((org.telegram.ui.Components.p5) c11Var.F).c())) {
+                if (!org.telegram.messenger.gj.C4(document2)) {
                     org.telegram.ui.Components.p5 p5Var = (org.telegram.ui.Components.p5) c11Var.F;
                     SparseArray sparseArray = org.telegram.ui.Components.p5.r;
                     if (p5Var == null || !p5Var.k()) {
@@ -335,7 +335,7 @@ public abstract class o11 extends Dialog {
                         o11Var.a.b = false;
                         o11Var.Q.i0.invalidate();
                     }
-                    org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.k1, 4);
+                    org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.k1, 4);
                 }
                 if (o11Var.J >= 0.5f || z12 || (runnable = k11Var2) == null) {
                     return;
@@ -464,7 +464,7 @@ public abstract class o11 extends Dialog {
             view.draw(canvas);
             canvas.restore();
         }
-        Utilities.stackBlurBitmap(createBitmap, Math.max(10, Math.max(measuredWidth, measuredHeight) / org.telegram.messenger.ks.K2));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(10, Math.max(measuredWidth, measuredHeight) / org.telegram.messenger.ls.K2));
         this.r = new Paint(1);
         this.n = createBitmap;
     }
@@ -472,7 +472,7 @@ public abstract class o11 extends Dialog {
     @Override // android.app.Dialog
     public final void show() {
         super.show();
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.j1, 4);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.j1, 4);
         d(true, null, null, true);
         c(true);
     }

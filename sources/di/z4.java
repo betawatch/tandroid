@@ -7,12 +7,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class z4 extends FrameLayout {
     public final bi.c3 a;
@@ -27,7 +27,7 @@ public final class z4 extends FrameLayout {
     public z4(Context context) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
-        addView(frameLayout, c8.ma.d(-1, -1.0f, ks.E1, 6.0f, 6.0f, 6.0f, 6.0f));
+        addView(frameLayout, c8.ma.d(-1, -1.0f, ls.E1, 6.0f, 6.0f, 6.0f, 6.0f));
         frameLayout.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.m6.r1(0.12f, -4530177)));
         frameLayout.setForeground(new p5(org.telegram.messenger.g0.L(18.0f), 0));
         ImageView imageView = new ImageView(context);
@@ -42,7 +42,7 @@ public final class z4 extends FrameLayout {
         frameLayout2.setBackground(c3Var);
         c3Var.s = org.telegram.messenger.g0.L(18.0f);
         c3Var.v = false;
-        frameLayout.addView(frameLayout2, c8.ma.e(-1, -1, ks.E1));
+        frameLayout.addView(frameLayout2, c8.ma.e(-1, -1, ls.E1));
         frameLayout2.setAlpha(0.0f);
         frameLayout2.setScaleX(0.6f);
         frameLayout2.setScaleY(0.6f);

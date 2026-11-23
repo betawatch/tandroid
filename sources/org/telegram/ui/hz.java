@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hz extends rg.b {
     public final Context d;
@@ -77,14 +77,14 @@ public final class hz extends rg.b {
             if (j3 > 0) {
                 TLRPC.User c22 = kzVar.getMessagesController().c2(Long.valueOf(j3));
                 if (c22 != null) {
-                    raVar.d(c22, null, c22.bot ? org.telegram.messenger.gd.N0(2131753153, null) : c22.contact ? org.telegram.messenger.gd.N0(2131750780, null) : org.telegram.messenger.gd.N0(2131750707, null), z11);
+                    raVar.d(c22, null, c22.bot ? org.telegram.messenger.hd.N0(2131753153, null) : c22.contact ? org.telegram.messenger.hd.N0(2131750780, null) : org.telegram.messenger.hd.N0(2131750707, null), z11);
                     return;
                 }
                 return;
             }
             TLRPC.Chat O0 = kzVar.getMessagesController().O0(Long.valueOf(-j3));
             if (O0 != null) {
-                raVar.d(O0, null, org.telegram.messenger.v3.Y(O0) ? org.telegram.messenger.gd.N0(2131751978, null) : O0.participants_count != 0 ? org.telegram.messenger.v3.V(O0) ? org.telegram.messenger.gd.H(',', "Subscribers", O0.participants_count) : org.telegram.messenger.gd.H(',', "Members", O0.participants_count) : !org.telegram.messenger.v3.t0(O0) ? (!org.telegram.messenger.v3.T(O0) || O0.megagroup) ? org.telegram.messenger.gd.N0(2131748448, null) : org.telegram.messenger.gd.N0(2131752317, null) : (!org.telegram.messenger.v3.T(O0) || O0.megagroup) ? org.telegram.messenger.gd.N0(2131748445, null) : org.telegram.messenger.gd.N0(2131752306, null), z11);
+                raVar.d(O0, null, org.telegram.messenger.v3.Y(O0) ? org.telegram.messenger.hd.N0(2131751978, null) : O0.participants_count != 0 ? org.telegram.messenger.v3.V(O0) ? org.telegram.messenger.hd.H(',', "Subscribers", O0.participants_count) : org.telegram.messenger.hd.H(',', "Members", O0.participants_count) : !org.telegram.messenger.v3.t0(O0) ? (!org.telegram.messenger.v3.T(O0) || O0.megagroup) ? org.telegram.messenger.hd.N0(2131748448, null) : org.telegram.messenger.hd.N0(2131752317, null) : (!org.telegram.messenger.v3.T(O0) || O0.megagroup) ? org.telegram.messenger.hd.N0(2131748445, null) : org.telegram.messenger.hd.N0(2131752306, null), z11);
                 return;
             }
             return;
@@ -110,7 +110,7 @@ public final class hz extends rg.b {
                     kzVar.J = azVar;
                     azVar.e(org.telegram.ui.Components.y5.cloneSpans(kzVar.x, -1, azVar.s.getPaint().getFontMetricsInt(), 0.5f), false);
                     kzVar.J.d(kzVar.getUserConfig().q() ? kzVar.F : -1, false);
-                    kzVar.J.setText(org.telegram.messenger.gd.N0(2131750605, null));
+                    kzVar.J.setText(org.telegram.messenger.hd.N0(2131750605, null));
                     break;
                 case 10:
                     im0 im0Var = (im0) view;
@@ -138,14 +138,14 @@ public final class hz extends rg.b {
         int i13 = czVar.k;
         CharSequence charSequence = czVar.d;
         ImageView imageView2 = tyVar.a;
-        int i14 = org.telegram.messenger.gd.a0 ? -1 : 1;
+        int i14 = org.telegram.messenger.hd.a0 ? -1 : 1;
         if (i13 == 0) {
             imageView2.setVisibility(8);
         } else {
             imageView2.setVisibility(0);
             imageView2.setImageResource(i13);
         }
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).rightMargin = org.telegram.messenger.g0.L(i13 == 0 ? 24.0f : 72.0f);
         } else {
             ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(i13 == 0 ? 24.0f : 72.0f);
@@ -191,7 +191,7 @@ public final class hz extends rg.b {
                 break;
             case 2:
                 org.telegram.ui.Components.du0 du0Var = (org.telegram.ui.Components.du0) kzVar.fragmentView;
-                String N0 = org.telegram.messenger.gd.N0(2131750720, null);
+                String N0 = org.telegram.messenger.hd.N0(2131750720, null);
                 h6Var = ((org.telegram.ui.ActionBar.g2) kzVar).resourceProvider;
                 fz fzVar = new fz(this.d, du0Var, N0, false, 12, h6Var);
                 kzVar.L = fzVar;
@@ -220,16 +220,16 @@ public final class hz extends rg.b {
                 ImageView imageView = new ImageView(context);
                 tyVar.a = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                tyVar.addView(imageView, c8.ma.d(24, 24.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+                tyVar.addView(imageView, c8.ma.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
                 TextView textView = new TextView(context);
                 tyVar.b = textView;
                 textView.setTextSize(1, 16.0f);
                 textView.setLines(1);
                 textView.setSingleLine();
-                boolean z10 = org.telegram.messenger.gd.a0;
+                boolean z10 = org.telegram.messenger.hd.a0;
                 textView.setPadding(z10 ? 24 : 0, 0, z10 ? 0 : 24, 0);
-                textView.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
-                boolean z11 = org.telegram.messenger.gd.a0;
+                textView.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+                boolean z11 = org.telegram.messenger.hd.a0;
                 tyVar.addView(textView, c8.ma.d(-1, -2.0f, 23, z11 ? 0.0f : 72.0f, 0.0f, z11 ? 72.0f : 0.0f, 0.0f));
                 view = tyVar;
                 break;

@@ -19,8 +19,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.p80;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.q80;
 import org.telegram.ui.Components.up;
 import org.telegram.ui.nd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class e extends FrameLayout implements p80, org.telegram.ui.ActionBar.b6 {
     public int E;
@@ -130,7 +130,7 @@ public class e extends FrameLayout implements p80, org.telegram.ui.ActionBar.b6 
         }
         this.W = i7;
         this.h = (i7 != 0 || this.a0) ? 1.0f : 0.0f;
-        n6Var.t(gd.E(i7, ' '), z10, true);
+        n6Var.t(hd.E(i7, ' '), z10, true);
         invalidate();
     }
 
@@ -512,7 +512,7 @@ public class e extends FrameLayout implements p80, org.telegram.ui.ActionBar.b6 
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z10 ? 1.0f : 0.0f);
             this.S = ofFloat;
             ofFloat.addUpdateListener(new b(this, 2));
-            this.S.addListener(new bi.h7(7, this, z10));
+            this.S.addListener(new bi.g7(7, this, z10));
             this.S.setDuration(this.T ? 240L : 320L);
             this.S.setInterpolator(nr.h);
             this.S.start();
@@ -617,7 +617,7 @@ public class e extends FrameLayout implements p80, org.telegram.ui.ActionBar.b6 
         this.U = 1.0f;
         this.d0 = 1.0f;
         this.e0 = true;
-        this.h0 = ks.e4;
+        this.h0 = ls.e4;
         this.s = z10;
         this.a = h6Var;
         c8.ra.b(this, 0.02f, 1.2f);

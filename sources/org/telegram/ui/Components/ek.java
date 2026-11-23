@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ek extends dk0 {
     public final /* synthetic */ int c;
@@ -120,10 +120,10 @@ public final class ek extends dk0 {
                 if (i11 == 0) {
                     org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) view;
                     if (!mkVar.d0) {
-                        o4Var.setText(org.telegram.messenger.gd.N0(2131746172, null));
+                        o4Var.setText(org.telegram.messenger.hd.N0(2131746172, null));
                         break;
                     } else {
-                        o4Var.setText(org.telegram.messenger.gd.N0(2131746171, null));
+                        o4Var.setText(org.telegram.messenger.hd.N0(2131746171, null));
                         break;
                     }
                 } else if (i11 == 1) {

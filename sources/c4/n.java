@@ -6,12 +6,12 @@ import android.widget.EditText;
 import fi.l5;
 import h2.x;
 import java.util.List;
-import org.telegram.messenger.ci;
+import org.telegram.messenger.di;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.rr;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.sr;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -29,9 +29,9 @@ import p4.i1;
 import p4.v;
 import w7.s;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimestamp, q1, rr, a1, c1 {
+public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimestamp, q1, sr, a1, c1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -44,7 +44,7 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
         this.d = obj;
     }
 
-    @Override // org.telegram.messenger.rr
+    @Override // org.telegram.messenger.sr
     public void a(String str) {
         jt0.f((jt0) this.d, this.c, this.b, str);
     }
@@ -86,7 +86,7 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
             case 3:
                 EditText editText = (EditText) obj;
                 if (j3 > 0) {
-                    TLRPC.UserFull d2 = mp.u1(i11).d2(j10.i(i11).e());
+                    TLRPC.UserFull d2 = np.u1(i11).d2(k10.i(i11).e());
                     String trim = editText.getText().toString().replace("\n", " ").replaceAll(" +", " ").trim();
                     if (d2 != null) {
                         String str = d2.about;
@@ -96,17 +96,17 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
                             break;
                         } else {
                             d2.about = trim;
-                            ks.f(i11).k(67, Long.valueOf(j3), d2);
+                            ls.f(i11).k(67, Long.valueOf(j3), d2);
                         }
                     }
                     TL_account.updateProfile updateprofile = new TL_account.updateProfile();
                     updateprofile.about = trim;
                     updateprofile.flags |= 4;
-                    ks.e().k(ks.S4, 2, Long.valueOf(j3));
+                    ls.e().k(ls.S4, 2, Long.valueOf(j3));
                     ConnectionsManager.getInstance(i11).sendRequest(updateprofile, new l5(18), 2);
                 } else {
                     long j10 = -j3;
-                    TLRPC.ChatFull P0 = mp.u1(i11).P0(j10);
+                    TLRPC.ChatFull P0 = np.u1(i11).P0(j10);
                     String obj2 = editText.getText().toString();
                     if (P0 != null) {
                         String str2 = P0.about;
@@ -116,23 +116,23 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
                             break;
                         } else {
                             P0.about = obj2;
-                            ks f10 = ks.f(i11);
+                            ls f10 = ls.f(i11);
                             Boolean bool = Boolean.FALSE;
                             f10.k(30, P0, 0, bool, bool);
                         }
                     }
-                    ks.e().k(ks.S4, 2, Long.valueOf(j3));
-                    mp u12 = mp.u1(i11);
+                    ls.e().k(ls.S4, 2, Long.valueOf(j3));
+                    np u12 = np.u1(i11);
                     TLRPC.TL_messages_editChatAbout tL_messages_editChatAbout = new TLRPC.TL_messages_editChatAbout();
                     tL_messages_editChatAbout.peer = u12.l1(-j10);
                     tL_messages_editChatAbout.about = obj2;
-                    u12.getConnectionsManager().sendRequest(tL_messages_editChatAbout, new ci(u12, P0, obj2, 7), 64);
+                    u12.getConnectionsManager().sendRequest(tL_messages_editChatAbout, new di(u12, P0, obj2, 7), 64);
                 }
                 t1Var.dismiss();
                 break;
             default:
                 Runnable runnable = (Runnable) obj;
-                SharedPreferences.Editor edit = mp.u1(j10.t0).g7.edit();
+                SharedPreferences.Editor edit = np.u1(k10.t0).g7.edit();
                 if (j3 != 0) {
                     edit.putInt("color_" + j3, 0);
                 } else if (i11 == 1) {

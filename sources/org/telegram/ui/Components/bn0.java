@@ -27,7 +27,7 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class bn0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static float[] l0;
@@ -430,9 +430,9 @@ public class bn0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
         }
     }
 
-    public final void g(org.telegram.messenger.fj fjVar) {
+    public final void g(org.telegram.messenger.gj gjVar) {
         String str;
-        if (fjVar == null) {
+        if (gjVar == null) {
             this.U = null;
             this.b0 = -1;
             this.a0 = 0.0f;
@@ -445,7 +445,7 @@ public class bn0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
             this.W = -1L;
             return;
         }
-        Long valueOf = Long.valueOf(((long) fjVar.L0()) * 1000);
+        Long valueOf = Long.valueOf(((long) gjVar.L0()) * 1000);
         if (valueOf.longValue() < 0) {
             this.U = null;
             this.b0 = -1;
@@ -459,13 +459,13 @@ public class bn0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
             this.W = -1L;
             return;
         }
-        CharSequence charSequence = fjVar.z;
-        if (fjVar.e5()) {
-            if (fjVar.B == null && (str = fjVar.k.media.webpage.description) != null) {
-                fjVar.B = SpannableString.valueOf(str);
-                org.telegram.messenger.fj.h(fjVar.N3(), fjVar.B, false, 3, (int) valueOf.longValue(), false);
+        CharSequence charSequence = gjVar.z;
+        if (gjVar.e5()) {
+            if (gjVar.B == null && (str = gjVar.k.media.webpage.description) != null) {
+                gjVar.B = SpannableString.valueOf(str);
+                org.telegram.messenger.gj.h(gjVar.N3(), gjVar.B, false, 3, (int) valueOf.longValue(), false);
             }
-            charSequence = fjVar.B;
+            charSequence = gjVar.B;
         }
         boolean z10 = charSequence != this.V;
         if (z10 || this.W != valueOf.longValue()) {
@@ -625,7 +625,7 @@ public class bn0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
                 }
             } else {
                 f12 = 8.0f;
-                float w10 = org.telegram.messenger.n10.w(elapsedRealtime, 60.0f, org.telegram.messenger.g0.L(1.0f), f18);
+                float w10 = org.telegram.messenger.o10.w(elapsedRealtime, 60.0f, org.telegram.messenger.g0.L(1.0f), f18);
                 this.H = w10;
                 if (w10 < f19) {
                     this.H = f19;

@@ -45,10 +45,10 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
@@ -65,7 +65,7 @@ import v0.g;
 import v0.n;
 import w0.h;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -142,7 +142,7 @@ public final /* synthetic */ class a implements Runnable {
                 }
                 String str = tL_error.text;
                 if (str.equals("REACTIONS_TOO_MANY")) {
-                    str = gd.G(pVar2.O, "ReactionMaxCountError", new Object[0]);
+                    str = hd.G(pVar2.O, "ReactionMaxCountError", new Object[0]);
                 }
                 lc.b0(pVar2).t(str, null).j();
                 return;
@@ -316,8 +316,8 @@ public final /* synthetic */ class a implements Runnable {
                 if (ci.b0.d(j0Var2.getParentActivity())) {
                     b0Var4.e();
                     y yVar = new y(i10);
-                    x10 x10Var = new x10() { // from class: ci.e0
-                        @Override // org.telegram.messenger.x10
+                    y10 y10Var = new y10() { // from class: ci.e0
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj) {
                             int i14 = i7;
                             j0 j0Var3 = j0Var2;
@@ -332,7 +332,7 @@ public final /* synthetic */ class a implements Runnable {
                                 default:
                                     z0 z0Var = j0Var3.d;
                                     if (z0Var != null && !j0Var3.isFinished) {
-                                        z0Var.d1(R.drawable.msg_download, gd.N0(2131746275, null), null);
+                                        z0Var.d1(R.drawable.msg_download, hd.N0(2131746275, null), null);
                                         break;
                                     }
                                     break;
@@ -343,7 +343,7 @@ public final /* synthetic */ class a implements Runnable {
                     qm0Var.H = 1;
                     qm0Var.I = false;
                     qm0Var.y = false;
-                    qm0Var.W = new a0(yVar, j0Var2, x10Var, false, 19);
+                    qm0Var.W = new a0(yVar, j0Var2, y10Var, false, 19);
                     j0Var2.presentFragment(qm0Var);
                     return;
                 }
@@ -355,8 +355,8 @@ public final /* synthetic */ class a implements Runnable {
                 if (parentActivity == null) {
                     return;
                 }
-                MediaController.d0(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new x10() { // from class: ci.e0
-                    @Override // org.telegram.messenger.x10
+                MediaController.d0(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new y10() { // from class: ci.e0
+                    @Override // org.telegram.messenger.y10
                     public final void a(Object obj) {
                         int i14 = i10;
                         j0 j0Var32 = j0Var3;
@@ -371,7 +371,7 @@ public final /* synthetic */ class a implements Runnable {
                             default:
                                 z0 z0Var = j0Var32.d;
                                 if (z0Var != null && !j0Var32.isFinished) {
-                                    z0Var.d1(R.drawable.msg_download, gd.N0(2131746275, null), null);
+                                    z0Var.d1(R.drawable.msg_download, hd.N0(2131746275, null), null);
                                     break;
                                 }
                                 break;
@@ -422,7 +422,7 @@ public final /* synthetic */ class a implements Runnable {
                 fVar.G = i14 == 1;
                 return;
             case 19:
-                ((x10) this.b).a((ci.e) this.c);
+                ((y10) this.b).a((ci.e) this.c);
                 return;
             case 20:
                 d1.e eVar4 = (d1.e) this.b;
@@ -480,7 +480,7 @@ public final /* synthetic */ class a implements Runnable {
                 b0Var5.i = 0;
                 if (tLObject instanceof TL_payments.connectedStarRefBots) {
                     TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-                    mp.u1(i17).f4(connectedstarrefbots.users, false);
+                    np.u1(i17).f4(connectedstarrefbots.users, false);
                     if (b0Var5.c <= 0) {
                         arrayList.clear();
                     }
@@ -492,7 +492,7 @@ public final /* synthetic */ class a implements Runnable {
                     b0Var5.d = true;
                 }
                 b0Var5.g = false;
-                ks.f(i17).k(ks.O3, Long.valueOf(b0Var5.b));
+                ls.f(i17).k(ls.O3, Long.valueOf(b0Var5.b));
                 return;
             case 27:
                 c0 c0Var = (c0) this.b;
@@ -501,7 +501,7 @@ public final /* synthetic */ class a implements Runnable {
                 ArrayList arrayList2 = c0Var.e;
                 if (tLObject2 instanceof TL_payments.suggestedStarRefBots) {
                     TL_payments.suggestedStarRefBots suggestedstarrefbots = (TL_payments.suggestedStarRefBots) tLObject2;
-                    mp.u1(i18).f4(suggestedstarrefbots.users, false);
+                    np.u1(i18).f4(suggestedstarrefbots.users, false);
                     if (c0Var.c <= 0) {
                         arrayList2.clear();
                     }
@@ -514,13 +514,13 @@ public final /* synthetic */ class a implements Runnable {
                     c0Var.d = true;
                 }
                 c0Var.h = false;
-                ks.f(i18).k(ks.N3, Long.valueOf(c0Var.b));
+                ls.f(i18).k(ls.N3, Long.valueOf(c0Var.b));
                 return;
             case 28:
                 f6 f6Var = (f6) this.b;
                 Long l10 = (Long) this.c;
-                String str7 = (l10.longValue() >= 0 || (O0 = mp.u1(f6Var.a).O0(Long.valueOf(-l10.longValue()))) == null) ? "" : O0.title;
-                gc Q = f6Var.k().Q(R.raw.contact_check, 36, g0.W2(TextUtils.isEmpty(str7) ? gd.N0(2131749443, null) : gd.a0(null, null, 2131749444, str7)));
+                String str7 = (l10.longValue() >= 0 || (O0 = np.u1(f6Var.a).O0(Long.valueOf(-l10.longValue()))) == null) ? "" : O0.title;
+                gc Q = f6Var.k().Q(R.raw.contact_check, 36, g0.W2(TextUtils.isEmpty(str7) ? hd.N0(2131749443, null) : hd.a0(null, null, 2131749444, str7)));
                 Q.t = true;
                 Q.j();
                 return;

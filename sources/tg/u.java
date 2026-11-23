@@ -2,15 +2,15 @@ package tg;
 
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.j01;
+import org.telegram.ui.Components.f21;
 import org.telegram.ui.Components.m80;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class u implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                ((j01) this.b).run();
+                ((f21) this.b).run();
                 break;
             case 1:
                 ((l2) this.b).onBackPressed();
@@ -45,8 +45,8 @@ public final /* synthetic */ class u implements View.OnClickListener {
                     aVar.b(true);
                     String str = g0Var.N2;
                     final int i7 = 0;
-                    x10 x10Var = new x10() { // from class: wg.f0
-                        @Override // org.telegram.messenger.x10
+                    y10 y10Var = new y10() { // from class: wg.f0
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj) {
                             switch (i7) {
                                 case 0:
@@ -64,8 +64,8 @@ public final /* synthetic */ class u implements View.OnClickListener {
                         }
                     };
                     final int i10 = 1;
-                    x10 x10Var2 = new x10() { // from class: wg.f0
-                        @Override // org.telegram.messenger.x10
+                    y10 y10Var2 = new y10() { // from class: wg.f0
+                        @Override // org.telegram.messenger.y10
                         public final void a(Object obj) {
                             switch (i10) {
                                 case 0:
@@ -82,10 +82,10 @@ public final /* synthetic */ class u implements View.OnClickListener {
                             }
                         }
                     };
-                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(j10.t0);
+                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(k10.t0);
                     TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
                     tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new wg.n(x10Var2, x10Var, 0), 2);
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new wg.n(y10Var2, y10Var, 0), 2);
                     break;
                 }
                 break;

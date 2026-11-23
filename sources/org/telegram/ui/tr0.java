@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class tr0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int i7;
-        ai.n2 n2Var;
+        ai.o2 o2Var;
         ArrayList arrayList;
         String str;
         int i10;
@@ -58,17 +58,17 @@ public final /* synthetic */ class tr0 implements Runnable {
                 as0 as0Var2 = (as0) this.b;
                 TLRPC.PollAnswer pollAnswer = (TLRPC.PollAnswer) this.c;
                 as0Var2.getClass();
-                org.telegram.messenger.g0.g(org.telegram.messenger.fj.h0(pollAnswer.text, false));
+                org.telegram.messenger.g0.g(org.telegram.messenger.gj.h0(pollAnswer.text, false));
                 as0Var2.c(true);
                 break;
             case 2:
                 as0 as0Var3 = (as0) this.b;
                 byte[] bArr = (byte[]) this.c;
-                org.telegram.messenger.zy C = org.telegram.messenger.zy.C(as0Var3.I.K1);
-                org.telegram.messenger.fj fjVar = as0Var3.I;
-                if (fjVar != null && (org.telegram.messenger.fj.m1(fjVar) instanceof TLRPC.TL_messageMediaPoll)) {
-                    long B0 = org.telegram.messenger.fj.B0(fjVar.k);
-                    int e12 = fjVar.e1();
+                org.telegram.messenger.az C = org.telegram.messenger.az.C(as0Var3.I.K1);
+                org.telegram.messenger.gj gjVar = as0Var3.I;
+                if (gjVar != null && (org.telegram.messenger.gj.m1(gjVar) instanceof TLRPC.TL_messageMediaPoll)) {
+                    long B0 = org.telegram.messenger.gj.B0(gjVar.k);
+                    int e12 = gjVar.e1();
                     TLRPC.TL_messages_deletePollAnswer tL_messages_deletePollAnswer = new TLRPC.TL_messages_deletePollAnswer();
                     tL_messages_deletePollAnswer.peer = C.getMessagesController().l1(B0);
                     tL_messages_deletePollAnswer.msg_id = e12;
@@ -198,8 +198,8 @@ public final /* synthetic */ class tr0 implements Runnable {
                 ProfileActivity profileActivity9 = (ProfileActivity) this.b;
                 boolean[] zArr2 = (boolean[]) this.c;
                 RectF rectF9 = ProfileActivity.Z6;
-                if (!zArr2[0] && (n2Var = profileActivity9.D5) != null) {
-                    n2Var.run();
+                if (!zArr2[0] && (o2Var = profileActivity9.D5) != null) {
+                    o2Var.run();
                 }
                 profileActivity9.D5 = null;
                 break;
@@ -237,7 +237,7 @@ public final /* synthetic */ class tr0 implements Runnable {
                 String[] split = str8.split(" ");
                 String[] strArr2 = new String[split.length];
                 for (int i13 = 0; i13 < split.length; i13++) {
-                    String T0 = org.telegram.messenger.gd.E0().T0(split[i13], true, false);
+                    String T0 = org.telegram.messenger.hd.E0().T0(split[i13], true, false);
                     strArr2[i13] = T0;
                     if (T0.equals(split[i13])) {
                         strArr2[i13] = null;
@@ -253,8 +253,8 @@ public final /* synthetic */ class tr0 implements Runnable {
                             int size = arrayList2.size();
                             int i15 = 0;
                             while (i15 < size) {
-                                org.telegram.messenger.yo yoVar = (org.telegram.messenger.yo) arrayList2.get(i15);
-                                String str11 = str9 + yoVar.a.toLowerCase();
+                                org.telegram.messenger.zo zoVar = (org.telegram.messenger.zo) arrayList2.get(i15);
+                                String str11 = str9 + zoVar.a.toLowerCase();
                                 SpannableStringBuilder spannableStringBuilder2 = null;
                                 int i16 = 0;
                                 while (true) {
@@ -272,7 +272,7 @@ public final /* synthetic */ class tr0 implements Runnable {
                                             if (i11 >= 0) {
                                                 if (spannableStringBuilder2 == null) {
                                                     str = str9;
-                                                    spannableStringBuilder2 = new SpannableStringBuilder(yoVar.a);
+                                                    spannableStringBuilder2 = new SpannableStringBuilder(zoVar.a);
                                                 } else {
                                                     str = str9;
                                                 }
@@ -285,7 +285,7 @@ public final /* synthetic */ class tr0 implements Runnable {
                                             i10 = size;
                                         }
                                         if (spannableStringBuilder2 != null && i16 == split.length - 1) {
-                                            arrayList4.add(yoVar);
+                                            arrayList4.add(zoVar);
                                             arrayList5.add(spannableStringBuilder2);
                                         }
                                         i16++;
@@ -354,7 +354,7 @@ public final /* synthetic */ class tr0 implements Runnable {
                                         while (true) {
                                             if (i18 >= 4) {
                                                 i18 = -1;
-                                            } else if (org.telegram.messenger.j10.i(i18).p()) {
+                                            } else if (org.telegram.messenger.k10.i(i18).p()) {
                                                 i18++;
                                             }
                                         }
@@ -385,8 +385,8 @@ public final /* synthetic */ class tr0 implements Runnable {
                 ArrayList arrayList6 = (ArrayList) this.c;
                 ww0Var2.d.addAll(arrayList6);
                 int i19 = ww0Var2.f;
-                org.telegram.messenger.mp.u1(i19).s2 = arrayList6;
-                org.telegram.messenger.mp.u1(i19).t2 = ww0Var2.F;
+                org.telegram.messenger.np.u1(i19).s2 = arrayList6;
+                org.telegram.messenger.np.u1(i19).t2 = ww0Var2.F;
                 if (!ww0Var2.x) {
                     ww0Var2.f();
                     break;
@@ -422,12 +422,12 @@ public final /* synthetic */ class tr0 implements Runnable {
                 org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.b;
                 org.telegram.ui.Components.lc lcVar = (org.telegram.ui.Components.lc) this.c;
                 aVar.run();
-                lcVar.c(org.telegram.messenger.gd.N0(2131754485, null)).j();
+                lcVar.c(org.telegram.messenger.hd.N0(2131754485, null)).j();
                 break;
             case 28:
                 org.telegram.ui.ActionBar.g2 g2Var3 = (org.telegram.ui.ActionBar.g2) this.b;
                 org.telegram.ui.Components.ou ouVar = (org.telegram.ui.Components.ou) this.c;
-                org.telegram.ui.Components.lc.b0(g2Var3).c(org.telegram.messenger.gd.N0(2131754485, null)).j();
+                org.telegram.ui.Components.lc.b0(g2Var3).c(org.telegram.messenger.hd.N0(2131754485, null)).j();
                 org.telegram.messenger.g0.g3(ouVar);
                 break;
             default:

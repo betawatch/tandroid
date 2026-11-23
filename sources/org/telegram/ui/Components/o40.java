@@ -21,7 +21,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class o40 extends org.telegram.messenger.r5 {
     public boolean E;
@@ -194,7 +194,7 @@ public final class o40 extends org.telegram.messenger.r5 {
                 float f13 = 0.5f - f11;
                 float f14 = f10 + 0.5f;
                 float f15 = f11 + 0.5f;
-                c50Var2.J0 = org.telegram.messenger.n10.i(ByteBuffer.allocateDirect(32));
+                c50Var2.J0 = org.telegram.messenger.o10.i(ByteBuffer.allocateDirect(32));
                 this.I.J0.put(new float[]{f12, f13, f14, f13, f12, f15, f14, f15}).position(0);
                 return;
             }
@@ -236,7 +236,7 @@ public final class o40 extends org.telegram.messenger.r5 {
             if (this.I.B0) {
                 this.I.q("GL input recreated: surface=0");
             }
-            org.telegram.messenger.g0.g3(new org.telegram.ui.b0(this.I, i11, this.n[0], 15));
+            org.telegram.messenger.g0.g3(new org.telegram.ui.f0(this.I, i11, this.n[0], 14));
             b();
             c50 c50Var5 = this.I;
             float f16 = (1.0f / c50Var5.L0) / 2.0f;
@@ -245,7 +245,7 @@ public final class o40 extends org.telegram.messenger.r5 {
             float f19 = 0.5f - f17;
             float f20 = f16 + 0.5f;
             float f21 = f17 + 0.5f;
-            c50Var5.J0 = org.telegram.messenger.n10.i(ByteBuffer.allocateDirect(32));
+            c50Var5.J0 = org.telegram.messenger.o10.i(ByteBuffer.allocateDirect(32));
             this.I.J0.put(new float[]{f18, f19, f20, f19, f18, f21, f20, f21}).position(0);
             return;
         }
@@ -260,7 +260,7 @@ public final class o40 extends org.telegram.messenger.r5 {
                 EGLSurface eGLSurface2 = this.e;
                 if (!egl102.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, this.d)) {
                     if (org.telegram.messenger.s2.a) {
-                        org.telegram.messenger.n10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                        org.telegram.messenger.o10.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                         return;
                     }
                     return;
@@ -319,17 +319,17 @@ public final class o40 extends org.telegram.messenger.r5 {
                 }
                 c50 c50Var8 = this.I;
                 u40 u40Var2 = c50Var8.i1;
-                org.telegram.messenger.ne neVar = c50Var8.f0;
+                org.telegram.messenger.oe oeVar = c50Var8.f0;
                 android.opengl.EGLContext eglGetCurrentContext = EGL14.eglGetCurrentContext();
                 if (u40Var2.G0 && u40Var2.U != null && u40Var2.U.getLooper() != null && u40Var2.U.getLooper().getThread() != null && u40Var2.U.getLooper().getThread().isAlive()) {
                     u40Var2.x = eglGetCurrentContext;
                     u40Var2.U.sendMessage(u40Var2.U.obtainMessage(0, 1, 0));
                 }
                 u40Var2.G0 = true;
-                int i14 = org.telegram.messenger.mp.u1(u40Var2.I0.e).y3;
-                int i15 = org.telegram.messenger.mp.u1(u40Var2.I0.e).z3 * 1024;
+                int i14 = org.telegram.messenger.np.u1(u40Var2.I0.e).y3;
+                int i15 = org.telegram.messenger.np.u1(u40Var2.I0.e).z3 * 1024;
                 org.telegram.messenger.g0.g3(new me(9));
-                u40Var2.a = neVar;
+                u40Var2.a = oeVar;
                 u40Var2.d = i14;
                 u40Var2.e = i14;
                 u40Var2.f = i15;
@@ -463,16 +463,15 @@ public final class o40 extends org.telegram.messenger.r5 {
         z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (org.telegram.messenger.s2.a) {
-                org.telegram.messenger.n10.v(this.b, new StringBuilder("InstantCamera eglGetDisplay failed "));
+                org.telegram.messenger.o10.v(this.b, new StringBuilder("InstantCamera eglGetDisplay failed "));
             }
             finish();
         } else if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
             int[] iArr = new int[1];
             EGLConfig[] eGLConfigArr = new EGLConfig[1];
-            int i7 = 15;
             if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 0, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                 if (org.telegram.messenger.s2.a) {
-                    org.telegram.messenger.n10.v(this.b, new StringBuilder("InstantCamera eglChooseConfig failed "));
+                    org.telegram.messenger.o10.v(this.b, new StringBuilder("InstantCamera eglChooseConfig failed "));
                 }
                 finish();
             } else if (iArr[0] > 0) {
@@ -481,7 +480,7 @@ public final class o40 extends org.telegram.messenger.r5 {
                 this.d = eglCreateContext;
                 if (eglCreateContext == null) {
                     if (org.telegram.messenger.s2.a) {
-                        org.telegram.messenger.n10.v(this.b, new StringBuilder("InstantCamera eglCreateContext failed "));
+                        org.telegram.messenger.o10.v(this.b, new StringBuilder("InstantCamera eglCreateContext failed "));
                     }
                     finish();
                 } else {
@@ -491,7 +490,7 @@ public final class o40 extends org.telegram.messenger.r5 {
                         this.e = eglCreateWindowSurface;
                         if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                             if (org.telegram.messenger.s2.a) {
-                                org.telegram.messenger.n10.v(this.b, new StringBuilder("InstantCamera createWindowSurface failed "));
+                                org.telegram.messenger.o10.v(this.b, new StringBuilder("InstantCamera createWindowSurface failed "));
                             }
                             finish();
                         } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -510,12 +509,12 @@ public final class o40 extends org.telegram.messenger.r5 {
                             if (c50Var.i1 == null) {
                                 c50Var.i1 = new u40(c50Var);
                             }
-                            FloatBuffer i10 = org.telegram.messenger.n10.i(ByteBuffer.allocateDirect(48));
-                            c50Var.I0 = i10;
-                            i10.put(fArr).position(0);
-                            FloatBuffer i11 = org.telegram.messenger.n10.i(ByteBuffer.allocateDirect(32));
-                            c50Var.J0 = i11;
-                            i11.put(fArr2).position(0);
+                            FloatBuffer i7 = org.telegram.messenger.o10.i(ByteBuffer.allocateDirect(48));
+                            c50Var.I0 = i7;
+                            i7.put(fArr).position(0);
+                            FloatBuffer i10 = org.telegram.messenger.o10.i(ByteBuffer.allocateDirect(32));
+                            c50Var.J0 = i10;
+                            i10.put(fArr2).position(0);
                             Matrix.setIdentityM(c50Var.G0, 0);
                             int l10 = c50.l(c50Var, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
                             int l11 = c50.l(c50Var, 35632, "#extension GL_OES_EGL_image_external : require\nprecision lowp float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
@@ -546,25 +545,25 @@ public final class o40 extends org.telegram.messenger.r5 {
                                 }
                                 Matrix.setIdentityM(c50Var.F0, 0);
                                 GLES20.glGenTextures(2, iArr2, 0);
-                                for (final int i12 = 0; i12 < 2; i12++) {
-                                    GLES20.glBindTexture(36197, iArr2[i12]);
+                                for (final int i11 = 0; i11 < 2; i11++) {
+                                    GLES20.glBindTexture(36197, iArr2[i11]);
                                     GLES20.glTexParameteri(36197, 10241, 9729);
                                     GLES20.glTexParameteri(36197, 10240, 9729);
                                     GLES20.glTexParameteri(36197, 10242, 33071);
                                     GLES20.glTexParameteri(36197, 10243, 33071);
-                                    SurfaceTexture surfaceTexture2 = new SurfaceTexture(iArr2[i12]);
+                                    SurfaceTexture surfaceTexture2 = new SurfaceTexture(iArr2[i11]);
                                     SurfaceTexture[] surfaceTextureArr = this.n;
-                                    surfaceTextureArr[i12] = surfaceTexture2;
+                                    surfaceTextureArr[i11] = surfaceTexture2;
                                     surfaceTexture2.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener() { // from class: org.telegram.ui.Components.m40
                                         @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
                                         public final void onFrameAvailable(SurfaceTexture surfaceTexture3) {
                                             o40 o40Var = o40.this;
-                                            int i13 = i12;
+                                            int i12 = i11;
                                             o40Var.I.W = true;
-                                            o40Var.requestRender(i13 == 0, i13 == 1);
+                                            o40Var.requestRender(i12 == 0, i12 == 1);
                                         }
                                     });
-                                    org.telegram.messenger.g0.g3(new org.telegram.ui.b0(c50Var, i12, surfaceTextureArr[i12], i7));
+                                    org.telegram.messenger.g0.g3(new org.telegram.ui.f0(c50Var, i11, surfaceTextureArr[i11], 14));
                                 }
                                 if (org.telegram.messenger.s2.a) {
                                     org.telegram.messenger.a8.d("InstantCamera gl initied");
@@ -573,7 +572,7 @@ public final class o40 extends org.telegram.messenger.r5 {
                             }
                         } else {
                             if (org.telegram.messenger.s2.a) {
-                                org.telegram.messenger.n10.v(this.b, new StringBuilder("InstantCamera eglMakeCurrent failed "));
+                                org.telegram.messenger.o10.v(this.b, new StringBuilder("InstantCamera eglMakeCurrent failed "));
                             }
                             finish();
                         }
@@ -589,7 +588,7 @@ public final class o40 extends org.telegram.messenger.r5 {
             }
         } else {
             if (org.telegram.messenger.s2.a) {
-                org.telegram.messenger.n10.v(this.b, new StringBuilder("InstantCamera eglInitialize failed "));
+                org.telegram.messenger.o10.v(this.b, new StringBuilder("InstantCamera eglInitialize failed "));
             }
             finish();
         }

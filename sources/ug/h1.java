@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.c9;
+import bi.b9;
 import c8.ma;
 import di.bc;
 import di.l4;
@@ -21,15 +21,15 @@ import di.u9;
 import hi.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.j10;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -55,9 +55,9 @@ import org.telegram.ui.d61;
 import org.telegram.ui.js0;
 import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class h1 extends sa implements fs {
+public class h1 extends sa implements gs {
     public boolean A2;
     public final int[] B2;
     public float C2;
@@ -115,7 +115,7 @@ public class h1 extends sa implements fs {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.N0(2131743990, null);
+        return hd.N0(2131743988, null);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -143,7 +143,7 @@ public class h1 extends sa implements fs {
 
     @Override // org.telegram.ui.Components.sa
     public final void V0(du0 du0Var) {
-        this.U1 = j10.t0;
+        this.U1 = k10.t0;
         r0 r0Var = new r0(getContext(), this.J0, false);
         r0Var.b(PremiumPreviewFragment.t0(this.U1, null), new tg.u(this, 3), false);
         this.H2 = new FrameLayout(getContext());
@@ -152,7 +152,7 @@ public class h1 extends sa implements fs {
         this.H2.addView(view, ma.c(1.0f, -1));
         view.getLayoutParams().height = 1;
         org.telegram.messenger.g0.X3(view, true, 1.0f, true, false);
-        if (j10.i(this.U1).q() || (this instanceof wg.j0)) {
+        if (k10.i(this.U1).q() || (this instanceof wg.j0)) {
             return;
         }
         this.H2.addView(r0Var, ma.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
@@ -216,15 +216,15 @@ public class h1 extends sa implements fs {
         canvas.restore();
         float T13 = org.telegram.messenger.g0.T1(f13, 1.0f, this.C2);
         canvas.scale(T13, T13, T1, T12);
-        n10.k(view3.getMeasuredHeight(), 2.0f, T12, T1 - (view3.getMeasuredWidth() / 2.0f), canvas);
+        o10.k(view3.getMeasuredHeight(), 2.0f, T12, T1 - (view3.getMeasuredWidth() / 2.0f), canvas);
         view3.draw(canvas);
         canvas.restore();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         TLRPC.InputStickerSet inputStickerSet;
-        if (i7 == ks.B0 && (inputStickerSet = this.y2) != null && inputStickerSet.id == ((Long) objArr[0]).longValue()) {
+        if (i7 == ls.B0 && (inputStickerSet = this.y2) != null && inputStickerSet.id == ((Long) objArr[0]).longValue()) {
             k1(true);
         }
     }
@@ -232,7 +232,7 @@ public class h1 extends sa implements fs {
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.c2
     public final void dismiss() {
         super.dismiss();
-        ks.e().k(ks.k1, 4);
+        ls.e().k(ls.k1, 4);
         ValueAnimator valueAnimator = this.E2;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -244,7 +244,7 @@ public class h1 extends sa implements fs {
     }
 
     public void f1(d61 d61Var) {
-        d61Var.addView(this.x2, ma.q(ks.W1, ks.W1, 1.0f, 17, 10, 10, 10, 10));
+        d61Var.addView(this.x2, ma.q(ls.W1, ls.W1, 1.0f, 17, 10, 10, 10, 10));
     }
 
     public int g1() {
@@ -278,10 +278,10 @@ public class h1 extends sa implements fs {
             if (lastIndexOf >= 0) {
                 str = str.substring(0, lastIndexOf);
             }
-            this.K2[0].setText(org.telegram.messenger.g0.T2(gd.a0(null, null, 2131743978, n5.u(user), str), new c1(this, i11)));
-            this.L2.setText(org.telegram.messenger.g0.W2(gd.N0(2131743976, null)));
+            this.K2[0].setText(org.telegram.messenger.g0.T2(hd.a0(null, null, 2131743976, n5.u(user), str), new c1(this, i11)));
+            this.L2.setText(org.telegram.messenger.g0.W2(hd.N0(2131743974, null)));
         } else if (this.y2 != null) {
-            CharSequence j12 = j1(gd.a0(null, null, 2131743975, i5.m(0, user.first_name, user.last_name), "<STICKERSET>"));
+            CharSequence j12 = j1(hd.a0(null, null, 2131743973, i5.m(0, user.first_name, user.last_name), "<STICKERSET>"));
             try {
                 j12 = j6.m(j12, this.K2[0].getPaint().getFontMetricsInt(), false, null, 0);
             } catch (Exception unused) {
@@ -289,7 +289,7 @@ public class h1 extends sa implements fs {
             SpannableStringBuilder spannableStringBuilder2 = j12 instanceof SpannableStringBuilder ? (SpannableStringBuilder) j12 : new SpannableStringBuilder(j12);
             int indexOf = j12.toString().indexOf("<STICKERSET>");
             if (indexOf >= 0) {
-                TLRPC.TL_messages_stickerSet o02 = ri.d0(this.U1).o0(this.y2, false);
+                TLRPC.TL_messages_stickerSet o02 = si.d0(this.U1).o0(this.y2, false);
                 if (o02 == null || o02.documents.isEmpty()) {
                     document = null;
                 } else {
@@ -326,12 +326,12 @@ public class h1 extends sa implements fs {
                         ArrayList arrayList = new ArrayList();
                         h1 h1Var = h1.this;
                         arrayList.add(h1Var.y2);
-                        c9 c9Var = new c9(h1Var, 12);
+                        b9 b9Var = new b9(h1Var, 12);
                         g2 g2Var = h1Var.p2;
                         if (g2Var != null) {
-                            c9Var.setParentFragment(g2Var);
+                            b9Var.setParentFragment(g2Var);
                         }
-                        new f1(h1Var, c9Var, h1Var.getContext(), h1Var.J0, arrayList).show();
+                        new f1(h1Var, b9Var, h1Var.getContext(), h1Var.J0, arrayList).show();
                     }
                 });
                 if (document != null) {
@@ -344,7 +344,7 @@ public class h1 extends sa implements fs {
                                 this.K2[1].setVisibility(0);
                                 ViewPropertyAnimator alpha = this.K2[1].animate().alpha(1.0f);
                                 nr nrVar = nr.f;
-                                n10.o(alpha, nrVar, 200L);
+                                o10.o(alpha, nrVar, 200L);
                                 this.K2[0].animate().alpha(0.0f).setInterpolator(nrVar).setDuration(200L).withEndAction(new c1(this, i7)).start();
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                                 ofFloat.addUpdateListener(new e1(this, i10));
@@ -363,39 +363,39 @@ public class h1 extends sa implements fs {
                     this.K2[0].setText(spannableStringBuilder2, (TextView.BufferType) null);
                 }
             }
-            this.L2.setText(org.telegram.messenger.g0.W2(gd.N0(2131743976, null)));
+            this.L2.setText(org.telegram.messenger.g0.W2(hd.N0(2131743974, null)));
         } else if (this.A2) {
-            m80VarArr[0].setText(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131743977, i5.m(0, user.first_name, user.last_name))));
-            this.L2.setText(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131743976, i5.m(0, user.first_name, user.last_name))));
+            m80VarArr[0].setText(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131743975, i5.m(0, user.first_name, user.last_name))));
+            this.L2.setText(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131743974, i5.m(0, user.first_name, user.last_name))));
         } else {
             j jVar = this.W1;
             if (jVar == null) {
                 TL_stars.StarGift starGift = this.X1;
                 if (starGift != null) {
-                    m80VarArr[0].setText(gd.N0(2131750051, null));
+                    m80VarArr[0].setText(hd.N0(2131750051, null));
                     this.K2[0].setTextSize(1, 20.0f);
                     if (starGift.limited_per_user) {
-                        this.L2.setText(org.telegram.messenger.g0.W2(gd.H(',', "Gift2PremiumSubtitleMany", starGift.per_user_total)));
+                        this.L2.setText(org.telegram.messenger.g0.W2(hd.H(',', "Gift2PremiumSubtitleMany", starGift.per_user_total)));
                     } else {
-                        this.L2.setText(org.telegram.messenger.g0.W2(gd.N0(2131750055, null)));
+                        this.L2.setText(org.telegram.messenger.g0.W2(hd.N0(2131750055, null)));
                     }
                     this.L2.setTextSize(1, 14.0f);
                 } else if (user == null) {
-                    m80VarArr[0].setText(gd.N0(2131743990, null));
-                    this.L2.setText(org.telegram.messenger.g0.W2(gd.N0(2131743988, null)));
+                    m80VarArr[0].setText(hd.N0(2131743988, null));
+                    this.L2.setText(org.telegram.messenger.g0.W2(hd.N0(2131743986, null)));
                 } else {
-                    m80VarArr[0].setText(j1(gd.a0(null, null, 2131743984, i5.m(0, user.first_name, user.last_name))));
-                    this.L2.setText(org.telegram.messenger.g0.W2(gd.N0(2131743985, null)));
+                    m80VarArr[0].setText(j1(hd.a0(null, null, 2131743982, i5.m(0, user.first_name, user.last_name))));
+                    this.L2.setText(org.telegram.messenger.g0.W2(hd.N0(2131743983, null)));
                 }
             } else if (this.Y1) {
-                m80VarArr[0].setText(j1(gd.a0(null, null, 2131743979, user != null ? user.first_name : "", gd.G(jVar.d(), "GiftMonths", new Object[0]))));
-                this.L2.setText(j1(gd.a0(null, null, 2131743980, user != null ? user.first_name : "")));
+                m80VarArr[0].setText(j1(hd.a0(null, null, 2131743977, user != null ? user.first_name : "", hd.G(jVar.d(), "GiftMonths", new Object[0]))));
+                this.L2.setText(j1(hd.a0(null, null, 2131743978, user != null ? user.first_name : "")));
             } else if (user == null || TextUtils.isEmpty(user.first_name) || user.id == 777000) {
-                this.K2[0].setText(j1(gd.a0(null, null, 2131743981, gd.G(jVar.d(), "GiftMonths", new Object[0]))));
-                this.L2.setText(org.telegram.messenger.g0.W2(gd.N0(2131743983, null)));
+                this.K2[0].setText(j1(hd.a0(null, null, 2131743979, hd.G(jVar.d(), "GiftMonths", new Object[0]))));
+                this.L2.setText(org.telegram.messenger.g0.W2(hd.N0(2131743981, null)));
             } else {
-                this.K2[0].setText(j1(gd.a0(null, null, 2131743982, user.first_name, gd.G(jVar.d(), "GiftMonths", new Object[0]))));
-                this.L2.setText(org.telegram.messenger.g0.W2(gd.N0(2131743983, null)));
+                this.K2[0].setText(j1(hd.a0(null, null, 2131743980, user.first_name, hd.G(jVar.d(), "GiftMonths", new Object[0]))));
+                this.L2.setText(org.telegram.messenger.g0.W2(hd.N0(2131743981, null)));
             }
         }
         try {
@@ -415,7 +415,7 @@ public class h1 extends sa implements fs {
         this.g2 = size;
         this.b2 = size + 1;
         this.h2 = size;
-        if (j10.i(this.U1).q() || this.W1 != null) {
+        if (k10.i(this.U1).q() || this.W1 != null) {
             return;
         }
         int i11 = this.b2;
@@ -469,20 +469,20 @@ public class h1 extends sa implements fs {
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ks.f(j10.t0).c(this, ks.B0);
+        ls.f(k10.t0).c(this, ls.B0);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ks.f(j10.t0).n(this, ks.B0);
+        ls.f(k10.t0).n(this, ls.B0);
     }
 
     @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
         super.show();
         int i7 = 1;
-        ks.e().k(ks.j1, 4);
+        ls.e().k(ls.j1, 4);
         if (this.F2) {
             org.telegram.messenger.g0.h3(new c1(this, i7), 200L);
         }
@@ -515,7 +515,7 @@ public class h1 extends sa implements fs {
         this.X1 = starGift;
         this.Z1 = new js0(getContext(), null);
         PremiumPreviewFragment.s0(i7, arrayList);
-        if (jVar != null || j10.i(i7).q()) {
+        if (jVar != null || k10.i(i7).q()) {
             this.H2.setVisibility(8);
         }
         a1 a1Var = new a1(m6.Ck, m6.Dk, m6.Ek, m6.Fk, null);
@@ -529,14 +529,14 @@ public class h1 extends sa implements fs {
         l1();
         this.o1.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
         this.o1.setOnItemClickListener(new wl0(this, i7, g2Var, 1));
-        ri.d0(i7).r1();
+        si.d0(i7).r1();
         PremiumPreviewFragment.w0("profile");
         wz wzVar = new wz(getContext());
         this.k2 = wzVar;
         this.c.addView(wzVar, ma.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.I2 = frameLayout;
-        this.b.addView(frameLayout, ma.e(-1, ks.W1, 87));
+        this.b.addView(frameLayout, ma.e(-1, ls.W1, 87));
     }
 
     public void h1(View view) {

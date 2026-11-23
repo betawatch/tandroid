@@ -8,9 +8,9 @@ import android.text.style.ClickableSpan;
 import android.text.style.URLSpan;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.y10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.z10;
 import org.telegram.ui.Components.b31;
 import org.telegram.ui.Components.gb;
 import org.telegram.ui.Components.gc;
@@ -22,7 +22,7 @@ import org.telegram.ui.a81;
 import org.telegram.ui.co;
 import org.telegram.ui.kt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -88,14 +88,14 @@ public final class h extends ClickableSpan {
             case 7:
                 URLSpan uRLSpan = (URLSpan) this.b;
                 b31 b31Var = (b31) this.c;
-                y10 y10Var = b31Var.O1;
-                if (y10Var == null) {
+                z10 z10Var = b31Var.O1;
+                if (z10Var == null) {
                     org.telegram.ui.ActionBar.g2 g2Var = b31Var.N1;
                     if (g2Var != null) {
                         org.telegram.ui.Components.c5.n0(g2Var, uRLSpan.getURL(), false, false);
                         break;
                     }
-                } else if (((Boolean) y10Var.a(uRLSpan)).booleanValue()) {
+                } else if (((Boolean) z10Var.a(uRLSpan)).booleanValue()) {
                     b31Var.dismiss();
                     break;
                 }
@@ -103,7 +103,7 @@ public final class h extends ClickableSpan {
             case 8:
                 ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
                 lc b02 = lc.b0(((kt0) this.c).d);
-                String N0 = gd.N0(2131748728, null);
+                String N0 = hd.N0(2131748728, null);
                 org.telegram.ui.ActionBar.h6 resourceProvider = ((kt0) this.c).d.getResourceProvider();
                 b02.getClass();
                 if (org.telegram.messenger.g0.G3()) {
@@ -156,7 +156,7 @@ public final class h extends ClickableSpan {
                 textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, (org.telegram.ui.ActionBar.h6) this.b));
                 break;
             case 7:
-                int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & ks.e4);
+                int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & ls.e4);
                 if (!(((URLSpan) this.b) instanceof s41)) {
                     textPaint.setUnderlineText(true);
                 }

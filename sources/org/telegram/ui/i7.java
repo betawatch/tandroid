@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i7 extends e7 {
     public final ArrayList f;
@@ -57,7 +57,7 @@ public final class i7 extends e7 {
         r6 r6Var2 = w6Var.a;
         boolean z10 = r6Var2 != null && r6Var2.a == r6Var.a;
         if (r6Var.a == Long.MAX_VALUE) {
-            H = org.telegram.messenger.gd.N0(2131752635, null);
+            H = org.telegram.messenger.hd.N0(2131752635, null);
             w6Var.getImageView().getAvatarDrawable().g(14);
             w6Var.getImageView().f(null, w6Var.getImageView().getAvatarDrawable());
         } else {
@@ -85,7 +85,7 @@ public final class i7 extends e7 {
                 opVar2.b(-1, org.telegram.ui.ActionBar.m6.d6, org.telegram.ui.ActionBar.m6.k7);
                 w6Var.n.setDrawUnchecked(false);
                 w6Var.n.setDrawBackgroundAsArc(3);
-                w6Var.addView(w6Var.n, c8.ma.d(24, 24.0f, (org.telegram.messenger.gd.a0 ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
+                w6Var.addView(w6Var.n, c8.ma.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
             }
             w6Var.n.a(contains, z10);
         }

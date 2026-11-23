@@ -10,13 +10,13 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.Components.n80;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.q80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v7 {
     public n80 a;
@@ -310,7 +310,7 @@ public final class v7 {
         if (w7Var.b) {
             float topPadding = this.e.getTopPadding() + this.e.getLineTop(2);
             if (this == v7VarArr[0]) {
-                String N0 = gd.N0(2131745143, null);
+                String N0 = hd.N0(2131745143, null);
                 w7Var.w = w7.a(w7Var, textPaint, N0, i7);
                 w7Var.h = ((w7Var.G + L) + topPadding) - org.telegram.messenger.g0.N(0.3f);
                 w7Var.n = (w7Var.F + i7) - textPaint.measureText(N0);

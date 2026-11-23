@@ -10,9 +10,9 @@ import e2.u;
 import h2.l0;
 import i5.c;
 import k2.e;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class ExperimentalFfmpegVideoRenderer extends d3.a {
     public static final int s0 = ((l0.g(720, 64) * l0.g(1280, 64)) * 6144) / 2;
@@ -34,7 +34,7 @@ public final class ExperimentalFfmpegVideoRenderer extends d3.a {
     public final int C(u uVar) {
         String str = uVar.s;
         String str2 = FfmpegLibrary.a;
-        return !s0.m(str) ? c.a(0, 0, 0, 0) : !FfmpegLibrary.d(str) ? c.a(1, 0, 0, 0) : uVar.T != 0 ? c.a(2, 0, 0, 0) : ks.W1;
+        return !s0.m(str) ? c.a(0, 0, 0, 0) : !FfmpegLibrary.d(str) ? c.a(1, 0, 0, 0) : uVar.T != 0 ? c.a(2, 0, 0, 0) : ls.W1;
     }
 
     @Override // d3.a

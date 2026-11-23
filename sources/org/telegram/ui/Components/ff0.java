@@ -27,7 +27,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ff0 extends org.telegram.ui.ActionBar.w2 {
     public static final org.telegram.ui.Cells.p8 M1 = new org.telegram.ui.Cells.p8("placeholderAlpha", 9);
@@ -49,7 +49,7 @@ public final class ff0 extends org.telegram.ui.ActionBar.w2 {
     public final View p1;
     public final v7 q1;
     public AnimatorSet r1;
-    public final org.telegram.messenger.fj s1;
+    public final org.telegram.messenger.gj s1;
     public final TLRPC.Poll t1;
     public final TLRPC.InputPeer u1;
     public final HashSet v1;
@@ -59,10 +59,10 @@ public final class ff0 extends org.telegram.ui.ActionBar.w2 {
     public int z1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ff0(Context context, int i7, org.telegram.messenger.fj fjVar, org.telegram.ui.ActionBar.h6 h6Var) {
+    public ff0(Context context, int i7, org.telegram.messenger.gj gjVar, org.telegram.ui.ActionBar.h6 h6Var) {
         super(1, context, h6Var, true);
         TLRPC.Message message;
-        org.telegram.messenger.w00 w00Var;
+        org.telegram.messenger.x00 x00Var;
         TLRPC.TL_textWithEntities tL_textWithEntities;
         int i10;
         int i11 = 1;
@@ -76,11 +76,11 @@ public final class ff0 extends org.telegram.ui.ActionBar.w2 {
         this.a = i7;
         this.x = true;
         O();
-        this.s1 = fjVar;
-        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) fjVar.k.media;
+        this.s1 = gjVar;
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) gjVar.k.media;
         this.I1 = tL_messageMediaPoll;
         this.t1 = tL_messageMediaPoll.poll;
-        this.u1 = org.telegram.messenger.mp.u1(this.a).l1(org.telegram.messenger.fj.B0(fjVar.k));
+        this.u1 = org.telegram.messenger.np.u1(this.a).l1(org.telegram.messenger.gj.B0(gjVar.k));
         ArrayList arrayList = new ArrayList();
         int size = tL_messageMediaPoll.results.results.size();
         Integer[] numArr = new Integer[size];
@@ -171,15 +171,15 @@ public final class ff0 extends org.telegram.ui.ActionBar.w2 {
         x5Var.setLayoutParams(new v4.q0(-1, -2));
         TLRPC.TL_textWithEntities tL_textWithEntities2 = this.t1.question;
         if (tL_textWithEntities2 != null) {
-            org.telegram.messenger.fj fjVar2 = this.s1;
-            if (fjVar2 != null && fjVar2.L2 && (message = fjVar2.k) != null && (w00Var = message.translatedPoll) != null && (tL_textWithEntities = w00Var.a) != null) {
+            org.telegram.messenger.gj gjVar2 = this.s1;
+            if (gjVar2 != null && gjVar2.L2 && (message = gjVar2.k) != null && (x00Var = message.translatedPoll) != null && (tL_textWithEntities = x00Var.a) != null) {
                 tL_textWithEntities2 = tL_textWithEntities;
             }
-            org.telegram.messenger.ks.i(x5Var);
+            org.telegram.messenger.ls.i(x5Var);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_textWithEntities2.text);
-            org.telegram.messenger.ri.g(tL_textWithEntities2.entities, tL_textWithEntities2.text, spannableStringBuilder, -1);
+            org.telegram.messenger.si.g(tL_textWithEntities2.entities, tL_textWithEntities2.text, spannableStringBuilder, -1);
             CharSequence m10 = org.telegram.messenger.j6.m(spannableStringBuilder, x5Var.getPaint().getFontMetricsInt(), false, null, 0);
-            org.telegram.messenger.fj.B5(m10, tL_textWithEntities2.entities, x5Var.getPaint().getFontMetricsInt(), false);
+            org.telegram.messenger.gj.B5(m10, tL_textWithEntities2.entities, x5Var.getPaint().getFontMetricsInt(), false);
             x5Var.setText(m10);
         }
         v7 v7Var = new v7(i17, context, this);
@@ -192,11 +192,11 @@ public final class ff0 extends org.telegram.ui.ActionBar.w2 {
         org.telegram.ui.ActionBar.t6.l(v7Var, 6, org.telegram.ui.ActionBar.m6.Gj, null);
         v7Var.setOccupyStatusBar(false);
         v7Var.setAlpha(0.0f);
-        v7Var.setTitle(org.telegram.messenger.gd.N0(2131746967, null));
+        v7Var.setTitle(org.telegram.messenger.hd.N0(2131746967, null));
         if (this.t1.quiz) {
-            v7Var.setSubtitle(org.telegram.messenger.gd.G(tL_messageMediaPoll.results.total_voters, "Answer", new Object[0]));
+            v7Var.setSubtitle(org.telegram.messenger.hd.G(tL_messageMediaPoll.results.total_voters, "Answer", new Object[0]));
         } else {
-            v7Var.setSubtitle(org.telegram.messenger.gd.G(tL_messageMediaPoll.results.total_voters, "Vote", new Object[0]));
+            v7Var.setSubtitle(org.telegram.messenger.hd.G(tL_messageMediaPoll.results.total_voters, "Vote", new Object[0]));
         }
         this.b.addView(v7Var, c8.ma.c(-2.0f, -1));
         v7Var.setActionBarMenuOnItemClick(new org.telegram.ui.x7(this, 19));
@@ -286,13 +286,13 @@ public final class ff0 extends org.telegram.ui.ActionBar.w2 {
                             i11++;
                         } else {
                             TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
-                            org.telegram.messenger.fj fjVar = this.s1;
-                            if (fjVar != null && fjVar.L2 && (message = fjVar.k) != null && message.translatedPoll != null) {
+                            org.telegram.messenger.gj gjVar = this.s1;
+                            if (gjVar != null && gjVar.L2 && (message = gjVar.k) != null && message.translatedPoll != null) {
                                 while (true) {
-                                    if (i10 >= fjVar.k.translatedPoll.b.size()) {
+                                    if (i10 >= gjVar.k.translatedPoll.b.size()) {
                                         break;
                                     }
-                                    TLRPC.PollAnswer pollAnswer2 = (TLRPC.PollAnswer) fjVar.k.translatedPoll.b.get(i10);
+                                    TLRPC.PollAnswer pollAnswer2 = (TLRPC.PollAnswer) gjVar.k.translatedPoll.b.get(i10);
                                     if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
                                         tL_textWithEntities = pollAnswer2.text;
                                         break;

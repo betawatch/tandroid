@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j2 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class j2 implements Runnable {
             case 1:
                 break;
             case 2:
-                ks.e().k(ks.l4, new Object[0]);
+                ls.e().k(ls.l4, new Object[0]);
                 return;
             case 3:
                 KeepAliveJob.a();
@@ -65,31 +65,31 @@ public final /* synthetic */ class j2 implements Runnable {
                 } catch (Throwable th2) {
                     a8.g(th2, true);
                 }
-                pc.l = SystemClock.elapsedRealtime();
-                pc.m = false;
+                qc.l = SystemClock.elapsedRealtime();
+                qc.m = false;
                 if (i11 < 0 || i11 > 100) {
                     return;
                 }
-                pc.l = SystemClock.elapsedRealtime();
-                if (pc.k == i11) {
+                qc.l = SystemClock.elapsedRealtime();
+                if (qc.k == i11) {
                     return;
                 }
-                pc.k = i11;
+                qc.k = i11;
                 g0.g3(new j2(6));
                 return;
             case 6:
-                pc.d(false);
+                qc.d(false);
                 return;
             case 7:
-                ks.e().k(ks.A4, new Object[0]);
+                ls.e().k(ls.A4, new Object[0]);
                 return;
             case 8:
-                ks.e().k(ks.H4, new Object[0]);
+                ls.e().k(ls.H4, new Object[0]);
                 return;
             case 9:
                 int i12 = LocationSharingService.d;
                 while (i10 < 4) {
-                    qd.f(i10).t();
+                    rd.f(i10).t();
                     i10++;
                 }
                 return;
@@ -109,10 +109,10 @@ public final /* synthetic */ class j2 implements Runnable {
                 org.telegram.ui.ActionBar.m6.F(false);
                 return;
             case 13:
-                ks.e().k(ks.g4, new Object[0]);
+                ls.e().k(ls.g4, new Object[0]);
                 return;
             case 14:
-                bz.y();
+                cz.y();
                 return;
             case 15:
                 try {
@@ -144,26 +144,26 @@ public final /* synthetic */ class j2 implements Runnable {
                     return;
                 }
             case 16:
-                if (bz.b || (Q = LaunchActivity.Q()) == null || Q.getParentActivity() == null) {
+                if (cz.b || (Q = LaunchActivity.Q()) == null || Q.getParentActivity() == null) {
                     return;
                 }
-                bz.h0 = null;
-                bz.y();
-                ec.D().i(new j2(17));
-                bz.b = true;
+                cz.h0 = null;
+                cz.y();
+                fc.D().i(new j2(17));
+                cz.b = true;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(Q.getParentActivity());
-                alertDialog$Builder.a.S = gd.N0(2131745642, null);
-                alertDialog$Builder.a.T = gd.N0(2131745641, null);
-                alertDialog$Builder.k(gd.N0(2131751343, null), new ed(16));
+                alertDialog$Builder.a.S = hd.N0(2131745642, null);
+                alertDialog$Builder.a.T = hd.N0(2131745641, null);
+                alertDialog$Builder.k(hd.N0(2131751343, null), new fd(16));
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.setCanceledOnTouchOutside(false);
                 t1Var.show();
                 return;
             case 17:
-                int i13 = bz.a;
+                int i13 = cz.a;
                 return;
             case 18:
-                lz.y = null;
+                mz.y = null;
                 return;
             case 19:
                 org.telegram.ui.ActionBar.m6.F(false);
@@ -175,9 +175,9 @@ public final /* synthetic */ class j2 implements Runnable {
                 ch.l0.b(true);
                 return;
             case 22:
-                ks e11 = ks.e();
+                ls e11 = ls.e();
                 Boolean bool = Boolean.TRUE;
-                e11.k(ks.q4, Boolean.FALSE, bool, bool);
+                e11.k(ls.q4, Boolean.FALSE, bool, bool);
                 return;
             case 23:
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
@@ -217,7 +217,7 @@ public final /* synthetic */ class j2 implements Runnable {
                 org.telegram.ui.Components.f8 f8Var = org.telegram.ui.Components.f8.T2;
                 return;
             case 27:
-                pv.h();
+                qv.h();
                 return;
             case 28:
                 LaunchActivity launchActivity = LaunchActivity.H1;
@@ -234,13 +234,13 @@ public final /* synthetic */ class j2 implements Runnable {
                     return;
                 }
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", j10.i(Q2.getCurrentAccount()).e());
+                bundle.putLong("user_id", k10.i(Q2.getCurrentAccount()).e());
                 bundle.putInt("chatMode", 1);
                 Q2.presentFragment(new org.telegram.ui.bn(bundle));
                 return;
         }
         while (i10 < 4) {
-            if (j10.i(i10).p()) {
+            if (k10.i(i10).p()) {
                 ConnectionsManager.getInstance(i10).resumeNetworkMaybe();
                 Utilities.e.c(new m4(i5.r(i10), i7));
             }

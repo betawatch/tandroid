@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.Map;
 import org.scilab.forge.jlatexmath.cyrillic.CyrillicRegistration;
 import org.scilab.forge.jlatexmath.greek.GreekRegistration;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.GraphicsEnvironment;
 import ru.noties.jlatexmath.awt.Toolkit;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class TeXFormula {
     public static final int BOLD = 2;
@@ -34,14 +34,14 @@ public class TeXFormula {
     private TeXParser parser;
     public Atom root;
     public String textStyle;
-    public static Map<String, TeXFormula> predefinedTeXFormulas = new HashMap(ks.g2);
-    public static Map<String, String> predefinedTeXFormulasAsString = new HashMap(ks.g2);
+    public static Map<String, TeXFormula> predefinedTeXFormulas = new HashMap(ls.g2);
+    public static Map<String, String> predefinedTeXFormulasAsString = new HashMap(ls.g2);
     public static String[] symbolMappings = new String[65536];
     public static String[] symbolTextMappings = new String[65536];
     public static String[] symbolFormulaMappings = new String[65536];
     public static Map<Character.UnicodeBlock, FontInfos> externalFontMap = new HashMap();
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public static class FontInfos {
         String sansserif;
         String serif;
@@ -52,7 +52,7 @@ public class TeXFormula {
         }
     }
 
-    /* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
     public class TeXIconBuilder {
         private Integer align;
         private Color fgcolor;

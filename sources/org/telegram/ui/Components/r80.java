@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.text.style.ReplacementSpan;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class r80 extends ReplacementSpan {
     public final int a;
@@ -55,7 +55,7 @@ public final class r80 extends ReplacementSpan {
             int color = paint.getColor();
             q80Var.f(org.telegram.ui.ActionBar.m6.r1(0.1f, color), org.telegram.ui.ActionBar.m6.r1(0.25f, color));
         }
-        q80Var.setAlpha((int) ((paint == null ? org.telegram.messenger.ks.e4 : paint.getAlpha()) * this.h));
+        q80Var.setAlpha((int) ((paint == null ? org.telegram.messenger.ls.e4 : paint.getAlpha()) * this.h));
         q80Var.draw(canvas);
         View view2 = this.b;
         if (view2 != null) {

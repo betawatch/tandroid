@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class so extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.h6 a;
@@ -35,12 +35,12 @@ public final class so extends FrameLayout implements org.telegram.ui.ActionBar.b
         org.telegram.ui.ActionBar.m5 m5Var2 = new org.telegram.ui.ActionBar.m5(context);
         this.d = m5Var2;
         m5Var2.setTextSize(14);
-        org.telegram.messenger.ks.i(m5Var2);
+        org.telegram.messenger.ls.i(m5Var2);
         addView(m5Var2, c8.ma.d(-1, 18.0f, 51, 52.0f, 24.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.m5 m5Var3 = new org.telegram.ui.ActionBar.m5(context);
         this.e = m5Var3;
         m5Var3.setTextSize(14);
-        m5Var3.l(org.telegram.messenger.gd.N0(2131744031, null), false);
+        m5Var3.l(org.telegram.messenger.hd.N0(2131744029, null), false);
         m5Var3.setAlpha(0.0f);
         addView(m5Var3, c8.ma.d(-1, 18.0f, 51, 52.0f, 24.0f, 0.0f, 0.0f));
         org.telegram.ui.qk qkVar = new org.telegram.ui.qk(this, context, new xh.f());

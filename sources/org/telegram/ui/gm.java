@@ -5,17 +5,17 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class gm extends org.telegram.ui.Components.ap0 {
-    public final /* synthetic */ org.telegram.messenger.fj V2;
+    public final /* synthetic */ org.telegram.messenger.gj V2;
     public final /* synthetic */ mm W2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gm(mm mmVar, Activity activity, bn bnVar, ArrayList arrayList, boolean z10, boolean z11, org.telegram.ui.ActionBar.h6 h6Var, boolean z12, org.telegram.messenger.fj fjVar) {
+    public gm(mm mmVar, Activity activity, bn bnVar, ArrayList arrayList, boolean z10, boolean z11, org.telegram.ui.ActionBar.h6 h6Var, boolean z12, org.telegram.messenger.gj gjVar) {
         super(activity, bnVar, arrayList, null, null, z10, null, null, false, false, z11, null, h6Var);
         this.W2 = mmVar;
-        this.V2 = fjVar;
+        this.V2 = gjVar;
         this.W1 = z12;
     }
 
@@ -56,16 +56,16 @@ public final class gm extends org.telegram.ui.Components.ap0 {
         bn bnVar = this.W2.a;
         hi.la b10 = view instanceof org.telegram.ui.Cells.e7 ? hi.na.b((org.telegram.ui.Cells.e7) view) : null;
         ArrayList arrayList = new ArrayList();
-        org.telegram.messenger.fj fjVar = this.V2;
-        org.telegram.messenger.aj ajVar = fjVar.c1() != 0 ? (org.telegram.messenger.aj) bnVar.P6.f(fjVar.c1()) : null;
-        if (ajVar != null) {
-            arrayList.addAll(ajVar.d);
+        org.telegram.messenger.gj gjVar = this.V2;
+        org.telegram.messenger.bj bjVar = gjVar.c1() != 0 ? (org.telegram.messenger.bj) bnVar.P6.f(gjVar.c1()) : null;
+        if (bjVar != null) {
+            arrayList.addAll(bjVar.d);
         } else {
-            arrayList.add(fjVar);
+            arrayList.add(gjVar);
         }
         final hi.sa D = hi.sa.D(bnVar.getParentActivity(), this.a);
-        D.S = new org.telegram.messenger.u10() { // from class: org.telegram.ui.bm
-            @Override // org.telegram.messenger.u10
+        D.S = new org.telegram.messenger.v10() { // from class: org.telegram.ui.bm
+            @Override // org.telegram.messenger.v10
             public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
                 Runnable runnable = (Runnable) obj2;
                 Long l10 = (Long) obj4;

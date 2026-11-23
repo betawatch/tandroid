@@ -8,21 +8,21 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.n10;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s8 implements x10 {
+public final /* synthetic */ class s8 implements y10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ sa b;
 
@@ -31,7 +31,7 @@ public final /* synthetic */ class s8 implements x10 {
         this.b = saVar;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         boolean z10;
         cb cbVar;
@@ -63,7 +63,7 @@ public final /* synthetic */ class s8 implements x10 {
                 c7 c7Var2 = (c7) obj;
                 saVar.V(c7Var2, false);
                 int i12 = saVar.c;
-                fi.p6 R1 = mp.u1(i12).R1();
+                fi.p6 R1 = np.u1(i12).R1();
                 a0.h hVar = R1.e;
                 int i13 = R1.a;
                 ArrayList arrayList = R1.h;
@@ -82,7 +82,7 @@ public final /* synthetic */ class s8 implements x10 {
                     R1.d(j3, o6Var, R1.b, false);
                 }
                 R1.d(j3, o6Var, R1.c, true);
-                if (j3 != j10.i(i13).n) {
+                if (j3 != k10.i(i13).n) {
                     int i14 = 0;
                     while (true) {
                         if (i14 >= arrayList2.size()) {
@@ -109,16 +109,16 @@ public final /* synthetic */ class s8 implements x10 {
                     }
                     if (!z10) {
                         TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
-                        tL_peerStories.peer = mp.u1(i13).B1(j3);
+                        tL_peerStories.peer = np.u1(i13).B1(j3);
                         R1.e0(j3, tL_peerStories);
                         arrayList2.add(0, tL_peerStories);
                         R1.R(j3);
                     }
                 }
                 o6Var.d();
-                ks.f(i13).k(ks.y5, new Object[0]);
+                ls.f(i13).k(ls.y5, new Object[0]);
                 if (c7Var2.c && !c7Var2.g) {
-                    mp.u1(i12).R1().w.b(c7Var2);
+                    np.u1(i12).R1().w.b(c7Var2);
                 }
                 if (c7Var2.e1 != 0) {
                     ConnectionsManager.getInstance(c7Var2.a).cancelRequest(c7Var2.e1, true);
@@ -141,7 +141,7 @@ public final /* synthetic */ class s8 implements x10 {
                 c7 c7Var3 = saVar.L1;
                 if (c7Var3 != null) {
                     c7Var3.I0 = num.intValue();
-                    mp.g1().edit().putInt("story_period", num.intValue()).apply();
+                    np.g1().edit().putInt("story_period", num.intValue()).apply();
                     break;
                 }
                 break;
@@ -158,7 +158,7 @@ public final /* synthetic */ class s8 implements x10 {
                     cbVar2.getWindow().setAttributes(cbVar2.b);
                 }
                 bbVar.setTouchable(true);
-                new lc(bbVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.R2(gd.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.m6.Xc, 0, new r8(saVar, 27), bVar)).k(true);
+                new lc(bbVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.R2(hd.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.m6.Xc, 0, new r8(saVar, 27), bVar)).k(true);
                 break;
             case 6:
                 Boolean bool = (Boolean) obj;
@@ -174,7 +174,7 @@ public final /* synthetic */ class s8 implements x10 {
                 }
                 saVar.Y0.x(2, bool.booleanValue());
                 saVar.Z0.clearAnimation();
-                n10.n(saVar.Z0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                o10.n(saVar.Z0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
                 gc gcVar = gc.w;
                 if (gcVar != null && gcVar.a == 2) {
                     gcVar.l();
@@ -209,7 +209,7 @@ public final /* synthetic */ class s8 implements x10 {
             case 9:
                 saVar.P = true;
                 saVar.p(true);
-                org.telegram.messenger.g0.h3(new h9((x10) obj, i11), 210L);
+                org.telegram.messenger.g0.h3(new h9((y10) obj, i11), 210L);
                 break;
             case 10:
                 Integer num2 = (Integer) obj;

@@ -25,12 +25,12 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.pc;
-import org.telegram.messenger.sr;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.qc;
 import org.telegram.messenger.tr;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
@@ -57,7 +57,7 @@ import org.telegram.ui.f40;
 import org.telegram.ui.r90;
 import org.telegram.ui.th;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c4 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,15 +85,15 @@ public final /* synthetic */ class c4 implements Runnable {
                 i4.b.add(Long.valueOf(j3));
                 i4.j(j3, 60000L);
                 ((aa.r) obj).run();
-                gc Q = i4.h().Q(R.raw.contact_check, 36, gd.N0(2131749546, null));
+                gc Q = i4.h().Q(R.raw.contact_check, 36, hd.N0(2131749546, null));
                 Q.t = true;
                 Q.j();
                 break;
             case 1:
-                lc.b0((pb) obj).I(R.raw.stars_topup, gd.N0(2131750204, null), gd.H(',', "Gift2Converted", (int) j3)).k(true);
+                lc.b0((pb) obj).I(R.raw.stars_topup, hd.N0(2131750204, null), hd.H(',', "Gift2Converted", (int) j3)).k(true);
                 break;
             case 2:
-                lc.b0((c51) obj).I(R.raw.stars_topup, gd.N0(2131750204, null), gd.H(',', "Gift2ConvertedChannel", (int) j3)).k(true);
+                lc.b0((c51) obj).I(R.raw.stars_topup, hd.N0(2131750204, null), hd.H(',', "Gift2ConvertedChannel", (int) j3)).k(true);
                 break;
             case 3:
                 ((fi.q) obj).s.h0(j3, false);
@@ -105,7 +105,7 @@ public final /* synthetic */ class c4 implements Runnable {
                 org.telegram.messenger.g0.h3((fi.l3) obj, Math.max(0L, 500 - (System.currentTimeMillis() - j3)));
                 break;
             case 6:
-                org.telegram.ui.ActionBar.g2 g02 = c51.g0(mp.u1(((fi.p6) obj).a).O0(Long.valueOf(-j3)), true);
+                org.telegram.ui.ActionBar.g2 g02 = c51.g0(np.u1(((fi.p6) obj).a).O0(Long.valueOf(-j3)), true);
                 org.telegram.ui.ActionBar.g2 Q2 = LaunchActivity.Q();
                 if (Q2 != null) {
                     sa saVar = sa.G2;
@@ -121,14 +121,14 @@ public final /* synthetic */ class c4 implements Runnable {
                 }
                 break;
             case 7:
-                tr trVar = ((fi.c7) obj).b;
-                SQLiteDatabase sQLiteDatabase = trVar.b;
+                ur urVar = ((fi.c7) obj).b;
+                SQLiteDatabase sQLiteDatabase = urVar.b;
                 try {
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("DELETE FROM stories WHERE dialog_id = " + j3).stepThis().dispose();
                     break;
                 } catch (Throwable th2) {
-                    trVar.o(th2, true);
+                    urVar.o(th2, true);
                     return;
                 }
             case 8:
@@ -162,8 +162,8 @@ public final /* synthetic */ class c4 implements Runnable {
                     na naVar2 = saVar2.G;
                     saVar2.H = naVar2.b;
                     naVar2.e();
-                    if (bz.o() > 1) {
-                        pc.e(360928);
+                    if (cz.o() > 1) {
+                        qc.e(360928);
                     }
                 }
                 saVar2.y = null;
@@ -186,7 +186,7 @@ public final /* synthetic */ class c4 implements Runnable {
                 jg.h0 h0Var = (jg.h0) obj;
                 h0Var.getClass();
                 try {
-                    tr.a0(h0Var.t0).b.executeFast("DELETE FROM search_recent WHERE did = " + j3).stepThis().dispose();
+                    ur.a0(h0Var.t0).b.executeFast("DELETE FROM search_recent WHERE did = " + j3).stepThis().dispose();
                     break;
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
@@ -194,7 +194,7 @@ public final /* synthetic */ class c4 implements Runnable {
                 }
             case 12:
                 li.d0 d0Var = (li.d0) obj;
-                mp.u1(d0Var.a).W2(this.b, d0Var.p1, true, false, new li.t(d0Var, i12));
+                np.u1(d0Var.a).W2(this.b, d0Var.p1, true, false, new li.t(d0Var, i12));
                 break;
             case 13:
                 li.k0 k0Var = (li.k0) obj;
@@ -244,7 +244,7 @@ public final /* synthetic */ class c4 implements Runnable {
                 }
                 break;
             case 21:
-                gc Q3 = lc.b0((org.telegram.ui.x6) obj).Q(R.raw.ic_delete, 36, gd.a0(null, null, 2131752633, org.telegram.messenger.g0.i0(j3, false, false)));
+                gc Q3 = lc.b0((org.telegram.ui.x6) obj).Q(R.raw.ic_delete, 36, hd.a0(null, null, 2131752633, org.telegram.messenger.g0.i0(j3, false, false)));
                 Q3.r = false;
                 Q3.j();
                 break;
@@ -268,14 +268,14 @@ public final /* synthetic */ class c4 implements Runnable {
                         Context context2 = (g2Var2 == null || g2Var2.getParentActivity() == null) ? zkVar.getContext() : g2Var2.getParentActivity();
                         if (context2 != null) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context2, h6Var2);
-                            String N0 = gd.N0(2131742961, null);
+                            String N0 = hd.N0(2131742959, null);
                             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                             t1Var.S = N0;
                             kg.z0 z0Var = new kg.z0(zkVar, context2);
                             z0Var.setTextSize(1, 18.0f);
                             org.telegram.ui.ActionBar.t6.U(z0Var, org.telegram.ui.ActionBar.m6.j5, h6Var2);
                             org.telegram.ui.ActionBar.t6.D(z0Var, org.telegram.ui.ActionBar.m6.t5, h6Var2);
-                            z0Var.setHint(gd.N0(2131742925, null));
+                            z0Var.setHint(hd.N0(2131742923, null));
                             z0Var.setText(zkVar.t0);
                             z0Var.setSelection(z0Var.length());
                             z0Var.setInputType(147457);
@@ -290,13 +290,13 @@ public final /* synthetic */ class c4 implements Runnable {
                             org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i15);
                             d2Var.setBackground(h02);
                             org.telegram.ui.ActionBar.t6.j(d2Var, h02, null, M, h6Var2);
-                            d2Var.e(gd.N0(2131742832, null), "", !zkVar.u0 || zkVar.getPublicKey() == null, false, false);
+                            d2Var.e(hd.N0(2131742830, null), "", !zkVar.u0 || zkVar.getPublicKey() == null, false, false);
                             d2Var.setMultiline(true);
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var.getCheckBoxView().getLayoutParams();
                             layoutParams.topMargin = 0;
-                            layoutParams.gravity = (gd.a0 ? 5 : 3) | 16;
+                            layoutParams.gravity = (hd.a0 ? 5 : 3) | 16;
                             d2Var.getCheckBoxView().setLayoutParams(layoutParams);
-                            d2Var.setPadding(gd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), gd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
+                            d2Var.setPadding(hd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
                             d2Var.setEnabled(zkVar.getPublicKey() != null);
                             d2Var.setOnClickListener(new org.telegram.ui.Components.j1(d2Var, 1));
                             LinearLayout linearLayout = new LinearLayout(context2);
@@ -306,8 +306,8 @@ public final /* synthetic */ class c4 implements Runnable {
                             t1Var.H = 6;
                             alertDialog$Builder.o(linearLayout);
                             t1Var.a = org.telegram.messenger.g0.L(292.0f);
-                            alertDialog$Builder.h(gd.N0(2131752577, null), new org.telegram.ui.Components.l2(19));
-                            alertDialog$Builder.k(gd.N0(2131754483, null), new a3.h(zkVar, z0Var, d2Var, 27));
+                            alertDialog$Builder.h(hd.N0(2131752577, null), new org.telegram.ui.Components.l2(19));
+                            alertDialog$Builder.k(hd.N0(2131754483, null), new a3.h(zkVar, z0Var, d2Var, 27));
                             zkVar.U0 = t1Var;
                             t1Var.k0 = false;
                             t1Var.setOnShowListener(new org.telegram.ui.Components.p2(z0Var, i12));
@@ -362,7 +362,7 @@ public final /* synthetic */ class c4 implements Runnable {
                 cx cxVar = (cx) obj;
                 cxVar.U4(true, true);
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(sr.a(j3, 0L));
+                arrayList.add(tr.a(j3, 0L));
                 cxVar.E2.y(cxVar, arrayList, null, false, cxVar.L2, cxVar.M2, cxVar.N2, null);
                 break;
             case 27:

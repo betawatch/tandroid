@@ -19,11 +19,11 @@ import java.util.Locale;
 import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.nq;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.uf0;
 import org.telegram.ui.Components.yk0;
 import org.telegram.ui.ih0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class w3 extends Dialog {
     public static final /* synthetic */ int X = 0;
@@ -85,9 +85,9 @@ public final class w3 extends Dialog {
         this.a = g2Var;
         this.b = uf0Var;
         final int i7 = 1;
-        boolean z10 = user != null && user.id == j10.i(g2Var.getCurrentAccount()).e();
+        boolean z10 = user != null && user.id == k10.i(g2Var.getCurrentAccount()).e();
         this.e = z10;
-        boolean z11 = (user == null || z10 || !((org.telegram.messenger.h0) mp.u1(g2Var.getCurrentAccount()).A7.p0.b).c) ? false : true;
+        boolean z11 = (user == null || z10 || !((org.telegram.messenger.h0) np.u1(g2Var.getCurrentAccount()).A7.p0.b).c) ? false : true;
         this.c = z11;
         this.d = (user == null || z10 || z11) ? false : true;
         uf0Var.getLocationOnScreen(new int[2]);
@@ -110,7 +110,7 @@ public final class w3 extends Dialog {
         this.r = x6Var;
         x6Var.setDiamondOnCard(true);
         int currentAccount = g2Var.getCurrentAccount();
-        String q10 = o10.q(user);
+        String q10 = p10.q(user);
         Locale locale = Locale.ROOT;
         x6Var.setCardHolder(q10.toUpperCase(locale));
         if (!TextUtils.isEmpty(cardVar.address)) {
@@ -191,7 +191,7 @@ public final class w3 extends Dialog {
         eVar.setUseWrapContent(true);
         eVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
         eVar.setRoundRadius(19);
-        CharSequence N0 = gd.N0(z10 ? 2131742797 : z11 ? 2131742753 : 2131749083, null);
+        CharSequence N0 = hd.N0(z10 ? 2131742795 : z11 ? 2131742751 : 2131749083, null);
         if (z11) {
             SpannableStringBuilder append = new SpannableStringBuilder("G  ").append(N0);
             nq nqVar = new nq(R.drawable.mini_gram_24, 0);
@@ -266,10 +266,10 @@ public final class w3 extends Dialog {
         d();
         textView.setAlpha(0.0f);
         if (z10) {
-            textView.setText(gd.N0(2131742779, null));
+            textView.setText(hd.N0(2131742777, null));
         } else if (user != null) {
-            String k10 = o10.k(user, true);
-            textView.setText(hi.l3.b(new BigDecimal(u0.u(cardVar.balance, false)).signum() == 0 ? gd.a0(null, null, 2131742781, k10) : gd.a0(null, null, 2131742782, k10, u0.q("Grams", x6.e(cardVar.balance).toString(), 2131749314).toString().replace(' ', (char) 160)), textView.getPaint()));
+            String k10 = p10.k(user, true);
+            textView.setText(hi.l3.b(new BigDecimal(u0.u(cardVar.balance, false)).signum() == 0 ? hd.a0(null, null, 2131742779, k10) : hd.a0(null, null, 2131742780, k10, u0.q("Grams", x6.e(cardVar.balance).toString(), 2131749314).toString().replace(' ', (char) 160)), textView.getPaint()));
         }
         textView.setVisibility(user == null ? 8 : 0);
         u3Var.addView(textView, c8.ma.e(-2, -2, 49));
@@ -430,7 +430,7 @@ public final class w3 extends Dialog {
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.height = -1;
         attributes.width = -1;
-        attributes.gravity = ks.E1;
+        attributes.gravity = ls.E1;
         attributes.dimAmount = 0.0f;
         attributes.flags = (attributes.flags & (-3)) | (-2147286784);
         window.setAttributes(attributes);

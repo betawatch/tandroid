@@ -5,15 +5,15 @@ import android.text.TextUtils;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b31;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class x3 {
     public TL_stories.StoryItem a = null;
@@ -71,7 +71,7 @@ public final class x3 {
         if (!storyItem.pinned) {
             return true;
         }
-        TLRPC.Chat O0 = mp.u1(this.k.m2).O0(Long.valueOf(-storyItem.dialogId));
+        TLRPC.Chat O0 = np.u1(this.k.m2).O0(Long.valueOf(-storyItem.dialogId));
         return O0 == null || !O0.noforwards;
     }
 
@@ -81,13 +81,13 @@ public final class x3 {
             return null;
         }
         if (z3Var.l1 > 0) {
-            TLRPC.User c22 = mp.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1));
-            if (o10.o(c22) == null) {
+            TLRPC.User c22 = np.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1));
+            if (p10.o(c22) == null) {
                 return null;
             }
-            return z3Var.y1.f ? String.format(Locale.US, "https://t.me/%1$s/s/live", o10.o(c22)) : String.format(Locale.US, "https://t.me/%1$s/s/%2$s", o10.o(c22), Integer.valueOf(z3Var.y1.a.id));
+            return z3Var.y1.f ? String.format(Locale.US, "https://t.me/%1$s/s/live", p10.o(c22)) : String.format(Locale.US, "https://t.me/%1$s/s/%2$s", p10.o(c22), Integer.valueOf(z3Var.y1.a.id));
         }
-        TLRPC.Chat O0 = mp.u1(z3Var.m2).O0(Long.valueOf(-z3Var.l1));
+        TLRPC.Chat O0 = np.u1(z3Var.m2).O0(Long.valueOf(-z3Var.l1));
         if (org.telegram.messenger.v3.K(O0, false) == null) {
             return null;
         }
@@ -205,13 +205,13 @@ public final class x3 {
                         long o4 = org.telegram.messenger.n5.o(peer);
                         s7Var.b = Long.valueOf(o4);
                         if (o4 >= 0) {
-                            s7Var.k = new SpannableStringBuilder(fj.h6()).append((CharSequence) " ").append((CharSequence) o10.q(mp.u1(i7).c2(Long.valueOf(o4))));
+                            s7Var.k = new SpannableStringBuilder(gj.h6()).append((CharSequence) " ").append((CharSequence) p10.q(np.u1(i7).c2(Long.valueOf(o4))));
                         } else {
-                            TLRPC.Chat O03 = mp.u1(i7).O0(Long.valueOf(-o4));
-                            s7Var.k = new SpannableStringBuilder(org.telegram.messenger.v3.V(O03) ? fj.F() : fj.m2()).append((CharSequence) " ").append((CharSequence) (O03 != null ? O03.title : ""));
+                            TLRPC.Chat O03 = np.u1(i7).O0(Long.valueOf(-o4));
+                            s7Var.k = new SpannableStringBuilder(org.telegram.messenger.v3.V(O03) ? gj.F() : gj.m2()).append((CharSequence) " ").append((CharSequence) (O03 != null ? O03.title : ""));
                         }
                     } else if (storyFwdHeader.from_name != null) {
-                        s7Var.k = new SpannableStringBuilder(fj.h6()).append((CharSequence) " ").append((CharSequence) storyItem.fwd_from.from_name);
+                        s7Var.k = new SpannableStringBuilder(gj.h6()).append((CharSequence) " ").append((CharSequence) storyItem.fwd_from.from_name);
                     }
                     s7Var.f = true;
                     TL_stories.StoryFwdHeader storyFwdHeader2 = storyItem.fwd_from;
@@ -227,14 +227,14 @@ public final class x3 {
                         }
                         r1++;
                     }
-                    if (tL_mediaAreaChannelPost != null && (O02 = mp.u1(i7).O0(Long.valueOf(tL_mediaAreaChannelPost.channel_id))) != null) {
+                    if (tL_mediaAreaChannelPost != null && (O02 = np.u1(i7).O0(Long.valueOf(tL_mediaAreaChannelPost.channel_id))) != null) {
                         s7Var = new s7();
                         s7Var.b = Long.valueOf(-O02.id);
                         s7Var.e = true;
                         s7Var.a = i7;
                         s7Var.f = true;
                         s7Var.d = Integer.valueOf(tL_mediaAreaChannelPost.msg_id);
-                        s7Var.k = new SpannableStringBuilder(org.telegram.messenger.v3.V(O02) ? fj.F() : fj.m2()).append((CharSequence) " ").append((CharSequence) O02.title);
+                        s7Var.k = new SpannableStringBuilder(org.telegram.messenger.v3.V(O02) ? gj.F() : gj.m2()).append((CharSequence) " ").append((CharSequence) O02.title);
                     }
                 }
                 this.j = s7Var;
@@ -250,17 +250,17 @@ public final class x3 {
                             s7Var.l = str;
                             s7Var.f = TextUtils.isEmpty(str);
                         } else if (c7Var.u && (arrayList = c7Var.v) != null && arrayList.size() > 0) {
-                            fj fjVar = (fj) c7Var.v.get(0);
-                            long p10 = hi.c7.p(fjVar);
-                            if (p10 < 0 && (O0 = mp.u1(fjVar.K1).O0(Long.valueOf(-p10))) != null) {
+                            gj gjVar = (gj) c7Var.v.get(0);
+                            long p10 = hi.c7.p(gjVar);
+                            if (p10 < 0 && (O0 = np.u1(gjVar.K1).O0(Long.valueOf(-p10))) != null) {
                                 s7Var = new s7();
                                 s7Var.b = Long.valueOf(p10);
                                 s7Var.e = true;
-                                s7Var.a = fjVar.K1;
+                                s7Var.a = gjVar.K1;
                                 s7Var.f = true;
-                                Boolean D = hi.c7.D(fjVar);
-                                s7Var.d = Integer.valueOf(D != null ? D.booleanValue() ? fjVar.k.fwd_from.channel_post : fjVar.e1() : 0);
-                                s7Var.k = new SpannableStringBuilder(org.telegram.messenger.v3.V(O0) ? fj.F() : fj.m2()).append((CharSequence) " ").append((CharSequence) O0.title);
+                                Boolean D = hi.c7.D(gjVar);
+                                s7Var.d = Integer.valueOf(D != null ? D.booleanValue() ? gjVar.k.fwd_from.channel_post : gjVar.e1() : 0);
+                                s7Var.k = new SpannableStringBuilder(org.telegram.messenger.v3.V(O0) ? gj.F() : gj.m2()).append((CharSequence) " ").append((CharSequence) O0.title);
                             }
                         }
                     }
@@ -316,7 +316,7 @@ public final class x3 {
         TL_stories.StoryItem storyItem = this.a;
         if (storyItem != null && (messageMedia = storyItem.media) != null && messageMedia.getDocument() != null) {
             TLRPC.Document document = this.a.media.getDocument();
-            return fj.K4(document) || "video/mp4".equals(document.mime_type);
+            return gj.K4(document) || "video/mp4".equals(document.mime_type);
         }
         TL_stories.StoryItem storyItem2 = this.a;
         if (storyItem2 == null || storyItem2.media != null || (str = storyItem2.attachPath) == null) {
@@ -350,9 +350,9 @@ public final class x3 {
             CharSequence m10 = org.telegram.messenger.j6.m(charSequence, g3Var.c0.getPaint().getFontMetricsInt(), false, null, 0);
             this.h = m10;
             SpannableStringBuilder spannableStringBuilder = m10 == null ? new SpannableStringBuilder() : SpannableStringBuilder.valueOf(m10);
-            TLRPC.User c22 = mp.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1));
-            if (z3Var.l1 < 0 || mp.u1(z3Var.m2).k5(c22)) {
-                fj.d(spannableStringBuilder, true);
+            TLRPC.User c22 = np.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1));
+            if (z3Var.l1 < 0 || np.u1(z3Var.m2).k5(c22)) {
+                gj.d(spannableStringBuilder, true);
                 return;
             }
             return;
@@ -367,13 +367,13 @@ public final class x3 {
                 if (m11 == null || x3Var.a.entities == null) {
                     return;
                 }
-                SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(fj.B5(new SpannableStringBuilder(x3Var.a.caption), x3Var.a.entities, g3Var.c0.getPaint().getFontMetricsInt(), false));
+                SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(gj.B5(new SpannableStringBuilder(x3Var.a.caption), x3Var.a.entities, g3Var.c0.getPaint().getFontMetricsInt(), false));
                 SpannableStringBuilder.valueOf(org.telegram.messenger.j6.m(valueOf, g3Var.c0.getPaint().getFontMetricsInt(), false, null, 0));
-                i7 = (z3Var.l1 < 0 || mp.u1(z3Var.m2).k5(mp.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1)))) ? 1 : 0;
+                i7 = (z3Var.l1 < 0 || np.u1(z3Var.m2).k5(np.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1)))) ? 1 : 0;
                 if (i7 != 0) {
-                    fj.d(valueOf, true);
+                    gj.d(valueOf, true);
                 }
-                fj.b(valueOf, x3Var.a.entities, false, true, true, false, i7 ^ 1);
+                gj.b(valueOf, x3Var.a.entities, false, true, true, false, i7 ^ 1);
                 this.h = valueOf;
                 return;
             }
@@ -386,13 +386,13 @@ public final class x3 {
             if (m12 == null || tL_textWithEntities.entities == null) {
                 return;
             }
-            SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(fj.B5(new SpannableStringBuilder(tL_textWithEntities.text), tL_textWithEntities.entities, g3Var.c0.getPaint().getFontMetricsInt(), false));
+            SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(gj.B5(new SpannableStringBuilder(tL_textWithEntities.text), tL_textWithEntities.entities, g3Var.c0.getPaint().getFontMetricsInt(), false));
             SpannableStringBuilder.valueOf(org.telegram.messenger.j6.m(valueOf2, g3Var.c0.getPaint().getFontMetricsInt(), false, null, 0));
-            i7 = (z3Var.l1 < 0 || mp.u1(z3Var.m2).k5(mp.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1)))) ? 1 : 0;
+            i7 = (z3Var.l1 < 0 || np.u1(z3Var.m2).k5(np.u1(z3Var.m2).c2(Long.valueOf(z3Var.l1)))) ? 1 : 0;
             if (i7 != 0) {
-                fj.d(valueOf2, true);
+                gj.d(valueOf2, true);
             }
-            fj.b(valueOf2, tL_textWithEntities.entities, false, true, true, false, i7 ^ 1);
+            gj.b(valueOf2, tL_textWithEntities.entities, false, true, true, false, i7 ^ 1);
             this.h = valueOf2;
         }
     }

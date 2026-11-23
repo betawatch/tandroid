@@ -8,9 +8,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class zzja {
     private final Map zza = new LinkedHashMap();
@@ -84,8 +84,8 @@ public final class zzja {
     }
 
     public final void zzd(int i7, Object obj) {
-        zze(ks.D2, obj);
-        this.zzb.add(Integer.valueOf(ks.D2));
+        zze(ls.D2, obj);
+        this.zzb.add(Integer.valueOf(ls.D2));
     }
 
     public final void zze(int i7, Object obj) {

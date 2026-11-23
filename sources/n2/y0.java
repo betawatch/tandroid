@@ -4,13 +4,13 @@ import android.os.Handler;
 import ci.b1;
 import java.nio.ByteBuffer;
 import oi.b6;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.fm0;
 import org.telegram.ui.Components.i61;
 import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class y0 extends f2.o {
     public final b6 i;
@@ -153,7 +153,7 @@ public final class y0 extends f2.o {
                             }
                         } else {
                             for (int i23 = 0; i23 < 6; i23++) {
-                                int i24 = ks.A2 * i23;
+                                int i24 = ls.A2 * i23;
                                 float f29 = ((float[]) b1Var.b)[i24];
                                 float f30 = ((float[]) b1Var.c)[i24];
                                 float sqrt3 = (float) (Math.sqrt((f30 * f30) + (f29 * f29)) / 30.0d);

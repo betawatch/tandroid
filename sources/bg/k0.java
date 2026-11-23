@@ -1,15 +1,15 @@
 package bg;
 
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.b21;
+import org.telegram.ui.Components.a21;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class k0 implements Runnable {
                 break;
             case 3:
                 bnVar.e6.put(j3, 0);
-                b21 b21Var = bnVar.g2;
-                if (b21Var != null) {
-                    b21Var.setAllTopicsHidden(false);
+                a21 a21Var = bnVar.g2;
+                if (a21Var != null) {
+                    a21Var.setAllTopicsHidden(false);
                 }
                 if (j3 == bnVar.s4) {
                     bnVar.D0.O(false);
@@ -63,7 +63,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 bnVar.presentFragment(ProfileActivity.D4(j3));
                 break;
             default:
-                lc.b0(bnVar).I(R.raw.stars_topup, gd.N0(2131744851, null), org.telegram.messenger.g0.W2(gd.H(',', "StarsGiveawaySentPopupInfo", (int) j3))).k(true);
+                lc.b0(bnVar).I(R.raw.stars_topup, hd.N0(2131744849, null), org.telegram.messenger.g0.W2(hd.H(',', "StarsGiveawaySentPopupInfo", (int) j3))).k(true);
                 break;
         }
     }

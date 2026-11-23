@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class e9 extends org.telegram.ui.Components.n41 {
     public static final /* synthetic */ int b = 0;
@@ -47,17 +47,17 @@ public final class e9 extends org.telegram.ui.Components.n41 {
         ArrayList arrayList2 = g9Var.b;
         imageView.setImageResource(z13 ? R.drawable.menu_videocall : R.drawable.menu_call_create_2_24);
         TLRPC.Message message = (TLRPC.Message) arrayList.get(0);
-        String str = org.telegram.messenger.gd.a0 ? "\u202b" : "";
+        String str = org.telegram.messenger.hd.a0 ? "\u202b" : "";
         if (arrayList.size() == 1) {
             StringBuilder n10 = p5.c.n(str, "  ");
             i7 = 1;
-            n10.append(org.telegram.messenger.gd.t(message.date));
+            n10.append(org.telegram.messenger.hd.t(message.date));
             spannableString = new SpannableString(n10.toString());
             z11 = false;
         } else {
             i7 = 1;
             z11 = false;
-            spannableString = new SpannableString(String.format(str.concat("  (%d) %s"), Integer.valueOf(arrayList.size()), org.telegram.messenger.gd.t(message.date)));
+            spannableString = new SpannableString(String.format(str.concat("  (%d) %s"), Integer.valueOf(arrayList.size()), org.telegram.messenger.hd.t(message.date)));
         }
         int i13 = g9Var.d;
         Object obj = null;
@@ -111,12 +111,12 @@ public final class e9 extends org.telegram.ui.Components.n41 {
             if (arrayList2.size() > 3) {
                 sb2.append(" ");
                 r12 = 0;
-                sb2.append(org.telegram.messenger.gd.G(arrayList2.size() - 3, "AndOther", new Object[0]));
+                sb2.append(org.telegram.messenger.hd.G(arrayList2.size() - 3, "AndOther", new Object[0]));
             } else {
                 r12 = 0;
             }
             ArrayList arrayList3 = new ArrayList(arrayList2);
-            arrayList3.add(org.telegram.messenger.j10.i(i12).f());
+            arrayList3.add(org.telegram.messenger.k10.i(i12).f());
             h6Var.setAllowEmojiStatus(r12);
             org.telegram.ui.Cells.h6 h6Var2 = f9Var.d;
             if (!arrayList2.isEmpty()) {

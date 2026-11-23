@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class tv0 extends org.telegram.ui.Components.du0 implements r0.l {
     public final e2.r0 g0;
@@ -347,7 +347,7 @@ public final class tv0 extends org.telegram.ui.Components.du0 implements r0.l {
                 profileActivity.f.setScaleY(1.38f);
                 org.telegram.ui.Components.vk0 vk0Var = profileActivity.L;
                 if (vk0Var != null) {
-                    vk0Var.b(Color.argb(org.telegram.messenger.ks.J2, org.telegram.messenger.ks.e4, org.telegram.messenger.ks.e4, org.telegram.messenger.ks.e4));
+                    vk0Var.b(Color.argb(org.telegram.messenger.ls.J2, org.telegram.messenger.ls.e4, org.telegram.messenger.ls.e4, org.telegram.messenger.ls.e4));
                 }
                 Drawable drawable = profileActivity.x;
                 if (drawable != null) {
@@ -409,10 +409,10 @@ public final class tv0 extends org.telegram.ui.Components.du0 implements r0.l {
             profileActivity.M3();
             profileActivity.p2 = true;
             profileActivity.q2 = true;
-            org.telegram.messenger.ks e10 = org.telegram.messenger.ks.e();
+            org.telegram.messenger.ls e10 = org.telegram.messenger.ls.e();
             Object[] objArr = new Object[1];
             objArr[c10] = Boolean.TRUE;
-            e10.k(org.telegram.messenger.ks.u4, objArr);
+            e10.k(org.telegram.messenger.ls.u4, objArr);
             if (profileActivity.T0 != null) {
                 if (profileActivity.w4()) {
                     profileActivity.T0.u(21);

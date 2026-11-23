@@ -15,7 +15,7 @@ import android.graphics.Shader;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -26,7 +26,7 @@ public class CheckBoxBase {
     public pp D;
     public org.telegram.ui.ActionBar.u4 E;
     public org.telegram.ui.ActionBar.h6 F;
-    public org.telegram.messenger.i9 G;
+    public org.telegram.messenger.j9 G;
     public long H;
     public View a;
     public final Paint d;
@@ -161,7 +161,7 @@ public class CheckBoxBase {
                 i10 = centerY;
                 f14 = f19;
                 canvas2 = canvas;
-                canvas2.saveLayerAlpha(f20 - f10, f21 - f10, f20 + f10, f21 + f10, org.telegram.messenger.ks.e4, 31);
+                canvas2.saveLayerAlpha(f20 - f10, f21 - f10, f20 + f10, f21 + f10, org.telegram.messenger.ls.e4, 31);
             }
             i11 = this.s;
             Paint paint2 = this.f;
@@ -260,7 +260,7 @@ public class CheckBoxBase {
                                 i21 = -90;
                             } else {
                                 i20 = (int) (270.0f * f14);
-                                if (org.telegram.messenger.gd.a0) {
+                                if (org.telegram.messenger.hd.a0) {
                                     i20 = -i20;
                                 }
                                 i21 = 90;
@@ -326,7 +326,7 @@ public class CheckBoxBase {
                                 canvas2.translate(i7 - L3, i14 - L3);
                                 boolean z13 = f12 < f15;
                                 if (z13) {
-                                    canvas2.saveLayerAlpha(0.0f, 0.0f, org.telegram.messenger.g0.L(this.B), org.telegram.messenger.g0.L(this.B), org.telegram.messenger.ks.e4, 31);
+                                    canvas2.saveLayerAlpha(0.0f, 0.0f, org.telegram.messenger.g0.L(this.B), org.telegram.messenger.g0.L(this.B), org.telegram.messenger.ls.e4, 31);
                                 }
                                 Paint paint4 = (Paint) this.G.m(null);
                                 int i31 = this.A;

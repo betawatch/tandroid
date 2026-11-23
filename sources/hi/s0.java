@@ -3,17 +3,17 @@ package hi;
 import java.io.File;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEncodingService;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class s0 implements fs {
+public final class s0 implements gs {
     public final int a;
     public final File b;
-    public fj c;
+    public gj c;
     public final q0 d;
     public final r0 e;
     public final p0 f;
@@ -27,13 +27,13 @@ public final class s0 implements fs {
         if (this.c != null) {
             return;
         }
-        ks.f(i7).b(this, ks.a2);
-        ks.f(i7).b(this, ks.b2);
-        ks.f(i7).b(this, ks.c2);
+        ls.f(i7).b(this, ls.a2);
+        ls.f(i7).b(this, ls.b2);
+        ls.f(i7).b(this, ls.c2);
         TLRPC.TL_message tL_message = new TLRPC.TL_message();
         tL_message.id = 1;
         tL_message.attachPath = file.getAbsolutePath();
-        this.c = new fj(i7, tL_message, null, false, false);
+        this.c = new gj(i7, tL_message, null, false, false);
         c7Var.s(new ai.h0(this, 23));
     }
 
@@ -42,22 +42,22 @@ public final class s0 implements fs {
             return;
         }
         int i7 = this.a;
-        ks.f(i7).n(this, ks.a2);
-        ks.f(i7).n(this, ks.b2);
-        ks.f(i7).n(this, ks.c2);
+        ls.f(i7).n(this, ls.a2);
+        ls.f(i7).n(this, ls.b2);
+        ls.f(i7).n(this, ls.c2);
         if (z10) {
             MediaController.B().i(this.c);
         }
         this.c = null;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.a2) {
+        if (i7 == ls.a2) {
             return;
         }
-        if (i7 != ks.b2) {
-            if (i7 == ks.c2 && ((fj) objArr[0]) == this.c) {
+        if (i7 != ls.b2) {
+            if (i7 == ls.c2 && ((gj) objArr[0]) == this.c) {
                 a(false);
                 try {
                     File file = this.b;
@@ -71,7 +71,7 @@ public final class s0 implements fs {
             }
             return;
         }
-        if (((fj) objArr[0]) == this.c) {
+        if (((gj) objArr[0]) == this.c) {
             ((Long) objArr[2]).getClass();
             long longValue = ((Long) objArr[3]).longValue();
             Float f10 = (Float) objArr[4];

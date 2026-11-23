@@ -1,30 +1,29 @@
 package org.telegram.messenger;
 
-import com.google.android.gms.location.LocationRequest;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public final class z9 implements qa {
-    public LocationRequest a;
+public final class z9 implements com.google.android.gms.common.api.k {
+    public final /* synthetic */ oa a;
 
-    public final void a() {
-        this.a.c = 1000L;
+    public z9(oa oaVar) {
+        this.a = oaVar;
     }
 
-    public final void b() {
-        LocationRequest locationRequest = this.a;
-        long j3 = locationRequest.c;
-        long j10 = locationRequest.b;
-        if (j3 == j10 / 6) {
-            locationRequest.c = 166L;
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnected(Bundle bundle) {
+        rd rdVar = (rd) this.a;
+        rdVar.M = true;
+        try {
+            ((h6.m) t0.j()).checkLocationSettings(rdVar.O, new ld(rdVar, 1));
+        } catch (Throwable th2) {
+            a8.g(th2, true);
         }
-        if (locationRequest.r == j10) {
-            locationRequest.r = 1000L;
-        }
-        locationRequest.b = 1000L;
     }
 
-    public final void c() {
-        this.a.a = 100;
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnectionSuspended(int i7) {
+        this.a.getClass();
     }
 }

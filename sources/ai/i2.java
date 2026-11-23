@@ -1,81 +1,90 @@
 package ai;
 
-import android.graphics.LinearGradient;
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.UpdateAppearance;
-import org.telegram.ui.ActionBar.m6;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.os.SystemClock;
+import android.text.Spanned;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class i2 extends CharacterStyle implements UpdateAppearance {
-    public final /* synthetic */ int a;
-    public final Object b;
+public final class i2 extends ReplacementSpan {
+    public final long a;
+    public final int b;
+    public int c;
 
-    public /* synthetic */ i2(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public i2(long j3, int i7) {
+        this.a = j3;
+        this.b = i7;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        float z10;
-        float z11;
-        switch (this.a) {
-            case 0:
-                j2 j2Var = (j2) this.b;
-                LinearGradient linearGradient = j2Var.k;
-                if (linearGradient != null && j2Var.m > 0.0f) {
-                    textPaint.setShader(linearGradient);
-                    textPaint.setColor(-1);
-                    break;
-                }
-                break;
-            case 1:
-                long j3 = ji.e.y3;
-                ji.c cVar = (ji.c) this.b;
-                float f10 = (j3 - cVar.c) / 360.0f;
-                if (f10 <= 0.0f) {
-                    z10 = cVar.d;
-                } else if (f10 >= 1.0f) {
-                    z10 = 1.0f;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        float f11;
+        float f12;
+        i2 i2Var = this;
+        CharSequence charSequence2 = charSequence;
+        long uptimeMillis = SystemClock.uptimeMillis();
+        int color = paint.getColor();
+        float f13 = i12;
+        float textSize = f13 - (paint.getTextSize() * 0.35f);
+        int i14 = i2Var.b;
+        paint.setColor(i14);
+        int i15 = i7;
+        while (i15 < i10) {
+            int charCount = Character.charCount(Character.codePointAt(charSequence2, i15)) + i15;
+            while (charCount < i10 && Character.getType(charSequence2.charAt(charCount)) == 6) {
+                charCount++;
+            }
+            float f14 = f13;
+            float C = a8.p0.C((uptimeMillis - i2Var.a) - ((i15 - i7) * 22), 320.0f, 1.0f, 0.0f);
+            if (C > 0.0f) {
+                float measureText = paint.measureText(charSequence2, i7, i15) + f10;
+                float measureText2 = paint.measureText(charSequence2, i15, charCount);
+                float f15 = C - 1.0f;
+                float f16 = (((1.4f * f15 * f15) + (2.4f * f15 * f15 * f15) + 1.0f) * 0.39999998f) + 0.6f;
+                float alpha = Color.alpha(i14);
+                float min = 1.0f - Math.min(1.0f, C * 1.6f);
+                float f17 = (1.0f - ((min * min) * min)) * alpha;
+                if (charSequence2 instanceof Spanned) {
+                    f11 = f17;
+                    g2[] g2VarArr = (g2[]) ((Spanned) charSequence2).getSpans(i15, i15 + 1, g2.class);
+                    int length = g2VarArr.length;
+                    int i16 = 0;
+                    float f18 = 1.0f;
+                    while (i16 < length) {
+                        g2[] g2VarArr2 = g2VarArr;
+                        f18 *= g2VarArr2[i16].a(uptimeMillis);
+                        i16++;
+                        g2VarArr = g2VarArr2;
+                    }
+                    f12 = f18;
                 } else {
-                    float f11 = cVar.d;
-                    z10 = com.google.android.gms.internal.vision.e2.z(1.0f, (float) Math.pow(1.0f - f10, 3.0d), 1.0f - f11, f11);
+                    f11 = f17;
+                    f12 = 1.0f;
                 }
-                float max = Math.max(0.0f, Math.min(1.0f, (((ji.e.y3 - cVar.c) / 1500.0f) - 0.2f) / 0.8f));
-                float C = com.google.android.gms.internal.vision.e2.C(max, 2.0f, 3.0f, max * max);
-                int alpha = textPaint.getAlpha();
-                textPaint.setColor(i0.a.f(C, ji.e.z3, ji.e.A3));
-                textPaint.setAlpha((int) (alpha * z10));
-                float f12 = ji.e.B3;
-                if (f12 > 0.0f && C < 1.0f) {
-                    textPaint.setShadowLayer(f12, 0.0f, 0.0f, m6.r1((1.0f - C) * 0.55f * z10, ji.e.z3));
-                    break;
-                }
-                break;
-            default:
-                long j10 = ji.r.b2;
-                ji.q qVar = (ji.q) this.b;
-                float f13 = (j10 - qVar.c) / 360.0f;
-                if (f13 <= 0.0f) {
-                    z11 = qVar.d;
-                } else if (f13 >= 1.0f) {
-                    z11 = 1.0f;
-                } else {
-                    float f14 = qVar.d;
-                    z11 = com.google.android.gms.internal.vision.e2.z(1.0f, (float) Math.pow(1.0f - f13, 3.0d), 1.0f - f14, f14);
-                }
-                float b10 = ji.r.b((((ji.r.b2 - qVar.c) / 1900.0f) - 0.2f) / 0.8f);
-                float C2 = com.google.android.gms.internal.vision.e2.C(b10, 2.0f, 3.0f, b10 * b10);
-                int alpha2 = textPaint.getAlpha();
-                textPaint.setColor(i0.a.f(C2, ji.r.X1, ji.r.Y1));
-                textPaint.setAlpha((int) (alpha2 * z11));
-                if (C2 < 1.0f) {
-                    textPaint.setShadowLayer(ji.r.Z1, 0.0f, 0.0f, m6.r1((1.0f - C2) * 0.55f * z11, ji.r.X1));
-                    break;
-                }
-                break;
+                paint.setAlpha((int) (f11 * f12));
+                canvas.save();
+                canvas.scale(f16, f16, (measureText2 / 2.0f) + measureText, textSize);
+                f13 = f14;
+                canvas.drawText(charSequence2, i15, charCount, measureText, f13, paint);
+                canvas.restore();
+            } else {
+                f13 = f14;
+            }
+            i2Var = this;
+            charSequence2 = charSequence;
+            i15 = charCount;
         }
+        paint.setColor(color);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt != null) {
+            paint.getFontMetricsInt(fontMetricsInt);
+        }
+        return Math.round(paint.measureText(charSequence, i7, i10));
     }
 }

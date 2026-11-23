@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class px implements View.OnClickListener {
     public final /* synthetic */ boolean[] a;
@@ -33,6 +33,6 @@ public final class px implements View.OnClickListener {
             str = tyVar.X0[0];
         }
         tL_messages_getEmojiURL.lang_code = str;
-        org.telegram.messenger.g0.h3(new org.telegram.ui.b0(this, t1VarArr, ConnectionsManager.getInstance(tyVar.d1).sendRequest(tL_messages_getEmojiURL, new bi.q1(this, t1VarArr, this.b, 16)), 11), 1000L);
+        org.telegram.messenger.g0.h3(new org.telegram.ui.f0(this, t1VarArr, ConnectionsManager.getInstance(tyVar.d1).sendRequest(tL_messages_getEmojiURL, new bi.q1(this, t1VarArr, this.b, 16)), 10), 1000L);
     }
 }

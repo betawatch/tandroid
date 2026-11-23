@@ -4,7 +4,7 @@ import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.q1 {
     public final /* synthetic */ int a;
@@ -32,14 +32,14 @@ public final /* synthetic */ class c1 implements org.telegram.ui.ActionBar.q1, o
                 TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.b;
                 TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) this.c;
                 ConnectionsManager connectionsManager = (ConnectionsManager) this.d;
-                org.telegram.messenger.x10 x10Var = (org.telegram.messenger.x10) this.e;
-                org.telegram.messenger.x10 x10Var2 = (org.telegram.messenger.x10) this.f;
+                org.telegram.messenger.y10 y10Var = (org.telegram.messenger.y10) this.e;
+                org.telegram.messenger.y10 y10Var2 = (org.telegram.messenger.y10) this.f;
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) this.h;
                 tL_inputStorePaymentPremiumGiftCode.currency = ((f5.m) list.get(0)).a().c;
                 tL_inputStorePaymentPremiumGiftCode.amount = (long) (Math.pow(10.0d, org.telegram.messenger.r1.i().h(tL_premiumGiftCodeOption.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumGiftCode;
-                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new di.y6(x10Var, list, fVar, x10Var2, g2Var, tL_inputStorePaymentPremiumGiftCode, 4));
+                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new di.y6(y10Var, list, fVar, y10Var2, g2Var, tL_inputStorePaymentPremiumGiftCode, 4));
                 break;
             default:
                 TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.b;
@@ -65,17 +65,17 @@ public final /* synthetic */ class c1 implements org.telegram.ui.ActionBar.q1, o
                 org.telegram.messenger.c cVar = (org.telegram.messenger.c) this.c;
                 org.telegram.ui.bn bnVar = (org.telegram.ui.bn) this.d;
                 TLRPC.Chat chat = (TLRPC.Chat) this.e;
-                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) this.f;
+                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) this.f;
                 org.telegram.ui.Cells.d2[] d2VarArr = (org.telegram.ui.Cells.d2[]) this.h;
                 if (user != null) {
-                    org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(cVar.a);
-                    a02.a.c(new org.telegram.messenger.np(3, bnVar.a(), user.id, a02));
+                    org.telegram.messenger.ur a02 = org.telegram.messenger.ur.a0(cVar.a);
+                    a02.a.c(new org.telegram.messenger.op(3, bnVar.a(), user.id, a02));
                 } else {
-                    org.telegram.messenger.tr a03 = org.telegram.messenger.tr.a0(cVar.a);
-                    a03.a.c(new org.telegram.messenger.np(3, bnVar.a(), -chat.id, a03));
+                    org.telegram.messenger.ur a03 = org.telegram.messenger.ur.a0(cVar.a);
+                    a03.a.c(new org.telegram.messenger.op(3, bnVar.a(), -chat.id, a03));
                 }
                 TLRPC.TL_contacts_blockFromReplies tL_contacts_blockFromReplies = new TLRPC.TL_contacts_blockFromReplies();
-                tL_contacts_blockFromReplies.msg_id = fjVar.e1();
+                tL_contacts_blockFromReplies.msg_id = gjVar.e1();
                 tL_contacts_blockFromReplies.delete_message = true;
                 tL_contacts_blockFromReplies.delete_history = true;
                 if (d2VarArr[0].b()) {
@@ -107,13 +107,13 @@ public final /* synthetic */ class c1 implements org.telegram.ui.ActionBar.q1, o
         }
     }
 
-    public /* synthetic */ c1(TLRPC.User user, org.telegram.messenger.c cVar, org.telegram.ui.bn bnVar, TLRPC.Chat chat, org.telegram.messenger.fj fjVar, org.telegram.ui.Cells.d2[] d2VarArr, org.telegram.ui.ActionBar.h6 h6Var) {
+    public /* synthetic */ c1(TLRPC.User user, org.telegram.messenger.c cVar, org.telegram.ui.bn bnVar, TLRPC.Chat chat, org.telegram.messenger.gj gjVar, org.telegram.ui.Cells.d2[] d2VarArr, org.telegram.ui.ActionBar.h6 h6Var) {
         this.a = 0;
         this.b = user;
         this.c = cVar;
         this.d = bnVar;
         this.e = chat;
-        this.f = fjVar;
+        this.f = gjVar;
         this.h = d2VarArr;
     }
 }

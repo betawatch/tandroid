@@ -12,14 +12,14 @@ import com.google.android.gms.vision.clearcut.DynamiteClearcutLogger;
 import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
 import java.util.ArrayList;
 import n2.a0;
-import org.telegram.messenger.fi;
-import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gi;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.si;
 import org.telegram.messenger.w7;
 import org.telegram.ui.Components.mp;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -130,12 +130,12 @@ public final class g implements Runnable {
                     ((mp) arrayList.get(i7)).a.m(this.b);
                     i7++;
                 }
-                g0.g3(new fi(3, this, arrayList));
+                g0.g3(new gi(3, this, arrayList));
                 return;
             case 6:
                 ArrayList arrayList2 = (ArrayList) this.d;
                 while (i7 < arrayList2.size()) {
-                    if (!((String) this.c).equals(((fj) arrayList2.get(i7)).S0())) {
+                    if (!((String) this.c).equals(((gj) arrayList2.get(i7)).S0())) {
                         arrayList2.remove(i7);
                         i7--;
                     }
@@ -160,9 +160,9 @@ public final class g implements Runnable {
         this.b = i7;
     }
 
-    public g(ri riVar, ArrayList arrayList, int i7) {
+    public g(si siVar, ArrayList arrayList, int i7) {
         this.a = 5;
-        this.c = riVar;
+        this.c = siVar;
         this.d = arrayList;
         this.b = i7;
     }

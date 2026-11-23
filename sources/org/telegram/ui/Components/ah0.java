@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ah0 extends org.telegram.ui.ActionBar.w2 {
     public final Bitmap m1;
@@ -56,7 +56,7 @@ public class ah0 extends org.telegram.ui.ActionBar.w2 {
         org.telegram.ui.ej0 ej0Var = new org.telegram.ui.ej0(this, context, kVar);
         ej0Var.addView(kVar, c8.ma.c(-1.0f, -1));
         ej0Var.addView(rh0Var, c8.ma.e(60, 60, 17));
-        linearLayout.addView(ej0Var, c8.ma.t(org.telegram.messenger.ks.x3, org.telegram.messenger.ks.x3, 1, 30, 0, 30, 0));
+        linearLayout.addView(ej0Var, c8.ma.t(org.telegram.messenger.ls.x3, org.telegram.messenger.ls.x3, 1, 30, 0, 30, 0));
         TextView textView = new TextView(context);
         this.n1 = textView;
         textView.setTextSize(1, 14.0f);
@@ -69,7 +69,7 @@ public class ah0 extends org.telegram.ui.ActionBar.w2 {
         textView2.setGravity(17);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setText(org.telegram.messenger.gd.N0(2131745252, null));
+        textView2.setText(org.telegram.messenger.hd.N0(2131745252, null));
         textView2.setOnClickListener(new m8(22, this, context));
         linearLayout.addView(textView2, c8.ma.t(-1, 48, 80, 16, 15, 16, 3));
         if (z10) {
@@ -78,7 +78,7 @@ public class ah0 extends org.telegram.ui.ActionBar.w2 {
             textView3.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
             textView3.setGravity(17);
             textView3.setTextSize(1, 14.0f);
-            textView3.setText(org.telegram.messenger.gd.N0(2131745262, null));
+            textView3.setText(org.telegram.messenger.hd.N0(2131745262, null));
             textView3.setOnClickListener(new m8(23, str2, context));
             linearLayout.addView(textView3, c8.ma.t(-1, 48, 80, 16, 3, 16, 16));
         }
@@ -127,7 +127,7 @@ public class ah0 extends org.telegram.ui.ActionBar.w2 {
             TextView textView2 = this.p1;
             if (textView2 != null) {
                 textView2.setTextColor(org.telegram.ui.ActionBar.m6.w0(i10, this.J0));
-                org.telegram.ui.ActionBar.m6.H1(textView2.getBackground(), i0.a.o(org.telegram.ui.ActionBar.m6.w0(i10, this.J0), Math.min(org.telegram.messenger.ks.e4, Color.alpha(org.telegram.ui.ActionBar.m6.w0(i12, this.J0)) * 2)), true);
+                org.telegram.ui.ActionBar.m6.H1(textView2.getBackground(), i0.a.o(org.telegram.ui.ActionBar.m6.w0(i10, this.J0), Math.min(org.telegram.messenger.ls.e4, Color.alpha(org.telegram.ui.ActionBar.m6.w0(i12, this.J0)) * 2)), true);
             }
             TextView textView3 = this.n1;
             if (textView3 != null) {
@@ -155,7 +155,7 @@ public class ah0 extends org.telegram.ui.ActionBar.w2 {
         TextView textView2 = this.p1;
         if (textView2 != null) {
             textView2.setTextColor(org.telegram.ui.ActionBar.m6.w0(i7, this.J0));
-            textView2.setBackground(org.telegram.ui.ActionBar.m6.h0(i0.a.o(org.telegram.ui.ActionBar.m6.w0(i7, this.J0), Math.min(org.telegram.messenger.ks.e4, Color.alpha(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.i6, this.J0)) * 2)), 7, -1));
+            textView2.setBackground(org.telegram.ui.ActionBar.m6.h0(i0.a.o(org.telegram.ui.ActionBar.m6.w0(i7, this.J0), Math.min(org.telegram.messenger.ls.e4, Color.alpha(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.i6, this.J0)) * 2)), 7, -1));
         }
         int i10 = org.telegram.ui.ActionBar.m6.y6;
         int w05 = org.telegram.ui.ActionBar.m6.w0(i10, this.J0);

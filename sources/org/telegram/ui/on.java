@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class on extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -275,9 +275,9 @@ public final class on extends AnimatorListenerAdapter {
                 }
                 boolean z12 = this.b;
                 mk mkVar = (mk) wa0Var;
-                org.telegram.messenger.jj jjVar = mkVar.I.x5;
-                if (jjVar != null) {
-                    jjVar.x = null;
+                org.telegram.messenger.kj kjVar = mkVar.I.x5;
+                if (kjVar != null) {
+                    kjVar.x = null;
                 }
                 if (z12) {
                     org.telegram.messenger.g0.h3(new lk(mkVar, i10), 15L);
@@ -338,49 +338,49 @@ public final class on extends AnimatorListenerAdapter {
                 break;
             case 21:
                 super.onAnimationEnd(animator);
-                org.telegram.ui.Components.l01 l01Var = (org.telegram.ui.Components.l01) obj;
-                l01Var.N = this.b ? 1.0f : 0.0f;
-                l01Var.invalidate();
+                org.telegram.ui.Components.k01 k01Var = (org.telegram.ui.Components.k01) obj;
+                k01Var.N = this.b ? 1.0f : 0.0f;
+                k01Var.invalidate();
                 break;
             case 22:
                 boolean z14 = this.b;
-                org.telegram.ui.Components.b21 b21Var = (org.telegram.ui.Components.b21) obj;
-                long j3 = b21Var.f;
-                if (b21Var.e0 == animator) {
-                    b21Var.V = z14 ? 1.0f : 0.0f;
-                    b21Var.p();
-                    b21Var.W = false;
-                    ImageView imageView = b21Var.I;
-                    boolean z15 = b21Var.T;
+                org.telegram.ui.Components.a21 a21Var = (org.telegram.ui.Components.a21) obj;
+                long j3 = a21Var.f;
+                if (a21Var.e0 == animator) {
+                    a21Var.V = z14 ? 1.0f : 0.0f;
+                    a21Var.p();
+                    a21Var.W = false;
+                    ImageView imageView = a21Var.I;
+                    boolean z15 = a21Var.T;
                     int i11 = R.drawable.menu_sidebar_top;
                     imageView.setImageResource(z15 ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
-                    ImageView imageView2 = b21Var.H;
-                    if (!b21Var.T) {
+                    ImageView imageView2 = a21Var.H;
+                    if (!a21Var.T) {
                         i11 = R.drawable.menu_sidebar_left;
                     }
                     imageView2.setImageResource(i11);
-                    b21Var.e0 = null;
-                    org.telegram.messenger.mp.u1(b21Var.e).h7.edit().putBoolean("topicssidetabs" + j3, b21Var.U).putBoolean("topicssidetabsb" + j3, b21Var.T).apply();
-                    Boolean bool = b21Var.d0;
+                    a21Var.e0 = null;
+                    org.telegram.messenger.np.u1(a21Var.e).h7.edit().putBoolean("topicssidetabs" + j3, a21Var.U).putBoolean("topicssidetabsb" + j3, a21Var.T).apply();
+                    Boolean bool = a21Var.d0;
                     if (bool != null && z14 != bool.booleanValue()) {
-                        boolean booleanValue = b21Var.d0.booleanValue();
-                        b21Var.d0 = null;
-                        b21Var.d(booleanValue);
+                        boolean booleanValue = a21Var.d0.booleanValue();
+                        a21Var.d0 = null;
+                        a21Var.d(booleanValue);
                     }
                     org.telegram.messenger.g0.g3(new org.telegram.ui.Components.cp0(this, 20));
                     break;
                 }
                 break;
             case 23:
-                org.telegram.ui.Components.w11 w11Var = (org.telegram.ui.Components.w11) obj;
-                w11Var.G = this.b ? 1.0f : 0.0f;
-                w11Var.h();
+                org.telegram.ui.Components.v11 v11Var = (org.telegram.ui.Components.v11) obj;
+                v11Var.G = this.b ? 1.0f : 0.0f;
+                v11Var.h();
                 break;
             case 24:
-                org.telegram.ui.Components.a21 a21Var = (org.telegram.ui.Components.a21) obj;
-                a21Var.V = this.b ? 1.0f : 0.0f;
-                a21Var.h();
-                a21Var.g();
+                org.telegram.ui.Components.z11 z11Var = (org.telegram.ui.Components.z11) obj;
+                z11Var.V = this.b ? 1.0f : 0.0f;
+                z11Var.h();
+                z11Var.g();
                 break;
             case 25:
                 org.telegram.ui.Components.n51 n51Var = (org.telegram.ui.Components.n51) obj;

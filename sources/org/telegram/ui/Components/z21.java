@@ -15,7 +15,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class z21 extends FrameLayout {
     public final ImageView a;
@@ -80,28 +80,28 @@ public final class z21 extends FrameLayout {
                         org.telegram.ui.ActionBar.t6.x(z21Var, mutate, i15, b31Var2.J0, PorterDuff.Mode.MULTIPLY);
                         y21Var.setBackground(mutate);
                         Runnable[] runnableArr = new Runnable[1];
-                        List list = org.telegram.messenger.z00.N;
-                        ArrayList arrayList = new ArrayList(org.telegram.messenger.gd.E0().N.values());
+                        List list = org.telegram.messenger.a10.N;
+                        ArrayList arrayList = new ArrayList(org.telegram.messenger.hd.E0().N.values());
                         int i16 = 0;
                         while (i16 < arrayList.size()) {
-                            org.telegram.messenger.cd cdVar = (org.telegram.messenger.cd) arrayList.get(i16);
-                            if (cdVar == null || (((str2 = cdVar.c) != null && str2.endsWith("_raw")) || !"remote".equals(cdVar.d))) {
+                            org.telegram.messenger.dd ddVar = (org.telegram.messenger.dd) arrayList.get(i16);
+                            if (ddVar == null || (((str2 = ddVar.c) != null && str2.endsWith("_raw")) || !"remote".equals(ddVar.d))) {
                                 arrayList.remove(i16);
                                 i16--;
                             }
                             i16++;
                         }
-                        Collections.sort(arrayList, new org.telegram.messenger.h00(org.telegram.messenger.gd.E0().B, 1));
+                        Collections.sort(arrayList, new org.telegram.messenger.i00(org.telegram.messenger.hd.E0().B, 1));
                         boolean z10 = true;
                         int i17 = 0;
                         while (i17 < arrayList.size()) {
-                            org.telegram.messenger.cd cdVar2 = (org.telegram.messenger.cd) arrayList.get(i17);
-                            if (!cdVar2.f.equals(b31Var2.u1) && "remote".equals(cdVar2.d)) {
-                                TextUtils.equals(b31Var2.v1, cdVar2.f);
+                            org.telegram.messenger.dd ddVar2 = (org.telegram.messenger.dd) arrayList.get(i17);
+                            if (!ddVar2.f.equals(b31Var2.u1) && "remote".equals(ddVar2.d)) {
+                                TextUtils.equals(b31Var2.v1, ddVar2.f);
                                 org.telegram.ui.ActionBar.y0 y0Var = new org.telegram.ui.ActionBar.y0(2, z21Var.getContext(), b31Var2.J0, z10, i17 == arrayList.size() - 1);
-                                y0Var.setText(b31.L0(b31.P0(cdVar2.f, null, null)));
-                                y0Var.setChecked(TextUtils.equals(b31Var2.v1, cdVar2.f));
-                                y0Var.setOnClickListener(new st(z21Var, runnableArr, cdVar2, 6));
+                                y0Var.setText(b31.L0(b31.P0(ddVar2.f, null, null)));
+                                y0Var.setChecked(TextUtils.equals(b31Var2.v1, ddVar2.f));
+                                y0Var.setOnClickListener(new st(z21Var, runnableArr, ddVar2, 6));
                                 y21Var.addView(y0Var);
                                 z10 = false;
                             }
@@ -110,7 +110,7 @@ public final class z21 extends FrameLayout {
                         org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(y21Var, -2, -2);
                         runnableArr[0] = new cp0(g1Var, 23);
                         g1Var.e = true;
-                        g1Var.c = org.telegram.messenger.ks.x3;
+                        g1Var.c = org.telegram.messenger.ls.x3;
                         g1Var.setOutsideTouchable(true);
                         g1Var.setClippingEnabled(true);
                         g1Var.setAnimationStyle(R.style.PopupContextAnimation);
@@ -132,13 +132,13 @@ public final class z21 extends FrameLayout {
         org.telegram.ui.ActionBar.t6.U(n2Var, i10, b31Var.J0);
         n2Var.setTextSize(1, 20.0f);
         n2Var.setTypeface(org.telegram.messenger.g0.o());
-        n2Var.setText(org.telegram.messenger.gd.N0(2131753763, null));
+        n2Var.setText(org.telegram.messenger.hd.N0(2131753763, null));
         n2Var.setPivotX(0.0f);
         n2Var.setPivotY(0.0f);
         addView(n2Var, c8.ma.d(-1, -2.0f, 55, 22.0f, 20.0f, 22.0f, 0.0f));
         org.telegram.ui.d61 d61Var = new org.telegram.ui.d61(17, context, this);
         this.c = d61Var;
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             d61Var.setGravity(5);
         }
         d61Var.setPivotX(0.0f);
@@ -152,15 +152,15 @@ public final class z21 extends FrameLayout {
             textView.setText(b31.L0(b31.P0(str, null, null)));
             textView.setPadding(0, org.telegram.messenger.g0.L(2.0f), 0, org.telegram.messenger.g0.L(2.0f));
         }
-        ImageView e10 = org.telegram.messenger.n10.e(context, R.drawable.search_arrow);
+        ImageView e10 = org.telegram.messenger.o10.e(context, R.drawable.search_arrow);
         int i14 = org.telegram.ui.ActionBar.m6.Gj;
         org.telegram.ui.ActionBar.t6.s(e10, i14, b31Var.J0, mode);
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             e10.setScaleX(-1.0f);
         }
         x21 x21Var = new x21(this, context);
         this.e = x21Var;
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             x21Var.setGravity(5);
         }
         x21Var.b(0.25f, 350L, nr.h);
@@ -193,28 +193,28 @@ public final class z21 extends FrameLayout {
                         org.telegram.ui.ActionBar.t6.x(z21Var, mutate, i15, b31Var2.J0, PorterDuff.Mode.MULTIPLY);
                         y21Var.setBackground(mutate);
                         Runnable[] runnableArr = new Runnable[1];
-                        List list = org.telegram.messenger.z00.N;
-                        ArrayList arrayList = new ArrayList(org.telegram.messenger.gd.E0().N.values());
+                        List list = org.telegram.messenger.a10.N;
+                        ArrayList arrayList = new ArrayList(org.telegram.messenger.hd.E0().N.values());
                         int i16 = 0;
                         while (i16 < arrayList.size()) {
-                            org.telegram.messenger.cd cdVar = (org.telegram.messenger.cd) arrayList.get(i16);
-                            if (cdVar == null || (((str2 = cdVar.c) != null && str2.endsWith("_raw")) || !"remote".equals(cdVar.d))) {
+                            org.telegram.messenger.dd ddVar = (org.telegram.messenger.dd) arrayList.get(i16);
+                            if (ddVar == null || (((str2 = ddVar.c) != null && str2.endsWith("_raw")) || !"remote".equals(ddVar.d))) {
                                 arrayList.remove(i16);
                                 i16--;
                             }
                             i16++;
                         }
-                        Collections.sort(arrayList, new org.telegram.messenger.h00(org.telegram.messenger.gd.E0().B, 1));
+                        Collections.sort(arrayList, new org.telegram.messenger.i00(org.telegram.messenger.hd.E0().B, 1));
                         boolean z10 = true;
                         int i17 = 0;
                         while (i17 < arrayList.size()) {
-                            org.telegram.messenger.cd cdVar2 = (org.telegram.messenger.cd) arrayList.get(i17);
-                            if (!cdVar2.f.equals(b31Var2.u1) && "remote".equals(cdVar2.d)) {
-                                TextUtils.equals(b31Var2.v1, cdVar2.f);
+                            org.telegram.messenger.dd ddVar2 = (org.telegram.messenger.dd) arrayList.get(i17);
+                            if (!ddVar2.f.equals(b31Var2.u1) && "remote".equals(ddVar2.d)) {
+                                TextUtils.equals(b31Var2.v1, ddVar2.f);
                                 org.telegram.ui.ActionBar.y0 y0Var = new org.telegram.ui.ActionBar.y0(2, z21Var.getContext(), b31Var2.J0, z10, i17 == arrayList.size() - 1);
-                                y0Var.setText(b31.L0(b31.P0(cdVar2.f, null, null)));
-                                y0Var.setChecked(TextUtils.equals(b31Var2.v1, cdVar2.f));
-                                y0Var.setOnClickListener(new st(z21Var, runnableArr, cdVar2, 6));
+                                y0Var.setText(b31.L0(b31.P0(ddVar2.f, null, null)));
+                                y0Var.setChecked(TextUtils.equals(b31Var2.v1, ddVar2.f));
+                                y0Var.setOnClickListener(new st(z21Var, runnableArr, ddVar2, 6));
                                 y21Var.addView(y0Var);
                                 z10 = false;
                             }
@@ -223,7 +223,7 @@ public final class z21 extends FrameLayout {
                         org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(y21Var, -2, -2);
                         runnableArr[0] = new cp0(g1Var, 23);
                         g1Var.e = true;
-                        g1Var.c = org.telegram.messenger.ks.x3;
+                        g1Var.c = org.telegram.messenger.ls.x3;
                         g1Var.setOutsideTouchable(true);
                         g1Var.setClippingEnabled(true);
                         g1Var.setAnimationStyle(R.style.PopupContextAnimation);
@@ -239,7 +239,7 @@ public final class z21 extends FrameLayout {
                 }
             }
         });
-        if (org.telegram.messenger.gd.a0) {
+        if (org.telegram.messenger.hd.a0) {
             d61Var.addView(x21Var, c8.ma.t(-2, -2, 16, 0, 0, this.d != null ? 3 : 0, 0));
             if (this.d != null) {
                 d61Var.addView(e10, c8.ma.t(-2, -2, 16, 0, 1, 0, 0));
@@ -279,7 +279,7 @@ public final class z21 extends FrameLayout {
         n2Var.setScaleX(T1);
         n2Var.setScaleY(org.telegram.messenger.g0.T1(0.85f, 1.0f, interpolation));
         n2Var.setTranslationY(org.telegram.messenger.g0.T1(org.telegram.messenger.g0.N(-12.0f), 0.0f, interpolation));
-        boolean z10 = org.telegram.messenger.gd.a0;
+        boolean z10 = org.telegram.messenger.hd.a0;
         org.telegram.ui.d61 d61Var = this.c;
         if (!z10) {
             n2Var.setTranslationX(org.telegram.messenger.g0.T1(org.telegram.messenger.g0.N(50.0f), 0.0f, interpolation));

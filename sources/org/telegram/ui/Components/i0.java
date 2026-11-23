@@ -13,7 +13,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i0 extends sa {
     public final FrameLayout T1;
@@ -110,13 +110,13 @@ public final class i0 extends sa {
                 }
             }
         });
-        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.N0(2131754965, null), false, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.V.b).c, h6Var);
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.hd.N0(2131754965, null), false, false, ((org.telegram.messenger.j0) org.telegram.messenger.np.u1(this.a).A7.V.b).c, h6Var);
         this.W1 = l3Var;
         l3Var.d.addTextChangedListener(new e0(this, 0));
-        org.telegram.ui.Cells.l3 l3Var2 = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.N0(2131754972, null), true, false, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c, h6Var);
+        org.telegram.ui.Cells.l3 l3Var2 = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.hd.N0(2131754972, null), true, false, ((org.telegram.messenger.j0) org.telegram.messenger.np.u1(this.a).A7.W.b).c, h6Var);
         this.X1 = l3Var2;
         final int i13 = 2;
-        l3Var2.setShowLimitWhenNear(Math.max(100, ((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(this.a).A7.W.b).c / 2));
+        l3Var2.setShowLimitWhenNear(Math.max(100, ((org.telegram.messenger.j0) org.telegram.messenger.np.u1(this.a).A7.W.b).c / 2));
         l3Var2.d.addTextChangedListener(new e0(this, 1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f));
@@ -201,11 +201,11 @@ public final class i0 extends sa {
         d.leftMargin = i19 + i20;
         d.rightMargin += i20;
         this.b.addView(frameLayout5, d);
-        hi.e g10 = org.telegram.messenger.n10.g(24, context, h6Var, true);
+        hi.e g10 = org.telegram.messenger.o10.g(24, context, h6Var, true);
         this.c2 = g10;
-        g10.setText(org.telegram.messenger.gd.N0(2131754981, null));
+        g10.setText(org.telegram.messenger.hd.N0(2131754981, null));
         g10.setOnClickListener(new oi.i1(20, this, h6Var));
-        frameLayout4.addView(g10, c8.ma.e(-1, 48, org.telegram.messenger.ks.E1));
+        frameLayout4.addView(g10, c8.ma.e(-1, 48, org.telegram.messenger.ls.E1));
         f1();
         this.j2.O(false);
     }
@@ -220,7 +220,7 @@ public final class i0 extends sa {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return org.telegram.messenger.gd.N0(this.f2 != null ? 2131754996 : 2131754988, null);
+        return org.telegram.messenger.hd.N0(this.f2 != null ? 2131754996 : 2131754988, null);
     }
 
     public final void e1() {

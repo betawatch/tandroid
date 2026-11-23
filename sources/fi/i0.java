@@ -12,11 +12,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.lz;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.mz;
 import org.telegram.ui.Components.xy0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class i0 extends Drawable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class i0 extends Drawable {
         switch (this.a) {
             case 0:
                 Rect bounds = getBounds();
-                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, ks.e4, 31);
+                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, ls.e4, 31);
                 Drawable drawable = (Drawable) this.b;
                 drawable.setBounds(bounds);
                 drawable.draw(canvas);
@@ -69,23 +69,23 @@ public final class i0 extends Drawable {
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(getBounds());
                 nVar.a(this.c, canvas, rectF, null);
-                lz lzVar = (lz) this.b;
-                if (lzVar != null) {
-                    lzVar.c = nVar.a;
+                mz mzVar = (mz) this.b;
+                if (mzVar != null) {
+                    mzVar.c = nVar.a;
                     int i10 = nVar.f;
                     float f15 = (((i7 * 2) + i10) * nVar.g) - i7;
                     int i11 = (int) (i10 * 0.5f);
                     int width = getBounds().width();
-                    float f16 = width / lzVar.e;
-                    float height = getBounds().height() / lzVar.f;
-                    float max = lzVar.s ? Math.max(f16, height) : Math.min(f16, height);
+                    float f16 = width / mzVar.e;
+                    float height = getBounds().height() / mzVar.f;
+                    float max = mzVar.s ? Math.max(f16, height) : Math.min(f16, height);
                     matrix.reset();
                     matrix.setScale(1.0f / max, 0.0f, i7 / 2.0f, 0.0f);
-                    matrix.setTranslate((f15 - lzVar.getBounds().left) - (i7 / max), 0.0f);
+                    matrix.setTranslate((f15 - mzVar.getBounds().left) - (i7 / max), 0.0f);
                     nVar.b.setLocalMatrix(matrix);
                     int i12 = i11 / 2;
-                    lzVar.setBounds(getBounds().centerX() - i12, getBounds().centerY() - i12, getBounds().centerX() + i12, getBounds().centerY() + i12);
-                    lzVar.draw(canvas);
+                    mzVar.setBounds(getBounds().centerX() - i12, getBounds().centerY() - i12, getBounds().centerX() + i12, getBounds().centerY() + i12);
+                    mzVar.draw(canvas);
                 }
                 nVar.o.invalidate();
                 break;
@@ -193,10 +193,10 @@ public final class i0 extends Drawable {
         this.c = f10;
     }
 
-    public i0(org.telegram.ui.Components.voip.n nVar, lz lzVar) {
+    public i0(org.telegram.ui.Components.voip.n nVar, mz mzVar) {
         this.a = 3;
         this.d = nVar;
-        this.b = lzVar;
+        this.b = mzVar;
     }
 
     public i0(Context context, int i7) {

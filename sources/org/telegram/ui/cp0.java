@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class cp0 extends v4.b1 {
     public final float k;
@@ -93,7 +93,7 @@ public final class cp0 extends v4.b1 {
                 if (i7 <= 0) {
                     i7 = i12 - y10;
                 }
-                max = Math.max(org.telegram.messenger.ks.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i7) * this.k)) / 0.3356d));
+                max = Math.max(org.telegram.messenger.ls.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i7) * this.k)) / 0.3356d));
                 if (max <= 0) {
                     a1Var.b(-i7, 0, Math.max(400, max), this.j);
                     return;
@@ -102,7 +102,7 @@ public final class cp0 extends v4.b1 {
             }
         }
         i7 = 0;
-        max = Math.max(org.telegram.messenger.ks.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i7) * this.k)) / 0.3356d));
+        max = Math.max(org.telegram.messenger.ls.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i7) * this.k)) / 0.3356d));
         if (max <= 0) {
         }
     }

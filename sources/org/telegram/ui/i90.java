@@ -5,7 +5,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class i90 extends org.telegram.ui.Cells.l3 {
     public boolean F;
@@ -41,7 +41,7 @@ public final class i90 extends org.telegram.ui.Cells.l3 {
             int i10 = k90Var.getConnectionsManager().isTestBackend() ? 2131745956 : 2131745959;
             org.telegram.messenger.r1 i11 = org.telegram.messenger.r1.i();
             i7 = ((org.telegram.ui.ActionBar.g2) k90Var).currentAccount;
-            textView.setText(org.telegram.messenger.gd.a0(null, null, i10, i11.f((long) ((parseLong / 1000.0d) * org.telegram.messenger.mp.u1(i7).f6), "USD")));
+            textView.setText(org.telegram.messenger.hd.a0(null, null, i10, i11.f((long) ((parseLong / 1000.0d) * org.telegram.messenger.np.u1(i7).f6), "USD")));
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }

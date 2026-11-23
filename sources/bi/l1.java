@@ -19,14 +19,14 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l1 extends Drawable {
     public NinePatchDrawable a;
@@ -79,9 +79,9 @@ public final class l1 extends Drawable {
             Canvas canvas = new Canvas(createBitmap);
             drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
             drawable.draw(canvas);
-            int i7 = (intrinsicWidth * 27) / ks.y2;
-            int i10 = (intrinsicHeight * 4) / ks.a2;
-            this.a = c8.q0.a(createBitmap, new Rect(i7, i10, (intrinsicWidth * 5) / ks.y2, i10), (intrinsicWidth * 94) / ks.y2, (intrinsicHeight * 71) / ks.a2);
+            int i7 = (intrinsicWidth * 27) / ls.y2;
+            int i10 = (intrinsicHeight * 4) / ls.a2;
+            this.a = c8.q0.a(createBitmap, new Rect(i7, i10, (intrinsicWidth * 5) / ls.y2, i10), (intrinsicWidth * 94) / ls.y2, (intrinsicHeight * 71) / ls.a2);
         }
         if (this.b == null) {
             Drawable drawable2 = org.telegram.messenger.t0.b.getResources().getDrawable(R.drawable.gift_message_bubble_border_24);
@@ -97,9 +97,9 @@ public final class l1 extends Drawable {
             paint.setShader(new LinearGradient(f10, 0.0f, 0.0f, f11, new int[]{1090519039, -805306369, 1090519039}, (float[]) null, Shader.TileMode.CLAMP));
             paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY));
             canvas2.drawRect(0.0f, 0.0f, f10, f11, paint);
-            int i11 = (intrinsicWidth2 * 27) / ks.y2;
-            int i12 = (intrinsicHeight2 * 4) / ks.a2;
-            this.b = c8.q0.a(createBitmap2, new Rect(i11, i12, (intrinsicWidth2 * 5) / ks.y2, i12), (intrinsicWidth2 * 94) / ks.y2, (intrinsicHeight2 * 71) / ks.a2);
+            int i11 = (intrinsicWidth2 * 27) / ls.y2;
+            int i12 = (intrinsicHeight2 * 4) / ls.a2;
+            this.b = c8.q0.a(createBitmap2, new Rect(i11, i12, (intrinsicWidth2 * 5) / ls.y2, i12), (intrinsicWidth2 * 94) / ls.y2, (intrinsicHeight2 * 71) / ls.a2);
         }
     }
 
@@ -160,9 +160,9 @@ public final class l1 extends Drawable {
             boolean z11 = tLObject instanceof TLRPC.User;
             ImageReceiver imageReceiver = this.d;
             if (z11) {
-                imageReceiver.q0(fc.l(j10.t0, 1, (TLRPC.User) tLObject), "48_48", b9Var, null, null, 0);
+                imageReceiver.q0(gc.l(k10.t0, 1, (TLRPC.User) tLObject), "48_48", b9Var, null, null, 0);
             } else if (tLObject instanceof TLRPC.Chat) {
-                imageReceiver.q0(fc.a(1, (TLRPC.Chat) tLObject), "48_48", b9Var, null, null, 0);
+                imageReceiver.q0(gc.a(1, (TLRPC.Chat) tLObject), "48_48", b9Var, null, null, 0);
             } else {
                 imageReceiver.w0(b9Var);
             }

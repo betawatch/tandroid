@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.os.Bundle;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class tq0 extends org.telegram.ui.bn {
     public boolean vd;
@@ -31,7 +31,7 @@ public final class tq0 extends org.telegram.ui.bn {
             if (bkVar != null) {
                 bkVar.e(vs0Var.y, false);
             }
-            org.telegram.messenger.ri mediaDataController = jt0Var.y1.getMediaDataController();
+            org.telegram.messenger.si mediaDataController = jt0Var.y1.getMediaDataController();
             int classGuid = getClassGuid();
             ch.p0 p0Var = vs0Var.y;
             String str = vs0Var.x;
@@ -54,7 +54,7 @@ public final class tq0 extends org.telegram.ui.bn {
             iArr[0] = i7;
             iArr[1] = 0;
             mediaDataController.f1 = this.wd;
-            mediaDataController.getNotificationCenter().k(org.telegram.messenger.ks.H0, Integer.valueOf(classGuid), 0, Integer.valueOf(mediaDataController.e0()), Long.valueOf(mediaDataController.getUserConfig().e()), Integer.valueOf(mediaDataController.f1), Integer.valueOf(mediaDataController.l0()), Boolean.TRUE);
+            mediaDataController.getNotificationCenter().k(org.telegram.messenger.ls.H0, Integer.valueOf(classGuid), 0, Integer.valueOf(mediaDataController.e0()), Long.valueOf(mediaDataController.getUserConfig().e()), Integer.valueOf(mediaDataController.f1), Integer.valueOf(mediaDataController.l0()), Boolean.TRUE);
             this.vd = false;
         }
         super.onTransitionAnimationStart(z10, z11);

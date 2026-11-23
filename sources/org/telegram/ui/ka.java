@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ka extends FrameLayout {
     public final org.telegram.ui.Components.m80 a;
@@ -29,7 +29,7 @@ public final class ka extends FrameLayout {
         m80Var.setTextSize(1, 15.0f);
         int i7 = org.telegram.ui.ActionBar.m6.F6;
         org.telegram.ui.ActionBar.t6.U(m80Var, i7, null);
-        m80Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        m80Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
         int i10 = org.telegram.ui.ActionBar.m6.J6;
         org.telegram.ui.ActionBar.t6.G(m80Var, i10, null);
         int i11 = org.telegram.ui.ActionBar.m6.K6;
@@ -40,17 +40,17 @@ public final class ka extends FrameLayout {
         this.b = c2Var;
         c2Var.setTextSize(1, 15.0f);
         org.telegram.ui.ActionBar.t6.U(c2Var, i7, null);
-        c2Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        c2Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
         org.telegram.ui.ActionBar.t6.G(c2Var, i10, null);
         org.telegram.ui.ActionBar.t6.C(c2Var, i11, null);
         c2Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
         addView(m80Var, c8.ma.e(-1, -2, 48));
         addView(c2Var, c8.ma.e(-1, -2, 48));
         if (laVar.y == 0) {
-            m80Var.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.N0(2131743417, null)));
+            m80Var.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.hd.N0(2131743415, null)));
             return;
         }
-        String N0 = org.telegram.messenger.gd.N0(2131752926, null);
+        String N0 = org.telegram.messenger.hd.N0(2131752926, null);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(N0);
         int indexOf = N0.indexOf(42);
         int lastIndexOf = N0.lastIndexOf(42);

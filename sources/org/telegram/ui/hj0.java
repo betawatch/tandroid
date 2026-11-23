@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class hj0 implements s9, org.telegram.ui.Components.si {
     public final /* synthetic */ hk0 a;
@@ -26,49 +26,49 @@ public final class hj0 implements s9, org.telegram.ui.Components.si {
     }
 
     @Override // org.telegram.ui.s9
-    public void S0(org.telegram.messenger.ur urVar) {
-        boolean isEmpty = TextUtils.isEmpty(urVar.b);
+    public void S0(org.telegram.messenger.vr vrVar) {
+        boolean isEmpty = TextUtils.isEmpty(vrVar.b);
         hk0 hk0Var = this.a;
         if (!isEmpty) {
-            hk0Var.Z[0].setText(urVar.b);
+            hk0Var.Z[0].setText(vrVar.b);
         }
-        if (!TextUtils.isEmpty(urVar.d)) {
-            hk0Var.Z[1].setText(urVar.d);
+        if (!TextUtils.isEmpty(vrVar.d)) {
+            hk0Var.Z[1].setText(vrVar.d);
         }
-        if (!TextUtils.isEmpty(urVar.c)) {
-            hk0Var.Z[2].setText(urVar.c);
+        if (!TextUtils.isEmpty(vrVar.c)) {
+            hk0Var.Z[2].setText(vrVar.c);
         }
-        int i7 = urVar.n;
+        int i7 = vrVar.n;
         if (i7 != 0) {
             if (i7 == 1) {
                 hk0Var.x = "male";
-                hk0Var.Z[4].setText(org.telegram.messenger.gd.N0(2131747314, null));
+                hk0Var.Z[4].setText(org.telegram.messenger.hd.N0(2131747314, null));
             } else if (i7 == 2) {
                 hk0Var.x = "female";
-                hk0Var.Z[4].setText(org.telegram.messenger.gd.N0(2131747375, null));
+                hk0Var.Z[4].setText(org.telegram.messenger.hd.N0(2131747375, null));
             }
         }
-        if (!TextUtils.isEmpty(urVar.m)) {
-            String str = urVar.m;
+        if (!TextUtils.isEmpty(vrVar.m)) {
+            String str = vrVar.m;
             hk0Var.s = str;
             String str2 = (String) hk0Var.Z0.get(str);
             if (str2 != null) {
                 hk0Var.Z[5].setText(str2);
             }
         }
-        if (!TextUtils.isEmpty(urVar.l)) {
-            String str3 = urVar.l;
+        if (!TextUtils.isEmpty(vrVar.l)) {
+            String str3 = vrVar.l;
             hk0Var.w = str3;
             String str4 = (String) hk0Var.Z0.get(str3);
             if (str4 != null) {
                 hk0Var.Z[6].setText(str4);
             }
         }
-        int i10 = urVar.k;
-        if (i10 <= 0 || urVar.j <= 0 || urVar.i <= 0) {
+        int i10 = vrVar.k;
+        if (i10 <= 0 || vrVar.j <= 0 || vrVar.i <= 0) {
             return;
         }
-        hk0Var.Z[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i10), Integer.valueOf(urVar.j), Integer.valueOf(urVar.i)));
+        hk0Var.Z[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i10), Integer.valueOf(vrVar.j), Integer.valueOf(vrVar.i)));
     }
 
     @Override // org.telegram.ui.Components.si
@@ -113,16 +113,16 @@ public final class hj0 implements s9, org.telegram.ui.Components.si {
         }
         ArrayList arrayList = new ArrayList();
         for (int i12 = 0; i12 < selectedPhotosOrder.size(); i12++) {
-            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) selectedPhotos.get(selectedPhotosOrder.get(i12));
-            org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
-            String str = efVar.h;
+            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) selectedPhotos.get(selectedPhotosOrder.get(i12));
+            org.telegram.messenger.zy zyVar = new org.telegram.messenger.zy();
+            String str = ffVar.h;
             if (str != null) {
-                yyVar.c = str;
+                zyVar.c = str;
             } else {
-                yyVar.c = efVar.I;
+                zyVar.c = ffVar.I;
             }
-            arrayList.add(yyVar);
-            efVar.e();
+            arrayList.add(zyVar);
+            ffVar.e();
         }
         hk0Var.K1(arrayList);
     }

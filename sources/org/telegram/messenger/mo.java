@@ -1,37 +1,40 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class mo extends y2 {
-    public final /* synthetic */ mp e;
+    public final /* synthetic */ np e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mo(mp mpVar) {
-        super(3600000);
-        this.e = mpVar;
+    public mo(np npVar) {
+        this.e = npVar;
     }
 
     @Override // org.telegram.messenger.y2
-    public final void e(int i7, Object obj, q10 q10Var) {
-        tr.a0(i7).a.c(new x0(i7, q10Var, 7));
+    public final /* bridge */ /* synthetic */ boolean b(Object obj) {
+        return true;
+    }
+
+    @Override // org.telegram.messenger.y2
+    public final void e(int i7, Object obj, r10 r10Var) {
+        this.e.getMessagesStorage().a.c(new io(i7, (w2) r10Var, 1));
     }
 
     @Override // org.telegram.messenger.y2
     public final void f(int i7, Object obj, long j3, x2 x2Var) {
-        TL_account.getWebBrowserSettings getwebbrowsersettings = new TL_account.getWebBrowserSettings();
-        getwebbrowsersettings.hash = j3;
-        this.e.getConnectionsManager().sendRequestTyped(getwebbrowsersettings, new d3.b(1), new d(x2Var, 6));
+        TLRPC.TL_messages_getAvailableEffects tL_messages_getAvailableEffects = new TLRPC.TL_messages_getAvailableEffects();
+        tL_messages_getAvailableEffects.hash = (int) j3;
+        this.e.getConnectionsManager().sendRequest(tL_messages_getAvailableEffects, new jo(x2Var, 1));
     }
 
     @Override // org.telegram.messenger.y2
     public final void g(int i7, Object obj, Object obj2) {
-        tr.a0(i7).a.c(new x0(i7, (TL_account.TL_webBrowserSettings) obj2, 8));
+        ur.a0(i7).a.c(new x0(i7, (TLRPC.messages_AvailableEffects) obj2, 6));
     }
 
     @Override // org.telegram.messenger.y2
-    public final /* bridge */ /* synthetic */ boolean j(Object obj) {
-        return false;
+    public final void h(int i7, long j3) {
+        this.e.h7.edit().putLong("effects_last_" + i7, j3).apply();
     }
 }

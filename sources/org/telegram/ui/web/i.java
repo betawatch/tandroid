@@ -2,16 +2,16 @@ package org.telegram.ui.web;
 
 import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final class i implements fs {
+public final class i implements gs {
     public final int b;
     public final Runnable c;
     public final String d;
@@ -33,8 +33,8 @@ public final class i implements fs {
         }
         this.h = true;
         int i7 = this.b;
-        ks.f(i7).c(this, ks.V);
-        ks.f(i7).c(this, ks.H1);
+        ls.f(i7).c(this, ls.V);
+        ls.f(i7).c(this, ls.H1);
         if (TextUtils.isEmpty(this.d)) {
             d();
         }
@@ -47,7 +47,7 @@ public final class i implements fs {
             if (i7 >= arrayList2.size()) {
                 return;
             }
-            if (arrayList.contains(Integer.valueOf(((fj) arrayList2.get(i7)).e1()))) {
+            if (arrayList.contains(Integer.valueOf(((gj) arrayList2.get(i7)).e1()))) {
                 arrayList2.remove(i7);
                 i7--;
             }
@@ -59,8 +59,8 @@ public final class i implements fs {
         if (this.h) {
             this.h = false;
             int i7 = this.b;
-            ks.f(i7).n(this, ks.V);
-            ks.f(i7).n(this, ks.H1);
+            ls.f(i7).n(this, ls.V);
+            ls.f(i7).n(this, ls.H1);
             ConnectionsManager.getInstance(i7).cancelRequestsForGuid(this.e);
             this.n = false;
         }
@@ -73,7 +73,7 @@ public final class i implements fs {
         }
         this.n = true;
         int i7 = this.b;
-        long e10 = j10.i(i7).e();
+        long e10 = k10.i(i7).e();
         int i10 = 0;
         int i11 = Integer.MAX_VALUE;
         while (true) {
@@ -81,10 +81,10 @@ public final class i implements fs {
             if (i10 >= arrayList.size()) {
                 break;
             }
-            i11 = Math.min(i11, ((fj) arrayList.get(i10)).e1());
+            i11 = Math.min(i11, ((gj) arrayList.get(i10)).e1());
             i10++;
         }
-        ri d02 = ri.d0(i7);
+        si d02 = si.d0(i7);
         int i12 = arrayList.isEmpty() ? 30 : 50;
         if (i11 == Integer.MAX_VALUE) {
             i11 = 0;
@@ -92,13 +92,13 @@ public final class i implements fs {
         d02.Q0(e10, i12, i11, 0, 3, 0L, 1, this.e, 0, null, this.d);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ks.V;
+        int i11 = ls.V;
         ArrayList arrayList = this.a;
         if (i7 != i11) {
-            if (i7 == ks.H1) {
-                arrayList.add(0, (fj) objArr[0]);
+            if (i7 == ls.H1) {
+                arrayList.add(0, (gj) objArr[0]);
             }
         } else if (((Integer) objArr[3]).intValue() == this.e) {
             this.n = false;

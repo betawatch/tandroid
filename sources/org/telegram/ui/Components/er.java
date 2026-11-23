@@ -7,7 +7,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class er extends sa {
     public final g70 T1;
@@ -25,7 +25,7 @@ public final class er extends sa {
         super(g2Var, false);
         boolean z10;
         String a02;
-        TLRPC.Chat O0 = org.telegram.messenger.mp.u1(this.a).O0(Long.valueOf(-j3));
+        TLRPC.Chat O0 = org.telegram.messenger.np.u1(this.a).O0(Long.valueOf(-j3));
         this.b2 = g2Var;
         this.c2 = j3;
         this.v1 = 0.26f;
@@ -47,7 +47,7 @@ public final class er extends sa {
         textView.setSingleLine(true);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(W ? org.telegram.messenger.gd.a0(null, null, 2131743212, new Object[0]) : org.telegram.messenger.gd.a0(null, null, 2131743081, new Object[0]));
+        textView.setText(W ? org.telegram.messenger.hd.a0(null, null, 2131743210, new Object[0]) : org.telegram.messenger.hd.a0(null, null, 2131743079, new Object[0]));
         org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.Ji, null);
         int L = org.telegram.messenger.g0.L(8.0f);
         int i10 = org.telegram.ui.ActionBar.m6.Fi;
@@ -68,10 +68,10 @@ public final class er extends sa {
         textView2.setTypeface(org.telegram.messenger.g0.o());
         if (W) {
             z10 = false;
-            a02 = org.telegram.messenger.gd.a0(null, null, 2131743219, new Object[0]);
+            a02 = org.telegram.messenger.hd.a0(null, null, 2131743217, new Object[0]);
         } else {
             z10 = false;
-            a02 = org.telegram.messenger.gd.a0(null, null, 2131743098, new Object[0]);
+            a02 = org.telegram.messenger.hd.a0(null, null, 2131743096, new Object[0]);
         }
         textView2.setText(a02);
         textView2.setLetterSpacing(0.025f);
@@ -96,12 +96,12 @@ public final class er extends sa {
                 switch (i12) {
                     case 0:
                         er erVar = this.b;
-                        erVar.a2 = org.telegram.messenger.mp.u1(erVar.a).l1(org.telegram.messenger.fj.B1(erVar.Z1));
+                        erVar.a2 = org.telegram.messenger.np.u1(erVar.a).l1(org.telegram.messenger.gj.B1(erVar.Z1));
                         erVar.dismiss();
                         break;
                     default:
                         er erVar2 = this.b;
-                        erVar2.a2 = org.telegram.messenger.mp.u1(erVar2.a).l1(org.telegram.messenger.fj.B1(erVar2.Z1));
+                        erVar2.a2 = org.telegram.messenger.np.u1(erVar2.a).l1(org.telegram.messenger.gj.B1(erVar2.Z1));
                         erVar2.Y1 = true;
                         erVar2.dismiss();
                         break;
@@ -120,12 +120,12 @@ public final class er extends sa {
                 switch (i7) {
                     case 0:
                         er erVar = this.b;
-                        erVar.a2 = org.telegram.messenger.mp.u1(erVar.a).l1(org.telegram.messenger.fj.B1(erVar.Z1));
+                        erVar.a2 = org.telegram.messenger.np.u1(erVar.a).l1(org.telegram.messenger.gj.B1(erVar.Z1));
                         erVar.dismiss();
                         break;
                     default:
                         er erVar2 = this.b;
-                        erVar2.a2 = org.telegram.messenger.mp.u1(erVar2.a).l1(org.telegram.messenger.fj.B1(erVar2.Z1));
+                        erVar2.a2 = org.telegram.messenger.np.u1(erVar2.a).l1(org.telegram.messenger.gj.B1(erVar2.Z1));
                         erVar2.Y1 = true;
                         erVar2.dismiss();
                         break;
@@ -156,6 +156,6 @@ public final class er extends sa {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return this.X1 ? org.telegram.messenger.gd.N0(2131744662, null) : org.telegram.messenger.gd.N0(2131744659, null);
+        return this.X1 ? org.telegram.messenger.hd.N0(2131744660, null) : org.telegram.messenger.hd.N0(2131744657, null);
     }
 }

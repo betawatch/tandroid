@@ -6,9 +6,9 @@ import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class x0 {
     public static final j6.b j = new j6.b("ApplicationAnalytics", null);
@@ -32,7 +32,7 @@ public final class x0 {
     public static void a(x0 x0Var, int i7) {
         j.b("log session ended with error = %d", Integer.valueOf(i7));
         x0Var.c();
-        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ks.F3);
+        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ls.F3);
         x0Var.e.removeCallbacks(x0Var.d);
         if (x0Var.i) {
             return;

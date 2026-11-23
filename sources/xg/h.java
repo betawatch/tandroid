@@ -11,11 +11,11 @@ import c8.ma;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m6;
@@ -33,7 +33,7 @@ import wg.a1;
 import wg.q;
 import wg.y0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class h extends rg.b {
     public final h6 d;
@@ -53,7 +53,7 @@ public final class h extends rg.b {
         this.x = z10;
         this.d = h6Var;
         z zVar = new z(this, 8);
-        tr a02 = tr.a0(j10.t0);
+        ur a02 = ur.a0(k10.t0);
         a02.a.c(new q(2, a02, zVar));
     }
 
@@ -66,7 +66,7 @@ public final class h extends rg.b {
     public final int F(TLRPC.Chat chat) {
         Integer num;
         int i7;
-        TLRPC.ChatFull P0 = mp.u1(j10.t0).P0(chat.id);
+        TLRPC.ChatFull P0 = np.u1(k10.t0).P0(chat.id);
         if (P0 != null && (i7 = P0.participants_count) > 0) {
             return i7;
         }
@@ -127,14 +127,14 @@ public final class h extends rg.b {
                 TLRPC.InputPeer inputPeer = gVar.d;
                 if (inputPeer != null) {
                     if (inputPeer instanceof TLRPC.TL_inputPeerSelf) {
-                        rVar.setUser(j10.i(j10.t0).f());
+                        rVar.setUser(k10.i(k10.t0).f());
                     } else if (inputPeer instanceof TLRPC.TL_inputPeerUser) {
-                        rVar.setUser(mp.u1(j10.t0).c2(Long.valueOf(inputPeer.user_id)));
+                        rVar.setUser(np.u1(k10.t0).c2(Long.valueOf(inputPeer.user_id)));
                     } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
-                        TLRPC.Chat O0 = mp.u1(j10.t0).O0(Long.valueOf(inputPeer.chat_id));
+                        TLRPC.Chat O0 = np.u1(k10.t0).O0(Long.valueOf(inputPeer.chat_id));
                         rVar.h(F(O0), O0);
                     } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
-                        TLRPC.Chat O02 = mp.u1(j10.t0).O0(Long.valueOf(inputPeer.channel_id));
+                        TLRPC.Chat O02 = np.u1(k10.t0).O0(Long.valueOf(inputPeer.channel_id));
                         rVar.h(F(O02), O02);
                     }
                 }
@@ -248,8 +248,8 @@ public final class h extends rg.b {
             h6 h6Var = this.d;
             if (i7 == 5) {
                 nv0 nv0Var = new nv0(context, null, 1, h6Var);
-                nv0Var.d.setText(gd.N0(2131747974, null));
-                nv0Var.e.setText(gd.N0(2131745611, null));
+                nv0Var.d.setText(hd.N0(2131747974, null));
+                nv0Var.e.setText(hd.N0(2131745611, null));
                 nv0Var.a.setTranslationY(g0.L(24.0f));
                 rVar = nv0Var;
             } else {

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.os.SystemClock;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -14,9 +14,9 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x3 implements q10 {
+public final /* synthetic */ class x3 implements r10 {
     public final /* synthetic */ int a = 2;
     public final /* synthetic */ Object b;
     public final /* synthetic */ int c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class x3 implements q10 {
         this.g = bArr2;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
         Object obj3 = this.g;
@@ -55,16 +55,16 @@ public final /* synthetic */ class x3 implements q10 {
                 if (updates == null) {
                     hashMap.remove(str);
                     i4.c();
-                    y4.r(context, i10, h6Var, lcVar, tL_error, null);
+                    x4.r(context, i10, h6Var, lcVar, tL_error, null);
                     break;
                 } else {
                     hashMap.put(str, Long.valueOf(SystemClock.elapsedRealtime() + 60000));
                     i4.c();
-                    mp.u1(i10).V3(updates, false);
+                    np.u1(i10).V3(updates, false);
                     if (runnable != null) {
                         runnable.run();
                     }
-                    gc Q = i4.h().Q(R.raw.contact_check, 36, gd.N0(2131749601, null));
+                    gc Q = i4.h().Q(R.raw.contact_check, 36, hd.N0(2131749601, null));
                     Q.t = true;
                     Q.j();
                     break;
@@ -81,12 +81,12 @@ public final /* synthetic */ class x3 implements q10 {
                 int i11 = this.c;
                 s3 s3Var = new s3(i11, context2, tL_starGiftUnique, h6Var2);
                 String str2 = this.e;
-                s3Var.k1(gd.N0(bool.booleanValue() ? 2131749512 : 2131749513, null), gd.a0(null, null, 2131749869, str2));
-                s3Var.Z1.e(gd.N0(2131749539, null), y4.i(p0Var.b), null, null);
-                s3Var.d2.i(gd.N0(2131750415, null), false, true);
+                s3Var.k1(hd.N0(bool.booleanValue() ? 2131749512 : 2131749513, null), hd.a0(null, null, 2131749869, str2));
+                s3Var.Z1.e(hd.N0(2131749539, null), x4.i(p0Var.b), null, null);
+                s3Var.d2.i(hd.N0(2131750415, null), false, true);
                 s3Var.q2 = 2131749614;
                 s3Var.j1(p0Var);
-                s3Var.i1(new x4(k1Var, tL_starGiftUnique, str2, i11, 0), new ai.x1(3, tL_starGiftUnique, str2), new k4(context2, i11, h6Var2, s3Var, bool, 0));
+                s3Var.i1(new ai.b1(k1Var, tL_starGiftUnique, str2, i11, 1), new ai.y1(3, tL_starGiftUnique, str2), new k4(context2, i11, h6Var2, s3Var, bool, 0));
                 s3Var.show();
                 break;
             default:
@@ -103,7 +103,7 @@ public final /* synthetic */ class x3 implements q10 {
                         break;
                     } else {
                         if (str3 == null) {
-                            str3 = gd.N0(2131742722, null);
+                            str3 = hd.N0(2131742720, null);
                         }
                         lc.c0(str3);
                         y2Var.d = false;

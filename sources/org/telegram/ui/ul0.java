@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class ul0 extends FrameLayout {
     public long a;
@@ -24,7 +24,7 @@ public final class ul0 extends FrameLayout {
         bi.c3 c3Var = new bi.c3(frameLayout, h6Var, false);
         this.e = c3Var;
         frameLayout.setBackground(c3Var);
-        addView(frameLayout, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(frameLayout, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         c8.ra.b(frameLayout, 0.025f, 1.25f);
         org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
         this.f = q9Var;
@@ -75,7 +75,7 @@ public final class ul0 extends FrameLayout {
             }
             this.n = document;
             TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, org.telegram.messenger.g0.L(100.0f), false, null, false);
-            q9Var.m(org.telegram.messenger.fc.b(document), "100_100", org.telegram.messenger.fc.c(w10, document), "100_100", org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.m6.a7, 0.3f, null), starGift);
+            q9Var.m(org.telegram.messenger.gc.b(document), "100_100", org.telegram.messenger.gc.c(w10, document), "100_100", org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.m6.a7, 0.3f, null), starGift);
         }
     }
 

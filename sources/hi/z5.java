@@ -5,12 +5,12 @@ import android.graphics.Bitmap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bz;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.np;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class z5 {
     public final s8 c;
@@ -20,7 +20,7 @@ public final class z5 {
     public final AtomicReference a = new AtomicReference();
     public final AtomicBoolean b = new AtomicBoolean(false);
     public final w5 h = new w5(this, 0);
-    public final String e = mp.u1(j10.t0).X2;
+    public final String e = np.u1(k10.t0).X2;
 
     public z5(Context context, s8 s8Var) {
         this.c = s8Var;
@@ -40,7 +40,7 @@ public final class z5 {
         if (this.d == null) {
             return 750L;
         }
-        int o4 = bz.o();
+        int o4 = cz.o();
         if (o4 != 1) {
             return o4 != 2 ? 800L : 80L;
         }

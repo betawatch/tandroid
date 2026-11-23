@@ -7,7 +7,7 @@ import android.provider.Settings;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.video.VideoAds;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class hn0 implements Runnable {
                         } else {
                             dq0 dq0Var = photoViewer21.g0;
                             if (dq0Var != null) {
-                                if ((!dq0Var.y || !"inapp".equals(org.telegram.messenger.mp.u1(dq0Var.a).D3)) && photoViewer21.g0.e()) {
+                                if ((!dq0Var.y || !"inapp".equals(org.telegram.messenger.np.u1(dq0Var.a).D3)) && photoViewer21.g0.e()) {
                                     photoViewer21.K3 = false;
                                     if (PhotoViewer.g9 != null) {
                                         PhotoViewer.g9.J0();

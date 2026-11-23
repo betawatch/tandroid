@@ -17,9 +17,9 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
-import org.telegram.messenger.j10;
+import org.telegram.messenger.k10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.h6;
@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.v6;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class q0 extends ek0 implements b6 {
     public static final o0[] k3 = {new o0(R.drawable.search_media_filled, 2131745211, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, 2131745214, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, 2131745218, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, 2131745209, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, 2131745206, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
@@ -77,7 +77,7 @@ public final class q0 extends ek0 implements b6 {
             return;
         }
         calendar.add(2, 1);
-        arrayList.add(new m0(timeInMillis2, gd.E0().v0().format(timeInMillis2), calendar.getTimeInMillis() - 1));
+        arrayList.add(new m0(timeInMillis2, hd.E0().v0().format(timeInMillis2), calendar.getTimeInMillis() - 1));
     }
 
     public static void B1(String str, ArrayList arrayList) {
@@ -89,7 +89,7 @@ public final class q0 extends ek0 implements b6 {
         if (trim.length() < 3) {
             return;
         }
-        if (gd.N0(2131745512, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
+        if (hd.N0(2131745512, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
             Calendar calendar = Calendar.getInstance();
             int i7 = calendar.get(1);
             int i10 = calendar.get(2);
@@ -97,10 +97,10 @@ public final class q0 extends ek0 implements b6 {
             calendar.set(i7, i10, i11, 0, 0, 0);
             long timeInMillis = calendar.getTimeInMillis();
             calendar.set(i7, i10, i11 + 1, 0, 0, 0);
-            arrayList.add(new m0(timeInMillis, gd.N0(2131745512, null), calendar.getTimeInMillis() - 1));
+            arrayList.add(new m0(timeInMillis, hd.N0(2131745512, null), calendar.getTimeInMillis() - 1));
             return;
         }
-        if (gd.N0(2131745511, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
+        if (hd.N0(2131745511, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
             Calendar calendar2 = Calendar.getInstance();
             int i12 = calendar2.get(1);
             int i13 = calendar2.get(2);
@@ -108,7 +108,7 @@ public final class q0 extends ek0 implements b6 {
             calendar2.set(i12, i13, i14, 0, 0, 0);
             long timeInMillis2 = calendar2.getTimeInMillis() - 86400000;
             calendar2.set(i12, i13, i14 + 1, 0, 0, 0);
-            arrayList.add(new m0(timeInMillis2, gd.N0(2131745511, null), calendar2.getTimeInMillis() - 86400001));
+            arrayList.add(new m0(timeInMillis2, hd.N0(2131745511, null), calendar2.getTimeInMillis() - 86400001));
             return;
         }
         Calendar calendar3 = Calendar.getInstance();
@@ -117,7 +117,7 @@ public final class q0 extends ek0 implements b6 {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
             for (int i16 = 0; i16 < 7; i16++) {
                 calendar3.set(7, i16);
-                if (gd.E0().B0().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
+                if (hd.E0().B0().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
                     i15 = i16;
                     break;
                 }
@@ -136,7 +136,7 @@ public final class q0 extends ek0 implements b6 {
             calendar4.set(i17, i18, i19, 0, 0, 0);
             long timeInMillis4 = calendar4.getTimeInMillis();
             calendar4.set(i17, i18, i19 + 1, 0, 0, 0);
-            arrayList.add(new m0(timeInMillis4, gd.E0().B0().format(timeInMillis4), calendar4.getTimeInMillis() - 1));
+            arrayList.add(new m0(timeInMillis4, hd.E0().B0().format(timeInMillis4), calendar4.getTimeInMillis() - 1));
             return;
         }
         Matcher matcher = o3.matcher(trim);
@@ -185,7 +185,7 @@ public final class q0 extends ek0 implements b6 {
                 calendar5.set(i20, parseInt4, parseInt3, 0, 0, 0);
                 long timeInMillis5 = calendar5.getTimeInMillis();
                 calendar5.set(i20, parseInt4, parseInt3 + 1, 0, 0, 0);
-                arrayList.add(new m0(timeInMillis5, gd.E0().D0().format(timeInMillis5), calendar5.getTimeInMillis() - 1));
+                arrayList.add(new m0(timeInMillis5, hd.E0().D0().format(timeInMillis5), calendar5.getTimeInMillis() - 1));
                 return;
             }
             return;
@@ -256,14 +256,14 @@ public final class q0 extends ek0 implements b6 {
                 long timeInMillis9 = calendar8.getTimeInMillis();
                 if (timeInMillis9 <= timeInMillis8) {
                     calendar8.add(2, 1);
-                    arrayList.add(new m0(timeInMillis9, gd.E0().v0().format(timeInMillis9), calendar8.getTimeInMillis() - 1));
+                    arrayList.add(new m0(timeInMillis9, hd.E0().v0().format(timeInMillis9), calendar8.getTimeInMillis() - 1));
                 }
             }
         }
     }
 
     public static int C1(String str) {
-        String[] strArr = {gd.N0(2131748893, null).toLowerCase(), gd.N0(2131750817, null).toLowerCase(), gd.N0(2131748490, null).toLowerCase(), gd.N0(2131754170, null).toLowerCase(), gd.N0(2131748469, null).toLowerCase(), gd.N0(2131748871, null).toLowerCase(), gd.N0(2131748873, null).toLowerCase(), gd.N0(2131753892, null).toLowerCase(), gd.N0(2131745369, null).toLowerCase(), gd.N0(2131747636, null).toLowerCase(), gd.N0(2131747641, null).toLowerCase(), gd.N0(2131751593, null).toLowerCase()};
+        String[] strArr = {hd.N0(2131748893, null).toLowerCase(), hd.N0(2131750817, null).toLowerCase(), hd.N0(2131748490, null).toLowerCase(), hd.N0(2131754170, null).toLowerCase(), hd.N0(2131748469, null).toLowerCase(), hd.N0(2131748871, null).toLowerCase(), hd.N0(2131748873, null).toLowerCase(), hd.N0(2131753892, null).toLowerCase(), hd.N0(2131745369, null).toLowerCase(), hd.N0(2131747636, null).toLowerCase(), hd.N0(2131747641, null).toLowerCase(), hd.N0(2131751593, null).toLowerCase()};
         String[] strArr2 = new String[12];
         Calendar calendar = Calendar.getInstance();
         for (int i7 = 1; i7 <= 12; i7++) {
@@ -297,9 +297,9 @@ public final class q0 extends ek0 implements b6 {
                     calendar.set(i13, i10, i7 + 2, 0, 0, 0);
                     long timeInMillis3 = calendar.getTimeInMillis() - 1;
                     if (i13 == i12) {
-                        arrayList.add(new m0(timeInMillis2, gd.E0().q0().format(timeInMillis2), timeInMillis3));
+                        arrayList.add(new m0(timeInMillis2, hd.E0().q0().format(timeInMillis2), timeInMillis3));
                     } else {
-                        arrayList.add(new m0(timeInMillis2, gd.E0().D0().format(timeInMillis2), timeInMillis3));
+                        arrayList.add(new m0(timeInMillis2, hd.E0().D0().format(timeInMillis2), timeInMillis3));
                     }
                 }
             }
@@ -319,7 +319,7 @@ public final class q0 extends ek0 implements b6 {
                 Object obj = arrayList.get(i7);
                 if (obj instanceof TLRPC.User) {
                     TLRPC.User user = (TLRPC.User) obj;
-                    o0 o0Var = new o0(R.drawable.search_users_filled, 4, j10.i(j10.t0).f().id == user.id ? gd.N0(2131745705, null) : i5.m(10, user.first_name, user.last_name));
+                    o0 o0Var = new o0(R.drawable.search_users_filled, 4, k10.i(k10.t0).f().id == user.id ? hd.N0(2131745705, null) : i5.m(10, user.first_name, user.last_name));
                     o0Var.f = user;
                     arrayList4.add(o0Var);
                 } else if (obj instanceof TLRPC.Chat) {

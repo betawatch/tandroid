@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class tg extends View {
     public oh0 E;
@@ -226,7 +226,7 @@ public final class tg extends View {
         if (this.G) {
             oh0 i12 = i();
             i12.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            i12.setAlpha(org.telegram.messenger.ks.e4);
+            i12.setAlpha(org.telegram.messenger.ls.e4);
             i12.draw(canvas);
             return;
         }

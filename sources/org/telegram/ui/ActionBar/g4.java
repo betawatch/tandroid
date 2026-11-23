@@ -2,10 +2,10 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.j10;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.k10;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class g4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,10 +20,10 @@ public final class g4 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                ks.f(j10.t0).d(new oi.c2(this, 13));
+                ls.f(k10.t0).d(new oi.c2(this, 13));
                 break;
             default:
-                ks.f(j10.t0).d(new oi.c2(this, 14));
+                ls.f(k10.t0).d(new oi.c2(this, 14));
                 break;
         }
     }

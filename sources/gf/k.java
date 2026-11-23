@@ -14,9 +14,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import kf.s;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class k implements lf.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -259,7 +259,7 @@ public final class k implements lf.a {
                         }
                     } else if (g10 != '`') {
                         switch (g10) {
-                            case ks.c1 /* 91 */:
+                            case ls.c1 /* 91 */:
                                 int i13 = this.f;
                                 this.f = i13 + 1;
                                 s sVar4 = new s("[");
@@ -271,7 +271,7 @@ public final class k implements lf.a {
                                 this.h = dVar2;
                                 pVar2 = sVar4;
                                 break;
-                            case ks.d1 /* 92 */:
+                            case ls.d1 /* 92 */:
                                 this.f++;
                                 if (g() == '\n') {
                                     sVar = new kf.g(1);
@@ -293,7 +293,7 @@ public final class k implements lf.a {
                                 }
                                 pVar2 = sVar;
                                 break;
-                            case ks.e1 /* 93 */:
+                            case ls.e1 /* 93 */:
                                 int i16 = this.f + 1;
                                 this.f = i16;
                                 d dVar3 = this.h;

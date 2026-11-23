@@ -6,9 +6,9 @@ import i2.p;
 import i2.q;
 import i2.r;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a {
     public boolean a;
@@ -58,7 +58,7 @@ public final class a {
         if (j3 != 2 && j3 != 0 && !i11) {
             fVar.L(3);
         }
-        this.a = ((j3 == 3 || j3 == 0) ? ks.e4 : fVar.j(8)) != 0;
+        this.a = ((j3 == 3 || j3 == 0) ? ls.e4 : fVar.j(8)) != 0;
     }
 
     public void a(boolean z10) {

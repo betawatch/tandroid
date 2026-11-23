@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class l0 extends org.telegram.ui.web.j1 {
     public final /* synthetic */ g4 C0;
@@ -114,10 +114,10 @@ public final class l0 extends org.telegram.ui.web.j1 {
             di.q qVar = this.c0;
             if (z10) {
                 int i10 = this.d0;
-                int i11 = org.telegram.messenger.bz.p0;
+                int i11 = org.telegram.messenger.cz.p0;
                 if (i10 != i11) {
                     this.d0 = i11;
-                    qVar.setHint(org.telegram.messenger.gd.a0(null, null, 2131754348, org.telegram.ui.web.e1.a().a));
+                    qVar.setHint(org.telegram.messenger.hd.a0(null, null, 2131754348, org.telegram.ui.web.e1.a().a));
                 }
             }
             qVar.setVisibility(0);

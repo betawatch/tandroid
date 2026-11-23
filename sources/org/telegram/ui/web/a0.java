@@ -2,14 +2,14 @@ package org.telegram.ui.web;
 
 import android.os.Bundle;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lc;
 import org.telegram.ui.bn;
 import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class a0 extends bn {
     public boolean vd;
@@ -32,6 +32,6 @@ public final class a0 extends bn {
             return;
         }
         this.vd = true;
-        lc.b0(this).I(R.raw.contact_check, gd.a0(null, null, 2131751727, o10.q(this.wd)), org.telegram.messenger.g0.T2(gd.a0(null, null, 2131751728, o10.q(this.yd.V)), new qx0(this, this.xd, 2))).j();
+        lc.b0(this).I(R.raw.contact_check, hd.a0(null, null, 2131751727, p10.q(this.wd)), org.telegram.messenger.g0.T2(hd.a0(null, null, 2131751728, p10.q(this.yd.V)), new qx0(this, this.xd, 2))).j();
     }
 }

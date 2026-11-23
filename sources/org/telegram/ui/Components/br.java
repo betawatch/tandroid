@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class br {
     public static boolean a(String str, String str2) {
@@ -38,7 +38,7 @@ public abstract class br {
         int i7 = 0;
         while (i7 < arrayList.size()) {
             String s5 = a8.p0.s(new StringBuilder("'"), (String) arrayList.get(i7), "'");
-            str2 = i7 == 0 ? s5 : i7 == arrayList.size() - 1 ? org.telegram.messenger.gd.a0(null, null, 2131751707, str2, s5) : org.telegram.messenger.gd.a0(null, null, 2131751709, str2, s5);
+            str2 = i7 == 0 ? s5 : i7 == arrayList.size() - 1 ? org.telegram.messenger.hd.a0(null, null, 2131751707, str2, s5) : org.telegram.messenger.hd.a0(null, null, 2131751709, str2, s5);
             i7++;
         }
         return str2;
@@ -65,25 +65,25 @@ public abstract class br {
             upperCase.getClass();
             switch (upperCase) {
                 case "OWNER_USERNAMES_LIMIT_EXCEEDED":
-                    return org.telegram.messenger.gd.a0(null, null, 2131751713, Integer.valueOf(((org.telegram.messenger.j0) org.telegram.messenger.mp.u1(i7).A7.S.b).c), b(treeSet));
+                    return org.telegram.messenger.hd.a0(null, null, 2131751713, Integer.valueOf(((org.telegram.messenger.j0) org.telegram.messenger.np.u1(i7).A7.S.b).c), b(treeSet));
                 case "PREMIUM_ACCOUNT_REQUIRED":
                     String c10 = c(str, treeSet);
-                    return org.telegram.messenger.g0.Q2(c10 == null ? org.telegram.messenger.gd.N0(2131751711, null) : org.telegram.messenger.gd.a0(null, null, 2131751712, c10), org.telegram.ui.ActionBar.m6.Xc, h6Var, iiVar, false);
+                    return org.telegram.messenger.g0.Q2(c10 == null ? org.telegram.messenger.hd.N0(2131751711, null) : org.telegram.messenger.hd.a0(null, null, 2131751712, c10), org.telegram.ui.ActionBar.m6.Xc, h6Var, iiVar, false);
                 case "ADDITIONAL_USERNAME_SUFFIX_MISSING":
-                    return org.telegram.messenger.gd.a0(null, null, 2131751710, b(treeSet));
+                    return org.telegram.messenger.hd.a0(null, null, 2131751710, b(treeSet));
                 case "USERNAME_INVALID":
-                    return org.telegram.messenger.gd.N0(2131743413, null);
+                    return org.telegram.messenger.hd.N0(2131743411, null);
                 case "USERNAME_PURCHASE_AVAILABLE":
                 case "USERNAME_OCCUPIED":
-                    return org.telegram.messenger.gd.N0(2131743415, null);
+                    return org.telegram.messenger.hd.N0(2131743413, null);
                 case "BOT_USERNAMES_LIMIT_EXCEEDED":
-                    return org.telegram.messenger.gd.N0(2131751716, null);
+                    return org.telegram.messenger.hd.N0(2131751716, null);
             }
         }
         return null;
     }
 
-    public static void e(Context context, int i7, TLRPC.User user, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot, boolean z10, org.telegram.messenger.x10 x10Var, org.telegram.ui.ActionBar.h6 h6Var, lc lcVar) {
+    public static void e(Context context, int i7, TLRPC.User user, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot, boolean z10, org.telegram.messenger.y10 y10Var, org.telegram.ui.ActionBar.h6 h6Var, lc lcVar) {
         String str;
         org.telegram.ui.Cells.j3 j3Var;
         hi.e eVar;
@@ -93,19 +93,19 @@ public abstract class br {
             if (lcVar == null) {
                 org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
                 if (T == null) {
-                    x10Var.a(null);
+                    y10Var.a(null);
                     return;
                 }
                 lcVar2 = lc.b0(T);
             } else {
                 lcVar2 = lcVar;
             }
-            lcVar2.Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), org.telegram.messenger.gd.a0(null, null, 2131751718, TextUtils.isEmpty(org.telegram.messenger.o10.o(user)) ? org.telegram.messenger.o10.q(user) : "@" + org.telegram.messenger.o10.o(user)))).j();
-            x10Var.a(null);
+            lcVar2.Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.xj, h6Var), org.telegram.messenger.hd.a0(null, null, 2131751718, TextUtils.isEmpty(org.telegram.messenger.p10.o(user)) ? org.telegram.messenger.p10.q(user) : "@" + org.telegram.messenger.p10.o(user)))).j();
+            y10Var.a(null);
             return;
         }
         TreeSet treeSet = new TreeSet();
-        HashSet<String> hashSet = ((org.telegram.messenger.o0) org.telegram.messenger.mp.u1(i7).A7.o0.b).c;
+        HashSet<String> hashSet = ((org.telegram.messenger.o0) org.telegram.messenger.np.u1(i7).A7.o0.b).c;
         if (hashSet != null) {
             for (String str2 : hashSet) {
                 if (!TextUtils.isEmpty(str2)) {
@@ -136,12 +136,12 @@ public abstract class br {
         TextView textView2 = new TextView(context);
         org.telegram.ui.ActionBar.t6.U(textView2, i10, h6Var);
         textView2.setTextSize(1, 14.0f);
-        String a02 = org.telegram.messenger.gd.a0(null, null, 2131751720, org.telegram.messenger.o10.q(user));
+        String a02 = org.telegram.messenger.hd.a0(null, null, 2131751720, org.telegram.messenger.p10.q(user));
         int i11 = org.telegram.ui.ActionBar.m6.Xc;
         textView2.setText(org.telegram.messenger.g0.Q2(a02, i11, h6Var, null, true));
         textView2.setGravity(17);
         arVar.addView(textView2, c8.ma.t(-1, -2, 55, 16, 0, 16, 22));
-        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.N0(2131751722, null), false, false, -1, h6Var);
+        org.telegram.ui.Cells.l3 l3Var = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.hd.N0(2131751722, null), false, false, -1, h6Var);
         org.telegram.ui.Cells.j3 j3Var2 = l3Var.d;
         j3Var2.setImeOptions(5);
         int L = org.telegram.messenger.g0.L(16.0f);
@@ -153,9 +153,9 @@ public abstract class br {
         l3Var.setText(tL_requestPeerTypeCreateBot.suggested_name);
         arVar.addView(l3Var, c8.ma.t(-1, -2, 55, 12, 0, 12, 0));
         org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(context, h6Var);
-        a9Var.setText(org.telegram.messenger.gd.N0(2131751721, null));
+        a9Var.setText(org.telegram.messenger.hd.N0(2131751721, null));
         arVar.addView(a9Var, c8.ma.t(-1, -2, 55, 9, 0, 9, 0));
-        org.telegram.ui.Cells.l3 l3Var2 = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.gd.N0(2131751717, null), false, false, 32, h6Var);
+        org.telegram.ui.Cells.l3 l3Var2 = new org.telegram.ui.Cells.l3(context, org.telegram.messenger.hd.N0(2131751717, null), false, false, 32, h6Var);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         org.telegram.ui.Cells.j3 j3Var3 = l3Var2.d;
@@ -176,7 +176,7 @@ public abstract class br {
         l3Var2.setBackground(d03);
         org.telegram.ui.ActionBar.t6.j(l3Var2, d03, M2, null, h6Var);
         j3Var3.setImeOptions(6);
-        j3Var3.setInputType(org.telegram.messenger.ks.b2);
+        j3Var3.setInputType(org.telegram.messenger.ls.b2);
         j3Var3.setSingleLine(true);
         String str3 = tL_requestPeerTypeCreateBot.suggested_username;
         if (str3 != null) {
@@ -205,10 +205,10 @@ public abstract class br {
         } else {
             str = null;
         }
-        eVar2.setText(org.telegram.messenger.gd.N0(2131752577, str));
+        eVar2.setText(org.telegram.messenger.hd.N0(2131752577, str));
         linearLayout2.addView(eVar2, c8.ma.q(0, 48, 119.0f, 1, 0, 0, 5, 0));
-        hi.e g10 = org.telegram.messenger.n10.g(24, context, h6Var, true);
-        g10.setText(org.telegram.messenger.gd.N0(2131751729, null));
+        hi.e g10 = org.telegram.messenger.o10.g(24, context, h6Var, true);
+        g10.setText(org.telegram.messenger.hd.N0(2131751729, null));
         linearLayout2.addView(g10, c8.ma.q(0, 48, 119.0f, 1, 5, 0, 0, 0));
         j3.U0 = false;
         j3.Q0 = true;
@@ -228,22 +228,22 @@ public abstract class br {
         org.telegram.ui.ii iiVar = new org.telegram.ui.ii(j3, i7, 11);
         String b10 = b(treeSet);
         if (TextUtils.isEmpty(b10)) {
-            Q2 = org.telegram.messenger.gd.N0(2131751714, null);
+            Q2 = org.telegram.messenger.hd.N0(2131751714, null);
             j3Var = j3Var3;
             eVar = eVar2;
         } else {
             j3Var = j3Var3;
             eVar = eVar2;
-            Q2 = org.telegram.messenger.g0.Q2(org.telegram.messenger.gd.a0(null, null, 2131751708, b10), i11, h6Var, iiVar, false);
+            Q2 = org.telegram.messenger.g0.Q2(org.telegram.messenger.hd.a0(null, null, 2131751708, b10), i11, h6Var, iiVar, false);
         }
         g gVar = new g(a9Var2, Q2, h6Var, 9);
-        bi.x4 x4Var = new bi.x4(iArr3, runnableArr, iArr2, i7, 23);
+        ai.b1 b1Var = new ai.b1(iArr3, runnableArr, iArr2, i7, 24);
         mf mfVar = new mf(23, l3Var2, treeSet);
-        xq xqVar = new xq(zArr2, iArr, x4Var, strArr, g10, l3Var2, treeSet, gVar, a9Var2, h6Var, iArr3, runnableArr, iArr2, i7, iiVar, j3);
+        xq xqVar = new xq(zArr2, iArr, b1Var, strArr, g10, l3Var2, treeSet, gVar, a9Var2, h6Var, iArr3, runnableArr, iArr2, i7, iiVar, j3);
         gVar.run();
         hi.e eVar3 = eVar;
         org.telegram.ui.Cells.j3 j3Var4 = j3Var;
-        yq yqVar = new yq(zArr2, iArr, l3Var2, treeSet, strArr, xqVar, l3Var, iArr4, x4Var, g10, z10, i7, user, zArr, x10Var, j3, iiVar, h6Var, a9Var2, context);
+        yq yqVar = new yq(zArr2, iArr, l3Var2, treeSet, strArr, xqVar, l3Var, iArr4, b1Var, g10, z10, i7, user, zArr, y10Var, j3, iiVar, h6Var, a9Var2, context);
         j3Var4.addTextChangedListener(new zq(mfVar, xqVar));
         mfVar.run();
         if (!TextUtils.isEmpty(str4)) {
@@ -253,7 +253,7 @@ public abstract class br {
         eVar3.setOnClickListener(new f3(j3, 2));
         g10.setEnabled(false);
         g10.setOnClickListener(new o0(yqVar, 10));
-        j3.setOnDismissListener(new ki.x3(zArr2, x4Var, zArr, x10Var, iArr, i7));
+        j3.setOnDismissListener(new ki.x3(zArr2, b1Var, zArr, y10Var, iArr, i7));
         j3.show();
     }
 }

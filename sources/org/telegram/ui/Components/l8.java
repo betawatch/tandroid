@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l8 implements org.telegram.ui.ActionBar.q1, lq {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class l8 implements org.telegram.ui.ActionBar.q1, l
             }
             y8Var.Z.f = i7;
         }
-        org.telegram.messenger.ks.e().k(org.telegram.messenger.ks.u4, new Object[0]);
+        org.telegram.messenger.ls.e().k(org.telegram.messenger.ls.u4, new Object[0]);
         y8Var.a.invalidate();
     }
 

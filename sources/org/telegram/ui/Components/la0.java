@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class la0 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class la0 implements Runnable {
             case 0:
                 ma0 ma0Var = this.b;
                 if (ma0Var.W != -1) {
-                    org.telegram.messenger.ks.f(ma0Var.Y.d0.x).j(ma0Var.W);
+                    org.telegram.messenger.ls.f(ma0Var.Y.d0.x).j(ma0Var.W);
                     ma0Var.W = -1;
                     break;
                 }
@@ -28,7 +28,7 @@ public final /* synthetic */ class la0 implements Runnable {
             default:
                 ma0 ma0Var2 = this.b;
                 if (ma0Var2.W != -1) {
-                    org.telegram.messenger.ks.f(ma0Var2.Y.d0.x).j(ma0Var2.W);
+                    org.telegram.messenger.ls.f(ma0Var2.Y.d0.x).j(ma0Var2.W);
                     ma0Var2.W = -1;
                     break;
                 }

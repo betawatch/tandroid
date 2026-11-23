@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class is0 extends org.telegram.ui.ActionBar.g2 {
     public final long a;
@@ -74,7 +74,7 @@ public final class is0 extends org.telegram.ui.ActionBar.g2 {
     }
 
     public final String b0() {
-        return org.telegram.messenger.gd.a0(null, null, 2131746879, ki.j.J0(getMessagesController().M6), String.valueOf(((int) (((this.r * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().f6)) / 100.0d));
+        return org.telegram.messenger.hd.a0(null, null, 2131746879, ki.j.J0(getMessagesController().M6), String.valueOf(((int) (((this.r * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().f6)) / 100.0d));
     }
 
     public final boolean c0() {
@@ -84,9 +84,9 @@ public final class is0 extends org.telegram.ui.ActionBar.g2 {
     @Override // org.telegram.ui.ActionBar.g2
     public final View createView(Context context) {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.gd.N0(2131746902, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.hd.N0(2131746902, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new hs0(this, 0));
-        this.e = this.simpleActionBar.s(org.telegram.messenger.gd.N0(2131745750, null));
+        this.e = this.simpleActionBar.s(org.telegram.messenger.hd.N0(2131745750, null));
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
@@ -119,7 +119,7 @@ public final class is0 extends org.telegram.ui.ActionBar.g2 {
         }
         this.e.b(true);
         TL_stars.updatePaidMessagesPrice updatepaidmessagesprice = new TL_stars.updatePaidMessagesPrice();
-        org.telegram.messenger.mp messagesController = getMessagesController();
+        org.telegram.messenger.np messagesController = getMessagesController();
         long j3 = this.a;
         updatepaidmessagesprice.channel = messagesController.j1(j3);
         boolean z10 = this.n;
@@ -177,12 +177,12 @@ public final class is0 extends org.telegram.ui.ActionBar.g2 {
         int i7 = 0;
         if (z10) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String N0 = org.telegram.messenger.gd.N0(2131743592, null);
+            String N0 = org.telegram.messenger.hd.N0(2131743590, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = org.telegram.messenger.gd.N0(2131748277, null);
-            alertDialog$Builder.k(org.telegram.messenger.gd.N0(2131754213, null), new gs0(this, i7));
-            alertDialog$Builder.h(org.telegram.messenger.gd.N0(2131751394, null), new gs0(this, 1));
+            t1Var.U = org.telegram.messenger.hd.N0(2131748277, null);
+            alertDialog$Builder.k(org.telegram.messenger.hd.N0(2131754213, null), new gs0(this, i7));
+            alertDialog$Builder.h(org.telegram.messenger.hd.N0(2131751394, null), new gs0(this, 1));
             showDialog(t1Var);
         }
         return false;

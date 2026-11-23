@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.du0;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.sh0;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class t8 extends du0 {
     public float g0;
@@ -370,7 +370,7 @@ public final class t8 extends du0 {
                                     f21 = f20;
                                 } else {
                                     if (c9Var != null && (e7Var2 = c9Var.m) != null && e7Var2.w) {
-                                        canvas.saveLayerAlpha(rectF11.left - org.telegram.messenger.g0.L(4.0f), rectF11.top - org.telegram.messenger.g0.L(4.0f), rectF11.right + org.telegram.messenger.g0.L(4.0f), rectF11.bottom + org.telegram.messenger.g0.L(4.0f), ks.e4, 31);
+                                        canvas.saveLayerAlpha(rectF11.left - org.telegram.messenger.g0.L(4.0f), rectF11.top - org.telegram.messenger.g0.L(4.0f), rectF11.right + org.telegram.messenger.g0.L(4.0f), rectF11.bottom + org.telegram.messenger.g0.L(4.0f), ls.e4, 31);
                                     }
                                     t3Var2.getImageReceiver().A0(rectF11);
                                     t3Var2.getImageReceiver().J0((int) org.telegram.messenger.g0.T1(rectF11.width() / 2.0f, ((c9Var == null || c9Var.b == null) ? null : Integer.valueOf((int) (c9Var.b.X0[0] * ((!c9Var.n || (view = c9Var.a) == null || view.getParent() == null) ? 1.0f : ((ViewGroup) c9Var.a.getParent()).getScaleY())))) != null ? r4.intValue() : rectF11.width() / 2.0f, 1.0f - f9Var.V));
@@ -759,11 +759,11 @@ public final class t8 extends du0 {
             org.telegram.messenger.g0.Z2(g2Var.getParentActivity(), g2Var.getClassGuid());
         }
         setTag(R.id.bulletin_delegate_tag, new s8(this));
-        ks.f(f9Var.h).c(f9Var, ks.A5);
-        ks.f(f9Var.h).c(f9Var, ks.y5);
-        ks.f(f9Var.h).c(f9Var, ks.d1);
-        ks.f(f9Var.h).c(f9Var, ks.c1);
-        ks.f(f9Var.h).c(f9Var, ks.z5);
+        ls.f(f9Var.h).c(f9Var, ls.A5);
+        ls.f(f9Var.h).c(f9Var, ls.y5);
+        ls.f(f9Var.h).c(f9Var, ls.d1);
+        ls.f(f9Var.h).c(f9Var, ls.c1);
+        ls.f(f9Var.h).c(f9Var, ls.z5);
     }
 
     @Override // org.telegram.ui.Components.du0, android.view.ViewGroup, android.view.View
@@ -771,11 +771,11 @@ public final class t8 extends du0 {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
         f9 f9Var = this.s0;
-        ks.f(f9Var.h).n(f9Var, ks.A5);
-        ks.f(f9Var.h).n(f9Var, ks.y5);
-        ks.f(f9Var.h).n(f9Var, ks.d1);
-        ks.f(f9Var.h).n(f9Var, ks.c1);
-        ks.f(f9Var.h).n(f9Var, ks.z5);
+        ls.f(f9Var.h).n(f9Var, ls.A5);
+        ls.f(f9Var.h).n(f9Var, ls.y5);
+        ls.f(f9Var.h).n(f9Var, ls.d1);
+        ls.f(f9Var.h).n(f9Var, ls.c1);
+        ls.f(f9Var.h).n(f9Var, ls.z5);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:129:0x0188  */
@@ -829,7 +829,7 @@ public final class t8 extends du0 {
             if (f9Var.a1 && f9Var.l0 && !f9Var.f1 && !f9Var.k0 && (y3Var = f9Var.G0) != null && ((e9) y3Var.c) != null && (currentPeerView2 = f9Var.o0.getCurrentPeerView()) != null && (x3Var = currentPeerView2.y1) != null && x3Var.b == null && x3Var.e) {
                 long j3 = currentPeerView2.B2;
                 if (j3 <= 0 && (storyItem = x3Var.a) != null && (messageMedia = storyItem.media) != null && (document = messageMedia.document) != null) {
-                    j3 = (long) (fj.H0(document) * 1000.0d);
+                    j3 = (long) (gj.H0(document) * 1000.0d);
                 }
                 if (j3 > 0) {
                     float x11 = motionEvent.getX();

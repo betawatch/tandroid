@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qg extends k1.b {
     public final /* synthetic */ rg o;
@@ -51,7 +51,7 @@ public final class qg extends k1.b {
             RectF rectF = chatActivityEnterView.I4;
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
             cVar.h(chatActivityEnterView.K4);
-            cVar.o(org.telegram.messenger.gd.N0(chatActivityEnterView.f5 > 0.5f ? 2131754927 : 2131754930, null));
+            cVar.o(org.telegram.messenger.hd.N0(chatActivityEnterView.f5 > 0.5f ? 2131754927 : 2131754930, null));
             return;
         }
         if (i7 == 4) {
@@ -59,7 +59,7 @@ public final class qg extends k1.b {
             RectF rectF2 = rgVar.K;
             rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
             cVar.h(chatActivityEnterView.K4);
-            cVar.o(org.telegram.messenger.gd.N0(chatActivityEnterView.P ? 2131754934 : 2131754935, null));
+            cVar.o(org.telegram.messenger.hd.N0(chatActivityEnterView.P ? 2131754934 : 2131754935, null));
         }
     }
 }

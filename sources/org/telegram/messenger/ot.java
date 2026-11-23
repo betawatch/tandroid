@@ -1,45 +1,44 @@
 package org.telegram.messenger;
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import org.telegram.tgnet.SerializedData;
+import android.text.TextUtils;
+import org.telegram.messenger.PushListenerController;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public abstract class ot {
-    public static final long[] a;
+public final class ot implements PushListenerController.IPushListenerServiceProvider {
+    public static final ot b = new ot();
+    public Boolean a;
 
-    static {
-        try {
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(t0.b.getResources().getAssets().open("lottie_meta.bin"));
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final String getLogTitle() {
+        return "Google Play Services";
+    }
+
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final int getPushType() {
+        return 2;
+    }
+
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final boolean hasServices() {
+        if (this.a == null) {
             try {
-                int available = bufferedInputStream.available();
-                if (available % 8 != 0) {
-                    throw new IllegalStateException("lottie_meta.bin has invalid size: " + available);
-                }
-                int i7 = available / 8;
-                long[] jArr = new long[i7];
-                SerializedData serializedData = new SerializedData(bufferedInputStream);
-                for (int i10 = 0; i10 < i7; i10++) {
-                    jArr[i10] = serializedData.readInt64(true);
-                }
-                bufferedInputStream.close();
-                a = jArr;
-            } catch (Throwable th2) {
-                try {
-                    bufferedInputStream.close();
-                } catch (Throwable th3) {
-                    th2.addSuppressed(th3);
-                }
-                throw th2;
+                this.a = Boolean.valueOf(n6.d.e.d(t0.b, n6.e.a) == 0);
+            } catch (Exception e10) {
+                a8.g(e10, true);
+                this.a = Boolean.FALSE;
             }
-        } catch (IOException e10) {
-            throw new RuntimeException("Unable to load lottie_meta.bin", e10);
-        } catch (RuntimeException e11) {
-            if (s2.a) {
-                a8.e("Unable to load lottie_meta.bin", e11);
-            }
-            throw e11;
         }
+        return this.a.booleanValue();
+    }
+
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final void onRequestPushToken() {
+        if (!TextUtils.isEmpty(cz.g)) {
+            boolean z10 = s2.a;
+        } else if (s2.a) {
+            a8.b("FCM Registration not found.");
+        }
+        Utilities.e.c(new yr(this, 3));
     }
 }

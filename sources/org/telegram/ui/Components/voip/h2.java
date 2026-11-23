@@ -16,9 +16,9 @@ import c8.nd;
 import hi.j3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.me;
@@ -26,9 +26,9 @@ import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.q31;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class h2 implements VoIPService.StateListener, fs {
+public final class h2 implements VoIPService.StateListener, gs {
     public static boolean T = false;
     public static h2 U;
     public static h2 V;
@@ -97,12 +97,12 @@ public final class h2 implements VoIPService.StateListener, fs {
             ImageView imageView = new ImageView(context);
             imageView.setImageResource(R.drawable.pip_close);
             imageView.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-            imageView.setContentDescription(gd.N0(2131752029, null));
+            imageView.setContentDescription(hd.N0(2131752029, null));
             g2Var.addView(imageView, ma.d(40, 40.0f, 53, 4.0f, 4.0f, 4.0f, 0.0f));
             ImageView imageView2 = new ImageView(context);
             imageView2.setImageResource(R.drawable.pip_enlarge);
             imageView2.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-            imageView2.setContentDescription(gd.N0(2131747623, null));
+            imageView2.setContentDescription(hd.N0(2131747623, null));
             g2Var.addView(imageView2, ma.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new bi.o(19));
             imageView2.setOnClickListener(new q31(6, this, context));
@@ -202,7 +202,7 @@ public final class h2 implements VoIPService.StateListener, fs {
         layoutParams2.x = (int) (((((f16 - L) - L2) - f18) * f14) - (h2Var3.F - L));
         layoutParams2.y = (int) (((((f17 - L3) - L4) - f19) * f15) - (h2Var3.G - L3));
         org.telegram.messenger.g0.R3(h2Var3.c, h2Var3.a, layoutParams2);
-        ks.e().b(U, ks.D2);
+        ls.e().b(U, ls.D2);
         windowManager.addView(U.a, layoutParams);
         U.r.d.init(VideoCapturerDevice.eglBase.getEglBaseContext(), null);
         U.s.d.init(VideoCapturerDevice.eglBase.getEglBaseContext(), U.S);
@@ -261,12 +261,12 @@ public final class h2 implements VoIPService.StateListener, fs {
                 a8.g(th2, true);
             }
         }
-        ks.e().n(this, ks.D2);
+        ls.e().n(this, ls.D2);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.D2) {
+        if (i7 == ls.D2) {
             b();
         }
     }

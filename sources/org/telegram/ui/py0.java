@@ -6,7 +6,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class py0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public int a;
@@ -29,18 +29,18 @@ public final class py0 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.e = frameLayout;
         frameLayout.setPadding(0, org.telegram.messenger.g0.m, 0, 0);
         frameLayout.setClipToPadding(true);
-        addView(frameLayout, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        addView(frameLayout, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
         int i7 = qy0.w1;
         di.n4 n4Var = new di.n4(context, qy0Var.J0);
         TextView textView = (TextView) n4Var.c;
         this.h = n4Var;
         n4Var.e = new my0(this, 0);
         if (qy0Var.p1) {
-            textView.setText(org.telegram.messenger.gd.N0(2131746038, null));
+            textView.setText(org.telegram.messenger.hd.N0(2131746038, null));
         } else if (qy0Var.q1) {
-            textView.setText(org.telegram.messenger.gd.N0(2131745999, null));
+            textView.setText(org.telegram.messenger.hd.N0(2131745999, null));
         } else {
-            textView.setText(org.telegram.messenger.gd.N0(2131746047, null));
+            textView.setText(org.telegram.messenger.hd.N0(2131746047, null));
         }
         ((org.telegram.ui.ActionBar.x1) n4Var.d).a(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, qy0Var.J0));
         org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.h5, n4Var, qy0Var.J0);

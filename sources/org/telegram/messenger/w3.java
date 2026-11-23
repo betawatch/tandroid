@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w3 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,10 +50,10 @@ public final /* synthetic */ class w3 implements Runnable {
             i5Var.g0.put(Long.valueOf(user.id), tL_contact);
         }
         i5Var.d(true);
-        ks notificationCenter = i5Var.getNotificationCenter();
-        int i7 = mp.I8;
-        notificationCenter.k(ks.r, 1);
-        i5Var.getNotificationCenter().k(ks.O, new Object[0]);
+        ls notificationCenter = i5Var.getNotificationCenter();
+        int i7 = np.I8;
+        notificationCenter.k(ls.r, 1);
+        i5Var.getNotificationCenter().k(ls.O, new Object[0]);
     }
 
     private final void b() {
@@ -73,7 +73,7 @@ public final /* synthetic */ class w3 implements Runnable {
                         accountArr = accountsByType;
                         break;
                     }
-                    TLRPC.User f10 = j10.i(i10).f();
+                    TLRPC.User f10 = k10.i(i10).f();
                     if (f10 != null) {
                         String str = account.name;
                         StringBuilder sb2 = new StringBuilder();
@@ -116,7 +116,7 @@ public final /* synthetic */ class w3 implements Runnable {
         i5Var.k0.clear();
         i5Var.l0.clear();
         i5Var.m0.clear();
-        i5Var.getNotificationCenter().k(ks.O, new Object[0]);
+        i5Var.getNotificationCenter().k(ls.O, new Object[0]);
         i5Var.A(0L, false);
         mt0Var.run();
     }
@@ -171,14 +171,14 @@ public final /* synthetic */ class w3 implements Runnable {
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                ks f10 = ks.f(((f4) obj2).currentAccount);
+                ls f10 = ls.f(((f4) obj2).currentAccount);
                 Boolean bool = Boolean.FALSE;
                 f10.k(30, (TLRPC.ChatFull) obj, 0, bool, bool);
                 return;
             case 1:
                 i5 i5Var = (i5) obj2;
                 i5Var.E = false;
-                SharedPreferences.Editor edit = mp.u1(i5Var.currentAccount).h7.edit();
+                SharedPreferences.Editor edit = np.u1(i5Var.currentAccount).h7.edit();
                 String str = ((TLRPC.TL_help_inviteText) obj).message;
                 i5Var.y = str;
                 edit.putString("invitelink", str);
@@ -216,7 +216,7 @@ public final /* synthetic */ class w3 implements Runnable {
                         }
                         i11++;
                     }
-                    SharedPreferences.Editor edit2 = mp.u1(a6Var.currentAccount).h7.edit();
+                    SharedPreferences.Editor edit2 = np.u1(a6Var.currentAccount).h7.edit();
                     edit2.putString("mobilePreset", z5Var3.toString());
                     edit2.putString("wifiPreset", z5Var2.toString());
                     edit2.putString("roamingPreset", z5Var.toString());
@@ -238,12 +238,12 @@ public final /* synthetic */ class w3 implements Runnable {
                     SQLitePreparedStatement executeFast = a6Var2.getMessagesStorage().b.executeFast("DELETE FROM downloading_documents WHERE hash = ? AND id = ?");
                     for (int i12 = 0; i12 < arrayList2.size(); i12++) {
                         executeFast.requery();
-                        executeFast.bindInteger(1, ((fj) arrayList2.get(i12)).F0().dc_id);
-                        executeFast.bindLong(2, ((fj) arrayList2.get(i12)).F0().id);
+                        executeFast.bindInteger(1, ((gj) arrayList2.get(i12)).F0().dc_id);
+                        executeFast.bindLong(2, ((gj) arrayList2.get(i12)).F0().id);
                         executeFast.step();
                         try {
                             w7.G(a6Var2.currentAccount);
-                            w7.M(((fj) arrayList2.get(i12)).k, false, true).delete();
+                            w7.M(((gj) arrayList2.get(i12)).k, false, true).delete();
                         } catch (Exception e10) {
                             a8.g(e10, true);
                         }
@@ -255,12 +255,12 @@ public final /* synthetic */ class w3 implements Runnable {
                     return;
                 }
             case 4:
-                mp.u1(((u9) obj2).currentAccount).V3(((TLRPC.TL_payments_paymentResult) obj).updates, false);
+                np.u1(((v9) obj2).currentAccount).V3(((TLRPC.TL_payments_paymentResult) obj).updates, false);
                 return;
             case 5:
-                mp mpVar = (mp) obj2;
+                np npVar = (np) obj2;
                 TLRPC.Message message = (TLRPC.Message) obj;
-                zy sendMessagesHelper = mpVar.getSendMessagesHelper();
+                az sendMessagesHelper = npVar.getSendMessagesHelper();
                 sendMessagesHelper.getClass();
                 if (message != null && message.reply_markup != null) {
                     List list = (List) sendMessagesHelper.s.remove(message.dialog_id + "_" + message.id);
@@ -278,18 +278,18 @@ public final /* synthetic */ class w3 implements Runnable {
                 if (messageAction instanceof TLRPC.TL_messageActionWalletTonConnectRequest) {
                     TLRPC.TL_messageActionWalletTonConnectRequest tL_messageActionWalletTonConnectRequest = (TLRPC.TL_messageActionWalletTonConnectRequest) messageAction;
                     if (tL_messageActionWalletTonConnectRequest.accepted || tL_messageActionWalletTonConnectRequest.declined) {
-                        org.telegram.ui.Wallet.u0.D(mpVar.currentAccount).g.o(message.id, tL_messageActionWalletTonConnectRequest.session_id);
+                        org.telegram.ui.Wallet.u0.D(npVar.currentAccount).g.o(message.id, tL_messageActionWalletTonConnectRequest.session_id);
                         return;
                     }
                     return;
                 }
                 return;
             case 6:
-                mp mpVar2 = (mp) obj2;
-                mpVar2.getClass();
-                gd E0 = gd.E0();
+                np npVar2 = (np) obj2;
+                npVar2.getClass();
+                hd E0 = hd.E0();
                 TLRPC.TL_langPackDifference tL_langPackDifference = ((TL_update.TL_updateLangPack) obj).difference;
-                int i13 = mpVar2.currentAccount;
+                int i13 = npVar2.currentAccount;
                 if (E0.B == null) {
                     return;
                 }
@@ -300,69 +300,69 @@ public final /* synthetic */ class w3 implements Runnable {
                 }
                 return;
             case 7:
-                gd.E0().a1(((mp) obj2).currentAccount, ((TL_update.TL_updateLangPackTooLong) obj).lang_code, false, null);
+                hd.E0().a1(((np) obj2).currentAccount, ((TL_update.TL_updateLangPackTooLong) obj).lang_code, false, null);
                 return;
             case 8:
-                mp mpVar3 = (mp) obj2;
+                np npVar3 = (np) obj2;
                 TLRPC.TL_config tL_config = (TLRPC.TL_config) obj;
-                mpVar3.getDownloadController().s(false);
-                mpVar3.X2(true);
-                mpVar3.M(true);
-                mpVar3.l4 = true;
-                mpVar3.a3 = tL_config.megagroup_size_max;
-                mpVar3.Y2 = tL_config.chat_size_max;
-                mpVar3.b3 = tL_config.edit_time_limit;
-                mpVar3.c3 = tL_config.rating_e_decay;
-                mpVar3.g3 = tL_config.stickers_recent_limit;
-                mpVar3.d3 = tL_config.revoke_time_limit;
-                mpVar3.e3 = tL_config.revoke_pm_time_limit;
-                mpVar3.f3 = tL_config.revoke_pm_inbox;
-                mpVar3.m4 = tL_config.fpnv_allowed;
+                npVar3.getDownloadController().s(false);
+                npVar3.X2(true);
+                npVar3.M(true);
+                npVar3.l4 = true;
+                npVar3.a3 = tL_config.megagroup_size_max;
+                npVar3.Y2 = tL_config.chat_size_max;
+                npVar3.b3 = tL_config.edit_time_limit;
+                npVar3.c3 = tL_config.rating_e_decay;
+                npVar3.g3 = tL_config.stickers_recent_limit;
+                npVar3.d3 = tL_config.revoke_time_limit;
+                npVar3.e3 = tL_config.revoke_pm_time_limit;
+                npVar3.f3 = tL_config.revoke_pm_inbox;
+                npVar3.m4 = tL_config.fpnv_allowed;
                 String str2 = tL_config.me_url_prefix;
-                mpVar3.X2 = str2;
+                npVar3.X2 = str2;
                 boolean z10 = tL_config.force_try_ipv6;
                 if (str2.endsWith("/")) {
-                    mpVar3.X2 = com.google.android.gms.internal.vision.e2.k(mpVar3.X2, 1, 0);
+                    npVar3.X2 = com.google.android.gms.internal.vision.e2.k(npVar3.X2, 1, 0);
                 }
-                if (mpVar3.X2.startsWith("https://")) {
-                    mpVar3.X2 = mpVar3.X2.substring(8);
-                } else if (mpVar3.X2.startsWith("http://")) {
-                    mpVar3.X2 = mpVar3.X2.substring(7);
+                if (npVar3.X2.startsWith("https://")) {
+                    npVar3.X2 = npVar3.X2.substring(8);
+                } else if (npVar3.X2.startsWith("http://")) {
+                    npVar3.X2 = npVar3.X2.substring(7);
                 }
-                mpVar3.j3 = tL_config.call_receive_timeout_ms;
-                mpVar3.k3 = tL_config.call_ring_timeout_ms;
-                mpVar3.l3 = tL_config.call_connect_timeout_ms;
-                mpVar3.m3 = tL_config.call_packet_timeout_ms;
-                mpVar3.w3 = tL_config.message_length_max;
-                mpVar3.x3 = tL_config.caption_length_max;
-                mpVar3.C3 = tL_config.preload_featured_stickers;
+                npVar3.j3 = tL_config.call_receive_timeout_ms;
+                npVar3.k3 = tL_config.call_ring_timeout_ms;
+                npVar3.l3 = tL_config.call_connect_timeout_ms;
+                npVar3.m3 = tL_config.call_packet_timeout_ms;
+                npVar3.w3 = tL_config.message_length_max;
+                npVar3.x3 = tL_config.caption_length_max;
+                npVar3.C3 = tL_config.preload_featured_stickers;
                 String str3 = tL_config.gif_search_username;
                 if (str3 != null) {
-                    mpVar3.N3 = str3;
+                    npVar3.N3 = str3;
                 }
-                if (mpVar3.O3 != null) {
-                    mpVar3.O3 = tL_config.img_search_username;
+                if (npVar3.O3 != null) {
+                    npVar3.O3 = tL_config.img_search_username;
                 }
-                mpVar3.B3 = tL_config.blocked_mode;
-                mpVar3.P3 = tL_config.dc_txt_domain_name;
-                mpVar3.Q3 = tL_config.webfile_dc_id;
+                npVar3.B3 = tL_config.blocked_mode;
+                npVar3.P3 = tL_config.dc_txt_domain_name;
+                npVar3.Q3 = tL_config.webfile_dc_id;
                 String str4 = tL_config.suggested_lang_code;
                 if (str4 != null) {
-                    String str5 = mpVar3.R3;
+                    String str5 = npVar3.R3;
                     boolean z11 = str5 == null || !str5.equals(str4);
-                    mpVar3.R3 = tL_config.suggested_lang_code;
+                    npVar3.R3 = tL_config.suggested_lang_code;
                     if (z11) {
-                        gd.E0().W0(mpVar3.currentAccount, true);
+                        hd.E0().W0(npVar3.currentAccount, true);
                     }
                 }
-                org.telegram.ui.ActionBar.m6.m1(mpVar3.currentAccount, false);
+                org.telegram.ui.ActionBar.m6.m1(npVar3.currentAccount, false);
                 org.telegram.ui.ActionBar.m6.G(false);
                 if (tL_config.static_maps_provider == null) {
                     tL_config.static_maps_provider = "telegram";
                 }
-                mpVar3.v3 = null;
-                mpVar3.p3 = 2;
-                mpVar3.q3 = 0;
+                npVar3.v3 = null;
+                npVar3.p3 = 2;
+                npVar3.q3 = 0;
                 p5.c.s(tL_config.static_maps_provider, new StringBuilder("map providers = "));
                 String[] split = tL_config.static_maps_provider.split(",");
                 for (int i14 = 0; i14 < split.length; i14++) {
@@ -373,83 +373,83 @@ public final /* synthetic */ class w3 implements Runnable {
                             if ("yandex".equals(split3[0])) {
                                 if (i14 == 0) {
                                     if (split2.length > 1) {
-                                        mpVar3.p3 = 3;
+                                        npVar3.p3 = 3;
                                     } else {
-                                        mpVar3.p3 = 1;
+                                        npVar3.p3 = 1;
                                     }
                                 }
-                                mpVar3.q3 |= 4;
+                                npVar3.q3 |= 4;
                             } else if ("google".equals(split3[0])) {
                                 if (i14 == 0 && split2.length > 1) {
-                                    mpVar3.p3 = 4;
+                                    npVar3.p3 = 4;
                                 }
-                                mpVar3.q3 |= 1;
+                                npVar3.q3 |= 1;
                             } else if ("telegram".equals(split3[0])) {
                                 if (i14 == 0) {
-                                    mpVar3.p3 = 2;
+                                    npVar3.p3 = 2;
                                 }
-                                mpVar3.q3 |= 2;
+                                npVar3.q3 |= 2;
                             }
                             if (split3.length > 1) {
-                                mpVar3.v3 = split3[1];
+                                npVar3.v3 = split3[1];
                             }
                         }
                     }
                 }
-                SharedPreferences.Editor edit3 = mpVar3.h7.edit();
-                edit3.putBoolean("remoteConfigLoaded", mpVar3.l4);
-                edit3.putInt("maxGroupCount", mpVar3.Y2);
-                edit3.putInt("maxMegagroupCount", mpVar3.a3);
-                edit3.putInt("maxEditTime", mpVar3.b3);
-                edit3.putInt("ratingDecay", mpVar3.c3);
-                edit3.putInt("maxRecentGifsCount", mpVar3.i3);
-                edit3.putInt("maxRecentStickersCount", mpVar3.g3);
-                edit3.putInt("maxFaveStickersCount", mpVar3.h3);
-                edit3.putInt("callReceiveTimeout", mpVar3.j3);
-                edit3.putInt("callRingTimeout", mpVar3.k3);
-                edit3.putInt("callConnectTimeout", mpVar3.l3);
-                edit3.putInt("callPacketTimeout", mpVar3.m3);
-                edit3.putString("linkPrefix", mpVar3.X2);
-                edit3.putInt("maxFolderPinnedDialogsCountDefault", mpVar3.n3);
-                edit3.putInt("maxFolderPinnedDialogsCountPremium", mpVar3.o3);
-                edit3.putInt("maxMessageLength", mpVar3.w3);
-                edit3.putInt("maxCaptionLength", mpVar3.x3);
-                edit3.putBoolean("preloadFeaturedStickers", mpVar3.C3);
-                edit3.putInt("revokeTimeLimit", mpVar3.d3);
-                edit3.putInt("revokeTimePmLimit", mpVar3.e3);
-                edit3.putInt("mapProvider", mpVar3.p3);
-                String str6 = mpVar3.v3;
+                SharedPreferences.Editor edit3 = npVar3.h7.edit();
+                edit3.putBoolean("remoteConfigLoaded", npVar3.l4);
+                edit3.putInt("maxGroupCount", npVar3.Y2);
+                edit3.putInt("maxMegagroupCount", npVar3.a3);
+                edit3.putInt("maxEditTime", npVar3.b3);
+                edit3.putInt("ratingDecay", npVar3.c3);
+                edit3.putInt("maxRecentGifsCount", npVar3.i3);
+                edit3.putInt("maxRecentStickersCount", npVar3.g3);
+                edit3.putInt("maxFaveStickersCount", npVar3.h3);
+                edit3.putInt("callReceiveTimeout", npVar3.j3);
+                edit3.putInt("callRingTimeout", npVar3.k3);
+                edit3.putInt("callConnectTimeout", npVar3.l3);
+                edit3.putInt("callPacketTimeout", npVar3.m3);
+                edit3.putString("linkPrefix", npVar3.X2);
+                edit3.putInt("maxFolderPinnedDialogsCountDefault", npVar3.n3);
+                edit3.putInt("maxFolderPinnedDialogsCountPremium", npVar3.o3);
+                edit3.putInt("maxMessageLength", npVar3.w3);
+                edit3.putInt("maxCaptionLength", npVar3.x3);
+                edit3.putBoolean("preloadFeaturedStickers", npVar3.C3);
+                edit3.putInt("revokeTimeLimit", npVar3.d3);
+                edit3.putInt("revokeTimePmLimit", npVar3.e3);
+                edit3.putInt("mapProvider", npVar3.p3);
+                String str6 = npVar3.v3;
                 if (str6 != null) {
                     edit3.putString("pk", str6);
                 } else {
                     edit3.remove("pk");
                 }
-                edit3.putBoolean("canRevokePmInbox", mpVar3.f3);
-                edit3.putBoolean("fpnvAllowed", mpVar3.m4);
-                edit3.putBoolean("blockedCountry", mpVar3.B3);
-                edit3.putString("gifSearchBot", mpVar3.N3);
-                edit3.putString("imageSearchBot", mpVar3.O3);
-                edit3.putString("dcDomainName2", mpVar3.P3);
-                edit3.putInt("webFileDatacenterId", mpVar3.Q3);
-                edit3.putString("suggestedLangCode", mpVar3.R3);
+                edit3.putBoolean("canRevokePmInbox", npVar3.f3);
+                edit3.putBoolean("fpnvAllowed", npVar3.m4);
+                edit3.putBoolean("blockedCountry", npVar3.B3);
+                edit3.putString("gifSearchBot", npVar3.N3);
+                edit3.putString("imageSearchBot", npVar3.O3);
+                edit3.putString("dcDomainName2", npVar3.P3);
+                edit3.putInt("webFileDatacenterId", npVar3.Q3);
+                edit3.putString("suggestedLangCode", npVar3.R3);
                 edit3.putBoolean("forceTryIpV6", z10);
                 String str7 = tL_config.autologin_token;
-                mpVar3.i4 = str7;
+                npVar3.i4 = str7;
                 edit3.putString("autologinToken", str7);
                 edit3.commit();
-                mpVar3.getConnectionsManager().setForceTryIpV6(z10);
-                gd E02 = gd.E0();
-                int i15 = mpVar3.currentAccount;
+                npVar3.getConnectionsManager().setForceTryIpV6(z10);
+                hd E02 = hd.E0();
+                int i15 = npVar3.currentAccount;
                 int i16 = tL_config.lang_pack_version;
                 int i17 = tL_config.base_lang_pack_version;
-                cd cdVar = E02.B;
-                if (cdVar != null && (cdVar.i() || E02.B.j())) {
+                dd ddVar = E02.B;
+                if (ddVar != null && (ddVar.i() || E02.B.j())) {
                     if (E02.B.g()) {
                         if (E02.B.i < i17) {
                             a8.b("LocaleController checkUpdateForCurrentRemoteLocale base version is out of date, applying (local is " + E02.B.i + ", remote is " + i17 + ")");
                             E02.P = true;
-                            cd cdVar2 = E02.B;
-                            E02.f(cdVar2, cdVar2.e, false, i15, new tc(E02, i15, 0));
+                            dd ddVar2 = E02.B;
+                            E02.f(ddVar2, ddVar2.e, false, i15, new uc(E02, i15, 0));
                         } else {
                             a8.b("LocaleController checkUpdateForCurrentRemoteLocale base version is up to date (local is " + E02.B.i + ", remote is " + i17 + ")");
                         }
@@ -457,88 +457,88 @@ public final /* synthetic */ class w3 implements Runnable {
                     if (E02.B.h < i16) {
                         a8.b("LocaleController checkUpdateForCurrentRemoteLocale version is out of date, applying (local is " + E02.B.h + ", remote is " + i16 + ")");
                         E02.P = true;
-                        cd cdVar3 = E02.B;
-                        E02.f(cdVar3, cdVar3.c, false, i15, new tc(E02, i15, 1));
+                        dd ddVar3 = E02.B;
+                        E02.f(ddVar3, ddVar3.c, false, i15, new uc(E02, i15, 1));
                     } else {
                         a8.b("LocaleController checkUpdateForCurrentRemoteLocale version is up to date (local is " + E02.B.h + ", remote is " + i16 + ")");
                     }
                 }
-                mpVar3.getNotificationCenter().k(ks.J2, new Object[0]);
+                npVar3.getNotificationCenter().k(ls.J2, new Object[0]);
                 return;
             case 9:
-                mp mpVar4 = (mp) obj2;
+                np npVar4 = (np) obj2;
                 TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj;
-                mpVar4.f4(tL_messages_invitedUsers.updates.users, false);
-                mpVar4.Z3(tL_messages_invitedUsers.updates.chats, false);
+                npVar4.f4(tL_messages_invitedUsers.updates.users, false);
+                npVar4.Z3(tL_messages_invitedUsers.updates.chats, false);
                 ArrayList<TLRPC.Chat> arrayList3 = tL_messages_invitedUsers.updates.chats;
                 if (arrayList3 == null || arrayList3.isEmpty()) {
-                    mpVar4.getNotificationCenter().k(29, new Object[0]);
+                    npVar4.getNotificationCenter().k(29, new Object[0]);
                     return;
                 } else {
-                    mpVar4.getNotificationCenter().k(28, Long.valueOf(tL_messages_invitedUsers.updates.chats.get(0).id));
-                    org.telegram.ui.Components.c5.f(mpVar4.currentAccount, tL_messages_invitedUsers.updates.chats.get(0), tL_messages_invitedUsers);
+                    npVar4.getNotificationCenter().k(28, Long.valueOf(tL_messages_invitedUsers.updates.chats.get(0).id));
+                    org.telegram.ui.Components.c5.f(npVar4.currentAccount, tL_messages_invitedUsers.updates.chats.get(0), tL_messages_invitedUsers);
                     return;
                 }
             case 10:
-                tr trVar = (tr) obj2;
-                fj fjVar = (fj) obj;
-                trVar.getClass();
+                ur urVar = (ur) obj2;
+                gj gjVar = (gj) obj;
+                urVar.getClass();
                 try {
-                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(fjVar.k.getObjectSize());
-                    fjVar.k.serializeToStream(nativeByteBuffer);
-                    int i18 = fjVar.a == 2 ? 1 : 0;
-                    if (fjVar.f) {
+                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(gjVar.k.getObjectSize());
+                    gjVar.k.serializeToStream(nativeByteBuffer);
+                    int i18 = gjVar.a == 2 ? 1 : 0;
+                    if (gjVar.f) {
                         i18 |= 2;
                     }
-                    SQLitePreparedStatement executeFast2 = trVar.b.executeFast("REPLACE INTO unread_push_messages VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    SQLitePreparedStatement executeFast2 = urVar.b.executeFast("REPLACE INTO unread_push_messages VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                     executeFast2.requery();
-                    executeFast2.bindLong(1, fj.B0(fjVar.k));
-                    executeFast2.bindInteger(2, fjVar.e1());
-                    executeFast2.bindLong(3, fjVar.k.random_id);
-                    executeFast2.bindInteger(4, fjVar.k.date);
+                    executeFast2.bindLong(1, gj.B0(gjVar.k));
+                    executeFast2.bindInteger(2, gjVar.e1());
+                    executeFast2.bindLong(3, gjVar.k.random_id);
+                    executeFast2.bindInteger(4, gjVar.k.date);
                     executeFast2.bindByteBuffer(5, nativeByteBuffer);
-                    CharSequence charSequence = fjVar.v;
+                    CharSequence charSequence = gjVar.v;
                     if (charSequence == null) {
                         executeFast2.bindNull(6);
                     } else {
                         executeFast2.bindString(6, charSequence.toString());
                     }
-                    String str8 = fjVar.b;
+                    String str8 = gjVar.b;
                     if (str8 == null) {
                         executeFast2.bindNull(7);
                     } else {
                         executeFast2.bindString(7, str8);
                     }
-                    String str9 = fjVar.c;
+                    String str9 = gjVar.c;
                     if (str9 == null) {
                         executeFast2.bindNull(8);
                     } else {
                         executeFast2.bindString(8, str9);
                     }
                     executeFast2.bindInteger(9, i18);
-                    executeFast2.bindLong(10, fj.b2(trVar.currentAccount, fjVar.k, false, false));
-                    executeFast2.bindInteger(11, (fjVar.I ? 1 : 0) + (fjVar.J ? 1 : 0));
+                    executeFast2.bindLong(10, gj.b2(urVar.currentAccount, gjVar.k, false, false));
+                    executeFast2.bindInteger(11, (gjVar.I ? 1 : 0) + (gjVar.J ? 1 : 0));
                     executeFast2.step();
                     nativeByteBuffer.reuse();
                     executeFast2.dispose();
                     return;
                 } catch (Exception e12) {
-                    trVar.o(e12, true);
+                    urVar.o(e12, true);
                     return;
                 }
             case 11:
-                di.y8.y(((zy) obj2).currentAccount, false).d0((ArrayList) obj);
+                di.y8.y(((az) obj2).currentAccount, false).d0((ArrayList) obj);
                 return;
             case 12:
-                e00 e00Var = (e00) obj2;
+                f00 f00Var = (f00) obj2;
                 HashMap hashMap = (HashMap) obj;
                 HashSet hashSet = new HashSet();
-                for (sr srVar : hashMap.keySet()) {
-                    int intValue = ((Integer) hashMap.get(srVar)).intValue();
-                    TLRPC.TL_forumTopic f11 = e00Var.f(-srVar.a, srVar.b);
+                for (tr trVar : hashMap.keySet()) {
+                    int intValue = ((Integer) hashMap.get(trVar)).intValue();
+                    TLRPC.TL_forumTopic f11 = f00Var.f(-trVar.a, trVar.b);
                     if (f11 != null) {
                         f11.read_outbox_max_id = Math.max(f11.read_outbox_max_id, intValue);
-                        hashSet.add(Long.valueOf(-srVar.a));
+                        hashSet.add(Long.valueOf(-trVar.a));
                         TLRPC.Message message2 = f11.topMessage;
                         if (message2 != null && f11.read_outbox_max_id >= message2.id) {
                             message2.unread = false;
@@ -547,90 +547,90 @@ public final /* synthetic */ class w3 implements Runnable {
                 }
                 Iterator it2 = hashSet.iterator();
                 while (it2.hasNext()) {
-                    ks.f(e00Var.currentAccount).k(ks.t5, (Long) it2.next(), Boolean.TRUE);
+                    ls.f(f00Var.currentAccount).k(ls.t5, (Long) it2.next(), Boolean.TRUE);
                 }
                 return;
             case 13:
-                e00 e00Var2 = (e00) obj2;
+                f00 f00Var2 = (f00) obj2;
                 List list2 = (List) obj;
-                a0.h hVar = e00Var2.e;
+                a0.h hVar = f00Var2.e;
                 HashSet hashSet2 = new HashSet();
                 a0.h hVar2 = null;
                 for (int i19 = 0; i19 < list2.size(); i19++) {
-                    b00 b00Var = (b00) list2.get(i19);
-                    if (b00Var.i) {
+                    c00 c00Var = (c00) list2.get(i19);
+                    if (c00Var.i) {
                         if (hVar2 == null) {
                             hVar2 = new a0.h();
                         }
-                        ArrayList arrayList4 = (ArrayList) hVar2.f(b00Var.b);
+                        ArrayList arrayList4 = (ArrayList) hVar2.f(c00Var.b);
                         if (arrayList4 == null) {
                             arrayList4 = new ArrayList();
-                            hVar2.k(arrayList4, b00Var.b);
+                            hVar2.k(arrayList4, c00Var.b);
                         }
                         TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
-                        if (v3.o0(e00Var2.currentAccount, b00Var.b)) {
+                        if (v3.o0(f00Var2.currentAccount, c00Var.b)) {
                             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
                             tL_forumTopic.from_id = tL_peerUser;
-                            tL_peerUser.user_id = b00Var.c;
+                            tL_peerUser.user_id = c00Var.c;
                         } else {
-                            tL_forumTopic.id = (int) b00Var.c;
+                            tL_forumTopic.id = (int) c00Var.c;
                         }
                         arrayList4.add(tL_forumTopic);
                     } else {
-                        TLRPC.TL_forumTopic f12 = e00Var2.f(-b00Var.b, b00Var.c);
+                        TLRPC.TL_forumTopic f12 = f00Var2.f(-c00Var.b, c00Var.c);
                         if (f12 != null) {
-                            if (b00Var.j) {
-                                int i20 = b00Var.e;
+                            if (c00Var.j) {
+                                int i20 = c00Var.e;
                                 if (i20 >= 0) {
                                     f12.unread_count = i20;
                                 }
-                                int i21 = b00Var.d;
+                                int i21 = c00Var.d;
                                 if (i21 >= 0) {
                                     f12.unread_mentions_count = i21;
                                 }
                             } else {
-                                hVar.l(e00.p(f12.top_message, -b00Var.b));
-                                f12.topMessage = b00Var.g;
-                                f12.groupedMessages = b00Var.h;
-                                int i22 = b00Var.f;
+                                hVar.l(f00.p(f12.top_message, -c00Var.b));
+                                f12.topMessage = c00Var.g;
+                                f12.groupedMessages = c00Var.h;
+                                int i22 = c00Var.f;
                                 f12.top_message = i22;
-                                f12.unread_count = b00Var.e;
-                                f12.unread_mentions_count = b00Var.d;
-                                hVar.k(f12, e00.p(i22, -b00Var.b));
+                                f12.unread_count = c00Var.e;
+                                f12.unread_mentions_count = c00Var.d;
+                                hVar.k(f12, f00.p(i22, -c00Var.b));
                             }
-                            int i23 = b00Var.a;
+                            int i23 = c00Var.a;
                             if (i23 > 0) {
                                 f12.totalMessagesCount = i23;
                             }
-                            hashSet2.add(Long.valueOf(-b00Var.b));
+                            hashSet2.add(Long.valueOf(-c00Var.b));
                         }
-                        if (f12 != null && b00Var.k) {
+                        if (f12 != null && c00Var.k) {
                             f12.totalMessagesCount = 0;
-                            e00Var2.k(b00Var.b, b00Var.c);
+                            f00Var2.k(c00Var.b, c00Var.c);
                         }
                     }
                 }
                 Iterator it3 = hashSet2.iterator();
                 while (it3.hasNext()) {
-                    e00Var2.y(((Long) it3.next()).longValue(), true);
+                    f00Var2.y(((Long) it3.next()).longValue(), true);
                 }
                 if (hVar2 != null) {
                     for (int i24 = 0; i24 < hVar2.m(); i24++) {
-                        e00Var2.v(-hVar2.j(i24), (ArrayList) hVar2.n(i24), null);
+                        f00Var2.v(-hVar2.j(i24), (ArrayList) hVar2.n(i24), null);
                     }
                     return;
                 }
                 return;
             case 14:
-                e00 e00Var3 = (e00) obj2;
+                f00 f00Var3 = (f00) obj2;
                 org.telegram.ui.ActionBar.g2 g2Var = (org.telegram.ui.ActionBar.g2) obj;
-                e00Var3.getClass();
+                f00Var3.getClass();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g2Var.getContext());
-                String N0 = gd.N0(2131748785, null);
+                String N0 = hd.N0(2131748785, null);
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = N0;
-                t1Var.U = gd.a0(null, null, 2131748755, Integer.valueOf(mp.u1(e00Var3.currentAccount).g5));
-                alertDialog$Builder.k(gd.N0(2131747637, null), null);
+                t1Var.U = hd.a0(null, null, 2131748755, Integer.valueOf(np.u1(f00Var3.currentAccount).g5));
+                alertDialog$Builder.k(hd.N0(2131747637, null), null);
                 g2Var.showDialog(t1Var);
                 return;
             case 15:
@@ -638,7 +638,7 @@ public final /* synthetic */ class w3 implements Runnable {
                 File file = (File) obj;
                 if (file == null) {
                     h1Var.j = false;
-                    ks.e().k(ks.T4, new Object[0]);
+                    ls.e().k(ls.T4, new Object[0]);
                     return;
                 }
                 if (!TextUtils.isEmpty(h1Var.d)) {
@@ -652,7 +652,7 @@ public final /* synthetic */ class w3 implements Runnable {
                 h1Var.f();
                 h1Var.k = 1.0f;
                 h1Var.j = false;
-                ks.e().k(ks.T4, new Object[0]);
+                ls.e().k(ls.T4, new Object[0]);
                 return;
             case 16:
                 v1 v1Var = (v1) obj2;
@@ -662,9 +662,9 @@ public final /* synthetic */ class w3 implements Runnable {
                     v1Var.b = System.currentTimeMillis();
                     TL_account.contactBirthdays contactbirthdays = (TL_account.contactBirthdays) tLObject2;
                     v1Var.c = t1.b(contactbirthdays);
-                    mp.u1(i25).f4(contactbirthdays.users, false);
-                    tr.a0(i25).m1(contactbirthdays.users, null, true, true);
-                    SharedPreferences.Editor edit4 = mp.u1(i25).h7.edit();
+                    np.u1(i25).f4(contactbirthdays.users, false);
+                    ur.a0(i25).m1(contactbirthdays.users, null, true, true);
+                    SharedPreferences.Editor edit4 = np.u1(i25).h7.edit();
                     edit4.putLong("bday_check", v1Var.b);
                     u1 u1Var = new u1();
                     u1Var.a = contactbirthdays.contacts;
@@ -672,7 +672,7 @@ public final /* synthetic */ class w3 implements Runnable {
                     u1Var.serializeToStream(serializedData);
                     edit4.putString("bday_contacts", Utilities.f(serializedData.toByteArray()));
                     edit4.apply();
-                    ks.f(i25).k(ks.j5, new Object[0]);
+                    ls.f(i25).k(ls.j5, new Object[0]);
                     v1Var.e = false;
                     return;
                 }

@@ -1,14 +1,14 @@
 package wg;
 
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y implements x10 {
+public final /* synthetic */ class y implements y10 {
     public final /* synthetic */ a0 a;
     public final /* synthetic */ TL_stories.TL_prepaidStarsGiveaway b;
     public final /* synthetic */ long c;
@@ -23,7 +23,7 @@ public final /* synthetic */ class y implements x10 {
         this.e = prepaidGiveaway;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         a0 a0Var = this.a;
         a0Var.dismiss();

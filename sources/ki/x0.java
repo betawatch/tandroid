@@ -1,13 +1,13 @@
 package ki;
 
 import android.content.Context;
-import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x0 implements x10 {
+public final /* synthetic */ class x0 implements y10 {
     public final /* synthetic */ org.telegram.ui.ActionBar.t1 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ int c;
@@ -28,7 +28,7 @@ public final /* synthetic */ class x0 implements x10 {
         this.h = h0Var;
     }
 
-    @Override // org.telegram.messenger.x10
+    @Override // org.telegram.messenger.y10
     public final void a(Object obj) {
         this.a.dismiss();
         new g1(this.b, this.c, this.d, this.e, null, (TLRPC.WebPage) obj, this.f, this.g, this.h).show();

@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.ri;
+import org.telegram.messenger.si;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class a2 implements Runnable {
     public final /* synthetic */ c2 a;
@@ -78,7 +78,7 @@ public final class a2 implements Runnable {
         c2Var.Q = i13;
         ArrayList arrayList2 = new ArrayList(0);
         LongSparseArray longSparseArray = new LongSparseArray(0);
-        HashMap hashMap5 = ri.d0(i12).e0;
+        HashMap hashMap5 = si.d0(i12).e0;
         if (c2Var.S.length() <= 14) {
             String str2 = c2Var.S;
             int length = str2.length();
@@ -143,12 +143,12 @@ public final class a2 implements Runnable {
         if (hashMap5 != null && !hashMap5.isEmpty() && c2Var.S.length() > 1) {
             String[] G0 = org.telegram.messenger.g0.G0();
             if (!Arrays.equals(y31Var.a.b(), G0)) {
-                ri.d0(i7).O(G0, false);
+                si.d0(i7).O(G0, false);
             }
             y31Var.a.i(G0);
-            ri.d0(i7).W(y31Var.a.b(), c2Var.S, false, new ai.t1(this, i13, hashMap5, 2), false);
+            si.d0(i7).W(y31Var.a.b(), c2Var.S, false, new ai.u1(this, i13, hashMap5, 2), false);
         }
-        ArrayList u02 = ri.d0(i7).u0(0);
+        ArrayList u02 = si.d0(i7).u0(0);
         int size2 = u02.size();
         int i18 = 0;
         while (i18 < size2) {
@@ -178,7 +178,7 @@ public final class a2 implements Runnable {
             hashMap4 = hashMap;
         }
         HashMap hashMap6 = hashMap4;
-        ArrayList u03 = ri.d0(i7).u0(3);
+        ArrayList u03 = si.d0(i7).u0(3);
         int size3 = u03.size();
         for (int i19 = 0; i19 < size3; i19++) {
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) u03.get(i19);

@@ -19,7 +19,7 @@ import hi.ha;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i5;
 import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.t80;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class d0 extends dk0 {
     public final /* synthetic */ k0 c;
@@ -118,21 +118,21 @@ public final class d0 extends dk0 {
                 o4 o4Var = (o4) view;
                 if (i10 != 11 && i10 != 34) {
                     if (i10 == 2) {
-                        o4Var.setText(gd.N0(2131742527, null));
+                        o4Var.setText(hd.N0(2131742525, null));
                         return;
                     } else {
-                        o4Var.setText(gd.N0(2131748840, null));
+                        o4Var.setText(hd.N0(2131748840, null));
                         return;
                     }
                 }
                 if (k0Var.U1) {
-                    o4Var.setText(gd.N0(2131752390, null));
+                    o4Var.setText(hd.N0(2131752390, null));
                     return;
                 } else if (k0Var.x2.size() == 1) {
-                    o4Var.setText(gd.N0(2131752387, null));
+                    o4Var.setText(hd.N0(2131752387, null));
                     return;
                 } else {
-                    o4Var.setText(gd.N0(2131752386, null));
+                    o4Var.setText(hd.N0(2131752386, null));
                     return;
                 }
             }
@@ -154,7 +154,7 @@ public final class d0 extends dk0 {
                     i4Var.S = true;
                     i4Var.R = requirementtocontactpremium;
                     i4Var.g();
-                    i4Var.e(user, i5.m(0, user.first_name, user.last_name), z10 ? gd.N0(2131748933, null) : gd.d0(k0Var.a, user, null, null), ((float) i7) != ((float) k0Var.l2) - 1.0f);
+                    i4Var.e(user, i5.m(0, user.first_name, user.last_name), z10 ? hd.N0(2131748933, null) : hd.d0(k0Var.a, user, null, null), ((float) i7) != ((float) k0Var.l2) - 1.0f);
                     i4Var.c(hashSet.contains(user), false);
                     return;
                 }
@@ -179,7 +179,7 @@ public final class d0 extends dk0 {
             n4Var.setVisibility(0);
             m5 m5Var2 = g0Var.d;
             e0 e0Var = g0Var.f;
-            m5Var2.l(gd.G(e0Var.g, e0Var.h ? "BoostLevelUnlocks" : "BoostLevel", new Object[0]), false);
+            m5Var2.l(hd.G(e0Var.g, e0Var.h ? "BoostLevelUnlocks" : "BoostLevel", new Object[0]), false);
             return;
         }
         if (f0Var != null) {
@@ -194,11 +194,11 @@ public final class d0 extends dk0 {
                 sb2.append(g0Var.e.d);
                 sb2.append("_");
                 int i13 = g0Var.e.e;
-                gd.E0();
-                sb2.append(gd.g1(gd.E0().A.a(i13)));
-                String O0 = gd.O0(sb2.toString());
+                hd.E0();
+                sb2.append(hd.g1(hd.E0().A.a(i13)));
+                String O0 = hd.O0(sb2.toString());
                 if (O0 == null || O0.startsWith("LOC_ERR")) {
-                    O0 = gd.O0(g0Var.e.d + "_other");
+                    O0 = hd.O0(g0Var.e.d + "_other");
                 }
                 if (O0 == null) {
                     O0 = "";
@@ -213,7 +213,7 @@ public final class d0 extends dk0 {
                 }
                 m5Var.l(spannableStringBuilder, false);
             } else {
-                String N0 = gd.N0(f0Var2.b, null);
+                String N0 = hd.N0(f0Var2.b, null);
                 String str = N0 != null ? N0 : "";
                 if (g0Var.e.c != null) {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(str);
@@ -382,8 +382,8 @@ public final class d0 extends dk0 {
                 linearLayout.setOrientation(1);
                 t80 t80Var = new t80(context);
                 m80 m80Var = new m80(context, null);
-                SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.N0(k0Var.s1() ? 2131753186 : 2131753187, null));
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gd.N0(2131753185, null));
+                SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(hd.N0(k0Var.s1() ? 2131753186 : 2131753187, null));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.N0(2131753185, null));
                 spannableStringBuilder.setSpan(new ha(this, i10), 0, spannableStringBuilder.length(), 33);
                 SpannableString spannableString = new SpannableString(">");
                 int i18 = 2;
@@ -440,7 +440,7 @@ public final class d0 extends dk0 {
                 t80Var.setOnClickListener(new tg.u(m80Var, i18));
                 if (k0Var.t1()) {
                     hi.e eVar = new hi.e(context, k0Var.J0, true);
-                    eVar.i(gd.N0(2131751755, null), false, true);
+                    eVar.i(hd.N0(2131751755, null), false, true);
                     eVar.setOnClickListener(new View.OnClickListener(this) { // from class: ug.b0
                         public final /* synthetic */ d0 b;
 

@@ -8,11 +8,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import sg.h1;
 import tg.a;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class ColorPicker extends FrameLayout {
     public static final int[] d = {-1431751, -2409774, -13610525, -11942419, -8337308, -205211, -223667, -16777216, -1};
@@ -56,7 +56,7 @@ public class ColorPicker extends FrameLayout {
         int green2 = Color.green(i12);
         int blue = Color.blue(i11);
         int blue2 = Color.blue(i12);
-        return Color.argb(ks.e4, Math.min(ks.e4, (int) (((red2 - red) * min) + red)), Math.min(ks.e4, (int) (((green2 - green) * min) + green)), Math.min(ks.e4, (int) (((blue2 - blue) * min) + blue)));
+        return Color.argb(ls.e4, Math.min(ls.e4, (int) (((red2 - red) * min) + red)), Math.min(ls.e4, (int) (((green2 - green) * min) + green)), Math.min(ls.e4, (int) (((blue2 - blue) * min) + blue)));
     }
 
     private void setDraggingFactor(float f10) {

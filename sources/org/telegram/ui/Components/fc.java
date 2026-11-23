@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fc extends eb {
     public final e9 a;
@@ -27,7 +27,7 @@ public final class fc extends eb {
             addView(linearLayout, c8.ma.i(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
             bi.u2 u2Var = new bi.u2(5, context, null);
             this.b = u2Var;
-            org.telegram.messenger.ks.i(u2Var);
+            org.telegram.messenger.ls.i(u2Var);
             Typeface typeface = Typeface.SANS_SERIF;
             u2Var.setTypeface(typeface);
             u2Var.setTextSize(1, 14.0f);
@@ -48,12 +48,12 @@ public final class fc extends eb {
         } else {
             bi.u2 u2Var2 = new bi.u2(4, context, null);
             this.b = u2Var2;
-            org.telegram.messenger.ks.i(u2Var2);
+            org.telegram.messenger.ls.i(u2Var2);
             u2Var2.setTypeface(Typeface.SANS_SERIF);
             u2Var2.setTextSize(1, 15.0f);
             u2Var2.setEllipsize(TextUtils.TruncateAt.END);
             u2Var2.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-            u2Var2.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+            u2Var2.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
             addView(u2Var2, c8.ma.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
         }
         org.telegram.ui.ActionBar.t6.G(this.b, org.telegram.ui.ActionBar.m6.xj, h6Var);

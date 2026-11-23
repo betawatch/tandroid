@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class fm extends org.telegram.ui.oq0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
@@ -27,7 +27,7 @@ public abstract class fm extends org.telegram.ui.oq0 {
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final int S(int i7) {
         boolean z10 = ChatAttachAlertPhotoLayout.r1;
-        org.telegram.messenger.ef e02 = this.a.e0(i7);
+        org.telegram.messenger.ff e02 = this.a.e0(i7);
         if (e02 == null) {
             return -1;
         }
@@ -40,7 +40,7 @@ public abstract class fm extends org.telegram.ui.oq0 {
     }
 
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
-    public final int k(int i7, org.telegram.messenger.e20 e20Var) {
+    public final int k(int i7, org.telegram.messenger.f20 f20Var) {
         boolean z10;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
         zl zlVar = chatAttachAlertPhotoLayout.r;
@@ -48,7 +48,7 @@ public abstract class fm extends org.telegram.ui.oq0 {
         ui uiVar = chatAttachAlertPhotoLayout.b;
         if (uiVar.Q3 < 0 || ChatAttachAlertPhotoLayout.t1.size() < uiVar.Q3 || x(i7)) {
             boolean z11 = ChatAttachAlertPhotoLayout.r1;
-            org.telegram.messenger.ef e02 = chatAttachAlertPhotoLayout.e0(i7);
+            org.telegram.messenger.ff e02 = chatAttachAlertPhotoLayout.e0(i7);
             if (e02 != null && !chatAttachAlertPhotoLayout.a0(e02)) {
                 if (ChatAttachAlertPhotoLayout.t1.size() + 1 <= ChatAttachAlertPhotoLayout.R(chatAttachAlertPhotoLayout)) {
                     int T = chatAttachAlertPhotoLayout.T(e02, -1);
@@ -59,7 +59,7 @@ public abstract class fm extends org.telegram.ui.oq0 {
                         e02.s = null;
                         z10 = false;
                     }
-                    e02.s = e20Var;
+                    e02.s = f20Var;
                     int childCount = zlVar2.getChildCount();
                     int i10 = 0;
                     while (true) {
@@ -112,7 +112,7 @@ public abstract class fm extends org.telegram.ui.oq0 {
     @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
     public final boolean x(int i7) {
         boolean z10 = ChatAttachAlertPhotoLayout.r1;
-        org.telegram.messenger.ef e02 = this.a.e0(i7);
+        org.telegram.messenger.ff e02 = this.a.e0(i7);
         return e02 != null && ChatAttachAlertPhotoLayout.t1.containsKey(Integer.valueOf(e02.C));
     }
 }

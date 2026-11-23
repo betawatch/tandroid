@@ -19,14 +19,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.ek0;
 import org.telegram.ui.d30;
 import org.telegram.ui.n30;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class t6 {
     public static final s6 a = new s6();
@@ -201,10 +201,10 @@ public abstract class t6 {
                         if (view instanceof EditTextBoldCursor) {
                             EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
                             switch (i10) {
-                                case ks.T /* 30 */:
+                                case ls.T /* 30 */:
                                     editTextBoldCursor.setCursorColor(i7);
                                     break;
-                                case ks.U /* 31 */:
+                                case ls.U /* 31 */:
                                     editTextBoldCursor.setLineColor(i7);
                                     break;
                                 case 32:
@@ -556,10 +556,10 @@ public abstract class t6 {
                                         if (view instanceof EditTextBoldCursor) {
                                             EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
                                             switch (i14) {
-                                                case ks.T /* 30 */:
+                                                case ls.T /* 30 */:
                                                     f10 = editTextBoldCursor.getCursorColor();
                                                     break;
-                                                case ks.U /* 31 */:
+                                                case ls.U /* 31 */:
                                                     f10 = editTextBoldCursor.getLineColor();
                                                     break;
                                                 case 32:

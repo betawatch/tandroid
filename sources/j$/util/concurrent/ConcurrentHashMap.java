@@ -1902,7 +1902,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         }
 
         @Override // j$.util.concurrent.b, java.util.Collection, java.util.Set
-        public final boolean contains(Object obj) {
+        public boolean contains(Object obj) {
             return this.a.containsKey(obj);
         }
 
@@ -1920,10 +1920,10 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         }
 
         @Override // java.util.Collection, java.util.Set
-        public final boolean add(Object obj) {
-            Object obj2 = this.b;
-            if (obj2 != null) {
-                return this.a.f(obj, obj2, true) == null;
+        public boolean add(K k10) {
+            Object obj = this.b;
+            if (obj != null) {
+                return this.a.f(k10, obj, true) == null;
             }
             throw new UnsupportedOperationException();
         }

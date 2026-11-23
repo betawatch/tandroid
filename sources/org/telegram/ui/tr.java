@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tr implements org.telegram.ui.Components.sj0, r0.m, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ ContactsActivity a;
@@ -81,13 +81,13 @@ public final /* synthetic */ class tr implements org.telegram.ui.Components.sj0,
                 hashMap.put(user, tL_contact);
             }
             contactsController.d(false);
-            org.telegram.messenger.ks notificationCenter = contactsController.getNotificationCenter();
-            int i12 = org.telegram.messenger.mp.I8;
-            notificationCenter.k(org.telegram.messenger.ks.r, 1);
-            contactsController.getNotificationCenter().k(org.telegram.messenger.ks.O, new Object[0]);
+            org.telegram.messenger.ls notificationCenter = contactsController.getNotificationCenter();
+            int i12 = org.telegram.messenger.np.I8;
+            notificationCenter.k(org.telegram.messenger.ls.r, 1);
+            contactsController.getNotificationCenter().k(org.telegram.messenger.ls.O, new Object[0]);
             org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(parentActivity, contactsActivity.getResourceProvider());
             ybVar.setTimer();
-            ybVar.b.setText(org.telegram.messenger.gd.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
+            ybVar.b.setText(org.telegram.messenger.hd.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
             org.telegram.ui.Components.ec ecVar = new org.telegram.ui.Components.ec(parentActivity, contactsActivity.getResourceProvider(), true, true);
             ecVar.b = new org.telegram.messenger.w3(27, contactsController, hashMap);
             ecVar.c = new org.telegram.messenger.y4(contactsController, arrayList, 1);

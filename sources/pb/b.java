@@ -37,21 +37,21 @@ import java.util.Set;
 import java.util.concurrent.Executors;
 import org.json.JSONObject;
 import org.telegram.messenger.IMapsProvider;
-import org.telegram.messenger.aa;
-import org.telegram.messenger.ab;
 import org.telegram.messenger.ba;
-import org.telegram.messenger.cj;
-import org.telegram.messenger.ea;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.i10;
+import org.telegram.messenger.bb;
+import org.telegram.messenger.ca;
+import org.telegram.messenger.dj;
+import org.telegram.messenger.fa;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.j10;
 import org.telegram.messenger.p2;
-import org.telegram.messenger.sa;
 import org.telegram.messenger.ta;
 import org.telegram.messenger.ua;
 import org.telegram.messenger.va;
 import org.telegram.messenger.wa;
 import org.telegram.messenger.xa;
 import org.telegram.messenger.ya;
+import org.telegram.messenger.za;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -69,7 +69,7 @@ import org.telegram.ui.Components.y5;
 import org.telegram.ui.fr0;
 import org.xml.sax.Attributes;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.google.android.gms.common.api.internal.q, u9.d, q5.b, IMapsProvider, gh.a, m1, s0, OnFailureListener, s2.t, u4.c, x5.a {
     public final /* synthetic */ int a;
@@ -363,7 +363,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean T1(r1 r1Var, fj fjVar) {
+    public /* synthetic */ boolean T1(r1 r1Var, gj gjVar) {
         return false;
     }
 
@@ -489,8 +489,8 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean f1(fj fjVar) {
-        return c0.a(fjVar);
+    public /* synthetic */ boolean f1(gj gjVar) {
+        return c0.a(gjVar);
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -586,7 +586,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public wa loadRawResourceStyle(Context context, int i7) {
+    public xa loadRawResourceStyle(Context context, int i7) {
         InputStream openRawResource = context.getResources().openRawResource(i7);
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -598,9 +598,9 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
                         x6.b.a(openRawResource);
                         x6.b.a(byteArrayOutputStream);
                         m8.e eVar = new m8.e(new String(byteArrayOutputStream.toByteArray(), "UTF-8"));
-                        ea eaVar = new ea();
-                        eaVar.a = eVar;
-                        return eaVar;
+                        fa faVar = new fa();
+                        faVar.a = eVar;
+                        return faVar;
                     }
                     byteArrayOutputStream.write(bArr, 0, read);
                 } catch (Throwable th2) {
@@ -625,8 +625,8 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public sa newCameraUpdateLatLng(ab abVar) {
-        LatLng latLng = new LatLng(abVar.a, abVar.b);
+    public ta newCameraUpdateLatLng(bb bbVar) {
+        LatLng latLng = new LatLng(bbVar.a, bbVar.b);
         try {
             l8.a aVar = d1.a;
             q6.m.i(aVar, "CameraUpdateFactory is not initialized");
@@ -635,15 +635,15 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
             Parcel o12 = aVar.o1(p12, 8);
             a7.a m12 = a7.b.m1(o12.readStrongBinder());
             o12.recycle();
-            return new aa(new w4(m12));
+            return new ba(new w4(m12));
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public sa newCameraUpdateLatLngBounds(ua uaVar, int i7) {
-        LatLngBounds latLngBounds = ((ba) uaVar).a;
+    public ta newCameraUpdateLatLngBounds(va vaVar, int i7) {
+        LatLngBounds latLngBounds = ((ca) vaVar).a;
         try {
             l8.a aVar = d1.a;
             q6.m.i(aVar, "CameraUpdateFactory is not initialized");
@@ -653,15 +653,15 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
             Parcel o12 = aVar.o1(p12, 10);
             a7.a m12 = a7.b.m1(o12.readStrongBinder());
             o12.recycle();
-            return new aa(new w4(m12));
+            return new ba(new w4(m12));
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public sa newCameraUpdateLatLngZoom(ab abVar, float f10) {
-        LatLng latLng = new LatLng(abVar.a, abVar.b);
+    public ta newCameraUpdateLatLngZoom(bb bbVar, float f10) {
+        LatLng latLng = new LatLng(bbVar.a, bbVar.b);
         try {
             l8.a aVar = d1.a;
             q6.m.i(aVar, "CameraUpdateFactory is not initialized");
@@ -671,14 +671,14 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
             Parcel o12 = aVar.o1(p12, 9);
             a7.a m12 = a7.b.m1(o12.readStrongBinder());
             o12.recycle();
-            return new aa(new w4(m12));
+            return new ba(new w4(m12));
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public ta onCreateCircleOptions() {
+    public ua onCreateCircleOptions() {
         w4 w4Var = new w4(23, false);
         m8.b bVar = new m8.b();
         bVar.a = null;
@@ -695,7 +695,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public va onCreateLatLngBoundsBuilder() {
+    public wa onCreateLatLngBoundsBuilder() {
         t5 t5Var = new t5(26);
         m8.d dVar = new m8.d(0);
         dVar.b = Double.POSITIVE_INFINITY;
@@ -707,14 +707,14 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public xa onCreateMapView(Context context) {
+    public ya onCreateMapView(Context context) {
         r7 r7Var = new r7(13, (byte) 0);
         r7Var.b = new l0(r7Var, context);
         return r7Var;
     }
 
     @Override // org.telegram.messenger.IMapsProvider
-    public ya onCreateMarkerOptions() {
+    public za onCreateMarkerOptions() {
         g1 g1Var = new g1(24);
         m8.g gVar = new m8.g();
         gVar.e = 0.5f;
@@ -803,7 +803,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ boolean y0(fj fjVar) {
+    public /* synthetic */ boolean y0(gj gjVar) {
         return true;
     }
 
@@ -895,7 +895,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void L(cj cjVar) {
+    public /* synthetic */ void L(dj djVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -911,7 +911,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void O1(fj fjVar) {
+    public /* synthetic */ void O1(gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -919,7 +919,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void R(fj fjVar) {
+    public /* synthetic */ void R(gj gjVar) {
     }
 
     @Override // org.telegram.ui.Cells.s0
@@ -1028,7 +1028,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void a2(r1 r1Var, i10 i10Var) {
+    public /* synthetic */ void a2(r1 r1Var, j10 j10Var) {
     }
 
     @Override // org.telegram.ui.Cells.m1
@@ -1144,6 +1144,6 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.d, qm0, com.goo
     }
 
     @Override // org.telegram.ui.Cells.m1
-    public /* synthetic */ void S1(fj fjVar, String str, String str2, String str3, String str4, int i7, int i10) {
+    public /* synthetic */ void S1(gj gjVar, String str, String str2, String str3, String str4, int i7, int i10) {
     }
 }

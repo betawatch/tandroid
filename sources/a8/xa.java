@@ -40,10 +40,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Deflater;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.lp0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.tm;
 import org.telegram.ui.md0;
@@ -51,7 +51,7 @@ import org.telegram.ui.wc1;
 import org.telegram.ui.zl;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class xa implements f3.i, m9.t {
     public final /* synthetic */ int a;
@@ -531,7 +531,7 @@ public class xa implements f3.i, m9.t {
                                 j10 = -9223372036854775807L;
                             }
                         }
-                        int i11 = i10 + ks.S2;
+                        int i11 = i10 + ls.S2;
                         if (i11 <= i7) {
                             long a10 = c8.p9.a(xVar, i10, this.b);
                             if (a10 != j10) {
@@ -678,7 +678,7 @@ public class xa implements f3.i, m9.t {
         p4.e0 e0Var = ((p4.n0) this.d).h;
         Handler handler = e0Var.l;
         p4.v vVar = (p4.v) this.c;
-        h2.l0.W(handler, new org.telegram.ui.Wallet.u4(e0Var, vVar, new mp0(this, this.b, list, vVar, 22)));
+        h2.l0.W(handler, new org.telegram.ui.Wallet.u4(e0Var, vVar, new lp0(this, this.b, list, vVar, 23)));
     }
 
     public void p(x2.u uVar, int i7, int i10, e2.u uVar2, int i11, Object obj, long j3, long j10) {

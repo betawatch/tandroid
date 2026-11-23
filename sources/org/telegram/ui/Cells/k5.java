@@ -13,16 +13,16 @@ import android.os.Build;
 import android.text.TextUtils;
 import java.io.File;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ec;
 import org.telegram.messenger.fc;
-import org.telegram.messenger.hf;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.jf;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.cb0;
 import org.telegram.ui.u71;
 import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k5 extends org.telegram.ui.Components.q9 implements org.telegram.messenger.y5 {
     public RectF H;
@@ -300,7 +300,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
     public void setPattern(TLRPC.TL_wallPaper tL_wallPaper) {
         this.J = tL_wallPaper;
         if (tL_wallPaper != null) {
-            g(1, 0L, tL_wallPaper, "100_100", null, "png", fc.c(org.telegram.messenger.w7.w(tL_wallPaper.document.thumbs, org.telegram.messenger.g0.L(100.0f), false, null, false), tL_wallPaper.document), null);
+            g(1, 0L, tL_wallPaper, "100_100", null, "png", gc.c(org.telegram.messenger.w7.w(tL_wallPaper.document.thumbs, org.telegram.messenger.g0.L(100.0f), false, null, false), tL_wallPaper.document), null);
         } else {
             setImageDrawable(null);
         }
@@ -313,7 +313,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
         int i7 = this.K;
         RadialProgress2 radialProgress2 = this.I;
         boolean z12 = obj instanceof TLRPC.TL_wallPaper;
-        if (!z12 && !(obj instanceof hf)) {
+        if (!z12 && !(obj instanceof jf)) {
             radialProgress2.setIcon(6, z10, z11);
             return;
         }
@@ -326,8 +326,8 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
             org.telegram.messenger.w7.G(i7);
             A = org.telegram.messenger.w7.J(tL_wallPaper.document, null, true, true);
         } else {
-            hf hfVar = (hf) obj;
-            TLRPC.Photo photo = hfVar.K;
+            jf jfVar = (jf) obj;
+            TLRPC.Photo photo = jfVar.K;
             if (photo != null) {
                 TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(photo.sizes, this.V, true, null, false);
                 org.telegram.messenger.w7.G(i7);
@@ -335,7 +335,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
                 name = org.telegram.messenger.w7.r(null, w10);
                 A = J;
             } else {
-                A = ec.A(hfVar.C);
+                A = fc.A(jfVar.C);
                 name = A.getName();
             }
             if (TextUtils.isEmpty(name)) {
@@ -350,7 +350,7 @@ public final class k5 extends org.telegram.ui.Components.q9 implements org.teleg
         }
         org.telegram.messenger.a6.q(i7).a(name, null, this);
         org.telegram.messenger.w7.G(i7).S(name);
-        Float w11 = ec.D().w(name);
+        Float w11 = fc.D().w(name);
         if (w11 != null) {
             radialProgress2.p(z11, w11.floatValue());
         } else {

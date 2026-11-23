@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.net.URLDecoder;
 import java.text.BreakIterator;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.j6;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class g extends n41 {
     public static final /* synthetic */ int b = 0;
@@ -112,7 +112,7 @@ public final class g extends n41 {
         String str2;
         h hVar = (h) view;
         Object obj = o41Var.I;
-        if (!(obj instanceof fj)) {
+        if (!(obj instanceof gj)) {
             if (obj instanceof w0) {
                 w0 w0Var = (w0) obj;
                 CharSequence charSequence = o41Var.n;
@@ -160,7 +160,7 @@ public final class g extends n41 {
                                 }
                                 textView2.setText(j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
                                 textView.setText(j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                                hVar.h.setText(gd.E0().p0().format(w0Var.b));
+                                hVar.h.setText(hd.E0().p0().format(w0Var.b));
                                 hVar.r.a(false, false);
                                 FrameLayout.LayoutParams layoutParams3 = layoutParams;
                                 layoutParams3.rightMargin = org.telegram.messenger.g0.L(70.0f);
@@ -196,7 +196,7 @@ public final class g extends n41 {
                         }
                         textView2.setText(j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
                         textView.setText(j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                        hVar.h.setText(gd.E0().p0().format(w0Var.b));
+                        hVar.h.setText(hd.E0().p0().format(w0Var.b));
                         hVar.r.a(false, false);
                         FrameLayout.LayoutParams layoutParams32 = layoutParams;
                         layoutParams32.rightMargin = org.telegram.messenger.g0.L(70.0f);
@@ -229,7 +229,7 @@ public final class g extends n41 {
                 }
                 textView2.setText(j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
                 textView.setText(j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                hVar.h.setText(gd.E0().p0().format(w0Var.b));
+                hVar.h.setText(hd.E0().p0().format(w0Var.b));
                 hVar.r.a(false, false);
                 FrameLayout.LayoutParams layoutParams322 = layoutParams;
                 layoutParams322.rightMargin = org.telegram.messenger.g0.L(70.0f);
@@ -240,7 +240,7 @@ public final class g extends n41 {
             }
             return;
         }
-        fj fjVar = (fj) obj;
+        gj gjVar = (gj) obj;
         boolean z12 = o41Var.r;
         CharSequence charSequence4 = o41Var.n;
         String charSequence5 = charSequence4 == null ? null : charSequence4.toString();
@@ -251,8 +251,8 @@ public final class g extends n41 {
         q9 q9Var2 = hVar.b;
         TextView textView4 = hVar.e;
         hVar.updateColors();
-        TLRPC.WebPage webPage = fj.m1(fjVar) != null ? fj.m1(fjVar).webpage : null;
-        String a10 = webPage != null ? webPage.url : k.a(fjVar);
+        TLRPC.WebPage webPage = gj.m1(gjVar) != null ? gj.m1(gjVar).webpage : null;
+        String a10 = webPage != null ? webPage.url : k.a(gjVar);
         z1 a11 = a2.b().a(org.telegram.messenger.g0.K0(a10, true));
         if (webPage != null && (str2 = webPage.title) != null) {
             textView4.setText(str2);
@@ -289,7 +289,7 @@ public final class g extends n41 {
                         q9Var2.setImageDrawable(oqVar3);
                         hVar.h.setVisibility(8);
                         hVar.n.setVisibility(z12 ? 0 : 8);
-                        String a12 = webPage != null ? webPage.url : k.a(fjVar);
+                        String a12 = webPage != null ? webPage.url : k.a(gjVar);
                         Uri parse3 = Uri.parse(a12);
                         a12 = vf.c.w(parse3, null, null, vf.c.a(parse3.getHost()), null);
                         a12 = URLDecoder.decode(a12.replaceAll("\\+", "%2b"), "UTF-8");
@@ -322,11 +322,11 @@ public final class g extends n41 {
                     oqVar32.n = L52;
                     q9Var2.setImageDrawable(oqVar32);
                 } else {
-                    q9Var2.l(fc.i(w7.w(photo.sizes, org.telegram.messenger.g0.L(32.0f), true, null, true), webPage.photo), org.telegram.messenger.g0.L(32.0f) + "_" + org.telegram.messenger.g0.L(32.0f), fc.i(w7.w(webPage.photo.sizes, org.telegram.messenger.g0.L(32.0f), true, null, false), webPage.photo), org.telegram.messenger.g0.L(32.0f) + "_" + org.telegram.messenger.g0.L(32.0f), 0, fjVar);
+                    q9Var2.l(gc.i(w7.w(photo.sizes, org.telegram.messenger.g0.L(32.0f), true, null, true), webPage.photo), org.telegram.messenger.g0.L(32.0f) + "_" + org.telegram.messenger.g0.L(32.0f), gc.i(w7.w(webPage.photo.sizes, org.telegram.messenger.g0.L(32.0f), true, null, false), webPage.photo), org.telegram.messenger.g0.L(32.0f) + "_" + org.telegram.messenger.g0.L(32.0f), 0, gjVar);
                 }
                 hVar.h.setVisibility(8);
                 hVar.n.setVisibility(z12 ? 0 : 8);
-                String a122 = webPage != null ? webPage.url : k.a(fjVar);
+                String a122 = webPage != null ? webPage.url : k.a(gjVar);
                 Uri parse32 = Uri.parse(a122);
                 a122 = vf.c.w(parse32, null, null, vf.c.a(parse32.getHost()), null);
                 a122 = URLDecoder.decode(a122.replaceAll("\\+", "%2b"), "UTF-8");
@@ -364,7 +364,7 @@ public final class g extends n41 {
         q9Var2.setImageDrawable(oqVar322);
         hVar.h.setVisibility(8);
         hVar.n.setVisibility(z12 ? 0 : 8);
-        String a1222 = webPage != null ? webPage.url : k.a(fjVar);
+        String a1222 = webPage != null ? webPage.url : k.a(gjVar);
         Uri parse322 = Uri.parse(a1222);
         a1222 = vf.c.w(parse322, null, null, vf.c.a(parse322.getHost()), null);
         a1222 = URLDecoder.decode(a1222.replaceAll("\\+", "%2b"), "UTF-8");

@@ -2,9 +2,9 @@ package di;
 
 import android.content.Context;
 import android.widget.FrameLayout;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.ek0;
@@ -15,9 +15,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class gb extends org.telegram.ui.Components.sa implements fs {
+public final class gb extends org.telegram.ui.Components.sa implements gs {
     public final FrameLayout T1;
     public c51 U1;
     public boolean V1;
@@ -27,7 +27,7 @@ public final class gb extends org.telegram.ui.Components.sa implements fs {
         ek0 ek0Var = this.o1;
         int i7 = this.u0;
         ek0Var.setPadding(i7, 0, i7, 0);
-        this.o1.setOnItemClickListener(new bi.l8(this, 5));
+        this.o1.setOnItemClickListener(new bi.k8(this, 5));
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;
@@ -37,7 +37,7 @@ public final class gb extends org.telegram.ui.Components.sa implements fs {
         int i10 = org.telegram.ui.ActionBar.m6.d6;
         w0(i10);
         Q(i10);
-        this.p1.setTitle(gd.N0(2131744910, null));
+        this.p1.setTitle(hd.N0(2131744908, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.T1 = frameLayout;
         m80 m80Var = new m80(context, h6Var);
@@ -45,7 +45,7 @@ public final class gb extends org.telegram.ui.Components.sa implements fs {
         m80Var.setTextSize(1, 12.0f);
         org.telegram.ui.ActionBar.t6.U(m80Var, org.telegram.ui.ActionBar.m6.B6, h6Var);
         org.telegram.ui.ActionBar.t6.G(m80Var, org.telegram.ui.ActionBar.m6.Xc, h6Var);
-        m80Var.setText(org.telegram.messenger.g0.T2(gd.N0(2131744726, null), new ca.r(this, 29)));
+        m80Var.setText(org.telegram.messenger.g0.T2(hd.N0(2131744724, null), new ca.r(this, 29)));
         m80Var.setGravity(17);
         m80Var.setMaxWidth(hi.l3.a(m80Var.getText(), m80Var.getPaint()));
         frameLayout.addView(m80Var, c8.ma.e(-2, -1, 17));
@@ -60,8 +60,8 @@ public final class gb extends org.telegram.ui.Components.sa implements fs {
     @Override // org.telegram.ui.ActionBar.w2
     public final void L() {
         super.L();
-        ks.f(this.a).n(this, ks.x3);
-        ks.f(this.a).n(this, ks.A3);
+        ls.f(this.a).n(this, ls.x3);
+        ls.f(this.a).n(this, ls.A3);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -74,13 +74,13 @@ public final class gb extends org.telegram.ui.Components.sa implements fs {
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence P0() {
-        return gd.N0(2131744910, null);
+        return hd.N0(2131744908, null);
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         c51 c51Var;
-        if ((i7 == ks.x3 || i7 == ks.A3) && (c51Var = this.U1) != null) {
+        if ((i7 == ls.x3 || i7 == ls.A3) && (c51Var = this.U1) != null) {
             c51Var.O(true);
         }
     }
@@ -97,7 +97,7 @@ public final class gb extends org.telegram.ui.Components.sa implements fs {
             }
         }
         super.show();
-        ks.f(this.a).c(this, ks.x3);
-        ks.f(this.a).c(this, ks.A3);
+        ls.f(this.a).c(this, ls.x3);
+        ls.f(this.a).c(this, ls.A3);
     }
 }

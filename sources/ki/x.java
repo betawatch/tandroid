@@ -9,7 +9,7 @@ import c8.ma;
 import di.xb;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.m6;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.dk0;
 import org.telegram.ui.Components.mj0;
 import org.telegram.ui.Components.nq;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class x extends dk0 {
     public ArrayList c;
@@ -83,7 +83,7 @@ public final class x extends dk0 {
         wVar.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
         xb xbVar = new xb(context, 4);
         wVar.b = xbVar;
-        ks.i(xbVar);
+        ls.i(xbVar);
         xbVar.setTextSize(1, 16.0f);
         int i10 = m6.G6;
         t6.U(xbVar, i10, null);

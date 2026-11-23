@@ -5,10 +5,10 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class m41 extends bv0 {
-    public final int a = org.telegram.messenger.j10.t0;
+    public final int a = org.telegram.messenger.k10.t0;
     public boolean b = false;
     public final float[] c = new float[3];
     public final float[] d = {0.0f, 150.0f, 300.0f};
@@ -61,7 +61,7 @@ public final class m41 extends bv0 {
         Paint paint = this.j;
         if (paint == null) {
             paint = org.telegram.ui.ActionBar.m6.c2;
-            paint.setAlpha(org.telegram.messenger.ks.e4);
+            paint.setAlpha(org.telegram.messenger.ls.e4);
         }
         float L2 = org.telegram.messenger.g0.L(3.0f) + i10;
         float f10 = i11;
@@ -87,7 +87,7 @@ public final class m41 extends bv0 {
 
     public final void f() {
         if (this.g) {
-            if (org.telegram.messenger.ks.f(this.a).g() && !this.i) {
+            if (org.telegram.messenger.ls.f(this.a).g() && !this.i) {
                 org.telegram.messenger.g0.h3(new cp0(this, 27), 100L);
                 return;
             }

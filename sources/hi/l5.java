@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.c20;
@@ -36,7 +36,7 @@ import org.telegram.ui.x71;
 import org.telegram.ui.yc;
 import org.telegram.ui.zm;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class l5 extends View implements te.b {
     public final /* synthetic */ int a;
@@ -468,7 +468,7 @@ public final class l5 extends View implements te.b {
                 paint11.setColor(x71Var.d ? org.telegram.ui.ActionBar.m6.F0(i12) : x71Var.getThemedColor(i12));
                 int i13 = 0;
                 while (i13 < 2) {
-                    paint11.setAlpha(i13 == currentItem ? ks.e4 : ks.L1);
+                    paint11.setAlpha(i13 == currentItem ? ls.e4 : ls.L1);
                     canvas.drawCircle(org.telegram.messenger.g0.L((i13 * 15) + 3), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(3.0f), paint11);
                     i13++;
                 }

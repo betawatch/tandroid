@@ -23,11 +23,11 @@ import c8.ma;
 import hi.l5;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fj;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.p10;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.u3;
@@ -49,7 +49,7 @@ import org.telegram.ui.f40;
 import org.telegram.ui.nk;
 import org.telegram.ui.x10;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class k0 extends FrameLayout {
     public boolean A0;
@@ -155,17 +155,17 @@ public abstract class k0 extends FrameLayout {
         kVar.setBackground(m6.h0(i0.a.o(-1, 55), 1, -1));
         View view = new View(context);
         this.n0 = view;
-        GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{0, i0.a.o(-16777216, ks.z1)});
+        GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{0, i0.a.o(-16777216, ls.z1)});
         this.b0 = gradientDrawable;
         view.setBackground(gradientDrawable);
         addView(view, ma.c(120.0f, -1));
         View view2 = new View(context);
         this.o0 = view2;
-        GradientDrawable gradientDrawable2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0, i0.a.o(-16777216, ks.z1)});
+        GradientDrawable gradientDrawable2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0, i0.a.o(-16777216, ls.z1)});
         this.c0 = gradientDrawable2;
         view2.setBackground(gradientDrawable2);
         view2.setVisibility((t3Var == null || !h()) ? 8 : 0);
-        addView(view2, ma.e(ks.q2, -1, 5));
+        addView(view2, ma.e(ls.q2, -1, 5));
         addView(kVar, ma.e(56, -1, 51));
         kVar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.f0
             @Override // android.view.View.OnClickListener
@@ -233,13 +233,13 @@ public abstract class k0 extends FrameLayout {
         textView.setTextColor(-1);
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(gd.N0(2131752587, null));
+        textView.setText(hd.N0(2131752587, null));
         TextView textView2 = new TextView(context);
         this.f0 = textView2;
         textView2.setTextColor(-1);
         textView2.setTextSize(1, 15.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setText(gd.N0(2131752586, null));
+        textView2.setText(hd.N0(2131752586, null));
         addView(textView, ma.e(-2, -2, 51));
         addView(textView2, ma.e(-2, -2, 51));
         ImageView imageView = new ImageView(context);
@@ -247,13 +247,13 @@ public abstract class k0 extends FrameLayout {
         imageView.setVisibility(4);
         imageView.setAlpha(0.0f);
         imageView.setImageResource(R.drawable.ic_goinline);
-        imageView.setContentDescription(gd.N0(2131754807, null));
+        imageView.setContentDescription(hd.N0(2131754807, null));
         int L4 = org.telegram.messenger.g0.L(4.0f);
         imageView.setPadding(L4, L4, L4, L4);
         imageView.setBackground(m6.h0(i0.a.o(-1, 55), 1, -1));
         imageView.setOnClickListener(new q31(3, b20Var, f40Var));
         addView(imageView, ma.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
-        ai.l0 l0Var = new ai.l0(b20Var, context, m6.d0(org.telegram.messenger.g0.L(18.0f), i0.a.o(m6.x0(null, m6.kh, false), ks.i3)), 20);
+        ai.l0 l0Var = new ai.l0(b20Var, context, m6.d0(org.telegram.messenger.g0.L(18.0f), i0.a.o(m6.x0(null, m6.kh, false), ls.i3)), 20);
         this.J = l0Var;
         e9 e9Var = new e9(context, true);
         this.K = e9Var;
@@ -669,7 +669,7 @@ public abstract class k0 extends FrameLayout {
 
     public final void f(y yVar) {
         this.I.remove(yVar);
-        long B1 = fj.B1(yVar.x.a.peer);
+        long B1 = gj.B1(yVar.x.a.peer);
         this.x.put(B1, r2.get(B1, 0) - 1);
     }
 
@@ -735,7 +735,7 @@ public abstract class k0 extends FrameLayout {
             return;
         }
         if (u3Var == null || !u3Var.equals(this.e)) {
-            long B1 = u3Var == null ? 0L : fj.B1(u3Var.a.peer);
+            long B1 = u3Var == null ? 0L : gj.B1(u3Var.a.peer);
             y yVar3 = this.E;
             Object[] objArr = 0;
             Object[] objArr2 = 0;
@@ -1085,7 +1085,7 @@ public abstract class k0 extends FrameLayout {
             if (i7 >= arrayList.size()) {
                 return;
             }
-            if (fj.B1(((y) arrayList.get(i7)).x.a.peer) == fj.B1(groupCallParticipant.peer)) {
+            if (gj.B1(((y) arrayList.get(i7)).x.a.peer) == gj.B1(groupCallParticipant.peer)) {
                 ((y) arrayList.get(i7)).setAmplitude(f10);
             }
             i7++;
@@ -1228,7 +1228,7 @@ public abstract class k0 extends FrameLayout {
                         boolean z12 = false;
                         z10 = false;
                         for (int i7 = 0; i7 < this.j0.f.size(); i7++) {
-                            if (this.N == fj.B1(((u3) this.j0.f.get(i7)).a.peer)) {
+                            if (this.N == gj.B1(((u3) this.j0.f.get(i7)).a.peer)) {
                                 f40Var.i1((u3) this.j0.f.get(i7));
                                 z12 = true;
                                 z10 = true;
@@ -1420,10 +1420,10 @@ public abstract class k0 extends FrameLayout {
                 j3 = j10;
             } else {
                 j3 = j10;
-                if (fj.B1(this.e.a.peer) == fj.B1(groupCallParticipant.peer)) {
+                if (gj.B1(this.e.a.peer) == gj.B1(groupCallParticipant.peer)) {
                     i7 = i11;
                 } else {
-                    long B1 = fj.B1(groupCallParticipant.peer);
+                    long B1 = gj.B1(groupCallParticipant.peer);
                     i7 = i11;
                     if (SystemClock.uptimeMillis() - groupCallParticipant.lastSpeakTime >= j3) {
                         continue;
@@ -1432,18 +1432,18 @@ public abstract class k0 extends FrameLayout {
                             spannableStringBuilder = new SpannableStringBuilder();
                         }
                         if (i12 == 0) {
-                            this.N = fj.B1(groupCallParticipant.peer);
+                            this.N = gj.B1(groupCallParticipant.peer);
                         }
                         if (i12 < 3) {
-                            TLRPC.User c22 = B1 > 0 ? mp.u1(i10).c2(Long.valueOf(B1)) : null;
-                            TLRPC.Chat O0 = B1 <= 0 ? mp.u1(i10).O0(Long.valueOf(B1)) : null;
+                            TLRPC.User c22 = B1 > 0 ? np.u1(i10).c2(Long.valueOf(B1)) : null;
+                            TLRPC.Chat O0 = B1 <= 0 ? np.u1(i10).O0(Long.valueOf(B1)) : null;
                             if (c22 != null || O0 != null) {
                                 e9Var.b(i12, i10, groupCallParticipant);
                                 if (i12 != 0) {
                                     spannableStringBuilder.append((CharSequence) ", ");
                                 }
                                 if (c22 != null) {
-                                    spannableStringBuilder.append(o10.k(c22, true), new l41(org.telegram.messenger.g0.o()), 0);
+                                    spannableStringBuilder.append(p10.k(c22, true), new l41(org.telegram.messenger.g0.o()), 0);
                                 } else {
                                     spannableStringBuilder.append(O0.title, new l41(org.telegram.messenger.g0.o()), 0);
                                 }
@@ -1484,7 +1484,7 @@ public abstract class k0 extends FrameLayout {
             invalidate();
             return;
         }
-        String K0 = gd.K0(i12, "MembersAreSpeakingToast");
+        String K0 = hd.K0(i12, "MembersAreSpeakingToast");
         int indexOf = K0.indexOf("un1");
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(K0);
         spannableStringBuilder2.replace(indexOf, indexOf + 3, (CharSequence) spannableStringBuilder);

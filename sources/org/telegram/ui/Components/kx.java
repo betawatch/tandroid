@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kx implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -98,17 +98,17 @@ public final /* synthetic */ class kx implements View.OnClickListener {
                         TLRPC.StickerSet stickerSet4 = lxVar.x.b;
                         tL_inputStickerSetID2.id = stickerSet4.id;
                         tL_inputStickerSetID2.access_hash = stickerSet4.access_hash;
-                        TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.ri.d0(i11).o0(tL_inputStickerSetID2, true);
+                        TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.si.d0(i11).o0(tL_inputStickerSetID2, true);
                         if (o02 != null && o02.set != null) {
                             org.telegram.ui.ActionBar.g2 g2Var = tyVar2.Z1;
                             if (g2Var == null) {
-                                g2Var = new bi.c9(lxVar, 8);
+                                g2Var = new bi.b9(lxVar, 8);
                             }
                             ev.K0(g2Var, o02, true, null, new oo(lxVar, 15));
                             break;
                         } else {
-                            org.telegram.messenger.ks.f(i11).c(lxVar, 64);
-                            org.telegram.messenger.ri d02 = org.telegram.messenger.ri.d0(i11);
+                            org.telegram.messenger.ls.f(i11).c(lxVar, 64);
+                            org.telegram.messenger.si d02 = org.telegram.messenger.si.d0(i11);
                             lxVar.s = tL_inputStickerSetID2;
                             d02.o0(tL_inputStickerSetID2, false);
                             break;
@@ -135,22 +135,22 @@ public final /* synthetic */ class kx implements View.OnClickListener {
                         TLRPC.StickerSet stickerSet5 = lxVar.x.b;
                         tL_inputStickerSetID3.id = stickerSet5.id;
                         tL_inputStickerSetID3.access_hash = stickerSet5.access_hash;
-                        TLRPC.TL_messages_stickerSet o03 = org.telegram.messenger.ri.d0(i13).o0(tL_inputStickerSetID3, true);
+                        TLRPC.TL_messages_stickerSet o03 = org.telegram.messenger.si.d0(i13).o0(tL_inputStickerSetID3, true);
                         if (o03 != null && o03.set != null) {
                             org.telegram.ui.ActionBar.g2 g2Var2 = tyVar3.Z1;
                             if (g2Var2 == null) {
-                                g2Var2 = new bi.c9(lxVar, 8);
+                                g2Var2 = new bi.b9(lxVar, 8);
                             }
                             org.telegram.ui.ActionBar.g2 g2Var3 = g2Var2;
                             ou ouVar = new ou(3, lxVar, o03);
                             Pattern pattern = ev.Q1;
                             if (g2Var3.getFragmentView() != null) {
-                                org.telegram.messenger.ri.d0(g2Var3.getCurrentAccount()).l2(g2Var3.getFragmentView().getContext(), o03, null, 0, g2Var3, null, true, true, ouVar, false);
+                                org.telegram.messenger.si.d0(g2Var3.getCurrentAccount()).l2(g2Var3.getFragmentView().getContext(), o03, null, 0, g2Var3, null, true, true, ouVar, false);
                                 break;
                             }
                         } else {
-                            org.telegram.messenger.ks.f(i13).c(lxVar, 64);
-                            org.telegram.messenger.ri d03 = org.telegram.messenger.ri.d0(i13);
+                            org.telegram.messenger.ls.f(i13).c(lxVar, 64);
+                            org.telegram.messenger.si d03 = org.telegram.messenger.si.d0(i13);
                             lxVar.w = tL_inputStickerSetID3;
                             d03.o0(tL_inputStickerSetID3, false);
                             break;

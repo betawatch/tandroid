@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class oc extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final int a;
@@ -22,7 +22,7 @@ public final class oc extends FrameLayout implements org.telegram.ui.ActionBar.b
     public boolean f;
     public final mc h;
     public boolean n;
-    public org.telegram.messenger.x10 r;
+    public org.telegram.messenger.y10 r;
     public String s;
     public TLRPC.WallPaper w;
     public final HashMap x;
@@ -95,8 +95,8 @@ public final class oc extends FrameLayout implements org.telegram.ui.ActionBar.b
         }
         for (int i11 = 0; i11 < f61Var.getChildCount(); i11++) {
             View childAt = f61Var.getChildAt(i11);
-            if ((childAt instanceof org.telegram.ui.Components.l01) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.l01) childAt).g(((org.telegram.ui.Components.mp) arrayList.get(R)).d, true);
+            if ((childAt instanceof org.telegram.ui.Components.k01) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.k01) childAt).g(((org.telegram.ui.Components.mp) arrayList.get(R)).d, true);
             }
         }
     }
@@ -118,8 +118,8 @@ public final class oc extends FrameLayout implements org.telegram.ui.ActionBar.b
         }
     }
 
-    public void setOnEmoticonSelected(org.telegram.messenger.x10 x10Var) {
-        this.r = x10Var;
+    public void setOnEmoticonSelected(org.telegram.messenger.y10 y10Var) {
+        this.r = y10Var;
     }
 
     public void setWithRemovedStub(boolean z10) {

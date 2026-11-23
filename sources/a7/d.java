@@ -9,7 +9,7 @@ import android.view.View;
 import androidx.mediarouter.app.b0;
 import androidx.mediarouter.app.z;
 import org.telegram.messenger.f3;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.l6;
@@ -20,7 +20,7 @@ import org.telegram.ui.ss;
 import org.telegram.ui.xt;
 import s4.v;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final class d implements View.OnClickListener {
                         ((xt) this.c).e.getImageView().getLocationInWindow(iArr);
                         int i10 = iArr[0];
                         int i11 = iArr[1];
-                        ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new ss(i7, this, (g2) this.b));
+                        ls.e().k(ls.w4, Q0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new ss(i7, this, (g2) this.b));
                         break;
                     }
                     str = string;
@@ -105,7 +105,7 @@ public final class d implements View.OnClickListener {
                     ((xt) this.c).e.getImageView().getLocationInWindow(iArr2);
                     int i102 = iArr2[0];
                     int i112 = iArr2[1];
-                    ks.e().k(ks.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new ss(i7, this, (g2) this.b));
+                    ls.e().k(ls.w4, Q0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), ((xt) this.c).e.getImageView(), ((xt) this.c).e, new ss(i7, this, (g2) this.b));
                 }
                 break;
         }

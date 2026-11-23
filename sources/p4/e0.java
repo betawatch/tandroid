@@ -25,14 +25,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import org.telegram.messenger.bf;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.pe;
+import org.telegram.messenger.cf;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qe;
 import org.telegram.ui.Components.es0;
 import org.telegram.ui.Wallet.u4;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public class e0 {
     public static final o1 B = new o1(1);
@@ -58,7 +58,7 @@ public class e0 {
     public final h9.i0 r;
     public g1 s;
     public i1 t;
-    public bf u;
+    public cf u;
     public boolean v;
     public final long w;
     public boolean x;
@@ -156,19 +156,19 @@ public class e0 {
                 if (keyCode != 272) {
                     if (keyCode != 273) {
                         switch (keyCode) {
-                            case ks.W0 /* 85 */:
+                            case ls.W0 /* 85 */:
                                 break;
-                            case ks.X0 /* 86 */:
+                            case ls.X0 /* 86 */:
                                 eVar = new e(this, e10, 6);
                                 break;
-                            case ks.Y0 /* 87 */:
+                            case ls.Y0 /* 87 */:
                                 break;
-                            case ks.Z0 /* 88 */:
+                            case ls.Z0 /* 88 */:
                                 break;
-                            case ks.a1 /* 89 */:
+                            case ls.a1 /* 89 */:
                                 eVar = new e(this, e10, 5);
                                 break;
-                            case ks.b1 /* 90 */:
+                            case ls.b1 /* 90 */:
                                 eVar = new e(this, e10, 4);
                                 break;
                             default:
@@ -239,9 +239,9 @@ public class e0 {
         this.c.a(false, false);
         d(new org.telegram.tgnet.u(y0Var, 13));
         try {
-            pe peVar = this.h.j;
+            qe qeVar = this.h.j;
             e2.o oVar = this.s.s;
-            peVar.n();
+            qeVar.n();
         } catch (RemoteException e10) {
             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
         }

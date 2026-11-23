@@ -1,42 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.io.Serializable;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k11 implements org.telegram.messenger.v10, org.telegram.messenger.w10, te.b {
-    public final /* synthetic */ b21 a;
+public final /* synthetic */ class k11 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a21 b;
 
-    public /* synthetic */ k11(b21 b21Var) {
-        this.a = b21Var;
+    public /* synthetic */ k11(a21 a21Var, int i7) {
+        this.a = i7;
+        this.b = a21Var;
     }
 
-    @Override // te.b
-    public void H(int i7, float f10, float f11, te.c cVar) {
-        this.a.h();
-    }
-
-    @Override // org.telegram.messenger.w10
-    public Boolean a(o41 o41Var, View view, Integer num, Float f10, Float f11) {
-        b21 b21Var = this.a;
-        boolean z10 = false;
-        if (!b21Var.K.k3 && !b21Var.y.k3) {
-            Object obj = o41Var.H;
-            if (obj instanceof TLRPC.TL_forumTopic) {
-                z10 = b21Var.o((TLRPC.TL_forumTopic) obj, view, false);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a21 a21Var = this.b;
+                if (a21Var.l()) {
+                    a21Var.m();
+                    break;
+                }
+                break;
+            default:
+                a21 a21Var2 = this.b;
+                p11 p11Var = a21Var2.K;
+                p11Var.z1(true);
+                n11 n11Var = a21Var2.y;
+                n11Var.z1(true);
+                a21Var2.N.a(true, true);
+                org.telegram.messenger.g0.Z3(n11Var);
+                org.telegram.messenger.g0.Z3(p11Var);
+                break;
         }
-        return Boolean.valueOf(z10);
-    }
-
-    @Override // org.telegram.messenger.v10
-    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        b21.a(this.a, (o41) obj);
-    }
-
-    @Override // te.b
-    public /* synthetic */ void D(float f10, int i7) {
     }
 }

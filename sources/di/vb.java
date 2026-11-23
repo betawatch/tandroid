@@ -2,15 +2,15 @@ package di;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.e00;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.xs;
+import org.telegram.messenger.f00;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ys;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb implements Runnable {
     public final /* synthetic */ int a;
@@ -56,11 +56,11 @@ public final /* synthetic */ class vb implements Runnable {
                 hi.p8 p8Var = k8Var.a0;
                 if (z10) {
                     int i12 = hi.p8.Y1;
-                    mp.u1(p8Var.a).Z2(Long.valueOf(j3), new hi.c8(k8Var, j3, i10), ks.e3);
+                    np.u1(p8Var.a).Z2(Long.valueOf(j3), new hi.c8(k8Var, j3, i10), ls.e3);
                     break;
                 } else {
                     int i13 = hi.p8.Y1;
-                    mp.u1(p8Var.a).b3(0, j3, true);
+                    np.u1(p8Var.a).b3(0, j3, true);
                     break;
                 }
             case 2:
@@ -80,17 +80,17 @@ public final /* synthetic */ class vb implements Runnable {
                 if (j0Var != null) {
                     j0Var.F();
                 }
-                mp u12 = mp.u1(k0Var.d);
+                np u12 = np.u1(k0Var.d);
                 long j10 = k0Var.e;
                 li.i0 i0Var = new li.i0(k0Var, 2);
                 TL_communities.TL_communities_togglePeerLinkRequestApproval tL_communities_togglePeerLinkRequestApproval = new TL_communities.TL_communities_togglePeerLinkRequestApproval();
                 tL_communities_togglePeerLinkRequestApproval.community = u12.j1(j10);
                 tL_communities_togglePeerLinkRequestApproval.peer = u12.l1(j3);
                 tL_communities_togglePeerLinkRequestApproval.reject = !z10;
-                u12.getConnectionsManager().sendRequestTyped(tL_communities_togglePeerLinkRequestApproval, new d3.b(i11), new org.telegram.messenger.o9(u12, j10, i0Var, 2));
+                u12.getConnectionsManager().sendRequestTyped(tL_communities_togglePeerLinkRequestApproval, new d3.b(i11), new org.telegram.messenger.p9(u12, j10, i0Var, 2));
                 break;
             case 3:
-                HashSet hashSet = ((xs) obj).y;
+                HashSet hashSet = ((ys) obj).y;
                 if (z10) {
                     hashSet.add(Long.valueOf(j3));
                     break;
@@ -99,24 +99,24 @@ public final /* synthetic */ class vb implements Runnable {
                     break;
                 }
             default:
-                e00 e00Var = (e00) obj;
-                e00Var.getUserConfig().k().edit().remove("topics_end_reached_" + j3).apply();
-                e00Var.a.l(j3);
-                e00Var.b.l(j3);
-                e00Var.d.delete(j3);
-                e00Var.s.l(j3);
-                TLRPC.Chat O0 = e00Var.getMessagesController().O0(Long.valueOf(j3));
+                f00 f00Var = (f00) obj;
+                f00Var.getUserConfig().k().edit().remove("topics_end_reached_" + j3).apply();
+                f00Var.a.l(j3);
+                f00Var.b.l(j3);
+                f00Var.d.delete(j3);
+                f00Var.s.l(j3);
+                TLRPC.Chat O0 = f00Var.getMessagesController().O0(Long.valueOf(j3));
                 if (O0 != null && (O0.forum || O0.monoforum)) {
-                    e00Var.n(0, j3, z10);
+                    f00Var.n(0, j3, z10);
                 }
-                e00Var.y(j3, true);
+                f00Var.y(j3, true);
                 break;
         }
     }
 
-    public /* synthetic */ vb(fs fsVar, boolean z10, long j3, int i7) {
+    public /* synthetic */ vb(gs gsVar, boolean z10, long j3, int i7) {
         this.a = i7;
-        this.d = fsVar;
+        this.d = gsVar;
         this.b = z10;
         this.c = j3;
     }

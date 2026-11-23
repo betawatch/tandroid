@@ -3,10 +3,10 @@ package hi;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.ViewGroup;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r6 implements eh.a {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class r6 implements eh.a {
             case 0:
                 u6 u6Var = (u6) this.b;
                 ek0 ek0Var = u6Var.o1;
-                ih.d.b(ek0Var, canvas, rectF, ek0Var, u6Var.b, ks.e4);
+                ih.d.b(ek0Var, canvas, rectF, ek0Var, u6Var.b, ls.e4);
                 break;
             default:
                 org.telegram.ui.ActionBar.w2 w2Var = this.b;

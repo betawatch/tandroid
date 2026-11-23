@@ -4,7 +4,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class fs0 extends org.telegram.ui.Cells.h7 {
     public final /* synthetic */ int m0;
@@ -18,21 +18,21 @@ public final class fs0 extends org.telegram.ui.Cells.h7 {
     }
 
     @Override // org.telegram.ui.Cells.h7
-    public final boolean d(org.telegram.messenger.fj fjVar) {
+    public final boolean d(org.telegram.messenger.gj gjVar) {
         long playlistTopicId;
         long playlistTopicId2;
         switch (this.m0) {
             case 0:
                 gs0 gs0Var = (gs0) this.n0;
-                if (org.telegram.messenger.fj.R4(fjVar.k) || fjVar.h4()) {
-                    boolean S = MediaController.B().S(fjVar);
+                if (org.telegram.messenger.gj.R4(gjVar.k) || gjVar.h4()) {
+                    boolean S = MediaController.B().S(gjVar);
                     MediaController.B().r0(S ? gs0Var.d : null, false);
-                    if (fjVar.h4()) {
+                    if (gjVar.h4()) {
                         MediaController.B().k0(false);
                     }
                     return S;
                 }
-                if (!fjVar.I3()) {
+                if (!gjVar.I3()) {
                     return false;
                 }
                 MediaController B = MediaController.B();
@@ -40,32 +40,32 @@ public final class fs0 extends org.telegram.ui.Cells.h7 {
                 jt0 jt0Var = gs0Var.w;
                 long j3 = jt0Var.f1;
                 playlistTopicId = jt0Var.getPlaylistTopicId();
-                return B.o0(arrayList, fjVar, j3, true, null, playlistTopicId);
+                return B.o0(arrayList, gjVar, j3, true, null, playlistTopicId);
             case 1:
                 ws0 ws0Var = (ws0) this.n0;
                 int i7 = ws0Var.d;
                 jt0 jt0Var2 = ws0Var.f;
-                if (org.telegram.messenger.fj.R4(fjVar.k) || fjVar.h4()) {
-                    boolean S2 = MediaController.B().S(fjVar);
+                if (org.telegram.messenger.gj.R4(gjVar.k) || gjVar.h4()) {
+                    boolean S2 = MediaController.B().S(gjVar);
                     MediaController.B().r0(S2 ? jt0Var2.w1[i7].a : null, false);
                     return S2;
                 }
-                if (!fjVar.I3()) {
+                if (!gjVar.I3()) {
                     return false;
                 }
                 MediaController B2 = MediaController.B();
                 ArrayList arrayList2 = jt0Var2.w1[i7].a;
                 long j10 = jt0Var2.f1;
                 playlistTopicId2 = jt0Var2.getPlaylistTopicId();
-                return B2.o0(arrayList2, fjVar, j10, true, null, playlistTopicId2);
+                return B2.o0(arrayList2, gjVar, j10, true, null, playlistTopicId2);
             default:
                 org.telegram.ui.c00 c00Var = ((org.telegram.ui.xz) this.n0).w;
-                if (org.telegram.messenger.fj.R4(fjVar.k) || fjVar.h4()) {
-                    boolean S3 = MediaController.B().S(fjVar);
+                if (org.telegram.messenger.gj.R4(gjVar.k) || gjVar.h4()) {
+                    boolean S3 = MediaController.B().S(gjVar);
                     MediaController.B().r0(S3 ? c00Var.f : null, false);
                     return S3;
                 }
-                if (!fjVar.I3()) {
+                if (!gjVar.I3()) {
                     return false;
                 }
                 String str = c00Var.R;
@@ -76,7 +76,7 @@ public final class fs0 extends org.telegram.ui.Cells.h7 {
                 a0Var.f = c00Var.w;
                 a0Var.d = c00Var.P;
                 a0Var.g = c00Var.K ? 1 : 0;
-                return MediaController.B().o0(c00Var.f, fjVar, 0L, true, a0Var, 0L);
+                return MediaController.B().o0(c00Var.f, gjVar, 0L, true, a0Var, 0L);
         }
     }
 

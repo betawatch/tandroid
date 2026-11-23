@@ -3,26 +3,26 @@ package di;
 import android.graphics.Bitmap;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.ef;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.np;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q1 implements s10 {
+public final /* synthetic */ class q1 implements t10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fs b;
+    public final /* synthetic */ gs b;
 
-    public /* synthetic */ q1(fs fsVar, int i7) {
+    public /* synthetic */ q1(gs gsVar, int i7) {
         this.a = i7;
-        this.b = fsVar;
+        this.b = gsVar;
     }
 
-    @Override // org.telegram.messenger.s10
+    @Override // org.telegram.messenger.t10
     public final void a(Object obj, Object obj2, Object obj3) {
         int i7;
         hi.v vVar;
@@ -33,11 +33,11 @@ public final /* synthetic */ class q1 implements s10 {
             case 1:
                 f6 f6Var = (f6) this.b;
                 ArrayList arrayList = (ArrayList) obj;
-                q10 q10Var = (q10) obj2;
+                r10 r10Var = (r10) obj2;
                 Runnable runnable = (Runnable) obj3;
-                bi.i8 i8Var = f6Var.S2;
-                if (i8Var != null) {
-                    i8Var.b();
+                bi.h8 h8Var = f6Var.S2;
+                if (h8Var != null) {
+                    h8Var.b();
                     f6Var.S2 = null;
                 }
                 TL_stars.craftStarGift craftstargift = new TL_stars.craftStarGift();
@@ -50,7 +50,7 @@ public final /* synthetic */ class q1 implements s10 {
                     tL_inputSavedStarGiftSlug.slug = ((TL_stars.StarGift) obj4).slug;
                     craftstargift.stargift.add(tL_inputSavedStarGiftSlug);
                 }
-                ConnectionsManager.getInstance(f6Var.a).sendRequestTyped(craftstargift, new d3.b(1), new e2(f6Var, q10Var, arrayList, runnable, 0));
+                ConnectionsManager.getInstance(f6Var.a).sendRequestTyped(craftstargift, new d3.b(1), new e2(f6Var, r10Var, arrayList, runnable, 0));
                 break;
             default:
                 hi.sa saVar = (hi.sa) this.b;
@@ -112,7 +112,7 @@ public final /* synthetic */ class q1 implements s10 {
                     int i12 = 0;
                     while (true) {
                         if (i12 < arrayList2.size()) {
-                            hi.c7 l10 = hi.c7.l((ef) arrayList2.get(i12));
+                            hi.c7 l10 = hi.c7.l((ff) arrayList2.get(i12));
                             l10.M0 = (Bitmap) arrayList3.get(i12);
                             l10.J0 = saVar.w0;
                             l10.K0 = saVar.x0;
@@ -159,8 +159,8 @@ public final /* synthetic */ class q1 implements s10 {
                         hi.l9 l9Var = saVar.e1;
                         if (l9Var != null) {
                             hi.l lVar = l9Var.h;
-                            if (!l9Var.J && !l9Var.N && (i7 = mp.g1().getInt("multistorieshint", 0)) < 3) {
-                                mp.g1().edit().putInt("multistorieshint", i7 + 1).apply();
+                            if (!l9Var.J && !l9Var.N && (i7 = np.g1().getInt("multistorieshint", 0)) < 3) {
+                                np.g1().edit().putInt("multistorieshint", i7 + 1).apply();
                                 org.telegram.messenger.g0.r(lVar);
                                 l9Var.J = true;
                                 l9Var.invalidate();

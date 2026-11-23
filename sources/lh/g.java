@@ -8,8 +8,8 @@ import android.widget.FrameLayout;
 import jh.k;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.g1;
@@ -20,12 +20,12 @@ import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.Components.jl0;
 import org.telegram.ui.af;
 import org.telegram.ui.bn;
-import org.telegram.ui.e0;
+import org.telegram.ui.d0;
 import org.telegram.ui.ee;
 import org.telegram.ui.mu0;
 import org.telegram.ui.pl;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -70,12 +70,12 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                     actionBarPopupWindow$ActionBarPopupWindowLayout.setMinimumWidth(g0.L(200.0f));
                     y0 y0Var = new y0(0, parentActivity, resourceProvider, true, true);
                     y0Var.setMinimumWidth(g0.L(200.0f));
-                    y0Var.j(!z10 ? gd.N0(2131746176, null) : z10 ? gd.N0(2131746178, null) : gd.N0(2131746177, null), R.drawable.msg_seen, null);
+                    y0Var.j(!z10 ? hd.N0(2131746176, null) : z10 ? hd.N0(2131746178, null) : hd.N0(2131746177, null), R.drawable.msg_seen, null);
                     y0Var.setOnClickListener(new mu0(1, afVar));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.addView(y0Var);
                     g1 g1Var = new g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                     g1Var.e = true;
-                    g1Var.c = ks.x3;
+                    g1Var.c = ls.x3;
                     g1Var.setOutsideTouchable(true);
                     g1Var.setClippingEnabled(true);
                     g1Var.setAnimationStyle(R.style.PopupContextAnimation);
@@ -96,7 +96,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                     g1Var.showAtLocation(plVar, 51, (int) width, (int) measuredHeight);
                     bnVar.g9 = g1Var;
                     bnVar.w8(bnVar.y1, false);
-                    bnVar.g9.setOnDismissListener(new e0(bnVar, i11));
+                    bnVar.g9.setOnDismissListener(new d0(bnVar, i11));
                     try {
                         view.performHapticFeedback(0, 2);
                     } catch (Exception unused) {

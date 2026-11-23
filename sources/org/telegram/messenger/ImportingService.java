@@ -5,30 +5,30 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
-public class ImportingService extends Service implements fs {
+public class ImportingService extends Service implements gs {
     public e0.q a;
 
     public ImportingService() {
         for (int i7 = 0; i7 < 4; i7++) {
-            ks.f(i7).b(this, ks.v1);
-            ks.f(i7).b(this, ks.w1);
+            ls.f(i7).b(this, ls.v1);
+            ls.f(i7).b(this, ls.w1);
         }
     }
 
     public static boolean a() {
         for (int i7 = 0; i7 < 4; i7++) {
-            if (zy.C(i7).G.size() != 0) {
+            if (az.C(i7).G.size() != 0) {
                 return true;
             }
         }
         return false;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if ((i7 != ks.v1 && i7 != ks.w1) || a() || a()) {
+        if ((i7 != ls.v1 && i7 != ls.w1) || a() || a()) {
             return;
         }
         stopSelf();
@@ -48,8 +48,8 @@ public class ImportingService extends Service implements fs {
         }
         new e0.i0(t0.b).b(5, null);
         for (int i7 = 0; i7 < 4; i7++) {
-            ks.f(i7).n(this, ks.v1);
-            ks.f(i7).n(this, ks.w1);
+            ls.f(i7).n(this, ls.v1);
+            ls.f(i7).n(this, ls.w1);
         }
         if (s2.a) {
             a8.b("destroy import service");
@@ -60,7 +60,7 @@ public class ImportingService extends Service implements fs {
     public final int onStartCommand(Intent intent, int i7, int i10) {
         if (!a()) {
             for (int i11 = 0; i11 < 4; i11++) {
-                if (zy.C(i11).E.m() == 0) {
+                if (az.C(i11).E.m() == 0) {
                 }
             }
             stopSelf();
@@ -70,24 +70,24 @@ public class ImportingService extends Service implements fs {
             a8.b("start import service");
         }
         if (this.a == null) {
-            xs.i();
+            ys.i();
             e0.q qVar = new e0.q(t0.b, null);
             this.a = qVar;
             qVar.F.icon = R.drawable.stat_sys_upload;
             qVar.F.when = System.currentTimeMillis();
             e0.q qVar2 = this.a;
-            qVar2.y = xs.k0;
-            qVar2.g(gd.N0(org.telegram.messenger.beta.R.string.AppName, null));
+            qVar2.y = ys.k0;
+            qVar2.g(hd.N0(org.telegram.messenger.beta.R.string.AppName, null));
             int i12 = 0;
             while (true) {
                 if (i12 >= 4) {
-                    this.a.p(gd.N0(2131749073, null));
-                    this.a.f(gd.N0(2131749073, null));
+                    this.a.p(hd.N0(2131749073, null));
+                    this.a.f(hd.N0(2131749073, null));
                     break;
                 }
-                if (zy.C(i12).E.m() != 0) {
-                    this.a.p(gd.N0(2131749074, null));
-                    this.a.f(gd.N0(2131749074, null));
+                if (az.C(i12).E.m() != 0) {
+                    this.a.p(hd.N0(2131749074, null));
+                    this.a.f(hd.N0(2131749074, null));
                     break;
                 }
                 i12++;

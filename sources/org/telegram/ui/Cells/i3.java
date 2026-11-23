@@ -7,13 +7,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashSet;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class i3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public boolean E;
@@ -61,7 +61,7 @@ public abstract class i3 extends FrameLayout implements org.telegram.ui.ActionBa
             editText.setSingleLine(true);
         }
         editText.setPadding(editText.getPaddingLeft(), editText.getPaddingTop(), org.telegram.messenger.g0.L(0.0f), editText.getPaddingBottom());
-        editText.setGravity((gd.a0 ? 5 : 3) | 48);
+        editText.setGravity((hd.a0 ? 5 : 3) | 48);
         editText.setInputType((z10 ? 131072 : 0) | 573441);
         editText.setRawInputType(573441);
         editText.setHint(str);
@@ -101,7 +101,7 @@ public abstract class i3 extends FrameLayout implements org.telegram.ui.ActionBa
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.E) {
-            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
+            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

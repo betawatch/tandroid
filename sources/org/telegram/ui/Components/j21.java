@@ -8,6 +8,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.StateSet;
 import j$.util.Objects;
+import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +21,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class j21 {
     public static HashMap O;
@@ -64,6 +65,7 @@ public abstract class j21 {
     public static final int[] N = {R.attr.state_enabled, R.attr.state_pressed};
     public static final HashMap R = new HashMap();
     public static final HashMap S = new HashMap();
+    public static final ConcurrentHashMap.KeySetView T = ConcurrentHashMap.newKeySet();
     public boolean w = false;
     public boolean A = false;
     public final x1.a B = new x1.a();
@@ -84,7 +86,7 @@ public abstract class j21 {
         oh0Var.M(0);
         oh0Var.setCallback(r1Var);
         final int i7 = z10 ? 1 : 0;
-        oh0Var.S(19, new Runnable(this) { // from class: org.telegram.ui.Components.f21
+        oh0Var.S(19, new Runnable(this) { // from class: org.telegram.ui.Components.e21
             public final /* synthetic */ j21 b;
 
             {
@@ -122,7 +124,7 @@ public abstract class j21 {
         oh0Var2.M(0);
         oh0Var2.setCallback(r1Var);
         oh0Var2.R(r1Var);
-        oh0Var2.S(19, new Runnable(this) { // from class: org.telegram.ui.Components.f21
+        oh0Var2.S(19, new Runnable(this) { // from class: org.telegram.ui.Components.e21
             public final /* synthetic */ j21 b;
 
             {
@@ -156,13 +158,36 @@ public abstract class j21 {
         oh0Var2.J(true);
         this.y = false;
         this.z = false;
-        if (r1Var.getMessageObject() != null && org.telegram.messenger.j10.i(r1Var.getMessageObject().K1).q()) {
+        if (r1Var.getMessageObject() != null && org.telegram.messenger.k10.i(r1Var.getMessageObject().K1).q()) {
             z10 = true;
         }
         this.x = z10;
         nr nrVar = nr.h;
         this.l = new d6(r1Var, 250L, nrVar);
         this.j = new d6(r1Var, 250L, nrVar);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0028, code lost:
+    
+        if (org.telegram.ui.Dictation.DictationAsr.B(r1) != false) goto L13;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean A(org.telegram.messenger.gj gjVar) {
+        if (gjVar != null) {
+            int i7 = gjVar.K1;
+            if (org.telegram.messenger.gj.R4(gjVar.k)) {
+                if (!j(gjVar)) {
+                    if (!T.contains(Integer.valueOf(r(gjVar)))) {
+                    }
+                }
+                if (DictationAsr.w(i7) && ai.m1.h() && gjVar.L0() * 16000.0d * 4.0d < 3.145728E8d) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static void a(Path path, int i7, int i10, int i11, int i12, float f10, float f11) {
@@ -220,16 +245,16 @@ public abstract class j21 {
         }
     }
 
-    public static boolean e(org.telegram.messenger.fj fjVar) {
-        if (fjVar != null) {
-            int i7 = fjVar.K1;
-            if (fjVar.k != null) {
+    public static boolean e(org.telegram.messenger.gj gjVar) {
+        if (gjVar != null) {
+            int i7 = gjVar.K1;
+            if (gjVar.k != null) {
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i7);
-                org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
-                if (i(fjVar)) {
+                org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i7);
+                if (i(gjVar)) {
                     return true;
                 }
-                if (u12.v4 > 0 && fjVar.L0() <= u12.w4) {
+                if (u12.v4 > 0 && gjVar.L0() <= u12.w4) {
                     return u12.x4 == 0 || connectionsManager.getCurrentTime() > u12.x4 || u12.y4 > 0;
                 }
             }
@@ -237,22 +262,22 @@ public abstract class j21 {
         return false;
     }
 
-    public static boolean f(org.telegram.messenger.fj fjVar, long j3, String str) {
+    public static boolean f(org.telegram.messenger.gj gjVar, long j3, String str) {
         try {
             HashMap hashMap = O;
-            org.telegram.messenger.fj fjVar2 = fjVar == null ? (hashMap == null || !hashMap.containsKey(Long.valueOf(j3))) ? null : (org.telegram.messenger.fj) O.remove(Long.valueOf(j3)) : fjVar;
-            if (fjVar2 != null && fjVar2.k != null) {
+            org.telegram.messenger.gj gjVar2 = gjVar == null ? (hashMap == null || !hashMap.containsKey(Long.valueOf(j3))) ? null : (org.telegram.messenger.gj) O.remove(Long.valueOf(j3)) : gjVar;
+            if (gjVar2 != null && gjVar2.k != null) {
                 HashMap hashMap2 = P;
                 if (hashMap2 != null) {
-                    hashMap2.remove(Integer.valueOf(q(fjVar2)));
+                    hashMap2.remove(Integer.valueOf(r(gjVar2)));
                 }
-                TLRPC.Message message = fjVar2.k;
+                TLRPC.Message message = gjVar2.k;
                 message.voiceTranscriptionFinal = true;
                 message.voiceTranscriptionLocal = false;
                 message.voiceTranscriptionWords = null;
-                org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(fjVar2.K1);
-                a02.a.c(new org.telegram.messenger.z1(a02, fjVar2.e1(), org.telegram.messenger.fj.B0(fjVar2.k), fjVar2.k, str, 2));
-                org.telegram.messenger.g0.g3(new c21(fjVar2, j3, str, 0));
+                org.telegram.messenger.ur a02 = org.telegram.messenger.ur.a0(gjVar2.K1);
+                a02.a.c(new org.telegram.messenger.z1(a02, gjVar2.e1(), org.telegram.messenger.gj.B0(gjVar2.k), gjVar2.k, str, 2));
+                org.telegram.messenger.g0.g3(new b21(gjVar2, j3, str, 0));
                 return true;
             }
         } catch (Exception unused) {
@@ -262,17 +287,17 @@ public abstract class j21 {
 
     public static int g(int i7) {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i7);
-        org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
+        org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i7);
         if (u12.v4 <= 0) {
             return 0;
         }
         return (u12.x4 == 0 || connectionsManager.getCurrentTime() > u12.x4) ? u12.v4 : u12.y4;
     }
 
-    public static boolean i(org.telegram.messenger.fj fjVar) {
-        if (fjVar != null && fjVar.k != null) {
-            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(fjVar.K1);
-            TLRPC.Chat O0 = u12.O0(Long.valueOf(fjVar.x0()));
+    public static boolean i(org.telegram.messenger.gj gjVar) {
+        if (gjVar != null && gjVar.k != null) {
+            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(gjVar.K1);
+            TLRPC.Chat O0 = u12.O0(Long.valueOf(gjVar.x0()));
             if (org.telegram.messenger.v3.n0(O0) && O0.level >= u12.D5) {
                 return true;
             }
@@ -280,110 +305,114 @@ public abstract class j21 {
         return false;
     }
 
-    public static boolean j(org.telegram.messenger.fj fjVar) {
+    public static boolean j(org.telegram.messenger.gj gjVar) {
+        return gjVar != null && org.telegram.messenger.n5.C(org.telegram.messenger.gj.B0(gjVar.k));
+    }
+
+    public static boolean k(org.telegram.messenger.gj gjVar) {
         TLRPC.Message message;
-        if (fjVar == null || (message = fjVar.k) == null || !org.telegram.messenger.fj.R4(message) || !fjVar.q4()) {
+        if (gjVar == null || (message = gjVar.k) == null || !org.telegram.messenger.gj.R4(message) || !gjVar.q4()) {
             return false;
         }
-        TLRPC.Message message2 = fjVar.k;
-        if (message2.voiceTranscriptionOpen && message2.voiceTranscriptionFinal && message2.voiceTranscription != null && message2.voiceTranscriptionLocal && !z(fjVar)) {
-            return (org.telegram.messenger.j10.i(fjVar.K1).q() || e(fjVar)) && !k(fjVar);
+        TLRPC.Message message2 = gjVar.k;
+        if (message2.voiceTranscriptionOpen && message2.voiceTranscriptionFinal && message2.voiceTranscription != null && message2.voiceTranscriptionLocal && !A(gjVar)) {
+            return (org.telegram.messenger.k10.i(gjVar.K1).q() || e(gjVar)) && !l(gjVar);
         }
         return false;
     }
 
-    public static boolean k(org.telegram.messenger.fj fjVar) {
+    public static boolean l(org.telegram.messenger.gj gjVar) {
         TLRPC.Message message;
         HashMap hashMap = P;
-        if (hashMap != null && (hashMap.containsValue(fjVar) || P.containsKey(Integer.valueOf(q(fjVar))))) {
+        if (hashMap != null && (hashMap.containsValue(gjVar) || P.containsKey(Integer.valueOf(r(gjVar))))) {
             return true;
         }
         HashMap hashMap2 = O;
-        return (hashMap2 == null || fjVar == null || (message = fjVar.k) == null || !hashMap2.containsKey(Long.valueOf(message.voiceTranscriptionId))) ? false : true;
+        return (hashMap2 == null || gjVar == null || (message = gjVar.k) == null || !hashMap2.containsKey(Long.valueOf(message.voiceTranscriptionId))) ? false : true;
     }
 
-    public static boolean l(org.telegram.messenger.fj fjVar) {
+    public static boolean m(org.telegram.messenger.gj gjVar) {
         if (Q != null) {
-            return !fjVar.h4() || Q.contains(Integer.valueOf(q(fjVar)));
+            return !gjVar.h4() || Q.contains(Integer.valueOf(r(gjVar)));
         }
         return false;
     }
 
-    public static void m(org.telegram.messenger.fj fjVar) {
-        R.remove(Integer.valueOf(q(fjVar)));
-        S.remove(Integer.valueOf(q(fjVar)));
+    public static void n(org.telegram.messenger.gj gjVar) {
+        R.remove(Integer.valueOf(r(gjVar)));
+        S.remove(Integer.valueOf(r(gjVar)));
         HashMap hashMap = P;
         if (hashMap != null) {
-            hashMap.remove(Integer.valueOf(q(fjVar)));
+            hashMap.remove(Integer.valueOf(r(gjVar)));
         }
         if (org.telegram.messenger.s2.a) {
-            org.telegram.messenger.a8.b("local transcription of msg_id=" + fjVar.e1() + " failed");
+            org.telegram.messenger.a8.b("local transcription of msg_id=" + gjVar.e1() + " failed");
         }
-        org.telegram.messenger.ks.f(fjVar.K1).k(org.telegram.messenger.ks.A1, fjVar);
+        org.telegram.messenger.ls.f(gjVar.K1).k(org.telegram.messenger.ls.A1, gjVar);
     }
 
-    public static void n(org.telegram.messenger.fj fjVar) {
-        m(fjVar);
+    public static void o(org.telegram.messenger.gj gjVar) {
+        n(gjVar);
         if (org.telegram.messenger.s2.a) {
-            org.telegram.messenger.a8.b("local transcription of msg_id=" + fjVar.e1() + ": no model and no auto-download, opening speech settings");
+            org.telegram.messenger.a8.b("local transcription of msg_id=" + gjVar.e1() + ": no model and no auto-download, opening speech settings");
         }
-        org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
-        if (T != null) {
-            T.presentFragment(new ai.z2());
+        org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
+        if (T2 != null) {
+            T2.presentFragment(new ai.a3());
         }
     }
 
-    public static void p(org.telegram.messenger.fj fjVar) {
-        if (fjVar == null || l(fjVar)) {
+    public static void q(org.telegram.messenger.gj gjVar) {
+        if (gjVar == null || m(gjVar)) {
             return;
         }
         if (Q == null) {
             Q = new ArrayList(1);
         }
-        Q.add(Integer.valueOf(q(fjVar)));
+        Q.add(Integer.valueOf(r(gjVar)));
     }
 
-    public static int q(org.telegram.messenger.fj fjVar) {
-        if (fjVar == null) {
+    public static int r(org.telegram.messenger.gj gjVar) {
+        if (gjVar == null) {
             return 0;
         }
-        return Objects.hash(Integer.valueOf(fjVar.K1), Long.valueOf(org.telegram.messenger.fj.B0(fjVar.k)), Integer.valueOf(fjVar.e1()));
+        return Objects.hash(Integer.valueOf(gjVar.K1), Long.valueOf(org.telegram.messenger.gj.B0(gjVar.k)), Integer.valueOf(gjVar.e1()));
     }
 
-    public static void u(org.telegram.messenger.fj fjVar, boolean z10) {
-        TLRPC.Message message = fjVar.k;
+    public static void v(org.telegram.messenger.gj gjVar, boolean z10) {
+        TLRPC.Message message = gjVar.k;
         if (message == null) {
             return;
         }
         message.voiceTranscriptionForce = true;
-        org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(fjVar.K1);
-        long B0 = org.telegram.messenger.fj.B0(fjVar.k);
-        a02.a.c(new org.telegram.messenger.ek(a02, fjVar.e1(), B0, fjVar.k, 6));
+        org.telegram.messenger.ur a02 = org.telegram.messenger.ur.a0(gjVar.K1);
+        long B0 = org.telegram.messenger.gj.B0(gjVar.k);
+        a02.a.c(new org.telegram.messenger.fk(a02, gjVar.e1(), B0, gjVar.k, 6));
         if (z10) {
-            org.telegram.messenger.g0.g3(new cp0(fjVar, 21));
+            org.telegram.messenger.g0.g3(new cp0(gjVar, 21));
         }
     }
 
-    public static boolean v(org.telegram.messenger.fj fjVar) {
-        if (fjVar != null) {
-            int i7 = fjVar.K1;
-            if (fjVar.k == null || i(fjVar) || z(fjVar) || !TextUtils.isEmpty(fjVar.k.voiceTranscription)) {
+    public static boolean w(org.telegram.messenger.gj gjVar) {
+        if (gjVar != null) {
+            int i7 = gjVar.K1;
+            if (gjVar.k == null || i(gjVar) || A(gjVar) || !TextUtils.isEmpty(gjVar.k.voiceTranscription)) {
                 return false;
             }
             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i7);
-            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
-            if (!org.telegram.messenger.j10.i(i7).q() && u12.x4 != 0 && connectionsManager.getCurrentTime() <= u12.x4 && u12.y4 <= 0) {
+            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i7);
+            if (!org.telegram.messenger.k10.i(i7).q() && u12.x4 != 0 && connectionsManager.getCurrentTime() <= u12.x4 && u12.y4 <= 0) {
                 return true;
             }
         }
         return false;
     }
 
-    public static void w(org.telegram.messenger.fj fjVar) {
-        Integer valueOf = Integer.valueOf(q(fjVar));
-        org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) R.remove(valueOf);
+    public static void x(org.telegram.messenger.gj gjVar) {
+        Integer valueOf = Integer.valueOf(r(gjVar));
+        org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) R.remove(valueOf);
         Runnable runnable = (Runnable) S.remove(valueOf);
-        if (fjVar2 == null) {
+        if (gjVar2 == null) {
             return;
         }
         if (runnable != null) {
@@ -393,9 +422,9 @@ public abstract class j21 {
         if (hashMap != null) {
             hashMap.remove(valueOf);
         }
-        org.telegram.messenger.fj[] fjVarArr = {fjVar2, fjVar};
+        org.telegram.messenger.gj[] gjVarArr = {gjVar2, gjVar};
         for (int i7 = 0; i7 < 2; i7++) {
-            TLRPC.Message message = fjVarArr[i7].k;
+            TLRPC.Message message = gjVarArr[i7].k;
             if (message != null && message.voiceTranscriptionLocal && !message.voiceTranscriptionFinal) {
                 message.voiceTranscription = null;
                 message.voiceTranscriptionWords = null;
@@ -404,98 +433,102 @@ public abstract class j21 {
             }
         }
         if (org.telegram.messenger.s2.a) {
-            org.telegram.messenger.a8.b("local transcription of msg_id=" + fjVar.e1() + " stopped");
+            org.telegram.messenger.a8.b("local transcription of msg_id=" + gjVar.e1() + " stopped");
         }
-        org.telegram.messenger.ks.f(fjVar2.K1).k(org.telegram.messenger.ks.A1, fjVar2);
+        org.telegram.messenger.ls.f(gjVar2.K1).k(org.telegram.messenger.ls.A1, gjVar2);
     }
 
-    public static void x(org.telegram.messenger.fj fjVar, String str) {
-        int i7 = fjVar.K1;
-        long B0 = org.telegram.messenger.fj.B0(fjVar.k);
+    public static void y(org.telegram.messenger.gj gjVar, String str, org.telegram.ui.Cells.m1 m1Var) {
+        int i7 = gjVar.K1;
+        long B0 = org.telegram.messenger.gj.B0(gjVar.k);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         ArrayList arrayList = (ArrayList) ai.w0.a.get(Long.valueOf(B0));
         int i10 = 0;
-        android.support.v4.media.session.a0 T = DictationAsr.T(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
+        android.support.v4.media.session.a0 T2 = DictationAsr.T(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
         if (org.telegram.messenger.s2.a) {
-            org.telegram.messenger.a8.b("local transcription of msg_id=" + fjVar.e1() + " with " + T);
+            org.telegram.messenger.a8.b("local transcription of msg_id=" + gjVar.e1() + " with " + T2);
         }
-        Integer valueOf = Integer.valueOf(q(fjVar));
+        Integer valueOf = Integer.valueOf(r(gjVar));
         HashMap hashMap = S;
-        h21 h21Var = new h21(valueOf, fjVar, i7, B0, elapsedRealtime);
+        h21 h21Var = new h21(valueOf, gjVar, m1Var, i7, B0, elapsedRealtime);
         boolean[] zArr = {false};
         DictationLid.d(org.telegram.messenger.t0.b);
-        new Thread(new ai.r(str, zArr, h21Var, T, 0), "DictationAsrFile").start();
+        new Thread(new ai.r(str, zArr, h21Var, T2, 0), "DictationAsrFile").start();
         hashMap.put(valueOf, new ai.s(i10, zArr));
     }
 
-    public static void y(final org.telegram.messenger.fj fjVar, boolean z10, final org.telegram.ui.Cells.m1 m1Var) {
+    public static void z(final org.telegram.messenger.gj gjVar, boolean z10, final org.telegram.ui.Cells.m1 m1Var) {
         ai.t tVar;
-        if (fjVar == null || fjVar.k == null || !fjVar.q4()) {
+        if (gjVar == null || gjVar.k == null || !gjVar.q4()) {
             return;
         }
-        final int i7 = fjVar.K1;
+        final int i7 = gjVar.K1;
         final long elapsedRealtime = SystemClock.elapsedRealtime();
-        TLRPC.InputPeer o12 = org.telegram.messenger.mp.u1(i7).o1(fjVar.k.peer_id);
+        TLRPC.InputPeer o12 = org.telegram.messenger.np.u1(i7).o1(gjVar.k.peer_id);
         final long n10 = org.telegram.messenger.n5.n(o12);
-        TLRPC.Message message = fjVar.k;
+        TLRPC.Message message = gjVar.k;
         final int i10 = message.id;
         if (!z10) {
-            w(fjVar);
+            x(gjVar);
             HashMap hashMap = P;
             if (hashMap != null) {
-                hashMap.remove(Integer.valueOf(q(fjVar)));
+                hashMap.remove(Integer.valueOf(r(gjVar)));
             }
-            fjVar.k.voiceTranscriptionOpen = false;
-            org.telegram.messenger.tr a02 = org.telegram.messenger.tr.a0(i7);
-            a02.a.c(new org.telegram.messenger.ek(a02, i10, n10, fjVar.k, 6));
+            gjVar.k.voiceTranscriptionOpen = false;
+            org.telegram.messenger.ur a02 = org.telegram.messenger.ur.a0(i7);
+            a02.a.c(new org.telegram.messenger.fk(a02, i10, n10, gjVar.k, 6));
             final int i11 = 1;
-            org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.Components.d21
+            org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.Components.c21
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i12 = i11;
-                    org.telegram.messenger.fj fjVar2 = fjVar;
+                    org.telegram.messenger.gj gjVar2 = gjVar;
                     int i13 = i7;
                     switch (i12) {
                         case 0:
-                            org.telegram.messenger.ks f10 = org.telegram.messenger.ks.f(i13);
+                            org.telegram.messenger.ls f10 = org.telegram.messenger.ls.f(i13);
                             Boolean bool = Boolean.TRUE;
-                            f10.k(org.telegram.messenger.ks.A1, fjVar2, null, null, bool, bool);
+                            f10.k(org.telegram.messenger.ls.A1, gjVar2, null, null, bool, bool);
                             break;
                         default:
-                            org.telegram.messenger.ks.f(i13).k(org.telegram.messenger.ks.A1, fjVar2, null, null, Boolean.FALSE, null);
+                            org.telegram.messenger.ls.f(i13).k(org.telegram.messenger.ls.A1, gjVar2, null, null, Boolean.FALSE, null);
                             break;
                     }
                 }
             });
             return;
         }
-        if (message.voiceTranscription != null && message.voiceTranscriptionFinal && (!message.voiceTranscriptionLocal || z(fjVar))) {
-            p(fjVar);
-            fjVar.k.voiceTranscriptionOpen = true;
-            org.telegram.messenger.tr a03 = org.telegram.messenger.tr.a0(i7);
-            a03.a.c(new org.telegram.messenger.ek(a03, i10, n10, fjVar.k, 6));
+        if (message.voiceTranscription != null && message.voiceTranscriptionFinal && (!message.voiceTranscriptionLocal || A(gjVar))) {
+            q(gjVar);
+            gjVar.k.voiceTranscriptionOpen = true;
+            org.telegram.messenger.ur a03 = org.telegram.messenger.ur.a0(i7);
+            a03.a.c(new org.telegram.messenger.fk(a03, i10, n10, gjVar.k, 6));
             final int i12 = 0;
-            org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.Components.d21
+            org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.Components.c21
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i122 = i12;
-                    org.telegram.messenger.fj fjVar2 = fjVar;
+                    org.telegram.messenger.gj gjVar2 = gjVar;
                     int i13 = i7;
                     switch (i122) {
                         case 0:
-                            org.telegram.messenger.ks f10 = org.telegram.messenger.ks.f(i13);
+                            org.telegram.messenger.ls f10 = org.telegram.messenger.ls.f(i13);
                             Boolean bool = Boolean.TRUE;
-                            f10.k(org.telegram.messenger.ks.A1, fjVar2, null, null, bool, bool);
+                            f10.k(org.telegram.messenger.ls.A1, gjVar2, null, null, bool, bool);
                             break;
                         default:
-                            org.telegram.messenger.ks.f(i13).k(org.telegram.messenger.ks.A1, fjVar2, null, null, Boolean.FALSE, null);
+                            org.telegram.messenger.ls.f(i13).k(org.telegram.messenger.ls.A1, gjVar2, null, null, Boolean.FALSE, null);
                             break;
                     }
                 }
             });
             return;
         }
-        if (!z(fjVar)) {
+        if (!A(gjVar)) {
+            if (j(gjVar)) {
+                n(gjVar);
+                return;
+            }
             if (org.telegram.messenger.s2.a) {
                 org.telegram.messenger.a8.b("sending Transcription request, msg_id=" + i10 + " dialog_id=" + n10);
             }
@@ -505,8 +538,8 @@ public abstract class j21 {
             if (P == null) {
                 P = new HashMap();
             }
-            P.put(Integer.valueOf(q(fjVar)), fjVar);
-            ConnectionsManager.getInstance(i7).sendRequest(tL_messages_transcribeAudio, new RequestDelegate() { // from class: org.telegram.ui.Components.e21
+            P.put(Integer.valueOf(r(gjVar)), gjVar);
+            ConnectionsManager.getInstance(i7).sendRequest(tL_messages_transcribeAudio, new RequestDelegate() { // from class: org.telegram.ui.Components.d21
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     boolean z11;
@@ -515,7 +548,7 @@ public abstract class j21 {
                     boolean z12 = tLObject instanceof TLRPC.TL_messages_transcribedAudio;
                     int i13 = i7;
                     org.telegram.ui.Cells.m1 m1Var2 = m1Var;
-                    org.telegram.messenger.fj fjVar2 = fjVar;
+                    org.telegram.messenger.gj gjVar2 = gjVar;
                     String str2 = "";
                     if (z12) {
                         TLRPC.TL_messages_transcribedAudio tL_messages_transcribedAudio = (TLRPC.TL_messages_transcribedAudio) tLObject;
@@ -529,49 +562,49 @@ public abstract class j21 {
                             str2 = null;
                         }
                         if ((tL_messages_transcribedAudio.flags & 2) != 0) {
-                            org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i13);
+                            org.telegram.messenger.np u12 = org.telegram.messenger.np.u1(i13);
                             int i14 = tL_messages_transcribedAudio.trial_remains_num;
                             if (i14 != u12.y4) {
                                 u12.y4 = i14;
                                 u12.h7.edit().putInt("transcribeAudioTrialCurrentNumber", u12.y4).apply();
                             }
-                            org.telegram.messenger.mp u13 = org.telegram.messenger.mp.u1(i13);
+                            org.telegram.messenger.np u13 = org.telegram.messenger.np.u1(i13);
                             int i15 = tL_messages_transcribedAudio.trial_remains_until_date;
                             if (i15 != u13.x4) {
                                 u13.x4 = i15;
                                 u13.h7.edit().putInt("transcribeAudioTrialCooldownUntil", u13.x4).apply();
-                                org.telegram.messenger.g0.g3(new org.telegram.messenger.rj(u13, 3));
+                                org.telegram.messenger.g0.g3(new org.telegram.messenger.sj(u13, 3));
                             }
-                            org.telegram.messenger.g0.g3(new fm0(16, m1Var2, tL_messages_transcribedAudio));
+                            org.telegram.messenger.g0.g3(new fm0(15, m1Var2, tL_messages_transcribedAudio));
                         }
                         if (j21.O == null) {
                             j21.O = new HashMap();
                         }
-                        j21.O.put(Long.valueOf(j3), fjVar2);
-                        fjVar2.k.voiceTranscriptionId = j3;
+                        j21.O.put(Long.valueOf(j3), gjVar2);
+                        gjVar2.k.voiceTranscriptionId = j3;
                     } else {
                         if (tL_error != null && (str = tL_error.text) != null && str.startsWith("FLOOD_WAIT_")) {
-                            org.telegram.messenger.mp u14 = org.telegram.messenger.mp.u1(i13);
+                            org.telegram.messenger.np u14 = org.telegram.messenger.np.u1(i13);
                             if (u14.y4 != 0) {
                                 u14.y4 = 0;
                                 u14.h7.edit().putInt("transcribeAudioTrialCurrentNumber", u14.y4).apply();
                             }
-                            org.telegram.messenger.mp u15 = org.telegram.messenger.mp.u1(i13);
+                            org.telegram.messenger.np u15 = org.telegram.messenger.np.u1(i13);
                             int intValue = Utilities.z(tL_error.text).intValue() + ConnectionsManager.getInstance(i13).getCurrentTime();
                             if (intValue != u15.x4) {
                                 u15.x4 = intValue;
                                 u15.h7.edit().putInt("transcribeAudioTrialCooldownUntil", u15.x4).apply();
-                                org.telegram.messenger.g0.g3(new org.telegram.messenger.rj(u15, 3));
+                                org.telegram.messenger.g0.g3(new org.telegram.messenger.sj(u15, 3));
                             }
-                            org.telegram.messenger.g0.g3(new j01(fjVar2, m1Var2, i13, 1));
+                            org.telegram.messenger.g0.g3(new f21(gjVar2, m1Var2, i13, 0));
                             return;
                         }
                         z11 = true;
                         j3 = 0;
                     }
                     long elapsedRealtime2 = SystemClock.elapsedRealtime() - elapsedRealtime;
-                    j21.p(fjVar2);
-                    TLRPC.Message message2 = fjVar2.k;
+                    j21.q(gjVar2);
+                    TLRPC.Message message2 = gjVar2.k;
                     message2.voiceTranscriptionOpen = true;
                     message2.voiceTranscriptionFinal = z11;
                     message2.voiceTranscriptionLocal = false;
@@ -579,53 +612,45 @@ public abstract class j21 {
                     if (org.telegram.messenger.s2.a) {
                         org.telegram.messenger.a8.b("Transcription request sent, received final=" + z11 + " id=" + j3 + " text=" + str2);
                     }
-                    org.telegram.messenger.tr a04 = org.telegram.messenger.tr.a0(i13);
+                    org.telegram.messenger.ur a04 = org.telegram.messenger.ur.a0(i13);
                     String str4 = str2;
-                    a04.a.c(new org.telegram.messenger.z1(a04, i10, n10, fjVar2.k, str4, 2));
+                    a04.a.c(new org.telegram.messenger.z1(a04, i10, n10, gjVar2.k, str4, 2));
                     if (z11) {
-                        org.telegram.messenger.g0.h3(new c21(fjVar2, j3, str4, 1), Math.max(0L, 350 - elapsedRealtime2));
+                        org.telegram.messenger.g0.h3(new b21(gjVar2, j3, str4, 1), Math.max(0L, 350 - elapsedRealtime2));
                     }
                 }
-            }, org.telegram.messenger.j10.i(i7).q() ? 0 : 1024);
+            }, org.telegram.messenger.k10.i(i7).q() ? 0 : 1024);
             return;
         }
-        ArrayList arrayList = (ArrayList) ai.w0.a.get(Long.valueOf(org.telegram.messenger.fj.B0(fjVar.k)));
-        android.support.v4.media.session.a0 T = DictationAsr.T(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
-        if (T == null || !((tVar = (ai.t) T.b) == null || tVar.f != 0 || DictationAsr.y(tVar) || ai.l1.b())) {
-            n(fjVar);
+        ArrayList arrayList = (ArrayList) ai.w0.a.get(Long.valueOf(org.telegram.messenger.gj.B0(gjVar.k)));
+        android.support.v4.media.session.a0 T2 = DictationAsr.T(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
+        if (T2 == null || !((tVar = (ai.t) T2.b) == null || tVar.f != 0 || DictationAsr.y(tVar) || ai.m1.b())) {
+            o(gjVar);
             return;
         }
-        int i13 = fjVar.K1;
+        int i13 = gjVar.K1;
         if (P == null) {
             P = new HashMap();
         }
-        Integer valueOf = Integer.valueOf(q(fjVar));
-        P.put(valueOf, fjVar);
-        R.put(valueOf, fjVar);
+        Integer valueOf = Integer.valueOf(r(gjVar));
+        P.put(valueOf, gjVar);
+        R.put(valueOf, gjVar);
         org.telegram.messenger.w7.G(i13);
-        File M = org.telegram.messenger.w7.M(fjVar.k, false, true);
+        File M = org.telegram.messenger.w7.M(gjVar.k, false, true);
         if (M != null && M.exists()) {
-            x(fjVar, M.getAbsolutePath());
+            y(gjVar, M.getAbsolutePath(), m1Var);
             return;
         }
-        String r10 = org.telegram.messenger.w7.r(null, fjVar.F0());
-        org.telegram.messenger.ks f10 = org.telegram.messenger.ks.f(i13);
-        g21 g21Var = new g21(r10, f10, fjVar);
-        f10.b(g21Var, org.telegram.messenger.ks.Y1);
-        f10.b(g21Var, org.telegram.messenger.ks.Z1);
-        S.put(valueOf, new fm0(15, f10, g21Var));
-        org.telegram.messenger.w7.G(i13).W(fjVar.F0(), fjVar, 3, 0);
+        String r10 = org.telegram.messenger.w7.r(null, gjVar.F0());
+        org.telegram.messenger.ls f10 = org.telegram.messenger.ls.f(i13);
+        g21 g21Var = new g21(r10, f10, gjVar, m1Var);
+        f10.b(g21Var, org.telegram.messenger.ls.Y1);
+        f10.b(g21Var, org.telegram.messenger.ls.Z1);
+        S.put(valueOf, new fm0(16, f10, g21Var));
+        org.telegram.messenger.w7.G(i13).W(gjVar.F0(), gjVar, 3, 0);
     }
 
-    public static boolean z(org.telegram.messenger.fj fjVar) {
-        if (fjVar == null) {
-            return false;
-        }
-        int i7 = fjVar.K1;
-        return org.telegram.messenger.fj.R4(fjVar.k) && DictationAsr.w(i7) && ai.l1.h() && DictationAsr.B(i7) && (fjVar.L0() * 16000.0d) * 4.0d < 3.145728E8d;
-    }
-
-    public final int A() {
+    public final int B() {
         return this.u.width();
     }
 
@@ -633,7 +658,7 @@ public abstract class j21 {
         return this.u.height();
     }
 
-    public final void o() {
+    public final void p() {
         boolean z10;
         org.telegram.ui.Cells.r1 r1Var = this.r;
         if (r1Var == null) {
@@ -644,13 +669,13 @@ public abstract class j21 {
         boolean z12 = !z11;
         boolean z13 = this.x;
         if (z11) {
-            t(false, true);
-            r(false, true);
+            u(false, true);
+            s(false, true);
             z10 = true;
         } else {
             z10 = !this.k;
-            if ((z13 || e(r1Var.getMessageObject()) || z(r1Var.getMessageObject())) && r1Var.getMessageObject().q4()) {
-                r(true, true);
+            if ((z13 || e(r1Var.getMessageObject()) || A(r1Var.getMessageObject())) && r1Var.getMessageObject().q4()) {
+                s(true, true);
             }
         }
         org.telegram.ui.Cells.y yVar = this.q;
@@ -664,11 +689,11 @@ public abstract class j21 {
                 if (!z11) {
                     this.w = true;
                 }
-                y(r1Var.getMessageObject(), z12, r1Var.getDelegate());
-            } else if (e(r1Var.getMessageObject()) || z(r1Var.getMessageObject()) || !(r1Var.getMessageObject() == null || r1Var.getMessageObject().k == null || TextUtils.isEmpty(r1Var.getMessageObject().k.voiceTranscription))) {
-                y(r1Var.getMessageObject(), z12, r1Var.getDelegate());
+                z(r1Var.getMessageObject(), z12, r1Var.getDelegate());
+            } else if (e(r1Var.getMessageObject()) || A(r1Var.getMessageObject()) || !(r1Var.getMessageObject() == null || r1Var.getMessageObject().k == null || TextUtils.isEmpty(r1Var.getMessageObject().k.voiceTranscription))) {
+                z(r1Var.getMessageObject(), z12, r1Var.getDelegate());
             } else if (r1Var.getDelegate() != null) {
-                if (org.telegram.messenger.mp.u1(r1Var.a6).v4 > 0) {
+                if (org.telegram.messenger.np.u1(r1Var.a6).v4 > 0) {
                     r1Var.getDelegate().h0(3);
                 } else {
                     r1Var.getDelegate().h0(0);
@@ -677,7 +702,7 @@ public abstract class j21 {
         }
     }
 
-    public final void r(boolean z10, boolean z11) {
+    public final void s(boolean z10, boolean z11) {
         this.k = z10;
         en0 en0Var = this.s;
         if (!en0Var.z && z10 && en0Var.B.c <= 0.0f) {
@@ -700,7 +725,7 @@ public abstract class j21 {
         }
     }
 
-    public final void s(boolean z10, boolean z11) {
+    public final void t(boolean z10, boolean z11) {
         org.telegram.ui.Cells.r1 r1Var;
         if (this.i != z10 && (r1Var = this.r) != null) {
             r1Var.invalidate();
@@ -712,11 +737,11 @@ public abstract class j21 {
         this.j.f(z10, true);
     }
 
-    public final void t(boolean z10, boolean z11) {
+    public final void u(boolean z10, boolean z11) {
         boolean z12 = this.z;
         if (!z12 && z10 && this.w) {
             this.w = false;
-            ((org.telegram.ui.Cells.c1) this).T.a.T2 = true;
+            ((org.telegram.ui.Cells.c1) this).U.a.T2 = true;
         }
         this.z = z10;
         oh0 oh0Var = this.p;

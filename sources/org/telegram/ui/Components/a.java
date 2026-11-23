@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class a implements Runnable {
                     n0Var.z2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
                     n0Var.z2.s(20.0f);
                     n0Var.z2.u(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.ui.ActionBar.m6.r1(0.25f, -16777216));
-                    n0Var.z2.v(org.telegram.messenger.gd.N0(2131755000, null));
+                    n0Var.z2.v(org.telegram.messenger.hd.N0(2131755000, null));
                     if (i0.a.h(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.d6, n0Var.J0)) < 0.5d) {
                         n0Var.z2.j(956301311);
                         hi.l3 l3Var3 = n0Var.z2;

@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class wy0 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -21,8 +21,8 @@ public final class wy0 extends FrameLayout {
         int i7 = this.d;
         org.telegram.ui.n80 n80Var = (org.telegram.ui.n80) vy0Var;
         n80Var.getClass();
-        org.telegram.messenger.j10.i(i7).a0 = null;
-        org.telegram.messenger.j10.i(i7).v(false);
+        org.telegram.messenger.k10.i(i7).a0 = null;
+        org.telegram.messenger.k10.i(i7).v(false);
         LaunchActivity launchActivity = n80Var.a;
         ArrayList arrayList = launchActivity.e0;
         if (!arrayList.isEmpty()) {

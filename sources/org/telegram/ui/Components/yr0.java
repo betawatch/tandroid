@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class yr0 extends dk0 {
     public final Context c;
@@ -47,15 +47,15 @@ public final class yr0 extends dk0 {
     public final void t(v4.f1 f1Var, int i7) {
         if (f1Var.f == 12) {
             jt0 jt0Var = this.d;
-            org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) jt0Var.w1[5].a.get(i7);
-            TLRPC.Document F0 = fjVar.F0();
+            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) jt0Var.w1[5].a.get(i7);
+            TLRPC.Document F0 = gjVar.F0();
             if (F0 != null) {
                 View view = f1Var.a;
                 if (view instanceof org.telegram.ui.Cells.i2) {
                     org.telegram.ui.Cells.i2 i2Var = (org.telegram.ui.Cells.i2) view;
-                    i2Var.d(fjVar.k.date, fjVar, F0);
+                    i2Var.d(gjVar.k.date, gjVar, F0);
                     if (jt0Var.F1) {
-                        i2Var.c(jt0Var.c1[(org.telegram.messenger.fj.B0(fjVar.k) > jt0Var.m1 ? 1 : (org.telegram.messenger.fj.B0(fjVar.k) == jt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(fjVar.e1()) >= 0, !jt0Var.e1);
+                        i2Var.c(jt0Var.c1[(org.telegram.messenger.gj.B0(gjVar.k) > jt0Var.m1 ? 1 : (org.telegram.messenger.gj.B0(gjVar.k) == jt0Var.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(gjVar.e1()) >= 0, !jt0Var.e1);
                     } else {
                         i2Var.c(false, !jt0Var.e1);
                     }

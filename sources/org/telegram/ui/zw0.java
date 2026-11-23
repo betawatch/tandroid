@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class zw0 extends FrameLayout {
     public RadialGradient E;
@@ -60,15 +60,15 @@ public final class zw0 extends FrameLayout {
         setWillNotDraw(false);
     }
 
-    public final void a(org.telegram.messenger.bp bpVar, boolean z10) {
+    public final void a(org.telegram.messenger.cp cpVar, boolean z10) {
         ProfileActivity profileActivity = this.Q;
-        if (bpVar != null) {
+        if (cpVar != null) {
             this.c = true;
-            this.e = bpVar.c(org.telegram.ui.ActionBar.m6.I.q());
-            int d = bpVar.d(org.telegram.ui.ActionBar.m6.I.q());
+            this.e = cpVar.c(org.telegram.ui.ActionBar.m6.I.q());
+            int d = cpVar.d(org.telegram.ui.ActionBar.m6.I.q());
             this.f = d;
             profileActivity.c1 = i0.a.f(0.25f, this.e, d);
-            int i7 = bpVar.a;
+            int i7 = cpVar.a;
             if (i7 != 0) {
                 this.H = i7;
                 this.I = org.telegram.ui.ActionBar.m6.r1(0.45f, i7);

@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class z71 extends ViewGroup implements g61, AudioManager.OnAudioFocusChangeListener {
     public String E;
@@ -911,7 +911,7 @@ public final class z71 extends ViewGroup implements g61, AudioManager.OnAudioFoc
                                                     if (photo != null) {
                                                         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(photo.sizes, 80, true, null, false);
                                                         if (w10 != null) {
-                                                            v71Var.a.r0(null, null, org.telegram.messenger.fc.i(w10, photo), "80_80_b", null, 0L, null, obj, 1);
+                                                            v71Var.a.r0(null, null, org.telegram.messenger.gc.i(w10, photo), "80_80_b", null, 0L, null, obj, 1);
                                                             this.Q = true;
                                                         }
                                                     } else {
@@ -1293,7 +1293,7 @@ public final class z71 extends ViewGroup implements g61, AudioManager.OnAudioFoc
         this.f0 = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(radialProgressView, "alpha", z10 ? 1.0f : 0.0f));
         this.f0.setDuration(150L);
-        this.f0.addListener(new u11(this, 7));
+        this.f0.addListener(new t11(this, 7));
         this.f0.start();
     }
 

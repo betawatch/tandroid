@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public abstract class fq extends Drawable {
     public final Paint a;
@@ -50,7 +50,7 @@ public abstract class fq extends Drawable {
         Paint paint2 = this.a;
         if (a10 != 0) {
             this.g = Color.alpha(a10);
-            paint2.setColor(i0.a.o(a10, org.telegram.messenger.ks.e4));
+            paint2.setColor(i0.a.o(a10, org.telegram.messenger.ls.e4));
         }
         long j3 = this.b;
         if (j3 != 0) {
@@ -201,7 +201,7 @@ public abstract class fq extends Drawable {
         this.a = paint;
         new DecelerateInterpolator();
         this.c = new RectF();
-        this.g = org.telegram.messenger.ks.e4;
+        this.g = org.telegram.messenger.ls.e4;
         paint.setColor(-1);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(f10));
         paint.setStrokeCap(Paint.Cap.ROUND);

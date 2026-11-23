@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class sc0 extends Dialog {
     public final FrameLayout a;
@@ -28,7 +28,7 @@ public final class sc0 extends Dialog {
         r0.a0.i(frameLayout, xb0Var);
         rc0 rc0Var = new rc0(this, launchActivity);
         this.b = rc0Var;
-        frameLayout.addView(rc0Var, c8.ma.e(-1, -1, org.telegram.messenger.ks.E1));
+        frameLayout.addView(rc0Var, c8.ma.e(-1, -1, org.telegram.messenger.ls.E1));
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface
@@ -72,7 +72,7 @@ public final class sc0 extends Dialog {
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.height = -1;
-        attributes.gravity = org.telegram.messenger.ks.E1;
+        attributes.gravity = org.telegram.messenger.ls.E1;
         attributes.dimAmount = 0.0f;
         int i7 = attributes.flags & (-3);
         attributes.flags = i7;

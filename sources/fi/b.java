@@ -8,10 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.util.SparseIntArray;
 import j$.util.Objects;
 import java.util.HashSet;
-import org.telegram.messenger.bz;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public class b implements org.telegram.ui.ActionBar.h6 {
     public final HashSet a = new HashSet();
@@ -69,7 +69,7 @@ public class b implements org.telegram.ui.ActionBar.h6 {
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.y8, -1);
         sparseIntArray.put(i7, i0.a.f(0.5f, -16777216, -1));
         sparseIntArray.put(i10, i0.a.o(-1, 17));
-        sparseIntArray.put(org.telegram.ui.ActionBar.m6.y6, i0.a.o(-1, ks.L1));
+        sparseIntArray.put(org.telegram.ui.ActionBar.m6.y6, i0.a.o(-1, ls.L1));
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.Re, -14606046);
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.Qe, -1);
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.ag, -1221292);
@@ -96,13 +96,13 @@ public class b implements org.telegram.ui.ActionBar.h6 {
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.Df, -8553090);
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.h6, -10177027);
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.Hf, 181267199);
-        sparseIntArray.put(org.telegram.ui.ActionBar.m6.Bf, i0.a.o(-1, ks.J1));
+        sparseIntArray.put(org.telegram.ui.ActionBar.m6.Bf, i0.a.o(-1, ls.J1));
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.Ef, -2130706433);
-        sparseIntArray.put(org.telegram.ui.ActionBar.m6.Ff, i0.a.o(-1, ks.J1));
+        sparseIntArray.put(org.telegram.ui.ActionBar.m6.Ff, i0.a.o(-1, ls.J1));
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.Gf, -1);
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.If, -10177041);
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.Cf, i0.a.o(-16777216, 30));
-        sparseIntArray.put(org.telegram.ui.ActionBar.m6.Jf, i0.a.o(-1, ks.J1));
+        sparseIntArray.put(org.telegram.ui.ActionBar.m6.Jf, i0.a.o(-1, ls.J1));
         int i12 = org.telegram.ui.ActionBar.m6.d7;
         sparseIntArray.put(i12, -16777216);
         sparseIntArray.put(org.telegram.ui.ActionBar.m6.qg, -15033089);
@@ -227,7 +227,7 @@ public class b implements org.telegram.ui.ActionBar.h6 {
 
     @Override // org.telegram.ui.ActionBar.h6
     public final boolean h() {
-        return bz.H0;
+        return cz.H0;
     }
 
     @Override // org.telegram.ui.ActionBar.h6

@@ -19,8 +19,8 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.g2;
@@ -38,7 +38,7 @@ import org.telegram.ui.Wallet.x9;
 import org.telegram.ui.bn;
 import v4.p;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class k extends Dialog {
     public final j E;
@@ -107,7 +107,7 @@ public final class k extends Dialog {
         y0Var.c(i11, i12);
         int i13 = m6.I5;
         y0Var.h(1.0f, i13);
-        y0Var.j(gd.N0(z10 ? 2131754375 : 2131754370, null), R.drawable.msg_requests, null);
+        y0Var.j(hd.N0(z10 ? 2131754375 : 2131754370, null), R.drawable.msg_requests, null);
         final int i14 = 0;
         y0Var.setOnClickListener(new View.OnClickListener(this) { // from class: zh.h
             public final /* synthetic */ k b;
@@ -149,7 +149,7 @@ public final class k extends Dialog {
         y0 y0Var2 = new y0(0, activity, h6Var, false, false);
         y0Var2.c(i11, i12);
         y0Var2.h(1.0f, i13);
-        y0Var2.j(gd.N0(2131745405, null), R.drawable.msg_msgbubble3, null);
+        y0Var2.j(hd.N0(2131745405, null), R.drawable.msg_msgbubble3, null);
         y0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: zh.h
             public final /* synthetic */ k b;
 
@@ -190,7 +190,7 @@ public final class k extends Dialog {
         y0 y0Var3 = new y0(0, activity, h6Var, false, true);
         y0Var3.c(m6.q7, m6.p7);
         y0Var3.h(1.0f, i13);
-        y0Var3.j(gd.N0(2131751356, null), R.drawable.msg_remove, null);
+        y0Var3.j(hd.N0(2131751356, null), R.drawable.msg_remove, null);
         final int i15 = 2;
         y0Var3.setOnClickListener(new View.OnClickListener(this) { // from class: zh.h
             public final /* synthetic */ k b;
@@ -284,7 +284,7 @@ public final class k extends Dialog {
 
     public final void f() {
         BitmapDrawable bitmapDrawable = this.x;
-        int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : ks.e4;
+        int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : ls.e4;
         Resources resources = getContext().getResources();
         j jVar = this.E;
         int measuredWidth = (int) (jVar.getMeasuredWidth() / 6.0f);
@@ -300,7 +300,7 @@ public final class k extends Dialog {
         if (visibleDialog != null) {
             visibleDialog.getWindow().getDecorView().draw(canvas);
         }
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / ks.K2));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / ls.K2));
         BitmapDrawable bitmapDrawable2 = new BitmapDrawable(resources, createBitmap);
         this.x = bitmapDrawable2;
         bitmapDrawable2.setAlpha(alpha);

@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class kx extends org.telegram.ui.ActionBar.g2 {
     public gx E;
@@ -62,8 +62,8 @@ public final class kx extends org.telegram.ui.ActionBar.g2 {
         if (i7 == kxVar.h) {
             org.telegram.ui.Components.l60 l60Var = new org.telegram.ui.Components.l60(context, kxVar.currentAccount, null, 0L, kxVar, null);
             l60Var.h2 = new zr(kxVar, 8);
-            org.telegram.messenger.ks.f(l60Var.a).c(l60Var, org.telegram.messenger.ks.s);
-            l60Var.i2 = new ArrayList(org.telegram.messenger.mp.u1(l60Var.a).F);
+            org.telegram.messenger.ls.f(l60Var.a).c(l60Var, org.telegram.messenger.ls.s);
+            l60Var.i2 = new ArrayList(org.telegram.messenger.np.u1(l60Var.a).F);
             l60Var.U0();
             ArrayList arrayList = kxVar.e;
             int size = arrayList.size();
@@ -75,7 +75,7 @@ public final class kx extends org.telegram.ui.ActionBar.g2 {
                 }
                 Long l10 = (Long) arrayList.get(i12);
                 long longValue = l10.longValue();
-                org.telegram.ui.Components.p20 p20Var = new org.telegram.ui.Components.p20(k60Var.getContext(), org.telegram.messenger.n5.z(longValue) ? org.telegram.messenger.mp.u1(l60Var.a).O0(Long.valueOf(-longValue)) : org.telegram.messenger.mp.u1(l60Var.a).c2(l10));
+                org.telegram.ui.Components.p20 p20Var = new org.telegram.ui.Components.p20(k60Var.getContext(), org.telegram.messenger.n5.z(longValue) ? org.telegram.messenger.np.u1(l60Var.a).O0(Long.valueOf(-longValue)) : org.telegram.messenger.np.u1(l60Var.a).c2(l10));
                 k60Var.a(p20Var, false);
                 p20Var.setOnClickListener(l60Var.m2);
                 i12++;
@@ -163,11 +163,11 @@ public final class kx extends org.telegram.ui.ActionBar.g2 {
             this.actionBar.setOccupyStatusBar(false);
         }
         if (this.x == 0) {
-            this.actionBar.setTitle(org.telegram.messenger.gd.N0(2131742613, null));
+            this.actionBar.setTitle(org.telegram.messenger.hd.N0(2131742611, null));
         } else {
-            this.actionBar.setTitle(org.telegram.messenger.gd.N0(2131742604, null));
+            this.actionBar.setTitle(org.telegram.messenger.hd.N0(2131742602, null));
         }
-        this.actionBar.s().e(1, org.telegram.messenger.gd.N0(2131751342, null).toUpperCase());
+        this.actionBar.s().e(1, org.telegram.messenger.hd.N0(2131751342, null).toUpperCase());
         this.actionBar.setActionBarMenuOnItemClick(new dv(this, 1));
         this.a = new hx(this, context);
         FrameLayout frameLayout = new FrameLayout(context);

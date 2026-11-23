@@ -7,9 +7,9 @@ import c8.ma;
 import hi.d7;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
 import org.telegram.messenger.q2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -21,9 +21,9 @@ import org.telegram.ui.Components.ek0;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.o41;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class c extends g2 implements fs {
+public final class c extends g2 implements gs {
     public int E;
     public int F;
     public int G;
@@ -42,15 +42,15 @@ public final class c extends g2 implements fs {
     public int y;
 
     public static void Z(c cVar, ArrayList arrayList, c51 c51Var) {
-        String N0 = gd.N0(2131752826, null);
-        String N02 = gd.N0(2131752823, null);
+        String N0 = hd.N0(2131752826, null);
+        String N02 = hd.N0(2131752823, null);
         o41 o41Var = new o41(2);
         o41Var.m = N0;
         o41Var.p = N02;
         o41Var.n = "RestrictedEmoji";
         o41Var.o = "💤";
         arrayList.add(o41Var);
-        o41 i7 = o41.i(1, gd.N0(2131752809, null));
+        o41 i7 = o41.i(1, hd.N0(2131752809, null));
         i7.L(cVar.r);
         arrayList.add(i7);
         arrayList.add(o41.C(null));
@@ -61,39 +61,39 @@ public final class c extends g2 implements fs {
                 o41Var2.H = d;
                 arrayList.add(o41Var2);
             } else {
-                o41 c10 = o41.c(2, R.drawable.msg2_chats_add, gd.N0(2131752825, null));
+                o41 c10 = o41.c(2, R.drawable.msg2_chats_add, hd.N0(2131752825, null));
                 c10.r = true;
                 arrayList.add(c10);
             }
             arrayList.add(o41.C(null));
-            arrayList.add(o41.u(gd.N0(2131752818, null)));
-            o41 x10 = o41.x(3, gd.N0(2131752817, null));
+            arrayList.add(o41.u(hd.N0(2131752818, null)));
+            o41 x10 = o41.x(3, hd.N0(2131752817, null));
             x10.L(cVar.x == 0);
             arrayList.add(x10);
             if (cVar.d) {
-                o41 x11 = o41.x(4, gd.N0(2131752810, null));
+                o41 x11 = o41.x(4, hd.N0(2131752810, null));
                 x11.L(cVar.x == 1);
                 arrayList.add(x11);
             }
-            o41 x12 = o41.x(5, gd.N0(2131752816, null));
+            o41 x12 = o41.x(5, hd.N0(2131752816, null));
             x12.L(cVar.x == 2);
             arrayList.add(x12);
             if (cVar.x == 2) {
                 arrayList.add(o41.C(null));
-                arrayList.add(o41.u(gd.N0(2131752818, null)));
-                arrayList.add(o41.f(gd.N0(2131752812, null), gd.Q(cVar.F), 8));
-                arrayList.add(o41.f(gd.N0(2131752815, null), gd.Q(cVar.G), 9));
+                arrayList.add(o41.u(hd.N0(2131752818, null)));
+                arrayList.add(o41.f(hd.N0(2131752812, null), hd.Q(cVar.F), 8));
+                arrayList.add(o41.f(hd.N0(2131752815, null), hd.Q(cVar.G), 9));
             }
             arrayList.add(o41.C(null));
-            o41 i10 = o41.i(10, gd.N0(2131752820, null));
+            o41 i10 = o41.i(10, hd.N0(2131752820, null));
             i10.L(cVar.w);
             arrayList.add(i10);
-            arrayList.add(o41.C(gd.N0(2131752819, null)));
-            arrayList.add(o41.u(gd.N0(2131752676, null)));
-            o41 x13 = o41.x(6, gd.N0(2131752769, null));
+            arrayList.add(o41.C(hd.N0(2131752819, null)));
+            arrayList.add(o41.u(hd.N0(2131752676, null)));
+            o41 x13 = o41.x(6, hd.N0(2131752769, null));
             x13.L(cVar.s);
             arrayList.add(x13);
-            o41 x14 = o41.x(7, gd.N0(2131752764, null));
+            o41 x14 = o41.x(7, hd.N0(2131752764, null));
             x14.L(!cVar.s);
             arrayList.add(x14);
             arrayList.add(o41.C(null));
@@ -193,9 +193,9 @@ public final class c extends g2 implements fs {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(gd.N0(2131752826, null));
+        this.simpleActionBar.setTitle(hd.N0(2131752826, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.v1(this, 6));
-        this.a = this.simpleActionBar.s(gd.N0(2131745750, null));
+        this.a = this.simpleActionBar.s(hd.N0(2131745750, null));
         int i7 = 0;
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -279,11 +279,11 @@ public final class c extends g2 implements fs {
         this.e = true;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         c51 c51Var;
-        if (i7 != ks.F1) {
-            if (i7 == ks.E0) {
+        if (i7 != ls.F1) {
+            if (i7 == ls.E0) {
                 d0();
             }
         } else {
@@ -316,12 +316,12 @@ public final class c extends g2 implements fs {
                 return false;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String N0 = gd.N0(2131743592, null);
+            String N0 = hd.N0(2131743590, null);
             org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = gd.N0(2131752808, null);
-            alertDialog$Builder.k(gd.N0(2131754213, null), new a(this, 1));
-            alertDialog$Builder.h(gd.N0(2131747386, null), new a(this, 2));
+            t1Var.U = hd.N0(2131752808, null);
+            alertDialog$Builder.k(hd.N0(2131754213, null), new a(this, 1));
+            alertDialog$Builder.h(hd.N0(2131747386, null), new a(this, 2));
             showDialog(t1Var);
         }
         return false;
@@ -329,8 +329,8 @@ public final class c extends g2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, ks.F1);
-        getNotificationCenter().c(this, ks.E0);
+        getNotificationCenter().c(this, ls.F1);
+        getNotificationCenter().c(this, ls.E0);
         v1.f(this.currentAccount).h();
         d0();
         return super.onFragmentCreate();
@@ -338,8 +338,8 @@ public final class c extends g2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, ks.F1);
-        getNotificationCenter().n(this, ks.E0);
+        getNotificationCenter().n(this, ls.F1);
+        getNotificationCenter().n(this, ls.E0);
         super.onFragmentDestroy();
     }
 

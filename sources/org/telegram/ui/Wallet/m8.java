@@ -8,12 +8,12 @@ import java.util.Iterator;
 import java.util.Random;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.np;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class m8 implements Runnable {
     public final /* synthetic */ r8 a;
@@ -525,7 +525,7 @@ public final class m8 implements Runnable {
                                     if (Z3 != null) {
                                         hi.l3 l3Var = r8Var.x1;
                                         if (l3Var == null) {
-                                            r8Var.x1 = r8Var.B(2131742860, true);
+                                            r8Var.x1 = r8Var.B(2131742858, true);
                                         } else if (r8Var.k1 && !(z11 = l3Var.W)) {
                                             r8Var.k1 = false;
                                             r8Var.j1 = false;
@@ -534,7 +534,7 @@ public final class m8 implements Runnable {
                                                 l3Var.f(true);
                                             }
                                             if (!z18) {
-                                                mp.g1().edit().putBoolean("walletcardstickerhint", true).apply();
+                                                np.g1().edit().putBoolean("walletcardstickerhint", true).apply();
                                             }
                                             r8Var.f0();
                                         }
@@ -553,7 +553,7 @@ public final class m8 implements Runnable {
                                     }
                                     if (r8Var.j1 && p8Var17.a > 0.5f && (aVar = r8Var.d) != null && aVar.J0() && r8Var.C()) {
                                         if (r8Var.y1 == null) {
-                                            r8Var.y1 = r8Var.B(2131742861, false);
+                                            r8Var.y1 = r8Var.B(2131742859, false);
                                         }
                                         r8Var.v1.computeBounds(rectF, true);
                                         float[] L = r8Var.L(rectF.centerX(), rectF.top);

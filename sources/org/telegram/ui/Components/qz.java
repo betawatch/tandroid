@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.FiltersSetupActivity;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class qz extends v4.w {
     public final /* synthetic */ int d;
@@ -48,7 +48,7 @@ public final class qz extends v4.w {
         switch (this.d) {
             case 0:
                 rz rzVar = (rz) this.f;
-                return (!org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).K3() || (rzVar.n && !(f1Var.b() == 0 && ((oz) rzVar.h.get(0)).e && !org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q()))) ? v4.w.l(12, 0) : v4.w.l(0, 0);
+                return (!org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).K3() || (rzVar.n && !(f1Var.b() == 0 && ((oz) rzVar.h.get(0)).e && !org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q()))) ? v4.w.l(12, 0) : v4.w.l(0, 0);
             default:
                 return f1Var.f != 2 ? v4.w.l(0, 0) : v4.w.l(3, 0);
         }
@@ -66,12 +66,12 @@ public final class qz extends v4.w {
 
     @Override // v4.w
     public final boolean n(RecyclerView recyclerView, v4.f1 f1Var, v4.f1 f1Var2) {
-        org.telegram.messenger.ro roVar;
-        org.telegram.messenger.ro roVar2;
+        org.telegram.messenger.so soVar;
+        org.telegram.messenger.so soVar2;
         switch (this.d) {
             case 0:
                 int i7 = 0;
-                if (!org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).K3() || ((f1Var.b() != 0 && f1Var2.b() != 0) || org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0).q())) {
+                if (!org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).K3() || ((f1Var.b() != 0 && f1Var2.b() != 0) || org.telegram.messenger.k10.i(org.telegram.messenger.k10.t0).q())) {
                     org.telegram.ui.l4 l4Var = ((rz) this.f).J;
                     int b10 = f1Var.b();
                     int b11 = f1Var2.b();
@@ -80,14 +80,14 @@ public final class qz extends v4.w {
                     SparseIntArray sparseIntArray = rzVar.l0;
                     int size = arrayList.size();
                     if (b10 >= 0 && b11 >= 0 && b10 < size && b11 < size) {
-                        ArrayList V0 = org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).V0();
-                        org.telegram.messenger.ro roVar3 = (org.telegram.messenger.ro) V0.get(b10);
-                        org.telegram.messenger.ro roVar4 = (org.telegram.messenger.ro) V0.get(b11);
-                        int i10 = roVar3.f;
-                        roVar3.f = roVar4.f;
-                        roVar4.f = i10;
-                        V0.set(b10, roVar4);
-                        V0.set(b11, roVar3);
+                        ArrayList V0 = org.telegram.messenger.np.u1(org.telegram.messenger.k10.t0).V0();
+                        org.telegram.messenger.so soVar3 = (org.telegram.messenger.so) V0.get(b10);
+                        org.telegram.messenger.so soVar4 = (org.telegram.messenger.so) V0.get(b11);
+                        int i10 = soVar3.f;
+                        soVar3.f = soVar4.f;
+                        soVar4.f = i10;
+                        V0.set(b10, soVar4);
+                        V0.set(b11, soVar3);
                         oz ozVar = (oz) arrayList.get(b10);
                         oz ozVar2 = (oz) arrayList.get(b11);
                         int i11 = ozVar.a;
@@ -151,10 +151,10 @@ public final class qz extends v4.w {
                     if (b12 >= i18 && b13 >= i18) {
                         org.telegram.ui.h00 h00Var = (org.telegram.ui.h00) arrayList2.get(b12);
                         org.telegram.ui.h00 h00Var2 = (org.telegram.ui.h00) arrayList2.get(b13);
-                        if (h00Var != null && h00Var2 != null && (roVar = h00Var.d) != null && (roVar2 = h00Var2.d) != null) {
-                            int i19 = roVar.f;
-                            roVar.f = roVar2.f;
-                            roVar2.f = i19;
+                        if (h00Var != null && h00Var2 != null && (soVar = h00Var.d) != null && (soVar2 = h00Var2.d) != null) {
+                            int i19 = soVar.f;
+                            soVar.f = soVar2.f;
+                            soVar2.f = i19;
                             ArrayList arrayList3 = filtersSetupActivity.getMessagesController().Q0;
                             try {
                                 arrayList3.set(b12 - filtersSetupActivity.r, h00Var2.d);

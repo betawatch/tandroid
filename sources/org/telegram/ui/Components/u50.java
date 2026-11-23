@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class u50 implements f80 {
     public final /* synthetic */ v50 a;
@@ -42,7 +42,7 @@ public final class u50 implements f80 {
             TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
             tL_messages_editExportedChatInvite.link = a60Var.m1.link;
             tL_messages_editExportedChatInvite.revoked = true;
-            tL_messages_editExportedChatInvite.peer = org.telegram.messenger.mp.u1(a60Var.a).l1(-a60Var.b2);
+            tL_messages_editExportedChatInvite.peer = org.telegram.messenger.np.u1(a60Var.a).l1(-a60Var.b2);
             ConnectionsManager.getInstance(a60Var.a).sendRequest(tL_messages_editExportedChatInvite, new s50(this, 0));
         }
         a60Var.dismiss();
@@ -57,7 +57,7 @@ public final class u50 implements f80 {
         } else {
             TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
             tL_messages_deleteExportedChatInvite.link = a60Var.m1.link;
-            tL_messages_deleteExportedChatInvite.peer = org.telegram.messenger.mp.u1(a60Var.a).l1(-a60Var.b2);
+            tL_messages_deleteExportedChatInvite.peer = org.telegram.messenger.np.u1(a60Var.a).l1(-a60Var.b2);
             ConnectionsManager.getInstance(a60Var.a).sendRequest(tL_messages_deleteExportedChatInvite, new s50(this, 1));
         }
         a60Var.dismiss();

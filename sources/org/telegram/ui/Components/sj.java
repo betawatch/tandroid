@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sj implements Runnable {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class sj implements Runnable {
             case 0:
                 uj ujVar = this.b;
                 if (ujVar.f != null) {
-                    ujVar.w = org.telegram.messenger.n10.h(new StringBuilder("+"), ujVar.f.phone, pf.b.c());
+                    ujVar.w = org.telegram.messenger.o10.h(new StringBuilder("+"), ujVar.f.phone, pf.b.c());
                     ujVar.s = ujVar.f;
                     org.telegram.messenger.g0.g3(new sj(ujVar, 1));
                     break;

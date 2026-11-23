@@ -22,12 +22,12 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ed;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.fd;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ur;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -54,9 +54,9 @@ import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.s01;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class p extends g2 implements fs {
+public final class p extends g2 implements gs {
     public final Paint E;
     public h51 F;
     public final ArrayList G;
@@ -156,7 +156,7 @@ public final class p extends g2 implements fs {
         SpannableStringBuilder spannableStringBuilder3;
         setHasOwnBackground(true);
         TLRPC.Document document = null;
-        this.simpleActionBar.setTitle(gd.N0(2131746191, null));
+        this.simpleActionBar.setTitle(hd.N0(2131746191, null));
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         int i10 = 3;
         this.simpleActionBar.setActionBarMenuOnItemClick(new v1(this, i10));
@@ -213,7 +213,7 @@ public final class p extends g2 implements fs {
                             Boolean valueOf = (s8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(s8Var4.e.h);
                             pVar2.s.setLoading(true);
                             pVar2.N = pVar2.Z;
-                            mp messagesController = pVar2.getMessagesController();
+                            np messagesController = pVar2.getMessagesController();
                             long j3 = pVar2.T;
                             int i14 = pVar2.Z;
                             ArrayList h02 = pVar2.h0(false);
@@ -233,9 +233,9 @@ public final class p extends g2 implements fs {
         t6.U(textView, i12, null);
         this.f.setTopPadding(12);
         this.f.setBottomPadding(16);
-        this.f.setText(gd.N0(2131746213, null));
+        this.f.setText(hd.N0(2131746213, null));
         o4 o4Var = new o4(context);
-        o4Var.setText(gd.N0(2131753756, null));
+        o4Var.setText(hd.N0(2131753756, null));
         t6.h(m6.d6, o4Var, null);
         o4Var.setTextSize(15.0f);
         o4Var.setTopMargin(14);
@@ -248,10 +248,10 @@ public final class p extends g2 implements fs {
         b0(this.h, false);
         a9 a9Var2 = new a9(12, context, this.resourceProvider);
         t6.U(a9Var2.getTextView(), i12, null);
-        a9Var2.setText(org.telegram.messenger.g0.R2(gd.N0(2131746210, null), m6.Xc, 0, new h(this, 4), getResourceProvider()));
+        a9Var2.setText(org.telegram.messenger.g0.R2(hd.N0(2131746210, null), m6.Xc, 0, new h(this, 4), getResourceProvider()));
         b0(a9Var2, true);
         o4 o4Var2 = new o4(context, this.resourceProvider);
-        o4Var2.setText(gd.N0(2131748474, null));
+        o4Var2.setText(hd.N0(2131748474, null));
         b0(o4Var2, false);
         this.n = new u7(context, this.resourceProvider);
         TLRPC.ChatFull chatFull = this.S;
@@ -270,18 +270,18 @@ public final class p extends g2 implements fs {
         t7 t7Var = new t7();
         t7Var.a = 1;
         t7Var.b = i17;
-        t7Var.e = new ed(22);
+        t7Var.e = new fd(22);
         u7Var.d(i16, t7Var, new i(this, i10));
         b0(this.n, false);
         a9 a9Var3 = new a9(12, context, this.resourceProvider);
         a9Var3.setTopPadding(12);
         a9Var3.setBottomPadding(16);
-        a9Var3.setText(gd.N0(2131748473, null));
+        a9Var3.setText(hd.N0(2131748473, null));
         b0(a9Var3, true);
         if (chatFull.paid_media_allowed) {
             s8 s8Var3 = new s8(context);
             this.r = s8Var3;
-            s8Var3.f(gd.N0(2131752399, null), false, false);
+            s8Var3.f(hd.N0(2131752399, null), false, false);
             b0(this.r, false);
             final int i18 = 1;
             this.r.setOnClickListener(new View.OnClickListener(this) { // from class: ch.j
@@ -322,7 +322,7 @@ public final class p extends g2 implements fs {
                                 Boolean valueOf = (s8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(s8Var4.e.h);
                                 pVar2.s.setLoading(true);
                                 pVar2.N = pVar2.Z;
-                                mp messagesController = pVar2.getMessagesController();
+                                np messagesController = pVar2.getMessagesController();
                                 long j3 = pVar2.T;
                                 int i142 = pVar2.Z;
                                 ArrayList h02 = pVar2.h0(false);
@@ -339,7 +339,7 @@ public final class p extends g2 implements fs {
             t6.U(a9Var4.getTextView(), i12, null);
             a9Var4.setTopPadding(12);
             a9Var4.setBottomPadding(70);
-            a9Var4.setText(org.telegram.messenger.g0.b4(gd.N0(2131752398, null), new h(this, 5)));
+            a9Var4.setText(org.telegram.messenger.g0.b4(hd.N0(2131752398, null), new h(this, 5)));
             b0(a9Var4, true);
         } else {
             a9Var3.setBottomPadding(70);
@@ -350,13 +350,13 @@ public final class p extends g2 implements fs {
         imageView.setImageResource(R.drawable.gradient_bottom);
         this.x.setScaleType(ImageView.ScaleType.FIT_XY);
         t6.s(this.x, m6.a7, this.resourceProvider, PorterDuff.Mode.SRC_ATOP);
-        this.w.addView(this.x, ma.e(-1, -1, ks.E1));
+        this.w.addView(this.x, ma.e(-1, -1, ls.E1));
         t0 t0Var = new t0(context, getResourceProvider(), true);
         this.s = t0Var;
         t0Var.f();
         t0 t0Var2 = this.s;
         t0Var2.getClass();
-        t0Var2.i(new SpannableStringBuilder(gd.N0(2131746192, null)), false, true);
+        t0Var2.i(new SpannableStringBuilder(hd.N0(2131746192, null)), false, true);
         t0Var2.m0 = new SpannableStringBuilder("l");
         nq nqVar = new nq(R.drawable.mini_switch_lock, 0);
         nqVar.n = 1;
@@ -401,7 +401,7 @@ public final class p extends g2 implements fs {
                             Boolean valueOf = (s8Var4 == null || !pVar2.S.paid_media_allowed) ? null : Boolean.valueOf(s8Var4.e.h);
                             pVar2.s.setLoading(true);
                             pVar2.N = pVar2.Z;
-                            mp messagesController = pVar2.getMessagesController();
+                            np messagesController = pVar2.getMessagesController();
                             long j3 = pVar2.T;
                             int i142 = pVar2.Z;
                             ArrayList h02 = pVar2.h0(false);
@@ -536,7 +536,7 @@ public final class p extends g2 implements fs {
                     i7 = 2;
                 }
             }
-            this.e.f(gd.N0(2131751141, null), (this.Z == i7 || this.a) ? z10 : false, false);
+            this.e.f(hd.N0(2131751141, null), (this.Z == i7 || this.a) ? z10 : false, false);
             this.h.J();
             if (chatFull.paid_media_allowed && chatFull.paid_reactions_available) {
                 k0();
@@ -576,7 +576,7 @@ public final class p extends g2 implements fs {
         i7 = 2;
         linkedHashMap = linkedHashMap2;
         z10 = true;
-        this.e.f(gd.N0(2131751141, null), (this.Z == i7 || this.a) ? z10 : false, false);
+        this.e.f(hd.N0(2131751141, null), (this.Z == i7 || this.a) ? z10 : false, false);
         this.h.J();
         if (chatFull.paid_media_allowed) {
             k0();
@@ -601,11 +601,11 @@ public final class p extends g2 implements fs {
         }
         if (z10 && z11) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String N0 = gd.N0(2131743592, "UnsavedChanges");
+            String N0 = hd.N0(2131743590, "UnsavedChanges");
             t1 t1Var = alertDialog$Builder.a;
             t1Var.S = N0;
-            t1Var.U = gd.N0(2131746211, "ReactionApplyChangesDialog");
-            alertDialog$Builder.k(gd.N0(2131754213, "ApplyTheme"), new q1(this) { // from class: ch.g
+            t1Var.U = hd.N0(2131746211, "ReactionApplyChangesDialog");
+            alertDialog$Builder.k(hd.N0(2131754213, "ApplyTheme"), new q1(this) { // from class: ch.g
                 public final /* synthetic */ p b;
 
                 {
@@ -624,7 +624,7 @@ public final class p extends g2 implements fs {
                     }
                 }
             });
-            alertDialog$Builder.h(gd.N0(2131751394, null), new q1(this) { // from class: ch.g
+            alertDialog$Builder.h(hd.N0(2131751394, null), new q1(this) { // from class: ch.g
                 public final /* synthetic */ p b;
 
                 {
@@ -648,9 +648,9 @@ public final class p extends g2 implements fs {
         return z11;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ks.y1 && ((Long) objArr[0]).longValue() == (-this.T)) {
+        if (i7 == ls.y1 && ((Long) objArr[0]).longValue() == (-this.T)) {
             r4 r4Var = this.parentLayout;
             if (r4Var == null || r4Var.getLastFragment() != this) {
                 removeSelfFromStack();
@@ -674,7 +674,7 @@ public final class p extends g2 implements fs {
             return;
         }
         if (z10) {
-            lc.b0(this).Q(R.raw.chats_infotip, 36, org.telegram.messenger.g0.W2(gd.G(size, "ReactionReachLvlForReactionShort", Integer.valueOf(size)))).j();
+            lc.b0(this).Q(R.raw.chats_infotip, 36, org.telegram.messenger.g0.W2(hd.G(size, "ReactionReachLvlForReactionShort", Integer.valueOf(size)))).j();
         }
         this.s.setLvlRequiredState(this.Y);
     }
@@ -688,7 +688,7 @@ public final class p extends g2 implements fs {
                 this.F.setFocusableInTouchMode(true);
                 this.F.requestFocus();
             }
-            ks.e().k(ks.j1, 512);
+            ls.e().k(ls.j1, 512);
             this.c.setLayerType(2, null);
             this.R.a(false, true);
         }
@@ -926,13 +926,13 @@ public final class p extends g2 implements fs {
 
     @Override // org.telegram.ui.ActionBar.g2
     public final boolean onFragmentCreate() {
-        mp messagesController = getMessagesController();
+        np messagesController = getMessagesController();
         long j3 = this.T;
         TLRPC.Chat O0 = messagesController.O0(Long.valueOf(j3));
         this.W = O0;
         int i7 = 0;
         if (O0 == null) {
-            TLRPC.Chat P = tr.a0(this.currentAccount).P(j3);
+            TLRPC.Chat P = ur.a0(this.currentAccount).P(j3);
             this.W = P;
             if (P != null) {
                 getMessagesController().X3(this.W, true);
@@ -941,10 +941,10 @@ public final class p extends g2 implements fs {
         }
         if (this.S != null) {
             getMessagesController().I0().a(-j3, new i(this, i7));
-            getNotificationCenter().c(this, ks.Y4);
+            getNotificationCenter().c(this, ls.Y4);
             this.L.addAll(getMediaDataController().n);
-            ks.e().k(ks.j1, 512);
-            getNotificationCenter().c(this, ks.y1);
+            ls.e().k(ls.j1, 512);
+            getNotificationCenter().c(this, ls.y1);
             return super.onFragmentCreate();
         }
         return false;
@@ -957,8 +957,8 @@ public final class p extends g2 implements fs {
         if (this.Z == 2 && (this.V != this.U || (this.N != 2 && !this.M && !this.a))) {
             getMessagesController().R4(this.T, this.Z, h0(false), this.V, null, null, null);
         }
-        getNotificationCenter().n(this, ks.Y4);
-        getNotificationCenter().n(this, ks.y1);
+        getNotificationCenter().n(this, ls.Y4);
+        getNotificationCenter().n(this, ls.y1);
     }
 
     @Override // org.telegram.ui.ActionBar.g2

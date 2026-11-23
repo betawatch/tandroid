@@ -6,9 +6,9 @@ import f3.i0;
 import h2.l0;
 import java.util.Arrays;
 import java.util.Collections;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -281,7 +281,7 @@ public final class e implements i {
                             fVar.L(5);
                             int j12 = fVar.j(3);
                             int i34 = this.p;
-                            byte[] bArr8 = {(byte) (((j11 << 3) & ks.X3) | ((i34 >> 1) & 7)), (byte) (((j12 << 3) & 120) | ((i34 << 7) & 128))};
+                            byte[] bArr8 = {(byte) (((j11 << 3) & ls.X3) | ((i34 >> 1) & 7)), (byte) (((j12 << 3) & 120) | ((i34 << 7) & 128))};
                             f3.a n10 = f3.b.n(new d4.f(bArr8, 2), false);
                             e2.t tVar = new e2.t();
                             tVar.a = this.g;

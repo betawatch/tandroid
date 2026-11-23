@@ -26,13 +26,13 @@ import m.b3;
 import m.l1;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.ic;
 import org.telegram.messenger.q5;
 import org.telegram.ui.Cells.c5;
 import org.telegram.ui.Components.ce0;
 import org.telegram.ui.rk;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -675,11 +675,11 @@ public final class c {
         return null;
     }
 
-    public Bitmap t(hc hcVar) {
-        if (hcVar == null) {
+    public Bitmap t(ic icVar) {
+        if (icVar == null) {
             return null;
         }
-        return s(hcVar.c, hcVar.a, hcVar.e, 0, false);
+        return s(icVar.c, icVar.a, icVar.e, 0, false);
     }
 
     public Bitmap u(ImageReceiver imageReceiver) {

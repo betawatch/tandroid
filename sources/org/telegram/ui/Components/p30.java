@@ -11,7 +11,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class p30 extends HorizontalScrollView {
     public static final RectF w = new RectF();
@@ -121,14 +121,14 @@ public final class p30 extends HorizontalScrollView {
         this.c.e(z11, linearLayout.getChildAt(i7).getRight());
     }
 
-    public final void b(ArrayList arrayList, org.telegram.messenger.nr nrVar) {
+    public final void b(ArrayList arrayList, org.telegram.messenger.or orVar) {
         LinearLayout linearLayout = this.d;
         linearLayout.removeAllViews();
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             CharSequence charSequence = (CharSequence) arrayList.get(i7);
             bi.m3 m3Var = new bi.m3(getContext(), 19);
             m3Var.setDrawingCacheEnabled(false);
-            m3Var.setOnClickListener(new bi.i5(this, i7, nrVar, 13));
+            m3Var.setOnClickListener(new bi.h5(this, i7, orVar, 13));
             m3Var.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(5.0f));
             LinearLayout.LayoutParams o4 = c8.ma.o(-2, -2);
             if (i7 < arrayList.size() - 1) {

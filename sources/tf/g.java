@@ -5,10 +5,10 @@ import android.graphics.BitmapFactory;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ks;
+import org.telegram.messenger.ls;
 import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes.dex */
 public final class g extends rf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -34,7 +34,7 @@ public final class g extends rf.a {
     public static f5.a c(e eVar) {
         b b10 = eVar.b();
         eVar.c(3, b.c);
-        return new f5.a(4, eVar.d(ks.e3, b10), eVar.c((int) eVar.a.e(), b10));
+        return new f5.a(4, eVar.d(ls.e3, b10), eVar.c((int) eVar.a.e(), b10));
     }
 
     public static String e(e eVar) {
@@ -81,7 +81,7 @@ public final class g extends rf.a {
                         eVar.d(20, b.c);
                     }
                     byte Q = jnVar.Q();
-                    eVar.d(ks.e3, b10);
+                    eVar.d(ls.e3, b10);
                     int e10 = (int) eVar.a.e();
                     byte[] bArr = new byte[e10];
                     int i12 = 0;

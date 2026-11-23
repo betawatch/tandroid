@@ -1,31 +1,31 @@
 package di;
 
-import org.telegram.messenger.fs;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.r10;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.lm0;
 import org.telegram.ui.nl0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e3 implements q10 {
+public final /* synthetic */ class e3 implements r10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ TL_stars.TL_starGiftUnique b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ fs d;
+    public final /* synthetic */ gs d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e3(fs fsVar, Object obj, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, Object obj2, int i7) {
+    public /* synthetic */ e3(gs gsVar, Object obj, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, Object obj2, int i7) {
         this.a = i7;
-        this.d = fsVar;
+        this.d = gsVar;
         this.e = obj;
         this.b = tL_starGiftUnique;
         this.c = j3;
         this.f = obj2;
     }
 
-    @Override // org.telegram.messenger.q10
+    @Override // org.telegram.messenger.r10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:

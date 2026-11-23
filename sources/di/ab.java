@@ -5,10 +5,10 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.fs;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.ks;
-import org.telegram.messenger.o10;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.dk0;
@@ -23,9 +23,9 @@ import org.telegram.ui.bn;
 import org.telegram.ui.rj;
 import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final class ab extends org.telegram.ui.Components.sa implements fs {
+public final class ab extends org.telegram.ui.Components.sa implements gs {
     public final za T1;
     public final FrameLayout U1;
     public final TLRPC.User V1;
@@ -38,14 +38,14 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
         this.V1 = user;
         this.W1 = runnable;
         this.v1 = 0.2f;
-        ks.f(this.a).c(this, ks.y3);
-        ks.f(this.a).c(this, ks.A3);
+        ls.f(this.a).c(this, ls.y3);
+        ls.f(this.a).c(this, ls.A3);
         O();
         ek0 ek0Var = this.o1;
         int i7 = this.u0;
         final int i10 = 0;
         ek0Var.setPadding(i7, 0, i7, 0);
-        this.o1.setOnItemClickListener(new bi.l8(this, 3));
+        this.o1.setOnItemClickListener(new bi.k8(this, 3));
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;
@@ -55,10 +55,10 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
         w0(org.telegram.ui.ActionBar.m6.i5);
         za zaVar = new za(0, context, h6Var);
         this.T1 = zaVar;
-        ((TextView) zaVar.c).setText(gd.N0(2131749431, null));
+        ((TextView) zaVar.c).setText(hd.N0(2131749431, null));
         m80 m80Var = (m80) zaVar.d;
         final int i11 = 1;
-        m80Var.setText(TextUtils.concat(org.telegram.messenger.g0.W2(gd.a0(null, null, 2131749433, o10.l(user))), " ", org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(gd.N0(2131749432, null).replace(' ', (char) 160), new Runnable(this) { // from class: di.ya
+        m80Var.setText(TextUtils.concat(org.telegram.messenger.g0.W2(hd.a0(null, null, 2131749433, p10.l(user))), " ", org.telegram.messenger.g0.H2(org.telegram.messenger.g0.T2(hd.N0(2131749432, null).replace(' ', (char) 160), new Runnable(this) { // from class: di.ya
             public final /* synthetic */ ab b;
 
             {
@@ -79,7 +79,7 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
                         tu0Var.show();
                         break;
                     default:
-                        vf.c.t(abVar.getContext(), gd.N0(2131744725, null));
+                        vf.c.t(abVar.getContext(), hd.N0(2131744723, null));
                         break;
                 }
             }
@@ -96,7 +96,7 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
         m80Var2.setTextSize(1, 12.0f);
         org.telegram.ui.ActionBar.t6.U(m80Var2, org.telegram.ui.ActionBar.m6.B6, h6Var);
         org.telegram.ui.ActionBar.t6.G(m80Var2, org.telegram.ui.ActionBar.m6.Xc, h6Var);
-        m80Var2.setText(org.telegram.messenger.g0.T2(gd.N0(2131744726, null), new Runnable(this) { // from class: di.ya
+        m80Var2.setText(org.telegram.messenger.g0.T2(hd.N0(2131744724, null), new Runnable(this) { // from class: di.ya
             public final /* synthetic */ ab b;
 
             {
@@ -117,7 +117,7 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
                         tu0Var.show();
                         break;
                     default:
-                        vf.c.t(abVar.getContext(), gd.N0(2131744725, null));
+                        vf.c.t(abVar.getContext(), hd.N0(2131744723, null));
                         break;
                 }
             }
@@ -150,10 +150,10 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
         int i7 = 1;
         if (!bool.booleanValue()) {
             if (str != null) {
-                org.telegram.ui.Components.lc.b0(T).Q(R.raw.error, 36, gd.a0(null, null, 2131743635, str)).j();
+                org.telegram.ui.Components.lc.b0(T).Q(R.raw.error, 36, hd.a0(null, null, 2131743633, str)).j();
             }
         } else {
-            org.telegram.ui.Components.gc L = org.telegram.ui.Components.lc.b0(T).L(R.raw.stars_send, gd.N0(2131744859, null), org.telegram.messenger.g0.W2(gd.G((int) o41Var.C, "StarsGiftSentPopupInfo", o10.l(abVar.V1))), gd.N0(2131743309, null), new g3(j3, i7));
+            org.telegram.ui.Components.gc L = org.telegram.ui.Components.lc.b0(T).L(R.raw.stars_send, hd.N0(2131744857, null), org.telegram.messenger.g0.W2(hd.G((int) o41Var.C, "StarsGiftSentPopupInfo", p10.l(abVar.V1))), hd.N0(2131743307, null), new g3(j3, i7));
             L.j = 5000;
             L.k(true);
             if (u80Var != null) {
@@ -166,8 +166,8 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
     @Override // org.telegram.ui.ActionBar.w2
     public final void L() {
         super.L();
-        ks.f(this.a).n(this, ks.y3);
-        ks.f(this.a).n(this, ks.A3);
+        ls.f(this.a).n(this, ls.y3);
+        ls.f(this.a).n(this, ls.A3);
     }
 
     @Override // org.telegram.ui.Components.sa
@@ -186,10 +186,10 @@ public final class ab extends org.telegram.ui.Components.sa implements fs {
         return ((TextView) zaVar.c).getText();
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         c51 c51Var;
-        if ((i7 == ks.y3 || i7 == ks.A3) && (c51Var = this.X1) != null) {
+        if ((i7 == ls.y3 || i7 == ls.A3) && (c51Var = this.X1) != null) {
             c51Var.O(true);
         }
     }

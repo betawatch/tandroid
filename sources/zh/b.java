@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import bi.h6;
-import bi.l8;
+import bi.g6;
+import bi.k8;
 import c8.ma;
 import di.b1;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.l90;
@@ -21,7 +21,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bn;
 import v4.u0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class b extends r51 {
     public final int O1;
@@ -51,7 +51,7 @@ public final class b extends r51 {
         this.P1 = l90Var;
         l90Var.B = false;
         this.q0 = 75;
-        this.w1.K.setHint(gd.N0(2131745562, null));
+        this.w1.K.setHint(hd.N0(2131745562, null));
         g gVar = l90Var.f;
         this.q1 = gVar;
         this.p1 = gVar;
@@ -59,12 +59,12 @@ public final class b extends r51 {
         this.o1.r1();
         b1 b1Var = this.o1;
         l90Var.p = b1Var;
-        b1Var.setOnItemClickListener(new l8(l90Var, 24));
+        b1Var.setOnItemClickListener(new k8(l90Var, 24));
         u0 onScrollListener = b1Var.getOnScrollListener();
         if (onScrollListener == null) {
             b1Var.setOnScrollListener(l90Var.D);
         } else {
-            b1Var.setOnScrollListener(new h6(11, l90Var, onScrollListener));
+            b1Var.setOnScrollListener(new g6(11, l90Var, onScrollListener));
         }
         int indexOfChild = ((ViewGroup) this.o1.getParent()).indexOfChild(this.o1);
         yz b10 = l90Var.b();

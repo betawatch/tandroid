@@ -20,7 +20,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public class du0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public static boolean f0;
@@ -88,11 +88,11 @@ public class du0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     }
 
     public static boolean E() {
-        return Build.VERSION.SDK_INT >= 31 && org.telegram.messenger.bz.a0;
+        return Build.VERSION.SDK_INT >= 31 && org.telegram.messenger.cz.a0;
     }
 
     public static void F(du0 du0Var, Canvas canvas) {
-        if (du0Var.M != null && org.telegram.ui.ActionBar.m6.G1 && org.telegram.messenger.pc.e(32)) {
+        if (du0Var.M != null && org.telegram.ui.ActionBar.m6.G1 && org.telegram.messenger.qc.e(32)) {
             if (du0Var.L == null) {
                 ou0 ou0Var = new ou0(1);
                 du0Var.L = ou0Var;
@@ -104,7 +104,7 @@ public class du0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     }
 
     public static float getBlurRadius() {
-        int o4 = org.telegram.messenger.bz.o();
+        int o4 = org.telegram.messenger.cz.o();
         if (o4 != 1) {
             return o4 != 2 ? 3.0f : 60.0f;
         }
@@ -113,7 +113,7 @@ public class du0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
 
     public static float getRenderNodeScale() {
         int L;
-        int o4 = org.telegram.messenger.bz.o();
+        int o4 = org.telegram.messenger.cz.o();
         if (o4 == 1) {
             L = org.telegram.messenger.g0.L(12.0f);
         } else {
@@ -157,7 +157,7 @@ public class du0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     }
 
     public void H(Canvas canvas, float f10, Rect rect, Paint paint, boolean z10) {
-        I(canvas, f10, rect, paint, z10, Color.alpha(org.telegram.ui.ActionBar.m6.w0((E() && org.telegram.messenger.bz.o() == 2) ? org.telegram.ui.ActionBar.m6.og : org.telegram.ui.ActionBar.m6.pg, getResourceProvider())));
+        I(canvas, f10, rect, paint, z10, Color.alpha(org.telegram.ui.ActionBar.m6.w0((E() && org.telegram.messenger.cz.o() == 2) ? org.telegram.ui.ActionBar.m6.og : org.telegram.ui.ActionBar.m6.pg, getResourceProvider())));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x0173  */
@@ -174,7 +174,7 @@ public class du0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
         float f12;
         boolean z12;
         Shader.TileMode tileMode;
-        if (!org.telegram.messenger.bz.f()) {
+        if (!org.telegram.messenger.cz.f()) {
             canvas.drawRect(rect, paint);
             return;
         }
@@ -309,7 +309,7 @@ public class du0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     }
 
     public void K() {
-        org.telegram.messenger.bz.f();
+        org.telegram.messenger.cz.f();
     }
 
     public final void M() {
@@ -409,7 +409,7 @@ public class du0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     }
 
     public boolean W() {
-        return !(this instanceof bi.w8);
+        return !(this instanceof bi.v8);
     }
 
     public void addColorKeys(HashSet hashSet) {

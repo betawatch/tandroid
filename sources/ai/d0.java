@@ -13,26 +13,26 @@ import hi.b8;
 import hi.k8;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.jc;
-import org.telegram.messenger.lr;
-import org.telegram.messenger.mp;
+import org.telegram.messenger.az;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.kc;
+import org.telegram.messenger.mr;
 import org.telegram.messenger.n5;
-import org.telegram.messenger.pd;
-import org.telegram.messenger.rr;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.np;
+import org.telegram.messenger.qd;
+import org.telegram.messenger.sr;
+import org.telegram.messenger.ur;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.x10;
-import org.telegram.messenger.xy;
-import org.telegram.messenger.zy;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.yy;
 import org.telegram.tgnet.RequestDelegateTimestamp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.a21;
 import org.telegram.ui.Components.a5;
-import org.telegram.ui.Components.b21;
 import org.telegram.ui.Components.df;
 import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.i61;
@@ -47,9 +47,9 @@ import org.telegram.ui.mw;
 import org.telegram.ui.na0;
 import org.telegram.ui.u40;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr, jc, a5, na0, lr, j2.g, org.telegram.ui.ActionBar.q1, u40, p4.c1, v5.e {
+public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, sr, kc, a5, na0, mr, j2.g, org.telegram.ui.ActionBar.q1, u40, p4.c1, v5.e {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -83,10 +83,10 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
         }
     }
 
-    @Override // org.telegram.messenger.rr
+    @Override // org.telegram.messenger.sr
     public void a(String str) {
         k8 k8Var = (k8) this.c;
-        mp.u1(k8Var.a0.a).R1().r(this.b, str, new b8(k8Var, 2));
+        np.u1(k8Var.a0.a).R1().r(this.b, str, new b8(k8Var, 2));
     }
 
     @Override // v5.e
@@ -112,22 +112,22 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
         switch (i11) {
             case 5:
                 float[] fArr = FragmentContextView.X0;
-                zy.C(((pd) obj).h.K1).r0(xy.d(messageMedia, this.b, null, null, null, null, true, 0));
+                az.C(((qd) obj).h.K1).r0(yy.d(messageMedia, this.b, null, null, null, null, true, 0));
                 break;
             default:
                 String str = LaunchActivity.C1;
-                zy.C(((int[]) obj)[0]).r0(xy.d(messageMedia, this.b, null, null, null, null, true, 0));
+                az.C(((int[]) obj)[0]).r0(yy.d(messageMedia, this.b, null, null, null, null, true, 0));
                 break;
         }
     }
 
     @Override // ai.f
     public void c(TLRPC.TL_error tL_error, String str) {
-        x10 x10Var = (x10) this.c;
+        y10 y10Var = (y10) this.c;
         if (str == null) {
             p0.G(tL_error);
         }
-        org.telegram.messenger.g0.h3(new i0(x10Var, str), Math.max(0L, (this.b + 1200) - SystemClock.uptimeMillis()));
+        org.telegram.messenger.g0.h3(new i0(y10Var, str), Math.max(0L, (this.b + 1200) - SystemClock.uptimeMillis()));
     }
 
     @Override // j2.g
@@ -135,9 +135,9 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
         return new e61(((i61) this.c).h.createDataSource(), this.b);
     }
 
-    @Override // org.telegram.messenger.lr
+    @Override // org.telegram.messenger.mr
     public void d(boolean z10) {
-        bn bnVar = ((b21) this.c).s;
+        bn bnVar = ((a21) this.c).s;
         if (com.google.android.gms.internal.vision.e2.s(bnVar)) {
             bnVar.Ta(this.b, false);
         }
@@ -157,7 +157,7 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
                     nm0Var.w0.remove(g0Var);
                     nm0Var.v0.remove(g0Var);
                     nm0Var.f();
-                    tr.a0(nm0Var.t0).a.c(new c4(nm0Var, j3, 11));
+                    ur.a0(nm0Var.t0).a.c(new c4(nm0Var, j3, 11));
                     break;
                 }
                 break;
@@ -178,7 +178,7 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
         int i10 = 0;
         while (i10 < size) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i10);
-            mp messagesController = g2Var.getMessagesController();
+            np messagesController = g2Var.getMessagesController();
             org.telegram.messenger.j2 j2Var = new org.telegram.messenger.j2(0);
             long j3 = this.b;
             messagesController.m(j3, user, i7, null, g2Var, false, j2Var, null, new a4(j91Var, tL_messages_invitedUsers, iArr, size, arrayList, j3));
@@ -194,10 +194,10 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
         return e0Var.q(vVar, h9.i0.u((e2.l0) this.c), 0, this.b);
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         oi.f0 f0Var = (oi.f0) this.c;
-        hc p10 = imageReceiver.p();
+        ic p10 = imageReceiver.p();
         if (!z10 || p10 == null) {
             return;
         }
@@ -227,7 +227,7 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
             if (c1Var.H == null && !groupcallstreamchannels.channels.isEmpty()) {
                 TLRPC.TL_groupCallParticipant tL_groupCallParticipant = new TLRPC.TL_groupCallParticipant();
                 c1Var.H = tL_groupCallParticipant;
-                tL_groupCallParticipant.peer = mp.u1(c1Var.e).B1(c1Var.b);
+                tL_groupCallParticipant.peer = np.u1(c1Var.e).B1(c1Var.b);
                 c1Var.H.video = new TLRPC.TL_groupCallParticipantVideo();
                 TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = new TLRPC.TL_groupCallParticipantVideoSourceGroup();
                 tL_groupCallParticipantVideoSourceGroup.semantics = "SIM";
@@ -255,10 +255,10 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
         }
     }
 
-    public /* synthetic */ d0(p0 p0Var, long j3, x10 x10Var) {
+    public /* synthetic */ d0(p0 p0Var, long j3, y10 y10Var) {
         this.a = 0;
         this.b = j3;
-        this.c = x10Var;
+        this.c = y10Var;
     }
 
     public /* synthetic */ d0(Object obj, long j3, int i7) {
@@ -267,7 +267,7 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
         this.b = j3;
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
@@ -275,7 +275,7 @@ public final /* synthetic */ class d0 implements f, RequestDelegateTimestamp, rr
     public /* synthetic */ void f(TLRPC.User user) {
     }
 
-    @Override // org.telegram.messenger.jc
+    @Override // org.telegram.messenger.kc
     public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 }

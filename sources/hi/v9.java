@@ -2,9 +2,9 @@ package hi;
 
 import android.content.Context;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gd;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes4.dex */
 public final class v9 extends d1 {
     public final /* synthetic */ sa c0;
@@ -28,7 +28,7 @@ public final class v9 extends d1 {
         super.toggleDual();
         sa saVar = this.c0;
         saVar.G0.setValue(isDual());
-        saVar.G0.setContentDescription(gd.N0(isDual() ? 2131754886 : 2131754887, null));
+        saVar.G0.setContentDescription(hd.N0(isDual() ? 2131754886 : 2131754887, null));
         saVar.d0(saVar.B());
     }
 

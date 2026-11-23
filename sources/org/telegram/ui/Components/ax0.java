@@ -14,9 +14,9 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
-public class ax0 extends FrameLayout implements org.telegram.messenger.fs, org.telegram.ui.ActionBar.b6 {
+public class ax0 extends FrameLayout implements org.telegram.messenger.gs, org.telegram.ui.ActionBar.b6 {
     public boolean E;
     public boolean F;
     public PorterDuffColorFilter G;
@@ -123,9 +123,9 @@ public class ax0 extends FrameLayout implements org.telegram.messenger.fs, org.t
         return 2;
     }
 
-    @Override // org.telegram.messenger.fs
+    @Override // org.telegram.messenger.gs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.ks.L2) {
+        if (i7 == org.telegram.messenger.ls.L2) {
             ArrayList arrayList = this.x;
             if (arrayList == null || arrayList.isEmpty()) {
                 return;
@@ -133,7 +133,7 @@ public class ax0 extends FrameLayout implements org.telegram.messenger.fs, org.t
             e();
             return;
         }
-        if (i7 != org.telegram.messenger.ks.l4 || this.e == null) {
+        if (i7 != org.telegram.messenger.ls.l4 || this.e == null) {
             return;
         }
         for (int i11 = 0; i11 < this.e.getChildCount(); i11++) {
@@ -204,15 +204,15 @@ public class ax0 extends FrameLayout implements org.telegram.messenger.fs, org.t
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.ks.e().c(this, org.telegram.messenger.ks.l4);
-        org.telegram.messenger.ks.f(this.a).c(this, org.telegram.messenger.ks.L2);
+        org.telegram.messenger.ls.e().c(this, org.telegram.messenger.ls.l4);
+        org.telegram.messenger.ls.f(this.a).c(this, org.telegram.messenger.ls.L2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.l4);
-        org.telegram.messenger.ks.f(this.a).n(this, org.telegram.messenger.ks.L2);
+        org.telegram.messenger.ls.e().n(this, org.telegram.messenger.ls.l4);
+        org.telegram.messenger.ls.f(this.a).n(this, org.telegram.messenger.ls.L2);
     }
 
     public void setDelegate(yw0 yw0Var) {

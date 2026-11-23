@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.nr;
 import org.telegram.ui.Components.oh0;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final class f5 extends LinearLayout {
     public final z4 a;
@@ -89,7 +89,7 @@ public final class f5 extends LinearLayout {
             layoutParams.leftMargin = i12;
         }
         addView(g5Var, -1, layoutParams);
-        g5Var.setOnClickListener(new bi.i5(this, g5Var, i7, 3));
+        g5Var.setOnClickListener(new bi.h5(this, g5Var, i7, 3));
         if (charSequence != null) {
             g5Var.setContentDescription(charSequence);
         }

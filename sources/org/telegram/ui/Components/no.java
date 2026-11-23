@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class no implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class no implements View.OnClickListener {
                 org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.e;
                 qo qoVar = (qo) this.f;
                 roVar.a();
-                c5.D(this.b, h6Var, new ai.u1(this.c, qoVar, 9));
+                c5.D(this.b, h6Var, new ai.v1(this.c, qoVar, 9));
                 break;
             default:
                 org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) this.d;
@@ -41,7 +41,7 @@ public final /* synthetic */ class no implements View.OnClickListener {
                 w2Var.dismiss();
                 Activity W = org.telegram.messenger.g0.W(this.b);
                 if (W != null) {
-                    org.telegram.messenger.mp.g1().edit().putBoolean("callmiconstart", opVar.a.q).apply();
+                    org.telegram.messenger.np.g1().edit().putBoolean("callmiconstart", opVar.a.q).apply();
                     org.telegram.ui.Components.voip.b2.g(W, this.c, tL_inputGroupCallSlug, false, null, null);
                     break;
                 }

@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.ur;
 
-/* compiled from: r8-map-id-914a42c19c49658e9d638b32d61254875ad778270fd8b91a9fbd9dcaec68ff21 */
+/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class w1 implements Runnable {
         switch (this.a) {
             case 0:
                 try {
-                    tr.a0(this.b.m).b.executeFast("DELETE FROM hashtag_recent_v2 WHERE 1").stepThis().dispose();
+                    ur.a0(this.b.m).b.executeFast("DELETE FROM hashtag_recent_v2 WHERE 1").stepThis().dispose();
                     break;
                 } catch (Exception e10) {
                     a8.g(e10, true);
@@ -32,7 +32,7 @@ public final /* synthetic */ class w1 implements Runnable {
             default:
                 z1 z1Var = this.b;
                 try {
-                    SQLiteCursor queryFinalized = tr.a0(z1Var.m).b.queryFinalized("SELECT id, date FROM hashtag_recent_v2 WHERE 1", new Object[0]);
+                    SQLiteCursor queryFinalized = ur.a0(z1Var.m).b.queryFinalized("SELECT id, date FROM hashtag_recent_v2 WHERE 1", new Object[0]);
                     ArrayList arrayList = new ArrayList();
                     HashMap hashMap = new HashMap();
                     while (queryFinalized.next()) {
