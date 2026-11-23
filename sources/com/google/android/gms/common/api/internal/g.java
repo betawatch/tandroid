@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.jn;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes.dex */
 public final class g implements Handler.Callback {
     public static final Status F = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);

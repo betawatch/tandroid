@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m60 implements org.telegram.messenger.i9, org.telegram.messenger.j9, org.telegram.messenger.db, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.pb0, org.telegram.messenger.s10, org.telegram.ui.Components.gu0, org.telegram.ui.ActionBar.q6, org.telegram.ui.ActionBar.r6 {
     public final /* synthetic */ int a;

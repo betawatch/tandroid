@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final class r2 {
     public final int a;
@@ -49,7 +49,7 @@ public final class r2 {
         this.t = size;
         this.u = true;
         int i7 = this.r;
-        DictationLid.j(DictationLid.j[this.s], new v1(this, i7, 2), null, byteArrayOutputStream.toByteArray());
+        DictationLid.j(DictationLid.k[this.s], new v1(this, i7, 2), null, byteArrayOutputStream.toByteArray());
     }
 
     public final void b() {

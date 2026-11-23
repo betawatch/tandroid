@@ -44,7 +44,7 @@ import org.telegram.messenger.t0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.h21;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public abstract class DictationAsr {
     public static boolean c;
@@ -634,8 +634,8 @@ public abstract class DictationAsr {
         np.g1().edit().putString("asr_variant_" + str, str2).apply();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x012f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -676,15 +676,21 @@ public abstract class DictationAsr {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             ExecutorService executorService = DictationLid.a;
             long elapsedRealtime2 = SystemClock.elapsedRealtime() + 30000;
-            synchronized (DictationLid.h) {
-                while (DictationLid.c == 0 && (DictationLid.f || DictationLid.g)) {
+            synchronized (DictationLid.i) {
+                while (true) {
                     try {
+                        if (DictationLid.c != 0 && !DictationLid.h) {
+                            break;
+                        }
+                        if (!DictationLid.f && !DictationLid.g) {
+                            break;
+                        }
                         long elapsedRealtime3 = elapsedRealtime2 - SystemClock.elapsedRealtime();
                         if (elapsedRealtime3 <= 0) {
                             break;
                         } else {
                             try {
-                                DictationLid.h.wait(elapsedRealtime3);
+                                DictationLid.i.wait(elapsedRealtime3);
                             } catch (InterruptedException unused) {
                             }
                         }

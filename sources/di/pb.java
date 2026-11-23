@@ -70,7 +70,7 @@ import org.telegram.ui.rn;
 import org.telegram.ui.s00;
 import org.telegram.ui.uv;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final class pb extends s00 implements gs {
     public static DecimalFormat w0;
@@ -1479,7 +1479,7 @@ public final class pb extends s00 implements gs {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r11v21 ?? I:??[OBJECT, ARRAY]), method size: 4312
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r11v19 ??), method size: 4312
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

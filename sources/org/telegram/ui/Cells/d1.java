@@ -24,7 +24,7 @@ import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.ym0;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final class d1 {
     public final r1 a;
@@ -326,7 +326,7 @@ public final class d1 {
         canvas.clipPath(c1Var4.C);
         float f20 = c1Var4.e * f10;
         if (f20 > f13) {
-            r1 r1Var2 = c1Var4.U.a;
+            r1 r1Var2 = c1Var4.T.a;
             Paint a22 = r1Var2.Q5.P5() ? r1Var2.a2("paintChatActionBackground") : r1Var2.a2("paintChatTimeBackground");
             int alpha3 = a22.getAlpha();
             a22.setAlpha((int) (alpha3 * f20));

@@ -2,15 +2,15 @@ package ai;
 
 import android.util.Log;
 import java.util.HashMap;
+import org.telegram.messenger.a8;
 import org.telegram.messenger.gj;
-import org.telegram.messenger.k10;
 import org.telegram.messenger.ls;
-import org.telegram.messenger.np;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.h21;
 import org.telegram.ui.Components.j21;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -67,39 +67,29 @@ public final /* synthetic */ class k implements Runnable {
                         break;
                     } else {
                         gj gjVar = h21Var.b;
-                        org.telegram.ui.Cells.m1 m1Var = h21Var.c;
                         Integer valueOf = Integer.valueOf(j21.r(gjVar));
                         int i7 = gjVar.K1;
-                        if (!j21.j(gjVar)) {
-                            j21.T.add(valueOf);
-                            j21.R.remove(valueOf);
-                            j21.S.remove(valueOf);
-                            HashMap hashMap = j21.P;
-                            if (hashMap != null) {
-                                hashMap.remove(valueOf);
-                            }
-                            boolean z10 = k10.i(i7).q() || j21.e(gjVar);
-                            if (org.telegram.messenger.s2.a) {
-                                StringBuilder sb2 = new StringBuilder("local transcription of msg_id=");
-                                sb2.append(gjVar.e1());
-                                sb2.append(": unknown language, ");
-                                p5.c.s(z10 ? "asking the server" : "needs premium", sb2);
-                            }
-                            if (!z10) {
-                                ls.f(i7).k(ls.A1, gjVar);
-                                ls.f(i7).k(ls.E1, new Object[0]);
-                                if (m1Var != null) {
-                                    m1Var.h0(np.u1(i7).v4 > 0 ? 3 : 0);
-                                    break;
-                                }
-                            } else {
-                                j21.z(gjVar, true, m1Var);
-                                break;
-                            }
-                        } else {
-                            j21.n(gjVar);
-                            break;
+                        j21.R.remove(valueOf);
+                        j21.S.remove(valueOf);
+                        HashMap hashMap = j21.P;
+                        if (hashMap != null) {
+                            hashMap.remove(valueOf);
                         }
+                        if (org.telegram.messenger.s2.a) {
+                            a8.b("local transcription of msg_id=" + gjVar.e1() + ": unknown language, no words");
+                        }
+                        TLRPC.Message message = gjVar.k;
+                        message.voiceTranscription = "";
+                        message.voiceTranscriptionWords = null;
+                        message.voiceTranscriptionLocal = true;
+                        message.voiceTranscriptionFinal = true;
+                        message.voiceTranscriptionOpen = true;
+                        message.voiceTranscriptionId = 0L;
+                        j21.q(gjVar);
+                        ls f10 = ls.f(i7);
+                        Boolean bool = Boolean.TRUE;
+                        f10.k(ls.A1, gjVar, null, null, bool, bool);
+                        break;
                     }
                 }
                 break;

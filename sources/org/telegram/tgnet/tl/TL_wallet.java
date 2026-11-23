@@ -15,18 +15,18 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.f3;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public class TL_wallet {
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class InputWalletReplacement extends TLObject {
         public static InputWalletReplacement TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
             return (InputWalletReplacement) TLObject.TLdeserialize(InputWalletReplacement.class, i7 != 1671708892 ? i7 != 1722182203 ? null : new inputWalletImported() : new inputWalletNew(), inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class TL_walletState extends WalletState {
         public static final int constructor = -1782238101;
         public String address;
@@ -57,7 +57,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class TL_walletStateEmpty extends WalletState {
         public static final int constructor = -1665551636;
         public boolean creating;
@@ -74,7 +74,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class WalletOnchainGiftAction extends TLObject {
         public static WalletOnchainGiftAction TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
             TLObject walletonchaingiftactiondelist;
@@ -119,14 +119,14 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class WalletState extends TLObject {
         public static WalletState TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z10) {
             return (WalletState) TLObject.TLdeserialize(WalletState.class, i7 != -1782238101 ? i7 != -1665551636 ? null : new TL_walletStateEmpty() : new TL_walletState(), inputSerializedData, i7, z10);
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class WalletTransactionPeer extends TLObject {
         public String address;
         public long channel_id;
@@ -207,7 +207,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class card extends TLObject {
         public static final int constructor = -1898953807;
         public String address;
@@ -249,7 +249,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class cardSticker extends TLObject {
         public static final int constructor = -218035014;
         public TL_stories.MediaAreaCoordinates coordinates;
@@ -273,7 +273,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class currencyRate extends TLObject {
         public static final int constructor = 819557436;
         public String currency;
@@ -306,7 +306,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class currencyRates extends TLObject {
         public static final int constructor = -1144199998;
         public ArrayList<currencyRate> rates = new ArrayList<>();
@@ -327,7 +327,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class disableBackup extends TLMethod<WalletState> {
         public static final int constructor = 185331930;
         public byte[] new_public_key;
@@ -356,7 +356,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class enableBackup extends TLMethod<WalletState> {
         public static final int constructor = 1157678373;
         public byte[] new_public_key;
@@ -383,7 +383,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class encryptedSecretPhrasePart extends TLObject {
         public static final int constructor = 417867063;
         public byte[] data;
@@ -404,7 +404,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class existingBalance extends TLObject {
         public static final int constructor = -1108800883;
         public boolean has_balance;
@@ -428,7 +428,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class exportSecretPhrase extends TLMethod<secretPhraseParts> {
         public static final int constructor = -1871197780;
         public TLRPC.InputCheckPasswordSRP password;
@@ -449,7 +449,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class fetchEncryptedSecretPhrasePart extends TLMethod<encryptedSecretPhrasePart> {
         public static final int constructor = -180804145;
         public byte[] public_key;
@@ -468,7 +468,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getBackupHolderDcs extends TLMethod<Vector<holderDc>> {
         public static final int constructor = -780544876;
 
@@ -483,7 +483,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getCurrencyRates extends TLMethod<currencyRates> {
         public static final int constructor = -749108248;
 
@@ -498,7 +498,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getExistingWaltBalance extends TLMethod<existingBalance> {
         public static final int constructor = 1763656544;
 
@@ -513,7 +513,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getGaslessInfo extends TLMethod<TLRPC.Updates> {
         public static final int constructor = 1949167777;
 
@@ -528,7 +528,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getNfts extends TLMethod<nftItems> {
         public static final int constructor = -1944915036;
         public int limit;
@@ -547,7 +547,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getProofChallenge extends TLMethod<proofChallenge> {
         public static final int constructor = 539354775;
 
@@ -562,7 +562,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getState extends TLMethod<WalletState> {
         public static final int constructor = -1417432262;
 
@@ -577,7 +577,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getTransactions extends TLMethod<walletTransactions> {
         public static final int constructor = -1467807101;
         public boolean inbound;
@@ -599,7 +599,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getTransactionsByIDs extends TLMethod<walletTransactions> {
         public static final int constructor = -2128811338;
         public ArrayList<String> id = new ArrayList<>();
@@ -616,7 +616,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getTransactionsByMsgHash extends TLMethod<walletTransactions> {
         public static final int constructor = -1497663139;
         public ArrayList<String> msg_hash = new ArrayList<>();
@@ -633,7 +633,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class getUserAddresses extends TLMethod<userAddresses> {
         public static final int constructor = 1383456733;
         public boolean force;
@@ -654,7 +654,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class holderDc extends TLObject {
         public static final int constructor = -103410961;
         public int dc;
@@ -678,7 +678,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class inputTonConnectOauthSession extends TLObject {
         public static final int constructor = 1654613710;
         public byte[] body;
@@ -708,7 +708,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class inputWalletCardSticker extends TLObject {
         public static final int constructor = 1474250151;
         public TL_stories.MediaAreaCoordinates coordinates;
@@ -732,7 +732,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class inputWalletImported extends InputWalletReplacement {
         public static final int constructor = 1722182203;
         public byte[] anchor_public_key;
@@ -762,7 +762,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class inputWalletNew extends InputWalletReplacement {
         public static final int constructor = 1671708892;
 
@@ -772,7 +772,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class mnemonic_decryptedKeyPart extends TLObject {
         public static final int constructor = -1953440504;
         public byte[] share;
@@ -793,7 +793,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class nftAttribute extends TLObject {
         public static final int constructor = 1277096206;
         public String trait_type;
@@ -817,7 +817,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class nftItem extends TLObject {
         public static final int constructor = 389937907;
         public String address;
@@ -952,7 +952,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class nftItems extends TLObject {
         public static final int constructor = 2035107951;
         public ArrayList<nftItem> items = new ArrayList<>();
@@ -983,7 +983,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class proofChallenge extends TLObject {
         public static final int constructor = -1713105145;
         public String domain;
@@ -1010,7 +1010,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class replaceWallet extends TLMethod<WalletState> {
         public static final int constructor = -658034964;
         public TLRPC.InputCheckPasswordSRP password;
@@ -1033,7 +1033,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class secretPhraseParts extends TLObject {
         public static final int constructor = -422514943;
         public ArrayList<Integer> dcs = new ArrayList<>();
@@ -1057,7 +1057,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class sendTransfer extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -639247902;
         public byte[] data_gasless;
@@ -1086,7 +1086,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class setCardStickers extends TLMethod<card> {
         public static final int constructor = 109382060;
         public String bg_nft_address;
@@ -1109,7 +1109,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectChallenge extends TLObject {
         public static final int constructor = 1271436947;
         public byte[] challenge;
@@ -1133,7 +1133,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectClaimRequest extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1723169601;
         public String app_request_id;
@@ -1161,7 +1161,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectCloseSession extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -700489266;
         public byte[] body;
@@ -1184,7 +1184,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectCreateSession extends TLMethod<tonConnectSession> {
         public static final int constructor = -862777274;
         public String dapp_client_id;
@@ -1203,7 +1203,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectGetNextEventId extends TLMethod<tonConnectNextEventId> {
         public static final int constructor = 2002612804;
         public long session_id;
@@ -1220,7 +1220,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectGetPending extends TLMethod<tonConnectPending> {
         public static final int constructor = 296673381;
         public String dapp_client_id;
@@ -1245,7 +1245,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectGetSessions extends TLMethod<tonConnectSessions> {
         public static final int constructor = -1476414098;
 
@@ -1260,7 +1260,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectManifest extends TLObject {
         public static final int constructor = 304255588;
         public TLRPC.WebDocument icon;
@@ -1294,7 +1294,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectNextEventId extends TLObject {
         public static final int constructor = 1478780131;
         public long event_id;
@@ -1315,7 +1315,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectPending extends TLObject {
         public static final int constructor = -2050952924;
         public ArrayList<tonConnectRequest> requests = new ArrayList<>();
@@ -1339,7 +1339,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectRegisterKey extends TLMethod<tonConnectChallenge> {
         public static final int constructor = 864800540;
         public String client_id;
@@ -1358,7 +1358,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectRequest extends TLObject {
         public static final int constructor = -1587575533;
         public byte[] body;
@@ -1405,7 +1405,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectSession extends TLObject {
         public static final int constructor = 308631238;
         public String client_id;
@@ -1465,7 +1465,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectSessions extends TLObject {
         public static final int constructor = 236939414;
         public ArrayList<tonConnectSession> sessions = new ArrayList<>();
@@ -1486,7 +1486,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectSubmitConnectResult extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1027602567;
         public byte[] body;
@@ -1514,7 +1514,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class tonConnectSubmitResponse extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -87655108;
         public byte[] body;
@@ -1541,7 +1541,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class userAddresses extends TLObject {
         public static final int constructor = -1836156075;
         public ArrayList<walletUserAddress> addresses = new ArrayList<>();
@@ -1565,7 +1565,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOnchainGiftActionBuy extends WalletOnchainGiftAction {
         public static final int constructor = -114117331;
 
@@ -1575,7 +1575,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOnchainGiftActionChangePrice extends WalletOnchainGiftAction {
         public static final int constructor = 1208637885;
         public int flags;
@@ -1623,7 +1623,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOnchainGiftActionDelist extends WalletOnchainGiftAction {
         public static final int constructor = -1710739570;
 
@@ -1633,7 +1633,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOnchainGiftActionOfferAccept extends WalletOnchainGiftAction {
         public static final int constructor = -187298232;
         public boolean buyer;
@@ -1683,7 +1683,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOnchainGiftActionOfferCancel extends WalletOnchainGiftAction {
         public static final int constructor = 1707653005;
         public String counterparty_address;
@@ -1745,7 +1745,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOnchainGiftActionOfferCreate extends WalletOnchainGiftAction {
         public static final int constructor = -451948018;
         public long amount;
@@ -1806,7 +1806,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOnchainGiftActionOfferDecline extends WalletOnchainGiftAction {
         public static final int constructor = -978823956;
         public String counterparty_address;
@@ -1861,7 +1861,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOnchainGiftActionOfferExpire extends WalletOnchainGiftAction {
         public static final int constructor = -628781360;
         public String counterparty_address;
@@ -1916,7 +1916,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletOwnershipProof extends TLObject {
         public static final int constructor = 1622985485;
         public byte[] signature;
@@ -1940,7 +1940,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransaction extends TLObject {
         public static final int constructor = -1792163517;
         public long amount;
@@ -2072,7 +2072,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransactionPeerAddress extends WalletTransactionPeer {
         public static final int constructor = 103596476;
 
@@ -2097,7 +2097,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransactionPeerChannel extends WalletTransactionPeer {
         public static final int constructor = 1424428081;
 
@@ -2124,7 +2124,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransactionPeerOnchainGift extends WalletTransactionPeer {
         public static final int constructor = 1257549816;
         public WalletOnchainGiftAction action;
@@ -2143,7 +2143,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransactionPeerOnramp extends WalletTransactionPeer {
         public static final int constructor = -443213714;
         public String provider_name;
@@ -2171,7 +2171,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransactionPeerTelegramGift extends WalletTransactionPeer {
         public static final int constructor = -193817447;
         public boolean own_profile;
@@ -2188,7 +2188,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransactionPeerUser extends WalletTransactionPeer {
         public static final int constructor = -722833299;
 
@@ -2215,7 +2215,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransactions extends TLObject {
         public static final int constructor = 1126356389;
         public long balance;
@@ -2255,7 +2255,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletUserAddress extends TLObject {
         public static final int constructor = -25628980;
         public String address;
@@ -2288,7 +2288,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public static class walletTransactionPeerUnsupported extends WalletTransactionPeer {
         public static final int constructor = 1921772890;
 

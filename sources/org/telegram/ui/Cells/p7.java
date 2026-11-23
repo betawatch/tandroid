@@ -48,7 +48,7 @@ import org.telegram.ui.Components.xy0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public class p7 extends FrameLayout {
     public static long F0;

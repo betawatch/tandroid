@@ -2,19 +2,17 @@ package org.telegram.ui.Components;
 
 import java.io.File;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final class g21 implements org.telegram.messenger.gs {
     public final /* synthetic */ String a;
     public final /* synthetic */ org.telegram.messenger.ls b;
     public final /* synthetic */ org.telegram.messenger.gj c;
-    public final /* synthetic */ org.telegram.ui.Cells.m1 d;
 
     public g21(String str, org.telegram.messenger.ls lsVar, org.telegram.messenger.gj gjVar, org.telegram.ui.Cells.m1 m1Var) {
         this.a = str;
         this.b = lsVar;
         this.c = gjVar;
-        this.d = m1Var;
     }
 
     @Override // org.telegram.messenger.gs
@@ -28,7 +26,7 @@ public final class g21 implements org.telegram.messenger.gs {
             if (i7 == i11 && objArr.length > 1) {
                 Object obj = objArr[1];
                 if (obj instanceof File) {
-                    j21.y(gjVar, ((File) obj).getAbsolutePath(), this.d);
+                    j21.y(gjVar, ((File) obj).getAbsolutePath());
                     return;
                 }
             }

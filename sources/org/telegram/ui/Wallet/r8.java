@@ -51,7 +51,7 @@ import org.telegram.ui.Components.a70;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.xf;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes4.dex */
 public final class r8 extends View {
     public static final /* synthetic */ int J1 = 0;

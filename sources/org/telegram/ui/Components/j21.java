@@ -8,7 +8,6 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.StateSet;
 import j$.util.Objects;
-import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +20,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public abstract class j21 {
     public static HashMap O;
@@ -65,7 +64,6 @@ public abstract class j21 {
     public static final int[] N = {R.attr.state_enabled, R.attr.state_pressed};
     public static final HashMap R = new HashMap();
     public static final HashMap S = new HashMap();
-    public static final ConcurrentHashMap.KeySetView T = ConcurrentHashMap.newKeySet();
     public boolean w = false;
     public boolean A = false;
     public final x1.a B = new x1.a();
@@ -167,24 +165,11 @@ public abstract class j21 {
         this.j = new d6(r1Var, 250L, nrVar);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0028, code lost:
-    
-        if (org.telegram.ui.Dictation.DictationAsr.B(r1) != false) goto L13;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public static boolean A(org.telegram.messenger.gj gjVar) {
         if (gjVar != null) {
             int i7 = gjVar.K1;
-            if (org.telegram.messenger.gj.R4(gjVar.k)) {
-                if (!j(gjVar)) {
-                    if (!T.contains(Integer.valueOf(r(gjVar)))) {
-                    }
-                }
-                if (DictationAsr.w(i7) && ai.m1.h() && gjVar.L0() * 16000.0d * 4.0d < 3.145728E8d) {
-                    return true;
-                }
+            if (org.telegram.messenger.gj.R4(gjVar.k) && ((j(gjVar) || DictationAsr.B(i7)) && DictationAsr.w(i7) && ai.m1.h() && gjVar.L0() * 16000.0d * 4.0d < 3.145728E8d)) {
+                return true;
             }
         }
         return false;
@@ -356,9 +341,9 @@ public abstract class j21 {
         if (org.telegram.messenger.s2.a) {
             org.telegram.messenger.a8.b("local transcription of msg_id=" + gjVar.e1() + ": no model and no auto-download, opening speech settings");
         }
-        org.telegram.ui.ActionBar.g2 T2 = LaunchActivity.T();
-        if (T2 != null) {
-            T2.presentFragment(new ai.a3());
+        org.telegram.ui.ActionBar.g2 T = LaunchActivity.T();
+        if (T != null) {
+            T.presentFragment(new ai.a3());
         }
     }
 
@@ -438,22 +423,22 @@ public abstract class j21 {
         org.telegram.messenger.ls.f(gjVar2.K1).k(org.telegram.messenger.ls.A1, gjVar2);
     }
 
-    public static void y(org.telegram.messenger.gj gjVar, String str, org.telegram.ui.Cells.m1 m1Var) {
+    public static void y(org.telegram.messenger.gj gjVar, String str) {
         int i7 = gjVar.K1;
         long B0 = org.telegram.messenger.gj.B0(gjVar.k);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         ArrayList arrayList = (ArrayList) ai.w0.a.get(Long.valueOf(B0));
         int i10 = 0;
-        android.support.v4.media.session.a0 T2 = DictationAsr.T(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
+        android.support.v4.media.session.a0 T = DictationAsr.T(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
         if (org.telegram.messenger.s2.a) {
-            org.telegram.messenger.a8.b("local transcription of msg_id=" + gjVar.e1() + " with " + T2);
+            org.telegram.messenger.a8.b("local transcription of msg_id=" + gjVar.e1() + " with " + T);
         }
         Integer valueOf = Integer.valueOf(r(gjVar));
         HashMap hashMap = S;
-        h21 h21Var = new h21(valueOf, gjVar, m1Var, i7, B0, elapsedRealtime);
+        h21 h21Var = new h21(valueOf, gjVar, i7, B0, elapsedRealtime);
         boolean[] zArr = {false};
         DictationLid.d(org.telegram.messenger.t0.b);
-        new Thread(new ai.r(str, zArr, h21Var, T2, 0), "DictationAsrFile").start();
+        new Thread(new ai.r(str, zArr, h21Var, T, 0), "DictationAsrFile").start();
         hashMap.put(valueOf, new ai.s(i10, zArr));
     }
 
@@ -623,8 +608,8 @@ public abstract class j21 {
             return;
         }
         ArrayList arrayList = (ArrayList) ai.w0.a.get(Long.valueOf(org.telegram.messenger.gj.B0(gjVar.k)));
-        android.support.v4.media.session.a0 T2 = DictationAsr.T(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
-        if (T2 == null || !((tVar = (ai.t) T2.b) == null || tVar.f != 0 || DictationAsr.y(tVar) || ai.m1.b())) {
+        android.support.v4.media.session.a0 T = DictationAsr.T(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
+        if (T == null || !((tVar = (ai.t) T.b) == null || tVar.f != 0 || DictationAsr.y(tVar) || ai.m1.b())) {
             o(gjVar);
             return;
         }
@@ -638,7 +623,7 @@ public abstract class j21 {
         org.telegram.messenger.w7.G(i13);
         File M = org.telegram.messenger.w7.M(gjVar.k, false, true);
         if (M != null && M.exists()) {
-            y(gjVar, M.getAbsolutePath(), m1Var);
+            y(gjVar, M.getAbsolutePath());
             return;
         }
         String r10 = org.telegram.messenger.w7.r(null, gjVar.F0());
@@ -741,7 +726,7 @@ public abstract class j21 {
         boolean z12 = this.z;
         if (!z12 && z10 && this.w) {
             this.w = false;
-            ((org.telegram.ui.Cells.c1) this).U.a.T2 = true;
+            ((org.telegram.ui.Cells.c1) this).T.a.T2 = true;
         }
         this.z = z10;
         oh0 oh0Var = this.p;

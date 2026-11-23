@@ -21,7 +21,7 @@ import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.rh0;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final class f1 extends FrameLayout implements gs {
     public static final List x = Arrays.asList(new c1(0, 1, 20, 0), new c1(0, 2, 20, 40), new c1(1, 0, 0, 20), new c1(1, 2, 60, 40), new c1(2, 0, 40, 20), new c1(2, 1, 40, 60));

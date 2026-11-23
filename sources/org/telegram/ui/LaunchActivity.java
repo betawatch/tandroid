@@ -98,7 +98,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public class LaunchActivity extends g5 implements org.telegram.ui.ActionBar.o4, org.telegram.messenger.gs, ww {
     public static final String C1 = UUID.randomUUID().toString();
@@ -3620,7 +3620,7 @@ public class LaunchActivity extends g5 implements org.telegram.ui.ActionBar.o4, 
     }
 
     /*  JADX ERROR: Types fix failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r34v45 ??), method size: 16206
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r12v38 ??), method size: 16206
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

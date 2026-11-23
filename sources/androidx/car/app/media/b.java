@@ -2,7 +2,7 @@ package androidx.car.app.media;
 
 import androidx.car.app.h;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int AUDIO_CONTENT_BUFFER_SIZE = 512;

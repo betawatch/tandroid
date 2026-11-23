@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ky implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.w10, jg.y1, te.b, org.telegram.messenger.j9, f80, sd0, sj0, org.telegram.ui.ww, fi.x6, org.telegram.messenger.sr, l71, org.telegram.messenger.oc, gu0, org.telegram.messenger.kc {
     public final /* synthetic */ int a;

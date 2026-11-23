@@ -177,7 +177,7 @@ import org.telegram.ui.pl;
 import org.telegram.ui.yg0;
 import org.telegram.ui.zq0;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs, te.b, q4, z60 {
     public static final float[] wd = new float[8];
@@ -6929,25 +6929,25 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
         return org.telegram.messenger.w7.G(this.a6).k(getFilename());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0410  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0466  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x046c  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x04e9  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x050c  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x050e  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0512 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0521  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0573  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x067c  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x042b  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0481  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0487  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0504  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0527  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0529  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x052d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x053c  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x058e  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0697  */
     /* JADX WARN: Removed duplicated region for block: B:238:0x0313  */
     /* JADX WARN: Removed duplicated region for block: B:247:0x032b  */
     /* JADX WARN: Removed duplicated region for block: B:254:0x0360  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x0345  */
-    /* JADX WARN: Removed duplicated region for block: B:293:0x0315  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x02ac  */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x02cf  */
-    /* JADX WARN: Removed duplicated region for block: B:310:0x02a9  */
+    /* JADX WARN: Removed duplicated region for block: B:294:0x0345  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x0315  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x02a6  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x02ac  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x02cf  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x02a9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6990,6 +6990,7 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
         Path path;
         float f16;
         Canvas canvas2 = canvas;
+        ej ejVar3 = ejVar;
         if (this.C6) {
             org.telegram.messenger.g0.L(12.0f);
             getExtraTextX();
@@ -7019,8 +7020,8 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
             org.telegram.messenger.g0.L(14.0f);
         }
         V0(canvas2, f10);
-        if (ejVar != null) {
-            ArrayList arrayList2 = ejVar.e;
+        if (ejVar3 != null) {
+            ArrayList arrayList2 = ejVar3.e;
             if (!z11 || this.u4.a > 0) {
                 if ((!this.Q5.Z || this.Hc || this.M == null) && f10 != 0.0f) {
                     E3();
@@ -7053,7 +7054,7 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
                     if (f17 != 1.0f) {
                         f11 = 9.0f;
                         RectF rectF = this.c4;
-                        rectF.set(f19, f18, ejVar.c + f19, ejVar.c(y1Var) + f18);
+                        rectF.set(f19, f18, ejVar3.c + f19, ejVar3.c(y1Var) + f18);
                         i7 = canvas2.saveLayerAlpha(rectF, (int) (f17 * 255.0f), 31);
                     } else {
                         f11 = 9.0f;
@@ -7131,7 +7132,7 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
                             float f23 = f19;
                             RectF rectF3 = this.cd;
                             gj gjVar4 = gjVar2;
-                            if (i12 == i13 || (i12 >= 0 && ejVar != this.Wc)) {
+                            if (i12 == i13 || (i12 >= 0 && ejVar3 != this.Wc)) {
                                 z15 = i12 != i13;
                                 if (!z15 || !z14 || i12 < 0 || i13 < 0) {
                                     z16 = z15;
@@ -7159,7 +7160,7 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
                                             }
                                         }
                                         this.Vc = i12;
-                                        this.Wc = ejVar;
+                                        this.Wc = ejVar3;
                                         if (i12 >= 0) {
                                             if (this.Rc == null) {
                                                 h80 h80Var2 = new h80(0);
@@ -7188,14 +7189,18 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
                                                     int max = Math.max(i18, djVar.n) - djVar.n;
                                                     int i24 = i19;
                                                     int min = Math.min(i19, djVar.r) - djVar.n;
-                                                    if (max < min && min <= djVar.e.getText().length()) {
-                                                        this.Rc.e(djVar.e, max, 0.0f, djVar.p(arrayList2, y1Var) + djVar.f);
+                                                    if (max >= min) {
+                                                        ejVar3 = ejVar;
+                                                    } else if (min <= djVar.e.getText().length()) {
+                                                        int i25 = i7;
+                                                        this.Rc.e(djVar.e, max, -(djVar.l() ? ejVar3.d - (djVar.J ? org.telegram.messenger.g0.L(f12) : 0) : 0.0f), djVar.p(arrayList2, y1Var) + djVar.f);
                                                         djVar.e.getSelectionPath(max, min, this.Rc);
+                                                        ejVar3 = ejVar;
                                                         i20 = i21;
                                                         size = i22;
                                                         i18 = i23;
                                                         i19 = i24;
-                                                        i7 = i7;
+                                                        i7 = i25;
                                                         arrayList2 = arrayList2;
                                                     }
                                                     i20 = i21;
@@ -7285,8 +7290,8 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
                                                     canvas2 = canvas;
                                                     f1(f23, f22, canvas2, arrayList, ejVar.d, z10, f10, true, false, true, false);
                                                 } else {
-                                                    int i25 = this.Q5.D;
-                                                    if (i25 == 1 || i25 == 20 || this.M1 == 4 || i25 == 8 || i25 == 23) {
+                                                    int i26 = this.Q5.D;
+                                                    if (i26 == 1 || i26 == 20 || this.M1 == 4 || i26 == 8 || i26 == 23) {
                                                         fi.s2 s2Var = this.U0;
                                                         float f26 = s2Var.M0;
                                                         L = s2Var.O0 + f26 + org.telegram.messenger.g0.L(6.0f);
@@ -7323,7 +7328,7 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
                                 if (z17) {
                                 }
                                 this.Vc = i12;
-                                this.Wc = ejVar;
+                                this.Wc = ejVar3;
                                 if (i12 >= 0) {
                                 }
                             }
@@ -7396,7 +7401,7 @@ public class r1 extends z implements xm0, kc, org.telegram.messenger.y5, r9, gs,
                     if (z17) {
                     }
                     this.Vc = i12;
-                    this.Wc = ejVar;
+                    this.Wc = ejVar3;
                     if (i12 >= 0) {
                     }
                     arrayList = arrayList2;

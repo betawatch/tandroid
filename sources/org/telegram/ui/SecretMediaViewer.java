@@ -45,7 +45,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public class SecretMediaViewer implements org.telegram.messenger.gs, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer w1;
@@ -160,7 +160,7 @@ public class SecretMediaViewer implements org.telegram.messenger.gs, GestureDete
     public boolean j0 = true;
     public final PhotoBackgroundDrawable k0 = new PhotoBackgroundDrawable();
 
-    /* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+    /* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
     public class PhotoBackgroundDrawable extends ColorDrawable {
         public tr0 a;
         public int b;

@@ -67,7 +67,7 @@ import org.telegram.ui.ti;
 import org.telegram.ui.vg0;
 import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v1 implements e1, h2.o, mr, pb0, kc, a5, sj0, rj0, org.telegram.ui.ActionBar.q1, na0, nj0, h2.j {
     public final /* synthetic */ int a;
@@ -293,7 +293,7 @@ public final /* synthetic */ class v1 implements e1, h2.o, mr, pb0, kc, a5, sj0,
                         }
                         int i29 = 0;
                         while (true) {
-                            int[] iArr = DictationLid.j;
+                            int[] iArr = DictationLid.k;
                             if (i29 >= iArr.length) {
                                 i29 = -1;
                                 break;

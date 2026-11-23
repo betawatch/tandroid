@@ -5,23 +5,21 @@ import android.text.TextUtils;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public final class h21 {
     public final /* synthetic */ Integer a;
     public final /* synthetic */ org.telegram.messenger.gj b;
-    public final /* synthetic */ org.telegram.ui.Cells.m1 c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
     public final /* synthetic */ long e;
-    public final /* synthetic */ long f;
 
-    public h21(Integer num, org.telegram.messenger.gj gjVar, org.telegram.ui.Cells.m1 m1Var, int i7, long j3, long j10) {
+    public h21(Integer num, org.telegram.messenger.gj gjVar, int i7, long j3, long j10) {
         this.a = num;
         this.b = gjVar;
-        this.c = m1Var;
-        this.d = i7;
-        this.e = j3;
-        this.f = j10;
+        this.c = i7;
+        this.d = j3;
+        this.e = j10;
     }
 
     public final void a(String str, int[] iArr, boolean z10) {
@@ -38,7 +36,7 @@ public final class h21 {
         }
         TLRPC.Message message = gjVar.k;
         if (z10) {
-            org.telegram.messenger.g0.h3(new bi.p4(gjVar, message, str, iArr, this.d, this.e), Math.max(0L, 350 - (SystemClock.elapsedRealtime() - this.f)));
+            org.telegram.messenger.g0.h3(new bi.p4(gjVar, message, str, iArr, this.c, this.d), Math.max(0L, 350 - (SystemClock.elapsedRealtime() - this.e)));
             return;
         }
         if (TextUtils.isEmpty(str)) {
@@ -50,6 +48,6 @@ public final class h21 {
         message.voiceTranscriptionFinal = false;
         message.voiceTranscriptionOpen = true;
         j21.q(gjVar);
-        org.telegram.messenger.ls.f(this.d).k(org.telegram.messenger.ls.A1, gjVar, null, null, Boolean.TRUE, Boolean.FALSE);
+        org.telegram.messenger.ls.f(this.c).k(org.telegram.messenger.ls.A1, gjVar, null, null, Boolean.TRUE, Boolean.FALSE);
     }
 }

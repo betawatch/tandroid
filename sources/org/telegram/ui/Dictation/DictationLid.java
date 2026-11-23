@@ -20,9 +20,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.np;
+import org.telegram.messenger.t0;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-20b6edc21a21e9633bf1653677d767a6060e6d78c777eedeb9e70c0d9e4777a4 */
+/* compiled from: r8-map-id-6f163cae349fa37df9d9efb188e844742dfa8f0bb6d7b32f72fe7fb477fc918c */
 /* loaded from: classes3.dex */
 public abstract class DictationLid {
     public static volatile long c;
@@ -30,11 +31,12 @@ public abstract class DictationLid {
     public static boolean e;
     public static volatile boolean f;
     public static volatile boolean g;
+    public static volatile boolean h;
     public static final ExecutorService a = Executors.newSingleThreadExecutor(new z0(0));
     public static final ExecutorService b = Executors.newSingleThreadExecutor();
-    public static final Object h = new Object();
-    public static final String[][] i = {new String[]{"ru", "uk", "be", "pl", "cs", "sk", "bg", "sr", "hr", "bs", "sl", "mk"}, new String[]{"sv", "no", "nb", "nn", "da"}, new String[]{"es", "pt", "ca", "gl", "it"}, new String[]{"nl", "de", "af"}, new String[]{"ms", "id"}, new String[]{"hi", "ur"}};
-    public static final int[] j = {1000, 2000, 5000, 10000, 20000};
+    public static final Object i = new Object();
+    public static final String[][] j = {new String[]{"ru", "uk", "be", "pl", "cs", "sk", "bg", "sr", "hr", "bs", "sl", "mk"}, new String[]{"sv", "no", "nb", "nn", "da"}, new String[]{"es", "pt", "ca", "gl", "it"}, new String[]{"nl", "de", "af"}, new String[]{"ms", "id"}, new String[]{"hi", "ur"}};
+    public static final int[] k = {1000, 2000, 5000, 10000, 20000};
 
     public static /* synthetic */ float[] a(byte[] bArr, int[] iArr) {
         byte[] m10 = m(bArr);
@@ -82,13 +84,19 @@ public abstract class DictationLid {
         Context applicationContext = context.getApplicationContext();
         File file = new File(applicationContext.getFilesDir(), "tinylid.bin");
         int i7 = 0;
-        boolean z10 = System.currentTimeMillis() - np.g1().getLong("tinylid_checked", 0L) > 86400000;
+        boolean z10 = System.currentTimeMillis() - np.g1().getLong("tinylid_checked", 0L) > 3600000;
         if (file.exists()) {
             k(applicationContext);
         }
         if (file.exists() || m1.b()) {
-            if ((!file.exists() || z10) && !f) {
+            boolean i10 = m1.i(m1.f(m1.a(), "tinylid"), file);
+            if (!file.exists() || z10 || i10) {
+                boolean z11 = i10 && t0.s();
+                if (f) {
+                    return;
+                }
                 f = true;
+                h = z11;
                 File file2 = new File(applicationContext.getFilesDir(), "tinylid.bin");
                 if (!file2.exists()) {
                     TLRPC.TL_transcriptionModel f10 = m1.f(m1.a(), "tinylid");
@@ -102,7 +110,7 @@ public abstract class DictationLid {
 
     public static boolean e(ArrayList arrayList) {
         if (arrayList != null) {
-            for (String[] strArr : i) {
+            for (String[] strArr : j) {
                 int size = arrayList.size();
                 int i7 = 0;
                 int i10 = 0;
@@ -174,7 +182,7 @@ public abstract class DictationLid {
     }
 
     public static void h() {
-        Object obj = h;
+        Object obj = i;
         synchronized (obj) {
             obj.notifyAll();
         }
